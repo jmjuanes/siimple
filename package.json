@@ -15,5 +15,6 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/jmjuanes/siimple.git"
-  }
+  },
+  "keywords": ["siimple","css","framework","jmjuanes","minimal","flat","clean","websites"]
 }
