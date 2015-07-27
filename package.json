@@ -1,0 +1,19 @@
+{
+  "name": "siimple",
+  "version": "1.0.0",
+  "description": "Minimal CSS Framework for flat and clean websites.",
+  "style": "siimple.css",
+   "main": "siimple.css",
+  "author": "Josemi Juanes <jmjuanes@outlook.com>",
+  "license": "MIT",
+  "files": [
+    "LICENSE.md",
+    "README.md",
+    "siimple.css"
+  ],
+  "homepage": "https://jmjuanes.github.io/siimple",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jmjuanes/siimple.git"
+  }
+}

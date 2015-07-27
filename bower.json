@@ -1,0 +1,14 @@
+{
+  "name": "siimple",
+  "version": "1.0.0",
+  "main": "siimple.css",
+  "author": "Josemi Juanes <jmjuanes@outlook.com>",
+  "homepage": "https://jmjuanes.github.io/siimple",
+  "ignore": ["package.json"],
+  "repository": {
+  	"type": "git",
+  	"url": "git://github.com/jmjuanes/siimple.git"
+  },
+  "license": "MIT",
+  "keywords": ["siimple","css","framework","jmjuanes","minimal","flat","clean","websites"]
+}
