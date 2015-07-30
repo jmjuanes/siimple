@@ -1,6 +1,6 @@
 /****************************************************************************************************************/
 /* 
-/* Siimple v0.1.0 - Minimal CSS Framework for flat and clean websites by Josemi Juanes.
+/* Siimple v0.1.1 - Minimal CSS Framework for flat and clean websites by Josemi Juanes.
 /* Not created for competing with Bootstrap.
 /*
 /* https://jmjuanes.github.io/siimple
@@ -18,16 +18,21 @@ body { background-color: #ffffff; margin: 0px; padding: 0px; }
 body { font-size: 16px; font-family: OpenSans; color: #526475; font-weight: 300; } 
 
 /* Headers */
-h1 { font-size: 40px; } 
-h2 { font-size: 34px; } 
-h3 { font-size: 28px; } 
-h4 { font-size: 22px; } 
-h5 { font-size: 18px; } 
-h6 { font-size: 16px; } 
+h1, h2, h3, h4, h5, h6 { margin-left: 0px; margin-right: 0px; margin-top: 30px; } 
+h1 { font-size: 40px; margin-bottom: 12px; } 
+h2 { font-size: 34px; margin-bottom: 10px; } 
+h3 { font-size: 28px; margin-bottom: 8px; } 
+h4 { font-size: 22px; margin-bottom: 6px; } 
+h5 { font-size: 18px; margin-bottom: 4px; } 
+h6 { font-size: 16px; margin-bottom: 2px; } 
 
 /* Links */
 a { color: #526475; text-decoration: none; font-weight: bold; } 
-a:hover { text-decoration: underline; }  
+a:hover { text-decoration: underline; } 
+
+/* Blockquote */
+blockquote { border-left: 4px solid #e2e3e7; padding-left: 20px; padding-right: 5px; } 
+blockquote { padding-bottom: 5px; padding-top: 5px; } 
 
 
 /* Page sections 
@@ -113,6 +118,9 @@ a:hover { text-decoration: underline; }
 .box { border: 1px solid #e2e3e7; border-radius: 5px; } 
 
 /* Code box */
+code { border-radius: 5px; background-color: #f1f2f4; color: #f1868d; padding-left: 5px; padding-right: 5px; } 
+
+/* Code box - multiple lines */
 pre { width: 96%; display: block; padding: 2%; margin-top: 10px; margin-bottom: 10px; } 
 pre { border-radius: 5px; border: 1px solid #e2e3e7; background-color: #f1f2f4; } 
 
@@ -120,13 +128,13 @@ pre { border-radius: 5px; border: 1px solid #e2e3e7; background-color: #f1f2f4; 
 /* Inputs 
 ***********************************/
 /* Text inputs */
-.input { width: 96%; display: block; padding: 2%; margin-top: 10px; margin-bottom: 10px; } 
+.input { width: 98%; display: block; padding: 2%; margin-top: 10px; margin-bottom: 10px; } 
 .input { border-radius: 5px; border: 1px solid #e2e3e7; background-color: #ffffff; } 
 .input { font-size: 15px; font-family: OpenSans; } 
 
 /* text inputs size */
-.input-small { font-size: 12px; } 
-.input-big { font-size: 20px; } 
+.input-small { font-size: 12px; width: 98%; padding: 1%; } 
+.input-big { font-size: 22px; } 
 
 
 /* Buttons 
@@ -152,14 +160,17 @@ pre { border-radius: 5px; border: 1px solid #e2e3e7; background-color: #f1f2f4; 
 .btn-big { min-width: 100px; min-height: 60px; line-height: 60px; font-size: 25px; } 
 .btn-big { padding-left: 30px; padding-right: 30px; } 
 
+
 /* Alerts
 ***********************************/
 /* Alert basic */
 .alert { width: 96%; display: block; padding: 2%; margin-top: 10px; margin-bottom: 10px; } 
 .alert { border-width: 1px; border-style: solid; border-radius: 5px; text-decoration: none; } 
 
+/* Alert default color */
+.alert { color: #4a8bdb; border-color: #4a8bdb; background-color: #d1e3f9; } .alert a { color: #4a8bdb; } 
+
 /* Alert colours */
-.alert-blue { color: #4a8bdb; border-color: #4a8bdb; background-color: #d1e3f9; } .alert-blue a { color: #4a8bdb; } 
 .alert-green { color: #82c250; border-color: #82c250; background-color: #e2f3d4; } .alert-green a { color: #82c250; } 
 .alert-yellow { color: #f5ba42; border-color: #f5ba42; background-color: #fef1cf; } .alert-yellow a { color: #f5ba42; } 
 .alert-red { color: #da4d44; border-color: #da4d44; background-color: #f9d2cf; } .alert-red a { color: #da4d44; } 
@@ -173,12 +184,12 @@ pre { border-radius: 5px; border: 1px solid #e2e3e7; background-color: #f1f2f4; 
 .panel { border-color: #526475; background-color: #526475; } 
 
 /* Panel header */
-.panel-head { color: #ffffff; font-weight: bold; display: block; width: 96%; } 
-.panel-head { padding: 2%; } 
+.panel .head { color: #ffffff; display: block; width: 98%; padding: 1%; } 
 
 /* Panel body */
-.panel-body { display: block; width: 96%; padding: 2%; background-color: #ffffff; } 
-.panel-body { border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; } 
+.panel .body { display: block; width: 98%; padding: 1%; background-color: #ffffff; } 
+.panel .body { border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; } 
+.panel .body { padding-top: 15px; padding-bottom: 15px; } 
 
 /* Panel colours */
 .panel-blue { border-color: #5c9ded; background-color: #5c9ded; } 
@@ -222,7 +233,8 @@ pre { border-radius: 5px; border: 1px solid #e2e3e7; background-color: #f1f2f4; 
 /* Text size */
 .text-big { font-size: 28px; } 
 .text-huge { font-size: 40px; } 
-.text-small { font-size: 12px; } 
+.text-small { font-size: 14px; } 
+.text-tiny { font-size: 12px; } 
 
 /* Text color */
 .color-blue { color: #5c9ded; } 

@@ -1,4 +1,4 @@
-Release notes 0.1.0
+Release notes 0.1.1
 
 [![Siimple Logo](http://jmjuanes.github.io/siimple/assets/siimple.png)](https://jmjuanes.github.io/siimple/)
 
@@ -13,7 +13,7 @@ Minimal CSS framework for flat and clean websites created by Josemi Juanes (not 
 * [npm](http://npmjs.org/): `npm install siimple`.
 - [Bower](http://bower.io): `bower install siimple`.
 - Clone the repo: `git clone https://github.com/jmjuanes/siimple.git`.
-- Link on your website: `<link rel="stylesheet" type="text/css" href="https://jmjuanes.github.io/siimple/0.1.0/siimple.css">`.
+- Link on your website: `<link rel="stylesheet" type="text/css" href="https://jmjuanes.github.io/siimple/0.1.1/siimple.css">`.
 - [Download](https://github.com/jmjuanes/siimple/releases).
 
 
