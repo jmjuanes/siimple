@@ -1,6 +1,6 @@
 /****************************************************************************************************************/
 /* 
-/* Siimple v0.1.1 - Minimal CSS Framework for flat and clean websites by Josemi Juanes.
+/* Siimple v0.1.2 - Minimal CSS Framework for flat and clean websites by Josemi Juanes.
 /* Not created for competing with Bootstrap.
 /*
 /* https://jmjuanes.github.io/siimple
@@ -142,21 +142,38 @@ pre { border-radius: 5px; border: 1px solid #e2e3e7; background-color: #f1f2f4; 
 /* Button basic */
 .btn { display: inline-block; min-width: 90px; min-height: 40px; line-height: 40px; } 
 .btn { text-align: center; text-decoration: none; font-weight: normal; font-size: 16px; } 
-.btn { border-radius: 5px; border-width: 2px; border-style: solid; background-color: transparent; } 
+.btn { border-radius: 5px; color: #ffffff; border-bottom-style: solid; border-bottom-width: 4px; } 
 .btn { padding-left: 15px; padding-right: 15px; margin: 5px; cursor: pointer; } 
-.btn:hover { color: #ffffff; text-decoration: none; } 
+.btn { box-sizing: border-box; } 
+.btn:hover { text-decoration: none; } 
 
-/* Button colours */
-.btn-white { border-color: #ffffff; color: #ffffff; } .btn-white:hover { background-color: #ffffff; color: #526475; } 
-.btn-navy { border-color: #526475; color: #526475; } .btn-navy:hover { background-color: #526475; } 
-.btn-blue { border-color: #5c9ded; color: #5c9ded; } .btn-blue:hover { background-color: #5c9ded; } 
-.btn-green { border-color: #99d468; color: #99d468; } .btn-green:hover { background-color: #99d468; } 
-.btn-yellow { border-color: #fcce54; color: #fcce54; } .btn-yellow:hover { background-color: #fcce54; } 
-.btn-red { border-color: #ed5f55; color: #ed5f55; } .btn-red:hover { background-color: #ed5f55; } 
+/* Button white */
+.btn-white { border-bottom-color: #f1f2f4; color: #526475; background-color: #ffffff; } 
+.btn-white:hover { background-color: #f1f2f4; } 
+
+/* Button navy */
+.btn-navy { background-color: #526475; border-bottom-color: #4b5a6a; } 
+.btn-navy:hover { background-color: #4b5a6a; } 
+
+ /* Button blue */
+.btn-blue { background-color: #5c9ded; border-bottom-color: #4a8bdb; } 
+.btn-blue:hover { background-color: #4a8bdb; } 
+
+/* Button green */
+.btn-green { background-color: #99d468; border-bottom-color: #82c250; } 
+.btn-green:hover { background-color: #82c250; } 
+
+/* Button yellow */
+.btn-yellow { background-color: #fcce54; border-bottom-color: #f5ba42; } 
+.btn-yellow:hover { background-color: #f5ba42; } 
+ 
+ /* Button red */
+.btn-red { background-color: #ed5f55; border-bottom-color: #da4d44; } 
+.btn-red:hover { background-color: #da4d44; } 
 
 /* Button sizes */
 .btn-small { min-width: 80px; min-height: 28px; line-height: 28px; font-size: 12px; } 
-.btn-small { padding-left: 6px; padding-right: 6px; } 
+.btn-small { padding-left: 6px; padding-right: 6px; border-bottom-width: 0px; } 
 .btn-big { min-width: 100px; min-height: 60px; line-height: 60px; font-size: 25px; } 
 .btn-big { padding-left: 30px; padding-right: 30px; } 
 
