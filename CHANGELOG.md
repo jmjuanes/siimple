@@ -1,5 +1,9 @@
 # ChangeLog
 
+### v0.1.3 (August 21, 2015)
+- Back to old button style.
+- Added folder **latest** version for online integration.
+
 ### v0.1.2 (August 4, 2015)
 - Changed buttons style.
 
