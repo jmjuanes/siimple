@@ -36,11 +36,7 @@ Then, build the **Siimple** source code (placed in `src/`) using **Gulp**:
 gulp siimple
 ```
 
-This will generate a compiled version in `css/` folder. You can change the output folder, adding it at the end of the last command. For example, if you want to save it to the `build/` folder, execute the next command:
-
-```sh
-gulp siimple build
-```
+This will generate a compiled version in `css/` folder.
 
 
 ## Contributing
