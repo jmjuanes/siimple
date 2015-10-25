@@ -1,0 +1,36 @@
+/* Siimple - Typography module */
+
+/* Body */
+body { background-color: #ffffff; color: #536273; font-family: OpenSans; }
+body { font-weight: 300; margin: 0px; padding: 0px; font-size: 16px; }
+
+/* Links */
+a { color: #21ad91; font-weight: bold; text-decoration: none; }
+a: hover {  } 
+
+/* Headers */
+h1 { font-size: 30px; line-height: 35px; color: #536273; font-weight: bold; }
+h2 { font-size: 24px; line-height: 28px; color: #536273; font-weight: bold; }
+h3 { font-size: 20px; line-height: 20px; color: #536273; font-weight: bold; }
+h4 { font-size: 18px; line-height: 18px; color: #536273; font-weight: bold; }
+
+/* Small text */
+small { color: #c5ccd4; font-size: 13px; }
+
+
+/* Code */
+code { border-radius: 5px; background-color: #f1f5fa; color: #21ad91; }
+code { padding-left: 5px; padding-right: 5px; }
+
+/* Code multiple lines */
+pre { display:block; width: calc(100% - 30px); padding: 14px; margin-top: 15px; }
+pre { margin-bottom: 15px; border-radius: 5px; background-color: #f1f5fa; color: #536273; }
+
+/* Box  */
+.box { display: block; width: calc(100% - 30px); padding: 14px; border-radius: 5px; }
+.box { border: 1px solid #d1e1e8; margin-top: 15px; margin-bottom: 15px; }
+
+
+/* Blockquote */
+blockquote { border-left: 4px solid #929faa; padding-left: 20px; padding-right: 5px; }
+blockquote { padding-bottom: 5px; padding-top: 5px; }

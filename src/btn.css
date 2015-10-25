@@ -1,0 +1,52 @@
+/* Siimple - Buttons module */
+
+/* Button default */
+.btn, .btn-outline { display: inline-block; text-align: center; line-height: 28px; }
+.btn, .btn-outline { border-radius: 5px; text-decoration: none; font-size: 16px; }
+.btn, .btn-outline { font-weight: normal; font-family: OpenSans; padding-bottom: 5px; }
+.btn, .btn-outline { padding-left: 25px; padding-right: 25px; padding-top: 5px; }
+.btn, .btn-outline { margin-left: 5px; margin-right: 5px; margin-top: 10px; margin-bottom: 10px; }
+.btn, .btn-outline { cursor: hand; }
+
+
+/* Basic button */
+.btn { color: #ffffff; background-color: #09a0f6; transition: opacity 0.3s; }
+.btn:hover { opacity: 0.8; }
+
+/* Basic button colors */
+.btn-blue { background-color: #09a0f6; }
+.btn-green { background-color: #4cc159; }
+.btn-purple { background-color: #a160ed; }
+.btn-orange { background-color: #f07c00; }
+.btn-red { background-color: #f45660; }
+
+
+/* Outline buttons */
+.btn-outline { border: 1px solid #09a0f6; color: #09a0f6; background-color: transparent; }
+.btn-outline { transition: background-color 0.3s, color 0.3s; }
+.btn-outline:hover { color: #ffffff; background-color: #09a0f6; }
+
+/* Outline button colors */
+.btn-outline-blue { color: #09a0f6; border-color: #09a0f6; }
+.btn-outline-blue:hover { background-color: #09a0f6; }
+
+.btn-outline-green { color: #4cc159; border-color: #4cc159; }
+.btn-outline-green:hover { background-color: #4cc159; }
+
+.btn-outline-purple { color: #a160ed; border-color: #a160ed; }
+.btn-outline-purple:hover { background-color: #a160ed; }
+
+.btn-outline-orange { color: #f07c00; border-color: #f07c00; }
+.btn-outline-orange:hover { background-color: #f07c00; }
+
+.btn-outline-red { color: #f45660; border-color: #f45660; }
+.btn-outline-red:hover { background-color: #f45660; }
+
+
+/* Button small size */
+.btn-small { font-size: 14px; line-height: 20px; padding-top: 4px; padding-bottom: 4px; }
+.btn-small { padding-left: 15px; padding-right: 15px; }
+
+/* Button Big size */
+.btn-big { font-size: 22px; line-height: 34px; padding-top: 8px; padding-bottom: 8px; }
+.btn-big { padding-left: 30px; padding-right: 30px; }

@@ -1,0 +1,27 @@
+/* Siimple - Table module */
+
+/* Table general */
+.table { display: table; width: 100%; border-width: 0px; border-collapse: collapse; }
+.table { margin-top: 10px; margin-bottom: 10px; }
+
+/* Table cols */
+.table tr td { border-bottom: 1px solid #d1e1e8; padding-top: 10px; padding-bottom: 10px; }
+.table tr td { padding-left: 10px; }
+
+/* Table head */
+.table thead { font-weight: bold; border-bottom: 1px solid #d1e1e8; color: #6c7a86; }
+.table thead { background-color: #f6f8fa; }
+
+/* Table hover */
+.table-hover tr:hover > td { background-color: #09a0f6; color: #ffffff; cursor: pointer; }
+.table-hover thead tr:hover > td { background-color: #f6f8fa; color: #6c7a86; cursor: auto; }
+
+/* Table striped */
+.table-striped tr:nth-child(even) { background-color: #fbfcfd; }
+
+/* Table border */
+.table-border { border: 1px solid #d1e1e8; }
+
+/* Table col border */
+.table-border-column td { border-right: 1px solid #d1e1e8; }
+.table-border-column td:last-child { border-right: 0px; }

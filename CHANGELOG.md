@@ -1,8 +1,15 @@
 # ChangeLog
 
+### v1.0.0 (October 23, 2015)
+- New style and colors.
+- Moved to new repository.
+- Added minified version.
+
+
 ### v0.1.3 (August 21, 2015)
 - Back to old button style.
 - Added folder **latest** version for online integration.
+
 
 ### v0.1.2 (August 4, 2015)
 - Changed buttons style.

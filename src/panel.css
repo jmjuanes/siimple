@@ -1,0 +1,26 @@
+/* Siimple - Panel module */
+
+/* Panel */
+.panel { display: block; width: calc(100% - 22px); margin-top: 10px; margin-bottom: 10px; }
+.panel { border-radius: 5px; border-radius: 5px; border: 1px solid #d1e1e8; }
+.panel { padding-left: 10; padding-right: 10; background-color: #ffffff; }
+
+/* Panel head */
+.panel .panel-head { display: block; width: calc(100% - 20px); height: 55px; line-height: 55px; }
+.panel .panel-head { padding-left: 9px; padding-right: 9px; font-weight: bold; }
+.panel .panel-head { border-bottom: 1px solid #d1e1e8; color: #536273; }
+
+/* Panel head arrow */
+.panel .panel-head:before { width: 39px; height: 55px; content: ''; float: right; }
+.panel .panel-head:before { transition: 0.4s all; z-index: -1; background-size: 39px 55px; }
+.panel .panel-head:before { background-repeat: no-repeat; background-position: center center; }
+.panel .panel-head:before { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAACMCAYAAACK9Qy7AAAABmJLR0QA0QDhAOhLJz1LAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3woMCy4EL+WBlwAAA9VJREFUeNrt2NlPXFUcwPHf75x7gRL1QU2axhqNaWOXoSNogYGBjhobNUZ9rEsqaqKJUQKUIXYL0bSVlkKrLTbxxaDg8u4/MAxlaFBngSKxqW1Su2At1LIUGGauj/rQNF2gBP1+Xu9y7sn33puTIwIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuF36X5jEK+/U3e/ec3fR7MR03zdHmkYX81zsYo+xqXrr0iX5+WGr3rvWtfcVFAZSqb7uqwRZAK/VbFuWl+OGxehSEWlXNSXWtWtWlYaSA7HI5GKck1m0MT5oWJ7r5jSIyr3pzMy+L5s//jYrMy0i+mCekYZN1VuX8oXcIa9u2f5QnpvXoJ7cpZppbt+/Z1BEJNETPV9QtuGkVe8Z1zpFBSXlA8ne6BhB5jNGTeMjuY75UD3JnU5nmttbdw39+3iyJzL8WCD0q6o8ZaxZ7y8NHk/EolcIMg/erm1c4TjaoOLprGT2dhzYfeJa5yVikYuF6yuGxNgNarRkdSA42B+L/kWQOfRG3dZVap2wZySdzs7u+7pl92/XOz9+rOtSUcmGXzyjFa6a8oKy4FCyJzpKkDnw+pZGn2OdsKg3MZ2d3d/Zsvv0jVwX742M+ALB41ZNwBhbWfhE8ET8WNclgtyGN2t3+F3HCYvIaGY23dzRuufMzVyfikUv+0uD/SJmvTrmyaJgxYn40a4/CXILqsKNRWpNvWS94cykNH91aNf5W7lPIha9sq6kvN+ofVzEPF0YCJ2MxyJ/EOQmbK5tLLYqdSre75Mz6ZbOw7uGb+d+yd7o2Jri8pR1rF/V27iuLHQ62RO5QJAb8Fb9zoCxUieqp7ypdGvHoU/m5G3u742O+0pDSSu6VtR7tqA4dCbVGzlHkOv9pmp2Vqi1NSIylJ6cPtB+uGlO//epWGTCVxhIOK7zqLHe875A5dlUrOssQa61tN3SGDKOVqvqwNT49KednzeNzMc4qb7uq6v9gYR17Qpr9AV/WeWFZE/XGYL8QzfXb99oVd8XY34e16uffX9w7+X5HLD/x+6plb7SRM4S52EV85I/ELyYjEVPE0REq8I7nrPqvCeivTNTI23ftbbeka2OwZ+OTq/0h+I5rjxgjL5cWF45Eu/pOvW/DlJVs63IOrZWVLvT2fG2zoMHx+/k+IN9kZnlvlA8P0+WqeiLawNlQ6lY94ItiRd8+91z3HOZTObQWPpKW0dLy8RCPMMPX3w0mc3XtkxWj7gzMiwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGDu/A2S0UhsIEZIQAAAAABJRU5ErkJggg=='); }
+
+/* Panel body */
+.panel .panel-body { display: block; width: calc(100% - 20px); padding: 9px; }
+.panel .panel-body { padding-top: 20px; padding-bottom: 20px; }
+
+/* Panel closed */
+.panel-closed > .panel-body { display: none; }
+.panel-closed > .panel-head { border-bottom: 0px; }
+.panel-closed > .panel-head:before { transform: rotate(180deg); }

@@ -1,21 +1,20 @@
 {
   "name": "siimple",
-  "version": "0.1.3",
-  "description": "Minimal CSS Framework for flat and clean websites.",
-  "style": "siimple.css",
-   "main": "siimple.css",
-  "author": "Josemi Juanes <jmjuanes@outlook.com>",
+  "version": "1.0.0",
+  "description": "Minimal CSS framework for flat and clean websites.",
+  "style": "css/siimple.css",
+  "main": "css/siimple.css",
+  "author": "Josemi Juanes <josemijuanes@gmail.com>",
   "license": "MIT",
-  "files": [
-    "LICENSE.md",
-    "CHANGELOG.md",
-    "README.md",
-    "siimple.css"
-  ],
-  "homepage": "https://jmjuanes.github.io/siimple",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/jmjuanes/siimple.git"
-  },
-  "keywords": ["siimple","css","framework","jmjuanes","minimal","flat","clean","websites"]
+  "files": ["LICENSE.md", "CHANGELOG.md", "README.md", "gulpfile.js", "css/", "js/", "src/"],
+  "homepage": "https://siimple.github.io/",
+  "repository": { "type": "git", "url": "git://github.com/siimple/siimple.git" },
+  "keywords": ["siimple","css","framework","jmjuanes","minimal","flat","clean","websites"],
+  "devDependencies": {
+    "gulp": "^3.0.9",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "1.2.1",
+    "gulp-rename": "1.2.2",
+    "gulp-header": "1.7.1",
+    "del": "^1.2.0" }
 }

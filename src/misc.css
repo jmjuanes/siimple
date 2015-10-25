@@ -1,0 +1,20 @@
+/* Siimple - Miscellaneous module */
+
+/* Heart */
+.heart:after { content: "\2764"; color: #f45660; }
+
+/* Text color */
+.color-blue { color: #09a0f6; }
+.color-green { color: #4cc159; }
+.color-orange { color: #f07c00; }
+.color-red { color: #f45660; }
+.color-purple { color: #a160ed; }
+.color-white { color: #ffffff; }
+
+/* Background */
+.bg-blue { background-color: #09a0f6; }
+.bg-green { background-color: #4cc159; }
+.bg-orange { background-color: #f07c00; }
+.bg-red { background-color: #f45660; }
+.bg-purple { background-color: #a160ed; }
+.bg-white { background-color: #ffffff; }
