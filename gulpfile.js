@@ -18,12 +18,7 @@ var banner = ['/**',
   '', ''].join('\n');
 
 // Clean output dir
-gulp.task('clean', function(){
-
-  //Delete all files
-  del(['css/*']);
-
-});
+gulp.task('clean', function(){ del(['css/*']); });
 
 //Concat all files in css/src folder
 gulp.task('css-concat', ['clean'], function(){
@@ -64,4 +59,4 @@ gulp.task('css-min', ['css-concat'], function(){
 
 //Execute the tasks
 //First clean the output dir, then execute the css-concat task, last run the css-min
-gulp.task('siimple', ['css-min']);
+gulp.task('default', ['css-min']);

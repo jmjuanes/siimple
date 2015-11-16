@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v1.0.1 (November 16, 2015)
+- Changed Headings line-height.
+- Changed Orange color (for buttons and alert).
+
+
 ### v1.0.0 (October 23, 2015)
 - New style and colors.
 - Moved to new repository.

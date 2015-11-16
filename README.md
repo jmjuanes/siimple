@@ -33,7 +33,7 @@ npm install
 Then, build the **Siimple** source code (placed in `src/`) using **Gulp**:
 
 ```sh
-gulp siimple
+gulp default
 ```
 
 This will generate a compiled version in `css/` folder.

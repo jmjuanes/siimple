@@ -17,8 +17,8 @@
 .btn-blue { background-color: #09a0f6; }
 .btn-green { background-color: #4cc159; }
 .btn-purple { background-color: #a160ed; }
-.btn-orange { background-color: #f07c00; }
-.btn-red { background-color: #f45660; }
+.btn-orange { background-color: #FFC107; }
+.btn-red { background-color: #F44336; }
 
 
 /* Outline buttons */
@@ -36,11 +36,11 @@
 .btn-outline-purple { color: #a160ed; border-color: #a160ed; }
 .btn-outline-purple:hover { background-color: #a160ed; }
 
-.btn-outline-orange { color: #f07c00; border-color: #f07c00; }
-.btn-outline-orange:hover { background-color: #f07c00; }
+.btn-outline-orange { color: #FFC107; border-color: #FFC107; }
+.btn-outline-orange:hover { background-color: #FFC107; }
 
-.btn-outline-red { color: #f45660; border-color: #f45660; }
-.btn-outline-red:hover { background-color: #f45660; }
+.btn-outline-red { color: #F44336; border-color: #F44336; }
+.btn-outline-red:hover { background-color: #F44336; }
 
 
 /* Button small size */
