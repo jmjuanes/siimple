@@ -1,7 +1,7 @@
 /* Siimple - Typography module */
 
 /* Body */
-body { background-color: #ffffff; color: #536273; font-family: OpenSans; }
+body { background-color: #ffffff; color: #536273; font-family: 'OpenSans', 'Open Sans'; }
 body { font-weight: 300; margin: 0px; padding: 0px; font-size: 16px; }
 
 /* Links */
@@ -20,11 +20,12 @@ small { color: #c5ccd4; font-size: 13px; }
 
 /* Code */
 code { border-radius: 5px; background-color: #f1f5fa; color: #21ad91; }
-code { padding-left: 5px; padding-right: 5px; }
+code { padding-left: 5px; padding-right: 5px; font-family: 'OpenSans', 'Open Sans'; }
 
 /* Code multiple lines */
 pre { display:block; width: calc(100% - 30px); padding: 14px; margin-top: 15px; }
 pre { margin-bottom: 15px; border-radius: 5px; background-color: #f1f5fa; color: #536273; }
+pre { font-family: 'OpenSans', 'Open Sans'; }
 
 /* Box  */
 .box { display: block; width: calc(100% - 30px); padding: 14px; border-radius: 5px; }

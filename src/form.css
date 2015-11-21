@@ -1,9 +1,9 @@
 /* Siimple - Forms module */
 
 /* Form default */
-.form-input, .form-select, .form-textarea { display: inline-block; padding: 10px; }
+.form-input, .form-select, .form-textarea { display: inline-block; padding: 10px; color: #647781; }
 .form-input, .form-select, .form-textarea { border: 1px solid #d1e1e8; outline: 0px; font-size: 16px; }
-.form-input, .form-select, .form-textarea { font-family: OpenSans; font-weight: 300; color: #647781; }
+.form-input, .form-select, .form-textarea { font-family: 'OpenSans', 'Open Sans'; font-weight: 300; }
 .form-input, .form-select, .form-textarea { margin-top: 10px; margin-bottom: 10px; border-radius: 5px; }
 .form-input, .form-select, .form-textarea { transition: border 0.4s; }
 .form-input:focus, .form-select:focus, .form-textarea:focus { border: 1px solid #09a0f6; }
