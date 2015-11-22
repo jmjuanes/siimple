@@ -5,42 +5,39 @@ body { background-color: #ffffff; color: #536273; font-family: 'OpenSans', 'Open
 body { font-weight: 300; margin: 0px; padding: 0px; font-size: 16px; }
 
 /* Links */
-a { color: #21ad91; font-weight: bold; text-decoration: none; }
-a: hover {  }
+a { color: #09a0f6; font-weight: normal; text-decoration: underline; }
+a:hover {  }
 
-/* Headers */
-h1 { font-size: 34px; line-height: 30px; color: #536273; font-weight: bold; }
-h2 { font-size: 28px; line-height: 24px; color: #536273; font-weight: bold; }
-h3 { font-size: 24px; line-height: 20px; color: #536273; font-weight: bold; }
-h4 { font-size: 20px; line-height: 10px; color: #536273; font-weight: bold; }
-h5 { font-size: 18px; line-height: 10px; color: #536273; font-weight: normal; }
-h6 { font-size: 16px; line-height: 10px; color: #536273; font-weight: normal; }
+/* Paragraph */
+p { line-height: 26px; margin-bottom: 26px; }
 
-/* Header margins */
-h1 { margin-top: 20px; margin-bottom: 20px; }
-h2 { margin-top: 18px; margin-bottom: 18px; }
-h3 { margin-top: 16px; margin-bottom: 16px; }
-h4 { margin-top: 14px; margin-bottom: 14px; }
-h5 { margin-top: 12px; margin-bottom: 12px; }
-h6 { margin-top: 10px; margin-bottom: 10px; }
+/* Headings default values */
+h1, h2, h3, h4, h5, h6 { margin-top: 0px; margin-bottom: 20px; display: block; }
+h1, h2, h3, h4, h5, h6 { font-weight: 300; color: #536273; }
+
+/* Headings */
+h1 { font-size: 34px; line-height: 60px; }
+h2 { font-size: 28px; line-height: 50px; }
+h3 { font-size: 24px; line-height: 45px; }
+h4 { font-size: 20px; line-height: 40px; }
+h5 { font-size: 18px; line-height: 30px; }
+h6 { font-size: 16px; line-height: 20px; }
 
 /* Small text */
 small { color: #c5ccd4; font-size: 13px; }
 
-
 /* Code */
-code { border-radius: 5px; background-color: #f1f5fa; color: #21ad91; }
+code { border-radius: 5px; background-color: #f1f5fa; color: #09a0f6; }
 code { padding-left: 5px; padding-right: 5px; font-family: 'OpenSans', 'Open Sans'; }
 
 /* Code multiple lines */
 pre { display:block; width: calc(100% - 30px); padding: 14px; margin-top: 15px; }
 pre { margin-bottom: 15px; border-radius: 5px; background-color: #f1f5fa; color: #536273; }
-pre { font-family: 'OpenSans', 'Open Sans'; }
+pre { font-family: 'OpenSans', 'Open Sans'; overflow-x: auto; }
 
 /* Box  */
 .box { display: block; width: calc(100% - 30px); padding: 14px; border-radius: 5px; }
 .box { border: 1px solid #d1e1e8; margin-top: 15px; margin-bottom: 15px; }
-
 
 /* Blockquote */
 blockquote { border-left: 4px solid #929faa; padding-left: 20px; padding-right: 5px; }

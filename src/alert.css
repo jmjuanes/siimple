@@ -2,7 +2,7 @@
 
 /* Basic alert */
 .alert { display: block;  width: calc(100% - 30px); padding: 14px; margin-top: 15px; }
-.alert { margin-bottom: 15px; color: #ffffff; font-weight: normal; font-size: 16px; }
+.alert { margin-bottom: 15px; color: #ffffff; font-weight: 300; font-size: 16px; }
 .alert { text-align: left; border: 0px; border-radius: 5px; background-color: #09a0f6; }
 .alert { padding-top: 16px; padding-bottom: 16px; }
 
