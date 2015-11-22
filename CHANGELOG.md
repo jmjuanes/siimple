@@ -1,5 +1,12 @@
 # ChangeLog
 
+### v1.1.0 (November 22, 2015)
+- Added grid.
+- Fixed text headings.
+- Added line-height for body.
+- Changed font weight for tables.
+
+
 ### v1.0.1 (November 16, 2015)
 - Changed Headings line-height.
 - Changed Orange color (for buttons and alert).
