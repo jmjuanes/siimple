@@ -1,0 +1,42 @@
+/* Siimple - Grid module */
+
+/* Default grid */
+.grid { display: block; width: 960px; margin-left: auto; margin-right: auto; }
+.grid { background-color: #ffffff; min-height: 40px; }
+
+/* Grid fluid */
+.grid-fluid { width: 100%; }
+
+/* Grid row */
+.grid > .row { display: block; width: 100%; margin-left: 0px; margin-right: 0px; }
+.grid > .row { background-color: #ffffff; }
+
+/* Grid row after */
+.grid > .row:after { content: " "; clear: both; display: table; line-height: 0; }
+
+/* Grid columns */
+.col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { display: inline-block; }
+.col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { vertical-align: top; }
+.col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { float: left; }
+.col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { padding: 1%; }
+
+/* Grid columns */
+.col-10 { width: 98%; }
+.col-9 { width: 88%; }
+.col-8 { width: 78%; }
+.col-7 { width: 68%; }
+.col-6 { width: 58%; }
+.col-5 { width: 48%; }
+.col-4 { width: 38%; }
+.col-3 { width: 28%; }
+.col-2 { width: 18%; }
+.col-1 { width: 8%; }
+
+/* Grid media for max width */
+@media (max-width: 960px) { .grid { width: 94%; } }
+
+/* Grid cols media for max width */
+@media (max-width: 500px)
+{
+  .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { width: 98%; }
+}
