@@ -1,4 +1,4 @@
-[![Siimple](http://siimple.github.io/assets/siimple.png)](https://siimple.github.io/)
+[![Siimple](http://siimple.github.io/img/siimple.png)](https://siimple.github.io/)
 
 # Siimple
 
@@ -17,10 +17,11 @@ NOTE: **Siimple** wasn't created for competing with Bootstrap.
 There are three ways to download **Siimple**:
 
 - Using [npm](http://npmjs.org/package/siimple): `npm install siimple`.
-- Clone the repo: `git clone https://github.com/siimple/siimple.git`.
+- Using [bower](http://bower.io): `bower install siimple`.
 - Download the latest release: [https://github.com/siimple/siimple/releases](https://github.com/siimple/siimple/releases).
+- Clone the repo: `git clone https://github.com/siimple/siimple.git`.
 
-For more information about **Siimple**, please visit the [Siimple homepage](https://siimple.github.io) and read the [documentation](https://siimple.github.io/docs).
+For more information about **Siimple**, please visit the [Siimple homepage](https://siimple.github.io) and read the [getting started](https://siimple.github.io/getting-started) guide or the [reference](https://siimple.github.io/reference).
 
 ## Building your copy of Siimple
 
