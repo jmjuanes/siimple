@@ -1,7 +1,6 @@
 //Import dependencies
 var fs = require('fs');
 var gulp = require('gulp');
-var del = require('del');
 var concat = require('gulp-concat');
 var minify = require('gulp-minify-css');
 var rename = require('gulp-rename');
@@ -17,11 +16,8 @@ var banner = ['/**',
   ' */',
   '', ''].join('\n');
 
-// Clean output dir
-gulp.task('clean', function(){ del(['css/*']); });
-
 //Concat all files in css/src folder
-gulp.task('css-concat', ['clean'], function(){
+gulp.task('css-concat', function(){
 
   //Set the source files
   gulp.src('src/*.css')
