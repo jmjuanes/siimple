@@ -25,467 +25,135 @@
 	<link rel="stylesheet" type="text/css" href="src/panel.css">
 	<link rel="stylesheet" type="text/css" href="src/table.css">
 	<link rel="stylesheet" type="text/css" href="src/typography.css">
+	<link rel="stylesheet" type="text/css" href="src/grid.css">
 
 </head>
 <body>
 
-<!-- Typography -->
-<a name="typography"><h2># Typography</h2></a>
+<br><br>
 
-<!-- Headers -->
-<h4>Headers</h4>
-
-<!-- Headers demo -->
-<div class="box">
-	Simple text.
-  <h1>Header 1</h1>Text below <b>H1</b> tag.
-  <h2>Header 2</h2>Text below <b>H2</b> tag.
-  <h3>Header 3</h3>Text below <b>H3</b> tag.
-  <h4>Header 4</h4>Text below <b>H4</b> tag.
-  <h5>Header 5</h5>Text below <b>H5</b> tag.
-  <h6>Header 6</h6>Text below <b>H6</b> tag.
+<div class="grid">
+	<div class="row">
+		<div class="col-10" style="background-color: #efefef;">Col 10</div>
+	</div>
+	<div class="row">
+		<div class="col-9" style="background-color: #efefef;">Col 9</div>
+		<div class="col-1" style="background-color: #efefef;">Col 1</div>
+	</div>
 </div>
 
-<!-- Headers code -->
-<pre>&lt;h1&gt;Header 1&lt;/h1&gt;<br>&lt;h2&gt;Header 2&lt;/h2&gt;<br>&lt;h3&gt;Header 3&lt;/h3&gt;<br>&lt;h4&gt;Header 4&lt;/h4&gt;<br>&lt;h5&gt;Header 5&lt;/h5&gt;<br>&lt;h6&gt;Header 6&lt;/h6&gt;<br></pre>
 
+<br><br>
 
-<!-- Links -->
-<h4>Links</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-<!-- Links demo -->
-<div class="box">You can use <a href="http://jm.juanes.xyz">links</a> to other sites.</div>
+<br><br>
 
-<!-- Links code -->
-<pre>You can use &lt;a href="http://jm.juanes.xyz"&gt;links&lt;/a&gt; to other sites.</pre>
+Simple text.
+<h1>Header 1</h1>Text below <b>H1</b> tag.
+<h2>Header 2</h2>Text below <b>H2</b> tag.
+<h3>Header 3</h3>Text below <b>H3</b> tag.
+<h4>Header 4</h4>Text below <b>H4</b> tag.
+<h5>Header 5</h5>Text below <b>H5</b> tag.
+<h6>Header 6</h6>Text below <b>H6</b> tag.
 
+<br><br>
 
-<!-- Boxes -->
-<h4>Boxes</h4>
-You can create a box adding the class <code>.box</code> to a div.
+<a href="http://jm.juanes.xyz">links</a>
 
-<!-- Boxes demos -->
-<div class="box">
-  Hi, this is a box!
-  <br>You can write multiple lines in a box, and put <a href="#">links too!</a>.
-</div>
+<br><br>
 
-<!-- Boxes code -->
-<pre>&lt;div class="box"&gt;Hi, ... &lt;/div&gt;</pre>
+<input type="text" class="form-input" placeholder="Put your text here">
 
+<br><br>
 
-<!-- Code -->
-<h4>Code</h4>
+<input type="text" class="form-input" placeholder="Disabled input" disabled>
 
-Use the <code>&lt;code&gt;</code> tag to show an inline code.
+<br><br>
 
-<!-- Code demo -->
-<div class="box">
-  For underline text, you can use the <code>&lt;u&gt;</code> tag!
-</div>
+<input type="submit" class="form-input" value="Submit form">
 
-<!-- Code code -->
-<pre>For underline text, you can use the &lt;code&gt;&amp;lt;u&amp;gt;&lt;/code&gt; tag!</pre>
-
-
-<!-- Code -->
-<h4>Code (multiple lines)</h4>
-
-Use the <code>&lt;pre&gt;</code> tag for one or more lines of code.
-
-<!-- Code demo -->
-<div class="box">
-  <pre>Here goes your &lt;i&gt;HTML&lt;/i&gt; code</pre>
-</div>
-
-<!-- Code code -->
-<pre>&lt;pre&gt;Here goes your &amp;lt;i&amp;gt;HTML&amp;lt;/i&amp;gt; code&lt;/pre&gt;</pre>
-
-
-<!-- Blockquote -->
-<h4>Blockquote</h4>
-
-<!-- Blockquote demo -->
-<div class="box">
-  <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</blockquote>
-</div>
-
-<!-- Blockquote code -->
-<pre>&lt;blockquote&gt;Lorem ipsum ...&lt;/blockquote&gt;</pre>
-
-<!-- Spaces -->
-<br>
-
-<!-- Forms -->
-<a name="forms"><h2># Forms</h2></a>
-
-<!-- Input text -->
-<h4>Input text</h4>
-Add a class <code>.form-input</code> to your text-based input fields.
-
-<!-- Input text demo -->
-<div class="box">
-  <input type="text" class="form-input" placeholder="Put your text here">
-</div>
-
-<!-- Input text code -->
-<pre>&lt;input type="text" class="form-input" placeholder="Put your text here"&gt;</pre>
-
-<!-- Input disabled -->
-<p>Additionally, you can add a <code>disabled</code> attribute to your input text field:</p>
-
-<!-- Input disabled demo -->
-<div class="box">
-  <input type="text" class="form-input" placeholder="Disabled input" disabled>
-</div>
-
-<!-- Input disabled code -->
-<pre>&lt;input type="text" class="form-input" placeholder="Disabled input" disabled&gt;</pre>
-
-
-<!-- Input submit -->
-<h4>Input submit</h4>
-You can add the class <code>.form-input</code> to your submit input fields:
-
-<!-- Input submit demo -->
-<div class="box">
-  <input type="submit" class="form-input" value="Submit form">
-</div>
 
 <!-- Input submit code -->
 <pre>&lt;input type="submit" class="form-input" value="Submit form"&gt;</pre>
 
+<br><br>
 
-<!-- Select -->
-<h4>Select</h4>
-Add the class <code>.form-select</code> yo your drop-down list tag:
+<select class="form-select">
+  <option>Element 1</option>
+  <option>Element 2</option>
+  <option>Element 3</option>
+  <option>Element 4</option>
+</select>
 
-<!-- Select demo -->
-<div class="box">
-  <select class="form-select">
-    <option>Element 1</option>
-    <option>Element 2</option>
-    <option>Element 3</option>
-    <option>Element 4</option>
-  </select>
+<br><br>
+
+<textarea class="form-textarea" rows="4" placeholder="Your text"></textarea>
+
+<br><br>
+
+<div class="btn">Default button</div>
+<div class="btn btn-green">Green button</div>
+<div class="btn btn-orange">Orange button</div>
+<div class="btn btn-red">Red button</div>
+<div class="btn btn-purple">Purple button</div>
+
+<br><br>
+
+<div class="btn btn-blue btn-small">Small button</div>
+<div class="btn btn-green btn-big">Big button</div>
+
+<br><br>
+
+<div class="btn-outline">Outline button</div>
+
+<br><br>
+
+<div class="alert">This is an alert, <a href="#">and this is a link inside the alert</a>.</div>
+
+<br><br>
+
+<div class="alert alert-green">This is a <b>green</b> alert</div>
+<div class="alert alert-orange">This is an <b>orange</b> alert</div>
+<div class="alert alert-red">This is a <b>red</b> alert</div>
+
+<br><br>
+
+<div class="alert alert-success">This is a <b>success</b> alert.</div>
+<div class="alert alert-warning">This is a <b>warning</b> alert.</div>
+<div class="alert alert-error">This is an <b>error</b> alert.</div>
+
+<br><br>
+
+<div class="panel">
+  <div class="panel-head">Panel</div>
+  <div class="panel-body">This is the content of the panel</div>
 </div>
 
-<!-- Select code -->
-<pre>&lt;select class="form-select"&gt;<br> &lt;option&gt;Element 1&lt;/option&gt;<br> &lt;option&gt;Element 2&lt;/option&gt;<br> &lt;option&gt;Element 3&lt;/option&gt;<br> &lt;option&gt;Element 4&lt;/option&gt;<br>&lt;/select&gt;</pre>
+<br><br>
 
-<!-- Textarea -->
-<h4>Textarea</h4>
-Simply add the class <code>.form-textarea</code> and modify the attribute <code>rows</code> with the number of rows.
-
-<!-- Textarea demo -->
-<div class="box">
-  <textarea class="form-textarea" rows="4" placeholder="Your text"></textarea>
-</div>
-
-<!-- Textarea code -->
-<pre>&lt;textarea class="form-textarea" rows="4" placeholder="Your text"&gt;&lt;/textarea&gt;</pre>
-
-
-<!-- Spaces -->
-<br>
-
-
-<!-- Buttons -->
-<a name="buttons"><h2># Buttons</h2></a>
-
-<!-- Default button -->
-<h4>Default button</h4>
-Add a <code>.btn</code> class to transform your <code>div</code>, <code>a</code>, etc... into a button.
-Optionally, add a <code>.btn-[color]</code> class for modifying the color.
-
-<!-- Normal buttons demo -->
-<div class="box">
-  <div class="btn">Default button</div>
-  <div class="btn btn-green">Green button</div>
-  <div class="btn btn-orange">Orange button</div>
-  <div class="btn btn-red">Red button</div>
-  <div class="btn btn-purple">Purple button</div>
-</div>
-
-<!-- Normal buttons code -->
-<pre>&lt;div class="btn"&gt;Default button&lt;/div&gt;<br>&lt;div class="btn btn-green"&gt;Green button&lt;/div&gt;<br>&lt;div class="btn btn-orange"&gt;Orange button&lt;/div&gt;<br>&lt;div class="btn btn-red"&gt;Red button&lt;/div&gt;<br>&lt;div class="btn btn-purple"&gt;Purple button&lt;/div&gt;</pre>
-
-<!-- Size buttons -->
-<p>Additionally, you can change the button size adding a <code>.btn-small</code> or <code>.btn-big</code> class.</p>
-
-<!-- Size buttons demo -->
-<div class="box">
-  <div class="btn btn-blue btn-small">Small button</div>
-  <div class="btn btn-green btn-big">Big button</div>
-</div>
-
-<!-- Size buttons code -->
-<pre>&lt;div class="btn btn-blue btn-small"&gt;Small button&lt;/div&gt;<br>&lt;div class="btn btn-green btn-big"&gt;Big button&lt;/div&gt;</pre>
-
-
-<!-- Outline buttons -->
-<h4>Outline buttons</h4>
-If you wan an outline button, add the <code>.btn-outline</code> class to your element:
-
-<!-- Outline buttons demo -->
-<div class="box">
-  <div class="btn-outline">Outline button</div>
-</div>
-
-<!-- Outline buttons code -->
-<pre>&lt;div class="btn-outline"&gt;Outline button&lt;/div&gt;</pre>
-
-
-<!-- Spaces -->
-<br>
-
-
-<!-- Alerts -->
-<a name="alerts"><h2># Alerts</h2></a>
-
-<!-- Basic alert -->
-You can create a blue alert adding the <code>.alert</code> class to your div.
-
-<!-- Basic alert demo -->
-<div class="box">
-  <div class="alert">This is an alert, <a href="#">and this is a link inside the alert</a>.</div>
-</div>
-
-<!-- Basic alert code -->
-<pre>&lt;div class="alert alert-blue"&gt;This is an alert.&lt;/div&gt;</pre>
-
-<!-- Colors available -->
-<p>You can change the alert color adding <code>.alert-green</code> <code>.alert-orange</code> and <code>.alert-red</code> for make the alert green, orange and red respectively.</p>
-
-<!-- Colors demo -->
-<div class="box">
-  <div class="alert alert-green">This is a <b>green</b> alert, <a href="#">and this is a link inside the alert</a>.</div>
-  <div class="alert alert-orange">This is an <b>orange</b> alert, <a href="#">and this is a link inside the alert</a>.</div>
-  <div class="alert alert-red">This is a <b>red</b> alert, <a href="#">and this is a link inside the alert</a>.</div>
-</div>
-
-<!-- Colors code -->
-<pre>&lt;div class="alert alert-green"&gt;This is a &lt;b&gt;green&lt;/b&gt; alert.&lt;/div&gt;<br>&lt;div class="alert alert-orange"&gt;This is a &lt;b&gt;orange&lt;/b&gt; alert.&lt;/div&gt;<br>&lt;div class="alert alert-red"&gt;This is a &lt;b&gt;red&lt;/b&gt; alert.&lt;/div&gt;</pre>
-
-<!-- Icons available -->
-<p>Also, you can add an icon to your alert. These are the available icons:</p>
-
-<!-- Alerts icons demo -->
-<div class="box">
-  <div class="alert alert-success">This is a <b>success</b> alert.</div>
-  <div class="alert alert-warning">This is a <b>warning</b> alert.</div>
-  <div class="alert alert-error">This is an <b>error</b> alert.</div>
-</div>
-
-<!-- Alerts icons code -->
-<pre>&lt;div class="alert alert-success"&gt;This is a &lt;b&gt;success&lt;/b&gt; alert.&lt;/div&gt;<br>&lt;div class="alert alert-warning"&gt;This is a &lt;b&gt;warning&lt;/b&gt; alert.&lt;/div&gt;<br>&lt;div class="alert alert-error"&gt;This is an &lt;b&gt;error&lt;/b&gt; alert.&lt;/div&gt;</pre>
-
-
-
-<!-- Spaces -->
-<br>
-
-<!-- Panels -->
-<a name="panels"><h2># Panels</h2></a>
-
-<!-- Default panels -->
-A panel consists in one <code>div</code> with the class <code>.panel</code>, and two <code>div</code> inside,
-the first with the class <code>.panel-head</code> and the second with the class <code>.panel-body</code>.
-
-<!-- Default panels demo -->
-<div class="box">
-  <div class="panel">
-    <div class="panel-head">Panel</div>
-    <div class="panel-body">This is the content of the panel</div>
-  </div>
-</div>
-
-<pre>&lt;div class="panel"&gt;<br>&lt;div class="panel-head"&gt;Panel&lt;/div&gt;<br>&lt;div class="panel-body"&gt;This is the content of the panel&lt;/div&gt;<br>&lt;/div&gt;</pre>
-
-
-<!-- Spaces -->
-<br>
-
-<!-- Tables -->
-<a name="tables"><h2># Tables</h2></a>
-
-<!-- Basic table -->
-<h4>Basic table</h4>
-Simply add <code>.table</code> to the class of your table.
-
-<!-- Basic table demo -->
-<div class="box">
-  <table class="table">
-    <thead>
-      <tr>
-        <td>#</td>
-        <td>Col1</td>
-        <td>Col2</td>
-        <td>Col3</td>
-      </tr>
-    </thead>
+<table class="table">
+  <thead>
     <tr>
-      <td>Row1</td>
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
+      <td>#</td>
+      <td>Col1</td>
+      <td>Col2</td>
+      <td>Col3</td>
     </tr>
-    <tr>
-      <td>Row2</td>
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
-    </tr>
-  </table>
-</div>
-
-<!-- Basic table code -->
-<pre>&lt;table class="table"&gt; ... &lt;/table&gt;</pre>
-
-
-<!-- Hover table -->
-<h4>Hover table</h4>
-Add <code>.table-hover</code> to the class of your table.
-
-<!-- Hover table demo -->
-<div class="box">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <td>#</td>
-        <td>Col1</td>
-        <td>Col2</td>
-        <td>Col3</td>
-      </tr>
-    </thead>
-    <tr>
-      <td>Row1</td>
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
-    </tr>
-    <tr>
-      <td>Row2</td>
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
-    </tr>
-  </table>
-</div>
-
-<!-- Hover table code -->
-<pre>&lt;table class="table table-hover"&gt; ... &lt;/table&gt;</pre>
-
-
-<!-- Striped table -->
-<h4>Striped rows table</h4>
-Add <code>.table-striped</code> to the class of your table.
-
-<!-- Basic table demo -->
-<div class="box">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <td>#</td>
-        <td>Col1</td>
-        <td>Col2</td>
-        <td>Col3</td>
-      </tr>
-    </thead>
-    <tr>
-      <td>Row1</td>
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
-    </tr>
-    <tr>
-      <td>Row2</td>
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
-    </tr>
-    <tr>
-      <td>Row3</td>
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
-    </tr>
-    <tr>
-      <td>Row4</td>
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
-    </tr>
-  </table>
-</div>
-
-<!-- Striped table code -->
-<pre>&lt;table class="table table-striped"&gt; ... &lt;/table&gt;</pre>
-
-
-<!-- Bordered table -->
-<h4>Bordered table</h4>
-Add <code>.table-border</code> to the class of your table.
-
-<!-- Bordered table demo -->
-<div class="box">
-  <table class="table table-border">
-    <thead>
-      <tr>
-        <td>#</td>
-        <td>Col1</td>
-        <td>Col2</td>
-        <td>Col3</td>
-      </tr>
-    </thead>
-    <tr>
-      <td>Row1</td>
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
-    </tr>
-    <tr>
-      <td>Row2</td>
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
-    </tr>
-  </table>
-</div>
-
-<!-- Bordered table code -->
-<pre>&lt;table class="table table-border"&gt; ... &lt;/table&gt;</pre>
-
-<p>Additionally you can add the colum border adding <code>.table-border-colum</code>.
-
-<!-- Bordered column table demo -->
-<div class="box">
-  <table class="table table-border-column">
-    <thead>
-      <tr>
-        <td>#</td>
-        <td>Col1</td>
-        <td>Col2</td>
-        <td>Col3</td>
-      </tr>
-    </thead>
-    <tr>
-      <td>Row1</td>
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
-    </tr>
-    <tr>
-      <td>Row2</td>
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
-    </tr>
-  </table>
-</div>
-
-<!-- Bordered column table code -->
-<pre>&lt;table class="table table-border-column"&gt; ... &lt;/table&gt;</pre>
-
-</body>
-</head>
+  </thead>
+  <tr>
+    <td>Row1</td>
+    <td>Item</td>
+    <td>Item</td>
+    <td>Item</td>
+  </tr>
+  <tr>
+    <td>Row2</td>
+    <td>Item</td>
+    <td>Item</td>
+    <td>Item</td>
+  </tr>
+</table>
