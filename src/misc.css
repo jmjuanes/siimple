@@ -4,7 +4,7 @@
 .heart:after { content: "\2764"; color: #f45660; }
 
 /* Border box */
-.borcer-box { border-radius: 5px; border: 1px solid #d1e1e8; }
+.border-box { border-radius: 5px; border: 1px solid #d1e1e8; }
 
 /* Text color */
 .color-blue { color: #09a0f6; }
