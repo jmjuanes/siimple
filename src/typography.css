@@ -6,7 +6,7 @@ body { font-weight: 300; margin: 0px; padding: 0px; font-size: 16px; }
 
 /* Links */
 a { color: #09a0f6; font-weight: normal; text-decoration: none; }
-a:hover { text-decoration: underline; }
+a:hover { text-decoration: underline; cursor: hand; }
 
 /* Paragraph */
 p { line-height: 26px; margin-bottom: 26px; }
