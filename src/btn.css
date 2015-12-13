@@ -26,21 +26,29 @@
 .btn-outline { transition: background-color 0.3s, color 0.3s; }
 .btn-outline:hover { color: #ffffff; background-color: #09a0f6; }
 
-/* Outline button colors */
+/* Outline button color blue */
 .btn-outline-blue { color: #09a0f6; border-color: #09a0f6; }
 .btn-outline-blue:hover { background-color: #09a0f6; }
 
+/* Outline button color green */
 .btn-outline-green { color: #4cc159; border-color: #4cc159; }
 .btn-outline-green:hover { background-color: #4cc159; }
 
+/* Outline button color purple */
 .btn-outline-purple { color: #a160ed; border-color: #a160ed; }
 .btn-outline-purple:hover { background-color: #a160ed; }
 
+/* Outline button color orange */
 .btn-outline-orange { color: #FFC107; border-color: #FFC107; }
 .btn-outline-orange:hover { background-color: #FFC107; }
 
+/* Outline button color red */
 .btn-outline-red { color: #F44336; border-color: #F44336; }
 .btn-outline-red:hover { background-color: #F44336; }
+
+/* Outline button color white */
+.btn-outline-red { color: #ffffff; border-color: #ffffff; }
+.btn-outline-red:hover { background-color: #ffffff; color: #09a0f6; } 
 
 
 /* Button small size */
