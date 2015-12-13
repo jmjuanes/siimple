@@ -1,6 +1,6 @@
 /**
  * siimple - Minimal CSS framework for flat and clean websites.
- * @version v1.1.0
+ * @version v1.1.1
  * @link https://siimple.github.io/
  * @license MIT
  */
@@ -37,10 +37,13 @@
 /* Button default */
 .btn, .btn-outline { display: inline-block; text-align: center; line-height: 28px; }
 .btn, .btn-outline { border-radius: 5px; text-decoration: none; font-size: 16px; }
-.btn, .btn-outline { font-weight: normal; font-family: OpenSans; padding-bottom: 5px; }
+.btn, .btn-outline { font-weight: 300; font-family: OpenSans; padding-bottom: 5px; }
 .btn, .btn-outline { padding-left: 25px; padding-right: 25px; padding-top: 5px; }
 .btn, .btn-outline { margin-left: 5px; margin-right: 5px; margin-top: 10px; margin-bottom: 10px; }
 .btn, .btn-outline { cursor: hand; }
+
+/* Button default hover */
+.btn:hover, .btn-outline:hover { text-decoration: none; }
 
 
 /* Basic button */
@@ -60,21 +63,29 @@
 .btn-outline { transition: background-color 0.3s, color 0.3s; }
 .btn-outline:hover { color: #ffffff; background-color: #09a0f6; }
 
-/* Outline button colors */
+/* Outline button color blue */
 .btn-outline-blue { color: #09a0f6; border-color: #09a0f6; }
 .btn-outline-blue:hover { background-color: #09a0f6; }
 
+/* Outline button color green */
 .btn-outline-green { color: #4cc159; border-color: #4cc159; }
 .btn-outline-green:hover { background-color: #4cc159; }
 
+/* Outline button color purple */
 .btn-outline-purple { color: #a160ed; border-color: #a160ed; }
 .btn-outline-purple:hover { background-color: #a160ed; }
 
+/* Outline button color orange */
 .btn-outline-orange { color: #FFC107; border-color: #FFC107; }
 .btn-outline-orange:hover { background-color: #FFC107; }
 
+/* Outline button color red */
 .btn-outline-red { color: #F44336; border-color: #F44336; }
 .btn-outline-red:hover { background-color: #F44336; }
+
+/* Outline button color white */
+.btn-outline-red { color: #ffffff; border-color: #ffffff; }
+.btn-outline-red:hover { background-color: #ffffff; color: #09a0f6; }
 
 
 /* Button small size */
@@ -164,19 +175,22 @@
 /* Heart */
 .heart:after { content: "\2764"; color: #f45660; }
 
+/* Border box */
+.border-box { border-radius: 5px; border: 1px solid #d1e1e8; }
+
 /* Text color */
 .color-blue { color: #09a0f6; }
 .color-green { color: #4cc159; }
-.color-orange { color: #f07c00; }
-.color-red { color: #f45660; }
+.color-orange { color: #FFC107; }
+.color-red { color: #F44336; }
 .color-purple { color: #a160ed; }
 .color-white { color: #ffffff; }
 
 /* Background */
 .bg-blue { background-color: #09a0f6; }
 .bg-green { background-color: #4cc159; }
-.bg-orange { background-color: #f07c00; }
-.bg-red { background-color: #f45660; }
+.bg-orange { background-color: #FFC107; }
+.bg-red { background-color: #F44336; }
 .bg-purple { background-color: #a160ed; }
 .bg-white { background-color: #ffffff; }
 
@@ -245,8 +259,8 @@ body { background-color: #ffffff; color: #536273; font-family: 'OpenSans', 'Open
 body { font-weight: 300; margin: 0px; padding: 0px; font-size: 16px; }
 
 /* Links */
-a { color: #09a0f6; font-weight: normal; text-decoration: underline; }
-a:hover {  }
+a { color: #09a0f6; font-weight: normal; text-decoration: none; }
+a:hover { text-decoration: underline; cursor: hand; }
 
 /* Paragraph */
 p { line-height: 26px; margin-bottom: 26px; }
