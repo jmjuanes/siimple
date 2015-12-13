@@ -8,6 +8,9 @@
 .btn, .btn-outline { margin-left: 5px; margin-right: 5px; margin-top: 10px; margin-bottom: 10px; }
 .btn, .btn-outline { cursor: hand; }
 
+/* Button default hover */
+.btn:hover, .btn-outline:hover { text-decoration: none; }
+
 
 /* Basic button */
 .btn { color: #ffffff; background-color: #09a0f6; transition: opacity 0.3s; }
@@ -48,7 +51,7 @@
 
 /* Outline button color white */
 .btn-outline-red { color: #ffffff; border-color: #ffffff; }
-.btn-outline-red:hover { background-color: #ffffff; color: #09a0f6; } 
+.btn-outline-red:hover { background-color: #ffffff; color: #09a0f6; }
 
 
 /* Button small size */
