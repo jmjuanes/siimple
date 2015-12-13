@@ -1,5 +1,11 @@
 # ChangeLog
 
+### v1.1.1 (December 13, 2015)
+- Changed button font-weight.
+- Added outline button white color.
+- Changed links style.
+
+
 ### v1.1.0 (November 22, 2015)
 - Added grid.
 - Fixed text headings.
