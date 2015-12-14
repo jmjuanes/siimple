@@ -1,6 +1,6 @@
 /**
  * siimple - Minimal CSS framework for flat and clean websites.
- * @version v1.1.1
+ * @version v1.1.2
  * @link https://siimple.github.io/
  * @license MIT
  */
@@ -84,8 +84,8 @@
 .btn-outline-red:hover { background-color: #F44336; }
 
 /* Outline button color white */
-.btn-outline-red { color: #ffffff; border-color: #ffffff; }
-.btn-outline-red:hover { background-color: #ffffff; color: #09a0f6; }
+.btn-outline-white { color: #ffffff; border-color: #ffffff; }
+.btn-outline-white:hover { background-color: #ffffff; color: #09a0f6; }
 
 
 /* Button small size */
