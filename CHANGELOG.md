@@ -1,5 +1,9 @@
 # ChangeLog
 
+### v1.1.2 (December 14, 2015)
+- Fixed bug on white button.
+
+
 ### v1.1.1 (December 13, 2015)
 - Changed button font-weight.
 - Added outline button white color.
