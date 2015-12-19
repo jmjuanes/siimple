@@ -16,9 +16,9 @@
 
 /* Form input submit */
 .form-input[type="submit"] { width: auto; line-height: 15px; background-color: #09a0f6 }
-.form-input[type="submit"] { color: #ffffff; border: 0px; cursor: hand; font-weight: normal; }
+.form-input[type="submit"] { color: #ffffff; border: 0px; cursor: hand; font-weight: 300; }
 .form-input[type="submit"] { padding-left: 20px; padding-right: 20px; transition: opacity 0.3s; }
-.form-input[type="submit"]:hover { opacity: 0.8; } 
+.form-input[type="submit"]:hover { opacity: 0.8; }
 
 /* Form input disabled */
 .form-input[disabled] { cursor: not-allowed; background-color: #c6d1dc; }
