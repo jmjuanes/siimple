@@ -3,6 +3,10 @@
 /* Heart */
 .heart:after { content: "\2764"; color: #f45660; }
 
+/* Box  */
+.box { display: block; width: calc(100% - 30px); padding: 14px; border-radius: 5px; }
+.box { border: 1px solid #d1e1e8; margin-top: 0px; margin-bottom: 16px; }
+
 /* Border box */
 .border-box { border-radius: 5px; border: 1px solid #d1e1e8; }
 
