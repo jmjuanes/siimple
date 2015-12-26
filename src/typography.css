@@ -1,7 +1,7 @@
 /* Siimple - Typography module */
 
 /* Body */
-body { background-color: #ffffff; color: #536273; font-family: 'OpenSans', 'Open Sans'; }
+body { background-color: #ffffff; color: #353f4a; font-family: 'OpenSans', 'Open Sans'; }
 body { font-weight: 300; margin: 0px; padding: 0px; font-size: 16px; }
 
 /* Links */
@@ -9,35 +9,35 @@ a { color: #09a0f6; font-weight: normal; text-decoration: none; }
 a:hover { text-decoration: underline; cursor: hand; }
 
 /* Paragraph */
-p { line-height: 26px; margin-bottom: 26px; }
+p { line-height: 26px; margin-bottom: 16px; margin-top: 0px; display: block; }
+
+/* Lists */
+ul, ol { line-height: 26px; margin-bottom: 16px; margin-top: 0px; }
+ul li, ol li { line-height: 26px; }
 
 /* Headings default values */
-h1, h2, h3, h4, h5, h6 { margin-top: 0px; margin-bottom: 20px; display: block; }
-h1, h2, h3, h4, h5, h6 { font-weight: 300; color: #536273; }
+h1, h2, h3, h4, h5, h6 { margin-top: 0px; margin-bottom: 10px; display: block; }
+h1, h2, h3, h4, h5, h6 { font-weight: 300; color: #353f4a; }
 
 /* Headings */
-h1 { font-size: 34px; line-height: 60px; }
-h2 { font-size: 28px; line-height: 50px; }
-h3 { font-size: 24px; line-height: 45px; }
-h4 { font-size: 20px; line-height: 40px; }
-h5 { font-size: 18px; line-height: 30px; }
-h6 { font-size: 16px; line-height: 20px; }
+h1 { font-size: 40px; line-height: 55px; padding-top: 10px; }
+h2 { font-size: 35px; line-height: 50px; padding-top: 8px; }
+h3 { font-size: 30px; line-height: 45px; padding-top: 5px; }
+h4 { font-size: 25px; line-height: 40px; }
+h5 { font-size: 20px; line-height: 35px; }
+h6 { font-size: 15px; line-height: 30px; }
 
 /* Small text */
-small { color: #c5ccd4; font-size: 13px; }
+small { color: #536273; font-size: 14px; }
 
 /* Code */
-code { border-radius: 5px; background-color: #f1f5fa; color: #09a0f6; }
-code { padding-left: 5px; padding-right: 5px; font-family: 'OpenSans', 'Open Sans'; }
+code { border-radius: 5px; background-color: #f1f5fa; color: #09a0f6; font-size: 15px; }
+code { padding-left: 6px; padding-right: 6px; font-family: 'OpenSans', 'Open Sans'; }
 
 /* Code multiple lines */
-pre { display:block; width: calc(100% - 30px); padding: 14px; margin-top: 15px; }
-pre { margin-bottom: 15px; border-radius: 5px; background-color: #f1f5fa; color: #536273; }
-pre { font-family: 'OpenSans', 'Open Sans'; overflow-x: auto; }
-
-/* Box  */
-.box { display: block; width: calc(100% - 30px); padding: 14px; border-radius: 5px; }
-.box { border: 1px solid #d1e1e8; margin-top: 15px; margin-bottom: 15px; }
+pre { display:block; width: calc(100% - 30px); padding: 14px; margin-top: 15px; line-height: 25px; }
+pre { margin-bottom: 16px; border-radius: 5px; background-color: #f1f5fa; color: #536273; }
+pre { font-family: 'OpenSans', 'Open Sans'; font-size: 15px; overflow-x: auto; }
 
 /* Blockquote */
 blockquote { border-left: 4px solid #929faa; padding-left: 20px; padding-right: 5px; }
