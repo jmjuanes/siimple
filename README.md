@@ -25,7 +25,7 @@ For more information about **Siimple**, please visit the [Siimple homepage](http
 
 ## Building your copy of Siimple
 
-By default, you have a compiled version of **Siimple** in the `css/` folder. Nevertheless, you can build your local copy of **Siimple** in two steps. First, install the build dependencies using **npm**:
+By default, you have a compiled version of **Siimple** in the `dist/` folder. Nevertheless, you can build your local copy of **Siimple** in two steps. First, install the build dependencies using **npm**:
 
 ```sh
 npm install
@@ -37,7 +37,7 @@ Then, build the **Siimple** source code (placed in `src/`) using **Gulp**:
 gulp default
 ```
 
-This will generate a compiled version in `css/` folder.
+This will generate a compiled version in `dist/` folder.
 
 
 ## Contributing
