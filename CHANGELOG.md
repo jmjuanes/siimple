@@ -1,5 +1,14 @@
 # ChangeLog
 
+### v1.2.0 (December 26, 2015)
+- Changed default text color.
+- Changed headings margin and line height.
+- Changed paragraph margin top.
+- Added style for lists.
+- Removed border for buttons.
+- Changed grid columns: 10 to 12.
+
+
 ### v1.1.2 (December 14, 2015)
 - Fixed bug on white button.
 
