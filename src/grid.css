@@ -8,29 +8,31 @@
 .grid-fluid { width: 100%; }
 
 /* Grid row */
-.grid > .row { display: block; width: 100%; margin-left: 0px; margin-right: 0px; }
-.grid > .row { background-color: #ffffff; }
+.row { display: block; width: 100%; margin-left: 0px; margin-right: 0px; }
+.row { background-color: #ffffff; }
 
 /* Grid row after */
-.grid > .row:after { content: " "; clear: both; display: table; line-height: 0; }
+.row:after { content: " "; clear: both; display: table; line-height: 0; }
 
 /* Grid columns */
-.col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { display: inline-block; }
-.col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { vertical-align: top; }
-.col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { float: left; }
-.col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { padding: 1%; }
+.col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { display: inline-block; }
+.col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { vertical-align: top; }
+.col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { float: left; }
+.col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { padding: 1%; }
 
 /* Grid columns */
-.col-10 { width: 98%; }
-.col-9 { width: 88%; }
-.col-8 { width: 78%; }
-.col-7 { width: 68%; }
-.col-6 { width: 58%; }
-.col-5 { width: 48%; }
-.col-4 { width: 38%; }
-.col-3 { width: 28%; }
-.col-2 { width: 18%; }
-.col-1 { width: 8%; }
+.col-12 { width: 98.99%; }
+.col-11 { width: 89.66%; }
+.col-10 { width: 81.33%; }
+.col-9 { width: 72.99%; }
+.col-8 { width: 64.66%; }
+.col-7 { width: 56.33%; }
+.col-6 { width: 47.99%; }
+.col-5 { width: 39.66%; }
+.col-4 { width: 31.33%; }
+.col-3 { width: 22.99%; }
+.col-2 { width: 14.66%; }
+.col-1 { width: 6.33%; }
 
 /* Grid media for max width */
 @media (max-width: 960px) { .grid { width: 94%; } }
