@@ -29,7 +29,7 @@ gulp.task('css-concat', function(){
   .pipe(header(banner, { pkg : pkg } ))
 
   //Save in css/ folder
-  .pipe(gulp.dest('css/'));
+  .pipe(gulp.dest('dist/'));
 
 });
 
@@ -37,7 +37,7 @@ gulp.task('css-concat', function(){
 gulp.task('css-min', ['css-concat'], function(){
 
   //Set the source file
-  gulp.src('css/siimple.css')
+  gulp.src('dist/siimple.css')
 
   //MinifCss
   .pipe(minify())
@@ -49,7 +49,7 @@ gulp.task('css-min', ['css-concat'], function(){
   .pipe(header(banner, { pkg : pkg } ))
 
   //Save in css/ folder
-  .pipe(gulp.dest('css/'));
+  .pipe(gulp.dest('dist/'));
 
 });
 
