@@ -11,48 +11,14 @@
 /* Button default hover */
 .btn:hover, .btn-outline:hover { text-decoration: none; }
 
-
 /* Basic button */
 .btn { color: #ffffff; background-color: #09a0f6; transition: opacity 0.3s; border: 0px; }
 .btn:hover { opacity: 0.8; }
-
-/* Basic button colors */
-.btn-blue { background-color: #09a0f6; }
-.btn-green { background-color: #4cc159; }
-.btn-purple { background-color: #a160ed; }
-.btn-orange { background-color: #FFC107; }
-.btn-red { background-color: #F44336; }
-
 
 /* Outline buttons */
 .btn-outline { border: 1px solid #09a0f6; color: #09a0f6; background-color: transparent; }
 .btn-outline { transition: background-color 0.3s, color 0.3s; }
 .btn-outline:hover { color: #ffffff; background-color: #09a0f6; }
-
-/* Outline button color blue */
-.btn-outline-blue { color: #09a0f6; border-color: #09a0f6; }
-.btn-outline-blue:hover { background-color: #09a0f6; }
-
-/* Outline button color green */
-.btn-outline-green { color: #4cc159; border-color: #4cc159; }
-.btn-outline-green:hover { background-color: #4cc159; }
-
-/* Outline button color purple */
-.btn-outline-purple { color: #a160ed; border-color: #a160ed; }
-.btn-outline-purple:hover { background-color: #a160ed; }
-
-/* Outline button color orange */
-.btn-outline-orange { color: #FFC107; border-color: #FFC107; }
-.btn-outline-orange:hover { background-color: #FFC107; }
-
-/* Outline button color red */
-.btn-outline-red { color: #F44336; border-color: #F44336; }
-.btn-outline-red:hover { background-color: #F44336; }
-
-/* Outline button color white */
-.btn-outline-white { color: #ffffff; border-color: #ffffff; }
-.btn-outline-white:hover { background-color: #ffffff; color: #09a0f6; }
-
 
 /* Button small size */
 .btn-small { font-size: 14px; line-height: 20px; padding-top: 4px; padding-bottom: 4px; }
