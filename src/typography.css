@@ -1,34 +1,34 @@
 /* Siimple - Typography module */
 
 /* Body */
-body { background-color: #ffffff; color: #353f4a; font-family: 'OpenSans', 'Open Sans'; }
+body { background-color: #ffffff; color: #414c58; font-family: 'OpenSans', 'Open Sans'; }
 body { font-weight: 300; margin: 0px; padding: 0px; font-size: 16px; }
 
 /* Links */
-a { color: #09a0f6; font-weight: normal; text-decoration: none; }
-a:hover { text-decoration: underline; cursor: hand; }
+a { color: #09a0f6; font-weight: normal; text-decoration: none; transition: all 0.3s; }
+a:hover { text-decoration: underline; cursor: hand; color: #01579B; }
 
 /* Paragraph */
 p { line-height: 26px; margin-bottom: 16px; margin-top: 0px; display: block; }
 
 /* Lists */
-ul, ol { line-height: 26px; margin-bottom: 16px; margin-top: 0px; }
-ul li, ol li { line-height: 26px; }
+ul, ol { line-height: 28px; margin-bottom: 16px; margin-top: 0px; }
+ul li, ol li { line-height: 28px; }
 
 /* Headings default values */
 h1, h2, h3, h4, h5, h6 { margin-top: 0px; margin-bottom: 10px; display: block; }
-h1, h2, h3, h4, h5, h6 { font-weight: 300; color: #353f4a; }
+h1, h2, h3, h4, h5, h6 { font-weight: 300; color: #414c58; }
 
 /* Headings */
-h1 { font-size: 40px; line-height: 55px; padding-top: 10px; }
-h2 { font-size: 35px; line-height: 50px; padding-top: 8px; }
-h3 { font-size: 30px; line-height: 45px; padding-top: 5px; }
+h1 { font-size: 40px; line-height: 55px; padding-top: 20px; }
+h2 { font-size: 35px; line-height: 50px; padding-top: 15px; }
+h3 { font-size: 30px; line-height: 45px; padding-top: 10px; }
 h4 { font-size: 25px; line-height: 40px; }
 h5 { font-size: 20px; line-height: 35px; }
-h6 { font-size: 15px; line-height: 30px; }
+h6 { font-size: 15px; line-height: 30px; color: #798ba0; }
 
 /* Small text */
-small { color: #536273; font-size: 14px; }
+small { color: #6a7e95; font-size: 14px; }
 
 /* Code */
 code { border-radius: 5px; background-color: #f1f5fa; color: #09a0f6; font-size: 15px; }
