@@ -1,6 +1,6 @@
 /**
  * siimple - Minimal CSS framework for flat and clean websites.
- * @version v1.2.0
+ * @version v1.2.1
  * @link https://siimple.github.io/
  * @license MIT
  */
@@ -18,19 +18,9 @@
 .alert a:hover { opacity: 0.8; }
 
 /* Alert types */
-.alert-warning, .alert-success, .alert-error { width: calc(100% - 75px); padding-left: 55px; }
-.alert-warning, .alert-success, .alert-error { background-position: left center; }
-.alert-warning, .alert-success, .alert-error { background-repeat: no-repeat; }
-
-/* Alert images */
-.alert-warning { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAA6CAYAAADhu0ooAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3woMCioVIPsOVgAAAepJREFUaN7t2L2KU0EYh/FnsnERdBNdVNBtAoKdjZ1rJVqo+IWFYGsWFOxEr0DUShDs0noBYpFCEPcG1E7ERgIKrvixhWJ0s8ljM2CMSbDILkl4f9XJzHDO+Z+Zk/MyEEIIIYQQQgghhBD+U9rMi6m7gMPAJ+BFSqk1dU9UnVUfqN/Vt+rJqVw66il11T+eqOVpC7lTXfZvP9XqtAW9prZzwB/qWj5+re6flpAHcqC2+lg9ri6p73LYe2px0kMW1FtqKy/VY7k9qTW1kwMvbvS9FDb4/IeAKlAEBNZzexFYy20LwJI6M5FB1VngJrC361qlruMd+TuegIvA2YkLWqvVEnABON3Ttb2rUCl1tW8Drqt7Ju3d3N3nc9JSr+T+OfVZT/8v9YZamKSleymXer3lZllNwNY8i922AJeByqTMZkV947/aeZYX1ar6tc+YdfVOs9ksjHvIGfW+g7XU52oj/+70GfNRPTLuQY+qnweE7OSCoaKeUVeGPJBH6txYvqNqCbgKzA8Y0gFepZQawEvgy5DTnQDO1+v1NI6zeU795nAN9bb6MP/LdoaMXVbnxzHoXUdrRT04qvsbZTG9nKubfSPYuWgBT4H3Y7eVkmvVBaA8gne/BXxIKa3GblcIIYQQQgghhBDCpvsNRtmSpqrl1OsAAAAASUVORK5CYII='); }
-.alert-success { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAA6CAYAAADhu0ooAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3woMCjAKHd75eAAAAShJREFUaN7t1zFLAzEYxvGmVouUAwVBujg7O7Sbbv0CioOfwG9SEEQoLq66CY4FsUvdXLt0cbzJRcGpx9X8XVIazwO32qTPb7nj3sDl4ZJLUqmIiIiIiIiIiIgsKWBzFUImwAi4jT1oj7k+UI8x5Dk/PeR5vhFbyEPAeiE/gZ3QQqz/Ud8GXr2QOXAQWsgbYAAkJTXjro9eSAuchRSwClx4Abppmq6VtLsszMs7oBpS0DrwVAhxVWhz7L7gbG6OsixLQvzBNIH3wrC8drVd4M2rTcqGdzCstVtA6gX6Ak6AF+/ZFOjEsHTsAx/8Nhuy3ZjWyTblhjHufFpA5oUcA41Y97KnbkMwBY7+ow+1RbzEGHMP7Ln751U5dxqdvkVERERERERERBboGwHRm1vUrK94AAAAAElFTkSuQmCC'); }
-.alert-error { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAA6CAYAAADhu0ooAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3woMCjErSKzYZwAAAUBJREFUaN7t1ztOw0AUheEzkCiKlC7vZWRBUKaiYQkW9BRBMtCyrvQUUCYoxOin4FqykAOVI5mcT3Jh+4411pkZjyUzMzMzMzMzM7MjAgZA74+aHjBoui+pwZccSbqS1JF0l1J6q6kZSrqWVEi6Tym9ti3JEXADbIEPYFUUxaRaUxTFBFjF/W3Uj9o2XLPofGkLPACzqJnF+c+arKlh3GngmXtJ53GU+pIuvt+RJ0nLOO9Xaso2+zalOoxhWU2sTG194Poq5mzrVtwx8Ahs+N0m6sZt/rxMgbwmwWqSOTD9D9/SRQzXOmtgcYx+nDWdaCw88wMlc0nLVid6EnP0JFbd2LveArua5PKYs3lN0rto12vLhqEr6TOO0rukZ0lZSukFyGKffVnZNJRtupJ23uv678X/o2ZmZmZmZmZmZqftC0B9NaZtPKpbAAAAAElFTkSuQmCC'); }
-
-/* Alert colors */
-.alert-red { background-color: #F44336; }
-.alert-orange { background-color: #FFC107; }
-.alert-green { background-color: #4cc159; }
+.alert-error { background-color: #F44336; }
+.alert-warning { background-color: #FFC107; }
+.alert-done { background-color: #4cc159; }
 
 /* Siimple - Buttons module */
 
@@ -45,48 +35,14 @@
 /* Button default hover */
 .btn:hover, .btn-outline:hover { text-decoration: none; }
 
-
 /* Basic button */
 .btn { color: #ffffff; background-color: #09a0f6; transition: opacity 0.3s; border: 0px; }
 .btn:hover { opacity: 0.8; }
-
-/* Basic button colors */
-.btn-blue { background-color: #09a0f6; }
-.btn-green { background-color: #4cc159; }
-.btn-purple { background-color: #a160ed; }
-.btn-orange { background-color: #FFC107; }
-.btn-red { background-color: #F44336; }
-
 
 /* Outline buttons */
 .btn-outline { border: 1px solid #09a0f6; color: #09a0f6; background-color: transparent; }
 .btn-outline { transition: background-color 0.3s, color 0.3s; }
 .btn-outline:hover { color: #ffffff; background-color: #09a0f6; }
-
-/* Outline button color blue */
-.btn-outline-blue { color: #09a0f6; border-color: #09a0f6; }
-.btn-outline-blue:hover { background-color: #09a0f6; }
-
-/* Outline button color green */
-.btn-outline-green { color: #4cc159; border-color: #4cc159; }
-.btn-outline-green:hover { background-color: #4cc159; }
-
-/* Outline button color purple */
-.btn-outline-purple { color: #a160ed; border-color: #a160ed; }
-.btn-outline-purple:hover { background-color: #a160ed; }
-
-/* Outline button color orange */
-.btn-outline-orange { color: #FFC107; border-color: #FFC107; }
-.btn-outline-orange:hover { background-color: #FFC107; }
-
-/* Outline button color red */
-.btn-outline-red { color: #F44336; border-color: #F44336; }
-.btn-outline-red:hover { background-color: #F44336; }
-
-/* Outline button color white */
-.btn-outline-white { color: #ffffff; border-color: #ffffff; }
-.btn-outline-white:hover { background-color: #ffffff; color: #09a0f6; }
-
 
 /* Button small size */
 .btn-small { font-size: 14px; line-height: 20px; padding-top: 4px; padding-bottom: 4px; }
@@ -208,9 +164,8 @@
 .panel { padding-left: 10; padding-right: 10; background-color: #ffffff; }
 
 /* Panel head */
-.panel .panel-head { display: block; width: calc(100% - 20px); height: 55px; line-height: 55px; }
-.panel .panel-head { padding-left: 9px; padding-right: 9px; font-weight: bold; }
-.panel .panel-head { border-bottom: 1px solid #d1e1e8; color: #353f4a; }
+.panel .panel-head { display: block; width: calc(100% - 20px); height: 55px; line-height: 55px; font-weight: normal; }
+.panel .panel-head { padding-left: 9px; padding-right: 9px; border-bottom: 1px solid #d1e1e8; }
 
 /* Panel body */
 .panel .panel-body { display: block; width: calc(100% - 20px); padding: 9px; }
@@ -227,7 +182,7 @@
 .table tr td { padding-left: 10px; font-weight: 300; }
 
 /* Table head */
-.table thead { font-weight: bold; border-bottom: 1px solid #d1e1e8; color: #353f4a; }
+.table thead { font-weight: bold; border-bottom: 1px solid #d1e1e8; color: #414c58; }
 .table thead { background-color: #f6f8fa; }
 
 /* Table head cols */
@@ -235,7 +190,7 @@
 
 /* Table hover */
 .table-hover tr:hover > td { background-color: #09a0f6; color: #ffffff; cursor: pointer; }
-.table-hover thead tr:hover > td { background-color: #f6f8fa; color: #353f4a; cursor: auto; }
+.table-hover thead tr:hover > td { background-color: #f6f8fa; color: #414c58; cursor: auto; }
 
 /* Table striped */
 .table-striped tr:nth-child(even) { background-color: #fbfcfd; }
@@ -250,34 +205,34 @@
 /* Siimple - Typography module */
 
 /* Body */
-body { background-color: #ffffff; color: #353f4a; font-family: 'OpenSans', 'Open Sans'; }
+body { background-color: #ffffff; color: #414c58; font-family: 'OpenSans', 'Open Sans'; }
 body { font-weight: 300; margin: 0px; padding: 0px; font-size: 16px; }
 
 /* Links */
-a { color: #09a0f6; font-weight: normal; text-decoration: none; }
-a:hover { text-decoration: underline; cursor: hand; }
+a { color: #09a0f6; font-weight: normal; text-decoration: none; transition: all 0.3s; }
+a:hover { text-decoration: underline; cursor: hand; color: #01579B; }
 
 /* Paragraph */
 p { line-height: 26px; margin-bottom: 16px; margin-top: 0px; display: block; }
 
 /* Lists */
-ul, ol { line-height: 26px; margin-bottom: 16px; margin-top: 0px; }
-ul li, ol li { line-height: 26px; }
+ul, ol { line-height: 28px; margin-bottom: 16px; margin-top: 0px; }
+ul li, ol li { line-height: 28px; }
 
 /* Headings default values */
 h1, h2, h3, h4, h5, h6 { margin-top: 0px; margin-bottom: 10px; display: block; }
-h1, h2, h3, h4, h5, h6 { font-weight: 300; color: #353f4a; }
+h1, h2, h3, h4, h5, h6 { font-weight: 300; color: #414c58; }
 
 /* Headings */
-h1 { font-size: 40px; line-height: 55px; padding-top: 10px; }
-h2 { font-size: 35px; line-height: 50px; padding-top: 8px; }
-h3 { font-size: 30px; line-height: 45px; padding-top: 5px; }
+h1 { font-size: 40px; line-height: 55px; padding-top: 20px; }
+h2 { font-size: 35px; line-height: 50px; padding-top: 15px; }
+h3 { font-size: 30px; line-height: 45px; padding-top: 10px; }
 h4 { font-size: 25px; line-height: 40px; }
 h5 { font-size: 20px; line-height: 35px; }
-h6 { font-size: 15px; line-height: 30px; }
+h6 { font-size: 15px; line-height: 30px; color: #798ba0; }
 
 /* Small text */
-small { color: #536273; font-size: 14px; }
+small { color: #6a7e95; font-size: 14px; }
 
 /* Code */
 code { border-radius: 5px; background-color: #f1f5fa; color: #09a0f6; font-size: 15px; }
