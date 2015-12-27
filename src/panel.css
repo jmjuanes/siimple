@@ -6,9 +6,8 @@
 .panel { padding-left: 10; padding-right: 10; background-color: #ffffff; }
 
 /* Panel head */
-.panel .panel-head { display: block; width: calc(100% - 20px); height: 55px; line-height: 55px; }
-.panel .panel-head { padding-left: 9px; padding-right: 9px; font-weight: bold; }
-.panel .panel-head { border-bottom: 1px solid #d1e1e8; color: #353f4a; }
+.panel .panel-head { display: block; width: calc(100% - 20px); height: 55px; line-height: 55px; font-weight: normal; }
+.panel .panel-head { padding-left: 9px; padding-right: 9px; border-bottom: 1px solid #d1e1e8; }
 
 /* Panel body */
 .panel .panel-body { display: block; width: calc(100% - 20px); padding: 9px; }

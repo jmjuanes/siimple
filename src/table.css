@@ -9,7 +9,7 @@
 .table tr td { padding-left: 10px; font-weight: 300; }
 
 /* Table head */
-.table thead { font-weight: bold; border-bottom: 1px solid #d1e1e8; color: #353f4a; }
+.table thead { font-weight: bold; border-bottom: 1px solid #d1e1e8; color: #414c58; }
 .table thead { background-color: #f6f8fa; }
 
 /* Table head cols */
@@ -17,7 +17,7 @@
 
 /* Table hover */
 .table-hover tr:hover > td { background-color: #09a0f6; color: #ffffff; cursor: pointer; }
-.table-hover thead tr:hover > td { background-color: #f6f8fa; color: #353f4a; cursor: auto; }
+.table-hover thead tr:hover > td { background-color: #f6f8fa; color: #414c58; cursor: auto; }
 
 /* Table striped */
 .table-striped tr:nth-child(even) { background-color: #fbfcfd; }
