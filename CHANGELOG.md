@@ -1,5 +1,12 @@
 # ChangeLog
 
+### v1.2.1 (December 27, 2015)
+- Changed default text color.
+- Changed headings padding.
+- Changed links.
+- Changed alert types.
+
+
 ### v1.2.0 (December 26, 2015)
 - Changed default text color.
 - Changed headings margin and line height.
