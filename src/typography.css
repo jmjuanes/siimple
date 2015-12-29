@@ -9,23 +9,23 @@ a { color: #09a0f6; font-weight: normal; text-decoration: none; transition: all 
 a:hover { text-decoration: underline; cursor: hand; color: #01579B; }
 
 /* Paragraph */
-p { line-height: 26px; margin-bottom: 16px; margin-top: 0px; display: block; }
+p { line-height: 26px; margin-bottom: 20px; margin-top: 0px; display: block; }
 
 /* Lists */
 ul, ol { line-height: 28px; margin-bottom: 16px; margin-top: 0px; }
 ul li, ol li { line-height: 28px; }
 
 /* Headings default values */
-h1, h2, h3, h4, h5, h6 { margin-top: 0px; margin-bottom: 10px; display: block; }
+h1, h2, h3, h4, h5, h6 { margin-top: 0px; margin-bottom: 15px; display: block; }
 h1, h2, h3, h4, h5, h6 { font-weight: 300; color: #414c58; }
 
 /* Headings */
-h1 { font-size: 40px; line-height: 55px; padding-top: 20px; }
-h2 { font-size: 35px; line-height: 50px; padding-top: 15px; }
-h3 { font-size: 30px; line-height: 45px; padding-top: 10px; }
-h4 { font-size: 25px; line-height: 40px; }
-h5 { font-size: 20px; line-height: 35px; }
-h6 { font-size: 15px; line-height: 30px; color: #798ba0; }
+h1 { font-size: 36px; line-height: 50px; }
+h2 { font-size: 32px; line-height: 46px; }
+h3 { font-size: 28px; line-height: 42px; }
+h4 { font-size: 24px; line-height: 38px; }
+h5 { font-size: 20px; line-height: 34px; }
+h6 { font-size: 16px; line-height: 30px; color: #798ba0; }
 
 /* Small text */
 small { color: #6a7e95; font-size: 14px; }
@@ -36,7 +36,7 @@ code { padding-left: 6px; padding-right: 6px; font-family: 'OpenSans', 'Open San
 
 /* Code multiple lines */
 pre { display:block; width: calc(100% - 30px); padding: 14px; margin-top: 15px; line-height: 25px; }
-pre { margin-bottom: 16px; border-radius: 5px; background-color: #f1f5fa; color: #536273; }
+pre { margin-bottom: 16px; border-radius: 5px; background-color: #f1f5fa; color: #414c58; }
 pre { font-family: 'OpenSans', 'Open Sans'; font-size: 15px; overflow-x: auto; }
 
 /* Blockquote */
