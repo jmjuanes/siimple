@@ -4,11 +4,12 @@
 
 [![npm](https://img.shields.io/npm/v/siimple.svg?style=flat-square)](https://www.npmjs.com/package/siimple)
 [![npm](https://img.shields.io/npm/dt/siimple.svg?style=flat-square)](https://www.npmjs.com/package/siimple)
+[![devDependency Status](https://david-dm.org/siimple/siimple/dev-status.svg?style=flat-square)](https://david-dm.org/siimple/siimple#info=devDependencies)
 
 
 ## About Siimple
 
-**Siimple** is a minimal CSS framework for flat and clean websites created by Josemi Juanes.
+**Siimple** is a minimal CSS framework for flat and clean websites created by [Josemi Juanes](http://jm.juanes.xyz).
 
 NOTE: **Siimple** wasn't created for competing with Bootstrap.
 
