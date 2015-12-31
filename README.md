@@ -7,9 +7,9 @@
 [![devDependency Status](https://david-dm.org/siimple/siimple/dev-status.svg?style=flat-square)](https://david-dm.org/siimple/siimple#info=devDependencies)
 
 
-## About Siimple
+## About
 
-**Siimple** is a minimal CSS framework for flat and clean websites created by [Josemi Juanes](http://jm.juanes.xyz).
+**Siimple** is a minimal and light CSS framework for flat and clean websites created by [Josemi Juanes](http://jm.juanes.xyz), build in ~250 lines of code. The framework provides a clean starting point for your front-end developments.
 
 NOTE: **Siimple** wasn't created for competing with Bootstrap.
 
@@ -24,9 +24,9 @@ There are three ways to download **Siimple**:
 
 For more information about **Siimple**, please visit the [Siimple homepage](https://siimple.github.io) and read the [getting started](https://siimple.github.io/getting-started) guide or the [reference](https://siimple.github.io/reference).
 
-## Building your copy of Siimple
+## Build
 
-By default, you have a compiled version of **Siimple** in the `dist/` folder. Nevertheless, you can build your local copy of **Siimple** in two steps. First, install the build dependencies using **npm**:
+By default, you have a compiled version of **Siimple** in the `dist/` folder. Nevertheless, you can build your local copy of **Siimple** in two steps. First, install the dev-dependencies using **npm**:
 
 ```sh
 npm install
@@ -41,7 +41,7 @@ gulp default
 This will generate a compiled version in `dist/` folder.
 
 
-## Contributing
+## Contribute
 
 You can contribute with **Siimple** installing it and submitting issues and pull requests :)
 
