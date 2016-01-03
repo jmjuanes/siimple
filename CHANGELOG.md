@@ -1,5 +1,13 @@
 # ChangeLog
 
+### v1.2.2 (January 3, 2016)
+- Fix headings margin top.
+- Change paragraph margin bottom to 20px.
+- Go back to old text color.
+- Fix bug in grid.
+- Change alerts colors.
+
+
 ### v1.2.1 (December 27, 2015)
 - Changed default text color.
 - Changed headings padding.
