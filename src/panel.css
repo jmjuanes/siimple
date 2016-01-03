@@ -1,7 +1,7 @@
 /* Siimple - Panel module */
 
 /* Panel */
-.panel { display: block; width: calc(100% - 22px); margin-top: 0px; margin-bottom: 16px; }
+.panel { display: block; width: calc(100% - 22px); margin-top: 0px; margin-bottom: 20px; }
 .panel { border-radius: 5px; border-radius: 5px; border: 1px solid #d1e1e8; }
 .panel { padding-left: 10; padding-right: 10; background-color: #ffffff; }
 
