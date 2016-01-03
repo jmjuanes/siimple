@@ -5,7 +5,7 @@
 .btn, .btn-outline { border-radius: 5px; text-decoration: none; font-size: 16px; }
 .btn, .btn-outline { font-weight: 300; font-family: OpenSans; padding-bottom: 5px; }
 .btn, .btn-outline { padding-left: 25px; padding-right: 25px; padding-top: 5px; }
-.btn, .btn-outline { margin-left: 5px; margin-right: 5px; margin-top: 0px; margin-bottom: 16px; }
+.btn, .btn-outline { margin-left: 5px; margin-right: 5px; margin-top: 0px; margin-bottom: 20px; }
 .btn, .btn-outline { cursor: hand; }
 
 /* Button default hover */
