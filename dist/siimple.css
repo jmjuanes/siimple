@@ -1,6 +1,6 @@
 /**
  * siimple - Minimal CSS framework for flat and clean websites.
- * @version v1.2.1
+ * @version v1.2.2
  * @link https://siimple.github.io/
  * @license MIT
  */
@@ -9,18 +9,28 @@
 
 /* Basic alert */
 .alert { display: block;  width: calc(100% - 30px); padding: 14px; margin-top: 0px; }
-.alert { margin-bottom: 16px; color: #ffffff; font-weight: 300; font-size: 16px; }
-.alert { text-align: left; border: 0px; border-radius: 5px; background-color: #09a0f6; }
-.alert { padding-top: 16px; padding-bottom: 16px; }
+.alert { margin-bottom: 20px; font-weight: 300; font-size: 16px; }
+.alert { text-align: left; border: 0px; border-radius: 5px; }
+.alert { padding-top: 16px; padding-bottom: 16px; border: 1px solid; }
 
 /* Alert links */
-.alert a { color: #ffffff; text-decoration: none; font-weight: bold; }
-.alert a:hover { opacity: 0.8; }
+.alert a { text-decoration: none; font-weight: bold; }
 
-/* Alert types */
-.alert-error { background-color: #F44336; }
-.alert-warning { background-color: #FFC107; }
-.alert-done { background-color: #4cc159; }
+/* Default alert */
+.alert { background-color: #E1F5FE; color: #03A9F4; border-color: #03A9F4; }
+.alert a { color: #03A9F4; }
+
+/* Error alert */
+.alert-error { background-color: #FFEBEE; color: #D32F2F; border-color: #F44336; }
+.alert-error a { color: #D32F2F; }
+
+/* Warning alert */
+.alert-warning { background-color: #FFF8E1; color: #FF8F00; border-color: #FFC107; }
+.alert-warning a { color: #FF8F00; }
+
+/* Done alert */
+.alert-done { background-color: #E8F5E9; color: #388E3C; border-color: #4CAF50; }
+.alert-done a { color: #388E3C; }
 
 /* Siimple - Buttons module */
 
@@ -29,7 +39,7 @@
 .btn, .btn-outline { border-radius: 5px; text-decoration: none; font-size: 16px; }
 .btn, .btn-outline { font-weight: 300; font-family: OpenSans; padding-bottom: 5px; }
 .btn, .btn-outline { padding-left: 25px; padding-right: 25px; padding-top: 5px; }
-.btn, .btn-outline { margin-left: 5px; margin-right: 5px; margin-top: 0px; margin-bottom: 16px; }
+.btn, .btn-outline { margin-left: 5px; margin-right: 5px; margin-top: 0px; margin-bottom: 20px; }
 .btn, .btn-outline { cursor: hand; }
 
 /* Button default hover */
@@ -58,7 +68,7 @@
 .form-input, .form-select, .form-textarea { display: inline-block; padding: 10px; color: #647781; }
 .form-input, .form-select, .form-textarea { border: 1px solid #d1e1e8; outline: 0px; font-size: 16px; }
 .form-input, .form-select, .form-textarea { font-family: 'OpenSans', 'Open Sans'; font-weight: 300; }
-.form-input, .form-select, .form-textarea { margin-top: 0px; margin-bottom: 16px; border-radius: 5px; }
+.form-input, .form-select, .form-textarea { margin-top: 0px; margin-bottom: 20px; border-radius: 5px; }
 .form-input, .form-select, .form-textarea { transition: border 0.4s; background-color: #ffffff; }
 .form-input:focus, .form-select:focus, .form-textarea:focus { border: 1px solid #09a0f6; }
 
@@ -78,10 +88,13 @@
 .form-input[disabled] { cursor: not-allowed; background-color: #c6d1dc; }
 
 /* Form select */
-.form-select { width: auto; padding-top: 6px; height: 40px; }
+.form-select { width: 100%; padding-top: 6px; height: 40px; }
 
 /* Form textarea */
 .form-textarea { width: 100%; }
+
+/* Form width auto */
+.form-auto { width: auto; }
 
 /* Siimple - Grid module */
 
@@ -106,7 +119,7 @@
 .col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 { padding: 1%; }
 
 /* Grid columns */
-.col-12 { width: 98.99%; }
+.col-12 { width: 97.99%; }
 .col-11 { width: 89.66%; }
 .col-10 { width: 81.33%; }
 .col-9 { width: 72.99%; }
@@ -135,7 +148,10 @@
 
 /* Box  */
 .box { display: block; width: calc(100% - 30px); padding: 14px; border-radius: 5px; }
-.box { border: 1px solid #d1e1e8; margin-top: 0px; margin-bottom: 16px; }
+.box { border: 1px solid #d1e1e8; margin-top: 0px; margin-bottom: 20px; }
+
+/* Box: remove last element margin bottom */
+.box *:last-child { margin-bottom: 0px !important; }
 
 /* Border box */
 .border-box { border-radius: 5px; border: 1px solid #d1e1e8; }
@@ -159,7 +175,7 @@
 /* Siimple - Panel module */
 
 /* Panel */
-.panel { display: block; width: calc(100% - 22px); margin-top: 0px; margin-bottom: 16px; }
+.panel { display: block; width: calc(100% - 22px); margin-top: 0px; margin-bottom: 20px; }
 .panel { border-radius: 5px; border-radius: 5px; border: 1px solid #d1e1e8; }
 .panel { padding-left: 10; padding-right: 10; background-color: #ffffff; }
 
@@ -175,14 +191,14 @@
 
 /* Table general */
 .table { display: table; width: 100%; border-width: 0px; border-collapse: collapse; }
-.table { margin-top: 0px; margin-bottom: 16px; }
+.table { margin-top: 0px; margin-bottom: 20px; }
 
 /* Table cols */
 .table tr td { border-bottom: 1px solid #d1e1e8; padding-top: 10px; padding-bottom: 10px; }
 .table tr td { padding-left: 10px; font-weight: 300; }
 
 /* Table head */
-.table thead { font-weight: bold; border-bottom: 1px solid #d1e1e8; color: #414c58; }
+.table thead { font-weight: bold; border-bottom: 1px solid #d1e1e8; color: #526475; }
 .table thead { background-color: #f6f8fa; }
 
 /* Table head cols */
@@ -190,7 +206,7 @@
 
 /* Table hover */
 .table-hover tr:hover > td { background-color: #09a0f6; color: #ffffff; cursor: pointer; }
-.table-hover thead tr:hover > td { background-color: #f6f8fa; color: #414c58; cursor: auto; }
+.table-hover thead tr:hover > td { background-color: #f6f8fa; color: #526475; cursor: auto; }
 
 /* Table striped */
 .table-striped tr:nth-child(even) { background-color: #fbfcfd; }
@@ -205,31 +221,31 @@
 /* Siimple - Typography module */
 
 /* Body */
-body { background-color: #ffffff; color: #414c58; font-family: 'OpenSans', 'Open Sans'; }
+body { background-color: #ffffff; color: #526475; font-family: 'OpenSans', 'Open Sans'; }
 body { font-weight: 300; margin: 0px; padding: 0px; font-size: 16px; }
 
 /* Links */
 a { color: #09a0f6; font-weight: normal; text-decoration: none; transition: all 0.3s; }
-a:hover { text-decoration: underline; cursor: hand; color: #01579B; }
+a:hover { text-decoration: underline; cursor: hand; }
 
 /* Paragraph */
-p { line-height: 26px; margin-bottom: 16px; margin-top: 0px; display: block; }
+p { line-height: 26px; margin-bottom: 20px; margin-top: 0px; display: block; }
 
 /* Lists */
 ul, ol { line-height: 28px; margin-bottom: 16px; margin-top: 0px; }
 ul li, ol li { line-height: 28px; }
 
 /* Headings default values */
-h1, h2, h3, h4, h5, h6 { margin-top: 0px; margin-bottom: 10px; display: block; }
-h1, h2, h3, h4, h5, h6 { font-weight: 300; color: #414c58; }
+h1, h2, h3, h4, h5, h6 { margin-top: 0px; margin-bottom: 20px; display: block; }
+h1, h2, h3, h4, h5, h6 { font-weight: 300; color: #526475; }
 
 /* Headings */
-h1 { font-size: 40px; line-height: 55px; padding-top: 20px; }
-h2 { font-size: 35px; line-height: 50px; padding-top: 15px; }
-h3 { font-size: 30px; line-height: 45px; padding-top: 10px; }
-h4 { font-size: 25px; line-height: 40px; }
-h5 { font-size: 20px; line-height: 35px; }
-h6 { font-size: 15px; line-height: 30px; color: #798ba0; }
+h1 { font-size: 36px; line-height: 50px; }
+h2 { font-size: 32px; line-height: 46px; }
+h3 { font-size: 28px; line-height: 42px; }
+h4 { font-size: 24px; line-height: 38px; }
+h5 { font-size: 20px; line-height: 34px; }
+h6 { font-size: 16px; line-height: 30px; }
 
 /* Small text */
 small { color: #6a7e95; font-size: 14px; }
@@ -240,7 +256,7 @@ code { padding-left: 6px; padding-right: 6px; font-family: 'OpenSans', 'Open San
 
 /* Code multiple lines */
 pre { display:block; width: calc(100% - 30px); padding: 14px; margin-top: 15px; line-height: 25px; }
-pre { margin-bottom: 16px; border-radius: 5px; background-color: #f1f5fa; color: #536273; }
+pre { margin-bottom: 20px; border-radius: 5px; background-color: #f1f5fa; color: #4b5868; }
 pre { font-family: 'OpenSans', 'Open Sans'; font-size: 15px; overflow-x: auto; }
 
 /* Blockquote */
