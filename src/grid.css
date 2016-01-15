@@ -1,15 +1,13 @@
 /* Siimple - Grid module */
 
 /* Default grid */
-.grid { display: block; width: 960px; margin-left: auto; margin-right: auto; }
-.grid { background-color: #ffffff; min-height: 40px; }
+.grid { display: block; width: 960px; margin-left: auto; margin-right: auto; min-height: 40px; }
 
 /* Grid fluid */
 .grid-fluid { width: 100%; }
 
 /* Grid row */
 .row { display: block; width: 100%; margin-left: 0px; margin-right: 0px; }
-.row { background-color: #ffffff; }
 
 /* Grid row after */
 .row:after { content: " "; clear: both; display: table; line-height: 0; }
