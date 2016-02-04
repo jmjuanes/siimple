@@ -5,9 +5,12 @@ var concat = require('gulp-concat');
 var minify = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
+var sass = require('gulp-sass');
 
 //Import the package
 var pkg = require('./package.json');
+
+//Header
 var banner = ['/**',
   ' * <%= pkg.name %> - <%= pkg.description %>',
   ' * @version v<%= pkg.version %>',
@@ -16,25 +19,25 @@ var banner = ['/**',
   ' */',
   '', ''].join('\n');
 
-//Concat all files in css/src folder
-gulp.task('css-concat', function(){
+//Build the SCSS files
+gulp.task('build', function(){
 
-  //Set the source files
-  gulp.src('src/*.css')
+  //Select all the SCSS files
+  gulp.src('src/**/*.scss')
 
-  //Concat all files in siimple.css
-  .pipe(concat('siimple.css'))
+  //Build
+  .pipe(sass().on('error', sass.logError))
 
   //Add the header
   .pipe(header(banner, { pkg : pkg } ))
 
-  //Save in css/ folder
-  .pipe(gulp.dest('dist/'));
+  //Save in the dist folder
+  .pipe(gulp.dest('./dist/'));
 
 });
 
-//Minimify the output file in siimple.min.css
-gulp.task('css-min', ['css-concat'], function(){
+//Minimize
+gulp.task('minimize', function(){
 
   //Set the source file
   gulp.src('dist/siimple.css')
@@ -42,7 +45,7 @@ gulp.task('css-min', ['css-concat'], function(){
   //MinifCss
   .pipe(minify())
 
-  //Save the minifed file as siimple.min.css
+  //Save as siimple.min.css
   .pipe(rename('siimple.min.css'))
 
   //Add the header
@@ -54,5 +57,4 @@ gulp.task('css-min', ['css-concat'], function(){
 });
 
 //Execute the tasks
-//First clean the output dir, then execute the css-concat task, last run the css-min
-gulp.task('default', ['css-min']);
+gulp.task('default', ['build', 'minimize']);
