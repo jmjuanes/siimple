@@ -1,19 +1,35 @@
 {
   "name": "siimple",
-  "version": "1.2.2",
-  "description": "Minimal CSS framework for flat and clean websites.",
+  "version": "1.3.0",
+  "description": "Minimal CSS framework for flat and clean designs.",
   "style": "dist/siimple.css",
   "main": "dist/siimple.css",
   "author": "Josemi Juanes <josemijuanes@gmail.com>",
   "license": "MIT",
-  "files": ["LICENSE.md", "CHANGELOG.md", "README.md", "gulpfile.js", "dist/", "src/"],
   "homepage": "https://siimple.github.io/",
-  "repository": { "type": "git", "url": "https://github.com/siimple/siimple.git" },
-  "keywords": ["siimple","css","framework","jmjuanes","minimal","flat","clean","websites","responsive"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siimple/siimple.git"
+  },
+  "keywords": [
+    "siimple",
+    "css",
+    "scss",
+    "sass",
+    "framework",
+    "jmjuanes",
+    "minimal",
+    "flat",
+    "clean",
+    "websites",
+    "responsive"
+  ],
   "devDependencies": {
     "gulp": "^3.0.9",
     "gulp-concat": "^2.6.0",
+    "gulp-header": "1.7.1",
     "gulp-minify-css": "1.2.1",
     "gulp-rename": "1.2.2",
-    "gulp-header": "1.7.1" }
+    "gulp-sass": "^2.1.1"
+  }
 }
