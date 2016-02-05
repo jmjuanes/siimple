@@ -1,0 +1,66 @@
+//////////////////////////////////////////////////////////////////////////////////
+//  Siimple - Minimal CSS framework for flat and clean designs.
+//  http://siimple.github.io
+//  Under the MIT License
+//////////////////////////////////////////////////////////////////////////////////
+
+//Form default style
+@mixin defaultForm
+{
+	//Default font style
+	@include defaultFont;
+
+	//Form display
+	display: inline-block;
+
+	//Form text style
+	color: $grey1;
+
+	//Form margin and padding
+	padding: 10px; margin: { top: 0px; bottom: 20px; left: 5px; right: 5px; }
+
+	//Form border
+	border: 1px solid $blue2; border-radius: 5px; transition: all 0.3s; outline: 0px;
+
+	//Focus
+	&:focus { border: 1px solid $blue1; }
+}
+
+//Form
+.form
+{
+	//Form input
+	&-input
+	{
+		//Default form input style
+		@include defaultForm; width: 100%; height: 40px;
+
+		//Form input date
+		&[type="date"] { width: auto; }
+
+		//Form input disabled
+		&[disabled] { cursor: not-allowed; background-color: $blue2; }
+
+		//Form input submit
+		&[type="submit"]
+		{
+			//Load the default button style
+			@include defaultBtn;
+
+			//Button style
+			color: $white; background-color: $blue1; border: 0px;
+
+			//Hover
+			&:hover { opacity: 0.8; }
+		}
+	}
+
+	//Form select
+	&-select { @include defaultForm; width: 100%; padding-top: 6px; height: 40px; background-color: $white; }
+
+	//Form textarea
+	&-textarea { @include defaultForm; width: 100%; }
+
+	//Form width auto
+	&-auto { width: auto; }
+}
