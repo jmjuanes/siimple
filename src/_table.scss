@@ -1,0 +1,22 @@
+//////////////////////////////////////////////////////////////////////////////////
+//  Siimple - Minimal CSS framework for flat and clean designs.
+//  http://siimple.github.io
+//  Under the MIT License
+//////////////////////////////////////////////////////////////////////////////////
+
+//Table style
+.table
+{
+	//General table style
+	display: table; width: 100%; border: { width: 0px; collapse: collapse; } font-weight: 300;
+	color: $grey1;
+
+	//Table margin
+	margin: { top: 0px; bottom: 20px; }
+
+	//Table head
+	thead tr td { font-weight: normal; border-bottom: 2px solid $blue2; background-color: #f6f8fa; }
+
+	//Table row
+	tr td { border-bottom: 1px solid $blue2; padding: { top: 10px; bottom: 10px; left: 10px; } }
+}
