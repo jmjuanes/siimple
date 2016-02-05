@@ -1,0 +1,57 @@
+//////////////////////////////////////////////////////////////////////////////////
+//  Siimple - Minimal CSS framework for flat and clean designs.
+//  http://siimple.github.io
+//  Under the MIT License
+//////////////////////////////////////////////////////////////////////////////////
+
+//Default button style
+@mixin defaultBtn
+{
+	//Include the default text style
+	@include defaultFont;
+
+	//Text style
+	text: { align: center; decoration: none !important; } line-height: 28px;
+
+	//Button margin and padding
+	margin: { left: 5px; right: 5px; top: 5px; bottom: 20px; }
+	padding: { left: 25px; right: 25px; top: 5px; bottom: 5px; }
+
+	//Button block definition
+	display: inline-block; cursor: hand; border-radius: 5px;
+
+	//Button hover
+	&:hover { text-decoration: none; }
+}
+
+//Button style
+.btn
+{
+	//Include the default button style
+	@include defaultBtn;
+
+	//Normal button style
+	color: $white; background-color: $blue1; border: 0px;
+
+	//Normal button hover
+	&:hover { opacity: 0.8; }
+
+	//Button small
+	&-small { font-size: 14px; line-height: 20px; padding: { top: 4px; bottom: 4px; left: 15px; right: 15px; } }
+
+	//Button big
+	&-big { font-size: 22px; line-height: 34px; padding: { top: 8px; bottom: 8px; left: 30px; right: 30px; } }
+
+	//Outline button
+	&-outline
+	{
+		//Include the default button style
+		@include defaultBtn;
+
+		//Outline button style
+		color: $blue1; background-color: rgba(0,0,0,0); border: 1px solid $blue1;
+
+		//Outline button hover
+		&:hover { color: $white; background-color: $blue1; }
+	}
+}
