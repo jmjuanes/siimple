@@ -1,9 +1,14 @@
 # ChangeLog
 
+### v1.3.0 (February 6, 2016)
+- Add SASS/SCSS support.
+- Fix form select background color.
+
+
 ### v1.2.2 (January 3, 2016)
 - Fix headings margin top.
 - Change paragraph margin bottom to 20px.
-- Go back to old text color.
+- Return to old text color.
 - Fix bug in grid.
 - Change alerts colors.
 
