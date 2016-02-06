@@ -9,7 +9,7 @@
 
 ## About
 
-**Siimple** is a minimal and light CSS framework for flat and clean designs created by [Josemi Juanes](http://jm.juanes.xyz), and build using SASS/SCSS. The result is a clean starting point for your front-end developments with a 5Kb minimized version.
+**Siimple** is a minimal and light CSS framework for flat and clean designs created by [Josemi Juanes](http://jm.juanes.xyz), and built using SASS/SCSS. The result is a clean starting point for your front-end developments with a 5Kb minimized version.
 
 NOTE: **Siimple** wasn't created for competing with Bootstrap.
 
