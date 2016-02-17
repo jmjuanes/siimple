@@ -1,6 +1,6 @@
 /**
  * siimple - Minimal CSS framework for flat and clean designs.
- * @version v1.3.0
+ * @version v1.3.1
  * @link https://siimple.github.io/
  * @license MIT
  */
@@ -14,7 +14,7 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: 'OpenSans', 'Open Sans';
-  font-size: 16;
+  font-size: 16px;
   font-weight: 300;
   background-color: #ffffff; }
 
@@ -118,7 +118,7 @@ h6 {
 
 .btn {
   font-family: 'OpenSans', 'Open Sans';
-  font-size: 16;
+  font-size: 16px;
   font-weight: 300;
   text-align: center;
   text-decoration: none !important;
@@ -157,7 +157,7 @@ h6 {
     padding-right: 30px; }
   .btn-outline {
     font-family: 'OpenSans', 'Open Sans';
-    font-size: 16;
+    font-size: 16px;
     font-weight: 300;
     text-align: center;
     text-decoration: none !important;
@@ -184,7 +184,7 @@ h6 {
 
 code {
   font-family: 'OpenSans', 'Open Sans';
-  font-size: 16;
+  font-size: 16px;
   font-weight: 300;
   border-radius: 5px;
   background-color: #f1f5fa;
@@ -196,7 +196,7 @@ code {
 
 pre {
   font-family: 'OpenSans', 'Open Sans';
-  font-size: 16;
+  font-size: 16px;
   font-weight: 300;
   display: block;
   width: calc(100% - 30px);
@@ -214,7 +214,7 @@ pre {
 
 .form-input {
   font-family: 'OpenSans', 'Open Sans';
-  font-size: 16;
+  font-size: 16px;
   font-weight: 300;
   display: inline-block;
   color: #526475;
@@ -238,7 +238,7 @@ pre {
     background-color: #d1e1e8; }
   .form-input[type="submit"] {
     font-family: 'OpenSans', 'Open Sans';
-    font-size: 16;
+    font-size: 16px;
     font-weight: 300;
     text-align: center;
     text-decoration: none !important;
@@ -264,7 +264,7 @@ pre {
 
 .form-select {
   font-family: 'OpenSans', 'Open Sans';
-  font-size: 16;
+  font-size: 16px;
   font-weight: 300;
   display: inline-block;
   color: #526475;
@@ -286,7 +286,7 @@ pre {
 
 .form-textarea {
   font-family: 'OpenSans', 'Open Sans';
-  font-size: 16;
+  font-size: 16px;
   font-weight: 300;
   display: inline-block;
   color: #526475;
