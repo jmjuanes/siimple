@@ -1,7 +1,11 @@
 # ChangeLog
 
+### v1.3.1 (February 17, 2016)
+- Fix bug on font-size (issue #2).
+
+
 ### v1.3.0 (February 6, 2016)
-- Add SASS/SCSS support.
+- Add SASS/SCSS support (issue #1).
 - Fix form select background color.
 
 
