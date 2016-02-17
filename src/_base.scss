@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 //Default font block
-@mixin defaultFont { font: { family: 'OpenSans', 'Open Sans'; size: 16; weight: 300; } }
+@mixin defaultFont { font: { family: 'OpenSans', 'Open Sans'; size: 16px; weight: 300; } }
 
 //Heart
 .heart{ &:after { content: "\2764"; color: #f45660; } }
