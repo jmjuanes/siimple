@@ -225,8 +225,11 @@ pre {
   margin-right: 5px;
   border: 1px solid #d1e1e8;
   border-radius: 5px;
-  transition: all 0.3s;
   outline: 0px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
   width: 100%;
   height: 40px; }
   .form-input:focus {
@@ -275,7 +278,6 @@ pre {
   margin-right: 5px;
   border: 1px solid #d1e1e8;
   border-radius: 5px;
-  transition: all 0.3s;
   outline: 0px;
   width: 100%;
   padding-top: 6px;
@@ -297,9 +299,9 @@ pre {
   margin-right: 5px;
   border: 1px solid #d1e1e8;
   border-radius: 5px;
-  transition: all 0.3s;
   outline: 0px;
-  width: 100%; }
+  width: 100%;
+  resize: vertical; }
   .form-textarea:focus {
     border: 1px solid #09a0f6; }
 
