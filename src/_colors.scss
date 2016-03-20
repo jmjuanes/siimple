@@ -13,8 +13,17 @@ $grey3: #f1f5fa; //Used for blocks background
 $blue1: #09a0f6;
 $blue2: #d1e1e8;
 
+//Button Colors
+$green1: #7CB342;
+$green2: darken($green1 ,10%);
+$red1: #F44336;
+$red2: darken($red1 ,10%);
+$orange1: #F57C00;
+$orange2: darken($orange1 ,10%);
+
 //Default colors
 $white: #ffffff;
+$black: #000000;
 
 //Default alert color
 $alert-default: #03A9F4;

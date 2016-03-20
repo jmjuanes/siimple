@@ -5,6 +5,7 @@
  * @license MIT
  */
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 .heart:after {
   content: "\2764";
   color: #f45660; }
@@ -181,6 +182,26 @@ h6 {
     .btn-outline:hover {
       color: #ffffff;
       background-color: #09a0f6; }
+
+.btn-red {
+  background-color: #F44336;
+  color: #ffffff; }
+
+.btn-green {
+  background-color: #7CB342;
+  color: #ffffff; }
+
+.btn-orange {
+  background-color: #F57C00;
+  color: #ffffff; }
+
+.btn-white {
+  background-color: #ffffff;
+  color: #000000; }
+
+.btn-black {
+  background-color: #000000;
+  color: #ffffff; }
 
 code {
   font-family: 'OpenSans', 'Open Sans';
