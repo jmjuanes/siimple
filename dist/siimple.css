@@ -449,6 +449,80 @@ pre {
     .col-12 {
       width: 98%; } }
 
+@media (max-width: 500px) {
+  .col-sm-1 {
+    width: 6.33%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-2 {
+    width: 14.66%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-3 {
+    width: 22.99%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-4 {
+    width: 31.33%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-5 {
+    width: 39.66%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-6 {
+    width: 47.99%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-7 {
+    width: 56.33%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-8 {
+    width: 64.66%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-9 {
+    width: 72.99%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-10 {
+    width: 81.33%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-11 {
+    width: 89.66%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-12 {
+    width: 97.99%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; } }
+
 .table {
   display: table;
   width: 100%;
