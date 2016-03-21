@@ -55,3 +55,21 @@
 		&:hover { color: $white; background-color: $blue1; }
 	}
 }
+
+//Button colors
+$btn_colors: ('red' ,$red1 ,$white),
+						 ('green' ,$green1 ,$white),
+						 ('orange' ,$orange1 ,$white),
+						 ('white' ,$white ,$black),
+						 ('black' ,$black ,$white);
+
+.btn
+{
+	@each $i,$w,$t in $btn_colors
+	{
+		&-#{$i}
+		{
+			background-color: #{$w}; color: #{$t};
+		}
+	}
+}

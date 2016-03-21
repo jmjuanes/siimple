@@ -182,6 +182,26 @@ h6 {
       color: #ffffff;
       background-color: #09a0f6; }
 
+.btn-red {
+  background-color: #F44336;
+  color: #ffffff; }
+
+.btn-green {
+  background-color: #7CB342;
+  color: #ffffff; }
+
+.btn-orange {
+  background-color: #F57C00;
+  color: #ffffff; }
+
+.btn-white {
+  background-color: #ffffff;
+  color: #000000; }
+
+.btn-black {
+  background-color: #000000;
+  color: #ffffff; }
+
 code {
   font-family: 'OpenSans', 'Open Sans';
   font-size: 16px;
@@ -225,8 +245,11 @@ pre {
   margin-right: 5px;
   border: 1px solid #d1e1e8;
   border-radius: 5px;
-  transition: all 0.3s;
   outline: 0px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
   width: 100%;
   height: 40px; }
   .form-input:focus {
@@ -275,7 +298,6 @@ pre {
   margin-right: 5px;
   border: 1px solid #d1e1e8;
   border-radius: 5px;
-  transition: all 0.3s;
   outline: 0px;
   width: 100%;
   padding-top: 6px;
@@ -297,9 +319,9 @@ pre {
   margin-right: 5px;
   border: 1px solid #d1e1e8;
   border-radius: 5px;
-  transition: all 0.3s;
   outline: 0px;
-  width: 100%; }
+  width: 100%;
+  resize: vertical; }
   .form-textarea:focus {
     border: 1px solid #09a0f6; }
 
@@ -448,6 +470,80 @@ pre {
   @media (max-width: 500px) {
     .col-12 {
       width: 98%; } }
+
+@media (max-width: 500px) {
+  .col-sm-1 {
+    width: 6.33%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-2 {
+    width: 14.66%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-3 {
+    width: 22.99%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-4 {
+    width: 31.33%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-5 {
+    width: 39.66%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-6 {
+    width: 47.99%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-7 {
+    width: 56.33%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-8 {
+    width: 64.66%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-9 {
+    width: 72.99%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-10 {
+    width: 81.33%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-11 {
+    width: 89.66%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; }
+  .col-sm-12 {
+    width: 97.99%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: 1%; } }
 
 .table {
   display: table;
