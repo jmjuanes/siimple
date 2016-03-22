@@ -254,6 +254,7 @@ pre {
   border: 1px solid #d1e1e8;
   border-radius: 5px;
   outline: 0px;
+  box-sizing: border-box;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -311,6 +312,7 @@ pre {
   border: 1px solid #d1e1e8;
   border-radius: 5px;
   outline: 0px;
+  box-sizing: border-box;
   width: 100%;
   padding-top: 6px;
   height: 40px;
@@ -332,6 +334,7 @@ pre {
   border: 1px solid #d1e1e8;
   border-radius: 5px;
   outline: 0px;
+  box-sizing: border-box;
   width: 100%;
   resize: vertical; }
   .form-textarea:focus {

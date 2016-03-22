@@ -22,6 +22,9 @@
 	//Form border
 	border: 1px solid $blue2; border-radius: 5px; outline: 0px;
 
+	//Size bug fix
+	box-sizing: border-box;
+
 	//Focus
 	&:focus { border: 1px solid $blue1; }
 }
