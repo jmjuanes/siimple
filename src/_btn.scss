@@ -20,6 +20,12 @@
 	//Button block definition
 	display: inline-block; cursor: hand; border-radius: 5px;
 
+	//Transitions
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+
 	//Button hover
 	&:hover { text-decoration: none; }
 }

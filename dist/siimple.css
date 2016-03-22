@@ -134,6 +134,10 @@ h6 {
   display: inline-block;
   cursor: hand;
   border-radius: 5px;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
   color: #ffffff;
   background-color: #09a0f6;
   border: 0px; }
@@ -173,6 +177,10 @@ h6 {
     display: inline-block;
     cursor: hand;
     border-radius: 5px;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
     color: #09a0f6;
     background-color: transparent;
     border: 1px solid #09a0f6; }
@@ -277,6 +285,10 @@ pre {
     display: inline-block;
     cursor: hand;
     border-radius: 5px;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
     color: #ffffff;
     background-color: #09a0f6;
     border: 0px; }
