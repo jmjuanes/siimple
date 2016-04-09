@@ -1,5 +1,8 @@
 # ChangeLog
 
+### v1.3.3 (April 9, 2016)
+- Fix another bug on grid.
+
 ### v1.3.2 (April 9, 2016)
 - Fix bug on grid (issue #4).
 
