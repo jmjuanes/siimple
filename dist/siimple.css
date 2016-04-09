@@ -1,6 +1,6 @@
 /**
  * siimple - Minimal CSS framework for flat and clean designs.
- * @version v1.3.1
+ * @version v1.3.2
  * @link https://siimple.github.io/
  * @license MIT
  */
@@ -367,7 +367,7 @@ pre {
     line-height: 0; }
 
 .col-1 {
-  width: 6.33%;
+  width: "6.33%";
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -377,7 +377,7 @@ pre {
       width: 98%; } }
 
 .col-2 {
-  width: 14.66%;
+  width: "14.66%";
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -387,7 +387,7 @@ pre {
       width: 98%; } }
 
 .col-3 {
-  width: 22.99%;
+  width: "22.99%";
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -397,7 +397,7 @@ pre {
       width: 98%; } }
 
 .col-4 {
-  width: 31.33%;
+  width: "31.33%";
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -407,7 +407,7 @@ pre {
       width: 98%; } }
 
 .col-5 {
-  width: 39.66%;
+  width: "39.66%";
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -417,7 +417,7 @@ pre {
       width: 98%; } }
 
 .col-6 {
-  width: 47.99%;
+  width: "47.99%";
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -427,7 +427,7 @@ pre {
       width: 98%; } }
 
 .col-7 {
-  width: 56.33%;
+  width: "56.33%";
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -437,7 +437,7 @@ pre {
       width: 98%; } }
 
 .col-8 {
-  width: 64.66%;
+  width: "64.66%";
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -447,7 +447,7 @@ pre {
       width: 98%; } }
 
 .col-9 {
-  width: 72.99%;
+  width: "72.99%";
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -457,7 +457,7 @@ pre {
       width: 98%; } }
 
 .col-10 {
-  width: 81.33%;
+  width: "81.33%";
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -467,7 +467,7 @@ pre {
       width: 98%; } }
 
 .col-11 {
-  width: 89.66%;
+  width: "89.66%";
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -477,7 +477,7 @@ pre {
       width: 98%; } }
 
 .col-12 {
-  width: 97.99%;
+  width: "97.99%";
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -488,73 +488,73 @@ pre {
 
 @media (max-width: 500px) {
   .col-sm-1 {
-    width: 6.33%;
+    width: "6.33%";
     display: inline-block;
     vertical-align: top;
     float: left;
     padding: 1%; }
   .col-sm-2 {
-    width: 14.66%;
+    width: "14.66%";
     display: inline-block;
     vertical-align: top;
     float: left;
     padding: 1%; }
   .col-sm-3 {
-    width: 22.99%;
+    width: "22.99%";
     display: inline-block;
     vertical-align: top;
     float: left;
     padding: 1%; }
   .col-sm-4 {
-    width: 31.33%;
+    width: "31.33%";
     display: inline-block;
     vertical-align: top;
     float: left;
     padding: 1%; }
   .col-sm-5 {
-    width: 39.66%;
+    width: "39.66%";
     display: inline-block;
     vertical-align: top;
     float: left;
     padding: 1%; }
   .col-sm-6 {
-    width: 47.99%;
+    width: "47.99%";
     display: inline-block;
     vertical-align: top;
     float: left;
     padding: 1%; }
   .col-sm-7 {
-    width: 56.33%;
+    width: "56.33%";
     display: inline-block;
     vertical-align: top;
     float: left;
     padding: 1%; }
   .col-sm-8 {
-    width: 64.66%;
+    width: "64.66%";
     display: inline-block;
     vertical-align: top;
     float: left;
     padding: 1%; }
   .col-sm-9 {
-    width: 72.99%;
+    width: "72.99%";
     display: inline-block;
     vertical-align: top;
     float: left;
     padding: 1%; }
   .col-sm-10 {
-    width: 81.33%;
+    width: "81.33%";
     display: inline-block;
     vertical-align: top;
     float: left;
     padding: 1%; }
   .col-sm-11 {
-    width: 89.66%;
+    width: "89.66%";
     display: inline-block;
     vertical-align: top;
     float: left;
     padding: 1%; }
   .col-sm-12 {
-    width: 97.99%;
+    width: "97.99%";
     display: inline-block;
     vertical-align: top;
     float: left;
