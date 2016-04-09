@@ -35,24 +35,19 @@ $cols: (1,'6.33%'),(2,'14.66%'),(3,'22.99%'),(4,'31.33%'),(5,'39.66%'),(6,'47.99
 @each $i,$w in $cols
 {
   //Add the column style
-	.col-#{$i}
+	.col-#{$i}, .col-sm-#{$i}
   {
     //Default column style
-    width: $w; display: inline-block; vertical-align: top; float: left; padding: 1%;
-
-    //Media style
-    @media(max-width: 500px){ width: 98%; }
+    width: unquote($w); display: inline-block; vertical-align: top; float: left; padding: 1%;
   }
 }
 
-@media(max-width: 500px){
+//Media column style
+@media(max-width: 500px)
+{
   @each $i,$w in $cols
   {
     //Add the column style
-    .col-sm-#{$i}
-    {
-      //Default column style
-      width: $w; display: inline-block; vertical-align: top; float: left; padding: 1%;
-    }
+    .col-#{$i} { width: 98%; }
   }
 }
