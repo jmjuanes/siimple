@@ -1,5 +1,8 @@
 # ChangeLog
 
+### v1.3.2 (April 9, 2016)
+- Fix bug on grid (issue #4).
+
 ### v1.3.1 (February 17, 2016)
 - Fix bug on font-size (issue #2).
 
