@@ -122,6 +122,7 @@ h6 {
   font-weight: 300;
   text-align: center;
   text-decoration: none !important;
+  text-cursor: pointer;
   line-height: 28px;
   margin-left: 5px;
   margin-right: 5px;
@@ -132,7 +133,7 @@ h6 {
   padding-top: 5px;
   padding-bottom: 5px;
   display: inline-block;
-  cursor: hand;
+  cursor: pointer;
   border-radius: 5px;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -140,7 +141,13 @@ h6 {
   transition: all 0.2s;
   color: #ffffff;
   background-color: #09a0f6;
-  border: 0px; }
+  border: 0px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
   .btn:hover {
     text-decoration: none; }
   .btn:hover {
@@ -165,6 +172,7 @@ h6 {
     font-weight: 300;
     text-align: center;
     text-decoration: none !important;
+    text-cursor: pointer;
     line-height: 28px;
     margin-left: 5px;
     margin-right: 5px;
@@ -175,7 +183,7 @@ h6 {
     padding-top: 5px;
     padding-bottom: 5px;
     display: inline-block;
-    cursor: hand;
+    cursor: pointer;
     border-radius: 5px;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
@@ -274,6 +282,7 @@ pre {
     font-weight: 300;
     text-align: center;
     text-decoration: none !important;
+    text-cursor: pointer;
     line-height: 28px;
     margin-left: 5px;
     margin-right: 5px;
@@ -284,7 +293,7 @@ pre {
     padding-top: 5px;
     padding-bottom: 5px;
     display: inline-block;
-    cursor: hand;
+    cursor: pointer;
     border-radius: 5px;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
