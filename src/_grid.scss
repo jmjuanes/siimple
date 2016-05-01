@@ -21,7 +21,7 @@
 .row
 {
   //Row style
-  display: block; width: 100%; margin: { left: 0px; right: 0px; }
+  display: inline-block; width: 100%; margin: { left: 0px; right: 0px; }
 
   //Row after
   &:after { content: " "; clear: both; display: table; line-height: 0; }
@@ -35,7 +35,7 @@ $cols: (1,'6.33%'),(2,'14.66%'),(3,'22.99%'),(4,'31.33%'),(5,'39.66%'),(6,'47.99
 @each $i,$w in $cols
 {
   //Add the column style
-	.col-#{$i}, .col-sm-#{$i}
+	.col-#{$i}
   {
     //Default column style
     width: unquote($w); display: inline-block; vertical-align: top; float: left; padding: 1%;
@@ -43,7 +43,7 @@ $cols: (1,'6.33%'),(2,'14.66%'),(3,'22.99%'),(4,'31.33%'),(5,'39.66%'),(6,'47.99
 }
 
 //Media column style
-@media(max-width: 500px)
+@media(max-width: 400px)
 {
   @each $i,$w in $cols
   {
