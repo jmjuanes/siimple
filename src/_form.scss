@@ -11,7 +11,7 @@
 	@include defaultFont;
 
 	//Form display
-	display: inline-block;
+	display: inline-block; width: 100%; transition: all 0.3s;
 
 	//Form text style
 	color: $grey1;
@@ -29,33 +29,23 @@
 	&:focus { border: 1px solid $blue1; }
 }
 
-//Form default transition
-@mixin defaultFormTransition
-{
-	//Transition
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
 //Form
 .form
 {
 	//Form input
 	&-input
 	{
-		//Default form input style
-		@include defaultForm; @include defaultFormTransition; width: 100%; height: 40px;
+		//Form input
+		&[type="text"], &[type="password"], &[type="number"] { @include defaultForm; line-height: 40px; height: 40px; }
 
 		//Form input date
-		&[type="date"] { width: auto; }
+		&[type="date"] { @include defaultForm; width: auto !important; height: 40px; }
 
 		//Form input disabled
-		&[disabled] { cursor: not-allowed; background-color: $blue2; }
+		&[disabled] { @include defaultForm; cursor: not-allowed; background-color: $blue2; height: 40px; }
 
 		//Form input submit
-		&[type="submit"]
+		&[type="submit"], &[type="button"]
 		{
 			//Load the default button style
 			@include defaultBtn;
@@ -69,11 +59,11 @@
 	}
 
 	//Form select
-	&-select { @include defaultForm; width: 100%; padding-top: 6px; height: 40px; background-color: $white; }
+	&-select { @include defaultForm; padding-top: 6px; height: 40px; background-color: $white; }
 
 	//Form textarea
-	&-textarea { @include defaultForm; width: 100%; resize: vertical; }
+	&-textarea { @include defaultForm;resize: vertical; }
 
 	//Form width auto
-	&-auto { width: auto; }
+	&-auto { width: auto !important; }
 }
