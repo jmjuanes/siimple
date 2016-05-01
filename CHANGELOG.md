@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v1.3.4 (May 1, 2016)
+- Disable text selectable in button (pull request #5, thanks @icetee)
+- Fix outline button small and big styles.
+- Fix form input style.
+
 ### v1.3.3 (April 9, 2016)
 - Fix another bug on grid.
 
