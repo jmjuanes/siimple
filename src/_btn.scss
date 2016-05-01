@@ -11,14 +11,14 @@
 	@include defaultFont;
 
 	//Text style
-	text: { align: center; decoration: none !important; } line-height: 28px;
+	text: { align: center; decoration: none !important; cursor: pointer; } line-height: 28px;
 
 	//Button margin and padding
 	margin: { left: 5px; right: 5px; top: 5px; bottom: 20px; }
 	padding: { left: 25px; right: 25px; top: 5px; bottom: 5px; }
 
 	//Button block definition
-	display: inline-block; cursor: hand; border-radius: 5px;
+	display: inline-block; cursor: pointer; border-radius: 5px;
 
 	//Transitions
 	-webkit-transition: all 0.2s;
@@ -60,6 +60,9 @@
 		//Outline button hover
 		&:hover { color: $white; background-color: $blue1; }
 	}
+
+	//Disable text selection in button
+	@include no-select(none);
 }
 
 //Button colors
