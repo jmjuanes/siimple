@@ -13,18 +13,17 @@
 	//Text style
 	text: { align: center; decoration: none !important; cursor: pointer; } line-height: 28px;
 
-	//Button margin and padding
+	//Margin
 	margin: { left: 5px; right: 5px; top: 5px; bottom: 20px; }
+
+	//Padding
 	padding: { left: 25px; right: 25px; top: 5px; bottom: 5px; }
 
 	//Button block definition
 	display: inline-block; cursor: pointer; border-radius: 5px;
 
 	//Transitions
-	-webkit-transition: all 0.2s;
-	-moz-transition: all 0.2s;
-	-o-transition: all 0.2s;
-	transition: all 0.2s;
+	transition: all 0.3s;
 
 	//Button hover
 	&:hover { text-decoration: none; }
@@ -43,10 +42,24 @@
 	&:hover { opacity: 0.8; }
 
 	//Button small
-	&-small { font-size: 14px; line-height: 20px; padding: { top: 4px; bottom: 4px; left: 15px; right: 15px; } }
+	&-small
+	{
+		//Text
+		font-size: 14px !important; line-height: 20px !important;
+
+		//Padding
+		padding: { top: 4px !important; bottom: 4px !important; left: 15px !important; right: 15px !important; }
+	}
 
 	//Button big
-	&-big { font-size: 22px; line-height: 34px; padding: { top: 8px; bottom: 8px; left: 30px; right: 30px; } }
+	&-big
+	{
+		//Text
+		font-size: 22px !important; line-height: 34px !important;
+
+		//Padding
+		padding: { top: 8px !important; bottom: 8px !important; left: 30px !important; right: 30px !important; }
+	}
 
 	//Outline button
 	&-outline
@@ -63,22 +76,4 @@
 
 	//Disable text selection in button
 	@include no-select(none);
-}
-
-//Button colors
-$btn_colors: ('red' ,$red1 ,$white),
-						 ('green' ,$green1 ,$white),
-						 ('orange' ,$orange1 ,$white),
-						 ('white' ,$white ,$black),
-						 ('black' ,$black ,$white);
-
-.btn
-{
-	@each $i,$w,$t in $btn_colors
-	{
-		&-#{$i}
-		{
-			background-color: #{$w}; color: #{$t};
-		}
-	}
 }
