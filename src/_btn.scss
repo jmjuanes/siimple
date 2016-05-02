@@ -10,6 +10,9 @@
 	//Include the default text style
 	@include defaultFont;
 
+	//Disable text selection in button
+	@include no-select(none);
+
 	//Text style
 	text: { align: center; decoration: none !important; cursor: pointer; } line-height: 28px;
 
@@ -73,7 +76,4 @@
 		//Outline button hover
 		&:hover { color: $white; background-color: $blue1; }
 	}
-
-	//Disable text selection in button
-	@include no-select(none);
 }
