@@ -1,6 +1,6 @@
 {
   "name": "siimple",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Minimal CSS framework for flat and clean designs.",
   "style": "dist/siimple.css",
   "main": "dist/siimple.css",
