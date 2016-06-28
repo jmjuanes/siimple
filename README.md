@@ -1,4 +1,4 @@
-[![Siimple](http://siimple.github.io/img/siimple.png)](https://siimple.github.io/)
+[![Siimple](http://siimple.juanes.xyz/img/siimple.png)](http://siimple.juanes.xyz/)
 
 # Siimple
 
@@ -22,7 +22,7 @@ There are three ways to download **Siimple**:
 - Download the latest release: [https://github.com/siimple/siimple/releases](https://github.com/siimple/siimple/releases).
 - Clone the repo: `git clone https://github.com/siimple/siimple.git`.
 
-For more information about **Siimple**, please visit the [Siimple homepage](https://siimple.github.io) and read the [getting started](https://siimple.github.io/getting-started) guide or the [reference](https://siimple.github.io/reference).
+For more information about **Siimple**, please visit the [Siimple homepage](http://siimple.juanes.xyz) and read the [getting started](http://siimple.juanes.xyz/getting-started) guide or the [reference](http://siimple.juanes.xyz/reference).
 
 ## Build
 
