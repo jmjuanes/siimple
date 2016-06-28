@@ -2,7 +2,7 @@
   "name": "siimple",
   "main": "dist/siimple.css",
   "author": "Josemi Juanes <josemijuanes@gmail.com>",
-  "homepage": "https://siimple.github.io",
+  "homepage": "http://siimple.juanes.xyz",
   "ignore": [ "package.json", "**/.*" ],
   "repository": { "type": "git", "url": "https://github.com/siimple/siimple.git" },
   "license": "MIT",
