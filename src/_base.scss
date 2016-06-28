@@ -7,6 +7,9 @@
 //Default font block
 @mixin defaultFont { font: { family: 'OpenSans', 'Open Sans'; size: 16px; weight: 300; } }
 
+//Import OpenSans from Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300');
+
 //Heart
 .heart{ &:after { content: "\2764"; color: #f45660; } }
 
