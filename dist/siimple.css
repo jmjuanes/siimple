@@ -1,10 +1,11 @@
 /**
  * siimple - Minimal CSS framework for flat and clean designs.
- * @version v1.3.4
- * @link https://siimple.github.io/
+ * @version v1.3.5
+ * @link https://siimple.juanes.xyz/
  * @license MIT
  */
 
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300");
 .heart:after {
   content: "\2764";
   color: #f45660; }
@@ -13,7 +14,7 @@ body {
   color: #526475;
   margin: 0px;
   padding: 0px;
-  font-family: 'OpenSans', 'Open Sans';
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 300;
   background-color: #ffffff; }
@@ -117,9 +118,15 @@ h6 {
     border-color: #4CAF50; }
 
 .btn {
-  font-family: 'OpenSans', 'Open Sans';
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 300;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   text-align: center;
   text-decoration: none !important;
   text-cursor: pointer;
@@ -138,13 +145,7 @@ h6 {
   transition: all 0.3s;
   color: #ffffff;
   background-color: #09a0f6;
-  border: 0px;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
+  border: 0px; }
   .btn:hover {
     text-decoration: none; }
   .btn:hover {
@@ -164,9 +165,15 @@ h6 {
     padding-left: 30px !important;
     padding-right: 30px !important; }
   .btn-outline {
-    font-family: 'OpenSans', 'Open Sans';
+    font-family: 'Open Sans';
     font-size: 16px;
     font-weight: 300;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     text-align: center;
     text-decoration: none !important;
     text-cursor: pointer;
@@ -193,7 +200,7 @@ h6 {
       background-color: #09a0f6; }
 
 code {
-  font-family: 'OpenSans', 'Open Sans';
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 300;
   border-radius: 5px;
@@ -205,7 +212,7 @@ code {
   padding-right: 6px; }
 
 pre {
-  font-family: 'OpenSans', 'Open Sans';
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 300;
   display: block;
@@ -223,7 +230,7 @@ pre {
   overflow-x: auto; }
 
 .form-input[type="text"], .form-input[type="password"], .form-input[type="number"] {
-  font-family: 'OpenSans', 'Open Sans';
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 300;
   display: inline-block;
@@ -245,7 +252,7 @@ pre {
     border: 1px solid #09a0f6; }
 
 .form-input[type="date"] {
-  font-family: 'OpenSans', 'Open Sans';
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 300;
   display: inline-block;
@@ -267,7 +274,7 @@ pre {
     border: 1px solid #09a0f6; }
 
 .form-input[disabled] {
-  font-family: 'OpenSans', 'Open Sans';
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 300;
   display: inline-block;
@@ -290,9 +297,15 @@ pre {
     border: 1px solid #09a0f6; }
 
 .form-input[type="submit"], .form-input[type="button"] {
-  font-family: 'OpenSans', 'Open Sans';
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 300;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   text-align: center;
   text-decoration: none !important;
   text-cursor: pointer;
@@ -318,7 +331,7 @@ pre {
     opacity: 0.8; }
 
 .form-select {
-  font-family: 'OpenSans', 'Open Sans';
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 300;
   display: inline-block;
@@ -341,7 +354,7 @@ pre {
     border: 1px solid #09a0f6; }
 
 .form-textarea {
-  font-family: 'OpenSans', 'Open Sans';
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 300;
   display: inline-block;
