@@ -5,7 +5,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 //Disable selection
-@mixin no-select($select) {
+@mixin no-select($select)
+{
   -webkit-touch-callout: $select;
   -webkit-user-select: $select;
   -khtml-user-select: $select;
