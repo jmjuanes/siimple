@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 //Default font block
-@mixin defaultFont { font: { family: 'OpenSans', 'Open Sans'; size: 16px; weight: 300; } }
+@mixin defaultFont { font: { family: 'Open Sans'; size: 16px; weight: 300; } }
 
 //Import OpenSans from Google Fonts
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300');
