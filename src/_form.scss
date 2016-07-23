@@ -36,7 +36,7 @@
 	&-input
 	{
 		//Form input
-		&[type="text"], &[type="password"], &[type="number"] { @include defaultForm; line-height: 40px; height: 40px; }
+		&[type="text"], &[type="password"], &[type="number"], &[type="email"] { @include defaultForm; line-height: 40px; height: 40px; }
 
 		//Form input date
 		&[type="date"] { @include defaultForm; width: auto !important; height: 40px; }

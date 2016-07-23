@@ -229,7 +229,7 @@ pre {
 pre {
   overflow-x: auto; }
 
-.form-input[type="text"], .form-input[type="password"], .form-input[type="number"] {
+.form-input[type="text"], .form-input[type="password"], .form-input[type="number"], .form-input[type="email"] {
   font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 300;
@@ -248,7 +248,7 @@ pre {
   box-sizing: border-box;
   line-height: 40px;
   height: 40px; }
-  .form-input[type="text"]:focus, .form-input[type="password"]:focus, .form-input[type="number"]:focus {
+  .form-input[type="text"]:focus, .form-input[type="password"]:focus, .form-input[type="number"]:focus, .form-input[type="email"]:focus {
     border: 1px solid #09a0f6; }
 
 .form-input[type="date"] {
