@@ -2,7 +2,7 @@
 var fs = require('fs');
 var gulp = require('gulp');
 var concat = require('gulp-concat');
-var minify = require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
 var sass = require('gulp-sass');
@@ -42,8 +42,11 @@ gulp.task('minimize', function(){
   //Set the source file
   gulp.src('dist/siimple.css')
 
-  //MinifCss
-  .pipe(minify())
+  //CleanCss
+  .pipe(cleanCSS({
+    compatibility: 'ie8',
+    processImportFrom: ['!fonts.googleapis.com']
+  }))
 
   //Save as siimple.min.css
   .pipe(rename('siimple.min.css'))
