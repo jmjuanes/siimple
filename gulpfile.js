@@ -1,4 +1,5 @@
 //Import dependencies
+var autoprefixer = require('gulp-autoprefixer');
 var fs = require('fs');
 var gulp = require('gulp');
 var concat = require('gulp-concat');
@@ -28,6 +29,12 @@ gulp.task('build', function(){
   //Build
   .pipe(sass().on('error', sass.logError))
 
+  //Autoprefix
+  .pipe(autoprefixer({
+      browsers: ['last 3 versions', 'IE 9'],
+      cascade: false
+  }))
+
   //Add the header
   .pipe(header(banner, { pkg : pkg } ))
 
@@ -44,7 +51,7 @@ gulp.task('minimize', function(){
 
   //CleanCss
   .pipe(cleanCSS({
-    compatibility: 'ie8',
+    compatibility: '*',
     processImportFrom: ['!fonts.googleapis.com']
   }))
 

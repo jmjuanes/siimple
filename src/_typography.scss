@@ -11,7 +11,7 @@ a
 	color: $blue1; font-weight: normal; text-decoration: none; transition: all 0.3s;
 
 	//Link hover style
-	&:hover { text-decoration: underline; cursor: hand; }
+	&:hover { text-decoration: underline; cursor: pointer; }
 }
 
 //Paragraph
