@@ -41,6 +41,34 @@
 		//Form input date
 		&[type="date"] { @include defaultForm; width: auto !important; height: 40px; }
 
+		//Form label
+		& + label { cursor: pointer; padding: 5px; line-height: 40px; }
+		& + label:before
+		{
+			content: "";
+			transition: all 0.3s;
+			background: transparent;
+			border: 1px solid $blue2;
+			display: inline-block;
+			height: 16px; width: 16px; //Same for square effect
+			margin-right: 5px;
+			vertical-align: middle;
+		}
+
+		//Form input radio & checkbox
+		&[type="radio"], &[type="checkbox"]
+		{
+			//Hide the default checkbox or radio
+			display: none;
+
+			&:checked + label:before { display: inline-block;	background-color: $blue1;	border-color: $blue1;	}
+
+		}
+
+		//border-radius differs for each input type
+		&[type="radio"] + label:before { border-radius: 50%; }
+		&[type="checkbox"] + label:before {	border-radius: 5px;	}
+
 		//Form input disabled
 		&[disabled] { @include defaultForm; cursor: not-allowed; background-color: $blue2; height: 40px; }
 
@@ -51,7 +79,7 @@
 			@include defaultBtn;
 
 			//Button style
-			color: $white; background-color: $blue1; border: 0px;
+			color: $white; background-color: $blue1; background-size: 3px; border: 0px;
 
 			//Hover
 			&:hover { opacity: 0.8; }
@@ -66,4 +94,5 @@
 
 	//Form width auto
 	&-auto { width: auto !important; }
+
 }
