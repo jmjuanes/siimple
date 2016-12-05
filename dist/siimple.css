@@ -1,10 +1,3 @@
-/**
- * siimple - Minimal CSS framework for flat and clean designs.
- * @version v1.3.7
- * @link https://siimple.juanes.xyz/
- * @license MIT
- */
-
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300");
 .heart:after {
   content: "\2764";
@@ -244,7 +237,6 @@ pre {
   height: 40px; }
   .form-input[type="text"]:focus, .form-input[type="password"]:focus, .form-input[type="number"]:focus, .form-input[type="email"]:focus {
     border: 1px solid #09a0f6; }
-
 .form-input[type="date"] {
   font-family: 'Open Sans';
   font-size: 16px;
@@ -266,7 +258,30 @@ pre {
   height: 40px; }
   .form-input[type="date"]:focus {
     border: 1px solid #09a0f6; }
-
+.form-input + label {
+  cursor: pointer;
+  padding: 5px;
+  line-height: 40px; }
+.form-input + label:before {
+  content: "";
+  transition: all 0.3s;
+  background: transparent;
+  border: 1px solid #d1e1e8;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin-right: 5px;
+  vertical-align: middle; }
+.form-input[type="radio"], .form-input[type="checkbox"] {
+  display: none; }
+  .form-input[type="radio"]:checked + label:before, .form-input[type="checkbox"]:checked + label:before {
+    display: inline-block;
+    background-color: #09a0f6;
+    border-color: #09a0f6; }
+.form-input[type="radio"] + label:before {
+  border-radius: 50%; }
+.form-input[type="checkbox"] + label:before {
+  border-radius: 5px; }
 .form-input[disabled] {
   font-family: 'Open Sans';
   font-size: 16px;
@@ -289,7 +304,6 @@ pre {
   height: 40px; }
   .form-input[disabled]:focus {
     border: 1px solid #09a0f6; }
-
 .form-input[type="submit"], .form-input[type="button"] {
   font-family: 'Open Sans';
   font-size: 16px;
@@ -315,12 +329,12 @@ pre {
   transition: all 0.3s;
   color: #ffffff;
   background-color: #09a0f6;
+  background-size: 3px;
   border: 0px; }
   .form-input[type="submit"]:hover, .form-input[type="button"]:hover {
     text-decoration: none; }
   .form-input[type="submit"]:hover, .form-input[type="button"]:hover {
     opacity: 0.8; }
-
 .form-select {
   font-family: 'Open Sans';
   font-size: 16px;
@@ -343,7 +357,6 @@ pre {
   background-color: #ffffff; }
   .form-select:focus {
     border: 1px solid #09a0f6; }
-
 .form-textarea {
   font-family: 'Open Sans';
   font-size: 16px;
@@ -364,7 +377,6 @@ pre {
   resize: vertical; }
   .form-textarea:focus {
     border: 1px solid #09a0f6; }
-
 .form-auto {
   width: auto !important; }
 
@@ -478,29 +490,39 @@ pre {
 @media (max-width: 400px) {
   .col-1 {
     width: 98%; }
+
   .col-2 {
     width: 98%; }
+
   .col-3 {
     width: 98%; }
+
   .col-4 {
     width: 98%; }
+
   .col-5 {
     width: 98%; }
+
   .col-6 {
     width: 98%; }
+
   .col-7 {
     width: 98%; }
+
   .col-8 {
     width: 98%; }
+
   .col-9 {
     width: 98%; }
+
   .col-10 {
     width: 98%; }
+
   .col-11 {
     width: 98%; }
+
   .col-12 {
     width: 98%; } }
-
 .table {
   display: table;
   width: 100%;
@@ -519,3 +541,5 @@ pre {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px; }
+
+/*# sourceMappingURL=siimple.css.map */
