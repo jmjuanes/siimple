@@ -1,46 +1,48 @@
-//////////////////////////////////////////////////////////////////////////////////
-//  Siimple - Minimal CSS framework for flat and clean designs.
-//  http://siimple.github.io
-//  Under the MIT License
-//////////////////////////////////////////////////////////////////////////////////
+//Siimple color palette
+$siimple-palette:
+(
+  navy:    #57607c,
+  grey:    #bac4da,
+  green:   #1add9f,
+  teal:    #18d2ba,
+  blue:    #4C98F2,
+  purple:  #b490f5,
+  magenta: #f45b93,
+  red:     #ff1a4f,
+  orange:  #ff8463,
+  yellow:  #ffc107,
+  white:   #ffffff
+);
 
-//Grey colors
-$grey1: #526475; //Used as default text color
-$grey2: #6a7e95; //Used as small text color
-$grey3: #f1f5fa; //Used for blocks background
+//navy color
+$siimple-navy: map-get($siimple-palette, navy);
 
-//Blue colors
-$blue1: #09a0f6;
-$blue2: #d1e1e8;
+//Grey color
+$siimple-grey: map-get($siimple-palette, grey);
 
-//Button Colors
-$green1: #7CB342;
-$green2: darken($green1 ,10%);
-$red1: #F44336;
-$red2: darken($red1 ,10%);
-$orange1: #F57C00;
-$orange2: darken($orange1 ,10%);
+//Green color
+$siimple-green: map-get($siimple-palette, green);
 
-//Default colors
-$white: #ffffff;
-$black: #000000;
+//Teal color
+$siimple-teal: map-get($siimple-palette, teal);
 
-//Default alert color
-$alert-default: #03A9F4;
-$alert-default-bg: #E1F5FE;
-$alert-default-border: #03A9F4;
+//Blue color
+$siimple-blue: map-get($siimple-palette, blue);
 
-//Error alert color
-$alert-error: #D32F2F;
-$alert-error-bg: #FFEBEE;
-$alert-error-border: #F44336;
+//Purple color
+$siimple-purple: map-get($siimple-palette, purple);
 
-//Warning alert color
-$alert-warning: #FF8F00;
-$alert-warning-bg: #FFF8E1;
-$alert-warning-border: #FFC107;
+//Magenta color
+$siimple-magenta: map-get($siimple-palette, magenta);
 
-//Done alert color
-$alert-done: #388E3C;
-$alert-done-bg: #E8F5E9;
-$alert-done-border: #4CAF50;
+//Read color
+$siimple-red: map-get($siimple-palette, red);
+
+//Orange color
+$siimple-orange: map-get($siimple-palette, orange);
+
+//Yellow color
+$siimple-yellow: map-get($siimple-palette, yellow);
+
+//White color
+$siimple-white: map-get($siimple-palette, white);
