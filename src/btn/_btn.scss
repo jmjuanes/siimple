@@ -1,0 +1,32 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
+
+//Button mixin
+@mixin siimple-btn
+{
+  //Display
+  display: inline-block; height: 30px; transition: all 0.3s;
+
+  //Text
+  line-height: 30px; text: { align: center; decoration: none; }
+
+  //Text font
+  @include siimple-font; font-weight: bold; font-size: $siimple-font-normal;
+
+  //Padding
+  padding: { left: 10px; right: 10px; }
+
+  //Border
+  border-radius: $siimple-border-radius;
+
+  //Disable user selection
+  @include siimple-utils-select(none);
+
+  //Hover
+  &:hover { cursor: hand; opacity: 0.8; text-decoration: none; }
+}
