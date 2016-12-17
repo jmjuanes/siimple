@@ -15,6 +15,9 @@
   //Text
   line-height: 30px; text: { align: center; decoration: none; }
 
+  //Cursor
+  cursor: pointer;
+
   //Text font
   @include siimple-font; font-weight: bold; font-size: $siimple-font-normal;
 
@@ -28,5 +31,18 @@
   @include siimple-utils-select(none);
 
   //Hover
-  &:hover { cursor: hand; opacity: 0.8; text-decoration: none; }
+  &:hover { opacity: 0.8; text-decoration: none; }
+
+  //Disabled button
+  &--disabled
+  {
+    //Backbround color
+    background-color: $siimple-grey !important;
+
+    //Text color
+    color: $siimple-navy !important;
+
+    //Cursor
+    cursor: disabled !important;
+  }
 }
