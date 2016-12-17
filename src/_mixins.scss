@@ -1,14 +1,26 @@
-//////////////////////////////////////////////////////////////////////////////////
-//  Siimple - Minimal CSS framework for flat and clean designs.
-//  http://siimple.github.io
-//  Under the MIT License
-//////////////////////////////////////////////////////////////////////////////////
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
 
-//Disable selection
-@mixin no-select($select)
-{
-  -webkit-touch-callout: $select;
-  -khtml-user-select: $select;
-  -moz-user-select: $select;
-  -ms-user-select: $select;
-}
+//Import variables
+@import "_variables.scss";
+
+//Import colors
+@import "_colors.scss";
+
+//Import font
+@import "_font.scss";
+
+//Import utils
+@import "_utils.scss";
+
+//Import typography
+@import "typography/_blockquote.scss";
+@import "typography/_code.scss";
+@import "typography/_heading.scss";
+@import "typography/_list.scss";
+@import "typography/_text.scss";
