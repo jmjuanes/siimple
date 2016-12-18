@@ -24,3 +24,13 @@
 @import "typography/_heading.scss";
 @import "typography/_list.scss";
 @import "typography/_text.scss";
+
+//Import form elements
+@import "form/_input.scss";
+@import "form/_textarea.scss";
+
+//Import buttons
+@import "btn/_btn.scss";
+
+//Import grid
+@import "grid/_grid.scss";
