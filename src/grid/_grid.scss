@@ -37,21 +37,21 @@
     &:after { content: " "; clear: both; display: table; line-height: 0; }
   }
 
+  //Column
+  &-col
+  {
+    //Display
+    display: inline-block; vertical-align: top; float: left;
+
+    //Padding
+    padding: 1%;
+  }
+
   //Read all the list
   @each $i,$w in $siimple-grid-columns
   {
     //Add the column style
-    &-col--#{$i}
-    {
-      //Display
-      display: inline-block; vertical-align: top; float: left;
-
-      //Column width
-      width: unquote($w);
-
-      //Padding
-      padding: 1%;
-    }
+    &-col--#{$i} { width: unquote($w); }
   }
 
   //Media column style
