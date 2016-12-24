@@ -1,35 +1,36 @@
-//////////////////////////////////////////////////////////////////////////////////
-//  Siimple - Minimal CSS framework for flat and clean designs.
-//  http://siimple.github.io
-//  Under the MIT License
-//////////////////////////////////////////////////////////////////////////////////
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
+
+//Import Montserrat from Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 //Import mixins
-@import "mixins";
+@import "_mixins.scss";
 
-//Import colors
-@import "colors";
+//Siimple class
+.siimple
+{
+  //Alert elements 
+  &-alert { @include siimple-alert; }
 
-//Import the base
-@import "base";
+  //Buttons
+  &-btn
+  {
+    //Include default button style
+    @include siimple-btn;
+  }
 
-//Import typography: p, headings, links...
-@import "typography";
+  //Input element
+  &-input, &-select { @include siimple-input; }
 
-//Import the alerts module
-@import "alert";
+  //Textarea element
+  &-textarea { @include siimple-textarea; }
 
-//Import buttons
-@import "btn";
-
-//Import code boxes
-@import "code";
-
-//Import form module
-@import "form";
-
-//Import the grid system for siimple
-@import "grid";
-
-//Import the table module
-@import "table";
+  //Grid element
+  &-grid { @include siimple-grid; }
+}
