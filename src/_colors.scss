@@ -59,7 +59,7 @@ $siimple-white: map-get($siimple-palette, white);
 @mixin siimple-background
 {
   //For each color in the list
-  @each $colo,$hex in $siimple-palette
+  @each $color,$hex in $siimple-palette
   {
     //Set the background color
     &--#{$color}{ background-color: $hex; }
@@ -70,7 +70,7 @@ $siimple-white: map-get($siimple-palette, white);
 @mixin siimple-color
 {
   //For each color in the list
-  @each $colo,$hex in $siimple-palette
+  @each $color,$hex in $siimple-palette
   {
     //Set the color
     &--#{$color}{ color: $hex; }
