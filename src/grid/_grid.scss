@@ -57,10 +57,7 @@
   //Media column style
   @media(max-width: 400px)
   {
-    @each $i,$w in $siimple-grid-columns
-    {
-      //Add the column style
-      &-col--#{$i} { width: 98%; }
-    }
+    //Add the column style
+    &-col { width: 98% !important; }
   }
 }
