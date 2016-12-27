@@ -54,3 +54,25 @@ $siimple-yellow: map-get($siimple-palette, yellow);
 
 //White color
 $siimple-white: map-get($siimple-palette, white);
+
+//Background colors mixin
+@mixin siimple-background
+{
+  //For each color in the list
+  @each $colo,$hex in $siimple-palette
+  {
+    //Set the background color
+    &--#{$color}{ background-color: $hex; }
+  }
+}
+
+//Text color mixin
+@mixin siimple-color
+{
+  //For each color in the list
+  @each $colo,$hex in $siimple-palette
+  {
+    //Set the color
+    &--#{$color}{ color: $hex; }
+  }
+}
