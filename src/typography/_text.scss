@@ -30,7 +30,7 @@
 @mixin siimple-link
 {
   //Text
-  @include siimple-font; color: $siimple-navy; font-weight: bold; text-decoration: none;
+  @include siimple-font; color: $siimple-navy; font-weight: bold; text-decoration: underline;
 
   //Transition
   transition: all 0.3s;
