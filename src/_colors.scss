@@ -19,7 +19,8 @@ $siimple-palette:
   orange:  #ff8463,
   yellow:  #ffc107,
   white:   #ffffff,
-  grey:    #e9effb
+  grey:    #e9effb,
+  grey-dark: #bac4da
 );
 
 //navy color
@@ -54,6 +55,9 @@ $siimple-white: map-get($siimple-palette, white);
 
 //Grey color
 $siimple-grey: map-get($siimple-palette, grey);
+
+//Dark grey color
+$siimple-grey-dark: map-get($siimple-palette, grey-dark);
 
 //Colors mixin
 @mixin siimple-colors
