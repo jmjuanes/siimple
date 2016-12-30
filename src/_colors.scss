@@ -10,23 +10,20 @@
 $siimple-palette:
 (
   navy:    #57607c,
-  grey:    #bac4da,
   green:   #1add9f,
   teal:    #18d2ba,
-  blue:    #4C98F2,
+  blue:    #4c98f2,
   purple:  #b490f5,
-  magenta: #f45b93,
+  pink:    #f45b93,
   red:     #ff1a4f,
   orange:  #ff8463,
   yellow:  #ffc107,
-  white:   #ffffff
+  white:   #ffffff,
+  grey:    #e9effb
 );
 
 //navy color
 $siimple-navy: map-get($siimple-palette, navy);
-
-//Grey color
-$siimple-grey: map-get($siimple-palette, grey);
 
 //Green color
 $siimple-green: map-get($siimple-palette, green);
@@ -40,8 +37,8 @@ $siimple-blue: map-get($siimple-palette, blue);
 //Purple color
 $siimple-purple: map-get($siimple-palette, purple);
 
-//Magenta color
-$siimple-magenta: map-get($siimple-palette, magenta);
+//Pink color
+$siimple-pink: map-get($siimple-palette, pink);
 
 //Read color
 $siimple-red: map-get($siimple-palette, red);
@@ -55,8 +52,38 @@ $siimple-yellow: map-get($siimple-palette, yellow);
 //White color
 $siimple-white: map-get($siimple-palette, white);
 
+//Grey color
+$siimple-grey: map-get($siimple-palette, grey);
+
+//Colors mixin
+@mixin siimple-colors
+{
+  //For each color in the list
+  @each $color,$hex in $siimple-palette
+  {
+    //Color class
+    &--#{$color}
+    {
+      //Set the background color
+      background-color: $hex;
+
+      //Check the text color
+      @if $color == grey or $color == white
+      {
+        //Set the navy text color
+        color: $siimple-navy;
+      }
+      @else
+      {
+        //Set the white text color
+        color: $siimple-white;
+      }
+    }
+  }
+}
+
 //Background colors mixin
-@mixin siimple-background
+@mixin siimple-colors-background
 {
   //For each color in the list
   @each $color,$hex in $siimple-palette
@@ -67,7 +94,7 @@ $siimple-white: map-get($siimple-palette, white);
 }
 
 //Text color mixin
-@mixin siimple-color
+@mixin siimple-colors-text
 {
   //For each color in the list
   @each $color,$hex in $siimple-palette
