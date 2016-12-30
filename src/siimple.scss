@@ -15,6 +15,12 @@
 //Siimple class
 .siimple
 {
+  //Text color
+  &-color { @include siimple-colors-text; }
+
+  //Background color
+  &-background, &-bg { @include siimple-colors-background; }
+
   //Blockquote
   &-blockquote { @include siimple-blockquote; }
 
@@ -49,7 +55,7 @@
   &-p, &-paragraph { @include siimple-paragraph; }
 
   //Links
-  &-a, &-link { @include siimple-link; } 
+  &-a, &-link { @include siimple-link; }
 
   //Alert elements
   &-alert { @include siimple-alert; }
@@ -59,6 +65,9 @@
   {
     //Include default button style
     @include siimple-btn;
+
+    //Add the button colors
+    @include siimple-colors;
   }
 
   //Input element
@@ -66,6 +75,9 @@
 
   //Textarea element
   &-textarea { @include siimple-textarea; }
+
+  //Label element
+  &-label { @include siimple-label; }
 
   //Grid element
   &-grid { @include siimple-grid; }
