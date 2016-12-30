@@ -70,6 +70,9 @@
     @include siimple-colors;
   }
 
+  //Checkbox
+  &-checkbox { @include siimple-checkbox; } 
+
   //Input element
   &-input, &-select { @include siimple-input; }
 
