@@ -13,7 +13,7 @@
   display: block;
 
   //Size
-  width: calc(100% - 20px);
+  width: calc(100% - 30px);
 
   //Text
   @include siimple-font; color: $siimple-navy; line-height: 20px;
@@ -25,7 +25,7 @@
   background-color: $siimple-grey;
 
   //Padding
-  padding: { top: 10px; bottom: 10px; left: 10px; right: 10px; }
+  padding: { top: 15px; bottom: 15px; left: 15px; right: 15px; }
 
   //Margin
   margin: { top: 10px; bottom: 10px; }
