@@ -7,6 +7,7 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
 var sass = require('gulp-sass');
+var del = require('del');
 
 //Import the package
 var pkg = require('./package.json');
@@ -24,6 +25,13 @@ banner.push(' ');
 
 //Join the banner
 banner = banner.join('\n');
+
+//Clean the dist folder
+gulp.task('clean', function()
+{
+  //Clean the dist folder
+  return del.sync([ './dist/**' ]);
+});
 
 //Build the SCSS files
 gulp.task('build', function()
@@ -48,13 +56,13 @@ gulp.task('build', function()
 gulp.task('minimize', function()
 {
   //Set the source file
-  gulp.src('dist/siimple.css')
+  gulp.src('dist/*.css')
 
   //Clean the css
   .pipe(cleanCSS({ compatibility: '*', processImportFrom: ['!fonts.googleapis.com'] }))
 
   //Rename the file
-  .pipe(rename('siimple.min.css'))
+  .pipe(rename({ extname: '.min.css' }))
 
   //Add the header
   .pipe(header(banner, { pkg : pkg } ))
@@ -64,4 +72,4 @@ gulp.task('minimize', function()
 });
 
 //Execute the tasks
-gulp.task('default', ['build', 'minimize']);
+gulp.task('default', [ 'clean', 'build' ]);
