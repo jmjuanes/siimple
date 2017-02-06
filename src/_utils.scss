@@ -10,7 +10,7 @@
 //Mixin by @icetee (PR #5) and edited by @dyzajash (PR #11)
 @mixin siimple-utils-select($select)
 {
-  -webkit-touch-callout: $select;
+  -webkit-user-select: $select;
   -khtml-user-select: $select;
   -moz-user-select: $select;
   -ms-user-select: $select;
