@@ -12,37 +12,122 @@
 
 ## Getting started
 
-- Using [npm](http://npmjs.org/package/siimple): `npm install siimple`.
-- Using [bower](http://bower.io): `bower install siimple`.
-- Download the latest release: [https://github.com/siimple/siimple/releases](https://github.com/siimple/siimple/releases).
-- Clone the repo: `git clone https://github.com/siimple/siimple.git`.
+First, install **siimple** in your project using one of the following methods:
 
-## Reference
+### Using npm
 
-Take a look at the [siimple documentation](http://siimple.juanes.xyz).
+Install the latest version from [npm](http://npmjs.org/package/siimple):
 
-## Build
-
-By default, you have a compiled version of **Siimple** in the `dist/` folder. Nevertheless, you can build your local copy of **Siimple** in two steps. First, install the dev-dependencies using **npm**:
-
-```sh
-npm install
+```
+npm install --save siimple
 ```
 
-Then, build the **Siimple** source code (placed in `src/`) using **Gulp**:
+### Using bower
 
-```sh
-gulp default
+Install the latest version from [bower](http://bower.io):
+
+```
+bower install siimple
 ```
 
-This will generate a compiled version in `dist/` folder.
+### Clone the git repository
+
+You can also clone the git repository hosted on [GitHub](https://github.com/siimple/siimple):
+
+```
+git clone https://github.com/siimple/siimple.git
+```
+
+## Usage
+
+The main `css` file is located in the `dist/` folder. Include it on every `HTML` file of your project by adding the following tag:
+
+```
+<link rel="stylesheet" type="text/css" href="./path/to/siimple/dist/siimple.css">
+```
+
+Or you can use the hosted version on [jsDelivr](https://www.jsdelivr.com/projects/siimple):
+
+```
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/siimple/VERSION/siimple.min.css">
+```
+
+Guides and reference are published in [siimple.juanes.xyz/docs](http://siimple.juanes.xyz/docs). Take a look and start creating your web page!
+
+## Using the SCSS/SASS mixins
+
+You can use the source mixins located in the `src/` folder. You need also the **siimple-colors**.
+
+#### Install using npm
+
+This is the easy way. Simply run the following command:
+
+```
+npm install siimple
+```
+
+This will download **siimple** and **siimple-colors** in the `node_modules` folder. You can then include all the mixins adding the following line to your `.scss` file:
+
+```
+@import "./node_modules/siimple/src/_mixins.scss";
+```
+
+#### Install using bower
+
+Run the following command:
+
+```
+bower install siimple siimple-colors
+```
+
+And then include all the mixins adding the following line to your `.scss` file:
+
+```
+@import "./bower_components/siimple/src/_mixins.scss";
+```
+
+#### Install cloning the repository 
+
+
+This will include all the mixins of the **siimple** framework.
+
+**IMPORTANT NOTE**: this package needs the [siimple-colors](https://github.com/siimple/siimple-colors) framework located at the same level:
+
+- If you installed **siimple** using `npm`, **siimple-colors** is installed too.
+- If you installed **siimple** using `bower`, yo must run `bower install siimple-colors`.
+- If you cloned the repository, you must clone the **siimple-colors** repository too at the same level.
+
+## Build siimple
+
+First, install [gulp](http://gulpjs.com) globally:
+
+```
+npm install -g gulp
+```
+
+Then, clone this repository:
+
+```
+git clone https://github.com/siimple/siimple.git
+```
+
+and also clone the **siimple-colors** repository at the same parent folder:
+
+```
+git clone https://github.com/siimple/siimple-colors.git
+```
+
+
+
+
+This will generate a compiled version in the `dist/` folder.
 
 
 ## Contribute
 
 Thanks a lot for taking the time to contribute to the **siimple** project! :blush::tada:
 
-We follow the [Contributor Covenant code of conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. 
+We follow the [Contributor Covenant code of conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
 
 ## License
