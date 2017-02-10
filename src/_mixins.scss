@@ -6,11 +6,11 @@
 // Website:    http://siimple.juanes.xyz
 //
 
+//Import colors
+@import "../../siimple-colors/src/_mixins.scss";
+
 //Import variables
 @import "_variables.scss";
-
-//Import colors
-@import "_colors.scss";
 
 //Import font
 @import "_font.scss";
@@ -39,3 +39,6 @@
 
 //Import grid
 @import "grid/_grid.scss";
+
+//Main mixin
+@import "_index.scss";
