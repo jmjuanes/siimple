@@ -1,28 +1,25 @@
-[![Siimple](http://siimple.juanes.xyz/img/siimple.png)](http://siimple.juanes.xyz/)
-
-# Siimple
+# siimple
 
 [![npm](https://img.shields.io/npm/v/siimple.svg?style=flat-square)](https://www.npmjs.com/package/siimple)
 [![npm](https://img.shields.io/npm/dt/siimple.svg?style=flat-square)](https://www.npmjs.com/package/siimple)
 [![devDependency Status](https://david-dm.org/siimple/siimple/dev-status.svg?style=flat-square)](https://david-dm.org/siimple/siimple#info=devDependencies)
+[![npm](https://img.shields.io/npm/l/siimple.svg?style=flat-square)](https://github.com/siimpl/siimple)
 
 
 ## About
 
-**Siimple** is a minimal and light CSS framework for flat and clean designs created by [Josemi Juanes](http://jm.juanes.xyz), and built using SASS/SCSS. The result is a clean starting point for your front-end developments with a 5Kb minimized version.
-
-NOTE: **Siimple** wasn't created for competing with Bootstrap.
+**siimple** is a minimal and light CSS framework for flat and clean designs built using SASS/SCSS. The result is a clean starting point for your front-end developments with a 5Kb minimized version.
 
 ## Getting started
-
-There are three ways to download **Siimple**:
 
 - Using [npm](http://npmjs.org/package/siimple): `npm install siimple`.
 - Using [bower](http://bower.io): `bower install siimple`.
 - Download the latest release: [https://github.com/siimple/siimple/releases](https://github.com/siimple/siimple/releases).
 - Clone the repo: `git clone https://github.com/siimple/siimple.git`.
 
-For more information about **Siimple**, please visit the [Siimple homepage](http://siimple.juanes.xyz) and read the [getting started](http://siimple.juanes.xyz/getting-started) guide or the [reference](http://siimple.juanes.xyz/reference).
+## Reference
+
+Take a look at the [siimple documentation](http://siimple.juanes.xyz).
 
 ## Build
 
@@ -43,8 +40,11 @@ This will generate a compiled version in `dist/` folder.
 
 ## Contribute
 
-You can contribute with **Siimple** installing it and submitting issues and pull requests :)
+Thanks a lot for taking the time to contribute to the **siimple** project! :blush::tada:
+
+We follow the [Contributor Covenant code of conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. 
+
 
 ## License
 
-**Siimple** is under the [MIT](LICENSE) license.
+**siimple** is under the [MIT](LICENSE) license. &copy; Josemi Juanes.
