@@ -86,17 +86,6 @@ And then include all the mixins adding the following line to your `.scss` file:
 @import "./bower_components/siimple/src/_mixins.scss";
 ```
 
-#### Install cloning the repository 
-
-
-This will include all the mixins of the **siimple** framework.
-
-**IMPORTANT NOTE**: this package needs the [siimple-colors](https://github.com/siimple/siimple-colors) framework located at the same level:
-
-- If you installed **siimple** using `npm`, **siimple-colors** is installed too.
-- If you installed **siimple** using `bower`, yo must run `bower install siimple-colors`.
-- If you cloned the repository, you must clone the **siimple-colors** repository too at the same level.
-
 ## Build siimple
 
 First, install [gulp](http://gulpjs.com) globally:
