@@ -106,15 +106,24 @@ and also clone the **siimple-colors** repository at the same parent folder:
 git clone https://github.com/siimple/siimple-colors.git
 ```
 
+Now, `cd` to the **siimple** repository and install all the dependencies using `npm`:
 
+```
+cd ./siimple
+npm install
+```
 
+Use `gulp` to compile the SCSS files and generate the `.css` files in the `dist/` folder running the following commands
 
-This will generate a compiled version in the `dist/` folder.
+```
+gulp build:scss
+gulp minimize
+```
 
 
 ## Contribute
 
-Thanks a lot for taking the time to contribute to the **siimple** project! :blush::tada:
+First, thanks a lot for taking the time to contribute to the **siimple** project! :blush::tada:
 
 We follow the [Contributor Covenant code of conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
