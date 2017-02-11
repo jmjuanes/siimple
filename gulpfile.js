@@ -34,10 +34,10 @@ gulp.task('clean', function()
 });
 
 //Build the SCSS files
-gulp.task('build', function()
+gulp.task('build:scss', function()
 {
   //Select all the SCSS files
-  gulp.src('src/**/*.scss')
+  gulp.src('scss/**/*.scss')
 
   //Build the scss files
   .pipe(sass().on('error', sass.logError))
@@ -70,6 +70,9 @@ gulp.task('minimize', function()
   //Save on the dist folder
   .pipe(gulp.dest('dist/'));
 });
+
+//Build task
+gulp.task('build', [ 'build:scss' ]);
 
 //Execute the tasks
 gulp.task('default', [ 'clean', 'build' ]);
