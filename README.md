@@ -56,7 +56,7 @@ Guides and reference are published in [siimple.juanes.xyz/docs](http://siimple.j
 
 ## Using the SCSS/SASS mixins
 
-You can use the source mixins located in the `src/` folder. You need also the **siimple-colors**.
+You can use the SASS/SCSS mixins located in the `scss/` folder. You need also the **siimple-colors**.
 
 #### Install using npm
 
@@ -69,7 +69,7 @@ npm install siimple
 This will download **siimple** and **siimple-colors** in the `node_modules` folder. You can then include all the mixins adding the following line to your `.scss` file:
 
 ```
-@import "./node_modules/siimple/src/_mixins.scss";
+@import "./node_modules/siimple/scss/_mixins.scss";
 ```
 
 #### Install using bower
@@ -83,7 +83,7 @@ bower install siimple siimple-colors
 And then include all the mixins adding the following line to your `.scss` file:
 
 ```
-@import "./bower_components/siimple/src/_mixins.scss";
+@import "./bower_components/siimple/scss/_mixins.scss";
 ```
 
 ## Build siimple
