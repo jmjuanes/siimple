@@ -123,9 +123,7 @@ gulp minimize
 
 ## Contribute
 
-First, thanks a lot for taking the time to contribute to the **siimple** project! :blush::tada:
-
-We follow the [Contributor Covenant code of conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+We appreciate all contributions to the **siimple** project and help make it better! Please, read the [contributing guidelines](./CONTRIBUTING.md) before starting your contribution.
 
 
 ## License
