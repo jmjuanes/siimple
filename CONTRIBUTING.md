@@ -6,7 +6,7 @@ Here you have the guidelines that you must read before start contributing to **s
 
 ### Code of Conduct
 
-You must follow and read the [code of conduct](./CODE_OF_CONDUCT.md) of **siimple**.
+You must read and follow the [code of conduct](./CODE_OF_CONDUCT.md) of **siimple**.
 
 ### Questions or problems
 
