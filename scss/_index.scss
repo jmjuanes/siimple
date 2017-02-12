@@ -1,0 +1,81 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
+
+//Main mixin
+@mixin siimple
+{
+  //Text color
+  &-color { @include siimple-color-attribute("color"); }
+
+  //Background color
+  &-background, &-bg { @include siimple-color-attribute("background-color"); }
+
+  //Blockquote
+  &-blockquote { @include siimple-blockquote; }
+
+  //Code element
+  &-code { @include siimple-code; }
+
+  //Pre element
+  &-pre { @include siimple-pre; }
+
+  //Heading 1
+  &-h1, &-heading1 { @include siimple-heading-1; }
+
+  //Heading 2
+  &-h2, &-heading2 { @include siimple-heading-2; }
+
+  //Heading 3
+  &-h3, &-heading3 { @include siimple-heading-3; }
+
+  //Heading 4
+  &-h4, &-heading4 { @include siimple-heading-4; }
+
+  //Heading 5
+  &-h5, &-heading5 { @include siimple-heading-5; }
+
+  //Heading 6
+  &-h6, &-heading6 { @include siimple-heading-6; }
+
+  //Small text
+  &-small { @include siimple-small; }
+
+  //Paragraph
+  &-p, &-paragraph { @include siimple-paragraph; }
+
+  //Links
+  &-a, &-link { @include siimple-link; }
+
+  //Alert elements
+  &-alert { @include siimple-alert; }
+
+  //Buttons
+  &-btn
+  {
+    //Include default button style
+    @include siimple-btn;
+
+    //Add the button colors
+    @include siimple-color-attribute-background();
+  }
+
+  //Checkbox
+  &-checkbox { @include siimple-checkbox; }
+
+  //Input element
+  &-input, &-select { @include siimple-input; }
+
+  //Textarea element
+  &-textarea { @include siimple-textarea; }
+
+  //Label element
+  &-label { @include siimple-label; }
+
+  //Grid element
+  &-grid { @include siimple-grid; }
+}

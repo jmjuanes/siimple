@@ -1,0 +1,105 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
+
+//Heading base
+@mixin siimple-heading
+{
+  //Display
+  display: block;
+
+  //Default font
+  @include siimple-font; font-weight: bold; color: $siimple-navy;
+
+  //Margins
+  margin: { top: 20px; left: 0px; right: 0px; }
+
+  //Padding
+  padding: 0px;
+}
+
+//Heading 1
+@mixin siimple-heading-1
+{
+  //Include the default heading style
+  @include siimple-heading;
+
+  //Font size
+  font-size: 45px;
+
+  //Margin bottom
+  margin-bottom: 20px;
+}
+
+//Heading 2
+@mixin siimple-heading-2
+{
+  //Include the default heading style
+  @include siimple-heading;
+
+  //Font size
+  font-size: 35px;
+
+  //Margin bottom
+  margin-bottom: 20px;
+}
+
+
+//Heading 3
+@mixin siimple-heading-3
+{
+  //Include the default heading style
+  @include siimple-heading;
+
+  //Font size
+  font-size: 25px;
+
+  //Margin bottom
+  margin-bottom: 18px;
+}
+
+
+//Heading 4
+@mixin siimple-heading-4
+{
+  //Include the default heading style
+  @include siimple-heading;
+
+  //Font size
+  font-size: 22px;
+
+  //Margin bottom
+  margin-bottom: 16px;
+}
+
+
+//Heading 5
+@mixin siimple-heading-5
+{
+  //Include the default heading style
+  @include siimple-heading;
+
+  //Font size
+  font-size: 20px;
+
+  //Margin bottom
+  margin-bottom: 14px;
+}
+
+
+//Heading 6
+@mixin siimple-heading-6
+{
+  //Include the default heading style
+  @include siimple-heading;
+
+  //Font size
+  font-size: 18px;
+
+  //Margin bottom
+  margin-bottom: 12px;
+}

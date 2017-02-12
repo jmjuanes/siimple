@@ -1,0 +1,39 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
+
+//Default border radius
+$siimple-border-radius: 5px;
+
+//Deault normal font size
+$siimple-font-normal: 16px;
+
+//Default small font size
+$siimple-font-small: 14px;
+
+//Default button font size
+$siimple-font-btn: 14px;
+
+//Default element margin top
+$siimple-margin-top: 0px;
+
+//Default element margin bottom
+$siimple-margin-bottom: 10px;
+
+//Default line height
+$siimple-lh: 26px;
+
+//Columns list
+$siimple-grid-columns:
+(
+  (1,'6.33%'), (2,'14.66%'),
+  (3,'22.99%'), (4,'31.33%'),
+  (5,'39.66%'), (6,'47.99%'),
+  (7,'56.33%'), (8,'64.66%'),
+  (9,'72.99%'), (10,'81.33%'),
+  (11,'89.66%'), (12,'97.99%')
+);

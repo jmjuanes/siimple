@@ -1,0 +1,20 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
+
+//Import Montserrat from Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+//Import mixins
+@import "_mixins.scss";
+
+//Siimple class
+.siimple
+{
+  //Include the main mixin
+  @include siimple;
+}

@@ -1,0 +1,26 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
+
+//Blockquote
+@mixin siimple-blockquote
+{
+  //Display
+  display: block;
+
+  //Text style
+  @include siimple-font; color: $siimple-grey-0; font-size: $siimple-font-normal;
+
+  //Border
+  border: { left: 4px solid $siimple-grey-0; }
+
+  //Padding
+  padding: { top: 10px; bottom: 10px; left: 20px; right: 10px; }
+
+  //Margin
+  margin: { top: 0px; bottom: $siimple-margin-bottom; }
+}

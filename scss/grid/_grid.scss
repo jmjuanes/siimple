@@ -1,0 +1,63 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
+
+//Grid
+@mixin siimple-grid
+{
+  //Grid style
+  display: block;
+
+  //Size
+  width: 100%; min-height: 40px;
+
+  //Margin
+  margin: { left: auto; right: auto; }
+
+  //Grid media
+  @media (max-width: 960px){ width: 94%; }
+
+  //Grid row
+  &-row
+  {
+    //Display
+    display: inline-block;
+
+    //Size
+    width: 100%;
+
+    //Margin
+    margin: { left: 0px; right: 0px; }
+
+    //Row after
+    &:after { content: " "; clear: both; display: table; line-height: 0; }
+  }
+
+  //Column
+  &-col
+  {
+    //Display
+    display: inline-block; vertical-align: top; float: left;
+
+    //Padding
+    padding: 1%;
+  }
+
+  //Read all the list
+  @each $i,$w in $siimple-grid-columns
+  {
+    //Add the column style
+    &-col--#{$i} { width: unquote($w); }
+  }
+
+  //Media column style
+  @media(max-width: 400px)
+  {
+    //Add the column style
+    &-col { width: 98% !important; }
+  }
+}

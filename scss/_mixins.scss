@@ -1,0 +1,44 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
+
+//Import colors
+@import "../../siimple-colors/scss/_mixins.scss";
+
+//Import variables
+@import "_variables.scss";
+
+//Import font
+@import "_font.scss";
+
+//Import utils
+@import "_utils.scss";
+
+//Import typography
+@import "typography/_blockquote.scss";
+@import "typography/_code.scss";
+@import "typography/_heading.scss";
+@import "typography/_list.scss";
+@import "typography/_text.scss";
+
+//Import alert
+@import "alert/_alert.scss";
+
+//Import form elements
+@import "form/_checkbox.scss";
+@import "form/_input.scss";
+@import "form/_label.scss";
+@import "form/_textarea.scss";
+
+//Import buttons
+@import "btn/_btn.scss";
+
+//Import grid
+@import "grid/_grid.scss";
+
+//Main mixin
+@import "_index.scss";

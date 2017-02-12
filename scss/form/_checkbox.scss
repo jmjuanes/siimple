@@ -1,0 +1,66 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
+
+@mixin siimple-checkbox
+{
+  //Display
+  display: inline-block; position: relative;
+
+  //Size
+  width: 16px; height: 16px;
+
+  //Margin
+  margin: { left: 10px; right: 10px; top: 7px; bottom: 7px; }
+
+  //Label style
+  & label
+  {
+    //Display
+    cursor: pointer; position: absolute; top: 0; left: 0; transition: all 0.3s; border-radius: 2px;
+
+    //Size
+    width: 16px; height: 16px;
+
+    //Background color
+    background: $siimple-grey;
+
+    //Tick
+    &:after
+    {
+      //Display
+      opacity: 0.2; content: ''; transform: rotate(-45deg);
+
+      //Transitions
+      transition: all 0.3s;
+
+      //Position
+      position: absolute; top: 3px; left: 3px;
+
+      //Size
+      width: 8px; height: 4px;
+
+      //Background
+      background: transparent;
+
+      //Border
+      border: 2px solid $siimple-navy; border-top: none; border-right: none;
+    }
+
+    //Label hover
+    &:hover::after { opacity: 0.5; }
+  }
+
+  //Input style
+  & input[type=checkbox] { visibility: hidden; }
+
+  //Checked -> change tick
+  & input[type=checkbox]:checked + label:after { opacity: 1; border-color: $siimple-white; }
+
+  //Checked -> change background
+  & input[type=checkbox]:checked + label { background-color: $siimple-green; }
+}

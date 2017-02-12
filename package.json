@@ -1,12 +1,12 @@
 {
   "name": "siimple",
-  "version": "1.3.7",
+  "version": "2.0.0",
   "description": "Minimal CSS framework for flat and clean designs.",
   "style": "dist/siimple.css",
   "main": "dist/siimple.css",
   "author": "Josemi Juanes <josemijuanes@gmail.com>",
   "license": "MIT",
-  "homepage": "https://siimple.juanes.xyz/",
+  "homepage": "http://siimple.juanes.xyz/",
   "repository": {
     "type": "git",
     "url": "https://github.com/siimple/siimple.git"
@@ -24,13 +24,15 @@
     "websites",
     "responsive"
   ],
+  "dependencies": { "siimple-colors": "0.0.2" },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-clean-css": "^2.0.12",
-    "gulp-concat": "^2.6.0",
-    "gulp-header": "^1.8.8",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2"
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "3.1.1",
+    "gulp-clean-css": "3.0.2",
+    "gulp-concat": "2.6.1",
+    "gulp-header": "1.8.8",
+    "gulp-rename": "1.2.2",
+    "gulp-sass": "3.1.0",
+    "del": "2.2.2"
   }
 }
