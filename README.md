@@ -8,7 +8,7 @@
 
 ## About
 
-**siimple** is a minimal and light CSS framework for flat and clean designs built using SASS/SCSS. The result is a clean starting point for your front-end developments with a 5Kb minimized version.
+**siimple** is a light, responsive and open source framework for design flat and clean websites. It has built in SASS/SCSS and provides a clean starting point for your web design.
 
 ## Getting started
 
