@@ -10,6 +10,8 @@
 
 **siimple** is a light, responsive and open source framework for design flat and clean websites. It has built in SASS/SCSS and provides a clean starting point for your web design.
 
+You can find the documentation and the reference guide in https://siimple.juanes.xyz/docs 
+
 ## Getting started
 
 First, install **siimple** in your project using one of the following methods:
