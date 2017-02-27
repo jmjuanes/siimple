@@ -247,6 +247,7 @@
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 5px;
+  border: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
