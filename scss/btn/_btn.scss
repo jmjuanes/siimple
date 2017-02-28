@@ -27,6 +27,9 @@
   //Border
   border-radius: $siimple-border-radius;
 
+  //Disable default button element borders
+  border: none;
+
   //Disable user selection
   @include siimple-utils-select(none);
 
