@@ -6,5 +6,9 @@
   "ignore": [ "package.json", "**/.*" ],
   "repository": { "type": "git", "url": "https://github.com/siimple/siimple.git" },
   "license": "MIT",
-  "keywords": [ "siimple", "css", "framework", "jmjuanes", "minimal", "flat", "clean", "websites", "responsive" ]
+  "keywords": [ "siimple", "css", "framework", "jmjuanes", "minimal", "flat", "clean", "websites", "responsive" ],
+  "dependencies":
+  {
+    "siimple-colors": "0.1.0"
+  }
 }
