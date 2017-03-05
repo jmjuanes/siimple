@@ -40,7 +40,7 @@ gulp.task('build:scss', function()
   gulp.src('scss/**/*.scss')
 
   //Build the scss files
-  .pipe(sass().on('error', sass.logError))
+  .pipe(sass({ includePaths: [ 'bower_components', 'node_modules' ] }).on('error', sass.logError))
 
   //Autoprefix
   .pipe(autoprefixer({ browsers: ['last 3 versions', 'IE 9'], cascade: false }))
