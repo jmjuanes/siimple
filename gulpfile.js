@@ -56,7 +56,7 @@ gulp.task('build:scss', function()
 gulp.task('minimize', function()
 {
   //Set the source file
-  gulp.src('dist/*.css')
+  gulp.src('dist/siimple.css')
 
   //Clean the css
   .pipe(cleanCSS({ compatibility: '*', processImportFrom: ['!fonts.googleapis.com'] }))
