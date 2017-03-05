@@ -44,13 +44,13 @@ git clone https://github.com/siimple/siimple.git
 
 The main `css` file is located in the `dist/` folder. Include it on every `HTML` file of your project by adding the following tag:
 
-```
+```html
 <link rel="stylesheet" type="text/css" href="./path/to/siimple/dist/siimple.css">
 ```
 
 Or you can use the hosted version on [jsDelivr](https://www.jsdelivr.com/projects/siimple):
 
-```
+```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/siimple/VERSION/siimple.min.css">
 ```
 
