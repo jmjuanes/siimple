@@ -10,11 +10,19 @@
 
 **siimple** is a light, responsive and open source framework for design flat and clean websites. It has built in SASS/SCSS and provides a clean starting point for your web design.
 
-You can find the documentation and the reference guide in https://siimple.juanes.xyz/docs 
+You can find the documentation and the reference guide in https://siimple.juanes.xyz/docs
 
 ## Getting started
 
 First, install **siimple** in your project using one of the following methods:
+
+### Using bower (recomended)
+
+Install the latest version from [bower](http://bower.io):
+
+```
+bower install siimple --save
+```
 
 ### Using npm
 
@@ -22,14 +30,6 @@ Install the latest version from [npm](http://npmjs.org/package/siimple):
 
 ```
 npm install --save siimple
-```
-
-### Using bower
-
-Install the latest version from [bower](http://bower.io):
-
-```
-bower install siimple
 ```
 
 ### Clone the git repository
@@ -58,35 +58,20 @@ Guides and reference are published in [siimple.juanes.xyz/docs](http://siimple.j
 
 ## Using the SCSS/SASS mixins
 
-You can use the SASS/SCSS mixins located in the `scss/` folder. You need also the **siimple-colors**.
-
-#### Install using npm
-
-This is the easy way. Simply run the following command:
+You can use the SASS/SCSS mixins located in the `scss/` folder. For this, first install **siimple** and all his dependencies using [bower](http://bower.io):
 
 ```
-npm install siimple
+bower install siimple
 ```
 
-This will download **siimple** and **siimple-colors** in the `node_modules` folder. You can then include all the mixins adding the following line to your `.scss` file:
+This will create a folder called `bower_components` with the latest version of **siimple** and **siimple-colors**. Then, import the mixins in your `.scss` files by adding the following line:
 
-```
-@import "./node_modules/siimple/scss/_mixins.scss";
-```
-
-#### Install using bower
-
-Run the following command:
-
-```
-bower install siimple siimple-colors
+```sass
+@import "siimple/scss/_mixins.scss"
 ```
 
-And then include all the mixins adding the following line to your `.scss` file:
+Remember that you must add the `bower_components` components to the SASS [load_paths](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#load_paths-option) option. If you are using [libsass](https://github.com/sass/node-sass#includepaths) with [gulp](http://gulpjs.com), here is an example of usage: https://github.com/siimple/siimple/blob/master/gulpfile.js#L43.
 
-```
-@import "./bower_components/siimple/scss/_mixins.scss";
-```
 
 ## Build siimple
 
@@ -102,32 +87,34 @@ Then, clone this repository:
 git clone https://github.com/siimple/siimple.git
 ```
 
-and also clone the **siimple-colors** repository at the same parent folder:
+Now, `cd` to the **siimple** repository and install all the develop dependencies using `npm`:
 
 ```
-git clone https://github.com/siimple/siimple-colors.git
-```
-
-Now, `cd` to the **siimple** repository and install all the dependencies using `npm`:
-
-```
-cd ./siimple
 npm install
 ```
 
-Use `gulp` to compile the SCSS files and generate the `.css` files in the `dist/` folder running the following commands
+Install also the `scss` dependencies using `bower`:
 
 ```
-gulp build:scss
+bower install
+```
+
+Use `gulp` to compile the SCSS files and generate the `.css` files in the `dist/` folder running the following command
+
+```
+gulp clean build
+```
+
+Also, you can generate the minimized version by running:
+
+```
 gulp minimize
 ```
-
 
 ## Contribute
 
 We appreciate all contributions to the **siimple** project and help make it better! Please, read the [contributing guidelines](./CONTRIBUTING.md) before starting your contribution.
 
-
 ## License
 
-**siimple** is under the [MIT](LICENSE) license. &copy; Josemi Juanes.
+**siimple** is under the [MIT](LICENSE) license. &copy; The **siimple team**.
