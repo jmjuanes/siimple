@@ -48,7 +48,10 @@
   @each $i,$w in $siimple-grid-columns
   {
     //Add the column style
-    &-col--#{$i} { width: unquote($w); }
+    &-col--#{$i} { width: calc(#{$w} - 10px); }
+
+    //First child style
+    &-col--#{$i}:first-child { width: unquote($w); }
   }
 
   //Media column style
