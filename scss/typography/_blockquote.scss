@@ -13,10 +13,10 @@
   display: block;
 
   //Text style
-  @include siimple-font; color: $siimple-grey-0; font-size: $siimple-font-normal;
+  @include siimple-font; color: $siimple-navy-4; font-size: $siimple-font-normal;
 
   //Border
-  border: { left: 4px solid $siimple-grey-0; }
+  border: { left: 4px solid $siimple-navy-4; }
 
   //Padding
   padding: { top: 10px; bottom: 10px; left: 20px; right: 10px; }
