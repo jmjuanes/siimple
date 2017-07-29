@@ -7,13 +7,13 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
 var sass = require('gulp-sass');
-var del = require('del');
+var rmr = require('rmr');
 
 //Import the package
 var pkg = require('./package.json');
 
 //Banner structure
-var banner = []
+var banner = [];
 banner.push('/**');
 banner.push(' * <%= pkg.name %> - <%= pkg.description %>');
 banner.push(' * @version v<%= pkg.version %>');
@@ -30,11 +30,11 @@ banner = banner.join('\n');
 gulp.task('clean', function()
 {
   //Clean the dist folder
-  return del.sync([ './dist/**' ]);
+  return rmr.sync('./dist/');
 });
 
 //Build the SCSS files
-gulp.task('build:scss', function()
+gulp.task('build', function()
 {
   //Select all the SCSS files
   gulp.src('scss/**/*.scss')
@@ -70,9 +70,6 @@ gulp.task('minimize', function()
   //Save on the dist folder
   .pipe(gulp.dest('dist/'));
 });
-
-//Build task
-gulp.task('build', [ 'build:scss' ]);
 
 //Execute the tasks
 gulp.task('default', [ 'clean', 'build' ]);
