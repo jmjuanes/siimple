@@ -9,52 +9,46 @@
 //Grid
 @mixin siimple-grid
 {
-  //Grid style
   display: block;
-
-  //Size
-  width: 100%; min-height: 40px;
-
-  //Margin
+  width: 100%;
+  min-height: 40px;
   margin: { left: auto; right: auto; }
 
-  //Grid row
+  //Grid row style
   &-row
   {
-    //Display
     display: inline-block;
-
-    //Size
     width: 100%;
-
-    //Margin
     margin: { left: 0px; right: 0px; }
 
     //Row after
-    &:after { content: " "; clear: both; display: table; line-height: 0; }
+    &:after
+    {
+      content: " ";
+      clear: both;
+      display: table;
+      line-height: 0;
+    }
   }
 
-  //Column
+  //Grid column style
   &-col
   {
-    //Display
-    display: inline-block; vertical-align: top; float: left;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin: { left: 10px; right: 10px }
   }
 
-  //Read all the list
+  //12 columns
   @each $i,$w in $siimple-grid-columns
   {
-    //Add the column style
-    &-col--#{$i} { width: calc(#{$w} - 10px); padding-left: 10px; }
-
-    //First child style
-    &-col--#{$i}:first-child { width: unquote($w); padding-left: 0px; }
+    &-col--#{$i} { width: calc(#{$w} - 20px); }
   }
 
   //Media column style
-  @media(max-width: 350px)
+  @media(max-width: 450px)
   {
-    //Add the column style
-    &-col { width: 98% !important; }
+    &-col { width: calc(100% - 20px) !important; }
   }
 }
