@@ -48,14 +48,14 @@
   @each $i,$w in $siimple-grid-columns
   {
     //Add the column style
-    &-col--#{$i} { width: calc(#{$w} - 10px); }
+    &-col--#{$i} { width: calc(#{$w} - 10px); padding-left: 10px; }
 
     //First child style
-    &-col--#{$i}:first-child { width: unquote($w); }
+    &-col--#{$i}:first-child { width: unquote($w); padding-left: 0px; }
   }
 
   //Media column style
-  @media(max-width: 400px)
+  @media(max-width: 350px)
   {
     //Add the column style
     &-col { width: 98% !important; }
