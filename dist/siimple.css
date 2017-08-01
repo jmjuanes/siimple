@@ -1,6 +1,6 @@
 /**
  * siimple - Minimal CSS framework for flat and clean designs.
- * @version v2.0.1
+ * @version v2.0.2
  * @link http://siimple.juanes.xyz/
  * @license MIT
 **/
@@ -75,9 +75,9 @@
 .siimple-blockquote {
   display: block;
   font-family: 'Montserrat', sans-serif;
-  color: #c3d7ef;
-  font-size: 16px;
-  border-left: 4px solid #c3d7ef;
+  color: #8790ab;
+  font-size: 14px;
+  border-left: 4px solid #8790ab;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 20px;
@@ -101,7 +101,7 @@
   overflow-x: auto;
   width: calc(100% - 20px);
   color: #57607c;
-  line-height: 26px;
+  line-height: 20px;
   font-weight: 300;
   font-size: 15px;
   background-color: #ebf2fa;
@@ -192,7 +192,7 @@
 .siimple-p, .siimple-paragraph {
   display: block;
   font-family: 'Montserrat', sans-serif;
-  line-height: 26px;
+  line-height: 20px;
   margin-bottom: 10px;
   margin-top: 0px; }
 
@@ -201,6 +201,8 @@
   color: #57607c;
   font-weight: bold;
   text-decoration: underline;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s; }
   .siimple-a:hover, .siimple-link:hover {
     text-decoration: underline;
@@ -236,6 +238,8 @@
 .siimple-btn {
   display: inline-block;
   height: 30px;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
   line-height: 30px;
   text-align: center;
@@ -307,6 +311,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
     border-radius: 2px;
     width: 16px;
@@ -315,8 +321,11 @@
     .siimple-checkbox label:after {
       opacity: 0.2;
       content: '';
+      -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
       transform: rotate(-45deg);
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
       transition: all 0.3s;
       position: absolute;
       top: 3px;
@@ -365,8 +374,6 @@
   padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-top: 0px;
-  margin-bottom: 10px;
   border: 0px;
   border-radius: 5px;
   outline: 0px;
@@ -393,9 +400,6 @@
   min-height: 40px;
   margin-left: auto;
   margin-right: auto; }
-  @media (max-width: 960px) {
-    .siimple-grid {
-      width: 94%; } }
   .siimple-grid-row {
     display: inline-block;
     width: 100%;
@@ -410,31 +414,32 @@
     display: inline-block;
     vertical-align: top;
     float: left;
-    padding: 1%; }
+    margin-left: 10px;
+    margin-right: 10px; }
   .siimple-grid-col--1 {
-    width: 6.33%; }
+    width: calc(8.33% - 20px); }
   .siimple-grid-col--2 {
-    width: 14.66%; }
+    width: calc(16.66% - 20px); }
   .siimple-grid-col--3 {
-    width: 22.99%; }
+    width: calc(24.99% - 20px); }
   .siimple-grid-col--4 {
-    width: 31.33%; }
+    width: calc(33.33% - 20px); }
   .siimple-grid-col--5 {
-    width: 39.66%; }
+    width: calc(41.66% - 20px); }
   .siimple-grid-col--6 {
-    width: 47.99%; }
+    width: calc(49.99% - 20px); }
   .siimple-grid-col--7 {
-    width: 56.33%; }
+    width: calc(58.33% - 20px); }
   .siimple-grid-col--8 {
-    width: 64.66%; }
+    width: calc(66.66% - 20px); }
   .siimple-grid-col--9 {
-    width: 72.99%; }
+    width: calc(74.99% - 20px); }
   .siimple-grid-col--10 {
-    width: 81.33%; }
+    width: calc(83.33% - 20px); }
   .siimple-grid-col--11 {
-    width: 89.66%; }
+    width: calc(91.66% - 20px); }
   .siimple-grid-col--12 {
-    width: 97.99%; }
-  @media (max-width: 400px) {
+    width: calc(99.99% - 20px); }
+  @media (max-width: 450px) {
     .siimple-grid-col {
-      width: 98% !important; } }
+      width: calc(100% - 20px) !important; } }
