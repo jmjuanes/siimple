@@ -9,40 +9,30 @@
 //Code mixin
 @mixin siimple-code
 {
-  //Text
-  color: $siimple-navy; text-decoration: none; font-size: 15px;
-
-  //Background color
+  color: $siimple-navy;
+  text-decoration: none;
+  font-size: 14px;
   background-color: $siimple-grey;
-
-  //Border
   border-radius: $siimple-border-radius;
 
-  //Padding
   padding: { top: 2px; bottom: 2px; left: 5px; right: 5px; }
 }
 
 //Pre mixin
 @mixin siimple-pre
 {
-  //Display
-  display: block; overflow-x: auto;
-
-  //Size
+  display: block;
+  overflow-x: auto;
   width: calc(100% - 20px);
 
-  //Text
-  color: $siimple-navy; line-height: $siimple-lh; font-weight: 300; font-size: 15px; 
+  color: $siimple-navy;
+  line-height: $siimple-lh;
+  font-weight: 300;
+  font-size: 14px;
 
-  //Background
   background-color: $siimple-grey;
-
-  //Border
   border-radius: $siimple-border-radius;
 
-  //Padding
   padding: 10px;
-
-  //Margin
-  margin: { top: $siimple-margin-top; bottom: $siimple-margin-bottom; left: 0px; right: 0px; }
+  margin: { top: $siimple-margin-top; bottom: $siimple-margin-bottom; }
 }
