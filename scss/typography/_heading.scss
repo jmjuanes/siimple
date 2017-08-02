@@ -9,97 +9,78 @@
 //Heading base
 @mixin siimple-heading
 {
-  //Display
   display: block;
-
-  //Default font
-  @include siimple-font; font-weight: bold; color: $siimple-navy;
-
-  //Margins
-  margin: { top: 20px; left: 0px; right: 0px; }
-
-  //Padding
+  @include siimple-font;
+  font-weight: bold;
+  color: $siimple-navy;
   padding: 0px;
 }
 
 //Heading 1
 @mixin siimple-heading-1
 {
-  //Include the default heading style
   @include siimple-heading;
-
-  //Font size
   font-size: 45px;
-
-  //Margin bottom
+  line-height: 51px;
   margin-bottom: 20px;
+
+  //Not first child
+  &:not(:first-child){ margin-top: 28px; }
 }
 
 //Heading 2
 @mixin siimple-heading-2
 {
-  //Include the default heading style
   @include siimple-heading;
-
-  //Font size
   font-size: 35px;
-
-  //Margin bottom
+  line-height: 40px;
   margin-bottom: 20px;
-}
 
+  //Not first child
+  &:not(:first-child){ margin-top: 28px; }
+}
 
 //Heading 3
 @mixin siimple-heading-3
 {
-  //Include the default heading style
   @include siimple-heading;
-
-  //Font size
   font-size: 25px;
-
-  //Margin bottom
+  line-height: 29px;
   margin-bottom: 18px;
-}
 
+  //Not first child
+  &:not(:first-child){ margin-top: 28px; }
+}
 
 //Heading 4
 @mixin siimple-heading-4
 {
-  //Include the default heading style
   @include siimple-heading;
-
-  //Font size
   font-size: 22px;
-
-  //Margin bottom
+  line-height: 25px;
   margin-bottom: 16px;
-}
 
+  //Not first child
+  &:not(:first-child){ margin-top: 28px; }
+}
 
 //Heading 5
 @mixin siimple-heading-5
 {
-  //Include the default heading style
   @include siimple-heading;
-
-  //Font size
   font-size: 20px;
-
-  //Margin bottom
+  line-height: 22px;
   margin-bottom: 14px;
-}
 
+  //Not first child
+  &:not(:first-child){ margin-top: 28px; }
+}
 
 //Heading 6
 @mixin siimple-heading-6
 {
-  //Include the default heading style
   @include siimple-heading;
-
-  //Font size
   font-size: 18px;
-
-  //Margin bottom
+  line-height: 20px;
   margin-bottom: 12px;
 }
