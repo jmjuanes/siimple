@@ -9,30 +9,27 @@
 //Small text
 @mixin siimple-small
 {
-  //Font
-  @include siimple-font; font-size: $siimple-font-small; color: $siimple-navy;
+  @include siimple-font;
+  font-size: $siimple-font-small;
+  color: $siimple-navy;
 }
 
 //Paragraph
 @mixin siimple-paragraph
 {
-  //Display
   display: block;
-
-  //Text
-  @include siimple-font; line-height: $siimple-lh;
-
-  //Margin
+  @include siimple-font;
+  line-height: $siimple-lh;
   margin: { bottom: $siimple-margin-bottom; top: $siimple-margin-top; }
 }
 
 //Link
 @mixin siimple-link
 {
-  //Text
-  @include siimple-font; color: $siimple-navy; font-weight: bold; text-decoration: underline;
-
-  //Transition
+  @include siimple-font;
+  color: $siimple-navy;
+  font-weight: bold;
+  text-decoration: underline;
   transition: all 0.3s;
 
   //Link hover style
