@@ -76,6 +76,9 @@
   //Input element
   &-input, &-select { @include siimple-input; }
 
+  //Switch element
+  &-switch { @include siimple-switch; }
+
   //Textarea element
   &-textarea { @include siimple-textarea; }
 
