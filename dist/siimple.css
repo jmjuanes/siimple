@@ -83,12 +83,12 @@
   padding-left: 20px;
   padding-right: 10px;
   margin-top: 0px;
-  margin-bottom: 10px; }
+  margin-bottom: 14px; }
 
 .siimple-code {
   color: #57607c;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   background-color: #ebf2fa;
   border-radius: 5px;
   padding-top: 2px;
@@ -101,87 +101,83 @@
   overflow-x: auto;
   width: calc(100% - 20px);
   color: #57607c;
-  line-height: 20px;
+  line-height: 22px;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 14px;
   background-color: #ebf2fa;
   border-radius: 5px;
   padding: 10px;
   margin-top: 0px;
-  margin-bottom: 10px;
-  margin-left: 0px;
-  margin-right: 0px; }
+  margin-bottom: 14px; }
 
 .siimple-h1, .siimple-heading1 {
   display: block;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #57607c;
-  margin-top: 20px;
-  margin-left: 0px;
-  margin-right: 0px;
   padding: 0px;
   font-size: 45px;
+  line-height: 51px;
   margin-bottom: 20px; }
+  .siimple-h1:not(:first-child), .siimple-heading1:not(:first-child) {
+    margin-top: 28px; }
 
 .siimple-h2, .siimple-heading2 {
   display: block;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #57607c;
-  margin-top: 20px;
-  margin-left: 0px;
-  margin-right: 0px;
   padding: 0px;
   font-size: 35px;
+  line-height: 40px;
   margin-bottom: 20px; }
+  .siimple-h2:not(:first-child), .siimple-heading2:not(:first-child) {
+    margin-top: 28px; }
 
 .siimple-h3, .siimple-heading3 {
   display: block;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #57607c;
-  margin-top: 20px;
-  margin-left: 0px;
-  margin-right: 0px;
   padding: 0px;
   font-size: 25px;
+  line-height: 29px;
   margin-bottom: 18px; }
+  .siimple-h3:not(:first-child), .siimple-heading3:not(:first-child) {
+    margin-top: 28px; }
 
 .siimple-h4, .siimple-heading4 {
   display: block;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #57607c;
-  margin-top: 20px;
-  margin-left: 0px;
-  margin-right: 0px;
   padding: 0px;
   font-size: 22px;
+  line-height: 25px;
   margin-bottom: 16px; }
+  .siimple-h4:not(:first-child), .siimple-heading4:not(:first-child) {
+    margin-top: 28px; }
 
 .siimple-h5, .siimple-heading5 {
   display: block;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #57607c;
-  margin-top: 20px;
-  margin-left: 0px;
-  margin-right: 0px;
   padding: 0px;
   font-size: 20px;
+  line-height: 22px;
   margin-bottom: 14px; }
+  .siimple-h5:not(:first-child), .siimple-heading5:not(:first-child) {
+    margin-top: 28px; }
 
 .siimple-h6, .siimple-heading6 {
   display: block;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #57607c;
-  margin-top: 20px;
-  margin-left: 0px;
-  margin-right: 0px;
   padding: 0px;
   font-size: 18px;
+  line-height: 20px;
   margin-bottom: 12px; }
 
 .siimple-small {
@@ -192,8 +188,8 @@
 .siimple-p, .siimple-paragraph {
   display: block;
   font-family: 'Montserrat', sans-serif;
-  line-height: 20px;
-  margin-bottom: 10px;
+  line-height: 22px;
+  margin-bottom: 14px;
   margin-top: 0px; }
 
 .siimple-a, .siimple-link {
