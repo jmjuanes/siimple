@@ -6,21 +6,33 @@
 // Website:    http://siimple.juanes.xyz
 //
 
-//Blockquote
+//Blockquote variables
+$siimple-blockquote-color: $siimple-navy-4;
+$siimple-blockquote-border: 4px;
+
+$siimple-blockquote-padding-top: 10px;
+$siimple-blockquote-padding-bottom: 10px;
+$siimple-blockquote-padding-left: 20px;
+$siimple-blockquote-padding-right: 10px;
+
+$siimple-blockquote-margin-top: 0px;
+$siimple-blockquote-margin-bottom: $siimple-default-margin-bottom;
+
+//Blockquote mixin
 @mixin siimple-blockquote
 {
-  //Display
   display: block;
+  font-family: $siimple-default-text-font;
+  color: $siimple-blockquote-color;
+  font-size: $siimple-default-text-size;
 
-  //Text style
-  @include siimple-font; color: $siimple-navy-4; font-size: $siimple-font-normal;
+  border-left: $siimple-blockquote-border solid $siimple-blockquote-color;
 
-  //Border
-  border: { left: 4px solid $siimple-navy-4; }
+  padding-top: $siimple-blockquote-padding-top;
+  padding-bottom: $siimple-blockquote-padding-bottom;
+  padding-left: $siimple-blockquote-padding-left;
+  padding-right: $siimple-blockquote-padding-right;
 
-  //Padding
-  padding: { top: 10px; bottom: 10px; left: 20px; right: 10px; }
-
-  //Margin
-  margin: { top: 0px; bottom: $siimple-margin-bottom; }
+  margin-top: $siimple-blockquote-padding-top;
+  margin-bottom: $siimple-blockquote-margin-bottom;
 }
