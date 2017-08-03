@@ -6,11 +6,20 @@
 // Website:    http://siimple.juanes.xyz
 //
 
+//Alert variables
+$siimple-alert-padding-top: 10px;
+$siimple-alert-padding-bottom: 10px;
+$siimple-alert-padding-left: 10px;
+$siimple-alert-padding-right: 30px;
+
+$siimple-alert-margin-top: 0px;
+$siimple-alert-margin-bottom: $siimple-default-margin-bottom;
+
 //Alert element
 @mixin siimple-alert
 {
   display: block;
-  width: calc(100% - 30px);
+  width: calc(100% - #{$siimple-alert-padding-left} - #{$siimple-alert-padding-right});
   @include siimple-font;
   color: $siimple-navy;
   line-height: $siimple-lh;
@@ -19,8 +28,13 @@
   border-radius: $siimple-border-radius;
   background-color: $siimple-grey;
 
-  padding: 15px;
-  margin: { top: 0px; bottom: $siimple-margin-bottom; }
+  padding-top: $siimple-alert-padding-top;
+  padding-bottom: $siimple-alert-padding-bottom;
+  padding-left: $siimple-alert-padding-left;
+  padding-right: $siimple-alert-padding-right;
+
+  margin-top: $siimple-alert-margin-top;
+  margin-bottom: $siimple-alert-margin-bottom;
 
   //Warning alert
   &--warning
