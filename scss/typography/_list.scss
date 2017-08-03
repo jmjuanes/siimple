@@ -6,22 +6,22 @@
 // Website:    http://siimple.juanes.xyz
 //
 
+//List variables
+$siimple-list-margin-bottom: 16px;
+$siimple-list-margin-top: 0px;
+
 //List style
 @mixin siimple-list
 {
-  //Line height
-  line-height: $siimple-lh;
+  line-height: $siimple-default-text-line;
+  font-family: $siimple-default-text-font;
 
-  //Text
-  @include siimple-font; 
-
-  //Margin
-  margin: { bottom: 16px; top: 0px; }
+  margin-top: $siimple-list-margin-top;
+  margin-bottom: $siimple-list-margin-bottom;
 
   //Li element
   li
   {
-    //Line height
-    line-height: $siimple-lh;
+    line-height: $siimple-default-text-line;
   }
 }
