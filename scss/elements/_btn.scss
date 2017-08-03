@@ -6,47 +6,56 @@
 // Website:    http://siimple.juanes.xyz
 //
 
+//Button variables
+$siimple-btn-height: 30px;
+$siimple-btn-padding-left: 10px;
+$siimple-btn-padding-right: 10px;
+
+//Button hover variables
+$siimple-btn-hover-opacity: 0.8;
+
+//Button disabled variables
+$siimple-btn-disabled-color: $siimple-navy;
+$siimple-btn-disabled-background: $siimple-grey-0;
+
 //Button mixin
 @mixin siimple-btn
 {
-  //Display
-  display: inline-block; height: 30px; transition: opacity 0.3s;
-
-  //Text
-  line-height: 30px; text: { align: center; decoration: none; }
-
-  //Cursor
+  display: inline-block;
+  height: $siimple-btn-height;
+  transition: opacity 0.3s;
   cursor: pointer;
 
-  //Text font
-  @include siimple-font; font-size: $siimple-font-btn; font-weight: bold;
+  line-height: $siimple-btn-height;
+  text-align: center;
+  text-decoration: none;
+  font-family: $siimple-default-text-font;
+  font-size: $siimple-default-text-size;
+  font-weight: bold;
 
-  //Padding
-  padding: { left: 10px; right: 10px; }
-
-  //Border
-  border-radius: $siimple-border-radius;
+  padding-left: $siimple-btn-padding-left;
+  padding-right: $siimple-btn-padding-right;
 
   //Disable default button element borders
   //https://github.com/siimple/siimple/pull/17
   border: none;
+  border-radius: $siimple-default-border-radius;
 
   //Disable user selection
   @include siimple-utils-select(none);
 
   //Hover
-  &:hover { opacity: 0.8; text-decoration: none; }
+  &:hover
+  {
+    opacity: $siimple-btn-hover-opacity;
+    text-decoration: none;
+  }
 
   //Disabled button
   &--disabled
   {
-    //Backbround color
-    background-color: $siimple-grey-0 !important;
-
-    //Text color
-    color: $siimple-navy !important;
-
-    //Cursor
+    background-color: $siimple-btn-disabled-background !important;
+    color: $siimple-btn-disabled-color !important;
     cursor: not-allowed !important;
   }
 }
