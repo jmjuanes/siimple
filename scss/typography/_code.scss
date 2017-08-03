@@ -6,6 +6,21 @@
 // Website:    http://siimple.juanes.xyz
 //
 
+//Code variables
+$siimple-code-size: $siimple-default-text-size;
+$siimple-code-background: $siimple-grey;
+$siimple-code-color: $siimple-default-text-color;
+$siimple-code-padding-top: 2px;
+$siimple-code-padding-bottom: 2px;
+$siimple-code-padding-left: 5px;
+$siimple-code-padding-right: 5px;
+
+//Pre vriables
+$siimple-pre-padding: 10px;
+$siimple-pre-margin-top: 0px;
+$siimple-pre-margin-bottom: $siimple-default-margin-bottom;
+$siimple-pre-background: $siimple-grey;
+
 //Code mixin
 @mixin siimple-code
 {
@@ -15,7 +30,10 @@
   background-color: $siimple-grey;
   border-radius: $siimple-border-radius;
 
-  padding: { top: 2px; bottom: 2px; left: 5px; right: 5px; }
+  padding-top: $siimple-code-padding-top;
+  padding-bottom: $siimple-code-padding-bottom;
+  padding-left: $siimple-code-padding-left;
+  padding-right: $siimple-code-padding-right;
 }
 
 //Pre mixin
@@ -23,16 +41,16 @@
 {
   display: block;
   overflow-x: auto;
-  width: calc(100% - 20px);
+  width: calc(100% - #{$siimple-pre-padding} - #{$siimple-pre-padding});
+  color: $siimple-default-text-color;
+  line-height: $siimple-default-text-line;
+  font-weight: $siimple-default-text-weight;
+  font-size: $siimple-default-text-size;
 
-  color: $siimple-navy;
-  line-height: $siimple-lh;
-  font-weight: 300;
-  font-size: 14px;
+  background-color: $siimple-pre-background;
+  border-radius: $siimple-default-border-radius;
 
-  background-color: $siimple-grey;
-  border-radius: $siimple-border-radius;
-
-  padding: 10px;
-  margin: { top: $siimple-margin-top; bottom: $siimple-margin-bottom; }
+  padding: $siimple-pre-padding;
+  margin-top: $siimple-pre-margin-top;
+  margin-bottom: $siimple-pre-margin-bottom;
 }
