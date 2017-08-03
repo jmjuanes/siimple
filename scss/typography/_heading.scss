@@ -6,81 +6,39 @@
 // Website:    http://siimple.juanes.xyz
 //
 
+//Heading variables
+$siimple-heading-padding: 0px;
+$siimple-heading-sizes:
+(
+  (1, 45px, 51px, 20px, 28px),
+  (2, 35px, 40px, 20px, 28px),
+  (3, 25px, 29px, 18px, 28px),
+  (4, 22px, 25px, 16px, 28px),
+  (5, 20px, 22px, 14px, 28px),
+  (6, )
+);
+
 //Heading base
 @mixin siimple-heading
 {
-  display: block;
-  @include siimple-font;
-  font-weight: bold;
-  color: $siimple-navy;
-  padding: 0px;
-}
+  //Each heading
+  @each $h-number, $h-size, $h-line, $h-top, $h-bottom in $siimple-heading-sizes
+  {
+    //Add this heading style
+    &#{$h-number}
+    {
+      display: block;
+      font-size: $h-size;
+      font-family: $siimple-default-text-font;
+      font-weight: bold;
+      line-height: $h-line;
+      color: $siimple-default-text-color;
 
-//Heading 1
-@mixin siimple-heading-1
-{
-  @include siimple-heading;
-  font-size: 45px;
-  line-height: 51px;
-  margin-bottom: 20px;
+      padding: $siimple-heading-padding;
+      margin-bottom: $h-bottom;
 
-  //Not first child
-  &:not(:first-child){ margin-top: 28px; }
-}
-
-//Heading 2
-@mixin siimple-heading-2
-{
-  @include siimple-heading;
-  font-size: 35px;
-  line-height: 40px;
-  margin-bottom: 20px;
-
-  //Not first child
-  &:not(:first-child){ margin-top: 28px; }
-}
-
-//Heading 3
-@mixin siimple-heading-3
-{
-  @include siimple-heading;
-  font-size: 25px;
-  line-height: 29px;
-  margin-bottom: 18px;
-
-  //Not first child
-  &:not(:first-child){ margin-top: 28px; }
-}
-
-//Heading 4
-@mixin siimple-heading-4
-{
-  @include siimple-heading;
-  font-size: 22px;
-  line-height: 25px;
-  margin-bottom: 16px;
-
-  //Not first child
-  &:not(:first-child){ margin-top: 28px; }
-}
-
-//Heading 5
-@mixin siimple-heading-5
-{
-  @include siimple-heading;
-  font-size: 20px;
-  line-height: 22px;
-  margin-bottom: 14px;
-
-  //Not first child
-  &:not(:first-child){ margin-top: 28px; }
-}
-
-//Heading 6
-@mixin siimple-heading-6
-{
-  @include siimple-heading;
-  font-size: 18px;
-  line-height: 20px;
-  margin-bottom: 12px;
+      //Not first child
+      &:not(:first-child){ margin-top: $h-top; }
+    }
+  }
 }
