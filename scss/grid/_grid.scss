@@ -6,20 +6,40 @@
 // Website:    http://siimple.juanes.xyz
 //
 
+//Grid row variables
+$siimple-grid-row-margin-left: 0px;
+$siimple-grid-row-margin-right: 0px;
+
+//Grid column variables
+$siimple-grid-column-margin-left: 10px;
+$siimple-grid-column-margin-right: 10px;
+$siimple-grid-column-sizes:
+(
+  (1,'8.33%'), (2,'16.66%'),
+  (3,'24.99%'), (4,'33.33%'),
+  (5,'41.66%'), (6,'49.99%'),
+  (7,'58.33%'), (8,'66.66%'),
+  (9,'74.99%'), (10,'83.33%'),
+  (11,'91.66%'), (12,'99.99%')
+);
+
 //Grid
 @mixin siimple-grid
 {
   display: block;
   width: 100%;
-  min-height: 40px;
-  margin: { left: auto; right: auto; }
+
+  margin-left: auto;
+  margin-right: auto;
 
   //Grid row style
   &-row
   {
     display: inline-block;
     width: 100%;
-    margin: { left: 0px; right: 0px; }
+
+    margin-left: $siimple-grid-row-margin-left;
+    margin-right: $siimple-grid-row-margin-right;
 
     //Row after
     &:after
@@ -37,18 +57,26 @@
     display: inline-block;
     vertical-align: top;
     float: left;
-    margin: { left: 10px; right: 10px }
+
+    margin-left: $siimple-grid-column-margin-left;
+    margin-right: $siimple-grid-column-margin-right;
   }
 
   //12 columns
-  @each $i,$w in $siimple-grid-columns
+  @each $i,$w in $siimple-grid-column-sizes
   {
-    &-col--#{$i} { width: calc(#{$w} - 20px); }
+    &-col--#{$i}
+    {
+      width: calc(#{$w} - #{$siimple-grid-column-margin-left} - #{$siimple-grid-column-margin-right});
+    }
   }
 
   //Media column style
   @media(max-width: 450px)
   {
-    &-col { width: calc(100% - 20px) !important; }
+    &-col
+    {
+      width: calc(100% - #{$siimple-grid-column-margin-left} - #{$siimple-grid-column-margin-right}) !important;
+    }
   }
 }
