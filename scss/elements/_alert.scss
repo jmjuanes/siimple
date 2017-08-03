@@ -20,12 +20,12 @@ $siimple-alert-margin-bottom: $siimple-default-margin-bottom;
 {
   display: block;
   width: calc(100% - #{$siimple-alert-padding-left} - #{$siimple-alert-padding-right});
-  @include siimple-font;
   color: $siimple-navy;
-  line-height: $siimple-lh;
-  font-size: $siimple-font-normal;
+  line-height: $siimple-default-text-line;
+  font-size: $siimple-default-text-size;
+  font-family: $siimple-default-text-font;
 
-  border-radius: $siimple-border-radius;
+  border-radius: $siimple-default-border-radius;
   background-color: $siimple-grey;
 
   padding-top: $siimple-alert-padding-top;
