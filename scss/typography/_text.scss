@@ -6,32 +6,46 @@
 // Website:    http://siimple.juanes.xyz
 //
 
+//Small text variables
+$siimple-small-size: 12px;
+
+//Paragraph variables
+$siimple-paragraph-margin-top: 0px;
+$siimple-paragraph-margin-bottom: $siimple-default-margin-bottom;
+
 //Small text
 @mixin siimple-small
 {
-  @include siimple-font;
-  font-size: $siimple-font-small;
-  color: $siimple-navy;
+  font-family: $siimple-default-text-font;
+  font-size: $siimple-small-size;
+  color: $siimple-navy-4;
 }
 
 //Paragraph
 @mixin siimple-paragraph
 {
   display: block;
-  @include siimple-font;
-  line-height: $siimple-lh;
-  margin: { bottom: $siimple-margin-bottom; top: $siimple-margin-top; }
+  font-family: $siimple-default-text-font;
+  line-height: $siimple-default-text-line;
+  font-size: $siimple-default-text-size;
+
+  margin-top: $siimple-paragraph-margin-top;
+  margin-bottom: $siimple-paragraph-margin-bottom;
 }
 
 //Link
 @mixin siimple-link
 {
-  @include siimple-font;
-  color: $siimple-navy;
+  font-family: $siimple-default-text-font;
+  color: $siimple-default-text-color;
   font-weight: bold;
   text-decoration: underline;
   transition: all 0.3s;
 
   //Link hover style
-  &:hover { text-decoration: underline; cursor: pointer; }
+  &:hover
+  {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
