@@ -12,9 +12,6 @@
 //Import variables
 @import "./_variables.scss";
 
-//Import font
-@import "./_font.scss";
-
 //Import utils
 @import "./_utils.scss";
 
@@ -25,8 +22,10 @@
 @import "./typography/_list.scss";
 @import "./typography/_text.scss";
 
-//Import alert
-@import "./alert/_alert.scss";
+//Import elements
+@import "./elements/_alert.scss";
+@import "./elements/_btn.scss";
+@import "./elements/_close.scss";
 
 //Import form elements
 @import "./form/_checkbox.scss";
@@ -34,9 +33,6 @@
 @import "./form/_label.scss";
 @import "./form/_switch.scss";
 @import "./form/_textarea.scss";
-
-//Import buttons
-@import "./btn/_btn.scss";
 
 //Import grid
 @import "./grid/_grid.scss";
