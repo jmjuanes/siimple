@@ -1,0 +1,84 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
+
+//Spinner variables
+$siimple-spinner-size: 10px;
+$siimple-spinner-space: 15px;
+
+//Spinner mixin
+@mixin siimple-spinner
+{
+  //Spinner animation
+  @keyframes siimple_spinner_animation { 0%, 80%, 100% { background-color: rgba(255, 255, 255, 0); } }
+
+  //Spinner animation
+  @keyframes siimple_spinner_animation { 40% { background-color: rgba(255, 255, 255, 0); } }
+
+  @include siimple-spinner-base();
+
+  display: block;
+
+  text-indent: -9999em;
+  font-size: 10px;
+
+  position: relative;
+  transform: translateZ(0);
+
+  animation-delay: -0.2s;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+
+  //Before spinner
+  &:before
+  {
+    @include siimple-spinner-base();
+
+    animation-delay: -0.4s;
+
+    position: absolute;
+    left: calc(#{$siimple-spinner-space} * -1);
+    top: 0;
+  }
+
+  //After spinner
+  &:after
+  {
+    @include siimple-spinner-base();
+
+    position: absolute;
+    left: $siimple-spinner-space;
+    top: 0;
+  }
+
+  //For each color in the palette
+  @each $color,$list in $siimple-palette
+  {
+    //Base, before and after spinner background color
+    &#{&}--#{$color}, &#{&}--#{$color}:before, &#{&}--#{$color}:after
+    {
+      background-color: siimple-color-index($color, 2) !important;
+    }
+  }
+}
+
+//Base spinner mixin
+@mixin siimple-spinner-base
+{
+  width: $siimple-spinner-size;
+  height: $siimple-spinner-size;
+  content: "";
+
+  background-color: $siimple-grey-2;
+
+  animation: siimple_spinner_animation 1.2s infinite ease-in-out;
+  animation-fill-mode: both;
+
+  border-radius: 100px;
+}
