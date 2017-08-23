@@ -10,6 +10,14 @@
 $siimple-spinner-size: 10px;
 $siimple-spinner-space: 15px;
 
+//Spinner large variables
+$siimple-spinner-large-size: 15px;
+$siimple-spinner-large-space: 20px;
+
+//Spinner small variables
+$siimple-spinner-small-size: 8px;
+$siimple-spinner-small-space: 13px;
+
 //Spinner mixin
 @mixin siimple-spinner
 {
@@ -65,6 +73,44 @@ $siimple-spinner-space: 15px;
     {
       background-color: siimple-color-index($color, 2) !important;
     }
+  }
+
+  //Spinner small
+  &#{&}--small, &#{&}--small:before, &#{&}--small:after
+  {
+    width: $siimple-spinner-small-size !important;
+    height: $siimple-spinner-small-size !important;
+  }
+
+  //Spinner small before
+  &#{&}--small:before
+  {
+    left: calc(#{$siimple-spinner-small-space} * -1) !important;
+  }
+
+  //Spinner small after
+  &#{&}--small:after
+  {
+    left: $siimple-spinner-small-space !important;
+  }
+
+  //Spinner large
+  &#{&}--large, &#{&}--large:before, &#{&}--large:after
+  {
+    width: $siimple-spinner-large-size !important;
+    height: $siimple-spinner-large-size !important;
+  }
+
+  //Spinner large before
+  &#{&}--large:before
+  {
+    left: calc(#{$siimple-spinner-large-space} * -1) !important;
+  }
+
+  //Spinner large after
+  &#{&}--large:after
+  {
+    left: $siimple-spinner-large-space !important;
   }
 }
 
