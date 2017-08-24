@@ -30,23 +30,8 @@
   //Pre element
   &-pre { @include siimple-pre; }
 
-  //Heading 1
-  &-h1, &-heading1 { @include siimple-heading-1; }
-
-  //Heading 2
-  &-h2, &-heading2 { @include siimple-heading-2; }
-
-  //Heading 3
-  &-h3, &-heading3 { @include siimple-heading-3; }
-
-  //Heading 4
-  &-h4, &-heading4 { @include siimple-heading-4; }
-
-  //Heading 5
-  &-h5, &-heading5 { @include siimple-heading-5; }
-
-  //Heading 6
-  &-h6, &-heading6 { @include siimple-heading-6; }
+  //Headings
+  &-h, &-heading { @include siimple-heading; }
 
   //Small text
   &-small { @include siimple-small; }
@@ -61,14 +46,13 @@
   &-alert { @include siimple-alert; }
 
   //Buttons
-  &-btn
-  {
-    //Include default button style
-    @include siimple-btn;
+  &-btn { @include siimple-btn; }
 
-    //Add the button colors
-    @include siimple-color-attribute-background();
-  }
+  //Close element
+  &-close { @include siimple-close(); }
+
+  //Spinner element
+  &-spinner { @include siimple-spinner(); }
 
   //Checkbox
   &-checkbox { @include siimple-checkbox; }
