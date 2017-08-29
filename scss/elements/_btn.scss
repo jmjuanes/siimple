@@ -50,17 +50,6 @@ $siimple-btn-disabled-background: $siimple-grey-0;
     opacity: $siimple-btn-hover-opacity;
     text-decoration: none;
   }
-
-  //Button colors
-  @each $color,$list in $siimple-palette
-  {
-    //Text and background color
-    &#{&}--#{$color}
-    {
-      background-color: siimple-color-base($color);
-      color: siimple-color-over($color);
-    }
-  }
 }
 
 //Button disabled mixin
