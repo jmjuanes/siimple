@@ -35,47 +35,31 @@ $siimple-close-large-size: 30px;
   border-radius: 100px;
   background-color: rgba($siimple-close-background, $siimple-close-opacity);
 
-  &:after
+  //Close common stick style
+  &:after, &:before
   {
     content: "";
     display: block;
+    width: 12px;
+    height: 2px;
+
     position: absolute;
     top: 9px;
     left: 4px;
-    width: 12px;
-    height: 2px;
-    transform: rotate(45deg);
-    background-color: $siimple-white;
-  }
-  &:before
-  {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 9px;
-    left: 4px;
-    width: 12px;
-    height: 2px;
-    transform: rotate(-45deg);
+
     background-color: $siimple-white;
   }
 
+  //Close first stick
+  &:after { transform: rotate(45deg); }
+
+  //Close scond stick
+  &:before { transform: rotate(-45deg); }
+
+  //Close hover style
   &:hover
   {
     background-color: rgba($siimple-close-background, $siimple-close-hover-opacity);
-  }
-
-
-  //Small close icon
-  &--small
-  {
-
-  }
-
-  //Large close icon
-  &--large
-  {
-
   }
 
   //Close in an alert element
@@ -85,4 +69,16 @@ $siimple-close-large-size: 30px;
     right: 5px;
     top: 5px;
   }
+}
+
+//Small close icon
+@mixin siimple-close-small()
+{
+
+}
+
+//Large close icon
+@mixin siimple-close-large()
+{
+
 }
