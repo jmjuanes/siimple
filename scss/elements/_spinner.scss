@@ -64,54 +64,6 @@ $siimple-spinner-small-space: 13px;
     left: $siimple-spinner-space;
     top: 0;
   }
-
-  //For each color in the palette
-  @each $color,$list in $siimple-palette
-  {
-    //Base, before and after spinner background color
-    &#{&}--#{$color}, &#{&}--#{$color}:before, &#{&}--#{$color}:after
-    {
-      background-color: siimple-color-index($color, 2) !important;
-    }
-  }
-
-  //Spinner small
-  &#{&}--small, &#{&}--small:before, &#{&}--small:after
-  {
-    width: $siimple-spinner-small-size !important;
-    height: $siimple-spinner-small-size !important;
-  }
-
-  //Spinner small before
-  &#{&}--small:before
-  {
-    left: calc(#{$siimple-spinner-small-space} * -1) !important;
-  }
-
-  //Spinner small after
-  &#{&}--small:after
-  {
-    left: $siimple-spinner-small-space !important;
-  }
-
-  //Spinner large
-  &#{&}--large, &#{&}--large:before, &#{&}--large:after
-  {
-    width: $siimple-spinner-large-size !important;
-    height: $siimple-spinner-large-size !important;
-  }
-
-  //Spinner large before
-  &#{&}--large:before
-  {
-    left: calc(#{$siimple-spinner-large-space} * -1) !important;
-  }
-
-  //Spinner large after
-  &#{&}--large:after
-  {
-    left: $siimple-spinner-large-space !important;
-  }
 }
 
 //Base spinner mixin
@@ -127,4 +79,60 @@ $siimple-spinner-small-space: 13px;
   animation-fill-mode: both;
 
   border-radius: 100px;
+}
+
+//Colored spinner mixin
+@mixin siimple-spinner-color($color)
+{
+  //Apply to base, after and before
+  &, &:after, &:before
+  {
+    background-color: siimple-color-index($color, 2) !important;
+  }
+}
+
+//Small spinner mixin
+@mixin siimple-spinner-small()
+{
+  //Spinner small common styles
+  &, &:before, &:after
+  {
+    width: $siimple-spinner-small-size !important;
+    height: $siimple-spinner-small-size !important;
+  }
+
+  //Spinner small before
+  &:before
+  {
+    left: calc(#{$siimple-spinner-small-space} * -1) !important;
+  }
+
+  //Spinner small after
+  &:after
+  {
+    left: $siimple-spinner-small-space !important;
+  }
+}
+
+//Large spinner mixin
+@mixin siimple-spinner-large()
+{
+  //Spinner large
+  &, &:before, &:after
+  {
+    width: $siimple-spinner-large-size !important;
+    height: $siimple-spinner-large-size !important;
+  }
+
+  //Spinner large before
+  &:before
+  {
+    left: calc(#{$siimple-spinner-large-space} * -1) !important;
+  }
+
+  //Spinner large after
+  &:after
+  {
+    left: $siimple-spinner-large-space !important;
+  }
 }
