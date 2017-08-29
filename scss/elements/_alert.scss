@@ -36,32 +36,11 @@ $siimple-alert-margin-bottom: $siimple-default-margin-bottom;
 
   margin-top: $siimple-alert-margin-top;
   margin-bottom: $siimple-alert-margin-bottom;
+}
 
-  //Warning alert
-  &--warning
-  {
-    background-color: $siimple-yellow !important;
-    color: $siimple-white !important;
-  }
-
-  //Error alert
-  &--error
-  {
-    background-color: $siimple-red !important;
-    color: $siimple-white !important;
-  }
-
-  //Done alert
-  &--done
-  {
-    background-color: $siimple-green !important;
-    color: $siimple-white !important;
-  }
-
-  //Info alert
-  &--info
-  {
-    background-color: $siimple-blue !important;
-    color: $siimple-white !important;
-  }
+//Alert colored
+@mixin siimple-alert-color($color)
+{
+  background-color: siimple-color-base($color);
+  color: siimple-color-over($color);
 }
