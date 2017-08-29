@@ -19,7 +19,7 @@ $siimple-btn-disabled-color: $siimple-navy;
 $siimple-btn-disabled-background: $siimple-grey-0;
 
 //Button mixin
-@mixin siimple-btn
+@mixin siimple-btn()
 {
   display: inline-block;
   height: $siimple-btn-height;
@@ -51,14 +51,6 @@ $siimple-btn-disabled-background: $siimple-grey-0;
     text-decoration: none;
   }
 
-  //Disabled button
-  &--disabled
-  {
-    background-color: $siimple-btn-disabled-background !important;
-    color: $siimple-btn-disabled-color !important;
-    cursor: not-allowed !important;
-  }
-
   //Button colors
   @each $color,$list in $siimple-palette
   {
@@ -69,4 +61,19 @@ $siimple-btn-disabled-background: $siimple-grey-0;
       color: siimple-color-over($color);
     }
   }
+}
+
+//Button disabled mixin
+@mixin siimple-btn-disabled()
+{
+  background-color: $siimple-btn-disabled-background !important;
+  color: $siimple-btn-disabled-color !important;
+  cursor: not-allowed !important;
+}
+
+//Colored button
+@mixin siimple-btn-color($color)
+{
+  background-color: siimple-color-base($color);
+  color: siimple-color-over($color);
 }
