@@ -10,35 +10,32 @@
 $siimple-heading-padding: 0px;
 $siimple-heading-sizes:
 (
-  (1, 45px, 51px, 20px, 28px),
-  (2, 35px, 40px, 20px, 28px),
-  (3, 25px, 29px, 18px, 28px),
-  (4, 22px, 25px, 16px, 28px),
-  (5, 20px, 22px, 14px, 28px),
-  (6, )
+  "1": ( "size": 45px, "line-height": 51px, "margin-top": 20px, "margin-bottom": 28px),
+  "2": ( "size": 35px, "line-heignt": 40px, "margin-top": 20px, "margin-bottom": 28px),
+  "3": ( "size": 25px, "line-heignt": 29px, "margin-top": 18px, "margin-bottom": 28px),
+  "4": ( "size": 22px, "line-heignt": 25px, "margin-top": 16px, "margin-bottom": 28px),
+  "5": ( "size": 20px, "line-heignt": 22px, "margin-top": 14px, "margin-bottom": 28px),
+  "6": ( "size": 00px, "line-heignt": 00px, "margin-top": 00px, "margin-bottom": 00px)
 );
 
 //Heading base
-@mixin siimple-heading
+@mixin siimple-heading($size)
 {
-  //Each heading
-  @each $h-number, $h-size, $h-line, $h-top, $h-bottom in $siimple-heading-sizes
-  {
-    //Add this heading style
-    &#{$h-number}
-    {
-      display: block;
-      font-size: $h-size;
-      font-family: $siimple-default-text-font;
-      font-weight: bold;
-      line-height: $h-line;
-      color: $siimple-default-text-color;
+  //Get the heading variables
+  $heading_variables: map-get($siimple-heading-sizes, "#{$size}");
 
-      padding: $siimple-heading-padding;
-      margin-bottom: $h-bottom;
+  display: block;
 
-      //Not first child
-      &:not(:first-child){ margin-top: $h-top; }
-    }
-  }
+  font-size: map-get($heading_variables, "size");
+  font-family: $siimple-default-text-font;
+  font-weight: bold;
+  line-height: map-get($heading_variables, "line-height");
+  color: $siimple-default-text-color;
+
+  padding: $siimple-heading-padding;
+
+  margin-bottom: map-get($heading_variables, "margin-bottom");
+
+  //Not first child
+  &:not(:first-child){ margin-top: map-get($heading_variables, "margin-top"); }
 }
