@@ -61,14 +61,6 @@ $siimple-close-large-size: 30px;
   {
     background-color: rgba($siimple-close-background, $siimple-close-hover-opacity);
   }
-
-  //Close in an alert element
-  &--alert
-  {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-  }
 }
 
 //Small close icon
