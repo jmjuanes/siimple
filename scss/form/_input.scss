@@ -7,22 +7,22 @@
 //
 
 //Imput variables
-$siimple-imput-height: 30px;
-$siimple-imput-padding: 10px;
-$siimple-imput-radius: $siimple-default-border-radius;
+$siimple-input-height: 30px;
+$siimple-input-padding: 10px;
+$siimple-input-radius: $siimple-default-border-radius;
 
 //Input mixin
 @mixin siimple-input()
 {
   display: inline-block;
-  height: $siimple-imput-height;
-  line-height: $siimple-imput-height;
+  height: $siimple-input-height;
+  line-height: $siimple-input-height;
 
   font-family: $siimple-default-text-font;
   font-size: $siimple-default-text-size;
   color: $siimple-navy;
 
-  padding: { left: $siimple-imput-padding; right: $siimple-imput-padding; top: 0px; bottom: 0px; }
+  padding: { left: $siimple-input-padding; right: $siimple-input-padding; top: 0px; bottom: 0px; }
 
   border: 0px;
   border-radius: $siimple-input-radius;
