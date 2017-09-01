@@ -12,7 +12,7 @@ $siimple-imput-padding: 10px;
 $siimple-imput-radius: $siimple-default-border-radius;
 
 //Input mixin
-@mixin siimple-input
+@mixin siimple-input()
 {
   display: inline-block;
   height: $siimple-imput-height;
@@ -27,7 +27,7 @@ $siimple-imput-radius: $siimple-default-border-radius;
   border: 0px;
   border-radius: $siimple-input-radius;
   outline: 0px;
-  
+
   background-color: $siimple-grey;
 
   //Fluid input
