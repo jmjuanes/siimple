@@ -6,26 +6,27 @@
 // Website:    http://siimple.juanes.xyz
 //
 
-//Textarea element
-@mixin siimple-textarea
+//Textarea variables
+$siimple-textarea-line: $siimple-default-text-line;
+$siimple-textarea-padding: 10px;
+$siimple-textarea-radius: $siimple-default-border-radius;
+
+//Textarea mixin
+@mixin siimple-textarea()
 {
-  //Display
   display: inline-block;
+  line-height: $siimple-textarea-line;
 
-  //Size
-  line-height: 20px;
-
-  //Font
   font-family: $siimple-default-text-font;
-  font-size: $siimple-default-text-size; color: $siimple-navy;
+  font-size: $siimple-default-text-size;
+  color: $siimple-default-text-color;
 
-  //Padding
-  padding: { left: 10px; right: 10px; top: 10px; bottom: 10px; }
+  padding: $siimple-textarea-padding;
 
-  //Input border
-  border: 0px; border-radius: $siimple-default-border-radius; outline: 0px;
+  border: 0px;
+  outline: 0px;
+  border-radius: $siimple-textarea-radius;
 
-  //Input background
   background-color: $siimple-grey;
 
   //Fluid textarea
