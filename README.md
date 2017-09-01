@@ -70,7 +70,7 @@ This will create a folder called `bower_components` with the latest version of *
 @import "siimple/scss/_all.scss"
 ```
 
-Remember that you must add the `bower_components` components to the SASS [load_paths](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#load_paths-option) option. If you are using [libsass](https://github.com/sass/node-sass#includepaths) with [gulp](http://gulpjs.com), here is an example of usage: https://github.com/siimple/siimple/blob/master/gulpfile.js#L43.
+Remember that you must add the `bower_components` path to the SASS [load_paths](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#load_paths-option) option. If you are using [libsass](https://github.com/sass/node-sass#includepaths) with [gulp](http://gulpjs.com), here is an example of usage: https://github.com/siimple/siimple/blob/master/gulpfile.js#L43.
 
 
 ## Build siimple
