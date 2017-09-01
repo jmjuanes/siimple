@@ -6,19 +6,21 @@
 // Website:    http://siimple.juanes.xyz
 //
 
+//Label variables
+$siimple-label-height: 30px;
+$siimple-label-padding: 10px;
+
 //Label elements
-@mixin siimple-label
+@mixin siimple-label()
 {
-  //Display
   display: inline-block;
+  height: $siimple-label-height;
+  line-height: $siimple-label-height;
 
-  //Size
-  height: 30px; line-height: 30px;
-
-  //Font
   font-family: $siimple-default-text-font;
-  font-size: $siimple-default-text-size; color: $siimple-navy; font-weight: bold;
+  font-size: $siimple-default-text-size;
+  color: $siimple-navy;
+  font-weight: bold;
 
-  //Padding
-  padding: { left: 0px; right: 10px; top: 0px; bottom: 0px; }
+  padding: { left: 0px; right: $siimple-label-padding; top: 0px; bottom: 0px; }
 }
