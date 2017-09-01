@@ -21,7 +21,7 @@ $siimple-checkbox-label-after-width: 8px;
 $siimple-checkbox-label-after-height: 4px;
 
 //Checkbox mixin
-@mixin siimple-checkbox
+@mixin siimple-checkbox()
 {
   display: inline-block;
   position: relative;
