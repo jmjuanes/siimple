@@ -14,7 +14,7 @@ $siimple-switch-margin-left-right: 10px;
 $siimple-switch-margin-top-bottom: 7px;
 
 //Switch mixin
-@mixin siimple-switch
+@mixin siimple-switch()
 {
   //Structure:
   //<div class="siimple-switch" id="switchDiv">
@@ -58,7 +58,7 @@ $siimple-switch-margin-top-bottom: 7px;
   {
     width: 100%;
     height:100%;
-    
+
     background: $siimple-navy-4;
     border-radius: $siimple-switch-radius;
     transition: all 0.3s;
