@@ -6,27 +6,30 @@
 // Website:    http://siimple.juanes.xyz
 //
 
-//Select element mixin
-@mixin siimple-select
+//Select variables
+$siimple-select-height: 30px;
+$siimple-select-padding: 10px;
+$siimple-select-radius: $siimple-default-border-radius;
+
+//Select mixin
+@mixin siimple-select()
 {
-  //Display
   display: inline-block;
+  height: $siimple-select-height;
+  line-height: $siimple-select-height;
 
-  //Size
-  height: 30px; line-height: 30px;
+  font-family: $siimple-default-text-font;
+  font-size: $siimple-default-text-size;
+  color: $siimple-navy;
 
-  //Font
-  @include siimple-font; font-size: $siimple-font-small; color: $siimple-navy;
+  padding: { left: $siimple-select-padding; right: $siimple-select-padding; top: 0px; bottom: 0px; }
 
-  //Padding
-  padding: { left: 10px; right: 10px; top: 0px; bottom: 0px; }
+  border: 0px;
+  border-radius: $siimple-select-radius;
+  outline: 0px;
 
-  //Input border
-  border: 0px; border-radius: $siimple-border-radius; outline: 0px;
-
-  //Input background
   background-color: $siimple-grey;
 
-  //Fluid input
+  //Fluid select
   &--fluid { width: 100%; }
 }
