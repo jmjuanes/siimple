@@ -6,6 +6,13 @@
 // Website:    http://siimple.juanes.xyz
 //
 
+//Switch variables
+$siimple-switch-width: 30px;
+$siimple-switch-height: 16px;
+$siimple-switch-radius: 50px;
+$siimple-switch-margin-left-right: 10px;
+$siimple-switch-margin-top-bottom: 7px;
+
 //Switch mixin
 @mixin siimple-switch
 {
@@ -17,12 +24,16 @@
   //</div>
 
   display: inline-block;
-  width: 30px;
-  height: 16px;
+  width: $siimple-switch-width;
+  height: $siimple-switch-height;
   position: relative;
-  border-radius: 50px;
 
-  margin: { left: 10px; right: 10px; top: 7px; bottom: 7px; }
+  border-radius: $siimple-switch-radius;
+
+  margin-left: $siimple-switch-margin-left-right;
+  margin-right: $siimple-switch-margin-left-right;
+  margin-top: $siimple-switch-margin-top-bottom;
+  margin-bottom: $siimple-switch-margin-top-bottom;
 
   //Label style -> circle
   & label
@@ -30,7 +41,8 @@
     display: block;
     width: 12px;
     height: 12px;
-    border-radius: 50px;
+
+    border-radius: $siimple-switch-radius;
     transition: all 0.3s ease;
     cursor: hand;
     background: $siimple-white;
@@ -46,8 +58,9 @@
   {
     width: 100%;
     height:100%;
+    
     background: $siimple-navy-4;
-    border-radius: 50px;
+    border-radius: $siimple-switch-radius;
     transition: all 0.3s;
 
     position: relative;
