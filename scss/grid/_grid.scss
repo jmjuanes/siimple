@@ -76,7 +76,7 @@ $siimple-grid-column-sizes:
   }
 
   //Media column style
-  @media(max-width: 450px)
+  @media screen and (max-width: 480px)
   {
     &-col
     {
