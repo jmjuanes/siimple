@@ -39,37 +39,37 @@
 .siimple-color--white {
   color: #ffffff; }
 
-.siimple-background--navy, .siimple-bg--navy {
+.siimple-bg--navy {
   background-color: #57607c; }
 
-.siimple-background--green, .siimple-bg--green {
+.siimple-bg--green {
   background-color: #1add9f; }
 
-.siimple-background--teal, .siimple-bg--teal {
+.siimple-bg--teal {
   background-color: #18d2ba; }
 
-.siimple-background--blue, .siimple-bg--blue {
+.siimple-bg--blue {
   background-color: #4894f0; }
 
-.siimple-background--purple, .siimple-bg--purple {
+.siimple-bg--purple {
   background-color: #b490f5; }
 
-.siimple-background--pink, .siimple-bg--pink {
+.siimple-bg--pink {
   background-color: #f45b93; }
 
-.siimple-background--red, .siimple-bg--red {
+.siimple-bg--red {
   background-color: #ff1a4f; }
 
-.siimple-background--orange, .siimple-bg--orange {
+.siimple-bg--orange {
   background-color: #ff8463; }
 
-.siimple-background--yellow, .siimple-bg--yellow {
+.siimple-bg--yellow {
   background-color: #ffbf00; }
 
-.siimple-background--grey, .siimple-bg--grey {
+.siimple-bg--grey {
   background-color: #ebf2fa; }
 
-.siimple-background--white, .siimple-bg--white {
+.siimple-bg--white {
   background-color: #ffffff; }
 
 .siimple-alert {
@@ -282,27 +282,27 @@
     left: 15px;
     top: 0; }
   .siimple-spinner.siimple-spinner--navy, .siimple-spinner.siimple-spinner--navy:after, .siimple-spinner.siimple-spinner--navy:before {
-    background-color: #57607c !important; }
+    background-color: siimple-color-index("navy", 2) !important; }
   .siimple-spinner.siimple-spinner--green, .siimple-spinner.siimple-spinner--green:after, .siimple-spinner.siimple-spinner--green:before {
-    background-color: #1add9f !important; }
+    background-color: siimple-color-index("green", 2) !important; }
   .siimple-spinner.siimple-spinner--teal, .siimple-spinner.siimple-spinner--teal:after, .siimple-spinner.siimple-spinner--teal:before {
-    background-color: #18d2ba !important; }
+    background-color: siimple-color-index("teal", 2) !important; }
   .siimple-spinner.siimple-spinner--blue, .siimple-spinner.siimple-spinner--blue:after, .siimple-spinner.siimple-spinner--blue:before {
-    background-color: #4894f0 !important; }
+    background-color: siimple-color-index("blue", 2) !important; }
   .siimple-spinner.siimple-spinner--purple, .siimple-spinner.siimple-spinner--purple:after, .siimple-spinner.siimple-spinner--purple:before {
-    background-color: #b490f5 !important; }
+    background-color: siimple-color-index("purple", 2) !important; }
   .siimple-spinner.siimple-spinner--pink, .siimple-spinner.siimple-spinner--pink:after, .siimple-spinner.siimple-spinner--pink:before {
-    background-color: #f45b93 !important; }
+    background-color: siimple-color-index("pink", 2) !important; }
   .siimple-spinner.siimple-spinner--red, .siimple-spinner.siimple-spinner--red:after, .siimple-spinner.siimple-spinner--red:before {
-    background-color: #ff1a4f !important; }
+    background-color: siimple-color-index("red", 2) !important; }
   .siimple-spinner.siimple-spinner--orange, .siimple-spinner.siimple-spinner--orange:after, .siimple-spinner.siimple-spinner--orange:before {
-    background-color: #ff8463 !important; }
+    background-color: siimple-color-index("orange", 2) !important; }
   .siimple-spinner.siimple-spinner--yellow, .siimple-spinner.siimple-spinner--yellow:after, .siimple-spinner.siimple-spinner--yellow:before {
-    background-color: #ffbf00 !important; }
+    background-color: siimple-color-index("yellow", 2) !important; }
   .siimple-spinner.siimple-spinner--grey, .siimple-spinner.siimple-spinner--grey:after, .siimple-spinner.siimple-spinner--grey:before {
-    background-color: #ebf2fa !important; }
+    background-color: siimple-color-index("grey", 2) !important; }
   .siimple-spinner.siimple-spinner--white, .siimple-spinner.siimple-spinner--white:after, .siimple-spinner.siimple-spinner--white:before {
-    background-color: #ffffff !important; }
+    background-color: siimple-color-index("white", 2) !important; }
   .siimple-spinner--small, .siimple-spinner--small:before, .siimple-spinner--small:after {
     width: 8px !important;
     height: 8px !important; }
@@ -499,7 +499,7 @@
     width: calc(91.66% - 10px - 10px); }
   .siimple-grid-col--12 {
     width: calc(99.99% - 10px - 10px); }
-  @media (max-width: 450px) {
+  @media screen and (max-width: 480px) {
     .siimple-grid-col {
       width: calc(100% - 10px - 10px) !important; } }
 
