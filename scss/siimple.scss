@@ -16,11 +16,22 @@
 .siimple
 {
   //Text color
-  &-color { @include siimple-color-attribute("color"); }
+  &-color
+  {
+    @each $color, $list in $siimple-palette
+    {
+      &--#{$color} { color: siimple-color-base($color); }
+    }
+  }
 
   //Background color
-  &-background, &-bg { @include siimple-color-attribute("background-color"); }
-
+  &-bg
+  {
+    @each $color, $list in $siimple-palette
+    {
+      &--#{$color} { background-color: siimple-color-base($color); }
+    }
+  }
 
   //Elements
   //***********************************************
@@ -94,7 +105,6 @@
     &--large { @include siimple-spinner-large(); }
   }
 
-
   //Form elements
   //***********************************************
 
@@ -113,13 +123,11 @@
   //Label element
   &-label { @include siimple-label; }
 
-
   //Grid elements
   //***********************************************
 
   //Grid element
   &-grid { @include siimple-grid; }
-
 
   //Typography elements
   //***********************************************
