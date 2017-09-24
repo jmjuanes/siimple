@@ -52,7 +52,7 @@ The main `css` file is located in the `dist/` folder. Include it on every `HTML`
 Or you can use the hosted version on [jsDelivr](https://www.jsdelivr.com/projects/siimple):
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/siimple/VERSION/siimple.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple@VERSION/dist/siimple.min.css">
 ```
 
 Guides and reference are published in [siimple.juanes.xyz/docs](http://siimple.juanes.xyz/docs). Take a look and start creating your web page!
