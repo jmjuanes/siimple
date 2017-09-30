@@ -27,6 +27,15 @@ $siimple-grid-column-sizes:
   (11,'91.66%'), (12,'99.99%')
 );
 
+//Grid column widths
+$siimple-grid-column-width:
+(
+  ('xl', 1280px),
+  ('lg', 960px),
+  ('md', 768px),
+  ('sm', 480px)
+);
+
 //Grid
 @mixin siimple-grid
 {
@@ -66,7 +75,7 @@ $siimple-grid-column-sizes:
     margin-right: $siimple-grid-column-margin-right;
   }
 
-  //12 columns
+  //Default column size
   @each $i,$w in $siimple-grid-column-sizes
   {
     &-col--#{$i}
@@ -75,12 +84,20 @@ $siimple-grid-column-sizes:
     }
   }
 
-  //Media column style
-  @media screen and (max-width: 480px)
+  //Grid sizes
+  @each $grid_name,$grid_size in $siimple-grid-column-width
   {
-    &-col
+    //Media column style
+    @media (max-width: $grid_size)
     {
-      width: calc(100% - #{$siimple-grid-column-margin-left} - #{$siimple-grid-column-margin-right}) !important;
+      //For each column size
+      @each $i,$w in $siimple-grid-column-sizes
+      {
+        &-col-#{$grid_name}--#{$i}
+        {
+          width: calc(#{$w} - #{$siimple-grid-column-margin-left} - #{$siimple-grid-column-margin-right});
+        }
+      }
     }
   }
 }
