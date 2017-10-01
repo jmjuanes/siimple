@@ -76,7 +76,7 @@
   display: block;
   width: calc(100% - 10px - 30px);
   color: #57607c;
-  line-height: 20px;
+  line-height: 22px;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
   position: relative;
@@ -429,7 +429,7 @@
 
 .siimple-textarea {
   display: inline-block;
-  line-height: 20px;
+  line-height: 22px;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   color: #57607c;
@@ -629,7 +629,7 @@
   overflow-x: auto;
   width: calc(100% - 10px - 10px);
   color: #57607c;
-  line-height: 20px;
+  line-height: 22px;
   font-weight: normal;
   font-size: 14px;
   background-color: #ebf2fa;
@@ -713,7 +713,7 @@
 .siimple-p, .siimple-paragraph {
   display: block;
   font-family: "Montserrat", sans-serif;
-  line-height: 20px;
+  line-height: 22px;
   font-size: 14px;
   margin-top: 0px;
   margin-bottom: 14px; }
