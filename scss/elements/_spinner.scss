@@ -87,7 +87,7 @@ $siimple-spinner-small-space: 13px;
   //Apply to base, after and before
   &, &:after, &:before
   {
-    background-color: siimple-color-index($color, 2) !important;
+    background-color: siimple-color($color, 2) !important;
   }
 }
 
