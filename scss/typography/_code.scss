@@ -20,6 +20,7 @@ $siimple-pre-padding: 10px;
 $siimple-pre-margin-top: 0px;
 $siimple-pre-margin-bottom: $siimple-default-margin-bottom;
 $siimple-pre-background: $siimple-grey;
+$siimple-pre-line: 22px;
 
 //Code mixin
 @mixin siimple-code
@@ -42,8 +43,9 @@ $siimple-pre-background: $siimple-grey;
   display: block;
   overflow-x: auto;
   width: calc(100% - #{$siimple-pre-padding} - #{$siimple-pre-padding});
+
   color: $siimple-default-text-color;
-  line-height: $siimple-default-text-line;
+  line-height: $siimple-pre-line;
   font-weight: $siimple-default-text-weight;
   font-size: $siimple-default-text-size;
 
