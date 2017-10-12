@@ -8,7 +8,7 @@
 
 //Tip variables
 $siimple-tip-padding: 10px;
-$siimple-tip-padding-left: 30px;
+$siimple-tip-padding-left: 25px;
 $siimple-tip-padding-right: 20px;
 $siimple-tip-border: 5px;
 $siimple-tip-background: $siimple-grey-2;
@@ -21,6 +21,7 @@ $siimple-tip-background: $siimple-grey-2;
   width: calc(100% - #{$siimple-tip-padding-left} - #{$siimple-tip-padding-right} - #{$siimple-tip-border});
   border-left-style: solid;
   border-left-width: $siimple-tip-border;
+  border-radius: $siimple-default-border-radius;
   padding-left: $siimple-tip-padding-left !important;
   padding-right: $siimple-tip-padding-right !important;
   padding-top: $siimple-tip-padding;
