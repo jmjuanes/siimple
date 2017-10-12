@@ -105,6 +105,19 @@
     &--large { @include siimple-spinner-large(); }
   }
 
+  //Tip element
+  &-tip
+  {
+    //Import tip base style
+    @include siimple-tip();
+
+    //Colored tip styles
+    @each $color,$list in $siimple-palette
+    {
+      &#{&}--#{$color} { @include siimple-tip-color($color); }
+    }
+  }
+
   //Form elements
   //***********************************************
 
