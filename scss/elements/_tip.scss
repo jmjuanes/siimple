@@ -55,7 +55,14 @@ $siimple-tip-background: $siimple-grey-2;
 };
 
 //Exclamation tip
-@mixin siimple-tip-exclamation(){ content: "!"; };
+@mixin siimple-tip-exclamation()
+{
+  &::before{ content: "!"; }
+};
 
 //Question tip
-@mixin siimple-tip-question(){ content: "?"; }
+@mixin siimple-tip-question()
+{
+  &::before{ content: "?"; } 
+}
+
