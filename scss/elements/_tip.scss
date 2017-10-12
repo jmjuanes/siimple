@@ -31,10 +31,31 @@ $siimple-tip-background: $siimple-grey-2;
   font-family: $siimple-default-text-font;
   font-size: $siimple-default-text-size;
   color: $siimple-default-text-color;
+
+  //Before element
+  &::before
+  {
+    position: absolute;
+    top: 10px;
+    left: -12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    color: $siimple-white;
+    text-align: center;
+    line-height: 20px;
+  }
 };
 
 //Colored tip
 @mixin siimple-tip-color($color)
 {
   border-left-color: siimple-color-base($color);
-}
+  &::before { background-color: siimple-color-base($color); }
+};
+
+//Exclamation tip
+@mixin siimple-tip-exclamation(){ content: "!"; };
+
+//Question tip
+@mixin siimple-tip-question(){ content: "?"; }
