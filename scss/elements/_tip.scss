@@ -66,3 +66,9 @@ $siimple-tip-background: $siimple-grey-2;
   &::before{ content: "?"; }
 }
 
+//Hearth tip
+@mixin siimple-tip-hearth()
+{
+  &::before { content: "\2764"; }
+};
+
