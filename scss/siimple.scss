@@ -117,6 +117,9 @@
       &#{&}--#{$color} { @include siimple-tip-color($color); }
     }
 
+    //Hearth tip
+    &--hearth { @include siimple-tip-hearth(); }
+
     //Exclamation tip
     &--exclamation { @include siimple-tip-exclamation(); }
 
