@@ -1,0 +1,39 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
+
+//Tip variables
+$siimple-tip-padding: 10px;
+$siimple-tip-padding-left: 30px;
+$siimple-tip-padding-right: 20px;
+$siimple-tip-border: 5px;
+$siimple-tip-background: $siimple-grey-2;
+
+//Tip base mixin
+@mixin siimple-tip()
+{
+  display: block;
+  position: relative;
+  width: calc(100% - #{$siimple-tip-padding-left} - #{$siimple-tip-padding-right} - #{$siimple-tip-border});
+  border-left-style: solid;
+  border-left-width: $siimple-tip-border;
+  padding-left: $siimple-tip-padding-left !important;
+  padding-right: $siimple-tip-padding-right !important;
+  padding-top: $siimple-tip-padding;
+  padding-bottom: $siimple-tip-padding;
+  margin-bottom: $siimple-default-margin-bottom;
+  background-color: $siimple-tip-background;
+  font-family: $siimple-default-text-font;
+  font-size: $siimple-default-text-size;
+  color: $siimple-default-text-color;
+};
+
+//Colored tip
+@mixin siimple-tip-color($color)
+{
+  border-left-color: siimple-color-base($color);
+}
