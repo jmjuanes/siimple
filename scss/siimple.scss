@@ -105,6 +105,19 @@
     &--large { @include siimple-spinner-large(); }
   }
 
+  //Tag element
+  &-tag
+  {
+    //Include tag base style
+    @include siimple-tag();
+
+    //Colored tag styles
+    @each $color,$list in $siimple-palette
+    {
+      &#{&}--#{$color} { @include siimple-tag-color($color); }
+    }
+  }
+
   //Tip element
   &-tip
   {
