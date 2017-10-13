@@ -35,7 +35,14 @@ $siimple-pre-line: 20px;
   padding-bottom: $siimple-code-padding-bottom;
   padding-left: $siimple-code-padding-left;
   padding-right: $siimple-code-padding-right;
-}
+};
+
+//Code dark mode
+@mixin siimple-code-dark()
+{
+  background-color: $siimple-navy !important;
+  color: $siimple-white;
+};
 
 //Pre mixin
 @mixin siimple-pre
@@ -55,4 +62,11 @@ $siimple-pre-line: 20px;
   padding: $siimple-pre-padding;
   margin-top: $siimple-pre-margin-top;
   margin-bottom: $siimple-pre-margin-bottom;
-}
+};
+
+//Pre dark mode mixin
+@mixin siimple-pre-dark()
+{
+  background-color: $siimple-navy !important;
+  color: $siimple-white;
+};
