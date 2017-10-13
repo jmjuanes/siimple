@@ -158,10 +158,24 @@
   &-blockquote { @include siimple-blockquote; }
 
   //Code element
-  &-code { @include siimple-code; }
+  &-code
+  {
+    //Include base code style
+    @include siimple-code();
+    
+    //Code dark mode
+    &--dark { @include siimple-code-dark(); }
+  }
 
   //Pre element
-  &-pre { @include siimple-pre; }
+  &-pre
+  {
+    //Include base pre style
+    @include siimple-pre();
+
+    //Pre dark mode
+    &--dark { @include siimple-pre-dark(); }
+  }
 
   //Headings
   @each $heading_number,$heading_list in $siimple-heading-sizes
