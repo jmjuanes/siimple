@@ -162,7 +162,7 @@
   {
     //Include base code style
     @include siimple-code();
-    
+
     //Code dark mode
     &--dark { @include siimple-code-dark(); }
   }
