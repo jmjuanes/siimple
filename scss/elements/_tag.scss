@@ -1,0 +1,37 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    http://siimple.juanes.xyz
+//
+
+//Tag variables
+$siimple-tag-height: 24px;
+$siimple-tag-font-size: 12px;
+$siimple-tag-padding-left: 8px;
+$siimple-tag-padding-right: 8px;
+$siimple-tag-margin-right: 5px;
+$siimple-tag-margin-bottom: 8px;
+
+//Tag mixin
+@mixin siimple-tag()
+{
+  display: inline-block;
+  height: $siimple-tag-height;
+  font-size: $siimple-tag-font-size;
+  text-decoration: none;
+  line-height: $siimple-tag-height;
+  border-radius: $siimple-default-border-radius;
+  padding-left: $siimple-tag-padding-left;
+  padding-right: $siimple-tag-padding-right;
+  margin-right: $siimple-tag-margin-right;
+  margin-bottom: $siimple-tag-margin-bottom;
+};
+
+//Tag color mixin
+@mixin siimple-tag-color($color)
+{
+  background-color: siimple-color-base($color);
+  color: siimple-color-over($color);
+};
