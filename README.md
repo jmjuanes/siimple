@@ -1,3 +1,8 @@
+<div align="center">
+  <img src="https://rawgit.com/siimple/siimple/master/media/logo-header.png" alt="siimple-core">
+  <br>
+</div>
+
 # siimple
 
 [![npm](https://img.shields.io/npm/v/siimple.svg?style=flat-square)](https://www.npmjs.com/package/siimple)
