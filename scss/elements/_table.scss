@@ -1,0 +1,71 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Table variables
+$siimple-table-width: 100%;
+
+//Table mixin
+@mixin siimple-table()
+{
+  display: table;
+  //width: $siimple-table-width;
+};
+
+//Table heading mixin
+@mixin siimple-table-header()
+{
+
+};
+
+//Table body mixin
+@mixin siimple-table-body()
+{
+
+};
+
+//Table footer mixin
+@mixin siimple-table-footer()
+{
+
+};
+
+//Table striped mixin
+@mixin siimple-table-striped()
+{
+
+};
+
+//Table border mixin
+@mixin siimple-table-border()
+{
+
+};
+
+//Table hover mixin
+@mixin siimple-table-hover()
+{
+
+};
+
+//Table row mixin
+@mixin siimple-table-row()
+{
+  display: table-row;
+};
+
+//Table row selected mixin
+@mixin siimple-table-row-selected()
+{
+
+};
+
+//Table cell mixin
+@mixin siimple-table-cell()
+{
+  display: table-cell;
+};
