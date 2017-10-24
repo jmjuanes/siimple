@@ -1,0 +1,29 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Footer variables
+$siimple-footer-padding-top: 50px;
+$siimple-footer-padding-bottom: 80px;
+
+//Footer mixin
+@mixin siimple-footer()
+{
+  display: block;
+  padding-top: $siimple-footer-padding-top;
+  padding-bottom: $siimple-footer-padding-bottom;
+
+  //Footer sizes
+  @include siimple-size();
+};
+
+//Colored footer
+@mixin siimple-footer-color($color)
+{
+  background-color: siimple-color-base($color);
+  color: siimple-color-over($color);
+};
