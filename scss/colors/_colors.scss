@@ -1,0 +1,137 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Color variables
+$siimple-colors-base-index: 2;
+$siimple-colors-over-index: 5;
+
+//Colors palette
+$siimple-palette:
+(
+  "navy": ( "0": #3f465a, "1": #495169, "2": #57607c, "3": #697496, "4": #8790ab, "5": #ffffff ),
+  "green": ( "0": #15b784, "1": #18cd94, "2": #1add9f, "3": #32e7ad, "4": #48eab7, "5": #ffffff ),
+  "teal": ( "0": #13a08d, "1": #15b7a1, "2": #18d2ba, "3": #1be4c9, "4": #32e7cf, "5": #ffffff ),
+  "blue": ( "0": #1275ed, "1": #2a82ef, "2": #4894f0, "3": #599ef3, "4": #71acf4, "5": #ffffff ),
+  "purple": ( "0": #905cf0, "1": #9f73f2, "2": #b490f5, "3": #bfa2f6, "4": #cfb9f8, "5": #ffffff ),
+  "pink": ( "0": #f02872, "1": #f24081, "2": #f45b93, "3": #f570a1, "4": #f788b0, "5": #ffffff ),
+  "red": ( "0": #e60036, "1": #ff003c, "2": #ff1a4f, "3": #ff3363, "4": #ff4d76, "5": #ffffff ),
+  "orange": ( "0": #ff5f33, "1": #ff734d, "2": #ff8463, "3": #ff9b80, "4": #ffaf99, "5": #ffffff ),
+  "yellow": ( "0": #cc9900, "1": #e6ac00, "2": #ffbf00, "3": #ffc61a, "4": #ffcc33, "5": #ffffff ),
+  "grey": ( "0": #c3d7ef, "1": #d7e4f4, "2": #ebf2fa, "3": #f0f5fb, "4": #f1f4f9, "5": #57607c ),
+  "white": ( "0": #ffffff, "1": #ffffff, "2": #ffffff, "3": #ffffff, "4": #ffffff, "5": #57607c )
+);
+
+//Navy base color
+$siimple-navy: #57607c;
+
+//Navy colors
+$siimple-navy-0: #3f465a;
+$siimple-navy-1: #495169;
+$siimple-navy-2: #57607c;
+$siimple-navy-3: #697496;
+$siimple-navy-4: #8790ab;
+
+//Green base color
+$siimple-green: #1add9f;
+
+//Green colors
+$siimple-green-0: #15b784;
+$siimple-green-1: #18cd94;
+$siimple-green-2: #1add9f;
+$siimple-green-3: #32e7ad;
+$siimple-green-4: #48eab7;
+
+//Teal base color
+$siimple-teal: #18d2ba;
+
+//Teal colors
+$siimple-teal-0: #13a08d;
+$siimple-teal-1: #15b7a1;
+$siimple-teal-2: #18d2ba;
+$siimple-teal-3: #1be4c9;
+$siimple-teal-4: #32e7cf;
+
+//Blue base color
+$siimple-blue: #4894f0;
+
+//Blue colors
+$siimple-blue-0: #1275ed;
+$siimple-blue-1: #2a82ef;
+$siimple-blue-2: #4894f0;
+$siimple-blue-3: #599ef3;
+$siimple-blue-4: #71acf4;
+
+//Purple base color
+$siimple-purple: #b490f5;
+
+//Purple colors
+$siimple-purple-0: #905cf0;
+$siimple-purple-1: #9f73f2;
+$siimple-purple-2: #b490f5;
+$siimple-purple-3: #bfa2f6;
+$siimple-purple-4: #cfb9f8;
+
+//Pink base color
+$siimple-pink: #f45b93;
+
+//Pink colors
+$siimple-pink-0: #f02872;
+$siimple-pink-1: #f24081;
+$siimple-pink-2: #f45b93;
+$siimple-pink-3: #f570a1;
+$siimple-pink-4: #f788b0;
+
+//Red base color
+$siimple-red: #ff1a4f;
+
+//Red colors
+$siimple-red-0: #e60036;
+$siimple-red-1: #ff003c;
+$siimple-red-2: #ff1a4f;
+$siimple-red-3: #ff3363;
+$siimple-red-4: #ff4d76;
+
+//Orange base color
+$siimple-orange: #ff8463;
+
+//Orange colors
+$siimple-orange-0: #ff5f33;
+$siimple-orange-1: #ff734d;
+$siimple-orange-2: #ff8463;
+$siimple-orange-3: #ff9b80;
+$siimple-orange-4: #ffaf99;
+
+//Yellow base color
+$siimple-yellow: #ffbf00;
+
+//Yellow colors
+$siimple-yellow-0: #cc9900;
+$siimple-yellow-1: #e6ac00;
+$siimple-yellow-2: #ffbf00;
+$siimple-yellow-3: #ffc61a;
+$siimple-yellow-4: #ffcc33;
+
+//Grey base color
+$siimple-grey: #ebf2fa;
+
+//Grey colors
+$siimple-grey-0: #c3d7ef;
+$siimple-grey-1: #d7e4f4;
+$siimple-grey-2: #ebf2fa;
+$siimple-grey-3: #f0f5fb;
+$siimple-grey-4: #f1f4f9;
+
+//White base color
+$siimple-white: #ffffff;
+
+//White colors
+$siimple-white-0: #ffffff;
+$siimple-white-1: #ffffff;
+$siimple-white-2: #ffffff;
+$siimple-white-3: #ffffff;
+$siimple-white-4: #ffffff;
