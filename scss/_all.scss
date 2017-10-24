@@ -3,7 +3,7 @@
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
-// Website:    http://siimple.juanes.xyz
+// Website:    https://www.siimple.xyz
 //
 
 //Import variables
@@ -31,6 +31,18 @@
 @import "./elements/_table.scss";
 @import "./elements/_tag.scss";
 @import "./elements/_tip.scss";
+
+//Import layout
+@import "./layout/_box.scss";
+@import "./layout/_breadcrumb.scss";
+@import "./layout/_content.scss";
+@import "./layout/_footer.scss";
+@import "./layout/_form.scss";
+@import "./layout/_jumbotron.scss";
+@import "./layout/_menu.scss";
+@import "./layout/_navbar.scss";
+@import "./layout/_tabs.scss";
+@import "./layout/_size.scss";
 
 //Import form elements
 @import "./form/_checkbox.scss";
