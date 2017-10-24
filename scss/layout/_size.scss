@@ -22,7 +22,7 @@ $siimple-size-large-width: 1180px;
   width: calc(100% - #{2 * $siimple-size-fluid-offset});
   padding-left: $siimple-size-fluid-offset;
   padding-right: $siimple-size-fluid-offset;
-}
+};
 
 //Small size mixin
 @mixin siimple-size-small()
@@ -37,7 +37,7 @@ $siimple-size-large-width: 1180px;
     //Include the fluid mixin
     @include siimple-size-fluid();
   }
-}
+};
 
 //Large size mixin
 @mixin siimple-size-large()
@@ -52,4 +52,4 @@ $siimple-size-large-width: 1180px;
     //Include the fluid mixin
     @include siimple-size-fluid();
   }
-}
+};
