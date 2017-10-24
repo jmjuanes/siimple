@@ -13,7 +13,20 @@
 .siimple
 {
   //Layout base style
-  &-layout { @include siimple-layout(); }
+  &-layout
+  {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    font-family: $siimple-default-text-font;
+    font-size: $siimple-default-text-size;
+    color: $siimple-default-text-color;
+    font-weight: normal;
+    //background-color: $siimple-white;
+  }
 
   //Box style
   &-box
