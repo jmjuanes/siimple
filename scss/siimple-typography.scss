@@ -1,0 +1,53 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Import all mixins
+@import "./_all.scss";
+
+//Typography classes
+.siimple
+{
+  //Blockquote
+  &-blockquote { @include siimple-blockquote; }
+
+  //Code element
+  &-code
+  {
+    //Include base code style
+    @include siimple-code();
+
+    //Code dark mode
+    &--dark { @include siimple-code-dark(); }
+  }
+
+  //Pre element
+  &-pre
+  {
+    //Include base pre style
+    @include siimple-pre();
+
+    //Pre dark mode
+    &--dark { @include siimple-pre-dark(); }
+  }
+
+  //Headings
+  @each $heading_number,$heading_list in $siimple-heading-sizes
+  {
+    //Add this heading size
+    &-h#{$heading_number} { @include siimple-heading($heading_number); }
+  }
+
+  //Small text
+  &-small { @include siimple-small; }
+
+  //Paragraph
+  &-p, &-paragraph { @include siimple-paragraph; }
+
+  //Links
+  &-a, &-link { @include siimple-link; }
+}
