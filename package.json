@@ -1,17 +1,19 @@
 {
   "name": "siimple",
-  "version": "2.1.0",
+  "version": "2.0.1",
   "description": "Minimal CSS framework for flat and clean designs.",
   "style": "dist/siimple.css",
   "main": "dist/siimple.css",
   "author": "Josemi Juanes <josemijuanes@gmail.com>",
   "license": "MIT",
   "homepage": "http://siimple.juanes.xyz/",
-  "repository": {
+  "repository":
+  {
     "type": "git",
     "url": "https://github.com/siimple/siimple.git"
   },
-  "keywords": [
+  "keywords":
+  [
     "siimple",
     "css",
     "scss",
@@ -24,10 +26,9 @@
     "websites",
     "responsive"
   ],
-  "dependencies": {
-    "siimple-colors": "0.1.0"
-  },
-  "devDependencies": {
+  "dependencies": { },
+  "devDependencies":
+  {
     "gulp": "3.9.1",
     "gulp-autoprefixer": "4.0.0",
     "gulp-clean-css": "^3.7.0",
