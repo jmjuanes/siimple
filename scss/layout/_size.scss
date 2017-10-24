@@ -53,3 +53,16 @@ $siimple-size-large-width: 1180px;
     @include siimple-size-fluid();
   }
 };
+
+//Default sizes
+@mixin siimple-size()
+{
+  //Small style
+  &--small { @include siimple-size-small(); }
+
+  //Large style
+  &--large { @include siimple-size-large(); }
+
+  //Fluid style
+  &--fluid { @include siimple-size-fluid(); }
+};
