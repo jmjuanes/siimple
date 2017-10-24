@@ -30,3 +30,25 @@
     }
   }
 }
+
+//Colors styles
+.siimple
+{
+  //Text color
+  &-color
+  {
+    @each $color, $list in $siimple-palette
+    {
+      &--#{$color} { color: siimple-color-base($color); }
+    }
+  }
+
+  //Background color
+  &-bg
+  {
+    @each $color, $list in $siimple-palette
+    {
+      &--#{$color} { background-color: siimple-color-base($color); }
+    }
+  }
+}
