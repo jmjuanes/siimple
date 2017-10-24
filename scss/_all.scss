@@ -6,15 +6,15 @@
 // Website:    https://www.siimple.xyz
 //
 
+//Import colors
+@import "./colors/_colors.scss";
+@import "./colors/_utils.scss";
+
 //Import variables
 @import "./_variables.scss";
 
 //Import utils
 @import "./_utils.scss";
-
-//Import colors
-@import "./colors/_colors.scss";
-@import "./colors/_utils.scss";
 
 //Import typography
 @import "./typography/_blockquote.scss";
