@@ -37,7 +37,6 @@
 @import "./layout/_breadcrumb.scss";
 @import "./layout/_content.scss";
 @import "./layout/_footer.scss";
-@import "./layout/_form.scss";
 @import "./layout/_jumbotron.scss";
 @import "./layout/_menu.scss";
 @import "./layout/_navbar.scss";
@@ -45,6 +44,7 @@
 @import "./layout/_size.scss";
 
 //Import form elements
+@import "./form/_form.scss";
 @import "./form/_checkbox.scss";
 @import "./form/_input.scss";
 @import "./form/_label.scss";
