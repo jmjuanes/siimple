@@ -1,0 +1,96 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Tabs variables
+$siimple-tabs-height: 40px;
+$siimple-tabs-margin-bottom: 10px;
+$siimple-tabs-margin-top: 0px;
+
+//Tabs tab variables
+$siimple-tabs-tab-radius: 5px;
+$siimple-tabs-tab-padding-left: 15px;
+$siimple-tabs-tab-padding-right: 15px;
+$siimple-tabs-tab-margin-bottom: -2px;
+
+//Tabs mixin
+@mixin siimple-tabs()
+{
+  display: block;
+  position: relative;
+  z-index: 8;
+  width: 100%;
+  height: $siimple-tabs-height;
+  line-height: $siimple-tabs-height;
+  font-family: $siimple-default-text-font;
+  font-size: $siimple-default-text-size;
+  border-bottom: 2px solid $siimple-grey-2;
+  margin-bottom: $siimple-tabs-margin-bottom;
+  margin-top: $siimple-tabs-margin-top;
+
+  //Disable user selection
+  @include siimple-utils-select(none);
+};
+
+//Tab element
+@mixin siimple-tabs-tab()
+{
+  display: inline-block;
+  float: left;
+  z-index: 10;
+  height: #{$siimple-tabs-height - 1px };
+  line-height: $siimple-tabs-height;
+  font-weight: bold;
+  color: $siimple-navy-3;
+  padding-left: $siimple-tabs-tab-padding-left;
+  padding-right: $siimple-tabs-tab-padding-right;
+  margin-bottom: $siimple-tabs-tab-margin-bottom;
+  border-bottom: 2px solid transparent;
+  border-top-left-radius: $siimple-tabs-tab-radius;
+  border-top-right-radius: $siimple-tabs-tab-radius;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  //Tab hover
+  &:hover
+  {
+    border-bottom: 2px solid $siimple-navy-4;
+  }
+};
+
+//Colored tab
+@mixin siimple-tabs-tab-color($color)
+{
+  //Hover tab
+  &:hover
+  {
+    border-bottom-color: siimple-color($color, 4);
+  }
+}
+
+//Selected tab
+@mixin siimple-tabs-tab-selected()
+{
+  color: $siimple-navy-2;
+  border-bottom: 2px solid $siimple-navy-2;
+};
+
+//Selected tab colored
+@mixin siimple-tabs-tab-selected-color($color)
+{
+  color: siimple-color($color, 2) !important;
+  border-bottom-color: siimple-color($color, 2) !important;
+};
+
+//Tab with a box
+@mixin siimple-tabs-tab-boxed()
+{
+  &:hover
+  {
+    background-color: $siimple-grey-2;
+  }
+};
