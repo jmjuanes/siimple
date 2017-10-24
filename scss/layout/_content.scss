@@ -1,0 +1,22 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Content variables
+$siimple-content-padding-top: 30px;
+$siimple-content-padding-bottom: 30px;
+
+//Content mixin
+@mixin siimple-content()
+{
+  display: block;
+  padding-top: $siimple-content-padding-top;
+  padding-bottom: $siimple-content-padding-bottom;
+
+  //Content sizes
+  @include siimple-size();
+};
