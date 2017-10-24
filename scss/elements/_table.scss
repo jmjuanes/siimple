@@ -100,7 +100,7 @@ $siimple-table-cell-padding: 10px;
   &-body &-row:last-child &-cell:last-child { border-bottom-right-radius: $siimple-table-border; }
 
   //Table body stripped
-  &--striped &-body &-row:nth-child(odd) &-cell { background-color: $siimple-grey-3; }
+  &--striped &-body &-row:nth-child(odd) &-cell { background-color: $siimple-grey-4; }
 
   //Table hover -> enable row hover
   &--hover &-body &-row:hover &-cell { background-color: $siimple-grey-1 !important; }
