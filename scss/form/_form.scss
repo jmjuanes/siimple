@@ -1,0 +1,111 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Form rule variables
+$siimple-form-rule-size: 1px;
+$siimple-form-rule-margin-top: 5px;
+$siimple-form-rule-margin-bottom: $siimple-default-margin-bottom;
+
+//Form title variables
+$siimple-form-title-font: 25px;
+$siimple-form-title-margin-top: 0px;
+$siimple-form-title-margin-bottom: 5px;
+
+//Form detail variables
+$siimple-form-detail-font: $siimple-default-text-size;
+$siimple-form-detail-margin-top: 0px;
+$siimple-form-detail-margin-bottom: 10px;
+
+//Form label variables
+$siimple-form-label-font: $siimple-default-text-size;
+$siimple-form-label-margin-top: 0px;
+$siimple-form-label-margin-bottom: 5px;
+
+//Form helper variables
+$siimple-form-helper-font: 12px;
+$siimple-form-helper-margin-top: 5px;
+$siimple-form-helper-margin-bottom: 15px;
+
+//Form mixin
+@mixin siimple-form()
+{
+  display: block;
+  width: 100%;
+  margin-top: $siimple-default-margin-top;
+  margin-bottom: $siimple-default-margin-bottom;
+  font-family: $siimple-default-text-font;
+  font-size: $siimple-default-text-size;
+};
+
+//Form group mixin
+@mixin siimple-form-group()
+{
+  display: block;
+  vertical-align: top;
+  margin-bottom: $siimple-default-margin-bottom;
+  margin-top: 0px;
+};
+
+//Form rule
+@mixin siimple-form-rule()
+{
+  display: block;
+  width: 100%;
+  height: 0px;
+  border-bottom: $siimple-form-rule-size solid $siimple-grey-1;
+  margin-top: $siimple-form-rule-margin-top;
+  margin-bottom: $siimple-form-rule-margin-bottom;
+};
+
+//Form title mixin
+@mixin siimple-form-title()
+{
+  display: block;
+  width: 100%;
+  vertical-align: top;
+  font-weight: bold;
+  font-size: $siimple-form-title-font;
+  color: $siimple-navy;
+  margin-top: $siimple-form-title-margin-top;
+  margin-bottom: $siimple-form-title-margin-bottom;
+};
+
+//Form detail mixin
+@mixin siimple-form-detail()
+{
+  display: block;
+  width: 100%;
+  vertical-align: top;
+  font-size: $siimple-form-detail-font;
+  color: $siimple-navy;
+  margin-top: $siimple-form-detail-margin-top;
+  margin-bottom: $siimple-form-detail-margin-bottom;
+};
+
+//Form label mixin
+@mixin siimple-form-label()
+{
+  display: block;
+  width: 100%;
+  vertical-align: top;
+  font-weight: bold;
+  font-size: $siimple-form-label-font;
+  color: $siimple-navy;
+  margin-top: $siimple-form-label-margin-top;
+  margin-bottom: $siimple-form-label-margin-bottom;
+};
+
+//Form helper mixin
+@mixin siimple-form-helper()
+{
+  font-weight: normal;
+  font-size: $siimple-form-label-font;
+  color: $siimple-navy-4;
+  margin-top: $siimple-form-helper-margin-top;
+  margin-bottom: $siimple-form-helper-margin-bottom;
+};
