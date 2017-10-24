@@ -32,7 +32,7 @@ $siimple-breadcrumb-crumb-last-padding: 10px;
   height: $siimple-breadcrumb-height;
   margin-bottom: $siimple-breadcrumb-margin-bottom;
   margin-top: $siimple-breadcrumb-margin-top;
-}
+};
 
 //Breadcrumb crumb mixin
 @mixin siimple-breadcrumb-crumb()
@@ -114,4 +114,4 @@ $siimple-breadcrumb-crumb-last-padding: 10px;
   {
     display: none;
   }
-}
+};
