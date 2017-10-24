@@ -1,0 +1,17 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Import all mixins
+@import "./_all.scss";
+
+//Layout classes
+.siimple
+{
+  //Layout base style
+  &-layout { @include siimple-layout(); } 
+}
