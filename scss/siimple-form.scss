@@ -1,0 +1,54 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Import all mixins
+@import "./_all.scss";
+
+//Form classes
+.siimple
+{
+  //Form style
+  &-form
+  {
+    //Form base style
+    @include siimple-form();
+
+    //Form group style
+    &-group { @include siimple-form-group(); }
+
+    //Form rule style
+    &-rule { @include siimple-form-rule(); }
+
+    //Form title style
+    &-title { @include siimple-form-title(); }
+
+    //Form detail style
+    &-detail { @include siimple-form-detail(); }
+
+    //Form label style
+    &-label { @include siimple-form-label(); }
+
+    //Form helper style
+    &-helper { @include siimple-form-helper(); }
+  }
+
+  //Checkbox
+  &-checkbox { @include siimple-checkbox(); }
+
+  //Input element
+  &-input, &-select { @include siimple-input(); }
+
+  //Switch element
+  &-switch { @include siimple-switch(); }
+
+  //Textarea element
+  &-textarea { @include siimple-textarea(); }
+
+  //Label element
+  &-label { @include siimple-label(); }
+}
