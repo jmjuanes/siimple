@@ -1,0 +1,117 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Breadcrumb variables
+$siimple-breadcrumb-height: 34px;
+$siimple-breadcrumb-margin-bottom: 10px;
+$siimple-breadcrumb-margin-top: 0px;
+
+//Breadcrumb crumb variables
+$siimple-breadcrumb-crumb-margin-right: 5px;
+$siimple-breadcrumb-crumb-padding-left: 25px;
+$siimple-breadcrumb-crumb-padding-right: 10px;
+
+//Breadcrumb crumb first variables
+$siimple-breadcrumb-crumb-first-radius: 5px;
+$siimple-breadcrumb-crumb-first-padding: 10px;
+
+//Breadcrumb crumb last variables
+$siimple-breadcrumb-crumb-last-radius: 5px;
+$siimple-breadcrumb-crumb-last-padding: 10px;
+
+//Breadcrumb mixin
+@mixin siimple-breadcrumb()
+{
+  display: block;
+  width: 100%;
+  height: $siimple-breadcrumb-height;
+  margin-bottom: $siimple-breadcrumb-margin-bottom;
+  margin-top: $siimple-breadcrumb-margin-top;
+}
+
+//Breadcrumb crumb mixin
+@mixin siimple-breadcrumb-crumb()
+{
+  display: inline-block;
+  float: left;
+  position: relative;
+  height: $siimple-breadcrumb-height;
+  line-height: $siimple-breadcrumb-height;
+  background-color: $siimple-grey-2;
+  text-align: center;
+  font-family: $siimple-default-text-font;
+  font-size: $siimple-default-text-size;
+  font-weight: bold;
+  text-decoration: none;
+  color: $siimple-navy-4;
+  margin-right: $siimple-breadcrumb-crumb-margin-right;
+  padding-left: $siimple-breadcrumb-crumb-padding-left;
+  padding-right: $siimple-breadcrumb-crumb-padding-right;
+  transition: all 0.3s;
+
+  //Crumb hover
+  &:hover
+  {
+    color: $siimple-navy;
+    cursor: pointer;
+  }
+
+  //Crumb after
+  &:after
+  {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    right: - #{$siimple-breadcrumb-height / 2};
+    top: 0;
+    border-top: #{$siimple-breadcrumb-height / 2} solid transparent;
+    border-bottom: #{$siimple-breadcrumb-height / 2} solid transparent;
+    border-left: #{$siimple-breadcrumb-height / 2} solid $siimple-grey-2;
+  }
+
+  //Crumb before
+  &:before
+  {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-top: #{$siimple-breadcrumb-height / 2} solid transparent;
+    border-bottom: #{$siimple-breadcrumb-height / 2} solid transparent;
+    border-left: #{$siimple-breadcrumb-height / 2} solid $siimple-white;
+  }
+
+  //First crumb
+  &:first-of-type
+  {
+    border-top-left-radius: $siimple-breadcrumb-crumb-first-radius;
+    border-bottom-left-radius: $siimple-breadcrumb-crumb-first-radius;
+    padding-left: $siimple-breadcrumb-crumb-first-padding;
+  }
+
+  //First of type before
+  &:first-of-type:before
+  {
+    display: none;
+  }
+
+  //Last crumb
+  &:last-of-type
+  {
+    border-top-right-radius: $siimple-breadcrumb-crumb-last-radius;
+    border-bottom-right-radius: $siimple-breadcrumb-crumb-last-radius;
+    padding-right: $siimple-breadcrumb-crumb-last-padding;
+  }
+
+  //Last of type after
+  &:last-of-type:after
+  {
+    display: none;
+  }
+}
