@@ -1,0 +1,18 @@
+{
+  "list":
+  [
+    { "name": "navy",   "values": [ "#3f465a", "#495169", "#57607c", "#697496", "#8790ab", "#ffffff" ] },
+    { "name": "green",  "values": [ "#15b784", "#18cd94", "#1add9f", "#32e7ad", "#48eab7", "#ffffff" ] },
+    { "name": "teal",   "values": [ "#13a08d", "#15b7a1", "#18d2ba", "#1be4c9", "#32e7cf", "#ffffff" ] },
+    { "name": "blue",   "values": [ "#1275ed", "#2a82ef", "#4894f0", "#599ef3", "#71acf4", "#ffffff" ] },
+    { "name": "purple", "values": [ "#905cf0", "#9f73f2", "#b490f5", "#bfa2f6", "#cfb9f8", "#ffffff" ] },
+    { "name": "pink",   "values": [ "#f02872", "#f24081", "#f45b93", "#f570a1", "#f788b0", "#ffffff" ] },
+    { "name": "red",    "values": [ "#e60036", "#ff003c", "#ff1a4f", "#ff3363", "#ff4d76", "#ffffff" ] },
+    { "name": "orange", "values": [ "#ff5f33", "#ff734d", "#ff8463", "#ff9b80", "#ffaf99", "#ffffff" ] },
+    { "name": "yellow", "values": [ "#cc9900", "#e6ac00", "#ffbf00", "#ffc61a", "#ffcc33", "#ffffff" ] },
+    { "name": "grey",   "values": [ "#c3d7ef", "#d7e4f4", "#ebf2fa", "#f0f5fb", "#f1f4f9", "#57607c" ] },
+    { "name": "white",  "values": [ "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#57607c" ] }
+  ],
+  "index_base": 2,
+  "index_over": 5
+}
