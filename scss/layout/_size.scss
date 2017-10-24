@@ -1,0 +1,55 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Fluid variables
+$siimple-size-fluid-width: 100%;
+$siimple-size-fluid-offset: 20px;
+
+//Small variables
+$siimple-size-small-width: 960px;
+
+//Large variables
+$siimple-size-large-width: 1180px;
+
+//Fluid size mixin
+@mixin siimple-size-fluid()
+{
+  width: calc(100% - #{2 * $siimple-size-fluid-offset});
+  padding-left: $siimple-size-fluid-offset;
+  padding-right: $siimple-size-fluid-offset;
+}
+
+//Small size mixin
+@mixin siimple-size-small()
+{
+  width: $siimple-size-small-width;
+  padding-left: calc(50% - #{$siimple-size-small-width / 2});
+  padding-right: calc(50% - #{$siimple-size-small-width / 2});
+
+  //Media
+  @media screen and (max-width: $siimple-size-small-width)
+  {
+    //Include the fluid mixin
+    @include siimple-size-fluid();
+  }
+}
+
+//Large size mixin
+@mixin siimple-size-large()
+{
+  width: $siimple-size-large-width;
+  padding-left: calc(50% - #{$siimple-size-large-width / 2});
+  padding-right: calc(50% - #{$siimple-size-large-width / 2});
+
+  //Media
+  @media screen and (max-width: $siimple-size-large-width)
+  {
+    //Include the fluid mixin
+    @include siimple-size-fluid();
+  }
+}
