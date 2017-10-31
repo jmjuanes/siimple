@@ -1,0 +1,140 @@
+/**
+ * siimple - Minimal CSS framework for flat and clean designs.
+ * @version v3.0.0-rc.1
+ * @link https://www.siimple.xyz/
+ * @license MIT
+**/
+ 
+ :root {
+  --siimple-navy: #57607c;
+  --siimple-navy-0: #3f465a;
+  --siimple-navy-1: #495169;
+  --siimple-navy-2: #57607c;
+  --siimple-navy-3: #697496;
+  --siimple-navy-4: #8790ab;
+  --siimple-green: #1add9f;
+  --siimple-green-0: #15b784;
+  --siimple-green-1: #18cd94;
+  --siimple-green-2: #1add9f;
+  --siimple-green-3: #32e7ad;
+  --siimple-green-4: #48eab7;
+  --siimple-teal: #18d2ba;
+  --siimple-teal-0: #13a08d;
+  --siimple-teal-1: #15b7a1;
+  --siimple-teal-2: #18d2ba;
+  --siimple-teal-3: #1be4c9;
+  --siimple-teal-4: #32e7cf;
+  --siimple-blue: #4894f0;
+  --siimple-blue-0: #1275ed;
+  --siimple-blue-1: #2a82ef;
+  --siimple-blue-2: #4894f0;
+  --siimple-blue-3: #599ef3;
+  --siimple-blue-4: #71acf4;
+  --siimple-purple: #b490f5;
+  --siimple-purple-0: #905cf0;
+  --siimple-purple-1: #9f73f2;
+  --siimple-purple-2: #b490f5;
+  --siimple-purple-3: #bfa2f6;
+  --siimple-purple-4: #cfb9f8;
+  --siimple-pink: #f45b93;
+  --siimple-pink-0: #f02872;
+  --siimple-pink-1: #f24081;
+  --siimple-pink-2: #f45b93;
+  --siimple-pink-3: #f570a1;
+  --siimple-pink-4: #f788b0;
+  --siimple-red: #ff1a4f;
+  --siimple-red-0: #e60036;
+  --siimple-red-1: #ff003c;
+  --siimple-red-2: #ff1a4f;
+  --siimple-red-3: #ff3363;
+  --siimple-red-4: #ff4d76;
+  --siimple-orange: #ff8463;
+  --siimple-orange-0: #ff5f33;
+  --siimple-orange-1: #ff734d;
+  --siimple-orange-2: #ff8463;
+  --siimple-orange-3: #ff9b80;
+  --siimple-orange-4: #ffaf99;
+  --siimple-yellow: #ffbf00;
+  --siimple-yellow-0: #cc9900;
+  --siimple-yellow-1: #e6ac00;
+  --siimple-yellow-2: #ffbf00;
+  --siimple-yellow-3: #ffc61a;
+  --siimple-yellow-4: #ffcc33;
+  --siimple-grey: #ebf2fa;
+  --siimple-grey-0: #c3d7ef;
+  --siimple-grey-1: #d7e4f4;
+  --siimple-grey-2: #ebf2fa;
+  --siimple-grey-3: #f0f5fb;
+  --siimple-grey-4: #f1f4f9;
+  --siimple-white: #ffffff;
+  --siimple-white-0: #ffffff;
+  --siimple-white-1: #ffffff;
+  --siimple-white-2: #ffffff;
+  --siimple-white-3: #ffffff;
+  --siimple-white-4: #ffffff; }
+
+.siimple-color--navy {
+  color: #57607c; }
+
+.siimple-color--green {
+  color: #1add9f; }
+
+.siimple-color--teal {
+  color: #18d2ba; }
+
+.siimple-color--blue {
+  color: #4894f0; }
+
+.siimple-color--purple {
+  color: #b490f5; }
+
+.siimple-color--pink {
+  color: #f45b93; }
+
+.siimple-color--red {
+  color: #ff1a4f; }
+
+.siimple-color--orange {
+  color: #ff8463; }
+
+.siimple-color--yellow {
+  color: #ffbf00; }
+
+.siimple-color--grey {
+  color: #ebf2fa; }
+
+.siimple-color--white {
+  color: #ffffff; }
+
+.siimple-bg--navy {
+  background-color: #57607c; }
+
+.siimple-bg--green {
+  background-color: #1add9f; }
+
+.siimple-bg--teal {
+  background-color: #18d2ba; }
+
+.siimple-bg--blue {
+  background-color: #4894f0; }
+
+.siimple-bg--purple {
+  background-color: #b490f5; }
+
+.siimple-bg--pink {
+  background-color: #f45b93; }
+
+.siimple-bg--red {
+  background-color: #ff1a4f; }
+
+.siimple-bg--orange {
+  background-color: #ff8463; }
+
+.siimple-bg--yellow {
+  background-color: #ffbf00; }
+
+.siimple-bg--grey {
+  background-color: #ebf2fa; }
+
+.siimple-bg--white {
+  background-color: #ffffff; }

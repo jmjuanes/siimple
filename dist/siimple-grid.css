@@ -1,0 +1,152 @@
+/**
+ * siimple - Minimal CSS framework for flat and clean designs.
+ * @version v3.0.0-rc.1
+ * @link https://www.siimple.xyz/
+ * @license MIT
+**/
+ 
+ .siimple-grid {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  .siimple-grid-row {
+    display: inline-block;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px; }
+    .siimple-grid-row:after {
+      content: " ";
+      clear: both;
+      display: table;
+      line-height: 0; }
+  .siimple-grid-col {
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px; }
+  .siimple-grid-col--1 {
+    width: calc(8.33% - 10px - 10px); }
+  .siimple-grid-col--2 {
+    width: calc(16.66% - 10px - 10px); }
+  .siimple-grid-col--3 {
+    width: calc(24.99% - 10px - 10px); }
+  .siimple-grid-col--4 {
+    width: calc(33.33% - 10px - 10px); }
+  .siimple-grid-col--5 {
+    width: calc(41.66% - 10px - 10px); }
+  .siimple-grid-col--6 {
+    width: calc(49.99% - 10px - 10px); }
+  .siimple-grid-col--7 {
+    width: calc(58.33% - 10px - 10px); }
+  .siimple-grid-col--8 {
+    width: calc(66.66% - 10px - 10px); }
+  .siimple-grid-col--9 {
+    width: calc(74.99% - 10px - 10px); }
+  .siimple-grid-col--10 {
+    width: calc(83.33% - 10px - 10px); }
+  .siimple-grid-col--11 {
+    width: calc(91.66% - 10px - 10px); }
+  .siimple-grid-col--12 {
+    width: calc(99.99% - 10px - 10px); }
+  @media (max-width: 1280px) {
+    .siimple-grid-col-xl--1 {
+      width: calc(8.33% - 10px - 10px); }
+    .siimple-grid-col-xl--2 {
+      width: calc(16.66% - 10px - 10px); }
+    .siimple-grid-col-xl--3 {
+      width: calc(24.99% - 10px - 10px); }
+    .siimple-grid-col-xl--4 {
+      width: calc(33.33% - 10px - 10px); }
+    .siimple-grid-col-xl--5 {
+      width: calc(41.66% - 10px - 10px); }
+    .siimple-grid-col-xl--6 {
+      width: calc(49.99% - 10px - 10px); }
+    .siimple-grid-col-xl--7 {
+      width: calc(58.33% - 10px - 10px); }
+    .siimple-grid-col-xl--8 {
+      width: calc(66.66% - 10px - 10px); }
+    .siimple-grid-col-xl--9 {
+      width: calc(74.99% - 10px - 10px); }
+    .siimple-grid-col-xl--10 {
+      width: calc(83.33% - 10px - 10px); }
+    .siimple-grid-col-xl--11 {
+      width: calc(91.66% - 10px - 10px); }
+    .siimple-grid-col-xl--12 {
+      width: calc(99.99% - 10px - 10px); } }
+  @media (max-width: 960px) {
+    .siimple-grid-col-lg--1 {
+      width: calc(8.33% - 10px - 10px); }
+    .siimple-grid-col-lg--2 {
+      width: calc(16.66% - 10px - 10px); }
+    .siimple-grid-col-lg--3 {
+      width: calc(24.99% - 10px - 10px); }
+    .siimple-grid-col-lg--4 {
+      width: calc(33.33% - 10px - 10px); }
+    .siimple-grid-col-lg--5 {
+      width: calc(41.66% - 10px - 10px); }
+    .siimple-grid-col-lg--6 {
+      width: calc(49.99% - 10px - 10px); }
+    .siimple-grid-col-lg--7 {
+      width: calc(58.33% - 10px - 10px); }
+    .siimple-grid-col-lg--8 {
+      width: calc(66.66% - 10px - 10px); }
+    .siimple-grid-col-lg--9 {
+      width: calc(74.99% - 10px - 10px); }
+    .siimple-grid-col-lg--10 {
+      width: calc(83.33% - 10px - 10px); }
+    .siimple-grid-col-lg--11 {
+      width: calc(91.66% - 10px - 10px); }
+    .siimple-grid-col-lg--12 {
+      width: calc(99.99% - 10px - 10px); } }
+  @media (max-width: 768px) {
+    .siimple-grid-col-md--1 {
+      width: calc(8.33% - 10px - 10px); }
+    .siimple-grid-col-md--2 {
+      width: calc(16.66% - 10px - 10px); }
+    .siimple-grid-col-md--3 {
+      width: calc(24.99% - 10px - 10px); }
+    .siimple-grid-col-md--4 {
+      width: calc(33.33% - 10px - 10px); }
+    .siimple-grid-col-md--5 {
+      width: calc(41.66% - 10px - 10px); }
+    .siimple-grid-col-md--6 {
+      width: calc(49.99% - 10px - 10px); }
+    .siimple-grid-col-md--7 {
+      width: calc(58.33% - 10px - 10px); }
+    .siimple-grid-col-md--8 {
+      width: calc(66.66% - 10px - 10px); }
+    .siimple-grid-col-md--9 {
+      width: calc(74.99% - 10px - 10px); }
+    .siimple-grid-col-md--10 {
+      width: calc(83.33% - 10px - 10px); }
+    .siimple-grid-col-md--11 {
+      width: calc(91.66% - 10px - 10px); }
+    .siimple-grid-col-md--12 {
+      width: calc(99.99% - 10px - 10px); } }
+  @media (max-width: 480px) {
+    .siimple-grid-col-sm--1 {
+      width: calc(8.33% - 10px - 10px); }
+    .siimple-grid-col-sm--2 {
+      width: calc(16.66% - 10px - 10px); }
+    .siimple-grid-col-sm--3 {
+      width: calc(24.99% - 10px - 10px); }
+    .siimple-grid-col-sm--4 {
+      width: calc(33.33% - 10px - 10px); }
+    .siimple-grid-col-sm--5 {
+      width: calc(41.66% - 10px - 10px); }
+    .siimple-grid-col-sm--6 {
+      width: calc(49.99% - 10px - 10px); }
+    .siimple-grid-col-sm--7 {
+      width: calc(58.33% - 10px - 10px); }
+    .siimple-grid-col-sm--8 {
+      width: calc(66.66% - 10px - 10px); }
+    .siimple-grid-col-sm--9 {
+      width: calc(74.99% - 10px - 10px); }
+    .siimple-grid-col-sm--10 {
+      width: calc(83.33% - 10px - 10px); }
+    .siimple-grid-col-sm--11 {
+      width: calc(91.66% - 10px - 10px); }
+    .siimple-grid-col-sm--12 {
+      width: calc(99.99% - 10px - 10px); } }

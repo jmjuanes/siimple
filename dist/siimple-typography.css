@@ -1,0 +1,142 @@
+/**
+ * siimple - Minimal CSS framework for flat and clean designs.
+ * @version v3.0.0-rc.1
+ * @link https://www.siimple.xyz/
+ * @license MIT
+**/
+ 
+ .siimple-blockquote {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  color: #8790ab;
+  font-size: 14px;
+  border-left: 4px solid #8790ab;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 14px; }
+
+.siimple-code {
+  color: #57607c;
+  text-decoration: none;
+  font-size: 14px;
+  background-color: #ebf2fa;
+  border-radius: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px; }
+  .siimple-code--dark {
+    background-color: #57607c !important;
+    color: #ffffff; }
+
+.siimple-pre {
+  display: block;
+  overflow-x: auto;
+  width: calc(100% - 10px - 10px);
+  color: #57607c;
+  line-height: 20px;
+  font-weight: normal;
+  font-size: 14px;
+  background-color: #ebf2fa;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 0px;
+  margin-bottom: 14px; }
+  .siimple-pre--dark {
+    background-color: #57607c !important;
+    color: #ffffff; }
+
+.siimple-h1 {
+  display: block;
+  font-size: 45px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  line-height: 51px;
+  color: #57607c;
+  padding: 0px;
+  margin-bottom: 20px; }
+  .siimple-h1:not(:first-child) {
+    margin-top: 28px; }
+
+.siimple-h2 {
+  display: block;
+  font-size: 35px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #57607c;
+  padding: 0px;
+  margin-bottom: 20px; }
+  .siimple-h2:not(:first-child) {
+    margin-top: 28px; }
+
+.siimple-h3 {
+  display: block;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #57607c;
+  padding: 0px;
+  margin-bottom: 18px; }
+  .siimple-h3:not(:first-child) {
+    margin-top: 28px; }
+
+.siimple-h4 {
+  display: block;
+  font-size: 22px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #57607c;
+  padding: 0px;
+  margin-bottom: 16px; }
+  .siimple-h4:not(:first-child) {
+    margin-top: 28px; }
+
+.siimple-h5 {
+  display: block;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #57607c;
+  padding: 0px;
+  margin-bottom: 14px; }
+  .siimple-h5:not(:first-child) {
+    margin-top: 28px; }
+
+.siimple-h6 {
+  display: block;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #57607c;
+  padding: 0px;
+  margin-bottom: 12px; }
+  .siimple-h6:not(:first-child) {
+    margin-top: 28px; }
+
+.siimple-small {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  color: #8790ab; }
+
+.siimple-p, .siimple-paragraph {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  line-height: 22px;
+  font-size: 14px;
+  margin-top: 0px;
+  margin-bottom: 14px; }
+
+.siimple-a, .siimple-link {
+  font-family: "Montserrat", sans-serif;
+  color: #57607c;
+  font-weight: bold;
+  text-decoration: underline;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  .siimple-a:hover, .siimple-link:hover {
+    text-decoration: underline;
+    cursor: pointer; }
