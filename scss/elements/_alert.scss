@@ -41,6 +41,6 @@ $siimple-alert-margin-bottom: $siimple-default-margin-bottom;
 //Alert colored
 @mixin siimple-alert-color($color)
 {
-  background-color: siimple-colors-base($color);
-  color: siimple-colors-over($color);
+  background-color: siimple-color-base($color);
+  color: siimple-color-over($color);
 }
