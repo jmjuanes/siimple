@@ -26,6 +26,12 @@
     color: $siimple-default-text-color;
     font-weight: normal;
     //background-color: $siimple-white;
+
+    //layout left align
+    &--left { float: left; }
+
+    //layout right align
+    &--right { float: right; }
   }
 
   //Box style
