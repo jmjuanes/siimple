@@ -6,9 +6,8 @@
 // Website:    https://www.siimple.xyz
 //
 
-//Import colors
-@import "./colors/_colors.scss";
-@import "./colors/_utils.scss";
+//Import dependencies
+@import "siimple-colors/scss/_all.scss";
 
 //Import variables
 @import "./_variables.scss";
