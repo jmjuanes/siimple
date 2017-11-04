@@ -13,10 +13,7 @@
   {
     "siimple-colors": "siimple/siimple-colors#master"
   },
-  "devDependencies":
-  {
-    "plume": "siimple/plume#master"
-  },
+  "devDependencies": {},
   "license": "MIT",
   "keywords": [ "siimple", "css", "framework", "jmjuanes", "minimal", "flat", "clean", "websites", "responsive" ]
 }
