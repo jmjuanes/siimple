@@ -21,6 +21,10 @@
   font-size: 14px;
   color: #57607c;
   font-weight: normal; }
+  .siimple-layout--left {
+    float: left; }
+  .siimple-layout--right {
+    float: right; }
 
 .siimple-box {
   display: block;
