@@ -140,3 +140,69 @@
   .siimple-a:hover, .siimple-link:hover {
     text-decoration: underline;
     cursor: pointer; }
+
+.siimple-color--navy {
+  color: #57607c; }
+
+.siimple-color--green {
+  color: #1add9f; }
+
+.siimple-color--teal {
+  color: #18d2ba; }
+
+.siimple-color--blue {
+  color: #4894f0; }
+
+.siimple-color--purple {
+  color: #b490f5; }
+
+.siimple-color--pink {
+  color: #f45b93; }
+
+.siimple-color--red {
+  color: #ff1a4f; }
+
+.siimple-color--orange {
+  color: #ff8463; }
+
+.siimple-color--yellow {
+  color: #ffbf00; }
+
+.siimple-color--grey {
+  color: #ebf2fa; }
+
+.siimple-color--white {
+  color: #ffffff; }
+
+.siimple-bg--navy {
+  background-color: #57607c; }
+
+.siimple-bg--green {
+  background-color: #1add9f; }
+
+.siimple-bg--teal {
+  background-color: #18d2ba; }
+
+.siimple-bg--blue {
+  background-color: #4894f0; }
+
+.siimple-bg--purple {
+  background-color: #b490f5; }
+
+.siimple-bg--pink {
+  background-color: #f45b93; }
+
+.siimple-bg--red {
+  background-color: #ff1a4f; }
+
+.siimple-bg--orange {
+  background-color: #ff8463; }
+
+.siimple-bg--yellow {
+  background-color: #ffbf00; }
+
+.siimple-bg--grey {
+  background-color: #ebf2fa; }
+
+.siimple-bg--white {
+  background-color: #ffffff; }
