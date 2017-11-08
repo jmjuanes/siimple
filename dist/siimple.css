@@ -259,7 +259,9 @@
   font-family: "Montserrat", sans-serif;
   color: #57607c;
   border-collapse: collapse;
-  border-width: 0px; }
+  border-width: 0px;
+  margin-top: 0px;
+  margin-bottom: 16px; }
   .siimple-table-row {
     display: table-row;
     -webkit-transition: all 0.3s;
@@ -305,51 +307,6 @@
     background-color: #f1f4f9; }
   .siimple-table--hover .siimple-table-body .siimple-table-row:hover .siimple-table-cell {
     background-color: #d7e4f4 !important; }
-
-.siimple-tag {
-  display: inline-block;
-  height: 24px;
-  font-size: 12px;
-  text-decoration: none;
-  line-height: 24px;
-  border-radius: 5px;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-right: 5px;
-  margin-bottom: 8px; }
-  .siimple-tag.siimple-tag--navy {
-    background-color: #57607c;
-    color: #ffffff; }
-  .siimple-tag.siimple-tag--green {
-    background-color: #1add9f;
-    color: #ffffff; }
-  .siimple-tag.siimple-tag--teal {
-    background-color: #18d2ba;
-    color: #ffffff; }
-  .siimple-tag.siimple-tag--blue {
-    background-color: #4894f0;
-    color: #ffffff; }
-  .siimple-tag.siimple-tag--purple {
-    background-color: #b490f5;
-    color: #ffffff; }
-  .siimple-tag.siimple-tag--pink {
-    background-color: #f45b93;
-    color: #ffffff; }
-  .siimple-tag.siimple-tag--red {
-    background-color: #ff1a4f;
-    color: #ffffff; }
-  .siimple-tag.siimple-tag--orange {
-    background-color: #ff8463;
-    color: #ffffff; }
-  .siimple-tag.siimple-tag--yellow {
-    background-color: #ffbf00;
-    color: #ffffff; }
-  .siimple-tag.siimple-tag--grey {
-    background-color: #ebf2fa;
-    color: #57607c; }
-  .siimple-tag.siimple-tag--white {
-    background-color: #ffffff;
-    color: #57607c; }
 
 .siimple-tip {
   display: block;
@@ -1561,6 +1518,51 @@
   margin-bottom: 12px; }
   .siimple-h6:not(:first-child) {
     margin-top: 28px; }
+
+.siimple-tag {
+  display: inline-block;
+  height: 24px;
+  font-size: 12px;
+  text-decoration: none;
+  line-height: 24px;
+  border-radius: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 5px;
+  margin-bottom: 8px; }
+  .siimple-tag.siimple-tag--navy {
+    background-color: #57607c;
+    color: #ffffff; }
+  .siimple-tag.siimple-tag--green {
+    background-color: #1add9f;
+    color: #ffffff; }
+  .siimple-tag.siimple-tag--teal {
+    background-color: #18d2ba;
+    color: #ffffff; }
+  .siimple-tag.siimple-tag--blue {
+    background-color: #4894f0;
+    color: #ffffff; }
+  .siimple-tag.siimple-tag--purple {
+    background-color: #b490f5;
+    color: #ffffff; }
+  .siimple-tag.siimple-tag--pink {
+    background-color: #f45b93;
+    color: #ffffff; }
+  .siimple-tag.siimple-tag--red {
+    background-color: #ff1a4f;
+    color: #ffffff; }
+  .siimple-tag.siimple-tag--orange {
+    background-color: #ff8463;
+    color: #ffffff; }
+  .siimple-tag.siimple-tag--yellow {
+    background-color: #ffbf00;
+    color: #ffffff; }
+  .siimple-tag.siimple-tag--grey {
+    background-color: #ebf2fa;
+    color: #57607c; }
+  .siimple-tag.siimple-tag--white {
+    background-color: #ffffff;
+    color: #57607c; }
 
 .siimple-small {
   font-family: "Montserrat", sans-serif;
