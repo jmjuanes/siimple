@@ -23,7 +23,7 @@ $siimple-pre-background: $siimple-grey;
 $siimple-pre-line: 20px;
 
 //Code mixin
-@mixin siimple-code
+@mixin siimple-code()
 {
   color: $siimple-navy;
   text-decoration: none;
@@ -45,7 +45,7 @@ $siimple-pre-line: 20px;
 };
 
 //Pre mixin
-@mixin siimple-pre
+@mixin siimple-pre()
 {
   display: block;
   overflow-x: auto;
