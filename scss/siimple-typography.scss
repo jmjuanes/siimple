@@ -42,6 +42,19 @@
     &-h#{$heading_number} { @include siimple-heading($heading_number); }
   }
 
+  //Tag
+  &-tag
+  {
+    //Include tag base style
+    @include siimple-tag();
+
+    //Colored tag styles
+    @each $color,$list in $siimple-palette
+    {
+      &#{&}--#{$color} { @include siimple-tag-color($color); }
+    }
+  }
+
   //Small text
   &-small { @include siimple-small; }
 
