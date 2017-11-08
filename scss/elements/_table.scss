@@ -24,6 +24,8 @@ $siimple-table-cell-padding: 10px;
   color: $siimple-default-text-color;
   border-collapse: collapse;
   border-width: 0px;
+  margin-top: 0px;
+  margin-bottom: $siimple-default-margin-bottom;
 
   //Table row
   &-row
