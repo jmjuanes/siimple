@@ -18,9 +18,6 @@
     //Form base style
     @include siimple-form();
 
-    //Form group style
-    &-group { @include siimple-form-group(); }
-
     //Form rule style
     &-rule { @include siimple-form-rule(); }
 
@@ -30,11 +27,18 @@
     //Form detail style
     &-detail { @include siimple-form-detail(); }
 
-    //Form label style
-    &-label { @include siimple-form-label(); }
+    //Form field class
+    &-field
+    {
+      //Base field style
+      @include siimple-form-field();
 
-    //Form helper style
-    &-helper { @include siimple-form-helper(); }
+      //Form field label style
+      &-label { @include siimple-form-field-label(); }
+
+      //Form field helper style
+      &-helper { @include siimple-form-field-helper(); }
+    }
   }
 
   //Checkbox
