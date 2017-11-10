@@ -30,11 +30,11 @@ $siimple-navbar-title-padding: 15px;
   display: block;
   //position: absolute; top: 0px; left: 0px;
   z-index: $siimple-navbar-zindex;
-  width: 100%;
+  //width: 100%;
   height: $siimple-navbar-height;
   font-family: $siimple-default-text-font;
-  margin: $siimple-navbar-margin;
-  padding: $siimple-navbar-padding;
+  //margin: $siimple-navbar-margin;
+  //padding: $siimple-navbar-padding;
 };
 
 //Navbar colored mixin
