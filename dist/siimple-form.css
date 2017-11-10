@@ -12,11 +12,6 @@
   margin-bottom: 16px;
   font-family: "Montserrat", sans-serif;
   font-size: 14px; }
-  .siimple-form-group {
-    display: block;
-    vertical-align: top;
-    margin-bottom: 16px;
-    margin-top: 0px; }
   .siimple-form-rule {
     display: block;
     width: 100%;
@@ -41,21 +36,26 @@
     color: #57607c;
     margin-top: 0px;
     margin-bottom: 10px; }
-  .siimple-form-label {
+  .siimple-form-field {
     display: block;
-    width: 100%;
     vertical-align: top;
-    font-weight: bold;
-    font-size: 14px;
-    color: #57607c;
-    margin-top: 0px;
-    margin-bottom: 5px; }
-  .siimple-form-helper {
-    font-weight: normal;
-    font-size: 14px;
-    color: #8790ab;
-    margin-top: 5px;
-    margin-bottom: 15px; }
+    margin-bottom: 16px;
+    margin-top: 0px; }
+    .siimple-form-field-label {
+      display: block;
+      width: 100%;
+      vertical-align: top;
+      font-weight: bold;
+      font-size: 13px;
+      color: #57607c;
+      margin-top: 0px;
+      margin-bottom: 5px; }
+    .siimple-form-field-helper {
+      font-weight: normal;
+      font-size: 12px;
+      color: #8790ab;
+      margin-top: 5px;
+      margin-bottom: 15px; }
 
 .siimple-checkbox {
   display: inline-block;
@@ -185,10 +185,8 @@
   height: 30px;
   line-height: 30px;
   font-family: "Montserrat", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   color: #57607c;
   font-weight: bold;
-  padding-left: 0px;
   padding-right: 10px;
-  padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-left: 0px; }
