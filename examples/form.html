@@ -3,22 +3,47 @@
 
 <!-- Common styles -->
 <style>
-  .content
+  body
   {
-    display: block;
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+    margin: 0px !important;
+    padding: 50px !important;
   }
 </style>
 
-<!-- Switch demo -->
-<div class="content">
-  <div class="siimple-label">Your switch: </div>
-  <div class="siimple-switch">
-    <input type="checkbox" value="1" id="mySwitch" name="">
-    <label for="mySwitch"></label>
-    <div></div>
+<!-- Form content -->
+<div class="siimple-form">
+  <div class="siimple-form-title">Send a comment</div>
+  <div class="siimple-form-detail">Fill the following form to send us a comment.</div>
+  <!-- Name group -->
+  <div class="siimple-form-field">
+    <div class="siimple-form-field-label">Your name</div>
+    <input type="text" class="siimple-input siimple-input--fluid" placeholder="Your name">
+    <div class="siimple-form-field-helper">This field can't be empty</div>
+  </div>
+  <!-- Email group -->
+  <div class="siimple-form-field">
+    <div class="siimple-form-field-label">Your email</div>
+    <input type="text" class="siimple-input siimple-input--fluid" placeholder="you@company.com">
+    <div class="siimple-form-field-helper">This field can't be empty</div>
+  </div>
+  <!-- Comment group -->
+  <div class="siimple-form-field">
+    <div class="siimple-form-field-label">Your comment</div>
+    <textarea class="siimple-textarea siimple-textarea--fluid"></textarea>
+    <div class="siimple-form-field-helper">This field can't be empty</div>
+  </div>
+  <!-- Subscribe group -->
+  <div class="siimple-form-field">
+    <div class="siimple-label">Want to subscribe to our newsletter?</div>
+    <div class="siimple-switch">
+      <input type="checkbox" value="1" id="mySwitch" name="">
+      <label for="mySwitch"></label>
+      <div></div>
+    </div>
+  </div>
+  <!-- Send button -->
+  <div class="siimple-form-field">
+    <div class="siimple-btn siimple-btn--blue">Send comment</div>
+    <div class="siimple-form-field-helper">Check if the information is correct and press "Send comment" button.</div>
   </div>
 </div>
