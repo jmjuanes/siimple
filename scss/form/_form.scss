@@ -16,6 +16,11 @@ $siimple-form-detail-font: $siimple-default-text-size;
 $siimple-form-detail-margin-top: 0px;
 $siimple-form-detail-margin-bottom: 10px;
 
+//Form rule variables
+$siimple-form-rule-size: 1px;
+$siimple-form-rule-margin-top: 5px;
+$siimple-form-rule-margin-bottom: $siimple-default-margin-bottom;
+
 //Form field variables
 $siimple-form-field-margin-top: 0px;
 $siimple-form-field-margin-bottom: $siimple-default-margin-bottom;
@@ -29,11 +34,6 @@ $siimple-form-field-label-margin-bottom: 5px;
 $siimple-form-field-helper-font: 12px;
 $siimple-form-field-helper-margin-top: 5px;
 $siimple-form-field-helper-margin-bottom: 15px;
-
-//Form field rule variables
-$siimple-form-field-rule-size: 1px;
-$siimple-form-field-rule-margin-top: 5px;
-$siimple-form-field-rule-margin-bottom: $siimple-default-margin-bottom;
 
 //Form mixin
 @mixin siimple-form()
@@ -71,6 +71,17 @@ $siimple-form-field-rule-margin-bottom: $siimple-default-margin-bottom;
   margin-bottom: $siimple-form-detail-margin-bottom;
 };
 
+//Form rule
+@mixin siimple-form-rule()
+{
+  display: block;
+  width: 100%;
+  height: 0px;
+  border-bottom: $siimple-form-rule-size solid $siimple-grey-1;
+  margin-top: $siimple-form-rule-margin-top;
+  margin-bottom: $siimple-form-rule-margin-bottom;
+};
+
 //Form field mixin
 @mixin siimple-form-field()
 {
@@ -101,15 +112,4 @@ $siimple-form-field-rule-margin-bottom: $siimple-default-margin-bottom;
   color: $siimple-navy-4;
   margin-top: $siimple-form-field-helper-margin-top;
   margin-bottom: $siimple-form-field-helper-margin-bottom;
-};
-
-//Form field rule
-@mixin siimple-form-field-rule()
-{
-  display: block;
-  width: 100%;
-  height: 0px;
-  border-bottom: $siimple-form-field-rule-size solid $siimple-grey-1;
-  margin-top: $siimple-form-field-rule-margin-top;
-  margin-bottom: $siimple-form-field-rule-margin-bottom;
 };
