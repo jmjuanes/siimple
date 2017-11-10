@@ -3,12 +3,13 @@
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
-// Website:    http://siimple.juanes.xyz
+// Website:    https://www.siimple.xyz
 //
 
 //Label variables
 $siimple-label-height: 30px;
-$siimple-label-padding: 10px;
+$siimple-label-padding-right: 10px;
+$siimple-label-font-size: 13px;
 
 //Label elements
 @mixin siimple-label()
@@ -16,11 +17,10 @@ $siimple-label-padding: 10px;
   display: inline-block;
   height: $siimple-label-height;
   line-height: $siimple-label-height;
-
   font-family: $siimple-default-text-font;
-  font-size: $siimple-default-text-size;
+  font-size: $siimple-label-font-size;
   color: $siimple-navy;
   font-weight: bold;
-
-  padding: { left: 0px; right: $siimple-label-padding; top: 0px; bottom: 0px; }
-}
+  padding-right: $siimple-label-padding-right;
+  padding-left: 0px;
+};
