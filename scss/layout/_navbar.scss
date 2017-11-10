@@ -35,6 +35,9 @@ $siimple-navbar-title-padding: 15px;
   font-family: $siimple-default-text-font;
   //margin: $siimple-navbar-margin;
   //padding: $siimple-navbar-padding;
+
+  //Navbar sizes
+  @include siimple-size();
 };
 
 //Navbar colored mixin
