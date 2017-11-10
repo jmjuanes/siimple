@@ -77,6 +77,6 @@ $siimple-jumbotron-detail-margin-bottom: 10px;
 //Jumbotron colors
 @mixin siimple-jumbotron-color($color)
 {
-  background-color: siimple-color-base($color);
+  background-color: siimple-color($color, 1);
   color: siimple-color-over($color);
 };
