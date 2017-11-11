@@ -3,7 +3,7 @@
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
-// Website:    http://siimple.juanes.xyz
+// Website:    https://wwww.siimple.xyz
 //
 
 //Close variables
@@ -29,9 +29,7 @@ $siimple-close-large-size: 30px;
   height: $siimple-close-size;
   cursor: pointer;
   transition: background-color 0.3s;
-
   position: relative;
-
   border-radius: 100px;
   background-color: rgba($siimple-close-background, $siimple-close-opacity);
 
@@ -42,18 +40,16 @@ $siimple-close-large-size: 30px;
     display: block;
     width: 12px;
     height: 2px;
-
     position: absolute;
     top: 9px;
     left: 4px;
-
     background-color: $siimple-white;
   }
 
   //Close first stick
   &:after { transform: rotate(45deg); }
 
-  //Close scond stick
+  //Close second stick
   &:before { transform: rotate(-45deg); }
 
   //Close hover style
