@@ -3,7 +3,7 @@
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
-// Website:    http://siimple.juanes.xyz
+// Website:    https://www.siimple.xyz
 //
 
 //Textarea variables
@@ -16,17 +16,13 @@ $siimple-textarea-radius: $siimple-default-border-radius;
 {
   display: inline-block;
   line-height: $siimple-textarea-line;
-
-  font-family: $siimple-default-text-font;
+  //font-family: $siimple-default-text-font;
   font-size: $siimple-default-text-size;
   color: $siimple-default-text-color;
-
   padding: $siimple-textarea-padding;
-
   border: 0px;
   outline: 0px;
   border-radius: $siimple-textarea-radius;
-
   background-color: $siimple-grey;
 
   //Fluid textarea
