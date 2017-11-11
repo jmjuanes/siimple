@@ -3,7 +3,7 @@
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
-// Website:    http://siimple.juanes.xyz
+// Website:    https://www.siimple.xyz
 //
 
 //Small text variables
@@ -14,29 +14,28 @@ $siimple-paragraph-margin-top: 0px;
 $siimple-paragraph-margin-bottom: $siimple-default-margin-bottom;
 
 //Small text
-@mixin siimple-small
+@mixin siimple-small()
 {
-  font-family: $siimple-default-text-font;
+  //font-family: $siimple-default-text-font;
   font-size: $siimple-small-size;
   color: $siimple-navy-4;
-}
+};
 
 //Paragraph
-@mixin siimple-paragraph
+@mixin siimple-paragraph()
 {
   display: block;
-  font-family: $siimple-default-text-font;
+  //font-family: $siimple-default-text-font;
   line-height: $siimple-default-text-line;
   font-size: $siimple-default-text-size;
-
   margin-top: $siimple-paragraph-margin-top;
   margin-bottom: $siimple-paragraph-margin-bottom;
-}
+};
 
 //Link
-@mixin siimple-link
+@mixin siimple-link()
 {
-  font-family: $siimple-default-text-font;
+  //font-family: $siimple-default-text-font;
   color: $siimple-default-text-color;
   font-weight: bold;
   text-decoration: underline;
@@ -48,4 +47,4 @@ $siimple-paragraph-margin-bottom: $siimple-default-margin-bottom;
     text-decoration: underline;
     cursor: pointer;
   }
-}
+};
