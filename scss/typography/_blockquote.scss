@@ -3,7 +3,7 @@
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
-// Website:    http://siimple.juanes.xyz
+// Website:    https://www.siimple.xyz
 //
 
 //Blockquote variables
@@ -22,17 +22,14 @@ $siimple-blockquote-margin-bottom: $siimple-default-margin-bottom;
 @mixin siimple-blockquote
 {
   display: block;
-  font-family: $siimple-default-text-font;
+  //font-family: $siimple-default-text-font;
   color: $siimple-blockquote-color;
   font-size: $siimple-default-text-size;
-
   border-left: $siimple-blockquote-border solid $siimple-blockquote-color;
-
   padding-top: $siimple-blockquote-padding-top;
   padding-bottom: $siimple-blockquote-padding-bottom;
   padding-left: $siimple-blockquote-padding-left;
   padding-right: $siimple-blockquote-padding-right;
-
   margin-top: $siimple-blockquote-padding-top;
   margin-bottom: $siimple-blockquote-margin-bottom;
 }
