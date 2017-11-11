@@ -6,13 +6,21 @@
 **/
  
  @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+html {
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  color: #57607c; }
+
+body {
+  margin: 0; }
+
 .siimple-alert {
   display: block;
   width: calc(100% - 10px - 30px);
   color: #57607c;
   line-height: 22px;
   font-size: 14px;
-  font-family: "Montserrat", sans-serif;
   position: relative;
   border-radius: 5px;
   background-color: #ebf2fa;
@@ -66,7 +74,6 @@
   line-height: 30px;
   text-align: center;
   text-decoration: none;
-  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: bold;
   padding-left: 10px;
@@ -256,7 +263,6 @@
   display: table;
   width: 100%;
   font-size: 14px;
-  font-family: "Montserrat", sans-serif;
   color: #57607c;
   border-collapse: collapse;
   border-width: 0px;
@@ -286,7 +292,8 @@
     border-right: 2px solid #ffffff; }
   .siimple-table-header {
     display: table-header-group;
-    border-bottom: 3px solid #ffffff !important; }
+    border-bottom: 3px solid #ffffff !important;
+    font-weight: bold; }
   .siimple-table-header .siimple-table-row:first-child .siimple-table-cell:first-child {
     border-top-left-radius: 5px; }
   .siimple-table-header .siimple-table-row:first-child .siimple-table-cell:last-child {
@@ -321,7 +328,6 @@
   padding-bottom: 10px;
   margin-bottom: 16px;
   background-color: #ebf2fa;
-  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   color: #57607c; }
   .siimple-tip::before {
@@ -390,7 +396,6 @@
   width: 100%;
   margin-top: 0px;
   margin-bottom: 16px;
-  font-family: "Montserrat", sans-serif;
   font-size: 14px; }
   .siimple-form-rule {
     display: block;
@@ -490,7 +495,6 @@
   display: inline-block;
   height: 30px;
   line-height: 30px;
-  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   color: #57607c;
   padding-left: 10px;
@@ -549,7 +553,6 @@
 .siimple-textarea {
   display: inline-block;
   line-height: 22px;
-  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   color: #57607c;
   padding: 10px;
@@ -564,7 +567,6 @@
   display: inline-block;
   height: 30px;
   line-height: 30px;
-  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   color: #57607c;
   font-weight: bold;
@@ -743,7 +745,6 @@
   vertical-align: top;
   width: calc(100% - 20px);
   background-color: #ebf2fa;
-  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   color: #57607c;
   border-radius: 5px;
@@ -826,7 +827,6 @@
     line-height: 34px;
     background-color: #ebf2fa;
     text-align: center;
-    font-family: "Montserrat", sans-serif;
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
@@ -978,7 +978,6 @@
 
 .siimple-jumbotron {
   display: block;
-  font-family: "Montserrat", sans-serif;
   padding-top: 120px;
   padding-bottom: 120px; }
   .siimple-jumbotron--small {
@@ -1071,7 +1070,6 @@
 .siimple-menu {
   display: block;
   width: 100%;
-  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   margin-top: 0px;
   margin-bottom: 10px;
@@ -1124,8 +1122,7 @@
 .siimple-navbar {
   display: block;
   z-index: 3;
-  height: 60px;
-  font-family: "Montserrat", sans-serif; }
+  height: 60px; }
   .siimple-navbar--small {
     width: 768px;
     padding-left: calc(50% - 384px);
@@ -1349,7 +1346,6 @@
   width: 100%;
   height: 40px;
   line-height: 40px;
-  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   border-bottom: 2px solid #ebf2fa;
   margin-bottom: 10px;
@@ -1441,7 +1437,6 @@
 
 .siimple-blockquote {
   display: block;
-  font-family: "Montserrat", sans-serif;
   color: #8790ab;
   font-size: 14px;
   border-left: 4px solid #8790ab;
@@ -1486,7 +1481,6 @@
 .siimple-h1 {
   display: block;
   font-size: 45px;
-  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   line-height: 51px;
   color: #57607c;
@@ -1498,7 +1492,6 @@
 .siimple-h2 {
   display: block;
   font-size: 35px;
-  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: #57607c;
   padding: 0px;
@@ -1509,7 +1502,6 @@
 .siimple-h3 {
   display: block;
   font-size: 25px;
-  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: #57607c;
   padding: 0px;
@@ -1520,7 +1512,6 @@
 .siimple-h4 {
   display: block;
   font-size: 22px;
-  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: #57607c;
   padding: 0px;
@@ -1531,7 +1522,6 @@
 .siimple-h5 {
   display: block;
   font-size: 20px;
-  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: #57607c;
   padding: 0px;
@@ -1542,7 +1532,6 @@
 .siimple-h6 {
   display: block;
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: #57607c;
   padding: 0px;
@@ -1552,15 +1541,13 @@
 
 .siimple-tag {
   display: inline-block;
-  height: 24px;
   font-size: 12px;
   text-decoration: none;
-  line-height: 24px;
+  line-height: 22px;
   border-radius: 5px;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-right: 5px;
-  margin-bottom: 8px; }
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-right: 1px; }
   .siimple-tag.siimple-tag--navy {
     background-color: #57607c;
     color: #ffffff; }
@@ -1596,20 +1583,17 @@
     color: #57607c; }
 
 .siimple-small {
-  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   color: #8790ab; }
 
 .siimple-p, .siimple-paragraph {
   display: block;
-  font-family: "Montserrat", sans-serif;
   line-height: 22px;
   font-size: 14px;
   margin-top: 0px;
   margin-bottom: 16px; }
 
 .siimple-a, .siimple-link {
-  font-family: "Montserrat", sans-serif;
   color: #57607c;
   font-weight: bold;
   text-decoration: underline;
