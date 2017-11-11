@@ -12,9 +12,28 @@
 //Import Montserrat font from Google Fonts
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
-//Import siimple styles
-@import "./siimple-elements.scss";
-@import "./siimple-form.scss";
-@import "./siimple-grid.scss";
-@import "./siimple-layout.scss";
-@import "./siimple-typography.scss";
+//Default html style
+html
+{
+  font-family: $siimple-default-text-font;
+  font-weight: $siimple-default-text-weight;
+  font-size: $siimple-default-text-size;
+  color: $siimple-default-text-color;
+  margin: 0px;
+  padding: 0px;
+}
+
+//Import elements styles
+@import "./_elements.scss";
+
+//Import form styles
+@import "./_form.scss";
+
+//Import grid styles
+@import "./_grid.scss";
+
+//Import layout styles
+@import "./_layout.scss";
+
+//Import typography styles
+@import "./_typography.scss";
