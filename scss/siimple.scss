@@ -19,8 +19,12 @@ html
   font-weight: $siimple-default-text-weight;
   font-size: $siimple-default-text-size;
   color: $siimple-default-text-color;
+}
+
+//Remove the margin in all browsers
+body
+{
   margin: 0px;
-  padding: 0px;
 }
 
 //Import elements styles
