@@ -3,7 +3,7 @@
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
-// Website:    http://siimple.juanes.xyz
+// Website:    https://www.siimple.xyz
 //
 
 //Heading variables
@@ -25,15 +25,12 @@ $siimple-heading-sizes:
   $heading_variables: map-get($siimple-heading-sizes, "#{$size}");
 
   display: block;
-
   font-size: map-get($heading_variables, "size");
-  font-family: $siimple-default-text-font;
+  //font-family: $siimple-default-text-font;
   font-weight: bold;
   line-height: map-get($heading_variables, "line-height");
   color: $siimple-default-text-color;
-
   padding: $siimple-heading-padding;
-
   margin-bottom: map-get($heading_variables, "margin-bottom");
 
   //Not first child
