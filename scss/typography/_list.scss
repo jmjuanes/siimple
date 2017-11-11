@@ -3,7 +3,7 @@
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
-// Website:    http://siimple.juanes.xyz
+// Website:    https://www.siimple.xyz
 //
 
 //List variables
@@ -14,8 +14,7 @@ $siimple-list-margin-top: 0px;
 @mixin siimple-list
 {
   line-height: $siimple-default-text-line;
-  font-family: $siimple-default-text-font;
-
+  //font-family: $siimple-default-text-font;
   margin-top: $siimple-list-margin-top;
   margin-bottom: $siimple-list-margin-bottom;
 
