@@ -122,7 +122,7 @@ body {
     color: #57607c; }
   .siimple-btn--disabled {
     background-color: #c3d7ef !important;
-    color: #57607c !important;
+    color: rgba(87, 96, 124, 0.2) !important;
     cursor: not-allowed !important; }
 
 .siimple-close {
@@ -384,7 +384,7 @@ body {
     border-left-color: #ffffff; }
     .siimple-tip.siimple-tip--white::before {
       background-color: #ffffff; }
-  .siimple-tip--hearth::before {
+  .siimple-tip--heart::before {
     content: "\2764"; }
   .siimple-tip--exclamation::before {
     content: "!"; }
