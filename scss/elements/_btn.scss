@@ -17,6 +17,7 @@ $siimple-btn-hover-opacity: 0.8;
 //Button disabled variables
 $siimple-btn-disabled-color: $siimple-navy;
 $siimple-btn-disabled-background: $siimple-grey-0;
+$siimple-btn-disabled-color-alpha: 0.5;
 
 //Button mixin
 @mixin siimple-btn()
@@ -56,7 +57,7 @@ $siimple-btn-disabled-background: $siimple-grey-0;
 @mixin siimple-btn-disabled()
 {
   background-color: $siimple-btn-disabled-background !important;
-  color: $siimple-btn-disabled-color !important;
+  color: rgba($siimple-btn-disabled-color, $siimple-btn-disabled-color-alpha) !important;
   cursor: not-allowed !important;
 }
 
