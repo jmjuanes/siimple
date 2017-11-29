@@ -3,7 +3,6 @@
   "main": "dist/siimple.css",
   "author": "Josemi Juanes <josemijuanes@gmail.com>",
   "homepage": "https://www.siimple.xyz",
-  "ignore": [ "package.json", "**/.*" ],
   "repository":
   {
     "type": "git",
