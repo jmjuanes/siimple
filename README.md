@@ -22,7 +22,15 @@ You can find the documentation and the reference guide in https://siimple.juanes
 
 First, install **siimple** in your project using one of the following methods:
 
-### Using bower (recomended)
+### Using npm (recomended)
+
+Install the latest version from [npm](http://npmjs.org/package/siimple):
+
+```
+npm install --save siimple
+```
+
+### Using bower 
 
 Install the latest version from [bower](http://bower.io):
 
@@ -30,13 +38,6 @@ Install the latest version from [bower](http://bower.io):
 bower install siimple --save
 ```
 
-### Using npm
-
-Install the latest version from [npm](http://npmjs.org/package/siimple):
-
-```
-npm install --save siimple
-```
 
 ### Clone the git repository
 
@@ -60,23 +61,23 @@ Or you can use the hosted version on [jsDelivr](https://www.jsdelivr.com/project
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple@VERSION/dist/siimple.min.css">
 ```
 
-Guides and reference are published in [siimple.juanes.xyz/docs](http://siimple.juanes.xyz/docs). Take a look and start creating your web page!
+Guides and reference are published in [https://www.siimple.xyz/documentation](https://wwww.siimple.xyz/documentation). Take a look and start creating your web page!
 
 ## Using the SCSS/SASS mixins
 
-You can use the SASS/SCSS mixins located in the `scss/` folder. For this, first install **siimple** and all his dependencies using [bower](http://bower.io):
+You can use the SASS/SCSS mixins located in the `scss/` folder. For this, first install **siimple** and all his dependencies using [NPM](http://npmjs.com):
 
 ```
-bower install siimple
+npm install siimple
 ```
 
-This will create a folder called `bower_components` with the latest version of **siimple** and **siimple-colors**. Then, import the mixins in your `.scss` files by adding the following line:
+This will create a folder called `node_modules` with the latest version of **siimple**. Then, import all mixins in your `.scss` files by adding the following line:
 
 ```sass
 @import "siimple/scss/_all.scss"
 ```
 
-Remember that you must add the `bower_components` path to the SASS [load_paths](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#load_paths-option) option. If you are using [libsass](https://github.com/sass/node-sass#includepaths) with [gulp](http://gulpjs.com), here is an example of usage: https://github.com/siimple/siimple/blob/master/gulpfile.js#L43.
+Remember that you must add the `node_modules` path to the SASS [load_paths](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#load_paths-option) option. If you are using [libsass](https://github.com/sass/node-sass#includepaths) with [gulp](http://gulpjs.com), here is an example of usage: https://github.com/siimple/siimple/blob/ae838b102b2a585a91453fb8e347a680b3bec22e/scripts/build.js#L41.
 
 
 ## Build siimple
