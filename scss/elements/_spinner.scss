@@ -37,7 +37,7 @@ $siimple-spinner-small-space: 13px;
   position: relative;
   transform: translateZ(0);
 
-  animation-delay: -0.2s;
+  animation-delay: -0.33s;
 
   margin-left: auto;
   margin-right: auto;
@@ -48,8 +48,7 @@ $siimple-spinner-small-space: 13px;
   {
     @include siimple-spinner-base();
 
-    animation-delay: -0.4s;
-
+    animation-delay: -0.66s;
     position: absolute;
     left: calc(#{$siimple-spinner-space} * -1);
     top: 0;
