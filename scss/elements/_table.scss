@@ -48,7 +48,7 @@ $siimple-table-cell-padding: 10px;
   &-cell
   {
     display: table-cell;
-    position: relative !important;
+    //position: relative;
     line-height: $siimple-table-cell-line-height;
     padding: $siimple-table-cell-padding;
     white-space: nowrap;
