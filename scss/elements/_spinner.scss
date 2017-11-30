@@ -28,17 +28,12 @@ $siimple-spinner-small-space: 13px;
   }
 
   @include siimple-spinner-base();
-
   display: block;
-
   text-indent: -9999em;
   font-size: 10px;
-
   position: relative;
   transform: translateZ(0);
-
   animation-delay: -0.33s;
-
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
@@ -47,7 +42,6 @@ $siimple-spinner-small-space: 13px;
   &:before
   {
     @include siimple-spinner-base();
-
     animation-delay: -0.66s;
     position: absolute;
     left: calc(#{$siimple-spinner-space} * -1);
@@ -58,7 +52,6 @@ $siimple-spinner-small-space: 13px;
   &:after
   {
     @include siimple-spinner-base();
-
     position: absolute;
     left: $siimple-spinner-space;
     top: 0;
