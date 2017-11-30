@@ -22,10 +22,10 @@ $siimple-spinner-small-space: 13px;
 @mixin siimple-spinner
 {
   //Spinner animation
-  @keyframes siimple_spinner_animation { 0%, 80%, 100% { background-color: rgba(255, 255, 255, 0); } }
-
-  //Spinner animation
-  @keyframes siimple_spinner_animation { 40% { background-color: rgba(255, 255, 255, 0); } }
+  @keyframes siimple_spinner_animation
+  {
+    50% { background-color: transparent; }
+  }
 
   @include siimple-spinner-base();
 
@@ -72,12 +72,9 @@ $siimple-spinner-small-space: 13px;
   width: $siimple-spinner-size;
   height: $siimple-spinner-size;
   content: "";
-
-  background-color: $siimple-grey-2;
-
-  animation: siimple_spinner_animation 1.2s infinite ease-in-out;
+  //background-color: $siimple-grey-2;
+  animation: siimple_spinner_animation 1s infinite ease-in-out;
   animation-fill-mode: both;
-
   border-radius: 100px;
 }
 
@@ -87,7 +84,7 @@ $siimple-spinner-small-space: 13px;
   //Apply to base, after and before
   &, &:after, &:before
   {
-    background-color: siimple-color($color, 2) !important;
+    background-color: siimple-color($color, 2);
   }
 }
 
