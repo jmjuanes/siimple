@@ -81,13 +81,7 @@ Remember that you must add the `bower_components` path to the SASS [load_paths](
 
 ## Build siimple
 
-First, install [gulp](http://gulpjs.com) globally:
-
-```
-npm install -g gulp
-```
-
-Then, clone this repository:
+First, clone this repository:
 
 ```
 git clone https://github.com/siimple/siimple.git
@@ -99,23 +93,14 @@ Now, `cd` to the **siimple** repository and install all the develop dependencies
 npm install
 ```
 
-Install also the `scss` dependencies using `bower`:
+Compile the SCSS files and generate the `.css` files in the `dist/` folder by running the following command
 
 ```
-bower install
+npm run build
 ```
 
-Use `gulp` to compile the SCSS files and generate the `.css` files in the `dist/` folder running the following command
+Also, the previous command will  generate the minimized version of **siimple**.
 
-```
-gulp clean build
-```
-
-Also, you can generate the minimized version by running:
-
-```
-gulp minimize
-```
 
 ## Contribute
 
