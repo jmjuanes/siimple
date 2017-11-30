@@ -1,8 +1,8 @@
 /**
- * siimple - Minimal CSS framework for flat and clean designs.
- * @version v3.0.0-rc.1
- * @link https://www.siimple.xyz/
- * @license MIT
+ * @name         siimple v3.0.0
+ * @description  Minimal CSS framework for flat and clean designs.
+ * @docs         https://www.siimple.xyz/
+ * @license      MIT
 **/
  
  @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
@@ -165,9 +165,8 @@ body {
   width: 10px;
   height: 10px;
   content: "";
-  background-color: #ebf2fa;
-  -webkit-animation: siimple_spinner_animation 1.2s infinite ease-in-out;
-  animation: siimple_spinner_animation 1.2s infinite ease-in-out;
+  -webkit-animation: siimple_spinner_animation 1s infinite ease-in-out;
+  animation: siimple_spinner_animation 1s infinite ease-in-out;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   border-radius: 100px;
@@ -177,35 +176,28 @@ body {
   position: relative;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  -webkit-animation-delay: -0.2s;
-  animation-delay: -0.2s;
+  -webkit-animation-delay: 0.33s;
+  animation-delay: 0.33s;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px; }
 
 @-webkit-keyframes siimple_spinner_animation {
-  0%, 80%, 100% {
-    background-color: rgba(255, 255, 255, 0); } }
+  50% {
+    background-color: transparent; } }
 
 @keyframes siimple_spinner_animation {
-  0%, 80%, 100% {
-    background-color: rgba(255, 255, 255, 0); } }
-
-@keyframes siimple_spinner_animation {
-  40% {
-    background-color: rgba(255, 255, 255, 0); } }
+  50% {
+    background-color: transparent; } }
   .siimple-spinner:before {
     width: 10px;
     height: 10px;
     content: "";
-    background-color: #ebf2fa;
-    -webkit-animation: siimple_spinner_animation 1.2s infinite ease-in-out;
-    animation: siimple_spinner_animation 1.2s infinite ease-in-out;
+    -webkit-animation: siimple_spinner_animation 1s infinite ease-in-out;
+    animation: siimple_spinner_animation 1s infinite ease-in-out;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     border-radius: 100px;
-    -webkit-animation-delay: -0.4s;
-    animation-delay: -0.4s;
     position: absolute;
     left: calc(15px * -1);
     top: 0; }
@@ -213,37 +205,38 @@ body {
     width: 10px;
     height: 10px;
     content: "";
-    background-color: #ebf2fa;
-    -webkit-animation: siimple_spinner_animation 1.2s infinite ease-in-out;
-    animation: siimple_spinner_animation 1.2s infinite ease-in-out;
+    -webkit-animation: siimple_spinner_animation 1s infinite ease-in-out;
+    animation: siimple_spinner_animation 1s infinite ease-in-out;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     border-radius: 100px;
+    -webkit-animation-delay: 0.66s;
+    animation-delay: 0.66s;
     position: absolute;
     left: 15px;
     top: 0; }
   .siimple-spinner.siimple-spinner--navy, .siimple-spinner.siimple-spinner--navy:after, .siimple-spinner.siimple-spinner--navy:before {
-    background-color: #57607c !important; }
+    background-color: #57607c; }
   .siimple-spinner.siimple-spinner--green, .siimple-spinner.siimple-spinner--green:after, .siimple-spinner.siimple-spinner--green:before {
-    background-color: #1add9f !important; }
+    background-color: #1add9f; }
   .siimple-spinner.siimple-spinner--teal, .siimple-spinner.siimple-spinner--teal:after, .siimple-spinner.siimple-spinner--teal:before {
-    background-color: #18d2ba !important; }
+    background-color: #18d2ba; }
   .siimple-spinner.siimple-spinner--blue, .siimple-spinner.siimple-spinner--blue:after, .siimple-spinner.siimple-spinner--blue:before {
-    background-color: #4894f0 !important; }
+    background-color: #4894f0; }
   .siimple-spinner.siimple-spinner--purple, .siimple-spinner.siimple-spinner--purple:after, .siimple-spinner.siimple-spinner--purple:before {
-    background-color: #b490f5 !important; }
+    background-color: #b490f5; }
   .siimple-spinner.siimple-spinner--pink, .siimple-spinner.siimple-spinner--pink:after, .siimple-spinner.siimple-spinner--pink:before {
-    background-color: #f45b93 !important; }
+    background-color: #f45b93; }
   .siimple-spinner.siimple-spinner--red, .siimple-spinner.siimple-spinner--red:after, .siimple-spinner.siimple-spinner--red:before {
-    background-color: #ff1a4f !important; }
+    background-color: #ff1a4f; }
   .siimple-spinner.siimple-spinner--orange, .siimple-spinner.siimple-spinner--orange:after, .siimple-spinner.siimple-spinner--orange:before {
-    background-color: #ff8463 !important; }
+    background-color: #ff8463; }
   .siimple-spinner.siimple-spinner--yellow, .siimple-spinner.siimple-spinner--yellow:after, .siimple-spinner.siimple-spinner--yellow:before {
-    background-color: #ffbf00 !important; }
+    background-color: #ffbf00; }
   .siimple-spinner.siimple-spinner--grey, .siimple-spinner.siimple-spinner--grey:after, .siimple-spinner.siimple-spinner--grey:before {
-    background-color: #ebf2fa !important; }
+    background-color: #ebf2fa; }
   .siimple-spinner.siimple-spinner--white, .siimple-spinner.siimple-spinner--white:after, .siimple-spinner.siimple-spinner--white:before {
-    background-color: #ffffff !important; }
+    background-color: #ffffff; }
   .siimple-spinner--small, .siimple-spinner--small:before, .siimple-spinner--small:after {
     width: 8px !important;
     height: 8px !important; }
@@ -280,7 +273,6 @@ body {
       border-bottom: 0px; }
   .siimple-table-cell {
     display: table-cell;
-    position: relative !important;
     line-height: 24px;
     padding: 10px;
     white-space: nowrap;
