@@ -33,7 +33,7 @@ $siimple-spinner-small-space: 13px;
   font-size: 10px;
   position: relative;
   transform: translateZ(0);
-  animation-delay: -0.33s;
+  animation-delay: 0.33s;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
@@ -42,7 +42,7 @@ $siimple-spinner-small-space: 13px;
   &:before
   {
     @include siimple-spinner-base();
-    animation-delay: -0.66s;
+    //animation-delay: -0.66s;
     position: absolute;
     left: calc(#{$siimple-spinner-space} * -1);
     top: 0;
@@ -52,6 +52,7 @@ $siimple-spinner-small-space: 13px;
   &:after
   {
     @include siimple-spinner-base();
+    animation-delay: 0.66s;
     position: absolute;
     left: $siimple-spinner-space;
     top: 0;
