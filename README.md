@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="100%" src="https://rawgit.com/siimple/siimple/master/media/logo-header.png" alt="siimple-core">
+  <img height="300px" src="https://rawgit.com/siimple/siimple/master/media/logo-inverted.png" alt="siimple-core">
   <br>
 </div>
 
