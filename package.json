@@ -24,7 +24,9 @@
     "websites",
     "responsive"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "siimple-colors": "^0.2.0"
+  },
   "devDependencies": {
     "gulp": "3.9.1",
     "gulp-autoprefixer": "4.0.0",
