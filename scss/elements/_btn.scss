@@ -61,6 +61,12 @@ $siimple-btn-disabled-color-alpha: 0.2;
   cursor: not-allowed !important;
 }
 
+//Button fluid
+@mixin siimple-btn-fluid()
+{
+  width: calc(100% - #{$siimple-btn-padding-left} - #{$siimple-btn-padding-right});
+}
+
 //Colored button
 @mixin siimple-btn-color($color)
 {
