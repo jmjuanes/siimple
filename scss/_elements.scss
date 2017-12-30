@@ -34,6 +34,9 @@
       &#{&}--#{$color} { @include siimple-btn-color($color); }
     }
 
+    //Fluid button style
+    &--fluid { @include siimple-btn-fluid(); }
+
     //Disabled button style
     &--disabled { @include siimple-btn-disabled(); }
   }
