@@ -3,10 +3,10 @@
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
-// Website:    http://siimple.juanes.xyz
+// Website:    https://www.siimple.xyz
 //
+@import "../_variables.scss";
 
-//Alert variables
 $siimple-alert-padding-top: 10px;
 $siimple-alert-padding-bottom: 10px;
 $siimple-alert-padding-left: 10px;
@@ -15,9 +15,7 @@ $siimple-alert-padding-right: 30px;
 $siimple-alert-margin-top: 0px;
 $siimple-alert-margin-bottom: $siimple-default-margin-bottom;
 
-//Alert element
-@mixin siimple-alert
-{
+.siimple-alert {
   display: block;
   width: calc(100% - #{$siimple-alert-padding-left} - #{$siimple-alert-padding-right});
   color: $siimple-navy;
@@ -25,22 +23,19 @@ $siimple-alert-margin-bottom: $siimple-default-margin-bottom;
   font-size: $siimple-default-text-size;
   //font-family: $siimple-default-text-font;
   position: relative;
-
   border-radius: $siimple-default-border-radius;
   background-color: $siimple-grey;
-
   padding-top: $siimple-alert-padding-top;
   padding-bottom: $siimple-alert-padding-bottom;
   padding-left: $siimple-alert-padding-left;
   padding-right: $siimple-alert-padding-right;
-
   margin-top: $siimple-alert-margin-top;
   margin-bottom: $siimple-alert-margin-bottom;
-}
 
-//Alert colored
-@mixin siimple-alert-color($color)
-{
-  background-color: siimple-color-base($color);
-  color: siimple-color-over($color);
+  @each $color, $list in $siimple-default-colors {
+    &#{&}--#{$color} {
+      background-color: nth($list, 1);
+      color: nth($list, 2);
+    }
+  }
 }
