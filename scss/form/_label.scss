@@ -5,15 +5,14 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
 
-//Label variables
 $siimple-label-height: 30px;
 $siimple-label-padding-right: 10px;
 $siimple-label-font-size: 13px;
 
-//Label elements
-@mixin siimple-label()
-{
+.siimple-label {
   display: inline-block;
   height: $siimple-label-height;
   line-height: $siimple-label-height;
@@ -23,4 +22,4 @@ $siimple-label-font-size: 13px;
   font-weight: bold;
   padding-right: $siimple-label-padding-right;
   padding-left: 0px;
-};
+}
