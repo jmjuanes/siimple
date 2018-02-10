@@ -19,3 +19,18 @@ $siimple-default-border-radius: 5px;
 //Default margin values
 $siimple-default-margin-top: 0px;
 $siimple-default-margin-bottom: 16px;
+
+//Default colors
+$siimple-default-colors: (
+  "navy": (#57607c, #ffffff),
+  "green": (#1add9f, #ffffff),
+  "teal": (#18d2ba, #ffffff),
+  "blue": (#4894f0, #ffffff),
+  "purple": (#b490f5, #ffffff),
+  "pink": (#f45b93, #ffffff),
+  "red": (#ff1a4f, #ffffff),
+  "orange": (#ff8463, #ffffff),
+  "yellow": (#ffbf00, #ffffff),
+  "grey": (#ebf2fa, #57607c),
+  "white": (#ffffff, #57607c)
+);
