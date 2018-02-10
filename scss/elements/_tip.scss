@@ -5,17 +5,16 @@
 // Repository: https://github.com/siimple
 // Website:    http://siimple.juanes.xyz
 //
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
 
-//Tip variables
 $siimple-tip-padding: 10px;
 $siimple-tip-padding-left: 25px;
 $siimple-tip-padding-right: 20px;
 $siimple-tip-border: 5px;
 $siimple-tip-background: $siimple-grey-2;
 
-//Tip base mixin
-@mixin siimple-tip()
-{
+.siimple-tip {
   display: block;
   position: relative;
   width: calc(100% - #{$siimple-tip-padding-left} - #{$siimple-tip-padding-right} - #{$siimple-tip-border});
@@ -32,9 +31,7 @@ $siimple-tip-background: $siimple-grey-2;
   font-size: $siimple-default-text-size;
   color: $siimple-default-text-color;
 
-  //Before element
-  &::before
-  {
+  &::before {
     position: absolute;
     top: 10px;
     left: -12px;
@@ -45,29 +42,23 @@ $siimple-tip-background: $siimple-grey-2;
     text-align: center;
     line-height: 20px;
   }
-};
 
-//Colored tip
-@mixin siimple-tip-color($color)
-{
-  border-left-color: siimple-color-base($color);
-  &::before { background-color: siimple-color-base($color); }
-};
+  @each $color, $value in $siimple-default-colors {
+    &#{&}--#{$color} {
+      background-color: $value;
+    }
+    &#{&}--#{$color}::before {
+      background-color: $value;
+    }
+  }
 
-//Exclamation tip
-@mixin siimple-tip-exclamation()
-{
-  &::before{ content: "!"; }
-};
-
-//Question tip
-@mixin siimple-tip-question()
-{
-  &::before{ content: "?"; }
+  &--exclamation::before {
+    content: "!";
+  }
+  &--question::before {
+    content: "?";
+  }
+  &--heart {
+    content: "\2764";
+  }
 }
-
-//Heart tip
-@mixin siimple-tip-heart()
-{
-  &::before { content: "\2764"; }
-};
