@@ -5,6 +5,7 @@
 // Repository: https://github.com/siimple
 // Website:    https://wwww.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
 $siimple-close-size: 20px;
@@ -25,7 +26,7 @@ $siimple-close-large-size: 30px;
   transition: background-color 0.3s;
   position: relative;
   border-radius: 100px;
-  background-color: rgba($siimple-default-navy, $siimple-close-opacity);
+  background-color: rgba($siimple-navy, $siimple-close-opacity);
 
   &:after, &:before {
     content: "";
@@ -35,7 +36,7 @@ $siimple-close-large-size: 30px;
     position: absolute;
     top: 9px;
     left: 4px;
-    background-color: $siimple-default-white;
+    background-color: $siimple-white;
   }
   &:after {
     transform: rotate(45deg);
@@ -45,6 +46,6 @@ $siimple-close-large-size: 30px;
   }
 
   &:hover {
-    background-color: rgba($siimple-default-navy, $siimple-close-hover-opacity);
+    background-color: rgba($siimple-navy, $siimple-close-hover-opacity);
   }
 }
