@@ -5,6 +5,7 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
 $siimple-alert-padding-top: 10px;
@@ -18,13 +19,13 @@ $siimple-alert-margin-bottom: $siimple-default-margin-bottom;
 .siimple-alert {
   display: block;
   width: calc(100% - #{$siimple-alert-padding-left} - #{$siimple-alert-padding-right});
-  color: $siimple-default-navy;
+  color: $siimple-navy;
   line-height: $siimple-default-text-line;
   font-size: $siimple-default-text-size;
   //font-family: $siimple-default-text-font;
   position: relative;
   border-radius: $siimple-default-border-radius;
-  background-color: $siimple-default-grey;
+  background-color: $siimple-grey;
   padding-top: $siimple-alert-padding-top;
   padding-bottom: $siimple-alert-padding-bottom;
   padding-left: $siimple-alert-padding-left;
@@ -32,10 +33,10 @@ $siimple-alert-margin-bottom: $siimple-default-margin-bottom;
   margin-top: $siimple-alert-margin-top;
   margin-bottom: $siimple-alert-margin-bottom;
 
-  @each $color, $list in $siimple-default-colors {
+  @each $color, $value in $siimple-default-colors {
     &#{&}--#{$color} {
-      background-color: nth($list, 1);
-      color: nth($list, 2);
+      background-color: $value;
+      color: siimple-color-over($color);
     }
   }
 }
