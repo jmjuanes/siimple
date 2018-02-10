@@ -5,49 +5,41 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
+@import "../_variables.scss";
 
-//Grid variables
 $siimple-grid-margin-left: auto;
 $siimple-grid-margin-right: auto;
 
-//Grid row variables
 $siimple-grid-row-margin-left: 0px;
 $siimple-grid-row-margin-right: 0px;
 
-//Grid column variables
 $siimple-grid-column-margin-left: 10px;
 $siimple-grid-column-margin-right: 10px;
-$siimple-grid-column-sizes:
-(
-  (1,'8.33%'), (2,'16.66%'),
-  (3,'24.99%'), (4,'33.33%'),
-  (5,'41.66%'), (6,'49.99%'),
-  (7,'58.33%'), (8,'66.66%'),
-  (9,'74.99%'), (10,'83.33%'),
-  (11,'91.66%'), (12,'99.99%')
+$siimple-grid-column-sizes: (
+  (1, '8.33%'), (2, '16.66%'),
+  (3, '24.99%'), (4, '33.33%'),
+  (5, '41.66%'), (6, '49.99%'),
+  (7, '58.33%'), (8, '66.66%'),
+  (9, '74.99%'), (10, '83.33%'),
+  (11, '91.66%'), (12, '99.99%')
 );
-$siimple-grid-column-media: ( ('xl', 1280px), ('lg', 960px), ('md', 768px), ('sm', 480px));
+$siimple-grid-column-media: (('xl', 1280px), ('lg', 960px), ('md', 768px), ('sm', 480px));
 
-//Grid
-@mixin siimple-grid
-{
+.siimple-grid {
   display: block;
   width: 100%;
   margin-left: $siimple-grid-margin-left;
   margin-right: $siimple-grid-margin-right;
 
-  //Grid row style
-  &-row
-  {
+  &-row {
     display: inline-block;
     width: 100%;
+    margin: {
+      left: $siimple-grid-row-margin-left;
+      right: $siimple-grid-row-margin-right;
+    }
 
-    margin-left: $siimple-grid-row-margin-left;
-    margin-right: $siimple-grid-row-margin-right;
-
-    //Row after
-    &:after
-    {
+    &:after {
       content: " ";
       clear: both;
       display: table;
@@ -55,35 +47,26 @@ $siimple-grid-column-media: ( ('xl', 1280px), ('lg', 960px), ('md', 768px), ('sm
     }
   }
 
-  //Grid column style
-  &-col
-  {
+  &-col {
     display: inline-block;
     vertical-align: top;
     float: left;
-
-    margin-left: $siimple-grid-column-margin-left;
-    margin-right: $siimple-grid-column-margin-right;
+    margin: {
+      left: $siimple-grid-column-margin-left;
+      right: $siimple-grid-column-margin-right;
+    }
   }
 
-  //Default column size
-  @each $i,$w in $siimple-grid-column-sizes
-  {
-    &-col--#{$i}
-    {
+  @each $i, $w in $siimple-grid-column-sizes {
+    &-col--#{$i} {
       width: calc(#{$w} - #{$siimple-grid-column-margin-left} - #{$siimple-grid-column-margin-right});
     }
   }
 
-  //Grid sizes
-  @each $grid_name,$grid_size in $siimple-grid-column-media
-  {
-    @media (max-width: $grid_size)
-    {
-      @each $i,$w in $siimple-grid-column-sizes
-      {
-        &-col-#{$grid_name}--#{$i}
-        {
+  @each $grid_name, $grid_size in $siimple-grid-column-media {
+    @media (max-width: $grid_size) {
+      @each $i, $w in $siimple-grid-column-sizes {
+        &-col-#{$grid_name}--#{$i} {
           width: calc(#{$w} - #{$siimple-grid-column-margin-left} - #{$siimple-grid-column-margin-right});
         }
       }
