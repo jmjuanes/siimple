@@ -5,15 +5,14 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
 
-//Textarea variables
 $siimple-textarea-line: $siimple-default-text-line;
 $siimple-textarea-padding: 10px;
 $siimple-textarea-radius: $siimple-default-border-radius;
 
-//Textarea mixin
-@mixin siimple-textarea()
-{
+.siimple-textarea {
   display: inline-block;
   line-height: $siimple-textarea-line;
   //font-family: $siimple-default-text-font;
@@ -25,6 +24,7 @@ $siimple-textarea-radius: $siimple-default-border-radius;
   border-radius: $siimple-textarea-radius;
   background-color: $siimple-grey;
 
-  //Fluid textarea
-  &--fluid { width: 100%; }
+  &--fluid {
+    width: 100%;
+  }
 }
