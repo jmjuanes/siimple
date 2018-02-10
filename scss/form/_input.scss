@@ -31,4 +31,13 @@ $siimple-input-radius: $siimple-default-border-radius;
   &--fluid {
     width: 100%;
   }
+
+  &--light {
+    background-color: $siimple-white;
+  }
+  
+  &--dark {
+    background-color: $siimple-navy;
+    color: $siimple-white;
+  }
 }
