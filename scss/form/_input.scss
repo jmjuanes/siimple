@@ -19,10 +19,12 @@ $siimple-input-radius: $siimple-default-border-radius;
   //font-family: $siimple-default-text-font;
   font-size: $siimple-default-text-size;
   color: $siimple-navy;
-  padding-left: $siimple-input-padding;
-  padding-right: $siimple-input-padding;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding: {
+    left: $siimple-input-padding;
+    right: $siimple-input-padding;
+    top: 0px;
+    bottom: 0px;
+  }
   border: 0px;
   border-radius: $siimple-input-radius;
   outline: 0px;
