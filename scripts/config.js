@@ -2,7 +2,7 @@ let utily = require("utily");
 let pkg = require("../package.json");
 
 //Generate the header
-module.exports = function() {
+exports.getHeader = function() {
     let header = [];
     header.push("/**");
     header.push(" * @name         {{ name }} v{{ version }}");
