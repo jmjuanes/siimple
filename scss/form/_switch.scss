@@ -60,8 +60,8 @@ $siimple-switch-margin-top-bottom: 7px;
     border-radius: $siimple-switch-radius;
     transition: all 0.3s;
 
-    position: relative;
-    top: -18px;
+    position: absolute;
+    top: 0px;
     z-index: 1;
   }
 
