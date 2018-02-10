@@ -6,14 +6,16 @@
 // Website:    http://siimple.juanes.xyz
 //
 @import "../_variables.scss";
+@import "../_utils.scss";
 
 //Button variables
 $siimple-btn-height: 30px;
 $siimple-btn-padding-left: 10px;
 $siimple-btn-padding-right: 10px;
+$siimple-btn-opacity: 0.8;
 
 //Button disabled variables
-$siimple-btn-disabled-opacity: 0.7;
+$siimple-btn-disabled-opacity: 0.6;
 
 .siimple-btn {
   display: inline-block;
@@ -39,6 +41,7 @@ $siimple-btn-disabled-opacity: 0.7;
 
   &:hover {
     text-decoration: none;
+    opacity: $siimple-btn-opacity;
   }
 
   @each $color, $list in $siimple-default-colors {
@@ -51,7 +54,7 @@ $siimple-btn-disabled-opacity: 0.7;
   &--disabled {
     //background-color: $siimple-btn-disabled-background !important;
     //color: rgba($siimple-btn-disabled-color, $siimple-btn-disabled-color-alpha) !important;
-    opacity: $siimple-btn-disabled-opacity;
+    opacity: $siimple-btn-disabled-opacity !important;
     cursor: not-allowed !important;
   }
 
