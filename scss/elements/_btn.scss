@@ -42,10 +42,10 @@ $siimple-btn-disabled-opacity: 0.6;
     opacity: $siimple-btn-opacity;
   }
 
-  @each $color, $list in $siimple-default-colors {
+  @each $color, $value in $siimple-default-colors {
     &#{&}--#{$color} {
-      background-color: nth($list, 1);
-      color: nth($list, 2);
+      background-color: $value;
+      color: siimple-color-over($color);
     }
   }
 
