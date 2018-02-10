@@ -5,15 +5,14 @@
 // Repository: https://github.com/siimple
 // Website:    https://wwww.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
 
-//Input variables
 $siimple-input-height: 30px;
 $siimple-input-padding: 10px;
 $siimple-input-radius: $siimple-default-border-radius;
 
-//Input mixin
-@mixin siimple-input()
-{
+.siimple-input {
   display: inline-block;
   height: $siimple-input-height;
   line-height: $siimple-input-height;
@@ -29,6 +28,7 @@ $siimple-input-radius: $siimple-default-border-radius;
   outline: 0px;
   background-color: $siimple-grey;
 
-  //Fluid input
-  &--fluid { width: 100%; }
+  &--fluid {
+    width: 100%;
+  }
 }
