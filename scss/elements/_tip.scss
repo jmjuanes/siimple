@@ -45,7 +45,7 @@ $siimple-tip-background: $siimple-grey-2;
 
   @each $color, $value in $siimple-default-colors {
     &#{&}--#{$color} {
-      background-color: $value;
+      border-left-color: $value;
     }
     &#{&}--#{$color}::before {
       background-color: $value;
@@ -58,7 +58,7 @@ $siimple-tip-background: $siimple-grey-2;
   &--question::before {
     content: "?";
   }
-  &--heart {
+  &--heart::before {
     content: "\2764";
   }
 }
