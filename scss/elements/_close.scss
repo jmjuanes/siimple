@@ -5,25 +5,19 @@
 // Repository: https://github.com/siimple
 // Website:    https://wwww.siimple.xyz
 //
+@import "../_variables.scss";
 
-//Close variables
 $siimple-close-size: 20px;
 $siimple-close-border: 100px;
-$siimple-close-background: $siimple-navy-4;
-$siimple-close-opacity: 0.3;
+$siimple-close-opacity: 0.1;
 
-//Close hover variables
-$siimple-close-hover-opacity: 0.6;
+$siimple-close-hover-opacity: 0.3;
 
-//Close small variables
 $siimple-close-small-size: 16px;
 
-//Close large variables
 $siimple-close-large-size: 30px;
 
-//Close element mixin
-@mixin siimple-close
-{
+.siimple-close {
   display: inline-block;
   width: $siimple-close-size;
   height: $siimple-close-size;
@@ -31,11 +25,9 @@ $siimple-close-large-size: 30px;
   transition: background-color 0.3s;
   position: relative;
   border-radius: 100px;
-  background-color: rgba($siimple-close-background, $siimple-close-opacity);
+  background-color: rgba($siimple-default-navy, $siimple-close-opacity);
 
-  //Close common stick style
-  &:after, &:before
-  {
+  &:after, &:before {
     content: "";
     display: block;
     width: 12px;
@@ -43,30 +35,16 @@ $siimple-close-large-size: 30px;
     position: absolute;
     top: 9px;
     left: 4px;
-    background-color: $siimple-white;
+    background-color: $siimple-default-white;
+  }
+  &:after {
+    transform: rotate(45deg);
+  }
+  &:before {
+    transform: rotate(-45deg);
   }
 
-  //Close first stick
-  &:after { transform: rotate(45deg); }
-
-  //Close second stick
-  &:before { transform: rotate(-45deg); }
-
-  //Close hover style
-  &:hover
-  {
-    background-color: rgba($siimple-close-background, $siimple-close-hover-opacity);
+  &:hover {
+    background-color: rgba($siimple-default-navy, $siimple-close-hover-opacity);
   }
-}
-
-//Small close icon
-@mixin siimple-close-small()
-{
-
-}
-
-//Large close icon
-@mixin siimple-close-large()
-{
-
 }
