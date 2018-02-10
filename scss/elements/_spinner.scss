@@ -5,6 +5,7 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
 $siimple-spinner-size: 10px;
@@ -60,9 +61,9 @@ $siimple-spinner-small-space: 13px;
     top: 0;
   }
 
-  @each $color, $list in $siimple-default-colors {
+  @each $color, $value in $siimple-default-colors {
     &#{&}--#{$color}, &#{&}--#{$color}:after, &#{&}--#{$color}:before {
-      background-color: nth($list, 1);
+      background-color: $value;
     }
   }
 
