@@ -39,3 +39,10 @@ $siimple-alert-margin-bottom: $siimple-default-margin-bottom;
     }
   }
 }
+
+//Alert with close button
+.siimple-alert .siimple-close {
+  position: absolute !important;
+  right: 5px !important;
+  top: 5px !important;
+}
