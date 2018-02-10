@@ -5,18 +5,16 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
 
-//Table variables
 $siimple-table-width: 100%;
 $siimple-table-border: $siimple-default-border-radius;
 
-//Table cell variables
 $siimple-table-cell-line-height: 24px;
 $siimple-table-cell-padding: 10px;
 
-//Table mixin
-@mixin siimple-table()
-{
+.siimple-table {
   display: table;
   width: $siimple-table-width;
   font-size: $siimple-default-text-size;
@@ -27,26 +25,20 @@ $siimple-table-cell-padding: 10px;
   margin-top: 0px;
   margin-bottom: $siimple-default-margin-bottom;
 
-  //Table row
-  &-row
-  {
+  &-row {
     display: table-row;
     transition: all 0.3s;
     border-bottom: 2px solid $siimple-white;
 
-    //Row hover
-    &:hover
-    {
+    &:hover {
       background-color: $siimple-grey;
     }
-
-    //Row last child
-    &:last-child { border-bottom: 0px; }
+    &:last-child {
+      border-bottom: 0px;
+    }
   }
 
-  //Table cell
-  &-cell
-  {
+  &-cell {
     display: table-cell;
     //position: relative;
     line-height: $siimple-table-cell-line-height;
@@ -56,55 +48,51 @@ $siimple-table-cell-padding: 10px;
     transition: background-color 0.3s;
   }
 
-  //Table bordered
-  &--border &-cell:not(:last-child)
-  {
+  &--border &-cell:not(:last-child) {
     border-right: 2px solid $siimple-white;
   }
 
-  //Table header
-  &-header
-  {
+  &-header {
     display: table-header-group;
     border-bottom: 3px solid $siimple-white !important;
     font-weight: bold;
   }
 
-  //Table header first row
-  &-header &-row:first-child &-cell:first-child { border-top-left-radius: $siimple-table-border; }
+  &-header &-row:first-child &-cell:first-child {
+    border-top-left-radius: $siimple-table-border;
+  }
 
-  //Table header last row last cell
-  &-header &-row:first-child &-cell:last-child { border-top-right-radius: $siimple-table-border; }
+  &-header &-row:first-child &-cell:last-child {
+    border-top-right-radius: $siimple-table-border;
+  }
 
-  //Table header cell
-  &-header &-cell
-  {
+  &-header &-cell {
     background-color: $siimple-grey-0 !important;
     border-bottom-right-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
   }
 
-  //Table body
-  &-body
-  {
+  &-body {
     display: table-row-group;
   }
 
-  //Table body cell
-  &-body &-cell
-  {
-    background-color: $siimple-grey-2;
+  &-body &-cell {
+    background-color: $siimple-grey;
   }
 
-  //Table body last row
-  &-body &-row:last-child &-cell:first-child { border-bottom-left-radius: $siimple-table-border; }
+  &-body &-row:last-child &-cell:first-child {
+    border-bottom-left-radius: $siimple-table-border;
+  }
 
-  //Table body last row last cell
-  &-body &-row:last-child &-cell:last-child { border-bottom-right-radius: $siimple-table-border; }
+  &-body &-row:last-child &-cell:last-child {
+    border-bottom-right-radius: $siimple-table-border;
+  }
 
-  //Table body stripped
-  &--striped &-body &-row:nth-child(odd) &-cell { background-color: $siimple-grey-4; }
+  &--striped &-body &-row:nth-child(odd) &-cell {
+    background-color: $siimple-grey-4;
+  }
 
-  //Table hover -> enable row hover
-  &--hover &-body &-row:hover &-cell { background-color: $siimple-grey-1 !important; }
-};
+  &--hover &-body &-row:hover &-cell {
+    background-color: $siimple-grey-1 !important;
+  }
+}
