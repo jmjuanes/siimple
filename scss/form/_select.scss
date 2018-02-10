@@ -3,33 +3,34 @@
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
-// Website:    http://siimple.juanes.xyz
+// Website:    https://www.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
 
-//Select variables
 $siimple-select-height: 30px;
 $siimple-select-padding: 10px;
 $siimple-select-radius: $siimple-default-border-radius;
 
-//Select mixin
-@mixin siimple-select()
-{
+.siimple-select {
   display: inline-block;
   height: $siimple-select-height;
   line-height: $siimple-select-height;
-
   font-family: $siimple-default-text-font;
   font-size: $siimple-default-text-size;
   color: $siimple-navy;
-
-  padding: { left: $siimple-select-padding; right: $siimple-select-padding; top: 0px; bottom: 0px; }
-
+  padding: {
+    left: $siimple-select-padding;
+    right: $siimple-select-padding;
+    top: 0px;
+    bottom: 0px;
+  }
   border: 0px;
   border-radius: $siimple-select-radius;
   outline: 0px;
-
   background-color: $siimple-grey;
 
-  //Fluid select
-  &--fluid { width: 100%; }
+  &--fluid {
+    width: 100%;
+  }
 }
