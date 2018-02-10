@@ -5,71 +5,57 @@
 // Repository: https://github.com/siimple
 // Website:    http://siimple.juanes.xyz
 //
+@import "../_variables.scss";
 
 //Button variables
 $siimple-btn-height: 30px;
 $siimple-btn-padding-left: 10px;
 $siimple-btn-padding-right: 10px;
 
-//Button hover variables
-$siimple-btn-hover-opacity: 0.8;
-
 //Button disabled variables
-$siimple-btn-disabled-color: $siimple-navy;
-$siimple-btn-disabled-background: $siimple-grey-0;
-$siimple-btn-disabled-color-alpha: 0.2;
+$siimple-btn-disabled-opacity: 0.7;
 
-//Button mixin
-@mixin siimple-btn()
-{
+.siimple-btn {
   display: inline-block;
   height: $siimple-btn-height;
   transition: opacity 0.3s;
   cursor: pointer;
-
   line-height: $siimple-btn-height;
   text-align: center;
   text-decoration: none;
   //font-family: $siimple-default-text-font;
   font-size: $siimple-default-text-size;
   font-weight: bold;
-
   padding-left: $siimple-btn-padding-left;
   padding-right: $siimple-btn-padding-right;
+  border-radius: $siimple-default-border-radius;
 
   //Disable default button element borders
   //https://github.com/siimple/siimple/pull/17
   border: none;
-  border-radius: $siimple-default-border-radius;
 
   //Disable user selection
   @include siimple-utils-select(none);
 
-  //Hover
-  &:hover
-  {
-    opacity: $siimple-btn-hover-opacity;
+  &:hover {
     text-decoration: none;
   }
-}
 
-//Button disabled mixin
-@mixin siimple-btn-disabled()
-{
-  background-color: $siimple-btn-disabled-background !important;
-  color: rgba($siimple-btn-disabled-color, $siimple-btn-disabled-color-alpha) !important;
-  cursor: not-allowed !important;
-}
+  @each $color, $list in $siimple-default-colors {
+    &#{&}--#{$color} {
+      background-color: nth($list, 1);
+      color: nth($list, 2);
+    }
+  }
 
-//Button fluid
-@mixin siimple-btn-fluid()
-{
-  width: calc(100% - #{$siimple-btn-padding-left} - #{$siimple-btn-padding-right});
-}
+  &--disabled {
+    //background-color: $siimple-btn-disabled-background !important;
+    //color: rgba($siimple-btn-disabled-color, $siimple-btn-disabled-color-alpha) !important;
+    opacity: $siimple-btn-disabled-opacity;
+    cursor: not-allowed !important;
+  }
 
-//Colored button
-@mixin siimple-btn-color($color)
-{
-  background-color: siimple-color-base($color);
-  color: siimple-color-over($color);
+  &--fluid {
+    width: calc(100% - #{$siimple-btn-padding-left} - #{$siimple-btn-padding-right});
+  }
 }
