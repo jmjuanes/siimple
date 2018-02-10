@@ -6,12 +6,40 @@
 // Website:    https://www.siimple.xyz
 //
 
+//Default colors
+$siimple-default-navy: #57607c;
+$siimple-default-green: #1add9f;
+$siimple-default-teal: #18d2ba;
+$siimple-default-blue: #4894f0;
+$siimple-default-purple: #b490f5;
+$siimple-default-pink: #f45b93;
+$siimple-default-red: #ff1a4f;
+$siimple-default-orange: #ff8463;
+$siimple-default-yellow: #ffbf00;
+$siimple-default-grey: #ebf2fa;
+$siimple-default-white: #ffffff;
+
+//Default color palette
+$siimple-default-colors: (
+  "navy": ($siimple-default-navy, $siimple-default-white),
+  "green": ($siimple-default-green, $siimple-default-white),
+  "teal": ($siimple-default-teal, $siimple-default-white),
+  "blue": ($siimple-default-blue, $siimple-default-white),
+  "purple": ($siimple-default-purple, $siimple-default-white),
+  "pink": ($siimple-default-pink, $siimple-default-white),
+  "red": ($siimple-default-red, $siimple-default-white),
+  "orange": ($siimple-default-orange, $siimple-default-white),
+  "yellow": ($siimple-default-yellow, $siimple-default-white),
+  "grey": ($siimple-default-grey, $siimple-default-navy),
+  "white": ($siimple-default-white, $siimple-default-navy),
+);
+
 //Default text variables
 $siimple-default-text-size: 14px;
 $siimple-default-text-font: 'Montserrat', sans-serif;
 $siimple-default-text-line: 23px;
 $siimple-default-text-weight: normal;
-$siimple-default-text-color: $siimple-navy;
+$siimple-default-text-color: $siimple-default-navy;
 
 //Default border values
 $siimple-default-border-radius: 5px;
@@ -19,18 +47,3 @@ $siimple-default-border-radius: 5px;
 //Default margin values
 $siimple-default-margin-top: 0px;
 $siimple-default-margin-bottom: 15px;
-
-//Default colors
-$siimple-default-colors: (
-  "navy": (#57607c, #ffffff),
-  "green": (#1add9f, #ffffff),
-  "teal": (#18d2ba, #ffffff),
-  "blue": (#4894f0, #ffffff),
-  "purple": (#b490f5, #ffffff),
-  "pink": (#f45b93, #ffffff),
-  "red": (#ff1a4f, #ffffff),
-  "orange": (#ff8463, #ffffff),
-  "yellow": (#ffbf00, #ffffff),
-  "grey": (#ebf2fa, #57607c),
-  "white": (#ffffff, #57607c)
-);
