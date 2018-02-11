@@ -5,6 +5,9 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
+@import "./size.scss";
 
 //Navbar default variables
 $siimple-navbar-zindex: 3;
@@ -16,17 +19,11 @@ $siimple-navbar-padding: 0px;
 $siimple-navbar-item-margin: 0px;
 $siimple-navbar-item-padding: 15px;
 
-//Navbar link variables
-$siimple-navbar-link-margin: 0px;
-$siimple-navbar-link-padding: 15px;
-
 //Navbar title variables
 $siimple-navbar-title-size: 22px;
 $siimple-navbar-title-padding: 15px;
 
-//Navbar mixin
-@mixin siimple-navbar()
-{
+.siimple-navbar {
   display: block;
   //position: absolute; top: 0px; left: 0px;
   z-index: $siimple-navbar-zindex;
@@ -36,84 +33,55 @@ $siimple-navbar-title-padding: 15px;
   //margin: $siimple-navbar-margin;
   //padding: $siimple-navbar-padding;
 
-  //Navbar sizes
   @include siimple-size();
-};
 
-//Navbar colored mixin
-@mixin siimple-navbar-color($color)
-{
-  background-color: siimple-color($color, 2);
-  color: siimple-color-over($color);
-};
-
-//Navbar item mixin
-@mixin siimple-navbar-item()
-{
-  display: inline-block;
-  height: $siimple-navbar-height;
-  line-height: $siimple-navbar-height;
-  margin-left: $siimple-navbar-item-margin;
-  margin-right: $siimple-navbar-item-margin;
-  padding-left: $siimple-navbar-item-padding;
-  padding-right: $siimple-navbar-item-padding;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-  font-size: $siimple-default-text-weight;
-};
-
-//Navbar title mixin
-@mixin siimple-navbar-title()
-{
-  display: inline-block;
-  height: $siimple-navbar-height;
-  line-height: $siimple-navbar-height;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: $siimple-navbar-title-size;
-  padding-left: $siimple-navbar-title-padding;
-  padding-right: $siimple-navbar-title-padding;
-  transition: all 0.3s;
-  cursor: pointer;
-};
-
-//Navbar title colored mixin
-@mixin siimple-navbar-title-color($color)
-{
-  color: siimple-color-over($color);
-  &:hover
-  {
-    background-color: siimple-color($color, 1);
-    color: siimple-color-over($color);
+  &-title {
+    display: inline-block;
+    height: $siimple-navbar-height;
+    line-height: $siimple-navbar-height;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: $siimple-navbar-title-size;
+    padding-left: $siimple-navbar-title-padding;
+    padding-right: $siimple-navbar-title-padding;
+    transition: all 0.3s;
+    cursor: pointer;
   }
-};
 
-//Navbar link mixin
-@mixin siimple-navbar-link()
-{
-  display: inline-block;
-  height: $siimple-navbar-height;
-  line-height: $siimple-navbar-height;
-  margin-left: $siimple-navbar-link-margin;
-  margin-right: $siimple-navbar-link-margin;
-  padding-left: $siimple-navbar-link-padding;
-  padding-right: $siimple-navbar-link-padding;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-  font-size: $siimple-default-text-weight;
-  transition: all 0.3s;
-  cursor: pointer;
-};
-
-//Navbar link colored mixin
-@mixin siimple-navbar-link-color($color)
-{
-  color: siimple-color-over($color);
-  &:hover
-  {
-    background-color: siimple-color($color, 1);
-    color: siimple-color-over($color);
+  &-item, &-link {
+    display: inline-block;
+    height: $siimple-navbar-height;
+    line-height: $siimple-navbar-height;
+    margin-left: $siimple-navbar-item-margin;
+    margin-right: $siimple-navbar-item-margin;
+    padding-left: $siimple-navbar-item-padding;
+    padding-right: $siimple-navbar-item-padding;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: $siimple-default-text-weight;
+    transition: all 0.3s;
+    cursor: pointer;
   }
-};
+
+  @each $color, $value in $siimple-default-colors {
+    &#{&}--#{$color} {
+      background-color: $value;
+      color: siimple-color-over($color);
+    }
+    &#{&}--#{$color} &-title {
+      color: siimple-color-over($color);
+      &:hover {
+        //background-color: siimple-color($color, 1);
+        color: siimple-color-over($color);
+      }
+    }
+    &#{&}--#{$color} &-link, &#{&}--#{$color} &-item {
+      color: siimple-color-over($color);
+      &:hover {
+        background-color: siimple-color($color, 1);
+        color: siimple-color-over($color);
+      }
+    }
+  }
+}
