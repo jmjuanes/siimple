@@ -106,7 +106,6 @@ $siimple-breadcrumb-item-last-padding: 10px;
   &--dark &-item, &--dark &-crumb {
     background-color: $siimple-navy;
     color: rgba($siimple-white, 0.7);
-
     &:hover {
       color: $siimple-white;
     }
