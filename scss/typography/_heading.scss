@@ -31,7 +31,8 @@ $siimple-heading-sizes: (
       line-height: map-get($heading_variables, "line-height");
       color: $siimple-default-text-color;
       padding: $siimple-heading-padding;
-      margin-bottom: map-get($heading_variables, "margin-bottom");
+      //margin-bottom: map-get($heading_variables, "margin-bottom");
+      margin-bottom: 0.5em;
 
       //Not first child
       &:not(:first-child) {
