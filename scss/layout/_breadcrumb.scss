@@ -12,16 +12,16 @@
 $siimple-breadcrumb-height: 30px;
 $siimple-breadcrumb-margin-top: 0px;
 
-//Breadcrumb crumb variables
-$siimple-breadcrumb-crumb-margin-right: 5px;
-$siimple-breadcrumb-crumb-padding-left: 25px;
-$siimple-breadcrumb-crumb-padding-right: 10px;
+//Breadcrumb item variables
+$siimple-breadcrumb-item-margin-right: 5px;
+$siimple-breadcrumb-item-padding-left: 25px;
+$siimple-breadcrumb-item-padding-right: 10px;
 
-//Breadcrumb crumb first variables
-$siimple-breadcrumb-crumb-first-padding: 10px;
+//Breadcrumb item first variables
+$siimple-breadcrumb-item-first-padding: 10px;
 
-//Breadcrumb crumb last variables
-$siimple-breadcrumb-crumb-last-padding: 10px;
+//Breadcrumb item last variables
+$siimple-breadcrumb-item-last-padding: 10px;
 
 .siimple-breadcrumb {
   display: block;
@@ -30,7 +30,7 @@ $siimple-breadcrumb-crumb-last-padding: 10px;
   margin-bottom: $siimple-default-margin-bottom;
   margin-top: $siimple-breadcrumb-margin-top;
 
-  &-crumb {
+  &-crumb, &-item {
     display: inline-block;
     float: left;
     position: relative;
@@ -43,9 +43,9 @@ $siimple-breadcrumb-crumb-last-padding: 10px;
     font-weight: bold;
     text-decoration: none;
     color: $siimple-navy-4;
-    margin-right: $siimple-breadcrumb-crumb-margin-right;
-    padding-left: $siimple-breadcrumb-crumb-padding-left;
-    padding-right: $siimple-breadcrumb-crumb-padding-right;
+    margin-right: $siimple-breadcrumb-item-margin-right;
+    padding-left: $siimple-breadcrumb-item-padding-left;
+    padding-right: $siimple-breadcrumb-item-padding-right;
     transition: all 0.3s;
 
     //Crumb hover
@@ -82,7 +82,7 @@ $siimple-breadcrumb-crumb-last-padding: 10px;
     &:first-of-type {
       border-top-left-radius: $siimple-default-border-radius;
       border-bottom-left-radius: $siimple-default-border-radius;
-      padding-left: $siimple-breadcrumb-crumb-first-padding;
+      padding-left: $siimple-breadcrumb-item-first-padding;
     }
 
     //First of type before
@@ -94,7 +94,7 @@ $siimple-breadcrumb-crumb-last-padding: 10px;
     &:last-of-type {
       border-top-right-radius: $siimple-default-border-radius;
       border-bottom-right-radius: $siimple-default-border-radius;
-      padding-right: $siimple-breadcrumb-crumb-last-padding;
+      padding-right: $siimple-breadcrumb-item-last-padding;
     }
 
     //Last of type after
