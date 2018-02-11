@@ -30,6 +30,7 @@ $siimple-tip-background: $siimple-grey-2;
   //font-family: $siimple-default-text-font;
   font-size: $siimple-default-text-size;
   color: $siimple-default-text-color;
+  line-height: $siimple-default-text-line;
 
   &::before {
     position: absolute;
