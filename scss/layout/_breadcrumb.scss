@@ -10,7 +10,6 @@
 
 //Breadcrumb variables
 $siimple-breadcrumb-height: 30px;
-$siimple-breadcrumb-margin-bottom: $siimple-default-margin-bottom;
 $siimple-breadcrumb-margin-top: 0px;
 
 //Breadcrumb crumb variables
@@ -19,18 +18,16 @@ $siimple-breadcrumb-crumb-padding-left: 25px;
 $siimple-breadcrumb-crumb-padding-right: 10px;
 
 //Breadcrumb crumb first variables
-$siimple-breadcrumb-crumb-first-radius: 5px;
 $siimple-breadcrumb-crumb-first-padding: 10px;
 
 //Breadcrumb crumb last variables
-$siimple-breadcrumb-crumb-last-radius: 5px;
 $siimple-breadcrumb-crumb-last-padding: 10px;
 
 .siimple-breadcrumb {
   display: block;
   width: 100%;
   height: $siimple-breadcrumb-height;
-  margin-bottom: $siimple-breadcrumb-margin-bottom;
+  margin-bottom: $siimple-default-margin-bottom;
   margin-top: $siimple-breadcrumb-margin-top;
 
   &-crumb {
@@ -83,8 +80,8 @@ $siimple-breadcrumb-crumb-last-padding: 10px;
 
     //First crumb
     &:first-of-type {
-      border-top-left-radius: $siimple-breadcrumb-crumb-first-radius;
-      border-bottom-left-radius: $siimple-breadcrumb-crumb-first-radius;
+      border-top-left-radius: $siimple-default-border-radius;
+      border-bottom-left-radius: $siimple-default-border-radius;
       padding-left: $siimple-breadcrumb-crumb-first-padding;
     }
 
@@ -95,8 +92,8 @@ $siimple-breadcrumb-crumb-last-padding: 10px;
 
     //Last crumb
     &:last-of-type {
-      border-top-right-radius: $siimple-breadcrumb-crumb-last-radius;
-      border-bottom-right-radius: $siimple-breadcrumb-crumb-last-radius;
+      border-top-right-radius: $siimple-default-border-radius;
+      border-bottom-right-radius: $siimple-default-border-radius;
       padding-right: $siimple-breadcrumb-crumb-last-padding;
     }
 
