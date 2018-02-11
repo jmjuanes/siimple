@@ -9,18 +9,18 @@
 @import "../_variables.scss";
 
 //Pre vriables
-$siimple-pre-padding: 10px;
+$siimple-pre-text-size: 13px;
+$siimple-pre-padding: 15px;
 $siimple-pre-margin-top: 0px;
-$siimple-pre-line: 20px;
+$siimple-pre-line: 22px;
 
 .siimple-pre {
   display: block;
   overflow-x: auto;
-  width: calc(100% - #{$siimple-pre-padding} - #{$siimple-pre-padding});
+  width: calc(100% - 2 * #{$siimple-pre-padding});
   color: $siimple-navy;
   line-height: $siimple-pre-line;
-  font-weight: $siimple-default-text-weight;
-  font-size: $siimple-default-text-size;
+  font-size: $siimple-pre-text-size;
   background-color: $siimple-grey;
   border-radius: $siimple-default-border-radius;
   padding: $siimple-pre-padding;
