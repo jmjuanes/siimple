@@ -9,8 +9,6 @@
 @import "../_variables.scss";
 
 $siimple-box-padding: 10px;
-$siimple-box-radius: 5px;
-$siimple-box-margin-bottom: $siimple-default-margin-bottom;
 
 $siimple-box-title-font-size: 40px;
 $siimple-box-title-margin-top: 20px;
@@ -32,9 +30,9 @@ $siimple-box-detail-margin-bottom: 10px;
   //font-family: $siimple-default-text-font;
   font-size: $siimple-default-text-size;
   color: $siimple-default-text-color;
-  border-radius: $siimple-box-radius;
+  border-radius: $siimple-default-border-radius;
   padding: $siimple-box-padding;
-  margin-bottom: $siimple-box-margin-bottom;
+  margin-bottom: $siimple-default-margin-bottom;
 
   &-title {
     display: block;
