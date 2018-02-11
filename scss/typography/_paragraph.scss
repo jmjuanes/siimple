@@ -1,0 +1,20 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
+
+$siimple-paragraph-margin-top: 0px;
+
+.siimple-paragraph, .siimple-p {
+  display: block;
+  //font-family: $siimple-default-text-font;
+  line-height: $siimple-default-text-line;
+  font-size: $siimple-default-text-size;
+  margin-top: $siimple-paragraph-margin-top;
+  margin-bottom: $siimple-default-margin-bottom;
+}
