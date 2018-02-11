@@ -9,7 +9,7 @@
 @import "../_variables.scss";
 
 $siimple-tag-height: 20px;
-$siimple-tag-font-size: 12px;
+$siimple-tag-text-size: 12px;
 $siimple-tag-padding-left: 6px;
 $siimple-tag-padding-right: 6px;
 $siimple-tag-margin-right: 1px;
@@ -18,7 +18,7 @@ $siimple-tag-margin-bottom: 8px;
 .siimple-tag {
   display: inline-block;
   //height: $siimple-tag-height;
-  font-size: $siimple-tag-font-size;
+  font-size: $siimple-tag-text-size;
   text-decoration: none;
   line-height: $siimple-tag-height;
   border-radius: $siimple-default-border-radius;
