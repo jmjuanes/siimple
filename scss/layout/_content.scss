@@ -5,18 +5,18 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
+@import "../_variables.scss";
+@import "./size.scss";
 
 //Content variables
 $siimple-content-padding-top: 30px;
 $siimple-content-padding-bottom: 30px;
 
-//Content mixin
-@mixin siimple-content()
-{
+.siimple-content {
   display: block;
   padding-top: $siimple-content-padding-top;
   padding-bottom: $siimple-content-padding-bottom;
 
   //Content sizes
   @include siimple-size();
-};
+}
