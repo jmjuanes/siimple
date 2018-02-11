@@ -11,9 +11,9 @@
 
 //Navbar default variables
 $siimple-navbar-zindex: 3;
-$siimple-navbar-height: 60px;
+$siimple-navbar-height: 30px;
 $siimple-navbar-margin: 0px;
-$siimple-navbar-padding: 0px;
+$siimple-navbar-padding: 15px;
 
 //Navbar item variables
 $siimple-navbar-item-margin: 0px;
@@ -31,7 +31,11 @@ $siimple-navbar-title-padding: 15px;
   height: $siimple-navbar-height;
   //font-family: $siimple-default-text-font;
   //margin: $siimple-navbar-margin;
-  //padding: $siimple-navbar-padding;
+  padding: {
+    top: $siimple-navbar-padding;
+    bottom: $siimple-navbar-margin;
+  }
+  vertical-align: middle;
 
   @include siimple-size();
 
