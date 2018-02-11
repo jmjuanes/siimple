@@ -64,13 +64,13 @@ $siimple-menu-submenu-padding: 10px;
     border: 0px;
     border-radius: $siimple-menu-item-radius;
     font-size: $siimple-default-text-size;
-    color: $siimple-navy;
+    color: $siimple-navy-4;
     font-weight: normal;
     text-decoration: none;
     padding-left: $siimple-menu-item-padding;
     padding-right: $siimple-menu-item-padding;
     opacity: 1.0;
-    transition: background-color 0.3s;
+    transition: all ease 0.3s;
     cursor: pointer;
 
     //Hover styles
