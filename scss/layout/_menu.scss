@@ -10,14 +10,13 @@
 
 //Menu variables
 $siimple-menu-margin-top: 0px;
-$siimple-menu-margin-bottom: 10px;
 
 //Menu group variables
 $siimple-menu-group-height: 25px;
 $siimple-menu-group-margin: 10px;
 
 //Menu item variables
-$siimple-menu-item-height: 34px;
+$siimple-menu-item-height: 30px;
 $siimple-menu-item-radius: 5px;
 $siimple-menu-item-padding: 10px;
 
@@ -33,7 +32,7 @@ $siimple-menu-submenu-padding: 10px;
   //font-family: $siimple-default-text-font;
   font-size: $siimple-default-text-size;
   margin-top: $siimple-menu-margin-top;
-  margin-bottom: $siimple-menu-margin-bottom;
+  margin-bottom: $siimple-default-margin-bottom;
   padding: 0px;
 
   &-group {
