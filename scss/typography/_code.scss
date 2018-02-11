@@ -9,7 +9,7 @@
 @import "../_variables.scss";
 
 //Code variables
-$siimple-code-size: 13px;
+$siimple-code-text-size: 13px;
 $siimple-code-background: $siimple-grey;
 $siimple-code-color: $siimple-default-text-color;
 $siimple-code-padding-top: 2px;
@@ -20,7 +20,7 @@ $siimple-code-padding-right: 5px;
 .siimple-code {
   color: $siimple-navy;
   text-decoration: none;
-  font-size: $siimple-code-size;
+  font-size: $siimple-code-text-size;
   background-color: $siimple-grey;
   border-radius: $siimple-default-border-radius;
   padding: {
