@@ -3,8 +3,10 @@
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
-// Website:    http://siimple.juanes.xyz
+// Website:    https://www.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
 
 //Code variables
 $siimple-code-size: $siimple-default-text-size;
@@ -18,55 +20,45 @@ $siimple-code-padding-right: 5px;
 //Pre vriables
 $siimple-pre-padding: 10px;
 $siimple-pre-margin-top: 0px;
-$siimple-pre-margin-bottom: $siimple-default-margin-bottom;
-$siimple-pre-background: $siimple-grey;
 $siimple-pre-line: 20px;
 
-//Code mixin
-@mixin siimple-code()
-{
+.siimple-code {
   color: $siimple-navy;
   text-decoration: none;
   font-size: $siimple-default-text-size;
   background-color: $siimple-grey;
   border-radius: $siimple-default-border-radius;
+  padding: {
+    top: $siimple-code-padding-top;
+    bottom: $siimple-code-padding-bottom;
+    left: $siimple-code-padding-left;
+    right: $siimple-code-padding-right;
+  }
 
-  padding-top: $siimple-code-padding-top;
-  padding-bottom: $siimple-code-padding-bottom;
-  padding-left: $siimple-code-padding-left;
-  padding-right: $siimple-code-padding-right;
-};
+  &--dark {
+    background-color: $siimple-navy !important;
+    color: $siimple-white;
+  }
+}
 
-//Code dark mode
-@mixin siimple-code-dark()
-{
-  background-color: $siimple-navy !important;
-  color: $siimple-white;
-};
-
-//Pre mixin
-@mixin siimple-pre()
-{
+.siimple-pre {
   display: block;
   overflow-x: auto;
   width: calc(100% - #{$siimple-pre-padding} - #{$siimple-pre-padding});
-
-  color: $siimple-default-text-color;
+  color: $siimple-navy;
   line-height: $siimple-pre-line;
   font-weight: $siimple-default-text-weight;
   font-size: $siimple-default-text-size;
-
-  background-color: $siimple-pre-background;
+  background-color: $siimple-grey;
   border-radius: $siimple-default-border-radius;
-
   padding: $siimple-pre-padding;
-  margin-top: $siimple-pre-margin-top;
-  margin-bottom: $siimple-pre-margin-bottom;
-};
+  margin: {
+    top: $siimple-pre-margin-top;
+    bottom: $siimple-default-margin-bottom;
+  }
 
-//Pre dark mode mixin
-@mixin siimple-pre-dark()
-{
-  background-color: $siimple-navy !important;
-  color: $siimple-white;
-};
+  &--dark {
+    background-color: $siimple-navy !important;
+    color: $siimple-white;
+  }
+}
