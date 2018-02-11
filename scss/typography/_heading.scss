@@ -5,34 +5,38 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
 
 //Heading variables
 $siimple-heading-padding: 0px;
-$siimple-heading-sizes:
-(
-  "1": ( "size": 45px, "line-height": 51px, "margin-bottom": 20px, "margin-top": 30px),
-  "2": ( "size": 35px, "line-heignt": 40px, "margin-bottom": 16px, "margin-top": 30px),
-  "3": ( "size": 25px, "line-heignt": 29px, "margin-bottom": 14px, "margin-top": 30px),
-  "4": ( "size": 22px, "line-heignt": 25px, "margin-bottom": 12px, "margin-top": 30px),
-  "5": ( "size": 20px, "line-heignt": 22px, "margin-bottom": 10px, "margin-top": 30px),
-  "6": ( "size": 16px, "line-heignt": 20px, "margin-bottom": 8px, "margin-top": 30px)
+$siimple-heading-sizes: (
+  "1": ("size": 45px, "line-height": 51px, "margin-bottom": 20px, "margin-top": 30px),
+  "2": ("size": 35px, "line-heignt": 40px, "margin-bottom": 16px, "margin-top": 30px),
+  "3": ("size": 25px, "line-heignt": 29px, "margin-bottom": 14px, "margin-top": 30px),
+  "4": ("size": 22px, "line-heignt": 25px, "margin-bottom": 12px, "margin-top": 30px),
+  "5": ("size": 20px, "line-heignt": 22px, "margin-bottom": 10px, "margin-top": 30px),
+  "6": ("size": 16px, "line-heignt": 20px, "margin-bottom": 8px, "margin-top": 30px)
 );
 
-//Heading base
-@mixin siimple-heading($size)
-{
-  //Get the heading variables
-  $heading_variables: map-get($siimple-heading-sizes, "#{$size}");
+.siimple-h {
+  @each $heading_number,$heading_variables in $siimple-heading-sizes
+  {
+    //Add this heading size
+    &#{$heading_number} {
+      display: block;
+      font-size: map-get($heading_variables, "size");
+      //font-family: $siimple-default-text-font;
+      font-weight: bold;
+      line-height: map-get($heading_variables, "line-height");
+      color: $siimple-default-text-color;
+      padding: $siimple-heading-padding;
+      margin-bottom: map-get($heading_variables, "margin-bottom");
 
-  display: block;
-  font-size: map-get($heading_variables, "size");
-  //font-family: $siimple-default-text-font;
-  font-weight: bold;
-  line-height: map-get($heading_variables, "line-height");
-  color: $siimple-default-text-color;
-  padding: $siimple-heading-padding;
-  margin-bottom: map-get($heading_variables, "margin-bottom");
-
-  //Not first child
-  &:not(:first-child){ margin-top: map-get($heading_variables, "margin-top"); }
+      //Not first child
+      &:not(:first-child) {
+        margin-top: map-get($heading_variables, "margin-top");
+      }
+    }
+  }
 }
