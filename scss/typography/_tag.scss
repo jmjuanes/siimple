@@ -5,8 +5,9 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
 
-//Tag variables
 $siimple-tag-height: 22px;
 $siimple-tag-font-size: 12px;
 $siimple-tag-padding-left: 6px;
@@ -14,24 +15,24 @@ $siimple-tag-padding-right: 6px;
 $siimple-tag-margin-right: 1px;
 $siimple-tag-margin-bottom: 8px;
 
-//Tag mixin
-@mixin siimple-tag()
-{
+.siimple-tag {
   display: inline-block;
   //height: $siimple-tag-height;
   font-size: $siimple-tag-font-size;
   text-decoration: none;
   line-height: $siimple-tag-height;
   border-radius: $siimple-default-border-radius;
-  padding-left: $siimple-tag-padding-left;
-  padding-right: $siimple-tag-padding-right;
+  padding: {
+    left: $siimple-tag-padding-left;
+    right: $siimple-tag-padding-right;
+  }
   margin-right: $siimple-tag-margin-right;
   //margin-bottom: $siimple-tag-margin-bottom;
-};
 
-//Tag color mixin
-@mixin siimple-tag-color($color)
-{
-  background-color: siimple-color-base($color);
-  color: siimple-color-over($color);
-};
+  @each $color, $value in $siimple-default-colors {
+    &#{&}--#{$color} {
+      background-color: $value;
+      color: siimple-color-over($color);
+    }
+  }
+}
