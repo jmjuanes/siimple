@@ -46,10 +46,32 @@ $siimple-navbar-title-padding: 15px;
     text-decoration: none;
     font-weight: bold;
     font-size: $siimple-navbar-title-size;
-    padding-left: $siimple-navbar-title-padding;
-    padding-right: $siimple-navbar-title-padding;
+    //padding-left: $siimple-navbar-title-padding;
+    //padding-right: $siimple-navbar-title-padding;
     transition: all 0.3s;
     cursor: pointer;
+    vertical-align: middle;
+  }
+
+  &-subtitle {
+    display: inline-block;
+    height: $siimple-navbar-height;
+    line-height: $siimple-navbar-height;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    vertical-align: middle;
+    opacity: 0.5;
+
+    &::before {
+      display: inline-block;
+      content: "";
+      width: 2px;
+      height: calc(#{$siimple-navbar-height} - 8px);
+      margin: 3px 5px 3px 5px;
+      vertical-align: middle;
+    }
   }
 
   &-item, &-link {
@@ -67,6 +89,7 @@ $siimple-navbar-title-padding: 15px;
     transition: all 0.3s;
     cursor: pointer;
     opacity: 0.8;
+    vertical-align: middle;
     &:hover {
       opacity: 1.0;
     }
@@ -79,6 +102,12 @@ $siimple-navbar-title-padding: 15px;
     }
     &#{&}--#{$color} &-title {
       color: siimple-color-over($color);
+    }
+    &#{&}--#{$color} &-subtitle {
+      color: siimple-color-over($color);
+      &::before {
+        background-color: siimple-color-over($color);
+      }
     }
     &#{&}--#{$color} &-link, &#{&}--#{$color} &-item {
       color: siimple-color-over($color);
