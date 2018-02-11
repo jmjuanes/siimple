@@ -5,6 +5,8 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
 
 //Menu variables
 $siimple-menu-margin-top: 0px;
@@ -20,14 +22,12 @@ $siimple-menu-item-radius: 5px;
 $siimple-menu-item-padding: 10px;
 
 //Menu submenu variables
-$siimple-menu-sub-margin-top: 5px;
-$siimple-menu-sub-margin-bottom: 5px;
-$siimple-menu-sub-margin-left: 10px;
-$siimple-menu-sub-padding: 10px;
+$siimple-menu-submenu-margin-top: 5px;
+$siimple-menu-submenu-margin-bottom: 5px;
+$siimple-menu-submenu-margin-left: 10px;
+$siimple-menu-submenu-padding: 10px;
 
-//Menu mixin
-@mixin siimple-menu()
-{
+.siimple-menu {
   display: block;
   width: 100%;
   //font-family: $siimple-default-text-font;
@@ -35,68 +35,59 @@ $siimple-menu-sub-padding: 10px;
   margin-top: $siimple-menu-margin-top;
   margin-bottom: $siimple-menu-margin-bottom;
   padding: 0px;
-};
 
-//Menu group mixin
-@mixin siimple-menu-group()
-{
-  display: block;
-  width: 100%;
-  height: $siimple-menu-group-height;
-  line-height: $siimple-menu-group-height;
-  transition: color 0.3s;
-  font-weight: bold;
-  text-decoration: none;
-  color: $siimple-navy-3;
-
-  //Menu group not first margin top
-  &:not(:first-child)
-  {
-    margin-top: $siimple-menu-group-margin;
-  }
-
-  //Menu group hover
-  &:hover
-  {
-    text-decoration: none !important;
+  &-group {
+    display: block;
+    width: 100%;
+    height: $siimple-menu-group-height;
+    line-height: $siimple-menu-group-height;
+    transition: color 0.3s;
+    font-weight: bold;
+    text-decoration: none;
     color: $siimple-navy-3;
+
+    //Menu group not first margin top
+    &:not(:first-child) {
+      margin-top: $siimple-menu-group-margin;
+    }
+
+    //Menu group hover
+    &:hover {
+      text-decoration: none !important;
+      color: $siimple-navy-3;
+    }
   }
-};
 
-//Menu item mixin
-@mixin siimple-menu-item()
-{
-  display: block;
-  height: $siimple-menu-item-height;
-  line-height: $siimple-menu-item-height;
-  border: 0px;
-  border-radius: $siimple-menu-item-radius;
-  font-size: $siimple-default-text-size;
-  color: $siimple-navy;
-  font-weight: normal;
-  text-decoration: none;
-  padding-left: $siimple-menu-item-padding;
-  padding-right: $siimple-menu-item-padding;
-  opacity: 1.0;
-  transition: background-color 0.3s;
-  cursor: pointer;
-
-  //Hover styles
-  &:hover
-  {
-    background-color: $siimple-grey-2;
-    text-decoration: none !important;
+  &-item {
+    display: block;
+    height: $siimple-menu-item-height;
+    line-height: $siimple-menu-item-height;
+    border: 0px;
+    border-radius: $siimple-menu-item-radius;
+    font-size: $siimple-default-text-size;
     color: $siimple-navy;
-  }
-};
+    font-weight: normal;
+    text-decoration: none;
+    padding-left: $siimple-menu-item-padding;
+    padding-right: $siimple-menu-item-padding;
+    opacity: 1.0;
+    transition: background-color 0.3s;
+    cursor: pointer;
 
-//Menu submenu mixin
-@mixin siimple-menu-sub()
-{
-  display: block;
-  padding-left: $siimple-menu-sub-padding;
-  margin-left: $siimple-menu-sub-margin-left;
-  margin-top: $siimple-menu-sub-margin-top;
-  margin-bottom: $siimple-menu-sub-margin-bottom;
-  border-left: 1px solid $siimple-grey-1;
-};
+    //Hover styles
+    &:hover {
+      background-color: $siimple-grey-2;
+      text-decoration: none !important;
+      color: $siimple-navy;
+    }
+  }
+
+  &-sub, &-submenu {
+    display: block;
+    padding-left: $siimple-menu-submenu-padding;
+    margin-left: $siimple-menu-submenu-margin-left;
+    margin-top: $siimple-menu-submenu-margin-top;
+    margin-bottom: $siimple-menu-submenu-margin-bottom;
+    border-left: 1px solid $siimple-grey-1;
+  }
+}
