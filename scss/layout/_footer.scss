@@ -5,25 +5,26 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
+@import "./size.scss";
 
 //Footer variables
 $siimple-footer-padding-top: 50px;
 $siimple-footer-padding-bottom: 80px;
 
-//Footer mixin
-@mixin siimple-footer()
-{
+.siimple-footer {
   display: block;
   padding-top: $siimple-footer-padding-top;
   padding-bottom: $siimple-footer-padding-bottom;
 
   //Footer sizes
   @include siimple-size();
-};
 
-//Colored footer
-@mixin siimple-footer-color($color)
-{
-  background-color: siimple-color-base($color);
-  color: siimple-color-over($color);
-};
+  @each $color, $value in $siimple-default-colors {
+    &#{&}--#{$color} {
+      background-color: $value;
+      color: siimple-color-over($color);
+    }
+  }
+}
