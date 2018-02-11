@@ -5,6 +5,9 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
+@import "./size.scss";
 
 //Jumbotron variables
 $siimple-jumbotron-padding-top: 120px;
@@ -28,55 +31,46 @@ $siimple-jumbotron-detail-line-height: 30px;
 $siimple-jumbotron-detail-margin-top: 10px;
 $siimple-jumbotron-detail-margin-bottom: 10px;
 
-//Jumbotron
-@mixin siimple-jumbotron()
-{
+.siimple-jumbotron {
   display: block;
   //font-family: $siimple-default-text-font;
   padding-top: $siimple-jumbotron-padding-top;
   padding-bottom: $siimple-jumbotron-padding-bottom;
 
-  //Jumbotron sizes
   @include siimple-size();
-};
 
-//Jumbotron title mixin
-@mixin siimple-jumbotron-title()
-{
-  display: block;
-  text-decoration: none;
-  line-height: $siimple-jumbotron-title-line-height;
-  font-weight: bold;
-  font-size: $siimple-jumbotron-title-font-size;
-  margin-top: $siimple-jumbotron-title-margin-top;
-  margin-bottom: $siimple-jumbotron-title-margin-bottom;
-};
+  &-title {
+    display: block;
+    text-decoration: none;
+    line-height: $siimple-jumbotron-title-line-height;
+    font-weight: bold;
+    font-size: $siimple-jumbotron-title-font-size;
+    margin-top: $siimple-jumbotron-title-margin-top;
+    margin-bottom: $siimple-jumbotron-title-margin-bottom;
+  }
 
-//Jumbotron subtitle mixin
-@mixin siimple-jumbotron-subtitle()
-{
-  display: block;
-  text-decoration: none;
-  line-height: $siimple-jumbotron-subtitle-line-height;
-  font-size: $siimple-jumbotron-subtitle-font-size;
-  margin-top: $siimple-jumbotron-subtitle-margin-top;
-  margin-bottom: $siimple-jumbotron-subtitle-margin-bottom;
-};
+  &-subtitle {
+    display: block;
+    text-decoration: none;
+    line-height: $siimple-jumbotron-subtitle-line-height;
+    font-size: $siimple-jumbotron-subtitle-font-size;
+    margin-top: $siimple-jumbotron-subtitle-margin-top;
+    margin-bottom: $siimple-jumbotron-subtitle-margin-bottom;
+  }
 
-//Jumbotron detail text
-@mixin siimple-jumbotron-detail()
-{
-  display: block;
-  text-decoration: none;
-  line-height: $siimple-jumbotron-detail-line-height;
-  font-size: $siimple-jumbotron-detail-font-size;
-  margin-top: $siimple-jumbotron-detail-margin-top;
-  margin-bottom: $siimple-jumbotron-detail-margin-bottom;
-};
+  &-detail {
+    display: block;
+    text-decoration: none;
+    line-height: $siimple-jumbotron-detail-line-height;
+    font-size: $siimple-jumbotron-detail-font-size;
+    margin-top: $siimple-jumbotron-detail-margin-top;
+    margin-bottom: $siimple-jumbotron-detail-margin-bottom;
+  }
 
-//Jumbotron colors
-@mixin siimple-jumbotron-color($color)
-{
-  background-color: siimple-color($color, 1);
-  color: siimple-color-over($color);
-};
+  @each $color, $value in $siimple-default-colors {
+    &#{&}--#{$color} {
+      background-color: $value;
+      color: siimple-color-over($color);
+    }
+  }
+}
