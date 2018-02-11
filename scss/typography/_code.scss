@@ -17,11 +17,6 @@ $siimple-code-padding-bottom: 2px;
 $siimple-code-padding-left: 5px;
 $siimple-code-padding-right: 5px;
 
-//Pre vriables
-$siimple-pre-padding: 10px;
-$siimple-pre-margin-top: 0px;
-$siimple-pre-line: 20px;
-
 .siimple-code {
   color: $siimple-navy;
   text-decoration: none;
@@ -33,28 +28,6 @@ $siimple-pre-line: 20px;
     bottom: $siimple-code-padding-bottom;
     left: $siimple-code-padding-left;
     right: $siimple-code-padding-right;
-  }
-
-  &--dark {
-    background-color: $siimple-navy !important;
-    color: $siimple-white;
-  }
-}
-
-.siimple-pre {
-  display: block;
-  overflow-x: auto;
-  width: calc(100% - #{$siimple-pre-padding} - #{$siimple-pre-padding});
-  color: $siimple-navy;
-  line-height: $siimple-pre-line;
-  font-weight: $siimple-default-text-weight;
-  font-size: $siimple-default-text-size;
-  background-color: $siimple-grey;
-  border-radius: $siimple-default-border-radius;
-  padding: $siimple-pre-padding;
-  margin: {
-    top: $siimple-pre-margin-top;
-    bottom: $siimple-default-margin-bottom;
   }
 
   &--dark {
