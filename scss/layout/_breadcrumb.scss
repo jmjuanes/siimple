@@ -37,7 +37,7 @@ $siimple-breadcrumb-item-last-padding: 10px;
     height: $siimple-breadcrumb-height;
     line-height: $siimple-breadcrumb-height;
     background-color: $siimple-grey-2;
-    text-align: center;
+    //text-align: center;
     //font-family: $siimple-default-text-font;
     font-size: $siimple-default-text-size;
     font-weight: bold;
@@ -47,11 +47,11 @@ $siimple-breadcrumb-item-last-padding: 10px;
     padding-left: $siimple-breadcrumb-item-padding-left;
     padding-right: $siimple-breadcrumb-item-padding-right;
     transition: all 0.3s;
+    cursor: pointer;
 
     //Crumb hover
     &:hover {
       color: $siimple-navy;
-      cursor: pointer;
     }
 
     //Crumb after
@@ -100,6 +100,18 @@ $siimple-breadcrumb-item-last-padding: 10px;
     //Last of type after
     &:last-of-type:after {
       display: none;
+    }
+  }
+
+  &--dark &-item, &--dark &-crumb {
+    background-color: $siimple-navy;
+    color: rgba($siimple-white, 0.7);
+
+    &:hover {
+      color: $siimple-white;
+    }
+    &:after {
+      border-left-color: $siimple-navy;
     }
   }
 }
