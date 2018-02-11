@@ -66,6 +66,10 @@ $siimple-navbar-title-padding: 15px;
     font-size: $siimple-default-text-weight;
     transition: all 0.3s;
     cursor: pointer;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1.0;
+    }
   }
 
   @each $color, $value in $siimple-default-colors {
@@ -75,17 +79,9 @@ $siimple-navbar-title-padding: 15px;
     }
     &#{&}--#{$color} &-title {
       color: siimple-color-over($color);
-      &:hover {
-        //background-color: siimple-color($color, 1);
-        color: siimple-color-over($color);
-      }
     }
     &#{&}--#{$color} &-link, &#{&}--#{$color} &-item {
       color: siimple-color-over($color);
-      &:hover {
-        background-color: siimple-color($color, 1);
-        color: siimple-color-over($color);
-      }
     }
   }
 }
