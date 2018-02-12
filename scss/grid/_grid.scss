@@ -10,11 +10,9 @@
 $siimple-grid-margin-left: auto;
 $siimple-grid-margin-right: auto;
 
-$siimple-grid-row-margin-left: 0px;
-$siimple-grid-row-margin-right: 0px;
+$siimple-grid-row-margin: 0px;
 
-$siimple-grid-column-margin-left: 10px;
-$siimple-grid-column-margin-right: 10px;
+$siimple-grid-column-margin: 10px;
 $siimple-grid-column-sizes: (
   (1, '8.33%'), (2, '16.66%'),
   (3, '24.99%'), (4, '33.33%'),
@@ -34,8 +32,8 @@ $siimple-grid-column-sizes: (
     display: inline-block;
     width: 100%;
     margin: {
-      left: $siimple-grid-row-margin-left;
-      right: $siimple-grid-row-margin-right;
+      left: $siimple-grid-row-margin;
+      right: $siimple-grid-row-margin;
     }
 
     &:after {
@@ -51,14 +49,14 @@ $siimple-grid-column-sizes: (
     vertical-align: top;
     float: left;
     margin: {
-      left: $siimple-grid-column-margin-left;
-      right: $siimple-grid-column-margin-right;
+      left: $siimple-grid-column-margin;
+      right: $siimple-grid-column-margin;
     }
   }
 
   @each $i, $w in $siimple-grid-column-sizes {
     &-col--#{$i} {
-      width: calc(#{$w} - #{$siimple-grid-column-margin-left} - #{$siimple-grid-column-margin-right});
+      width: calc(#{$w} - 2 * #{$siimple-grid-column-margin});
     }
   }
 
@@ -66,7 +64,7 @@ $siimple-grid-column-sizes: (
     @media (max-width: $grid_size) {
       @each $i, $w in $siimple-grid-column-sizes {
         &-col-#{$grid_name}--#{$i} {
-          width: calc(#{$w} - #{$siimple-grid-column-margin-left} - #{$siimple-grid-column-margin-right});
+          width: calc(#{$w} - 2 * #{$siimple-grid-column-margin});
         }
       }
     }
