@@ -8,17 +8,25 @@
 
 //Default color palette
 $siimple-default-colors: (
-  "navy": $siimple-navy,
-  "green": $siimple-green,
-  "teal": $siimple-teal,
-  "blue": $siimple-blue,
-  "purple": $siimple-purple,
-  "pink": $siimple-pink,
-  "red": $siimple-red,
-  "orange": $siimple-orange,
-  "yellow": $siimple-yellow,
-  "grey": $siimple-grey,
-  "white": $siimple-white,
+    "navy": $siimple-navy,
+    "green": $siimple-green,
+    "teal": $siimple-teal,
+    "blue": $siimple-blue,
+    "purple": $siimple-purple,
+    "pink": $siimple-pink,
+    "red": $siimple-red,
+    "orange": $siimple-orange,
+    "yellow": $siimple-yellow,
+    "grey": $siimple-grey,
+    "white": $siimple-white,
+);
+
+//Default media sizes values
+$siimple-default-sizes: (
+    "xl": 1280px,
+    "lg": 960px,
+    "md": 768px,
+    "sm": 480px
 );
 
 //Default text variables
