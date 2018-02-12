@@ -19,5 +19,4 @@ let compileCss = function() {
         .pipe(header(config.getHeader(), {}))
         .pipe(gulp.dest("./dist"));
 };
-
 compileCss();
