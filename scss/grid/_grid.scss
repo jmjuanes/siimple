@@ -23,7 +23,6 @@ $siimple-grid-column-sizes: (
   (9, '74.99%'), (10, '83.33%'),
   (11, '91.66%'), (12, '99.99%')
 );
-$siimple-grid-column-media: (('xl', 1280px), ('lg', 960px), ('md', 768px), ('sm', 480px));
 
 .siimple-grid {
   display: block;
@@ -63,7 +62,7 @@ $siimple-grid-column-media: (('xl', 1280px), ('lg', 960px), ('md', 768px), ('sm'
     }
   }
 
-  @each $grid_name, $grid_size in $siimple-grid-column-media {
+  @each $grid_name, $grid_size in $siimple-default-sizes {
     @media (max-width: $grid_size) {
       @each $i, $w in $siimple-grid-column-sizes {
         &-col-#{$grid_name}--#{$i} {
