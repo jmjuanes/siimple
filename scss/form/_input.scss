@@ -29,6 +29,7 @@ $siimple-input-radius: $siimple-default-border-radius;
   border-radius: $siimple-input-radius;
   outline: 0px;
   background-color: $siimple-grey;
+  vertical-align: top;
 
   &--fluid {
     width: 100%;

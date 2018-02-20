@@ -23,6 +23,7 @@ $siimple-textarea-radius: $siimple-default-border-radius;
   outline: 0px;
   border-radius: $siimple-textarea-radius;
   background-color: $siimple-grey;
+  vertical-align: top;
 
   &--fluid {
     width: 100%;
