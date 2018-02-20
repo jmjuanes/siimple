@@ -22,6 +22,7 @@ $siimple-label-font-size: 13px;
   font-weight: bold;
   padding-right: $siimple-label-padding-right;
   padding-left: 0px;
+  vertical-align: top;
 
   &--light {
     color: $siimple-white;
