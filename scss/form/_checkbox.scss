@@ -24,10 +24,12 @@ $siimple-checkbox-label-after-height: 4px;
   position: relative;
   width: $siimple-checkbox-size;
   height: $siimple-checkbox-size;
-  margin-left: $siimple-checkbox-margin-left-right;
-  margin-right: $siimple-checkbox-margin-left-right;
-  margin-top: $siimple-checkbox-margin-top-bottom;
-  margin-bottom: $siimple-checkbox-margin-top-bottom;
+  margin: {
+    left: $siimple-checkbox-margin-left-right;
+    right: $siimple-checkbox-margin-left-right;
+    top: $siimple-checkbox-margin-top-bottom;
+    bottom: $siimple-checkbox-margin-top-bottom;
+  }
   vertical-align: top;
 
   & label {
