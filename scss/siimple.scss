@@ -5,16 +5,15 @@
 // Repository: https://github.com/siimple/siimple
 // Website:    https://www.siimple.xyz
 //
-
-//Import all mixins
-@import "./_all.scss";
+@import "siimple-colors/scss/_all.scss";
+@import "./_variables.scss";
+@import "./_utils.scss";
 
 //Import Montserrat font from Google Fonts
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 //Default html style
-html
-{
+html {
   font-family: $siimple-default-text-font;
   font-weight: $siimple-default-text-weight;
   font-size: $siimple-default-text-size;
@@ -22,22 +21,70 @@ html
 }
 
 //Remove the margin in all browsers
-body
-{
+body {
   margin: 0;
 }
 
-//Import elements styles
-@import "./_elements.scss";
+//Layout base style
+.siimple-layout {
+  //display: flex;
+  //flex-direction: column;
+  //position: relative;
+  display: block;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  font-family: $siimple-default-text-font;
+  font-size: $siimple-default-text-size;
+  color: $siimple-default-text-color;
+  font-weight: normal;
+  //background-color: $siimple-white;
 
-//Import form styles
-@import "./_form.scss";
+  &--left {
+    float: left;
+  }
+  &--right {
+    float: right;
+  }
+}
 
-//Import grid styles
-@import "./_grid.scss";
+//Import elements
+@import "./elements/_alert.scss";
+@import "./elements/_btn.scss";
+@import "./elements/_close.scss";
+@import "./elements/_spinner.scss";
+@import "./elements/_table.scss";
+@import "./elements/_tip.scss";
 
-//Import layout styles
-@import "./_layout.scss";
+//Import form
+@import "./form/_form.scss";
+@import "./form/_checkbox.scss";
+@import "./form/_input.scss";
+@import "./form/_label.scss";
+@import "./form/_select.scss";
+@import "./form/_switch.scss";
+@import "./form/_textarea.scss";
 
-//Import typography styles
-@import "./_typography.scss";
+//Import grid
+@import "./grid/_grid.scss";
+
+//Import layout
+@import "./layout/_box.scss";
+@import "./layout/_breadcrumb.scss";
+@import "./layout/_content.scss";
+@import "./layout/_footer.scss";
+@import "./layout/_jumbotron.scss";
+@import "./layout/_menu.scss";
+@import "./layout/_navbar.scss";
+@import "./layout/_tabs.scss";
+
+//Import typography
+@import "./typography/_blockquote.scss";
+@import "./typography/_code.scss";
+@import "./typography/_heading.scss";
+@import "./typography/_link.scss";
+@import "./typography/_paragraph.scss";
+@import "./typography/_pre.scss";
+@import "./typography/_small.scss";
+@import "./typography/_tag.scss";
+
