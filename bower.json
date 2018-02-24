@@ -9,7 +9,9 @@
     "url": "https://github.com/siimple/siimple.git"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "siimple": "siimple/siimple-colors#develop"
+  },
   "license": "MIT",
   "keywords": [ "siimple", "css", "framework", "jmjuanes", "minimal", "flat", "clean", "websites", "responsive" ]
 }
