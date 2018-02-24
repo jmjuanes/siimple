@@ -10,7 +10,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "siimple": "siimple/siimple-colors#develop"
+    "siimple-colors": "siimple/siimple-colors#develop"
   },
   "license": "MIT",
   "keywords": [ "siimple", "css", "framework", "jmjuanes", "minimal", "flat", "clean", "websites", "responsive" ]
