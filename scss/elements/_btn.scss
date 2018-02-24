@@ -45,7 +45,7 @@ $siimple-btn-disabled-opacity: 0.6;
 
   @each $color, $value in $siimple-default-colors {
     &#{&}--#{$color} {
-      background-color: $value;
+      background-color: siimple-color-base($color);
       color: siimple-color-over($color);
     }
   }
