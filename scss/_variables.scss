@@ -7,19 +7,7 @@
 //
 
 //Default color palette
-$siimple-default-colors: (
-    "navy": $siimple-navy,
-    "green": $siimple-green,
-    "teal": $siimple-teal,
-    "blue": $siimple-blue,
-    "purple": $siimple-purple,
-    "pink": $siimple-pink,
-    "red": $siimple-red,
-    "orange": $siimple-orange,
-    "yellow": $siimple-yellow,
-    "grey": $siimple-grey,
-    "white": $siimple-white,
-);
+$siimple-default-colors: $siimple-colors;
 
 //Default media sizes values
 $siimple-default-sizes: (
