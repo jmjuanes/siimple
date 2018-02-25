@@ -8,11 +8,11 @@
 @import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
-$siimple-switch-width: 30px;
-$siimple-switch-height: 16px;
+$siimple-switch-width: 32px;
+$siimple-switch-height: 18px;
 $siimple-switch-radius: 50px;
 $siimple-switch-margin-left-right: 10px;
-$siimple-switch-margin-top-bottom: 7px;
+$siimple-switch-margin-top-bottom: 8px;
 
 .siimple-switch {
   //Structure:
@@ -38,8 +38,8 @@ $siimple-switch-margin-top-bottom: 7px;
   //Label style -> circle
   & label {
     display: block;
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     border-radius: $siimple-switch-radius;
     transition: all 0.3s ease;
     cursor: hand;
@@ -54,7 +54,7 @@ $siimple-switch-margin-top-bottom: 7px;
   & div {
     width: 100%;
     height: 100%;
-    background: $siimple-navy-4;
+    background: $siimple-navy-light;
     border-radius: $siimple-switch-radius;
     transition: all 0.3s;
     position: absolute;
