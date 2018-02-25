@@ -26,11 +26,13 @@ $siimple-alert-margin-bottom: $siimple-default-margin-bottom;
   position: relative;
   border-radius: $siimple-default-border-radius;
   background-color: $siimple-grey;
-  padding-top: $siimple-alert-padding-top;
-  padding-bottom: $siimple-alert-padding-bottom;
-  padding-left: $siimple-alert-padding-left;
-  padding-right: $siimple-alert-padding-right;
-  margin-top: $siimple-alert-margin-top;
+  padding: {
+    top: $siimple-alert-padding-top;
+    right: $siimple-alert-padding-right;
+    bottom: $siimple-alert-padding-bottom;
+    left: $siimple-alert-padding-left;
+  }
+  //margin-top: $siimple-alert-margin-top;
   margin-bottom: $siimple-alert-margin-bottom;
 
   @each $color, $value in $siimple-default-colors {
