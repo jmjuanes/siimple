@@ -63,7 +63,7 @@ $siimple-spinner-small-space: 13px;
 
   @each $color, $value in $siimple-default-colors {
     &#{&}--#{$color}, &#{&}--#{$color}:after, &#{&}--#{$color}:before {
-      background-color: $value;
+      background-color: siimple-color-base($color);
     }
   }
 
