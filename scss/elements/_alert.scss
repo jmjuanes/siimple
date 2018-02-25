@@ -12,9 +12,11 @@ $siimple-alert-padding-top: 15px;
 $siimple-alert-padding-bottom: 15px;
 $siimple-alert-padding-left: 15px;
 $siimple-alert-padding-right: 30px;
-
 $siimple-alert-margin-top: 0px;
 $siimple-alert-margin-bottom: $siimple-default-margin-bottom;
+
+$siimple-alert-title-margin: 10px;
+$siimple-alert-title-text-size: 19px;
 
 .siimple-alert {
   display: block;
@@ -34,6 +36,13 @@ $siimple-alert-margin-bottom: $siimple-default-margin-bottom;
   }
   //margin-top: $siimple-alert-margin-top;
   margin-bottom: $siimple-alert-margin-bottom;
+
+  //Alert title
+  &-title {
+    font-size: $siimple-alert-title-text-size;
+    font-weight: bold;
+    margin-bottom: $siimple-alert-title-margin;
+  }
 
   @each $color, $value in $siimple-default-colors {
     &#{&}--#{$color} {
