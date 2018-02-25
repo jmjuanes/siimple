@@ -89,7 +89,7 @@ $siimple-box-detail-margin-bottom: 10px;
 
   @each $color, $value in $siimple-default-colors {
     &#{&}--#{$color} {
-      background-color: $value;
+      background-color: siimple-color-base($color);
       color: siimple-color-over($color);
     }
   }
