@@ -12,7 +12,7 @@ $siimple-tip-padding: 10px;
 $siimple-tip-padding-left: 25px;
 $siimple-tip-padding-right: 20px;
 $siimple-tip-border: 5px;
-$siimple-tip-background: $siimple-grey-2;
+$siimple-tip-background: $siimple-grey;
 
 .siimple-tip {
   display: block;
@@ -46,10 +46,10 @@ $siimple-tip-background: $siimple-grey-2;
 
   @each $color, $value in $siimple-default-colors {
     &#{&}--#{$color} {
-      border-left-color: $value;
+      border-left-color: siimple-color-base($color);
     }
     &#{&}--#{$color}::before {
-      background-color: $value;
+      background-color: siimple-color-base($color);
     }
   }
 
