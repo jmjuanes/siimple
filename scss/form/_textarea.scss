@@ -8,20 +8,18 @@
 @import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
-$siimple-textarea-line: $siimple-default-text-line;
 $siimple-textarea-padding: 10px;
-$siimple-textarea-radius: $siimple-default-border-radius;
 
 .siimple-textarea {
   display: inline-block;
-  line-height: $siimple-textarea-line;
+  line-height: $siimple-default-text-line;
   //font-family: $siimple-default-text-font;
   font-size: $siimple-default-text-size;
   color: $siimple-default-text-color;
   padding: $siimple-textarea-padding;
   border: 0px;
   outline: 0px;
-  border-radius: $siimple-textarea-radius;
+  border-radius: $siimple-default-border-radius;
   background-color: $siimple-grey;
   vertical-align: top;
 
