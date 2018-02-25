@@ -27,7 +27,7 @@ $siimple-tabs-tab-margin-bottom: -2px;
   line-height: $siimple-tabs-height;
   //font-family: $siimple-default-text-font;
   font-size: $siimple-default-text-size;
-  border-bottom: 2px solid $siimple-grey-2;
+  border-bottom: 2px solid $siimple-grey;
   margin-bottom: $siimple-default-margin-bottom;
   margin-top: $siimple-tabs-margin-top;
 
@@ -41,7 +41,7 @@ $siimple-tabs-tab-margin-bottom: -2px;
     height: #{$siimple-tabs-height - 1px };
     line-height: $siimple-tabs-height;
     font-weight: bold;
-    color: $siimple-navy-3;
+    color: $siimple-navy-light;
     padding-left: $siimple-tabs-tab-padding-left;
     padding-right: $siimple-tabs-tab-padding-right;
     margin-bottom: $siimple-tabs-tab-margin-bottom;
@@ -52,27 +52,27 @@ $siimple-tabs-tab-margin-bottom: -2px;
     transition: all 0.3s;
 
     &:hover {
-      border-bottom: 2px solid $siimple-navy-4;
+      border-bottom: 2px solid $siimple-navy-light;
     }
 
     &--selected {
-      color: $siimple-navy-2;
-      border-bottom: 2px solid $siimple-navy-2;
+      color: $siimple-navy;
+      border-bottom: 2px solid $siimple-navy;
     }
   }
 
   &--boxed &-item:hover, &--boxed &-tab:hover {
-    background-color: $siimple-grey-2;
+    background-color: $siimple-grey;
   }
 
   @each $color, $value in $siimple-default-colors {
     &#{&}--#{$color} &-tab, &#{&}--#{$color} &-item {
       &:hover {
-        border-bottom-color: siimple-color($color, 4);
+        border-bottom-color: siimple-color-light($color);
       }
       &--selected {
-        color: $value !important;
-        border-bottom-color: $value !important;
+        color: siimple-color-base($color) !important;
+        border-bottom-color: siimple-color-base($color) !important;
       }
     }
   }
