@@ -8,8 +8,9 @@
 @import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
-$siimple-tag-height: 20px;
-$siimple-tag-text-size: 12px;
+$siimple-tag-height: 19px;
+$siimple-tag-border-radius: 4px;
+$siimple-tag-text-size: 10px;
 $siimple-tag-padding-left: 6px;
 $siimple-tag-padding-right: 6px;
 $siimple-tag-margin-right: 1px;
@@ -19,9 +20,10 @@ $siimple-tag-margin-bottom: 8px;
   display: inline-block;
   //height: $siimple-tag-height;
   font-size: $siimple-tag-text-size;
+  font-weight: bold;
   text-decoration: none;
   line-height: $siimple-tag-height;
-  border-radius: $siimple-default-border-radius;
+  border-radius: $siimple-tag-border-radius;
   padding: {
     left: $siimple-tag-padding-left;
     right: $siimple-tag-padding-right;
