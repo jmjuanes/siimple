@@ -21,10 +21,12 @@ $siimple-tip-background: $siimple-grey;
   border-left-style: solid;
   border-left-width: $siimple-tip-border;
   border-radius: $siimple-default-border-radius;
-  padding-left: $siimple-tip-padding-left !important;
-  padding-right: $siimple-tip-padding-right !important;
-  padding-top: $siimple-tip-padding;
-  padding-bottom: $siimple-tip-padding;
+  padding: {
+    top: $siimple-tip-padding;
+    right: $siimple-tip-padding-right !important;
+    bottom: $siimple-tip-padding;
+    left: $siimple-tip-padding-left !important;
+  }
   margin-bottom: $siimple-default-margin-bottom;
   background-color: $siimple-tip-background;
   //font-family: $siimple-default-text-font;
