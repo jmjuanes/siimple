@@ -43,7 +43,7 @@ $siimple-menu-submenu-padding: 10px;
     transition: color 0.3s;
     font-weight: bold;
     text-decoration: none;
-    color: $siimple-navy-3;
+    color: $siimple-navy-light;
 
     //Menu group not first margin top
     &:not(:first-child) {
@@ -53,7 +53,7 @@ $siimple-menu-submenu-padding: 10px;
     //Menu group hover
     &:hover {
       text-decoration: none !important;
-      color: $siimple-navy-3;
+      color: $siimple-navy-light;
     }
   }
 
@@ -64,7 +64,7 @@ $siimple-menu-submenu-padding: 10px;
     border: 0px;
     border-radius: $siimple-menu-item-radius;
     font-size: $siimple-default-text-size;
-    color: $siimple-navy-4;
+    color: $siimple-navy-light;
     font-weight: normal;
     text-decoration: none;
     padding-left: $siimple-menu-item-padding;
@@ -75,7 +75,7 @@ $siimple-menu-submenu-padding: 10px;
 
     //Hover styles
     &:hover {
-      background-color: $siimple-grey-2;
+      background-color: $siimple-grey;
       text-decoration: none !important;
       color: $siimple-navy;
     }
@@ -87,6 +87,6 @@ $siimple-menu-submenu-padding: 10px;
     margin-left: $siimple-menu-submenu-margin-left;
     margin-top: $siimple-menu-submenu-margin-top;
     margin-bottom: $siimple-menu-submenu-margin-bottom;
-    border-left: 1px solid $siimple-grey-1;
+    border-left: 1px solid $siimple-grey-dark;
   }
 }
