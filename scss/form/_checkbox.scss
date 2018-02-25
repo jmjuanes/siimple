@@ -8,8 +8,8 @@
 @import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
-$siimple-checkbox-size: 16px;
-$siimple-checkbox-margin-top-bottom: 9px;
+$siimple-checkbox-size: 18px;
+$siimple-checkbox-margin-top-bottom: 8px;
 $siimple-checkbox-margin-left-right: 10px;
 
 $siimple-checkbox-label-size: $siimple-checkbox-size;
@@ -52,8 +52,8 @@ $siimple-checkbox-label-after-height: 4px;
       transform: rotate(-45deg);
       transition: all 0.3s;
       position: absolute;
-      top: 3px;
-      left: 3px;
+      top: 5px;
+      left: 4px;
       background: transparent;
       border: 2px solid $siimple-navy;
       border-top: none;
