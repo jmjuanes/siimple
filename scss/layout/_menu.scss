@@ -17,7 +17,7 @@ $siimple-menu-group-margin: 10px;
 
 //Menu item variables
 $siimple-menu-item-height: 30px;
-$siimple-menu-item-radius: 5px;
+$siimple-menu-item-radius: $siimple-default-border-radius;
 $siimple-menu-item-padding: 10px;
 
 //Menu submenu variables
