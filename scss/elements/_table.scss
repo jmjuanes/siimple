@@ -9,9 +9,6 @@
 @import "../_variables.scss";
 
 $siimple-table-width: 100%;
-$siimple-table-border: $siimple-default-border-radius;
-
-$siimple-table-cell-line-height: 24px;
 $siimple-table-cell-padding: 10px;
 
 .siimple-table {
@@ -41,7 +38,7 @@ $siimple-table-cell-padding: 10px;
   &-cell {
     display: table-cell;
     //position: relative;
-    line-height: $siimple-table-cell-line-height;
+    line-height: $siimple-default-text-line;
     padding: $siimple-table-cell-padding;
     white-space: nowrap;
     overflow: hidden;
@@ -59,15 +56,15 @@ $siimple-table-cell-padding: 10px;
   }
 
   &-header &-row:first-child &-cell:first-child {
-    border-top-left-radius: $siimple-table-border;
+    border-top-left-radius: $siimple-default-border-radius;
   }
 
   &-header &-row:first-child &-cell:last-child {
-    border-top-right-radius: $siimple-table-border;
+    border-top-right-radius: $siimple-default-border-radius;
   }
 
   &-header &-cell {
-    background-color: $siimple-grey-0 !important;
+    background-color: $siimple-grey-dark !important;
     border-bottom-right-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
   }
@@ -77,22 +74,22 @@ $siimple-table-cell-padding: 10px;
   }
 
   &-body &-cell {
-    background-color: $siimple-grey;
+    background-color: rgba($siimple-grey-light, 0.4);
   }
 
   &-body &-row:last-child &-cell:first-child {
-    border-bottom-left-radius: $siimple-table-border;
+    border-bottom-left-radius: $siimple-default-border-radius;
   }
 
   &-body &-row:last-child &-cell:last-child {
-    border-bottom-right-radius: $siimple-table-border;
+    border-bottom-right-radius: $siimple-default-border-radius;
   }
 
   &--striped &-body &-row:nth-child(odd) &-cell {
-    background-color: $siimple-grey-4;
+    background-color: rgba($siimple-grey-light, 1.0);
   }
 
   &--hover &-body &-row:hover &-cell {
-    background-color: $siimple-grey-1 !important;
+    background-color: $siimple-grey !important;
   }
 }
