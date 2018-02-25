@@ -36,13 +36,13 @@ $siimple-breadcrumb-item-last-padding: 10px;
     position: relative;
     height: $siimple-breadcrumb-height;
     line-height: $siimple-breadcrumb-height;
-    background-color: $siimple-grey-2;
+    background-color: $siimple-grey;
     //text-align: center;
     //font-family: $siimple-default-text-font;
     font-size: $siimple-default-text-size;
     font-weight: bold;
     text-decoration: none;
-    color: $siimple-navy-4;
+    color: $siimple-navy-light;
     margin-right: $siimple-breadcrumb-item-margin-right;
     padding-left: $siimple-breadcrumb-item-padding-left;
     padding-right: $siimple-breadcrumb-item-padding-right;
@@ -63,7 +63,7 @@ $siimple-breadcrumb-item-last-padding: 10px;
       top: 0;
       border-top: #{$siimple-breadcrumb-height / 2} solid transparent;
       border-bottom: #{$siimple-breadcrumb-height / 2} solid transparent;
-      border-left: #{$siimple-breadcrumb-height / 2} solid $siimple-grey-2;
+      border-left: #{$siimple-breadcrumb-height / 2} solid $siimple-grey;
     }
 
     //Crumb before
