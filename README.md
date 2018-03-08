@@ -61,7 +61,7 @@ Or you can use the hosted version on [jsDelivr](https://www.jsdelivr.com/project
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple@VERSION/dist/siimple.min.css">
 ```
 
-Guides and reference are published in [https://www.siimple.xyz/documentation](https://wwww.siimple.xyz/documentation). Take a look and start creating your web page!
+Guides and reference are published in https://www.siimple.xyz/documentation. Take a look and start creating your web page!
 
 ## Using the SCSS/SASS mixins
 
