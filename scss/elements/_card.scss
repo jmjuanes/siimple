@@ -1,0 +1,58 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
+@import "../_utils.scss";
+
+$siimple-card-border-width: 1px;
+
+.siimple-card {
+    display: block;
+    width: 100%;
+    margin-bottom: $siimple-default-margin-bottom;
+
+    &-header, &-body, &-footer {
+        display: block;
+        line-height: $siimple-default-text-line;
+        border-left: $siimple-card-border-width solid $siimple-grey;
+        border-right: $siimple-card-border-width solid $siimple-grey;
+        border-top: $siimple-card-border-width solid $siimple-grey;
+        &:first-child {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        &:last-child {
+            border-bottom: $siimple-card-border-width solid $siimple-grey;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    &-header, &-footer {
+        display: block;
+        padding: 12px;
+        background-color: $siimple-grey-light;
+    }
+    
+    //Card header
+    &-header {
+        font-weight: bold;
+    }
+    
+    //Card body
+    &-body {
+        display: block;
+        padding: 12px;
+    }
+    
+    //Card title
+    &-title {
+    
+    }
+}
+
