@@ -45,7 +45,8 @@ $siimple-progress-font-size: 12px;
         line-height: $siimple-progress-height;
         font-size: $siimple-progress-font-size;
     }
-
+    
+    //Striped progress bar
     &--striped > span::after, &--striped-slow > span::after, &--striped-fast > span::after  {
         content: "";
         position: absolute;
