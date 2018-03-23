@@ -56,11 +56,11 @@ $siimple-progress-font-size: 12px;
         z-index: 1px;
         background-size: 50px 50px;
         background-image : linear-gradient(-45deg, 
-            rgba(255, 255, 255, .2) 25%, 
+            rgba($siimple-white, 0.15) 25%, 
             transparent 25%, 
             transparent 50%, 
-            rgba(255, 255, 255, .2) 50%, 
-            rgba(255, 255, 255, .2) 75%, 
+            rgba($siimple-white, 0.15) 50%, 
+            rgba($siimple-white, 0.15) 75%, 
             transparent 75%, 
             transparent);
     }
