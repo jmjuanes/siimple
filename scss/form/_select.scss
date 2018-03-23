@@ -32,8 +32,8 @@ $siimple-select-radius: $siimple-default-border-radius;
     vertical-align: top;
     
     //Disable default appearance
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    //-webkit-appearance: none;
+    //-moz-appearance: none;
 
     &--fluid {
         width: 100%;
