@@ -38,7 +38,6 @@ $siimple-progress-font-size: 12px;
     & > span {
         display: block;
         height: 100%;
-        background-color: $siimple-red;
         overflow: hidden;
         transition: all 0.3s;
         position: relative;
@@ -75,5 +74,12 @@ $siimple-progress-font-size: 12px;
         animation: siimple-progress-animation 4s linear infinite;
     }
 
+    //Colored progress bar
+    @each $color, $value in $siimple-default-colors {
+        &#{&}--#{$color} > span {
+            background-color: siimple-color-base($color);
+            color: siimple-color-over($color);
+        }
+    }
 }
 
