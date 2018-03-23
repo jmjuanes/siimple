@@ -1,0 +1,41 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
+
+$siimple-badge-height: 19px;
+$siimple-badge-border-radius: 15px;
+$siimple-badge-text-size: 10px;
+$siimple-badge-padding-left: 6px;
+$siimple-badge-padding-right: 6px;
+$siimple-badge-margin-right: 1px;
+$siimple-badge-margin-bottom: 8px;
+
+.siimple-badge {
+  display: inline-block;
+  //height: $siimple-badge-height;
+  font-size: $siimple-badge-text-size;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: $siimple-badge-height;
+  border-radius: $siimple-badge-border-radius;
+  padding: {
+    left: $siimple-badge-padding-left;
+    right: $siimple-badge-padding-right;
+  }
+  margin-right: $siimple-badge-margin-right;
+  //margin-bottom: $siimple-badge-margin-bottom;
+
+  @each $color, $value in $siimple-default-colors {
+    &#{&}--#{$color} {
+      background-color: siimple-color-base($color);
+      color: siimple-color-over($color);
+    }
+  }
+}
+
