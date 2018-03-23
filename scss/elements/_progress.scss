@@ -47,7 +47,7 @@ $siimple-progress-font-size: 12px;
         font-size: $siimple-progress-font-size;
     }
 
-    & > span::after {
+    &--striped > span::after, &--striped-slow > span::after, &--striped-fast > span::after  {
         content: "";
         position: absolute;
         top: 0px;
@@ -64,7 +64,16 @@ $siimple-progress-font-size: 12px;
             rgba(255, 255, 255, .2) 75%, 
             transparent 75%, 
             transparent);
+    }
+    &--striped > span::after {
         animation: siimple-progress-animation 2s linear infinite;
     }
+    &--striped-fast > span::after {
+        animation: siimple-progress-animation 1s linear infinite;
+    }
+    &--striped-slow > span::after {
+        animation: siimple-progress-animation 3s linear infinite;
+    }
+
 }
 
