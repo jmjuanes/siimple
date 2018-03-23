@@ -30,6 +30,10 @@ $siimple-select-radius: $siimple-default-border-radius;
     outline: 0px;
     background-color: $siimple-grey;
     vertical-align: top;
+    
+    //Disable default appearance
+    -webkit-appearance: none;
+    -moz-appearance: none;
 
     &--fluid {
         width: 100%;
