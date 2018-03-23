@@ -13,34 +13,34 @@ $siimple-select-padding: 10px;
 $siimple-select-radius: $siimple-default-border-radius;
 
 .siimple-select {
-  display: inline-block;
-  height: $siimple-select-height;
-  line-height: $siimple-select-height;
-  font-family: $siimple-default-text-font;
-  font-size: $siimple-default-text-size;
-  color: $siimple-navy;
-  padding: {
-    left: $siimple-select-padding;
-    right: $siimple-select-padding;
-    top: 0px;
-    bottom: 0px;
-  }
-  border: 0px;
-  border-radius: $siimple-select-radius;
-  outline: 0px;
-  background-color: $siimple-grey;
-  vertical-align: top;
+    display: inline-block;
+    height: $siimple-select-height;
+    line-height: $siimple-select-height;
+    font-family: $siimple-default-text-font;
+    font-size: $siimple-default-text-size;
+    color: $siimple-navy;
+    padding: {
+        left: $siimple-select-padding;
+        right: $siimple-select-padding;
+        top: 0px;
+        bottom: 0px;
+    }
+    border: 0px;
+    border-radius: $siimple-select-radius;
+    outline: 0px;
+    background-color: $siimple-grey;
+    vertical-align: top;
 
-  &--fluid {
-    width: 100%;
-  }
+    &--fluid {
+        width: 100%;
+    }
 
-  &--light {
-    background-color: $siimple-white;
-  }
+    &--light {
+        background-color: $siimple-white;
+    }
 
-  &--dark {
-    background-color: $siimple-navy;
-    color: $siimple-white;
-  }
+    &--dark {
+        background-color: $siimple-navy;
+        color: $siimple-white;
+    }
 }
