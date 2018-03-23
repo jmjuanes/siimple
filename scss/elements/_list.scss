@@ -25,11 +25,20 @@ $siimple-list-item-padding: 10px;
         background-color: $siimple-grey-light;
         transition: all 0.3s ease;
     }
+    &-item:first-child {
+        border-top-left-radius: $siimple-default-border-radius;
+        border-top-right-radius: $siimple-default-border-radius;
+    }
+    &-item:last-child {
+        border-bottom-left-radius: $siimple-default-border-radius;
+        border-bottom-right-radius: $siimple-default-border-radius;
+    }
     &-item:not(:last-child) {
         border-bottom: 1px solid $siimple-grey;
     }
     &--hover &-item:hover {
         background-color: $siimple-grey;
+        cursor: pointer;
     }
 }
 
