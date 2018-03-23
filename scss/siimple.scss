@@ -14,38 +14,38 @@
 
 //Default html style
 html {
-  font-family: $siimple-default-text-font;
-  font-weight: $siimple-default-text-weight;
-  font-size: $siimple-default-text-size;
-  color: $siimple-default-text-color;
+    font-family: $siimple-default-text-font;
+    font-weight: $siimple-default-text-weight;
+    font-size: $siimple-default-text-size;
+    color: $siimple-default-text-color;
 }
 
 //Remove the margin in all browsers
 body {
-  margin: 0;
+    margin: 0;
 }
 
 //Layout base style
 .siimple-layout {
-  //display: flex;
-  //flex-direction: column;
-  //position: relative;
-  display: block;
-  overflow-x: hidden;
-  width: 100%;
-  height: 100%;
-  font-family: $siimple-default-text-font;
-  font-size: $siimple-default-text-size;
-  color: $siimple-default-text-color;
-  font-weight: normal;
-  //background-color: $siimple-white;
+    //display: flex;
+    //flex-direction: column;
+    //position: relative;
+    display: block;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    font-family: $siimple-default-text-font;
+    font-size: $siimple-default-text-size;
+    color: $siimple-default-text-color;
+    font-weight: normal;
+    //background-color: $siimple-white;
 
-  &--left {
-    float: left;
-  }
-  &--right {
-    float: right;
-  }
+    &--left {
+        float: left;
+    }
+    &--right {
+        float: right;
+    }
 }
 
 //Import elements
