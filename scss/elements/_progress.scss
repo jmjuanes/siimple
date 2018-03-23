@@ -66,13 +66,13 @@ $siimple-progress-font-size: 12px;
             transparent);
     }
     &--striped > span::after {
-        animation: siimple-progress-animation 2s linear infinite;
+        animation: siimple-progress-animation 2.5s linear infinite;
     }
     &--striped-fast > span::after {
         animation: siimple-progress-animation 1s linear infinite;
     }
     &--striped-slow > span::after {
-        animation: siimple-progress-animation 3s linear infinite;
+        animation: siimple-progress-animation 4s linear infinite;
     }
 
 }
