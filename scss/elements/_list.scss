@@ -9,7 +9,27 @@
 @import "../_variables.scss";
 @import "../_utils.scss";
 
+$siimple-list-item-padding: 10px;
+
 .siimple-list {
     display: block;
+    width: 100%;
+    margin: {
+        bottom: $siimple-default-margin-bottom;
+    }
+
+    //List item 
+    &-item {
+        display: block;
+        padding: $siimple-list-item-padding;
+        background-color: $siimple-grey-light;
+        transition: all 0.3s ease;
+    }
+    &-item:not(:last-child) {
+        border-bottom: 1px solid $siimple-grey;
+    }
+    &--hover &-item:hover {
+        background-color: $siimple-grey;
+    }
 }
 
