@@ -24,6 +24,7 @@ $siimple-list-item-padding: 10px;
         padding: $siimple-list-item-padding;
         background-color: $siimple-grey-light;
         transition: all 0.3s ease;
+        //position: relative;
     }
     &-item:first-child {
         border-top-left-radius: $siimple-default-border-radius;
@@ -49,6 +50,14 @@ $siimple-list-item-padding: 10px;
         margin: {
             bottom: 5px;
         }
+    }
+
+    //List with badge 
+    &-item .siimple-badge {
+        //position: absolute;
+        //top: 0px;
+        //right: 0px;
+        float: right;
     }
 }
 
