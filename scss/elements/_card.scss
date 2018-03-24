@@ -9,7 +9,7 @@
 @import "../_variables.scss";
 @import "../_utils.scss";
 
-$siimple-card-border-width: 1px;
+$siimple-card-border-width: 2px;
 
 .siimple-card {
     display: block;
@@ -19,15 +19,15 @@ $siimple-card-border-width: 1px;
     &-header, &-body, &-footer {
         display: block;
         line-height: $siimple-default-text-line;
-        border-left: $siimple-card-border-width solid $siimple-grey;
-        border-right: $siimple-card-border-width solid $siimple-grey;
-        border-top: $siimple-card-border-width solid $siimple-grey;
+        border-left: $siimple-card-border-width solid $siimple-grey-light;
+        border-right: $siimple-card-border-width solid $siimple-grey-light;
+        border-top: $siimple-card-border-width solid $siimple-grey-light;
         &:first-child {
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
         }
         &:last-child {
-            border-bottom: $siimple-card-border-width solid $siimple-grey;
+            border-bottom: $siimple-card-border-width solid $siimple-grey-light;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
         }
