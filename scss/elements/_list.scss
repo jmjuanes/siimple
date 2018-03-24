@@ -40,5 +40,15 @@ $siimple-list-item-padding: 10px;
         background-color: $siimple-grey;
         cursor: pointer;
     }
+
+    //List title 
+    &-title {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        margin: {
+            bottom: 5px;
+        }
+    }
 }
 
