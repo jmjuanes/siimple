@@ -1,0 +1,63 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+@import "siimple-colors/scss/_all.scss";
+@import "../_variables.scss";
+
+$siimple-radio-size: 20px;
+$siimple-radio-margin: 7px;
+$siimple-radio-border: 4px;
+$siimple-radio-circle: 6px;
+
+.siimple-radio {
+    display: inline-block;
+    width: $siimple-radio-size;
+    height: $siimple-radio-size;
+    position: relative;
+    vertical-align: top;
+    margin: $siimple-radio-margin;
+    
+    & > label {
+        display: block;
+        width: calc(#{$siimple-radio-size} - 2 * #{$siimple-radio-border});
+        height: calc(#{$siimple-radio-size} - 2 * #{$siimple-radio-border});
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        border-radius: 100px;
+        border-width: $siimple-radio-border;
+        border-style: solid;
+        border-color: $siimple-grey-light;
+        transition: border-color 0.3s ease;
+    }
+
+    & > label:after {
+        position: absolute;
+        display: block;;
+        content: "";
+        width: $siimple-radio-circle;
+        height: $siimple-radio-circle;
+        background-color: transparent;
+        border-radius: 100px;
+        top: calc(50% - #{$siimple-radio-circle} / 2);
+        left: calc(50% - #{$siimple-radio-circle} / 2);
+        transition: all 0.3s ease;
+    }
+    
+    & input[type=radio] {
+        visibility: hidden;
+    }
+    //Checked -> change tick
+    & input[type=radio]:checked + label:after {
+        background-color: $siimple-green;
+    }
+    //Checked -> change background
+    & input[type=radio]:checked + label {
+        border-color: $siimple-green;
+    }
+}
+
