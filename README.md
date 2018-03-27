@@ -13,11 +13,11 @@
 [![pr](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
 
 
-## About
-
 **siimple** is a light, responsive and open source framework for design flat and clean websites. It has been built in SASS/SCSS and provides a clean starting point for your web design.
 
-You can find the documentation and the reference guide in https://www.siimple.xyz/documentation
+## Documentation 
+
+We are working on a new documentation for version `v3.1.0`. You can find the documentation and the reference guide for `v3.0.0` in https://www.siimple.xyz/documentation
 
 ## Getting started
 
