@@ -20,6 +20,7 @@ $siimple-radio-circle: 6px;
     position: relative;
     vertical-align: top;
     margin: $siimple-radio-margin;
+    cursor: pointer;
     
     & > label {
         display: block;
@@ -31,7 +32,7 @@ $siimple-radio-circle: 6px;
         border-radius: 100px;
         border-width: $siimple-radio-border;
         border-style: solid;
-        border-color: $siimple-grey-light;
+        border-color: $siimple-grey;
         transition: border-color 0.3s ease;
     }
 
@@ -46,6 +47,10 @@ $siimple-radio-circle: 6px;
         top: calc(50% - #{$siimple-radio-circle} / 2);
         left: calc(50% - #{$siimple-radio-circle} / 2);
         transition: all 0.3s ease;
+    }
+
+    &:hover > label:after {
+        background-color: $siimple-grey;
     }
     
     & input[type=radio] {
