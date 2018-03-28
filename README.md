@@ -15,14 +15,9 @@
 
 **siimple** is a light, responsive and open source framework for design flat and clean websites. It has been built in SASS/SCSS and provides a clean starting point for your web design.
 
-## Ecosystem
-
-
 ## Installation
 
-**siimple** is available on [npm](https://npmjs.com/package/siimple), so you can run `npm install siimple` to install it in your project. 
-
-It is also available on a [CDN](https://www.jsdelivr.com/package/npm/siimple), so you can import the compiled CSS files directly on your HTML page.
+**siimple** is available on [npm](https://npmjs.com/package/siimple), so you can run `npm install siimple` to install it in your project. It is also available on a [CDN](https://www.jsdelivr.com/package/npm/siimple), so you can import the compiled CSS files directly on your HTML page.
 
 ## Documentation 
 
