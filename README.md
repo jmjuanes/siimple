@@ -32,7 +32,7 @@ Use this method if you are going to contribute to **siimple**. Or main branch is
 Follow these steps:
 
 1. Download and install [Node.js](https://nodejs.org/download/) on your computer.
-2. Navigate to the cloned repository folder, and run `npm install` to download all the dependencies listed in `package.json`. This action can take a while.
+2. Navigate to the cloned repository folder, and run `npm install` to download all the dependencies listed in `package.json`.
 
 ### Building siimple
 
