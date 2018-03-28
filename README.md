@@ -18,7 +18,11 @@
 ## Ecosystem
 
 
+## Installation
 
+**siimple** is available on [npm](https://npmjs.com/package/siimple), so you can run `npm install siimple` to install it in your project. 
+
+It is also available on a [CDN](https://www.jsdelivr.com/package/npm/siimple), so you can import the compiled CSS files directly on your HTML page.
 
 ## Documentation 
 
