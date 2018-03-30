@@ -20,4 +20,20 @@
     &--clear {
         @include siimple-utils-clear();
     }
+
+    //Text 
+    &--text {
+        &-justify {
+            text-align: justify !important;
+        }
+        &-left {
+            text-align: left !important;
+        }
+        &-center {
+            text-align: center !important;
+        }
+        &-right {
+            text-align: right !important;
+        }
+    }
 }
