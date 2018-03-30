@@ -1,4 +1,4 @@
-let utily = require("utily");
+let kofi = require("kofi");
 let pkg = require("../package.json");
 
 //Generate the header
@@ -12,5 +12,5 @@ exports.getHeader = function() {
     header.push("**/");
     header.push(" ");
     header.push(" ");
-    return utily.string.format(header.join("\n"), pkg)
+    return kofi.format(header.join("\n"), pkg)
 };
