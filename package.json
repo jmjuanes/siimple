@@ -1,44 +1,44 @@
 {
-  "name": "siimple",
-  "version": "3.0.0",
-  "description": "Minimal CSS framework for flat and clean designs.",
-  "style": "dist/siimple.css",
-  "main": "dist/siimple.css",
-  "author": "Josemi Juanes <josemijuanes@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://www.siimple.xyz/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/siimple/siimple.git"
-  },
-  "keywords": [
-    "siimple",
-    "css",
-    "scss",
-    "sass",
-    "framework",
-    "jmjuanes",
-    "minimal",
-    "flat",
-    "clean",
-    "websites",
-    "responsive"
-  ],
-  "dependencies": {
-    "siimple-colors": "^0.2.0"
-  },
-  "devDependencies": {
-    "gulp": "3.9.1",
-    "gulp-autoprefixer": "4.0.0",
-    "gulp-clean-css": "^3.9.0",
-    "gulp-header": "^1.8.9",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "utily": "^0.2.4"
-  },
-  "scripts": {
-    "build": "npm run css:compile && npm run css:minify",
-    "css:compile": "node ./scripts/css-compile.js",
-    "css:minify": "node ./scripts/css-minify.js"
-  }
+    "name": "siimple",
+    "version": "3.0.0",
+    "description": "Minimal CSS framework for flat and clean designs.",
+    "style": "dist/siimple.css",
+    "main": "dist/siimple.css",
+    "author": "Josemi Juanes <josemijuanes@gmail.com>",
+    "license": "MIT",
+    "homepage": "https://www.siimple.xyz/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/siimple/siimple.git"
+    },
+    "keywords": [
+        "siimple",
+        "css",
+        "scss",
+        "sass",
+        "framework",
+        "jmjuanes",
+        "minimal",
+        "flat",
+        "clean",
+        "websites",
+        "responsive"
+    ],
+    "dependencies": {
+        "siimple-colors": "^1.0.0-beta"
+    },
+    "devDependencies": {
+        "tinyflow": "^0.0.3",
+        "node-sass": "^4.7.2",
+        "autoprefixer": "^8.1.0",
+        "clean-css": "^4.1.11",
+        "kofi": "^0.1.0",
+        "glob": "^7.1.2",
+        "mkdirp": "^0.5.1"
+    },
+    "scripts": {
+        "build": "npm run css:compile && npm run css:minify",
+        "css:compile": "node ./scripts/css-compile.js",
+        "css:minify": "node ./scripts/css-minify.js"
+    }
 }
