@@ -1,0 +1,23 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple/siimple
+// Website:    https://www.siimple.xyz
+//
+@import "./_variables.scss";
+
+.siimple {
+    //Align
+    &--right {
+        float: right;
+    }
+    &--left {
+        float: left;
+    }
+
+    //Clear floated content 
+    &--clear {
+        @include siimple-utils-clear();
+    }
+}
