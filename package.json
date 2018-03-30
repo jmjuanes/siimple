@@ -37,8 +37,8 @@
         "mkdirp": "^0.5.1"
     },
     "scripts": {
-        "build": "npm run css:compile && npm run css:minify",
-        "css:compile": "node ./scripts/css-compile.js",
-        "css:minify": "node ./scripts/css-minify.js"
+        "build": "node ./scripts/build.js",
+        "css:compile": "node ./scripts/build.js --flow-tasks css:compile",
+        "css:minify": "node ./scripts/build.js --flow-tasks css:minify"
     }
 }
