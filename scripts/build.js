@@ -31,7 +31,7 @@ flow.task("css:compile", ["dist:create"], function (done) {
             return done(error); 
         }
         //Compile the scss file to generate the css
-        let sassOptions = {data: content, includePaths: ["./scss/"]}; 
+        let sassOptions = {data: content, includePaths: ["./scss/", "./node_modules/"]}; 
         return sass.render(sassOptions, function (error, result) {
             if (error) {
                 return done(error); 
