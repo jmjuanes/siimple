@@ -15,7 +15,7 @@
     -ms-user-select: $select;
 }
 
-//Clear float
+//Clear floated content
 @mixin siimple-utils-clear () {
     &::after {
         display: block;
