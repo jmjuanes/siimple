@@ -30,3 +30,13 @@ $siimple-default-border-radius: 5px;
 //Default margin values
 $siimple-default-margin-top: 0px;
 $siimple-default-margin-bottom: 15px;
+
+//Default percentages values 
+$siimple-default-percentages : (
+    "0": 0%,
+    "25": 25%,
+    "50": 50%,
+    "75": 75%,
+    "100": 100%
+);
+
