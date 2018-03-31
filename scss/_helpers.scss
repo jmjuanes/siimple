@@ -10,10 +10,10 @@
 .siimple {
     //Align
     &--right {
-        float: right;
+        float: right !important;
     }
     &--left {
-        float: left;
+        float: left !important;
     }
 
     //Clear floated content 
