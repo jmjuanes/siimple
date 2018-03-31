@@ -21,6 +21,22 @@
         @include siimple-utils-clear();
     }
 
+    //Sizes 
+    @each $key,$value in $siimple-default-percentages {
+        &--width-#{$key} {
+            width: $value !important;
+        }
+        &--mwidth-#{$key} {
+            max-width: $value !important;
+        }
+        &--height-#{$key} {
+            height: $value !important;
+        }
+        &--mheight-#{$key} {
+            max-height: $value !important;
+        }
+    } 
+
     //Text 
     &--text {
         &-justify {
