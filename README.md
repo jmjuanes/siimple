@@ -9,8 +9,8 @@
 [![npm](https://img.shields.io/npm/dt/siimple.svg?style=flat-square)](https://www.npmjs.com/package/siimple)
 [![devDependency Status](https://david-dm.org/siimple/siimple/dev-status.svg?style=flat-square)](https://david-dm.org/siimple/siimple#info=devDependencies)
 [![](https://data.jsdelivr.com/v1/package/npm/siimple/badge)](https://www.jsdelivr.com/package/npm/siimple)
-[![npm](https://img.shields.io/npm/l/siimple.svg?style=flat-square)](https://github.com/siimpl/siimple)
-[![pr](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
+[![npm](https://img.shields.io/npm/l/siimple.svg?style=flat-square)](https://github.com/siimple/siimple)
+[![pr](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/siimple/siimple)
 
 
 **siimple** is a light, responsive and open source framework for design flat and clean websites. It has been built in SASS/SCSS and provides a clean starting point for your web design.
