@@ -17,6 +17,9 @@ $siimple-list-item-padding: 10px;
     margin: {
         bottom: $siimple-default-margin-bottom;
     }
+    color: $siimple-default-text-color;
+    font-size: $siimple-default-text-size;
+    line-height: $siimple-default-text-line;
 
     //List item 
     &-item {
