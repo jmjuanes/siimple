@@ -5,7 +5,6 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 @import "../_utils.scss";
 
@@ -17,47 +16,48 @@ $siimple-btn-opacity: 0.8;
 $siimple-btn-disabled-opacity: 0.6;
 
 .siimple-btn {
-  display: inline-block;
-  height: $siimple-btn-height;
-  transition: opacity 0.3s;
-  cursor: pointer;
-  line-height: $siimple-btn-height;
-  text-align: center;
-  text-decoration: none;
-  //font-family: $siimple-default-text-font;
-  font-size: $siimple-default-text-size;
-  font-weight: bold;
-  padding-left: $siimple-btn-padding-left;
-  padding-right: $siimple-btn-padding-right;
-  border-radius: $siimple-default-border-radius;
-
-  //Disable default button element borders
-  //https://github.com/siimple/siimple/pull/17
-  border: none;
-
-  //Disable user selection
-  @include siimple-utils-select(none);
-
-  &:hover {
+    display: inline-block;
+    height: $siimple-btn-height;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    line-height: $siimple-btn-height;
+    text-align: center;
     text-decoration: none;
-    opacity: $siimple-btn-opacity;
-  }
+    //font-family: $siimple-default-text-font;
+    font-size: $siimple-default-text-size;
+    font-weight: bold;
+    padding-left: $siimple-btn-padding-left;
+    padding-right: $siimple-btn-padding-right;
+    border-radius: $siimple-default-border-radius;
 
-  @each $color, $value in $siimple-default-colors {
-    &#{&}--#{$color} {
-      background-color: siimple-color-base($color);
-      color: siimple-color-over($color);
+    //Disable default button element borders
+    //https://github.com/siimple/siimple/pull/17
+    border: none;
+
+    //Disable user selection
+    @include siimple-utils-select(none);
+
+    &:hover {
+        text-decoration: none;
+        opacity: $siimple-btn-opacity;
     }
-  }
 
-  &--disabled {
-    //background-color: $siimple-btn-disabled-background !important;
-    //color: rgba($siimple-btn-disabled-color, $siimple-btn-disabled-color-alpha) !important;
-    opacity: $siimple-btn-disabled-opacity !important;
-    cursor: not-allowed !important;
-  }
+    @each $color, $value in $siimple-default-colors {
+        &#{&}--#{$color} {
+            background-color: siimple-color-base($color);
+            color: siimple-color-over($color);
+        }
+    }
 
-  &--fluid {
-    width: calc(100% - #{$siimple-btn-padding-left} - #{$siimple-btn-padding-right});
-  }
+    &--disabled {
+        //background-color: $siimple-btn-disabled-background !important;
+        //color: rgba($siimple-btn-disabled-color, $siimple-btn-disabled-color-alpha) !important;
+        opacity: $siimple-btn-disabled-opacity !important;
+        cursor: not-allowed !important;
+    }
+
+    &--fluid {
+        width: calc(100% - #{$siimple-btn-padding-left} - #{$siimple-btn-padding-right});
+    }
 }
+
