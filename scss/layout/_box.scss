@@ -5,10 +5,9 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
-$siimple-box-padding: 10px;
+$siimple-box-padding: 15px;
 
 $siimple-box-title-font-size: 40px;
 $siimple-box-title-margin-top: 20px;
@@ -22,75 +21,75 @@ $siimple-box-subtitle-title-margin: -12px;
 
 $siimple-box-detail-margin-bottom: 10px;
 
+//Box style
 .siimple-box {
-  display: block;
-  vertical-align: top;
-  width: calc(100% - #{2 * $siimple-box-padding});
-  background-color: $siimple-grey;
-  //font-family: $siimple-default-text-font;
-  font-size: $siimple-default-text-size;
-  color: $siimple-default-text-color;
-  border-radius: $siimple-default-border-radius;
-  padding: $siimple-box-padding;
-  margin-bottom: $siimple-default-margin-bottom;
-
-  &-title {
     display: block;
-    font-weight: bold;
-    font-size: $siimple-box-title-font-size;
-    text-decoration: none;
-    margin-top: $siimple-box-title-margin-top;
-    margin-bottom: $siimple-box-title-margin-bottom;
-
-    //Title last element
-    &:last-child {
-      margin-bottom: $siimple-box-title-margin-top;
+    vertical-align: top;
+    width: calc(100% - #{2 * $siimple-box-padding});
+    background-color: $siimple-grey;
+    //font-family: $siimple-default-text-font;
+    font-size: $siimple-default-text-size;
+    color: $siimple-default-text-color;
+    border-radius: $siimple-default-border-radius;
+    padding: $siimple-box-padding;
+    margin: {
+        bottom: $siimple-default-margin-bottom;
     }
-  }
-
-  &-subtitle {
-    display: block;
-    font-weight: bold;
-    font-size: $siimple-box-subtitle-font-size;
-    text-decoration: none;
-    margin-top: $siimple-box-subtitle-margin-top;
-    margin-bottom: $siimple-box-subtitle-margin-bottom;
-
-    //Subtitle first element
-    &:first-child {
-      margin-top: $siimple-box-title-margin-top;
-    }
-
-    //Subtitle last element
-    &:last-child {
-      margin-bottom: $siimple-box-title-margin-top;
-    }
-  }
-
-  //Subtitle after a title
-  &-title + &-subtitle {
-    margin-top: $siimple-box-subtitle-title-margin;
-  }
-
-  &-detail {
-    display: block;
-    margin-bottom: $siimple-box-detail-margin-bottom;
-
-    //Detail first child
-    &:first-child {
-      margin-top: $siimple-box-title-margin-top;
+    
+    //Box title
+    &-title {
+        display: block;
+        font-weight: bold;
+        font-size: $siimple-box-title-font-size;
+        text-decoration: none;
+        margin: {
+            top: $siimple-box-title-margin-top;
+            bottom: $siimple-box-title-margin-bottom;
+        }
+        &:last-child {
+            margin-bottom: $siimple-box-title-margin-top;
+        }
     }
 
-    //Detail last child
-    &:last-child {
-      margin-bottom: $siimple-box-title-margin-top;
+    //Box subtitle
+    &-subtitle {
+        display: block;
+        font-weight: bold;
+        font-size: $siimple-box-subtitle-font-size;
+        text-decoration: none;
+        margin: {
+            top: $siimple-box-subtitle-margin-top;
+            bottom: $siimple-box-subtitle-margin-bottom;
+        }
+        &:first-child {
+            margin-top: $siimple-box-title-margin-top;
+        }
+        &:last-child {
+            margin-bottom: $siimple-box-title-margin-top;
+        }
     }
-  }
 
-  @each $color, $value in $siimple-default-colors {
-    &#{&}--#{$color} {
-      background-color: siimple-color-base($color);
-      color: siimple-color-over($color);
+    //Subtitle after a title
+    &-title + &-subtitle {
+        margin-top: $siimple-box-subtitle-title-margin;
     }
-  }
+
+    &-detail {
+        display: block;
+        margin-bottom: $siimple-box-detail-margin-bottom;
+        &:first-child {
+            margin-top: $siimple-box-title-margin-top;
+        }
+        &:last-child {
+            margin-bottom: $siimple-box-title-margin-top;
+        }
+    }
+
+    //Box color classes
+    @each $color, $value in $siimple-default-colors {
+        &#{&}--#{$color} {
+            background-color: siimple-color-base($color);
+            color: siimple-color-over($color);
+        }
+    }
 }
