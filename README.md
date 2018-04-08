@@ -25,7 +25,27 @@ You can also download a [ZIP file](https://github.com/siimple/siimple/releases) 
 git clone https://github.com/siimple/siimple.git
 ```
 
-Use this method if you are going to contribute to **siimple**. Or main branch is `develop`, which reflects a state with the latest delivered development changes. 
+You can include `siimple` in your HTML files: 
+
+```html
+<link rel="stylesheet" href="./node_modules/siimple/dist/siimple.min.css">
+```
+
+Or you can import the full library in your SASS/SCSS files: 
+
+```scss
+@import "siimple/scss/_all.scss";
+```
+
+Or import only the styles that you need: 
+
+```scss
+@import "siimple/scss/elements/_tip.scss";
+```
+
+## Develop
+
+Follow the steps described in this section if you are going to contribute, extend or modify **siimple**. Our main branch is `develop`, which reflects a state with the latest delivered development changes. 
 
 ### Setup environment
 
@@ -56,14 +76,14 @@ npm run build
 
 This will generate `siimple.css` and `siimple.min.css` on `dist`.
 
-### Running documentation locally
-
-The documentation for `v3.1.0` will be available on this repository. 
-
 
 ## Documentation 
 
 We are working on a new documentation for version `v3.1.0`. You can find the documentation and the reference guide for `v3.0.0` in https://www.siimple.xyz/documentation
+
+### Running documentation locally
+
+The documentation for `v3.1.0` will be available on this repository. 
 
 
 ## Questions 
