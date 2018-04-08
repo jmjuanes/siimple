@@ -26,8 +26,10 @@ $siimple-btn-disabled-opacity: 0.6;
     //font-family: $siimple-default-text-font;
     font-size: $siimple-default-text-size;
     font-weight: bold;
-    padding-left: $siimple-btn-padding-left;
-    padding-right: $siimple-btn-padding-right;
+    padding: {
+        left: $siimple-btn-padding-left;
+        right: $siimple-btn-padding-right;
+    }
     border-radius: $siimple-default-border-radius;
 
     //Disable default button element borders
