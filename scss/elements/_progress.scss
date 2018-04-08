@@ -5,7 +5,6 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 @import "../_utils.scss";
 
@@ -47,7 +46,9 @@ $siimple-progress-font-size: 12px;
     }
     
     //Striped progress bar
-    &--striped > span::after, &--striped-slow > span::after, &--striped-fast > span::after  {
+    &--striped > span::after, 
+    &--striped-slow > span::after, 
+    &--striped-fast > span::after  {
         content: "";
         position: absolute;
         top: 0px;
