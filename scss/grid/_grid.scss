@@ -5,7 +5,6 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
 $siimple-grid-margin-left: auto;
@@ -15,59 +14,71 @@ $siimple-grid-row-margin: 0px;
 
 $siimple-grid-column-margin: 10px;
 $siimple-grid-column-sizes: (
-  (1, '8.33%'), (2, '16.66%'),
-  (3, '24.99%'), (4, '33.33%'),
-  (5, '41.66%'), (6, '49.99%'),
-  (7, '58.33%'), (8, '66.66%'),
-  (9, '74.99%'), (10, '83.33%'),
-  (11, '91.66%'), (12, '99.99%')
+    (1, '8.33%'), 
+    (2, '16.66%'),
+    (3, '24.99%'), 
+    (4, '33.33%'),
+    (5, '41.66%'), 
+    (6, '49.99%'),
+    (7, '58.33%'), 
+    (8, '66.66%'),
+    (9, '74.99%'), 
+    (10, '83.33%'),
+    (11, '91.66%'), 
+    (12, '99.99%')
 );
 
 .siimple-grid {
-  display: block;
-  width: 100%;
-  margin-left: $siimple-grid-margin-left;
-  margin-right: $siimple-grid-margin-right;
-
-  &-row {
-    display: inline-block;
+    display: block;
     width: 100%;
     margin: {
-      left: $siimple-grid-row-margin;
-      right: $siimple-grid-row-margin;
+        left: $siimple-grid-margin-left;
+        right: $siimple-grid-margin-right;
     }
 
-    &:after {
-      content: " ";
-      clear: both;
-      display: table;
-      line-height: 0;
-    }
-  }
-
-  &-col {
-    display: inline-block;
-    vertical-align: top;
-    float: left;
-    margin: {
-      left: $siimple-grid-column-margin;
-      right: $siimple-grid-column-margin;
-    }
-  }
-
-  @each $i, $w in $siimple-grid-column-sizes {
-    &-col--#{$i} {
-      width: calc(#{$w} - 2 * #{$siimple-grid-column-margin});
-    }
-  }
-
-  @each $grid_name, $grid_size in $siimple-default-sizes {
-    @media (max-width: $grid_size) {
-      @each $i, $w in $siimple-grid-column-sizes {
-        &-col-#{$grid_name}--#{$i} {
-          width: calc(#{$w} - 2 * #{$siimple-grid-column-margin});
+    //Grid row
+    &-row {
+        display: inline-block;
+        width: 100%;
+        margin: {
+            left: $siimple-grid-row-margin;
+            right: $siimple-grid-row-margin;
         }
-      }
+
+        &:after {
+            content: " ";
+            clear: both;
+            display: table;
+            line-height: 0;
+        }
     }
-  }
+
+    //Grid column
+    &-col {
+        display: inline-block;
+        vertical-align: top;
+        float: left;
+        margin: {
+            left: $siimple-grid-column-margin;
+            right: $siimple-grid-column-margin;
+        }
+    }
+
+    //Grid default column sizes
+    @each $i, $w in $siimple-grid-column-sizes {
+        &-col--#{$i} {
+            width: calc(#{$w} - 2 * #{$siimple-grid-column-margin});
+        }
+    }
+
+    //Grid columns for each screen size
+    @each $grid_name, $grid_size in $siimple-default-sizes {
+        @media (max-width: $grid_size) {
+            @each $i, $w in $siimple-grid-column-sizes {
+                &-col-#{$grid_name}--#{$i} {
+                    width: calc(#{$w} - 2 * #{$siimple-grid-column-margin});
+                }
+            }
+        }
+    }
 }
