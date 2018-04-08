@@ -5,7 +5,6 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
 $siimple-alert-padding-top: 15px;
@@ -19,42 +18,43 @@ $siimple-alert-title-margin: 5px;
 $siimple-alert-title-text-size: 19px;
 
 .siimple-alert {
-  display: block;
-  width: calc(100% - #{$siimple-alert-padding-left} - #{$siimple-alert-padding-right});
-  color: $siimple-navy;
-  line-height: $siimple-default-text-line;
-  font-size: $siimple-default-text-size;
-  //font-family: $siimple-default-text-font;
-  position: relative;
-  border-radius: $siimple-default-border-radius;
-  background-color: $siimple-grey;
-  padding: {
-    top: $siimple-alert-padding-top;
-    right: $siimple-alert-padding-right;
-    bottom: $siimple-alert-padding-bottom;
-    left: $siimple-alert-padding-left;
-  }
-  //margin-top: $siimple-alert-margin-top;
-  margin-bottom: $siimple-alert-margin-bottom;
-
-  //Alert title
-  &-title {
-    font-size: $siimple-alert-title-text-size;
-    font-weight: bold;
-    margin-bottom: $siimple-alert-title-margin;
-  }
-
-  @each $color, $value in $siimple-default-colors {
-    &#{&}--#{$color} {
-      background-color: siimple-color-light($color);
-      color: siimple-color-dark($color);
+    display: block;
+    width: calc(100% - #{$siimple-alert-padding-left} - #{$siimple-alert-padding-right});
+    color: $siimple-navy;
+    line-height: $siimple-default-text-line;
+    font-size: $siimple-default-text-size;
+    //font-family: $siimple-default-text-font;
+    position: relative;
+    border-radius: $siimple-default-border-radius;
+    background-color: $siimple-grey;
+    padding: {
+        top: $siimple-alert-padding-top;
+        right: $siimple-alert-padding-right;
+        bottom: $siimple-alert-padding-bottom;
+        left: $siimple-alert-padding-left;
     }
-  }
+    //margin-top: $siimple-alert-margin-top;
+    margin-bottom: $siimple-alert-margin-bottom;
+
+    //Alert title
+    &-title {
+        font-size: $siimple-alert-title-text-size;
+        font-weight: bold;
+        margin-bottom: $siimple-alert-title-margin;
+    }
+
+    @each $color, $value in $siimple-default-colors {
+        &#{&}--#{$color} {
+            background-color: siimple-color-light($color);
+            color: siimple-color-dark($color);
+        }
+    }
 }
 
 //Alert with close button
 .siimple-alert .siimple-close {
-  position: absolute !important;
-  right: 5px !important;
-  top: 5px !important;
+    position: absolute !important;
+    right: 5px !important;
+    top: 5px !important;
 }
+
