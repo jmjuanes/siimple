@@ -5,47 +5,45 @@
 // Repository: https://github.com/siimple
 // Website:    https://wwww.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
 $siimple-close-size: 20px;
 $siimple-close-border: 100px;
 $siimple-close-opacity: 0.3;
-
 $siimple-close-hover-opacity: 0.5;
 
 $siimple-close-small-size: 16px;
-
 $siimple-close-large-size: 30px;
 
 .siimple-close {
-  display: inline-block;
-  width: $siimple-close-size;
-  height: $siimple-close-size;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  position: relative;
-  border-radius: 100px;
-  background-color: rgba($siimple-navy, $siimple-close-opacity);
+    display: inline-block;
+    width: $siimple-close-size;
+    height: $siimple-close-size;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    border-radius: 100px;
+    background-color: rgba($siimple-navy, $siimple-close-opacity);
 
-  &:after, &:before {
-    content: "";
-    display: block;
-    width: 12px;
-    height: 2px;
-    position: absolute;
-    top: 9px;
-    left: 4px;
-    background-color: $siimple-white;
-  }
-  &:after {
-    transform: rotate(45deg);
-  }
-  &:before {
-    transform: rotate(-45deg);
-  }
+    &:after, 
+    &:before {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 2px;
+        position: absolute;
+        top: 9px;
+        left: 4px;
+        background-color: $siimple-white;
+    }
+    &:after {
+        transform: rotate(45deg);
+    }
+    &:before {
+        transform: rotate(-45deg);
+    }
 
-  &:hover {
-    background-color: rgba($siimple-navy, $siimple-close-hover-opacity);
-  }
+    &:hover {
+        background-color: rgba($siimple-navy, $siimple-close-hover-opacity);
+    }
 }
