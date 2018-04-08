@@ -5,91 +5,92 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
 $siimple-table-width: 100%;
 $siimple-table-cell-padding: 10px;
 
 .siimple-table {
-  display: table;
-  width: $siimple-table-width;
-  font-size: $siimple-default-text-size;
-  //font-family: $siimple-default-text-font;
-  color: $siimple-default-text-color;
-  border-collapse: collapse;
-  border-width: 0px;
-  margin-top: 0px;
-  margin-bottom: $siimple-default-margin-bottom;
-
-  &-row {
-    display: table-row;
-    transition: all 0.3s;
-    border-bottom: 2px solid $siimple-white;
-
-    &:hover {
-      background-color: $siimple-grey;
+    display: table;
+    width: $siimple-table-width;
+    font-size: $siimple-default-text-size;
+    //font-family: $siimple-default-text-font;
+    color: $siimple-default-text-color;
+    border-collapse: collapse;
+    border-width: 0px;
+    margin: {
+        top: 0px;
+        bottom: $siimple-default-margin-bottom;
     }
-    &:last-child {
-      border-bottom: 0px;
+
+    &-row {
+        display: table-row;
+        transition: all 0.3s;
+        border-bottom: 2px solid $siimple-white;
+
+        &:hover {
+            background-color: $siimple-grey;
+        }
+        &:last-child {
+            border-bottom: 0px;
+        }
     }
-  }
 
-  &-cell {
-    display: table-cell;
-    //position: relative;
-    line-height: $siimple-default-text-line;
-    padding: $siimple-table-cell-padding;
-    white-space: nowrap;
-    overflow: hidden;
-    transition: background-color 0.3s;
-  }
+    &-cell {
+        display: table-cell;
+        //position: relative;
+        line-height: $siimple-default-text-line;
+        padding: $siimple-table-cell-padding;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: background-color 0.3s;
+    }
 
-  &--border &-cell:not(:last-child) {
-    border-right: 2px solid $siimple-white;
-  }
+    &--border &-cell:not(:last-child) {
+        border-right: 2px solid $siimple-white;
+    }
 
-  &-header {
-    display: table-header-group;
-    border-bottom: 3px solid $siimple-white !important;
-    font-weight: bold;
-  }
+    &-header {
+        display: table-header-group;
+        border-bottom: 3px solid $siimple-white !important;
+        font-weight: bold;
+    }
 
-  &-header &-row:first-child &-cell:first-child {
-    border-top-left-radius: $siimple-default-border-radius;
-  }
+    &-header &-row:first-child &-cell:first-child {
+        border-top-left-radius: $siimple-default-border-radius;
+    }
 
-  &-header &-row:first-child &-cell:last-child {
-    border-top-right-radius: $siimple-default-border-radius;
-  }
+    &-header &-row:first-child &-cell:last-child {
+        border-top-right-radius: $siimple-default-border-radius;
+    }
 
-  &-header &-cell {
-    background-color: $siimple-grey-dark !important;
-    border-bottom-right-radius: 0px !important;
-    border-bottom-left-radius: 0px !important;
-  }
+    &-header &-cell {
+        background-color: $siimple-grey-dark !important;
+        border-bottom-right-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
 
-  &-body {
-    display: table-row-group;
-  }
+    &-body {
+        display: table-row-group;
+    }
 
-  &-body &-cell {
-    background-color: rgba($siimple-grey-light, 0.4);
-  }
+    &-body &-cell {
+        background-color: rgba($siimple-grey-light, 0.4);
+    }
 
-  &-body &-row:last-child &-cell:first-child {
-    border-bottom-left-radius: $siimple-default-border-radius;
-  }
+    &-body &-row:last-child &-cell:first-child {
+        border-bottom-left-radius: $siimple-default-border-radius;
+    }
 
-  &-body &-row:last-child &-cell:last-child {
-    border-bottom-right-radius: $siimple-default-border-radius;
-  }
+    &-body &-row:last-child &-cell:last-child {
+        border-bottom-right-radius: $siimple-default-border-radius;
+    }
 
-  &--striped &-body &-row:nth-child(odd) &-cell {
-    background-color: rgba($siimple-grey-light, 1.0);
-  }
+    &--striped &-body &-row:nth-child(odd) &-cell {
+        background-color: rgba($siimple-grey-light, 1.0);
+    }
 
-  &--hover &-body &-row:hover &-cell {
-    background-color: $siimple-grey !important;
-  }
+    &--hover &-body &-row:hover &-cell {
+        background-color: $siimple-grey !important;
+    }
 }
