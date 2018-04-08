@@ -89,7 +89,7 @@ The documentation for `v3.1.0` will be available on this repository.
 
 ## Questions 
 
-For questions and support, please use our [community chat](http://chat.siimple.xyz) on **Gitter**.
+For questions and support, please use our [community chat](http://chat.siimple.xyz) on **Gitter**. You can also follow [@siimplecss on Twitter](https://twitter.com/siimplecss).
 
 
 ## Bugs and new features
