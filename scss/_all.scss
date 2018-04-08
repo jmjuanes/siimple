@@ -6,28 +6,23 @@
 // Website:    https://www.siimple.xyz
 //
 
-//Import dependencies
-@import "siimple-colors/scss/_all.scss";
-
-//Import variables
-@import "./_variables.scss";
-
-//Import utils
-@import "./_utils.scss";
-
 //Import typography
+@import "./typography/_badge.scss";
 @import "./typography/_blockquote.scss";
 @import "./typography/_code.scss";
 @import "./typography/_heading.scss";
-@import "./typography/_list.scss";
+@import "./typography/_link.scss";
+@import "./typography/_paragraph.scss";
+@import "./typography/_small.scss";
 @import "./typography/_tag.scss";
-@import "./typography/_text.scss";
 
 //Import elements
 @import "./elements/_alert.scss";
 @import "./elements/_btn.scss";
 @import "./elements/_card.scss";
 @import "./elements/_close.scss";
+@import "./elements/_list.scss";
+@import "./elements/_progress.scss";
 @import "./elements/_spinner.scss";
 @import "./elements/_table.scss";
 @import "./elements/_tip.scss";
@@ -41,15 +36,21 @@
 @import "./layout/_menu.scss";
 @import "./layout/_navbar.scss";
 @import "./layout/_tabs.scss";
-@import "./layout/_size.scss";
 
 //Import form elements
-@import "./form/_form.scss";
 @import "./form/_checkbox.scss";
+@import "./form/_field.scss";
+@import "./form/_form.scss";
 @import "./form/_input.scss";
 @import "./form/_label.scss";
+@import "./form/_radio.scss";
+@import "./form/_select.scss";
 @import "./form/_switch.scss";
 @import "./form/_textarea.scss";
 
 //Import grid
 @import "./grid/_grid.scss";
+
+//Import helpers
+@import "./_helpers.scss";
+
