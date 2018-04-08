@@ -5,7 +5,6 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 @import "../_utils.scss";
 
@@ -18,7 +17,9 @@ $siimple-card-border-width: 2px;
     color: $siimple-default-text-color;
     font-size: $siimple-default-text-size;
 
-    &-header, &-body, &-footer {
+    &-header, 
+    &-body, 
+    &-footer {
         display: block;
         line-height: $siimple-default-text-line;
         border-left: $siimple-card-border-width solid $siimple-grey-light;
@@ -35,7 +36,8 @@ $siimple-card-border-width: 2px;
         }
     }
 
-    &-header, &-footer {
+    &-header, 
+    &-footer {
         display: block;
         padding: 12px;
         background-color: $siimple-grey-light;
