@@ -52,7 +52,8 @@ Follow the steps described in this section if you are going to contribute, exten
 Follow these steps:
 
 1. Download and install [Node.js](https://nodejs.org/download/) on your computer.
-2. Navigate to the cloned repository folder, and run `npm install` to download all the dependencies listed in `package.json`.
+2. Clone this repository: `git clone https://github.com/siimple/siimple.git`.
+3. Navigate to the cloned repository folder, and run `npm install` to download all the dependencies listed in `package.json`.
 
 ### Building siimple
 
