@@ -24,7 +24,8 @@ body {
     margin: 0;
 }
 
-//Layout base style
+//Layout base style DEPRECATED!
+//This class is deprecated and will be removed in future versions
 .siimple-layout {
     //display: flex;
     //flex-direction: column;
@@ -38,7 +39,9 @@ body {
     color: $siimple-default-text-color;
     font-weight: normal;
     //background-color: $siimple-white;
-
+    
+    //DEPRECATED!
+    //Use `siimple--left` or `siimple--right` instead.
     &--left {
         float: left;
     }
