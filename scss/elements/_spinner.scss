@@ -5,7 +5,6 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
 $siimple-spinner-size: 10px;
@@ -19,78 +18,80 @@ $siimple-spinner-small-space: 13px;
 
 //Base spinner mixin
 @mixin siimple-spinner-base {
-  width: $siimple-spinner-size;
-  height: $siimple-spinner-size;
-  content: "";
-  //background-color: $siimple-grey-2;
-  animation: siimple_spinner_animation 1s infinite ease-in-out;
-  animation-fill-mode: both;
-  border-radius: 100px;
+    width: $siimple-spinner-size;
+    height: $siimple-spinner-size;
+    content: "";
+    //background-color: $siimple-grey-2;
+    animation: siimple_spinner_animation 1s infinite ease-in-out;
+    animation-fill-mode: both;
+    border-radius: 100px;
 }
 
 .siimple-spinner {
-  @keyframes siimple_spinner_animation {
-    50% {
-      background-color: transparent;
+    @keyframes siimple_spinner_animation {
+        50% {
+            background-color: transparent;
+        }
     }
-  }
 
-  @include siimple-spinner-base();
-  display: block;
-  text-indent: -9999em;
-  font-size: 10px;
-  position: relative;
-  transform: translateZ(0);
-  animation-delay: 0.33s;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
-
-  &:before {
     @include siimple-spinner-base();
-    //animation-delay: -0.66s;
-    position: absolute;
-    left: calc(#{$siimple-spinner-space} * -1);
-    top: 0;
-  }
-  &:after {
-    @include siimple-spinner-base();
-    animation-delay: 0.66s;
-    position: absolute;
-    left: $siimple-spinner-space;
-    top: 0;
-  }
-
-  @each $color, $value in $siimple-default-colors {
-    &#{&}--#{$color}, &#{&}--#{$color}:after, &#{&}--#{$color}:before {
-      background-color: siimple-color-base($color);
+    display: block;
+    text-indent: -9999em;
+    font-size: 10px;
+    position: relative;
+    transform: translateZ(0);
+    animation-delay: 0.33s;
+    margin: {
+        left: auto;
+        right: auto;
+        top: 0px;
     }
-  }
 
-  &--small{
-    &, &:before, &:after {
-      width: $siimple-spinner-small-size !important;
-      height: $siimple-spinner-small-size !important;
-    }
     &:before {
-      left: calc(#{$siimple-spinner-small-space} * -1) !important;
+        @include siimple-spinner-base();
+        //animation-delay: -0.66s;
+        position: absolute;
+        left: calc(#{$siimple-spinner-space} * -1);
+        top: 0;
     }
     &:after {
-      left: $siimple-spinner-small-space !important;
-    }
-  }
-
-  &--large{
-    &, &:before, &:after {
-      width: $siimple-spinner-large-size !important;
-      height: $siimple-spinner-large-size !important;
-    }
-    &:before {
-      left: calc(#{$siimple-spinner-large-space} * -1) !important;
+        @include siimple-spinner-base();
+        animation-delay: 0.66s;
+        position: absolute;
+        left: $siimple-spinner-space;
+        top: 0;
     }
 
-    &:after {
-      left: $siimple-spinner-large-space !important;
+    @each $color, $value in $siimple-default-colors {
+        &#{&}--#{$color}, &#{&}--#{$color}:after, &#{&}--#{$color}:before {
+            background-color: siimple-color-base($color);
+        }
     }
-  }
+
+    &--small{
+        &, &:before, &:after {
+            width: $siimple-spinner-small-size !important;
+            height: $siimple-spinner-small-size !important;
+        }
+        &:before {
+            left: calc(#{$siimple-spinner-small-space} * -1) !important;
+        }
+        &:after {
+            left: $siimple-spinner-small-space !important;
+        }
+    }
+
+    &--large{
+        &, &:before, &:after {
+            width: $siimple-spinner-large-size !important;
+            height: $siimple-spinner-large-size !important;
+        }
+        &:before {
+            left: calc(#{$siimple-spinner-large-space} * -1) !important;
+        }
+
+        &:after {
+            left: $siimple-spinner-large-space !important;
+        }
+    }
 }
