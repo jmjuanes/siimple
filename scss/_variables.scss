@@ -20,10 +20,11 @@ $siimple-default-sizes: (
 );
 
 //Default text variables
-$siimple-default-text-size: 14px;
-$siimple-default-text-font: 'Montserrat', sans-serif;
-$siimple-default-text-line: 20px;
-$siimple-default-text-weight: normal;
+$siimple-default-text-size: 15px;
+//$siimple-default-text-font: 'Montserrat', sans-serif;
+$siimple-default-text-font: 'Open Sans', sans-serif;
+$siimple-default-text-line: 22.5px;
+$siimple-default-text-weight: 400;
 $siimple-default-text-color: $siimple-navy;
 
 //Default border values
