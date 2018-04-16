@@ -5,7 +5,6 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
 //Blockquote variables
@@ -19,20 +18,21 @@ $siimple-blockquote-margin-top: 0px;
 $siimple-blockquote-margin-left: 10px;
 
 .siimple-blockquote {
-  display: block;
-  //font-family: $siimple-default-text-font;
-  color: $siimple-blockquote-color;
-  font-size: $siimple-default-text-size;
-  border-left: $siimple-blockquote-border solid $siimple-blockquote-color;
-  padding: {
-    top: $siimple-blockquote-padding-top;
-    bottom: $siimple-blockquote-padding-bottom;
-    left: $siimple-blockquote-padding-left;
-    right: $siimple-blockquote-padding-right;
-  }
-  margin: {
-    top: $siimple-blockquote-padding-top;
-    bottom: $siimple-default-margin-bottom;
-    left: $siimple-blockquote-margin-left;
-  }
+    display: block;
+    //font-family: $siimple-default-text-font;
+    color: $siimple-blockquote-color;
+    font-size: $siimple-default-text-size;
+    line-height: $siimple-default-text-line;
+    border-left: $siimple-blockquote-border solid $siimple-blockquote-color;
+    padding: {
+        top: $siimple-blockquote-padding-top;
+        bottom: $siimple-blockquote-padding-bottom;
+        left: $siimple-blockquote-padding-left;
+        right: $siimple-blockquote-padding-right;
+    }
+    margin: {
+        top: $siimple-blockquote-padding-top;
+        bottom: $siimple-default-margin-bottom;
+        left: $siimple-blockquote-margin-left;
+    }
 }
