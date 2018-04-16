@@ -5,36 +5,37 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
+//Tag variables
 $siimple-tag-height: 19px;
+$siimple-tag-line-height: 19px;
 $siimple-tag-border-radius: 4px;
-$siimple-tag-text-size: 10px;
+$siimple-tag-font-size: 10px;
 $siimple-tag-padding-left: 6px;
 $siimple-tag-padding-right: 6px;
 $siimple-tag-margin-right: 1px;
 $siimple-tag-margin-bottom: 8px;
 
 .siimple-tag {
-  display: inline-block;
-  //height: $siimple-tag-height;
-  font-size: $siimple-tag-text-size;
-  font-weight: bold;
-  text-decoration: none;
-  line-height: $siimple-tag-height;
-  border-radius: $siimple-tag-border-radius;
-  padding: {
-    left: $siimple-tag-padding-left;
-    right: $siimple-tag-padding-right;
-  }
-  margin-right: $siimple-tag-margin-right;
-  //margin-bottom: $siimple-tag-margin-bottom;
-
-  @each $color, $value in $siimple-default-colors {
-    &#{&}--#{$color} {
-      background-color: siimple-color-base($color);
-      color: siimple-color-over($color);
+    display: inline-block;
+    //height: $siimple-tag-height;
+    font-size: $siimple-tag-font-size;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: $siimple-tag-line-height;
+    border-radius: $siimple-tag-border-radius;
+    padding: {
+        left: $siimple-tag-padding-left;
+        right: $siimple-tag-padding-right;
     }
-  }
+    margin-right: $siimple-tag-margin-right;
+    //margin-bottom: $siimple-tag-margin-bottom;
+
+    @each $color, $value in $siimple-default-colors {
+        &#{&}--#{$color} {
+            background-color: siimple-color-base($color);
+            color: siimple-color-over($color);
+        }
+    }
 }
