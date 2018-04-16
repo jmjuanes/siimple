@@ -5,13 +5,15 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
-$siimple-small-text-size: 12px;
+//Small variables
+$siimple-small-font-size: 14px;
+$siimple-small-color: $siimple-navy-light;
 
+//Small class
 .siimple-small {
-  //font-family: $siimple-default-text-font;
-  font-size: $siimple-small-text-size;
-  color: $siimple-navy-light;
+    //font-family: $siimple-default-text-font;
+    font-size: $siimple-small-font-size;
+    color: $siimple-small-color;
 }
