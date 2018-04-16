@@ -5,32 +5,33 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
 //Pre vriables
-$siimple-pre-text-size: 13px;
+$siimple-pre-font-size: 14px;
 $siimple-pre-padding: 15px;
 $siimple-pre-margin-top: 0px;
-$siimple-pre-line: 22px;
+$siimple-pre-line-height: 22px;
+$siimple-pre-color: $siimple-navy;
 
+//Pre class
 .siimple-pre {
-  display: block;
-  overflow-x: auto;
-  width: calc(100% - 2 * #{$siimple-pre-padding});
-  color: $siimple-navy;
-  line-height: $siimple-pre-line;
-  font-size: $siimple-pre-text-size;
-  background-color: $siimple-grey;
-  border-radius: $siimple-default-border-radius;
-  padding: $siimple-pre-padding;
-  margin: {
-    top: $siimple-pre-margin-top;
-    bottom: $siimple-default-margin-bottom;
-  }
+    display: block;
+    overflow-x: auto;
+    width: calc(100% - 2 * #{$siimple-pre-padding});
+    color: $siimple-pre-color;
+    line-height: $siimple-pre-line-height;
+    font-size: $siimple-pre-font-size;
+    background-color: $siimple-grey;
+    border-radius: $siimple-default-border-radius;
+    padding: $siimple-pre-padding;
+    margin: {
+        top: $siimple-pre-margin-top;
+        bottom: $siimple-default-margin-bottom;
+    }
 
-  &--dark {
-    background-color: $siimple-navy !important;
-    color: $siimple-white;
-  }
+    &--dark {
+        background-color: $siimple-navy !important;
+        color: $siimple-white;
+    }
 }
