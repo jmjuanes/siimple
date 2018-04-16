@@ -5,16 +5,21 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
+//Paragraph variables
 $siimple-paragraph-margin-top: 0px;
+$siimple-paragraph-margin-bottom: $siimple-default-margin-bottom;
 
-.siimple-paragraph, .siimple-p {
-  display: block;
-  //font-family: $siimple-default-text-font;
-  line-height: $siimple-default-text-line;
-  font-size: $siimple-default-text-size;
-  margin-top: $siimple-paragraph-margin-top;
-  margin-bottom: $siimple-default-margin-bottom;
+//Paragraph class
+.siimple-paragraph, 
+.siimple-p {
+    display: block;
+    //font-family: $siimple-default-text-font;
+    line-height: $siimple-default-text-line;
+    font-size: $siimple-default-text-size;
+    margin: {
+        top: $siimple-paragraph-margin-top;
+        bottom: $siimple-paragraph-margin-bottom;
+    }
 }
