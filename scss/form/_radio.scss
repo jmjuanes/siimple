@@ -5,38 +5,54 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
-$siimple-radio-size: 18px;
+//Radio variables
+$siimple-radio-width: 18px;
+$siimple-radio-height: 18px;
 $siimple-radio-margin: 8px;
+
+//Outer circle radio border
 $siimple-radio-border: 3px;
+
+//Inner circe radio width
 $siimple-radio-circle: 6px;
 
+//Radio inactive variables
+$siimple-radio-inactive-border-color: $siimple-grey;
+$siimple-radio-inactive-background-color: $siimple-grey;
+
+//Radio active variables
+$siimple-radio-active-background-color: $siimple-green;
+$siimple-radio-active-border-color: $siimple-green;
+
+//Radio class
 .siimple-radio {
     display: inline-block;
-    width: $siimple-radio-size;
-    height: $siimple-radio-size;
+    width: $siimple-radio-width;
+    height: $siimple-radio-height;
     position: relative;
     vertical-align: top;
     margin: $siimple-radio-margin;
     cursor: pointer;
     
+    //Radio outer circle
     & > label {
         display: block;
-        width: calc(#{$siimple-radio-size} - 2 * #{$siimple-radio-border});
-        height: calc(#{$siimple-radio-size} - 2 * #{$siimple-radio-border});
+        width: calc(#{$siimple-radio-width} - 2 * #{$siimple-radio-border});
+        height: calc(#{$siimple-radio-height} - 2 * #{$siimple-radio-border});
         position: absolute;
         top: 0px;
         left: 0px;
         border-radius: 100px;
         border-width: $siimple-radio-border;
         border-style: solid;
-        border-color: $siimple-grey;
+        border-color: $siimple-radio-inactive-border-color;
         transition: border-color 0.3s ease;
         cursor: pointer;
     }
 
+    //Radio inner circle
     & > label:after {
         position: absolute;
         display: block;;
@@ -49,21 +65,21 @@ $siimple-radio-circle: 6px;
         left: calc(50% - #{$siimple-radio-circle} / 2);
         transition: all 0.3s ease;
     }
-
     &:hover > label:after {
-        background-color: $siimple-grey;
+        background-color: $siimple-inactive-background-color;
     }
     
+    //Hide radio input
     & input[type=radio] {
         visibility: hidden;
     }
     //Checked -> change tick
     & input[type=radio]:checked + label:after {
-        background-color: $siimple-green;
+        background-color: $siimple-radio-active-background-color;
     }
     //Checked -> change background
     & input[type=radio]:checked + label {
-        border-color: $siimple-green;
+        border-color: $siimple-radio-active-border-color;
     }
 }
 
