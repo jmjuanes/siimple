@@ -5,25 +5,36 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
+//Textarea variables
+$siimple-texatrea-line-height: 20px;
+$siimple-textarea-font-size: 14px;
+$siimple-textarea-color: $siimple-default-color;
+$siimple-textarea-border: 0px;
+$siimple-textarea-border-radius: $siimple-default-border-radius;
+$siimple-textarea-outline: 0px;
 $siimple-textarea-padding: 10px;
+$siimple-textarea-background-color: $siimple-grey;
 
+//Textarea class
 .siimple-textarea {
-  display: inline-block;
-  line-height: $siimple-default-text-line;
-  //font-family: $siimple-default-text-font;
-  font-size: $siimple-default-text-size;
-  color: $siimple-default-text-color;
-  padding: $siimple-textarea-padding;
-  border: 0px;
-  outline: 0px;
-  border-radius: $siimple-default-border-radius;
-  background-color: $siimple-grey;
-  vertical-align: top;
-
-  &--fluid {
-    width: 100%;
-  }
+    display: inline-block;
+    line-height: $siimple-textarea-line-height;
+    //font-family: $siimple-default-text-font;
+    font-size: $siimple-textarea-font-size;
+    color: $siimple-textarea-color;
+    padding: $siimple-textarea-padding;
+    border: $siimple-textarea-border;
+    border-radius: $siimple-textarea-border-radius
+    outline: $siimple-textarea-outline;
+    border-radius: $siimple-textarea-border-radius;
+    background-color: $siimple-textarea-background-color;
+    vertical-align: top;
+    
+    //Fluid textarea
+    &--fluid {
+        width: 100%;
+    }
 }
+
