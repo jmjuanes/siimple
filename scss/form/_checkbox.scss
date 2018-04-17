@@ -5,75 +5,86 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
-$siimple-checkbox-size: 18px;
-$siimple-checkbox-margin-top-bottom: 8px;
-$siimple-checkbox-margin-left-right: 10px;
+//Checkbox variables
+$siimple-checkbox-width: 18px;
+$siimple-checkbox-height: 18px;
+$siimple-checkbox-margin-top: 8px;
+$siimple-checkbox-margin-bottom: 8px;
+$siimple-checkbox-margin-left: 10px;
+$siimple-checkbox-margin-right: 10px;
 
-$siimple-checkbox-label-size: $siimple-checkbox-size;
-$siimple-checkbox-label-radius: 2px;
+$siimple-checkbox-label-width: $siimple-checkbox-width;
+$siimple-checkbox-label-height: $siimple-checkbox-height;
+$siimple-checkbox-label-border-radius: 2px;
 
 $siimple-checkbox-label-after-opacity: 0.2;
 $siimple-checkbox-label-after-width: 8px;
 $siimple-checkbox-label-after-height: 4px;
 
+//Checkbox inactive variables
+$siimple-checkbox-inactive-background-color: $siimple-grey;
+
+//Checkbox active variables
+$siimple-checkbox-active-background-color: $siimple-green;
+
+//Checkbox class
 .siimple-checkbox {
-  display: inline-block;
-  position: relative;
-  width: $siimple-checkbox-size;
-  height: $siimple-checkbox-size;
-  margin: {
-    left: $siimple-checkbox-margin-left-right;
-    right: $siimple-checkbox-margin-left-right;
-    top: $siimple-checkbox-margin-top-bottom;
-    bottom: $siimple-checkbox-margin-top-bottom;
-  }
-  vertical-align: top;
-
-  & label {
-    width: $siimple-checkbox-label-size;
-    height: $siimple-checkbox-label-size;
-    cursor: pointer;
-    transition: all 0.3s;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: $siimple-checkbox-label-radius;
-    background: $siimple-grey;
-
-    //Tick
-    &:after {
-      opacity: $siimple-checkbox-label-after-opacity;
-      content: '';
-      width: $siimple-checkbox-label-after-width;
-      height: $siimple-checkbox-label-after-height;
-      transform: rotate(-45deg);
-      transition: all 0.3s;
-      position: absolute;
-      top: 5px;
-      left: 4px;
-      background: transparent;
-      border: 2px solid $siimple-navy;
-      border-top: none;
-      border-right: none;
+    display: inline-block;
+    position: relative;
+    width: $siimple-checkbox-width;
+    height: $siimple-checkbox-height;
+    margin: {
+        left: $siimple-checkbox-margin-left;
+        right: $siimple-checkbox-margin-right;
+        top: $siimple-checkbox-margin-top;
+        bottom: $siimple-checkbox-margin-bottom;
     }
-    &:hover::after {
-      opacity: 0.5;
+    vertical-align: top;
+
+    & label {
+        width: $siimple-checkbox-label-width;
+        height: $siimple-checkbox-label-height;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: $siimple-checkbox-label-border-radius;
+        background: $siimple-checkbox-inactive-background-color;
+
+        //Tick
+        &:after {
+            opacity: $siimple-checkbox-label-after-opacity;
+            content: '';
+            width: $siimple-checkbox-label-after-width;
+            height: $siimple-checkbox-label-after-height;
+            transform: rotate(-45deg);
+            transition: all 0.3s;
+            position: absolute;
+            top: 5px;
+            left: 4px;
+            background: transparent;
+            border: 2px solid $siimple-navy;
+            border-top: none;
+            border-right: none;
+        }
+        &:hover::after {
+            opacity: 0.5;
+        }
     }
-  }
-  //Input style
-  & input[type=checkbox] {
-    visibility: hidden;
-  }
-  //Checked -> change tick
-  & input[type=checkbox]:checked + label:after {
-    opacity: 1;
-    border-color: $siimple-white;
-  }
-  //Checked -> change background
-  & input[type=checkbox]:checked + label {
-    background-color: $siimple-green;
-  }
+    //Input style
+    & input[type=checkbox] {
+        visibility: hidden;
+    }
+    //Checked -> change tick
+    & input[type=checkbox]:checked + label:after {
+        opacity: 1;
+        border-color: $siimple-white;
+    }
+    //Checked -> change background
+    & input[type=checkbox]:checked + label {
+        background-color: $siimple-checkbox-active-background-color;
+    }
 }
