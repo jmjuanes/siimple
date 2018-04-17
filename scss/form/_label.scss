@@ -5,30 +5,38 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
+//Label variables
 $siimple-label-height: 34px;
+$siimple-label-line-height: $siimple-label-height;
 $siimple-label-padding-right: 10px;
-$siimple-label-font-size: 13px;
+$siimple-label-padding-left: 0px;
+$siimple-label-font-size: 14px;
+$siimple-label-color: $siimple-default-color;
 
+//Label class
 .siimple-label {
-  display: inline-block;
-  height: $siimple-label-height;
-  line-height: $siimple-label-height;
-  //font-family: $siimple-default-text-font;
-  font-size: $siimple-label-font-size;
-  color: $siimple-navy;
-  font-weight: bold;
-  padding-right: $siimple-label-padding-right;
-  padding-left: 0px;
-  vertical-align: top;
-
-  &--light {
-    color: $siimple-white;
-  }
-
-  &--dark {
-    color: $siimple-navy;
-  }
+    display: inline-block;
+    height: $siimple-label-height;
+    line-height: $siimple-label-line-height;
+    //font-family: $siimple-default-text-font;
+    font-size: $siimple-label-font-size;
+    color: $siimple-label-color;
+    font-weight: bold;
+    padding: {
+        right: $siimple-label-padding-right;
+        left: $siimple-label-padding-left;
+    }
+    vertical-align: top;
+    
+    //Light label style
+    &--light {
+        color: $siimple-white;
+    }
+    
+    //Dark label style
+    &--dark {
+        color: $siimple-navy;
+    }
 }
