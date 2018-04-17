@@ -5,88 +5,109 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
 //Menu variables
+$siimple-menu-font-size: $siimple-defualt-font-size;
 $siimple-menu-margin-top: 0px;
+$siimple-menu-margin-bottom: $siimple-default-margin-bottom;
+$siimple-menu-padding: 0px;
 
 //Menu group variables
 $siimple-menu-group-height: 25px;
-$siimple-menu-group-margin: 10px;
+$siimple-menu-group-line-height: $siimple-menu-group-height;
+$siimple-menu-group-margin-top: 10px;
+$siimple-menu-group-font-weight: bold;
+$siimple-menu-group-color: $siimple-navy-light;
 
 //Menu item variables
-$siimple-menu-item-height: 30px;
-$siimple-menu-item-radius: $siimple-default-border-radius;
-$siimple-menu-item-padding: 10px;
+$siimple-menu-item-height: 34px;
+$siimple-menu-item-line-height: $siimple-menu-item-height;
+$siimple-menu-item-border-radius: $siimple-default-border-radius;
+$siimple-menu-item-padding-left: 10px;
+$siimple-menu-item-padding-right: 10px;
+$siimple-menu-item-font-size: $siimple-default-font-size;
 
 //Menu submenu variables
 $siimple-menu-submenu-margin-top: 5px;
 $siimple-menu-submenu-margin-bottom: 5px;
 $siimple-menu-submenu-margin-left: 10px;
-$siimple-menu-submenu-padding: 10px;
+$siimple-menu-submenu-padding-left: 10px;
 
+//Menu class
 .siimple-menu {
-  display: block;
-  width: 100%;
-  //font-family: $siimple-default-text-font;
-  font-size: $siimple-default-text-size;
-  margin-top: $siimple-menu-margin-top;
-  margin-bottom: $siimple-default-margin-bottom;
-  padding: 0px;
-
-  &-group {
     display: block;
     width: 100%;
-    height: $siimple-menu-group-height;
-    line-height: $siimple-menu-group-height;
-    transition: color 0.3s;
-    font-weight: bold;
-    text-decoration: none;
-    color: $siimple-navy-light;
+    //font-family: $siimple-default-text-font;
+    font-size: $siimple-menu-font-size;
+    margin: {
+        top: $siimple-menu-margin-top;
+        bottom: $siimple-menu-margin-bottom;
+    }
+    padding: $siimple-menu-padding;
 
-    //Menu group not first margin top
-    &:not(:first-child) {
-      margin-top: $siimple-menu-group-margin;
+    //Menu group
+    &-group {
+        display: block;
+        width: 100%;
+        height: $siimple-menu-group-height;
+        line-height: $siimple-menu-group-line-height;
+        transition: color 0.3s;
+        font-weight: $siimple-menu-group-font-weight;
+        text-decoration: none;
+        color: $siimple-menu-group-color;
+
+        //Menu group not first margin top
+        &:not(:first-child) {
+            margin-top: $siimple-menu-group-margin-top;
+        }
+
+        //Menu group hover
+        &:hover {
+            text-decoration: none !important;
+            color: $siimple-menu-group-color;
+        }
     }
 
-    //Menu group hover
-    &:hover {
-      text-decoration: none !important;
-      color: $siimple-navy-light;
+    //Menu item
+    &-item {
+        display: block;
+        height: $siimple-menu-item-height;
+        line-height: $siimple-menu-item-line-height;
+        border: 0px;
+        border-radius: $siimple-menu-item-border-radius;
+        font-size: $siimple-menu-item-font-size;
+        color: $siimple-navy-light;
+        font-weight: normal;
+        text-decoration: none;
+        padding: {
+            left: $siimple-menu-item-padding-left;
+            right: $siimple-menu-item-padding-right;
+        }
+        opacity: 1.0;
+        transition: all ease 0.3s;
+        cursor: pointer;
+
+        //Hover styles
+        &:hover {
+            background-color: $siimple-grey;
+            text-decoration: none !important;
+            color: $siimple-navy;
+        }
     }
-  }
-
-  &-item {
-    display: block;
-    height: $siimple-menu-item-height;
-    line-height: $siimple-menu-item-height;
-    border: 0px;
-    border-radius: $siimple-menu-item-radius;
-    font-size: $siimple-default-text-size;
-    color: $siimple-navy-light;
-    font-weight: normal;
-    text-decoration: none;
-    padding-left: $siimple-menu-item-padding;
-    padding-right: $siimple-menu-item-padding;
-    opacity: 1.0;
-    transition: all ease 0.3s;
-    cursor: pointer;
-
-    //Hover styles
-    &:hover {
-      background-color: $siimple-grey;
-      text-decoration: none !important;
-      color: $siimple-navy;
+    
+    //submenu
+    &-sub, 
+    &-submenu {
+        display: block;
+        padding: {
+            left: $siimple-menu-submenu-padding-left;
+        }
+        margin: {
+            left: $siimple-menu-submenu-margin-left;
+            top: $siimple-menu-submenu-margin-top;
+            bottom: $siimple-menu-submenu-margin-bottom;
+        }
+        border-left: 1px solid $siimple-grey-dark;
     }
-  }
-
-  &-sub, &-submenu {
-    display: block;
-    padding-left: $siimple-menu-submenu-padding;
-    margin-left: $siimple-menu-submenu-margin-left;
-    margin-top: $siimple-menu-submenu-margin-top;
-    margin-bottom: $siimple-menu-submenu-margin-bottom;
-    border-left: 1px solid $siimple-grey-dark;
-  }
 }
