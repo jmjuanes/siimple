@@ -5,7 +5,6 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 @import "./size.scss";
 
@@ -13,104 +12,140 @@
 $siimple-navbar-zindex: 3;
 $siimple-navbar-height: 30px;
 $siimple-navbar-margin: 0px;
-$siimple-navbar-padding: 15px;
+$siimple-navbar-padding-top: 15px;
+$siimple-navbar-padding-bottom: 15px;
 
 //Navbar item variables
-$siimple-navbar-item-margin: 0px;
-$siimple-navbar-item-padding: 15px;
+$siimple-navbar-item-height: $siimple-navbar-height;
+$siimple-navbar-item-line-height: $siimple-navbar-item-height;
+$siimple-navbar-item-margin-left: 0px;
+$siimple-navbar-item-margin-right: 0px;
+$siimple-navbar-item-padding-left: 15px;
+$siimple-navbar-item-padding-right: 15px;
+$siimple-navbar-item-font-size: $siimple-default-font-size;
+$siimple-navbar-item-font-weight: bold;
 
 //Navbar title variables
-$siimple-navbar-title-size: 22px;
-$siimple-navbar-title-padding: 15px;
+$siimple-navbar-title-height: $siimple-navbar-height;
+$siimple-navbar-title-line-height: $siimple-navbar-title-height;
+$siimple-navbar-title-font-size: 21px;
+$siimple-navbar-title-font-weight: bold;
+$siimple-navbar-title-padding-left: 0px;
+$siimple-navbar-title-padding-right: 0px;
 
+//Navbar subtitle variables
+$siimple-navbar-subtitle-font-size: 17px;
+$siimple-navbar-subtitle-font-weight: bold;
+$siimple-navbar-subtitle-height: $siimple-navbar-height;
+$siimple-navbar-subtitle-line-height: $siimple-navbar-subtitle-height;
+$siimple-navbar-subtitle-padding-left: 15px;
+
+//Navbar class
 .siimple-navbar {
-  display: block;
-  //position: absolute; top: 0px; left: 0px;
-  z-index: $siimple-navbar-zindex;
-  //width: 100%;
-  height: $siimple-navbar-height;
-  //font-family: $siimple-default-text-font;
-  //margin: $siimple-navbar-margin;
-  padding: {
-    top: $siimple-navbar-padding;
-    bottom: $siimple-navbar-padding;
-  }
-  vertical-align: middle;
-
-  @include siimple-size();
-
-  &-title {
-    display: inline-block;
+    display: block;
+    //position: absolute; top: 0px; left: 0px;
+    z-index: $siimple-navbar-zindex;
+    //width: 100%;
     height: $siimple-navbar-height;
-    line-height: $siimple-navbar-height;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: $siimple-navbar-title-size;
-    //padding-left: $siimple-navbar-title-padding;
-    //padding-right: $siimple-navbar-title-padding;
-    transition: all 0.3s;
-    cursor: pointer;
+    //font-family: $siimple-default-text-font;
+    //margin: $siimple-navbar-margin;
+    padding: {
+        top: $siimple-navbar-padding-top;
+        bottom: $siimple-navbar-padding-bottom;
+    }
     vertical-align: middle;
-  }
 
-  &-subtitle {
-    display: inline-block;
-    height: $siimple-navbar-height;
-    line-height: $siimple-navbar-height;
-    font-size: 17px;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    vertical-align: middle;
-    opacity: 0.5;
+    @include siimple-size();
 
-    &::before {
-      display: inline-block;
-      content: "";
-      width: 2px;
-      height: calc(#{$siimple-navbar-height} - 8px);
-      margin: 3px 5px 3px 5px;
-      vertical-align: middle;
+    //Navbar title
+    &-title {
+        display: inline-block;
+        height: $siimple-navbar-title-height;
+        //line-height: $siimple-navbar-title-line-height;
+        text-decoration: none;
+        font-weight: $siimple-navbar-title-font-weight;
+        font-size: $siimple-navbar-title-font-size;
+        padding: {
+            left: $siimple-navbar-title-padding-left;
+            right: $siimple-navbar-title-padding-right;
+        }
+        transition: all 0.3s;
+        cursor: pointer;
+        vertical-align: middle;
     }
-  }
 
-  &-item, &-link {
-    display: inline-block;
-    height: $siimple-navbar-height;
-    line-height: $siimple-navbar-height;
-    margin-left: $siimple-navbar-item-margin;
-    margin-right: $siimple-navbar-item-margin;
-    padding-left: $siimple-navbar-item-padding;
-    padding-right: $siimple-navbar-item-padding;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-    font-size: $siimple-default-text-size;
-    transition: all 0.3s;
-    cursor: pointer;
-    opacity: 0.8;
-    vertical-align: middle;
-    &:hover {
-      opacity: 1.0;
-    }
-  }
+    //Navbar subtitle
+    &-subtitle {
+        display: inline-block;
+        height: $siimple-navbar-subtitle-height;
+        line-height: $siimple-navbar-subtitle-line-height;
+        font-size: $siimple-navbar-subtitle-font-size;
+        font-weight: $siimple-navbar-subtitle-font-weight;
+        text-decoration: none;
+        cursor: pointer;
+        vertical-align: middle;
+        opacity: 0.5;
+        position: relative;
+        padding: {
+            left: $siimple-navbar-subtitle-padding-left;
+        }
 
-  @each $color, $value in $siimple-default-colors {
-    &#{&}--#{$color} {
-      background-color: siimple-color-base($color);
-      color: siimple-color-over($color);
+        &::before {
+            position: absolute;
+            display: inline-block;
+            content: "";
+            width: 2px;
+            height: calc(#{$siimple-navbar-subtitle-height} - 4px);
+            margin: 0px 5px 0px 5px;
+            vertical-align: middle;
+            top: 2px;
+            left: -1px;
+        }
     }
-    &#{&}--#{$color} &-title {
-      color: siimple-color-over($color);
+
+    //Navbar item
+    &-item, 
+    &-link {
+        display: inline-block;
+        height: $siimple-navbar-item-height;
+        line-height: $siimple-navbar-item-line-height;
+        margin: {
+            left: $siimple-navbar-item-margin-left;
+            right: $siimple-navbar-item-margin-right;
+        }
+        padding: {
+            left: $siimple-navbar-item-padding-left;
+            right: $siimple-navbar-item-padding-right;
+        }
+        text-decoration: none;
+        text-align: center;
+        font-weight: $siimple-navbar-item-font-weight;
+        font-size: $siimple-navbar-item-font-size;
+        transition: all 0.3s;
+        cursor: pointer;
+        opacity: 0.8;
+        vertical-align: middle;
+        &:hover {
+            opacity: 1.0;
+        }
     }
-    &#{&}--#{$color} &-subtitle {
-      color: siimple-color-over($color);
-      &::before {
-        background-color: siimple-color-over($color);
-      }
+
+    @each $color, $value in $siimple-default-colors {
+        &#{&}--#{$color} {
+            background-color: siimple-color-base($color);
+            color: siimple-color-over($color);
+        }
+        &#{&}--#{$color} &-title {
+            color: siimple-color-over($color);
+        }
+        &#{&}--#{$color} &-subtitle {
+            color: siimple-color-over($color);
+            &::before {
+                background-color: siimple-color-over($color);
+            }
+        }
+        &#{&}--#{$color} &-link, &#{&}--#{$color} &-item {
+            color: siimple-color-over($color);
+        }
     }
-    &#{&}--#{$color} &-link, &#{&}--#{$color} &-item {
-      color: siimple-color-over($color);
-    }
-  }
 }
