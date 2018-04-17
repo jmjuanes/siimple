@@ -5,23 +5,25 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
 $siimple-field-margin-top: 0px;
 $siimple-field-margin-bottom: $siimple-default-margin-bottom;
 
-$siimple-field-label-font: 13px;
+$siimple-field-label-font-size: 14px;
+$siimple-field-label-color: $siimple-default-text-color;
 $siimple-field-label-margin-top: 0px;
 $siimple-field-label-margin-bottom: 5px;
 
-$siimple-field-helper-font: 12px;
+$siimple-field-helper-font-size: 13px;
+$siimple-field-helper-color: $siimple-navy-light;
 $siimple-field-helper-margin-top: 5px;
 $siimple-field-helper-margin-bottom: 15px;
 
 //The class siimple-form-field will be deprecated
 //Use siimple-field istead!
-.siimple-field, .siimple-form-field {
+.siimple-field, 
+.siimple-form-field {
     display: block;
     vertical-align: top;
     margin-bottom: $siimple-field-margin-bottom;
@@ -29,20 +31,26 @@ $siimple-field-helper-margin-bottom: 15px;
 
     &-label {
         display: block;
-        width: 100%;
+        //width: 100%;
         vertical-align: top;
         font-weight: bold;
-        font-size: $siimple-field-label-font;
-        color: $siimple-navy;
-        margin-top: $siimple-field-label-margin-top;
-        margin-bottom: $siimple-field-label-margin-bottom;
+        font-size: $siimple-field-label-font-size;
+        color: $siimple-field-label-color;
+        margin: {
+            top: $siimple-field-label-margin-top;
+            bottom: $siimple-field-label-margin-bottom;
+        }
     }
     &-helper {
+        display: block;
+        vertical-align: top;
         font-weight: normal;
-        font-size: $siimple-field-helper-font;
-        color: $siimple-navy-light;
-        margin-top: $siimple-field-helper-margin-top;
-        margin-bottom: $siimple-field-helper-margin-bottom;
+        font-size: $siimple-field-helper-font-size;
+        color: $siimple-field-helper-color;
+        margin: {
+            top: $siimple-field-helper-margin-top;
+            bottom: $siimple-field-helper-margin-bottom;
+        }
     }
 }
 
