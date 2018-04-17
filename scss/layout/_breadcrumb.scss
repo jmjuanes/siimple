@@ -5,17 +5,22 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
 
 //Breadcrumb variables
 $siimple-breadcrumb-height: 30px;
 $siimple-breadcrumb-margin-top: 0px;
+$siimple-breadcrumb-margin-bottom: $siimple-default-margin-bottom;
 
 //Breadcrumb item variables
+$siimple-breadcrumb-item-height: $siimple-breadcrumb-height;
 $siimple-breadcrumb-item-margin-right: 5px;
 $siimple-breadcrumb-item-padding-left: 25px;
 $siimple-breadcrumb-item-padding-right: 10px;
+$siimple-breadcrumb-item-font-size: 14px;
+$siimple-breadcrumb-item-font-weight: bold;
+$siimple-breadcrumb-item-line-height: $siimple-breadcrumb-item-height;
+$siimple-breadcrumb-item-background-color: $siimple-grey;
 
 //Breadcrumb item first variables
 $siimple-breadcrumb-item-first-padding: 10px;
@@ -24,93 +29,99 @@ $siimple-breadcrumb-item-first-padding: 10px;
 $siimple-breadcrumb-item-last-padding: 10px;
 
 .siimple-breadcrumb {
-  display: block;
-  width: 100%;
-  height: $siimple-breadcrumb-height;
-  margin-bottom: $siimple-default-margin-bottom;
-  margin-top: $siimple-breadcrumb-margin-top;
-
-  &-crumb, &-item {
-    display: inline-block;
-    float: left;
-    position: relative;
+    display: block;
+    width: 100%;
     height: $siimple-breadcrumb-height;
-    line-height: $siimple-breadcrumb-height;
-    background-color: $siimple-grey;
-    //text-align: center;
-    //font-family: $siimple-default-text-font;
-    font-size: $siimple-default-text-size;
-    font-weight: bold;
-    text-decoration: none;
-    color: $siimple-navy-light;
-    margin-right: $siimple-breadcrumb-item-margin-right;
-    padding-left: $siimple-breadcrumb-item-padding-left;
-    padding-right: $siimple-breadcrumb-item-padding-right;
-    transition: all 0.3s;
-    cursor: pointer;
-
-    //Crumb hover
-    &:hover {
-      color: $siimple-navy;
+    margin: {
+        bottom: $siimple-breadcrumb-margin-bottom;
+        top: $siimple-breadcrumb-margin-top;
     }
 
-    //Crumb after
-    &:after {
-      content: "";
-      z-index: 1;
-      position: absolute;
-      right: - #{$siimple-breadcrumb-height / 2};
-      top: 0;
-      border-top: #{$siimple-breadcrumb-height / 2} solid transparent;
-      border-bottom: #{$siimple-breadcrumb-height / 2} solid transparent;
-      border-left: #{$siimple-breadcrumb-height / 2} solid $siimple-grey;
+    //Breadcrumb item
+    &-item,
+    &-crumb {
+        display: inline-block;
+        float: left;
+        position: relative;
+        height: $siimple-breadcrumb-item-height;
+        line-height: $siimple-breadcrumb-item-line-height;
+        background-color: $siimple-breadcrumb-item-background-color;
+        //text-align: center;
+        //font-family: $siimple-default-text-font;
+        font-size: $siimple-breadcrumb-item-font-size;
+        font-weight: $siimple-breadcrumb-item-font-weight;
+        text-decoration: none;
+        color: $siimple-navy-light;
+        margin-right: $siimple-breadcrumb-item-margin-right;
+        padding-left: $siimple-breadcrumb-item-padding-left;
+        padding-right: $siimple-breadcrumb-item-padding-right;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        //Crumb hover
+        &:hover {
+            color: $siimple-navy;
+        }
+
+        //Crumb after
+        &:after {
+            content: "";
+            z-index: 1;
+            position: absolute;
+            right: - #{$siimple-breadcrumb-item-height / 2};
+            top: 0;
+            border-top: #{$siimple-breadcrumb-item-height / 2} solid transparent;
+            border-bottom: #{$siimple-breadcrumb-item-height / 2} solid transparent;
+            border-left: #{$siimple-breadcrumb-item-height / 2} solid $siimple-grey;
+        }
+
+        //Crumb before
+        &:before {
+            content: "";
+            z-index: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-top: #{$siimple-breadcrumb-item-height / 2} solid transparent;
+            border-bottom: #{$siimple-breadcrumb-item-height / 2} solid transparent;
+            border-left: #{$siimple-breadcrumb-item-height / 2} solid $siimple-white;
+        }
+
+        //First crumb
+        &:first-of-type {
+            border-top-left-radius: $siimple-default-border-radius;
+            border-bottom-left-radius: $siimple-default-border-radius;
+            padding-left: $siimple-breadcrumb-item-first-padding;
+        }
+
+        //First of type before
+        &:first-of-type:before {
+            display: none;
+        }
+
+        //Last crumb
+        &:last-of-type {
+            border-top-right-radius: $siimple-default-border-radius;
+            border-bottom-right-radius: $siimple-default-border-radius;
+            padding-right: $siimple-breadcrumb-item-last-padding;
+        }
+
+        //Last of type after
+        &:last-of-type:after {
+            display: none;
+        }
     }
 
-    //Crumb before
-    &:before {
-      content: "";
-      z-index: 0;
-      position: absolute;
-      left: 0;
-      top: 0;
-      border-top: #{$siimple-breadcrumb-height / 2} solid transparent;
-      border-bottom: #{$siimple-breadcrumb-height / 2} solid transparent;
-      border-left: #{$siimple-breadcrumb-height / 2} solid $siimple-white;
+    &--dark &-item, 
+    &--dark &-crumb {
+        background-color: $siimple-navy;
+        color: rgba($siimple-white, 0.7);
+        &:hover {
+            color: $siimple-white;
+        }
+        &:after {
+            border-left-color: $siimple-navy;
+        }
     }
-
-    //First crumb
-    &:first-of-type {
-      border-top-left-radius: $siimple-default-border-radius;
-      border-bottom-left-radius: $siimple-default-border-radius;
-      padding-left: $siimple-breadcrumb-item-first-padding;
-    }
-
-    //First of type before
-    &:first-of-type:before {
-      display: none;
-    }
-
-    //Last crumb
-    &:last-of-type {
-      border-top-right-radius: $siimple-default-border-radius;
-      border-bottom-right-radius: $siimple-default-border-radius;
-      padding-right: $siimple-breadcrumb-item-last-padding;
-    }
-
-    //Last of type after
-    &:last-of-type:after {
-      display: none;
-    }
-  }
-
-  &--dark &-item, &--dark &-crumb {
-    background-color: $siimple-navy;
-    color: rgba($siimple-white, 0.7);
-    &:hover {
-      color: $siimple-white;
-    }
-    &:after {
-      border-left-color: $siimple-navy;
-    }
-  }
 }
+
