@@ -9,6 +9,7 @@
 
 //Heading variables
 $siimple-heading-padding: 0px;
+$siimple-heading-margin-bottom: 0.5em;
 $siimple-heading-sizes: (
     "1": ("size": 40px, "line-height": 51px, "margin-bottom": 20px, "margin-top": 30px),
     "2": ("size": 32px, "line-heignt": 40px, "margin-bottom": 16px, "margin-top": 30px),
@@ -31,7 +32,7 @@ $siimple-heading-sizes: (
             color: $siimple-default-text-color;
             padding: $siimple-heading-padding;
             //margin-bottom: map-get($heading_variables, "margin-bottom");
-            margin-bottom: 0.5em;
+            margin-bottom: $siimple-heading-margin-bottom;
 
             //Not first child
             &:not(:first-child) {
