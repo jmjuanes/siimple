@@ -8,7 +8,7 @@
 @import "../_variables.scss";
 
 //Menu variables
-$siimple-menu-font-size: $siimple-default-font-size;
+//$siimple-menu-font-size: $siimple-default-font-size;
 $siimple-menu-margin-top: 0px;
 $siimple-menu-margin-bottom: $siimple-default-margin-bottom;
 $siimple-menu-padding: 0px;
@@ -17,6 +17,7 @@ $siimple-menu-padding: 0px;
 $siimple-menu-group-height: 25px;
 $siimple-menu-group-line-height: $siimple-menu-group-height;
 $siimple-menu-group-margin-top: 10px;
+$siimple-menu-group-font-size: 15px;
 $siimple-menu-group-font-weight: bold;
 $siimple-menu-group-color: $siimple-navy-light;
 
@@ -27,6 +28,7 @@ $siimple-menu-item-border-radius: $siimple-default-border-radius;
 $siimple-menu-item-padding-left: 10px;
 $siimple-menu-item-padding-right: 10px;
 $siimple-menu-item-font-size: 14px;
+$siimple-menu-item-font-weight: 400;
 
 //Menu submenu variables
 $siimple-menu-submenu-margin-top: 5px;
@@ -39,7 +41,7 @@ $siimple-menu-submenu-padding-left: 10px;
     display: block;
     width: 100%;
     //font-family: $siimple-default-text-font;
-    font-size: $siimple-menu-font-size;
+    //font-size: $siimple-menu-font-size;
     margin: {
         top: $siimple-menu-margin-top;
         bottom: $siimple-menu-margin-bottom;
@@ -53,6 +55,7 @@ $siimple-menu-submenu-padding-left: 10px;
         height: $siimple-menu-group-height;
         line-height: $siimple-menu-group-line-height;
         transition: color 0.3s;
+        font-size: $siimple-menu-group-font-size;
         font-weight: $siimple-menu-group-font-weight;
         text-decoration: none;
         color: $siimple-menu-group-color;
@@ -77,8 +80,8 @@ $siimple-menu-submenu-padding-left: 10px;
         border: 0px;
         border-radius: $siimple-menu-item-border-radius;
         font-size: $siimple-menu-item-font-size;
+        font-weight: $siimple-menu-item-font-weight;
         color: $siimple-navy-light;
-        font-weight: normal;
         text-decoration: none;
         padding: {
             left: $siimple-menu-item-padding-left;
@@ -96,7 +99,7 @@ $siimple-menu-submenu-padding-left: 10px;
         }
     }
 
-    //submenu
+    //Submenu
     &-sub, 
     &-submenu {
         display: block;
