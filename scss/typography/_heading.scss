@@ -10,6 +10,7 @@
 //Heading variables
 $siimple-heading-padding: 0px;
 $siimple-heading-margin-bottom: 0.5em;
+$siimple-heading-font-weight: bold;
 $siimple-heading-sizes: (
     "1": ("size": 40px, "line-height": 51px, "margin-bottom": 20px, "margin-top": 30px),
     "2": ("size": 32px, "line-heignt": 40px, "margin-bottom": 16px, "margin-top": 30px),
@@ -27,7 +28,7 @@ $siimple-heading-sizes: (
             display: block;
             font-size: map-get($heading_variables, "size");
             //font-family: $siimple-default-text-font;
-            font-weight: bold;
+            font-weight: $siimple-heading-font-weight;
             line-height: map-get($heading_variables, "line-height");
             color: $siimple-default-text-color;
             padding: $siimple-heading-padding;
