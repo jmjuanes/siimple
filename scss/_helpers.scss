@@ -35,9 +35,22 @@
         &--mheight-#{$key} {
             max-height: $value !important;
         }
-    } 
+    }
+    
+    //Line-height helpers 
+    &--lh {
+        &-normal {
+            line-height: $siimple-default-line-height !important;
+        }
+        &-condensed {
+            line-height: 18px !important;
+        }
+        &-mcondensed {
+            line-height: 15px !important;
+        }
+    }
 
-    //Text 
+    //Text helpers
     &--text {
         //Text alignment
         &-justify {
