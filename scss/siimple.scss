@@ -8,24 +8,8 @@
 @import "./_variables.scss";
 @import "./_utils.scss";
 
-//Import font from Google Fonts
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-
-//Default html style
-html {
-    font-family: $siimple-default-text-font;
-    font-weight: $siimple-default-text-weight;
-    font-size: $siimple-default-text-size;
-    color: $siimple-default-text-color;
-    font-smooth: antialiased;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-//Remove the margin in all browsers
-body {
-    margin: 0;
-}
+//Import base style
+@import "./_base.scss";
 
 //Layout base style DEPRECATED!
 //This class is deprecated and will be removed in future versions
