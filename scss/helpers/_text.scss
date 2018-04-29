@@ -1,0 +1,42 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple/siimple
+// Website:    https://www.siimple.xyz
+//
+@import "./_variables.scss";
+
+//Text helpers
+.siimple--text {
+    //Text alignment
+    &-justify {
+        text-align: justify !important;
+    }
+    &-left {
+        text-align: left !important;
+    }
+    &-center {
+        text-align: center !important;
+    }
+    &-right {
+        text-align: right !important;
+    }
+
+    //Text transformation
+    &-uppercase {
+        text-transform: uppercase !important;
+    }
+    &-bold {
+        font-weight: 700 !important;
+    }
+    &-normal {
+        font-weight: 400 !important;
+    }
+
+    //Text sizes
+    &-small {
+        font-size: 13px !important; 
+    }
+}
+
