@@ -1,0 +1,42 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple/siimple
+// Website:    https://www.siimple.xyz
+//
+@import "../_variables.scss";
+@import "../_utils.scss";
+
+//Float mixin
+@mixin siimple-helpers-float {
+    &-left {
+        float: left !important;
+    }
+    &-right {
+        float: right !important;
+    }
+    &-none {
+        float: none !important;
+    }
+}
+//Float helpers
+.siimple--float {
+    //Default float
+    @include siimple-helpers-float();
+
+    //Responsive float
+    @each $name, $size in $siimple-default-sizes {
+        @media (max-width: $size) {
+            &-#{$name} {
+                @include siimple-helpers-float()
+            }
+        }
+    }
+}
+
+//Clear floated content
+.siimple--clearfix {
+    @include siimple-utils-clear();
+}
+
