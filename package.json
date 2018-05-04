@@ -7,10 +7,8 @@
     "author": "Josemi Juanes <josemijuanes@gmail.com>",
     "license": "MIT",
     "homepage": "https://www.siimple.xyz/",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/siimple/siimple.git"
-    },
+    "repository": "https://github.com/siimple/siimple",
+    "bugs": "https://github.com/siimple/siimple/issues",
     "keywords": [
         "siimple",
         "css",
@@ -29,8 +27,8 @@
     },
     "devDependencies": {
         "tinyflow": "^0.0.3",
-        "node-sass": "^4.7.2",
-        "autoprefixer": "^8.1.0",
+        "node-sass": "^4.9.0",
+        "autoprefixer": "^8.4.1",
         "clean-css": "^4.1.11",
         "kofi": "^0.1.0",
         "glob": "^7.1.2",
