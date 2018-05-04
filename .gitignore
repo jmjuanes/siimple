@@ -29,3 +29,7 @@ bower_components
 
 # excluding intellij project management files
 *.iml
+
+# Exclude vim cache files
+*.swp
+
