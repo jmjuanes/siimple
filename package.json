@@ -28,7 +28,8 @@
     "devDependencies": {
         "node-sass": "^4.9.0",
         "autoprefixer": "^8.4.1",
-        "clean-css": "^4.1.11"
+        "clean-css": "^4.1.11",
+        "@kofijs/utils": "^0.0.1"
     },
     "scripts": {
         "build": "node ./scripts/build.js",
