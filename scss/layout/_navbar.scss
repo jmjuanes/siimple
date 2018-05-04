@@ -71,7 +71,7 @@ $siimple-navbar-subtitle-padding-left: 15px;
         }
         transition: all 0.3s;
         cursor: pointer;
-        vertical-align: middle;
+        //vertical-align: middle;
     }
 
     //Navbar subtitle
@@ -83,7 +83,7 @@ $siimple-navbar-subtitle-padding-left: 15px;
         font-weight: $siimple-navbar-subtitle-font-weight;
         text-decoration: none;
         cursor: pointer;
-        vertical-align: middle;
+        //vertical-align: middle;
         opacity: 0.5;
         position: relative;
         padding: {
@@ -97,7 +97,7 @@ $siimple-navbar-subtitle-padding-left: 15px;
             width: 2px;
             height: calc(#{$siimple-navbar-subtitle-height} - 4px);
             margin: 0px 5px 0px 5px;
-            vertical-align: middle;
+            //vertical-align: middle;
             top: 2px;
             left: -1px;
         }
@@ -124,7 +124,7 @@ $siimple-navbar-subtitle-padding-left: 15px;
         transition: all 0.3s;
         cursor: pointer;
         opacity: 0.8;
-        vertical-align: middle;
+        //vertical-align: middle;
         &:hover {
             opacity: 1.0;
         }
