@@ -26,13 +26,9 @@
         "siimple-colors": "^1.0.0-beta"
     },
     "devDependencies": {
-        "tinyflow": "^0.0.3",
         "node-sass": "^4.9.0",
         "autoprefixer": "^8.4.1",
-        "clean-css": "^4.1.11",
-        "kofi": "^0.1.0",
-        "glob": "^7.1.2",
-        "mkdirp": "^0.5.1"
+        "clean-css": "^4.1.11"
     },
     "scripts": {
         "build": "node ./scripts/build.js",
