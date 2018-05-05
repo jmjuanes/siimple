@@ -6,6 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 @import "../_utils.scss";
 
 $siimple-btn-height: 34px;
@@ -43,8 +44,17 @@ $siimple-btn-disabled-opacity: 0.6;
         text-decoration: none;
         opacity: $siimple-btn-opacity;
     }
+    
+    @each $color in $siimple-default-colors {
+        &#{&}--#{$color} {
+            background-color: siimple-default-color($color, "base");
+            color: siimple-default-color($color, "over");
+        }
+    }
 
-    @each $color, $value in $siimple-default-colors {
+    //Legacy colors
+    //To be deprecated in future major release
+    @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
             background-color: siimple-color-base($color);
             color: siimple-color-over($color);
