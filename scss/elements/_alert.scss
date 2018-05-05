@@ -6,6 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 $siimple-alert-padding-top: 15px;
 $siimple-alert-padding-bottom: 15px;
@@ -20,13 +21,13 @@ $siimple-alert-title-text-size: 19px;
 .siimple-alert {
     display: block;
     width: calc(100% - #{$siimple-alert-padding-left} - #{$siimple-alert-padding-right});
-    color: $siimple-navy;
+    //color: $siimple-navy;
     line-height: $siimple-default-text-line;
     font-size: $siimple-default-text-size;
     //font-family: $siimple-default-text-font;
     position: relative;
     border-radius: $siimple-default-border-radius;
-    background-color: $siimple-grey;
+    //background-color: $siimple-grey;
     padding: {
         top: $siimple-alert-padding-top;
         right: $siimple-alert-padding-right;
@@ -43,6 +44,14 @@ $siimple-alert-title-text-size: 19px;
         margin-bottom: $siimple-alert-title-margin;
     }
 
+    //Alert colors 
+    @each $color in $siimple-default-colors {
+        &#{&}--#{$color} {
+            background-color: siimple-default-color($color, "light");
+            color: siimple-default-color($color, "dark");
+        }
+    }
+    
     @each $color, $value in $siimple-default-colors {
         &#{&}--#{$color} {
             background-color: siimple-color-light($color);
