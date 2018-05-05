@@ -52,7 +52,9 @@ $siimple-alert-title-text-size: 19px;
         }
     }
     
-    @each $color, $value in $siimple-default-colors {
+    //Legacy alert colors
+    //To be deprecated in future major release
+    @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
             background-color: siimple-color-light($color);
             color: siimple-color-dark($color);
