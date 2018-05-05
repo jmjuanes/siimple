@@ -6,17 +6,22 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 @import "../_utils.scss";
 
 //Progress variables 
 $siimple-progress-height: 20px;
+$siimple-progress-background: siimple-default-color("grey", "light");
 $siimple-progress-font-size: 12px;
+$siimple-progress-striped: #ffffff;
 
+//Progress animation
 @keyframes siimple-progress-animation {
     0% { background-position: 0 0; }
     100% { background-position: 50px 50px; }
 }
 
+//Progress class
 .siimple-progress {
     display: block;
     width: 100%;
@@ -27,7 +32,7 @@ $siimple-progress-font-size: 12px;
         bottom: $siimple-default-margin-bottom;
     };
     border-radius: $siimple-default-border-radius;
-    background-color: $siimple-grey-light;
+    background-color: $siimple-progress-background;
     overflow: hidden;
 
     //Disable default appearance in webkit and gecko
@@ -58,11 +63,11 @@ $siimple-progress-font-size: 12px;
         z-index: 1px;
         background-size: 50px 50px;
         background-image : linear-gradient(-45deg, 
-            rgba($siimple-white, 0.15) 25%, 
+            rgba($siimple-progress-striped, 0.15) 25%, 
             transparent 25%, 
             transparent 50%, 
-            rgba($siimple-white, 0.15) 50%, 
-            rgba($siimple-white, 0.15) 75%, 
+            rgba($siimple-progress-striped, 0.15) 50%, 
+            rgba($siimple-progress-striped, 0.15) 75%, 
             transparent 75%, 
             transparent);
     }
@@ -77,10 +82,10 @@ $siimple-progress-font-size: 12px;
     }
 
     //Colored progress bar
-    @each $color, $value in $siimple-default-colors {
+    @each $color in $siimple-default-colors {
         &#{&}--#{$color} > span {
-            background-color: siimple-color-base($color);
-            color: siimple-color-over($color);
+            background-color: siimple-default-color($color, "base");
+            color: siimple-default-color($color, "over");
         }
     }
 }
