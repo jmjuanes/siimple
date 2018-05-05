@@ -9,7 +9,7 @@
 //Legacy colors
 //Will be removed in future major version
 @import "siimple-colors/scss/_all.scss";
-$siimple-legacy-colors: $siimple-colors;
+$siimple-legacy-colors: ("navy", "green", "teal", "blue", "purple", "pink", "red", "orange", "yellow", "grey");
 
 //Default color palette
 $siimple-default-palette: (
