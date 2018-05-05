@@ -6,10 +6,13 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
+//Table variables
 $siimple-table-width: 100%;
 $siimple-table-cell-padding: 10px;
 
+//Table class
 .siimple-table {
     display: table;
     width: $siimple-table-width;
@@ -26,10 +29,10 @@ $siimple-table-cell-padding: 10px;
     &-row {
         display: table-row;
         transition: all 0.3s;
-        border-bottom: 2px solid $siimple-white;
+        border-bottom: 2px solid siimple-default-color("light");
 
         &:hover {
-            background-color: $siimple-grey;
+            background-color: siimple-default-color("grey");
         }
         &:last-child {
             border-bottom: 0px;
@@ -47,12 +50,12 @@ $siimple-table-cell-padding: 10px;
     }
 
     &--border &-cell:not(:last-child) {
-        border-right: 2px solid $siimple-white;
+        border-right: 2px solid siimple-default-color("light");
     }
 
     &-header {
         display: table-header-group;
-        border-bottom: 3px solid $siimple-white !important;
+        border-bottom: 3px solid siimple-default-color("light") !important;
         font-weight: bold;
     }
 
@@ -65,7 +68,7 @@ $siimple-table-cell-padding: 10px;
     }
 
     &-header &-cell {
-        background-color: $siimple-grey-dark !important;
+        background-color: siimple-default-color("grey", "dark") !important;
         border-bottom-right-radius: 0px !important;
         border-bottom-left-radius: 0px !important;
     }
@@ -75,7 +78,7 @@ $siimple-table-cell-padding: 10px;
     }
 
     &-body &-cell {
-        background-color: rgba($siimple-grey-light, 0.4);
+        background-color: rgba(siimple-default-color("grey", "light"), 0.4);
     }
 
     &-body &-row:last-child &-cell:first-child {
@@ -87,10 +90,11 @@ $siimple-table-cell-padding: 10px;
     }
 
     &--striped &-body &-row:nth-child(odd) &-cell {
-        background-color: rgba($siimple-grey-light, 1.0);
+        background-color: rgba(siimple-default-color("grey", "light"), 1.0);
     }
 
     &--hover &-body &-row:hover &-cell {
-        background-color: $siimple-grey !important;
+        background-color: siimple-default-color("grey") !important;
     }
 }
+
