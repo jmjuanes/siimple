@@ -6,7 +6,9 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
+//Spinner variables
 $siimple-spinner-size: 10px;
 $siimple-spinner-space: 15px;
 
@@ -22,18 +24,18 @@ $siimple-spinner-small-space: 13px;
     height: $siimple-spinner-size;
     content: "";
     //background-color: $siimple-grey-2;
-    animation: siimple_spinner_animation 1s infinite ease-in-out;
+    animation: siimple-spinner-animation 1s infinite ease-in-out;
     animation-fill-mode: both;
     border-radius: 100px;
 }
 
-.siimple-spinner {
-    @keyframes siimple_spinner_animation {
-        50% {
-            background-color: transparent;
-        }
-    }
+//Spinner animation
+@keyframes siimple-spinner-animation {
+    50% { background-color: transparent; }
+}
 
+//Spinner class
+.siimple-spinner {
     @include siimple-spinner-base();
     display: block;
     text-indent: -9999em;
