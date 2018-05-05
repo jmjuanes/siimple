@@ -57,6 +57,7 @@ $siimple-tip-background: siimple-default-color("grey", "light");
         }
 
     }
+    
     //Legacy tip colors
     //To be deprecated in future major release
     @each $color in $siimple-legacy-colors {
