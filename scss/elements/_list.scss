@@ -56,13 +56,13 @@ $siimple-list-item-padding: 10px;
             bottom: 5px;
         }
     }
+}
 
-    //List with badge 
-    &-item .siimple-badge {
-        //position: absolute;
-        //top: 0px;
-        //right: 0px;
-        float: right;
-    }
+//List with badge 
+.siimple-list-item .siimple-badge {
+    //position: absolute;
+    //top: 0px;
+    //right: 0px;
+    float: right;
 }
 
