@@ -6,9 +6,12 @@
 // Website:    https://wwww.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 $siimple-close-size: 20px;
 $siimple-close-border: 100px;
+$siimple-close-color: #ffffff;
+$siimple-close-background: siimple-default-color("dark", "base");
 $siimple-close-opacity: 0.3;
 $siimple-close-hover-opacity: 0.5;
 
@@ -23,7 +26,7 @@ $siimple-close-large-size: 30px;
     transition: background-color 0.3s;
     position: relative;
     border-radius: 100px;
-    background-color: rgba($siimple-navy, $siimple-close-opacity);
+    background-color: rgba($siimple-close-background, $siimple-close-opacity);
 
     &:after, 
     &:before {
@@ -34,7 +37,7 @@ $siimple-close-large-size: 30px;
         position: absolute;
         top: 9px;
         left: 4px;
-        background-color: $siimple-white;
+        background-color: $siimple-close-color;
     }
     &:after {
         transform: rotate(45deg);
@@ -44,6 +47,6 @@ $siimple-close-large-size: 30px;
     }
 
     &:hover {
-        background-color: rgba($siimple-navy, $siimple-close-hover-opacity);
+        background-color: rgba($siimple-close-background, $siimple-close-hover-opacity);
     }
 }
