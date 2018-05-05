@@ -18,10 +18,10 @@ $siimple-default-palette: (
     "warning": ("dark": #fab005, "base": #fbc850, "light": #fde09b, "over": #ffffff),
     "error":   ("dark": #e72618, "base": #ee675d, "light": #f5a8a3, "over": #ffffff),
     "dark":    ("dark": #34414b, "base": #546778, "light": #788ea1, "over": #ffffff),
-    "light":   ("dark": #ffffff, "base": #ffffff, "light": #ffffff, "over": #546778),
-    "grey":    ("dark": #cbd8e6, "base": #dde5ee, "light": #eef2f7, "over": #546778) 
+    "light":   ("dark": #cbd8e6, "base": #dde5ee, "light": #eef2f7, "over": #546778) 
 );
 $siimple-default-colors: ("primary", "success", "warning", "error", "dark", "light");
+$siimple-default-white: #ffffff;
 
 //Default media sizes values
 $siimple-default-sizes: (
