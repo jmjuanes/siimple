@@ -6,10 +6,14 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 @import "../_utils.scss";
 
+//Card variables
+$siimple-card-border-color: siimple-default-color("grey", "light");
 $siimple-card-border-width: 2px;
 
+//Card element class
 .siimple-card {
     display: block;
     width: 100%;
@@ -22,15 +26,15 @@ $siimple-card-border-width: 2px;
     &-footer {
         display: block;
         line-height: $siimple-default-text-line;
-        border-left: $siimple-card-border-width solid $siimple-grey-light;
-        border-right: $siimple-card-border-width solid $siimple-grey-light;
-        border-top: $siimple-card-border-width solid $siimple-grey-light;
+        border-left: $siimple-card-border-width solid $siimple-card-border-color;
+        border-right: $siimple-card-border-width solid $siimple-card-border-color;
+        border-top: $siimple-card-border-width solid $siimple-card-border-color;
         &:first-child {
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
         }
         &:last-child {
-            border-bottom: $siimple-card-border-width solid $siimple-grey-light;
+            border-bottom: $siimple-card-border-width solid $siimple-card-border-color;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
         }
@@ -40,7 +44,7 @@ $siimple-card-border-width: 2px;
     &-footer {
         display: block;
         padding: 12px;
-        background-color: $siimple-grey-light;
+        background-color: $siimple-card-border-color;
     }
     
     //Card header
@@ -66,7 +70,7 @@ $siimple-card-border-width: 2px;
     &-subtitle {
         display: block;
         font-size: 15px;
-        color: $siimple-navy-light;
+        color: siimple-default-color("dark", "light");
         margin-bottom: 5px;
     }
 }
