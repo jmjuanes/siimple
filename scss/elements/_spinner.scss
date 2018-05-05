@@ -64,8 +64,21 @@ $siimple-spinner-small-space: 13px;
         top: 0;
     }
 
-    @each $color, $value in $siimple-default-colors {
-        &#{&}--#{$color}, &#{&}--#{$color}:after, &#{&}--#{$color}:before {
+    //Spinner colors
+    @each $color in $siimple-default-colors {
+        &#{&}--#{$color}, 
+        &#{&}--#{$color}:after,
+        &#{&}--#{$color}:before {
+            background-color: siimple-default-color($color, "base");
+        }
+    }
+    
+    //Legacy spinner colors
+    //To be deprecated in future major release
+    @each $color in $siimple-legacy-colors {
+        &#{&}--#{$color}, 
+        &#{&}--#{$color}:after, 
+        &#{&}--#{$color}:before {
             background-color: siimple-color-base($color);
         }
     }
