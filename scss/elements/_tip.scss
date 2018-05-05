@@ -6,13 +6,16 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
+//Tip variables
 $siimple-tip-padding: 10px;
 $siimple-tip-padding-left: 25px;
 $siimple-tip-padding-right: 20px;
 $siimple-tip-border: 5px;
-$siimple-tip-background: $siimple-grey-light;
+$siimple-tip-background: siimple-default-color("grey", "light");
 
+//Tip class
 .siimple-tip {
     display: block;
     position: relative;
@@ -45,7 +48,18 @@ $siimple-tip-background: $siimple-grey-light;
         line-height: 20px;
     }
 
-    @each $color, $value in $siimple-default-colors {
+    @each $color in $siimple-default-colors {
+        &#{&}--#{$color} {
+            border-left-color: siimple-default-color($color);
+        }
+        &#{&}--#{$color}::before {
+            background-color: siimple-default-color($color);
+        }
+
+    }
+    //Legacy tip colors
+    //To be deprecated in future major release
+    @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
             border-left-color: siimple-color-base($color);
         }
@@ -64,3 +78,4 @@ $siimple-tip-background: $siimple-grey-light;
         content: "\2764";
     }
 }
+
