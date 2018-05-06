@@ -6,6 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 //Switch variables
 $siimple-switch-width: 32px;
@@ -17,10 +18,10 @@ $siimple-switch-margin-top: 8px;
 $siimple-switch-margin-bottom: 8px;
 
 //Switch inactive variablesi
-$siimple-switch-inactive-background-color: $siimple-navy-light;
+$siimple-switch-inactive-background-color: siimple-default-color("dark", "light");
 
 //Switch active variables
-$siimple-switch-active-background-color: $siimple-green;
+$siimple-switch-active-background-color: siimple-default-color("green");
 
 //Switch class
 .siimple-switch {
@@ -52,7 +53,7 @@ $siimple-switch-active-background-color: $siimple-green;
         border-radius: $siimple-switch-border-radius;
         transition: all 0.3s ease;
         cursor: pointer;
-        background: $siimple-white;
+        background: $siimple-default-white;
         position: absolute;
         top: 2px;
         left: 2px;
@@ -86,4 +87,5 @@ $siimple-switch-active-background-color: $siimple-green;
         left: 16px;
     }
 }
+
 
