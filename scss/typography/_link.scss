@@ -5,18 +5,23 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
+@import "../_functions.scss";
 
+//Link variables
+$siimple-link-color: siimple-default-color("primary");
+
+//Link class
 .siimple-link {
-  //font-family: $siimple-default-text-font;
-  color: $siimple-default-text-color;
-  font-weight: bold;
-  text-decoration: underline;
-  transition: all 0.3s;
-
-  &:hover {
+    //font-family: $siimple-default-text-font;
+    color: $siimple-link-color;
+    font-weight: bold;
     text-decoration: underline;
-    cursor: pointer;
-  }
+    transition: all 0.3s;
+
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
 }
+
