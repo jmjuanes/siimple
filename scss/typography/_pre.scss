@@ -6,13 +6,15 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 //Pre vriables
 $siimple-pre-font-size: 14px;
 $siimple-pre-padding: 15px;
 $siimple-pre-margin-top: 0px;
 $siimple-pre-line-height: 22px;
-$siimple-pre-color: $siimple-navy;
+$siimple-pre-color: siimple-default-color("dark");
+$siimple-pre-background: siimple-default-color("light");
 
 //Pre class
 .siimple-pre {
@@ -22,7 +24,7 @@ $siimple-pre-color: $siimple-navy;
     color: $siimple-pre-color;
     line-height: $siimple-pre-line-height;
     font-size: $siimple-pre-font-size;
-    background-color: $siimple-grey;
+    background-color: $siimple-pre-background;
     border-radius: $siimple-default-border-radius;
     padding: $siimple-pre-padding;
     margin: {
@@ -31,7 +33,8 @@ $siimple-pre-color: $siimple-navy;
     }
 
     &--dark {
-        background-color: $siimple-navy !important;
-        color: $siimple-white;
+        background-color: siimple-default-color("dark") !important;
+        color: $siimple-default-white;
     }
 }
+
