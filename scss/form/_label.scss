@@ -6,6 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 //Label variables
 $siimple-label-height: 34px;
@@ -32,11 +33,12 @@ $siimple-label-color: $siimple-default-color;
     
     //Light label style
     &--light {
-        color: $siimple-white;
+        color: $siimple-default-white;
     }
     
     //Dark label style
     &--dark {
-        color: $siimple-navy;
+        color: siimple-default-color("dark");
     }
 }
+
