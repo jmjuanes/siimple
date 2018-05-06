@@ -6,9 +6,10 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 //Blockquote variables
-$siimple-blockquote-color: $siimple-navy-light;
+$siimple-blockquote-color: siimple-default-color("dark", "light");
 $siimple-blockquote-border: 4px;
 $siimple-blockquote-padding-top: 10px;
 $siimple-blockquote-padding-bottom: 10px;
@@ -17,6 +18,7 @@ $siimple-blockquote-padding-right: 10px;
 $siimple-blockquote-margin-top: 0px;
 $siimple-blockquote-margin-left: 10px;
 
+//Blockquote class
 .siimple-blockquote {
     display: block;
     //font-family: $siimple-default-text-font;
@@ -36,3 +38,4 @@ $siimple-blockquote-margin-left: 10px;
         left: $siimple-blockquote-margin-left;
     }
 }
+
