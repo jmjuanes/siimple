@@ -6,6 +6,7 @@
 // Website:    https://wwww.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 $siimple-input-font-size: 14px;
 $siimple-input-height: 34px;
@@ -19,7 +20,7 @@ $siimple-input-radius: $siimple-default-border-radius;
     line-height: $siimple-input-line-height;
     //font-family: $siimple-default-text-font;
     font-size: $siimple-input-font-size;
-    color: $siimple-navy;
+    color: $siimple-default-color;
     padding: {
         left: $siimple-input-padding;
         right: $siimple-input-padding;
@@ -29,7 +30,7 @@ $siimple-input-radius: $siimple-default-border-radius;
     border: 0px;
     border-radius: $siimple-input-radius;
     outline: 0px;
-    background-color: $siimple-grey;
+    background-color: siimple-default-color("light");
     vertical-align: top;
 
     &--fluid {
@@ -37,11 +38,12 @@ $siimple-input-radius: $siimple-default-border-radius;
     }
 
     &--light {
-        background-color: $siimple-white;
+        background-color: $siimple-default-white;
     }
 
     &--dark {
-        background-color: $siimple-navy;
-        color: $siimple-white;
+        background-color: siimple-default-color("dark");
+        color: $siimple-default-white;
     }
 }
+
