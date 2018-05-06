@@ -6,6 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 //Tag variables
 $siimple-tag-height: 19px;
@@ -17,6 +18,7 @@ $siimple-tag-padding-right: 6px;
 $siimple-tag-margin-right: 1px;
 $siimple-tag-margin-bottom: 8px;
 
+//Tag class
 .siimple-tag {
     display: inline-block;
     //height: $siimple-tag-height;
@@ -31,8 +33,16 @@ $siimple-tag-margin-bottom: 8px;
     }
     margin-right: $siimple-tag-margin-right;
     //margin-bottom: $siimple-tag-margin-bottom;
-
-    @each $color, $value in $siimple-default-colors {
+    
+    @each $color in $siimple-default-colors {
+        &#{&}--#{$color} {
+            background-color: siimple-default-color($color);
+            color: siimple-default-color($color, "over");
+        }
+    }
+    //Legacy colors
+    //To be deprecated in future major release
+    @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
             background-color: siimple-color-base($color);
             color: siimple-color-over($color);
