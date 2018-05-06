@@ -6,6 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 //Textarea variables
 $siimple-textarea-line-height: 20px;
@@ -15,7 +16,7 @@ $siimple-textarea-border: 0px;
 $siimple-textarea-border-radius: $siimple-default-border-radius;
 $siimple-textarea-outline: 0px;
 $siimple-textarea-padding: 10px;
-$siimple-textarea-background-color: $siimple-grey;
+$siimple-textarea-background-color: siimple-default-color("light");
 
 //Textarea class
 .siimple-textarea {
