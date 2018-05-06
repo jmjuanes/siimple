@@ -6,6 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 //Radio variables
 $siimple-radio-width: 18px;
@@ -19,12 +20,12 @@ $siimple-radio-border: 3px;
 $siimple-radio-circle: 6px;
 
 //Radio inactive variables
-$siimple-radio-inactive-border-color: $siimple-grey;
-$siimple-radio-inactive-background-color: $siimple-grey;
+$siimple-radio-inactive-border-color: siimple-default-color("light");
+$siimple-radio-inactive-background-color: siimple-default-color("light");
 
 //Radio active variables
-$siimple-radio-active-background-color: $siimple-green;
-$siimple-radio-active-border-color: $siimple-green;
+$siimple-radio-active-background-color: siimple-default-color("green");
+$siimple-radio-active-border-color: siimple-default-color("green");
 
 //Radio class
 .siimple-radio {
@@ -55,7 +56,7 @@ $siimple-radio-active-border-color: $siimple-green;
     //Radio inner circle
     & > label:after {
         position: absolute;
-        display: block;;
+        display: block;
         content: "";
         width: $siimple-radio-circle;
         height: $siimple-radio-circle;
@@ -82,4 +83,6 @@ $siimple-radio-active-border-color: $siimple-green;
         border-color: $siimple-radio-active-border-color;
     }
 }
+
+
 
