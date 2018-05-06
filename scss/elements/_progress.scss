@@ -11,9 +11,9 @@
 
 //Progress variables 
 $siimple-progress-height: 20px;
-$siimple-progress-background: siimple-default-color("grey", "light");
+$siimple-progress-background: siimple-default-color("light", "light");
 $siimple-progress-font-size: 12px;
-$siimple-progress-striped: #ffffff;
+$siimple-progress-striped: $siimple-default-white;
 
 //Progress animation
 @keyframes siimple-progress-animation {

@@ -27,7 +27,7 @@ $siimple-list-item-padding: 10px;
     &-item {
         display: block;
         padding: $siimple-list-item-padding;
-        background-color: siimple-default-color("grey", "light");
+        background-color: siimple-default-color("light", "light");
         transition: all 0.3s ease;
         //position: relative;
     }
@@ -40,10 +40,10 @@ $siimple-list-item-padding: 10px;
         border-bottom-right-radius: $siimple-default-border-radius;
     }
     &-item:not(:last-child) {
-        border-bottom: 1px solid siimple-default-color("grey", "base");
+        border-bottom: 1px solid siimple-default-color("light", "base");
     }
     &--hover &-item:hover {
-        background-color: siimple-default-color("grey", "base");
+        background-color: siimple-default-color("light", "base");
         cursor: pointer;
     }
 
