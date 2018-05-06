@@ -6,10 +6,11 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 //Small variables
 $siimple-small-font-size: 14px;
-$siimple-small-color: $siimple-navy-light;
+$siimple-small-color: siimple-default-color("dark", "light");
 
 //Small class
 .siimple-small {
@@ -17,3 +18,4 @@ $siimple-small-color: $siimple-navy-light;
     font-size: $siimple-small-font-size;
     color: $siimple-small-color;
 }
+
