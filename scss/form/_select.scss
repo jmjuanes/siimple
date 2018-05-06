@@ -6,6 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 //Select variables
 $siimple-select-height: 34px;
@@ -16,7 +17,7 @@ $siimple-select-font-size: 14px;
 $siimple-select-font-weight: normal;
 $siimple-select-border: 0px;
 $siimple-select-border-radius: $siimple-default-border-radius;
-$siimple-select-background-color: $siimple-grey;
+$siimple-select-background-color: siimple-default-color("light");
 $siimple-select-outline: 0px;
 
 //Select class
@@ -51,13 +52,13 @@ $siimple-select-outline: 0px;
 
     //Light select style
     &--light {
-        background-color: $siimple-white;
+        background-color: $siimple-default-white;
     }
 
     //Dark select style
     &--dark {
-        background-color: $siimple-navy;
-        color: $siimple-white;
+        background-color: siimple-default-color("dark");
+        color: $siimple-default-white;
     }
 }
 
