@@ -6,6 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 $siimple-field-margin-top: 0px;
 $siimple-field-margin-bottom: $siimple-default-margin-bottom;
@@ -16,7 +17,7 @@ $siimple-field-label-margin-top: 0px;
 $siimple-field-label-margin-bottom: 5px;
 
 $siimple-field-helper-font-size: 13px;
-$siimple-field-helper-color: $siimple-navy-light;
+$siimple-field-helper-color: siimple-default-color("dark", "light");
 $siimple-field-helper-margin-top: 5px;
 $siimple-field-helper-margin-bottom: 15px;
 
