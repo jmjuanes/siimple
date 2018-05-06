@@ -5,8 +5,8 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "siimple-colors/scss/_all.scss";
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 $siimple-form-title-font: 25px;
 $siimple-form-title-margin-top: 0px;
@@ -19,6 +19,7 @@ $siimple-form-detail-margin-bottom: 20px;
 $siimple-form-rule-size: 1px;
 $siimple-form-rule-margin-top: 5px;
 $siimple-form-rule-margin-bottom: $siimple-default-margin-bottom;
+$siimple-form-rule-color: siimple-default-color("light", "dark");
 
 .siimple-form {
     display: block;
@@ -51,7 +52,7 @@ $siimple-form-rule-margin-bottom: $siimple-default-margin-bottom;
         display: block;
         width: 100%;
         height: 0px;
-        border-bottom: $siimple-form-rule-size solid $siimple-grey-dark;
+        border-bottom: $siimple-form-rule-size solid $siimple-form-rule-color;
         margin-top: $siimple-form-rule-margin-top;
         margin-bottom: $siimple-form-rule-margin-bottom;
     }
