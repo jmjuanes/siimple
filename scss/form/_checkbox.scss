@@ -6,6 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 //Checkbox variables
 $siimple-checkbox-width: 18px;
@@ -24,10 +25,10 @@ $siimple-checkbox-label-after-width: 8px;
 $siimple-checkbox-label-after-height: 4px;
 
 //Checkbox inactive variables
-$siimple-checkbox-inactive-background-color: $siimple-grey;
+$siimple-checkbox-inactive-background-color: siimple-default-color("light");
 
 //Checkbox active variables
-$siimple-checkbox-active-background-color: $siimple-green;
+$siimple-checkbox-active-background-color: siimple-default-color("green");
 
 //Checkbox class
 .siimple-checkbox {
@@ -66,7 +67,7 @@ $siimple-checkbox-active-background-color: $siimple-green;
             top: 5px;
             left: 4px;
             background: transparent;
-            border: 2px solid $siimple-navy;
+            border: 2px solid siimple-default-color("dark");
             border-top: none;
             border-right: none;
         }
@@ -81,10 +82,11 @@ $siimple-checkbox-active-background-color: $siimple-green;
     //Checked -> change tick
     & input[type=checkbox]:checked + label:after {
         opacity: 1;
-        border-color: $siimple-white;
+        border-color: $siimple-default-white;
     }
     //Checked -> change background
     & input[type=checkbox]:checked + label {
         background-color: $siimple-checkbox-active-background-color;
     }
 }
+
