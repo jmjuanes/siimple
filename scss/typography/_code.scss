@@ -6,11 +6,12 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 //Code variables
 $siimple-code-font-size: 14px;
-$siimple-code-background: $siimple-grey;
-$siimple-code-color: $siimple-navy;
+$siimple-code-background: siimple-default-color("light");
+$siimple-code-color: siimple-default-color("error");
 $siimple-code-padding-top: 2px;
 $siimple-code-padding-bottom: 2px;
 $siimple-code-padding-left: 5px;
@@ -31,7 +32,8 @@ $siimple-code-padding-right: 5px;
     }
 
     &--dark {
-        background-color: $siimple-navy !important;
-        color: $siimple-white;
+        background-color: siimple-default-color("dark") !important;
+        color: $siimple-default-white;
     }
 }
+
