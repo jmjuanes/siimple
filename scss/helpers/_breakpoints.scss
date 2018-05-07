@@ -1,0 +1,54 @@
+
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+@import "../_variables.scss";
+@import "../_utils.scss";
+
+//Breakpoints class
+.siimple {
+    //Fluid content
+    &--fluid { 
+        @include siimple-fluid();
+    }
+
+    //Small content
+    &--small {
+        width: $siimple-default-breakpoint-small;
+        padding: {
+            left: calc(50% - #{$siimple-default-breakpoint-small / 2});
+            right: calc(50% - #{$siimple-default-breakpoint-small / 2});
+        }
+        @media screen and (max-width: $siimple-default-breakpoint-small) {
+            @include siimple-fluid();
+        }
+    }
+
+    //Medium content
+    &--medium {
+        width: $siimple-default-breakpoint-medium;
+        padding: {
+            left: calc(50% - #{$siimple-default-breakpoint-medium / 2});
+            right: calc(50% - #{$siimple-default-breakpoint-medium / 2});
+        }
+        @media screen and (max-width: $siimple-default-breakpoint-medium) {
+            @include siimple-fluid();
+        }
+    }
+
+    //Large content
+    &--large {
+        width: $siimple-default-breakpoint-large;
+        padding: {
+            left: calc(50% - #{$siimple-default-breakpoint-large / 2});
+            right: calc(50% - #{$siimple-default-breakpoint-large / 2});
+        }
+        @media screen and (max-width: $siimple-default-breakpoint-large) {
+            @include siimple-fluid();
+        }
+    }
+}
+
