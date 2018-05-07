@@ -54,6 +54,7 @@
 @import "./grid/_grid.scss";
 
 //Import helpers
+@import "./helpers/_breakpoints.scss";
 @import "./helpers/_display.scss";
 @import "./helpers/_float.scss";
 @import "./helpers/_line-height.scss";
