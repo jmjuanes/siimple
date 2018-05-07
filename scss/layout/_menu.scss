@@ -6,6 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 //Menu variables
 //$siimple-menu-font-size: $siimple-default-font-size;
@@ -19,7 +20,7 @@ $siimple-menu-group-line-height: $siimple-menu-group-height;
 $siimple-menu-group-margin-top: 10px;
 $siimple-menu-group-font-size: 15px;
 $siimple-menu-group-font-weight: bold;
-$siimple-menu-group-color: $siimple-navy-light;
+$siimple-menu-group-color: siimple-default-color("dark", "light");
 
 //Menu item variables
 $siimple-menu-item-height: 34px;
@@ -29,6 +30,8 @@ $siimple-menu-item-padding-left: 10px;
 $siimple-menu-item-padding-right: 10px;
 $siimple-menu-item-font-size: 14px;
 $siimple-menu-item-font-weight: 400;
+$siimple-menu-item-color: siimple-default-color("dark", "base");
+$siimple-menu-item-background-color: siimple-default-color("light", "base");
 
 //Menu submenu variables
 $siimple-menu-submenu-margin-top: 5px;
@@ -77,25 +80,26 @@ $siimple-menu-submenu-padding-left: 10px;
         display: block;
         height: $siimple-menu-item-height;
         line-height: $siimple-menu-item-line-height;
-        border: 0px;
+        //border: 0px;
         border-radius: $siimple-menu-item-border-radius;
         font-size: $siimple-menu-item-font-size;
         font-weight: $siimple-menu-item-font-weight;
-        color: $siimple-navy-light;
+        color: rgba($siimple-menu-item-color, 0.7);
         text-decoration: none;
         padding: {
             left: $siimple-menu-item-padding-left;
             right: $siimple-menu-item-padding-right;
         }
-        opacity: 1.0;
+        background-color: rgba($siimple-menu-item-background-color, 0);
+        //opacity: 1.0;
         transition: all ease 0.3s;
         cursor: pointer;
 
         //Hover styles
         &:hover {
-            background-color: $siimple-grey;
+            background-color: $siimple-menu-item-background-color;
             text-decoration: none !important;
-            color: $siimple-navy;
+            color: $siimple-menu-item-color;
         }
     }
 
@@ -111,6 +115,7 @@ $siimple-menu-submenu-padding-left: 10px;
             top: $siimple-menu-submenu-margin-top;
             bottom: $siimple-menu-submenu-margin-bottom;
         }
-        border-left: 1px solid $siimple-grey-dark;
+        border-left: 1px solid siimple-default-color("light", "dark");
     }
 }
+
