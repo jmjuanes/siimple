@@ -6,6 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
 //Breadcrumb variables
 $siimple-breadcrumb-height: 30px;
@@ -20,7 +21,8 @@ $siimple-breadcrumb-item-padding-right: 10px;
 $siimple-breadcrumb-item-font-size: 14px;
 $siimple-breadcrumb-item-font-weight: bold;
 $siimple-breadcrumb-item-line-height: $siimple-breadcrumb-item-height;
-$siimple-breadcrumb-item-background-color: $siimple-grey;
+$siimple-breadcrumb-item-background-color: siimple-default-color("light");
+$siimple-breadcrumb-item-color: siimple-default-color("dark", "light");
 
 //Breadcrumb item first variables
 $siimple-breadcrumb-item-first-padding: 15px;
@@ -52,7 +54,7 @@ $siimple-breadcrumb-item-last-padding: 15px;
         font-size: $siimple-breadcrumb-item-font-size;
         font-weight: $siimple-breadcrumb-item-font-weight;
         text-decoration: none;
-        color: $siimple-navy-light;
+        color: rgba($siimple-breadcrumb-item-color, 0.7);
         margin-right: $siimple-breadcrumb-item-margin-right;
         padding-left: $siimple-breadcrumb-item-padding-left;
         padding-right: $siimple-breadcrumb-item-padding-right;
@@ -61,7 +63,7 @@ $siimple-breadcrumb-item-last-padding: 15px;
 
         //Crumb hover
         &:hover {
-            color: $siimple-navy;
+            color: $siimple-breadcrumb-item-color;
         }
 
         //Crumb after
@@ -115,13 +117,13 @@ $siimple-breadcrumb-item-last-padding: 15px;
 
     &--dark &-item, 
     &--dark &-crumb {
-        background-color: $siimple-navy;
-        color: rgba($siimple-white, 0.7);
+        background-color: siimple-default-color("dark");
+        color: rgba($siimple-default-white, 0.7);
         &:hover {
-            color: $siimple-white;
+            color: $siimple-default-white;
         }
         &:after {
-            border-left-color: $siimple-navy;
+            border-left-color: siimple-default-color("dark");
         }
     }
 }
