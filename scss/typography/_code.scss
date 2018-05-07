@@ -16,6 +16,7 @@ $siimple-code-padding-top: 2px;
 $siimple-code-padding-bottom: 2px;
 $siimple-code-padding-left: 5px;
 $siimple-code-padding-right: 5px;
+$siimple-code-border-radius: 3px;
 
 //Code class
 .siimple-code {
@@ -23,7 +24,7 @@ $siimple-code-padding-right: 5px;
     text-decoration: none;
     font-size: $siimple-code-font-size;
     background-color: $siimple-code-background;
-    border-radius: $siimple-default-border-radius;
+    border-radius: $siimple-code-border-radius;
     padding: {
         top: $siimple-code-padding-top;
         bottom: $siimple-code-padding-bottom;
