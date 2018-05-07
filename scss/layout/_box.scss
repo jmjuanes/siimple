@@ -24,7 +24,7 @@ $siimple-box-detail-margin-bottom: 10px;
     display: block;
     vertical-align: top;
     width: calc(100% - #{2 * $siimple-box-padding});
-    //background-color: $siimple-grey;
+    background-color: siimple-default-color("light");
     //font-family: $siimple-default-text-font;
     font-size: $siimple-default-text-size;
     //color: $siimple-default-text-color;
