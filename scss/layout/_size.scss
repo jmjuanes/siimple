@@ -21,56 +21,56 @@ $siimple-size-large-width: 1180px;
 
 //Fluid size mixin
 @mixin siimple-size-fluid() {
-  width: calc(100% - #{2 * $siimple-size-fluid-offset});
-  padding-left: $siimple-size-fluid-offset;
-  padding-right: $siimple-size-fluid-offset;
+    width: calc(100% - #{2 * $siimple-size-fluid-offset});
+    padding-left: $siimple-size-fluid-offset;
+    padding-right: $siimple-size-fluid-offset;
 }
 
 //Small size mixin
 @mixin siimple-size-small() {
-  width: $siimple-size-small-width;
-  padding-left: calc(50% - #{$siimple-size-small-width / 2});
-  padding-right: calc(50% - #{$siimple-size-small-width / 2});
+    width: $siimple-size-small-width;
+    padding-left: calc(50% - #{$siimple-size-small-width / 2});
+    padding-right: calc(50% - #{$siimple-size-small-width / 2});
 
-  @media screen and (max-width: $siimple-size-small-width) {
-    @include siimple-size-fluid();
-  }
+    @media screen and (max-width: $siimple-size-small-width) {
+        @include siimple-size-fluid();
+    }
 }
 
 //Medium size mixin
 @mixin siimple-size-medium() {
-  width: $siimple-size-medium-width;
-  padding-left: calc(50% - #{$siimple-size-medium-width / 2});
-  padding-right: calc(50% - #{$siimple-size-medium-width / 2});
+    width: $siimple-size-medium-width;
+    padding-left: calc(50% - #{$siimple-size-medium-width / 2});
+    padding-right: calc(50% - #{$siimple-size-medium-width / 2});
 
-  @media screen and (max-width: $siimple-size-medium-width) {
-    @include siimple-size-fluid();
-  }
+    @media screen and (max-width: $siimple-size-medium-width) {
+        @include siimple-size-fluid();
+    }
 }
 
 //Large size mixin
 @mixin siimple-size-large() {
-  width: $siimple-size-large-width;
-  padding-left: calc(50% - #{$siimple-size-large-width / 2});
-  padding-right: calc(50% - #{$siimple-size-large-width / 2});
+    width: $siimple-size-large-width;
+    padding-left: calc(50% - #{$siimple-size-large-width / 2});
+    padding-right: calc(50% - #{$siimple-size-large-width / 2});
 
-  @media screen and (max-width: $siimple-size-large-width) {
-    @include siimple-size-fluid();
-  }
+    @media screen and (max-width: $siimple-size-large-width) {
+        @include siimple-size-fluid();
+    }
 }
 
 //Default sizes
 @mixin siimple-size() {
-  &--small {
-    @include siimple-size-small();
-  }
-  &--medium {
-    @include siimple-size-medium();
-  }
-  &--large {
-    @include siimple-size-large();
-  }
-  &--fluid {
-    @include siimple-size-fluid();
-  }
+    &--small {
+        @include siimple-size-small();
+    }
+    &--medium {
+        @include siimple-size-medium();
+    }
+    &--large {
+        @include siimple-size-large();
+    }
+    &--fluid {
+        @include siimple-size-fluid();
+    }
 }
