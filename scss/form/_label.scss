@@ -19,7 +19,8 @@ $siimple-label-color: $siimple-default-color;
 //Label class
 .siimple-label {
     display: inline-block;
-    height: $siimple-label-height;
+    //height: $siimple-label-height;
+    min-height: $siimple-label-height;
     line-height: $siimple-label-line-height;
     //font-family: $siimple-default-text-font;
     font-size: $siimple-label-font-size;
