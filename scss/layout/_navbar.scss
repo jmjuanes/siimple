@@ -6,6 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 @import "./size.scss";
 
 //Navbar default variables
@@ -130,7 +131,31 @@ $siimple-navbar-subtitle-padding-left: 15px;
         }
     }
 
-    @each $color, $value in $siimple-default-colors {
+    //Navbar colors 
+    @each $color in $siimple-default-colors {
+        &#{&}--#{$color} {
+            background-color: siimple-default-color($color);
+            color: siimple-default-color($color, "over");
+        }
+        &#{&}--#{$color} &-title {
+            color: siimple-default-color($color, "over");
+        }
+        &#{&}--#{$color} &-subtitle {
+            color: siimple-default-color($color, "over");
+            &::before {
+                background-color: siimple-default-color($color, "over");
+            }
+        }
+        &#{&}--#{$color} &-link, 
+        &#{&}--#{$color} &-item {
+            color: siimple-default-color($color, "over");
+        }
+    }
+
+
+    //Legacy colors
+    //To be deprecated in future major release
+    @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
             background-color: siimple-color-base($color);
             color: siimple-color-over($color);
