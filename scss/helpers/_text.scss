@@ -27,8 +27,17 @@
     &-uppercase {
         text-transform: uppercase !important;
     }
+    &-lowercase {
+        text-transform: lowercase !important;
+    }
+    &-capitalize {
+        text-transform: capitalize !important;
+    }
     &-bold {
         font-weight: 700 !important;
+    }
+    &-italic {
+        font-style: italic !important;
     }
     &-normal {
         font-weight: 400 !important;
