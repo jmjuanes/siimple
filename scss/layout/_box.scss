@@ -6,19 +6,17 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
+@import "../_functions.scss";
 
+//Box variables
 $siimple-box-padding: 15px;
-
 $siimple-box-title-font-size: 40px;
 $siimple-box-title-margin-top: 20px;
 $siimple-box-title-margin-bottom: 10px;
-
 $siimple-box-subtitle-font-size: 30px;
 $siimple-box-subtitle-margin-top: 10px;
 $siimple-box-subtitle-margin-bottom: 10px;
-
 $siimple-box-subtitle-title-margin: -12px;
-
 $siimple-box-detail-margin-bottom: 10px;
 
 //Box style
@@ -26,10 +24,10 @@ $siimple-box-detail-margin-bottom: 10px;
     display: block;
     vertical-align: top;
     width: calc(100% - #{2 * $siimple-box-padding});
-    background-color: $siimple-grey;
+    //background-color: $siimple-grey;
     //font-family: $siimple-default-text-font;
     font-size: $siimple-default-text-size;
-    color: $siimple-default-text-color;
+    //color: $siimple-default-text-color;
     border-radius: $siimple-default-border-radius;
     padding: $siimple-box-padding;
     margin: {
@@ -84,9 +82,18 @@ $siimple-box-detail-margin-bottom: 10px;
             margin-bottom: $siimple-box-title-margin-top;
         }
     }
+    
+    //Box colors
+    @each $color in $siimple-default-colors {
+        &#{&}--#{$color} {
+            background-color: siimple-default-color($color);
+            color: siimple-default-color($color, "over");
+        }
+    }
 
-    //Box color classes
-    @each $color, $value in $siimple-default-colors {
+    //Legacy box colors
+    //To be deprecated in future major release
+    @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
             background-color: siimple-color-base($color);
             color: siimple-color-over($color);
