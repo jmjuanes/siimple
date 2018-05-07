@@ -24,3 +24,13 @@
     }
 }
 
+//Fluid content
+@mixin siimple-fluid() {
+    width: calc(100% - #{2 * $siimple-default-breakpoint-gap});
+    padding: {
+        left: $siimple-default-breakpoint-gap;
+        right: $siimple-default-breakpoint-gap;
+    }
+}
+
+
