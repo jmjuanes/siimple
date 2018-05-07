@@ -32,7 +32,7 @@ $siimple-footer-padding-bottom: 80px;
 
     //Legacy colors
     //To be deprecated in future major release
-    @each $color, $value in $siimple-default-colors {
+    @each $color, $value in $siimple-legacy-colors {
         &#{&}--#{$color} {
             background-color: siimple-color-base($color);
             color: siimple-color-over($color);
