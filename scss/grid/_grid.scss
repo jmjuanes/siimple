@@ -7,11 +7,14 @@
 //
 @import "../_variables.scss";
 
+//Grid variables
 $siimple-grid-margin-left: auto;
 $siimple-grid-margin-right: auto;
 
+//Grid row variables
 $siimple-grid-row-margin: 0px;
 
+//Gird colum variables
 $siimple-grid-column-margin: 10px;
 $siimple-grid-column-sizes: (
     (1, '8.33%'), 
@@ -28,6 +31,7 @@ $siimple-grid-column-sizes: (
     (12, '99.99%')
 );
 
+//Grid class
 .siimple-grid {
     display: block;
     width: 100%;
@@ -82,3 +86,4 @@ $siimple-grid-column-sizes: (
         }
     }
 }
+
