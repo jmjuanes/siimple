@@ -35,7 +35,6 @@ $siimple-grid-column-sizes: $siimple-default-grid;
             left: $siimple-grid-row-margin;
             right: $siimple-grid-row-margin;
         }
-
         &:after {
             content: " ";
             clear: both;
@@ -49,25 +48,27 @@ $siimple-grid-column-sizes: $siimple-default-grid;
         display: inline-block;
         vertical-align: top;
         float: left;
-        margin: {
-            left: $siimple-grid-column-margin;
-            right: $siimple-grid-column-margin;
-        }
+        //margin: {
+        //    left: $siimple-grid-column-margin;
+        //    right: $siimple-grid-column-margin;
+        //}
     }
 
     //Grid default column sizes
-    @each $i, $w in $siimple-grid-column-sizes {
-        &-col--#{$i} {
-            width: calc(#{$w} - 2 * #{$siimple-grid-column-margin});
+    @each $grid-name, $grid-width in $siimple-grid-column-sizes {
+        &-col--#{$grid-name} {
+            width: #{$grid-width};
+            //width: calc(#{$grid-width} - 2 * #{$siimple-grid-column-margin});
         }
     }
 
     //Grid columns for each screen size
-    @each $grid_name, $grid_size in $siimple-default-sizes {
-        @media (max-width: $grid_size) {
-            @each $i, $w in $siimple-grid-column-sizes {
-                &-col-#{$grid_name}--#{$i} {
-                    width: calc(#{$w} - 2 * #{$siimple-grid-column-margin});
+    @each $grid-breakpoint, $grid-screen in $siimple-default-sizes {
+        @media (max-width: $grid-screen) {
+            @each $grid-name, $grid-width in $siimple-grid-column-sizes {
+                &-col-#{$grid-breakpoint}--#{$grid-name} {
+                    width: #{$grid-width};
+                    //width: calc(#{$grid-width} - 2 * #{$siimple-grid-column-margin});
                 }
             }
         }
