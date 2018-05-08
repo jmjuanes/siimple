@@ -21,7 +21,6 @@ $siimple-navbar-item-margin-left: 0px;
 $siimple-navbar-item-margin-right: 0px;
 $siimple-navbar-item-padding-left: 15px;
 $siimple-navbar-item-padding-right: 15px;
-$siimple-navbar-item-font-size: $siimple-default-font-size;
 $siimple-navbar-item-font-weight: bold;
 
 //Navbar title variables
@@ -115,7 +114,7 @@ $siimple-navbar-subtitle-padding-left: 15px;
         text-decoration: none;
         text-align: center;
         font-weight: $siimple-navbar-item-font-weight;
-        font-size: $siimple-navbar-item-font-size;
+        font-size: $siimple-default-font-size;
         transition: all 0.3s;
         cursor: pointer;
         opacity: 0.8;
