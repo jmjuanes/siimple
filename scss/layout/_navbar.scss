@@ -101,7 +101,7 @@ $siimple-navbar-subtitle-opacity: 0.6;
     &-link {
         display: inline-block;
         height: $siimple-navbar-height;
-        line-height: $siimple-default-line-height;
+        line-height: $siimple-navbar-height;
         margin: {
             left: $siimple-navbar-item-margin-left;
             right: $siimple-navbar-item-margin-right;
