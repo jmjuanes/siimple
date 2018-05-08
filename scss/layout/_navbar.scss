@@ -33,6 +33,7 @@ $siimple-navbar-title-padding-right: 0px;
 $siimple-navbar-subtitle-font-size: 16px;
 $siimple-navbar-subtitle-font-weight: bold;
 $siimple-navbar-subtitle-padding-left: 15px;
+$siimple-navbar-subtitle-opacity: 0.6;
 
 //Navbar class
 .siimple-navbar {
@@ -72,28 +73,26 @@ $siimple-navbar-subtitle-padding-left: 15px;
     &-subtitle {
         display: inline-block;
         height: $siimple-navbar-height;
-        line-height: $siimple-default-line-height;
+        line-height: $siimple-navbar-height;
         font-size: $siimple-navbar-subtitle-font-size;
         font-weight: $siimple-navbar-subtitle-font-weight;
         text-decoration: none;
         cursor: pointer;
         //vertical-align: middle;
-        opacity: 0.5;
-        position: relative;
-        padding: {
-            left: $siimple-navbar-subtitle-padding-left;
-        }
-
+        opacity: $siimple-navbar-subtitle-opacity;
         &::before {
-            position: absolute;
             display: inline-block;
             content: "";
             width: 2px;
-            height: calc(#{$siimple-navbar-height} - 4px);
-            margin: 0px 5px 0px 5px;
+            height: calc(#{$siimple-navbar-height} - 10px);
+            float: left;
+            margin: {
+                top: 4px;
+                left: 4px;
+                right: 6px;
+            }
             //vertical-align: middle;
-            top: 2px;
-            left: -1px;
+            opacity: 0.4;
         }
     }
 
