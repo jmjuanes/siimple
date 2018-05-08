@@ -17,8 +17,6 @@ $siimple-navbar-padding-top: 15px;
 $siimple-navbar-padding-bottom: 15px;
 
 //Navbar item variables
-$siimple-navbar-item-height: $siimple-navbar-height;
-$siimple-navbar-item-line-height: $siimple-navbar-item-height;
 $siimple-navbar-item-margin-left: 0px;
 $siimple-navbar-item-margin-right: 0px;
 $siimple-navbar-item-padding-left: 15px;
@@ -27,18 +25,14 @@ $siimple-navbar-item-font-size: $siimple-default-font-size;
 $siimple-navbar-item-font-weight: bold;
 
 //Navbar title variables
-$siimple-navbar-title-height: $siimple-navbar-height;
-$siimple-navbar-title-line-height: $siimple-navbar-title-height;
 $siimple-navbar-title-font-size: 21px;
 $siimple-navbar-title-font-weight: bold;
 $siimple-navbar-title-padding-left: 0px;
 $siimple-navbar-title-padding-right: 0px;
 
 //Navbar subtitle variables
-$siimple-navbar-subtitle-font-size: 17px;
+$siimple-navbar-subtitle-font-size: 16px;
 $siimple-navbar-subtitle-font-weight: bold;
-$siimple-navbar-subtitle-height: $siimple-navbar-height;
-$siimple-navbar-subtitle-line-height: $siimple-navbar-subtitle-height;
 $siimple-navbar-subtitle-padding-left: 15px;
 
 //Navbar class
@@ -61,7 +55,7 @@ $siimple-navbar-subtitle-padding-left: 15px;
     //Navbar title
     &-title {
         display: inline-block;
-        height: $siimple-navbar-title-height;
+        height: $siimple-navbar-height;
         //line-height: $siimple-navbar-title-line-height;
         text-decoration: none;
         font-weight: $siimple-navbar-title-font-weight;
@@ -78,8 +72,8 @@ $siimple-navbar-subtitle-padding-left: 15px;
     //Navbar subtitle
     &-subtitle {
         display: inline-block;
-        height: $siimple-navbar-subtitle-height;
-        line-height: $siimple-navbar-subtitle-line-height;
+        height: $siimple-navbar-height;
+        line-height: $siimple-default-line-height;
         font-size: $siimple-navbar-subtitle-font-size;
         font-weight: $siimple-navbar-subtitle-font-weight;
         text-decoration: none;
@@ -96,7 +90,7 @@ $siimple-navbar-subtitle-padding-left: 15px;
             display: inline-block;
             content: "";
             width: 2px;
-            height: calc(#{$siimple-navbar-subtitle-height} - 4px);
+            height: calc(#{$siimple-navbar-height} - 4px);
             margin: 0px 5px 0px 5px;
             //vertical-align: middle;
             top: 2px;
@@ -108,8 +102,8 @@ $siimple-navbar-subtitle-padding-left: 15px;
     &-item, 
     &-link {
         display: inline-block;
-        height: $siimple-navbar-item-height;
-        line-height: $siimple-navbar-item-line-height;
+        height: $siimple-navbar-height;
+        line-height: $siimple-default-line-height;
         margin: {
             left: $siimple-navbar-item-margin-left;
             right: $siimple-navbar-item-margin-right;
@@ -174,3 +168,4 @@ $siimple-navbar-subtitle-padding-left: 15px;
         }
     }
 }
+
