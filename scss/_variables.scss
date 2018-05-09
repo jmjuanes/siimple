@@ -11,6 +11,15 @@
 @import "siimple-colors/scss/_all.scss";
 $siimple-legacy-colors: ("navy", "green", "teal", "blue", "purple", "pink", "red", "orange", "yellow", "grey");
 
+//Defautl colors
+$siimple-default-white: #ffffff !default;
+$siimple-default-dark: #546778 !default;
+$siimple-default-light: #dde5ee !default;
+$siimple-default-primary: #4e91e4 !default;
+$siimple-default-success: #93d260 !default;
+$siimple-default-warning: #fbc850 !default;
+$siimple-default-error: #ee675d !default;
+
 //Default color palette
 $siimple-default-palette: (
     "primary": ("dark": #1e6ac8, "base": #4e91e4, "light": #90bbee, "over": #ffffff),
@@ -21,7 +30,6 @@ $siimple-default-palette: (
     "light":   ("dark": #cbd8e6, "base": #dde5ee, "light": #eef2f7, "over": #546778) 
 ) !default;
 $siimple-default-colors: ("primary", "success", "warning", "error", "dark", "light");
-$siimple-default-white: #ffffff !default;
 
 //Default media sizes values
 $siimple-default-sizes: (
@@ -32,7 +40,7 @@ $siimple-default-sizes: (
 );
 
 //Default text color
-$siimple-default-color: #546778 !default;
+$siimple-default-color: $siimple-default-dark !default;
 
 //Default font variables
 $siimple-default-font-size: 15px !default;
