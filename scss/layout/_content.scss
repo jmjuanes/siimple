@@ -13,12 +13,12 @@ $siimple-content-padding-top: 30px;
 $siimple-content-padding-bottom: 30px;
 
 .siimple-content {
-  display: block;
-  padding-top: $siimple-content-padding-top;
-  padding-bottom: $siimple-content-padding-bottom;
+    display: block;
+    padding-top: $siimple-content-padding-top;
+    padding-bottom: $siimple-content-padding-bottom;
 
-  //Legacy Content sizes
-  //To be deprecated in future major release
-  @include siimple-size();
+    //Legacy Content sizes
+    //To be deprecated in future major release
+    @include siimple-size();
 }
 
