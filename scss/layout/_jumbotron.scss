@@ -39,7 +39,8 @@ $siimple-jumbotron-detail-margin-bottom: 10px;
         top: $siimple-jumbotron-padding-top;
         bottom: $siimple-jumbotron-padding-bottom;
     }
-
+    //Legacy jumbotron sizes
+    //To be deprecated in a fueture major release
     @include siimple-size();
     
     //Jumbotron title
