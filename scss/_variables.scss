@@ -31,6 +31,13 @@ $siimple-default-palette: (
 ) !default;
 $siimple-default-colors: ("primary", "success", "warning", "error", "dark", "light");
 
+//Default breakpoints variables
+$siimple-default-breakpoint-gap: 20px !default;
+$siimple-default-breakpoint-fluid: 100% !default;
+$siimple-default-breakpoint-small: 768px !default;
+$siimple-default-breakpoint-medium: 960px !default;
+$siimple-default-breakpoint-large: 1280px !default;
+
 //Default media sizes values
 $siimple-default-sizes: (
     "xl": 1280px,
@@ -99,11 +106,4 @@ $siimple-default-percentages : (
     "75": 75%,
     "100": 100%
 );
-
-//Default breakpoints variables
-$siimple-default-breakpoint-gap: 20px !default;
-$siimple-default-breakpoint-fluid: 100% !default;
-$siimple-default-breakpoint-small: 768px !default;
-$siimple-default-breakpoint-medium: 960px !default;
-$siimple-default-breakpoint-large: 1180px !default;
 
