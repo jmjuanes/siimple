@@ -40,8 +40,10 @@
 //Invert a color
 @function siimple-color-invert($color) {
     @if (siimple-color-luminance($color) > 0.55) {
+        //Return the default dark color
         @return $siimple-default-dark;
     } @else {
+        //Return the default white color
         @return $siimple-default-white;
     }
 }
