@@ -31,7 +31,7 @@ You can include `siimple` in your HTML files:
 <link rel="stylesheet" href="./node_modules/siimple/dist/siimple.min.css">
 ```
 
-Or you can import the full library in your SASS/SCSS files: 
+Or you can import all the styles in your SASS/SCSS files: 
 
 ```scss
 @import "siimple/scss/_all.scss";
