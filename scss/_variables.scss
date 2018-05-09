@@ -38,12 +38,18 @@ $siimple-default-breakpoint-small: 768px !default;
 $siimple-default-breakpoint-medium: 960px !default;
 $siimple-default-breakpoint-large: 1280px !default;
 
+//Media sizes
+$siimple-default-size-extralarge: 1280px !default;
+$siimple-default-size-large: 960px !default;
+$siimple-default-size-medium: 768px !default;
+$siimple-default-size-small: 480px !default;
+
 //Default media sizes values
 $siimple-default-sizes: (
-    "xl": 1280px,
-    "lg": 960px,
-    "md": 768px,
-    "sm": 480px
+    "xl": $siimple-default-size-extralarge,
+    "lg": $siimple-default-size-large,
+    "md": $siimple-default-size-medium,
+    "sm": $siimple-default-size-small
 );
 
 //Default text color
