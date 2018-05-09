@@ -43,6 +43,10 @@ Or import only the styles that you need:
 @import "siimple/scss/elements/_tip.scss";
 ```
 
+## Documentation 
+
+We are working on a new documentation for version `v3.1.0`. You can find the documentation and the reference guide for `v3.0.0` in https://www.siimple.xyz/documentation
+
 ## Develop
 
 Follow the steps described in this section if you are going to contribute, extend or modify **siimple**. Our main branch is `develop`, which reflects a state with the latest delivered development changes. 
@@ -55,9 +59,11 @@ Follow these steps:
 2. Clone this repository: `git clone https://github.com/siimple/siimple.git`.
 3. Navigate to the cloned repository folder, and run `npm install` to download all the dependencies listed in `package.json`.
 
+We use [Make](https://www.tutorialspoint.com/unix_commands/make.htm) to automazie the building of **siimple**. 
+
 ### Building siimple
 
-We use [Make](https://www.tutorialspoint.com/unix_commands/make.htm) to automazie the building of **siimple**. Navigate to the root folder of the **siimple** module and run the following command:
+Navigate to the root folder of the **siimple** module and run the following command:
 
 ```
 make build
@@ -65,15 +71,9 @@ make build
 
 This will generate `siimple.css` and `siimple.min.css` on `dist` folder.
 
-
-## Documentation 
-
-We are working on a new documentation for version `v3.1.0`. You can find the documentation and the reference guide for `v3.0.0` in https://www.siimple.xyz/documentation
-
 ### Running documentation locally
 
 The documentation for `v3.1.0` will be available on this repository. 
-
 
 ## Questions 
 
