@@ -18,8 +18,8 @@ $siimple-footer-padding-bottom: 80px;
     display: block;
     padding-top: $siimple-footer-padding-top;
     padding-bottom: $siimple-footer-padding-bottom;
-
-    //Footer sizes
+    //Legacy footer sizes
+    //To be deprected in future major release
     @include siimple-size();
     
     //Footer colors
