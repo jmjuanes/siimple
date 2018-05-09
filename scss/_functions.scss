@@ -48,3 +48,13 @@
     }
 }
 
+//Makes a color darker
+@function siimple-color-darken($color) {
+    @return darken($color, 10%);
+}
+
+//Makes a color lighter
+@function siimple-color-lighten($color) {
+    @return lighten($color, 10%);
+}
+
