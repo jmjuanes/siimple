@@ -18,7 +18,7 @@ build:
 	rm -rf ./dist ;\
 	mkdir -p ./dist ;\
 	${NODE_BIN}/node-sass --include-path ./node_modules/ scss/siimple.scss dist/siimple.css ;\
-	${NODE_BIN}/postcss --use autoprefixer --map false --output dist/siimple.css dist/siimple.css ;\
+	${NODE_BIN}/postcss --use autoprefixer --config ./postcss.config.js --map false --output dist/siimple.css dist/siimple.css ;\
 	${NODE_BIN}/cleancss --compatibility "*" --level 2 --output dist/siimple.min.css dist/siimple.css
 
 # Install all dependencies
