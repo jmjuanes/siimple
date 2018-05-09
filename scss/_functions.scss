@@ -13,3 +13,36 @@
     @return $value;
 }
 
+//Return the luminance of a color
+//From: https://css-tricks.com/snippets/sass/luminance-color-function/ 
+//Reference: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef 
+@function siimple-color-luminance($color) {
+    $colors: (
+        "red": red($color),
+        "green": green($color),
+        "blue": blue($color)
+    );
+    @each $name, $value in $colors {
+        $adjusted: 0;
+        $value: $value / 255;
+        @if $value < 0.03928 {
+            $value: $value / 12.92;
+        } @else {
+            $value: ($value + .055) / 1.055;
+            //Terrible hack to calculate pow($value, 2.4)
+            $value: $value * $value;
+        }
+        $colors: map-merge($colors, ($name: $value));
+    }
+    @return (map-get($colors, 'red') * .2126) + (map-get($colors, 'green') * .7152) + (map-get($colors, 'blue') * .0722);
+}
+
+//Invert a color
+@function siimple-color-invert($color) {
+    @if (siimple-color-luminance($color) > 0.55) {
+        @return $siimple-default-dark;
+    } @else {
+        @return $siimple-default-white;
+    }
+}
+
