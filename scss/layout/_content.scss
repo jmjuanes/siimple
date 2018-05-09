@@ -17,7 +17,8 @@ $siimple-content-padding-bottom: 30px;
   padding-top: $siimple-content-padding-top;
   padding-bottom: $siimple-content-padding-bottom;
 
-  //Content sizes
+  //Legacy Content sizes
+  //To be deprecated in future major release
   @include siimple-size();
 }
 
