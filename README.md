@@ -57,25 +57,13 @@ Follow these steps:
 
 ### Building siimple
 
-Run the following command to compile the SCSS files:
+We use [Make](https://www.tutorialspoint.com/unix_commands/make.htm) to automazie the building of **siimple**. Navigate to the root folder of the **siimple** module and run the following command:
 
 ```
-npm run css:compile
+make build
 ```
 
-This will generate a file called `siimple.css` on the `dist` folder. You can also generate a minified version of **siimple** running the following command: 
-
-```
-npm run css:minify
-```
-
-This will generate a file called `siimple.min.css` on the `dist` folder. You can also run both commands in only one: 
-
-```
-npm run build
-```
-
-This will generate `siimple.css` and `siimple.min.css` on `dist`.
+This will generate `siimple.css` and `siimple.min.css` on `dist` folder.
 
 
 ## Documentation 
@@ -105,3 +93,4 @@ We appreciate all contributions to the **siimple** project and help make it bett
 ## License
 
 **siimple** is under the [MIT](LICENSE) license. &copy; The **siimple team**.
+
