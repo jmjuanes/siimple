@@ -17,9 +17,9 @@ $siimple-legacy-colors: ("navy", "green", "teal", "blue", "purple", "pink", "red
 //Darker/lighter amount
 $siimple-default-amount: 20% !default;
 
-//Defautl colors
+//Default colors
 $siimple-default-white: #ffffff !default;
-$siimple-default-dark: #546778 !default;
+$siimple-default-navy: #546778 !default;
 $siimple-default-primary: #4e91e4 !default;
 $siimple-default-success: #93d260 !default;
 $siimple-default-warning: #fbc850 !default;
@@ -57,16 +57,16 @@ $siimple-default-palette: (
         "over": $siimple-default-white
     ),
     "dark": (
-        "dark": darken($siimple-default-dark, $siimple-default-amount), 
-        "base": $siimple-default-dark, 
-        "light": lighten($siimple-default-dark, $siimple-default-amount), 
+        "dark": darken($siimple-default-navy, $siimple-default-amount), 
+        "base": $siimple-default-navy, 
+        "light": lighten($siimple-default-navy, $siimple-default-amount), 
         "over": $siimple-default-white
     ),
     "light": (
         "dark": $siimple-default-grey-dark, 
         "base": $siimple-default-grey, 
         "light":$siimple-default-grey-light, 
-        "over": $siimple-default-dark
+        "over": $siimple-default-navy
     ) 
 );
 
