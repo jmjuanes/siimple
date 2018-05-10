@@ -1,0 +1,14 @@
+html {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+body {
+    margin: 0px;
+    padding: 50px;
+}
+
+.demo {
+    padding-bottom: 50px;
+}
+
