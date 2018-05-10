@@ -36,32 +36,38 @@ $siimple-default-palette: (
         "dark": darken($siimple-default-primary, $siimple-default-amount), 
         "base": $siimple-default-primary, 
         "light": lighten($siimple-default-primary, $siimple-default-amount), 
-        "over": $siimple-default-white),
+        "over": $siimple-default-white
+    ),
     "success": (
         "dark": darken($siimple-default-success, $siimple-default-amount), 
         "base": $siimple-default-success, 
         "light": lighten($siimple-default-success, $siimple-default-amount), 
-        "over": $siimple-default-white),
+        "over": $siimple-default-white
+    ),
     "warning": (
         "dark": darken($siimple-default-warning, $siimple-default-amount), 
         "base": $siimple-default-warning, 
         "light": lighten($siimple-default-warning, $siimple-default-amount), 
-        "over": $siimple-default-white),
+        "over": $siimple-default-white
+    ),
     "error": (
         "dark": darken($siimple-default-error, $siimple-default-amount), 
         "base": $siimple-default-error, 
         "light": lighten($siimple-default-error, $siimple-default-amount), 
-        "over": $siimple-default-white),
+        "over": $siimple-default-white
+    ),
     "dark": (
         "dark": darken($siimple-default-dark, $siimple-default-amount), 
         "base": $siimple-default-dark, 
         "light": lighten($siimple-default-dark, $siimple-default-amount), 
-        "over": $siimple-default-white),
+        "over": $siimple-default-white
+    ),
     "light": (
         "dark": $siimple-default-grey-dark, 
         "base": $siimple-default-grey, 
         "light":$siimple-default-grey-light, 
-        "over": $siimple-default-dark) 
+        "over": $siimple-default-dark
+    ) 
 );
 
 //Default colors list
