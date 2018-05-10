@@ -35,26 +35,21 @@ $siimple-btn-disabled-opacity: 0.6;
         right: $siimple-btn-padding-right;
     }
     border-radius: $siimple-default-border-radius;
-
     //Disable default button element borders
     //https://github.com/siimple/siimple/pull/17
     border: none;
-
     //Disable user selection
     @include siimple-utils-select(none);
-
     &:hover {
         text-decoration: none;
         opacity: $siimple-btn-opacity;
     }
-    
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
             background-color: siimple-default-color($color, "base");
             color: siimple-default-color($color, "over");
         }
     }
-
     //Legacy colors
     //To be deprecated in future major release
     @each $color in $siimple-legacy-colors {
@@ -63,14 +58,14 @@ $siimple-btn-disabled-opacity: 0.6;
             color: siimple-color-over($color);
         }
     }
-
+    //Disabled button
     &--disabled {
         //background-color: $siimple-btn-disabled-background !important;
         //color: rgba($siimple-btn-disabled-color, $siimple-btn-disabled-color-alpha) !important;
         opacity: $siimple-btn-disabled-opacity !important;
         cursor: not-allowed !important;
     }
-
+    //Fluid button
     &--fluid {
         width: calc(100% - #{$siimple-btn-padding-left} - #{$siimple-btn-padding-right});
     }
