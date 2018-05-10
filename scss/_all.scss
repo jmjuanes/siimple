@@ -7,7 +7,6 @@
 //
 
 //Import typography
-@import "./typography/_badge.scss";
 @import "./typography/_blockquote.scss";
 @import "./typography/_code.scss";
 @import "./typography/_heading.scss";
@@ -15,29 +14,32 @@
 @import "./typography/_paragraph.scss";
 @import "./typography/_pre.scss";
 @import "./typography/_small.scss";
-@import "./typography/_tag.scss";
 
 //Import elements
-@import "./elements/_alert.scss";
+@import "./elements/_badge.scss";
 @import "./elements/_btn.scss";
-@import "./elements/_card.scss";
 @import "./elements/_close.scss";
-@import "./elements/_list.scss";
 @import "./elements/_progress.scss";
 @import "./elements/_rule.scss";
 @import "./elements/_spinner.scss";
-@import "./elements/_table.scss";
+@import "./elements/_tag.scss";
 @import "./elements/_tip.scss";
+
+//Import components
+@import "./components/_alert.scss";
+@import "./components/_breadcrumb.scss";
+@import "./components/_card.scss";
+@import "./components/_list.scss";
+@import "./components/_menu.scss";
+@import "./components/_table.scss";
+@import "./components/_tabs.scss";
 
 //Import layout
 @import "./layout/_box.scss";
-@import "./layout/_breadcrumb.scss";
 @import "./layout/_content.scss";
 @import "./layout/_footer.scss";
 @import "./layout/_jumbotron.scss";
-@import "./layout/_menu.scss";
 @import "./layout/_navbar.scss";
-@import "./layout/_tabs.scss";
 
 //Import form elements
 @import "./form/_checkbox.scss";
