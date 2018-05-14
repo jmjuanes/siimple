@@ -75,7 +75,7 @@ $siimple-breadcrumb-item-last-padding: 15px;
             top: 0;
             border-top: #{$siimple-breadcrumb-item-height / 2} solid transparent;
             border-bottom: #{$siimple-breadcrumb-item-height / 2} solid transparent;
-            border-left: #{$siimple-breadcrumb-item-height / 2} solid $siimple-grey;
+            border-left: #{$siimple-breadcrumb-item-height / 2} solid $siimple-breadcrumb-item-background-color;
         }
 
         //Crumb before
@@ -87,7 +87,7 @@ $siimple-breadcrumb-item-last-padding: 15px;
             top: 0;
             border-top: #{$siimple-breadcrumb-item-height / 2} solid transparent;
             border-bottom: #{$siimple-breadcrumb-item-height / 2} solid transparent;
-            border-left: #{$siimple-breadcrumb-item-height / 2} solid $siimple-white;
+            border-left: #{$siimple-breadcrumb-item-height / 2} solid $siimple-default-white;
         }
 
         //First crumb
