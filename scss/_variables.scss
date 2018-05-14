@@ -9,9 +9,21 @@
 //Import dependencies
 @import "./_functions.scss";
 
-//Legacy colors
+//Legacy colors [DEPRECATED]
 //Will be removed in future major version
-@import "siimple-colors/scss/_all.scss";
+//@import "siimple-colors/scss/_all.scss";
+$siimple-legacy-palette: (
+    "navy": ("dark": #34414b, "base": #546778, "light": #788ea1, "over": #ffffff), 
+    "green": ("dark": #6cb332, "base": #93d260, "light": #bce39c, "over": #ffffff), 
+    "teal": ("dark": #32b393, "base": #60d2b6, "light": #9ce3d1, "over": #ffffff), 
+    "blue": ("dark": #1e6ac8, "base": #4e91e4, "light": #90bbee, "over": #ffffff), 
+    "purple": ("dark": #7c57db, "base": #ac94e8, "light": #ded5f6, "over": #ffffff), 
+    "pink": ("dark": #db3d94, "base": #e77eb8, "light": #f3bedb, "over": #ffffff), 
+    "red": ("dark": #e72618, "base": #ee675d, "light": #f5a8a3, "over": #ffffff), 
+    "orange": ("dark": #f4490b, "base": #f78055, "light": #fab69e, "over": #ffffff), 
+    "yellow": ("dark": #fab005, "base": #fbc850, "light": #fde09b, "over": #ffffff), 
+    "grey": ("dark": #cbd8e6, "base": #dde5ee, "light": #eef2f7, "over": #546778)
+);
 $siimple-legacy-colors: ("navy", "green", "teal", "blue", "purple", "pink", "red", "orange", "yellow", "grey");
 
 //Darker/lighter amount
