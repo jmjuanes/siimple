@@ -99,7 +99,7 @@ $siimple-menu-submenu-padding-left: 10px;
         transition: all ease 0.3s;
         cursor: pointer;
         //Hover styles
-        &:hover {
+        &:not(#{&}--selected):hover {
             background-color: $siimple-menu-item-background-color;
             text-decoration: none !important;
             color: $siimple-menu-item-color;
