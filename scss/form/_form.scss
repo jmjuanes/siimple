@@ -8,53 +8,43 @@
 @import "../_variables.scss";
 @import "../_functions.scss";
 
-$siimple-form-title-font: 25px;
-$siimple-form-title-margin-top: 0px;
-$siimple-form-title-margin-bottom: 5px;
-
-$siimple-form-detail-font: $siimple-default-text-size;
-$siimple-form-detail-margin-top: 0px;
-$siimple-form-detail-margin-bottom: 20px;
-
-$siimple-form-rule-size: 1px;
-$siimple-form-rule-margin-top: 5px;
-$siimple-form-rule-margin-bottom: $siimple-default-margin-bottom;
-$siimple-form-rule-color: siimple-default-color("light", "dark");
-
+//Form class
 .siimple-form {
     display: block;
     width: 100%;
-    margin-top: $siimple-default-margin-top;
-    margin-bottom: $siimple-default-margin-bottom;
+    margin: {
+        top: 0px;
+        bottom: $siimple-default-margin-bottom;
+    }
     //font-family: $siimple-default-text-font;
-    font-size: $siimple-default-text-size;
+    font-size: $siimple-default-font-size;
 
     &-title {
         display: block;
         width: 100%;
         vertical-align: top;
         font-weight: bold;
-        font-size: $siimple-form-title-font;
-        color: $siimple-navy;
-        margin-top: $siimple-form-title-margin-top;
-        margin-bottom: $siimple-form-title-margin-bottom;
+        font-size: 25px;
+        color: siimple-default-color("dark", "base");
+        margin-bottom: $siimple-default-margin-bottom;
     }
     &-detail {
         display: block;
         width: 100%;
         vertical-align: top;
-        font-size: $siimple-form-detail-font;
-        color: $siimple-navy;
-        margin-top: $siimple-form-detail-margin-top;
-        margin-bottom: $siimple-form-detail-margin-bottom;
+        font-size: $siimple-default-font-size;
+        color: siimple-default-color("dark", "base");
+        margin-bottom: 20px;
     }
     &-rule {
         display: block;
         width: 100%;
+        border-bottom: 1px solid siimple-default-color("light", "dark");
+        margin: {
+            top: 5px;
+            bottom: $siimple-default-margin-bottom;
+        }
         height: 0px;
-        border-bottom: $siimple-form-rule-size solid $siimple-form-rule-color;
-        margin-top: $siimple-form-rule-margin-top;
-        margin-bottom: $siimple-form-rule-margin-bottom;
     }
 }
 
