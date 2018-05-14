@@ -13,3 +13,23 @@
     @return $value;
 }
 
+//Legacy colors function [DEPRECATED]
+//Will be removed in a future major release
+@function siimple-color($color, $index: "base") {
+    $list: map-get($siimple-legacy-palette, "#{$color}");
+    $value: map-get($list, "#{$index}");
+    @return $value;
+}
+@function siimple-color-base($color) {
+    @return siimple-color($color, "base");
+}
+@function siimple-color-light($color) {
+    @return siimple-color($color, "light");
+}
+@function siimple-color-dark($color) {
+    @return siimple-color($color, "dark");
+}
+@function siimple-color-over($color) {
+    @return siimple-color($color, "over");
+}
+
