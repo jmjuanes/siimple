@@ -32,6 +32,7 @@ $siimple-menu-item-font-size: 14px;
 $siimple-menu-item-font-weight: 400;
 $siimple-menu-item-color: siimple-default-color("dark", "base");
 $siimple-menu-item-background-color: siimple-default-color("light", "base");
+$siimple-menu-item-margin-bottom: 5px;
 
 //Menu submenu variables
 $siimple-menu-submenu-margin-top: 5px;
@@ -89,6 +90,9 @@ $siimple-menu-submenu-padding-left: 10px;
         padding: {
             left: $siimple-menu-item-padding-left;
             right: $siimple-menu-item-padding-right;
+        }
+        margin: {
+            bottom: $siimple-menu-item-margin-bottom;
         }
         background-color: rgba($siimple-menu-item-background-color, 0);
         //opacity: 1.0;
