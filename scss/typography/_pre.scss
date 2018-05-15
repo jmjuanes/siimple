@@ -23,6 +23,7 @@ $siimple-pre-padding: 15px;
     border-radius: $siimple-default-border-radius;
     padding: $siimple-pre-padding;
     margin-bottom: $siimple-default-margin-bottom;
+    margin-top: 0px;
     //Pre dark mode
     &--dark {
         background-color: siimple-default-color("dark") !important;
