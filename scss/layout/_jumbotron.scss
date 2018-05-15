@@ -9,77 +9,43 @@
 @import "../_functions.scss";
 @import "./size.scss";
 
-//Jumbotron variables
-$siimple-jumbotron-padding-top: 120px;
-$siimple-jumbotron-padding-bottom: 120px;
-
-//Jumbotron title variables
-$siimple-jumbotron-title-font-size: 50px;
-$siimple-jumbotron-title-line-height: 60px;
-$siimple-jumbotron-title-margin-top: 0px;
-$siimple-jumbotron-title-margin-bottom: 0px;
-
-//Jumbotron subtitle variables
-$siimple-jumbotron-subtitle-font-size: 30px;
-$siimple-jumbotron-subtitle-line-height: 40px;
-$siimple-jumbotron-subtitle-margin-top: 10px;
-$siimple-jumbotron-subtitle-margin-bottom: 10px;
-
-//Jumbotron detail variables
-$siimple-jumbotron-detail-font-size: 20px;
-$siimple-jumbotron-detail-line-height: 30px;
-$siimple-jumbotron-detail-margin-top: 10px;
-$siimple-jumbotron-detail-margin-bottom: 10px;
-
 //Jumbotron class
 .siimple-jumbotron {
     display: block;
     //font-family: $siimple-default-text-font;
-    padding: {
-        top: $siimple-jumbotron-padding-top;
-        bottom: $siimple-jumbotron-padding-bottom;
-    }
+    padding-top: 120px;
+    padding-bottom: 120px;
     //Legacy jumbotron sizes
     //To be deprecated in a fueture major release
     @include siimple-size();
-    
     //Jumbotron title
     &-title {
         display: block;
         text-decoration: none;
-        line-height: $siimple-jumbotron-title-line-height;
+        line-height: 60px;
         font-weight: bold;
-        font-size: $siimple-jumbotron-title-font-size;
-        margin: {
-            top: $siimple-jumbotron-title-margin-top;
-            bottom: $siimple-jumbotron-title-margin-bottom;
-        }
+        font-size: 50px;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
-    
     //Jumbotron subtitle
     &-subtitle {
         display: block;
         text-decoration: none;
-        line-height: $siimple-jumbotron-subtitle-line-height;
-        font-size: $siimple-jumbotron-subtitle-font-size;
-        margin: {
-            top: $siimple-jumbotron-subtitle-margin-top;
-            bottom: $siimple-jumbotron-subtitle-margin-bottom;
-        }
+        line-height: 40px;
+        font-size: 30px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
-
     //Jumbotron detail
     &-detail {
         display: block;
         text-decoration: none;
-        line-height: $siimple-jumbotron-detail-line-height;
-        font-size: $siimple-jumbotron-detail-font-size;
-        margin: {
-            top: $siimple-jumbotron-detail-margin-top;
-            bottom: $siimple-jumbotron-detail-margin-bottom;
-        }
+        line-height: 30px;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
-    
     //Jumbotron colors
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
@@ -87,13 +53,12 @@ $siimple-jumbotron-detail-margin-bottom: 10px;
             color: siimple-default-color($color, "over");
         }
     }
-
     //Legacy jumbotron colors
     //To be deprecated in future major release
     @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
-            background-color: siimple-color-base($color);
-            color: siimple-color-over($color);
+            background-color: siimple-legacy-color($color, "base");
+            color: siimple-legacy-color($color, "over");
         }
     }
 }
