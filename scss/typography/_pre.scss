@@ -9,29 +9,21 @@
 @import "../_functions.scss";
 
 //Pre vriables
-$siimple-pre-font-size: 14px;
 $siimple-pre-padding: 15px;
-$siimple-pre-margin-top: 0px;
-$siimple-pre-line-height: 22px;
-$siimple-pre-color: siimple-default-color("dark");
-$siimple-pre-background: siimple-default-color("light");
 
 //Pre class
 .siimple-pre {
     display: block;
     overflow-x: auto;
     width: calc(100% - 2 * #{$siimple-pre-padding});
-    color: $siimple-pre-color;
-    line-height: $siimple-pre-line-height;
-    font-size: $siimple-pre-font-size;
-    background-color: $siimple-pre-background;
+    color: siimple-default-color("dark");
+    line-height: 22px;
+    font-size: 14px;
+    background-color: siimple-default-color("light");
     border-radius: $siimple-default-border-radius;
     padding: $siimple-pre-padding;
-    margin: {
-        top: $siimple-pre-margin-top;
-        bottom: $siimple-default-margin-bottom;
-    }
-
+    margin-bottom: $siimple-default-margin-bottom;
+    //Pre dark mode
     &--dark {
         background-color: siimple-default-color("dark") !important;
         color: $siimple-default-white;
