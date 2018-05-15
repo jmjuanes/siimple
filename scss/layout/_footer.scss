@@ -9,19 +9,14 @@
 @import "../_functions.scss";
 @import "./size.scss";
 
-//Footer variables
-$siimple-footer-padding-top: 50px;
-$siimple-footer-padding-bottom: 80px;
-
 //Footer class
 .siimple-footer {
     display: block;
-    padding-top: $siimple-footer-padding-top;
-    padding-bottom: $siimple-footer-padding-bottom;
+    padding-top: 50px;
+    padding-bottom: 80px;
     //Legacy footer sizes
     //To be deprected in future major release
     @include siimple-size();
-    
     //Footer colors
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
@@ -29,13 +24,12 @@ $siimple-footer-padding-bottom: 80px;
             color: siimple-default-color($color, "over");
         }
     }
-
     //Legacy colors
     //To be deprecated in future major release
     @each $color, $value in $siimple-legacy-colors {
         &#{&}--#{$color} {
-            background-color: siimple-color-base($color);
-            color: siimple-color-over($color);
+            background-color: siimple-legacy-color($color, "base");
+            color: siimple-legacy-color($color, "over");
         }
     }
 }
