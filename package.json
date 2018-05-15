@@ -22,9 +22,7 @@
         "websites",
         "responsive"
     ],
-    "dependencies": {
-        "siimple-colors": "^1.0.0-beta"
-    },
+    "dependencies": {},
     "devDependencies": {
         "clean-css-cli": "^4.1.11",
         "postcss-cli": "^5.0.0",
