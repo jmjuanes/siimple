@@ -10,32 +10,19 @@
 
 //Blockquote variables
 $siimple-blockquote-color: siimple-default-color("dark", "light");
-$siimple-blockquote-border: 4px;
-$siimple-blockquote-padding-top: 10px;
-$siimple-blockquote-padding-bottom: 10px;
-$siimple-blockquote-padding-left: 20px;
-$siimple-blockquote-padding-right: 10px;
-$siimple-blockquote-margin-top: 0px;
-$siimple-blockquote-margin-left: 0px;
 
 //Blockquote class
 .siimple-blockquote {
     display: block;
     //font-family: $siimple-default-text-font;
     color: $siimple-blockquote-color;
-    font-size: $siimple-default-text-size;
-    line-height: $siimple-default-text-line;
-    border-left: $siimple-blockquote-border solid $siimple-blockquote-color;
-    padding: {
-        top: $siimple-blockquote-padding-top;
-        bottom: $siimple-blockquote-padding-bottom;
-        left: $siimple-blockquote-padding-left;
-        right: $siimple-blockquote-padding-right;
-    }
-    margin: {
-        top: $siimple-blockquote-padding-top;
-        bottom: $siimple-default-margin-bottom;
-        left: $siimple-blockquote-margin-left;
-    }
+    font-size: $siimple-default-font-size;
+    line-height: $siimple-default-line-height;
+    border-left: 4px solid $siimple-blockquote-color;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 20px;
+    margin-bottom: $siimple-default-margin-bottom;
 }
 
