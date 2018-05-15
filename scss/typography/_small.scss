@@ -8,14 +8,10 @@
 @import "../_variables.scss";
 @import "../_functions.scss";
 
-//Small variables
-$siimple-small-font-size: 14px;
-$siimple-small-color: siimple-default-color("dark", "light");
-
 //Small class
 .siimple-small {
     //font-family: $siimple-default-text-font;
-    font-size: $siimple-small-font-size;
-    color: $siimple-small-color;
+    font-size: 13px;
+    color: siimple-default-color("dark", "light");
 }
 
