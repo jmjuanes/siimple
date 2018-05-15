@@ -8,22 +8,17 @@
 @import "../_variables.scss";
 @import "../_functions.scss";
 
-//Link variables
-$siimple-link-color: siimple-default-color("primary");
-$siimple-link-color-hover: siimple-default-color("primary", "dark");
-
 //Link class
 .siimple-link {
-    //font-family: $siimple-default-text-font;
-    color: $siimple-link-color;
+    //font-family: $siimple-default-font-size;
+    color: siimple-default-color("primary");
     //font-weight: bold;
     text-decoration: none;
     transition: all 0.3s;
-
     &:hover {
         text-decoration: underline;
         cursor: pointer;
-        color: $siimple-link-color-hover;
+        color: siimple-default-color("primary", "dark");
     }
 }
 
