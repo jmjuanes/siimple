@@ -8,18 +8,22 @@
 @import "../_variables.scss";
 @import "../_functions.scss";
 
+//Badge variables
+$siimple-badge-height: 19px;
+$siimple-badge-padding: 6px;
+
 //Badge class
 .siimple-badge {
     display: inline-block;
-    //height: 19px;
+    //height: $siimple-badge-height;
     font-size: 10px;
     font-weight: bold;
     text-decoration: none;
-    line-height: 19px;
+    line-height: $siimple-badge-height;
     border-radius: 15px;
     padding: {
-        left: 6px;
-        right: 6px;
+        left: $siimple-badge-padding;
+        right: $siimple-badge-padding;
     }
     margin-right: 1px;
     //margin-bottom: 8px;
