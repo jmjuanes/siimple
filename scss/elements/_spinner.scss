@@ -12,9 +12,11 @@
 $siimple-spinner-size: 10px;
 $siimple-spinner-space: 15px;
 
+//Large spinner variables
 $siimple-spinner-large-size: 15px;
 $siimple-spinner-large-space: 20px;
 
+//Small spinner variables
 $siimple-spinner-small-size: 8px;
 $siimple-spinner-small-space: 13px;
 
@@ -48,7 +50,6 @@ $siimple-spinner-small-space: 13px;
         right: auto;
         top: 0px;
     }
-
     &:before {
         @include siimple-spinner-base();
         //animation-delay: -0.66s;
@@ -63,7 +64,6 @@ $siimple-spinner-small-space: 13px;
         left: $siimple-spinner-space;
         top: 0;
     }
-
     //Spinner colors
     @each $color in $siimple-default-colors {
         &#{&}--#{$color}, 
@@ -72,17 +72,16 @@ $siimple-spinner-small-space: 13px;
             background-color: siimple-default-color($color, "base");
         }
     }
-    
     //Legacy spinner colors
     //To be deprecated in future major release
     @each $color in $siimple-legacy-colors {
         &#{&}--#{$color}, 
         &#{&}--#{$color}:after, 
         &#{&}--#{$color}:before {
-            background-color: siimple-color-base($color);
+            background-color: siimple-legacy-color($color, "base");
         }
     }
-
+    //Small spinner
     &--small{
         &, &:before, &:after {
             width: $siimple-spinner-small-size !important;
@@ -95,7 +94,7 @@ $siimple-spinner-small-space: 13px;
             left: $siimple-spinner-small-space !important;
         }
     }
-
+    //Large spinner 
     &--large{
         &, &:before, &:after {
             width: $siimple-spinner-large-size !important;
@@ -104,7 +103,6 @@ $siimple-spinner-small-space: 13px;
         &:before {
             left: calc(#{$siimple-spinner-large-space} * -1) !important;
         }
-
         &:after {
             left: $siimple-spinner-large-space !important;
         }
