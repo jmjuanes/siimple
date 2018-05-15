@@ -9,11 +9,9 @@
 @import "../_functions.scss";
 
 //Tip variables
-$siimple-tip-padding: 10px;
 $siimple-tip-padding-left: 25px;
 $siimple-tip-padding-right: 20px;
 $siimple-tip-border: 5px;
-$siimple-tip-background: siimple-default-color("light", "light");
 
 //Tip class
 .siimple-tip {
@@ -24,18 +22,18 @@ $siimple-tip-background: siimple-default-color("light", "light");
     border-left-width: $siimple-tip-border;
     border-radius: $siimple-default-border-radius;
     padding: {
-        top: $siimple-tip-padding;
+        top: 10px;
         right: $siimple-tip-padding-right !important;
-        bottom: $siimple-tip-padding;
+        bottom: 10px;
         left: $siimple-tip-padding-left !important;
     }
     margin-bottom: $siimple-default-margin-bottom;
-    background-color: $siimple-tip-background;
+    background-color: siimple-default-color("light", "light");
     //font-family: $siimple-default-text-font;
-    font-size: $siimple-default-text-size;
-    color: $siimple-default-text-color;
-    line-height: $siimple-default-text-line;
-
+    font-size: $siimple-default-font-size;
+    color: $siimple-default-color;
+    line-height: $siimple-default-line-height;
+    //Tip circle
     &::before {
         position: absolute;
         top: 10px;
@@ -47,7 +45,7 @@ $siimple-tip-background: siimple-default-color("light", "light");
         text-align: center;
         line-height: 20px;
     }
-
+    //Tip colors
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
             border-left-color: siimple-default-color($color);
@@ -55,26 +53,26 @@ $siimple-tip-background: siimple-default-color("light", "light");
         &#{&}--#{$color}::before {
             background-color: siimple-default-color($color);
         }
-
     }
-    
     //Legacy tip colors
     //To be deprecated in future major release
     @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
-            border-left-color: siimple-color-base($color);
+            border-left-color: siimple-legacy-color($color, "base");
         }
         &#{&}--#{$color}::before {
-            background-color: siimple-color-base($color);
+            background-color: siimple-legacy-color($color, "base");
         }
     }
-
+    //Exclamation tip
     &--exclamation::before {
         content: "!";
     }
+    //Question tip
     &--question::before {
         content: "?";
     }
+    //Heart tip
     &--heart::before {
         content: "\2764";
     }
