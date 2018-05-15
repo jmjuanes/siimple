@@ -13,10 +13,6 @@
 $siimple-btn-height: 34px;
 $siimple-btn-padding-left: 15px;
 $siimple-btn-padding-right: 15px;
-$siimple-btn-opacity: 0.8;
-
-//Disabled button variables
-$siimple-btn-disabled-opacity: 0.6;
 
 //Button class
 .siimple-btn {
@@ -28,7 +24,7 @@ $siimple-btn-disabled-opacity: 0.6;
     text-align: center;
     text-decoration: none;
     //font-family: $siimple-default-text-font;
-    font-size: $siimple-default-text-size;
+    font-size: $siimple-default-font-size;
     //font-weight: bold;
     padding: {
         left: $siimple-btn-padding-left;
@@ -40,10 +36,12 @@ $siimple-btn-disabled-opacity: 0.6;
     border: none;
     //Disable user selection
     @include siimple-utils-select(none);
+    //Button hover style
     &:hover {
         text-decoration: none;
-        opacity: $siimple-btn-opacity;
+        opacity: 0.8;
     }
+    //Button colors
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
             background-color: siimple-default-color($color, "base");
@@ -54,15 +52,15 @@ $siimple-btn-disabled-opacity: 0.6;
     //To be deprecated in future major release
     @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
-            background-color: siimple-color-base($color);
-            color: siimple-color-over($color);
+            background-color: siimple-legacy-color($color, "base");
+            color: siimple-legacy-color($color, "over");
         }
     }
     //Disabled button
     &--disabled {
         //background-color: $siimple-btn-disabled-background !important;
         //color: rgba($siimple-btn-disabled-color, $siimple-btn-disabled-color-alpha) !important;
-        opacity: $siimple-btn-disabled-opacity !important;
+        opacity: 0.6 !important;
         cursor: not-allowed !important;
     }
     //Fluid button
