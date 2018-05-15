@@ -7,19 +7,14 @@
 //
 @import "../_variables.scss";
 
-//Paragraph variables
-$siimple-paragraph-margin-top: 0px;
-$siimple-paragraph-margin-bottom: $siimple-default-margin-bottom;
-
 //Paragraph class
 .siimple-paragraph, 
 .siimple-p {
     display: block;
     //font-family: $siimple-default-text-font;
-    line-height: $siimple-default-text-line;
-    font-size: $siimple-default-text-size;
-    margin: {
-        top: $siimple-paragraph-margin-top;
-        bottom: $siimple-paragraph-margin-bottom;
-    }
+    line-height: $siimple-default-line-height;
+    font-size: $siimple-default-font-size;
+    margin-top: 0px;
+    margin-bottom: $siimple-default-margin-bottom;
 }
+
