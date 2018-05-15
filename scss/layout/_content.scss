@@ -8,15 +8,11 @@
 @import "../_variables.scss";
 @import "./size.scss";
 
-//Content variables
-$siimple-content-padding-top: 30px;
-$siimple-content-padding-bottom: 30px;
-
+//Content class
 .siimple-content {
     display: block;
-    padding-top: $siimple-content-padding-top;
-    padding-bottom: $siimple-content-padding-bottom;
-
+    padding-top: 30px;
+    padding-bottom: 30px;
     //Legacy Content sizes
     //To be deprecated in future major release
     @include siimple-size();
