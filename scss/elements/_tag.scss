@@ -10,30 +10,24 @@
 
 //Tag variables
 $siimple-tag-height: 19px;
-$siimple-tag-line-height: 19px;
-$siimple-tag-border-radius: 4px;
-$siimple-tag-font-size: 10px;
-$siimple-tag-padding-left: 6px;
-$siimple-tag-padding-right: 6px;
-$siimple-tag-margin-right: 1px;
-$siimple-tag-margin-bottom: 8px;
+$siimple-tag-padding: 6px;
 
 //Tag class
 .siimple-tag {
     display: inline-block;
     //height: $siimple-tag-height;
-    font-size: $siimple-tag-font-size;
+    font-size: 10px;
     font-weight: bold;
     text-decoration: none;
-    line-height: $siimple-tag-line-height;
-    border-radius: $siimple-tag-border-radius;
+    line-height: $siimple-tag-height;
+    border-radius: 4px;
     padding: {
-        left: $siimple-tag-padding-left;
-        right: $siimple-tag-padding-right;
+        left: $siimple-tag-padding;
+        right: $siimple-tag-padding;
     }
-    margin-right: $siimple-tag-margin-right;
-    //margin-bottom: $siimple-tag-margin-bottom;
-    
+    margin-right: 1px;
+    //margin-bottom: 8px;
+    //Tag colors
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
             background-color: siimple-default-color($color);
@@ -44,8 +38,8 @@ $siimple-tag-margin-bottom: 8px;
     //To be deprecated in future major release
     @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
-            background-color: siimple-color-base($color);
-            color: siimple-color-over($color);
+            background-color: siimple-legacy-color($color, "base");
+            color: siimple-legacy-color($color, "over");
         }
     }
 }
