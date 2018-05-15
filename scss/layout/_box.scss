@@ -10,14 +10,6 @@
 
 //Box variables
 $siimple-box-padding: 15px;
-$siimple-box-title-font-size: 40px;
-$siimple-box-title-margin-top: 20px;
-$siimple-box-title-margin-bottom: 10px;
-$siimple-box-subtitle-font-size: 30px;
-$siimple-box-subtitle-margin-top: 10px;
-$siimple-box-subtitle-margin-bottom: 10px;
-$siimple-box-subtitle-title-margin: -12px;
-$siimple-box-detail-margin-bottom: 10px;
 
 //Box style
 .siimple-box {
@@ -26,63 +18,57 @@ $siimple-box-detail-margin-bottom: 10px;
     width: calc(100% - #{2 * $siimple-box-padding});
     background-color: siimple-default-color("light");
     //font-family: $siimple-default-text-font;
-    font-size: $siimple-default-text-size;
-    //color: $siimple-default-text-color;
+    font-size: $siimple-default-font-size;
+    //color: $siimple-default-color;
     border-radius: $siimple-default-border-radius;
     padding: $siimple-box-padding;
-    margin: {
-        bottom: $siimple-default-margin-bottom;
-    }
-    
+    margin-bottom: $siimple-default-margin-bottom;
     //Box title
     &-title {
         display: block;
         font-weight: bold;
-        font-size: $siimple-box-title-font-size;
+        font-size: 40px;
         text-decoration: none;
         margin: {
-            top: $siimple-box-title-margin-top;
-            bottom: $siimple-box-title-margin-bottom;
+            top: 20px;
+            bottom: 10px;
         }
         &:last-child {
-            margin-bottom: $siimple-box-title-margin-top;
+            margin-bottom: 20px;
         }
     }
-
     //Box subtitle
     &-subtitle {
         display: block;
         font-weight: bold;
-        font-size: $siimple-box-subtitle-font-size;
+        font-size: 30px;
         text-decoration: none;
         margin: {
-            top: $siimple-box-subtitle-margin-top;
-            bottom: $siimple-box-subtitle-margin-bottom;
+            top: 10px;
+            bottom: 10px;
         }
         &:first-child {
-            margin-top: $siimple-box-title-margin-top;
+            margin-top: 20px;
         }
         &:last-child {
-            margin-bottom: $siimple-box-title-margin-top;
+            margin-bottom: 20px;
         }
     }
-
     //Subtitle after a title
     &-title + &-subtitle {
-        margin-top: $siimple-box-subtitle-title-margin;
+        margin-top: -12px;
     }
-
+    //Box detail
     &-detail {
         display: block;
-        margin-bottom: $siimple-box-detail-margin-bottom;
+        margin-bottom: 10px;
         &:first-child {
-            margin-top: $siimple-box-title-margin-top;
+            margin-top: 20px;
         }
         &:last-child {
-            margin-bottom: $siimple-box-title-margin-top;
+            margin-bottom: 20px;
         }
     }
-    
     //Box colors
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
@@ -90,13 +76,13 @@ $siimple-box-detail-margin-bottom: 10px;
             color: siimple-default-color($color, "over");
         }
     }
-
     //Legacy box colors
     //To be deprecated in future major release
     @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
-            background-color: siimple-color-base($color);
-            color: siimple-color-over($color);
+            background-color: siimple-legacy-color($color, "base");
+            color: siimple-legacy-color($color, "over");
         }
     }
 }
+
