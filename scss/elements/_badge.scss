@@ -8,45 +8,34 @@
 @import "../_variables.scss";
 @import "../_functions.scss";
 
-//Badge variables
-$siimple-badge-height: 19px;
-$siimple-badge-line-height: 19px;
-$siimple-badge-border-radius: 15px;
-$siimple-badge-font-size: 10px;
-$siimple-badge-padding-left: 6px;
-$siimple-badge-padding-right: 6px;
-$siimple-badge-margin-right: 1px;
-$siimple-badge-margin-bottom: 8px;
-
 //Badge class
 .siimple-badge {
     display: inline-block;
-    //height: $siimple-badge-height;
-    font-size: $siimple-badge-font-size;
+    //height: 19px;
+    font-size: 10px;
     font-weight: bold;
     text-decoration: none;
-    line-height: $siimple-badge-line-height;
-    border-radius: $siimple-badge-border-radius;
+    line-height: 19px;
+    border-radius: 15px;
     padding: {
-        left: $siimple-badge-padding-left;
-        right: $siimple-badge-padding-right;
+        left: 6px;
+        right: 6px;
     }
-    margin-right: $siimple-badge-margin-right;
-    //margin-bottom: $siimple-badge-margin-bottom;
-    
+    margin-right: 1px;
+    //margin-bottom: 8px;
+    //Badge colors    
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
             background-color: siimple-default-color($color);
             color: siimple-default-color($color, "over");
         }
     }
-
     //Legacy colors
     //To be deprecated in future major release
     @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
-            background-color: siimple-color-base($color);
-            color: siimple-color-over($color);
+            background-color: siimple-legacy-color($color, "base");
+            color: siimple-legacy-color($color, "over");
         }
     }
 }
