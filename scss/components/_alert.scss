@@ -8,22 +8,19 @@
 @import "../_variables.scss";
 @import "../_functions.scss";
 
+//Alert global variables
 $siimple-alert-padding-top: 15px;
 $siimple-alert-padding-bottom: 15px;
 $siimple-alert-padding-left: 15px;
 $siimple-alert-padding-right: 30px;
-$siimple-alert-margin-top: 0px;
-$siimple-alert-margin-bottom: $siimple-default-margin-bottom;
 
-$siimple-alert-title-margin: 5px;
-$siimple-alert-title-text-size: 19px;
-
+//Alert class
 .siimple-alert {
     display: block;
     width: calc(100% - #{$siimple-alert-padding-left} - #{$siimple-alert-padding-right});
     //color: $siimple-navy;
-    line-height: $siimple-default-text-line;
-    font-size: $siimple-default-text-size;
+    line-height: $siimple-default-line-height;
+    font-size: $siimple-default-font-size;
     //font-family: $siimple-default-text-font;
     position: relative;
     border-radius: $siimple-default-border-radius;
@@ -35,15 +32,13 @@ $siimple-alert-title-text-size: 19px;
         left: $siimple-alert-padding-left;
     }
     //margin-top: $siimple-alert-margin-top;
-    margin-bottom: $siimple-alert-margin-bottom;
-
+    margin-bottom: $siimple-default-margin-bottom;
     //Alert title
     &-title {
-        font-size: $siimple-alert-title-text-size;
+        font-size: 19px;
         font-weight: bold;
-        margin-bottom: $siimple-alert-title-margin;
+        margin-bottom: 5px;;
     }
-
     //Alert colors 
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
@@ -51,13 +46,12 @@ $siimple-alert-title-text-size: 19px;
             color: siimple-default-color($color, "dark");
         }
     }
-    
     //Legacy alert colors
     //To be deprecated in future major release
     @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
-            background-color: siimple-color-light($color);
-            color: siimple-color-dark($color);
+            background-color: siimple-legacy-color($color, "light");
+            color: siimple-legacy-color($color, "dark");
         }
     }
 }
