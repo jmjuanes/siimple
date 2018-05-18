@@ -1,0 +1,18 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ page.root }}assets/siimple.min.css">
+<link rel="stylesheet" href="{{ page.root }}assets/siimple-docs.css">
+<div class="siimple-navbar siimple-navbar--primary sd-navbar siimple--{{ site.size }}">
+    <a class="siimple-navbar-title">siimple</a>
+    <a class="siimple-navbar-subtitle" href="#">Documentation</a>
+    {% for social_id in site.data.social.all %}
+    {% assign social = site.data.social[social_id] %}
+    <a class="sd-navbar-social siimple--d-sm-none" style="background-image:url('{{ social.icon }}');" href="{{ social.url }}" target="_blank"></a>
+    {% endfor %}
+</div>
+<div>
+    {{ content }}
+</div>
+<div class="sd-footer siimple--{{ site.size }}">
+    Footer
+</div>
+
