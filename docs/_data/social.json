@@ -1,0 +1,12 @@
+{
+    "twitter": {
+        "url": "https://twitter.com/siimplecss",
+        "icon": "./assets/social/twitter.png"
+    },
+    "github": {
+        "url": "https://github.com/siimple",
+        "icon": "./assets/social/github.png"
+    },
+    "all": ["twitter", "github"]
+}
+
