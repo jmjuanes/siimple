@@ -1,0 +1,17 @@
+<div class="sd-navigation">
+    {% if include.prev %}
+        {% assign prev_data = site.data.categories[include.prev] %}
+        <a class="sd-navigation-prev" href="{{ prev_data.path }}">
+            <div class="sd-navigation-title">Previous</div>
+            <div class="sd-navigation-detail">{{ prev_data.name }}</div>
+        </a>
+    {% endif %}
+    {% if include.next %}
+        {% assign next_data = site.data.categories[include.next] %}
+        <a class="sd-navigation-next" href="{{ next_data.path }}">
+            <div class="sd-navigation-title">Next</div>
+            <div class="sd-navigation-detail">{{ next_data.name }}</div>
+        </a>
+    {% endif %}
+</div>
+
