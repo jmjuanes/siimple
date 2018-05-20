@@ -1,0 +1,54 @@
+---
+layout: "documentation"
+root: "../"
+group_id: "form"
+category_id: "form-switch"
+prev: "form-select"
+next: "form-textarea"
+---
+
+<div class="siimple-h2">Switch</div>
+<div class="siimple-paragraph">
+    You can style a checkbox like a switch. First create a <code class="siimple-code">div</code> element with a <code class="siimple-code">siimple-switch</code> class:
+</div>
+<pre class="siimple-pre">
+&lt;div class="siimple-switch"&gt;&lt;/div&gt;
+</pre>
+<div class="siimple-paragraph">
+    Then add a <code class="siimple-code">input</code> element inside your new switch <code class="siimple-code">div</code>. You must also assign an <code class="siimple-code">id</code> to the <code class="siimple-code">input</code> element.
+</div>
+<pre class="siimple-pre">
+&lt;div class="siimple-switch"&gt;
+    &lt;input type="text" id="mySwitch"&gt;
+&lt;/div&gt;
+</pre>
+<div class="siimple-paragraph">
+    Finally, add a <code class="siimple-code">label</code> bound to the previously <code class="siimple-code">input</code> and an empty <code class="siimple-code">div</code> element.
+</div>
+<pre class="siimple-pre">
+&lt;div class="siimple-switch"&gt;
+    &lt;input type="text" id="mySwitch"&gt;
+    &lt;label for="mySwitch"&gt;&lt;/label&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<div class="siimple-paragraph">
+    Final result:
+</div>
+<div class="sd-snippet-demo">
+    <label class="siimple-label">Your switch:</label>
+    <div class="siimple-switch">
+        <input type="checkbox" id="mySwitch" checked>
+        <label for="mySwitch"></label>
+        <div></div>
+    </div>
+</div>
+<pre class="sd-snippet-code">
+&lt;label class="siimple-label">Your switch:</label>
+&lt;div class="siimple-switch"&gt;
+    &lt;input type="checkbox" id="mySwitch" checked&gt;
+    &lt;label for="mySwitch"&gt;&lt;/label&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
