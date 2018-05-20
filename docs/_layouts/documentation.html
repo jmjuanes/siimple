@@ -1,0 +1,29 @@
+---
+layout: "default"
+---
+{% assign category = site.data.categories[page.category_id] %}
+{% assign group = site.data.groups[page.group_id] %}
+<title>{{ category.name }} | {{ site.title }}</title>
+{% include header.html title=group.name subtitle=group.description %}
+
+<div class="sd-main siimple--{{ site.size }}">
+    <div class="siimple-grid-row">
+        <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col-sm--12">
+            <div class="sd-menu">
+                <div class="siimple-menu-group">{{ group.name }}</div>
+                {% for category_id in group.categories %}
+                {% assign category = site.data.categories[category_id] %}
+                <a class="siimple-menu-item {% if category_id == page.category_id %}sd-menu--selected{% endif %}" href="{{ category.path }}">
+                    {{ category.name }}
+                </a>
+                {% endfor %}
+            </div>
+            <a class="sd-top">Back to top</a>
+        </div>
+        <div class="siimple-grid-col siimple-grid-col--9 siimple-grid-col-sm--12">
+            {{ content }}
+            {% include navigation.html next=page.next prev=page.prev %}
+        </div>
+    </div>
+</div>
+
