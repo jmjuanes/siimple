@@ -1,0 +1,110 @@
+{
+    "getting-started": {
+        "name": "Getting started",
+        "description": "An introduction to how to get started with <strong>siimple</strong>.",
+        "path": "getting-started/installation.html",
+        "categories": [
+            "installation",
+            "customize",
+            "class-names",
+            "theming"
+        ],
+        "icon": "./assets/images/rocket.png"
+    },
+    "helpers": {
+        "name": "Helpers",
+        "description": "Utility classes to modify the style of any element.",
+        "path": "helpers/breakpoints.html",
+        "categories": [
+            "breakpoints",
+            "display",
+            "float"
+        ],
+        "icon": "./assets/images/settings.png"
+    },
+    "typography": {
+        "name": "Typography",
+        "description": "Style your typograhic HTML elements, including headings, paragraph, etc.",
+        "path": "typography/blockquote.html",
+        "categories": [
+            "typography-blockquote",
+            "typography-code",
+            "typography-heading",
+            "typography-link",
+            "typography-paragraph",
+            "typography-small"
+        ],
+        "icon": "./assets/images/order.png"
+    },
+    "elements": {
+        "name": "Elements",
+        "description": "Basic elements that only require a single CSS class to go!",
+        "path": "elements/btn.html",
+        "categories": [
+            "elements-btn",
+            "elements-close",
+            "elements-rule",
+            "elements-spinner",
+            "elements-tag",
+            "elements-tip"
+        ],
+        "icon": "./assets/images/product.png"
+    },
+    "components": {
+        "name": "Components",
+        "description": "Reusable advanced elements, including alerts, lists and more!",
+        "path": "components/alert.html",
+        "categories": [
+            "components-alert",
+            "components-breadcrumb",
+            "components-card",
+            "components-list",
+            "components-menu",
+            "components-table",
+            "components-tabs"
+        ],
+        "icon": "./assets/images/albums.png"
+    },
+    "grid": {
+        "name": "Grid",
+        "description": "Use our responsive grid system with twelve columns.",
+        "path": "grid/overview.html",
+        "categories": [
+            "grid-overview",
+            "grid-tutorial",
+            "grid-sizes"
+        ],
+        "icon": "./assets/images/data.png"
+    },
+    "form": {
+        "name": "Form",
+        "description": "The guide to style your form elements using <strong>siimple</strong>.",
+        "path": "form/form.html",
+        "categories": [
+            "form-form",
+            "form-field",
+            "form-checkbox",
+            "form-input",
+            "form-label",
+            "form-radio",
+            "form-select",
+            "form-switch",
+            "form-textarea"
+        ],
+        "icon": "./assets/images/checkbox.png"
+    },
+    "layout": {
+        "name": "Layout",
+        "description": "A collection of CSS classes for laying your project.",
+        "path": "layout/box.html",
+        "categories": [
+            "layout-box",
+            "layout-content",
+            "layout-footer",
+            "layout-jumbotron",
+            "layout-navbar"
+        ],
+        "icon": "./assets/images/layers.png"
+    },
+    "all": ["getting-started", "helpers", "typography", "elements", "components", "layout", "form", "grid"]
+}
