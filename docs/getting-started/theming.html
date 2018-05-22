@@ -1,0 +1,75 @@
+---
+layout: "documentation"
+root: "../"
+group_id: "getting-started"
+category_id: "theming"
+prev: "class-names"
+---
+
+<div class="siimple-h2">Theming</div>
+<div class="siimple-h5">Font</div>
+<div class="siimple-paragraph">
+    <b>siimple</b> uses <a class="siimple-link" href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserrat</a> as
+    the default font family, imported automatically from <b>Google Fonts</b>. If you want to use your own font, you can set that in your body tag. Here is an example:
+</div>
+<pre class="siimple-pre">
+body {
+    font-family: Verdana, Arial, 'sans-serif';
+}
+</pre>
+<div class="siimple-paragraph">
+    All the elements on your page will inherit this <code class="siimple-code">font-family</code> and will overwrite the Montserrat font set by default by <b>siimple</b>.
+</div>
+
+<div class="siimple-h5">Colors</div>
+<div class="siimple-paragraph">
+    All colors in <strong>siimple</strong> are available as a SASS variables and a SASS map in <code class="siimple-code">scss/_variables.scss</code>. 
+</div>
+<div class="sd-colors-wrapper">
+    <div class="sd-colors sd-colors--primary">primary</div>
+    <div class="sd-colors sd-colors--success">success</div>
+    <div class="sd-colors sd-colors--warning">warning</div>
+    <div class="sd-colors sd-colors--error">error</div>
+</div>
+<div class="sd-colors-wrapper">
+    <div class="sd-colors sd-colors--dark">dark</div>
+    <div class="sd-colors sd-colors--light">light</div>
+</div>
+<div class="siimple-paragraph">
+    You can these colors in your SASS styles using directly the SASS variable. You can also use our function <code class="siimple-code">siimple-default-color</code> defined in <code class="siimple-code">scss/_functions.scss</code> to import the color from the SASS map:
+</div>
+<pre class="siimple-pre">
+//Import colors
+@import "siimple/scss/_variables.scss";
+@import "siimple/scss/_functions.scss";
+
+//Using the color variable
+.button {
+    background-color: $siimple-default-primary;
+}
+
+//Using the function
+.button {
+    background-color: siimple-default-color("success");
+}
+</pre>
+
+<div class="siimple-h5">Legacy colors</div>
+<div class="siimple-tip siimple-tip--warning siimple-tip--exclamation">
+    The colors API defined in the latest version of <strong>siimple</strong> are still supported, but keep in mind that <strong>will be removed in a future major relase</strong>. Consider upgrading to the new colors API defined in <code class="siimple-code">v3.1.0</code>.
+</div>
+<div class="sd-colors-wrapper">
+    <div class="sd-colors sd-colors-legacy--navy">navy</div>
+    <div class="sd-colors sd-colors-legacy--green">green</div>
+    <div class="sd-colors sd-colors-legacy--teal">teal</div>
+    <div class="sd-colors sd-colors-legacy--blue">blue</div>
+    <div class="sd-colors sd-colors-legacy--purple">purple</div>
+    <div class="sd-colors sd-colors-legacy--pink">pink</div>
+    <div class="sd-colors sd-colors-legacy--red">red</div>
+    <div class="sd-colors sd-colors-legacy--orange">orange</div>
+    <div class="sd-colors sd-colors-legacy--yellow">yellow</div>
+    <div class="sd-colors sd-colors-legacy--grey">grey</div>
+</div>
+
+
+
