@@ -1,0 +1,58 @@
+.sd-group {
+    display: block;
+    //border-bottom: 1px solid siimple-default-color("light");
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: siimple-default-color("light", "light");
+    &-header {
+        display: block;
+        margin-bottom: 40px;
+        &-title {
+            font-size: 30px;
+            //font-weight: bold;
+            color: siimple-default-color("dark");
+        }
+    }
+    &-item {
+        display: inline-block;
+        width: calc(33% - 30px);
+        float: left;
+        position: relative;
+        height: 140px;
+        padding: 15px;
+        //margin: 10px;
+        text-decoration: none !important;
+        color: siimple-default-color("dark");
+        //background-color: siimple-default-color("light", "light");
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        &-logo {
+            display: block;
+            height: 50px;
+            margin-bottom: 10px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 45px 45px;
+        }
+        &-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: siimple-default-color("dark");
+            margin-bottom: 5px;
+        }
+        &-description {
+            font-size: 15px;
+            color: siimple-default-color("dark", "light");
+        }
+        &:hover {
+            cursor: pointer;
+            background-color: $siimple-default-white;
+        }
+    }
+    &::after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+}
+
