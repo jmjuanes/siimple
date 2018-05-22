@@ -1,0 +1,225 @@
+{
+    "elements-btn": {
+        "name": "Btn",
+        "description": "",
+        "path": "btn.html",
+        "group": "elements"
+    },
+    "elements-close": {
+        "name": "Close",
+        "description": "",
+        "path": "close.html",
+        "group": "elements"
+    },
+    "elements-rule": {
+        "name": "Rule",
+        "description": "",
+        "path": "rule.html",
+        "group": "elements"
+    },
+    "elements-spinner": {
+        "name": "Spinner",
+        "description": "",
+        "path": "spinner.html",
+        "group": "elements"
+    },
+    "elements-tag": {
+        "name": "Tag",
+        "description": "",
+        "path": "tag.html",
+        "group": "elements"
+    },
+    "elements-tip": {
+        "name": "Tip",
+        "description": "",
+        "path": "tip.html",
+        "group": "elements"
+    },
+    "components-alert": {
+        "name": "Alert",
+        "description": "",
+        "path": "alert.html",
+        "group": "components"
+    },
+    "components-breadcrumb": {
+        "name": "Breadcrumb",
+        "description": "",
+        "path": "breadcrumb.html",
+        "group": "components"
+    },
+    "components-card": {
+        "name": "Card",
+        "description": "",
+        "path": "card.html"
+    },
+    "components-list": {
+        "name": "List",
+        "description": "",
+        "path": "list.html"
+    },
+    "components-menu": {
+        "name": "Menu",
+        "description": "",
+        "path": "menu.html"
+    },
+    "components-table": {
+        "name": "Table",
+        "description": "",
+        "path": "table.html"
+    },
+    "components-tabs": {
+        "name": "Tabs",
+        "description": "",
+        "path": "tabs.html"
+    },
+    "layout-box": {
+        "name": "Box",
+        "description": "",
+        "path": "box.html"
+    },
+    "layout-content": {
+        "name": "Content",
+        "description": "",
+        "path": "content.html"
+    },
+    "layout-footer": {
+        "name": "Footer",
+        "description": "",
+        "path": "footer.html"
+    },
+    "layout-jumbotron": {
+        "name": "Jumbotron",
+        "description": "",
+        "path": "jumbotron.html"
+    },
+    "layout-navbar": {
+        "name": "Navbar",
+        "description": "",
+        "path": "navbar.html"
+    },
+    "grid-overview": {
+        "name": "Grid overview",
+        "description": "",
+        "path": "overview.html"
+    },
+    "grid-tutorial": {
+        "name": "Building a grid",
+        "description": "",
+        "path": "tutorial.html"
+    },
+    "grid-sizes": {
+        "name": "Responsive grid",
+        "description": "",
+        "path": "sizes.html"
+    },
+    "form-form": {
+        "name": "Form",
+        "description": "",
+        "path": "form.html"
+    },
+    "form-field": {
+        "name": "Form field",
+        "description": "",
+        "path": "field.html"
+    },
+    "form-checkbox": {
+        "name": "Checkbox",
+        "description": "",
+        "path": "checkbox.html"
+    },
+    "form-input": {
+        "name": "Input",
+        "description": "",
+        "path": "input.html"
+    },
+    "form-label": {
+        "name": "Label",
+        "description": "",
+        "path": "label.html"
+    },
+    "form-radio": {
+        "name": "Radio button",
+        "description": "",
+        "path": "radio.html"
+    },
+    "form-select": {
+        "name": "Select",
+        "description": "",
+        "path": "select.html"
+    },
+    "form-switch": {
+        "name": "Switch",
+        "description": "",
+        "path": "switch.html"
+    },
+    "form-textarea": {
+        "name": "Textarea",
+        "description": "",
+        "path": "textarea.html"
+    },
+    "typography-blockquote": {
+        "name": "Blockquote",
+        "description": "",
+        "path": "blockquote.html"
+    },
+    "typography-code": {
+        "name": "Code",
+        "description": "",
+        "path": "code.html"
+    },
+    "typography-heading": {
+        "name": "Headings",
+        "description": "",
+        "path": "heading.html"
+    },
+    "typography-link": {
+        "name": "Link",
+        "description": "",
+        "path": "link.html"
+    },
+    "typography-paragraph": {
+        "name": "Paragraph",
+        "description": "",
+        "path": "paragraph.html"
+    },
+    "typography-small": {
+        "name": "Small",
+        "description": "",
+        "path": "small.html"
+    },
+    "installation": {
+        "name": "Installation",
+        "description": "",
+        "path": "installation.html"
+    },
+    "customize": {
+        "name": "Customize",
+        "description": "",
+        "path": "customize.html"
+    },
+    "class-names": {
+        "name": "Class Names",
+        "description": "",
+        "path": "class-names.html"
+    },
+    "theming": {
+        "name": "Theming",
+        "description": "",
+        "path": "theming.html"
+    },
+    "breakpoints": {
+        "name": "Breakpoints",
+        "description": "",
+        "path": "breakpoints.html"
+    },
+    "display": {
+        "name": "Display",
+        "description": "",
+        "path": "display.html"
+    },
+    "float": {
+        "name": "Float",
+        "description": "",
+        "path": "float.html"
+    }
+}
