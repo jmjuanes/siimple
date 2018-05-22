@@ -40,12 +40,11 @@
 }
 
 //Display helpers
-.siimple--d {
+.siimple--display {
     //Base display
     @include siimple-helpers-display();
-
     //Responsive display 
-    @each $name,$size in $siimple-default-sizes {
+    @each $name,$size in $siimple-default-breakpoint {
         @media (max-width: $size) {
             &-#{$name} {
                 @include siimple-helpers-display();
