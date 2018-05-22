@@ -1,0 +1,26 @@
+.sd-navbar {
+    //background-color: $siimple-default-white !important;
+    //border-bottom: 1px solid rgba($siimple-default-white, 0.1);
+    &-follow {
+        background-color: rgba($siimple-default-white, 0.9);
+        color: $siimple-default-primary;
+    }
+    &-social {
+        display: inline-block;
+        float: right;
+        height: 34px;
+        width: 34px;
+        border-radius: 5px;
+        background-color: rgba(siimple-default-color("primary", "dark"), 0.5);
+        cursor: pointer;
+        background-position: center center;
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+        transition: background-color 0.3s;
+        margin-left: 8px;
+        &:hover {
+            background-color: rgba(siimple-default-color("primary", "dark"), 0.8);
+        }
+    }
+}
+
