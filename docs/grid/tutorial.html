@@ -1,0 +1,65 @@
+---
+layout: "documentation"
+root: "../"
+group_id: "grid"
+category_id: "grid-tutorial"
+next: "grid-sizes"
+prev: "grid-overview"
+---
+
+<div class="siimple-h2">Building a grid</div>
+<div class="siimple-paragraph">
+    Create a new div element and add the <code class="siimple-code">siimple-grid</code> class using the class attribute.
+</div>
+<pre class="siimple-pre">
+&lt;div class="siimple-grid"&gt;&lt;/div&gt;
+</pre>
+<div class="siimple-paragraph">
+    For each row of your grid, you must add a new div element with the <code class="siimple-code">siimple-grid-row</code> class.
+</div>
+<pre class="siimple-pre">
+&lt;div class="siimple-grid"&gt;
+    &lt;div class="siimple-grid-row"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<div class="siimple-paragraph">
+    For each cell, add a div element with the class <code class="siimple-code">siimple-grid-col</code> inside the row div. Also, you must specify the cell size adding a <code class="siimple-code">siimple-grid-col--COLUMN</code>, where <code class="siimple-code">COLUMN</code> is an integer from 1 to 12 that specifies the column size.
+</div>
+<div class="siimple-tip siimple-tip--warning siimple-tip--exclamation">
+    Remember that the column sizes <b>must add up to twelve for a row</b>.
+</div>
+<div class="siimple-paragraph">
+    For example, if you want a grid with two columns just add two <code class="siimple-code">div</code> elements with the class <code class="siimple-code">siimple-grid-col--6</code>:
+</div>
+<pre class="siimple-pre">
+&lt;div class="siimple-grid"&gt;
+    &lt;div class="siimple-grid-row"&gt;
+        &lt;div class="siimple-grid-col siimple-grid-col--6"&gt;Cell 1&lt;/div&gt;
+        &lt;div class="siimple-grid-col siimple-grid-col--6"&gt;Cell 2&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<div class="siimple-paragraph">
+    Now your grid is ready to use!
+</div>
+<div class="sd-snippet-demo">
+    <div class="siimple-grid">
+        <div class="siimple-grid-row">
+            <div class="siimple-grid-col siimple-grid-col--6">
+                <div class="demo-grid">Cell 1</div>
+            </div>
+            <div class="siimple-grid-col siimple-grid-col--6">
+                <div class="demo-grid">Cell 2</div>
+            </div>
+        </div>
+    </div>
+</div>
+<pre class="sd-snippet-code">
+&lt;div class="siimple-grid"&gt;
+    &lt;div class="siimple-grid-row"&gt;
+        &lt;div class="siimple-grid-col siimple-grid-col--6"&gt;Cell 1&lt;/div&gt;
+        &lt;div class="siimple-grid-col siimple-grid-col--6"&gt;Cell 2&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
