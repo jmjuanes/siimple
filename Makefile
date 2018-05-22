@@ -1,4 +1,4 @@
-.PHONY: build clean setup
+.PHONY: build clean setup docs
 
 # Node binaries folder
 NODE_BIN=./node_modules/.bin
@@ -35,4 +35,13 @@ clean:
 setup:
 	@set -e
 	npm install 
+
+# Build docs
+docs: 
+	@set -e
+	cd ./docs && jekyll build
+	@# Build assets
+	mkdir -p ./docs/_site/assets
+	cp ./dist/siimple.min.css ./docs/_site/assets/
+	${NODE_BIN}/node-sass ./docs/siimple-docs.scss ./docs/_site/assets/siimple-docs.css
 
