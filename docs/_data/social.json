@@ -4,7 +4,7 @@
         "icon": "assets/social/twitter.png"
     },
     "github": {
-        "url": "https://github.com/siimple",
+        "url": "https://github.com/siimple/siimple",
         "icon": "assets/social/github.png"
     },
     "all": ["twitter", "github"]
