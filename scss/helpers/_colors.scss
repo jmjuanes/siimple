@@ -1,0 +1,27 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple/siimple
+// Website:    https://www.siimple.xyz
+//
+@import "../_variables.scss";
+
+//Colors helpers
+.siimple {
+    @each $color in $siimple-default-colors {
+        &--color-#{$color} {
+            color: siimple-default-color($color, "base");
+        }
+        &--bg-#{$color} {
+            background-color: siimple-default-color($color, "base");
+        }
+    }
+    &--color-white {
+        color: $siimple-default-white;
+    }
+    &--bg-white {
+        background-color: $siimple-default-white;
+    }
+}
+
