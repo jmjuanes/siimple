@@ -19,7 +19,7 @@ $siimple-pre-padding: 15px;
     color: siimple-default-color("dark");
     line-height: 22px;
     font-size: 14px;
-    background-color: siimple-default-color("light");
+    background-color: siimple-default-color("light", "light");
     border-radius: $siimple-default-border-radius;
     padding: $siimple-pre-padding;
     margin-bottom: $siimple-default-margin-bottom;
