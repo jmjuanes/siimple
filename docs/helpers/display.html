@@ -4,14 +4,25 @@ root: "../"
 group_id: "helpers"
 category_id: "display"
 next: "float"
-prev: "breakpoints"
+prev: "colors"
 ---
 
 <div class="siimple-h2">Display</div>
 <div class="siimple-paragraph">
-    Use these classes to change the display value of an element.
+    Use these classes to change the display value of an element. Available display modifiers: 
 </div>
-<style>
+<ul>
+    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-none</code></li>
+    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-block</code></li>
+    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-inline</code></li>
+    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-inline-block</code></li>
+    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-table</code></li>
+    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-table-cell</code></li>
+    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-table-row</code></li>
+    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-flex</code></li>
+    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-inline-flex</code></li>
+</ul>
+ <style>
 .example {
     padding: 5px;
     color: #ffffff;
@@ -36,21 +47,8 @@ prev: "breakpoints"
     Display block
 &lt;/div&gt;
 </pre>
-<div class="siimple-paragraph">
-    All supported display modifiers:
-</div>
-<ul>
-    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-none</code></li>
-    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-block</code></li>
-    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-inline</code></li>
-    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-inline-block</code></li>
-    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-table</code></li>
-    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-table-cell</code></li>
-    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-table-row</code></li>
-    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-flex</code></li>
-    <li style="margin-bottom:5px;"><code class="siimple-code">siimple--display-inline-flex</code></li>
-</ul>
- 
+
+<!-- 
 <div class="siimple-h5">Responsive displays</div>
 <div class="siimple-paragraph">
     Responsive display classes are named using the format <code class="siimple-code">siimple--display-{breakpoint}-{property}</code>. You can use these classes to change the display property when the screen width <strong>is smaller than or equal</strong> to the defined breakpoint. For example:  
@@ -62,4 +60,5 @@ prev: "breakpoints"
     <li style="margin-bottom:5px;line-height:22px;"><code class="siimple-code">siimple--display-lg-none</code> hides the element when the screen width is smaller than or equal to <code class="siimple-code">960px</code></li>
     <li style="margin-bottom:5px;line-height:22px;"><code class="siimple-code">siimple--display-xl-none</code> hides the element when the screen width is smaller than or equal to <code class="siimple-code">1280px</code></li>
 </ul>
+-->
 
