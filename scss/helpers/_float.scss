@@ -21,12 +21,11 @@
     }
 }
 //Float helpers
-.siimple- {
+.siimple--float {
     //Default float
     @include siimple-helpers-float();
-
     //Responsive float
-    @each $name, $size in $siimple-default-sizes {
+    @each $name, $size in $siimple-default-breakpoint {
         @media (max-width: $size) {
             &-#{$name} {
                 @include siimple-helpers-float()

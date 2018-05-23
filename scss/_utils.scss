@@ -25,12 +25,41 @@
 }
 
 //Fluid content
-@mixin siimple-fluid() {
+@mixin siimple-fluid () {
     width: calc(100% - #{2 * $siimple-default-breakpoint-gap});
-    padding: {
-        left: $siimple-default-breakpoint-gap;
-        right: $siimple-default-breakpoint-gap;
+    padding-left: $siimple-default-breakpoint-gap;
+    padding-right: $siimple-default-breakpoint-gap;
+}
+
+//Breakpoint mixin
+@mixin siimple-breakpoint ($size: 0px) {
+    max-width: $size;
+    padding-left: calc(50% - #{$size} / 2);
+    padding-right: calc(50% - #{$size} / 2);
+    @media screen and (max-width: $size) {
+        @include siimple-fluid();
     }
 }
 
+//Sizing mixin
+@mixin siimple-sizing () {
+    &--extra-small {
+        @include siimple-breakpoint($siimple-default-breakpoint-extra-small);
+    }
+    &--small {
+        @include siimple-breakpoint($siimple-default-breakpoint-small);
+    }
+    &--medium {
+        @include siimple-breakpoint($siimple-default-breakpoint-medium);
+    }
+    &--large {
+        @include siimple-breakpoint($siimple-default-breakpoint-large);
+    }
+    &--extra-large {
+        @include siimple-breakpoint($siimple-default-breakpoint-extra-large);
+    }
+    &--fluid {
+        @include siimple-fluid();
+    }
+}
 

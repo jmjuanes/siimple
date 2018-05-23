@@ -27,6 +27,10 @@ $siimple-tag-padding: 6px;
     }
     margin-right: 1px;
     //margin-bottom: 8px;
+    //Rounded tag 
+    &--rounded {
+        border-radius: 15px;        
+    }
     //Tag colors
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {

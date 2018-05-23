@@ -6,21 +6,18 @@
 // Website:    https://www.siimple.xyz
 //
 
+//@import "../_variables.scss";
+@import "../_utils.scss";
+
 // WARNING: 
-// ALL MIXINS OF THIS FILE HAVE BEEN DEPRECATED AND WILL BE REMOVED IN A FUTURE MAJOR RELEASE
-// PLEASE USE THE NEW MIXINS AVAILABLE IN _utils.scss AND THE BREAKPOINT VARIABLES DEFINED IN _variables.scss
+// THE VARIABLES AND MIXINS OF THIS FILE HAVE BEEN DEPRECATED AND WILL BE REMOVED IN A FUTURE MAJOR RELEASE
+// PLEASE USE THE NEW BREAKPOINT VARIABLES DEFINED IN _variables.scss AND MIXINS IN _utils.scss
 
 //Fluid variables
 $siimple-size-fluid-width: 100%;
 $siimple-size-fluid-offset: 20px;
-
-//Small variables
 $siimple-size-small-width: 768px;
-
-//Medium variables
 $siimple-size-medium-width: 960px;
-
-//Large variables
 $siimple-size-large-width: 1180px;
 
 //Fluid size mixin
@@ -78,3 +75,4 @@ $siimple-size-large-width: 1180px;
         @include siimple-size-fluid();
     }
 }
+

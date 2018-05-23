@@ -16,10 +16,8 @@
 @import "./typography/_small.scss";
 
 //Import elements
-@import "./elements/_badge.scss";
 @import "./elements/_btn.scss";
 @import "./elements/_close.scss";
-//@import "./elements/_progress.scss";
 @import "./elements/_rule.scss";
 @import "./elements/_spinner.scss";
 @import "./elements/_tag.scss";
@@ -56,7 +54,7 @@
 @import "./grid/_grid.scss";
 
 //Import helpers
-@import "./helpers/_breakpoints.scss";
+@import "./helpers/_colors.scss";
 @import "./helpers/_display.scss";
 @import "./helpers/_float.scss";
 @import "./helpers/_line-height.scss";

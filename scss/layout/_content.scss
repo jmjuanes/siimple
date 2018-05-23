@@ -6,15 +6,14 @@
 // Website:    https://www.siimple.xyz
 //
 @import "../_variables.scss";
-@import "./size.scss";
+@import "../_utils.scss";
 
 //Content class
 .siimple-content {
     display: block;
     padding-top: 30px;
     padding-bottom: 30px;
-    //Legacy Content sizes
-    //To be deprecated in future major release
-    @include siimple-size();
+    //Content sizes
+    @include siimple-sizing();
 }
 
