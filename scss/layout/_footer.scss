@@ -7,16 +7,15 @@
 //
 @import "../_variables.scss";
 @import "../_functions.scss";
-@import "./size.scss";
+@import "../_utils.scss";
 
 //Footer class
 .siimple-footer {
     display: block;
     padding-top: 50px;
     padding-bottom: 80px;
-    //Legacy footer sizes
-    //To be deprected in future major release
-    @include siimple-size();
+    //Footer sizes
+    @include siimple-sizing();
     //Footer colors
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {

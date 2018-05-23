@@ -7,7 +7,7 @@
 //
 @import "../_variables.scss";
 @import "../_functions.scss";
-@import "./size.scss";
+@import "../_utils.scss";
 
 //Jumbotron class
 .siimple-jumbotron {
@@ -15,9 +15,7 @@
     //font-family: $siimple-default-text-font;
     padding-top: 120px;
     padding-bottom: 120px;
-    //Legacy jumbotron sizes
-    //To be deprecated in a fueture major release
-    @include siimple-size();
+    @include siimple-sizing();
     //Jumbotron title
     &-title {
         display: block;
