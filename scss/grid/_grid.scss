@@ -26,7 +26,6 @@ $siimple-grid-column-sizes: $siimple-default-grid;
         left: $siimple-grid-margin-left;
         right: $siimple-grid-margin-right;
     }
-
     //Grid row
     &-row {
         display: inline-block;
@@ -42,7 +41,6 @@ $siimple-grid-column-sizes: $siimple-default-grid;
             line-height: 0;
         }
     }
-
     //Grid column
     &-col {
         display: inline-block;
@@ -53,7 +51,6 @@ $siimple-grid-column-sizes: $siimple-default-grid;
         //    right: $siimple-grid-column-margin;
         //}
     }
-
     //Grid default column sizes
     @each $grid-name, $grid-width in $siimple-grid-column-sizes {
         &-col--#{$grid-name} {
@@ -61,9 +58,8 @@ $siimple-grid-column-sizes: $siimple-default-grid;
             //width: calc(#{$grid-width} - 2 * #{$siimple-grid-column-margin});
         }
     }
-
-    //Grid columns for each screen size
-    @each $grid-breakpoint, $grid-screen in $siimple-default-sizes {
+    //Grid columns for each breakpoint
+    @each $grid-breakpoint, $grid-screen in $siimple-default-breakpoint {
         @media (max-width: $grid-screen) {
             @each $grid-name, $grid-width in $siimple-grid-column-sizes {
                 &-col-#{$grid-breakpoint}--#{$grid-name} {
