@@ -221,5 +221,20 @@
         "name": "Float",
         "description": "",
         "path": "float.html"
+    },
+    "colors": {
+        "name": "Colors",
+        "description": "",
+        "path": "colors.html"
+    },
+    "sizing": {
+        "name": "Sizing",
+        "description": "",
+        "path": "sizing.html"
+    },
+    "text": {
+        "name": "Text helpers",
+        "description": "",
+        "path": "text.html"
     }
 }
