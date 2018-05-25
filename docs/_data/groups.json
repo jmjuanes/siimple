@@ -14,11 +14,13 @@
     "helpers": {
         "name": "Helpers",
         "description": "Utility classes to modify the style of any element.",
-        "path": "helpers/breakpoints.html",
+        "path": "helpers/colors.html",
         "categories": [
-            "breakpoints",
+            "colors",
             "display",
-            "float"
+            "float",
+            "sizing",
+            "text"
         ],
         "icon": "./assets/images/settings.png"
     },
