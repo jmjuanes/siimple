@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ page.root }}assets/siimple-docs.css">
 <div class="siimple-navbar siimple-navbar--primary sd-navbar siimple-navbar--{{ site.size }}">
     <a class="siimple-navbar-title" href="{{ page.root }}index.html">siimple</a>
-    <a class="siimple-navbar-subtitle" href="#">Documentation</a>
+    <a class="siimple-navbar-subtitle">v{{ site.version }}</a>
     {% for social_id in site.data.social.all %}
     {% assign social = site.data.social[social_id] %}
     <a class="sd-navbar-social siimple--d-sm-none" style="background-image:url('{{ page.root }}{{ social.icon }}');" href="{{ social.url }}" target="_blank"></a>
