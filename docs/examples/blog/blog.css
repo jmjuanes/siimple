@@ -1,0 +1,30 @@
+.blog-title {
+    font-weight: bold;
+    height: 34px;
+    line-height: 34px;
+    font-size: 22px;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.3s;
+}
+.blog-title:hover {
+    opacity: 1.0;
+}
+.blog-featured {
+    width: calc(100% - 60px);
+    padding: 30px;
+}
+.blog-featured-more {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.blog-featured-more:hover {
+    text-decoration: underline;
+}
+.blog-content {
+    margin-top: 30px;
+}
+.blog-footer {
+    border-top: 1px solid #cbd8e6;
+}
