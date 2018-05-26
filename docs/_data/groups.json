@@ -98,8 +98,9 @@
     "layout": {
         "name": "Layout",
         "description": "A collection of CSS classes for laying your project.",
-        "path": "layout/box.html",
+        "path": "layout/overview.html",
         "categories": [
+            "layout-overview",
             "layout-box",
             "layout-content",
             "layout-footer",
