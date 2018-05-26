@@ -72,6 +72,11 @@
         "description": "",
         "path": "tabs.html"
     },
+    "layout-overview": {
+        "name": "Overview",
+        "description": "",
+        "path": "overview.html"
+    },
     "layout-box": {
         "name": "Box",
         "description": "",
