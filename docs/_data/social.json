@@ -1,9 +1,11 @@
 {
     "twitter": {
+        "name": "Follow @siimplecss in Twitter",
         "url": "https://twitter.com/siimplecss",
         "icon": "assets/social/twitter.png"
     },
     "github": {
+        "name": "Our repository in GitHub",
         "url": "https://github.com/siimple/siimple",
         "icon": "assets/social/github.png"
     },
