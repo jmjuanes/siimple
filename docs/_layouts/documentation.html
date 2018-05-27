@@ -23,7 +23,10 @@ layout: "default"
         <div class="siimple-grid-col siimple-grid-col--9 siimple-grid-col-sm--12">
             {{ content }}
             {% include navigation.html next=page.next prev=page.prev %}
-            {% include typo.html %}
+            <div class="sd-typo" align="center">
+                Found a mistake or want to help improve this documentation?<br> 
+                <a href="{{ site.bugs_url }}" class="sd-typo-link" target="_blank">Suggest changes on GitHub</a>
+            </div> 
         </div>
     </div>
 </div>
