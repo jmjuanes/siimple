@@ -5,15 +5,15 @@
     color: siimple-default-color("dark", "light");
     font-size: 14px;
     line-height: $siimple-default-line-height;
-}
-.sd-typo-link {
-    color: $siimple-default-color;
-    //text-decoration: none;
-    font-weight: bold;
-    opacity: 0.9;
-    transition: all 0.3s;
-}
-.sd-typo-link:hover {
-    opacity: 1.0;
+    &-link {
+        color: $siimple-default-color;
+        //text-decoration: none;
+        font-weight: bold;
+        opacity: 0.9;
+        transition: all 0.3s;
+        &:hover {
+            opacity: 1.0;
+        }
+    }
 }
 
