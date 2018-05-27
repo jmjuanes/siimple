@@ -76,3 +76,22 @@
         padding: 15px;
     }
 }
+.sd-typo {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: siimple-default-color("dark", "light");
+    font-size: 14px;
+    line-height: $siimple-default-line-height;
+    &-link {
+        color: $siimple-default-color;
+        //text-decoration: none;
+        font-weight: bold;
+        opacity: 0.9;
+        transition: all 0.3s;
+        &:hover {
+            opacity: 1.0;
+        }
+    }
+}
+
