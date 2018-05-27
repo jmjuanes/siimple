@@ -1,0 +1,22 @@
+{
+    "blog": {
+        "name": "Blog",
+        "description": "Micro blog example with a header, a box description and two columns content.",
+        "path": "examples/blog"
+    },
+    "features": {
+        "name": "Features",
+        "description": "A simple features page with a navbar, jumbotron, three features columns and a footer.",
+        "path": "examples/features"
+    },
+    "dashboard": {
+        "name": "Dashboard",
+        "description": "An administration panel with a sidebar and a navigation bar.",
+        "path": "examples/dashboard"
+    },
+    "all": [
+        "features",
+        "blog",
+        "dashboard"
+    ]
+}
