@@ -16,13 +16,25 @@ root: "./"
     {% for group_id in site.data.groups.all %}
         {% assign group = site.data.groups[group_id] %}
         <a class="sd-group-item" align="center" href="./{{ group.path }}">
-            <div class="sd-group-item-logo" style="background-image: url('{{ group.icon }}');"></div>
+            <div class="sd-group-item-logo" style="background-image:url('{{ group.icon }}');"></div>
             <div class="sd-group-item-title">{{ group.name }}</div>
             <div class="sd-group-item-description">{{ group.description }}</div>
         </a>
     {% endfor %}
 </div>
-<div class="siimple-content siimple-content--{{ site.size }}">
-    Examples section
+<div class="sd-examples siimple-content--{{ site.size }}">
+    <div class="sd-examples-header" align="center">
+        <div class="sd-examples-header-title">Try <strong>siimple</strong></div>
+    </div>
+    {% for example_id in site.data.examples.all %}
+        {% assign example = site.data.examples[example_id] %}
+        <a class="sd-examples-item" href="./{{ example.path }}/index.html" target="_blank">
+            <div class="sd-examples-item-image" style="background-image:url('./{{ example.path }}/thumbnail.jpg');"></div>
+            <div class="sd-examples-item-title">{{ example.name }}</div>
+            <div class="sd-examples-item-description">
+                {{ example.description }}
+            </div>
+        </a>
+    {% endfor %}
 </div>
 
