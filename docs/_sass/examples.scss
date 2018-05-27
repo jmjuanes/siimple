@@ -9,6 +9,11 @@
             font-size: 30px;
             color: siimple-default-color("dark");
         }
+        &-description {
+            font-size: 18px;
+            color: siimple-default-color("dark", "light");
+            line-height: 28px;
+        }
     }
     &-item {
         text-decoration: none !important;
