@@ -1,0 +1,43 @@
+.sd-examples {
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    &-header {
+        padding-bottom: 40px;
+        &-title {
+            font-size: 30px;
+            color: siimple-default-color("dark");
+        }
+    }
+    &-item {
+        text-decoration: none !important;
+        display: inline-block;
+        max-width: calc(315px - 20px);
+        padding-bottom: 15px;
+        margin: 10px;
+        &-image {
+            display: block;
+            width: 295px;
+            height: 169px;
+            background-repeat: no-repeat;
+            background-size: 295px 169px;
+            background-position: center center;
+        }
+        &-title {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 24px;
+            color: siimple-default-color("dark");
+            margin-top: 10px;
+            margin-bottom: 2px;
+        }
+        &-description {
+            display: block;
+            text-decoration: none;
+            color: siimple-default-color("dark", "light");
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}
