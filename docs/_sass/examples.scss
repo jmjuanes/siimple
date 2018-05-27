@@ -2,6 +2,7 @@
     display: block;
     padding-top: 50px;
     padding-bottom: 50px;
+    vertical-align: top;
     &-header {
         padding-bottom: 40px;
         &-title {
@@ -12,8 +13,10 @@
     &-item {
         text-decoration: none !important;
         display: inline-block;
+        vertical-align: top;
         max-width: calc(315px - 20px);
-        padding-bottom: 15px;
+        height: 300px;
+        //padding-bottom: 15px;
         margin: 10px;
         &-image {
             display: block;
