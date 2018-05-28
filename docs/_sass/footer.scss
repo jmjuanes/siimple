@@ -1,7 +1,23 @@
 .sd-footer {
     border-top: 1px solid siimple-default-color("light", "light");
-    padding-top: 40px;
-    padding-bottom: 20px;
+    //padding-top: 40px;
+    padding-bottom: 120px;
     margin-top: 20px;
+    //font-size: 13px;
+    color: siimple-default-color("dark", "light");
+    &-credits {
+        font-size: 13px !important;
+        line-height: 20px;
+    }
+    &-link {
+        color: siimple-default-color("dark");
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+        &:hover {
+            text-decoration: underline;
+            color: siimple-default-color("primary");
+        }
+    }
 }
 
