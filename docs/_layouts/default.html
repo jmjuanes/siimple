@@ -12,7 +12,10 @@
 <div>
     {{ content }}
 </div>
-<div class="sd-footer siimple-footer--{{ site.size }}">
-    Footer
+<div class="siimple-footer sd-footer siimple-footer--{{ site.size }}">
+    <div class="sd-footer-credits">
+        Designed and built with love by <a href="https://github.com/jmjuanes" class="sd-footer-link" target="_blank">@jmjuanes</a>.<br>
+        Current version: <strong>{{ site.version }}</strong>. Code released under the <a href="{{ site.code_license }}" class="sd-footer-link" target="_blank">MIT License</a>. Documentation under the <a href="{{ site.docs_license }}" class="sd-footer-link" target="_blank">Creative Commons CC BY 4.0</a>. 
+    </div>
 </div>
 
