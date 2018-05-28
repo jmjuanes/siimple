@@ -9,4 +9,6 @@ size: "large"
 
 # Global metadata
 bugs_url: "https://github.com/siimple/siimple/issues"
+code_license: "https://github.com/siimple/siimple/blob/develop/LICENSE.md"
+docs_license: "https://creativecommons.org/licenses/by/4.0/"
 
