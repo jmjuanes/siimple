@@ -12,10 +12,14 @@
         background-repeat: no-repeat;
         background-size: 100px 100px;
         background-position: center center;
+        background-image: url('./logo.png');
         margin-bottom: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        opacity: 0.8;
+        opacity: 0.6;
+        transition: opacity 0.3s;
+        &:hover {
+            cursor: pointer;
+            opacity: 0.9;
+        }
     }
     &-credits {
         font-size: 13px !important;
