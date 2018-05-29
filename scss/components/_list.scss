@@ -22,7 +22,6 @@ $siimple-list-item-padding: 10px;
     color: $siimple-default-text-color;
     font-size: $siimple-default-text-size;
     line-height: $siimple-default-text-line;
-
     //List item 
     &-item {
         display: block;
@@ -46,12 +45,12 @@ $siimple-list-item-padding: 10px;
         background-color: siimple-default-color("light", "base");
         cursor: pointer;
     }
-
     //List title 
     &-title {
         display: block;
         font-size: 16px;
         font-weight: bold;
+        line-height: 24px;
         //margin-bottom: 5px;
     }
 }
