@@ -5,9 +5,30 @@
     margin-top: 20px;
     //font-size: 13px;
     color: siimple-default-color("dark", "light");
+    &-logo {
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-size: 100px 100px;
+        background-position: center center;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.8;
+    }
     &-credits {
         font-size: 13px !important;
         line-height: 20px;
+    }
+    &-header {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 25px;
+        color: siimple-default-color("dark");
+        margin-bottom: 8px;
+        border-bottom: 1px solid siimple-default-color("light");
     }
     &-link {
         color: siimple-default-color("dark");
@@ -17,6 +38,42 @@
         &:hover {
             text-decoration: underline;
             color: siimple-default-color("primary");
+        }
+    }
+    &-columns {
+        margin-bottom: 20px;
+    }
+    &-social {
+        text-decoration: none;
+        margin-bottom: 8px;
+        display: block;
+        &-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: siimple-default-color("dark");
+            transition: color 0.3s;
+        }
+        &-description {
+            font-size: 13px;
+            color: siimple-default-color("dark", "light");
+        }
+        &:hover &-title {
+            color: siimple-default-color("primary");
+            text-decoration: underline;
+        }
+    }
+    &-docs {
+        display: block;
+        line-height: 22px;
+        font-size: 14px;
+        color: siimple-default-color("dark", "light");
+        font-weight: normal;
+        transition: color 0.3s;
+        text-decoration: none;
+        margin-bottom: 2px;
+        &:hover {
+            color: siimple-default-color("primary");
+            text-decoration: underline;
         }
     }
 }
