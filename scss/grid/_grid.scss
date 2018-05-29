@@ -47,6 +47,7 @@ $siimple-grid-column-sizes: $siimple-default-grid;
         display: inline-block;
         vertical-align: top;
         float: left;
+        padding: $siimple-grid-column-padding;
         //margin: {
         //    left: $siimple-grid-column-margin;
         //    right: $siimple-grid-column-margin;
@@ -55,8 +56,8 @@ $siimple-grid-column-sizes: $siimple-default-grid;
     //Grid default column sizes
     @each $grid-name, $grid-width in $siimple-grid-column-sizes {
         &-col--#{$grid-name} {
-            width: #{$grid-width};
-            //width: calc(#{$grid-width} - 2 * #{$siimple-grid-column-margin});
+            //width: #{$grid-width};
+            width: calc(#{$grid-width} - 2 * #{$siimple-grid-column-padding});
         }
     }
     //Grid columns for each breakpoint
@@ -65,8 +66,8 @@ $siimple-grid-column-sizes: $siimple-default-grid;
             @each $grid-name, $grid-width in $siimple-grid-column-sizes {
                 &-col--#{$grid-breakpoint}-#{$grid-name},
                 &-col-#{$grid-breakpoint}--#{$grid-name} {
-                    width: #{$grid-width};
-                    //width: calc(#{$grid-width} - 2 * #{$siimple-grid-column-margin});
+                    //width: #{$grid-width};
+                    width: calc(#{$grid-width} - 2 * #{$siimple-grid-column-padding});
                 }
             }
         }
