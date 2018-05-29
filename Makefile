@@ -43,5 +43,6 @@ docs:
 	@# Build assets
 	mkdir -p ./docs/_site/assets
 	cp ./dist/siimple.min.css ./docs/_site/assets/
+	cp ./media/logo-colored.png ./docs/_site/assets/logo.png
 	${NODE_BIN}/node-sass ./docs/siimple-docs.scss ./docs/_site/assets/siimple-docs.css
 
