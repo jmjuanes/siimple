@@ -8,6 +8,7 @@ version: "3.1.0-beta.4"
 size: "large"
 
 # Global metadata
+home_url: "https://www.siimple.xyz"
 bugs_url: "https://github.com/siimple/siimple/issues"
 team_url: "https://github.com/orgs/siimple/people"
 contributors_url: "https://github.com/siimple/siimple/graphs/contributors"
