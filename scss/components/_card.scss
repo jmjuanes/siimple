@@ -20,7 +20,7 @@ $siimple-card-border-width: 2px;
     margin-bottom: $siimple-default-margin-bottom;
     color: $siimple-default-text-color;
     font-size: $siimple-default-text-size;
-
+    //Common styles
     &-header, 
     &-body, 
     &-footer {
@@ -39,25 +39,22 @@ $siimple-card-border-width: 2px;
             border-bottom-right-radius: 5px;
         }
     }
-
+    //Card header and footer styles
     &-header, 
     &-footer {
         display: block;
         padding: 12px;
         background-color: $siimple-card-border-color;
     }
-    
     //Card header
     &-header {
         font-weight: bold;
     }
-    
     //Card body
     &-body {
         display: block;
         padding: 12px;
     }
-    
     //Card title
     &-title {
         display: block;
@@ -65,13 +62,16 @@ $siimple-card-border-width: 2px;
         font-weight: bold;
         margin-bottom: 5px;    
     }
-
     //Card subtitle 
     &-subtitle {
         display: block;
         font-size: 15px;
         color: siimple-default-color("dark", "light");
         margin-bottom: 5px;
+    }
+    //Card title after a subtitle
+    &-title + &-subtitle {
+        margin-top: -5px !important;
     }
 }
 
