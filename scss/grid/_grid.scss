@@ -70,6 +70,10 @@ $siimple-grid-column-sizes: $siimple-default-grid;
                     width: calc(#{$grid-width} - 2 * #{$siimple-grid-column-padding});
                 }
             }
+            //Hide grid column
+            &-col--#{$grid-breakpoint}-hide {
+                display: none !important;
+            }
         }
     }
 }
