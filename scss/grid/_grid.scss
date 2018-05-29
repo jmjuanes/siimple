@@ -16,6 +16,7 @@ $siimple-grid-row-margin: 0px;
 
 //Gird colum variables
 $siimple-grid-column-margin: 10px;
+$siimple-grid-column-padding: 12px;
 $siimple-grid-column-sizes: $siimple-default-grid; 
 
 //Grid class
@@ -62,6 +63,7 @@ $siimple-grid-column-sizes: $siimple-default-grid;
     @each $grid-breakpoint, $grid-screen in $siimple-default-breakpoint {
         @media (max-width: $grid-screen) {
             @each $grid-name, $grid-width in $siimple-grid-column-sizes {
+                &-col--#{$grid-breakpoint}-#{$grid-name},
                 &-col-#{$grid-breakpoint}--#{$grid-name} {
                     width: #{$grid-width};
                     //width: calc(#{$grid-width} - 2 * #{$siimple-grid-column-margin});
