@@ -9,6 +9,14 @@ size: "large"
 
 # Global metadata
 bugs_url: "https://github.com/siimple/siimple/issues"
-code_license: "https://github.com/siimple/siimple/blob/develop/LICENSE.md"
-docs_license: "https://creativecommons.org/licenses/by/4.0/"
+team_url: "https://github.com/orgs/siimple/people"
+contributors_url: "https://github.com/siimple/siimple/graphs/contributors"
+
+# Licenses
+code_license:
+    name: "MIT License"
+    url: "https://github.com/siimple/siimple/blob/develop/LICENSE.md"
+docs_license:
+    name: "Creative Commons CC BY 4.0"
+    url: "https://creativecommons.org/licenses/by/4.0/"
 
