@@ -21,16 +21,12 @@ $siimple-table-cell-padding: 10px;
     color: $siimple-default-text-color;
     border-collapse: collapse;
     border-width: 0px;
-    margin: {
-        top: 0px;
-        bottom: $siimple-default-margin-bottom;
-    }
-
+    margin-bottom: $siimple-default-margin-bottom;
+    //Table row
     &-row {
         display: table-row;
         transition: all 0.3s;
         border-bottom: 2px solid $siimple-default-white;
-
         &:hover {
             background-color: siimple-default-color("light");
         }
@@ -38,7 +34,7 @@ $siimple-table-cell-padding: 10px;
             border-bottom: 0px;
         }
     }
-
+    //Table cell
     &-cell {
         display: table-cell;
         //position: relative;
@@ -48,7 +44,6 @@ $siimple-table-cell-padding: 10px;
         overflow: hidden;
         transition: background-color 0.3s;
     }
-
     &--border &-cell:not(:last-child) {
         border-right: 2px solid $siimple-default-white;
     }
