@@ -24,5 +24,8 @@ $siimple-blockquote-color: siimple-default-color("dark", "light");
     padding-right: 10px;
     padding-left: 20px;
     margin-bottom: $siimple-default-margin-bottom;
+    //Fix default margin values in blockquote element
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
