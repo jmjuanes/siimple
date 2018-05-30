@@ -57,13 +57,7 @@ $siimple-box-padding: 15px;
     //Box detail
     &-detail {
         display: block;
-        margin-bottom: 10px;
-        &:first-child {
-            margin-top: 20px;
-        }
-        &:last-child {
-            margin-bottom: 20px;
-        }
+        //margin-bottom: 10px;
     }
     //Box colors
     @each $color in $siimple-default-colors {
