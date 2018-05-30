@@ -13,8 +13,8 @@
 .siimple-jumbotron {
     display: block;
     //font-family: $siimple-default-text-font;
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 75px;
+    padding-bottom: 75px;
     @include siimple-sizing();
     //Jumbotron title
     &-title {
