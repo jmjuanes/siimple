@@ -16,33 +16,39 @@
     padding-top: 75px;
     padding-bottom: 75px;
     @include siimple-sizing();
-    //Jumbotron title
-    &-title {
-        display: block;
-        text-decoration: none;
-        line-height: 60px;
-        font-weight: bold;
-        font-size: 50px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-    //Jumbotron subtitle
-    &-subtitle {
-        display: block;
-        text-decoration: none;
-        line-height: 40px;
-        font-size: 30px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    //Jumbotron detail
+    //Common styles
+    &-title, 
+    &-subtitle,
     &-detail {
         display: block;
         text-decoration: none;
-        line-height: 30px;
-        font-size: 20px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+    }
+    //Jumbotron title
+    &-title {
+        //line-height: 60px;
+        font-weight: bold;
+        font-size: 40px;
+        //margin-top: 0px;
+        //margin-bottom: 0px;
+    }
+    //Jumbotron subtitle
+    &-subtitle {
+        //line-height: 40px;
+        font-size: 25px;
+        //margin-top: 10px;
+        //margin-bottom: 10px;
+    }
+    //Jumbotron detail
+    &-detail {
+        line-height: 24px;
+        font-size: 16px;
+        //margin-top: 10px;
+        //margin-bottom: 10px;
+    }
+    &-title + &-subtitle,
+    &-title + &-detail,
+    &-subtitle + &-detail {
+        margin-top: 5px;
     }
     //Jumbotron colors
     @each $color in $siimple-default-colors {
