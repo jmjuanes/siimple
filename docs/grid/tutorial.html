@@ -9,14 +9,17 @@ prev: "grid-overview"
 
 <div class="siimple-h2">Building a grid</div>
 <style>
-    .demo-grid {
+    .demo-grid .siimple-grid-col {
         background-color: #1be4c9;
         color: #ffffff;
         text-align: center;
-        height: 34px;
-        line-height: 34px;
-        border-radius: 5px;
+        height: 20px;
+        line-height: 20px;
         margin-bottom: 10px;
+        padding-left: 11px !important;
+        padding-right: 11px !important;
+        border-left: 1px solid #38c7a3;
+        border-right: 1px solid #38c7a3;
     }
 </style>
 <div class="siimple-paragraph">
@@ -54,14 +57,10 @@ prev: "grid-overview"
     Now your grid is ready to use!
 </div>
 <div class="sd-snippet-demo">
-    <div class="siimple-grid">
+    <div class="siimple-grid demo-grid">
         <div class="siimple-grid-row">
-            <div class="siimple-grid-col siimple-grid-col--6">
-                <div class="demo-grid">Cell 1</div>
-            </div>
-            <div class="siimple-grid-col siimple-grid-col--6">
-                <div class="demo-grid">Cell 2</div>
-            </div>
+            <div class="siimple-grid-col siimple-grid-col--6">Cell 1</div>
+            <div class="siimple-grid-col siimple-grid-col--6">Cell 2</div>
         </div>
     </div>
 </div>
