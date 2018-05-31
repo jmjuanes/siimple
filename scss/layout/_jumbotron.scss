@@ -9,12 +9,15 @@
 @import "../_functions.scss";
 @import "../_utils.scss";
 
+//Jumbotron variables
+$siimple-jumbotron-padding: 85px;
+
 //Jumbotron class
 .siimple-jumbotron {
     display: block;
     //font-family: $siimple-default-text-font;
-    padding-top: 75px;
-    padding-bottom: 75px;
+    padding-top: $siimple-jumbotron-padding;
+    padding-bottom: $siimple-jumbotron-padding;
     @include siimple-sizing();
     //Common styles
     &-title, 
@@ -34,14 +37,16 @@
     //Jumbotron subtitle
     &-subtitle {
         //line-height: 40px;
-        font-size: 28px;
+        font-size: 22px;
+        opacity: 0.7;
         //margin-top: 10px;
         //margin-bottom: 10px;
     }
     //Jumbotron detail
     &-detail {
-        line-height: 25px;
-        font-size: 18px;
+        line-height: 24px;
+        font-size: 16px;
+        opacity: 0.5;
         //margin-top: 10px;
         //margin-bottom: 10px;
     }
