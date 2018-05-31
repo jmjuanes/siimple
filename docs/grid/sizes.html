@@ -8,14 +8,17 @@ prev: "grid-tutorial"
 
 <div class="siimple-h2">Responsive grid sizes</div>
 <style>
-    .demo-grid {
+    .demo-grid .siimple-grid-col {
         background-color: #1be4c9;
         color: #ffffff;
         text-align: center;
-        height: 34px;
-        line-height: 34px;
-        border-radius: 5px;
+        height: 20px;
+        line-height: 20px;
         margin-bottom: 10px;
+        padding-left: 11px !important;
+        padding-right: 11px !important;
+        border-left: 1px solid #38c7a3;
+        border-right: 1px solid #38c7a3;
     }
 </style>
 <div class="siimple-paragraph">
@@ -79,14 +82,10 @@ prev: "grid-tutorial"
     You can combine different column classes to specify how the grid will be displayed on different devices. For example, if you create a grid with two columns and add the class <code class="siimple-code">siimple-grid-col--6</code> and <code class="siimple-code">siimple-grid-col--sm-12</code>, your grid will have two columns on screens with sizes greater than <code class="siimple-code">600px</code>, and one column on mobile devices.
 </div>
 <div class="sd-snippet-demo">
-    <div class="siimple-grid">
+    <div class="siimple-grid demo-grid">
         <div class="siimple-grid-row">
-            <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col--sm-12">
-                <div class="demo-grid">col--6 col--sm-12</div>
-            </div>
-            <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col--sm-12">
-                <div class="demo-grid">col--6 col--sm-12</div>
-            </div>
+            <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col--sm-12">col--6 col--sm-12</div>
+            <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col--sm-12">col--6 col--sm-12</div>
         </div>
     </div>
 </div>
@@ -109,14 +108,10 @@ prev: "grid-tutorial"
     You can hide a column at a specific breakpoint adding the class <code class="siimple-code">siimple-grid-col--{breakpoint}-hide</code>.
 </div>
 <div class="sd-snippet-demo">
-    <div class="siimple-grid">
+    <div class="siimple-grid demo-grid">
         <div class="siimple-grid-row">
-            <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col--sm-hide">
-                <div class="demo-grid">col--4 col--sm-hide</div>
-            </div>
-            <div class="siimple-grid-col siimple-grid-col--8 siimple-grid-col--sm-12">
-                <div class="demo-grid">col--8 col--sm-12</div>
-            </div>
+            <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col--sm-hide">col--4 col--sm-hide</div>
+            <div class="siimple-grid-col siimple-grid-col--8 siimple-grid-col--sm-12">col--8 col--sm-12</div>
         </div>
     </div>
 </div>
