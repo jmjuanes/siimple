@@ -9,7 +9,7 @@
 @import "../_functions.scss";
 
 //Box variables
-$siimple-box-padding: 15px;
+$siimple-box-padding: 30px;
 
 //Box style
 .siimple-box {
@@ -27,36 +27,31 @@ $siimple-box-padding: 15px;
     &-title {
         display: block;
         font-weight: bold;
-        font-size: 40px;
+        font-size: 35px;
         text-decoration: none;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        &:last-child {
-            margin-bottom: 20px;
-        }
+        //margin-top: 20px;
+        //margin-bottom: 10px;
     }
     //Box subtitle
     &-subtitle {
         display: block;
-        font-weight: bold;
-        font-size: 30px;
+        //font-weight: bold;
+        font-size: 22px;
         text-decoration: none;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        &:first-child {
-            margin-top: 20px;
-        }
-        &:last-child {
-            margin-bottom: 20px;
-        }
+        opacity: 0.75;
+        //margin-top: 10px;
+        //margin-bottom: 10px;
     }
     //Subtitle after a title
     &-title + &-subtitle {
-        margin-top: -12px;
+        //margin-top: -12px;
     }
     //Box detail
     &-detail {
         display: block;
+        font-size: 16px;
+        line-height: 24px;
+        opacity: 0.5;
         //margin-bottom: 10px;
     }
     //Box colors
