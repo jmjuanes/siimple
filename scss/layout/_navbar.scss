@@ -29,7 +29,7 @@ $siimple-navbar-height: 34px;
     &-title {
         display: inline-block;
         height: $siimple-navbar-height;
-        //line-height: $siimple-navbar-title-line-height;
+        line-height: $siimple-navbar-height;
         text-decoration: none;
         font-weight: bold;
         font-size: 21px;
