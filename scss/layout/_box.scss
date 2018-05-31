@@ -23,36 +23,39 @@ $siimple-box-padding: 30px;
     border-radius: $siimple-default-border-radius;
     padding: $siimple-box-padding;
     margin-bottom: $siimple-default-margin-bottom;
+    //Common styles
+    &-title,
+    &-subtitle,
+    &-detail {
+        display: block;
+        text-decoration: none;
+    }
     //Box title
     &-title {
-        display: block;
         font-weight: bold;
         font-size: 35px;
-        text-decoration: none;
         //margin-top: 20px;
         //margin-bottom: 10px;
     }
     //Box subtitle
     &-subtitle {
-        display: block;
         //font-weight: bold;
         font-size: 22px;
-        text-decoration: none;
         opacity: 0.75;
         //margin-top: 10px;
         //margin-bottom: 10px;
     }
-    //Subtitle after a title
-    &-title + &-subtitle {
-        //margin-top: -12px;
-    }
     //Box detail
     &-detail {
-        display: block;
         font-size: 16px;
         line-height: 24px;
         opacity: 0.5;
         //margin-bottom: 10px;
+    }
+    &-title + &-subtitle,
+    &-subtitle + &-detail,
+    &-title + &-detail {
+        margin-top: 5px;
     }
     //Box colors
     @each $color in $siimple-default-colors {
