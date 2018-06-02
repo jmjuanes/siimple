@@ -35,7 +35,7 @@
     &-item {
         background-color: rgba(siimple-default-color("light"), 0.3);
         &:hover {
-            background-color: $siimple-default-white;
+            background-color: $siimple-default-white !important;
         }
     }
     &--selected {
