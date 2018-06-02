@@ -9,11 +9,14 @@ layout: "default"
 <div class="sd-main siimple-content--{{ site.size }}">
     <div class="siimple-grid-row">
         <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col-sm--12">
+            <div class="sd-searchbox">
+                <div class="siimple-menu-group sd-searchbox-title">Search</div>
+            </div>
             <div class="sd-menu">
-                <div class="siimple-menu-group">{{ group.name }}</div>
+                <div class="siimple-menu-group sd-menu-title">{{ group.name }}</div>
                 {% for category_id in group.categories %}
                 {% assign category = site.data.categories[category_id] %}
-                <a class="siimple-menu-item {% if category_id == page.category_id %}sd-menu--selected{% endif %}" href="{{ category.path }}">
+                <a class="siimple-menu-item sd-menu-item {% if category_id == page.category_id %}sd-menu--selected{% endif %}" href="{{ category.path }}">
                     {{ category.name }}
                 </a>
                 {% endfor %}
