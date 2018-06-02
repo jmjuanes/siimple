@@ -15,25 +15,40 @@
     color: siimple-default-color("dark", "light");
     margin-bottom: 25px;
 }
-.sd-menu {
+.sd-menu,
+.sd-searchbox {
     display: block;
     background-color: siimple-default-color("light", "light");
     border-radius: 5px;
     width: calc(100% - 30px);
     //margin-right: 20px;
-    padding: 15px;
-    & .siimple-menu-group {
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.sd-menu {
+    &-title {
         margin-bottom: 5px;
     }
-    & .siimple-menu-item {
+    &-item {
         background-color: rgba(siimple-default-color("light"), 0.3);
-    }
-    & .siimple-menu-item:hover {
-        background-color: $siimple-default-white;
+        &:hover {
+            background-color: $siimple-default-white;
+        }
     }
     &--selected {
         background-color: siimple-default-color("primary") !important;
         color: $siimple-default-white !important;
+    }
+}
+.sd-searchbox {
+    &-title {
+        margin-bottom: 5px;
+    }
+    &-input {
+        background-color: #ffffff;
     }
 }
 .sd-top {
