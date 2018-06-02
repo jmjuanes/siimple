@@ -1,0 +1,27 @@
+---
+layout: "default"
+---
+
+<script type="text/javascript" src="{{ page.root }}assets/search.js"></script>
+<title>Search | {{ site.title }}</title>
+{% include header.html title=site.welcome_title subtitle=site.welcome_subtitle %}
+<div align="center" class="siimple-content siimple-content--{{ site.size }} sd-search-header">
+    <div class="sd-search-header-title">Search in <strong>siimple</strong> docs</div>
+    <input type="text" id="search-input" class="siimple-input siimple-input--fluid sd-search-header-input" placeholder="Search in siimple docs">
+    <div id="search-submit" class="siimple-btn siimple-btn--success sd-search-header-submit">Search</div>
+</div>
+<div id="search-results" class="siimple-content siimple-content--{{ site.size }} sd-search-results"></div>
+
+<script type="text/javascript">
+    let content = [
+        {% for category in site.data.categories %}
+        {
+            "name": "{{ category[1].name }}",
+            "description": "{{ category[1].description }}",
+            "url": "{{ category[1].path }}"
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ];
+    initSearchPage("search-input", "search-submit", "search-results", content);
+</script>
+
