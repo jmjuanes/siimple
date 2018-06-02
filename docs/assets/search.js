@@ -17,6 +17,7 @@ let addDOMNode = function (parent, tag, attr, text) {
     });
     el.textContent = text;
     parent.appendChild(el);
+    return el;
 };
 //Initialize the search box listener
 let initSearchBox = function (searchInput, searchSubmit, searchPage) {
@@ -50,7 +51,7 @@ let initSearchPage = function (searchInput, searchSubmit, searchResults, searchC
         resetDOMNode(parent);
         let countResults = 0;
         //Append the results count
-        addDOMNode(parent, "div", {"className": "sd-search-results-count", "id": "search-results-count"}, "");
+        let countElement = addDOMNode(parent, "div", {"className": "sd-search-results-count", "id": "search-results-count"}, "");
         //Find items in the search content array
         searchContent.forEach(function (item) {
             let name = item.name.toLowerCase();
@@ -65,7 +66,7 @@ let initSearchPage = function (searchInput, searchSubmit, searchResults, searchC
             }
         });
         //Save the number of results
-        document.getElementById("search-results-count").textContent = "" + countResults + " results found";
+        countElement.textContent = "" + countResults + " results found";
     };
     //Change the hash
     let updateHash = function () {
