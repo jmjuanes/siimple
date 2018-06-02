@@ -1,3 +1,7 @@
+//Search variables
+$sd-search-results-breakpoint: 600px;
+
+//Search class
 .sd-search {
     &-header {
         display: block;
@@ -64,6 +68,11 @@
                 line-height: 22px;
                 font-size: 15px;
                 margin-bottom: 20px;
+            }
+        }
+        @media (max-width: $sd-search-results-breakpoint) {
+            &-item {
+                width: calc(100% - 50px);
             }
         }
         &:after {
