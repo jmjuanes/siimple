@@ -6,18 +6,20 @@ let resetDOMNode = function (parent) {
 };
 //Add a new dom node
 let addDOMNode = function (parent, tag, attr, text) {
-    let el = document.createElement(tag.toUpperCase());
+    let element = document.createElement(tag.toUpperCase());
     Object.keys(attr).forEach(function (key) {
         if (key === "className") {
-            el.className = attr.className;
+            element.className = attr.className;
         }
         else {
-            el.setAttribute(key, attr[key]);
+            element.setAttribute(key, attr[key]);
         }
     });
-    el.textContent = text;
-    parent.appendChild(el);
-    return el;
+    if (typeof text === "string") {
+        element.textContent = text;
+    }
+    parent.appendChild(element);
+    return element;
 };
 //Initialize the search box listener
 let initSearchBox = function (searchInput, searchSubmit, searchPage) {
@@ -57,10 +59,10 @@ let initSearchPage = function (searchInput, searchSubmit, searchResults, searchC
             let name = item.name.toLowerCase();
             let description = item.description.toLowerCase();
             if (name.indexOf(str) !== -1 || description.indexOf(str) !== -1) {
-                //Append the name of the result
-                addDOMNode(parent, "a", {"className": "sd-search-results-name", "href": item.url}, item.name);
-                addDOMNode(parent, "div", {"className": "sd-search-results-url"}, item.url);
-                addDOMNode(parent, "div", {"className": "sd-search-results-description"}, item.description);
+                let container = addDOMNode(parent, "a", {"className": "sd-search-results-item", "href": item.url}, null);
+                addDOMNode(container, "div", {"className": "sd-search-results-item-name"}, item.name);
+                addDOMNode(container, "div", {"className": "sd-search-results-item-url"}, item.url);
+                addDOMNode(container, "div", {"className": "sd-search-results-item-description"}, item.description);
                 //Increment the results counter
                 countResults = countResults + 1;
             }
