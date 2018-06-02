@@ -23,10 +23,7 @@
     width: calc(100% - 30px);
     //margin-right: 20px;
     margin-bottom: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 15px;
 }
 .sd-menu {
     &-title {
@@ -45,10 +42,12 @@
 }
 .sd-searchbox {
     &-title {
+        display: none;
         margin-bottom: 5px;
     }
     &-input {
-        background-color: #ffffff;
+        background-color: #ffffff !important;
+        margin-bottom: 8px;
     }
 }
 .sd-top {
