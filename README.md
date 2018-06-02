@@ -82,7 +82,7 @@ For questions and support, please use our [community chat](http://chat.siimple.x
 
 ## Bugs and new features
 
-Found any bug? Have you a feature request? Please make sure to read our [contributing guidelines](./CONTRIBUTING.md) and search for existing or similar issues. If your problem or idea is not addressed yet, please feel free to open a new issue!
+Found any bug? Have you a feature request? Please make sure to read our [contributing guidelines](.github/CONTRIBUTING.md) and search for existing or similar issues. If your problem or idea is not addressed yet, please feel free to open a new issue!
 
 
 ## Contribute
