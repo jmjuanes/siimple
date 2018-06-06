@@ -19,16 +19,20 @@ layout: "default"
             </div>
             <div class="sd-menu">
                 <div class="siimple-menu-group sd-menu-title">{{ group.name }}</div>
-                {% for category_id in group.categories %}
-                {% assign category = site.data.categories[category_id] %}
-                <a class="siimple-menu-item sd-menu-item {% if category_id == page.category %}sd-menu--selected{% endif %}" href="{{ page.root }}{{ category.path }}">
-                    {{ category.name }}
+                {% for menu_id in group.categories %}
+                {% assign menu = site.data.categories[menu_id] %}
+                <a class="siimple-menu-item sd-menu-item {% if menu_id == page.category %}sd-menu--selected{% endif %}" href="{{ page.root }}{{ menu.path }}">
+                    {{ menu.name }}
                 </a>
                 {% endfor %}
             </div>
             <a class="sd-top">Back to top</a>
         </div>
         <div class="siimple-grid-col siimple-grid-col--9 siimple-grid-col-sm--12">
+            <div class="sd-lead">
+                <div class="sd-title">{{ category.name }}</div>
+                <div class="sd-description">{{ category.description }}</div>
+            </div>
             {{ content }}
             {% include navigation.html next=page.next prev=page.prev %}
             <div class="sd-typo" align="center">
