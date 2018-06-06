@@ -2,7 +2,7 @@
 layout: "default"
 ---
 {% assign category = site.data.categories[page.category_id] %}
-{% assign group = site.data.groups[page.group_id] %}
+{% assign group = site.data.groups[category.group] %}
 
 <script type="text/javascript" src="{{ page.root }}assets/search.js"></script>
 <title>{{ category.name }} | {{ site.title }}</title>
@@ -21,7 +21,7 @@ layout: "default"
                 <div class="siimple-menu-group sd-menu-title">{{ group.name }}</div>
                 {% for category_id in group.categories %}
                 {% assign category = site.data.categories[category_id] %}
-                <a class="siimple-menu-item sd-menu-item {% if category_id == page.category_id %}sd-menu--selected{% endif %}" href="{{ category.path }}">
+                <a class="siimple-menu-item sd-menu-item {% if category_id == page.category_id %}sd-menu--selected{% endif %}" href="{{ page.root }}{{ category.path }}">
                     {{ category.name }}
                 </a>
                 {% endfor %}
