@@ -62,12 +62,14 @@ $sd-search-results-breakpoint: 600px;
                 display: block;
                 color: siimple-default-color("success", "dark");
                 font-size: 14px;
+                margin-bottom: 4px;
             }
             &-description {
                 display: block;
                 line-height: 22px;
                 font-size: 15px;
-                margin-bottom: 20px;
+                color: siimple-default-color("dark");
+                //margin-bottom: 20px;
             }
         }
         @media (max-width: $sd-search-results-breakpoint) {
