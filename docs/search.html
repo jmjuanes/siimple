@@ -19,6 +19,7 @@ root: "./"
         {
             "name": "{{ category[1].name }}",
             "description": "{{ category[1].description }}",
+            "keywords": "{{ category[1].keywords }}",
             "url": "{{ category[1].path }}"
         }{% unless forloop.last %},{% endunless %}
         {% endfor %}
