@@ -2,7 +2,7 @@
     "getting-started": {
         "name": "Getting started",
         "description": "An introduction to how to get started with <strong>siimple</strong>.",
-        "path": "getting-started/installation.html",
+        "entry": "installation",
         "categories": [
             "installation",
             "customize",
@@ -14,7 +14,7 @@
     "helpers": {
         "name": "Helpers",
         "description": "Utility classes to modify the style of any element.",
-        "path": "helpers/colors.html",
+        "entry": "colors",
         "categories": [
             "colors",
             "display",
@@ -27,50 +27,50 @@
     "typography": {
         "name": "Typography",
         "description": "Style your typograhic HTML elements, including headings, paragraph, etc.",
-        "path": "typography/blockquote.html",
+        "entry": "blockquote",
         "categories": [
-            "typography-blockquote",
-            "typography-code",
-            "typography-heading",
-            "typography-link",
-            "typography-paragraph",
-            "typography-small"
+            "blockquote",
+            "code",
+            "heading",
+            "link",
+            "paragraph",
+            "small"
         ],
         "icon": "./assets/images/order.png"
     },
     "elements": {
         "name": "Elements",
         "description": "Basic elements that only require a single CSS class to go!",
-        "path": "elements/btn.html",
+        "entry": "btn",
         "categories": [
-            "elements-btn",
-            "elements-close",
-            "elements-rule",
-            "elements-spinner",
-            "elements-tag",
-            "elements-tip"
+            "btn",
+            "close",
+            "rule",
+            "spinner",
+            "tag",
+            "tip"
         ],
         "icon": "./assets/images/product.png"
     },
     "components": {
         "name": "Components",
         "description": "Reusable advanced elements, including alerts, lists and more!",
-        "path": "components/alert.html",
+        "entry": "alert",
         "categories": [
-            "components-alert",
-            "components-breadcrumb",
-            "components-card",
-            "components-list",
-            "components-menu",
-            "components-table",
-            "components-tabs"
+            "alert",
+            "breadcrumb",
+            "card",
+            "list",
+            "menu",
+            "table",
+            "tabs"
         ],
         "icon": "./assets/images/albums.png"
     },
     "grid": {
         "name": "Grid",
         "description": "Use our responsive grid system with twelve columns.",
-        "path": "grid/overview.html",
+        "entry": "grid-overview",
         "categories": [
             "grid-overview",
             "grid-tutorial",
@@ -81,31 +81,31 @@
     "form": {
         "name": "Form",
         "description": "The guide to style your form elements using <strong>siimple</strong>.",
-        "path": "form/form.html",
+        "entry": "form",
         "categories": [
-            "form-form",
-            "form-field",
-            "form-checkbox",
-            "form-input",
-            "form-label",
-            "form-radio",
-            "form-select",
-            "form-switch",
-            "form-textarea"
+            "form",
+            "field",
+            "checkbox",
+            "input",
+            "label",
+            "radio",
+            "select",
+            "switch",
+            "textarea"
         ],
         "icon": "./assets/images/checkbox.png"
     },
     "layout": {
         "name": "Layout",
         "description": "A collection of CSS classes for laying your project.",
-        "path": "layout/overview.html",
+        "entry": "layout-overview",
         "categories": [
             "layout-overview",
-            "layout-box",
-            "layout-content",
-            "layout-footer",
-            "layout-jumbotron",
-            "layout-navbar"
+            "box",
+            "content",
+            "footer",
+            "jumbotron",
+            "navbar"
         ],
         "icon": "./assets/images/layers.png"
     },
