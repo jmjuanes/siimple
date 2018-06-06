@@ -1,245 +1,324 @@
 {
-    "elements-btn": {
+    "btn": {
         "name": "Btn",
-        "description": "",
-        "path": "btn.html",
+        "description": "The essential and classic button element",
+        "keywords": "btn,button,buttons,submit",
+        "path": "elements/btn.html",
         "group": "elements"
     },
-    "elements-close": {
+    "close": {
         "name": "Close",
-        "description": "",
-        "path": "close.html",
+        "description": "A minimal close button",
+        "keywords": "close,btn,cross,delete",
+        "path": "elements/close.html",
         "group": "elements"
     },
-    "elements-rule": {
+    "rule": {
         "name": "Rule",
-        "description": "",
-        "path": "rule.html",
+        "description": "Simple element to separate content in your page",
+        "keywords": "rule,hr",
+        "path": "elements/rule.html",
         "group": "elements"
     },
-    "elements-spinner": {
+    "spinner": {
         "name": "Spinner",
-        "description": "",
-        "path": "spinner.html",
+        "description": "An animated and pure CSS loading indicator",
+        "keywords": "spinner,loading,animate",
+        "path": "elements/spinner.html",
         "group": "elements"
     },
-    "elements-tag": {
+    "tag": {
         "name": "Tag",
-        "description": "",
-        "path": "tag.html",
+        "description": "Small labeling element",
+        "keywords": "tag,badge,label,labels",
+        "path": "elements/tag.html",
         "group": "elements"
     },
-    "elements-tip": {
+    "tip": {
         "name": "Tip",
-        "description": "",
-        "path": "tip.html",
+        "description": "A special alert to grab attention in something important",
+        "keywords": "tip,exclamation,warning,question,callout,alert,messages",
+        "path": "elements/tip.html",
         "group": "elements"
     },
-    "components-alert": {
+    "alert": {
         "name": "Alert",
-        "description": "",
-        "path": "alert.html",
+        "description": "Display block messages",
+        "keywords": "alert,toast,messages,actions",
+        "path": "components/alert.html",
         "group": "components"
     },
-    "components-breadcrumb": {
+    "breadcrumb": {
         "name": "Breadcrumb",
-        "description": "",
-        "path": "breadcrumb.html",
+        "description": "Show the current page navigation",
+        "keywords": "breadcrumb,navigation,location",
+        "path": "components/breadcrumb.html",
         "group": "components"
     },
-    "components-card": {
+    "card": {
         "name": "Card",
-        "description": "",
-        "path": "card.html"
+        "description": "A minimal and flexible container component",
+        "keywords": "card,content,container",
+        "path": "components/card.html",
+        "group": "components"
     },
-    "components-list": {
+    "list": {
         "name": "List",
-        "description": "",
-        "path": "list.html"
+        "description": "Simple component for displaying series of items",
+        "keywords": "list,content",
+        "path": "components/list.html",
+        "group": "components"
     },
-    "components-menu": {
+    "menu": {
         "name": "Menu",
-        "description": "",
-        "path": "menu.html"
+        "description": "A vertical navigation component",
+        "keywords": "menu,item,selected,sidebar,vertical",
+        "path": "components/menu.html",
+        "group": "components"
     },
-    "components-table": {
+    "table": {
         "name": "Table",
-        "description": "",
-        "path": "table.html"
+        "description": "Build a table using only divs",
+        "keywords": "table,tables,row,rows,columns,cells,header,body",
+        "path": "components/table.html",
+        "group": "components"
     },
-    "components-tabs": {
+    "tabs": {
         "name": "Tabs",
-        "description": "",
-        "path": "tabs.html"
+        "description": "A horizontal navigation component",
+        "keywords": "tabs,tab,navigation,horizontal",
+        "path": "components/tabs.html",
+        "group": "components"
     },
     "layout-overview": {
-        "name": "Overview",
-        "description": "",
-        "path": "overview.html"
+        "name": "Layout overview",
+        "description": "Introduction to layout components of siimple",
+        "keywords": "layout",
+        "path": "layout/overview.html",
+        "group": "layout"
     },
-    "layout-box": {
+    "box": {
         "name": "Box",
-        "description": "",
-        "path": "box.html"
+        "description": "A simple layout component to highlight something",
+        "keywords": "box,content",
+        "path": "layout/box.html",
+        "group": "layout"
     },
-    "layout-content": {
+    "content": {
         "name": "Content",
-        "description": "",
-        "path": "content.html"
+        "description": "A responsive component to center content horizontally",
+        "keywords": "content,container,center",
+        "path": "layout/content.html",
+        "group": "layout"
     },
-    "layout-footer": {
+    "footer": {
         "name": "Footer",
-        "description": "",
-        "path": "footer.html"
+        "description": "A basic component for displaying content in the bottom of your page",
+        "keywords": "foot,footer,content,bottom",
+        "path": "layout/footer.html",
+        "group": "layout"
     },
-    "layout-jumbotron": {
+    "jumbotron": {
         "name": "Jumbotron",
-        "description": "",
-        "path": "jumbotron.html"
+        "description": "A lightweight component for showcasing content",
+        "keywords": "jumbotron,content,title,subtitle,hero",
+        "path": "layout/jumbotron.html",
+        "group": "layout"
     },
-    "layout-navbar": {
+    "navbar": {
         "name": "Navbar",
-        "description": "",
-        "path": "navbar.html"
+        "description": "A horizontally navigation component",
+        "keywords": "navbar,nav,navigation,top",
+        "path": "layout/navbar.html",
+        "group": "layout"
     },
     "grid-overview": {
         "name": "Grid overview",
-        "description": "",
-        "path": "overview.html"
+        "description": "Brief introduction to our grid system",
+        "keywords": "grid,overview,columns",
+        "path": "grid/overview.html",
+        "group": "grid"
     },
     "grid-tutorial": {
         "name": "Building a grid",
-        "description": "",
-        "path": "tutorial.html"
+        "description": "A guide for building a grid",
+        "keywords": "grid,tutorial,building",
+        "path": "grid/tutorial.html",
+        "group": "grid"
     },
     "grid-sizes": {
         "name": "Responsive grid",
-        "description": "",
-        "path": "sizes.html"
+        "description": "Handle different grid columns sizes for each breakpoint",
+        "keywords": "grid,sizes,responsive",
+        "path": "grid/sizes.html",
+        "group": "grid"
     },
-    "form-form": {
+    "form": {
         "name": "Form",
-        "description": "",
-        "path": "form.html"
+        "description": "Create and style a wide variety of forms",
+        "keywords": "form",
+        "path": "form/form.html",
+        "group": "form"
     },
     "form-field": {
         "name": "Form field",
-        "description": "",
-        "path": "field.html"
+        "description": "A simple form container to group form sections",
+        "keywords": "form,field,groups",
+        "path": "form/field.html",
+        "group": "form"
     },
-    "form-checkbox": {
+    "checkbox": {
         "name": "Checkbox",
-        "description": "",
-        "path": "checkbox.html"
+        "description": "The redesigned checkbox element",
+        "keywords": "checkbox,check,checked",
+        "path": "form/checkbox.html",
+        "group": "form"
     },
-    "form-input": {
+    "input": {
         "name": "Input",
-        "description": "",
-        "path": "input.html"
+        "description": "The universal text input element",
+        "keywords": "input,text,password,number",
+        "path": "form/input.html",
+        "group": "form"
     },
-    "form-label": {
+    "label": {
         "name": "Label",
-        "description": "",
-        "path": "label.html"
+        "description": "Style your form labels",
+        "keywords": "label,labeling",
+        "path": "form/label.html",
+        "group": "form"
     },
-    "form-radio": {
+    "radio": {
         "name": "Radio button",
-        "description": "",
-        "path": "radio.html"
+        "description": "The redesigned radio button element",
+        "keywords": "radio,button",
+        "path": "form/radio.html",
+        "group": "form"
     },
-    "form-select": {
+    "select": {
         "name": "Select",
-        "description": "",
-        "path": "select.html"
+        "description": "A basic dropdown selection element",
+        "keywords": "select,dropdown,options,selections",
+        "path": "form/select.html",
+        "group": "form"
     },
-    "form-switch": {
+    "switch": {
         "name": "Switch",
-        "description": "",
-        "path": "switch.html"
+        "description": "A redesigned checkbox element that looks like a switch",
+        "keywords": "switch,checkbox",
+        "path": "form/switch.html",
+        "group": "form"
     },
-    "form-textarea": {
+    "textarea": {
         "name": "Textarea",
-        "description": "",
-        "path": "textarea.html"
+        "description": "A multiline text input element",
+        "keywords": "textarea,input,rows,lines",
+        "path": "form/textarea.html",
+        "group": "form"
     },
-    "typography-blockquote": {
+    "blockquote": {
         "name": "Blockquote",
-        "description": "",
-        "path": "blockquote.html"
+        "description": "A single class to style your quoting blocks",
+        "keywords": "blockquote,cites,block",
+        "path": "typography/blockquote.html",
+        "group": "typography"
     },
-    "typography-code": {
+    "code": {
         "name": "Code",
-        "description": "",
-        "path": "code.html"
+        "description": "Display inline code blocks",
+        "keywords": "code,inline",
+        "path": "typography/code.html",
+        "group": "typography"
     },
-    "typography-heading": {
+    "heading": {
         "name": "Headings",
-        "description": "",
-        "path": "heading.html"
+        "description": "Style your HTML headings",
+        "keywords": "headings,h1,h2,h3,h4,h5,h6",
+        "path": "typography/heading.html",
+        "group": "typography"
     },
-    "typography-link": {
+    "link": {
         "name": "Link",
-        "description": "",
-        "path": "link.html"
+        "description": "Style your link tags",
+        "keywords": "link,anchor,a,href",
+        "path": "typography/link.html",
+        "group": "typography"
     },
-    "typography-paragraph": {
+    "paragraph": {
         "name": "Paragraph",
-        "description": "",
-        "path": "paragraph.html"
+        "description": "Format blocks of text",
+        "keywords": "paragraph,text,blocks",
+        "path": "typography/paragraph.html",
+        "group": "typography"
     },
-    "typography-small": {
+    "small": {
         "name": "Small",
-        "description": "",
-        "path": "small.html"
+        "description": "Display smaller text",
+        "keywords": "small,text",
+        "path": "typography/small.html",
+        "group": "typography"
     },
     "installation": {
         "name": "Installation",
-        "description": "",
-        "path": "installation.html"
+        "description": "The guide to import <strong>siimple</strong> in your proyect",
+        "keywords": "installation,install,cdn,package",
+        "path": "getting-started/installation.html",
+        "group": "getting-started"
     },
     "customize": {
         "name": "Customize",
-        "description": "",
-        "path": "customize.html"
+        "description": "Build your own version of <strong>siimple</strong>",
+        "keywords": "build,customize,variables,make",
+        "path": "getting-started/customize.html",
+        "group": "getting-started"
     },
     "class-names": {
         "name": "Class Names",
-        "description": "",
-        "path": "class-names.html"
+        "description": "How <strong>siimple</strong> is structured",
+        "keywords": "class,names,classess,bem",
+        "path": "getting-started/class-names.html",
+        "group": "getting-started"
     },
     "theming": {
         "name": "Theming",
-        "description": "",
-        "path": "theming.html"
-    },
-    "breakpoints": {
-        "name": "Breakpoints",
-        "description": "",
-        "path": "breakpoints.html"
+        "description": "Font and colors that <strong>siimple</strong> uses",
+        "keywords": "font,colors,theme",
+        "path": "getting-started/theming.html",
+        "group": "getting-started"
     },
     "display": {
         "name": "Display",
-        "description": "",
-        "path": "display.html"
+        "description": "Customize how the content is displayed in your website",
+        "keywords": "display,inline,displaying,block,flex",
+        "path": "helpers/display.html",
+        "group": "helpers"
     },
     "float": {
         "name": "Float",
-        "description": "",
-        "path": "float.html"
+        "description": "Align elements in your website",
+        "keywords": "float,left,right,clearfix,floating",
+        "path": "helpers/float.html",
+        "group": "helpers"
     },
     "colors": {
         "name": "Colors",
-        "description": "",
-        "path": "colors.html"
+        "description": "Change the color of the text or background",
+        "keywords": "color,colors",
+        "path": "helpers/colors.html",
+        "group": "helpers"
     },
     "sizing": {
         "name": "Sizing",
-        "description": "",
-        "path": "sizing.html"
+        "description": "Modify the widht or the height of an element",
+        "keywords": "sizing,sizes,height,width",
+        "path": "helpers/sizing.html",
+        "group": "helpers"
     },
     "text": {
         "name": "Text helpers",
-        "description": "",
-        "path": "text.html"
+        "description": "Basic text helpers",
+        "keywords": "text,alignment,transform,size,weight,italic",
+        "path": "helpers/text.html",
+        "group": "helpers"
     }
 }
