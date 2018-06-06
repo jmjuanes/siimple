@@ -13,7 +13,8 @@ root: "./"
     </div>
     {% for group_id in site.data.groups.all %}
         {% assign group = site.data.groups[group_id] %}
-        <a class="sd-group-item" align="center" href="./{{ group.path }}">
+        {% assign category = site.data.categories[group.entry] %}
+        <a class="sd-group-item" align="center" href="{{ category.path }}">
             <div class="sd-group-item-logo" style="background-image:url('{{ group.icon }}');"></div>
             <div class="sd-group-item-title">{{ group.name }}</div>
             <div class="sd-group-item-description">{{ group.description }}</div>
