@@ -33,3 +33,6 @@ bower_components
 # Exclude vim cache files
 *.swp
 
+# Exclude some documentation folders and files
+docs/_site
+
