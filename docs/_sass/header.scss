@@ -1,18 +1,19 @@
 .sd-header {
     display: block;
     background-color: siimple-default-color("primary", "dark");
+    color: $siimple-default-white;
     //border-bottom: 2px solid siimple-default-color("light");
-    padding-top: 70px;
-    padding-bottom: 70px;
+    //padding-top: 70px;
+    //padding-bottom: 70px;
     //margin-bottom: 20px;
-    &-title {
-        font-size: 35px;
-        font-weight: bold;
-        color: $siimple-default-white;
-    }
-    &-subtitle {
-        font-size: 22px;
-        color: rgba($siimple-default-white, 0.7);
-    }
+    //&-title {
+        //font-size: 35px;
+        //font-weight: bold;
+        //color: $siimple-default-white;
+    //}
+    //&-subtitle {
+        //font-size: 22px;
+        //color: rgba($siimple-default-white, 0.7);
+    //}
 }
 
