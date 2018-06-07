@@ -53,21 +53,11 @@
         margin-bottom: 8px;
     }
 }
-.sd-top {
-    display: block;
-    height: 20px;
-    line-height: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    color: siimple-default-color("dark", "light");
-    margin-top: 15px;
-    margin-bottom: 10px;
-    margin-right: 35px;
-    padding-left: 15px;
-    cursor: pointer;
-    transition: color 0.3s;
-    &:hover {
-        color: siimple-default-color("dark");
+@media (max-width: 600px) {
+    .sd-column {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        width: 100%;
     }
 }
 .sd-snippet {
