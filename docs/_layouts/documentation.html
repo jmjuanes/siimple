@@ -9,7 +9,7 @@ layout: "default"
 {% include header.html title=group.name subtitle=group.description %}
 <div class="sd-main siimple-content--{{ site.size }}">
     <div class="siimple-grid-row">
-        <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col-sm--12">
+        <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col-sm--12 sd-column">
             <div class="sd-searchbox">
                 <div class="siimple-menu-group sd-searchbox-title">Search</div>
                 <input type="text" class="siimple-input siimple-input--fluid sd-searchbox-input" id="search-input" placeholder="Search...">
@@ -26,9 +26,8 @@ layout: "default"
                 </a>
                 {% endfor %}
             </div>
-            <a class="sd-top">Back to top</a>
         </div>
-        <div class="siimple-grid-col siimple-grid-col--9 siimple-grid-col-sm--12">
+        <div class="siimple-grid-col siimple-grid-col--9 siimple-grid-col-sm--12 sd-column">
             <div class="sd-lead">
                 <div class="sd-title">{{ category.name }}</div>
                 <div class="sd-description">{{ category.description }}</div>
