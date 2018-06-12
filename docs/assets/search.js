@@ -49,6 +49,8 @@ let initSearchPage = function (searchInput, searchSubmit, searchResults, searchC
     //Search on content
     let search = function (str) {
         console.log("Search string: " + str);
+        //Split the search string by spaces
+        //let searchItems = str.trim().toLowerCase().split(" ");
         let parent = document.getElementById(searchResults);
         resetDOMNode(parent);
         let countResults = 0;
@@ -58,7 +60,8 @@ let initSearchPage = function (searchInput, searchSubmit, searchResults, searchC
         searchContent.forEach(function (item) {
             let name = item.name.toLowerCase();
             let description = item.description.toLowerCase();
-            if (name.indexOf(str) !== -1 || description.indexOf(str) !== -1) {
+            let keywords = item.keywords.toLowerCase();
+            if (name.indexOf(str) !== -1 || description.indexOf(str) !== -1 || keywords.indexOf(str) !== -1) {
                 let container = addDOMNode(parent, "a", {"className": "sd-search-results-item", "href": item.url}, null);
                 addDOMNode(container, "div", {"className": "sd-search-results-item-name"}, item.name);
                 addDOMNode(container, "div", {"className": "sd-search-results-item-url"}, item.url);
