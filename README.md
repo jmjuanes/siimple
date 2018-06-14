@@ -97,6 +97,14 @@ Found any bug? Have you a feature request? Please make sure to read our [contrib
 We appreciate all contributions to the **siimple** project and help make it better! Please, read the [contributing guidelines][CONTRIBUTING] before starting your contribution.
 
 
+## Related projects
+
+| Project | Description |
+|---------|-------------|
+| (siimple-rubygem)[https://github.com/BerkhanBerkdemir/siimple-rubygem] | siimple Ruby Gem for any type of Ruby web application |
+| (siimact)[https://github.com/mirgj/siimact] | siimact: A set of React components for Siimple CSS Framework |
+
+
 ## License
 
 **siimple** is under the [MIT](LICENSE) license. &copy; The **siimple team**.
