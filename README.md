@@ -101,8 +101,8 @@ We appreciate all contributions to the **siimple** project and help make it bett
 
 | Project | Description |
 |---------|-------------|
-| (siimple-rubygem)[https://github.com/BerkhanBerkdemir/siimple-rubygem] | siimple Ruby Gem for any type of Ruby web application |
-| (siimact)[https://github.com/mirgj/siimact] | siimact: A set of React components for Siimple CSS Framework |
+| [siimple-rubygem](https://github.com/BerkhanBerkdemir/siimple-rubygem) | siimple Ruby Gem for any type of Ruby web application |
+| [siimact](https://github.com/mirgj/siimact) | siimact: A set of React components for Siimple CSS Framework |
 
 
 ## License
