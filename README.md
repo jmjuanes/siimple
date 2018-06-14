@@ -73,7 +73,14 @@ This will generate `siimple.css` and `siimple.min.css` on `dist` folder.
 
 ### Running documentation locally
 
-The documentation for `v3.1.0` will be available on this repository. 
+The documentation is generated using the [Jekyll](https://jekyllrb.com/docs/installation/) tool. Make sure that you have it installed in your computer. Then, to build the documentation you should run the following command:
+
+```
+make docs
+```
+
+This will generate a folder `docs/_site` with the generated static documentation website.
+ 
 
 ## Questions 
 
