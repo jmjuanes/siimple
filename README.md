@@ -104,10 +104,11 @@ We appreciate all contributions to the **siimple** project and help make it bett
 | [siimple-rubygem](https://github.com/BerkhanBerkdemir/siimple-rubygem) | siimple Ruby Gem for any type of Ruby web application |
 | [siimact](https://github.com/mirgj/siimact) | siimact: A set of React components for Siimple CSS Framework |
 
+Have an awesome project or plugin related to **siimple**? Open a new issue and tell us! :)
 
 ## License
 
-**siimple** is under the [MIT](LICENSE) license. &copy; The **siimple team**.
+**siimple** is under the [MIT](LICENSE) license. &copy; 2015 - present The **siimple team**.
 
 [CONTRIBUTING]: .github/CONTRIBUTING.md
 
