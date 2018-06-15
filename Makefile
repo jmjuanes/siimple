@@ -16,7 +16,7 @@ help:
 build: 
 	@set -e
 	# Compile the scss file and generate the output css file
-	${NODE_BIN}/node-sass --include-path ./node_modules/ scss/siimple.scss dist/siimple.css 
+	${NODE_BIN}/sass scss/siimple.scss dist/siimple.css 
 	# Add the header to the compiled css file
 	@node ./scripts/header.js > ./dist/header.txt
 	@cat ./dist/header.txt ./dist/siimple.css > ./dist/siimple.temp.css
@@ -44,5 +44,5 @@ docs:
 	mkdir -p ./docs/_site/assets
 	cp ./dist/siimple.min.css ./docs/_site/assets/
 	cp ./media/logo-colored.png ./docs/_site/assets/logo.png
-	${NODE_BIN}/node-sass ./docs/siimple-docs.scss ./docs/_site/assets/siimple-docs.css
+	${NODE_BIN}/sass ./docs/siimple-docs.scss ./docs/_site/assets/siimple-docs.css
 
