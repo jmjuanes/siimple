@@ -26,7 +26,7 @@
     "devDependencies": {
         "clean-css-cli": "^4.1.11",
         "postcss-cli": "^5.0.0",
-        "node-sass": "^4.9.0",
+        "sass": "^1.6.0",
         "autoprefixer": "^8.4.1"
     },
     "scripts": {
