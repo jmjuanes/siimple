@@ -28,11 +28,6 @@
         "postcss-cli": "^5.0.0",
         "sass": "^1.6.0",
         "autoprefixer": "^8.4.1"
-    },
-    "scripts": {
-        "build": "node ./scripts/build.js",
-        "css:compile": "node ./scripts/build.js --flow-tasks css:compile",
-        "css:minify": "node ./scripts/build.js --flow-tasks css:minify",
-        "deploy": "npm run build && npm publish"
     }
 }
+
