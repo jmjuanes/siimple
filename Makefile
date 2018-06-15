@@ -46,3 +46,18 @@ docs:
 	cp ./media/logo-colored.png ./docs/_site/assets/logo.png
 	${NODE_BIN}/sass ./docs/siimple-docs.scss ./docs/_site/assets/siimple-docs.css
 
+# Prepublish docs
+docs-prepublish:
+	@set -e
+	make docs
+	@echo ">>> Generating deploying folder"
+	mkdir -p ./.deploy
+	cp -r ./docs/_site ./.deploy/_docs
+	cp docs.yaml ./.deploy/
+
+# Serve documentation website
+docs-serve:
+	@set -e
+	dev_appserver.py .deploy/docs.yaml
+
+
