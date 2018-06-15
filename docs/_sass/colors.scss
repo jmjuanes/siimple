@@ -21,7 +21,7 @@
             color: siimple-default-color($color, "over");
         }
         &--#{$color}::after {
-            content: quote(siimple-default-color($color, "base"));
+            content: inspect(siimple-default-color($color, "base"));
         }
     }
     //Legacy colors
@@ -32,7 +32,7 @@
             color: siimple-legacy-color($color, "over");
         }
         &-legacy--#{$color}::after {
-            content: quote($color-hex);
+            content: inspect($color-hex);
         }
     }
     &-wrapper {
