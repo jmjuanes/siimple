@@ -8,35 +8,22 @@
 @import "../_variables.scss";
 @import "../_functions.scss";
 
-//Label variables
-$siimple-label-height: 34px;
-$siimple-label-line-height: $siimple-label-height;
-$siimple-label-padding-right: 10px;
-$siimple-label-padding-left: 0px;
-$siimple-label-font-size: 14px;
-$siimple-label-color: $siimple-default-color;
-
 //Label class
 .siimple-label {
-    display: inline-block;
-    //height: $siimple-label-height;
-    min-height: $siimple-label-height;
-    line-height: $siimple-label-line-height;
-    //font-family: $siimple-default-text-font;
-    font-size: $siimple-label-font-size;
-    color: $siimple-label-color;
+    //display: inline-block;
+    //height: 34px;
+    min-height: 34px;
+    line-height: 34px;
+    font-size: $siimple-default-font-size;
+    color: $siimple-default-color;
     font-weight: bold;
-    padding: {
-        right: $siimple-label-padding-right;
-        left: $siimple-label-padding-left;
-    }
+    padding-right: 10px;
+    padding-left: 0px;
     vertical-align: top;
-    
     //Light label style
     &--light {
         color: $siimple-default-white;
     }
-    
     //Dark label style
     &--dark {
         color: siimple-default-color("dark");
