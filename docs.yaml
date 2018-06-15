@@ -5,19 +5,11 @@ service: docs
 
 # Handlers
 handlers:
-- url: /assets
-  secure: always
-  static_dir: _docs/assets
-- url: /(.+).html
-  secure: always
-  static_files: _docs/\1.html
-  upload: _docs/(.+).html
-- url: /(.+)/(.+).html
-  secure: always
-  static_files: _docs/\1/\2.html
-  upload: _docs/(.+)/(.+).html
 - url: /
   secure: always
   static_files: _docs/index.html
   upload: _docs/index.html
+- url: /
+  secure: always
+  static_dir: _docs
 
