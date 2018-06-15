@@ -7,7 +7,7 @@ service: docs
 handlers:
 - url: /assets
   secure: always
-  static_dir: /_docs/assets
+  static_dir: _docs/assets
 - url: /(.+).html
   secure: always
   static_files: _docs/\1.html
