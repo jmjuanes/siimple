@@ -7,9 +7,11 @@ NODE_BIN=./node_modules/.bin
 help: 
 	@echo "Available commands: "
 	@echo ""
-	@echo "  make build   Generate the compiled CSS files of siimple"
-	@echo "  make clean   Clean the generated folders"
-	@echo "  make setup   Install all dependencies"
+	@echo "  make build         Build siimple"
+	@echo "  make clean         Clean the generated folders"
+	@echo "  make docs          Build documentation website"
+	@echo "  make docs-serve    Serve documentation website"
+	@echo "  make setup         Install all dependencies"
 	@echo ""
 
 # Build siimple
@@ -84,5 +86,4 @@ docs-serve:
 	make docs-prepublish
 	dev_appserver.py .deploy/docs.yaml
 	@logger -s "Docs serve finished"
-
 
