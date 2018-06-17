@@ -15,6 +15,7 @@
 
 **siimple** is a light, responsive and open source framework for design flat and clean websites. It has been built in SASS/SCSS and provides a clean starting point for your web design.
 
+
 ## Getting started
 
 **siimple** is available on [npm](https://npmjs.com/package/siimple), so you can run `npm install siimple` to install it in your project. It is also available on a [CDN](https://www.jsdelivr.com/package/npm/siimple), so you can import the compiled CSS files directly on your HTML page.
@@ -43,9 +44,11 @@ Or import only the styles that you need:
 @import "siimple/scss/elements/_tip.scss";
 ```
 
+
 ## Documentation 
 
 We are working on a new documentation for version `v3.1.0`. You can find the documentation and the reference guide for `v3.0.0` in https://www.siimple.xyz/documentation
+
 
 ## Develop
 
@@ -105,6 +108,7 @@ We appreciate all contributions to the **siimple** project and help make it bett
 | [siimact](https://github.com/mirgj/siimact) | siimact: A set of React components for Siimple CSS Framework |
 
 Have an awesome project or plugin related to **siimple**? Open a new issue and tell us! :)
+
 
 ## License
 
