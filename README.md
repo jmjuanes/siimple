@@ -52,7 +52,7 @@ We are working on a new documentation for version `v3.1.0`. You can find the doc
 
 ## Develop
 
-Follow the steps described in this section if you are going to contribute, extend or modify **siimple**. Our main branch is `develop`, which reflects a state with the latest delivered development changes. 
+Follow the steps described in this section if you are going to contribute, extend or modify **siimple**. Our main branch is `develop`, which reflects a state with the latest delivered development changes.
 
 ### Setup environment
 
@@ -112,7 +112,7 @@ Have an awesome project or plugin related to **siimple**? Open a new issue and t
 
 ## License
 
-**siimple** is under the [MIT](LICENSE) license. &copy; 2015 - present The **siimple team**.
+Code and documentation of **siimple** &copy; 2015-2018 **Josemi Juanes**. The code is released unde the [MIT License](LICENSE) and the documentation is released under the [Creative Commons License](https://creativecommons.org/licenses/by/4.0/).
 
 [CONTRIBUTING]: .github/CONTRIBUTING.md
 
