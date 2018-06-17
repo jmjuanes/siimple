@@ -112,7 +112,9 @@ Have an awesome project or plugin related to **siimple**? Open a new issue and t
 
 ## License
 
-Code and documentation of **siimple** &copy; 2015-2018 **Josemi Juanes**. The code is released unde the [MIT License](LICENSE) and the documentation is released under the [Creative Commons License](https://creativecommons.org/licenses/by/4.0/).
+Code and documentation of **siimple** &copy; 2015-2018 **Josemi Juanes**. The code is released unde the [MIT License](LICENSE) and the documentation is released under the [Creative Commons CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
+
+The **siimple** logo &copy; 2018 **Josemi Juanes**. Released under the [Creativa Commons CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/). 
 
 [CONTRIBUTING]: .github/CONTRIBUTING.md
 
