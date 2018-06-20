@@ -1,14 +1,18 @@
+---
+# This ensures Jekyll reads the file to be transformed into CSS later
+---
+
 //Import dependencies
-@import "../scss/_variables.scss";
+@import "../../../scss/_variables.scss";
 
 //Import partials
-@import "./_sass/footer.scss";
-@import "./_sass/group.scss";
-@import "./_sass/header.scss";
-@import "./_sass/colors.scss";
-@import "./_sass/examples.scss";
-@import "./_sass/main.scss";
-@import "./_sass/navbar.scss";
-@import "./_sass/navigation.scss";
-@import "./_sass/search.scss";
+@import "footer.scss";
+@import "group.scss";
+@import "header.scss";
+@import "colors.scss";
+@import "examples.scss";
+@import "main.scss";
+@import "navbar.scss";
+@import "navigation.scss";
+@import "search.scss";
 
