@@ -47,8 +47,7 @@ Or import only the styles that you need:
 
 ## Documentation 
 
-We are working on a new documentation for version `v3.1.0`. You can find the documentation and the reference guide for `v3.0.0` in https://www.siimple.xyz/documentation
-
+The documentation website is available et https://docs.siimple.xyz. The source code of the documentation is on this repository on the `./docs` folder. Follow the instructions below to build the documentation locally.
 
 ## Develop
 
