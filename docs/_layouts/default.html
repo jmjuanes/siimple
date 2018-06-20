@@ -13,36 +13,6 @@
     {{ content }}
 </div>
 <div class="siimple-footer sd-footer siimple-footer--{{ site.size }}" align="center">
-    <!--
-    <div class="siimple-grid-row sd-footer-columns">
-        <div class="sd-footer-column siimple-grid-col siimple-grid-col--sm-12 siimple-grid-col--4">
-            <div class="sd-footer-header">Documentation</div>
-            {% for group_id in site.data.groups.all %}
-            {% assign group = site.data.groups[group_id] %}
-                <a href="{{ page.root }}{{ group.path }}" class="sd-footer-docs">{{ group.name }}</a>
-            {% endfor %}
-        </div>
-        <div class="sd-footer-column siimple-grid-col siimple-grid-col--sm-12 siimple-grid-col--4">
-            <div class="sd-footer-header">Support</div>
-            <a href="{{ site.support_url }}" class="sd-footer-social" target="_blank">
-                <div class="sd-footer-social-title"></div>
-                <div class="sd-footer-social-description">
-                    
-                </div>
-            </a>
-        </div>
-        <div class="sd-footer-column siimple-grid-col siimple-grid-col--sm-12 siimple-grid-col--4">
-            <div class="sd-footer-header">Stay tuned</div>
-            {% for social_id in site.data.social.all %}
-            {% assign social = site.data.social[social_id] %}
-                <a href="{{ social.url }}" class="sd-footer-social" target="_blank">
-                    <div class="sd-footer-social-title">{{ social.name }}</div>
-                    <div class="sd-footer-social-description">{{ social.description }}</div>
-                </a>
-            {% endfor %}
-        </div>
-    </div>
-    -->
     <div align="center">
         <a href="{{ site.home_url }}" class="sd-footer-logo" target="_blank"></a>
     </div>
