@@ -35,4 +35,5 @@ bower_components
 
 # Exclude some documentation folders and files
 docs/_site
+docs/.sass-cache
 
