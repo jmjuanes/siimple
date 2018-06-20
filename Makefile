@@ -50,11 +50,8 @@ docs:
 	@logger -s "Docs build started"
 	@logger -s "Building documentation site with Jekyll"
 	cd ./docs && jekyll build
-	@logger -s "Building documentation styles"
-	${NODE_BIN}/sass ./docs/siimple-docs.scss ./docs/_site/assets/siimple-docs.css
 	@logger -s "Copiyng assets files"
-	mkdir -p ./docs/_site/assets
-	cp ./dist/siimple.min.css ./docs/_site/assets/
+	cp ./dist/siimple.min.css ./docs/_site/assets/css/
 	cp ./media/logo-colored.png ./docs/_site/assets/logo.png
 	@logger -s "Docs build finished"
 
