@@ -52,7 +52,7 @@ docs:
 	cd ./docs && jekyll build
 	@logger -s "Copiyng assets files"
 	cp ./dist/siimple.min.css ./docs/_site/assets/css/
-	cp ./media/logo-colored.png ./docs/_site/assets/logo.png
+	cp ./media/logo-colored.png ./docs/_site/assets/images/logo.png
 	@logger -s "Docs build finished"
 
 # Publish docs
