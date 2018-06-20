@@ -3,13 +3,13 @@
         "name": "Twitter",
         "description": "Follow <strong>@siimplecss</strong> on Twitter",
         "url": "https://twitter.com/siimplecss",
-        "icon": "assets/social/twitter.png"
+        "icon": "assets/images/social/twitter.png"
     },
     "github": {
         "name": "GitHub",
         "description": "Contribute to our repository on GitHub",
         "url": "https://github.com/siimple/siimple",
-        "icon": "assets/social/github.png"
+        "icon": "assets/images/social/github.png"
     },
     "all": ["twitter", "github"]
 }
