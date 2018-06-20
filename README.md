@@ -47,7 +47,7 @@ Or import only the styles that you need:
 
 ## Documentation 
 
-The documentation website is available et https://docs.siimple.xyz. The source code of the documentation is on this repository on the `./docs` folder. Follow the instructions below to build the documentation locally.
+The documentation website is available at https://docs.siimple.xyz. The source code of the documentation is on this repository on the `./docs` folder. Follow the instructions below to build the documentation in your computer.
 
 ## Develop
 
