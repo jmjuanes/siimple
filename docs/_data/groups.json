@@ -9,7 +9,7 @@
             "class-names",
             "theming"
         ],
-        "icon": "./assets/images/rocket.png"
+        "icon": "./assets/images/groups/rocket.png"
     },
     "helpers": {
         "name": "Helpers",
@@ -22,7 +22,7 @@
             "sizing",
             "text"
         ],
-        "icon": "./assets/images/settings.png"
+        "icon": "./assets/images/groups/settings.png"
     },
     "typography": {
         "name": "Typography",
@@ -36,7 +36,7 @@
             "paragraph",
             "small"
         ],
-        "icon": "./assets/images/order.png"
+        "icon": "./assets/images/groups/order.png"
     },
     "elements": {
         "name": "Elements",
@@ -50,7 +50,7 @@
             "tag",
             "tip"
         ],
-        "icon": "./assets/images/product.png"
+        "icon": "./assets/images/groups/product.png"
     },
     "components": {
         "name": "Components",
@@ -65,7 +65,7 @@
             "table",
             "tabs"
         ],
-        "icon": "./assets/images/albums.png"
+        "icon": "./assets/images/groups/albums.png"
     },
     "grid": {
         "name": "Grid",
@@ -76,7 +76,7 @@
             "grid-tutorial",
             "grid-sizes"
         ],
-        "icon": "./assets/images/data.png"
+        "icon": "./assets/images/groups/data.png"
     },
     "form": {
         "name": "Form",
@@ -93,7 +93,7 @@
             "switch",
             "textarea"
         ],
-        "icon": "./assets/images/checkbox.png"
+        "icon": "./assets/images/groups/checkbox.png"
     },
     "layout": {
         "name": "Layout",
@@ -107,7 +107,7 @@
             "jumbotron",
             "navbar"
         ],
-        "icon": "./assets/images/layers.png"
+        "icon": "./assets/images/groups/layers.png"
     },
     "all": ["getting-started", "helpers", "typography", "elements", "components", "layout", "form", "grid"]
 }
