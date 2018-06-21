@@ -10,6 +10,7 @@
 [![devDependency Status](https://david-dm.org/siimple/siimple/dev-status.svg?style=flat-square)](https://david-dm.org/siimple/siimple#info=devDependencies)
 [![](https://data.jsdelivr.com/v1/package/npm/siimple/badge)](https://www.jsdelivr.com/package/npm/siimple)
 [![npm](https://img.shields.io/npm/l/siimple.svg?style=flat-square)](https://github.com/siimple/siimple)
+[![twitter](https://img.shields.io/badge/Twitter-%40siimplecss-blue.svg?style=flat-square)](https://twitter.com/siimplecss)
 [![gitter](https://img.shields.io/gitter/room/siimple/siimple.svg?style=flat-square)](https://gitter.im/siimple/siimple)
 [![pr](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/siimple/siimple)
 
