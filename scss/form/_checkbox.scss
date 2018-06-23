@@ -58,7 +58,7 @@ $siimple-checkbox-active-background-color: siimple-default-color("success");
         //Tick
         &:after {
             opacity: $siimple-checkbox-label-after-opacity;
-            content: '';
+            content: "";
             width: $siimple-checkbox-label-after-width;
             height: $siimple-checkbox-label-after-height;
             transform: rotate(-45deg);
@@ -68,8 +68,8 @@ $siimple-checkbox-active-background-color: siimple-default-color("success");
             left: 4px;
             background: transparent;
             border: 2px solid siimple-default-color("dark");
-            border-top: none;
-            border-right: none;
+            border-top: 0px;
+            border-right: 0px;
         }
         &:hover::after {
             opacity: 0.5;
