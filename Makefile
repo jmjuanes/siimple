@@ -11,6 +11,7 @@ help:
 	@echo "  make clean         Clean the generated folders"
 	@echo "  make docs          Build documentation website"
 	@echo "  make docs-serve    Serve documentation website"
+	@echo "  make lint          Run sass-lint"
 	@echo "  make setup         Install all dependencies"
 	@echo ""
 
@@ -43,6 +44,11 @@ setup:
 	@logger -s "Setup started"
 	npm install 
 	@logger -s "Setup finished"
+
+# Run sass-lint
+lint: 
+	@set -e
+	${NODE_BIN}/sass-lint -v
 
 # Build docs
 docs: 
