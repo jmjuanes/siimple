@@ -33,7 +33,9 @@ $siimple-spinner-small-space: 13px;
 
 //Spinner animation
 @keyframes siimple-spinner-animation {
-    50% { background-color: transparent; }
+    50% { 
+        background-color: transparent; 
+    }
 }
 
 //Spinner class
