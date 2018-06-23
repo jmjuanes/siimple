@@ -11,24 +11,6 @@
 //Checkbox variables
 $siimple-checkbox-width: 18px;
 $siimple-checkbox-height: 18px;
-$siimple-checkbox-margin-top: 8px;
-$siimple-checkbox-margin-bottom: 8px;
-$siimple-checkbox-margin-left: 10px;
-$siimple-checkbox-margin-right: 10px;
-
-$siimple-checkbox-label-width: $siimple-checkbox-width;
-$siimple-checkbox-label-height: $siimple-checkbox-height;
-$siimple-checkbox-label-border-radius: 2px;
-
-$siimple-checkbox-label-after-opacity: 0.2;
-$siimple-checkbox-label-after-width: 8px;
-$siimple-checkbox-label-after-height: 4px;
-
-//Checkbox inactive variables
-$siimple-checkbox-inactive-background-color: siimple-default-color("light");
-
-//Checkbox active variables
-$siimple-checkbox-active-background-color: siimple-default-color("success");
 
 //Checkbox class
 .siimple-checkbox {
@@ -36,31 +18,28 @@ $siimple-checkbox-active-background-color: siimple-default-color("success");
     position: relative;
     width: $siimple-checkbox-width;
     height: $siimple-checkbox-height;
-    margin: {
-        left: $siimple-checkbox-margin-left;
-        right: $siimple-checkbox-margin-right;
-        top: $siimple-checkbox-margin-top;
-        bottom: $siimple-checkbox-margin-bottom;
-    }
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     vertical-align: top;
-
+    //Checkbox label
     & label {
-        width: $siimple-checkbox-label-width;
-        height: $siimple-checkbox-label-height;
+        width: $siimple-checkbox-width;
+        height: $siimple-checkbox-height;
         cursor: pointer;
         transition: all 0.3s;
         position: absolute;
         top: 0;
         left: 0;
-        border-radius: $siimple-checkbox-label-border-radius;
-        background: $siimple-checkbox-inactive-background-color;
-
+        border-radius: 2px;
+        background: siimple-default-color("light");
         //Tick
         &:after {
-            opacity: $siimple-checkbox-label-after-opacity;
             content: "";
-            width: $siimple-checkbox-label-after-width;
-            height: $siimple-checkbox-label-after-height;
+            opacity: 0.2;
+            width: 8px;
+            height: 4px;
             transform: rotate(-45deg);
             transition: all 0.3s;
             position: absolute;
@@ -86,7 +65,7 @@ $siimple-checkbox-active-background-color: siimple-default-color("success");
     }
     //Checked -> change background
     & input[type=checkbox]:checked + label {
-        background-color: $siimple-checkbox-active-background-color;
+        background-color: siimple-default-color("success");
     }
 }
 
