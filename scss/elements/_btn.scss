@@ -11,8 +11,6 @@
 
 //Button variables
 $siimple-btn-height: 34px;
-$siimple-btn-padding-left: 15px;
-$siimple-btn-padding-right: 15px;
 
 //Button class
 .siimple-btn {
@@ -26,14 +24,12 @@ $siimple-btn-padding-right: 15px;
     //font-family: $siimple-default-text-font;
     font-size: $siimple-default-font-size;
     //font-weight: bold;
-    padding: {
-        left: $siimple-btn-padding-left;
-        right: $siimple-btn-padding-right;
-    }
+    padding-left: 15px;
+    padding-right: 15px;
     border-radius: $siimple-default-border-radius;
     //Disable default button element borders
     //https://github.com/siimple/siimple/pull/17
-    border: none;
+    border: 0px;
     //Disable user selection
     @include siimple-utils-select(none);
     //Button hover style
