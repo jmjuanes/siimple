@@ -27,13 +27,13 @@ build/Release
 node_modules
 bower_components
 
-# excluding intellij project management files
+# excluding project management files
 *.iml
-
-# Exclude vim cache files
+.idea
 *.swp
 
 # Exclude some documentation folders and files
 docs/_site
 docs/.sass-cache
+.deploy
 
