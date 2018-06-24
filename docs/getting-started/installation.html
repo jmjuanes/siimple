@@ -11,31 +11,33 @@ next: "customize"
 
 <!-- Install with npm or bower -->
 <div class="siimple-h5">1. Install using a package manager</div>
-<div class="siimple-p">
-    You can use <a href="https://www.npmjs.com/package/siimple" class="siimple-link" target="_blank">npm</a> or
-    <a href="http://bower.io" class="siimple-link" target="_blank">bower</a> to download the latest version of <b>siimple</b>.
+<div class="siimple-h6">Using npm</div>
+<div class="siimple-paragraph">
+    You can use <a href="https://www.npmjs.com/package/siimple" class="siimple-link" target="_blank">npm</a> to download the latest version of <b>siimple</b>.
 </div>
-<div class="siimple-paragraph">Install using <b>npm</b>:</div>
 <pre class="siimple-pre">$ npm install siimple --save</pre>
-<div class="siimple-p">Install using <b>bower</b>: </div>
-<pre class="siimple-pre">$ bower install siimple</pre>
-<div class="siimple-p">
-    You can find the release CSS files in the <code class="siimple-code">./dist/</code> folder.
+<div class="siimple-h6">Using RubyGems</div>
+<div class="siimple-paragraph">
+    Install <strong>siimple</strong> in your Ruby application by adding the following line in your <a href="https://bundler.io/gemfile.html" class="siimple-link" target="_blank">Gemfile</a>:
+</div>
+<pre class="siimple-pre">gem 'siimple', '~&gt; {{ site.version }}', :git =&gt; 'https://github.com/BerkhanBerkdemir/siimple-rubygem.git'</pre>
+<div class="siimple-paragraph">
+    See the <a href="https://github.com/BerkhanBerkdemir/siimple-rubygem" class="siimple-link" target="_blank">gem’s README</a> for more information.
 </div>
 
 <!-- Hosted description -->
 <div class="siimple-h5">2. Use a hosted version</div>
-<div class="siimple-p">
+<div class="siimple-paragraph">
     You can use our hosted version in <b>JsDelivr</b>. Just copy and paste the following <code class="siimple-code">&lt;link&gt;</code> element in your HTML file:
 </div>
 <pre class="siimple-pre">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple@{{ site.version }}/dist/siimple.min.css"&gt;</pre>
-<div class="siimple-p">
+<div class="siimple-paragraph">
     You can check all available hosted versions <a href="https://www.jsdelivr.com/package/npm/siimple" class="siimple-link" target="_blank">in the jsDelivr website</a>.
 </div>
 
 <!-- Dowmload from github -->
 <div class="siimple-h5">3. Download manually from the repository</div>
-<div class="siimple-p">
+<div class="siimple-paragraph">
     You can visit the repository hosted on <a href="{{ site.data.social.github.url }}" class="siimple-link" target="_blank">GitHub</a> and download the
     latest version from the <a href="{{ site.data.social.github.url }}/releases" class="siimple-link" target="_blank">releases page</a>.
     You can find the CSS files on the <code class="siimple-code">./dist/</code> folder, so you can copy them to your project.
