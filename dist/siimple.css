@@ -1,5 +1,5 @@
 /*!
- * @name         siimple 3.1.1
+ * @name         siimple 3.1.0
  * @description  Minimal CSS framework for flat and clean designs.
  * @homepage     https://www.siimple.xyz/
  * @repository   https://github.com/siimple/siimple
@@ -200,7 +200,7 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 5px;
-  border: none;
+  border: 0px;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -2017,8 +2017,8 @@ body {
   background: #dde5ee;
 }
 .siimple-checkbox label:after {
-  opacity: 0.2;
   content: "";
+  opacity: 0.2;
   width: 8px;
   height: 4px;
   -webkit-transform: rotate(-45deg);
@@ -2029,8 +2029,8 @@ body {
   left: 4px;
   background: transparent;
   border: 2px solid #546778;
-  border-top: none;
-  border-right: none;
+  border-top: 0px;
+  border-right: 0px;
 }
 .siimple-checkbox label:hover::after {
   opacity: 0.5;
