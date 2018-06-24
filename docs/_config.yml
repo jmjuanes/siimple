@@ -14,6 +14,7 @@ version: "3.1.0"
 size: "large"
 
 # Global metadata
+author_url: "https://github.com/jmjuanes"
 home_url: "https://www.siimple.xyz"
 bugs_url: "https://github.com/siimple/siimple/issues"
 team_url: "https://github.com/orgs/siimple/people"
