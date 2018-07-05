@@ -28,6 +28,8 @@ $siimple-list-item-padding: 10px;
         padding: $siimple-list-item-padding;
         background-color: siimple-default-color("light", "light");
         transition: all 0.3s ease;
+        text-decoration: none;
+        color: $siimple-default-text-color;
         //position: relative;
     }
     &-item:first-child {
@@ -51,6 +53,8 @@ $siimple-list-item-padding: 10px;
         font-size: 16px;
         font-weight: bold;
         line-height: 24px;
+        text-decoration: none;
+        color: $siimple-default-text-color;
         //margin-bottom: 5px;
     }
 }
