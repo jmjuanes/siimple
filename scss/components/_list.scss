@@ -43,9 +43,18 @@ $siimple-list-item-padding: 10px;
     &-item:not(:last-child) {
         border-bottom: 1px solid siimple-default-color("light", "base");
     }
-    &--hover &-item:hover {
+    &--hover &-item:not(#{&}-item--selected):hover {
         background-color: siimple-default-color("light", "base");
         cursor: pointer;
+    }
+    //Item selected
+    &-item--selected {
+        background-color: siimple-default-color("primary", "light");
+    }
+    &-item--selected,
+    &-item--selected &-title,
+    &-item--selected &-description {
+        color: siimple-default-color("primary", "dark");
     }
     //List title 
     &-title {
@@ -56,6 +65,14 @@ $siimple-list-item-padding: 10px;
         text-decoration: none;
         color: $siimple-default-text-color;
         //margin-bottom: 5px;
+    }
+    //List description
+    &-description {
+        display: block;
+        font-size: 14px;
+        line-height: 20px;
+        text-decoration: none;
+        color: siimple-default-color("dark", "light");
     }
 }
 
