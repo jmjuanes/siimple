@@ -1,324 +1,42 @@
 {
-    "btn": {
-        "name": "Btn",
-        "description": "The essential and classic button element",
-        "keywords": "btn,button,buttons,submit",
-        "path": "elements/btn.html",
-        "group": "elements"
+    "getting-started": {
+        "title": "Getting started",
+        "description": "An introduction to how to get started with <strong>siimple</strong>.",
+        "icon": "./assets/images/groups/rocket.png"
     },
-    "close": {
-        "name": "Close",
-        "description": "A minimal close button",
-        "keywords": "close,btn,cross,delete",
-        "path": "elements/close.html",
-        "group": "elements"
+    "helpers": {
+        "title": "Helpers",
+        "description": "Utility classes to modify the style of any element.",
+        "icon": "./assets/images/groups/settings.png"
     },
-    "rule": {
-        "name": "Rule",
-        "description": "Simple element to separate content in your page",
-        "keywords": "rule,hr",
-        "path": "elements/rule.html",
-        "group": "elements"
+    "typography": {
+        "title": "Typography",
+        "description": "Style your typograhic HTML elements, including headings, paragraph, etc.",
+        "icon": "./assets/images/groups/order.png"
     },
-    "spinner": {
-        "name": "Spinner",
-        "description": "An animated and pure CSS loading indicator",
-        "keywords": "spinner,loading,animate",
-        "path": "elements/spinner.html",
-        "group": "elements"
+    "elements": {
+        "title": "Elements",
+        "description": "Basic elements that only require a single CSS class to go!",
+        "icon": "./assets/images/groups/product.png"
     },
-    "tag": {
-        "name": "Tag",
-        "description": "Small labeling element",
-        "keywords": "tag,badge,label,labels",
-        "path": "elements/tag.html",
-        "group": "elements"
+    "components": {
+        "title": "Components",
+        "description": "Reusable advanced elements, including alerts, lists and more!",
+        "icon": "./assets/images/groups/albums.png"
     },
-    "tip": {
-        "name": "Tip",
-        "description": "A special alert to grab attention in something important",
-        "keywords": "tip,exclamation,warning,question,callout,alert,messages",
-        "path": "elements/tip.html",
-        "group": "elements"
-    },
-    "alert": {
-        "name": "Alert",
-        "description": "Display block messages",
-        "keywords": "alert,toast,messages,actions",
-        "path": "components/alert.html",
-        "group": "components"
-    },
-    "breadcrumb": {
-        "name": "Breadcrumb",
-        "description": "Show the current page navigation",
-        "keywords": "breadcrumb,navigation,location",
-        "path": "components/breadcrumb.html",
-        "group": "components"
-    },
-    "card": {
-        "name": "Card",
-        "description": "A minimal and flexible container component",
-        "keywords": "card,content,container",
-        "path": "components/card.html",
-        "group": "components"
-    },
-    "list": {
-        "name": "List",
-        "description": "Simple component for displaying series of items",
-        "keywords": "list,content",
-        "path": "components/list.html",
-        "group": "components"
-    },
-    "menu": {
-        "name": "Menu",
-        "description": "A vertical navigation component",
-        "keywords": "menu,item,selected,sidebar,vertical",
-        "path": "components/menu.html",
-        "group": "components"
-    },
-    "table": {
-        "name": "Table",
-        "description": "Build a table using only divs",
-        "keywords": "table,tables,row,rows,columns,cells,header,body",
-        "path": "components/table.html",
-        "group": "components"
-    },
-    "tabs": {
-        "name": "Tabs",
-        "description": "A horizontal navigation component",
-        "keywords": "tabs,tab,navigation,horizontal",
-        "path": "components/tabs.html",
-        "group": "components"
-    },
-    "layout-overview": {
-        "name": "Layout overview",
-        "description": "Introduction to layout components of siimple",
-        "keywords": "layout",
-        "path": "layout/overview.html",
-        "group": "layout"
-    },
-    "box": {
-        "name": "Box",
-        "description": "A simple layout component to highlight something",
-        "keywords": "box,content",
-        "path": "layout/box.html",
-        "group": "layout"
-    },
-    "content": {
-        "name": "Content",
-        "description": "A responsive component to center content horizontally",
-        "keywords": "content,container,center",
-        "path": "layout/content.html",
-        "group": "layout"
-    },
-    "footer": {
-        "name": "Footer",
-        "description": "A basic component for displaying content in the bottom of your page",
-        "keywords": "foot,footer,content,bottom",
-        "path": "layout/footer.html",
-        "group": "layout"
-    },
-    "jumbotron": {
-        "name": "Jumbotron",
-        "description": "A lightweight component for showcasing content",
-        "keywords": "jumbotron,content,title,subtitle,hero",
-        "path": "layout/jumbotron.html",
-        "group": "layout"
-    },
-    "navbar": {
-        "name": "Navbar",
-        "description": "A horizontally navigation component",
-        "keywords": "navbar,nav,navigation,top",
-        "path": "layout/navbar.html",
-        "group": "layout"
-    },
-    "grid-overview": {
-        "name": "Grid overview",
-        "description": "Brief introduction to our grid system",
-        "keywords": "grid,overview,columns",
-        "path": "grid/overview.html",
-        "group": "grid"
-    },
-    "grid-tutorial": {
-        "name": "Building a grid",
-        "description": "A guide for building a grid",
-        "keywords": "grid,tutorial,building",
-        "path": "grid/tutorial.html",
-        "group": "grid"
-    },
-    "grid-sizes": {
-        "name": "Responsive grid",
-        "description": "Handle different grid columns sizes for each breakpoint",
-        "keywords": "grid,sizes,responsive",
-        "path": "grid/sizes.html",
-        "group": "grid"
+    "grid": {
+        "title": "Grid",
+        "description": "Use our responsive grid system with twelve columns.",
+        "icon": "./assets/images/groups/data.png"
     },
     "form": {
-        "name": "Form",
-        "description": "Create and style a wide variety of forms",
-        "keywords": "form",
-        "path": "form/form.html",
-        "group": "form"
+        "title": "Form",
+        "description": "The guide to style your form elements using <strong>siimple</strong>.",
+        "icon": "./assets/images/groups/checkbox.png"
     },
-    "field": {
-        "name": "Form field",
-        "description": "A simple form container to group form sections",
-        "keywords": "form,field,groups",
-        "path": "form/field.html",
-        "group": "form"
-    },
-    "checkbox": {
-        "name": "Checkbox",
-        "description": "The redesigned checkbox element",
-        "keywords": "checkbox,check,checked",
-        "path": "form/checkbox.html",
-        "group": "form"
-    },
-    "input": {
-        "name": "Input",
-        "description": "The universal text input element",
-        "keywords": "input,text,password,number",
-        "path": "form/input.html",
-        "group": "form"
-    },
-    "label": {
-        "name": "Label",
-        "description": "Style your form labels",
-        "keywords": "label,labeling",
-        "path": "form/label.html",
-        "group": "form"
-    },
-    "radio": {
-        "name": "Radio button",
-        "description": "The redesigned radio button element",
-        "keywords": "radio,button",
-        "path": "form/radio.html",
-        "group": "form"
-    },
-    "select": {
-        "name": "Select",
-        "description": "A basic dropdown selection element",
-        "keywords": "select,dropdown,options,selections",
-        "path": "form/select.html",
-        "group": "form"
-    },
-    "switch": {
-        "name": "Switch",
-        "description": "A redesigned checkbox element that looks like a switch",
-        "keywords": "switch,checkbox",
-        "path": "form/switch.html",
-        "group": "form"
-    },
-    "textarea": {
-        "name": "Textarea",
-        "description": "A multiline text input element",
-        "keywords": "textarea,input,rows,lines",
-        "path": "form/textarea.html",
-        "group": "form"
-    },
-    "blockquote": {
-        "name": "Blockquote",
-        "description": "A single class to style your quoting blocks",
-        "keywords": "blockquote,cites,block",
-        "path": "typography/blockquote.html",
-        "group": "typography"
-    },
-    "code": {
-        "name": "Code",
-        "description": "Display inline code blocks",
-        "keywords": "code,inline",
-        "path": "typography/code.html",
-        "group": "typography"
-    },
-    "heading": {
-        "name": "Headings",
-        "description": "Style your HTML headings",
-        "keywords": "headings,h1,h2,h3,h4,h5,h6",
-        "path": "typography/heading.html",
-        "group": "typography"
-    },
-    "link": {
-        "name": "Link",
-        "description": "Style your link tags",
-        "keywords": "link,anchor,a,href",
-        "path": "typography/link.html",
-        "group": "typography"
-    },
-    "paragraph": {
-        "name": "Paragraph",
-        "description": "Format blocks of text",
-        "keywords": "paragraph,text,blocks",
-        "path": "typography/paragraph.html",
-        "group": "typography"
-    },
-    "small": {
-        "name": "Small",
-        "description": "Display smaller text",
-        "keywords": "small,text",
-        "path": "typography/small.html",
-        "group": "typography"
-    },
-    "installation": {
-        "name": "Installation",
-        "description": "The guide to import <strong>siimple</strong> in your proyect",
-        "keywords": "installation,install,cdn,package",
-        "path": "getting-started/installation.html",
-        "group": "getting-started"
-    },
-    "customize": {
-        "name": "Customize",
-        "description": "Build your own version of <strong>siimple</strong>",
-        "keywords": "build,customize,variables,make",
-        "path": "getting-started/customize.html",
-        "group": "getting-started"
-    },
-    "class-names": {
-        "name": "Class Names",
-        "description": "How <strong>siimple</strong> is structured",
-        "keywords": "class,names,classess,bem",
-        "path": "getting-started/class-names.html",
-        "group": "getting-started"
-    },
-    "theming": {
-        "name": "Theming",
-        "description": "Font and colors that <strong>siimple</strong> uses",
-        "keywords": "font,colors,theme",
-        "path": "getting-started/theming.html",
-        "group": "getting-started"
-    },
-    "display": {
-        "name": "Display",
-        "description": "Customize how the content is displayed in your website",
-        "keywords": "display,inline,displaying,block,flex",
-        "path": "helpers/display.html",
-        "group": "helpers"
-    },
-    "float": {
-        "name": "Float",
-        "description": "Align elements in your website",
-        "keywords": "float,left,right,clearfix,floating",
-        "path": "helpers/float.html",
-        "group": "helpers"
-    },
-    "colors": {
-        "name": "Colors",
-        "description": "Change the color of the text or background",
-        "keywords": "color,colors",
-        "path": "helpers/colors.html",
-        "group": "helpers"
-    },
-    "sizing": {
-        "name": "Sizing",
-        "description": "Modify the widht or the height of an element",
-        "keywords": "sizing,sizes,height,width",
-        "path": "helpers/sizing.html",
-        "group": "helpers"
-    },
-    "text": {
-        "name": "Text helpers",
-        "description": "Basic text helpers",
-        "keywords": "text,alignment,transform,size,weight,italic",
-        "path": "helpers/text.html",
-        "group": "helpers"
+    "layout": {
+        "title": "Layout",
+        "description": "A collection of CSS classes for laying your project.",
+        "icon": "./assets/images/groups/layers.png"
     }
 }
