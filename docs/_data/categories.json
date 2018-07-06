@@ -38,5 +38,6 @@
         "title": "Layout",
         "description": "A collection of CSS classes for laying your project.",
         "icon": "./assets/images/groups/layers.png"
-    }
+    },
+    "all": ["getting-started", "helpers", "typography", "elements", "components", "layout", "form", "grid"] 
 }
