@@ -1,8 +1,9 @@
 ---
 layout: "documentation"
-root: "../"
-category: "blockquote"
-next: "code"
+category: "typography"
+title: "Blockquote"
+description: "A single class to style your quoting blocks"
+keywords: "blockquote,cites,block"
 ---
 
 <div class="siimple-paragraph">
