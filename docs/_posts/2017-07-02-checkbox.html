@@ -1,0 +1,48 @@
+---
+layout: "documentation"
+category: "form"
+title: "Checkbox"
+description: "The redesigned checkbox element"
+keywords: "checkbox,check,checked"
+---
+
+<div class="siimple-paragraph">
+    For adding a checkbox element to your project, first you must create a <code class="siimple-code">div</code> with the class
+    <code class="siimple-code">siimple-checkbox</code>:
+</div>
+<pre class="siimple-pre">&lt;div class="siimple-checkbox"&gt;&lt;/div&gt;</pre>
+<div class="siimple-paragraph">
+    Inside it, create an <code class="siimple-code">input</code> with the attribute <code class="siimple-code">type="checkbox"</code>. Also, you must add an <code class="siimple-code">id</code> attribute that will be used in the last step.
+</div>
+<pre class="siimple-pre">
+&lt;div class="siimple-checkbox"&gt;
+    &lt;input type="checkbox" id="myCheckbox"&gt;
+&lt;/div&gt;
+</pre>
+<div class="siimple-paragraph">
+    Finally, create a <code class="siimple-code">label</code> element bound to the previous <code class="siimple-code">input</code> element.
+</div>
+<pre class="siimple-pre">
+&lt;div class="siimple-checkbox"&gt;
+    &lt;input type="checkbox" id="myCheckbox"&gt;
+    &lt;label for="myCheckbox"&gt;&lt;/label&gt;
+&lt;/div&gt;
+</pre>
+<div class="siimple-paragraph">
+    Final result:
+</div>
+<div class="sd-snippet-demo">
+    <label class="siimple-label">Your checkbox:</label>
+    <div class="siimple-checkbox">
+        <input type="checkbox" id="myCheckbox" checked>
+        <label for="myCheckbox"></label>
+    </div>
+</div>
+<pre class="sd-snippet-code">
+&lt;label class="siimple-label"&gt;Your checkbox:&lt;/label&gt;
+&lt;div class="siimple-checkbox"&gt;
+    &lt;input type="checkbox" id="myCheckbox" checked&gt;
+    &lt;label for="myCheckbox"&gt;&lt;/label&gt;
+&lt;/div&gt;
+</pre>
+
