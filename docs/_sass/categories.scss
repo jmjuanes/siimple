@@ -1,8 +1,8 @@
-//Group variables
-$sd-group-breakpoint: 700px;
+//Categories variables
+$sd-categories-breakpoint: 700px;
 
-//Group class
-.sd-group {
+//Categories class
+.sd-categories {
     display: block;
     //border-bottom: 1px solid siimple-default-color("light");
     padding-top: 50px;
@@ -58,7 +58,7 @@ $sd-group-breakpoint: 700px;
         clear: both;
         content: "";
     }
-    @media (max-width: $sd-group-breakpoint) {
+    @media (max-width: $sd-categories-breakpoint) {
         &-item {
             width: calc(100% - 30px);
         }
