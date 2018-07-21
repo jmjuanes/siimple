@@ -12,7 +12,7 @@ help:
 	@echo "  make docs          Build documentation website"
 	@echo "  make docs-serve    Serve documentation website"
 	@echo "  make lint          Run sass-lint"
-	@echo "  make setup         Install all dependencies"
+	@echo "  make install       Install all dependencies"
 	@echo ""
 
 # Build siimple
@@ -39,10 +39,15 @@ clean:
 	@logger -s "Clean finished"
 
 # Install all dependencies
-setup:
+install:
 	@set -e
 	@logger -s "Setup started"
 	npm install 
+	@# Install documentation dependencies
+	bower install
+	cd ./docs && bundle install
+	@# Hack to ensure that sass finds the siimple source code
+	ln -s ${PWD} ./bower_components/siimple 
 	@logger -s "Setup finished"
 
 # Run sass-lint
@@ -58,7 +63,6 @@ docs:
 	cd ./docs && jekyll build
 	@logger -s "Copiyng assets files"
 	cp ./dist/siimple.min.css ./docs/_site/assets/css/
-	cp ./media/logo-colored.png ./docs/_site/assets/images/logo.png
 	@logger -s "Docs build finished"
 
 # Publish docs
