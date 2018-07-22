@@ -1,5 +1,5 @@
 /*!
- * @name         siimple 3.1.0
+ * @name         siimple 3.1.1
  * @description  Minimal CSS framework for flat and clean designs.
  * @homepage     https://www.siimple.xyz/
  * @repository   https://github.com/siimple/siimple
@@ -75,7 +75,6 @@ body {
 .siimple-h1 {
   display: block;
   font-size: 40px;
-  font-weight: bold;
   line-height: 51px;
   color: #546778;
   padding: 0px;
@@ -87,7 +86,6 @@ body {
 .siimple-h2 {
   display: block;
   font-size: 32px;
-  font-weight: bold;
   line-height: 40px;
   color: #546778;
   padding: 0px;
@@ -99,7 +97,6 @@ body {
 .siimple-h3 {
   display: block;
   font-size: 28px;
-  font-weight: bold;
   line-height: 29px;
   color: #546778;
   padding: 0px;
@@ -111,7 +108,6 @@ body {
 .siimple-h4 {
   display: block;
   font-size: 24px;
-  font-weight: bold;
   line-height: 25px;
   color: #546778;
   padding: 0px;
@@ -123,7 +119,6 @@ body {
 .siimple-h5 {
   display: block;
   font-size: 20px;
-  font-weight: bold;
   line-height: 22px;
   color: #546778;
   padding: 0px;
@@ -135,7 +130,6 @@ body {
 .siimple-h6 {
   display: block;
   font-size: 16px;
-  font-weight: bold;
   line-height: 20px;
   color: #546778;
   padding: 0px;
@@ -899,6 +893,8 @@ body {
   padding: 10px;
   background-color: #eef2f7;
   transition: all 0.3s ease;
+  text-decoration: none;
+  color: #546778;
 }
 .siimple-list-item:first-child {
   border-top-left-radius: 5px;
@@ -911,15 +907,30 @@ body {
 .siimple-list-item:not(:last-child) {
   border-bottom: 1px solid #dde5ee;
 }
-.siimple-list--hover .siimple-list-item:hover {
+.siimple-list--hover .siimple-list-item:not(.siimple-list-item--selected):hover {
   background-color: #dde5ee;
   cursor: pointer;
+}
+.siimple-list-item--selected {
+  background-color: #a7c8f2;
+}
+.siimple-list-item--selected, .siimple-list-item--selected .siimple-list-title, .siimple-list-item--selected .siimple-list-description {
+  color: #1b5eb1;
 }
 .siimple-list-title {
   display: block;
   font-size: 16px;
   font-weight: bold;
   line-height: 24px;
+  text-decoration: none;
+  color: #546778;
+}
+.siimple-list-description {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+  color: #879aab;
 }
 
 .siimple-list-item .siimple-tag {
