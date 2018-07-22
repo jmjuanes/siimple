@@ -1,0 +1,13 @@
+---
+---
+[
+    {% for post in site.posts %}
+    {
+        "title": "{{ post.title }}",
+        "description": "{{ post.description }}",
+        "keywords": "{{ post.keywords }}",
+        "url": ".{{ post.url }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+]
+
