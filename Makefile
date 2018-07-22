@@ -1,4 +1,4 @@
-.PHONY: build clean setup docs
+.PHONY: build clean install docs
 
 # Node binaries folder
 NODE_BIN=./node_modules/.bin
