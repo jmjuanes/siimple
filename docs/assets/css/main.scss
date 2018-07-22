@@ -5,6 +5,11 @@
 //Import theme
 @import "{{ site.theme }}";
 
+//Import partials
+@import "categories.scss";
+@import "colors.scss";
+@import "examples.scss";
+
 //Snippet class
 .sd-snippet {
     &-demo {
