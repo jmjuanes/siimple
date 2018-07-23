@@ -19,7 +19,7 @@ $siimple-heading-sizes: $siimple-default-headings;
             display: block;
             font-size: map-get($heading-variables, "size");
             //font-family: $siimple-default-text-font;
-            //font-weight: bold;
+            font-weight: 600;
             line-height: map-get($heading-variables, "line-height");
             color: $siimple-default-color;
             padding: 0px;
