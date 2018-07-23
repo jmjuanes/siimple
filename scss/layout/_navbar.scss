@@ -11,6 +11,7 @@
 
 //Navbar default variables
 $siimple-navbar-height: 34px;
+$siimple-navbar-padding: 20px;
 
 //Navbar class
 .siimple-navbar {
@@ -18,11 +19,14 @@ $siimple-navbar-height: 34px;
     //position: absolute; top: 0px; left: 0px;
     z-index: 3;
     //width: 100%;
+    max-width: calc(100% - 2 * #{$siimple-navbar-padding});
     height: $siimple-navbar-height;
     //font-family: $siimple-default-text-font;
     //margin: $siimple-navbar-margin;
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-left: $siimple-navbar-padding;
+    padding-right: $siimple-navbar-padding;
     //vertical-align: middle;
     @include siimple-sizing();
     //Navbar title
