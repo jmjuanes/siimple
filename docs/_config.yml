@@ -1,29 +1,50 @@
-# Build configuration
+# Build settings
 env: "production"
-exclude: ["README.md", "docs.yaml"]
-sass:
-    load_paths:
-        - ../scss
-        - _sass
+theme: "siimple-theme"
 permalink: "none" 
 
-# Site global variables
-title: "siimple: minimal CSS framework for flat and clean websites!"
-version: "3.1.0"
-size: "large"
+# Sass build settings
+sass:
+    style: "compressed"
+    load_paths: ["../bower_components", "_sass"]
 
-# Global metadata
-author_url: "https://github.com/jmjuanes"
-home_url: "https://www.siimple.xyz"
-bugs_url: "https://github.com/siimple/siimple/issues"
-team_url: "https://github.com/orgs/siimple/people"
-contributors_url: "https://github.com/siimple/siimple/graphs/contributors"
+# Site settings
+title: "siimple"
+version: "3.1.1"
+base_url: "https://docs.siimple.xyz/"
 
-# Licenses
-code_license:
-    name: "MIT License"
-    url: "https://github.com/siimple/siimple/blob/develop/LICENSE.md"
-docs_license:
-    name: "Creative Commons CC BY 4.0"
-    url: "https://creativecommons.org/licenses/by/4.0/"
+# Repository settings
+repository:
+    url: "https://github.com/siimple/siimple"
+    contributors: "https://github.com/siimple/siimple/graphs/contributors"
+    issues: "https://github.com/siimple/siimple/issues"
+    code_license: 
+        title: "MIT License"
+        url: "https://github.com/siimple/siimple/blob/develop/LICENSE"
+    docs_license: 
+        title: "Creative Commons CC BY 4.0"
+        url: "https://github.com/siimple/siimple/blob/develop/docs/LICENSE"
+
+# Social links
+social:
+    - id: "github"
+      description: "Contribute to our repository"
+      url: "https://github.com/siimple/siimple"
+    - id: "twitter"
+      description: "Follow <strong>@siimplecss</strong> on Twitter"
+      url: "https://twitter.com/siimplecss"
+    - id: "gitter"
+      description: "Join our community chat room"
+      url: "https://gitter.im/siimple/siimple"
+
+# Search settings
+search:
+    entry: "/search.html"
+    database: "./assets/search.json"
+
+# Cookies settings
+cookies:
+    analytics: "UA-70800807-5"
+    path: "/"
+    domain: ".siimple.xyz"
 
