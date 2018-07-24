@@ -29,18 +29,16 @@ $siimple-field-helper-margin-bottom: 15px;
     vertical-align: top;
     margin-bottom: $siimple-field-margin-bottom;
     margin-top: $siimple-field-margin-top;
-
+    //Field label
     &-label {
         display: block;
         //width: 100%;
         vertical-align: top;
-        font-weight: bold;
-        font-size: $siimple-field-label-font-size;
-        color: $siimple-field-label-color;
-        margin: {
-            top: $siimple-field-label-margin-top;
-            bottom: $siimple-field-label-margin-bottom;
-        }
+        font-weight: 600;
+        font-size: 14px;
+        color: $siimple-default-color;
+        margin-top: 0px;
+        margin-bottom: 5px;
     }
     &-helper {
         display: block;
