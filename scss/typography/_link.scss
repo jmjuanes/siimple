@@ -12,12 +12,13 @@
 .siimple-link {
     //font-family: $siimple-default-font-size;
     color: siimple-default-color("primary");
-    //font-weight: bold;
+    font-weight: 600;
     text-decoration: none;
     transition: all 0.3s;
+    cursor: pointer;
     &:hover {
-        text-decoration: underline;
-        cursor: pointer;
+        //text-decoration: underline;
+        //cursor: pointer;
         color: siimple-default-color("primary", "dark");
     }
 }
