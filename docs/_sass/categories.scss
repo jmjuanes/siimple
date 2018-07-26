@@ -19,15 +19,15 @@ $sd-categories-breakpoint: 700px;
     }
     &-item {
         display: inline-block;
-        width: calc(33% - 56px);
+        width: calc(33% - 30px);
         float: left;
         position: relative;
         height: 140px;
-        padding: 20px;
-        margin: 10px;
+        padding: 15px;
+        //margin: 10px;
         text-decoration: none !important;
         color: siimple-default-color("dark");
-        background-color: rgba(siimple-default-color("light"), 0.6);
+        //background-color: rgba(siimple-default-color("light"), 0.6);
         border-radius: 5px;
         transition: background-color 0.3s ease;
         &-logo {
@@ -60,9 +60,7 @@ $sd-categories-breakpoint: 700px;
     }
     @media (max-width: $sd-categories-breakpoint) {
         &-item {
-            width: calc(100% - 40px);
-            margin-left: 0px;
-            margin-right: 0px;
+            width: calc(100% - 30px);
         }
     }
 }
