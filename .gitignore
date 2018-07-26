@@ -36,4 +36,6 @@ bower_components
 docs/_site
 docs/.sass-cache
 .deploy
+package-lock.json
+Gemfile.lock
 
