@@ -2,42 +2,42 @@
     "getting-started": {
         "title": "Getting started",
         "description": "An introduction to how to get started with <strong>siimple</strong>.",
-        "icon": "./assets/images/groups/rocket.png"
+        "icon": "./assets/images/categories/rocket.png"
     },
     "helpers": {
         "title": "Helpers",
         "description": "Utility classes to modify the style of any element.",
-        "icon": "./assets/images/groups/settings.png"
+        "icon": "./assets/images/categories/settings.png"
     },
     "typography": {
         "title": "Typography",
         "description": "Style your typograhic HTML elements, including headings, paragraph, etc.",
-        "icon": "./assets/images/groups/order.png"
+        "icon": "./assets/images/categories/order.png"
     },
     "elements": {
         "title": "Elements",
         "description": "Basic elements that only require a single CSS class to go!",
-        "icon": "./assets/images/groups/product.png"
+        "icon": "./assets/images/categories/product.png"
     },
     "components": {
         "title": "Components",
         "description": "Reusable advanced elements, including alerts, lists and more!",
-        "icon": "./assets/images/groups/albums.png"
+        "icon": "./assets/images/categories/albums.png"
     },
     "grid": {
         "title": "Grid",
         "description": "Use our responsive grid system with twelve columns.",
-        "icon": "./assets/images/groups/data.png"
+        "icon": "./assets/images/categories/data.png"
     },
     "form": {
         "title": "Form",
         "description": "The guide to style your form elements using <strong>siimple</strong>.",
-        "icon": "./assets/images/groups/checkbox.png"
+        "icon": "./assets/images/categories/checkbox.png"
     },
     "layout": {
         "title": "Layout",
         "description": "A collection of CSS classes for laying your project.",
-        "icon": "./assets/images/groups/layers.png"
+        "icon": "./assets/images/categories/layers.png"
     },
     "all": ["getting-started", "helpers", "typography", "elements", "components", "layout", "form", "grid"] 
 }
