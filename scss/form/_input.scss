@@ -8,15 +8,17 @@
 @import "../_variables.scss";
 @import "../_functions.scss";
 
-$siimple-input-font-size: 14px;
+//Input variables
 $siimple-input-padding: 10px;
 
+//Input style
 .siimple-input {
     display: inline-block;
     height: 34px;
     line-height: 34px;
     //font-family: $siimple-default-text-font;
-    font-size: $siimple-input-font-size;
+    font-size: 14px;
+    font-weight: normal;
     color: $siimple-default-color;
     padding: {
         left: $siimple-input-padding;
