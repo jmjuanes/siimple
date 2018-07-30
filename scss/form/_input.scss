@@ -9,15 +9,12 @@
 @import "../_functions.scss";
 
 $siimple-input-font-size: 14px;
-$siimple-input-height: 34px;
-$siimple-input-line-height: $siimple-input-height;
 $siimple-input-padding: 10px;
-$siimple-input-radius: $siimple-default-border-radius;
 
 .siimple-input {
     display: inline-block;
-    height: $siimple-input-height;
-    line-height: $siimple-input-line-height;
+    height: 34px;
+    line-height: 34px;
     //font-family: $siimple-default-text-font;
     font-size: $siimple-input-font-size;
     color: $siimple-default-color;
@@ -28,7 +25,7 @@ $siimple-input-radius: $siimple-default-border-radius;
         bottom: 0px;
     }
     border: 0px;
-    border-radius: $siimple-input-radius;
+    border-radius: $siimple-default-border-radius;
     outline: 0px;
     background-color: siimple-default-color("light");
     vertical-align: top;
