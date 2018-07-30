@@ -1,7 +1,11 @@
 # Build settings
 env: "production"
-theme: "siimple-theme"
 permalink: "none" 
+exclude: ["LICENSE"]
+
+# Theme configuration
+theme: "siimple-theme"
+color: "blue"
 
 # Sass build settings
 sass:
@@ -11,36 +15,42 @@ sass:
 # Site settings
 title: "siimple"
 version: "3.1.1"
-base_url: "https://docs.siimple.xyz/"
+url: "https://docs.siimple.xyz"
 
-# Repository settings
-repository:
-    url: "https://github.com/siimple/siimple"
-    contributors: "https://github.com/siimple/siimple/graphs/contributors"
+# Documentation settings
+documentation:
     issues: "https://github.com/siimple/siimple/issues"
+
+# Navbar settings
+navbar:
+    - title: "Go to siimple.xyz"
+      url: "https://www.siimple.xyz"
+
+# Footer settings
+footer:
+    contributors: "https://github.com/siimple/siimple/graphs/contributors"
+    privacy_url: "https://www.siimple.xyz/legal/privacy.html"
+    cookies_url: "https://www.siimple.xyz/legal/cookies.html"
     code_license: 
         title: "MIT License"
         url: "https://github.com/siimple/siimple/blob/develop/LICENSE"
     docs_license: 
-        title: "Creative Commons CC BY 4.0"
+        title: "Creative Commons CC BY 4.0 License"
         url: "https://github.com/siimple/siimple/blob/develop/docs/LICENSE"
+    social:
+        - title: "GitHub"
+          url: "https://github.com/siimple/siimple"
+        - title: "Twitter"
+          url: "https://twitter.com/siimplecss"
+        - title: "Gitter"
+          url: "https://gitter.im/siimple/siimple"
 
-# Social links
-social:
-    - id: "github"
-      description: "Contribute to our repository"
-      url: "https://github.com/siimple/siimple"
-    - id: "twitter"
-      description: "Follow <strong>@siimplecss</strong> on Twitter"
-      url: "https://twitter.com/siimplecss"
-    - id: "gitter"
-      description: "Join our community chat room"
-      url: "https://gitter.im/siimple/siimple"
-
-# Search settings
+## Search settings
 search:
     entry: "/search.html"
     database: "./assets/search.json"
+    title: "Search"
+    subtitle: "Search in <strong>siimple</strong> docs"
 
 # Cookies settings
 cookies:
