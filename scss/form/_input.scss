@@ -32,15 +32,15 @@ $siimple-input-radius: $siimple-default-border-radius;
     outline: 0px;
     background-color: siimple-default-color("light");
     vertical-align: top;
-
+    //Fluid input
     &--fluid {
-        width: 100%;
+        width: calc(100% - 2*#{$siimple-input-padding});
     }
-
+    //Light input
     &--light {
         background-color: $siimple-default-white;
     }
-
+    //Dark input
     &--dark {
         background-color: siimple-default-color("dark");
         color: $siimple-default-white;
