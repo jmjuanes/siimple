@@ -9,52 +9,39 @@
 @import "../_functions.scss";
 
 //Select variables
-$siimple-select-height: 34px;
-$siimple-select-line-height: $siimple-select-height;
 $siimple-select-padding: 10px;
-$siimple-select-color: $siimple-default-color;
-$siimple-select-font-size: 14px;
-$siimple-select-font-weight: normal;
-$siimple-select-border: 0px;
-$siimple-select-border-radius: $siimple-default-border-radius;
-$siimple-select-background-color: siimple-default-color("light");
-$siimple-select-outline: 0px;
 
 //Select class
 .siimple-select {
     display: inline-block;
-    height: $siimple-select-height;
-    line-height: $siimple-select-line-height;
+    height: 34px;
+    line-height: 34px;
     //font-family: $siimple-default-text-font;
-    font-size: $siimple-select-font-size;
-    font-weight: $siimple-select-font-weight;
-    color: $siimple-select-color;
+    font-size: 14px;
+    font-weight: normal;
+    color: $siimple-default-color;
     padding: {
         left: $siimple-select-padding;
         right: $siimple-select-padding;
         top: 0px;
         bottom: 0px;
     }
-    border: $siimple-select-border;
-    border-radius: $siimple-select-border-radius;
-    outline: $siimple-select-outline;
-    background-color: $siimple-select-background-color;
+    border: 0px;
+    border-radius: $siimple-default-border-radius;
+    outline: 0px;
+    background-color: siimple-default-color("light");
     vertical-align: top;
-
     //Disable default appearance
     //-webkit-appearance: none;
     //-moz-appearance: none;
-    
     //Fluid select
     &--fluid {
         width: 100%;
     }
-
     //Light select style
     &--light {
         background-color: $siimple-default-white;
     }
-
     //Dark select style
     &--dark {
         background-color: siimple-default-color("dark");
