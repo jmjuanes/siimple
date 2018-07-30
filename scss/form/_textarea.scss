@@ -9,30 +9,21 @@
 @import "../_functions.scss";
 
 //Textarea variables
-$siimple-textarea-line-height: 20px;
-$siimple-textarea-font-size: 14px;
-$siimple-textarea-color: $siimple-default-color;
-$siimple-textarea-border: 0px;
-$siimple-textarea-border-radius: $siimple-default-border-radius;
-$siimple-textarea-outline: 0px;
 $siimple-textarea-padding: 10px;
-$siimple-textarea-background-color: siimple-default-color("light");
 
 //Textarea class
 .siimple-textarea {
     display: inline-block;
-    line-height: $siimple-textarea-line-height;
+    line-height: 20px;
     //font-family: $siimple-default-text-font;
-    font-size: $siimple-textarea-font-size;
-    color: $siimple-textarea-color;
+    font-size: 14px;
+    color: $siimple-default-color;
     padding: $siimple-textarea-padding;
-    border: $siimple-textarea-border;
-    border-radius: $siimple-textarea-border-radius;
-    outline: $siimple-textarea-outline;
-    border-radius: $siimple-textarea-border-radius;
-    background-color: $siimple-textarea-background-color;
+    border: 0px;
+    border-radius: $siimple-default-border-radius;
+    outline: 0px;
+    background-color: siimple-default-color("light");
     vertical-align: top;
-    
     //Fluid textarea
     &--fluid {
         width: 100%;
