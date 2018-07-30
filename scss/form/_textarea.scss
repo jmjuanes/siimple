@@ -28,5 +28,14 @@ $siimple-textarea-padding: 10px;
     &--fluid {
         width: calc(100% - 2*#{$siimple-textarea-padding});
     }
+    //Light textarea style
+    &--light {
+        background-color: $siimple-default-white;
+    }
+    //Dark textarea style
+    &--dark {
+        background-color: siimple-default-color("dark");
+        color: $siimple-default-white;
+    }
 }
 
