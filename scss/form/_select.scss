@@ -36,7 +36,7 @@ $siimple-select-padding: 10px;
     //-moz-appearance: none;
     //Fluid select
     &--fluid {
-        width: 100%;
+        width: calc(100% - 2*#{$siimple-select-padding});
     }
     //Light select style
     &--light {
