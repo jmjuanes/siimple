@@ -26,7 +26,7 @@ $siimple-textarea-padding: 10px;
     vertical-align: top;
     //Fluid textarea
     &--fluid {
-        width: 100%;
+        width: calc(100% - 2*#{$siimple-textarea-padding});
     }
 }
 
