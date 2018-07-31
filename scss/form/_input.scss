@@ -31,9 +31,10 @@ $siimple-input-padding: 10px;
     outline: 0px;
     background-color: siimple-default-color("light");
     vertical-align: top;
+    box-sizing: border-box;
     //Fluid input
     &--fluid {
-        width: calc(100% - 2*#{$siimple-input-padding});
+        width: 100%;
     }
     //Light input
     &--light {
