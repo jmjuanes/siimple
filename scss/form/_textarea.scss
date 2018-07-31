@@ -24,9 +24,10 @@ $siimple-textarea-padding: 10px;
     outline: 0px;
     background-color: siimple-default-color("light");
     vertical-align: top;
+    box-sizing: border-box;
     //Fluid textarea
     &--fluid {
-        width: calc(100% - 2*#{$siimple-textarea-padding});
+        width: 100%;
     }
     //Light textarea style
     &--light {
