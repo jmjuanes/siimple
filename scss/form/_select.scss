@@ -31,12 +31,13 @@ $siimple-select-padding: 10px;
     outline: 0px;
     background-color: siimple-default-color("light");
     vertical-align: top;
+    box-sizing: border-box;
     //Disable default appearance
     //-webkit-appearance: none;
     //-moz-appearance: none;
     //Fluid select
     &--fluid {
-        width: calc(100% - 2*#{$siimple-select-padding});
+        width: 100%;
     }
     //Light select style
     &--light {
