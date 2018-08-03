@@ -63,7 +63,7 @@ Follow these steps:
 2. Clone this repository: `git clone https://github.com/siimple/siimple.git`.
 3. Navigate to the cloned repository folder, and run `npm install` to download all the dependencies listed in `package.json`.
 
-We use [Make](https://www.tutorialspoint.com/unix_commands/make.htm) to automazie the building of **siimple**. 
+We use [Make](https://www.tutorialspoint.com/unix_commands/make.htm) to automatize the building of **siimple**. 
 
 ### Building siimple
 
