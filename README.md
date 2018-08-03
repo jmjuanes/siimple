@@ -70,7 +70,7 @@ We use [Make](https://www.tutorialspoint.com/unix_commands/make.htm) to automazi
 Navigate to the root folder of the **siimple** module and run the following command:
 
 ```
-make build
+$ make build
 ```
 
 This will generate `siimple.css` and `siimple.min.css` on `dist` folder.
@@ -88,7 +88,7 @@ $ make install
 Then, to build the documentation you should run the following command:
 
 ```
-make docs
+$ make docs
 ```
 
 This will generate a folder `docs/_site` with the generated static documentation website.
