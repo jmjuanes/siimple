@@ -77,7 +77,7 @@ This will generate `siimple.css` and `siimple.min.css` on `dist` folder.
 
 ### Running documentation locally
 
-The documentation is generated using [bundle](https://bundler.io/) and [Jekyll](https://jekyllrb.com/docs/installation/) tool. Make sure that you have it installed in your computer. Also, you will need [bower](https://bower.io) to download some front end dependencies. 
+The documentation is generated using [bundle](https://bundler.io/) and [Jekyll](https://jekyllrb.com/docs/installation/). Make sure that you have them installed in your computer. Also, you will need [bower](https://bower.io) to download some front end dependencies. 
 
 First, you should run the following command to download and configure all dependencies for the documentation:
 
