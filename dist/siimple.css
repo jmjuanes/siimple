@@ -47,8 +47,8 @@ body {
   font-size: 15px;
   line-height: 23px;
   border-left: 4px solid #879aab;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-right: 10px;
   padding-left: 20px;
   margin-bottom: 20px;
@@ -2132,6 +2132,7 @@ body {
   height: 34px;
   line-height: 34px;
   font-size: 14px;
+  font-weight: normal;
   color: #546778;
   padding-left: 10px;
   padding-right: 10px;
@@ -2142,6 +2143,7 @@ body {
   outline: 0px;
   background-color: #dde5ee;
   vertical-align: top;
+  box-sizing: border-box;
 }
 .siimple-input--fluid {
   width: 100%;
@@ -2236,6 +2238,7 @@ body {
   outline: 0px;
   background-color: #dde5ee;
   vertical-align: top;
+  box-sizing: border-box;
 }
 .siimple-select--fluid {
   width: 100%;
@@ -2302,12 +2305,19 @@ body {
   border: 0px;
   border-radius: 5px;
   outline: 0px;
-  border-radius: 5px;
   background-color: #dde5ee;
   vertical-align: top;
+  box-sizing: border-box;
 }
 .siimple-textarea--fluid {
   width: 100%;
+}
+.siimple-textarea--light {
+  background-color: #ffffff;
+}
+.siimple-textarea--dark {
+  background-color: #546778;
+  color: #ffffff;
 }
 
 .siimple-grid {
