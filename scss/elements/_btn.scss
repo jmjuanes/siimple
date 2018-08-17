@@ -75,5 +75,9 @@ $siimple-btn-small-height: 24px;
         padding-right: 0px !important;
         //width: calc(100% - #{$siimple-btn-padding-left} - #{$siimple-btn-padding-right});
     }
+    //Rounded button
+    &--rounded {
+        border-radius: 50px !important;
+    }
 }
 
