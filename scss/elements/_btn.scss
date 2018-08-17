@@ -61,6 +61,14 @@ $siimple-btn-padding-right: 15px;
         opacity: 0.6 !important;
         cursor: not-allowed !important;
     }
+    //Small button
+    &--small {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+    }
     //Fluid button
     &--fluid {
         width: calc(100% - #{$siimple-btn-padding-left} - #{$siimple-btn-padding-right});
