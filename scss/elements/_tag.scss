@@ -30,7 +30,7 @@ $siimple-tag-height: 19px;
     }
     //Tag with a close icon
     &--close {
-        padding-right: 18px;
+        padding-right: 22px;
         position: relative;
         cursor: pointer;
         &::before,
@@ -41,7 +41,7 @@ $siimple-tag-height: 19px;
             width: 10px;
             height: 2px;
             top: 8.2px;
-            right: 4px;
+            right: 6px;
             background-color: $siimple-default-white;
             border-radius: 2px;
             transition: opacity 0.3s;
