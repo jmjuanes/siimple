@@ -71,7 +71,10 @@ $siimple-btn-padding-right: 15px;
     }
     //Fluid button
     &--fluid {
-        width: calc(100% - #{$siimple-btn-padding-left} - #{$siimple-btn-padding-right});
+        width: 100%;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        //width: calc(100% - #{$siimple-btn-padding-left} - #{$siimple-btn-padding-right});
     }
 }
 
