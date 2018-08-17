@@ -1,0 +1,69 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+@import "../_variables.scss";
+@import "../_functions.scss";
+
+//Spacing variables
+$siimple-spacing-sizes: (
+    "0": 0px,
+    "1": 5px,
+    "2": 10px,
+    "3": 15px,
+    "4": 20px,
+    "5": 25px,
+    "auto": auto
+);
+
+//Spacing class
+.siimple {
+    @each $key,$value in $siimple-spacing-sizes {
+        //Margin attributes
+        &--mt-#{$key} {
+            margin-top: $value;
+        }
+        &--mb-#{$key} {
+            margin-bottom: $value;
+        }
+        &--ml-#{$key} {
+            margin-left: $value;
+        }
+        &--mr-#{$key} {
+            margin-right: $value;
+        }
+        &--mx-#{$key} {
+            margin-left: $value;
+            margin-right: $value;
+        }
+        &--my-#{$key} {
+            margin-top: $value;
+            margin-bottom: $value;
+        }
+        //Padding attributes
+        &--pt-#{$key} {
+            padding-top: $value;
+        }
+        &--pb-#{$key} {
+            padding-bottom: $value;
+        }
+        &--pl-#{$key} {
+            padding-left: $value;
+        }
+        &--pr-#{$key} {
+            padding-right: $value;
+        }
+        &--px-#{$key} {
+            padding-left: $value;
+            padding-right: $value;
+        }
+        &--py-#{$key} {
+            padding-top: $value;
+            padding-bottom: $value;
+        }
+    }
+}
+
