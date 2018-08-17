@@ -28,6 +28,35 @@ $siimple-tag-height: 19px;
     &--rounded {
         border-radius: 15px;        
     }
+    //Tag with a close icon
+    &--close {
+        padding-right: 18px;
+        position: relative;
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 10px;
+            height: 2px;
+            top: 8.2px;
+            right: 4px;
+            background-color: $siimple-default-white;
+            border-radius: 2px;
+            transition: opacity 0.3s;
+            opacity: 0.6;
+        }
+        &::after {
+            transform: rotate(45deg);
+        }
+        &::before {
+            transform: rotate(-45deg);
+        }
+        &:hover::before,
+        &:hover::after {
+            opacity: 1.0;
+        }
+    }
     //Tag colors
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
