@@ -10,7 +10,6 @@
 
 //Tag variables
 $siimple-tag-height: 19px;
-$siimple-tag-padding: 6px;
 
 //Tag class
 .siimple-tag {
@@ -21,11 +20,9 @@ $siimple-tag-padding: 6px;
     text-decoration: none;
     line-height: $siimple-tag-height;
     border-radius: 4px;
-    padding: {
-        left: $siimple-tag-padding;
-        right: $siimple-tag-padding;
-    }
-    margin-right: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    //margin-right: 1px;
     //margin-bottom: 8px;
     //Rounded tag 
     &--rounded {
