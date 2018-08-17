@@ -20,8 +20,8 @@ $siimple-tag-height: 19px;
     text-decoration: none;
     line-height: $siimple-tag-height;
     border-radius: 4px;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
     //margin-right: 1px;
     //margin-bottom: 8px;
     //Rounded tag 
@@ -32,6 +32,7 @@ $siimple-tag-height: 19px;
     &--close {
         padding-right: 18px;
         position: relative;
+        cursor: pointer;
         &::before,
         &::after {
             position: absolute;
