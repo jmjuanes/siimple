@@ -52,20 +52,9 @@ $siimple-navbar-padding: 20px;
         //font-weight: bold;
         text-decoration: none;
         cursor: pointer;
+        padding-left: 5px;
         //vertical-align: middle;
         opacity: 0.6;
-        &::before {
-            display: inline-block;
-            content: "";
-            width: 2px;
-            height: calc(#{$siimple-navbar-height} - 10px);
-            float: left;
-            margin-top: 4px;
-            margin-left: 4px;
-            margin-right: 6px;
-            //vertical-align: middle;
-            opacity: 0.4;
-        }
     }
     //Navbar item
     &-item, 
