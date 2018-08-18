@@ -46,6 +46,10 @@
             color: siimple-default-color("dark");
             padding-right: 8px;
         }
+        //Selected crumb
+        &--selected {
+            color: siimple-default-color("dark") !important;
+        }
     }
 }
 
