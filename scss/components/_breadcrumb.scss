@@ -49,6 +49,7 @@
         //Selected crumb
         &--selected {
             color: siimple-default-color("dark") !important;
+            cursor: none !important;
         }
     }
 }
