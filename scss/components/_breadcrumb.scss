@@ -43,13 +43,14 @@
         //Crumb before
         &:not(:first-of-type)::before {
             content: "/";
-            color: siimple-default-color("dark");
+            color: siimple-default-color("dark", "light");
+            font-weight: 600;
             padding-right: 8px;
         }
         //Selected crumb
         &--selected {
             color: siimple-default-color("dark") !important;
-            cursor: none !important;
+            cursor: default !important;
         }
     }
 }
