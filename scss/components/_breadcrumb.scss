@@ -8,113 +8,45 @@
 @import "../_variables.scss";
 @import "../_functions.scss";
 
-//Breadcrumb variables
-$siimple-breadcrumb-height: 30px;
-$siimple-breadcrumb-margin-top: 0px;
-$siimple-breadcrumb-margin-bottom: $siimple-default-margin-bottom;
-
-//Breadcrumb item variables
-$siimple-breadcrumb-item-height: $siimple-breadcrumb-height;
-$siimple-breadcrumb-item-margin-right: 5px;
-$siimple-breadcrumb-item-padding-left: 25px;
-$siimple-breadcrumb-item-padding-right: 10px;
-$siimple-breadcrumb-item-font-size: 14px;
-$siimple-breadcrumb-item-font-weight: bold;
-$siimple-breadcrumb-item-line-height: $siimple-breadcrumb-item-height;
-$siimple-breadcrumb-item-background-color: siimple-default-color("light");
-$siimple-breadcrumb-item-color: siimple-default-color("dark", "light");
-
-//Breadcrumb item first variables
-$siimple-breadcrumb-item-first-padding: 15px;
-
-//Breadcrumb item last variables
-$siimple-breadcrumb-item-last-padding: 15px;
-
 //Breadcrumb class
 .siimple-breadcrumb {
     display: block;
-    width: 100%;
-    height: $siimple-breadcrumb-height;
-    margin: {
-        bottom: $siimple-breadcrumb-margin-bottom;
-        top: $siimple-breadcrumb-margin-top;
-    }
-
+    //width: 100%;
+    height: 24px;
+    padding: 10px;
+    margin-bottom: $siimple-default-margin-bottom;
+    background-color: siimple-default-color("light", "light");
+    border-radius: $siimple-default-border-radius;
+    border: 0px;
     //Breadcrumb item
     &-item,
     &-crumb {
         display: inline-block;
         float: left;
         position: relative;
-        height: $siimple-breadcrumb-item-height;
-        line-height: $siimple-breadcrumb-item-line-height;
-        background-color: $siimple-breadcrumb-item-background-color;
+        height: 24px;
+        line-height: 24px;
         //text-align: center;
         //font-family: $siimple-default-text-font;
-        font-size: $siimple-breadcrumb-item-font-size;
-        font-weight: $siimple-breadcrumb-item-font-weight;
+        font-size: 14px;
         text-decoration: none;
-        color: rgba($siimple-breadcrumb-item-color, 0.7);
-        margin-right: $siimple-breadcrumb-item-margin-right;
-        padding-left: $siimple-breadcrumb-item-padding-left;
-        padding-right: $siimple-breadcrumb-item-padding-right;
-        transition: all 0.3s;
+        color: siimple-default-color("primary");
+        transition: color 0.3s;
         cursor: pointer;
-
+        &:not(:first-of-type) {
+            padding-left: 8px;
+        }
         //Crumb hover
         &:hover {
-            color: $siimple-breadcrumb-item-color;
+            color: siimple-default-color("primary", "dark");
         }
-
-        //Crumb after
-        &:after {
-            content: "";
-            z-index: 1;
-            position: absolute;
-            right: - #{$siimple-breadcrumb-item-height / 2};
-            top: 0;
-            border-top: #{$siimple-breadcrumb-item-height / 2} solid transparent;
-            border-bottom: #{$siimple-breadcrumb-item-height / 2} solid transparent;
-            border-left: #{$siimple-breadcrumb-item-height / 2} solid $siimple-breadcrumb-item-background-color;
-        }
-
         //Crumb before
-        &:before {
-            content: "";
-            z-index: 0;
-            position: absolute;
-            left: 0;
-            top: 0;
-            border-top: #{$siimple-breadcrumb-item-height / 2} solid transparent;
-            border-bottom: #{$siimple-breadcrumb-item-height / 2} solid transparent;
-            border-left: #{$siimple-breadcrumb-item-height / 2} solid $siimple-default-white;
-        }
-
-        //First crumb
-        &:first-of-type {
-            border-top-left-radius: $siimple-default-border-radius;
-            border-bottom-left-radius: $siimple-default-border-radius;
-            padding-left: $siimple-breadcrumb-item-first-padding;
-        }
-
-        //First of type before
-        &:first-of-type:before {
-            display: none;
-        }
-
-        //Last crumb
-        &:last-of-type {
-            border-top-right-radius: $siimple-default-border-radius;
-            border-bottom-right-radius: $siimple-default-border-radius;
-            padding-right: $siimple-breadcrumb-item-last-padding;
-        }
-
-        //Last of type after
-        &:last-of-type:after {
-            display: none;
+        &:not(:first-of-type)::before {
+            content: "/";
+            color: siimple-default-color("dark");
+            padding-right: 8px;
         }
     }
-
     &--dark &-item, 
     &--dark &-crumb {
         background-color: siimple-default-color("dark");
