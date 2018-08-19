@@ -47,8 +47,8 @@
         vertical-align: top;
     }
     //Table with border
-    &--border &-cell:not(:last-child) {
-        //border-right: 2px solid $siimple-default-white;
+    &--border &-cell {
+        border: 1px solid siimple-default-color("light", "dark");
     }
     //Table header
     &-header {
