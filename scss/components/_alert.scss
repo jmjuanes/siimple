@@ -24,7 +24,9 @@ $siimple-alert-padding-right: 30px;
     //font-family: $siimple-default-text-font;
     position: relative;
     border-radius: $siimple-default-border-radius;
-    //background-color: $siimple-grey;
+    //Default background and text color
+    background-color: siimple-default-color("light", "light");
+    color: siimple-default-color("light", "dark");
     padding: {
         top: $siimple-alert-padding-top;
         right: $siimple-alert-padding-right;
