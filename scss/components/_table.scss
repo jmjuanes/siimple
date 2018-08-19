@@ -87,7 +87,7 @@
     }
     //Striped table
     &--striped &-body &-row:nth-child(odd) &-cell {
-        //background-color: rgba(siimple-default-color("light", "light"), 1.0);
+        background-color: rgba(siimple-default-color("light", "light"), 0.8);
     }
     //Hovered table
     &--hover &-body &-row:hover &-cell {
