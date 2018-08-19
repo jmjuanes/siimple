@@ -26,7 +26,7 @@ $siimple-alert-padding-right: 30px;
     border-radius: $siimple-default-border-radius;
     //Default background and text color
     background-color: siimple-default-color("light", "light");
-    color: siimple-default-color("light", "dark");
+    color: siimple-default-color("dark");
     padding: {
         top: $siimple-alert-padding-top;
         right: $siimple-alert-padding-right;
