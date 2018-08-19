@@ -86,5 +86,11 @@ $siimple-table-cell-padding: 10px;
     &--hover &-body &-row:hover &-cell {
         background-color: siimple-default-color("light") !important;
     }
+    //Responsive table container
+    &-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
 }
 
