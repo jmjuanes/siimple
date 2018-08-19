@@ -87,11 +87,11 @@
     }
     //Striped table
     &--striped &-body &-row:nth-child(odd) &-cell {
-        background-color: rgba(siimple-default-color("light", "light"), 0.8);
+        background-color: rgba(siimple-default-color("light", "light"), 0.5);
     }
     //Hovered table
     &--hover &-body &-row:hover &-cell {
-        background-color: rgba(siimple-default-color("light"), 0.8);
+        background-color: rgba(siimple-default-color("light", "light"), 1.0);
     }
     //Responsive table container
     &-responsive {
