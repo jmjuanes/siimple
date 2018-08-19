@@ -11,91 +11,50 @@
 
 //Tabs variables
 $siimple-tabs-height: 40px;
-$siimple-tabs-margin-top: 0px;
-$siimple-tabs-border-width: 2px;
-$siimple-tabs-border-color: siimple-default-color("light");
-$siimple-tabs-zindex: 8;
-
-//Tabs tab variables
-$siimple-tabs-tab-padding-left: 15px;
-$siimple-tabs-tab-padding-right: 15px;
-$siimple-tabs-tab-margin-bottom: -2px;
-$siimple-tabs-tab-zindex: 10;
-$siimple-tabs-tab-color: siimple-default-color("dark");
-$siimple-tabs-tab-border-width: 2px;
-
-//Selected tab
-$siimple-tabs-tab-selected: siimple-default-color("primary");
 
 //Tabs class
 .siimple-tabs {
     display: block;
     position: relative;
-    z-index: $siimple-tabs-zindex;
     width: 100%;
     height: $siimple-tabs-height;
-    line-height: $siimple-tabs-height;
+    //line-height: $siimple-tabs-height;
     //font-family: $siimple-default-text-font;
     font-size: $siimple-default-text-size;
-    border: {
-        bottom: $siimple-tabs-border-width solid $siimple-tabs-border-color;
-    }
-    margin: {
-        bottom: $siimple-default-margin-bottom;
-        top: $siimple-tabs-margin-top;
-    }
-
+    margin-bottom: $siimple-default-margin-bottom;
+    border-bottom: 2px solid siimple-default-color("light");
     //Disable user selection
     @include siimple-utils-select(none);
-
     &-tab, 
     &-item {
         display: inline-block;
         float: left;
-        z-index: $siimple-tabs-tab-zindex;
-        height: #{$siimple-tabs-height - 1px };
+        height: calc(#{$siimple-tabs-height} - 2px);
         line-height: $siimple-tabs-height;
-        font-weight: bold;
-        color: rgba($siimple-tabs-tab-color, 0.7);
-        padding: {
-            left: $siimple-tabs-tab-padding-left;
-            right: $siimple-tabs-tab-padding-right;
-        }
-        margin: {
-            bottom: $siimple-tabs-tab-margin-bottom;
-        }
-        border-bottom: $siimple-tabs-tab-border-width solid transparent;
+        font-weight: 600;
+        color: siimple-default-color("dark", "light");
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: -1px;
+        border: 2px solid transparent;
         border-top-left-radius: $siimple-default-border-radius;
         border-top-right-radius: $siimple-default-border-radius;
         cursor: pointer;
         transition: all 0.3s;
-
+        //Hover tab
         &:hover {
-            border-bottom: $siimple-tabs-tab-border-width solid siimple-default-color("dark", "light");
+            border-top-color: siimple-default-color("light", "light");
+            border-left-color: siimple-default-color("light", "light");
+            border-right-color: siimple-default-color("light", "light");
         }
-
+        //Selected tab
         &--selected {
-            color: $siimple-tabs-tab-color;
-            border-bottom: 2px solid $siimple-tabs-tab-selected !important;
-        }
-    }
-
-    &--boxed &-item:hover, &--boxed &-tab:hover {
-        background-color: siimple-default-color("light");
-    }
-
-    //Legacy colors
-    //To be deprecated in future major release
-    @each $color in $siimple-legacy-colors {
-        &#{&}--#{$color} &-tab, 
-        &#{&}--#{$color} &-item {
-            &:hover {
-                border-bottom-color: siimple-color-light($color);
-            }
-            &--selected {
-                color: siimple-color-base($color) !important;
-                border-bottom-color: siimple-color-base($color) !important;
-            }
+            border-top-color: siimple-default-color("light") !important;
+            border-left-color: siimple-default-color("light") !important;
+            border-right-color: siimple-default-color("light") !important;
+            border-bottom-color: $siimple-default-white !important;
+            background-color: $siimple-default-white !important;
+            color: siimple-default-color("dark");
         }
     }
 }
