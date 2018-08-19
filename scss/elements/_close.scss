@@ -19,6 +19,7 @@ $siimple-close-small-size: 16px;
 $siimple-close-large-size: 30px;
 
 //Close element class
+//DEPRECATED!!! WILL BE REMOVED IN A FUTURE MAJOR RELEASE
 .siimple-close {
     display: inline-block;
     width: $siimple-close-size;
@@ -28,7 +29,6 @@ $siimple-close-large-size: 30px;
     position: relative;
     border-radius: 100px;
     background-color: rgba($siimple-close-background, $siimple-close-opacity);
-
     &:after, 
     &:before {
         content: "";
