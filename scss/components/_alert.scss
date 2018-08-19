@@ -42,6 +42,37 @@ $siimple-alert-padding-right: 30px;
         //margin-bottom: 5px;
         line-height: 26px;
     }
+    //Alert close button
+    &-close {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.3s;
+        &:hover {
+            opacity: 1.0;
+        }
+        &::before,
+        &::after {
+            content: "";
+            width: 16px;
+            height: 3px;
+            background-color: siimple-default-color("dark");
+            position: absolute;
+            border-radius: 1px;
+            top: 6px;
+        }
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
     //Alert colors 
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
@@ -60,6 +91,7 @@ $siimple-alert-padding-right: 30px;
 }
 
 //Alert with close button
+// DEPRECATED: WILL BE REMOVED IN A FUTURE MAJOR RELEASE
 .siimple-alert .siimple-close {
     position: absolute !important;
     right: 5px !important;
