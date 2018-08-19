@@ -79,6 +79,11 @@ $siimple-alert-padding-right: 30px;
             background-color: siimple-default-color($color, "light");
             color: siimple-default-color($color, "dark");
         }
+        //Close icon color
+        &--#{$color} &-close::before,
+        &--#{$color} &-close::after {
+            background-color: siimple-default-color($color, "dark");
+        }
     }
     //Legacy alert colors
     //To be deprecated in future major release
