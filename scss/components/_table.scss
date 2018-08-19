@@ -8,30 +8,29 @@
 @import "../_variables.scss";
 @import "../_functions.scss";
 
-//Table variables
-$siimple-table-width: 100%;
-$siimple-table-cell-padding: 10px;
-
 //Table class
 .siimple-table {
     display: table;
-    width: $siimple-table-width;
+    width: 100%;
     font-size: $siimple-default-text-size;
     //font-family: $siimple-default-text-font;
     color: $siimple-default-text-color;
     border-collapse: collapse;
     border-width: 0px;
     margin-bottom: $siimple-default-margin-bottom;
+    background-color: transparent;
+    box-sizing: border-box;
     //Table row
     &-row {
         display: table-row;
-        transition: all 0.3s;
-        border-bottom: 2px solid $siimple-default-white;
+        //transition: all 0.3s;
+        box-sizing: border-box;
+        //border-bottom: 2px solid $siimple-default-white;
         &:hover {
             //background-color: siimple-default-color("light");
         }
         &:last-child {
-            border-bottom: 0px;
+            //border-bottom: 0px;
         }
     }
     //Table cell
@@ -39,52 +38,60 @@ $siimple-table-cell-padding: 10px;
         display: table-cell;
         //position: relative;
         line-height: $siimple-default-text-line;
-        padding: $siimple-table-cell-padding;
-        white-space: nowrap;
-        overflow: hidden;
+        padding: 10px;
+        //white-space: nowrap;
+        //overflow: hidden;
         transition: background-color 0.3s;
+        border-top: 1px solid siimple-default-color("light", "dark");
+        box-sizing: border-box;
+        vertical-align: top;
     }
     //Table with border
     &--border &-cell:not(:last-child) {
-        border-right: 2px solid $siimple-default-white;
+        //border-right: 2px solid $siimple-default-white;
     }
     //Table header
     &-header {
         display: table-header-group;
-        border-bottom: 3px solid $siimple-default-white !important;
-        font-weight: bold;
+        box-sizing: border-box;
+        //border-bottom: 3px solid $siimple-default-white !important;
+        //font-weight: bold;
     }
     &-header &-row:first-child &-cell:first-child {
-        border-top-left-radius: $siimple-default-border-radius;
+        //border-top-left-radius: $siimple-default-border-radius;
     }
     &-header &-row:first-child &-cell:last-child {
-        border-top-right-radius: $siimple-default-border-radius;
+        //border-top-right-radius: $siimple-default-border-radius;
     }
     &-header &-cell {
-        background-color: siimple-default-color("light", "dark") !important;
-        border-bottom-right-radius: 0px !important;
-        border-bottom-left-radius: 0px !important;
+        //background-color: siimple-default-color("light", "dark") !important;
+        //border-bottom-right-radius: 0px !important;
+        //border-bottom-left-radius: 0px !important;
+        vertical-align: bottom;
+        border-bottom: 2px solid siimple-default-color("light", "dark");
+        font-weight: 600;
     }
     //Table body
     &-body {
         display: table-row-group;
+        vertical-align: middle;
     }
     &-body &-cell {
-        background-color: rgba(siimple-default-color("light", "light"), 0.4);
+        //background-color: rgba(siimple-default-color("light", "light"), 0.4);
     }
     &-body &-row:last-child &-cell:first-child {
-        border-bottom-left-radius: $siimple-default-border-radius;
+        //border-bottom-left-radius: $siimple-default-border-radius;
     }
     &-body &-row:last-child &-cell:last-child {
-        border-bottom-right-radius: $siimple-default-border-radius;
+        //border-bottom-right-radius: $siimple-default-border-radius;
     }
     //Striped table
     &--striped &-body &-row:nth-child(odd) &-cell {
-        background-color: rgba(siimple-default-color("light", "light"), 1.0);
+        //background-color: rgba(siimple-default-color("light", "light"), 1.0);
     }
     //Hovered table
     &--hover &-body &-row:hover &-cell {
-        background-color: siimple-default-color("light") !important;
+        //background-color: siimple-default-color("light") !important;
     }
     //Responsive table container
     &-responsive {
