@@ -91,7 +91,7 @@
     }
     //Hovered table
     &--hover &-body &-row:hover &-cell {
-        background-color: siimple-default-color("light");
+        background-color: rgba(siimple-default-color("light"), 0.8);
     }
     //Responsive table container
     &-responsive {
