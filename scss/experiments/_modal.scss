@@ -38,9 +38,10 @@ $siimple-modal-padding: 15px;
     &-header {
         display: block;
         height: 34px;
-        padding: 15px;
+        padding: 20px;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
+        border-bottom: 1px solid siimple-default-color("light");
         //Modal header title
         &-title {
             float: left;
@@ -51,35 +52,32 @@ $siimple-modal-padding: 15px;
         }
         //Modal header close button
         &-close {
+            display: block;
             float: right;
-            height: 34px;
-            width: 34px;
             position: relative;
-            //margin-top: 7px;
-            opacity: 0.5;
-            transition: opacity 0.3s;
+            width: 16px;
+            height: 34px;
             cursor: pointer;
-            &::after,
-            &::before {
-                content: "";
-                display: block;
-                width: 20px;
-                height: 3px;
-                position: absolute;
-                top: 15px;
-                left: 7px;
-                border-radius: 100px;
-                background-color: siimple-default-color("dark");
-            }
-            &::after {
-                transform: rotate(45deg);
-            }
-            &::before {
-                transform: rotate(-45deg);
-            }
-            //Close hover
+            opacity: 0.6;
+            transition: opacity 0.3s;
             &:hover {
                 opacity: 1.0;
+            }
+            &::before,
+            &::after {
+                content: "";
+                width: 16px;
+                height: 3px;
+                background-color: siimple-default-color("dark");
+                position: absolute;
+                border-radius: 1px;
+                top: 15px;
+            }
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
             }
         }
         &:after {
@@ -92,14 +90,16 @@ $siimple-modal-padding: 15px;
         display: block;
         overflow-y: auto;
         max-height: 50vh;
-        padding: 15px;
+        padding: 20px;
     }
     //Modal footer
     &-footer {
         display: block;
-        padding: 15px;
-        margin-top: 10px;
+        padding: 20px;
         color: siimple-default-color("dark", "light");
+        background-color: siimple-default-color("light", "light");
+        border-bottom-left-radius: $siimple-default-border-radius;
+        border-bottom-right-radius: $siimple-default-border-radius;
     }
 }
 
