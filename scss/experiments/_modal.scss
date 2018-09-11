@@ -1,0 +1,105 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+@import "../_variables.scss";
+
+//Modal variables
+$siimple-modal-padding: 15px;
+
+//Modal class
+.siimple-modal {
+    display: flex;
+    width: calc(100% - 2 * #{$siimple-modal-padding});
+    height: calc(100% - 2 * #{$siimple-modal-padding});
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 400;
+    padding: $siimple-modal-padding;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(siimple-default-color("dark", "dark"), 0.4);
+    //Modal content
+    &-content {
+        display: block;
+        width: 100%;
+        //max-width: 960px;
+        background-color: $siimple-default-white;
+        border-radius: $siimple-default-border-radius;
+        padding: 0px;
+    }
+    //Modal header
+    &-header {
+        display: block;
+        height: 34px;
+        padding: 15px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        //Modal header title
+        &-title {
+            float: left;
+            font-weight: bold;
+            font-size: 20px;
+            height: 34px;
+            line-height: 34px;
+        }
+        //Modal header close button
+        &-close {
+            float: right;
+            height: 34px;
+            width: 34px;
+            position: relative;
+            //margin-top: 7px;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+            cursor: pointer;
+            &::after,
+            &::before {
+                content: "";
+                display: block;
+                width: 20px;
+                height: 3px;
+                position: absolute;
+                top: 15px;
+                left: 7px;
+                border-radius: 100px;
+                background-color: siimple-default-color("dark");
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+            &::before {
+                transform: rotate(-45deg);
+            }
+            //Close hover
+            &:hover {
+                opacity: 1.0;
+            }
+        }
+        &:after {
+            content: "";
+            clear: both;
+        }
+    }
+    //Modal body
+    &-body {
+        display: block;
+        overflow-y: auto;
+        max-height: 50vh;
+        padding: 15px;
+    }
+    //Modal footer
+    &-footer {
+        display: block;
+        padding: 15px;
+        margin-top: 10px;
+        color: siimple-default-color("dark", "light");
+    }
+}
+
