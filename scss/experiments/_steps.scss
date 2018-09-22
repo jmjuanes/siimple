@@ -86,19 +86,6 @@ $siimple-steps-item-segment-height: 8px;
             color: siimple-default-color("dark", "light") !important; 
         }
         //Step icon
-        &--loading &-bubble::after {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 16px;
-            height: 16;
-            top: 5px;
-            left: 5px;
-            border-radius: 100%;
-            border: 4px solid rgba(#ffffff, 0.3);
-            border-top: 4px solid rgba(#ffffff, 0.8);
-            animation: siimple-steps-loading 1s infinite linear;
-        }
         &--check &-bubble::after,
         &--check &-bubble::before,
         &--cross &-bubble::after,
@@ -160,14 +147,3 @@ $siimple-steps-item-segment-height: 8px;
     }
 }
 
-//Animation
-@keyframes siimple-steps-loading {
-    0% {
-        transform: rotate(0deg);
-    }
-    50% {
-    }
-    100% {
-        transform: rotate(360deg);   
-    }
-}
