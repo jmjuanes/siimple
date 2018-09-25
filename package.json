@@ -24,10 +24,10 @@
     ],
     "devDependencies": {
         "sass-lint": "^1.12.1",
-        "clean-css-cli": "^4.1.11",
+        "clean-css-cli": "^4.2.1",
         "postcss-cli": "^6.0.0",
         "sass": "^1.6.0",
-        "autoprefixer": "^9.0.1",
+        "autoprefixer": "^9.1.5",
         "stattic": "^0.3.2"
     }
 }
