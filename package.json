@@ -27,6 +27,7 @@
         "clean-css-cli": "^4.1.11",
         "postcss-cli": "^6.0.0",
         "sass": "^1.6.0",
-        "autoprefixer": "^9.0.1"
+        "autoprefixer": "^9.0.1",
+        "stattic": "^0.3.2"
     }
 }
