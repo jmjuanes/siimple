@@ -60,7 +60,7 @@ docs:
 	@set -e
 	@logger -s "Docs build started"
 	@logger -s "Building documentation site with Jekyll"
-	cd ./docs && jekyll build
+	cd ./docs && bundle exec jekyll build
 	@logger -s "Copiyng assets files"
 	cp ./dist/siimple.min.css ./docs/_site/assets/css/
 	@logger -s "Docs build finished"
