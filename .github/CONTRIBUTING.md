@@ -12,6 +12,10 @@ You must read and follow the [code of conduct](./CODE_OF_CONDUCT.md) of **siimpl
 
 We are happy to help you if you have any problem or question using **siimple**. Please, send your problem to our [public chat](https://gitter.im/siimple/siimple).
 
+## Commit Convention
+
+If you contribute to our code, make sure that all of your commit messages follows our [commit convention](./COMMIT_CONVENTION.md).
+
 ## Issues or bugs
 
 If you want to report a bug or issue, please open a new [issue here](https://github.com/siimple/siimple/issues) and include as many details as possible with your report. Adding code or screenshots are very helpful.
