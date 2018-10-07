@@ -10,6 +10,12 @@ All commit messages must match the following format:
 [revert: ] <TYPE>[(<SCOPE>)]: <MESSAGE>
 ```
 
+Examples: 
+
+```
+docs: update changelog to beta.5
+```
+
 ### Revert
 
 If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit.
