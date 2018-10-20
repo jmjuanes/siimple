@@ -15,7 +15,8 @@
     font-size: $siimple-default-text-size;
     //font-family: $siimple-default-text-font;
     color: $siimple-default-text-color;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     border-width: 0px;
     margin-bottom: $siimple-default-margin-bottom;
     background-color: transparent;
@@ -57,11 +58,12 @@
         //border-bottom: 3px solid $siimple-default-white !important;
         //font-weight: bold;
     }
-    &-header &-row:first-child &-cell:first-child {
-        //border-top-left-radius: $siimple-default-border-radius;
+    //Bordered table with rouded corners
+    &--border &-header &-row:first-child &-cell:first-child {
+        border-top-left-radius: $siimple-default-border-radius;
     }
-    &-header &-row:first-child &-cell:last-child {
-        //border-top-right-radius: $siimple-default-border-radius;
+    &--border &-header &-row:first-child &-cell:last-child {
+        border-top-right-radius: $siimple-default-border-radius;
     }
     &-header &-cell {
         //background-color: siimple-default-color("light", "dark") !important;
@@ -79,11 +81,12 @@
     &-body &-cell {
         //background-color: rgba(siimple-default-color("light", "light"), 0.4);
     }
-    &-body &-row:last-child &-cell:first-child {
-        //border-bottom-left-radius: $siimple-default-border-radius;
+    //Bordered table with rouded corners
+    &--border &-body &-row:last-child &-cell:first-child {
+        border-bottom-left-radius: $siimple-default-border-radius;
     }
-    &-body &-row:last-child &-cell:last-child {
-        //border-bottom-right-radius: $siimple-default-border-radius;
+    &--border &-body &-row:last-child &-cell:last-child {
+        border-bottom-right-radius: $siimple-default-border-radius;
     }
     //Striped table
     &--striped &-body &-row:nth-child(odd) &-cell {
