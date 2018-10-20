@@ -25,7 +25,7 @@ $siimple-footer-dark-text: rgba($siimple-default-white, 0.8);
     //Light footer style
     &--light {
         color: $siimple-footer-light-text;
-        background-color: siimple-default-color("grey", "light");
+        background-color: siimple-default-color("light", "light");
     }
     //Dark footer style
     &--dark {
