@@ -11,7 +11,7 @@
 
 //Footer variables
 $siimple-footer-light-text: siimple-default-color("dark", "light");
-$siimple-footer-dark-text: rgba($siimple-white, 0.8);
+$siimple-footer-dark-text: rgba($siimple-default-white, 0.8);
 
 //Footer class
 .siimple-footer {
@@ -105,7 +105,7 @@ $siimple-footer-dark-text: rgba($siimple-white, 0.8);
         background-color: siimple-default-color("light", "dark");
     }
     &--dark &-rule {
-        background-color: rgba($siimple-white, 0.6);
+        background-color: rgba($siimple-default-white, 0.6);
     }
     //Legacy colors
     //To be deprecated in future major release
