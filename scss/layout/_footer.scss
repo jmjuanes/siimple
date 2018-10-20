@@ -69,6 +69,7 @@ $siimple-footer-dark-text: rgba($siimple-default-white, 0.8);
         text-decoration: none;
         font-weight: 600;
         transition: color 0.3s;
+        cursor: pointer;
         //Inline link
         &--inline:not(:last-child) {
             margin-right: 10px;
