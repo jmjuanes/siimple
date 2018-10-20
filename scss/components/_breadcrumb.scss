@@ -32,6 +32,7 @@
         //text-align: center;
         //font-family: $siimple-default-text-font;
         font-size: 14px;
+        font-weight: 600;
         text-decoration: none;
         color: siimple-default-color("primary");
         transition: color 0.3s;
@@ -47,13 +48,14 @@
         &:not(:first-of-type)::before {
             content: "/";
             color: siimple-default-color("dark", "light");
-            font-weight: 600;
+            font-weight: bold !important;
             padding-right: 8px;
         }
         //Selected crumb
         &--selected {
             color: siimple-default-color("dark") !important;
             cursor: default !important;
+            font-weight: normal !important;
         }
     }
 }
