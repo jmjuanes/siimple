@@ -8,6 +8,10 @@
 
 //Get a color from the color palette
 @function siimple-default-color($color, $index: "base") {
+    //Check for white color
+    @if $color == "white" {
+        @return $siimple-default-white;
+    }
     $list: map-get($siimple-default-palette, "#{$color}");
     $value: map-get($list, "#{$index}");
     @return $value;
