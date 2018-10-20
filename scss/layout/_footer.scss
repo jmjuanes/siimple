@@ -38,7 +38,7 @@ $siimple-footer-dark-text: rgba($siimple-default-white, 0.8);
         font-size: 20px;
         font-weight: bold;
         text-decoration: none;
-        line-height: 24px;
+        line-height: 30px;
     }
     //Footer subtitle
     &-subtitle {
@@ -79,13 +79,26 @@ $siimple-footer-dark-text: rgba($siimple-default-white, 0.8);
             //text-decoration: underline;
             color: siimple-default-color("primary") !important;
         }
+        //Link description
+        &-description {
+            display: block;
+            font-size: 12px;
+            font-weight: normal;
+            margin-bottom: 3px;
+        }
     }
     //Colored link
     &--light &-link {
         color: $siimple-footer-light-text;
     }
+    &--light &-link-description {
+        color: $siimple-footer-light-text !important;
+    }
     &--dark &-link {
         color: $siimple-footer-dark-text;
+    }
+    &--dark &-link-description {
+        color: $siimple-footer-dark-text !important;
     }
     //Footer paragraph 
     &-paragraph {
