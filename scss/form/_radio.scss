@@ -24,7 +24,6 @@ $siimple-radio-circle: 6px;
     vertical-align: top;
     margin: $siimple-radio-margin;
     cursor: pointer;
-    
     //Radio outer circle
     & > label {
         display: block;
@@ -40,7 +39,6 @@ $siimple-radio-circle: 6px;
         transition: border-color 0.3s ease;
         cursor: pointer;
     }
-
     //Radio inner circle
     & > label:after {
         position: absolute;
@@ -57,7 +55,6 @@ $siimple-radio-circle: 6px;
     &:hover > label:after {
         background-color: siimple-default-color("light");
     }
-    
     //Hide radio input
     & input[type=radio] {
         visibility: hidden;
@@ -79,8 +76,5 @@ $siimple-radio-circle: 6px;
             border-color: siimple-default-color($color);
         }
     }
-
 }
-
-
 
