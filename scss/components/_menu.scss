@@ -44,70 +44,59 @@ $siimple-menu-submenu-padding-left: 10px;
 .siimple-menu {
     display: block;
     width: 100%;
-    //font-family: $siimple-default-text-font;
-    //font-size: $siimple-menu-font-size;
-    margin: {
-        top: $siimple-menu-margin-top;
-        bottom: $siimple-menu-margin-bottom;
-    }
-    padding: $siimple-menu-padding;
-
+    //margin-top: 0px;
+    margin-bottom: $siimple-default-margin-bottom;
+    //padding: 0px;
     //Menu group
     &-group {
         display: block;
         width: 100%;
-        height: $siimple-menu-group-height;
-        line-height: $siimple-menu-group-line-height;
+        height: 25px;
+        line-height: 25px;
         transition: color 0.3s;
-        font-size: $siimple-menu-group-font-size;
-        font-weight: $siimple-menu-group-font-weight;
+        font-size: 15px;
+        font-weight: bold;
         text-decoration: none;
-        color: $siimple-menu-group-color;
-
+        color: siimple-default-color("dark", "light");
         //Menu group not first margin top
         &:not(:first-child) {
-            margin-top: $siimple-menu-group-margin-top;
+            margin-top: 10px;
         }
-
         //Menu group hover
         &:hover {
             text-decoration: none !important;
-            color: $siimple-menu-group-color;
+            //color: $siimple-menu-group-color;
         }
     }
-
     //Menu item
     &-item {
         display: block;
-        height: $siimple-menu-item-height;
-        line-height: $siimple-menu-item-line-height;
+        height: 34px;
+        line-height: 34px;
         //border: 0px;
-        border-radius: $siimple-menu-item-border-radius;
-        font-size: $siimple-menu-item-font-size;
-        font-weight: $siimple-menu-item-font-weight;
-        color: rgba($siimple-menu-item-color, 0.7);
+        border-radius: $siimple-default-border-radius;
+        font-size: 14px;
+        //font-weight: 600;
+        color: siimple-default-color("dark", "light");
         text-decoration: none;
-        padding: {
-            left: $siimple-menu-item-padding-left;
-            right: $siimple-menu-item-padding-right;
-        }
-        margin: {
-            bottom: $siimple-menu-item-margin-bottom;
-        }
-        background-color: rgba($siimple-menu-item-background-color, 0);
+        padding-left: 10px;
+        padding-right: 10px;
+        //margin-bottom: 5px;
+        //background-color: rgba($siimple-menu-item-background-color, 0);
         //opacity: 1.0;
         transition: all ease 0.3s;
         cursor: pointer;
         //Hover styles
         &:not(#{&}--selected):hover {
-            background-color: $siimple-menu-item-background-color;
+            //background-color: $siimple-menu-item-background-color;
             text-decoration: none !important;
-            color: $siimple-menu-item-color;
+            color: siimple-default-color("primary");
         }
         //Selected item
         &--selected {
-            background-color: siimple-default-color("primary", "base");
-            color: siimple-default-color("primary", "over");
+            background-color: siimple-default-color("light", "light");
+            color: siimple-default-color("dark");
+            font-weight: 600;
         }
     }
     //Submenu
