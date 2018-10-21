@@ -48,7 +48,7 @@ $siimple-radio-active-border-color: siimple-default-color("success");
         border-radius: 100px;
         border-width: $siimple-radio-border;
         border-style: solid;
-        border-color: $siimple-radio-inactive-border-color;
+        border-color: siimple-default-color("light");
         transition: border-color 0.3s ease;
         cursor: pointer;
     }
@@ -67,7 +67,7 @@ $siimple-radio-active-border-color: siimple-default-color("success");
         transition: all 0.3s ease;
     }
     &:hover > label:after {
-        background-color: $siimple-radio-inactive-background-color;
+        background-color: siimple-default-color("light");
     }
     
     //Hide radio input
@@ -76,12 +76,22 @@ $siimple-radio-active-border-color: siimple-default-color("success");
     }
     //Checked -> change tick
     & input[type=radio]:checked + label:after {
-        background-color: $siimple-radio-active-background-color;
+        background-color: siimple-default-color("primary");
     }
     //Checked -> change background
     & input[type=radio]:checked + label {
-        border-color: $siimple-radio-active-border-color;
+        border-color: siimple-default-color("primary");
     }
+    //Radio colors
+    @each $color in $siimple-default-colors {
+        &--#{$color} input[type=radio]:checked + label:after {
+            background-color: siimple-default-color($color);
+        }
+        &--#{$color} input[type=radio]:checked + label {
+            border-color: siimple-default-color($color);
+        }
+    }
+
 }
 
 
