@@ -17,12 +17,6 @@ $siimple-switch-margin-right: 10px;
 $siimple-switch-margin-top: 8px;
 $siimple-switch-margin-bottom: 8px;
 
-//Switch inactive variablesi
-$siimple-switch-inactive-background-color: siimple-default-color("dark", "light");
-
-//Switch active variables
-$siimple-switch-active-background-color: siimple-default-color("success");
-
 //Switch class
 .siimple-switch {
     //Structure:
@@ -31,7 +25,6 @@ $siimple-switch-active-background-color: siimple-default-color("success");
     //	<label for="mySwitch"></label>
     //	<div></div>
     //</div>
-
     display: inline-block;
     width: $siimple-switch-width;
     height: $siimple-switch-height;
@@ -44,7 +37,6 @@ $siimple-switch-active-background-color: siimple-default-color("success");
         bottom: $siimple-switch-margin-bottom;
     }
     vertical-align: top;
-
     //Label style -> circle
     & label {
         display: block;
@@ -59,32 +51,34 @@ $siimple-switch-active-background-color: siimple-default-color("success");
         left: 2px;
         z-index: 2;
     }
-
     //Background div
     & div {
         width: 100%;
         height: 100%;
-        background: $siimple-switch-inactive-background-color;
+        background-color: siimple-default-color("dark", "light");
         border-radius: $siimple-switch-border-radius;
         transition: all 0.3s;
         position: absolute;
         top: 0px;
         z-index: 1;
     }
-
     //Hide the checkbox
     & input[type=checkbox] {
         visibility: hidden;
     }
-
     //Checkbox active -> background color
     & input[type=checkbox]:checked ~ div {
-        background: $siimple-switch-active-background-color;
+        background-color: siimple-default-color("primary");
     }
-
     //Checkbox active -> move circle
     & input[type=checkbox]:checked ~ label {
         left: 16px;
+    }
+    //Colored switch 
+    @each $color in $siimple-default-colors {
+        &--#{$color} input[type=checkbox]:checked ~ div {
+            background-color: siimple-default-color($color);
+        }
     }
 }
 
