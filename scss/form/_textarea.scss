@@ -25,6 +25,7 @@ $siimple-textarea-padding: 10px;
     background-color: siimple-default-color("light");
     vertical-align: top;
     box-sizing: border-box;
+    resize: vertical;
     //Fluid textarea
     &--fluid {
         width: 100%;
