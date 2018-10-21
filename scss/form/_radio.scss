@@ -12,20 +12,8 @@
 $siimple-radio-width: 18px;
 $siimple-radio-height: 18px;
 $siimple-radio-margin: 8px;
-
-//Outer circle radio border
 $siimple-radio-border: 3px;
-
-//Inner circe radio width
 $siimple-radio-circle: 6px;
-
-//Radio inactive variables
-$siimple-radio-inactive-border-color: siimple-default-color("light");
-$siimple-radio-inactive-background-color: siimple-default-color("light");
-
-//Radio active variables
-$siimple-radio-active-background-color: siimple-default-color("success");
-$siimple-radio-active-border-color: siimple-default-color("success");
 
 //Radio class
 .siimple-radio {
