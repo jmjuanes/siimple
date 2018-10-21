@@ -8,32 +8,6 @@
 @import "../_variables.scss";
 @import "../_functions.scss";
 
-//Menu variables
-//$siimple-menu-font-size: $siimple-default-font-size;
-$siimple-menu-margin-top: 0px;
-$siimple-menu-margin-bottom: $siimple-default-margin-bottom;
-$siimple-menu-padding: 0px;
-
-//Menu group variables
-$siimple-menu-group-height: 25px;
-$siimple-menu-group-line-height: $siimple-menu-group-height;
-$siimple-menu-group-margin-top: 10px;
-$siimple-menu-group-font-size: 15px;
-$siimple-menu-group-font-weight: bold;
-$siimple-menu-group-color: siimple-default-color("dark", "light");
-
-//Menu item variables
-$siimple-menu-item-height: 34px;
-$siimple-menu-item-line-height: $siimple-menu-item-height;
-$siimple-menu-item-border-radius: $siimple-default-border-radius;
-$siimple-menu-item-padding-left: 10px;
-$siimple-menu-item-padding-right: 10px;
-$siimple-menu-item-font-size: 14px;
-$siimple-menu-item-font-weight: 400;
-$siimple-menu-item-color: siimple-default-color("dark", "base");
-$siimple-menu-item-background-color: siimple-default-color("light", "base");
-$siimple-menu-item-margin-bottom: 5px;
-
 //Menu submenu variables
 $siimple-menu-submenu-margin-top: 5px;
 $siimple-menu-submenu-margin-bottom: 5px;
@@ -103,14 +77,10 @@ $siimple-menu-submenu-padding-left: 10px;
     &-sub, 
     &-submenu {
         display: block;
-        padding: {
-            left: $siimple-menu-submenu-padding-left;
-        }
-        margin: {
-            left: $siimple-menu-submenu-margin-left;
-            top: $siimple-menu-submenu-margin-top;
-            bottom: $siimple-menu-submenu-margin-bottom;
-        }
+        padding-left: 10px;
+        margin-left: 10px; 
+        margin-top: 5px;
+        margin-bottom: 5px;
         border-left: 1px solid siimple-default-color("light", "dark");
     }
 }
