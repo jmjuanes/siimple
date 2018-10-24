@@ -175,5 +175,8 @@ $siimple-default-spacing: (
     "auto": auto
 ) !default;
 
-
+//Default form elements checked colors
+$siimple-default-checkbox-color: $siimple-default-primary !default;
+$siimple-default-switch-color: $siimple-default-primary !default;
+$siimple-default-radio-color: $siimple-default-primary !default;
 
