@@ -72,7 +72,7 @@ $siimple-switch-margin-bottom: 8px;
     }
     //Checkbox active -> background color
     & input[type=checkbox]:checked ~ div {
-        background-color: siimple-default-color("primary");
+        background-color: $siimple-default-switch-color;
     }
     //Checkbox active -> move circle
     & input[type=checkbox]:checked ~ label {
@@ -81,11 +81,11 @@ $siimple-switch-margin-bottom: 8px;
         background-color: siimple-default-color("white");
     }
     //Colored switch 
-    @each $color in $siimple-default-colors {
-        &--#{$color} input[type=checkbox]:checked ~ div {
-            background-color: siimple-default-color($color);
-        }
-    }
+    //@each $color in $siimple-default-colors {
+    //    &--#{$color} input[type=checkbox]:checked ~ div {
+    //        background-color: siimple-default-color($color);
+    //    }
+    //}
 }
 
 
