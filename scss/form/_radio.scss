@@ -61,20 +61,20 @@ $siimple-radio-circle: 6px;
     }
     //Checked -> change tick
     & input[type=radio]:checked + label:after {
-        background-color: siimple-default-color("primary");
+        background-color: $siimple-default-radio-color;
     }
     //Checked -> change background
     & input[type=radio]:checked + label {
-        border-color: siimple-default-color("primary");
+        border-color: $siimple-default-radio-color;
     }
     //Radio colors
-    @each $color in $siimple-default-colors {
-        &--#{$color} input[type=radio]:checked + label:after {
-            background-color: siimple-default-color($color);
-        }
-        &--#{$color} input[type=radio]:checked + label {
-            border-color: siimple-default-color($color);
-        }
-    }
+    //@each $color in $siimple-default-colors {
+    //    &--#{$color} input[type=radio]:checked + label:after {
+    //        background-color: siimple-default-color($color);
+    //    }
+    //    &--#{$color} input[type=radio]:checked + label {
+    //        border-color: siimple-default-color($color);
+    //    }
+    //}
 }
 
