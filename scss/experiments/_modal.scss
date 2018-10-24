@@ -101,5 +101,15 @@ $siimple-modal-padding: 15px;
         border-bottom-left-radius: $siimple-default-border-radius;
         border-bottom-right-radius: $siimple-default-border-radius;
     }
+    //Modal sizes
+    &--small &-content {
+        max-width: $siimple-default-breakpoint-small;
+    }
+    &--medium &-content {
+        max-width: $siimple-default-breakpoint-medium;
+    }
+    &--large &-content {
+        max-width: $siimple-default-breakpoint-large;
+    }
 }
 
