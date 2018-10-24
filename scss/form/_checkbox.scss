@@ -65,13 +65,13 @@ $siimple-checkbox-height: 18px;
     }
     //Checked -> change background
     & input[type=checkbox]:checked + label {
-        background-color: siimple-default-color("primary");
+        background-color: $siimple-default-checkbox-color;
     }
     //Checkbox colors
-    @each $color in $siimple-default-colors {
-        &--#{$color} input[type=checkbox]:checked + label {
-            background-color: siimple-default-color($color);
-        }
-    }
+    //@each $color in $siimple-default-colors {
+    //    &--#{$color} input[type=checkbox]:checked + label {
+    //        background-color: siimple-default-color($color);
+    //    }
+    //}
 }
 
