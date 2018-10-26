@@ -53,6 +53,11 @@
 //Import grid
 @import "./grid/_grid.scss";
 
+//Import Experiments
+@import "./experiments/_modal.scss";
+@import "./experiments/_progress.scss";
+@import "./experiments/_steps.scss";
+
 //Import helpers
 @import "./helpers/_colors.scss";
 @import "./helpers/_display.scss";
@@ -61,9 +66,4 @@
 @import "./helpers/_sizing.scss";
 @import "./helpers/_spacing.scss";
 @import "./helpers/_text.scss";
-
-//Import Experiments
-@import "./experiments/_modal.scss";
-@import "./experiments/_progress.scss";
-@import "./experiments/_steps.scss";
 
