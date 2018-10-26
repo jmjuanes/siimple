@@ -25,9 +25,9 @@
     "devDependencies": {
         "sass-lint": "^1.12.1",
         "clean-css-cli": "^4.2.1",
-        "postcss-cli": "^6.0.0",
-        "sass": "^1.6.0",
-        "autoprefixer": "^9.1.5",
+        "postcss-cli": "^6.0.1",
+        "sass": "^1.14.3",
+        "autoprefixer": "^9.3.1",
         "stattic": "^0.3.2"
     }
 }
