@@ -18,7 +18,7 @@ $siimple-box-padding: 30px;
     width: calc(100% - #{2 * $siimple-box-padding});
     background-color: siimple-default-color("light");
     //font-family: $siimple-default-text-font;
-    font-size: $siimple-default-font-size;
+    //font-size: $siimple-default-font-size;
     //color: $siimple-default-color;
     border-radius: $siimple-default-border-radius;
     padding: $siimple-box-padding;
@@ -57,6 +57,16 @@ $siimple-box-padding: 30px;
     &-title + &-detail {
         margin-top: 5px;
     }
+    ////Light box
+    //&--light {
+    //    background-color: siimple-default-color("light");
+    //    color: siimple-default-color("dark");
+    //}
+    ////Dark box
+    //&--dark {
+    //    background-color: siimple-default-color("dark");
+    //    color: siimple-default-color("white");
+    //}
     //Box colors
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
