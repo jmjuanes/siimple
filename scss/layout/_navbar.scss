@@ -76,7 +76,7 @@ $siimple-navbar-padding: 20px;
             opacity: 1.0;
         }
     }
-    ////Light navbar
+    //Light navbar
     //&--light {
     //    color: siimple-default-color("dark");
     //    background-color: siimple-default-color("light", "light");
@@ -95,8 +95,8 @@ $siimple-navbar-padding: 20px;
     //Navbar colors 
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
-            background-color: siimple-default-color($color);
             color: siimple-default-color($color, "over");
+            background-color: siimple-default-color($color);
         }
         &#{&}--#{$color} &-title,
         &#{&}--#{$color} &-subtitle,
