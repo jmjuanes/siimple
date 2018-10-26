@@ -76,23 +76,35 @@ $siimple-navbar-padding: 20px;
             opacity: 1.0;
         }
     }
-    //Light navbar
-    &--light {
-        color: siimple-default-color("dark");
-        background-color: siimple-default-color("light", "light");
-    }
-    &--light &-title, &--light &-subtitle, &--light &-item, &--light &-link {
-        color: siimple-default-color("dark");
-    }
-    //Dark navbar
-    &--dark {
-        color: siimple-default-color("white");
-        background-color: siimple-default-color("dark");
-    }
-    &--dark &-title, &--dark &-subtitle, &--dark &-link, &--dark &-item {
-        color: siimple-default-color("white");
-    }
-    //Legacy colors
+    ////Light navbar
+    //&--light {
+    //    color: siimple-default-color("dark");
+    //    background-color: siimple-default-color("light", "light");
+    //}
+    //&--light &-title, &--light &-subtitle, &--light &-item, &--light &-link {
+    //    color: siimple-default-color("dark");
+    //}
+    ////Dark navbar
+    //&--dark {
+    //    color: siimple-default-color("white");
+    //    background-color: siimple-default-color("dark");
+    //}
+    //&--dark &-title, &--dark &-subtitle, &--dark &-link, &--dark &-item {
+    //    color: siimple-default-color("white");
+    //}
+    //Navbar colors 
+    @each $color in $siimple-default-colors {
+        &#{&}--#{$color} {
+            background-color: siimple-default-color($color);
+            color: siimple-default-color($color, "over");
+        }
+        &#{&}--#{$color} &-title,
+        &#{&}--#{$color} &-subtitle,
+        &#{&}--#{$color} &-link, 
+        &#{&}--#{$color} &-item {
+            color: siimple-default-color($color, "over");
+        }
+    }//Legacy colors
     //To be deprecated in future major release
     @each $color in $siimple-legacy-colors {
         &#{&}--#{$color} {
