@@ -56,6 +56,16 @@ $siimple-jumbotron-padding: 85px;
     &-subtitle + &-detail {
         margin-top: 5px;
     }
+    ////Light jumbotron
+    //&--light {
+    //    background-color: siimple-default-color("light");
+    //    color: siimple-default-color("dark");
+    //}
+    ////Dark jumbotron
+    //&--dark {
+    //    background-color: siimple-default-color("dark");
+    //    color: siimple-default-color("white");
+    //}
     //Jumbotron colors
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
