@@ -12,6 +12,9 @@
 $siimple-table-width: 100%;
 $siimple-table-cell-padding: 10px;
 
+//Table cell variables
+$siimple-table-cell-sizes: $siimple-default-grid;
+
 //Table class
 .siimple-table {
     display: table;
@@ -43,6 +46,12 @@ $siimple-table-cell-padding: 10px;
         white-space: nowrap;
         overflow: hidden;
         transition: background-color 0.3s;
+    }
+    //Table cell sizes
+    @each $cell-name, $cell-width in $siimple-table-cell-sizes {
+        &-cell--#{$cell-name} {
+            width: #{$cell-width};
+        }
     }
     //Table with border
     &--border &-cell:not(:last-child) {
