@@ -1,14 +1,10 @@
----
-# This ensures Jekyll reads the file to be transformed into CSS later
----
-
-//Import theme
-@import "{{ site.theme }}";
+//Import dependencies
+@import "siimple/scss/_variables.scss";
 
 //Import partials
-@import "categories.scss";
-@import "colors.scss";
-@import "examples.scss";
+@import "./categories.scss";
+@import "./colors.scss";
+@import "./examples.scss";
 
 //Snippet class
 .sd-snippet {
