@@ -59,7 +59,9 @@ docs:
 	@logger -s "Docs build started"
 	@logger -s "Building documentation site with Jekyll"
 	cd ./docs && bundle exec jekyll build
-	@logger -s "Copiyng assets files"
+	@logger -s "Building assets"
+	mkdir -p ./docs/_site/assets/css ./docs/_site/assets/js
+	${NODE_BIN}/sass ./docs/_sass/main.scss ./docs/_site/assets/css/main.css --load-path=./bower_components/
 	cp ./dist/siimple.min.css ./docs/_site/assets/css/
 	@logger -s "Docs build finished"
 
