@@ -66,11 +66,15 @@ $siimple-footer-dark-text: rgba(siimple-default-color("white"), 0.8);
     }
     //Footer text link
     &-link {
+        display: block;
         text-decoration: none;
         font-weight: 600;
         transition: color 0.3s;
         cursor: pointer;
         //Inline link
+        &--inline {
+            display: inline !important;
+        }
         &--inline:not(:last-child) {
             margin-right: 10px;
         }
