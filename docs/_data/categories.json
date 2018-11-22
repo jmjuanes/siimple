@@ -39,5 +39,10 @@
         "description": "A collection of CSS classes for laying your project.",
         "icon": "./assets/images/categories/layers.png"
     },
-    "all": ["getting-started", "helpers", "typography", "elements", "components", "layout", "form", "grid"] 
+    "experiments": {
+        "title": "Experiments",
+        "description": "A special set of experimental components.",
+        "icon": "./assets/images/categories/flask.png"
+    },
+    "all": ["getting-started", "helpers", "typography", "elements", "components", "layout", "form", "grid", "experiments"] 
 }
