@@ -8,6 +8,9 @@
 @import "../_variables.scss";
 @import "../_functions.scss";
 
+//Table cell variables
+$siimple-table-cell-sizes: $siimple-default-grid;
+
 //Table class
 .siimple-table {
     display: table;
@@ -46,6 +49,12 @@
         border-top: 1px solid siimple-default-color("light", "dark");
         box-sizing: border-box;
         vertical-align: top;
+    }
+    //Table cell sizes
+    @each $cell-name, $cell-width in $siimple-table-cell-sizes {
+        &-cell--#{$cell-name} {
+            width: #{$cell-width};
+        }
     }
     //Table with border
     &--border &-cell {
