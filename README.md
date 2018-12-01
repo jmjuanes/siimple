@@ -39,7 +39,7 @@ You can include `siimple` in your HTML files:
 Or you can import all the styles in your SASS/SCSS files: 
 
 ```scss
-@import "siimple/scss/_all.scss";
+@import "siimple/index.scss";
 ```
 
 Or import only the styles that you need: 
