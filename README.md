@@ -1,7 +1,9 @@
+<!-- 
 <div align="center">
   <img height="300px" src="https://rawgit.com/siimple/siimple/develop/media/logo-colored.png" alt="siimple">
   <br>
 </div>
+-->
 
 # siimple
 
