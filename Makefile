@@ -21,7 +21,7 @@ build:
 	@logger -s "Build started"
 	@logger -s "Compiling SCSS and adding the license header" 
 	mkdir -p ./dist
-	${NODE_BIN}/sass scss/siimple.scss dist/siimple.css 
+	${NODE_BIN}/sass index.scss dist/siimple.css 
 	node ./scripts/header.js > ./dist/header.txt
 	cat ./dist/header.txt ./dist/siimple.css > ./dist/siimple.temp.css
 	rm ./dist/header.txt ./dist/siimple.css
