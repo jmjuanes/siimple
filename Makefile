@@ -63,7 +63,7 @@ docs:
 	mkdir -p ./docs/_site/assets/css ./docs/_site/assets/js ./docs/assets/images
 	${NODE_BIN}/sass ./docs/_sass/main.scss ./docs/_site/assets/css/main.css --load-path=./bower_components/
 	cp ./dist/siimple.min.css ./docs/_site/assets/css/
-	${NODE_BIN}/pngsprite --inputPNGFolder ./docs/_images/ --outputPNGFile ./docs/_site/assets/images/icons.png --cssIconSize 45 --cssOutput ./docs/_site/assets/css/icons.css --debug
+	${NODE_BIN}/pngsprite --inputPNGFolder ./docs/_images/ --outputPNGFile ./docs/_site/assets/images/icons.png --cssIconSize 45 --cssOutput ./docs/_site/assets/css/icons.css --debug --cssNamespace sd-icons
 	@logger -s "Docs build finished"
 
 # Publish docs
