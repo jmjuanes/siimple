@@ -3,6 +3,7 @@ layout: "default"
 title: "siimple documentation"
 ---
 
+<link rel="stylesheet" href="/assets/css/icons.css">
 <title>Documentation for version {{ site.version }} | {{ site.title }}</title>
 {% assign welcome_title = "Documentation" %}
 {% assign welcome_subtitle = "All that you need to create your website with <strong>siimple</strong>." %}
@@ -17,7 +18,7 @@ title: "siimple documentation"
         {% assign category = site.data.categories[category_id] %}
         {% assign post = site.categories[category_id].last %}
         <a class="sd-categories-item" align="center" href=".{{ post.url }}">
-            <div class="sd-categories-item-logo" style="background-image:url('{{ category.icon }}');"></div>
+            <div class="sd-categories-item-icon sd-icon sd-icon-{{ category_id }}"></div>
             <div class="sd-categories-item-title">{{ category.title }}</div>
             <div class="sd-categories-item-description">{{ category.description }}</div>
         </a>
