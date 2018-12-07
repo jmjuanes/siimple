@@ -84,6 +84,7 @@ $siimple-default-palette: (
 
 //Default colors list
 $siimple-default-colors: ("primary", "success", "warning", "error", "dark", "light");
+$siimple-default-basic-colors: ("primary", "success", "warning", "error");
 
 //Default breakpoints variables
 $siimple-default-breakpoint-gap: 20px !default;
@@ -174,7 +175,4 @@ $siimple-default-spacing: (
     "5": 25px,
     "auto": auto
 ) !default;
-
-//Default form elements checked colors
-$siimple-default-form-colors: "success", "error", "warning";
 
