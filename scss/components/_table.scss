@@ -112,7 +112,7 @@ $siimple-table-cell-sizes: $siimple-default-grid;
         overflow-x: auto;
     }
     //Colored table rows
-    @each $color in $siimple-default-colors {
+    @each $color in $siimple-default-basic-colors {
         &-row--#{$color},
         &-row--#{$color} &-cell {
             background-color: rgba(siimple-default-color($color, "light"), 1.0) !important;
