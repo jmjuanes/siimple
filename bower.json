@@ -5,7 +5,7 @@
     "homepage": "https://www.siimple.xyz",
     "repository": "https://github.com/siimple/siimple.git",
     "devDependencies": {
-        "siimple-colors": "siimple/siimple-colors#1.0.0-beta.1"
+        "siimple-colors": "siimple/siimple-colors#develop"
     },
     "license": "MIT"
 }
