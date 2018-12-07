@@ -185,6 +185,67 @@ keywords: "table,tables,row,rows,columns,cells,header,body"
 &lt;/div&gt;
 </pre>
 
+<div class="siimple-h5">Coloring rows</div>
+<div class="siimple-blockquote">
+    Added in <strong>v3.2.0</strong>
+</div>
+<div class="siimple-paragraph">
+    Use <code class="siimple-code">siimple-table-row--{color}</code> to color table rows.
+</div>
+<div class="sd-snippet-demo">
+    <div class="siimple-table" style="margin-bottom:0px !important;">
+        <div class="siimple-table-header">
+            <div class="siimple-table-row">
+                <div class="siimple-table-cell">Header 1</div>
+                <div class="siimple-table-cell">Header 2</div>
+                <div class="siimple-table-cell">Header 3</div>
+            </div>
+        </div>
+        <div class="siimple-table-body">
+            <div class="siimple-table-row siimple-table-row--primary">
+                <div class="siimple-table-cell">Cell 1</div>
+                <div class="siimple-table-cell">Cell 2</div>
+                <div class="siimple-table-cell">Cell 3</div>
+            </div>
+            <div class="siimple-table-row siimple-table-row--success">
+                <div class="siimple-table-cell">Cell 4</div>
+                <div class="siimple-table-cell">Cell 5</div>
+                <div class="siimple-table-cell">Cell 6</div>
+            </div>
+            <div class="siimple-table-row siimple-table-row--warning">
+                <div class="siimple-table-cell">Cell 7</div>
+                <div class="siimple-table-cell">Cell 8</div>
+                <div class="siimple-table-cell">Cell 9</div>
+            </div>
+            <div class="siimple-table-row siimple-table-row--error">
+                <div class="siimple-table-cell">Cell 10</div>
+                <div class="siimple-table-cell">Cell 11</div>
+                <div class="siimple-table-cell">Cell 12</div>
+            </div>
+        </div>
+    </div>
+</div>
+<pre class="sd-snippet-code">
+&lt;div class="siimple-table"&gt;
+    &lt;div class="siimple-table-body"&gt;
+        &lt;div class="siimple-table-row siimple-table-row--primary"&gt;
+            . . .
+        &lt;/div&gt;
+        &lt;div class="siimple-table-row siimple-table-row--success"&gt;
+            . . .
+        &lt;/div&gt;
+        &lt;div class="siimple-table-row siimple-table-row--warning"&gt;
+            . . .
+        &lt;/div&gt;
+        &lt;div class="siimple-table-row siimple-table-row--error"&gt;
+            . . .
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+
 <div class="siimple-h5">Sizing columns</div>
 <div class="siimple-blockquote">
     Added in <strong>v3.2.0</strong>
