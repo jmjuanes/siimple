@@ -13,8 +13,12 @@ $siimple-progress-striped: $siimple-default-white;
 
 //Progress animation
 @keyframes siimple-progress-animation {
-    0% { background-position: 0 0; }
-    100% { background-position: 50px 50px; }
+    0% { 
+        background-position: 0 0; 
+    }
+    100% { 
+        background-position: 50px 50px; 
+    }
 }
 
 //Progress class
