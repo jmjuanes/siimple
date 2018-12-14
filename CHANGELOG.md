@@ -2,8 +2,8 @@
 
 ### New features
 
-- Add new experimental components styles: `modal`, `steps` and `progress`.
-- Add `spacing` helpers.
+- Add new experimental components: `modal`, `steps` and `progress`.
+- Add spacing helpers.
 - Add `siimple-alert-close` class-name to display a close icon in the alert component.
 - Add new footer elements (`siimple-footer-title`, `siimple-footer-subtitle`, `siimple-footer-link`, `siimple-footer-group` and `siimple-footer-rule`).
 - Add table sizes (thanks to @yoshikawaa in #51).
