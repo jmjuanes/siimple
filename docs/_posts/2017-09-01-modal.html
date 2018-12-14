@@ -38,11 +38,11 @@ keywords: "experiments,experimentals,modal,popup,dialog"
     </script>
 </div>
 <pre class="sd-snippet-code">
-&lt;div class="siimple-modal siimple-modal--medium"&gt;
+&lt;div class="siimple-modal siimple-modal--medium" id="modal" style="display:none;"&gt;
     &lt;div class="siimple-modal-content"&gt;
         &lt;div class="siimple-modal-header"&gt;
             &lt;div class="siimple-modal-header-title"&gt;Modal title&lt;/div&gt;
-            &lt;div class="siimple-modal-header-close"&gt;&lt;/div&gt;
+            &lt;div class="siimple-modal-header-close" id="modal-close"&gt;&lt;/div&gt;
         &lt;/div&gt;
         &lt;div class="siimple-modal-body"&gt;
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -54,10 +54,19 @@ keywords: "experiments,experimentals,modal,popup,dialog"
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="siimple-btn siimple-btn--primary" id="modal-open"&gt;Open modal&lt;/div&gt;
+&lt;script&gt;
+    document.getElementById("modal-open").addEventListener("click", function () {
+        document.getElementById("modal").style.display = "";
+    });
+    document.getElementById("modal-close").addEventListener("click", function () {
+        document.getElementById("modal").style.display = "none";
+    });
+&lt;/script&gt;
 </pre>
 
 <div class="siimple-tip siimple-tip--exclamation siimple-tip--warning">
-    <strong>siimple</strong> does <strong>not</strong> include JavaScript code, so you will have to implement the class toggle by yourself.
+    <strong>siimple</strong> does <strong>not</strong> include JavaScript code, so you will have to implement the class toggle by yourself (you can copy the <code class="siimple-code">&lt;script&gt;</code> section provided in the modal example code).
 </div>
 
 <div class="siimple-h5">Modal header</div>
