@@ -2,24 +2,24 @@
 
 ### New features
 
-- Add new experimental components: `modal`, `steps` and `progress`.
-- Add spacing helpers.
-- Add `siimple-alert-close` class-name to display a close icon in the alert component.
-- Add new footer elements (`siimple-footer-title`, `siimple-footer-subtitle`, `siimple-footer-link`, `siimple-footer-group` and `siimple-footer-rule`).
-- Add table sizes (thanks to @yoshikawaa in #51).
-- Add checkbox, switch and radio color modifier (thanks to 0x92 in #36).
-- Add small button modifier (thanks to @HDVinnie in #41).
+- Added new experimental components: `modal`, `steps` and `progress`.
+- Added spacing helpers.
+- Added `siimple-alert-close` class-name to display a close icon in the alert component.
+- Added new footer elements (`siimple-footer-title`, `siimple-footer-subtitle`, `siimple-footer-link`, `siimple-footer-group` and `siimple-footer-rule`).
+- Added table sizes (thanks to @yoshikawaa in #51).
+- Added checkbox, switch and radio color modifier (thanks to 0x92 in #36).
+- Added small button modifier (thanks to @HDVinnie in #41).
 
 ### Changes and improvements
 
-- Redesign table component.
-- Minor changes on navbar component.
-- Disable textarea horizontal resize.
+- Redesigned table component.
+- Updated some navbar styles.
+- Disabled textarea horizontal resize.
 - Deprecate `siimple-close` element.
 
 ### Bug fixes
 
-- Fix some typos in README and documentation.
+- Fixed some typos in README and documentation.
 
 
 ## v3.1.1 (August 4, 2018)
