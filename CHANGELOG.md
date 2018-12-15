@@ -1,4 +1,4 @@
-## v3.2.0 (December 14, 2018)
+## v3.2.0 (December 15, 2018)
 
 ### New features
 
