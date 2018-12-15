@@ -129,7 +129,78 @@ keywords: "experiments,experimentals,progress,task,completed"
 &lt;/div&gt;
 </pre>
 
-
+<div class="siimple-h5">Animated progress with <strong>JavaScript</strong></div>
+<div class="siimple-paragraph">
+    You can use <code class="siimple-code">JavaScript</code> to update the progress bar width.
+</div>
+<div class="sd-snippet-demo">
+    <div class="siimple-progress siimple-progress--primary siimple-progress--striped">
+        <span id="progress" style="width:50%;">50%</span>
+    </div>
+    <div align="center">
+        <div class="siimple-btn siimple-btn--primary siimple-btn--small" id="progress-0">0%</div>
+        <div class="siimple-btn siimple-btn--primary siimple-btn--small" id="progress-25">25%</div>
+        <div class="siimple-btn siimple-btn--primary siimple-btn--small" id="progress-50">50%</div>
+        <div class="siimple-btn siimple-btn--primary siimple-btn--small" id="progress-75">75%</div>
+        <div class="siimple-btn siimple-btn--primary siimple-btn--small" id="progress-100">100%</div>
+    </div>
+    <script type="text/javascript">
+        let updateProgress = function (value) {
+            let progressElement = document.getElementById("progress");
+            progressElement.style.width = value;
+            progressElement.textContent = value;
+        };
+        document.getElementById("progress-0").addEventListener("click", function () {
+            return updateProgress("0%");
+        });
+        document.getElementById("progress-25").addEventListener("click", function () {
+            return updateProgress("25%");
+        });
+        document.getElementById("progress-50").addEventListener("click", function () {
+            return updateProgress("50%");
+        });
+        document.getElementById("progress-75").addEventListener("click", function () {
+            return updateProgress("75%");
+        });
+        document.getElementById("progress-100").addEventListener("click", function () {
+            return updateProgress("100%");
+        });
+    </script>
+</div>
+<pre class="siimple-pre">
+&lt;div class="siimple-progress siimple-progress--primary siimple-progress--striped"&gt;
+    &lt;span style="width:50%;"&gt;50%&lt;/span&gt;
+&lt;/div&gt;
+&lt;div align="center"&gt;
+    &lt;div class="siimple-btn siimple-btn--primary siimple-btn--small" id="progress-0"&gt;0%&lt;/div&gt;
+    &lt;div class="siimple-btn siimple-btn--primary siimple-btn--small" id="progress-25">25%&lt;/div&gt;
+    &lt;div class="siimple-btn siimple-btn--primary siimple-btn--small" id="progress-50">50%&lt;/div&gt;
+    &lt;div class="siimple-btn siimple-btn--primary siimple-btn--small" id="progress-75">75%&lt;/div&gt;
+    &lt;div class="siimple-btn siimple-btn--primary siimple-btn--small" id="progress-100">100%&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+    let updateProgress = function (value) {
+        let progressElement = document.getElementById("progress");
+        progressElement.style.width = value;
+        progressElement.textContent = value;
+    };
+    document.getElementById("progress-0").addEventListener("click", function () {
+        return updateProgress("0%");
+    });
+    document.getElementById("progress-25").addEventListener("click", function () {
+        return updateProgress("25%");
+    });
+    document.getElementById("progress-50").addEventListener("click", function () {
+        return updateProgress("50%");
+    });
+    document.getElementById("progress-75").addEventListener("click", function () {
+        return updateProgress("75%");
+    });
+    document.getElementById("progress-100").addEventListener("click", function () {
+        return updateProgress("100%");
+    });
+&lt;/script&gt;
+</pre>
 
 
 
