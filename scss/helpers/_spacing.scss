@@ -32,26 +32,28 @@
             margin-top: $value !important;
             margin-bottom: $value !important;
         }
-        //Padding attributes
-        &--pt-#{$key} {
-            padding-top: $value !important;
-        }
-        &--pb-#{$key} {
-            padding-bottom: $value !important;
-        }
-        &--pl-#{$key} {
-            padding-left: $value !important;
-        }
-        &--pr-#{$key} {
-            padding-right: $value !important;
-        }
-        &--px-#{$key} {
-            padding-left: $value !important;
-            padding-right: $value !important;
-        }
-        &--py-#{$key} {
-            padding-top: $value !important;
-            padding-bottom: $value !important;
+        //Padding attributes only if key is not auto
+        @if $key != "auto" {
+            &--pt-#{$key} {
+                padding-top: $value !important;
+            }
+            &--pb-#{$key} {
+                padding-bottom: $value !important;
+            }
+            &--pl-#{$key} {
+                padding-left: $value !important;
+            }
+            &--pr-#{$key} {
+                padding-right: $value !important;
+            }
+            &--px-#{$key} {
+                padding-left: $value !important;
+                padding-right: $value !important;
+            }
+            &--py-#{$key} {
+                padding-top: $value !important;
+                padding-bottom: $value !important;
+            }
         }
     }
 }
