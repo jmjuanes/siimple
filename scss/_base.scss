@@ -10,7 +10,7 @@
 @import "./_utils.scss";
 
 //Import font from Google Fonts
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700");
+@import url(#{$siimple-default-font-url});
 
 //Default html style
 html {
