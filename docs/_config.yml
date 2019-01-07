@@ -8,12 +8,13 @@ url: "https://docs.siimple.xyz"
 license: "MIT License"
 repository: "https://github.com/siimple/siimple"
 links:
-    - title: "siimple.xyz"
-      url: "https://www.siimple.xyz"
-      target: "_blank"
+    - title: "Home"
+      url: "/index.html"
+    - title: "Examples"
+      url: "/examples/index.html"
 ## Theme configuration
 theme_config:
-    color: "blue"
+    #color: "blue"
     custom_styles: ["/assets/css/main.css"]
     changes_url: "https://github.com/siimple/siimple/issues/new"
     analytics: "UA-70800807-5"
