@@ -11,17 +11,17 @@
 .siimple {
     @each $color in $siimple-default-colors {
         &--color-#{$color} {
-            color: siimple-default-color($color, "base");
+            color: siimple-default-color($color, "base") !important;
         }
         &--bg-#{$color} {
-            background-color: siimple-default-color($color, "base");
+            background-color: siimple-default-color($color, "base") !important;
         }
     }
     &--color-white {
-        color: $siimple-default-white;
+        color: $siimple-default-white !important;
     }
     &--bg-white {
-        background-color: $siimple-default-white;
+        background-color: $siimple-default-white !important;
     }
 }
 
