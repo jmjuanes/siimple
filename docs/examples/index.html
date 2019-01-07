@@ -1,0 +1,27 @@
+---
+layout: default
+title: "Examples"
+subtitle: "Get started with <strong>siimple</strong> with any of our examples!"
+---
+
+{% include header.html title=page.title subtitle=page.subtitle %}
+
+<div class="siimple-content docs-examples siimple-content--large">
+    {% for example_id in site.data.examples.all %}
+        {% assign example = site.data.examples[example_id] %}
+        <div class="docs-examples-item">
+            <a href="/examples/{{ example_id }}/index.html" target="_blank">
+                <div class="docs-examples-item-image" style="background-image:url('/examples/{{ example_id }}/thumbnail.jpg');"></div>
+                <div class="docs-examples-item-title">{{ example.name }}</div>
+            </a>
+            <div class="docs-examples-item-description">{{ example.description }} </div>
+            <!--
+            <a href="" class="siimple-btn siimple-btn--fluid siimple-btn--primary" target="_blank">
+                Source code
+            </a>
+            -->
+        </div>
+    {% endfor %}
+</div>
+
+
