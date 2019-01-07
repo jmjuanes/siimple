@@ -1,13 +1,34 @@
 ---
 layout: "default"
-title: "siimple documentation"
+title: "siimple"
+subtitle: "A minimal and Open Source CSS framework for building flat and clean web applications and sites!"
 ---
 
 <link rel="stylesheet" href="/assets/css/icons.css">
 <title>Documentation for version {{ site.version }} | {{ site.title }}</title>
-{% assign welcome_title = "Documentation" %}
-{% assign welcome_subtitle = "All that you need to create your website with <strong>siimple</strong>." %}
-{% include header.html title=welcome_title subtitle=welcome_subtitle %}
+<div class="siimple-jumbotron theme-header siimple-jumbotron--large" align="center">
+    <div class="siimple-jumbotron-title">{{ site.title }} {{ site.version }}</div>
+    <div class="siimple-jumbotron-subtitle">{{ page.subtitle }}</div>
+</div>
+<div class="siimple-content siimple-content--large siimple--py-5">
+    <div class="siimple--py-5" align="center">
+        <div class="siimple-h3 siimple--mb-2 siimple--text-normal">Install <strong>siimple</strong></div>
+        <div class="siimple-lead">
+            You only need one command to add <strong>siimple</strong> to your project:
+        </div>
+        <div class="siimple--mb-3" align="center">
+            <pre class="siimple-pre">$ npm install siimple</pre>
+        </div>
+        <div class="siimple-lead">
+            Or you can use an alternative method to download and install <strong>siimple</strong> on your project:
+        </div>
+        <div align="center">
+            <a href="/getting-started/installation.html" class="siimple-btn siimple-btn--primary">
+                Read <strong>installation</strong> docs
+            </a>
+        </div>
+    </div>
+</div>
 <div class="sd-categories siimple-content--large" align="center">
     <div class="sd-categories-header">
         <div class="sd-categories-header-title" align="center">
@@ -24,22 +45,11 @@ title: "siimple documentation"
         </a>
     {% endfor %}
 </div>
-<div class="sd-examples siimple-content--large">
-    <div class="sd-examples-header" align="center">
-        <div class="sd-examples-header-title">Try <strong>siimple</strong></div>
-        <div class="sd-examples-header-description">
-            Get started with any of our examples.
-        </div>
+<div class="siimple-content siimple-content--large siimple--py-5">
+    <div class="siimple--py-4" align="center">
+        <div class="siimple-h3 siimple--mb-2 siimple--text-normal">Browse our <strong>examples</strong></div>
+        <div class="siimple-lead">Get started with <strong>siimple</strong> using any of our examples.</div>
+        <a href="/examples/index.html" class="siimple-btn siimple-btn--primary">Browse <strong>examples</strong></a>
     </div>
-    {% for example_id in site.data.examples.all %}
-        {% assign example = site.data.examples[example_id] %}
-        <a class="sd-examples-item" href="./{{ example.path }}/index.html" target="_blank">
-            <div class="sd-examples-item-image" style="background-image:url('./{{ example.path }}/thumbnail.jpg');"></div>
-            <div class="sd-examples-item-title">{{ example.name }}</div>
-            <div class="sd-examples-item-description">
-                {{ example.description }}
-            </div>
-        </a>
-    {% endfor %}
 </div>
 
