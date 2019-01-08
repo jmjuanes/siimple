@@ -1,13 +1,13 @@
 //Categories variables
-$sd-categories-breakpoint: 700px;
+$docs-categories-breakpoint: 700px;
 
 //Categories class
-.sd-categories {
+.docs-categories {
     display: block;
     //border-bottom: 1px solid siimple-default-color("light");
-    padding-top: 100px;
-    padding-bottom: 100px;
-    background-color: siimple-default-color("light", "light");
+    //padding-top: 100px;
+    //padding-bottom: 100px;
+    //background-color: siimple-default-color("light", "light");
     &-header {
         display: block;
         margin-bottom: 40px;
@@ -54,15 +54,16 @@ $sd-categories-breakpoint: 700px;
         }
         &:hover {
             cursor: pointer;
-            background-color: $siimple-default-white;
+            //background-color: $siimple-default-white;
+            background-color: rgba(siimple-default-color("primary"), 0.1);
         }
     }
-    &::after {
-        display: table;
-        clear: both;
-        content: "";
-    }
-    @media (max-width: $sd-categories-breakpoint) {
+    //&::after {
+    //    display: table;
+    //    clear: both;
+    //    content: "";
+    //}
+    @media (max-width: $docs-categories-breakpoint) {
         &-item {
             width: calc(100% - 30px);
         }
