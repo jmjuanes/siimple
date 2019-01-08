@@ -39,7 +39,7 @@ subtitle: "A minimal and Open Source CSS framework for building flat and clean w
             {% for category_id in site.data.categories.all %}
             {% assign category = site.data.categories[category_id] %}
             {% assign post = site.categories[category_id].last %}
-            <a class="docs-categories" align="center" href=".{{ post.url }}">
+            <a class="docs-categories-item" align="center" href=".{{ post.url }}">
                 <div class="docs-categories-item-icon sd-icons sd-icons-{{ category_id }}"></div>
                 <div class="docs-categories-item-title">{{ category.title }}</div>
                 <div class="docs-categories-item-description">{{ category.description }}</div>
