@@ -11,7 +11,7 @@ subtitle: "A minimal and Open Source CSS framework for building flat and clean w
     <div class="siimple-jumbotron-subtitle">{{ page.subtitle }}</div>
 </div>
 <div class="siimple-content siimple-content--large siimple--py-5">
-    <div class="siimple--py-5" align="center">
+    <div class="siimple--py-4" align="center">
         <div class="siimple-h3 siimple--mb-2 siimple--text-normal">Install <strong>siimple</strong></div>
         <div class="siimple-lead">
             You only need one command to add <strong>siimple</strong> to your project:
@@ -29,22 +29,27 @@ subtitle: "A minimal and Open Source CSS framework for building flat and clean w
         </div>
     </div>
 </div>
-<div class="sd-categories siimple-content--large" align="center">
-    <div class="sd-categories-header">
-        <div class="sd-categories-header-title" align="center">
+<div class="docs-rule"></div>
+<div class="siimple-content siimple-content--large siimple--py-5" align="center">
+    <div class="siimple--py-4">
+        <div class="siimple-h3 siimple--text-normal siimple--mb-5">
             Discover <strong>siimple</strong>
         </div>
+        <div class="docs-categories siimple--clearfix" align="center">
+            {% for category_id in site.data.categories.all %}
+            {% assign category = site.data.categories[category_id] %}
+            {% assign post = site.categories[category_id].last %}
+            <a class="docs-categories" align="center" href=".{{ post.url }}">
+                <div class="docs-categories-item-icon sd-icons sd-icons-{{ category_id }}"></div>
+                <div class="docs-categories-item-title">{{ category.title }}</div>
+                <div class="docs-categories-item-description">{{ category.description }}</div>
+            </a>
+            {% endfor %}
+        </div>
     </div>
-    {% for category_id in site.data.categories.all %}
-        {% assign category = site.data.categories[category_id] %}
-        {% assign post = site.categories[category_id].last %}
-        <a class="sd-categories-item" align="center" href=".{{ post.url }}">
-            <div class="sd-categories-item-icon sd-icons sd-icons-{{ category_id }}"></div>
-            <div class="sd-categories-item-title">{{ category.title }}</div>
-            <div class="sd-categories-item-description">{{ category.description }}</div>
-        </a>
-    {% endfor %}
 </div>
+<!--
+<div class="docs-rule"></div>
 <div class="siimple-content siimple-content--large siimple--py-5">
     <div class="siimple--py-4" align="center">
         <div class="siimple-h3 siimple--mb-2 siimple--text-normal">Browse our <strong>examples</strong></div>
@@ -52,4 +57,5 @@ subtitle: "A minimal and Open Source CSS framework for building flat and clean w
         <a href="/examples/index.html" class="siimple-btn siimple-btn--primary">Browse <strong>examples</strong></a>
     </div>
 </div>
+-->
 
