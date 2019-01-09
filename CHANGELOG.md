@@ -1,3 +1,15 @@
+## v3.2.1 (January 9, 2019)
+
+### Improvements
+
+- Added `!important` flag to all colors and spacing helpers.
+- Changed `siimple-navbar-item` padding attribute to `10px` instead of `15px`.
+
+### Bug fixes
+
+- Fixed missing `px` in `padding-left` attribute of `siimple-navbar-item` (thanks to @VictorVSa in #53). 
+
+
 ## v3.2.0 (December 15, 2018)
 
 ### New features
@@ -7,7 +19,7 @@
 - Added `siimple-alert-close` class-name to display a close icon in the alert component.
 - Added new footer elements (`siimple-footer-title`, `siimple-footer-subtitle`, `siimple-footer-link`, `siimple-footer-group` and `siimple-footer-rule`).
 - Added table sizes (thanks to @yoshikawaa in #51).
-- Added checkbox, switch and radio color modifier (thanks to 0x92 in #36).
+- Added checkbox, switch and radio color modifier (thanks to @0x92 in #36).
 - Added small button modifier (thanks to @HDVinnie in #41).
 
 ### Changes and improvements
