@@ -8,19 +8,6 @@
 @import "../_variables.scss";
 @import "../_functions.scss";
 
-$siimple-field-margin-top: 0px;
-$siimple-field-margin-bottom: $siimple-default-margin-bottom;
-
-$siimple-field-label-font-size: 15px;
-$siimple-field-label-color: $siimple-default-text-color;
-$siimple-field-label-margin-top: 0px;
-$siimple-field-label-margin-bottom: 5px;
-
-$siimple-field-helper-font-size: 13px;
-$siimple-field-helper-color: siimple-default-color("dark", "light");
-$siimple-field-helper-margin-top: 5px;
-$siimple-field-helper-margin-bottom: 15px;
-
 //The class siimple-form-field will be deprecated
 //Use siimple-field istead!
 .siimple-field, 
