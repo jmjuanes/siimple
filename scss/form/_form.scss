@@ -12,38 +12,37 @@
 .siimple-form {
     display: block;
     width: 100%;
-    margin: {
-        top: 0px;
-        bottom: $siimple-default-margin-bottom;
-    }
+    margin-top: 0px;
+    margin-bottom: $siimple-default-margin-bottom;
     //font-family: $siimple-default-text-font;
     font-size: $siimple-default-font-size;
-
+    //Form title
     &-title {
         display: block;
         width: 100%;
         vertical-align: top;
         font-weight: bold;
-        font-size: 25px;
+        font-size: 24px;
         color: siimple-default-color("dark", "base");
         margin-bottom: 10px;
     }
+    //Form detail
     &-detail {
         display: block;
         width: 100%;
         vertical-align: top;
         font-size: $siimple-default-font-size;
+        line-height: $siimple-default-line-height;
         color: siimple-default-color("dark", "base");
         margin-bottom: 20px;
     }
+    //Form rule (deprecated)
     &-rule {
         display: block;
         width: 100%;
         border-bottom: 1px solid siimple-default-color("light", "dark");
-        margin: {
-            top: 5px;
-            bottom: $siimple-default-margin-bottom;
-        }
+        margin-top: 5px;
+        margin-bottom: $siimple-default-margin-bottom;
         height: 0px;
     }
 }
