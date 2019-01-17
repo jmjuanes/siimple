@@ -105,6 +105,10 @@ $siimple-table-cell-sizes: $siimple-default-grid;
     &--hover &-body &-row:hover &-cell {
         background-color: rgba(siimple-default-color("light"), 0.8);
     }
+    //Fixed columns width
+    &--fixed {
+        table-layout: fixed;
+    }
     //Responsive table container
     &-responsive {
         display: block;
