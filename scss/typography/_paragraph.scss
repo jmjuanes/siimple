@@ -16,5 +16,10 @@
     font-size: $siimple-default-font-size;
     margin-top: 0px;
     margin-bottom: $siimple-default-margin-bottom;
+    //Paragraph lead modifier
+    &--lead {
+        font-size: 20px;
+        line-height: 30px;
+    }
 }
 
