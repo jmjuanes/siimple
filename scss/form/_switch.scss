@@ -23,19 +23,16 @@ $siimple-switch-margin-bottom: 8px;
     //<div class="siimple-switch" id="switchDiv">
     //	<input type="checkbox" value="1" id="mySwitch" name="" />
     //	<label for="mySwitch"></label>
-    //	<div></div>
     //</div>
     display: inline-block;
     width: $siimple-switch-width;
     height: $siimple-switch-height;
     position: relative;
     border-radius: $siimple-switch-border-radius;
-    margin: {
-        left: $siimple-switch-margin-left;
-        right: $siimple-switch-margin-right;
-        top: $siimple-switch-margin-top;
-        bottom: $siimple-switch-margin-bottom;
-    }
+    margin-left: $siimple-switch-margin-left;
+    margin-right: $siimple-switch-margin-right;
+    margin-top: $siimple-switch-margin-top;
+    margin-bottom: $siimple-switch-margin-bottom;
     //cursor: pointer;
     vertical-align: top;
     //Label style -> circle
