@@ -9,8 +9,8 @@
 @import "../_functions.scss";
 
 //Alert global variables
-$siimple-alert-padding-top: 15px;
-$siimple-alert-padding-bottom: 15px;
+$siimple-alert-padding-top: 10px;
+$siimple-alert-padding-bottom: 10px;
 $siimple-alert-padding-left: 15px;
 $siimple-alert-padding-right: 30px;
 
@@ -27,12 +27,10 @@ $siimple-alert-padding-right: 30px;
     //Default background and text color
     background-color: siimple-default-color("light", "light");
     color: siimple-default-color("dark");
-    padding: {
-        top: $siimple-alert-padding-top;
-        right: $siimple-alert-padding-right;
-        bottom: $siimple-alert-padding-bottom;
-        left: $siimple-alert-padding-left;
-    }
+    padding-top: $siimple-alert-padding-top;
+    padding-right: $siimple-alert-padding-right;
+    padding-bottom: $siimple-alert-padding-bottom;
+    padding-left: $siimple-alert-padding-left;
     //margin-top: $siimple-alert-margin-top;
     margin-bottom: $siimple-default-margin-bottom;
     //Alert title
