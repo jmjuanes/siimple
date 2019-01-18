@@ -29,7 +29,8 @@ $siimple-input-padding: 10px;
     border: 0px;
     border-radius: $siimple-default-border-radius;
     outline: 0px;
-    background-color: siimple-default-color("light");
+    //background-color: siimple-default-color("light");
+    background-color: siimple-default-color("light", "light");
     vertical-align: top;
     box-sizing: border-box;
     //Fluid input
