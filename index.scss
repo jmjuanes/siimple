@@ -39,6 +39,9 @@
     }
 }
 
+//Import branding style
+@import "./scss/_brand.scss";
+
 //Import all styles
 @import "./scss/_all.scss";
 
