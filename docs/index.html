@@ -6,12 +6,16 @@ subtitle: "A minimal and Open Source CSS framework for building flat, clean and 
 
 <link rel="stylesheet" href="/assets/css/icons.css">
 <div class="siimple-jumbotron theme-header siimple-jumbotron--large" align="center">
-    <div class="siimple-jumbotron-title">siimple v{{ site.version }}</div>
+    <div class="siimple-jumbotron-title">
+        <span class="siimple-brand">siimple</span> v{{ site.version }}
+    </div>
     <div class="siimple-jumbotron-subtitle">{{ page.subtitle }}</div>
 </div>
 <div class="siimple-content siimple-content--large siimple--py-5">
     <div class="siimple--py-4" align="center">
-        <div class="siimple-h3 siimple--mb-2 siimple--text-normal">Install <strong>siimple</strong></div>
+        <div class="siimple-h3 siimple--mb-2 siimple--text-normal">
+            Install <strong class="siimple-brand">siimple</strong>
+        </div>
         <div class="siimple-paragraph siimple-paragraph--lead">
             You only need one command to add <strong>siimple</strong> to your project:
         </div>
@@ -32,7 +36,7 @@ subtitle: "A minimal and Open Source CSS framework for building flat, clean and 
 <div class="siimple-content siimple-content--large siimple--py-5" align="center">
     <div class="siimple--py-4">
         <div class="siimple-h3 siimple--text-normal siimple--mb-5">
-            Discover <strong>siimple</strong>
+            Discover <strong class="siimple-brand">siimple</strong>
         </div>
         <div class="docs-categories siimple--clearfix" align="center">
             {% for category_id in site.data.categories.all %}
