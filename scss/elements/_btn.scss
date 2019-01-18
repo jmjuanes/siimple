@@ -12,6 +12,7 @@
 //Button variables
 $siimple-btn-height: 34px;
 $siimple-btn-small-height: 24px;
+$siimple-btn-big-height: 48px;
 
 //Button class
 .siimple-btn {
@@ -67,6 +68,14 @@ $siimple-btn-small-height: 24px;
         font-size: 12px;
         height: $siimple-btn-small-height;
         line-height: $siimple-btn-small-height;
+    }
+    //Big button
+    &--big {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 20px;
+        height: $siimple-btn-big-height;
+        line-height: $siimple-btn-big-height;
     }
     //Fluid button
     &--fluid {
