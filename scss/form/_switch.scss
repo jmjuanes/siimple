@@ -36,53 +36,60 @@ $siimple-switch-margin-bottom: 8px;
         top: $siimple-switch-margin-top;
         bottom: $siimple-switch-margin-bottom;
     }
+    //cursor: pointer;
     vertical-align: top;
     //Label style -> circle
     & label {
-        display: block;
-        width: 14px;
-        height: 14px;
-        border-radius: $siimple-switch-border-radius;
-        transition: all 0.3s ease;
         cursor: pointer;
-        background: siimple-default-color("dark", "light");
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        z-index: 2;
-        opacity: 0.6;
-        &:hover {
-            opacity: 1.0;
+        &::after {
+            display: block;
+            content: "";
+            width: 14px;
+            height: 14px;
+            border-radius: $siimple-switch-border-radius;
+            transition: all 0.3s ease;
+            //cursor: pointer;
+            background: siimple-default-color("dark", "light");
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            z-index: 2;
+            opacity: 0.6;
+            &:hover {
+                opacity: 1.0;
+            }
         }
-    }
-    //Background div
-    & div {
-        width: 100%;
-        height: 100%;
-        background-color: siimple-default-color("light");
-        border-radius: $siimple-switch-border-radius;
-        transition: all 0.3s;
-        position: absolute;
-        top: 0px;
-        z-index: 1;
+        //Switch background
+        &::before {
+            display: block;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: siimple-default-color("light");
+            border-radius: $siimple-switch-border-radius;
+            transition: all 0.3s;
+            position: absolute;
+            top: 0px;
+            z-index: 1;
+        }
     }
     //Hide the checkbox
     & input[type=checkbox] {
         visibility: hidden;
     }
     //Checkbox active -> background color
-    & input[type=checkbox]:checked ~ div {
+    & input[type=checkbox]:checked ~ label::before {
         background-color: siimple-default-color("primary");
     }
     //Checkbox active -> move circle
-    & input[type=checkbox]:checked ~ label {
+    & input[type=checkbox]:checked ~ label::after {
         left: 16px;
         opacity: 1.0;
         background-color: siimple-default-color("white");
     }
     //Colored switch 
     @each $color in $siimple-default-form-colors {
-        &--#{$color} input[type=checkbox]:checked ~ div {
+        &--#{$color} input[type=checkbox]:checked ~ label::before {
             background-color: siimple-default-color($color);
         }
     }
