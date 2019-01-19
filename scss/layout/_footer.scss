@@ -71,6 +71,7 @@ $siimple-footer-dark-text: rgba(siimple-default-color("white"), 0.8);
         font-weight: 600;
         transition: color 0.3s;
         cursor: pointer;
+        opacity: 0.85;
         //Inline link
         &--inline {
             display: inline !important;
