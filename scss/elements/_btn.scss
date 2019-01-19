@@ -88,5 +88,19 @@ $siimple-btn-big-height: 48px;
     &--rounded {
         border-radius: 50px !important;
     }
+    //Group buttons
+    &-group {
+        display: inline-block;
+    }
+    &-group > &:not(:first-child) {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        margin-left: -1px;
+    }
+    &-group > &:not(:last-child) {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-right: -2px;
+    }
 }
 
