@@ -54,8 +54,8 @@ $siimple-table-cell-sizes: $siimple-default-grid;
             padding-right: 20px !important;
             cursor: pointer;
             //Sortable triangles common styles
-            &--sortable::before,
-            &--sortable::after {
+            &::before,
+            &::after {
                 content: "";
                 position: absolute;
                 right: 5px;
@@ -66,12 +66,12 @@ $siimple-table-cell-sizes: $siimple-default-grid;
                 transition: all 0.3s;
             }
             //Sortable triangle up
-            &--sortable::before {
+            &::before {
                 top: 12px;
                 border-bottom: 8px solid siimple-default-color("light");
             }
             //Sortable triangle down
-            &--sortable::after {
+            &::after {
                 bottom: 12px;
                 border-top: 8px solid siimple-default-color("light");
             }
