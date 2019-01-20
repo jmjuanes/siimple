@@ -23,18 +23,14 @@ $siimple-grid-column-sizes: $siimple-default-grid;
 .siimple-grid {
     display: block;
     width: 100%;
-    margin: {
-        left: $siimple-grid-margin-left;
-        right: $siimple-grid-margin-right;
-    }
+    margin-left: $siimple-grid-margin-left;
+    margin-right: $siimple-grid-margin-right;
     //Grid row
     &-row {
         display: block;
         //width: 100%;
-        margin: {
-            left: $siimple-grid-row-margin;
-            right: $siimple-grid-row-margin;
-        }
+        margin-left: $siimple-grid-row-margin;
+        margin-right: $siimple-grid-row-margin;
         &:after {
             content: " ";
             clear: both;
