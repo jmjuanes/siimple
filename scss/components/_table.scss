@@ -49,6 +49,41 @@ $siimple-table-cell-sizes: $siimple-default-grid;
         border-top: 1px solid siimple-default-color("light", "dark");
         box-sizing: border-box;
         vertical-align: top;
+        //Sortable cell
+        &--sortable {
+            padding-right: 20px !important;
+            cursor: pointer;
+            //Sortable triangles common styles
+            &--sortable::before,
+            &--sortable::after {
+                content: "";
+                position: absolute;
+                right: 5px;
+                width: 0px;
+                height: 0px;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                transition: all 0.3s;
+            }
+            //Sortable triangle up
+            &--sortable::before {
+                top: 12px;
+                border-bottom: 8px solid siimple-default-color("light");
+            }
+            //Sortable triangle down
+            &--sortable::after {
+                bottom: 12px;
+                border-top: 8px solid siimple-default-color("light");
+            }
+        }
+        //Asc order
+        &--asc::before {
+            border-bottom-color: siimple-default-color("primary");
+        }
+        //Desc order
+        &--desc::after {
+            border-top-color: siimple-default-color("primary");
+        }
     }
     //Table cell sizes
     @each $cell-name, $cell-width in $siimple-table-cell-sizes {
