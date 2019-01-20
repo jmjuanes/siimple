@@ -53,9 +53,11 @@ $siimple-table-cell-sizes: $siimple-default-grid;
         &--sortable {
             padding-right: 20px !important;
             cursor: pointer;
+            position: relative;
             //Sortable triangles common styles
             &::before,
             &::after {
+                display: block;
                 content: "";
                 position: absolute;
                 right: 5px;
