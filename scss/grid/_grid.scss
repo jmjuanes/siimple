@@ -12,7 +12,7 @@ $siimple-grid-margin-left: auto;
 $siimple-grid-margin-right: auto;
 
 //Grid row variables
-$siimple-grid-row-margin: 0px;
+$siimple-grid-row-margin: -10px;
 
 //Gird colum variables
 $siimple-grid-column-margin: 10px;
@@ -29,8 +29,8 @@ $siimple-grid-column-sizes: $siimple-default-grid;
     }
     //Grid row
     &-row {
-        display: inline-block;
-        width: 100%;
+        display: block;
+        //width: 100%;
         margin: {
             left: $siimple-grid-row-margin;
             right: $siimple-grid-row-margin;
