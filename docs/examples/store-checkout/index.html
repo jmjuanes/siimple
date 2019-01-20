@@ -1,0 +1,137 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/siimple.min.css">
+    <title>Store checkout example | siimple</title>
+</head>
+<body>
+    <div class="siimple-navbar siimple-navbar--large siimple-navbar--light">
+        <a class="siimple-navbar-title" href="#">Store Checkout</a>
+        <a class="siimple-btn siimple-btn--dark siimple--float-right siimple--ml-2 siimple--text-bold">
+            Go back to store
+        </a>
+    </div>
+    <div class="siimple-content siimple-content--large siimple--mt-5">
+        <div class="siimple--mb-5" align="center">
+            <div class="siimple-h1 siimple--text-normal siimple--mb-1">Checkout</div>
+            <div class="siimple-paragraph siimple-paragraph--lead">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            </div>
+        </div>
+        <div class="siimple-grid">
+            <div class="siimple-grid-row">
+                <div class="siimple-grid-col siimple-grid-col--7 siimple-grid-col--sm-12">
+                    <div class="siimple-h4">Personal information</div>
+                    <div class="siimple-field">
+                        <div class="siimple-field-label">First name</div>
+                        <input type="text" class="siimple-input siimple-input--fluid" placeholder="Bob">
+                    </div>
+                    <div class="siimple-field">
+                        <div class="siimple-field-label">Last name</div>
+                        <input type="text" class="siimple-input siimple-input--fluid" placeholder="Smith">
+                    </div>
+                    <div class="siimple-field">
+                        <div class="siimple-field-label">Email</div>
+                        <input type="email" class="siimple-input siimple-input--fluid" placeholder="bob.smith@email.com">
+                        <div class="siimple-field-helper">We will send you a confirmation email</div>
+                    </div>
+                    <div class="siimple-grid-row">
+                        <div class="siimple-grid-col siimple-grid-col--6 siimple--py-0">
+                            <div class="siimple-field">
+                                <div class="siimple-field-label">Country</div>
+                                <select class="siimple-select siimple-select--fluid">
+                                    <option>Select one...</option>
+                                    <option>Spain</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="siimple-grid-col siimple-grid-col--6 siimple--py-0">
+                            <div class="siimple-field">
+                                <div class="siimple-field-label">ZIP Code</div>
+                                <input type="number" class="siimple-input siimple-input--fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="siimple-h4">Payment details</div>
+                    <div class="siimple-field">
+                        <div class="siimple-field-label">Credit card number</div>
+                        <input type="text" class="siimple-input siimple-input--fluid" placeholder="0000-0000-0000-0000">
+                    </div>
+                    <div class="siimple-grid-row">
+                        <div class="siimple-grid-col siimple-grid-col--6 siimple--py-0">
+                            <div class="siimple-field">
+                                <div class="siimple-field-label">Security code</div>
+                                <input type="password" class="siimple-input siimple-input--fluid" placeholder="***">
+                            </div>
+                        </div>
+                        <div class="siimple-grid-col siimple-grid-col--6 siimple--py-0">
+                            <div class="siimple-field">
+                                <div class="siimple-field-label">Expiration date</div>
+                                <input type="text" class="siimple-input siimple-input--fluid" placeholder="MM / YYYY">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="siimple-btn siimple-btn--success siimple-btn--fluid siimple--text-bold">
+                        Complete payment
+                    </div>
+                </div>
+                <div class="siimple-grid-col siimple-grid-col--5 siimple-grid-col--sm-12">
+                    <div class="siimple-h4">Your cart</div>
+                    <div class="siimple-list">
+                        <div class="siimple-list-item siimple--clearfix">
+                            <div class="siimple--float-left">
+                                <div class="siimple-list-title">Product 4</div>
+                                Product description
+                            </div>
+                            <div class="siimple--float-right">$100</div>
+                        </div>
+                        <div class="siimple-list-item siimple--clearfix">
+                            <div class="siimple--float-left">
+                                <div class="siimple-list-title">Product 4</div>
+                                Product description
+                            </div>
+                            <div class="siimple--float-right">$100</div>
+                        </div>
+                        <div class="siimple-list-item siimple--clearfix">
+                            <div class="siimple--float-left">
+                                <div class="siimple-list-title">Product 4</div>
+                                Product description
+                            </div>
+                            <div class="siimple--float-right">$100</div>
+                        </div>
+                        <div class="siimple-list-item siimple--clearfix">
+                            <div class="siimple--float-left">
+                                <div class="siimple-list-title">Product 4</div>
+                                Product description
+                            </div>
+                            <div class="siimple--float-right">$100</div>
+                        </div>
+                        <div class="siimple-list-item siimple--clearfix">
+                            <div class="siimple--float-left">
+                                <div class="siimple-list-title">TOTAL</div>
+                            </div>
+                            <div class="siimple--float-right">
+                                <strong>$400</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="siimple-card">
+                        <div class="siimple-card-body">
+                            <input type="text" class="siimple-input siimple-input--fluid" placeholder="Promo code">
+                            <div class="siimple-btn siimple-btn--fluid siimple-btn--dark siimple--mt-2">
+                                Apply promo code
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="siimple-footer siimple-footer--large" align="center">
+        <div class="siimple-rule"></div>
+        <div class="siimple--my-5" align="center">
+            <div class="siimple-footer-title">Store Name</div>
+            <div class="siimple-footer-subtitle">&copy; 2019 store company name</div>
+        </div>
+    </div>
+</body>
+
