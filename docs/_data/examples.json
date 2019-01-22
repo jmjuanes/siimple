@@ -14,9 +14,27 @@
         "description": "An administration panel with a sidebar and a navigation bar.",
         "path": "examples/dashboard"
     },
+    "pricing": {
+        "name": "Pricing",
+        "description": "A pricing example page using cards with a navbar and a footer.",
+        "path": "examples/pricing"
+    },
+    "login": {
+        "name": "Login",
+        "description": "A micro login page for a minimalist web application.",
+        "path": "examples/login"
+    },
+    "store-checkout": {
+        "name": "Store checkout",
+        "description": "Store checkout view built using our form elements and the list component.",
+        "path": "examples/store-checkout"
+    },
     "all": [
         "features",
         "blog",
-        "dashboard"
+        "dashboard",
+        "pricing",
+        "login",
+        "store-checkout"
     ]
 }
