@@ -4,7 +4,7 @@ title: "Documentation"
 subtitle: "A minimal and Open Source CSS framework for building flat, clean and responsive web designs!"
 ---
 
-<link rel="stylesheet" href="/assets/css/icons.css">
+<link rel="stylesheet" href="/assets/css/icons-categories.css">
 <div class="siimple-jumbotron theme-header siimple-jumbotron--large" align="center">
     <div class="siimple-jumbotron-title">
         <span class="siimple-brand">siimple</span> v{{ site.version }}
@@ -43,7 +43,7 @@ subtitle: "A minimal and Open Source CSS framework for building flat, clean and 
             {% assign category = site.data.categories[category_id] %}
             {% assign post = site.categories[category_id].last %}
             <a class="docs-categories-item" align="center" href=".{{ post.url }}">
-                <div class="docs-categories-item-icon sd-icons sd-icons-{{ category_id }}"></div>
+                <div class="docs-categories-item-icon docs-icons-categories docs-icons-categories-{{ category_id }}"></div>
                 <div class="docs-categories-item-title">{{ category.title }}</div>
                 <div class="docs-categories-item-description">{{ category.description }}</div>
             </a>
