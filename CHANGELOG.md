@@ -1,3 +1,27 @@
+## v3.3.0 (January 24, 2019)
+
+## New features
+
+- Added `siimple-table--fixed` modifier to table component to automatically divide equally the width of the columns across the table.
+- Added table column modifier to display a sorting indicator in the table header.
+- Added big button modifier.
+- Added `siimple-btn-group` class to wrap a collection of buttons.
+- Added `siimple-paragraph--lead` modifier to highlight a paragraph.
+- Added miscellanea helpers.
+
+## Changes and improvements
+
+- Changed default `font-family` to Roboto.
+- Changed default `font-size` to `16px`.
+- Changed default `line-height` to `24px`.
+- Changed default background color of the input, select and textarea form elements.
+
+## Bug fixes
+
+- Fixed bug on switch element: only changes to checked/unchecked state if user clicks on the circle button, not in the background of the switch.
+- Fixed bug in grid row: removed extra `10px` padding added at the left side and the right side of the grid.
+
+
 ## v3.2.1 (January 9, 2019)
 
 ### Improvements
