@@ -1,5 +1,5 @@
 /*!
- * @name         siimple 3.2.1
+ * @name         siimple 3.3.0
  * @description  Minimal CSS framework for flat and clean designs.
  * @homepage     https://www.siimple.xyz/
  * @repository   https://github.com/siimple/siimple
@@ -8,11 +8,11 @@
 **/
 
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
 html {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
   color: #546778;
   font-smooth: antialiased;
   -webkit-font-smoothing: antialiased;
@@ -29,8 +29,8 @@ body {
   overflow-x: hidden;
   width: 100%;
   height: 100%;
-  font-family: "Montserrat", sans-serif;
-  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
   color: #546778;
   font-weight: normal;
 }
@@ -41,11 +41,15 @@ body {
   float: right;
 }
 
+.siimple-brand {
+  font-family: "Montserrat", "Roboto", sans-serif;
+}
+
 .siimple-blockquote {
   display: block;
   color: #879aab;
-  font-size: 15px;
-  line-height: 23px;
+  font-size: 16px;
+  line-height: 24px;
   border-left: 4px solid #879aab;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -146,14 +150,6 @@ body {
   margin-top: 30px;
 }
 
-.siimple-lead {
-  display: block;
-  line-height: 30px;
-  font-size: 20px;
-  margin-top: 0px;
-  margin-bottom: 20px;
-}
-
 .siimple-link {
   color: #4e91e4;
   font-weight: 600;
@@ -168,10 +164,15 @@ body {
 .siimple-paragraph,
 .siimple-p {
   display: block;
-  line-height: 23px;
-  font-size: 15px;
+  line-height: 24px;
+  font-size: 16px;
   margin-top: 0px;
   margin-bottom: 20px;
+}
+.siimple-paragraph--lead,
+.siimple-p--lead {
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .siimple-pre {
@@ -205,7 +206,7 @@ body {
   line-height: 34px;
   text-align: center;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 5px;
@@ -294,6 +295,13 @@ body {
   height: 24px;
   line-height: 24px;
 }
+.siimple-btn--big {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20px;
+  height: 48px;
+  line-height: 48px;
+}
 .siimple-btn--fluid {
   width: 100%;
   padding-left: 0px !important;
@@ -301,6 +309,19 @@ body {
 }
 .siimple-btn--rounded {
   border-radius: 50px !important;
+}
+.siimple-btn-group {
+  display: inline-block;
+}
+.siimple-btn-group > .siimple-btn:not(:first-child) {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-left: -1px;
+}
+.siimple-btn-group > .siimple-btn:not(:last-child) {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-right: -2px;
 }
 
 .siimple-close {
@@ -482,7 +503,7 @@ body {
 
 .siimple-tag {
   display: inline-block;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: bold;
   text-decoration: none;
   line-height: 19px;
@@ -572,9 +593,9 @@ body {
   padding-left: 25px !important;
   margin-bottom: 20px;
   background-color: #eef2f7;
-  font-size: 15px;
+  font-size: 16px;
   color: #546778;
-  line-height: 23px;
+  line-height: 24px;
 }
 .siimple-tip::before {
   position: absolute;
@@ -696,15 +717,15 @@ body {
 .siimple-alert {
   display: block;
   width: calc(100% - 15px - 30px);
-  line-height: 23px;
-  font-size: 15px;
+  line-height: 24px;
+  font-size: 16px;
   position: relative;
   border-radius: 5px;
   background-color: #eef2f7;
   color: #546778;
-  padding-top: 15px;
+  padding-top: 10px;
   padding-right: 30px;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   padding-left: 15px;
   margin-bottom: 20px;
 }
@@ -881,11 +902,11 @@ body {
   width: 100%;
   margin-bottom: 20px;
   color: #546778;
-  font-size: 15px;
+  font-size: 16px;
 }
 .siimple-card-header, .siimple-card-body, .siimple-card-footer {
   display: block;
-  line-height: 23px;
+  line-height: 24px;
   border-left: 2px solid #eef2f7;
   border-right: 2px solid #eef2f7;
   border-top: 2px solid #eef2f7;
@@ -932,8 +953,8 @@ body {
   width: 100%;
   margin-bottom: 20px;
   color: #546778;
-  font-size: 15px;
-  line-height: 23px;
+  font-size: 16px;
+  line-height: 24px;
 }
 .siimple-list-item {
   display: block;
@@ -995,7 +1016,7 @@ body {
   height: 25px;
   line-height: 25px;
   transition: color 0.3s;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
   text-decoration: none;
   color: #879aab;
@@ -1011,7 +1032,7 @@ body {
   height: 34px;
   line-height: 34px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 15px;
   color: #879aab;
   text-decoration: none;
   padding-left: 10px;
@@ -1040,7 +1061,7 @@ body {
 .siimple-table {
   display: table;
   width: 100%;
-  font-size: 15px;
+  font-size: 16px;
   color: #546778;
   border-collapse: separate;
   border-spacing: 0;
@@ -1055,12 +1076,42 @@ body {
 }
 .siimple-table-cell {
   display: table-cell;
-  line-height: 23px;
+  line-height: 24px;
   padding: 10px;
   transition: background-color 0.3s;
   border-top: 1px solid #cbd8e6;
   box-sizing: border-box;
   vertical-align: top;
+}
+.siimple-table-cell--sortable {
+  padding-right: 20px !important;
+  cursor: pointer;
+  position: relative;
+}
+.siimple-table-cell--sortable::before, .siimple-table-cell--sortable::after {
+  display: block;
+  content: "";
+  position: absolute;
+  right: 5px;
+  width: 0px;
+  height: 0px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  transition: all 0.3s;
+}
+.siimple-table-cell--sortable::before {
+  top: 12px;
+  border-bottom: 8px solid #dde5ee;
+}
+.siimple-table-cell--sortable::after {
+  bottom: 12px;
+  border-top: 8px solid #dde5ee;
+}
+.siimple-table-cell--asc::before {
+  border-bottom-color: #4e91e4;
+}
+.siimple-table-cell--desc::after {
+  border-top-color: #4e91e4;
 }
 .siimple-table-cell--1 {
   width: 8.33%;
@@ -1132,6 +1183,9 @@ body {
 .siimple-table--hover .siimple-table-body .siimple-table-row:hover .siimple-table-cell {
   background-color: rgba(221, 229, 238, 0.8);
 }
+.siimple-table--fixed {
+  table-layout: fixed;
+}
 .siimple-table-responsive {
   display: block;
   width: 100%;
@@ -1155,7 +1209,7 @@ body {
   position: relative;
   width: 100%;
   height: 40px;
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 20px;
   border-bottom: 2px solid #dde5ee;
   -webkit-user-select: none;
@@ -1363,7 +1417,7 @@ body {
   display: block;
   padding-top: 50px;
   padding-bottom: 50px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 21px;
 }
 .siimple-footer--extra-small {
@@ -1456,7 +1510,7 @@ body {
   display: block;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -1472,6 +1526,7 @@ body {
   font-weight: 600;
   transition: color 0.3s;
   cursor: pointer;
+  opacity: 0.85;
 }
 .siimple-footer-link--inline {
   display: inline !important;
@@ -1487,6 +1542,7 @@ body {
   font-size: 12px;
   font-weight: normal;
   margin-bottom: 3px;
+  margin-top: -4px;
 }
 .siimple-footer--light .siimple-footer-link {
   color: #879aab;
@@ -1638,14 +1694,14 @@ body {
   font-size: 40px;
 }
 .siimple-jumbotron-subtitle {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 .siimple-jumbotron-detail {
   line-height: 22px;
   font-size: 16px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 .siimple-jumbotron-title + .siimple-jumbotron-subtitle, .siimple-jumbotron-title + .siimple-jumbotron-detail, .siimple-jumbotron-subtitle + .siimple-jumbotron-detail {
   margin-top: 5px;
@@ -1806,11 +1862,10 @@ body {
   height: 34px;
   line-height: 34px;
   font-size: 16px;
-  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   padding-left: 5px;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .siimple-navbar-item, .siimple-navbar-link {
   display: inline-block;
@@ -1820,11 +1875,10 @@ body {
   padding-right: 10px;
   text-decoration: none;
   text-align: center;
-  font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   transition: opacity 0.3s;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .siimple-navbar-item:hover, .siimple-navbar-link:hover {
   opacity: 1;
@@ -2105,7 +2159,7 @@ body {
   display: block;
   vertical-align: top;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   color: #546778;
   margin-top: 0px;
   margin-bottom: 5px;
@@ -2118,7 +2172,7 @@ body {
   font-size: 13px;
   color: #879aab;
   margin-top: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .siimple-form {
@@ -2126,14 +2180,14 @@ body {
   width: 100%;
   margin-top: 0px;
   margin-bottom: 20px;
-  font-size: 15px;
+  font-size: 16px;
 }
 .siimple-form-title {
   display: block;
   width: 100%;
   vertical-align: top;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 24px;
   color: #546778;
   margin-bottom: 10px;
 }
@@ -2141,7 +2195,8 @@ body {
   display: block;
   width: 100%;
   vertical-align: top;
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 24px;
   color: #546778;
   margin-bottom: 20px;
 }
@@ -2168,7 +2223,7 @@ body {
   border: 0px;
   border-radius: 5px;
   outline: 0px;
-  background-color: #dde5ee;
+  background-color: #eef2f7;
   vertical-align: top;
   box-sizing: border-box;
 }
@@ -2187,7 +2242,7 @@ body {
   display: inline-block;
   min-height: 34px;
   line-height: 34px;
-  font-size: 14px;
+  font-size: 15px;
   color: #546778;
   font-weight: 600;
   padding-right: 10px;
@@ -2281,7 +2336,7 @@ body {
   border: 0px;
   border-radius: 5px;
   outline: 0px;
-  background-color: #dde5ee;
+  background-color: #eef2f7;
   vertical-align: top;
   box-sizing: border-box;
 }
@@ -2309,12 +2364,15 @@ body {
   vertical-align: top;
 }
 .siimple-switch label {
+  cursor: pointer;
+}
+.siimple-switch label::after {
   display: block;
+  content: "";
   width: 14px;
   height: 14px;
   border-radius: 50px;
   transition: all 0.3s ease;
-  cursor: pointer;
   background: #879aab;
   position: absolute;
   top: 2px;
@@ -2322,10 +2380,12 @@ body {
   z-index: 2;
   opacity: 0.6;
 }
-.siimple-switch label:hover {
+.siimple-switch label::after:hover {
   opacity: 1;
 }
-.siimple-switch div {
+.siimple-switch label::before {
+  display: block;
+  content: "";
   width: 100%;
   height: 100%;
   background-color: #dde5ee;
@@ -2338,21 +2398,21 @@ body {
 .siimple-switch input[type=checkbox] {
   visibility: hidden;
 }
-.siimple-switch input[type=checkbox]:checked ~ div {
+.siimple-switch input[type=checkbox]:checked ~ label::before {
   background-color: #4e91e4;
 }
-.siimple-switch input[type=checkbox]:checked ~ label {
+.siimple-switch input[type=checkbox]:checked ~ label::after {
   left: 16px;
   opacity: 1;
   background-color: #ffffff;
 }
-.siimple-switch--success input[type=checkbox]:checked ~ div {
+.siimple-switch--success input[type=checkbox]:checked ~ label::before {
   background-color: #4acf7f;
 }
-.siimple-switch--error input[type=checkbox]:checked ~ div {
+.siimple-switch--error input[type=checkbox]:checked ~ label::before {
   background-color: #ee675d;
 }
-.siimple-switch--warning input[type=checkbox]:checked ~ div {
+.siimple-switch--warning input[type=checkbox]:checked ~ label::before {
   background-color: #fbc850;
 }
 
@@ -2365,7 +2425,7 @@ body {
   border: 0px;
   border-radius: 5px;
   outline: 0px;
-  background-color: #dde5ee;
+  background-color: #eef2f7;
   vertical-align: top;
   box-sizing: border-box;
   resize: vertical;
@@ -2388,10 +2448,9 @@ body {
   margin-right: auto;
 }
 .siimple-grid-row {
-  display: inline-block;
-  width: 100%;
-  margin-left: 0px;
-  margin-right: 0px;
+  display: block;
+  margin-left: -12px;
+  margin-right: -12px;
 }
 .siimple-grid-row:after {
   content: " ";
@@ -3265,7 +3324,7 @@ body {
 }
 
 .siimple--lh-normal {
-  line-height: 23px !important;
+  line-height: 24px !important;
 }
 .siimple--lh-condensed {
   line-height: 18px !important;
@@ -3625,6 +3684,10 @@ body {
 }
 .siimple--text-small {
   font-size: 13px !important;
+}
+
+.siimple--rounded {
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=siimple.css.map */
