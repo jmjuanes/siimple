@@ -15,18 +15,17 @@ links:
     - title: "GitHub"
       url: "https://github.com/siimple/siimple"
       target: "_blank"
+
 ## Theme configuration
+##############################################
 theme_config:
-    #color: "blue"
+    color: "blue"
     custom_styles: ["/assets/css/main.css"]
     changes_url: "https://github.com/siimple/siimple/issues/new"
     analytics: "UA-70800807-5"
-    ## Search configuration
     search:
         entry_url: "/search.html"
-        database_url: "./assets/search.json"
-        title: "Search"
-        description: "Search in <strong>siimple</strong> docs"
+        database_url: "/assets/search.json"
     legal_urls:
         cookies: "https://www.siimple.xyz/legal/cookies.html"
         privacy: "https://www.siimple.xyz/legal/privacy.html"
