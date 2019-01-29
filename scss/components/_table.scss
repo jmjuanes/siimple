@@ -127,6 +127,10 @@ $siimple-table-cell-sizes: $siimple-default-grid;
     &-body &-cell {
         //background-color: rgba(siimple-default-color("light", "light"), 0.4);
     }
+    //Not last row of the table body
+    &-body &-row:not(:last-child) &-cell {
+        border-bottom: 1px solid siimple-default-color("light", "dark");
+    }
     //Bordered table with rouded corners
     &--border &-body &-row:last-child &-cell:first-child {
         border-bottom-left-radius: $siimple-default-border-radius;
