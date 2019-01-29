@@ -23,7 +23,8 @@ $siimple-card-border-width: 2px;
     //Common styles
     &-header, 
     &-body, 
-    &-footer {
+    &-footer, 
+    &-link {
         display: block;
         line-height: $siimple-default-text-line;
         border-left: $siimple-card-border-width solid $siimple-card-border-color;
@@ -42,7 +43,7 @@ $siimple-card-border-width: 2px;
     //Card header and footer styles
     &-header, 
     &-footer {
-        display: block;
+        //display: block;
         padding: 12px;
         background-color: $siimple-card-border-color;
     }
@@ -52,8 +53,40 @@ $siimple-card-border-width: 2px;
     }
     //Card body
     &-body {
-        display: block;
+        //display: block;
         padding: 12px;
+    }
+    //Card link 
+    &-link {
+        position: relative;
+        color: siimple-default-color("primary");
+        font-weight: bold;
+        font-size: 15px;
+        padding: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        //Card link arrow
+        &::before {
+            display: block;
+            content: "";
+            width: 11px;
+            height: 11px;
+            border-top: 3px solid siimple-default-color("primary");
+            border-right: 3px solid siimple-default-color("primary");
+            transform: rotate(45deg);
+            border-radius: 2px;
+            position: absolute;
+            top: 17px;
+            right: 15px;
+            transition: right 0.3s;
+        }
+        //Hovered card link
+        &:hover {
+            background-color: $siimple-card-border-color;
+        }
+        &:hover::before {
+            right: 12px;
+        }
     }
     //Card title
     &-title {
