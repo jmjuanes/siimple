@@ -107,9 +107,14 @@ $siimple-table-cell-sizes: $siimple-default-grid;
     //Bordered table with rouded corners
     &--border &-header &-row:first-child &-cell:first-child {
         border-top-left-radius: $siimple-default-border-radius;
+        border-left-width: 2px;
     }
     &--border &-header &-row:first-child &-cell:last-child {
         border-top-right-radius: $siimple-default-border-radius;
+        border-right-width: 2px;
+    }
+    &--border &-header &-row:first-child &-cell {
+        border-top-width: 2px;
     }
     &-header &-cell {
         //background-color: siimple-default-color("light", "dark") !important;
@@ -137,6 +142,15 @@ $siimple-table-cell-sizes: $siimple-default-grid;
     }
     &--border &-body &-row:last-child &-cell:last-child {
         border-bottom-right-radius: $siimple-default-border-radius;
+    }
+    &--border &-body &-row:last-child &-cell {
+        border-bottom-width: 2px;
+    }
+    &--border &-body &-row &-cell:first-child {
+        border-left-width: 2px;
+    }
+    &--border &-body &-row &-cell:last-child {
+        border-right-width: 2px;
     }
     //Striped table
     &--striped &-body &-row:nth-child(odd) &-cell {
