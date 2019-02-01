@@ -5,8 +5,6 @@
 </div>
 -->
 
-[![siimple](https://raw.githubusercontent.com/siimple/siimple/develop/media/splash.jpg)](https://www.siimple.xyz)
-
 # siimple
 
 [![npm](https://img.shields.io/npm/v/siimple.svg?style=flat-square)](https://www.npmjs.com/package/siimple)
@@ -20,6 +18,8 @@
 
 
 [**siimple**](https://www.siimple.xyz) is a light, responsive and open source framework for design flat and clean websites. It has been built in SASS/SCSS and provides a clean starting point for your web design.
+
+[![siimple](https://raw.githubusercontent.com/siimple/siimple/develop/media/splash.jpg)](https://www.siimple.xyz)
 
 - [Homepage](https://www.siimple.xyz) - Learn more about **siimple**.
 - [Documentation](https://docs.siimple.xyz) - **siimple** documentation.
