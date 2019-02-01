@@ -5,7 +5,7 @@
 </div>
 -->
 
-# siimple
+# siimple · [www.siimple.xyz](https://www.siimple.xyz)
 
 [![npm](https://img.shields.io/npm/v/siimple.svg?style=flat-square)](https://www.npmjs.com/package/siimple)
 [![npm](https://img.shields.io/npm/dt/siimple.svg?style=flat-square)](https://www.npmjs.com/package/siimple)
