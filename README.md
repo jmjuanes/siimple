@@ -23,7 +23,7 @@
 - [Homepage](https://www.siimple.xyz) - Learn more about **siimple**.
 - [Documentation](https://docs.siimple.xyz) - **siimple** documentation.
 - [Examples](https://docs.siimple.xyz/examples.html) - Explore our examples made with **siimple**.
-- [@siimplecss](https://twitter.com/siimplecss) - Follow us on Twitter.
+- [@siimplecss](https://twitter.com/siimplecss) - Follow us on Twitter and share your love to **siimple** with the HT [#siimplecss](https://twitter.com/search?q=%23siimplecss&src=typd).
 
 ## Getting started
 
