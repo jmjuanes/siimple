@@ -16,10 +16,9 @@
 [![gitter](https://img.shields.io/gitter/room/siimple/siimple.svg?style=flat-square)](https://gitter.im/siimple/siimple)
 [![pr](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/siimple/siimple)
 
+[![siimple](https://raw.githubusercontent.com/siimple/siimple/develop/media/splash.jpg)](https://www.siimple.xyz)
 
 [**siimple**](https://www.siimple.xyz) is a light, responsive and open source framework for design flat and clean websites. It has been built in SASS/SCSS and provides a clean starting point for your web design.
-
-[![siimple](https://raw.githubusercontent.com/siimple/siimple/develop/media/splash.jpg)](https://www.siimple.xyz)
 
 - [Homepage](https://www.siimple.xyz) - Learn more about **siimple**.
 - [Documentation](https://docs.siimple.xyz) - **siimple** documentation.
