@@ -22,6 +22,14 @@
         border-right: 4px solid transparent;
         vertical-align: middle;
     }
+    //Toggle light color
+    &-toggle--light::after {
+        border-top-color: $siimple-default-white;
+    }
+    //Toggle dark color
+    &-toggle--dark::after {
+        border-top-color: $siimple-default-color;
+    }
     //Dropdown content
     &-content {
         display: none;
