@@ -1,0 +1,68 @@
+//
+// Siimple - minimal css framework for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+@import "../_variables.scss";
+
+//Dropdown experimental component
+.siimple-dropdown {
+    position: relative;
+    //Dropdown toggle arrow
+    &-toggle::after {
+        display: inline-block;
+        content: "";
+        height: 0px;
+        width: 0px;
+        margin-left: 4px;
+        border-top: 6px solid $siimple-default-white;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        vertical-align: middle;
+    }
+    //Dropdown content
+    &-content {
+        display: none;
+        position: absolute;
+        top: calc(100% + 2px);
+        left: 0px;
+        min-width: 150px;
+        color: $siimple-default-color;
+        text-align: left;
+        background-color: $siimple-default-white;
+        border-radius: $siimple-default-border-radius;
+        border: 1px solid siimple-default-color("light");
+    }
+    //Visible dropdown container
+    &--visible &-content {
+        display: block;
+    }
+    //Dropdown item 
+    &-item {
+        display: block;
+        line-height: $siimple-default-line-height;
+        font-size: $siimple-default-font-size;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        //Dropdown item hover
+        &:hover {
+            background-color: siimple-default-color("light", "light");
+        }
+    }
+    //Dropdown rule separator
+    &-separator {
+        display: block;
+        height: 0px;
+        border-top: 1px solid siimple-default-color("light");
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
