@@ -10,17 +10,17 @@
 @import "../_utils.scss";
 
 //Button variables
-$siimple-btn-height: 34px;
-$siimple-btn-small-height: 24px;
-$siimple-btn-big-height: 48px;
+//$siimple-btn-height: 34px;
+//$siimple-btn-small-height: 24px;
+//$siimple-btn-big-height: 48px;
 
 //Button class
 .siimple-btn {
     display: inline-block;
-    height: $siimple-btn-height;
+    //min-height: 24px;
     transition: opacity 0.3s;
     cursor: pointer;
-    line-height: $siimple-btn-height;
+    line-height: 24px;
     text-align: center;
     text-decoration: none;
     //font-family: $siimple-default-text-font;
@@ -28,6 +28,8 @@ $siimple-btn-big-height: 48px;
     //font-weight: bold;
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-radius: $siimple-default-border-radius;
     //Disable default button element borders
     //https://github.com/siimple/siimple/pull/17
@@ -65,17 +67,21 @@ $siimple-btn-big-height: 48px;
     &--small {
         padding-left: 10px;
         padding-right: 10px;
+        padding-top: 4px;
+        padding-bottom: 4px;
         font-size: 12px;
-        height: $siimple-btn-small-height;
-        line-height: $siimple-btn-small-height;
+        //min-height: 24px;
+        line-height: 16px;
     }
     //Big button
     &--big {
         padding-left: 20px;
         padding-right: 20px;
+        padding-top: 9px;
+        padding-bottom: 9px;
         font-size: 20px;
-        height: $siimple-btn-big-height;
-        line-height: $siimple-btn-big-height;
+        //min-height: 48px;
+        line-height: 30px;
     }
     //Fluid button
     &--fluid {
