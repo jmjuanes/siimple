@@ -44,7 +44,7 @@
         //border: 0px;
         border-radius: $siimple-default-border-radius;
         font-size: 15px;
-        //font-weight: 600;
+        font-weight: bold;
         color: siimple-default-color("dark", "light");
         text-decoration: none;
         padding-left: 10px;
@@ -64,7 +64,7 @@
         &--selected {
             background-color: siimple-default-color("light", "light");
             color: siimple-default-color("dark");
-            font-weight: 600;
+            //font-weight: bold;
         }
     }
     //Submenu
