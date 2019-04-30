@@ -1,3 +1,12 @@
+## v3.3.1 (April 30, 2019)
+
+### Improvements
+
+- Fixed table border size (reported on issue #64)
+- Minor improvements on button element. Added default button color.
+- Minor improvements on menu component.
+
+
 ## v3.3.0 (January 24, 2019)
 
 ### New features
