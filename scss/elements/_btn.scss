@@ -18,7 +18,8 @@
 .siimple-btn {
     display: inline-block;
     //min-height: 24px;
-    transition: opacity 0.3s;
+    //transition: opacity 0.3s;
+    transition: background-color 0.3s;
     cursor: pointer;
     line-height: 24px;
     text-align: center;
@@ -39,13 +40,18 @@
     //Button hover style
     &:hover {
         text-decoration: none;
-        opacity: 0.8;
+        //opacity: 0.8;
+        background-color: siimple-default-color("light", "light");
     }
     //Button colors
     @each $color in $siimple-default-colors {
         &#{&}--#{$color} {
             background-color: siimple-default-color($color, "base");
             color: siimple-default-color($color, "over");
+            //Button hover
+            &:hover {
+                background-color: siimple-default-color($color, "dark");
+            }
         }
     }
     //Legacy colors
