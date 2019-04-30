@@ -1,8 +1,10 @@
 ## Site settings
 ##############################################
 title: "siimple"
-description: "All that you need to create your website with <strong>siimple</strong>."
+subtitle: "css"
+description: "A minimal CSS toolkit for building flat, clean and responsive web designs"
 version: "3.3.0"
+package: "siimple"
 author: "Josemi Juanes, Pablo Marin and David Gomez"
 url: "https://docs.siimple.xyz"
 license: "MIT License"
@@ -29,6 +31,9 @@ theme_config:
     legal_urls:
         cookies: "https://www.siimple.xyz/legal/cookies.html"
         privacy: "https://www.siimple.xyz/legal/privacy.html"
+    home:
+        installation_cmd: "npm install --save siimple"
+        installation_url: "/getting-started/installation.html"
     copyright: "&copy; 2015-present <strong>siimple</strong>"
 
 ## Build settings
