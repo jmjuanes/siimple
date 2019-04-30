@@ -3,7 +3,7 @@
 title: "siimple"
 subtitle: "css"
 description: "A minimal CSS toolkit for building flat, clean and responsive web designs"
-version: "3.3.0"
+version: "3.3.1"
 package: "siimple"
 author: "Josemi Juanes, Pablo Marin and David Gomez"
 url: "https://docs.siimple.xyz"
