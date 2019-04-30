@@ -23,12 +23,12 @@
         "responsive"
     ],
     "devDependencies": {
-        "sass-lint": "^1.12.1",
-        "clean-css-cli": "^4.2.1",
-        "postcss-cli": "^6.0.1",
-        "sass": "^1.14.3",
-        "autoprefixer": "^9.3.1",
-        "stattic": "^0.3.2",
-        "mini-png-sprite": "^0.0.2"
+        "autoprefixer": "^9.5.1",
+        "clean-css-cli": "^4.3.0",
+        "mini-png-sprite": "^0.0.2",
+        "postcss-cli": "^6.0.2",
+        "sass": "^1.19.0",
+        "sass-lint": "^1.13.1",
+        "stattic": "^0.3.2"
     }
 }
