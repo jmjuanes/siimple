@@ -5,6 +5,7 @@
 - Fixed table border size (reported on issue #64)
 - Minor improvements on button element. Added default button color.
 - Minor improvements on menu component.
+- Minor improvements on card component.
 
 
 ## v3.3.0 (January 24, 2019)
