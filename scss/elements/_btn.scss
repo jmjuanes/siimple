@@ -37,6 +37,9 @@
     border: 0px;
     //Disable user selection
     @include siimple-utils-select(none);
+    //Default button style
+    color: $siimple-default-color;
+    background-color: $siimple-default-white;
     //Button hover style
     &:hover {
         text-decoration: none;
