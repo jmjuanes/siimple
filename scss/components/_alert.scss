@@ -72,9 +72,9 @@ $siimple-alert-padding-right: 30px;
         }
     }
     //Alert colors 
-    @each $color in $siimple-default-colors {
+    @each $color in $siimple-default-basic-colors {
         &#{&}--#{$color} {
-            background-color: siimple-default-color($color, "light");
+            background-color: lighten(siimple-default-color($color), 30%);
             color: siimple-default-color($color, "dark");
         }
         //Close icon color
