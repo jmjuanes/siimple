@@ -174,7 +174,7 @@ $siimple-table-cell-sizes: $siimple-default-grid;
     @each $color in $siimple-default-basic-colors {
         &-row--#{$color},
         &-row--#{$color} &-cell {
-            background-color: rgba(siimple-default-color($color, "light"), 1.0) !important;
+            background-color: rgba(siimple-default-color($color, "light"), 0.2) !important;
         }
     }
 }
