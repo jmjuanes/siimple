@@ -1,5 +1,5 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
@@ -7,41 +7,69 @@
 //
 
 //Import default variables and utilities
-@import "./scss/_variables.scss";
-@import "./scss/_utils.scss";
+@import "./scss/variables.scss";
+@import "./scss/mixins.scss";
 
 //Import base style
-@import "./scss/_base.scss";
+@import "./scss/base.scss";
 
-//Layout base style DEPRECATED!
-//This class is deprecated and will be removed in future versions
-.siimple-layout {
-    //display: flex;
-    //flex-direction: column;
-    //position: relative;
-    display: block;
-    overflow-x: hidden;
-    width: 100%;
-    height: 100%;
-    font-family: $siimple-default-text-font;
-    font-size: $siimple-default-text-size;
-    color: $siimple-default-text-color;
-    font-weight: normal;
-    //background-color: $siimple-white;
-    
-    //DEPRECATED!
-    //Use `siimple--left` or `siimple--right` instead.
-    &--left {
-        float: left;
-    }
-    &--right {
-        float: right;
-    }
-}
+//Import typography
+@import "./scss/typography/blockquote.scss";
+@import "./scss/typography/code.scss";
+@import "./scss/typography/heading.scss";
+@import "./scss/typography/link.scss";
+@import "./scss/typography/paragraph.scss";
+@import "./scss/typography/pre.scss";
+@import "./scss/typography/small.scss";
+
+//Import elements
+@import "./scss/elements/btn.scss";
+@import "./scss/elements/close.scss";
+@import "./scss/elements/rule.scss";
+@import "./scss/elements/spinner.scss";
+@import "./scss/elements/tag.scss";
+@import "./scss/elements/tip.scss";
+
+//Import components
+@import "./scss/components/alert.scss";
+@import "./scss/components/breadcrumb.scss";
+@import "./scss/components/card.scss";
+@import "./scss/components/list.scss";
+@import "./scss/components/menu.scss";
+@import "./scss/components/table.scss";
+@import "./scss/components/tabs.scss";
+
+//Import layout
+@import "./scss/layout/box.scss";
+@import "./scss/layout/content.scss";
+@import "./scss/layout/footer.scss";
+@import "./scss/layout/jumbotron.scss";
+@import "./scss/layout/navbar.scss";
+
+//Import form elements
+@import "./scss/form/checkbox.scss";
+@import "./scss/form/field.scss";
+@import "./scss/form/form.scss";
+@import "./scss/form/input.scss";
+@import "./scss/form/label.scss";
+@import "./scss/form/radio.scss";
+@import "./scss/form/select.scss";
+@import "./scss/form/switch.scss";
+@import "./scss/form/textarea.scss";
+
+//Import grid
+@import "./scss/grid/grid.scss";
+
+//Import helpers
+@import "./scss/helpers/colors.scss";
+@import "./scss/helpers/display.scss";
+@import "./scss/helpers/float.scss";
+@import "./scss/helpers/line-height.scss";
+@import "./scss/helpers/sizing.scss";
+@import "./scss/helpers/spacing.scss";
+@import "./scss/helpers/text.scss";
+@import "./scss/helpers/miscellanea.scss";
 
 //Import branding style
-@import "./scss/_brand.scss";
-
-//Import all styles
-@import "./scss/_all.scss";
+@import "./scss/brand.scss";
 
