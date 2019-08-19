@@ -1,19 +1,19 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
-@import "../_utils.scss";
+@import "../variables.scss";
+@import "../functions.scss";
+@import "../utils.scss";
 
 //Tabs variables
 $siimple-tabs-height: 40px;
 
 //Tabs class
-.siimple-tabs {
+.#{$siimple-prefix}-tabs {
     display: block;
     position: relative;
     width: 100%;
@@ -43,9 +43,9 @@ $siimple-tabs-height: 40px;
         transition: all 0.3s;
         //Hover tab
         &:hover {
-            border-top-color: siimple-default-color("light", "light");
-            border-left-color: siimple-default-color("light", "light");
-            border-right-color: siimple-default-color("light", "light");
+            border-top-color: siimple-default-color("light");
+            border-left-color: siimple-default-color("light");
+            border-right-color: siimple-default-color("light");
         }
         //Selected tab
         &--selected {
