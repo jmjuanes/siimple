@@ -1,22 +1,17 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
+@import "../variables.scss";
 
 //Spinner variables
 $siimple-spinner-size: 10px;
 $siimple-spinner-space: 15px;
-
-//Large spinner variables
 $siimple-spinner-large-size: 15px;
 $siimple-spinner-large-space: 20px;
-
-//Small spinner variables
 $siimple-spinner-small-size: 8px;
 $siimple-spinner-small-space: 13px;
 
@@ -47,11 +42,10 @@ $siimple-spinner-small-space: 13px;
     position: relative;
     transform: translateZ(0);
     animation-delay: 0.33s;
-    margin: {
-        left: auto;
-        right: auto;
-        top: 0px;
-    }
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    //First spinner circle
     &:before {
         @include siimple-spinner-base();
         //animation-delay: -0.66s;
@@ -59,6 +53,7 @@ $siimple-spinner-small-space: 13px;
         left: calc(#{$siimple-spinner-space} * -1);
         top: 0;
     }
+    //Last spinner circle
     &:after {
         @include siimple-spinner-base();
         animation-delay: 0.66s;
@@ -72,15 +67,6 @@ $siimple-spinner-small-space: 13px;
         &#{&}--#{$color}:after,
         &#{&}--#{$color}:before {
             background-color: siimple-default-color($color, "base");
-        }
-    }
-    //Legacy spinner colors
-    //To be deprecated in future major release
-    @each $color in $siimple-legacy-colors {
-        &#{&}--#{$color}, 
-        &#{&}--#{$color}:after, 
-        &#{&}--#{$color}:before {
-            background-color: siimple-legacy-color($color, "base");
         }
     }
     //Small spinner
