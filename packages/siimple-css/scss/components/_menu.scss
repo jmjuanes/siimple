@@ -1,15 +1,15 @@
 //
-// @siimple/css - minimal css toolkit for flat and clean websites
+// Siimple - minimal css framework for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+@import "../_variables.scss";
+@import "../_functions.scss";
 
 //Menu class
-.#{$siimple-prefix}-menu {
+.siimple-menu {
     display: block;
     width: 100%;
     //margin-top: 0px;
@@ -50,17 +50,19 @@
         padding-left: 10px;
         padding-right: 10px;
         //margin-bottom: 5px;
+        //background-color: rgba($siimple-menu-item-background-color, 0);
         //opacity: 1.0;
         transition: all ease 0.3s;
         cursor: pointer;
         //Hover styles
         &:not(#{&}--selected):hover {
+            //background-color: $siimple-menu-item-background-color;
             text-decoration: none !important;
             color: siimple-default-color("primary");
         }
         //Selected item
         &--selected {
-            background-color: siimple-default-color("light");
+            background-color: siimple-default-color("light", "light");
             color: siimple-default-color("dark");
             //font-weight: bold;
         }
