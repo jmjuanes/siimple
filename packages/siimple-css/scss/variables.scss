@@ -10,6 +10,9 @@
 @import "./functions.scss";
 @import "./mixins.scss";
 
+//Default class prefix
+$siimple-prefix: "siimple";
+
 //Darker/lighter amount
 $siimple-default-amount: 20% !default;
 
@@ -59,9 +62,9 @@ $siimple-default-palette: (
         "over": $siimple-default-white
     ),
     "light": (
-        "dark": $siimple-default-grey-dark, 
-        "base": $siimple-default-grey, 
-        "light":$siimple-default-grey-light, 
+        "dark": $siimple-default-grey, 
+        "base": $siimple-default-grey-light, 
+        "light":$siimple-default-white, 
         "over": $siimple-default-navy
     ) 
 );
