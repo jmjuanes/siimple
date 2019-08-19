@@ -1,36 +1,38 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
-@import "../_utils.scss";
-
-//List variables
-$siimple-list-item-padding: 10px;
+@import "../variables.scss";
+@import "../functions.scss";
+@import "../mixins.scss";
 
 //List class
-.siimple-list {
+.#{$siimple-prefix}-list {
     display: block;
     width: 100%;
-    margin: {
-        bottom: $siimple-default-margin-bottom;
-    }
+    margin-bottom: $siimple-default-margin-bottom;
     color: $siimple-default-text-color;
     font-size: $siimple-default-text-size;
     line-height: $siimple-default-text-line;
     //List item 
     &-item {
         display: block;
-        padding: $siimple-list-item-padding;
-        background-color: siimple-default-color("light", "light");
+        padding: 10px;
+        background-color: siimple-default-color("light");
         transition: all 0.3s ease;
         text-decoration: none;
         color: $siimple-default-text-color;
         //position: relative;
+        //List with tag
+        & .#{$siimple-prefix}-tag {
+            //position: absolute;
+            //top: 0px;
+            //right: 0px;
+            float: right;
+        }
     }
     &-item:first-child {
         border-top-left-radius: $siimple-default-border-radius;
@@ -41,10 +43,10 @@ $siimple-list-item-padding: 10px;
         border-bottom-right-radius: $siimple-default-border-radius;
     }
     &-item:not(:last-child) {
-        border-bottom: 1px solid siimple-default-color("light", "base");
+        border-bottom: 1px solid siimple-default-color("light", "dark");
     }
     &--hover &-item:not(#{&}-item--selected):hover {
-        background-color: siimple-default-color("light", "base");
+        background-color: darken(siimple-default-color("light"), 10%);
         cursor: pointer;
     }
     //Item selected
@@ -74,13 +76,5 @@ $siimple-list-item-padding: 10px;
         text-decoration: none;
         color: siimple-default-color("dark", "light");
     }
-}
-
-//List with tag
-.siimple-list-item .siimple-tag {
-    //position: absolute;
-    //top: 0px;
-    //right: 0px;
-    float: right;
 }
 
