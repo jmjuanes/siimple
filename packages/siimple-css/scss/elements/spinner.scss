@@ -34,7 +34,7 @@ $siimple-spinner-small-space: 13px;
 }
 
 //Spinner class
-.siimple-spinner {
+.#{$siimple-prefix}-spinner {
     @include siimple-spinner-base();
     display: block;
     text-indent: -9999em;
