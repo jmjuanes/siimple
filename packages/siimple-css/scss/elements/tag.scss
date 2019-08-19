@@ -1,24 +1,20 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
-
-//Tag variables
-$siimple-tag-height: 19px;
+@import "../variables.scss";
+@import "../functions.scss";
 
 //Tag class
-.siimple-tag {
+.#{$siimple-prefix}-tag {
     display: inline-block;
-    //height: $siimple-tag-height;
     font-size: 11px;
     font-weight: bold;
     text-decoration: none;
-    line-height: $siimple-tag-height;
+    line-height: 19px;
     border-radius: 4px;
     padding-left: 8px;
     padding-right: 8px;
@@ -36,12 +32,5 @@ $siimple-tag-height: 19px;
             color: siimple-default-color($color, "over");
         }
     }
-    //Legacy colors
-    //To be deprecated in future major release
-    @each $color in $siimple-legacy-colors {
-        &#{&}--#{$color} {
-            background-color: siimple-legacy-color($color, "base");
-            color: siimple-legacy-color($color, "over");
-        }
-    }
 }
+
