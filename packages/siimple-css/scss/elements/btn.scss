@@ -1,13 +1,11 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
-@import "../_utils.scss";
+@import "../variables.scss";
 
 //Button variables
 //$siimple-btn-height: 34px;
@@ -15,7 +13,7 @@
 //$siimple-btn-big-height: 48px;
 
 //Button class
-.siimple-btn {
+.#{$siimple-prefix}-btn {
     display: inline-block;
     //min-height: 24px;
     //transition: opacity 0.3s;
@@ -24,7 +22,6 @@
     line-height: 24px;
     text-align: center;
     text-decoration: none;
-    //font-family: $siimple-default-text-font;
     font-size: $siimple-default-font-size;
     //font-weight: bold;
     padding-left: 15px;
@@ -55,14 +52,6 @@
             &:hover {
                 background-color: siimple-default-color($color, "dark");
             }
-        }
-    }
-    //Legacy colors
-    //To be deprecated in future major release
-    @each $color in $siimple-legacy-colors {
-        &#{&}--#{$color} {
-            background-color: siimple-legacy-color($color, "base");
-            color: siimple-legacy-color($color, "over");
         }
     }
     //Disabled button
