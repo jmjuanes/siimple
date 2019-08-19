@@ -1,0 +1,27 @@
+//
+// @siimple/css - minimal css toolkit for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+@import "../variables.scss";
+
+//Rule class 
+.#{$siimple-prefix}-rule {
+    display: block;
+    height: 2px;
+    background-color: siimple-default-color("light");
+    padding: 0px;
+    margin-top: 15px;
+    margin-bottm: 15px;
+    border: 0px;
+    //Rule first and last child
+    &:first-child {
+        margin-top: 0px !important;
+    }
+    &:last-child {
+        margin-bottom: 0px !important;
+    }
+}
+
