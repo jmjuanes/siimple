@@ -1,19 +1,19 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
+@import "../variables.scss";
+@import "../functions.scss";
 
 //Checkbox variables
 $siimple-checkbox-width: 18px;
 $siimple-checkbox-height: 18px;
 
 //Checkbox class
-.siimple-checkbox {
+.#{$siimple-prefix}-checkbox {
     display: inline-block;
     position: relative;
     width: $siimple-checkbox-width;
