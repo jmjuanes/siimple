@@ -1,20 +1,20 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
-@import "../_utils.scss";
+@import "../variables.scss";
+@import "../functions.scss";
+@import "../mixins.scss";
 
 //Footer variables
 $siimple-footer-light-text: siimple-default-color("dark", "light");
 $siimple-footer-dark-text: rgba(siimple-default-color("white"), 0.8);
 
 //Footer class
-.siimple-footer {
+.#{$siimple-prefix}-footer {
     display: block;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -25,7 +25,7 @@ $siimple-footer-dark-text: rgba(siimple-default-color("white"), 0.8);
     //Light footer style
     &--light {
         color: $siimple-footer-light-text;
-        background-color: siimple-default-color("light", "light");
+        background-color: siimple-default-color("light");
     }
     //Dark footer style
     &--dark {
@@ -126,14 +126,6 @@ $siimple-footer-dark-text: rgba(siimple-default-color("white"), 0.8);
     }
     &--dark &-rule {
         background-color: rgba(siimple-default-color("white"), 0.6);
-    }
-    //Legacy colors
-    //To be deprecated in future major release
-    @each $color, $value in $siimple-legacy-colors {
-        &#{&}--#{$color} {
-            background-color: siimple-legacy-color($color, "base");
-            color: siimple-legacy-color($color, "over");
-        }
     }
 }
 
