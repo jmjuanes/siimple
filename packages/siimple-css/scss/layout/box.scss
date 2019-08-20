@@ -1,18 +1,18 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
+@import "../variables.scss";
+@import "../functions.scss";
 
 //Box variables
 $siimple-box-padding: 30px;
 
 //Box style
-.siimple-box {
+.#{$siimple-prefix}-box {
     display: block;
     vertical-align: top;
     width: calc(100% - #{2 * $siimple-box-padding});
@@ -72,14 +72,6 @@ $siimple-box-padding: 30px;
         &#{&}--#{$color} {
             background-color: siimple-default-color($color);
             color: siimple-default-color($color, "over");
-        }
-    }
-    //Legacy box colors
-    //To be deprecated in future major release
-    @each $color in $siimple-legacy-colors {
-        &#{&}--#{$color} {
-            background-color: siimple-legacy-color($color, "base");
-            color: siimple-legacy-color($color, "over");
         }
     }
 }
