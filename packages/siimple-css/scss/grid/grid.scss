@@ -1,11 +1,11 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
+@import "../variables.scss";
 
 //Grid variables
 $siimple-grid-margin-left: auto;
@@ -20,7 +20,7 @@ $siimple-grid-column-padding: 12px;
 $siimple-grid-column-sizes: $siimple-default-grid; 
 
 //Grid class
-.siimple-grid {
+.#{$siimple-prefix}-grid {
     display: block;
     width: 100%;
     margin-left: $siimple-grid-margin-left;
