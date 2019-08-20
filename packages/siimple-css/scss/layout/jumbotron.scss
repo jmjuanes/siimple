@@ -1,19 +1,19 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
-@import "../_utils.scss";
+@import "../variables.scss";
+@import "../functions.scss";
+@import "../mixins.scss";
 
 //Jumbotron variables
 $siimple-jumbotron-padding: 85px;
 
 //Jumbotron class
-.siimple-jumbotron {
+.#{$siimple-prefix}-jumbotron {
     display: block;
     //font-family: $siimple-default-text-font;
     padding-top: $siimple-jumbotron-padding;
@@ -56,30 +56,15 @@ $siimple-jumbotron-padding: 85px;
     &-subtitle + &-detail {
         margin-top: 5px;
     }
-    ////Light jumbotron
-    //&--light {
-    //    background-color: siimple-default-color("light");
-    //    color: siimple-default-color("dark");
-    //}
-    ////Dark jumbotron
-    //&--dark {
-    //    background-color: siimple-default-color("dark");
-    //    color: siimple-default-color("white");
-    //}
-    //Jumbotron colors
-    @each $color in $siimple-default-colors {
-        &#{&}--#{$color} {
-            background-color: siimple-default-color($color);
-            color: siimple-default-color($color, "over");
-        }
+    //Light jumbotron
+    &--light {
+        background-color: siimple-default-color("light");
+        color: siimple-default-color("dark");
     }
-    //Legacy jumbotron colors
-    //To be deprecated in future major release
-    @each $color in $siimple-legacy-colors {
-        &#{&}--#{$color} {
-            background-color: siimple-legacy-color($color, "base");
-            color: siimple-legacy-color($color, "over");
-        }
+    //Dark jumbotron
+    &--dark {
+        background-color: siimple-default-color("dark");
+        color: siimple-default-color("white");
     }
 }
 
