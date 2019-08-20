@@ -1,20 +1,19 @@
-
-// Siimple - minimal css framework for flat and clean websites
+//
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_utils.scss";
+@import "../variables.scss";
+@import "../utils.scss";
 
 //Breakpoints class
-.siimple {
+.#{$siimple-prefix} {
     //Fluid content
     &--fluid { 
         @include siimple-fluid();
     }
-
     //Small content
     &--small {
         width: $siimple-default-breakpoint-small;
@@ -26,7 +25,6 @@
             @include siimple-fluid();
         }
     }
-
     //Medium content
     &--medium {
         width: $siimple-default-breakpoint-medium;
@@ -38,7 +36,6 @@
             @include siimple-fluid();
         }
     }
-
     //Large content
     &--large {
         width: $siimple-default-breakpoint-large;
