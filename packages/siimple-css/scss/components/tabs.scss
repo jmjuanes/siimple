@@ -7,7 +7,7 @@
 //
 @import "../variables.scss";
 @import "../functions.scss";
-@import "../utils.scss";
+@import "../mixins.scss";
 
 //Tabs variables
 $siimple-tabs-height: 40px;
@@ -19,8 +19,8 @@ $siimple-tabs-height: 40px;
     width: 100%;
     height: $siimple-tabs-height;
     //line-height: $siimple-tabs-height;
-    //font-family: $siimple-default-text-font;
-    font-size: $siimple-default-text-size;
+    //font-family: $siimple-default-font-family;
+    font-size: $siimple-default-font-size;
     margin-bottom: $siimple-default-margin-bottom;
     border-bottom: 2px solid siimple-default-color("light");
     //Disable user selection
