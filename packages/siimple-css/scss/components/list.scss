@@ -14,9 +14,9 @@
     display: block;
     width: 100%;
     margin-bottom: $siimple-default-margin-bottom;
-    color: $siimple-default-text-color;
-    font-size: $siimple-default-text-size;
-    line-height: $siimple-default-text-line;
+    color: $siimple-default-color;
+    font-size: $siimple-default-font-size;
+    line-height: $siimple-default-line-height;
     //List item 
     &-item {
         display: block;
@@ -24,7 +24,7 @@
         background-color: siimple-default-color("light");
         transition: all 0.3s ease;
         text-decoration: none;
-        color: $siimple-default-text-color;
+        color: $siimple-default-color;
         //position: relative;
         //List with tag
         & .#{$siimple-prefix}-tag {
@@ -65,7 +65,7 @@
         font-weight: bold;
         line-height: 24px;
         text-decoration: none;
-        color: $siimple-default-text-color;
+        color: $siimple-default-color;
         //margin-bottom: 5px;
     }
     //List description
