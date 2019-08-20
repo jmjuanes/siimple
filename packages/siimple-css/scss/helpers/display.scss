@@ -1,12 +1,12 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_utils.scss";
+@import "../variables.scss";
+@import "../mixins.scss";
 
 //Display mixin
 @mixin siimple-helpers-display () {
@@ -40,7 +40,7 @@
 }
 
 //Display helpers
-.siimple--display {
+.#{$siimple-prefix}--display {
     //Base display
     @include siimple-helpers-display();
     //Responsive display 
