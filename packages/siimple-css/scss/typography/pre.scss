@@ -1,25 +1,25 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
+@import "../variables.scss";
+@import "../functions.scss";
 
 //Pre vriables
 $siimple-pre-padding: 15px;
 
 //Pre class
-.siimple-pre {
+.#{$siimple-prefix}-pre {
     display: block;
     overflow-x: auto;
     width: calc(100% - 2 * #{$siimple-pre-padding});
     color: siimple-default-color("dark");
     line-height: 22px;
     font-size: 14px;
-    background-color: siimple-default-color("light", "light");
+    background-color: siimple-default-color("light");
     border-radius: $siimple-default-border-radius;
     padding: $siimple-pre-padding;
     margin-bottom: $siimple-default-margin-bottom;
