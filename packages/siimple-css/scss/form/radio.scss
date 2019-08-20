@@ -1,12 +1,12 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
+@import "../variables.scss";
+@import "../functions.scss";
 
 //Radio variables
 $siimple-radio-width: 18px;
@@ -16,7 +16,7 @@ $siimple-radio-border: 3px;
 $siimple-radio-circle: 6px;
 
 //Radio class
-.siimple-radio {
+.#{$siimple-prefix}-radio {
     display: inline-block;
     width: $siimple-radio-width;
     height: $siimple-radio-height;
