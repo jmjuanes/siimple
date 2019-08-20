@@ -1,18 +1,18 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
+@import "../variables.scss";
+@import "../functions.scss";
 
 //Textarea variables
 $siimple-textarea-padding: 10px;
 
 //Textarea class
-.siimple-textarea {
+.#{$siimple-prefix}-textarea {
     display: inline-block;
     line-height: 20px;
     //font-family: $siimple-default-text-font;
@@ -22,8 +22,7 @@ $siimple-textarea-padding: 10px;
     border: 0px;
     border-radius: $siimple-default-border-radius;
     outline: 0px;
-    //background-color: siimple-default-color("light");
-    background-color: siimple-default-color("light", "light");
+    background-color: siimple-default-color("light");
     vertical-align: top;
     box-sizing: border-box;
     resize: vertical;
