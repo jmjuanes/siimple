@@ -1,15 +1,15 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
+@import "../variables.scss";
+@import "../functions.scss";
 
 //Form class
-.siimple-form {
+.#{$siimple-prefix}-form {
     display: block;
     width: 100%;
     margin-top: 0px;
@@ -35,15 +35,6 @@
         line-height: $siimple-default-line-height;
         color: siimple-default-color("dark", "base");
         margin-bottom: 20px;
-    }
-    //Form rule (deprecated)
-    &-rule {
-        display: block;
-        width: 100%;
-        border-bottom: 1px solid siimple-default-color("light", "dark");
-        margin-top: 5px;
-        margin-bottom: $siimple-default-margin-bottom;
-        height: 0px;
     }
 }
 
