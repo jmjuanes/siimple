@@ -15,9 +15,9 @@ $siimple-table-cell-sizes: $siimple-default-grid;
 .#{$siimple-prefix}-table {
     display: table;
     width: 100%;
-    font-size: $siimple-default-text-size;
-    //font-family: $siimple-default-text-font;
-    color: $siimple-default-text-color;
+    font-size: $siimple-default-font-size;
+    //font-family: $siimple-default-font-family;
+    color: $siimple-default-color;
     border-collapse: separate;
     border-spacing: 0;
     border-width: 0px;
@@ -41,7 +41,7 @@ $siimple-table-cell-sizes: $siimple-default-grid;
     &-cell {
         display: table-cell;
         //position: relative;
-        line-height: $siimple-default-text-line;
+        line-height: $siimple-default-line-height;
         padding: 10px;
         //white-space: nowrap;
         //overflow: hidden;
