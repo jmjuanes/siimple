@@ -1,18 +1,18 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
+@import "../variables.scss";
+@import "../functions.scss";
 
 //Blockquote variables
 $siimple-blockquote-color: siimple-default-color("dark", "light");
 
 //Blockquote class
-.siimple-blockquote {
+.#{$siimple-prefix}-blockquote {
     display: block;
     //font-family: $siimple-default-text-font;
     color: $siimple-blockquote-color;
