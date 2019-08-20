@@ -1,18 +1,18 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
+@import "../variables.scss";
 
 //Heading variables
 $siimple-heading-margin-bottom: 0.5em;
 $siimple-heading-sizes: $siimple-default-headings;
 
 //Heading class
-.siimple-h {
+.#{$siimple-prefix}-h {
     @each $heading-number,$heading-variables in $siimple-heading-sizes {
         //Add this heading size
         &#{$heading-number} {
