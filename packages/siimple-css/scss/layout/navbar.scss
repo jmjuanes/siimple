@@ -1,20 +1,20 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_functions.scss";
-@import "../_utils.scss";
+@import "../variables.scss";
+@import "../functions.scss";
+@import "../mixins.scss";
 
 //Navbar default variables
 $siimple-navbar-height: 34px;
 $siimple-navbar-padding: 20px;
 
 //Navbar class
-.siimple-navbar {
+.#{$siimple-prefix}-navbar {
     display: block;
     //position: absolute; top: 0px; left: 0px;
     z-index: 3;
@@ -77,53 +77,20 @@ $siimple-navbar-padding: 20px;
         }
     }
     //Light navbar
-    //&--light {
-    //    color: siimple-default-color("dark");
-    //    background-color: siimple-default-color("light", "light");
-    //}
-    //&--light &-title, &--light &-subtitle, &--light &-item, &--light &-link {
-    //    color: siimple-default-color("dark");
-    //}
-    ////Dark navbar
-    //&--dark {
-    //    color: siimple-default-color("white");
-    //    background-color: siimple-default-color("dark");
-    //}
-    //&--dark &-title, &--dark &-subtitle, &--dark &-link, &--dark &-item {
-    //    color: siimple-default-color("white");
-    //}
-    //Navbar colors 
-    @each $color in $siimple-default-colors {
-        &#{&}--#{$color} {
-            color: siimple-default-color($color, "over");
-            background-color: siimple-default-color($color);
-        }
-        &#{&}--#{$color} &-title,
-        &#{&}--#{$color} &-subtitle,
-        &#{&}--#{$color} &-link, 
-        &#{&}--#{$color} &-item {
-            color: siimple-default-color($color, "over");
-        }
-    }//Legacy colors
-    //To be deprecated in future major release
-    @each $color in $siimple-legacy-colors {
-        &#{&}--#{$color} {
-            background-color: siimple-legacy-color($color, "base");
-            color: siimple-legacy-color($color, "over");
-        }
-        &#{&}--#{$color} &-title {
-            color: siimple-legacy-color($color, "over");
-        }
-        &#{&}--#{$color} &-subtitle {
-            color: siimple-legacy-color($color, "over");
-            &::before {
-                background-color: siimple-legacy-color($color, "over");
-            }
-        }
-        &#{&}--#{$color} &-link, 
-        &#{&}--#{$color} &-item {
-            color: siimple-legacy-color($color, "over");
-        }
+    &--light {
+        color: siimple-default-color("dark");
+        background-color: siimple-default-color("light");
+    }
+    &--light &-title, &--light &-subtitle, &--light &-item, &--light &-link {
+        color: siimple-default-color("dark");
+    }
+    //Dark navbar
+    &--dark {
+        color: siimple-default-color("white");
+        background-color: siimple-default-color("dark");
+    }
+    &--dark &-title, &--dark &-subtitle, &--dark &-link, &--dark &-item {
+        color: siimple-default-color("white");
     }
 }
 
