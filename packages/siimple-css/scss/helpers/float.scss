@@ -1,12 +1,12 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
-@import "../_utils.scss";
+@import "../variables.scss";
+@import "../mixins.scss";
 
 //Float mixin
 @mixin siimple-helpers-float {
@@ -21,7 +21,7 @@
     }
 }
 //Float helpers
-.siimple--float {
+.#{$siimple-prefix}--float {
     //Default float
     @include siimple-helpers-float();
     //Responsive float
@@ -35,7 +35,7 @@
 }
 
 //Clear floated content
-.siimple--clearfix {
+.#{$siimple-prefix}--clearfix {
     @include siimple-utils-clear();
 }
 
