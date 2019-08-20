@@ -1,14 +1,14 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
+@import "../variables.scss";
 
 //Text helpers
-.siimple--text {
+.#{$siimple-prefix}--text {
     //Text alignment
     &-justify {
         text-align: justify !important;
