@@ -1,11 +1,12 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/experiments - experimental css components based on siimple
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
+@import "@siimple/css/scss/variables.scss";
+@import "@siimple/css/scss/functions.scss";
 
 //Steps variables
 $siimple-steps-item-bubble-size: 34px;
@@ -14,7 +15,7 @@ $siimple-steps-item-description-padding: 5px;
 $siimple-steps-item-segment-height: 8px;
 
 //Steps class
-.siimple-steps {
+.#{$siimple-prefix}-steps {
     display: block;
     margin-bottom: $siimple-default-margin-bottom;
     text-align: center;
