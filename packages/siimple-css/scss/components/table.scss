@@ -10,6 +10,12 @@
 
 //Table cell variables
 $siimple-table-cell-sizes: $siimple-default-grid;
+$siimple-table-colors: (
+    "primary": 15%, 
+    "success": 15%, 
+    "warning": 10%,
+    "error": 10%
+);
 
 //Table class
 .#{$siimple-prefix}-table {
@@ -173,7 +179,8 @@ $siimple-table-cell-sizes: $siimple-default-grid;
     @each $color in $siimple-default-basic-colors {
         &-row--#{$color},
         &-row--#{$color} &-cell {
-            background-color: lighten(siimple-default-color($color, "light"), 10%) !important;
+            $color-lighten: map-get($siimple-table-colors, $color);
+            background-color: lighten(siimple-default-color($color, "light"), $color-lighten) !important;
         }
     }
 }
