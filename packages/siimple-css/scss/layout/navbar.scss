@@ -66,11 +66,11 @@ $siimple-navbar-padding: 20px;
         padding-right: 10px;
         text-decoration: none;
         text-align: center;
-        //font-weight: 600;
+        font-weight: 600;
         font-size: $siimple-default-font-size;
         transition: opacity 0.3s;
         cursor: pointer;
-        opacity: 0.9;
+        opacity: 0.7;
         //vertical-align: middle;
         &:hover {
             opacity: 1.0;
