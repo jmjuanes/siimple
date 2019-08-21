@@ -61,6 +61,14 @@
     &--visible &-content {
         display: block;
     }
+    //Dark dropdown item
+    &--dark &-content {
+        background-color: siimple-default-color("dark");
+        //Dark theme arrow color
+        &::before {
+            border-bottom-color: siimple-default-color("dark");
+        }
+    }
     //Dropdown item 
     &-item {
         display: block;
@@ -77,7 +85,7 @@
         &:hover {
             //background-color: siimple-default-color("light");
             background-color: siimple-default-color("primary");
-            color: $siimple-default-white;
+            color: siimple-default-color("white");
         }
         //First item
         &:first-child {
@@ -90,13 +98,26 @@
             border-bottom-right-radius: 5px;
         }
     }
+    //Dark dropdown
+    &--dark &-item {
+        color: rgba($siimple-default-white, 0.8);
+        //Item hover
+        &:hover {
+            color: rgba(siimple-default-color("white"), 1.0);
+        }
+    }
     //Dropdown rule separator
     &-separator {
         display: block;
-        height: 0px;
-        border-top: 2px solid siimple-default-color("light", "dark");
+        height: 2px;
+        //border-top: 2px solid siimple-default-color("light", "dark");
+        background-color: siimple-default-color("light", "dark");
         //margin-top: 5px;
         //margin-bottom: 5px;
+    }
+    //Dark separator
+    &--dark &-separator {
+        background-color: rgba(siimple-default-color("white"), 0.2);
     }
 }
 
