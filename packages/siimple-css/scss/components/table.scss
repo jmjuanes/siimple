@@ -52,7 +52,7 @@ $siimple-table-colors: (
         //white-space: nowrap;
         //overflow: hidden;
         transition: background-color 0.3s;
-        border-top: 1px solid siimple-default-color("light", "dark");
+        //border-top: 1px solid siimple-default-color("light", "dark");
         box-sizing: border-box;
         vertical-align: top;
         //Sortable cell
@@ -135,6 +135,7 @@ $siimple-table-colors: (
         vertical-align: middle;
     }
     &-body &-cell {
+        border-top: 1px solid siimple-default-color("light", "dark");
         //background-color: rgba(siimple-default-color("light", "light"), 0.4);
     }
     //Not last row of the table body
@@ -159,11 +160,11 @@ $siimple-table-colors: (
     }
     //Striped table
     &--striped &-body &-row:nth-child(odd) &-cell {
-        background-color: rgba(siimple-default-color("light", "light"), 0.8);
+        background-color: lighten(siimple-default-color("light"), 3%);
     }
     //Hovered table
     &--hover &-body &-row:hover &-cell {
-        background-color: rgba(siimple-default-color("light"), 0.8);
+        background-color: lighten(siimple-default-color("light"), 0%);
     }
     //Fixed columns width
     &--fixed {
