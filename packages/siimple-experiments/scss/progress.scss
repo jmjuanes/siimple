@@ -1,11 +1,12 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/experiments - experimental css components based on siimple
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
+@import "@siimple/css/scss/variables.scss";
+@import "@siimple/css/scss/functions.scss";
 
 //Progress variables 
 $siimple-progress-height: 20px;
@@ -22,7 +23,7 @@ $siimple-progress-striped: $siimple-default-white;
 }
 
 //Progress class
-.siimple-progress {
+.#{$siimple-prefix}-progress {
     display: block;
     width: 100%;
     height: $siimple-progress-height;
@@ -30,7 +31,7 @@ $siimple-progress-striped: $siimple-default-white;
     margin-top: 0px;
     margin-bottom: $siimple-default-margin-bottom;
     border-radius: $siimple-default-border-radius;
-    background-color: siimple-default-color("light", "light"); 
+    background-color: siimple-default-color("light"); 
     overflow: hidden;
     //Disable default appearance in webkit and gecko
     -webkit-appearance: none;
