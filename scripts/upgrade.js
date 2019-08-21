@@ -6,7 +6,7 @@ let pkg = require(path.join(process.cwd(), "package.json"));
 let updateDependencies = function (list) {
     if (typeof list === "object") {
         Object.keys(list).forEach(function (key) {
-            list[key] = (key.indexOf("@siimple") !== -1) ? pkg.packages[key] : pkg.dependencies[key];
+            list[key] = (key.indexOf("@siimple") !== -1) ? "^" + pkg.packages[key] : pkg.dependencies[key];
         });
     }
 };
