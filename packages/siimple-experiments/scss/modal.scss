@@ -1,17 +1,18 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/experiments - experimental css components based on siimple
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
+@import "@siimple/css/scss/variables.scss";
+@import "@siimple/css/scss/functions.scss";
 
 //Modal variables
 $siimple-modal-padding: 15px;
 
 //Modal class
-.siimple-modal {
+.#{$siimple-prefix}-modal {
     display: flex;
     width: calc(100% - 2 * #{$siimple-modal-padding});
     height: calc(100% - 2 * #{$siimple-modal-padding});
@@ -97,7 +98,7 @@ $siimple-modal-padding: 15px;
         display: block;
         padding: 20px;
         color: siimple-default-color("dark", "light");
-        background-color: siimple-default-color("light", "light");
+        background-color: siimple-default-color("light");
         border-bottom-left-radius: $siimple-default-border-radius;
         border-bottom-right-radius: $siimple-default-border-radius;
     }
