@@ -8,141 +8,90 @@
 @import "@siimple/css/scss/variables.scss";
 @import "@siimple/css/scss/functions.scss";
 
-//Steps variables
-$siimple-steps-item-bubble-size: 34px;
-$siimple-steps-item-title-padding: 5px;
-$siimple-steps-item-description-padding: 5px;
-$siimple-steps-item-segment-height: 8px;
-
 //Steps class
 .#{$siimple-prefix}-steps {
-    display: block;
-    margin-bottom: $siimple-default-margin-bottom;
-    text-align: center;
-    //Steps item
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    align-items: flex-start;
+    justify-content: center;
+    //Steps item element
     &-item {
-        display: inline-block;
-        padding-top: 40px;
-        //float: left;
+        flex-grow: 1;
+        flex-basis: 0;
         position: relative;
-        //Steps item buble 
-        &-bubble {
-            display: block;
-            width: $siimple-steps-item-bubble-size;
-            height: $siimple-steps-item-bubble-size;
-            border-radius: 100px;
-            position: absolute;
-            left: calc(50% - #{$siimple-steps-item-bubble-size} / 2);
-            top: 0px;
-            z-index: 10;
-            line-height: $siimple-steps-item-bubble-size;
-            font-size: 20px;
-            color: $siimple-default-white;
-            //background-color: siimple-default-color("success");
-        }
-        //Steps item title
-        &-title {
-            display: block;
-            width: calc(100% - 2 * #{$siimple-steps-item-title-padding});
-            padding-left: $siimple-steps-item-title-padding;
-            padding-right: $siimple-steps-item-title-padding;
-            font-size: 15px;
-            line-height: 22px;
-            font-weight: bold;
-            color: siimple-default-color("light", "dark");
-        }
-        //Steps item description
-        &-description {
-            display: block;
-            width: calc(100% - 2 * #{$siimple-steps-item-description-padding});
-            padding-left: $siimple-steps-item-description-padding;
-            padding-right: $siimple-steps-item-description-padding;
-            font-size: 13px;
-            line-height: 20px;
-            color: siimple-default-color("light");
-        }
-        //Step segment
-        &:not(:last-child)::after {
+        padding-top: 24px;
+        //Step circle element
+        &::after {
             content: "";
-            display: block;
-            width: 100%;
-            height: $siimple-steps-item-segment-height;
-            position: absolute;
-            top: calc(#{$siimple-steps-item-bubble-size - $siimple-steps-item-segment-height} / 2);
-            left: 50%;
-            //background-color: siimple-default-color("success");
-        } 
-        //Current step
-        &--current ~ & &-bubble { 
-            background-color: siimple-default-color("light") !important; 
-        }
-        &--current::after, 
-        &--current ~ &::after { 
-            background-color: siimple-default-color("light") !important; 
-        }
-        &--current &-title { 
-            color: siimple-default-color("dark") !important; 
-        }
-        &--current &-description { 
-            color: siimple-default-color("dark", "light") !important; 
-        }
-        //Step icon
-        &--check &-bubble::after,
-        &--check &-bubble::before,
-        &--cross &-bubble::after,
-        &--cross &-bubble::before,
-        &--exclamation &-bubble::after,
-        &--exclamation &-bubble::before {
-            display: block;
-            content: "";
-            height: 3px;
-            position: absolute;
-            background-color: $siimple-default-white;
-            border-radius: 5px;
-        }
-        &--check &-bubble::after {
-            width: 10px;
-            transform: rotate(45deg);
-            top: 19px;
-            left: 6.5px;
-        }
-        &--check &-bubble::before {
+            background-color: siimple-default-color("primary");
             width: 18px;
-            transform: rotate(-45deg);
-            top: 16px;
-            left: 10.5px;
+            height: 18px;
+            border-radius: 50px;
+            position: absolute;
+            left: calc(50% - 9px);
+            top: 0px;
+            z-index: 2;
         }
-        &--cross &-bubble::after {
-            width: 20px;
-            transform: rotate(45deg);
-            top: 15.5px;
-            left: 7px;
-        }
-        &--cross &-bubble::before {
-            width: 20px;
-            transform: rotate(-45deg);
-            top: 15.5px;
-            left: 7px;
-        }
-        &--exclamation &-bubble::after {
-            width: 3px;
-            top: 22px;
-            left: 15.5px;
-        }
-        &--exclamation &-bubble::before {
-            width: 3px;
-            height: 11px;
+        &:not(:first-child)::before {
+            content: "";
+            background-color: siimple-default-color("primary");
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            left: -50%;
             top: 8px;
-            left: 15.5px;
+            z-index: 1;
         }
-
+        //Checked item
+        &--checked::after {
+            content: "L";
+            color: #ffffff;
+            vertical-align: top;
+            text-align: center;
+            font-size: 11px;
+            line-height: 17px;
+            font-family: arial;
+            font-weight: bold;
+            transform: scaleY(-1) rotate(135deg);
+        }
+    }
+    //Steps title
+    &-title {
+        display: block;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 15px;
+        line-height: 23px;
+        font-weight: 700;
+        color: siimple-default-color("dark");
+        opacity: 0.4;
+        text-align: center;
+    }
+    //Steps description
+    &-description {
+        display: block;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 13px;
+        line-height: 20px;
+        color: siimple-default-color("dark", "light");
+        opacity: 0.4;
+        text-align: center;
+    }
+    //Current item
+    &-item--current ~ &-item::after,
+    &-item--current ~ &-item::before {
+        background-color: siimple-default-color("light") !important;
+    }
+    &-item--current &-title, 
+    &-item--current &-description {
+        opacity: 1.0;
     }
     //Colored steps
-    @each $color in $siimple-default-colors {
-        &--#{$color} &-item-bubble {
-            background-color: siimple-default-color($color);
-        }
-        &--#{$color} &-item:not(:last-child)::after {
+    @each $color in $siimple-default-basic-colors {
+        &--#{$color} &-item::after,
+        &--#{$color} &-item::before {
             background-color: siimple-default-color($color);
         }
     }
