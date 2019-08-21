@@ -35,14 +35,27 @@
     &-content {
         display: none;
         position: absolute;
-        top: calc(100% + 2px);
+        top: calc(100% + 12px);
         left: 0px;
         min-width: 150px;
         color: $siimple-default-color;
         text-align: left;
-        background-color: $siimple-default-white;
+        //background-color: $siimple-default-white;
+        background-color: siimple-default-color("light");
         border-radius: $siimple-default-border-radius;
-        border: 1px solid siimple-default-color("light");
+        //border: 1px solid siimple-default-color("light");
+        //Dropdown arrow
+        &:before {
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            content: "";
+            display: block;
+            border: 7px solid transparent;
+            border-bottom-color: siimple-default-color("light");
+            top: -14px;
+            right: 15px;
+        }
     }
     //Visible dropdown container
     &--visible &-content {
@@ -55,23 +68,35 @@
         font-size: $siimple-default-font-size;
         padding-left: 15px;
         padding-right: 15px;
-        padding-top: 4px;
-        padding-bottom: 4px;
+        padding-top: 5px;
+        padding-bottom: 5px;
         white-space: nowrap;
         cursor: pointer;
-        transition: background-color 0.3s;
+        transition: all 0.3s;
         //Dropdown item hover
         &:hover {
-            background-color: siimple-default-color("light");
+            //background-color: siimple-default-color("light");
+            background-color: siimple-default-color("primary");
+            color: $siimple-default-white;
+        }
+        //First item
+        &:first-child {
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+        //Last item
+        &:last-child {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
         }
     }
     //Dropdown rule separator
     &-separator {
         display: block;
         height: 0px;
-        border-top: 1px solid siimple-default-color("light");
-        margin-top: 5px;
-        margin-bottom: 5px;
+        border-top: 2px solid siimple-default-color("light", "dark");
+        //margin-top: 5px;
+        //margin-bottom: 5px;
     }
 }
 
