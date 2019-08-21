@@ -1,14 +1,15 @@
 //
-// Siimple - minimal css framework for flat and clean websites
+// @siimple/experiments - experimental css components based on siimple
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../_variables.scss";
+@import "@siimple/css/scss/variables.scss";
+@import "@siimple/css/scss/functions.scss";
 
 //Dropdown experimental component
-.siimple-dropdown {
+.#{$siimple-prefix}-dropdown {
     position: relative;
     //Dropdown toggle arrow
     &-toggle::after {
@@ -61,7 +62,7 @@
         transition: background-color 0.3s;
         //Dropdown item hover
         &:hover {
-            background-color: siimple-default-color("light", "light");
+            background-color: siimple-default-color("light");
         }
     }
     //Dropdown rule separator
