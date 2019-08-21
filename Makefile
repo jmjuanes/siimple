@@ -19,7 +19,11 @@ install:
 	@# Install node dependencies
 	rm -rf node_modules
 	npm install
-	@# Create a symlink in node_modules to packages
+	${MAKE} bootstrap
+
+# Create a symlink in node_modules to packages
+bootstrap:
+	rm -r ./node_modules/\@siimple
 	node ./scripts/bootstrap.js
 
 # Upgrade all package.json files
