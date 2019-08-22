@@ -598,6 +598,24 @@
         "unicode": 57443,
         "added": "v0.0.1",
         "keywords": ["shield", "security", "error", "danger"]
+    },
+    {
+        "id": "play",
+        "unicode": 57444,
+        "added": "v0.0.1",
+        "keywords": ["play", "resume", "controls"]
+    },
+    {
+        "id": "stop",
+        "unicode": 57445,
+        "added": "v0.0.1",
+        "keywords": ["stop", "controls"]
+    },
+    {
+        "id": "pause",
+        "unicode": 57446,
+        "added": "v0.0.1",
+        "keywords": ["pause", "controls"]
     }
 ]
 
