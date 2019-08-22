@@ -17,14 +17,20 @@ help:
 # Initialize the env
 install:
 	@# Install node dependencies
-	rm -rf node_modules
+	-rm -rf node_modules
 	npm install
 	${MAKE} bootstrap
 
 # Create a symlink in node_modules to packages
 bootstrap:
-	rm -r ./node_modules/\@siimple
+	-rm -r ./node_modules/\@siimple
 	node ./scripts/bootstrap.js
+
+# Update dependencies
+update:
+	-rm -r ./node_modules/\@siimple
+	npm install
+	${MAKE} bootstrap
 
 # Upgrade all package.json files
 upgrade:
