@@ -84,5 +84,14 @@ $siimple-progress-striped: $siimple-default-white;
             color: siimple-default-color($color, "over");
         }
     }
+    //Small progress bar
+    &--small {
+        height: 10px;
+        //Progress bar style: remove text displayed
+        & > span {
+            line-height: 10px;
+            font-size: 0px;
+        }
+    }
 }
 
