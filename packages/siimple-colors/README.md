@@ -1,4 +1,10 @@
-# @siimple/colors
+<p align="center">
+  <img width="300px" src="./art/header.svg">
+</p>
+
+<h1 align="center">@siimple/colors</h1>
+
+<p align="center">An elegant and minimalistic color palette for UI design</p>
 
 [![npm](https://img.shields.io/npm/v/@siimple/colors.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/colors)
 [![npm](https://img.shields.io/npm/dt/@siimple/colors.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/colors)
