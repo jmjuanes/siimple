@@ -628,6 +628,18 @@
         "unicode": 57448,
         "added": "v0.0.1",
         "keywords": ["cash", "wallet", "money", "pocket", "coins", "cards"]
+    },
+    {
+        "id": "step-backward",
+        "unicode": 57449,
+        "added": "v0.0.1",
+        "keywords": ["step", "backward", "controls", "back", "previous"]
+    },
+    {
+        "id": "step-forward",
+        "unicode": 57450,
+        "added": "v0.0.1",
+        "keywords": ["step", "forward", "controls", "next"]
     }
 ]
 
