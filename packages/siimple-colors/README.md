@@ -6,7 +6,6 @@
 
 [![npm](https://img.shields.io/npm/v/@siimple/colors.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/colors)
 [![npm](https://img.shields.io/npm/dt/@siimple/colors.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/colors)
-[![devDependency Status](https://david-dm.org/siimple/colors/dev-status.svg?style=flat-square)](https://david-dm.org/siimple/colors#info=devDependencies)
 [![jsdelivr](https://data.jsdelivr.com/v1/package/npm/@siimple/colors/badge)](https://www.jsdelivr.com/package/npm/@siimple/colors)
 [![npm](https://img.shields.io/npm/l/@siimple/colors.svg?style=flat-square)](https://github.com/siimple/colors)
 
@@ -108,6 +107,6 @@ Code and documentation &copy; 2018 the **siimple team**. The code is released un
 
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/siimple/art/master/footer.png">
+    <img src="https://raw.githubusercontent.com/siimple/siimple/monorepo/art/footer.png">
 </p>
 
