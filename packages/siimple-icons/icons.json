@@ -616,6 +616,12 @@
         "unicode": 57446,
         "added": "v0.0.1",
         "keywords": ["pause", "controls"]
+    },
+    {
+        "id": "credit-card",
+        "unicode": 57447,
+        "added": "v0.0.1",
+        "keywords": ["credit", "card", "money", "pay"]
     }
 ]
 
