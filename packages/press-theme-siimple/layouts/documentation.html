@@ -1,0 +1,63 @@
+---
+layout: "default"
+showBreadcrumb: true
+showTitle: true
+showNavigation: true
+---
+<div class="siimple-content siimple-press-content siimple-content--large">
+    {{#if page.data.showBreadcrumb }}
+    <div class="siimple-breadcrumb siimple--mb-2">
+        <a class="siimple-breadcrumb-item" href="/">Home</a>
+        {{#each page.categories}}
+        <a class="siimple-breadcrumb-item">{{capitalize (replace this "-" " ")}}</a>
+        {{/each}}
+        <a class="siimple-breadcrumb-item">{{ page.data.title }}</a>
+    </div>
+    {{/if}}
+    <div class="siimple-grid-row">
+        <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col-sm--12 siimple-press-documentation-column">
+            <div class="siimple-list siimple-list--hover">
+                {{#each pages}}
+                {{#if (eq (join this.categories "/") (join ../page.categories "/"))}}
+                <a class="siimple-list-item {{#if (eq this.name ../page.name)}}siimple-list-item--selected{{/if}}" href="{{this.url}}">
+                    <div class="siimple-list-title">{{{this.data.title}}}</div>
+                    <div class="siimple-list-description">{{{this.data.description}}}</div>
+                </a>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="siimple-grid-col siimple-grid-col--9 siimple-grid-col-sm--12 siimple-press-column">
+            {{#if page.data.showTitle }}
+            <div align="left">
+                <div class="siimple-press-documentation-title">{{{page.data.title}}}</div>
+                <div class="siimple-press-documentation-description">{{{page.data.description}}}</div>
+            </div>
+            {{/if}}
+            {{ content }}
+            {{#if page.data.showNavigation }}
+            <div class="siimple-press-documentation-navigation">
+            {{#if page.previous}}
+                <a class="siimple-press-documentation-navigation-prev" href="{{page.previous.url}}">
+                    <div class="siimple-press-documentation-navigation-title">Previous</div>
+                    <div class="siimple-press-documentation-navigation-detail">{{page.previous.data.title}}</div>
+                </a>
+            {{/if}}
+            {{#if page.next}}
+                <a class="siimple-press-documentation-navigation-next" href="{{page.next.url}}">
+                    <div class="siimple-press-documentation-navigation-title">Next</div>
+                    <div class="siimple-press-documentation-navigation-detail">{{page.next.data.title}}</div>
+                </a>
+            {{/if}}
+            </div>
+            {{/if}}
+            {{#if site.issues}}
+            <div class="siimple-press-documentation-changes">
+                Found a mistake or want to help improve this documentation? 
+                <a href="{{site.issues}}" class="siimple-link" target="_blank">Suggest changes</a>.
+            </div> 
+            {{/if}}
+        </div>
+    </div>
+</div>
+

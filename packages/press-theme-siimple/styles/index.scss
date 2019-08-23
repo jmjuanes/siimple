@@ -1,0 +1,21 @@
+//Import dependencies
+@import "siimple/scss/_variables.scss";
+//@import "siimple-colors/scss/colors.scss";
+
+//Import variables
+@import "./variables.scss";
+
+//Import layout styles
+@import "./layout/home.scss";
+@import "./layout/documentation.scss";
+
+//Import  partials
+@import "./partials/analytics.scss";
+@import "./partials/navbar.scss";
+@import "./partials/footer.scss";
+@import "./partials/content.scss";
+
+//Import extra styles
+@import "./extra/code.scss";
+@import "./extra/search.scss";
+

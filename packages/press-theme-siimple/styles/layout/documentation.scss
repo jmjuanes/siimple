@@ -1,0 +1,118 @@
+//Documentation content class
+.#{$press-base}-documentation {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    //Content title
+    &-title {
+        display: block;
+        font-size: 30px;
+        font-weight: 600;
+        color: siimple-default-color("dark");
+        margin-bottom: 5px;
+    }
+    //Content description
+    &-description {
+        display: block;
+        font-size: 18px;
+        color: siimple-default-color("dark", "light");
+        margin-bottom: 25px;
+    }
+    //Content changes
+    &-changes {
+        display: block;
+        color: siimple-default-color("dark", "light");
+        font-size: 13px;
+        line-height: $siimple-default-line-height;
+    }
+    //Navigation links
+    &-navigation {
+        display: block;
+        width: 100%;
+        height: 40px;
+        transition: all 0.3s;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        &-next, 
+        &-prev {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            transition: color 0.3s;
+            height: 40px;
+            //line-height: $plume-navigation-height;
+            text-decoration: none !important;
+            &::after, &::before {
+                content: "";
+                width: 15px;
+                height: 3px;
+                position: absolute;
+                background-color: siimple-default-color("primary");
+                border-radius: 50px;
+                transition: all 0.3s;
+            }
+        }
+        &-next {
+            float: right;
+            padding-left: 0px;
+            padding-right: 35px;
+            text-align: right;
+            &::after {
+                top: 14px;
+                right: 10px;
+                transform: rotate(45deg);
+            }
+            &::before {
+                top: 23px;
+                right: 10px;
+                transform: rotate(-45deg);
+            }
+            &:hover::before, &:hover::after {
+                right: 5px;
+            }
+        }
+        &-prev {
+            float: left;
+            padding-left: 35px;
+            padding-right: 0px;
+            text-align: left;
+            &::after {
+                top: 14px;
+                left: 10px;
+                transform: rotate(-45deg);
+            }
+            &::before {
+                top: 23px;
+                left: 10px;
+                transform: rotate(45deg);
+            }
+            &:hover::before, &:hover::after {
+                left: 5px;
+            }
+        }
+        &-title {
+            display: block;
+            font-size: 13px;
+            font-weight: bold;
+            color: siimple-default-color("primary");
+            text-transform: uppercase;
+            height: 22px;
+            line-height: 22px;
+        }
+        &-detail {
+            display: block;
+            font-size: 13px;
+            color: siimple-default-color("dark", "light");
+            height: 18px;
+            line-height: 18px;
+        }
+    }
+}
+//Columns media
+@media (max-width: 600px) {
+    .#{$press-base}-documentation-column {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        width: 100%;
+    }
+}
+

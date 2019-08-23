@@ -1,0 +1,21 @@
+.#{$press-base}-home {
+    display: block;
+    //background-color: siimple-default-color("primary", "dark");
+    //color: $siimple-default-white;
+    //border-bottom: 2px solid siimple-default-color("light");
+    //padding-top: 70px;
+    //padding-bottom: 70px;
+    //margin-bottom: 20px;
+    color: siimple-default-color("primary");
+    background-color: siimple-default-color("light", "light");
+    //background-color: #ffffff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    //Home image
+    &-image {
+        max-width: 400px;
+    }
+}
+

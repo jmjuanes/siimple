@@ -1,0 +1,30 @@
+---
+layout: "documentation.html"
+homeImage: null
+showTitle: false
+---
+<!-- Header -->
+<div class="siimple-jumbotron siimple-jumbotron--large siimple-press-home" align="center">
+    <div class="siimple--mt-3 siimple--mb-3">
+        <div class="siimple-jumbotron-title">
+            <span class="siimple-brand">siimple</span>
+            <span class="siimple--text-normal" style="margin-left:-5px;">
+                {{ site.name }}
+            </span> 
+        </div>
+        <div class="siimple-jumbotron-subtitle siimple--text-normal">
+            {{ site.description }}
+        </div>
+        <div class="siimple--mt-3">
+            Current version: <strong>v{{ site.version }}</strong>
+        </div>
+    </div>
+    {{#if page.data.homeImage}}
+    <div class="siimple-press-home-image">
+        <img src="{{page.data.homeImage}}" width="100%">
+    </div>
+    {{/if}}
+</div>
+<!-- Content -->
+{{content}}
+

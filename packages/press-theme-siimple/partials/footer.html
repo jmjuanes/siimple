@@ -1,0 +1,47 @@
+<div class="siimple-footer siimple-press-footer siimple-footer--light siimple-footer--large">
+    <div class="siimple-grid-row">
+        <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col--sm-12">
+            <div class="siimple-footer-title">
+                <span class="siimple-brand">siimple</span>
+                {{#if site.name }}
+                <span class="siimple--text-normal" style="margin-left:-2px;">{{ site.name }}</span>
+                {{/if }}
+            </div>
+            {{#if site.version}}
+            <div class="siimple-footer-subtitle">
+                Current version: <strong>v{{ site.version }}</strong>
+            </div> 
+            {{/if }}
+        </div>
+        <div class="siimple-grid-col siimple-grid-col--8 siimple-grid-col--sm-12">
+            <div>
+                Designed and built with love by <strong>the siimple core team</strong>.<br> 
+                Released under the <strong>{{ site.license }}</strong>. 
+            </div>
+            {{#if site.footerLinks }}
+            <div class="siimple--mt-1">
+                {{#each site.footerLinks}}
+                <a href="{{ this.url }}" class="siimple-footer-link siimple-footer-link--inline" target="{{ this.target }}">
+                    {{ this.text }}
+                </a>
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+    </div>
+    <div class="siimple-footer-rule"></div>
+    <div class="siimple-grid-row">
+        <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col--sm-12" align="left">
+            {{{ site.copyright }}}
+        </div>
+        <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col--sm-hide" align="right">
+            <a href="{{ site.home }}" class="siimple-footer-link siimple-footer-link--inline" target="_blank">
+                siimple.xyz
+            </a>
+            <a href="{{ site.privacy }}" class="siimple-footer-link siimple-footer-link--inline" target="_blank">
+                Privacy Policy
+            </a>
+        </div>
+    </div>
+</div>
+

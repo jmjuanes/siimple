@@ -1,0 +1,20 @@
+<div class="siimple-navbar siimple-press-navbar siimple-navbar--large">
+    <a class="siimple-navbar-title" href="/index.html">
+        <span class="siimple-brand">siimple</span>
+        {{#if site.name }}
+        <span class="siimple--text-normal" style="margin-left:-2px">{{ site.name }}</span>
+        {{/if }}
+    </a>
+    {{#if site.version }}
+    <a class="siimple-navbar-subtitle">v{{ site.version }}</a>
+    {{/if}}
+    {{#if site.navbarLinks }}
+        {{#eachRev site.navbarLinks }}
+        <a class="siimple-navbar-item siimple--float-right siimple--display-sm-none" href="{{ this.url }}" target="{{ this.target }}">
+            {{ this.text }}
+        </a>
+        {{/eachRev}}
+    {{/if}}
+</div>
+
+
