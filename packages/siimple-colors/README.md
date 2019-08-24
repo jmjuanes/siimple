@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="500px" src="./art/header.svg">
+  <img width="500px" src="./header.svg">
 </p>
 
 # @siimple/colors
