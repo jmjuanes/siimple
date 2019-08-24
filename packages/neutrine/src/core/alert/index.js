@@ -4,7 +4,7 @@ import * as helpers from "../../helpers.js";
 import "@siimple/css/scss/components/alert.scss";
 
 //Alert component
-export function Alert (props) {
+export conts Alert = function (props) {
     //Clone the alert props 
     let newProps = helpers.filterProps(props, ["className", "color"]);
     //Initialize the class list
@@ -16,19 +16,19 @@ export function Alert (props) {
     //Append the provided class list 
     newProps.className = helpers.classNames(classList, props.className);
     return React.createElement("div", newProps, props.children);
-}
+};
 //Alert default props
 Alert.defaultProps = { 
     "color": "primary" 
 };
 
 //Alert title component 
-export function AlertTitle (props) {
+export const AlertTitle = function (props) {
     return helpers.createMergedElement("div", props, "siimple-alert-title");
-}
+};
 
 //Alert close component
-export function AlertClose (props) {
+export const AlertClose = function (props) {
     return helpers.createMergedElement("div", props, "siimple-alert-close");
-}
+};
 
