@@ -6,7 +6,7 @@ $neutrine-layout-toolbar-width: 300px;
 $neutrine-layout-toolbar-padding: 15px;
 
 //Neutrine layout toolbar style
-.neutrine-layout-toolbar {
+.neutrine-toolbar {
     display: block;
     position: fixed;
     width: calc(#{$neutrine-layout-toolbar-width} - 2 * #{$neutrine-layout-toolbar-padding});
