@@ -6,7 +6,7 @@ import * as helpers from "../../helpers.js";
 import "../styles/toolbar.scss";
 
 //Base class
-let baseClass = "neutrine-layout-toolbar";
+let baseClass = "neutrine-toolbar";
 
 //Export toolbar wrapper component
 export const ToolbarContainer = function (props) {
