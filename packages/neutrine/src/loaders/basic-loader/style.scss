@@ -1,0 +1,40 @@
+//Basic loader class
+.neutrine-basic-loader {
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        position: relative;
+        //margin-bottom: 45px;
+        animation: neutrine-basic-animation 1s linear infinite;
+}
+
+//Loader animation variables
+$neutrine-basic-loader-frames: 100% 87.5% 75% 62.5% 50% 37.5% 25% 12.5% 0%;
+$neutrine-basic-loader-opacity: 0.05 0.1 0.2 0.3 0.4 0.6 0.8 1.0;
+$neutrine-basic-loader-points: (
+    (0 -27px 0 0), 
+    (19px -19px 0 0),
+    (27px 0 0 0),
+    (19px 19px 0 0),
+    (0 27px 0 0),
+    (-19px 19px 0 0),
+    (-27px 0 0 0),
+    (-19px -19px 0 0)
+);
+
+//Loader circles animation
+@keyframes neutrine-basic-animation {
+    @for $i from 1 through 9 {
+        #{nth($neutrine-basic-loader-frames, $i)} {
+            $box-shadow: ();
+            @for $j from 1 through 8 {
+                $points: nth($neutrine-basic-loader-points, $j);
+                $opacity: nth($neutrine-basic-loader-opacity, ($i + $j - 2) % 8 + 1);
+                $box-shadow: append($box-shadow, $points rgba(#ffffff, $opacity), comma);
+            }
+            box-shadow: $box-shadow;
+        }
+    }
+}
+
