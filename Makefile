@@ -19,6 +19,7 @@ install:
 	@# Install node dependencies
 	-rm -rf node_modules
 	npm install
+	rm package-lock.json
 	${MAKE} bootstrap
 
 # Create a symlink in node_modules to packages
@@ -30,6 +31,7 @@ bootstrap:
 update:
 	-rm -r ./node_modules/\@siimple
 	npm install
+	rm package-lock.json
 	${MAKE} bootstrap
 
 # Upgrade all package.json files
