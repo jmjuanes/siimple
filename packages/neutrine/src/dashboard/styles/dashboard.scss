@@ -1,0 +1,190 @@
+//Import dependencies
+@import "@siimple/css/scss/variables.scss";
+
+//Dashboard variables
+$neutrine-layout-dashboard-sidebar-width: 250px;
+$neutrine-layout-dashboard-main-width: 860px;
+$neutrine-layout-dashboard-header-height: 52px;
+
+//Dashboard style
+.neutrine-layout-dashboard {
+    display: block;
+    min-height: calc(100% - 66px);
+    position: relative;
+    background-color: siimple-default-color("white");
+    padding-left: $neutrine-layout-dashboard-sidebar-width;
+    padding-top: 66px;
+    transition: padding-left 0.3s;
+    //Light dashboard
+    &--light {
+        background-color: siimple-default-color("light");
+    }
+    //Hide sidebar
+    &--hide-sidebar {
+        padding-left: 0px;
+    }
+    &--hide-sidebar &-sidebar {
+        left: -$neutrine-layout-dashboard-sidebar-width;
+    }
+    //Collapse sidebar
+    &--collapse-sidebar {
+        padding-left: 80px;
+    }
+    &--collapse-sidebar &-sidebar {
+        width: 50px !important;
+    }
+    &--collapse-sidebar &-sidebar-item {
+        width: 0px;
+        padding-right: 0px;
+    }
+    //Dashboard sidebar
+    &-sidebar {
+        display: block;
+        position: absolute;
+        width: calc(#{$neutrine-layout-dashboard-sidebar-width} - 30px);
+        height: calc(100% - 66px - 40px);
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        transition: all 0.3s;
+        top: 66px;
+        left: 0px;
+        //transition: left 0.3s;
+        //Sidebar item
+        &-item {
+            display: block;
+            padding-left: 50px;
+            padding-right: 10px;
+            min-height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            margin-bottom: 5px;
+            border-radius: 3px;
+            transition: all 0.3s;
+            background-position: 13px 8px;
+            background-repeat: no-repeat;
+            background-size: 24px 24px;
+            cursor: pointer;
+            text-overflow: clip;
+            overflow: hidden;
+            position: relative;
+            color: siimple-default-color("dark","light");
+            //Hover link
+            &:hover {
+                background-color: rgba(siimple-default-color("primary"), 0.1);
+            }
+            //Active link
+            &--active {
+                background-color: rgba(siimple-default-color("primary"), 0.2) !important;
+                color: siimple-default-color("primary");
+                font-weight: 600;
+            }
+            //Link icons
+            &-icon {
+                position: absolute;
+                left: 13px;
+                font-size: 24px;
+                line-height: 40px;
+                font-weight: normal !important;
+            }
+        }
+        //Sidebar separator
+        &-separator {
+            display: block;
+            height: 1px;
+            background-color: siimple-default-color("light");
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    //Dashboard header 
+    &-header {
+        display: block;
+        width: calc(100% - 30px);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 34px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: siimple-default-color("white");
+        border-bottom: 2px solid siimple-default-color("light");
+        //Header title and subtitle
+        &-title,
+        &-subtitle {
+            display: block;
+            float: left;
+            height: 34px;
+            line-height: 34px;
+            font-size: 20px;
+            padding-right: 3px;
+        }
+        //Header title
+        &-title {
+            font-weight: bold;
+            color: siimple-default-color("dark");
+        }
+        //Header subtitle
+        &-subtitle {
+            color: siimple-default-color("dark", "light");
+        }
+        //Header toggle icon
+        &-toggle {
+            display: block;
+            float: left;
+            height: 30px;
+            width: 30px;
+            padding-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            cursor: pointer;
+            color: siimple-default-color("dark", "light");
+            &:hover {
+                color: siimple-default-color("dark");
+            }
+            transition: color 0.3s;
+        }
+    }
+    //Dashboard Content
+    &-content {
+        display: block;
+        max-width: calc(#{$neutrine-layout-dashboard-main-width} - 30px);
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        //min-height: 100%;
+        //Fluid content
+        &--fluid {
+            max-width: calc(100% - 30px);
+        }
+        //Fixed height
+        &--fixed {
+            //width: 100%;
+            max-width: calc(100% - 30px);
+            height: calc(100% - 96px);
+            //padding: 0px !important;
+        }
+    }
+    //Dashboard footer
+    &-footer {
+        display: block;
+        max-width: calc(#{$neutrine-layout-dashboard-main-width} - 20px);
+        border-top: 1px solid siimple-default-color("light");
+        padding-top: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: siimple-default-color("dark", "light");
+        font-size: 14px;
+    }
+}
+
