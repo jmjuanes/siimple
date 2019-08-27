@@ -7,7 +7,7 @@ import * as helpers from "../../helpers.js";
 import "../styles/dashboard.scss";
 
 //Base class
-let baseClass = "neutrine-layout-dashboard";
+let baseClass = "neutrine-dashboard";
 
 //Export dashboard component
 export const Dashboard = function (props) {
