@@ -1,0 +1,15 @@
+<div class="siimple-press-documentation-navigation">
+{{#if page.previous}}
+    <a class="siimple-press-documentation-navigation-prev" href="{{page.previous.url}}">
+        <div class="siimple-press-documentation-navigation-title">Previous</div>
+        <div class="siimple-press-documentation-navigation-detail">{{page.previous.data.title}}</div>
+    </a>
+{{/if}}
+{{#if page.next}}
+    <a class="siimple-press-documentation-navigation-next" href="{{page.next.url}}">
+        <div class="siimple-press-documentation-navigation-title">Next</div>
+        <div class="siimple-press-documentation-navigation-detail">{{page.next.data.title}}</div>
+    </a>
+{{/if}}
+</div>
+
