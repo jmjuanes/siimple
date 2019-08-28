@@ -11,10 +11,16 @@
 //Import  partials
 @import "./partials/analytics.scss";
 @import "./partials/navbar.scss";
+@import "./partials/navigation.scss";
 @import "./partials/footer.scss";
-@import "./partials/content.scss";
 
 //Import extra styles
 @import "./extra/code.scss";
 @import "./extra/search.scss";
+
+//Content class
+.#{$press-base}-content {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
 
