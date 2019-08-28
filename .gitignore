@@ -5,5 +5,8 @@ node_modules
 *.swp
 package-lock.json
 packages/*/dist
-packages/*/site
+packages/*/docs/public
+
+# Custom paths
+packages/siimple-colors/docs/data
 
