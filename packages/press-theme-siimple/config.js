@@ -37,7 +37,7 @@ module.exports = {
     //Plugins
     "plugins": [
         {
-            "plugin": path.resolve(__dirname, "../../packages/press-plugin-sass/index.js"),
+            "plugin": "@siimple/press-plugin-sass",
             "source": path.join(__dirname, "styles", "index.scss"),
             "options": {
                 "includePaths": [path.join(process.cwd(), "node_modules")]
@@ -45,13 +45,13 @@ module.exports = {
             "target": "css/siimple-press.css"
         },
         {
-            "plugin": path.resolve(__dirname, "../../packages/press-plugin-copyfiles/index.js"),
+            "plugin": "@siimple/press-plugin-copyfiles",
             //"plugin": "@siimple/press-plugin-copyfiles",
             "files": path.join(path.dirname(require.resolve("siimple")), "siimple.min.css"),
             "target": "css/"
         },
         {
-            "plugin": path.resolve(__dirname, "../../packages/press-plugin-copyfiles/index.js"),
+            "plugin": "@siimple/press-plugin-copyfiles",
             "files": path.join(__dirname, "scripts", "siimple-press-analytics.js"),
             "target": "js/"
         }
