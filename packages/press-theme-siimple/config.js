@@ -47,7 +47,7 @@ module.exports = {
         {
             "plugin": "@siimple/press-plugin-copyfiles",
             //"plugin": "@siimple/press-plugin-copyfiles",
-            "files": path.join(path.dirname(require.resolve("siimple")), "siimple.min.css"),
+            "files": path.join(path.dirname(require.resolve("@siimple/css")), "siimple.min.css"),
             "target": "css/"
         },
         {
