@@ -1,7 +1,5 @@
 ---
-layout: "documentation.html"
-homeImage: null
-showTitle: false
+layout: "default.html"
 ---
 <!-- Header -->
 <div class="siimple-jumbotron siimple-jumbotron--large siimple-press-home" align="center">
@@ -19,12 +17,11 @@ showTitle: false
             Current version: <strong>v{{ site.version }}</strong>
         </div>
     </div>
-    {{#if page.data.homeImage}}
     <div class="siimple-press-home-image">
-        <img src="{{page.data.homeImage}}" width="100%">
+        <img src="/images/hero.svg" width="100%">
     </div>
-    {{/if}}
 </div>
 <!-- Content -->
 {{content}}
+{{> navigation.html}}
 
