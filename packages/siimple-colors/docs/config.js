@@ -4,7 +4,7 @@ let pkg = require("../package.json");
 module.exports = {
     "source": __dirname,
     "target": path.join(__dirname, "public"),
-    "theme": "@siimple/press/packages/press-theme-siimple/config.js",
+    "theme": "@siimple/press-theme-siimple/config.js",
     "site": {
         "name": "colors",
         "description": "An elegant and minimalistic color palette for UI design",
@@ -33,7 +33,7 @@ module.exports = {
     //Plugins
     "plugins": [
         {
-            "plugin": "@siimple/press/packages/press-plugin-sass/index.js",
+            "plugin": "@siimple/press-plugin-sass",
             "source": path.join(__dirname, "styles", "index.scss"),
             "target": "/css/siimple-colors-docs.css"
         }
