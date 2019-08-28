@@ -27,11 +27,12 @@ build:
 docs:
 	@# Building documentation site
 	mkdir -p ./docs/data && cp ./colors.json ./docs/data/
-	./node_modules/.bin/siimplepress --config docs/config.js
+	cd ../../ && ./node_modules/@siimple/press/cli.js --config ./packages/siimple-colors/docs/config.js
 	@# Copying assets files
 	#mkdir -p ./docs/_site/assets/css
 	#${NODE_BIN}/sass ./docs/_sass/main.scss ./docs/_site/assets/css/main.css --load-path=./bower_components/
 	#cp ./bower_components/siimple/dist/siimple.min.css ./docs/_site/assets/css/
 	cp ${OUTPUT_MIN} ./docs/public/css/
 	cp -R ./docs/images ./docs/public/
+	cp header.svg ./docs/public/images/hero.svg
 
