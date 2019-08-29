@@ -1,5 +1,5 @@
 //Import dependencies
-@import "siimple/scss/_variables.scss";
+@import "@siimple/css/scss/variables.scss";
 
 //Import partials
 @import "./categories.scss";
@@ -11,7 +11,7 @@
     &-demo {
         display: block;
         padding: 10px;
-        border: 2px solid siimple-default-color("light", "light");
+        border: 2px solid siimple-default-color("light");
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         margin-bottom: 0px;
@@ -24,7 +24,7 @@
         border-bottom-right-radius: 5px;
         margin-top: 0px !important;
         margin-bottom: 30px !important;
-        background-color: siimple-default-color("light", "light");
+        background-color: siimple-default-color("light");
         color: siimple-default-color("dark");
         overflow-x: auto;
         padding: 15px;
