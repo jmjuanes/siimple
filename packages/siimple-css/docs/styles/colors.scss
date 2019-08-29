@@ -24,17 +24,6 @@
             content: quote(inspect(siimple-default-color($color, "base")));
         }
     }
-    //Legacy colors
-    @each $color in $siimple-legacy-colors {
-        $color-hex: siimple-legacy-color($color, "base");
-        &-legacy--#{$color} {
-            background-color: $color-hex;
-            color: siimple-legacy-color($color, "over");
-        }
-        &-legacy--#{$color}::after {
-            content: quote(inspect($color-hex));
-        }
-    }
     &-wrapper {
         margin-bottom: 15px;
         margin-top: 20px;
