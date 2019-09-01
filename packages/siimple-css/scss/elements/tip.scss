@@ -116,5 +116,26 @@
         transform: rotate(45deg);
         left: -22px;
     }
+    //Check tip icon
+    &--check::after,
+    &--check::before {
+        content: "";
+        position: absolute;
+        background-color: $siimple-default-white;
+        width: 5px;
+        border-radius: 2px;
+    }
+    &--check::after {
+        transform: rotate(45deg);
+        left: -20px;
+        height: 20px;
+        top: 15px;
+    }
+    &--check::before {
+        transform: rotate(-45deg);
+        left: -28px;
+        height: 12px;
+        top: 22px;
+    }
 }
 
