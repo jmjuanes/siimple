@@ -14,30 +14,18 @@
     position: relative;
     //width: calc(100% - 25px - 20px - 5px);
     border-left-style: solid;
-    border-left-width: 30px;
+    border-left-width: 40px;
     border-radius: $siimple-default-border-radius;
-    padding-top: 10px;
-    padding-right: 10px !important;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-right: 15px !important;
+    padding-bottom: 15px;
     padding-left: 15px !important;
-    margin-bottom: 10px;
+    margin-bottom: $siimple-default-margin-bottom;
     //background-color: siimple-default-color("light");
     //font-family: $siimple-default-text-font;
     font-size: $siimple-default-font-size;
     color: $siimple-default-color;
     line-height: $siimple-default-line-height;
-    //Tip circle
-    &::before {
-        position: absolute;
-        top: 10px;
-        left: -12px;
-        width: 20px;
-        height: 20px;
-        border-radius: 100px;
-        color: $siimple-default-white;
-        text-align: center;
-        line-height: 20px;
-    }
     //Tip colors
     @each $color in $siimple-default-basic-colors {
         &#{&}--#{$color} {
@@ -53,9 +41,29 @@
     &--question::before {
         content: "?";
     }
-    //Heart tip
+    //Heart tip icon
+    &--heart::before,
+    &--heart::after {
+        content: "";
+        position: absolute;
+        top: 17px;
+        background-color: $siimple-default-white;
+        border-radius: 100px 100px 0 0;
+        width: 10px;
+        height: 15px;
+    }
     &--heart::before {
-        content: "\2764";
+        transform: rotate(-45deg);
+        left: -27px;
+    }
+    &--heart::after {
+        transform: rotate(45deg);
+        left: -23px;
+    }
+    //Info tip
+    &--info::before {
+        content: "i";
+        font-family: monospace;
     }
 }
 
