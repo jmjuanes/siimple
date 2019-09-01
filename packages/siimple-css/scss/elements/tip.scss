@@ -8,25 +8,20 @@
 @import "../variables.scss";
 @import "../functions.scss";
 
-//Tip variables
-$siimple-tip-padding-left: 25px;
-$siimple-tip-padding-right: 20px;
-$siimple-tip-border: 5px;
-
 //Tip class
 .#{$siimple-prefix}-tip {
     display: block;
     position: relative;
-    width: calc(100% - #{$siimple-tip-padding-left} - #{$siimple-tip-padding-right} - #{$siimple-tip-border});
+    //width: calc(100% - 25px - 20px - 5px);
     border-left-style: solid;
-    border-left-width: $siimple-tip-border;
+    border-left-width: 30px;
     border-radius: $siimple-default-border-radius;
     padding-top: 10px;
-    padding-right: $siimple-tip-padding-right !important;
+    padding-right: 10px !important;
     padding-bottom: 10px;
-    padding-left: $siimple-tip-padding-left !important;
-    margin-bottom: $siimple-default-margin-bottom;
-    background-color: siimple-default-color("light");
+    padding-left: 15px !important;
+    margin-bottom: 10px;
+    //background-color: siimple-default-color("light");
     //font-family: $siimple-default-text-font;
     font-size: $siimple-default-font-size;
     color: $siimple-default-color;
@@ -44,12 +39,10 @@ $siimple-tip-border: 5px;
         line-height: 20px;
     }
     //Tip colors
-    @each $color in $siimple-default-colors {
+    @each $color in $siimple-default-basic-colors {
         &#{&}--#{$color} {
+            background-color: lighten(siimple-default-color($color, "light"), 8%);
             border-left-color: siimple-default-color($color);
-        }
-        &#{&}--#{$color}::before {
-            background-color: siimple-default-color($color);
         }
     }
     //Exclamation tip
