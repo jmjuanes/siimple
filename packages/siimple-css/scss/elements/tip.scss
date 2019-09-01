@@ -34,13 +34,17 @@
         }
     }
     //Exclamation tip icon
-    &--exclamation::before,
-    &--exclamation::after {
-        position: absolute;
-        //opacity: 0.6;
-    }
     &--exclamation::before {
         content: "!";
+    }
+    //Question tip
+    &--question::before {
+        content: "?";
+    }
+    //Common question and exclamation styles
+    &--exclamation::before,
+    &--question::before {
+        position: absolute;
         color: $siimple-default-white;
         width: 20px;
         left: -30px;
@@ -50,18 +54,16 @@
         //font-family: monospace;
         //font-size: 16px;
     }
-    &--exclamation::after {
+    &--exclamation::after,
+    &--question::after {
         content: "";
+        position: absolute;
         border: 2px solid $siimple-default-white;
         border-radius: 100px;
         width: 20px;
         height: 20px;
         top: 15px;
         left: -32px;
-    }
-    //Question tip
-    &--question::before {
-        content: "?";
     }
     //Heart tip icon
     &--heart::before,
