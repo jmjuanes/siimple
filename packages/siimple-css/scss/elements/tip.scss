@@ -84,7 +84,7 @@
         transform: rotate(45deg);
         left: -23px;
     }
-    //Info tip
+    //Info tip icons
     &--info::before {
         content: "i";
         color: $siimple-default-white;
@@ -96,6 +96,25 @@
         text-align: center;
         font-weight: bold;
         font-size: 20px;
+    }
+    //Cross tip icon
+    &--cross::after,
+    &--cross::before {
+        content: "";
+        position: absolute;
+        background-color: $siimple-default-white;
+        width: 5px;
+        height: 20px;
+        border-radius: 2px;
+        top: 16px;
+    }
+    &--cross::after {
+        transform: rotate(-45deg);
+        left: -22px;
+    }
+    &--cross::before {
+        transform: rotate(45deg);
+        left: -22px;
     }
 }
 
