@@ -85,7 +85,15 @@
     //Info tip
     &--info::before {
         content: "i";
+        color: $siimple-default-white;
         font-family: monospace;
+        position: absolute;
+        top: 15px;
+        left: -30px;
+        width: 20px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
     }
 }
 
