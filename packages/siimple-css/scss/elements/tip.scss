@@ -33,9 +33,31 @@
             border-left-color: siimple-default-color($color);
         }
     }
-    //Exclamation tip
+    //Exclamation tip icon
+    &--exclamation::before,
+    &--exclamation::after {
+        position: absolute;
+        //opacity: 0.6;
+    }
     &--exclamation::before {
         content: "!";
+        color: $siimple-default-white;
+        width: 20px;
+        left: -30px;
+        top: 16px;
+        text-align: center;
+        font-weight: 600;
+        //font-family: monospace;
+        //font-size: 16px;
+    }
+    &--exclamation::after {
+        content: "";
+        border: 2px solid $siimple-default-white;
+        border-radius: 100px;
+        width: 20px;
+        height: 20px;
+        top: 15px;
+        left: -32px;
     }
     //Question tip
     &--question::before {
