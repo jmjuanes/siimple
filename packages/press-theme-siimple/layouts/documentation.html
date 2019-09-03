@@ -1,5 +1,7 @@
 ---
 layout: "default.html"
+showTitle: True
+showNavigation: True
 ---
 <div>
     <div class="siimple-grid-row">
@@ -16,10 +18,12 @@ layout: "default.html"
             </div>
         </div>
         <div class="siimple-grid-col siimple-grid-col--9 siimple-grid-col-sm--12 siimple-press-column">
+            {{#if page.data.showTitle }}
             <div align="left">
                 <div class="siimple-press-documentation-title">{{{page.data.title}}}</div>
                 <div class="siimple-press-documentation-description">{{{page.data.description}}}</div>
             </div>
+            {{/if}}
             {{ content }}
             {{#if site.issues}}
             <div class="siimple-press-documentation-changes">
@@ -27,7 +31,9 @@ layout: "default.html"
                 <a href="{{site.issues}}" class="siimple-link" target="_blank">Suggest changes</a>.
             </div> 
             {{/if}}
+            {{#if page.data.showNavigation }}
             {{> navigation.html}}
+            {{/if}
         </div>
     </div>
 </div>
