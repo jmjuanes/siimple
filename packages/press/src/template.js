@@ -1,3 +1,4 @@
+let path = require("path");
 let handlebars = require("handlebars");
 
 //Commpon handlebars helpers
@@ -37,6 +38,10 @@ handlebars.registerHelper({
     //Join elements of an array to a string
     "join": function (array, separator) {
         return array.join(separator);
+    },
+    //Join two paths
+    "pathJoin": function (from, to) {
+        return path.join(from, to);
     },
     //Each reverse
     "eachRev": function (context) {
