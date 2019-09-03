@@ -25,6 +25,7 @@ module.exports = function (config, options) {
         "compiler": template.compile,
         "layouts": {},
         "pages": [],
+        "firstPages": {},
         "partials": {},
         "assets": [],
         "plugins": [],
@@ -144,6 +145,12 @@ module.exports = function (config, options) {
     if (typeof context.config.pages.sort === "function") {
         context.pages.sort(context.config.pages.sort);
     }
+    //Get first pages of each category
+    context.pages.forEach(function (item, index) {
+        if (typeof context.firstPages[item.categoriesStr] === "undefined") {
+            context.firstPages[item.categoriesStr] = index;
+        }
+    });
     //Save theme partials
     //if (config.theme !== null) {
     //    Object.assign(config.partials, content.readPartials(path.join(config.theme, defaults.partials)));
@@ -175,6 +182,7 @@ module.exports = function (config, options) {
             "env": context.config.env,
             "page": Object.assign({}, item, {
                 "data": Object.assign({}, itemLayout.data, item.data),
+                "isFirst": context.firstPages[item.categoriesStr] === index,
                 "next": null,
                 "previous": null
             }),
