@@ -1,8 +1,11 @@
 <div class="siimple-breadcrumb siimple--mb-2">
     <a class="siimple-breadcrumb-item" href="/">Home</a>
+    {{#if (eq site.home false) }}
+    <a class="siimple-breadcrumb-item" href="{{ base }}">siimple@{{ site.name }}</a>
     {{#each page.categories}}
     <a class="siimple-breadcrumb-item">{{capitalize (replace this "-" " ")}}</a>
     {{/each}}
     <a class="siimple-breadcrumb-item">{{ page.data.title }}</a>
+    {{/if }}
 </div>
 
