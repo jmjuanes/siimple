@@ -169,6 +169,7 @@ module.exports = function (config, options) {
         let itemLayout = getLayout(item.data.layout);
         let templateOptions = {
             "site": context.config.site,
+            "base": context.config.base,
             "data": context.data,
             "pages": context.pages,
             "env": context.config.env,
