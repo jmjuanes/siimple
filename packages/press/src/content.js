@@ -99,7 +99,8 @@ module.exports.readPages = function (context, folder) {
         log.info("Reading page: " + filePath);
         //Read and save the page data
         pages.push(readFile(filePath, {
-            "categories": categories
+            "categories": categories,
+            "categoriesStr": categories.join("/")
         }));
     });
     //Return the list of pages of this folder
