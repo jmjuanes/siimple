@@ -1,14 +1,7 @@
 ---
-layout: "default"
+layout: "default.html"
 ---
 <div>
-    <div class="siimple-breadcrumb siimple--mb-2">
-        <a class="siimple-breadcrumb-item" href="/">Home</a>
-        {{#each page.categories}}
-        <a class="siimple-breadcrumb-item">{{capitalize (replace this "-" " ")}}</a>
-        {{/each}}
-        <a class="siimple-breadcrumb-item">{{ page.data.title }}</a>
-    </div>
     <div class="siimple-grid-row">
         <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col-sm--12">
             <div class="siimple-list siimple-list--hover">
