@@ -136,7 +136,7 @@ module.exports = function (config, options) {
         }
         //Build the page output path and save the page
         page.url = path.normalize(path.join(context.config.base, page.categories.join("/"), page.name + page.extension));
-        page.path = path.normalize(path.join(context.targetPath, page.url));
+        page.path = path.normalize(path.join(context.targetPath, page.categories.join("/"), page.name + page.extension));
         //Return the parsed page
         return page;
     });
