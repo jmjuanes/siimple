@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Get started",
+        "links": [
+            {
+                "title": "Documentation",
+                "description": "Read the official docs of <strong>siimple</strong>",
+                "url": "https://docs.siimple.xyz"
+            }
+        ]
+    },
+    {
+        "title": "Community",
+        "links": [
+            {
+                "title": "GitHub", 
+                "description": "Our repositories on GitHub", 
+                "url": "https://github.com/siimple"
+            },
+            {
+                "title": "Twitter", 
+                "description": "Follow <strong>@siimplecss</strong> on Twitter", 
+                "url": "https://twitter.com/siimplecss"
+            },
+            {
+                "title": "Gitter", 
+                "description": "Join our chat room on Gitter", 
+                "url": "https://gitter.im/siimple"
+            }
+        ]
+    },
+    {
+        "title": "Support",
+        "links": [
+            {
+                "title": "Report bug",
+                "description": "Create a report for a bug",
+                "url": "https://github.com/siimple/siimple/issues/new?template=BUG_REPORT.md"
+            },
+            {
+                "title": "Request a feature",
+                "description": "Suggest an idea for <strong>siimple</strong>",
+                "url": "https://github.com/siimple/siimple/issues/new?template=FEATURE_REQUEST.md"
+            }
+        ]
+    }
+]

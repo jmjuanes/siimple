@@ -1,0 +1,16 @@
+<div class="siimple-grid-row">
+    <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col--sm-12">
+        <div class="theme-footer-title siimple-brand">{{ site.title }}</div>
+    </div>
+    {% for group in site.data.footer %}
+    <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col--sm-12">
+        <div class="theme-footer-group">{{ group.title }}</div>
+        {% for link in group.links %}
+        <a href="{{ link.url }}" class="theme-footer-link" target="_blank">{{ link.title }}
+            <div class="theme-footer-link-description">{{ link.description }}</div>
+        </a>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+

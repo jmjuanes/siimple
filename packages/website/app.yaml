@@ -1,0 +1,26 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+service: default
+
+handlers:
+- url: /
+  secure: always
+  static_files: _site/index.html
+  upload: _site/index.html
+- url: /docs
+  secure: always
+  static_files: _site/documentation.html
+  upload: _site/documentation.html
+- url: /documentation
+  secure: always
+  static_files: _site/documentation.html
+  upload: _site/documentation.html
+- url: /documentation/.*
+  secure: always
+  static_files: _site/documentation.html
+  upload: _site/documentation.html
+- url: /
+  static_dir: _site
+  secure: always
+

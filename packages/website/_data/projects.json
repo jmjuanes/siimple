@@ -1,0 +1,13 @@
+{
+    "siimple": {
+        "name": "siimple",
+        "description": "Minimal and responsive CSS Framework for flat and clean designs.",
+        "url": ""
+    },
+    "siimple-colors": {
+        "name": "siimple colors",
+        "description": "An elegant and minimalistic color palette for UI design.",
+        "url": ""
+    }
+}
+

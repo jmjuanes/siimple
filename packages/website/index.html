@@ -1,0 +1,186 @@
+---
+layout: "default"
+title: "siimple: minimal and responsive CSS Framework for flat and clean designs"
+root: "./"
+---
+<!-- Icons -->
+<link rel="stylesheet" href="/assets/css/icons.css">
+<title>{{ page.title }}</title>
+<div class="siimple-jumbotron siimple-jumbotron--large siimple--color-primary siimple--bg-grey-light" align="center">
+    <div class="docs-welcome-title1">
+        A <strong>flat</strong>, <strong>minimal</strong> and <strong>different</strong> CSS framework.</div>
+    <div class="docs-welcome-title2">
+        That is <strong class="siimple-brand">siimple</strong>.
+    </div>
+    <div class="docs-welcome-buttons">
+        <a href="https://docs.siimple.xyz" class="siimple-btn siimple--color-white siimple--bg-primary">
+            Get started
+        </a>
+        <a href="https://github.com/siimple/siimple/releases" class="siimple-btn siimple--color-white siimple--bg-primary">
+            Download
+        </a>
+    </div>
+    <div class="docs-welcome-detail">Current version: <strong>{{ site.version }}</strong></div>
+</div>
+<div class="siimple-content siimple-content--large siimple--py-5" align="center">
+    <div class="siimple--py-4">
+        <div class="siimple-h2 siimple--mb-2 siimple--text-normal">
+            Why <strong class="siimple-brand">siimple</strong>?
+        </div>
+        <div class="siimple-paragraph siimple-paragraph--lead">
+            Build responsive, flat and clean web designs with the minimalist and flexible <strong>siimple</strong> CSS framework. 
+        </div>
+        <div class="siimple-grid-row">
+            {% for feature_id in site.data.features.all %}
+            {% assign feature = site.data.features[feature_id] %} 
+            <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col-sm--12 website-feature">
+                <div class="website-feature-image website-icons website-icons-{{ feature_id }}"></div>
+                <div class="website-feature-title">{{ feature.title }}</div>
+                <div class="website-feature-description">{{ feature.description }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="siimple-content siimple-content--large siimple--py-5">
+    <div align="center">
+        <div class="siimple-h3 siimple--mb-2 siimple--text-normal">
+            So <strong>siiiimple</strong> to use!
+        </div>
+        <div class="siimple-paragraph siimple-paragraph--lead">
+            <strong>siimple</strong> provides intuitive classes to style your elements.
+        </div>
+    </div>
+    <div class="siimple-grid-row">
+        <div class="siimple-grid-col siimple-grid-col--5 siimple-grid-col--sm-12">
+            <div class="siimple-field">
+                <div class="siimple-field-label">Your email</div>
+                <input type="email" class="siimple-input siimple-input--fluid" value="bob.smith@email.com">
+                <div class="siimple-field-helper">Provide a valid email</div>
+            </div>
+            <div class="siimple-field">
+                <div class="siimple-field-label">Your message</div>
+                <textarea class="siimple-textarea siimple-textarea--fluid" rows="4">Siimple is awesome!</textarea>
+            </div>
+            <div class="siimple-field">
+                <span class="siimple-btn siimple-btn--success">Submit</span>
+                <span class="siimple-btn siimple-btn--error">Cancel</span>
+            </div>
+        </div>
+        <div class="siimple-grid-col siimple-grid-col--7 siimple-grid-col--sm-12">
+<pre class="siimple-pre theme-code theme-code--small">
+<span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-field"</span><span class="b">&gt;</span>
+    <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-field-label"</span><span class="b">&gt;</span>Your email<span class="b">&lt;/div&gt;</span>
+        <span class="b">&lt;input </span><span class="y">type=</span><span class="g">"email"</span> <span class="y">class=</span><span class="g">"siimple-input siimple-input--fluid"</span> <span class="y">value=</span><span class="g">"bob.smith@email.com"</span><span class="b">&gt;</span>
+        <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-field-helper"</span><span class="b">&gt;</span>Provide a valid email<span class="b">&lt;/div&gt;</span>
+    <span class="b">&lt;/div&gt;</span>
+    <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-field"</span><span class="b">&gt;</span>
+        <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-field-label"</span><span class="b">&gt;</span>Your message<span class="b">&lt;/div&gt;</span>
+        <span class="b">&lt;textarea </span><span class="y">class=</span><span class="g">"siimple-textarea siimple-textarea--fluid"</span> <span class="y">rows=</span><span class="g">"4"</span><span class="b">&gt;</span>Siimple is awesome!<span class="b">&lt;/textarea&gt;</span>
+    <span class="b">&lt;/div&gt;</span>
+    <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-field"</span><span class="b">&gt;</span>
+        <span class="b">&lt;span </span><span class="y">class=</span><span class="g">"siimple-btn siimple-btn--success"</span><span class="b">&gt;</span>Submit<span class="b">&lt;/span&gt;</span>
+        <span class="b">&lt;span </span><span class="y">class=</span><span class="g">"siimple-btn siimple-btn--error"</span><span class="b">&gt;</span>Cancel<span class="b">&lt;/span&gt;</span>
+    <span class="b">&lt;/div&gt;</span>
+<span class="b">&lt;/div&gt;</span>
+</pre>
+        </div>
+    </div>
+</div>
+<div class="siimple-content siimple-content--large siimple--py-5">
+    <div align="center">
+        <div class="siimple-h3 siimple--mb-2 siimple--text-normal">
+            With a flexible <strong>grid</strong> system!
+        </div>
+        <div class="siimple-paragraph siimple-paragraph--lead">
+            Build responsive layouts using our twelve-columns grid system.
+        </div>
+    </div>
+    <div class="siimple-grid-row">
+        <div class="siimple-grid-col siimple-grid-col--7 siimple-grid-col--sm-12">
+<pre class="siimple-pre theme-code theme-code--small">
+<span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-grid"</span><span class="b">&gt;</span>
+    <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-grid-row"</span><span class="b">&gt;</span>
+        <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-grid-col siimple-grid-col--5"</span><span class="b">&gt;</span>5<span class="b">&lt;/div&gt;</span>
+        <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-grid-col siimple-grid-col--7"</span><span class="b">&gt;</span>7<span class="b">&lt;/div&gt;</span>
+    <span class="b">&lt;/div&gt;</span>
+    <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-grid-row"</span><span class="b">&gt;</span>
+        <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-grid-col siimple-grid-col--8"</span><span class="b">&gt;</span>8<span class="b">&lt;/div&gt;</span>
+        <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-grid-col siimple-grid-col--4"</span><span class="b">&gt;</span>4<span class="b">&lt;/div&gt;</span>
+    <span class="b">&lt;/div&gt;</span>
+<span class="b">&lt;/div&gt;</span>
+</pre>
+        </div>
+        <div class="siimple-grid-col siimple-grid-col--5 siimple-grid-col--sm-12">
+            <div class="siimple-grid example-grid">
+                <div class="siimple-grid-row">
+                    <div class="siimple-grid-col siimple-grid-col--5">
+                        <div class="example-grid-content">5</div>
+                    </div>
+                    <div class="siimple-grid-col siimple-grid-col--7">
+                        <div class="example-grid-content">7</div>
+                    </div>
+                </div>
+                <div class="siimple-grid-row">
+                    <div class="siimple-grid-col siimple-grid-col--8">
+                        <div class="example-grid-content">8</div>
+                    </div>
+                    <div class="siimple-grid-col siimple-grid-col--4">
+                        <div class="example-grid-content">4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="siimple-content siimple-content--large siimple--py-5 siimple--mb-4" align="center">
+    <div class="siimple-h3 siimple--mb-2 siimple--text-normal">
+        Let's get started with <strong class="siimple-brand">siimple</strong>
+    </div>
+    <div class="siimple-paragraph siimple-paragraph--lead">
+        You can get started with <strong>siimple</strong> reading the official documentation: 
+        learn how to add <strong>siimple</strong> to your project and discover how to style your buttons, forms and more!
+    </div>
+    <div align="center">
+        <a href="https://docs.siimple.xyz" class="siimple-btn siimple-btn--primary">
+            Read the documentation
+        </a>
+    </div>
+</div>
+<div class="siimple-content siimple-content--large siimple--bg-grey-light siimple--py-5">
+    <div align="center">
+        <div class="website-icons website-icons-announcement"></div>
+    </div>
+    <div class="siimple-h3 siimple--mb-2 siimple--text-normal" align="center">
+        What people say about <strong class="siimple-brand">siimple</strong>?
+    </div>
+    <div class="siimple-grid-row siimple--py-4">
+        {% for review in site.data.reviews limit:3 %}
+        <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col--sm-12 docs-reviews-column">
+            <div class="siimple-h5">{{ review.site }}</div>
+            <div class="siimple-paragraph docs-reviews-content">
+                <strong class="docs-reviews-quote">&#8220;</strong> {{ review.content }} <strong class="docs-reviews-quote">&#8221;</strong>
+            </div>
+            <a href="{{ review.url }}" class="siimple-btn siimple-btn--primary docs-reviews-btn" target="_blank">
+                Read more <strong>&raquo;</strong>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="siimple-content siimple-content--large siimple--py-5" align="center">
+    <div class="siimple--py-4">
+        <div class="siimple-h3 siimple--mb-2 siimple--text-normal">
+            Contribute to <strong class="siimple-brand">siimple</strong>
+        </div>
+        <div class="siimple-paragraph siimple-paragraph--lead">
+            Contribute to our repository on <strong>GitHub</strong>. Bug reports, improvements and new ideas are always welcome!
+        </div>
+        <div>
+            <a href="https://github.com/siimple/siimple" class="siimple-btn siimple-btn--primary" target="_blank">
+                Contribute to <strong>siimple</strong>
+            </a>
+        </div>
+    </div>
+</div>
+

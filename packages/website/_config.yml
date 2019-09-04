@@ -1,0 +1,32 @@
+## Site settings
+##############################################
+title: "siimple"
+description: "The homepage of <strong>siimple</strong>."
+version: "3.3.0"
+author: "Josemi Juanes"
+url: "https://www.siimple.xyz"
+license: "MIT License"
+repository: "https://github.com/siimple/website"
+links:
+    - title: "Docs"
+      url: "https://docs.siimple.xyz"
+
+## Theme configuration
+##############################################
+theme_config:
+    color: "blue"
+    custom_styles: ["/assets/css/main.css", "/assets/css/siimple-colors.min.css"]
+    changes_url: "https://github.com/siimple/website/issues/new"
+    analytics: "UA-70800807-2"
+    legal_urls:
+        cookies: "https://www.siimple.xyz/legal/cookies.html"
+        privacy: "https://www.siimple.xyz/legal/privacy.html"
+    copyright: "&copy; 2015-present <strong>siimple</strong>"
+
+## Build settings
+##############################################
+env: "production"
+permalink: "none"
+theme: "siimple-theme"
+exclude: ["README.md","LICENSE","app.yaml","dispatch.yaml","bower_components/","node_modules/","package.json","bower.json"]
+

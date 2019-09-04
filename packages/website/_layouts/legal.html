@@ -1,0 +1,37 @@
+---
+layout: "default"
+---
+
+<div class="siimple-jumbotron siimple-jumbotron--large siimple--color-white siimple--bg-blue" align="center">
+    <div class="siimple-jumbotron-title">Legal resources</div>
+    <div class="siimple-jumbotron-subtitle">
+        Useful resources to learn more about the privacy at the <strong>siimple</strong> website.
+    </div>
+</div>
+<div class="theme-content siimple-content--large">
+    <div class="siimple-grid-row">
+        <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col-sm--12 sd-column">
+            <div class="siimple-list siimple-list--hover">
+                {% for post in site.posts reversed %}
+                {% if post.category == "legal" %}
+                <a class="siimple-list-item {% if post.title == page.title %}siimple-list-item--selected{% endif %}" href="{{ post.url }}">
+                    <div class="siimple-list-title">{{ post.title }}</div>
+                    <div class="siimple-list-description">{{ post.description }}</div>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="siimple-grid-col siimple-grid-col--9 siimple-grid-col-sm--12 sd-column">
+            <div class="theme-content-lead">
+                <div class="theme-content-title">{{ page.title }}</div>
+                <div class="theme-content-description">{{ page.description }}</div>
+            </div>
+            {{ content }}
+            <div class="siimple-paragraph">
+                <span class="siimple-small">Last updated: <strong>{{ page.updated_at }}</strong>.</span>
+            </div>
+        </div>
+    </div>
+</div>
+

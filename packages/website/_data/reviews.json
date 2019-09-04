@@ -1,0 +1,27 @@
+[
+    {
+        "site": "Designmodo",
+        "title": "10 Smallest & Fastest Frontend Web Dev Frameworks",
+        "content": "This is a really cool framework for rapid prototyping or for building custom layouts without starting from scratch.",
+        "url": "https://designmodo.com/frontend-web-dev-frameworks/"
+    },
+    {
+        "site": "Colorlib",
+        "title": "Top 21 Best Free CSS3 Frameworks for Web Development 2018",
+        "content": "Siimple is a concise, flexible, beautiful, certainly minimal, front-end CSS framework that serves as the foundation for building FLAT and clean design web pages",
+        "url": "https://colorlib.com/wp/free-css3-frameworks/"
+    },
+    {
+        "site": "TemplateToaster",
+        "title": "9 Best Responsive Web Design Frameworks",
+        "content": "Flexible, aesthetically built and a concise front-end CSS framework to accomplish clean web pages.",
+        "url": "https://blog.templatetoaster.com/best-responsive-web-design-frameworks/"
+    },
+    {
+        "site": "GrayGrids",
+        "title": "30+ Best and Popular Responsive CSS Front-end Frameworks in 2017",
+        "content": "Siimple is the only solution to build your FLAT and beautiful design web pages.",
+        "url": "https://graygrids.com/best-css-frameworks/"
+    }
+]
+
