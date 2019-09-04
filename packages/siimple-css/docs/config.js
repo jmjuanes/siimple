@@ -3,7 +3,7 @@ let pkg = require("../package.json");
 
 module.exports = {
     "source": __dirname,
-    "target": path.join(process.cwd(), "docs", "public", "css"),
+    "target": path.join(process.cwd(), "packages", "docs", "public", "css"),
     "theme": "@siimple/press-theme-siimple/config.js",
     "base": "/css/",
     "site": {
