@@ -1,10 +1,7 @@
-# siimple.xyz
+# @siimple/website
 
-This repository contains the source code powering [www.siimple.xyz](https://www.siimple.xyz).
+This package contains the source code powering [www.siimple.xyz](https://www.siimple.xyz).
 
-## Getting started
-
-> Under development
 
 ## License
 
