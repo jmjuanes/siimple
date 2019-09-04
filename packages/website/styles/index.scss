@@ -1,0 +1,12 @@
+//Import dependencies
+@import "@siimple/css/scss/variables.scss";
+
+//Global variables
+$website-prefix: "sw";
+
+//Import global styles
+@import "./code.scss";
+
+//Import toolkits styles
+@import "./toolkits/css.scss";
+
