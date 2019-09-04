@@ -89,6 +89,11 @@ module.exports = function (config, options) {
     context.data = content.readData(context, path.join(context.sourcePath, "data"));
     //Get layout template
     let getLayout = function (name) {
+        //Check for no layout provided
+        if (typeof name !== "string") {
+            return "{{ content }}"; //<-- Return a fake layout
+        }
+        //Check if layout has not extension
         if (name.indexOf(".html") === -1) {
             name = name + ".html";
         }
