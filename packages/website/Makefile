@@ -11,7 +11,7 @@ build:
 	mkdir -p ./public/assets/css ./public/assets/images ./public/assets/js
 	cp ../../node_modules/@siimple/css/dist/siimple.min.css ./public/assets/css/
 	# Building website styles
-	#${NODE_BIN}/sass --load-path="./bower_components/" ./_sass/main.scss ./_site/assets/css/main.css
+	${NODE_BIN}/sass -I ../../node_modules ./styles/index.scss ./public/assets/css/siimple-website.css
 
 # Serve the site
 test:
