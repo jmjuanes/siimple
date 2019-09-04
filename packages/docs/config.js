@@ -1,5 +1,5 @@
 let path = require("path");
-let pkg = require("../package.json");
+//let pkg = require("../package.json");
 
 module.exports = {
     "source": __dirname,
