@@ -1,15 +1,11 @@
 {
-    "name": "siimple-website",
+    "name": "@siimple/website",
     "version": "0.0.1",
     "private": true,
     "description": "The source code that powers siimple.xyz",
     "author": "Josemi Juanes <josemijuanes@gmail.com>",
     "license": "MIT",
     "homepage": "http://www.siimple.xyz/",
-    "repository": "git://github.com/siimple/website.git",
-    "dependencies": {
-        "sass": "^1.15.2",
-        "mini-png-sprite": "^0.0.2",
-        "stattic": "^0.3.2"
-    }
+    "repository": "https://github.com/siimple/siimple",
+    "dependencies": {}
 }
