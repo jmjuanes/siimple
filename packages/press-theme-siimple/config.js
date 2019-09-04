@@ -10,11 +10,15 @@ module.exports = {
         "version": null, //Package version
         "license": null, //Package license
         //Global links
-        "home": "https://www.siimple.xyz",
-        "privacy": "https://www.siimple.xyz/legal/privacy.html",
+        "links": {
+            "home": "https://www.siimple.xyz",
+            "privacy": "https://www.siimple.xyz/legal/privacy.html",
+        },
         //Repository configuration
         "repository": null,
-        "issues": null,
+        "issues": "https://github.com/siimple/siimple/issues",
+        //Breadcrumb links
+        "breadcrumbLinks": [],
         //Navbar links
         "navbarLinks": [],
         //Footer links
@@ -28,33 +32,33 @@ module.exports = {
     "head": [
         ["meta", {"name":"viewport", "content": "width=device-width,initial-scale=1"}],
         ["link", {"rel": "stylesheet", "href": "https://fonts.googleapis.com/css?family=Montserrat:700"}],
-        ["link", {"rel": "stylesheet", "href": "/css/siimple.min.css"}],
-        ["link", {"rel": "stylesheet", "href": "/css/siimple-press.css"}],
-        ["script", {"type": "text/javascript", "src": "/js/siimple-press-analytics.js"}]
+        ["link", {"rel": "stylesheet", "href": "/assets/css/siimple.min.css"}],
+        ["link", {"rel": "stylesheet", "href": "/assets/css/siimple-press.css"}],
+        ["script", {"type": "text/javascript", "src": "/assets/js/siimple-press-analytics.js"}]
     ],
     //Default title template
     "title": "{{page.data.title}} | siimple {{site.name}}",
     //Plugins
     "plugins": [
-        {
-            "plugin": "@siimple/press-plugin-sass",
-            "source": path.join(__dirname, "styles", "index.scss"),
-            "options": {
-                "includePaths": [path.join(process.cwd(), "node_modules")]
-            },
-            "target": "css/siimple-press.css"
-        },
-        {
-            "plugin": "@siimple/press-plugin-copyfiles",
-            //"plugin": "@siimple/press-plugin-copyfiles",
-            "files": path.join(path.dirname(require.resolve("@siimple/css")), "siimple.min.css"),
-            "target": "css/"
-        },
-        {
-            "plugin": "@siimple/press-plugin-copyfiles",
-            "files": path.join(__dirname, "scripts", "siimple-press-analytics.js"),
-            "target": "js/"
-        }
+    //    {
+    //        "plugin": "@siimple/press-plugin-sass",
+    //        "source": path.join(__dirname, "styles", "index.scss"),
+    //        "options": {
+    //            "includePaths": [path.join(process.cwd(), "node_modules")]
+    //        },
+    //        "target": "css/siimple-press.css"
+    //    },
+    //    {
+    //        "plugin": "@siimple/press-plugin-copyfiles",
+    //        //"plugin": "@siimple/press-plugin-copyfiles",
+    //        "files": path.join(path.dirname(require.resolve("@siimple/css")), "siimple.min.css"),
+    //        "target": "css/"
+    //    },
+    //    {
+    //        "plugin": "@siimple/press-plugin-copyfiles",
+    //        "files": path.join(__dirname, "scripts", "siimple-press-analytics.js"),
+    //        "target": "js/"
+    //    }
     ],
     //Pages parsing
     "pages": {
