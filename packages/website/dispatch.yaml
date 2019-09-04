@@ -1,6 +1,0 @@
-dispatch:
-- url: "docs.siimple.xyz/*"
-  service: beta
-- url: "colors.siimple.xyz/*"
-  service: beta
-
