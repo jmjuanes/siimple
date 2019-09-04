@@ -10,7 +10,7 @@ build:
 	cd ../../ && ${PRESS_BIN} --config ./packages/docs/config.js
 	@# Build documentation assets
 	mkdir -p public/assets/css public/assets/js public/assets/images
-	${NODE_BIN}/sass -I ../../node_modules packages/press-theme-siimple/styles/index.scss ./public/assets/css/siimple-press.css
+	${NODE_BIN}/sass -I ../../node_modules ../press-theme-siimple/styles/index.scss ./public/assets/css/siimple-press.css
 	cp ../siimple-css/dist/siimple.min.css ./public/assets/css/
 	@# Build packages documentation
 	@# Build documentation of @siimple/css package
