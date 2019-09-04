@@ -2,6 +2,7 @@
 
 > A collection of toolkits and libs for building a better web
 
+[![dependency Status](https://david-dm.org/siimple/siimple/status.svg?style=flat-square)](https://david-dm.org/siimple/siimple)
 
 ## FAQ
 
