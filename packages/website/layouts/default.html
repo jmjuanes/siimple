@@ -1,0 +1,41 @@
+
+<!-- Header -->
+<div class="siimple-navbar siimple-navbar--large siimple-navbar--light">
+    <a class="siimple-navbar-title siimple--color-primary" href="{{ base }}">
+        <div class="siimple-brand">siimple</div>
+    </a>
+</div>
+<!-- Body -->
+{{content}}
+<!-- Footer -->
+<div class="siimple-footer siimple-footer--light siimple-footer--large">
+    <div class="siimple-grid-row">
+        <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col--sm-12">
+            <div class="siimple-footer-title siimple-brand">siimple</div>
+        </div>
+        {{#each data.footer }}
+        <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col--sm-12">
+            <div class="siimple-footer-group">{{ this.title }}</div>
+            {{#each this.links }}
+            <a href="{{ this.url }}" class="siimple-footer-link" target="_blank">
+                {{ this.title }}
+                <div class="siimple-footer-link-description">{{{ this.description }}}</div>
+            </a>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+    <!-- Legal links -->
+    <div class="siimple-footer-rule"></div>
+    <div class="siimple-grid-row">
+        <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col--sm-12" align="left">
+            &copy; 2015-present <strong>siimple</strong>
+        </div>
+        <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col--sm-hide" align="right">
+            <a href="#" class="siimple-footer-link siimple-footer-link--inline">
+                Privacy Policy
+            </a>
+        </div>
+    </div>
+</div>
+
