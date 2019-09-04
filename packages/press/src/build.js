@@ -91,7 +91,11 @@ module.exports = function (config, options) {
     let getLayout = function (name) {
         //Check for no layout provided
         if (typeof name !== "string") {
-            return "{{ content }}"; //<-- Return a fake layout
+            //Return a fake layout
+            return {
+                "data": {},
+                "content": "{{ content }}"
+            };
         }
         //Check if layout has not extension
         if (name.indexOf(".html") === -1) {
