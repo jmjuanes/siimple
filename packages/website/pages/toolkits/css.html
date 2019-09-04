@@ -1,26 +1,24 @@
 ---
-layout: "default"
-title: "siimple: minimal and responsive CSS Framework for flat and clean designs"
-root: "./"
+layout: "default.html"
+title: "Minimal and responsive CSS toolkit for flat and clean designs"
 ---
-<!-- Icons -->
-<link rel="stylesheet" href="/assets/css/icons.css">
-<title>{{ page.title }}</title>
-<div class="siimple-jumbotron siimple-jumbotron--large siimple--color-primary siimple--bg-grey-light" align="center">
-    <div class="docs-welcome-title1">
+<div class="siimple-jumbotron siimple-jumbotron--large siimple--color-primary siimple--bg-light" align="center">
+    <div class="sw-toolkits-css-welcome-title1">
         A <strong>flat</strong>, <strong>minimal</strong> and <strong>different</strong> CSS framework.</div>
-    <div class="docs-welcome-title2">
+    <div class="sw-toolkits-css-welcome-title2">
         That is <strong class="siimple-brand">siimple</strong>.
     </div>
-    <div class="docs-welcome-buttons">
-        <a href="https://docs.siimple.xyz" class="siimple-btn siimple--color-white siimple--bg-primary">
-            Get started
+    <div class="sw-toolkits-css-welcome-buttons">
+        <a href="https://docs.siimple.xyz/css/" class="siimple-btn siimple--color-white siimple--bg-primary">
+            Let's <strong>get started</strong>
         </a>
-        <a href="https://github.com/siimple/siimple/releases" class="siimple-btn siimple--color-white siimple--bg-primary">
-            Download
+        <a href="#" class="siimple-btn siimple--color-white siimple--bg-primary">
+            Download <strong>latest</strong>
         </a>
     </div>
-    <div class="docs-welcome-detail">Current version: <strong>{{ site.version }}</strong></div>
+    <div class="sw-toolkits-css-welcome-detail">
+        Current version: <strong>{{ site.version }}</strong>
+    </div>
 </div>
 <div class="siimple-content siimple-content--large siimple--py-5" align="center">
     <div class="siimple--py-4">
@@ -31,14 +29,17 @@ root: "./"
             Build responsive, flat and clean web designs with the minimalist and flexible <strong>siimple</strong> CSS framework. 
         </div>
         <div class="siimple-grid-row">
-            {% for feature_id in site.data.features.all %}
-            {% assign feature = site.data.features[feature_id] %} 
-            <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col-sm--12 website-feature">
-                <div class="website-feature-image website-icons website-icons-{{ feature_id }}"></div>
-                <div class="website-feature-title">{{ feature.title }}</div>
-                <div class="website-feature-description">{{ feature.description }}</div>
+            {{#each data.toolkits.css.features }}
+            <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col-sm--12 sw-toolkits-css-feature">
+                <div class="sw-toolkits-css-feature-image website-icons">
+                    <img src="" width="100%" height="100%" />
+                </div>
+                <div class="sw-toolkits-css-feature-title">{{ this.title }}</div>
+                <div class="sw-toolkits-css-feature-description">
+                    {{{ this.description }}}
+                </div>
             </div>
-            {% endfor %}
+            {{/each}}
         </div>
     </div>
 </div>
@@ -68,7 +69,7 @@ root: "./"
             </div>
         </div>
         <div class="siimple-grid-col siimple-grid-col--7 siimple-grid-col--sm-12">
-<pre class="siimple-pre theme-code theme-code--small">
+<pre class="siimple-pre sw-code sw-code--small">
 <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-field"</span><span class="b">&gt;</span>
     <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-field-label"</span><span class="b">&gt;</span>Your email<span class="b">&lt;/div&gt;</span>
         <span class="b">&lt;input </span><span class="y">type=</span><span class="g">"email"</span> <span class="y">class=</span><span class="g">"siimple-input siimple-input--fluid"</span> <span class="y">value=</span><span class="g">"bob.smith@email.com"</span><span class="b">&gt;</span>
@@ -98,7 +99,7 @@ root: "./"
     </div>
     <div class="siimple-grid-row">
         <div class="siimple-grid-col siimple-grid-col--7 siimple-grid-col--sm-12">
-<pre class="siimple-pre theme-code theme-code--small">
+<pre class="siimple-pre sw-code sw-code--small">
 <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-grid"</span><span class="b">&gt;</span>
     <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-grid-row"</span><span class="b">&gt;</span>
         <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-grid-col siimple-grid-col--5"</span><span class="b">&gt;</span>5<span class="b">&lt;/div&gt;</span>
@@ -112,21 +113,21 @@ root: "./"
 </pre>
         </div>
         <div class="siimple-grid-col siimple-grid-col--5 siimple-grid-col--sm-12">
-            <div class="siimple-grid example-grid">
+            <div class="siimple-grid sw-toolkits-css-example-grid">
                 <div class="siimple-grid-row">
                     <div class="siimple-grid-col siimple-grid-col--5">
-                        <div class="example-grid-content">5</div>
+                        <div class="sw-toolkits-css-example-grid-content">5</div>
                     </div>
                     <div class="siimple-grid-col siimple-grid-col--7">
-                        <div class="example-grid-content">7</div>
+                        <div class="sw-toolkits-css-example-grid-content">7</div>
                     </div>
                 </div>
                 <div class="siimple-grid-row">
                     <div class="siimple-grid-col siimple-grid-col--8">
-                        <div class="example-grid-content">8</div>
+                        <div class="sw-toolkits-css-example-grid-content">8</div>
                     </div>
                     <div class="siimple-grid-col siimple-grid-col--4">
-                        <div class="example-grid-content">4</div>
+                        <div class="sw-toolkits-css-example-grid-content">4</div>
                     </div>
                 </div>
             </div>
@@ -142,12 +143,12 @@ root: "./"
         learn how to add <strong>siimple</strong> to your project and discover how to style your buttons, forms and more!
     </div>
     <div align="center">
-        <a href="https://docs.siimple.xyz" class="siimple-btn siimple-btn--primary">
-            Read the documentation
+        <a href="https://docs.siimple.xyz/css/" class="siimple-btn siimple-btn--primary">
+            Read the <strong>documentation</strong>
         </a>
     </div>
 </div>
-<div class="siimple-content siimple-content--large siimple--bg-grey-light siimple--py-5">
+<div class="siimple-content siimple-content--large siimple--bg-light siimple--py-5">
     <div align="center">
         <div class="website-icons website-icons-announcement"></div>
     </div>
@@ -155,17 +156,19 @@ root: "./"
         What people say about <strong class="siimple-brand">siimple</strong>?
     </div>
     <div class="siimple-grid-row siimple--py-4">
-        {% for review in site.data.reviews limit:3 %}
-        <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col--sm-12 docs-reviews-column">
-            <div class="siimple-h5">{{ review.site }}</div>
-            <div class="siimple-paragraph docs-reviews-content">
-                <strong class="docs-reviews-quote">&#8220;</strong> {{ review.content }} <strong class="docs-reviews-quote">&#8221;</strong>
+        {{#each data.toolkits.css.reviews }}
+        <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col--sm-12 sw-toolkits-css-reviews-column">
+            <div class="siimple-h5">{{ this.site }}</div>
+            <div class="siimple-paragraph sw-toolkits-css-reviews-content">
+                <strong class="sw-toolkits-css-reviews-quote">&#8220;</strong> 
+                {{{ this.content }}} 
+                <strong class="sw-toolkits-css-reviews-quote">&#8221;</strong>
             </div>
-            <a href="{{ review.url }}" class="siimple-btn siimple-btn--primary docs-reviews-btn" target="_blank">
-                Read more <strong>&raquo;</strong>
+            <a href="{{{ this.url }}}" class="siimple-btn siimple-btn--primary sw-toolkits-css-reviews-btn" target="_blank">
+                Read <strong>more</strong> <strong>&raquo;</strong>
             </a>
         </div>
-        {% endfor %}
+        {{/each}}
     </div>
 </div>
 <div class="siimple-content siimple-content--large siimple--py-5" align="center">
