@@ -1,34 +1,24 @@
-.PHONY: install build publish prepublish
+.PHONY: build publish test
 
 # Binaries paths
-NODE_BIN=./node_modules/.bin
-
-# Innitial installation
-install:
-	bundle install
-	npm install
-	rm -rf bower_components && bower install
+NODE_BIN=../../node_modules/.bin
 
 # Build the website
 build:
-	@# Building website with Jekyll
-	bundle exec jekyll build
-	# Creating assets folder
-	mkdir -p ./_site/assets/css ./_site/assets/images
-	# Copying styles
-	cp bower_components/siimple/dist/siimple.min.css ./_site/assets/css/
-	cp bower_components/siimple-colors/dist/siimple-colors.min.css ./_site/assets/css/
+	@# Build website
+	cd ../../ && ./node_modules/@siimple/press/cli.js --config ./packages/website/config.js
+	@# Build assets
+	mkdir -p ./public/assets/css ./public/assets/images ./public/assets/js
+	cp ../../node_modules/@siimple/css/dist/siimple.min.css ./public/assets/css/
 	# Building website styles
-	${NODE_BIN}/sass --load-path="./bower_components/" ./_sass/main.scss ./_site/assets/css/main.css
-	# Generating image sprites
-	${NODE_BIN}/pngsprite --inputPNGFolder ./_images/ --outputPNGFile ./_site/assets/images/icons.png --cssIconSize 80 --cssOutput ./_site/assets/css/icons.css --debug --cssNamespace website-icons
+	#${NODE_BIN}/sass --load-path="./bower_components/" ./_sass/main.scss ./_site/assets/css/main.css
 
 # Serve the site
-serve:
-	${NODE_BIN}/stattic --folder ./_site --cors
+test:
+	${NODE_BIN}/stattic --port 5000 --folder ./public --cors
 
 # Publish the website
 publish: 
-	make build
-	gsutil rsync -d -r ./_site gs://siimple-documentation.appspot.com/www
+	#make build
+	#gsutil rsync -d -r ./_site gs://siimple-documentation.appspot.com/www
 
