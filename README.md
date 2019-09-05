@@ -24,6 +24,6 @@ Issues for all packages are available at [siimple/issues](https://github.com/sii
 
 ## License
 
-Code and documentation of **siimple** &copy; 2015-present **Josemi Juanes**. 
+Code and documentation of **siimple** &copy; 2015-present **the siimple team**. 
 The code is released unde the [MIT License](LICENSE) and the documentation is released under the [Creative Commons CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
 
