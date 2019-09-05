@@ -10,6 +10,11 @@
 
 The **siimple** project started as a small css framework with basic UI elements.
 
+
+## Contribute
+
+Check our [CONTRIBUTING guide](/CONTRIBUTING.md) to get started.
+
 ## FAQ
 
 ### Looking for support?
@@ -26,7 +31,9 @@ The documentation of public packages of this monorepo is available at [docs.siim
 
 ### How to report a bug or request a feature for a package?
 
-Issues for all packages are available at [siimple/issues](https://github.com/siimple/siimple/issues). Please specify in the issue the package the issue is related to (for example, in the issue title or using the label of the package).
+Issues for all packages are available at [siimple/issues](https://github.com/siimple/siimple/issues).
+
+Before submit an issue, please specify in the issue the package the issue is related to (for example, in the issue title or using the label of the package).
 
 ## License
 
