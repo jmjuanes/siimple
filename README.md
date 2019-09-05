@@ -1,3 +1,5 @@
+![siimple smile logo](/art/footer.png)
+
 # siimple
 
 > A collection of toolkits and libs for building a better web
@@ -8,7 +10,7 @@
 
 ## Introduction
 
-The **siimple** project started as a small css framework. 
+The **siimple** project started as a small css framework with basic UI elements.
 
 ## FAQ
 
