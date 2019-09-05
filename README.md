@@ -4,7 +4,7 @@
 
 [![dependency Status](https://david-dm.org/siimple/siimple/status.svg?style=flat-square)](https://david-dm.org/siimple/siimple)
 [![Follow @siimplecss](https://img.shields.io/badge/Twitter-%40siimplecss-blue.svg?style=flat-square)](https://twitter.com/siimplecss)
-[![Join us on Gitter](https://img.shields.io/gitter/room/siimple/siimple.svg?style=flat-square)](https://gitter.im/siimple/siimple)
+[![Join us on Gitter](https://img.shields.io/badge/chat-on_gitter-4EB897.svg?style=flat-square)](https://gitter.im/siimple/siimple)
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/siimple/siimple)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/siimple/siimple)
 
