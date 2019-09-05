@@ -1,5 +1,3 @@
-![siimple smile logo](/art/footer.png)
-
 # siimple
 
 > A collection of toolkits and libs for building a better web
