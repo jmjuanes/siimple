@@ -1,13 +1,10 @@
-<p align="center">
-  <img width="500px" src="./header.svg">
-</p>
-
 # @siimple/colors
 
 [![npm](https://img.shields.io/npm/v/@siimple/colors.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/colors)
 [![npm](https://img.shields.io/npm/dt/@siimple/colors.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/colors)
 [![jsdelivr](https://data.jsdelivr.com/v1/package/npm/@siimple/colors/badge)](https://www.jsdelivr.com/package/npm/@siimple/colors)
 [![npm](https://img.shields.io/npm/l/@siimple/colors.svg?style=flat-square)](https://github.com/siimple/colors)
+[![Join us on Gitter](https://img.shields.io/badge/chat-on_gitter-4EB897.svg?style=flat-square)](https://gitter.im/siimple/siimple)
 
 [**siimple colors**]() is an elegant and minimalistic color palette for UI design.
 
@@ -28,10 +25,6 @@ Or imported in your HTML files using a [CDN](https://www.jsdelivr.com/package/np
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@siimple/colors@1.0.0/dist/siimple-colors.min.css">
 ```
-
-## Documentation 
-
-We are working on a new documentation for `v1.0.0`.
 
 ## Usage 
 
@@ -64,7 +57,8 @@ Use `.siimple--color-{COLOR}` class to change the text color, or `.siimple--bg-{
 
 ### Using SASS/SCSS 
 
-Using the `siimple-color` function defined in `scss/functions.scss` is the easiest way to load our colors in your **SASS/SCSS** files. This function will return a string with the hex value of the desired color, and gets two arguments:
+Using the `siimple-color` function defined in `scss/functions.scss` is the easiest way to load our colors in your **SASS/SCSS** files. 
+This function will return a string with the hex value of the desired color, and gets two arguments:
 
 - `COLOR`: a string with the desired color.
 - `LIGHTNESS` (optionally): a string with the desired lightness variant of the color. If not provided, the function will return the base color.
@@ -103,10 +97,7 @@ You can also use the colors variables defined in `scss/colors.scss`. Each color 
 
 ## License
 
-Code and documentation &copy; 2018 the **siimple team**. The code is released under the [MIT License](./LICENSE) and the documentation is released under the [Creative Commons CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
+Code and documentation &copy; 2015-present the **siimple team**. 
+The code is released under the [MIT License](./LICENSE) and the documentation is released under the [Creative Commons CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
 
-
-<p align="center">
-    <img src="https://raw.githubusercontent.com/siimple/siimple/monorepo/art/footer.png">
-</p>
 
