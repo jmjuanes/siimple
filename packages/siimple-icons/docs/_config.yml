@@ -1,0 +1,31 @@
+## Site settings
+##############################################
+title: "siimple-icons"
+version: "0.0.0"
+url: "https://icons.siimple.xyz/"
+author: "Josemi Juanes, Pablo Marin and David Gomez"
+license: "MIT License"
+repository: "https://github.com/siimple/siimple-icons"
+links:
+    - title: "Usage"
+      url: "/usage.html"
+    - title: "Icons"
+      url: "/icons.html"
+## Theme configuration
+theme_config:
+    color: "green"
+    custom_styles: ["/assets/css/main.css"]
+    changes_url: "https://github.com/siimple/siimple-icons/issues/new"
+    analytics: "UA-70800807-5"
+    legal_urls:
+        cookies: "https://www.siimple.xyz/legal/cookies.html"
+        privacy: "https://www.siimple.xyz/legal/privacy.html"
+    copyright: "&copy; 2015-present <strong>siimple</strong>"
+
+## Build settings
+##############################################
+env: "production"
+permalink: "none" 
+theme: "siimple-theme"
+exclude: ["LICENSE","Gemfile","Gemfile.lock"]
+

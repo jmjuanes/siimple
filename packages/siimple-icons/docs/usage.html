@@ -1,0 +1,67 @@
+---
+layout: default
+title: "Using siimple-icos"
+---
+
+{% assign header_title="Usage guide" %}
+{% assign header_subtitle="How to get started with <strong>siimple-icons</strong>" %}
+{% include header.html title=header_title subtitle=header_subtitle %}
+<div class="siimple-content siimple-content--large">
+    <div class="siimple-h2">Installation</div>
+    <div class="siimple-paragraph">
+
+    </div>
+    <div class="siimple-h4">Import <strong>siimple-icons</strong> using a CDN</div>
+    <div class="siimple-paragraph">
+        Simply add the following <code class="siimple-code">link</code> tag in the <code class="siimple-code">head</code> of each page that you want to use <strong>siimple-icons</strong> on:
+    </div>
+    <pre class="siimple-pre">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple-icons@{{ site.version }}/dist/siimple-icons.min.css"&gt;</pre>
+    <div class="siimple-paragraph">
+        You can browse the source of the package at <a href="https://cdn.jsdelivr.net/npm/siimple-icons/" class="siimple-link" target="_blank">https://cdn.jsdelivr.net/npm/siimple-icons/</a>.
+    </div>
+    <div class="siimple-h4">Install <strong>siimple-icons</strong> as a package</div>
+    <div class="siimple-paragraph">
+        You can easily install the latest version of <strong>siimple-icons</strong> via <a class="siimple-link" href="https://npmjs.com" target="_blank">npm</a> or <a href="https://yarnpkg.com/" class="siimple-link" target="_blank">yarn</a>.
+    </div>
+    <pre class="siimple-pre">$ npm install siimple-icons</pre>
+    <pre class="siimple-pre">$ yarn add siimple-icons</pre>
+    <div class="siimple-paragraph">
+        Now you should add a reference to <code class="siimple-code">siimple-icons.min.css</code> file in the <code class="siimple-code">head</code> tag of each HTML page where you are going to use <strong>siimple-icons</strong>:
+    </div>
+    <pre class="siimple-pre">&lt;link rel="stylesheet" href="./node_modules/siimple-icons/dist/siimple-icons.min.css"&gt;</pre>
+
+    <div class="siimple-h2">Usage</div>
+    <div class="siimple-h4">Using CSS styles</div>
+    <div class="siimple-paragraph">
+        You can use <strong>siimple-icons</strong> in your project adding a <code class="siimple-code">&lt;span&gt;</code> tag (or a <code class="siimple-code">&lt;i&gt;</code> tag for brevity) and reference the icon using the following class names: <code class="siimple-code">si</code> to add the icon base style and <code class="siimple-code">si-</code> followed by the icon name. 
+    </div>
+<pre class="siimple-pre">
+&lt;!-- Add a left arrow icon --&gt;
+&lt;span class="<strong>si si-arrow-left</strong>"&gt;&lt;/span&gt;
+
+&lt;!-- Add a star icon --&gt;
+&lt;span class="<strong>si si-star</strong>"&gt;&lt;/span&gt;
+</pre>
+    <div class="siimple-paragraph">
+        All icons will automatically inherit the font-size and the color style rules.
+    </div>
+    <pre class="siimple-pre">&lt;span class="<strong>si si-plus</strong>" style="<strong>color: red; font-size:20px;</strong>"&gt;&lt/span&gt;</pre>
+    <div class="siimple-h4">Using SVG sprites</div>
+    <div class="siimple-paragraph">
+        You can use our icons strpite in svg format creating a <code class="siimple-code">&lt;svg&gt;</code> tag and calling the desired icon using a <code class="siimple-code">&lt;use&gt;</code> tag. 
+    </div>
+<pre class="siimple-pre">
+&lt;svg&gt;
+    &lt;use xlink:href="./node_modules/siimple-icons/dist/siimple-icons.svg#arrow-left"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+</pre>
+    <div class="siimple-paragraph">
+        You can also style your icon adding a <code class="siimple-code">style</code> attribute to your <code class="siimple-code">&lt;svg&gt;</code> tag.
+    </div>
+<pre class="siimple-pre">
+&lt;svg style="color: blue; font-size: 20px"&gt;
+    &lt;use xlink:href="./node_modules/siimple-icons/dist/siimple-icons.svg#calendar"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+</pre>
+</div>
+

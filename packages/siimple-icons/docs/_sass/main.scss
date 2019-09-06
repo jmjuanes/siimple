@@ -1,0 +1,66 @@
+//Import dependencies
+@import "siimple-colors/scss/colors.scss";
+
+//Dowumentation welcome
+.docs-welcome {
+    &-buttons {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+//Icons styles
+.icons {
+    display: block;
+    //Icons count
+    &-count {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    //Icons item
+    &-item {
+        display: inline-block;
+        width: 135px;
+        color: siimple-color("navy", "extra-light");
+        text-align: center;
+        border-radius: 5px;
+        transition: all 0.3s;
+        padding-top: 5px;
+        &:hover {
+            color: siimple-color("green");
+            background-color: siimple-color("grey", "light");
+        }
+        //Item preview
+        &-preview {
+            height: 50px;
+            line-height: 50px;
+            font-size: 50px !important;
+            &::before {
+                box-sizing: inherit;
+            }
+        }
+        //Item name
+        &-name {
+            height: 30px;
+            line-height: 30px;
+            font-size: 10px;
+            color: siimple-color("navy", "light") !important;
+        }
+    }
+    //Empty icons list
+    &-empty {
+        display: block;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: siimple-color("grey", "light");
+        &-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+    }
+}
+

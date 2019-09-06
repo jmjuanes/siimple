@@ -1,0 +1,94 @@
+---
+layout: "default"
+title: "Icons cheatsheet"
+---
+<link rel="stylesheet" href="/assets/css/siimple-icons.min.css">
+<script type="text/javascript" src="./assets/js/react.production.min.js"></script>
+<script type="text/javascript" src="./assets/js/react-dom.production.min.js"></script>
+<div class="siimple-content siimple-content--large">
+    <div id="icons"></div>
+</div>
+<script type="text/javascript">
+    class IconsGallery extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {"filter": ""};
+            this.ref = {
+                "filterInput": React.createRef()
+            };
+            this.onFilterChange = this.onFilterChange.bind(this);
+        }
+        onFilterChange() {
+            return this.setState({"filter": this.ref.filterInput.current.value});
+        }
+        filterIcons() {
+            let filter = this.state.filter.trim().toLowerCase();
+            return this.props.icons.filter(function (icon) {
+                //Check if the filter matches the icon id
+                if (icon.id.indexOf(filter) !== -1) {
+                    return true;
+                }
+                //Check if the filter matches the keywords of the icon
+                for (let i = 0; i < icon.keywords.length; i++) {
+                    if (icon.keywords[i].indexOf(filter) !== -1) {
+                        return true;
+                    }
+                }
+                //Icon not matched
+                return false;
+            });
+        }
+        renderInput() {
+            let self = this;
+            let inputProps = {
+                "className": "siimple-input siimple-input--fluid",
+                "type": "text",
+                "placeholder": "Search for icons",
+                "ref": self.ref.filterInput,
+                "onChange": self.onFilterChange
+            };
+            return React.createElement("input", inputProps);
+        }
+        renderIcons(icons, isFiltered) {
+            //Check the number of icons
+            if (icons.length === 0) {
+                let emptyTitle = React.createElement("div", {"className": "icons-empty-title"}, "No results found...");
+                let emptyText = React.createElement("div", {}, "Sorry, we could not find any icon that matches your search...");
+                return React.createElement("div", {"className": "icons-empty", "align": "center"}, emptyTitle, emptyText);
+            }
+            //Render the icons list
+            let content = icons.map(function (icon, index) {
+                let iconPreview = React.createElement("i", {"className": "icons-item-preview si si-" + icon.id});
+                let iconName = React.createElement("div", {"className": "icons-item-name"}, icon.id);
+                return React.createElement("div", {"className": "icons-item"}, iconPreview, iconName);
+            });
+            //Generate the icons count
+            let countText = (!isFiltered) ? icons.length + " icons filtered" : "All of our " + icons.length + " icons";
+            let count = React.createElement("div", {"className": "icons-count"}, countText);
+            //Render the icons gallery
+            return React.createElement(React.Fragment, {}, count, content);
+        }
+        render() {
+            //Filter the icons list
+            let isFiltered = this.state.filter.length === 0;
+            let iconsFiltered = (isFiltered) ? this.props.icons : this.filterIcons();
+            //Render components
+            let input = this.renderInput();
+            let rule = React.createElement("div", {"className": "siimple-rule"}, null);
+            let gallery = this.renderIcons(iconsFiltered, isFiltered);
+            //Return the icons gallery
+            return React.createElement("div", {}, input, rule, gallery)
+        }
+    } 
+    //Import icons data
+    theme.utils.loadJSON("/assets/icons.json", function (error, icons) {
+        //Sort the icons list by it's id
+        icons.sort(function (a, b) {
+            return (a.id < b.id) ? -1 : 1;
+        });
+        //Display all icons
+        let parent = document.getElementById("icons");
+        ReactDOM.render(React.createElement(IconsGallery, {"icons": icons}), parent); 
+    }); 
+</script>
+
