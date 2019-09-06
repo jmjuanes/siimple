@@ -54,3 +54,14 @@ to build the specified package. Note that you should replace `{{PKG_NAME}}` with
 Check the [packages description](/packages/README.md) for more information about the available packages.
 
 
+### Building documentation
+
+Run 
+
+```
+$ make docs
+```
+
+To build and start the documentation server. Then, open a new browser window and navigate to `http://localhost:5000`.
+
+
