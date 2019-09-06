@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/dist/neutrine.css">
+<link rel="stylesheet" href="/bower_components/siimple/dist/siimple.css">
+<script type="text/javascript" src="/node_modules/react/umd/react.development.js"></script>
+<script type="text/javascript" src="/node_modules/react-dom/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="/dist/neutrine.js"></script>
+
+<div id="root"></div>
+<script type="text/javascript">
+    let options = {
+        "paper": true,
+        "resize": true
+    };
+    let editor = ReactDOM.render(React.createElement(Neutrine.TextEditor, options), document.getElementById("root"));
+</script>
+
