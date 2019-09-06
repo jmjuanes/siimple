@@ -15,6 +15,11 @@ It has been built in SASS/SCSS and provides a clean starting point for your web 
 - [@siimplecss](https://twitter.com/siimplecss) - Follow us on Twitter and share your love to **siimple** with the HT [#siimplecss](https://twitter.com/search?q=%23siimplecss&src=typd).
 
 
+## Migration
+
+Please read our [migration guide](./MIGRATING.md) to migrate from older versions to `v4`.
+
+
 ## Installation
 
 The **@siimple/css** package is available on [npm](https://npmjs.com/package/@siimple/css), so you can run the following command to add it to your project: 
