@@ -1,7 +1,7 @@
 # v3.x.x to v4.x.x
 
 The first remarkable change is that we have change our npm package from `siimple` to `@siimple/css`. 
-Also, we have extraacted the experimental styles introduced in `v3.2.0` to a new package called `@siimple/experiments`.
+Also, we have extracted the experimental modules introduced in `v3.2.0` to a new package called `@siimple/experiments`.
 
 Here are the steps that you need to migrate:
 
@@ -60,5 +60,5 @@ Read the [changelog](./CHANGELOG.md) for more information about the changes in t
 
 # Get more help
 
-Feel free to [open an issue](/issues/new) if you need help in the migration process or send us a message in our [Gitter chat](https://gitter.im/siimple/siimple).
+Feel free to open an issue if you need help in the migration process or send us a message in our [Gitter chat](https://gitter.im/siimple/siimple).
 
