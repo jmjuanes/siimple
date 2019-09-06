@@ -1,119 +1,75 @@
-<!-- 
-<div align="center">
-  <img height="300px" src="https://rawgit.com/siimple/siimple/develop/media/logo-colored.png" alt="siimple">
-  <br>
-</div>
--->
 
-# siimple
+# @siimple/css
 
-[![npm](https://img.shields.io/npm/v/siimple.svg?style=flat-square)](https://www.npmjs.com/package/siimple)
-[![npm](https://img.shields.io/npm/dt/siimple.svg?style=flat-square)](https://www.npmjs.com/package/siimple)
-[![devDependency Status](https://david-dm.org/siimple/siimple/dev-status.svg?style=flat-square)](https://david-dm.org/siimple/siimple#info=devDependencies)
-[![](https://data.jsdelivr.com/v1/package/npm/siimple/badge)](https://www.jsdelivr.com/package/npm/siimple)
-[![npm](https://img.shields.io/npm/l/siimple.svg?style=flat-square)](https://github.com/siimple/siimple)
-[![twitter](https://img.shields.io/badge/Twitter-%40siimplecss-blue.svg?style=flat-square)](https://twitter.com/siimplecss)
-[![gitter](https://img.shields.io/gitter/room/siimple/siimple.svg?style=flat-square)](https://gitter.im/siimple/siimple)
-[![pr](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/siimple/siimple)
+[![npm](https://img.shields.io/npm/v/@siimple/css.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/css)
+[![npm](https://img.shields.io/npm/dt/@siimple/css.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/css)
+[![jsdelivr](https://data.jsdelivr.com/v1/package/npm/@siimple/css/badge)](https://www.jsdelivr.com/package/npm/@siimple/css)
+[![npm](https://img.shields.io/npm/l/@siimple/css.svg?style=flat-square)](https://github.com/siimple/siimple)
+[![Join us on Gitter](https://img.shields.io/badge/chat-on_gitter-4EB897.svg?style=flat-square)](https://gitter.im/siimple/siimple)
 
-[![siimple](https://raw.githubusercontent.com/siimple/siimple/develop/media/splash.jpg)](https://www.siimple.xyz)
-
-[**siimple**](https://www.siimple.xyz) is a light, responsive and open source framework for design flat and clean websites. It has been built in SASS/SCSS and provides a clean starting point for your web design.
+[**@siimple/css**](https://www.siimple.xyz) is a light, responsive and open source CSS toolkit for design flat and clean websites. 
+It has been built in SASS/SCSS and provides a clean starting point for your web design.
 
 - [Homepage](https://www.siimple.xyz) - Learn more about the **siimple** ecosystem.
 - [Documentation](https://docs.siimple.xyz) - **siimple** documentation.
-- [Examples](https://docs.siimple.xyz/examples.html) - Explore our examples made with **siimple**.
 - [@siimplecss](https://twitter.com/siimplecss) - Follow us on Twitter and share your love to **siimple** with the HT [#siimplecss](https://twitter.com/search?q=%23siimplecss&src=typd).
 
-## Getting started
 
-**siimple** is available on [npm](https://npmjs.com/package/siimple), so you can run `npm install siimple` to install it in your project. It is also available on a [CDN](https://www.jsdelivr.com/package/npm/siimple), so you can import the compiled CSS files directly on your HTML page.
+## Installation
 
-You can also download a [ZIP file](https://github.com/siimple/siimple/releases) with the code of each release, or clone the repository: 
+The **@siimple/css** package is available on [npm](https://npmjs.com/package/@siimple/css), so you can run the following command to add it to your project: 
 
-```
-git clone https://github.com/siimple/siimple.git
-```
+```bash
+$ npm install --save @siimple/css
+``` 
 
-You can include `siimple` in your HTML files: 
+This package is also available on a [CDN](https://www.jsdelivr.com/package/npm/@siimple/css), so you can import the compiled CSS files directly on your HTML page. 
+
+
+## Usage
+
+You can include the compiled styles in your HTML files: 
 
 ```html
-<link rel="stylesheet" href="./node_modules/siimple/dist/siimple.min.css">
+<link rel="stylesheet" href="./node_modules/@siimple/css/dist/siimple.min.css">
 ```
 
-Or you can import all the styles in your SASS/SCSS files: 
+The source files are written in [Sass](http://sass-lang.com/), so you can import all the styles in your scss files: 
 
 ```scss
-@import "siimple/index.scss";
+@import "@siimple/css/index.scss";
 ```
 
-Or import only the styles that you need: 
+Or import individual modules:
 
 ```scss
-@import "siimple/scss/elements/_tip.scss";
+@import "@siimple/css/scss/elements/btn.scss";
+@import "@siimple/css/scss/components/alert.scss";
 ```
+
+Make sure that you have added your `node_modules` folder to your Sass [include paths](https://github.com/sass/node-sass#includepaths).
 
 
 ## Documentation 
 
-The documentation website is available at https://docs.siimple.xyz. The source code of the documentation is on this repository on the `./docs` folder. Follow the instructions below to build the documentation in your computer.
+The documentation website is available at [docs.siimple.xyz](https://docs.siimple.xyz). 
 
-## Develop
-
-Follow the steps described in this section if you are going to contribute, extend or modify **siimple**. Our main branch is `develop`, which reflects a state with the latest delivered development changes.
-
-### Setup environment
-
-Follow these steps:
-
-1. Download and install [Node.js](https://nodejs.org/download/) on your computer.
-2. Clone this repository: `git clone https://github.com/siimple/siimple.git`.
-3. Navigate to the cloned repository folder, and run `npm install` to download all the dependencies listed in `package.json`.
-
-We use [Make](https://www.tutorialspoint.com/unix_commands/make.htm) to automatize the building of **siimple**. 
-
-### Building siimple
-
-Navigate to the root folder of the **siimple** module and run the following command:
-
-```
-$ make build
-```
-
-This will generate `siimple.css` and `siimple.min.css` on `dist` folder.
-
-### Running documentation locally
-
-The documentation is generated using [bundle](https://bundler.io/) and [Jekyll](https://jekyllrb.com/docs/installation/). Make sure that you have them installed in your computer. Also, you will need [bower](https://bower.io) to download some front end dependencies. 
-
-First, you should run the following command to download and configure all dependencies for the documentation:
-
-```
-$ make install
-``` 
-
-Then, to build the documentation you should run the following command:
-
-```
-$ make docs
-```
-
-This will generate a folder `docs/_site` with the generated static documentation website.
- 
 
 ## Questions 
 
-For questions and support, please use our [community chat](http://chat.siimple.xyz) on **Gitter**. You can also follow [@siimplecss on Twitter](https://twitter.com/siimplecss).
+For questions and support, please use our [community chat](http://chat.siimple.xyz) on **Gitter**. 
+You can also follow [@siimplecss on Twitter](https://twitter.com/siimplecss).
 
 
 ## Bugs and new features
 
-Found any bug? Have you a feature request? Please make sure to read our [contributing guidelines][CONTRIBUTING] and search for existing or similar issues. If your problem or idea is not addressed yet, please feel free to open a new issue!
+Found any bug? Have you a feature request? Please make sure to read our [contributing guidelines][/iCONTRIBUTING.md] and search for existing or similar issues. 
+If your problem or idea is not addressed yet, please feel free to open a new issue!
 
 
 ## Contribute
 
-We appreciate all contributions to the **siimple** project and help make it better! Please, read the [contributing guidelines][CONTRIBUTING] before starting your contribution.
+We appreciate all contributions to the **siimple** project and help make it better! Please, read the [contributing guidelines][/CONTRIBUTING.md] before starting your contribution.
 
 
 ## Related projects
@@ -128,9 +84,6 @@ Have an awesome project or plugin related to **siimple**? Open a new issue and t
 
 ## License
 
-Code and documentation of **siimple** &copy; 2015-2018 **Josemi Juanes**. The code is released unde the [MIT License](LICENSE) and the documentation is released under the [Creative Commons CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
-
-The **siimple** logo &copy; 2018 **Josemi Juanes**. Released under the [Creative Commons CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/). 
-
-[CONTRIBUTING]: .github/CONTRIBUTING.md
+Code and documentation of **siimple** &copy; 2015-present **Josemi Juanes**. 
+The code is released unde the [MIT License](LICENSE) and the documentation is released under the [Creative Commons CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
 
