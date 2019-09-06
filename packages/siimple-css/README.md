@@ -63,13 +63,13 @@ You can also follow [@siimplecss on Twitter](https://twitter.com/siimplecss).
 
 ## Bugs and new features
 
-Found any bug? Have you a feature request? Please make sure to read our [contributing guidelines][/iCONTRIBUTING.md] and search for existing or similar issues. 
+Found any bug? Have you a feature request? Please make sure to read our [contributing guidelines](/CONTRIBUTING.md) and search for existing or similar issues. 
 If your problem or idea is not addressed yet, please feel free to open a new issue!
 
 
 ## Contribute
 
-We appreciate all contributions to the **siimple** project and help make it better! Please, read the [contributing guidelines][/CONTRIBUTING.md] before starting your contribution.
+We appreciate all contributions to the **siimple** project and help make it better! Please, read the [contributing guidelines](/CONTRIBUTING.md) before starting your contribution.
 
 
 ## Related projects
