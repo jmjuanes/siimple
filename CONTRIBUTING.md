@@ -56,12 +56,6 @@ Check the [packages description](/packages/README.md) for more information about
 
 ### Building documentation
 
-Run 
-
-```
-$ make docs
-```
-
-To build and start the documentation server. Then, open a new browser window and navigate to `http://localhost:5000`.
+Run `make docs` to build and start the documentation server. Then, open a new browser window and navigate to `http://localhost:5000`.
 
 
