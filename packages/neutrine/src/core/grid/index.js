@@ -6,12 +6,16 @@ import "@siimple/css/scss/grid/grid.scss";
 
 //Grid class
 export const Grid = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-grid");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-grid"
+    });
 };
 
 //Grid row class
 export const GridRow = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-grid-row");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-grid-row"
+    });
 };
 
 //Grid column class
