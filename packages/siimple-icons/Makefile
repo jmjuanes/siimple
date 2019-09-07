@@ -37,16 +37,11 @@ build:
 	${NODE_BIN}/ttf2woff ${OUTPUT_FONTS_TTF} ${OUTPUT_FONTS_WOFF}
 	${NODE_BIN}/woff2_compress.js ${OUTPUT_FONTS_TTF} ${OUTPUT_FONTS_WOFF2}
 
-# Build docs
-docs:
-	#cd ./docs && bundle exec jekyll build
-	#mkdir -p ./docs/_site/assets/js ./docs/_site/assets/css
-	#${NODE_BIN}/sass ./docs/_sass/main.scss ./docs/_site/assets/css/main.css --load-path=./bower_components/
-	#cp ./node_modules/react/umd/react.production.min.js ./docs/_site/assets/js/
-	#cp ./node_modules/react-dom/umd/react-dom.production.min.js ./docs/_site/assets/js/
-	#cp ./bower_components/siimple/dist/siimple.min.css ./docs/_site/assets/css/
-	#cp ./bower_components/siimple-colors/dist/siimple-colors.min.css ./docs/_site/assets/css/
-	#cp ./dist/siimple-icons.min.css ./docs/_site/assets/css/
-	#cp -R ./dist/fonts ./docs/_site/assets/css/
-	#cp ./icons.json ./docs/_site/assets/
+# Run tests
+test:
+	@# TODO
+
+# Publish the package
+publish:
+	npm publish --access public
 
