@@ -6,8 +6,8 @@
     display: block;
     width: 100%;
     max-width: 100%;
-    font-size: $siimple-default-text-size;
-    color: $siimple-default-text-color;
+    font-size: $siimple-default-font-size;
+    color: $siimple-default-color;
     margin-bottom: $siimple-default-margin-bottom;
     //Table container 
     &-container {
@@ -133,7 +133,7 @@
         }
         //Pagination buttons
         &-btn {
-            background-color: siimple-default-color("light", "light") !important;
+            background-color: siimple-default-color("light") !important;
             color: siimple-default-color("dark") !important;
         }
     }
