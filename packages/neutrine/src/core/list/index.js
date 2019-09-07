@@ -43,6 +43,8 @@ ListItem.defaultProps = {
 
 //List title component 
 export const ListTitle = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-list-title");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-list-title"
+    });
 };
 
