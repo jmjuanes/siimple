@@ -6,7 +6,9 @@ import "@siimple/css/scss/components/tabs.scss";
 
 //Export tabs component
 export const Tabs = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-tabs");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-tabs"
+    });
 };
 
 //Tabs item component 
