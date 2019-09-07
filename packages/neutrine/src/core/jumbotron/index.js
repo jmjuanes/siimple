@@ -32,16 +32,22 @@ Jumbotron.defaultProps = {
 
 //Jumbotron title
 export const JumbotronTitle = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-jumbotron-title");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-jumbotron-title"
+    });
 };
 
 //Jumbotron subtitle 
 export const JumbotronSubtitle = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-jumbotron-subtitle");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-jumbotron-subtitle"
+    });
 };
 
 //Jumbotron detail component 
 export const JumbotronDetail = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-jumbotron-detail");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-jumbotron-detail"
+    });
 };
 
