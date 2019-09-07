@@ -6,11 +6,15 @@ import "@siimple/css/scss/components/breadcrumb.scss";
 
 //Breadcrumb parent component
 export const Breadcrumb = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-breadcrumb");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-breadcrumb"
+    });
 };
 
 //Breadcrumb item component
 export const BreadcrumbItem = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-breadcrumb-item");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-breadcrumb-item"
+    });
 };
 
