@@ -2,7 +2,7 @@ import React from "react";
 import * as helpers from "../../helpers.js";
 
 //Import styles
-import "@siimple/scss/experiments/_steps.scss";
+import "@siimple/experiments/scss/steps.scss";
 
 //Step component
 export const Steps = function (props) {
