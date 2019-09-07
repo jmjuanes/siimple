@@ -1,7 +1,7 @@
 {
     "name": "@siimple/press-theme-siimple",
     "description": "A theme for siimple-press",
-    "version": "0.1.0",
+    "version": "0.0.1",
     "private": true,
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "files": [
@@ -19,7 +19,7 @@
     "dependencies": {
         "@siimple/press-plugin-copyfiles": "^0.0.1",
         "@siimple/press-plugin-sass": "^0.0.1",
-        "@siimple/css": "^4.0.0"
+        "@siimple/css": "^4.0.0-alpha"
     },
     "license": "MIT"
 }
