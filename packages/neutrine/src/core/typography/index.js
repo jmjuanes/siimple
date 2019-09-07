@@ -12,12 +12,16 @@ import "@siimple/css/scss/typography/small.scss";
 
 //Export blockquote component 
 export const Blockquote = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-blockquote");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-blockquote"
+    });
 };
 
 //Export code component 
 export const Code = function (props) {
-    return helpers.createMergedElement("code", props, "siimple-code");
+    return helpers.createMergedElement("code", props, {
+        "className": "siimple-code"
+    });
 };
 
 //Heading class
@@ -43,7 +47,9 @@ Heading.defaultProps = {
 
 //Export link component 
 export const Link = function (props) {
-    return helpers.createMergedElement("a", props, "siimple-link");
+    return helpers.createMergedElement("a", props, {
+        "className": "siimple-link"
+    });
 };
 
 //Paragraph component
@@ -69,11 +75,15 @@ Paragraph.defaultProps = {
 
 //Export pre component 
 export const Pre = function (props) {
-    return helpers.createMergedElement("pre", props, "siimple-pre");
+    return helpers.createMergedElement("pre", props, {
+        "className": "siimple-pre"
+    });
 };
 
 //Export small text component 
 export const Small = function (props) {
-    return helpers.createMergedElement("span", props, "siimple-small");
+    return helpers.createMergedElement("span", props, {
+        "className": "siimple-small"
+    });
 };
 
