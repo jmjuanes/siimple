@@ -7,6 +7,7 @@ import "./src/style.scss";
 //Export helpers
 export * from "./src/global.js";
 export * from "./src/helpers.js";
+export * from "./src/ready.js";
 
 //Export basic components
 export * from "./src/core/index.js";
