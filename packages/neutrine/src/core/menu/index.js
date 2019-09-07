@@ -6,12 +6,16 @@ import "@siimple/css/scss/components/menu.scss";
 
 //Menu component
 export const Menu = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-menu");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-menu"
+    });
 };
 
 //Menu group component
 export const MenuGroup = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-menu-group");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-menu-group"
+    });
 };
 
 //Menu item
