@@ -6,6 +6,8 @@ import "@siimple/css/scss/elements/rule.scss";
 
 //Rule component
 export const Rule = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-rule");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-rule"
+    });
 };
 
