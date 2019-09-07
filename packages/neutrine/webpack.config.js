@@ -17,8 +17,7 @@ module.exports = {
     },
     "resolve": {
         "modules": [
-            path.join(process.cwd(), "bower_components"),
-            path.join(process.cwd(), "node_modules")
+            path.resolve(process.cwd(), "../../", "node_modules")
         ],
     },
     "module": {
@@ -32,7 +31,9 @@ module.exports = {
                         "loader": "sass-loader",
                         "options": {
                             "implementation": require("sass"),
-                            "includePaths": ["./node_modules/"]
+                            "includePaths": [
+                                path.resolve(process.cwd(), "../../", "./node_modules/")
+                            ]
                         }
                     }
                 ]
@@ -73,7 +74,9 @@ module.exports = {
         })
     },
     "plugins": [
-        new MiniCssExtract({filename: "neutrine.css"})
+        new MiniCssExtract({
+            "filename": "neutrine.css"
+        })
     ]
 };
 
