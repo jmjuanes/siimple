@@ -1,9 +1,11 @@
 {
     "name": "@siimple/experiments",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "Experimental css components based on siimple",
     "style": "dist/siimple-experiments.css",
-    "main": "dist/siimple-experiments.css",
+    "browser": "dist/siimple-experiments.css",
+    "jsdelivr": "dist/siimple-experiments.css",
+    "main": "index.scss",
     "author": "Josemi Juanes <josemijuanes@gmail.com>",
     "license": "MIT",
     "homepage": "https://www.siimple.xyz/",
@@ -16,15 +18,13 @@
         "websites",
         "responsive"
     ],
+    "files": [
+        "dist",
+        "scss",
+        "test",
+        "index.scss"
+    ],
     "dependencies": {
-        "@siimple/css": "^4.0.0"
-    },
-    "devDependencies": {
-        "autoprefixer": "^9.6.1",
-        "clean-css-cli": "^4.3.0",
-        "postcss-cli": "^6.1.3",
-        "sass": "^1.22.9",
-        "sass-lint": "^1.13.1",
-        "stattic": "^0.4.0"
+        "@siimple/css": "^4.0.0-alpha.0"
     }
 }
