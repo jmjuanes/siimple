@@ -32,16 +32,22 @@ Navbar.defaultProps = {
 
 //Navbar title element
 export const NavbarTitle = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-navbar-title");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-navbar-title"
+    });
 };
 
 //Navbar subtitle class
 export const NavbarSubtitle = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-navbar-subtitle");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-navbar-subtitle"
+    });
 };
 
 //Navbar item element
 export const NavbarItem = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-navbar-item");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-navbar-item"
+    });
 };
 
