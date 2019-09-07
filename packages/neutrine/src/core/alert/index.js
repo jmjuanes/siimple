@@ -4,7 +4,7 @@ import * as helpers from "../../helpers.js";
 import "@siimple/css/scss/components/alert.scss";
 
 //Alert component
-export conts Alert = function (props) {
+export const Alert = function (props) {
     //Clone the alert props 
     let newProps = helpers.filterProps(props, ["className", "color"]);
     //Initialize the class list
