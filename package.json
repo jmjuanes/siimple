@@ -40,11 +40,12 @@
         "webpack-cli": "^3.3.7"
     },
     "packages": {
-        "@siimple/colors": "1.0.0",
-        "@siimple/css": "4.0.0",
+        "@siimple/colors": "0.0.1",
+        "@siimple/css": "4.0.0-alpha",
+        "@siimple/docs": "0.0.1",
         "@siimple/experiments": "0.0.1",
         "@siimple/icons": "0.0.1",
-        "@siimple/neutrine": "0.1.0",
+        "@siimple/neutrine": "0.0.1",
         "@siimple/press": "0.1.1",
         "@siimple/press-plugin-copyfiles": "0.0.1",
         "@siimple/press-plugin-sass": "0.0.1",
