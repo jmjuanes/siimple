@@ -15,8 +15,7 @@ process.nextTick(function () {
     });
     //Register static folders routes
     app.use("/dist", express.static(path.join(process.cwd(), "dist")));
-    app.use("/node_modules", express.static(path.join(process.cwd(), "node_modules")));
-    app.use("/bower_components", express.static(path.join(process.cwd(), "bower_components")));
+    app.use("/node_modules", express.static(path.resolve(process.cwd(), "../../node_modules")));
     app.use("/raw", express.static(path.join(process.cwd(), "test")));
     //Render the template
     app.use(function (req, res, next) {
