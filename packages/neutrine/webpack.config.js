@@ -17,7 +17,7 @@ module.exports = {
     },
     "resolve": {
         "modules": [
-            path.resolve(process.cwd(), "../../", "node_modules")
+            path.resolve(process.cwd(), "../../node_modules/")
         ],
     },
     "module": {
@@ -32,7 +32,7 @@ module.exports = {
                         "options": {
                             "implementation": require("sass"),
                             "includePaths": [
-                                path.resolve(process.cwd(), "../../", "./node_modules/")
+                                path.resolve(process.cwd(), "../../node_modules/")
                             ]
                         }
                     }
