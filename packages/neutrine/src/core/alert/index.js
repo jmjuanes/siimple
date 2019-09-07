@@ -24,11 +24,15 @@ Alert.defaultProps = {
 
 //Alert title component 
 export const AlertTitle = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-alert-title");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-alert-title"
+    });
 };
 
 //Alert close component
 export const AlertClose = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-alert-close");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-alert-close"
+    });
 };
 
