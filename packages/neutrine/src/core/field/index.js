@@ -6,16 +6,22 @@ import "@siimple/css/scss/form/field.scss";
 
 //Form field component
 export const Field = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-field");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-field"
+    });
 };
 
 //Field label component 
 export const FieldLabel = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-field-label");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-field-label"
+    });
 };
 
 //Field helper component
 export const FieldHelper = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-field-helper");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-field-helper"
+    });
 };
 
