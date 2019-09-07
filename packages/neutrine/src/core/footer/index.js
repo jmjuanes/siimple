@@ -32,31 +32,43 @@ Footer.defaultProps = {
 
 //Footer title
 export const FooterTitle = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-footer-title");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-footer-title"
+    });
 };
 
 //Footer subtitle
 export const FooterSubtitle = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-footer-subtitle");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-footer-subtitle"
+    });
 };
 
 //Footer group
 export const FooterGroup = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-footer-group");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-footer-group"
+    });
 };
 
 //Footer paragraph
 export const FooterParagraph = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-footer-paragraph");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-footer-paragraph"
+    });
 };
 
 //Footer link
 export const FooterLink = function (props) {
-    return helpers.createMergedElement("a", props, "siimple-footer-link");
+    return helpers.createMergedElement("a", props, {
+        "className": "siimple-footer-link"
+    });
 };
 
 //Footer rule
 export const FooterRule = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-footer-rule");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-footer-rule"
+    });
 };
 
