@@ -35,17 +35,23 @@ Table.defaultProps = {
 
 //Export table header component
 export const TableHeader = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-table-header");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-table-header"
+    });
 };
 
 //Export table body component
 export const TableBody = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-table-body");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-table-body"
+    });
 };
 
 //Export table row component
 export const TableRow = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-table-row"); 
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-table-row"
+    }); 
 };
 
 //Export table cell component
