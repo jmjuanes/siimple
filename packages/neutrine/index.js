@@ -21,7 +21,7 @@ export * from "./src/loaders/dna-loader/index.js";
 
 //Widgets
 export * from "./src/datatable/index.js";
-export * from "./src/text-editor/index.js";
+//export * from "./src/text-editor/index.js";
 
 //Export testing components
 export * from "./src/test/index.js";
