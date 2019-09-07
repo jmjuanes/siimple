@@ -21,5 +21,5 @@ test:
 
 # Publish the package
 publish:
-	#TODO
+	npm publish --access public
 
