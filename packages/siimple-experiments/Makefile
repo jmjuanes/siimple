@@ -21,5 +21,5 @@ test:
 
 # Publish the @siimple/experiments package
 publish:
-	@# TODO
+	npm publish --access public
 
