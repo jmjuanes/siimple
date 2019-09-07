@@ -41,7 +41,7 @@
     },
     "packages": {
         "@siimple/colors": "0.0.1",
-        "@siimple/css": "4.0.0-alpha",
+        "@siimple/css": "4.0.0-alpha.0",
         "@siimple/docs": "0.0.1",
         "@siimple/experiments": "0.0.1",
         "@siimple/icons": "0.0.1",
