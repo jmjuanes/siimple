@@ -43,6 +43,8 @@ Btn.defaultProps = {
 
 //Button groups
 export const BtnGroup = function (props) {
-    return helpers.createMergedElement("div", props, "siimple-btn-group");
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-btn-group"
+    });
 };
 
