@@ -1,6 +1,6 @@
 import React from "react";
 import {Table, TableHeader, TableBody, TableRow, TableCell} from "../../core/table/index.js";
-import {Chek} from "../../future/check/index.js";
+import {Check} from "../../future/check/index.js";
 import * as helpers from "../../helpers.js";
 
 //Import table utils
