@@ -5,6 +5,7 @@ export const DataTableConst = {
     "containerClass": "neutrine-datatable-container",
     "highlightedClass": "neutrine-datatable-row--highlighted",
     "cellClass": "neutrine-datatable-cell",
-    "headerCellClass": "neutrine-datatable-header-cell"
+    "headerCellClass": "neutrine-datatable-header-cell",
+    "fixedHeaderClass": "neutrine-datatable--fixed-header"
 };
 
