@@ -43,6 +43,7 @@ NeutrineUtils.loadJSON("/raw/packages/datatable/data.json", function (data) {
             let columns = Object.values({
                 "select1": {
                     "key": -1,
+                    "title": "Select 1",
                     "visible": true,
                     "selectable": true,
                     "selected": function () {
@@ -50,10 +51,12 @@ NeutrineUtils.loadJSON("/raw/packages/datatable/data.json", function (data) {
                     },
                     "onBodySelect": function (event, row, index) {
                         console.log("Select row " + index);
-                    }
+                    },
+                    "width": "80px"
                 },
                 "select2": {
                     "key": -2,
+                    "title": "Select 2",
                     "visible": true,
                     "selectable": true,
                     "selected": function () {
@@ -61,7 +64,8 @@ NeutrineUtils.loadJSON("/raw/packages/datatable/data.json", function (data) {
                     },
                     "onBodySelect": function (event, row, index) {
                         console.log("Select row " + index);
-                    }
+                    },
+                    "width": "80px"
                 },
                 "name": {
                     "title": "Name",
