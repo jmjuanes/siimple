@@ -543,11 +543,6 @@ DataTable.defaultProps = {
     "showPageSize": false, //Not available yet
     "onPageChange": null, //Current page changed
     "onPageSizeChange": null, //Page size changed
-    //Selection
-    "selectable": false,
-    "onBodyRowSelect": null,  //Select/deselect on a body row
-    "onHeaderRowSelect": null,  //Select/deselect on a header row
-    "rowSelected": null,  //Set if a body row should be selected
     //Default texts
     "emptyText": "No data to display" //No data to display
 };
