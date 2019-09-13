@@ -58,10 +58,6 @@ export function DataTableRender (props) {
         }
         //Add the cell column index
         cellProps["data-column"] = column.index;
-        //Join other class names
-        //if (typeof column.className === "string") {
-        //    cellProps.className.push(column.className);
-        //}
         //Build the class list
         cellProps.className = helpers.classNames(cellClassList, column.className);
         //Save the cell
@@ -110,10 +106,6 @@ export function DataTableRender (props) {
                 //Add a custom cell style
                 //cellClass.push(""); //TODO
             }
-            //Check the custom cell class-name
-            //if (typeof cell.className === "string") {
-            //    cellProps.className.push(cell.className);
-            //}
             //Add classnames
             cellProps.className = helpers.classNames(cellClass, cell.className);
             //Return the cell element
