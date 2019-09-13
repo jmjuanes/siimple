@@ -31,6 +31,10 @@
     //Table cell
     &-cell {
         //vertical-align: top;
+        //Cell with a checkbox
+        &--selectable {
+            width: 45px;
+        }
     }
     //Table row
     &-row {
