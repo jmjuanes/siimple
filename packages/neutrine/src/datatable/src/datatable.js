@@ -333,6 +333,7 @@ export class DataTable extends React.Component {
             "border": this.props.border,
             "striped": this.props.striped,
             "hover": this.props.hover,
+            "height": this.props.height,
             //"selectable": this.props.selectable,
             "onHeaderClick": self.handleHeaderClick,
             "onBodyClick": self.handleBodyClick
@@ -474,14 +475,18 @@ export class DataTable extends React.Component {
         //Initialize the table props
         let tableProps = {
             //"height": (this.props.pagination === true) ? null : this.props.height,
-            "style": {
-                "height": (this.props.pagination === true) ? null : this.props.height
-            },
+            "style": {},
             "className": helpers.classNames(DataTableConst.containerClass, this.props.className)
         };
+        //Check for fixed height
+        //if (this.props.pagination === false && this.props.fixedHeader === false) {
+        //    Object.assign(tableProps.style, {
+        //        "height": this.props.height
+        //    });
+        //}
         //Check for custom style provided
         if (typeof this.props.style === "object" && this.props.style !== null) {
-            Object.assign(tableProps, this.props.style);
+            Object.assign(tableProps.style, this.props.style);
         }
         //Return the table wrapper
         return React.createElement("div", tableProps, this.renderTable(rowStart, rowEnd));
@@ -520,9 +525,10 @@ DataTable.defaultProps = {
     "border": true, 
     "striped": false, 
     "hover": false,
-    "height": null,
+    "height": null,    //Max table height
     "className": null, //Global table classname
-    "style": null, //Global table style
+    "style": null,     //Global table style
+    //"fixedHeader": false,  //Header is fixed
     //Header row style
     "headerRowClassName": null,
     "headerRowStyle": null,
