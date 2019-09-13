@@ -354,7 +354,7 @@ export class DataTable extends React.Component {
                 "selectable": false,
                 "order": null,
                 "className": column.headerClassName,
-                "style": column.headerStyle
+                "style": {} //column.headerStyle
             };
             //Check if column is selectable
             if (typeof column.selectable === "boolean" && column.selectable === true) {
@@ -373,6 +373,16 @@ export class DataTable extends React.Component {
                         columnProps.order = self.state.sortedColumns[columnOrder].order.toLowerCase();
                     }
                 }
+            }
+            //Check for custom column style
+            if (typeof column.headerStyle === "object" && column.headerStyle !== null) {
+                Object.assign(columnProps.style, column.headerStyle);
+            }
+            //Check for column width
+            if (typeof column.width === "string") {
+                Object.assign(columnProps.style, {
+                    "width": column.width
+                });
             }
             //Add this column to the list of displayed columns
             renderProps.columns.push(columnProps);
@@ -429,6 +439,17 @@ export class DataTable extends React.Component {
                                 }
                             }
                         }
+                    }
+                    //Check for custom column width
+                    if (typeof column.width === "string") {
+                        //Check for null or undefined cell style
+                        if (typeof cellProps.style !== "object" || cellProps.style === null) {
+                            cellProps.style = {};
+                        }
+                        //Assign the cell width
+                        Object.assign(cellProps.style, {
+                            "width": column.width
+                        });
                     }
                     //Save the cell information
                     rowProps.cells.push(cellProps);
