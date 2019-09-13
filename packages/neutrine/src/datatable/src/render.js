@@ -130,17 +130,33 @@ export function DataTableRender (props) {
         //Return this row
         return React.createElement(TableRow, rowProps, rowCells);
     });
+    //Get the table classNAme
+    let tableClassList = [DataTableConst.tableClass];
+    //Get the table header and body props
+    let tableHeaderProps = {};
+    let tableBodyProps = {
+        "style": {}
+    };
+    //Check for table fixed height
+    if (props.height !== null) {
+        //Add fixed class
+        tableClassList.push(DataTableConst.fixedHeaderClass);
+        //Set the height
+        Object.assign(tableBodyProps.style, {
+            "height": props.height
+        });
+    }
     //Generate the table props
     let tableProps = {
-        "className": DataTableConst.tableClass,
+        "className": helpers.classNames(tableClassList),
         "border": props.border,
         "striped": props.striped,
         "hover": props.hover
     };
     //Return the table content
     return React.createElement(Table, tableProps, 
-        React.createElement(TableHeader, {}, headerRow),
-        React.createElement(TableBody, {}, bodyRows)
+        React.createElement(TableHeader, tableHeaderProps, headerRow),
+        React.createElement(TableBody, tableBodyProps, bodyRows)
     );
 }
 
@@ -151,6 +167,7 @@ DataTableRender.defaultProps = {
     "border": false,
     "striped": false,
     "hover": false,
+    "height": null,
     "onHeaderClick": null,
     "onBodyClick": null
 };
