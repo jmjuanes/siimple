@@ -349,7 +349,7 @@ export class DataTable extends React.Component {
             //Initialize the colum properties
             let columnProps = {
                 "index": index,
-                "content": null, //column.title,
+                "content": column.title,
                 "sortable": false,
                 "selectable": false,
                 "order": null,
@@ -362,7 +362,7 @@ export class DataTable extends React.Component {
             }
             else {
                 //Save the column title
-                columnProps.content = column.title;
+                //columnProps.content = column.title;
                 //Check if column is sortable
                 if (typeof column.sortable === "boolean" && column.sortable === true) {
                     //Set sortable column
