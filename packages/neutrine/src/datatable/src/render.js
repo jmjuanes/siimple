@@ -43,7 +43,7 @@ export function DataTableRender (props) {
         let cellClassList = [DataTableConst.headerCellClass];
         //Check if column is selectable 
         if (column.selectable === true) {
-            //cellClassList.push("");  //TODO
+            cellClassList.push(DataTableConst.selectableCellClass);
         }
         //Check if column is sortable
         else if (typeof column.sortable === "boolean" && column.sortable === true) {
@@ -96,7 +96,7 @@ export function DataTableRender (props) {
             };
             //Initialize the cell content and the cell class
             let cellContent = cell.content;
-            let cellClass = [DataTableConst.cellClass];
+            let cellClassList = [DataTableConst.cellClass];
             //Check if this column is selectable
             if (cell.selectable === true) {
                 //Display a checkbox component
@@ -104,10 +104,10 @@ export function DataTableRender (props) {
                     "checked": cell.selected
                 });
                 //Add a custom cell style
-                //cellClass.push(""); //TODO
+                cellClassList.push(DataTableConst.selectableCellClass);
             }
             //Add classnames
-            cellProps.className = helpers.classNames(cellClass, cell.className);
+            cellProps.className = helpers.classNames(cellClassList, cell.className);
             //Return the cell element
             return React.createElement(TableCell, cellProps, cellContent);
         });
