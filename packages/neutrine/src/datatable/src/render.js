@@ -3,29 +3,28 @@ import {Table, TableHeader, TableBody, TableRow, TableCell} from "../../core/tab
 import {Check} from "../../future/check/index.js";
 import * as helpers from "../../helpers.js";
 
-//Import table utils
 import * as DataTableUtils from "./utils.js";
+import {DataTableConst} from "./const.js";
 
 //Export datatable render component
 export function DataTableRender (props) {
+    //Handle header cell click
+    let handleHeaderCellClick = function (event, index) {
+        return props.onHeaderClick.call(null, event, index);
+    };
     //Handle body cell click
     let handleBodyCellClick = function (event) {
         //Find the cell class in the nodes list
-        return DataTableUtils.findClassInNodeList(event.nativeEvent.path, "neutrine-datatable-cell", function (node, index) {
+        return DataTableUtils.findClassInNodeList(event.nativeEvent.path, DataTableConst.cellClass, function (node, index) {
             //Get the row and column index
             let rowIndex = parseInt(node.dataset.row);
             let colIndex = parseInt(node.dataset.column);
+            //Check for undefined row index or column index
+            if (isNaN(rowIndex) || isNaN(colIndex)) {
+                return null;
+            }
             //Call the click listener
-            return props.onBodyCellClick.call(null, event, rowIndex, colIndex);
-        });
-    };
-    //Handle body row select
-    let handleBodyRowSelect = function (event) {
-        //console.log("Cell select clicked");
-        return DataTableUtils.findClassInNodeList(event.nativeEvent.path, "neutrine-datatable-cell", function (node, index) {
-            let rowIndex = parseInt(node.dataset.row);
-            //console.log("Row selected: " + rowIndex);
-            return props.onBodyRowSelect.call(null, event, rowIndex);
+            return props.onBodyClick.call(null, event, rowIndex, colIndex);
         });
     };
     //Build the table header cell
@@ -35,17 +34,19 @@ export function DataTableRender (props) {
             "className": null, //["neutrine-datatable-header-cell"],
             "onClick": null,
             "style": column.style,
+            "onClick": function (event) {
+                return handleHeaderCellClick(event, column.index);
+            },
             "key": index
         };
-        //Check the header cell click event listener
-        if (typeof props.onHeaderCellClick === "function") {
-            //Register the on-click event listener to this cell
-            cellProps.onClick = function (event) {
-                return props.onHeaderCellClick(event, column.index);
-            };
+        //Initialize the cell class list
+        let cellClassList = [DataTableConst.headerCellClass];
+        //Check if column is selectable 
+        if (column.selectable === true) {
+            //cellClassList.push("");  //TODO
         }
         //Check if column is sortable
-        if (typeof column.sortable === "boolean" && column.sortable === true) {
+        else if (typeof column.sortable === "boolean" && column.sortable === true) {
             //Add the sortable class
             //cellProps.className.push("neutrine-datatable-header-cell--sortable");
             cellProps.sortable = true;
@@ -62,18 +63,18 @@ export function DataTableRender (props) {
         //    cellProps.className.push(column.className);
         //}
         //Build the class list
-        cellProps.className = helpers.classNames("neutrine-datatable-header-cell", column.className);
+        cellProps.className = helpers.classNames(cellClassList, column.className);
         //Save the cell
         return React.createElement(TableCell, cellProps, column.content);
     });
-    //Check if table is selectable
-    if (props.selectable === true) {
-        headerCells.unshift(React.createElement(TableCell, {
-            "className": "neutrine-datatable-header-cell",
-            "onClick": null,
-            "key": -1
-        }));
-    }
+    ////Check if table is selectable
+    //if (props.selectable === true) {
+    //    headerCells.unshift(React.createElement(TableCell, {
+    //        "className": "neutrine-datatable-header-cell",
+    //        "onClick": null,
+    //        "key": -1
+    //    }));
+    //}
     //Build the row element
     let headerRow = React.createElement(TableRow, {}, headerCells);
     //Build the table body rows
@@ -97,37 +98,49 @@ export function DataTableRender (props) {
                 "onClick": handleBodyCellClick,
                 "style": cell.style
             };
+            //Initialize the cell content and the cell class
+            let cellContent = cell.content;
+            let cellClass = [DataTableConst.cellClass];
+            //Check if this column is selectable
+            if (cell.selectable === true) {
+                //Display a checkbox component
+                cellContent = React.createElement(Check, {
+                    "checked": cell.selected
+                });
+                //Add a custom cell style
+                //cellClass.push(""); //TODO
+            }
             //Check the custom cell class-name
             //if (typeof cell.className === "string") {
             //    cellProps.className.push(cell.className);
             //}
             //Add classnames
-            cellProps.className = helpers.classNames("neutrine-datatable-cell", cell.className);
+            cellProps.className = helpers.classNames(cellClass, cell.className);
             //Return the cell element
-            return React.createElement(TableCell, cellProps, cell.content);
+            return React.createElement(TableCell, cellProps, cellContent);
         });
-        //Check if the table is selectable
-        if (props.selectable === true) {
-            //Initialize the selection cell props
-            let selectCellProps = {
-                "className": "neutrine-datatable-cell",
-                "data-row": "" + row.index + "",
-                "onClick": handleBodyRowSelect,
-                "key": -1
-            };
-            //Initialize the selection cell content
-            let selectCellContent = React.createElement(Check, {
-                "selected": row.selected
-            });
-            //Save the selection cell
-            rowCells.unshift(React.createElement(TableCell, selectCellProps, selectCellContent));
-        }
+        ////Check if the table is selectable
+        //if (props.selectable === true) {
+        //    //Initialize the selection cell props
+        //    let selectCellProps = {
+        //        "className": "neutrine-datatable-cell",
+        //        "data-row": "" + row.index + "",
+        //        "onClick": handleBodyRowSelect,
+        //        "key": -1
+        //    };
+        //    //Initialize the selection cell content
+        //    let selectCellContent = React.createElement(Check, {
+        //        "selected": row.selected
+        //    });
+        //    //Save the selection cell
+        //    rowCells.unshift(React.createElement(TableCell, selectCellProps, selectCellContent));
+        //}
         //Return this row
         return React.createElement(TableRow, rowProps, rowCells);
     });
     //Generate the table props
     let tableProps = {
-        "className": "neutrine-datatable-table",
+        "className": DataTableConst.tableClass,
         "border": props.border,
         "striped": props.striped,
         "hover": props.hover
@@ -146,10 +159,7 @@ DataTableRender.defaultProps = {
     "border": false,
     "striped": false,
     "hover": false,
-    "selectable": false,
-    "onHeaderCellClick": null,
-    "onHeaderRowSelect": null,
-    "onBodyCellClick": null,
-    "onBodyRowSelect": null
+    "onHeaderClick": null,
+    "onBodyClick": null
 };
 
