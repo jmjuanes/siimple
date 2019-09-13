@@ -42,50 +42,16 @@
     }
     //Table header
     &-header {
+        //Header cell style
         &-cell {
             position: relative;
             -webkit-user-select: none;
             -moz-user-select: none;
             user-select: none;
-            //Sortable class
-            //&--sortable {
-            //    padding-right: 20px !important;
-            //    cursor: pointer;
-            //}
-            ////Cell triangle up
-            //&--sortable::before {
-            //    content: "";
-            //    position: absolute;
-            //    right: 5px;
-            //    top: 12px;
-            //    width: 0;
-            //    height: 0;
-            //    border-left: 6px solid transparent;
-            //    border-right: 6px solid transparent;
-            //    border-bottom: 8px solid siimple-default-color("light");
-            //    transition: all 0.3s;
-            //}
-            ////Cell triangle down
-            //&--sortable::after {
-            //    content: "";
-            //    position: absolute;
-            //    right: 5px;
-            //    bottom: 12px;
-            //    width: 0;
-            //    height: 0;
-            //    border-left: 6px solid transparent;
-            //    border-right: 6px solid transparent;
-            //    border-top: 8px solid siimple-default-color("light");
-            //    transition: all 0.3s;
-            //}
-            ////Asc order
-            //&--asc::before {
-            //    border-bottom-color: siimple-default-color("primary");
-            //}
-            ////Desc order
-            //&--desc::after {
-            //    border-top-color: siimple-default-color("primary");
-            //}
+            //Selectable cell style
+            &--selectable {
+                width: 45px;
+            }
         }
     }
     //Pagination controls
