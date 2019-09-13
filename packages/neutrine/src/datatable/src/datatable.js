@@ -31,11 +31,11 @@ export class DataTable extends React.Component {
         this.handlePageChange = this.handlePageChange.bind(this);
         this.handlePageSizeChange = this.handlePageSizeChange.bind(this);
         //Cell click handlers
-        this.handleHeaderCellClick = this.handleHeaderCellClick.bind(this);
-        this.handleBodyCellClick = this.handleBodyCellClick.bind(this);
+        this.handleHeaderClick = this.handleHeaderClick.bind(this);
+        this.handleBodyClick = this.handleBodyClick.bind(this);
         //Row select handlers
-        this.handleHeaderRowSelect = this.handleHeaderRowSelect.bind(this);
-        this.handleBodyRowSelect = this.handleBodyRowSelect.bind(this);
+        //this.handleHeaderRowSelect = this.handleHeaderRowSelect.bind(this);
+        //this.handleBodyRowSelect = this.handleBodyRowSelect.bind(this);
     }
     //Build the table state
     buildState(props) {
@@ -76,41 +76,56 @@ export class DataTable extends React.Component {
             "pageSize": size
         });
     }
-    //Handle the cell click event
-    handleBodyCellClick(event, rowIndex, columnIndex) {
+    //Handle body cell click event
+    handleBodyClick(event, rowIndex, colIndex) {
         //console.log("Clicked on row: " + rowIndex);
         //console.log("Clicked on cell: " + columnIndex);
-        if (typeof this.props.onBodyCellClick === "function") {
-            //Get the row and column data
-            let row = this.getRow(rowIndex);
-            //Call the cell click listener
-            return this.props.onBodyCellClick(event.nativeEvent, row, rowIndex, columnIndex);
+        //Get the column and the row data
+        let row = this.getRow(rowIndex);
+        let column = this.getColumn(colIndex);
+        //Check if this column is selectable
+        if (column.selectable === true) {
+            //Check if a body row select listener has been provided
+            if (typeof column.onBodySelect === "function") {
+                return column.onBodySelect(event, row, rowIndex, column, colIndex);
+            }
+        }
+        //Check for body cell click listener
+        else if (typeof this.props.onBodyClick === "function") {
+            return this.props.onBodyClick(event, row, rowIndex, column, colIndex);
         }
     }
-    //Handle body row select event
-    handleBodyRowSelect(event, index) {
-        //Check for custom row selection handler
-        if (typeof this.props.onBodyRowSelect === "function") {
-            return this.props.onBodyRowSelect(this.getRow(index), index); //, isSelected);
-        }
-    }
+    ////Handle body row select event
+    //handleBodyRowSelect(event, index) {
+    //    //Check for custom row selection handler
+    //    if (typeof this.props.onBodyRowSelect === "function") {
+    //        return this.props.onBodyRowSelect(this.getRow(index), index); //, isSelected);
+    //    }
+    //}
     //Handle the header cell click event
-    handleHeaderCellClick(event, index) {
+    handleHeaderClick(event, index) {
         //Get the column
         let column = this.getColumn(index);
+        //Check if this column is selectable
+        if (column.selectable === true) {
+            //Check if a header select listener has been provided
+            if (typeof column.onHeaderSelect === "function") {
+                return column.onHeaderSelect(event, column, index);
+            }
+        }
         //Check if this column is sortable
-        if (typeof column.sortable === "boolean" && column.sortable === true) {
+        else if (typeof column.sortable === "boolean" && column.sortable === true) {
             this.addSortColumn(index, event.nativeEvent.shiftKey);
         }
         //Call the header click method
-        if (typeof this.props.onHeaderCellClick === "function") {
-            this.props.onHeaderCellClick.call(null, event.nativeEvent, index);
+        if (typeof this.props.onHeaderClick === "function") {
+            this.props.onHeaderClick.call(null, even, column, index);
         }
     }
     //Handle the header row select event
-    handleHeaderRowSelect(event) {
-        //TODO
-    }
+    //handleHeaderRowSelect(event) {
+    //    //TODO
+    //}
     //Get a column data by index
     getColumn(index) {
         return this.props.columns[index];
@@ -318,11 +333,11 @@ export class DataTable extends React.Component {
             "border": this.props.border,
             "striped": this.props.striped,
             "hover": this.props.hover,
-            "selectable": this.props.selectable,
-            "onHeaderCellClick": self.handleHeaderCellClick,
-            "onBodyCellClick": self.handleBodyCellClick,
+            //"selectable": this.props.selectable,
+            "onHeaderClick": self.handleHeaderClick,
+            "onBodyClick": self.handleBodyClick
             //"onHeaderRowSelect": self.handleHeaderRowSelect,
-            "onBodyRowSelect": self.handleBodyRowSelect
+            //"onBodyRowSelect": self.handleBodyRowSelect
         };
         //Add the table columns
         this.props.columns.forEach(function (column, index) {
@@ -333,20 +348,29 @@ export class DataTable extends React.Component {
             //Initialize the colum properties
             let columnProps = {
                 "index": index,
-                "content": column.title,
+                "content": null, //column.title,
                 "sortable": false,
+                "selectable": false,
                 "order": null,
                 "className": column.headerClassName,
                 "style": column.headerStyle
             };
-            //Check if column is sortable
-            if (typeof column.sortable === "boolean" && column.sortable === true) {
-                //Set sortable column
-                columnProps.sortable = true;
-                //Check the order of this column
-                let columnOrder = self.findSortedColumn(index);
-                if (columnOrder !== -1) {
-                    columnProps.order = self.state.sortedColumns[columnOrder].order.toLowerCase();
+            //Check if column is selectable
+            if (typeof column.selectable === "boolean" && column.selectable === true) {
+                columnProps.selectable = true;
+            }
+            else {
+                //Save the column title
+                columnProps.content = column.title;
+                //Check if column is sortable
+                if (typeof column.sortable === "boolean" && column.sortable === true) {
+                    //Set sortable column
+                    columnProps.sortable = true;
+                    //Check the order of this column
+                    let columnOrder = self.findSortedColumn(index);
+                    if (columnOrder !== -1) {
+                        columnProps.order = self.state.sortedColumns[columnOrder].order.toLowerCase();
+                    }
                 }
             }
             //Add this column to the list of displayed columns
@@ -361,8 +385,7 @@ export class DataTable extends React.Component {
                     "index": rowIndex,
                     "cells": [],
                     "style": null,
-                    "className": null,
-                    "selected": false 
+                    "className": null
                 };
                 //Get the row data
                 let row = this.props.data[rowProps.index];
@@ -377,28 +400,42 @@ export class DataTable extends React.Component {
                         "index": index,
                         "style": helpers.callProp(column.bodyClassName, [row, rowIndex, column, index]),
                         "className": helpers.callProp(column.bodyStyle, [row, rowIndex, column, index]),
-                        "content": (typeof column.defaultValue === "string") ? column.defaultValue : ""
+                        //"content": (typeof column.defaultValue === "string") ? column.defaultValue : "",
+                        "content": null,
+                        "selectable": column.selectable,
+                        "selected": false
                     };
-                    //Check for custom cell content
-                    if (typeof column.render === "function") {
-                        cellProps.content = column.render.call(null, row, rowProps.index);
+                    //Check if this column is selectable
+                    if (column.selectable === true) {
+                        //Save if this row is selected
+                        if (typeof column.selected === "function") {
+                            cellProps.selected = column.selected(row, rowProps.index);
+                        }
                     }
+                    //If this column is not selectable, save the column content
                     else {
-                        //No custom content, find the content in the row data
-                        if (typeof column.key !== "undefined" && column.key !== null) {
-                            if (typeof row[column.key] !== "undefined") {
-                                cellProps.content = row[column.key];
+                        //Add the default content value
+                        cellProps.content = (typeof column.defaultValue === "string") ? column.defaultValue : "";
+                        //Check for custom cell content
+                        if (typeof column.render === "function") {
+                            cellProps.content = column.render.call(null, row, rowProps.index);
+                        }
+                        else {
+                            //No custom content, find the content in the row data
+                            if (typeof column.key !== "undefined" && column.key !== null) {
+                                if (typeof row[column.key] !== "undefined") {
+                                    cellProps.content = row[column.key];
+                                }
                             }
                         }
-                        //cellProps.content = (typeof column.key !== "undefined") ? row[column.key] : column.defaultValue;
                     }
                     //Save the cell information
                     rowProps.cells.push(cellProps);
                 });
                 //Check if this row is selected
-                if (typeof this.props.rowSelected === "function") {
-                    rowProps.selected = this.props.rowSelected(row, rowProps.index);
-                }
+                //if (typeof this.props.rowSelected === "function") {
+                //    rowProps.selected = this.props.rowSelected(row, rowProps.index);
+                //}
                 //Assign row style
                 Object.assign(rowProps, {
                     "className": helpers.callProp(this.props.bodyRowClassName, [row, rowProps.index, rowProps.selected]),
@@ -493,8 +530,8 @@ DataTable.defaultProps = {
     "bodyRowClassName": null,
     "bodyRowStyle": null,
     //Cell click listener
-    "onBodyCellClick": null, //Body cell click event listener
-    "onHeaderCellClick": null, //Header cell click event listener
+    "onBodyClick": null, //Body cell click event listener
+    "onHeaderClick": null, //Header cell click event listener
     //Pagination
     "pagination": true, //Use pagination
     "page": 0, //Initial page
