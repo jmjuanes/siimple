@@ -54,6 +54,22 @@
             }
         }
     }
+    //Fixed table header
+    &--fixed-header {
+        //Overwrite table body style
+        & .siimple-table-body {
+            display: block;
+            //max-height: 450px;
+            overflow-y: scroll;
+        }
+        //Overwrite table row style
+        & .siimple-table-header,
+        & .siimple-table-body .siimple-table-row {
+            display: table;
+            width: 100%; 
+            table-layout: fixed;
+        }
+    }
     //Pagination controls
     &-pagination {
         display: block;
