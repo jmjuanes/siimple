@@ -105,6 +105,8 @@ export function DataTableRender (props) {
                 });
                 //Add a custom cell style
                 cellClassList.push(DataTableConst.selectableCellClass);
+                //Align checkbox
+                cellProps.align = "center";
             }
             //Add classnames
             cellProps.className = helpers.classNames(cellClassList, cell.className);
