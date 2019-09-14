@@ -145,7 +145,7 @@ export function DataTableRender (props) {
         tableClassList.push(DataTableConst.fixedHeaderClass);
         //Set the height
         Object.assign(tableBodyProps.style, {
-            "height": props.height
+            "maxHeight": props.height
         });
     }
     //Generate the table props
