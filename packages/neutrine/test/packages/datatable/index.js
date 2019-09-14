@@ -24,10 +24,6 @@ NeutrineUtils.loadJSON("/raw/packages/datatable/data.json", function (data) {
                 "type": "boolean",
                 "defaultValue": false
             },
-            "selectable": {
-                "type": "boolean",
-                "defaultValue": false
-            },
             "pagination": {
                 "type": "boolean",
                 "defaultValue": true
@@ -52,7 +48,7 @@ NeutrineUtils.loadJSON("/raw/packages/datatable/data.json", function (data) {
                     "onBodySelect": function (event, row, index) {
                         console.log("Select row " + index);
                     },
-                    "width": "80px"
+                    "width": "85px"
                 },
                 "select2": {
                     "key": -2,
@@ -65,7 +61,7 @@ NeutrineUtils.loadJSON("/raw/packages/datatable/data.json", function (data) {
                     "onBodySelect": function (event, row, index) {
                         console.log("Select row " + index);
                     },
-                    "width": "80px"
+                    "width": "85px"
                 },
                 "name": {
                     "title": "Name",
@@ -116,7 +112,6 @@ NeutrineUtils.loadJSON("/raw/packages/datatable/data.json", function (data) {
                 "striped": newProps.striped,
                 "border": newProps.border,
                 "hover": newProps.hover,
-                //"selectable": newProps.selectable,
                 "pagination": newProps.pagination,
                 "bodyRowClassName": function (row, index) {
                     return (parseSalary(row[5]) < 100000) ? "siimple-table-row--warning" : "";
