@@ -2,53 +2,53 @@ import React from "react";
 import {Icon} from "../../icon/index.js";
 import * as helpers from "../../helpers.js";
 
-//Import toolbar styles
+//Import appside styles
 import "./style.scss";
 
 //Base class
-let baseClass = "neutrine-toolbar";
+let baseClass = "neutrine-appside";
 
-//Export toolbar wrapper component
-export const ToolbarWrapper = function (props) {
-    //Toolbar class styles
+//Export appside wrapper component
+export const AppsideWrapper = function (props) {
+    //Appside class styles
     let classList = [baseClass + "-wrapper"];
-    //Check if toolbar is collapsed
+    //Check if appside is collapsed
     if (props.collapsed === true) {
         classList.push(baseClass + "-wrapper--collapsed");
     }
-    //Return the toolbar element
+    //Return the appside element
     return React.createElement("div", {"className": classList.join(" ")}, props.children);
 };
 
-//Toolbar wrapper default props
-ToolbarWrapper.defaultProps = {
+//Appside wrapper default props
+AppsideWrapper.defaultProps = {
     "collapsed": true
 };
 
-//Export toolbar component
-export const Toolbar = function (props) {
+//Export appside component
+export const Appside = function (props) {
     //Sidebar base class styles
     let classList = [baseClass];
-    //Check the toolbar color
+    //Check the appside color
     if (props.color === "light" || props.color === "dark") {
         classList.push(baseClass + "--" + props.color);
     }
-    //Build toolbar props
-    let toolbarProps = {
+    //Build appside props
+    let appsideProps = {
         "className": helpers.classNames(classList, props.className),
         "style": props.style
     };
-    //Return the toolbar component
-    return React.createElement("div", toolbarProps, props.children);
+    //Return the appside component
+    return React.createElement("div", appsideProps, props.children);
 };
 
-//Toolbar default props
-Toolbar.defaultProps = {
+//Appside default props
+Appside.defaultProps = {
     "color": "light"
 };
 
-//Toolbar toggle
-export const ToolbarToggle = function (props) {
+//Appside toggle
+export const AppsideToggle = function (props) {
     //Build the sidebar toggle props
     let toggleProps = {
         "align": "center",
@@ -64,8 +64,8 @@ export const ToolbarToggle = function (props) {
     return React.createElement("div", toggleProps, toggleIcon);
 };
 
-//Toolbar item
-export const ToolbarItem = function (props) {
+//Appside item
+export const AppsideItem = function (props) {
     //Initialize the button props
     let itemProps = {
         "className": [baseClass + "-item"],
@@ -86,37 +86,37 @@ export const ToolbarItem = function (props) {
     }
     //Merge the classnames
     itemProps.className = itemProps.className.join(" ");
-    //Return the toolbar item element
+    //Return the appside item element
     return React.createElement("div", itemProps, icon, props.text);
 };
 
-//Toolbar item default props
-ToolbarItem.defaultProps = {
+//Appside item default props
+AppsideItem.defaultProps = {
     "text": "",
     "icon": null,
     "active": false,
     "onClick": null,
 };
 
-//Toolbar separator
-export const ToolbarSeparator = function (props) {
+//Appside separator
+export const AppsideSeparator = function (props) {
     return React.createElement("div", {
         "className": baseClass + "-separator"
     });
 };
 
-//Toolbar group
-export const ToolbarGroup = function (props) {
-    //Toolbar group default props
+//Appside group
+export const AppsideGroup = function (props) {
+    //Appside group default props
     let groupProps = {
         "className": baseClass + "-group"
     };
-    //Return the toolbar group element
+    //Return the appside group element
     return React.createElement("div", groupProps, props.text);
 };
 
-//Toolbar group default props
-ToolbarGroup.defaultProps = {
+//Appside group default props
+AppsideGroup.defaultProps = {
     "text": null
 };
 
