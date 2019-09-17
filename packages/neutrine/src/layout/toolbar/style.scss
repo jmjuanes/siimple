@@ -1,8 +1,8 @@
 //Import dependencies
 @import "@siimple/css/scss/variables.scss";
 
-//Neutrine appside style
-.neutrine-appside {
+//Neutrine toolbar style
+.neutrine-toolbar {
     display: block;
     position: fixed;
     width: calc(260px - 30px);
@@ -14,12 +14,12 @@
     transition: all 0.3s;
     top: 0px !important;
     left: 0px;
-    //Light appside
+    //Light toolbar
     &--light {
         background-color: siimple-default-color("light");
         color: siimple-default-color("dark");
     }
-    //Dark appside
+    //Dark toolbar
     &--dark {
         background-color: siimple-default-color("dark");
         color: #ffffff;
@@ -45,11 +45,11 @@
         transition: all 0.3s;
         overflow: hidden;
     }
-    //Light appside --> change group color
+    //Light toolbar --> change group color
     &--light &-group {
         color: rgba(siimple-default-color("dark"), 0.6);
     }
-    //Dark appside --> change group color
+    //Dark toolbar --> change group color
     &--dark &-group {
         color: rgba(siimple-default-color("white"), 0.6);
     }
@@ -81,7 +81,7 @@
             font-weight: normal !important;
         }
     }
-    //Light appside
+    //Light toolbar
     &--light &-item {
         color: siimple-default-color("dark","light");
         //Item hover
@@ -114,11 +114,11 @@
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    //Light appside --> change separator color
+    //Light toolbar --> change separator color
     &--light &-separator {
         background-color: siimple-default-color("light", "dark");
     }
-    //Dark appside --> change separator color
+    //Dark toolbar --> change separator color
     &--dark &-separator {
         background-color: rgba(#ffffff, 0.3);
     }
@@ -150,12 +150,12 @@
             transition: all 0.3s;
         }
     }
-    //Light appside --> change toggle color
+    //Light toolbar --> change toggle color
     &--light &-toggle {
         color: rgba(siimple-default-color("dark"), 0.8);
         background-color: rgba(siimple-default-color("dark"), 0.1);
     }
-    //Dark appside --> change toggle color
+    //Dark toolbar --> change toggle color
     &--dark &-toggle {
         color: rgba(siimple-default-color("white"), 0.8);
         background-color: rgba(siimple-default-color("white"), 0.1);
@@ -164,7 +164,7 @@
     &-wrapper--collapsed &-toggle-icon {
         transform: rotate(180deg);
     }
-    //Collapsed appside
+    //Collapsed toolbar
     &-wrapper--collapsed & {
         width: 40px !important;    
         //margin-left: 0px !important;
