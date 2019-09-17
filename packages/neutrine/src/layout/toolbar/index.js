@@ -3,83 +3,106 @@ import React from "react";
 import * as helpers from "../../helpers.js";
 
 //Import toolbar styles
-import "../styles/toolbar.scss";
+import "./style.scss";
 
 //Base class
 let baseClass = "neutrine-toolbar";
 
 //Export toolbar wrapper component
-export const ToolbarContainer = function (props) {
+export const ToolbarWrapper = function (props) {
     //Toolbar class styles
-    let classList = [baseClass + "-container"];
+    let classList = [baseClass + "-wrapper"];
     //Check if toolbar is collapsed
     if (props.collapsed === true) {
-        classList.push(baseClass + "-container--collapsed");
+        classList.push(baseClass + "-wrapper--collapsed");
     }
     //Return the toolbar element
     return React.createElement("div", {"className": classList.join(" ")}, props.children);
 };
 
-//Toolbar container default props
-ToolbarContainer.defaultProps = {
+//Toolbar wrapper default props
+ToolbarWrapper.defaultProps = {
     "collapsed": true
 };
 
-//Export toolbar 
+//Export toolbar component
 export const Toolbar = function (props) {
-    //Initialize the toolbar props
+    //Sidebar base class styles
+    let classList = [baseClass];
+    //Check the toolbar color
+    if (props.color === "light" || props.color === "dark") {
+        classList.push(baseClass + "--" + props.color);
+    }
+    //Build toolbar props
     let toolbarProps = {
-        "className": baseClass
+        "className": helpers.classNames(classList, props.className),
+        "style": props.style
     };
-    //Return the sidebar element
+    //Return the toolbar component
     return React.createElement("div", toolbarProps, props.children);
 };
 
 //Toolbar default props
-Toolbar.defaultProps = {};
+Toolbar.defaultProps = {
+    "color": "light"
+};
 
 //Toolbar toggle
 export const ToolbarToggle = function (props) {
-    return React.createElement("div", {
-        "className": baseClass + "-toggle",
-        "onClick": props.onClick
+    //Build the sidebar toggle props
+    let toggleProps = {
+        "align": "center",
+        "onClick": props.onClick,
+        "className": baseClass + "-toggle"
+    };
+    //Build the toggle icon
+    let toggleIcon = React.createElement(Icon, {
+        "icon": "chevron-left",
+        "className": baseClass + "-toggle-icon"
     });
-};
-
-//Toolbar toggle default props
-ToolbarToggle.defaultProps = {
-    "onClick": null
+    //Build the toggle element
+    return React.createElement("div", toggleProps, toggleIcon);
 };
 
 //Toolbar item
 export const ToolbarItem = function (props) {
-    //Initialize the item classlist
-    let classList = [baseClass + "-item"];
-    //Check if this item is active
-    if (props.active === true) {
-        classList.push(baseClass + "-item--active");
-    }
-    //Build the item props
+    //Initialize the button props
     let itemProps = {
-        "className": helpers.classNames(classList, props.className),
+        "className": [baseClass + "-item"],
         "onClick": props.onClick
     };
-    //Check for custom icon
-    if (props.icon !== null && typeof props.icon === "string") {
-        itemProps.style = {
-            "backgroundImage": "url('" + props.icon + "')"
-        };
+    //Add the button icon
+    let icon = null;
+    if (props.icon !== null) {
+        icon = React.createElement(Icon, {
+            "icon": props["icon"],
+            "className": baseClass + "-item-icon"
+        });
     }
-    //Return the item
-    return React.createElement("div", itemProps, props.text); 
+    //itemProps.className.push(baseClass + "-link-" + key);
+    //Check if this link is active
+    if (typeof props.active === "boolean" && props.active === true) {
+        itemProps.className.push(baseClass + "-item--active");
+    }
+    //Merge the classnames
+    itemProps.className = itemProps.className.join(" ");
+    //Return the toolbar item element
+    return React.createElement("div", itemProps, icon, props.text);
 };
 
-//Toolbar item defualt props
+//Toolbar item default props
 ToolbarItem.defaultProps = {
-    "onClick": null,
-    "active": false,
+    "text": "",
     "icon": null,
-    "text": null
+    "active": false,
+    "onClick": null,
+};
+
+//Toolbar separator
+export const ToolbarSeparator = function (props) {
+    return React.createElement("div", {
+        "className": baseClass + "-separator"
+    });
 };
 
 //Toolbar group
