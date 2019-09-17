@@ -9,8 +9,8 @@ import "./style.scss";
 let baseClass = "neutrine-appside";
 
 //Export appside wrapper component
-export const AppsideWrapper = function (props) {
-    //Appside class styles
+export const AppSideWrapper = function (props) {
+    //AppSide class styles
     let classList = [baseClass + "-wrapper"];
     //Check if appside is collapsed
     if (props.collapsed === true) {
@@ -20,13 +20,13 @@ export const AppsideWrapper = function (props) {
     return React.createElement("div", {"className": classList.join(" ")}, props.children);
 };
 
-//Appside wrapper default props
-AppsideWrapper.defaultProps = {
+//AppSide wrapper default props
+AppSideWrapper.defaultProps = {
     "collapsed": true
 };
 
 //Export appside component
-export const Appside = function (props) {
+export const AppSide = function (props) {
     //Sidebar base class styles
     let classList = [baseClass];
     //Check the appside color
@@ -42,13 +42,13 @@ export const Appside = function (props) {
     return React.createElement("div", appsideProps, props.children);
 };
 
-//Appside default props
-Appside.defaultProps = {
+//AppSide default props
+AppSide.defaultProps = {
     "color": "light"
 };
 
-//Appside toggle
-export const AppsideToggle = function (props) {
+//AppSide toggle
+export const AppSideToggle = function (props) {
     //Build the sidebar toggle props
     let toggleProps = {
         "align": "center",
@@ -64,8 +64,8 @@ export const AppsideToggle = function (props) {
     return React.createElement("div", toggleProps, toggleIcon);
 };
 
-//Appside item
-export const AppsideItem = function (props) {
+//AppSide item
+export const AppSideItem = function (props) {
     //Initialize the button props
     let itemProps = {
         "className": [baseClass + "-item"],
@@ -90,24 +90,24 @@ export const AppsideItem = function (props) {
     return React.createElement("div", itemProps, icon, props.text);
 };
 
-//Appside item default props
-AppsideItem.defaultProps = {
+//AppSide item default props
+AppSideItem.defaultProps = {
     "text": "",
     "icon": null,
     "active": false,
     "onClick": null,
 };
 
-//Appside separator
-export const AppsideSeparator = function (props) {
+//AppSide separator
+export const AppSideSeparator = function (props) {
     return React.createElement("div", {
         "className": baseClass + "-separator"
     });
 };
 
-//Appside group
-export const AppsideGroup = function (props) {
-    //Appside group default props
+//AppSide group
+export const AppSideGroup = function (props) {
+    //AppSide group default props
     let groupProps = {
         "className": baseClass + "-group"
     };
@@ -115,8 +115,8 @@ export const AppsideGroup = function (props) {
     return React.createElement("div", groupProps, props.text);
 };
 
-//Appside group default props
-AppsideGroup.defaultProps = {
+//AppSide group default props
+AppSideGroup.defaultProps = {
     "text": null
 };
 
