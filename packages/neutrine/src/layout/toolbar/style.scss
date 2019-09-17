@@ -1,35 +1,41 @@
 //Import dependencies
 @import "@siimple/css/scss/variables.scss";
 
-//Toolbar variables
-$neutrine-layout-toolbar-width: 300px;
-$neutrine-layout-toolbar-padding: 15px;
-
-//Neutrine layout toolbar style
+//Neutrine toolbar style
 .neutrine-toolbar {
     display: block;
     position: fixed;
-    width: calc(#{$neutrine-layout-toolbar-width} - 2 * #{$neutrine-layout-toolbar-padding});
-    height: 100%;
-    padding-left: $neutrine-layout-toolbar-padding;
-    padding-right: $neutrine-layout-toolbar-padding;
-    background-color: siimple-default-color("primary");
+    width: calc(260px - 30px);
+    height: calc(100% - 30px);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     transition: all 0.3s;
-    color: siimple-default-color("white");
     top: 0px !important;
     left: 0px;
-    //Layout toolbar container
-    &-container {
+    //Light toolbar
+    &--light {
+        background-color: siimple-default-color("light");
+        color: siimple-default-color("dark");
+    }
+    //Dark toolbar
+    &--dark {
+        background-color: siimple-default-color("dark");
+        color: #ffffff;
+    }
+    //Toolbar wrapper
+    &-wrapper {
         display: block;
-        min-height: 100%;
-        margin-left: $neutrine-layout-toolbar-width;
+        //min-height: 100%;
+        margin-left: 260px;
         transition: all 0.3s;
         position: relative;
     }
     //Toolbar group
     &-group {
         display: block;
-        color: rgba(siimple-default-color("white"), 0.6);
+        //color: rgba(siimple-default-color("white"), 0.6);
         font-size: 13px;
         height: 30px;
         line-height: 30px;
@@ -38,6 +44,14 @@ $neutrine-layout-toolbar-padding: 15px;
         font-weight: 600;
         transition: all 0.3s;
         overflow: hidden;
+    }
+    //Light toolbar --> change group color
+    &--light &-group {
+        color: rgba(siimple-default-color("dark"), 0.6);
+    }
+    //Dark toolbar --> change group color
+    &--dark &-group {
+        color: rgba(siimple-default-color("white"), 0.6);
     }
     //Toolbar item
     &-item {
@@ -50,80 +64,121 @@ $neutrine-layout-toolbar-padding: 15px;
         margin-bottom: 5px;
         border-radius: 3px;
         transition: background-color 0.3s;
-        background-position: 8px 8px;
-        background-repeat: no-repeat;
-        background-size: 24px 24px;
-        background-image: url("../images/applications.png");
         cursor: pointer;
         text-overflow: clip;
         overflow: hidden;
-        //Hover and active item
-        &:hover,
+        //Active item
         &--active {
-            background-color: rgba(siimple-default-color("white"), 0.2);
+            font-weight: 600;
+        }
+        //Link icons
+        &-icon {
+            position: absolute;
+            left: 13px;
+            font-size: 24px;
+            line-height: 40px;
+            font-weight: normal !important;
         }
     }
-    //Toolbar toggle button
+    //Light toolbar
+    &--light &-item {
+        color: siimple-default-color("dark","light");
+        //Item hover
+        &:hover {
+            background-color: rgba(siimple-default-color("primary"), 0.1);
+        }
+        //Item active
+        &--active {
+            color: siimple-default-color("primary") !important;
+            background-color: rgba(siimple-default-color("primary"), 0.2) !important;
+        }
+    }
+    //Dark sidebar
+    &--dark &-item {
+        color: rgba(#ffffff, 0.6);
+        //Item hover 
+        &:hover {
+            background-color: rgba(#ffffff, 0.1);
+        }
+        //Item active
+        &--active {
+            color: #ffffff !important;
+            background-color: rgba(#ffffff, 0.2) !important;
+        }
+    }
+    //Toolbar separator
+    &-separator {
+        display: block;
+        height: 1px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    //Light toolbar --> change separator color
+    &--light &-separator {
+        background-color: siimple-default-color("light", "dark");
+    }
+    //Dark toolbar --> change separator color
+    &--dark &-separator {
+        background-color: rgba(#ffffff, 0.5);
+    }
+    //Toggle button
     &-toggle {
         display: block;
         position: absolute;
-        height: 50px;
-        line-height: 50px;
-        color: rgba(siimple-default-color("white"), 0.8);
+        height: 40px;
+        line-height: 40px;
+        padding-top: 5px;
+        padding-bottom: 5px;
         font-size: 14px;
         bottom: 0px;
         left: 0px;
         width: 100%;
         cursor: pointer;
         transition: all 0.3s;
-        background-color: rgba(siimple-default-color("dark"), 0.1);
+        opacity: 0.5;
         &:hover {
-            background-color: rgba(siimple-default-color("dark"), 0.2);
+            opacity: 1.0;
         }
-        //Toggle arrow icon
-        &::before {
-            display: block;
-            content: "";
-            width: 24px;
-            height: 24px;
-            background-image: url("../images/arrow.png");
-            background-size: 24px 24px;
-            background-repeat: no-repeat;
-            background-position: center center;
-            position: absolute;
-            top: 13px;
-            left: calc(50% - 12px);
+        //Toggle icon
+        &-icon {
+            //position: absolute;
+            //left: 13px;
+            font-size: 24px;
+            line-height: 40px;
+            font-weight: normal !important;
             transition: all 0.3s;
         }
     }
-    //Toolbar layout content
-    &-content {
-        //display: block;
-        //margin-left: $neutrine-layout-toolbar-width;
-        //min-height: 100%;
-        //transition: all 0.3s;
+    //Light toolbar --> change toggle color
+    &--light &-toggle {
+        color: rgba(siimple-default-color("dark"), 0.8);
+        background-color: rgba(siimple-default-color("dark"), 0.1);
+    }
+    //Dark toolbar --> change toggle color
+    &--dark &-toggle {
+        color: rgba(siimple-default-color("white"), 0.8);
+        background-color: rgba(siimple-default-color("white"), 0.1);
+    }
+    //Sidebar collapsed --> rotate toggle icon
+    &-wrapper--collapsed &-toggle-icon {
+        transform: rotate(180deg);
     }
     //Collapsed toolbar
-    &-container--collapsed & {
+    &-wrapper--collapsed & {
         width: 40px !important;    
         //margin-left: 0px !important;
     }
-    &-container--collapsed &-item {
+    &-wrapper--collapsed &-item {
         width: 0px !important;
-        color: transparent !important;
+        //color: transparent !important;
         padding-right: 0px !important;
     }
-    &-container--collapsed &-group {
+    &-wrapper--collapsed &-group {
         height: 0px !important;
         opacity: 0 !important;
     }
-    &-container--collapsed &-toggle {
-        &::before {
-            transform: rotate(180deg);
-        }
-    }
-    &-container--collapsed {
-        margin-left: calc(40px + 2 * #{$neutrine-layout-toolbar-padding});
+    &-wrapper--collapsed {
+        margin-left: 70px;
     }
 }
 
