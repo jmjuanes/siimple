@@ -1,5 +1,5 @@
 import React from "react";
-//import {Icon} from "../../icon/index.js";
+import {Icon} from "../../icon/index.js";
 import * as helpers from "../../helpers.js";
 
 //Import toolbar styles
