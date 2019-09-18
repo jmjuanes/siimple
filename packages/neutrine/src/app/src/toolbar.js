@@ -3,7 +3,7 @@ import {Icon} from "../../icon/index.js";
 import * as helpers from "../../helpers.js";
 
 //Import app-toolbar styles
-import "./style.scss";
+import "../styles/toolbar.scss";
 
 //Base class
 let baseClass = "neutrine-app-toolbar";
