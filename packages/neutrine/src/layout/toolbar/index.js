@@ -120,3 +120,24 @@ ToolbarGroup.defaultProps = {
     "text": null
 };
 
+//Export toolbar logo component
+export const ToolbarLogo = function (props) {
+    //Build the logo props
+    let logoProps = {
+        "className": helpers.classNames(baseClass + "-logo", props.className),
+        "style": Object.assign({}, props.style, {
+            "backgroundImage": (props.image !== null) ? "url(" + props.image + ")" : null
+        }),
+        "onClick": props.onClick
+    };
+    //Return the toolbar logo component wrapper
+    return React.createElement("div", logoProps, props.children);
+};
+
+//Toolbar logo default props
+ToolbarLogo.defaultProps = {
+    "image": null,
+    "style": {}
+};
+
+
