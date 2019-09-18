@@ -17,7 +17,7 @@ Neutrine.ready(function () {
         render(props) {
             return (
                 <Neutrine.ToolbarWrapper collapsed={this.state.collapsed}>
-                    <Neutrine.Toolbar>
+                    <Neutrine.Toolbar theme="dark">
                         <Neutrine.ToolbarGroup text="Group 1" />
                         <Neutrine.ToolbarItem text="Home" icon="home" active={true} />
                         <Neutrine.ToolbarItem text="Profile" icon="user" />
