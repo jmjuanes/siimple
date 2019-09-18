@@ -52,24 +52,38 @@
     &-content {
         display: block;
         //display: none;
-        width: 400px; //Default width
-        height: 100%;
+        //width: 400px; //Default width
+        //height: 100%;
         background-color: #ffffff;
         border-radius: 0px;
         position: fixed;
-        top: 0px;
+        //top: 0px;
         z-index: 120;
         overflow-x: hidden;
         overflow-y: auto;
         //Right aligned side
         &--right {
+            top: 0px;
             right: calc(-1 * 100%);
             transition: right 0.3s;
         }
         //Left aligned side
         &--left {
+            top: 0px;
             left: calc(-1 * 100%);
             transition: left 0.3s;
+        }
+        //Top aligned side
+        &--top {
+            left: 0px;
+            top: calc(-1 * 100%);
+            transition: top 0.3s;
+        }
+        //Bottom aligned side
+        &--bottom {
+            left: 0px;
+            bottom: calc(-1 * 100%);
+            transition: bottom 0.3s;
         }
     }
     //Side visible
@@ -81,6 +95,12 @@
     }
     &--visible &-content--left {
         left: 0px;
+    }
+    &--visible &-content--top {
+        top: 0px;
+    }
+    &--visible &-content--bottom {
+        bottom: 0px;
     }
     //Side close icon
     &-close {
