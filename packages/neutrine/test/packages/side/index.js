@@ -5,39 +5,44 @@ Neutrine.ready(function () {
             super(props);
             this.state = {
                 "visible": true,
-                "position": "right",
-                "width": "400px"
+                "position": "top",
+                "width": "300px"
             };
             //Bind methods
-            this.handleClose = this.handleClose.bind(this);
+            this.handleToggle = this.handleToggle.bind(this);
         }
-        //Handle close click
-        handleClose() {
+        //Handle toggle click
+        handleToggle() {
             return this.setState({
-                "visible": false
+                "visible": !this.state.visible
             });
         }
         //Render the side test
         render () {
             return (
-                <Neutrine.Side visible={this.state.visible}>
-                    <Neutrine.SideBackground onClick={this.handleClose} />
-                    <Neutrine.SideContent position={this.state.position} width={this.state.width}>
-                        <Neutrine.SideHeader>
-                            Title
-                            <Neutrine.SideClose onClick={this.handleClose} />
-                        </Neutrine.SideHeader>
-                        <Neutrine.SideBody>
-                            Content of the side component 1
-                        </Neutrine.SideBody>
-                        <Neutrine.SideBody>
-                            Content of the side component 2
-                        </Neutrine.SideBody>
-                        <Neutrine.SideBody>
-                            Content of the side component 3
-                        </Neutrine.SideBody>
-                    </Neutrine.SideContent>
-                </Neutrine.Side>
+                <React.Fragment>
+                    <Neutrine.Btn color="primary" onClick={this.handleToggle}>
+                        Open side
+                    </Neutrine.Btn>
+                    <Neutrine.Side visible={this.state.visible}>
+                        <Neutrine.SideBackground onClick={this.handleToggle} />
+                        <Neutrine.SideContent position={this.state.position} size={this.state.width}>
+                            <Neutrine.SideHeader>
+                                Title
+                                <Neutrine.SideClose onClick={this.handleToggle} />
+                            </Neutrine.SideHeader>
+                            <Neutrine.SideBody>
+                                    Content of the side component 1
+                            </Neutrine.SideBody>
+                            <Neutrine.SideBody>
+                                    Content of the side component 2
+                            </Neutrine.SideBody>
+                            <Neutrine.SideBody>
+                                    Content of the side component 3
+                            </Neutrine.SideBody>
+                        </Neutrine.SideContent>
+                    </Neutrine.Side>
+                </React.Fragment>
             );
         }
     };
