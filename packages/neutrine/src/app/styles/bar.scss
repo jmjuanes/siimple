@@ -1,0 +1,26 @@
+//Import dependencies
+@import "@siimple/css/scss/variables.scss";
+
+//AppBar styles
+.neutrine-app-bar {
+    display: block;
+    position: sticky;
+    top: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 40px;
+    line-height: 40px;
+    //Light appbar 
+    &--light {
+        background-color: siimple-default-color("light");
+        color: siimple-default-color("dark");
+    }
+    //Dark appbar
+    &--dark {
+        background-color: siimple-default-color("dark");
+        color: #ffffff;
+    }
+}
+
