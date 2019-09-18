@@ -1,13 +1,13 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-import "../styles/bar.scss";
+import "./style.scss";
 
 //Base class
-let baseClass = "neutrine-app-bar";
+let baseClass = "neutrine-appbar";
 
-//Export app bar component
-export const AppBar = function (props) {
+//Export appbar component
+export const Appbar = function (props) {
     let classList = [baseClass];
     //Check the theme
     if (props.theme === "light" || props.theme === "dark") {
@@ -19,8 +19,8 @@ export const AppBar = function (props) {
     });
 };
 
-//App bar default props
-AppBar.defaultProps = {
+//Appbar default props
+Appbar.defaultProps = {
     "theme": "light"
 };
 
