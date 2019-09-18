@@ -16,19 +16,24 @@ Neutrine.ready(function () {
         }
         render(props) {
             return (
-                <Neutrine.ToolbarWrapper collapsed={this.state.collapsed}>
-                    <Neutrine.Toolbar theme="dark">
-                        <Neutrine.ToolbarGroup text="Group 1" />
-                        <Neutrine.ToolbarItem text="Home" icon="home" active={true} />
-                        <Neutrine.ToolbarItem text="Profile" icon="user" />
-                        <Neutrine.ToolbarSeparator />
-                        <Neutrine.ToolbarItem text="Admin" icon="gear" />
-                        <Neutrine.ToolbarToggle onClick={this.handleToggleClick} />
-                    </Neutrine.Toolbar>
+                <Neutrine.AppToolbarWrapper collapsed={this.state.collapsed}>
+                    <Neutrine.AppToolbar theme="dark">
+                        <Neutrine.AppLogo>
+                            Dashboard
+                        </Neutrine.AppLogo>
+                        <Neutrine.AppToolbarGroup text="Group 1" />
+                        <Neutrine.AppToolbarItem text="Home" icon="home" active={true} />
+                        <Neutrine.AppToolbarItem text="Profile" icon="user" />
+                        <Neutrine.AppToolbarSeparator />
+                        <Neutrine.AppToolbarItem text="Admin" icon="gear" />
+                        <Neutrine.AppToolbarToggle onClick={this.handleToggleClick} />
+                    </Neutrine.AppToolbar>
                     <div>
-                        Hello world!
+                        <Neutrine.AppMain fluid={false}>
+                            Hello world!
+                        </Neutrine.AppMain>
                     </div>
-                </Neutrine.ToolbarWrapper>
+                </Neutrine.AppToolbarWrapper>
             );
         }
     };
