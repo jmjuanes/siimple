@@ -34,12 +34,12 @@ export const AppToolbar = function (props) {
         classList.push(baseClass + "--" + props.theme);
     }
     //Build app-toolbar props
-    let app-toolbarProps = {
+    let toolbarProps = {
         "className": helpers.classNames(classList, props.className),
         "style": props.style
     };
     //Return the app-toolbar component
-    return React.createElement("div", app-toolbarProps, props.children);
+    return React.createElement("div", toolbarProps, props.children);
 };
 
 //AppToolbar default props
