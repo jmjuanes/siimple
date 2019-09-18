@@ -29,9 +29,9 @@ ToolbarWrapper.defaultProps = {
 export const Toolbar = function (props) {
     //Sidebar base class styles
     let classList = [baseClass];
-    //Check the toolbar color
-    if (props.color === "light" || props.color === "dark") {
-        classList.push(baseClass + "--" + props.color);
+    //Check the toolbar theme color
+    if (props.theme === "light" || props.theme === "dark") {
+        classList.push(baseClass + "--" + props.theme);
     }
     //Build toolbar props
     let toolbarProps = {
@@ -44,7 +44,7 @@ export const Toolbar = function (props) {
 
 //Toolbar default props
 Toolbar.defaultProps = {
-    "color": "light"
+    "theme": "light"
 };
 
 //Toolbar toggle
