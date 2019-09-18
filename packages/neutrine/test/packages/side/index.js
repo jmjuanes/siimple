@@ -32,13 +32,11 @@ Neutrine.ready(function () {
                                 <Neutrine.SideClose onClick={this.handleToggle} />
                             </Neutrine.SideHeader>
                             <Neutrine.SideBody>
-                                    Content of the side component 1
-                            </Neutrine.SideBody>
-                            <Neutrine.SideBody>
-                                    Content of the side component 2
-                            </Neutrine.SideBody>
-                            <Neutrine.SideBody>
-                                    Content of the side component 3
+                                Content of the side component 1
+                                <br />
+                                Content of the side component 2
+                                <br />
+                                Content of the side component 3
                             </Neutrine.SideBody>
                         </Neutrine.SideContent>
                     </Neutrine.Side>
