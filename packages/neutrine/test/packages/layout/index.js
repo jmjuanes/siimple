@@ -16,29 +16,29 @@ Neutrine.ready(function () {
         }
         render(props) {
             return (
-                <Neutrine.AppToolbarWrapper collapsed={this.state.collapsed}>
-                    <Neutrine.AppToolbar theme="dark">
-                        <Neutrine.AppLogo>
+                <Neutrine.ToolbarWrapper collapsed={this.state.collapsed}>
+                    <Neutrine.Toolbar theme="dark">
+                        <Neutrine.ToolbarLogo>
                             Dashboard
-                        </Neutrine.AppLogo>
-                        <Neutrine.AppToolbarGroup text="Group 1" />
-                        <Neutrine.AppToolbarItem text="Home" icon="home" active={true} />
-                        <Neutrine.AppToolbarItem text="Profile" icon="user" />
-                        <Neutrine.AppToolbarSeparator />
-                        <Neutrine.AppToolbarItem text="Admin" icon="gear" />
-                        <Neutrine.AppToolbarToggle onClick={this.handleToggleClick} />
-                    </Neutrine.AppToolbar>
+                        </Neutrine.ToolbarLogo>
+                        <Neutrine.ToolbarGroup text="Group 1" />
+                        <Neutrine.ToolbarItem text="Home" icon="home" active={true} />
+                        <Neutrine.ToolbarItem text="Profile" icon="user" />
+                        <Neutrine.ToolbarSeparator />
+                        <Neutrine.ToolbarItem text="Admin" icon="gear" />
+                        <Neutrine.ToolbarToggle onClick={this.handleToggleClick} />
+                    </Neutrine.Toolbar>
                     <div>
-                        <Neutrine.AppBar theme="dark">
-                            <Neutrine.AppLogo>
+                        <Neutrine.Appbar theme="dark">
+                            <Neutrine.AppbarLogo>
                                 Dashboard
-                            </Neutrine.AppLogo>
-                        </Neutrine.AppBar>
-                        <Neutrine.AppMain fluid={false} style={{"height":"3000px"}}>
+                            </Neutrine.AppbarLogo>
+                        </Neutrine.Appbar>
+                        <div>
                             Hello world!
-                        </Neutrine.AppMain>
+                        </div>
                     </div>
-                </Neutrine.AppToolbarWrapper>
+                </Neutrine.ToolbarWrapper>
             );
         }
     };
