@@ -29,7 +29,12 @@ Neutrine.ready(function () {
                         <Neutrine.AppToolbarToggle onClick={this.handleToggleClick} />
                     </Neutrine.AppToolbar>
                     <div>
-                        <Neutrine.AppMain fluid={false}>
+                        <Neutrine.AppBar theme="dark">
+                            <Neutrine.AppLogo>
+                                Dashboard
+                            </Neutrine.AppLogo>
+                        </Neutrine.AppBar>
+                        <Neutrine.AppMain fluid={false} style={{"height":"3000px"}}>
                             Hello world!
                         </Neutrine.AppMain>
                     </div>
