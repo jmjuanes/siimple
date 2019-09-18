@@ -53,21 +53,25 @@
     &--dark &-group {
         color: rgba(siimple-default-color("white"), 0.6);
     }
-    //Toolbar item
-    &-item {
+    //Toolbar item and logo common styles
+    &-item,
+    &-logo {
         display: block;
         position: relative;
         padding-left: 40px;
         padding-right: 10px;
         min-height: 40px;
         line-height: 40px;
-        font-size: 14px;
         margin-bottom: 5px;
         border-radius: 3px;
         transition: background-color 0.3s;
         cursor: pointer;
         text-overflow: clip;
         overflow: hidden;
+    }
+    //Toolbar item
+    &-item {
+        font-size: 14px;
         //Active item
         &--active {
             font-weight: 600;
@@ -106,6 +110,15 @@
             color: #ffffff !important;
             background-color: rgba(#ffffff, 0.2) !important;
         }
+    }
+    //Toolbar logo
+    &-logo {
+        font-size: 16px;
+        font-weight: bold;
+        background-position: 8px 8px;
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        background-image: url("./images/logo.png");
     }
     //Toolbar separator
     &-separator {
