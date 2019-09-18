@@ -181,5 +181,10 @@
     &-wrapper--collapsed {
         margin-left: 70px;
     }
+    //Collapsed toolbar --> hide app logo width
+    &-wrapper--collapsed .neutrine-app-logo {
+        width: 0px !important;
+        padding-right: 0px !important;
+    }
 }
 
