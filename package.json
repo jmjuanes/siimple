@@ -45,7 +45,7 @@
         "@siimple/docs": "0.0.1",
         "@siimple/experiments": "0.0.1",
         "@siimple/icons": "0.0.1",
-        "@siimple/neutrine": "0.0.2",
+        "@siimple/neutrine": "0.0.3",
         "@siimple/press": "0.1.1",
         "@siimple/press-plugin-copyfiles": "0.0.1",
         "@siimple/press-plugin-sass": "0.0.1",
