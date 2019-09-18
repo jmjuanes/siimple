@@ -182,7 +182,8 @@
         width: 40px !important;    
         //margin-left: 0px !important;
     }
-    &-wrapper--collapsed &-item {
+    &-wrapper--collapsed &-item,
+    &-wrapper--collapsed &-logo {
         width: 0px !important;
         //color: transparent !important;
         padding-right: 0px !important;
