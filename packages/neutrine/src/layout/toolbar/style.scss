@@ -2,7 +2,7 @@
 @import "@siimple/css/scss/variables.scss";
 
 //Neutrine toolbar style
-.neutrine-app-toolbar {
+.neutrine-toolbar {
     display: block;
     position: fixed;
     width: calc(260px - 30px);
@@ -180,11 +180,6 @@
     }
     &-wrapper--collapsed {
         margin-left: 70px;
-    }
-    //Collapsed toolbar --> hide app logo width
-    &-wrapper--collapsed .neutrine-app-logo {
-        width: 0px !important;
-        padding-right: 0px !important;
     }
 }
 

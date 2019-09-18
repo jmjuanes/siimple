@@ -2,53 +2,53 @@ import React from "react";
 import {Icon} from "../../icon/index.js";
 import * as helpers from "../../helpers.js";
 
-//Import app-toolbar styles
-import "../styles/toolbar.scss";
+//Import toolbar styles
+import "./style.scss";
 
 //Base class
-let baseClass = "neutrine-app-toolbar";
+let baseClass = "neutrine-toolbar";
 
-//Export app-toolbar wrapper component
-export const AppToolbarWrapper = function (props) {
-    //AppToolbar class styles
+//Export toolbar wrapper component
+export const ToolbarWrapper = function (props) {
+    //Toolbar class styles
     let classList = [baseClass + "-wrapper"];
-    //Check if app-toolbar is collapsed
+    //Check if toolbar is collapsed
     if (props.collapsed === true) {
         classList.push(baseClass + "-wrapper--collapsed");
     }
-    //Return the app-toolbar element
+    //Return the toolbar element
     return React.createElement("div", {"className": classList.join(" ")}, props.children);
 };
 
-//AppToolbar wrapper default props
-AppToolbarWrapper.defaultProps = {
+//Toolbar wrapper default props
+ToolbarWrapper.defaultProps = {
     "collapsed": true
 };
 
-//Export app-toolbar component
-export const AppToolbar = function (props) {
+//Export toolbar component
+export const Toolbar = function (props) {
     //Sidebar base class styles
     let classList = [baseClass];
-    //Check the app-toolbar theme color
+    //Check the toolbar theme color
     if (props.theme === "light" || props.theme === "dark") {
         classList.push(baseClass + "--" + props.theme);
     }
-    //Build app-toolbar props
+    //Build toolbar props
     let toolbarProps = {
         "className": helpers.classNames(classList, props.className),
         "style": props.style
     };
-    //Return the app-toolbar component
+    //Return the toolbar component
     return React.createElement("div", toolbarProps, props.children);
 };
 
-//AppToolbar default props
-AppToolbar.defaultProps = {
+//Toolbar default props
+Toolbar.defaultProps = {
     "theme": "light"
 };
 
-//AppToolbar toggle
-export const AppToolbarToggle = function (props) {
+//Toolbar toggle
+export const ToolbarToggle = function (props) {
     //Build the sidebar toggle props
     let toggleProps = {
         "align": "center",
@@ -64,8 +64,8 @@ export const AppToolbarToggle = function (props) {
     return React.createElement("div", toggleProps, toggleIcon);
 };
 
-//AppToolbar item
-export const AppToolbarItem = function (props) {
+//Toolbar item
+export const ToolbarItem = function (props) {
     //Initialize the button props
     let itemProps = {
         "className": [baseClass + "-item"],
@@ -86,37 +86,37 @@ export const AppToolbarItem = function (props) {
     }
     //Merge the classnames
     itemProps.className = itemProps.className.join(" ");
-    //Return the app-toolbar item element
+    //Return the toolbar item element
     return React.createElement("div", itemProps, icon, props.text);
 };
 
-//AppToolbar item default props
-AppToolbarItem.defaultProps = {
+//Toolbar item default props
+ToolbarItem.defaultProps = {
     "text": "",
     "icon": null,
     "active": false,
     "onClick": null,
 };
 
-//AppToolbar separator
-export const AppToolbarSeparator = function (props) {
+//Toolbar separator
+export const ToolbarSeparator = function (props) {
     return React.createElement("div", {
         "className": baseClass + "-separator"
     });
 };
 
-//AppToolbar group
-export const AppToolbarGroup = function (props) {
-    //AppToolbar group default props
+//Toolbar group
+export const ToolbarGroup = function (props) {
+    //Toolbar group default props
     let groupProps = {
         "className": baseClass + "-group"
     };
-    //Return the app-toolbar group element
+    //Return the toolbar group element
     return React.createElement("div", groupProps, props.text);
 };
 
-//AppToolbar group default props
-AppToolbarGroup.defaultProps = {
+//Toolbar group default props
+ToolbarGroup.defaultProps = {
     "text": null
 };
 
