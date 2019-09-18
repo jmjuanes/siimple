@@ -24,3 +24,25 @@ Appbar.defaultProps = {
     "theme": "light"
 };
 
+//Export appbar logo component
+export const AppbarLogo = function (props) {
+    //Build the logo props
+    let logoProps = {
+        "className": helpers.classNames(baseClass + "-logo", props.className),
+        "style": Object.assign({}, props.style, {
+            "backgroundImage": (props.image !== null) ? "url(" + props.image + ")" : null
+        }),
+        "onClick": props.onClick
+    };
+    //Return the toolbar logo component wrapper
+    return React.createElement("div", logoProps, props.children);
+};
+
+//Appbar logo default props
+AppbarLogo.defaultProps = {
+    "image": null,
+    "style": {}
+};
+
+
+
