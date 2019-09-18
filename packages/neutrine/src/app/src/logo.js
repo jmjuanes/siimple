@@ -1,6 +1,7 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
+//import defaultLogo from "../images/applications.png";
 import "../styles/logo.scss";
 
 //Base class
@@ -16,9 +17,9 @@ export const AppLogo = function (props) {
     //Build the logo props
     let logoProps = {
         "className": helpers.classNames(classList, props.className),
-        "style": Object.assign({}, props.style, {
-            "backgroundImage": props.image
-        }),
+        "style": { //Object.assign({}, props.style, {
+            "backgroundImage": (props.image !== null) ? "url(" + props.image + ")" : null
+        }, //),
         "onClick": props.onClick
     };
     //Return the logo app component wrapper
