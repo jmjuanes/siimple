@@ -22,5 +22,9 @@
         background-color: siimple-default-color("dark");
         color: #ffffff;
     }
+    //Override logo styles
+    & .neutrine-app-logo {
+        margin-bottom: 0px !important;
+    }
 }
 
