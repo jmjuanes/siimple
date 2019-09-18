@@ -8,7 +8,7 @@ import "./style.scss";
 let baseClass = "neutrine-side";
 
 //Available positions
-let sidePositions = ["left", "right"];
+let sidePositions = ["left", "right", "top", "bottom"];
 
 //Export side component
 export const Side = function (props) {
@@ -46,11 +46,17 @@ export const SideContent = function (props) {
     let contentProps = {
         "className": classList.join(" "),
         "style": {
-            "width": props.width
+            "width": "100%",
+            "height": "100%"
         }
     };
-    //Build the content container
-    //let content = React.createElement("div", {"className": baseClass + "-content-container"}, props.children);
+    //Check the content position
+    if (props.position === "right" || props.position === "left") {
+        contentProps.style.width = props.size;
+    }
+    else {
+        contentProps.style.height = props.size;
+    }
     //Return the side container
     return React.createElement("div", contentProps, props.children);
 };
@@ -58,7 +64,7 @@ export const SideContent = function (props) {
 //Side content default props
 SideContent.defaultProps = {
     "position": "right",
-    "width": "400px"
+    "size": "400px"
 };
 
 //Side close icon
