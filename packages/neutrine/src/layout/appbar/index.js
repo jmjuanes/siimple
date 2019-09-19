@@ -13,6 +13,10 @@ export const Appbar = function (props) {
     if (props.theme === "light" || props.theme === "dark") {
         classList.push(baseClass + "--" + props.theme);
     }
+    //Check if appbar is fixed
+    if (props.fixed === true) {
+        classList.push(baseClass + "--fixed");
+    }
     //Return the logo app component wrapper
     return helpers.createMergedElement("div", props, {
         "className": classList.join(" ")
@@ -21,7 +25,8 @@ export const Appbar = function (props) {
 
 //Appbar default props
 Appbar.defaultProps = {
-    "theme": "light"
+    "theme": "light",
+    "fixed": false
 };
 
 //Export appbar logo component
