@@ -10,7 +10,7 @@
     //padding-right: 15px;
     //padding-top: 10px;
     //padding-bottom: 10px;
-    min-height: 50px;
+    height: 50px;
     line-height: 50px;
     //Light appbar 
     &--light {
@@ -46,6 +46,41 @@
         //Center the logo in the appbar
         margin-top: 5px;
         margin-bottom: 5px;
+        vertical-align: top;
+    }
+    //Appbar item
+    &-item{
+        display: inline-block;
+        height: calc(100% - 2px);
+        //line-height: calc(100% - 2px);
+        //color: rgba(#ffffff, 0.5);
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: normal;
+        padding-left: 10px;
+        padding-right: 10px;
+        vertical-align: top;
+        opacity: 0.5;
+        //Menu button hover
+        &:hover {
+            //color: #ffffff;
+            border-bottom-color: siimple-default-color("primary");
+            opacity: 1.0;
+        }
+        //Menu button icon
+        &-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 4px;
+            font-size: 16px;
+        }
+        //Menu button text
+        &-text {
+            display: inline-block;
+            vertical-align: middle;
+        }
     }
 }
 
