@@ -17,10 +17,13 @@ export const Appbar = function (props) {
     if (props.fixed === true) {
         classList.push(baseClass + "--fixed");
     }
+    //Build the appbar props
+    let barProps = {
+        "className": helpers.classNames(classList, props.className),
+        "style": props.style
+    };
     //Return the logo app component wrapper
-    return helpers.createMergedElement("div", props, {
-        "className": classList.join(" ")
-    });
+    return React.createElement("div", barProps, props.children);
 };
 
 //Appbar default props
