@@ -22,7 +22,8 @@ export class Toast extends React.Component {
         this.timer = null;
         //Bind some methods
         this.close = this.close.bind(this);
-        this.display = this.display.bind(this);
+        this.show = this.show.bind(this);
+        //this.display = this.display.bind(this);
         this.displayError = this.displayError.bind(this);
         this.displayWarning = this.displayWarning.bind(this);
         this.displaySuccess = this.displaySuccess.bind(this);
@@ -33,35 +34,29 @@ export class Toast extends React.Component {
         return this.setState({"visible": false});
     }
     //Display a toast message
-    display(color, message, time) {
+    show(options) {
         let self = this;
         //Check the provided time
-        if (typeof time !== "number" || time <= 0) {
-            time = this.props.timeout;
+        if (typeof options.timeout !== "number" || optionstimeout <= 0) {
+            options.timeout = this.props.timeout;
         }
+        //Build the new state
+        let newState = {
+            "visible": true,
+            "color": options.type,
+            "message": options.message
+        };
         //Display this toast message
-        return this.setState({"visible": true, "color": color, "message": message}, function () {
+        return this.setState(newState, function () {
             //Check if there are an active timer
             if (self.timer) {
                 clearTimeout(self.timer);
             }
             //Register the new timer
-            self.timer = delay(time, function () {
+            self.timer = delay(options.timeout, function () {
                 return self.setState({"visible": false});
             });
         });
-    }
-    //Display an error message
-    displayError(message, time) {
-        return this.display("error", message, time);
-    }
-    //Display a warning message
-    displayWarning(message, time) {
-        return this.display("warning", message, time);
-    }
-    //Display a success message
-    displaySuccess(message, time) {
-        return this.display("success", message, time);
     }
     //Build the alert element
     renderAlert() {
@@ -93,4 +88,9 @@ Toast.defaultProps = {
     "cancellable": false,
     "timeout": 5000
 };
+
+//Create a new toaster component
+//export const createToaster = function (parent, props) {
+//    //TODO
+//};
 
