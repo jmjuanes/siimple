@@ -28,11 +28,11 @@
     }
     //Appbar logo style
     &-logo {
-        display: block;
+        display: inline-block;
         //position: relative;
         padding-left: 40px;
         padding-right: 10px;
-        min-height: 40px;
+        height: 40px;
         line-height: 40px;
         font-size: 16px;
         font-weight: bold;
