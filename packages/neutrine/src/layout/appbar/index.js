@@ -1,4 +1,5 @@
 import React from "react";
+import {Icon} from "../../icon/index.js";
 import * as helpers from "../../helpers.js";
 
 import "./style.scss";
@@ -52,5 +53,38 @@ AppbarLogo.defaultProps = {
     "style": {}
 };
 
+//Export appbar item component
+export const AppbarItem = function (props) {
+    //Build the button icon
+    let iconElement = null;
+    if (props.icon !== null) {
+        iconElement = React.createElement(Icon, {
+            "icon": props["icon"],
+            "className": baseClass + "-item-icon"
+        });
+    }
+    //Build the text element
+    let textElement = React.createElement("span", {"className": baseClass + "-item-text"}, props.children);
+    //Initialize the class list
+    let classList = [baseClass + "-item"];
+    //Check if this link is active
+    //if (typeof props.active === "boolean" && props.active === true) {
+    //    classList.push(baseClass + "-item--active");
+    //}
+    //Build the item props
+    let itemProps = {
+        "className": helpers.classNames(classList, props.className),
+        "onClick": props.onClick,
+        "style": props.style
+    };
+    //Return the toolbar item element
+    return React.createElement("div", itemProps, iconElement, textElement);
+};
 
+//Appbar item default props
+AppbarItem.defaultProps = {
+    "icon": null,
+    "color": "primary",
+    "onClick": null
+};
 
