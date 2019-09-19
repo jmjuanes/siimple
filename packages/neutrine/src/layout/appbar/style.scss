@@ -4,7 +4,7 @@
 //AppBar styles
 .neutrine-appbar {
     display: block;
-    position: sticky;
+    //position: sticky;
     top: 0px;
     //padding-left: 15px;
     //padding-right: 15px;
@@ -21,6 +21,10 @@
     &--dark {
         background-color: siimple-default-color("dark");
         color: #ffffff;
+    }
+    //Fixed appbar
+    &--fixed {
+        position: sticky;
     }
     //Appbar logo style
     &-logo {
