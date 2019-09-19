@@ -6,12 +6,12 @@
     display: block;
     position: sticky;
     top: 0px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    min-height: 40px;
-    line-height: 40px;
+    //padding-left: 15px;
+    //padding-right: 15px;
+    //padding-top: 10px;
+    //padding-bottom: 10px;
+    min-height: 50px;
+    line-height: 50px;
     //Light appbar 
     &--light {
         background-color: siimple-default-color("light");
@@ -39,6 +39,9 @@
         background-repeat: no-repeat;
         background-size: 24px 24px;
         background-image: url("./images/logo.png");
+        //Center the logo in the appbar
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 }
 
