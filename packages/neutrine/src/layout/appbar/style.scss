@@ -67,7 +67,7 @@
         &:hover,
         &--active {
             //color: #ffffff;
-            border-bottom-color: siimple-default-color("primary");
+            //border-bottom-color: siimple-default-color("primary");
             opacity: 1.0;
         }
         //Appbar item icon
@@ -82,6 +82,16 @@
             display: inline-block;
             vertical-align: middle;
         }
+    }
+    //Light appbar --> change item active color
+    &--light &-item:hover,
+    &--light &-item--active {
+        border-bottom-color: siimple-default-color("dark");
+    }
+    //Dark appbar --> change item active color
+    &--dark &-item:hover,
+    &--dark &-item--active {
+        border-bottom-color: siimple-default-color("white");
     }
 }
 
