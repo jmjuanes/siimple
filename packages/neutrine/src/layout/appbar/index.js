@@ -67,10 +67,10 @@ export const AppbarItem = function (props) {
     let textElement = React.createElement("span", {"className": baseClass + "-item-text"}, props.children);
     //Initialize the class list
     let classList = [baseClass + "-item"];
-    //Check if this link is active
-    //if (typeof props.active === "boolean" && props.active === true) {
-    //    classList.push(baseClass + "-item--active");
-    //}
+    //Check if this item is active
+    if (typeof props.active === "boolean" && props.active === true) {
+        classList.push(baseClass + "-item--active");
+    }
     //Build the item props
     let itemProps = {
         "className": helpers.classNames(classList, props.className),
@@ -85,6 +85,7 @@ export const AppbarItem = function (props) {
 AppbarItem.defaultProps = {
     "icon": null,
     "color": "primary",
+    "active": false,
     "onClick": null
 };
 
