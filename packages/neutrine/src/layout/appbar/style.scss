@@ -63,20 +63,21 @@
         padding-right: 10px;
         vertical-align: top;
         opacity: 0.5;
-        //Menu button hover
-        &:hover {
+        //Appbar item hover or active
+        &:hover,
+        &--active {
             //color: #ffffff;
             border-bottom-color: siimple-default-color("primary");
             opacity: 1.0;
         }
-        //Menu button icon
+        //Appbar item icon
         &-icon {
             display: inline-block;
             vertical-align: middle;
             margin-right: 4px;
             font-size: 16px;
         }
-        //Menu button text
+        //Appbar item text
         &-text {
             display: inline-block;
             vertical-align: middle;
