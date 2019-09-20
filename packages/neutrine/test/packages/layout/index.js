@@ -36,6 +36,9 @@ Neutrine.ready(function () {
                             <Neutrine.AppbarItem icon="home">
                                 Go to <strong>home</strong>
                             </Neutrine.AppbarItem>
+                            <Neutrine.AppbarItem icon="save">
+                                Save <strong>session</strong>
+                            </Neutrine.AppbarItem>
                         </Neutrine.Appbar>
                         <div style={{"minHeight":"2000px"}}>
                             Hello world!
