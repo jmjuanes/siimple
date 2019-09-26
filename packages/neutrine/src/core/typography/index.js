@@ -24,7 +24,7 @@ export const Code = function (props) {
     });
 };
 
-//Heading class
+//HEading wrapper
 export const Heading = function (props) {
     //Initialize the header props
     let newProps = helpers.filterProps(props, ["type", "className"]);
@@ -43,6 +43,38 @@ export const Heading = function (props) {
 //Default heading props
 Heading.defaultProps = {
     "type": "h1"
+};
+
+//Export single heading components
+export const Heading1 = function (props) {
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-h1"
+    });
+};
+export const Heading2 = function (props) {
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-h2"
+    });
+};
+export const Heading3 = function (props) {
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-h3"
+    });
+};
+export const Heading4 = function (props) {
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-h4"
+    });
+};
+export const Heading5 = function (props) {
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-h5"
+    });
+};
+export const Heading6 = function (props) {
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-h6"
+    });
 };
 
 //Export link component 
