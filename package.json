@@ -9,8 +9,12 @@
     "repository": "https://github.com/siimple/siimple",
     "bugs": "https://github.com/siimple/siimple/issues",
     "dependencies": {
+        "@babel/core": "^7.6.2",
+        "@babel/preset-env": "^7.6.2",
+        "@babel/preset-react": "^7.0.0",
         "@babel/standalone": "^7.5.5",
         "autoprefixer": "^9.6.1",
+        "babel-loader": "^8.0.6",
         "clean-css-cli": "^4.3.0",
         "css-loader": "^3.2.0",
         "express": "^4.17.1",
@@ -50,6 +54,7 @@
         "@siimple/press-plugin-copyfiles": "0.0.1",
         "@siimple/press-plugin-sass": "0.0.1",
         "@siimple/press-theme-siimple": "0.0.1",
+        "@siimple/studio": "0.0.1",
         "@siimple/website": "0.0.1"
     }
 }
