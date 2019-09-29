@@ -22,6 +22,7 @@
         "@siimple/css": "^4.0.0-alpha.0",
         "@siimple/experiments": "^0.0.1",
         "@siimple/icons": "^0.0.1",
-        "react": "^16.8.6"
+        "react": "^16.8.6",
+        "reac-dom": "^16.8.6"
     }
 }
