@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import {Alert, AlertClose} from "../../core/alert/index.js";
 
 //Import toast styles
@@ -89,8 +90,14 @@ Toast.defaultProps = {
     "timeout": 5000
 };
 
-//Create a new toaster component
-//export const createToaster = function (parent, props) {
-//    //TODO
-//};
+//Create and mount a new toaster
+export const createToaster = function (props, parent) {
+    //Check for no parent element provided
+    if (typeof parent !== "object" || parent === null) {
+        parent = document.createElement("div");
+        document.body.appendChild(parent);
+    }
+    //Render the toast and return the instance to the toast
+    return ReactDOM.render(React.createElement(Toast, props), parent);
+};
 
