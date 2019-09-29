@@ -79,6 +79,10 @@ export const ToolbarItem = function (props) {
             "className": baseClass + "-item-icon"
         });
     }
+    //Add the item text
+    let text = React.createElement("span", {
+        "className": baseClass + "-item-text"
+    }, props.text);
     //itemProps.className.push(baseClass + "-link-" + key);
     //Check if this link is active
     if (typeof props.active === "boolean" && props.active === true) {
@@ -87,7 +91,7 @@ export const ToolbarItem = function (props) {
     //Merge the classnames
     itemProps.className = itemProps.className.join(" ");
     //Return the toolbar item element
-    return React.createElement("div", itemProps, icon, props.text);
+    return React.createElement("div", itemProps, icon, text);
 };
 
 //Toolbar item default props

@@ -84,6 +84,11 @@
             line-height: 40px;
             font-weight: normal !important;
         }
+        //Text props
+        &-text {
+            line-height: 40px;
+            height: 40px;
+        }
     }
     //Light toolbar
     &--light &-item {
@@ -187,6 +192,9 @@
         width: 0px !important;
         //color: transparent !important;
         padding-right: 0px !important;
+    }
+    &-wrapper--collapsed &-item-text {
+        display: none;
     }
     &-wrapper--collapsed &-group {
         height: 0px !important;
