@@ -25,9 +25,9 @@ export class Toast extends React.Component {
         this.close = this.close.bind(this);
         this.show = this.show.bind(this);
         //this.display = this.display.bind(this);
-        this.displayError = this.displayError.bind(this);
-        this.displayWarning = this.displayWarning.bind(this);
-        this.displaySuccess = this.displaySuccess.bind(this);
+        //this.displayError = this.displayError.bind(this);
+        //this.displayWarning = this.displayWarning.bind(this);
+        //this.displaySuccess = this.displaySuccess.bind(this);
     }
     //Hide the toast
     close() {

@@ -1,5 +1,6 @@
-//Neutrine version
+//Export general modules
 export {version} from "./src/version.js";
+export * from "./src/global.js";
 
 //Import global styles
 import "./src/style.scss";
