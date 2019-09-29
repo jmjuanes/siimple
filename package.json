@@ -23,6 +23,7 @@
         "glob": "^7.1.4",
         "handlebars": "^4.1.2",
         "js-yaml": "^3.13.1",
+        "kofi": "^0.3.0",
         "mkdirp": "^0.5.1",
         "mini-css-extract-plugin": "^0.8.0",
         "postcss-cli": "^6.1.3",
