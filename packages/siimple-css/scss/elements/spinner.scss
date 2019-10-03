@@ -7,29 +7,23 @@
 //
 @import "../variables.scss";
 
-//Spinner variables
-$siimple-spinner-size: 10px;
-$siimple-spinner-space: 15px;
-$siimple-spinner-large-size: 15px;
-$siimple-spinner-large-space: 20px;
-$siimple-spinner-small-size: 8px;
-$siimple-spinner-small-space: 13px;
-
 //Base spinner mixin
 @mixin siimple-spinner-base {
-    width: $siimple-spinner-size;
-    height: $siimple-spinner-size;
-    content: "";
-    //background-color: $siimple-grey-2;
-    animation: siimple-spinner-animation 1s infinite ease-in-out;
+    width: 12px;
+    height: 12px;
+    //content: "";
+    background-color: siimple-default-color("white");
+    animation: siimple-spinner-animation 0.6s infinite alternate;
     animation-fill-mode: both;
     border-radius: 100px;
 }
 
 //Spinner animation
 @keyframes siimple-spinner-animation {
-    50% { 
-        background-color: transparent; 
+    to {
+        /*opacity: 0.1;*/
+        background-color: transparent;
+        transform: translate3d(0, -10px, 0);
     }
 }
 
@@ -41,25 +35,27 @@ $siimple-spinner-small-space: 13px;
     font-size: 10px;
     position: relative;
     transform: translateZ(0);
-    animation-delay: 0.33s;
+    animation-delay: 0.2s;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0px;
     //First spinner circle
     &:before {
         @include siimple-spinner-base();
-        //animation-delay: -0.66s;
+        //animation-delay: 0s;
+        content: "";
         position: absolute;
-        left: calc(#{$siimple-spinner-space} * -1);
-        top: 0;
+        left: -15px;
+        top: 5px;
     }
     //Last spinner circle
     &:after {
         @include siimple-spinner-base();
-        animation-delay: 0.66s;
+        content: "";
+        animation-delay: 0.4s;
         position: absolute;
-        left: $siimple-spinner-space;
-        top: 0;
+        left: 15px;
+        top: 5px;
     }
     //Spinner colors
     @each $color in $siimple-default-colors {
@@ -69,30 +65,5 @@ $siimple-spinner-small-space: 13px;
             background-color: siimple-default-color($color, "base");
         }
     }
-    //Small spinner
-    &--small{
-        &, &:before, &:after {
-            width: $siimple-spinner-small-size !important;
-            height: $siimple-spinner-small-size !important;
-        }
-        &:before {
-            left: calc(#{$siimple-spinner-small-space} * -1) !important;
-        }
-        &:after {
-            left: $siimple-spinner-small-space !important;
-        }
-    }
-    //Large spinner 
-    &--large{
-        &, &:before, &:after {
-            width: $siimple-spinner-large-size !important;
-            height: $siimple-spinner-large-size !important;
-        }
-        &:before {
-            left: calc(#{$siimple-spinner-large-space} * -1) !important;
-        }
-        &:after {
-            left: $siimple-spinner-large-space !important;
-        }
-    }
 }
+
