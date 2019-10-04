@@ -41,7 +41,7 @@
     &:hover {
         text-decoration: none;
         //opacity: 0.8;
-        background-color: siimple-default-color("light", "light");
+        background-color: siimple-default-color("light");
     }
     //Button colors
     @each $color in $siimple-default-colors {
