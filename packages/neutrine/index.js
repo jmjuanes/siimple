@@ -30,6 +30,7 @@ export * from "./src/test/index.js";
 
 //Export utils components
 export * from "./src/utils/choose.js";
+export * from "./src/utils/for.js";
 export * from "./src/utils/for-each.js";
 export * from "./src/utils/if.js";
 export * from "./src/utils/renderer.js";
