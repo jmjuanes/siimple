@@ -67,11 +67,16 @@ export function classNames () {
             if (typeof arg === "string") {
                 list.push(arg); 
             }
-            //Check for an array of class strings 
-            else if (typeof arg === "object" && Array.isArray(arg) === true) {
-                arg.forEach(function (value) {
-                    if(typeof value === "string") {
-                        list.push(value);
+            //Check for array argument
+            if (Array.isArray(arg) === true && arg.length) {
+                list.push(classNames.apply(null, arg));
+            }
+            //Check for object
+            else if (typeof arg === "object") {
+                //Add only classnames with a truly value
+                Object.keys(arg).forEach(function (key) {
+                    if (arg[key] === true) {
+                        list.push(key);
                     }
                 });
             }
