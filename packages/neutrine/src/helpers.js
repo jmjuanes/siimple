@@ -75,6 +75,15 @@ export function classNames () {
                     }
                 });
             }
+            //Check for object
+            else if (typeof arg === "object" && arg !== null) {
+                //Add classnames
+                Object.keys(arg).forEach(function (key) {
+                    if (arg[key] === true) {
+                        list.push(key);
+                    }
+                });
+            }
         }
     }
     //Return the joined class names
