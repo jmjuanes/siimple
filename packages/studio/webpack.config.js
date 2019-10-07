@@ -6,6 +6,21 @@ let MiniCssExtract = require("mini-css-extract-plugin");
 //let HtmlWebpackPlugin = require("html-webpack-plugin");
 let modulesPath = path.resolve(process.cwd(), "../../node_modules");
 
+//Common loaders configuration
+let loaders = {
+    // Extract CSS styles to a separaate .css file
+    "cssExtract": {
+        "loader": MiniCssExtract.loader,
+        "options": {
+            "publicPath": "./"
+        }
+    },
+    // Common CSS loader for parsing .css and compiled .scss files
+    "css": {
+        "loader": "css-loader"
+    }
+};
+
 //Export the webpack configuration
 module.exports = function (env) {
     //Export webpack configuration
@@ -22,18 +37,12 @@ module.exports = function (env) {
         },
         "module": {
             "rules": Object.values({
+                // Parse .scss files
                 "scssLoader": {
                     "test": /\.scss$/,
                     "use": Object.values({
-                        "cssExtractLoader": {
-                            "loader": MiniCssExtract.loader,
-                            "options": {
-                                "publicPath": "./"
-                            }
-                        },
-                        "cssLoader": {
-                            "loader": "css-loader"
-                        },
+                        "cssExtractLoader": loaders.cssExtract,
+                        "cssLoader": loaders.css,
                         "sassLoader": {
                             "loader": "sass-loader",
                             "options": {
@@ -43,20 +52,16 @@ module.exports = function (env) {
                         }
                     })
                 },
+                // @siimple/icons uses CSS instead of SCSS, so we need to add a loader
+                // for parsing css files
                 "cssLoader": {
                     "test": /\.css$/,
                     "use": Object.values({
-                        "cssExtractLoader": {
-                            "loader": MiniCssExtract.loader,
-                            "options": {
-                                "publicPath": "./"
-                            }
-                        },
-                        "cssLoader": {
-                            "loader": "css-loader"
-                        }
+                        "cssExtractLoader": loaders.cssExtract,
+                        "cssLoader": loaders.css
                     })
                 },
+                // Export images to img/ folder
                 "imageLoader": {
                     "test": /\.(png|jpg|gif|svg)$/,
                     "use": {
@@ -67,6 +72,7 @@ module.exports = function (env) {
                         }
                     }
                 },
+                // Export fonts to fonts/ folder
                 "fontLoader": {
                     "test": /\.(ttf|woff|woff2)$/,
                     "use": {
@@ -77,6 +83,8 @@ module.exports = function (env) {
                         }
                     }
                 },
+                // Parse JSX using babel
+                // BUT: ignore all .js files in node_modules and bower_components folders
                 "jsxLoader": {
                     "test": /\.js$/,
                     "include": [
