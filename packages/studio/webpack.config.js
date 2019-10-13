@@ -15,6 +15,14 @@ let loaders = {
             "publicPath": "./"
         }
     },
+    // sass loader
+    "sass": {
+        "loader": "sass-loader",
+        "options": {
+            "includePaths": [modulesPath],
+            "implementation": require("sass")
+        }
+    },
     // Common CSS loader for parsing .css and compiled .scss files
     "css": {
         "loader": "css-loader"
@@ -37,19 +45,33 @@ module.exports = function (env) {
         },
         "module": {
             "rules": Object.values({
-                // Parse .scss files
-                "scssLoader": {
+                // Parse .scss files of this module and ignore .scss files of 
+                // other modules
+                "localScssLoader": {
                     "test": /\.scss$/,
+                    "include": path.join(__dirname, "src"),
+                    "use": Object.values({
+                        "cssExtractLoader": loaders.cssExtract,
+                        "cssLoader": {
+                            "loader": "css-loader",
+                            "options": {
+                                "modules": {
+                                    "mode": "local",
+                                    "localIdentName": "siimple-studio__[hash:base64:8]"
+                                }
+                            }
+                        },
+                        "sassLoader": loaders.sass
+                    })
+                },
+                // Parse .scss files of the other modules
+                "modulesScss": {
+                    "test": /\.scss$/,
+                    "exclude": path.join(__dirname, "src"),
                     "use": Object.values({
                         "cssExtractLoader": loaders.cssExtract,
                         "cssLoader": loaders.css,
-                        "sassLoader": {
-                            "loader": "sass-loader",
-                            "options": {
-                                "includePaths": [modulesPath],
-                                "implementation": require("sass")
-                            }
-                        }
+                        "sassLoader": loaders.sass
                     })
                 },
                 // @siimple/icons uses CSS instead of SCSS, so we need to add a loader
