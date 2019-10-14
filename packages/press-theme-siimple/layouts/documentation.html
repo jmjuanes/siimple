@@ -1,10 +1,13 @@
 ---
 layout: "default.html"
-showTitle: True
-showNavigation: True
+show_breadcrumb: True
+show_title: True
+show_navigation: True
 ---
 <div class="siimple-content siimple-press-content siimple-content--large">
+    {{#if page.data.show_breadcrumb }}
     {{> breadcrumbs.html}}
+    {{/if}}
     <div class="siimple-grid-row">
         <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col-sm--12">
             <div class="siimple-list siimple-list--hover">
@@ -19,7 +22,7 @@ showNavigation: True
             </div>
         </div>
         <div class="siimple-grid-col siimple-grid-col--9 siimple-grid-col-sm--12 siimple-press-column">
-            {{#if page.data.showTitle }}
+            {{#if page.data.show_title }}
             <div align="left">
                 <div class="siimple-press-documentation-title">{{{page.data.title}}}</div>
                 <div class="siimple-press-documentation-description">{{{page.data.description}}}</div>
@@ -32,7 +35,7 @@ showNavigation: True
                 <a href="{{site.issues}}" class="siimple-link" target="_blank">Suggest changes</a>.
             </div> 
             {{/if}}
-            {{#if page.data.showNavigation }}
+            {{#if page.data.show_navigation }}
             {{> navigation.html}}
             {{/if}}
         </div>
