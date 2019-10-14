@@ -67,7 +67,7 @@ module.exports = {
             let match = page.name.match(/^(\d\d\d?)-(.+)$/);
             //Check for no math name
             if (match === null) {
-                return Object.assign(path, {
+                return Object.assign(page, {
                     "index": 0
                 });
             }
