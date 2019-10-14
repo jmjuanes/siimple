@@ -65,6 +65,12 @@ module.exports = {
         //Custom post file name parser
         "parse": function (page) {
             let match = page.name.match(/^(\d\d\d?)-(.+)$/);
+            //Check for no math name
+            if (match === null) {
+                return Object.assign(path, {
+                    "index": 0
+                });
+            }
             //Return the parsed filename values
             return Object.assign(page, {
                 "index": parseInt(match[1]),
