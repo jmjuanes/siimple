@@ -15,7 +15,7 @@
     ],
     "repository": "https://github.com/siimple/siimple",
     "bugs": "https://github.com/siimple/siimple/issues",
-    "main": "index.js",
+    "main": "config.js",
     "dependencies": {
         "@siimple/press-plugin-copyfiles": "^0.0.1",
         "@siimple/press-plugin-sass": "^0.0.1",
