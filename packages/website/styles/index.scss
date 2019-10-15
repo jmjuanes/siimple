@@ -2,11 +2,10 @@
 @import "@siimple/css/scss/variables.scss";
 
 //Global variables
-$website-prefix: "sw";
+$website-prefix: "website";
 
 //Import global styles
+@import "./card.scss";
 @import "./code.scss";
-
-//Import toolkits styles
-@import "./toolkits/css.scss";
+@import "./toolkits.scss";
 
