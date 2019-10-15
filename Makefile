@@ -11,7 +11,6 @@ help:
 	@echo "  make build pkg=<PKG>          Run the build command of the provided package"
 	@echo "  make test pkg=<PKG>           Run the test command of the provided package"
 	@echo "  make publish pkg=<PKG>        Run the publish command of the provided package"
-	@echo "  make docs                     Build and serve the documentation website"
 	@echo "  make website                  Build and serve the siimple website"
 	@echo "  make lint                     Run sass-lint"
 	@echo ""
@@ -58,12 +57,6 @@ test:
 # Example: make publish pkg="siimple-css"
 publish:
 	cd ./packages/${pkg}/ && ${MAKE} publish
-
-# Build and serve documentation
-# Shortcut for 'make build pkg="docs" && make test pkg="docs"'
-docs:
-	${MAKE} build pkg="docs"
-	${MAKE} test pkg="docs"
 
 # Build and serve siimple website
 # Sortcut for 'make build pkg="website" && make test pkg="website"'
