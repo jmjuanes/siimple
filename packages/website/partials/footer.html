@@ -8,7 +8,7 @@
         <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col--sm-12">
             <div class="siimple-footer-group">{{ this.title }}</div>
             {{#each this.links }}
-            <a href="{{ this.url }}" class="siimple-footer-link" target="_blank">
+            <a href="{{ this.url }}" class="siimple-footer-link" target="{{ this.target }}">
                 {{ this.title }}
                 <div class="siimple-footer-link-description">{{{ this.description }}}</div>
             </a>
