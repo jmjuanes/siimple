@@ -1,0 +1,57 @@
+//Card style
+.#{$website-prefix}-card {
+    display: block;
+    min-height: 80px;
+    //padding: 18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 38px;
+    padding-bottom: 40px;
+    color: #ffffff;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    //Card label
+    &-label {
+        display: block;
+        height: 20px;
+        font-size: 10px;
+        line-height: 20px;
+        position: absolute;
+        top: 12px;
+        left: 18px;
+        opacity: 0.6;
+    }
+    //Card title
+    &-title {
+        display: block;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    //Card description
+    &-description {
+        display: block;
+        font-size: 14px;
+        line-height: 22px;
+        opacity: 0.8;
+    }
+    //Card action
+    &-action {
+        display: block;
+        height: 22px;
+        line-height: 22px;
+        opacity: 0.5;
+        font-size: 14px;
+        position: absolute;
+        bottom: 18px;
+        left: 18px;
+        transition: all 0.3s;
+    }
+    //Card hover --> change opacity of card-action element
+    &:hover &-action {
+        opacity: 1.0;
+    }
+}
+
