@@ -7,7 +7,7 @@
         },
         "responsive": {
             "title": "Responsive",
-            "image": "/assets/images/icons/responsive.svg",
+            "image": "/assets/images/icons/mobile.svg",
             "description": "<strong>@siimple/css</strong> allows you to design a web page that looks great on all devices (desktops, tablets and phones)."
         },
         "elegant": {
