@@ -75,12 +75,21 @@ module.exports.readData = function (context, folder) {
     }
     //Read all JSON files inside the data folder
     let data = {};
-    util.listFiles(folder, ".json").forEach(function (file) {
+    //util.listFiles(folder, ".json").forEach(function (file) {
+    util.walkDir(folder, ".json", function (file, filePath, folders) {
         let fileName = path.basename(file, ".json");
-        let filePath = path.join(folder, file);
+        //let filePath = path.join(folder, file);
         //Store the data file content
         log.info("Reading data: " + filePath);
-        data[fileName] = JSON.parse(fs.readFileSync(filePath, "utf8"));
+        let lastObject = data;
+        for (let i = 0; i < folders.length; i++) {
+            if (typeof lastObject[folders[i]] !== "object") {
+                lastObject[folders[i]] = {};
+            }
+            lastObject = lastObject[folders[i]];
+        }
+        //data[fileName] = JSON.parse(fs.readFileSync(filePath, "utf8"));
+        lastObject[fileName] = JSON.parse(fs.readFileSync(filePath, "utf8"));
     });
     //Return read data
     return data;
