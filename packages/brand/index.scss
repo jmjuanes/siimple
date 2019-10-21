@@ -1,13 +1,16 @@
 //
-// @siimple/css - minimal css toolkit for flat and clean websites
+// @siimple/brand - branding assets and styles for siimple
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
 
+//siimple brand font-family import
+@import url('https://fonts.googleapis.com/css?family=Nunito:800&display=swap');
+
 //Branding class
-.siimple-brand {
-    font-family: "Montserrat", "Roboto", sans-serif;
+.siimple {
+    font-family: "Nunito", "Montserrat", sans-serif;
 }
 
