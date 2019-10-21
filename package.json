@@ -46,6 +46,7 @@
         "webpack-cli": "^3.3.7"
     },
     "packages": {
+        "@siimple/brand": "0.0.1",
         "@siimple/colors": "0.0.1",
         "@siimple/css": "4.0.0-alpha.0",
         "@siimple/experiments": "0.0.1",
