@@ -1,0 +1,12 @@
+{
+    "name": "@siimple/brand",
+    "description": "Styles and assets for siimple branding",
+    "version": "0.0.1",
+    "private": true,
+    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "repository": "https://github.com/siimple/siimple",
+    "bugs": "https://github.com/siimple/siimple/issues",
+    "main": "index.scss",
+    "dependencies": {},
+    "license": "MIT"
+}
