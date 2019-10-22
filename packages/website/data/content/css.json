@@ -3,17 +3,17 @@
         "modular": {
             "title": "Modular",
             "image": "/assets/images/icons/modules.svg",
-            "description": "<strong>@siimple/css</strong> has been built using SASS/SCSS. Just import only what you need!"
+            "content": "<strong>@siimple/css</strong> has been built using SASS/SCSS. Just import only what you need!"
         },
         "responsive": {
             "title": "Responsive",
             "image": "/assets/images/icons/mobile.svg",
-            "description": "<strong>@siimple/css</strong> allows you to design a web page that looks great on all devices (desktops, tablets and phones)."
+            "content": "<strong>@siimple/css</strong> allows you to design a web page that looks great on all devices (desktops, tablets and phones)."
         },
         "elegant": {
             "title": "Elegant",
             "image": "/assets/images/icons/heart.svg",
-            "description": "<strong>@siimple/css</strong> combines an elegant, modern, flat and minimalistic design."
+            "content": "<strong>@siimple/css</strong> combines an elegant, modern, flat and minimalistic design."
         }
     },
     "reviews": {
