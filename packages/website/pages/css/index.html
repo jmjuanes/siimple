@@ -7,7 +7,7 @@ title: "Minimal and responsive CSS toolkit for flat and clean designs"
         <div class="siimple-grid-col siimple-grid-col--7 siimple-grid-col--sm-12">
             <div class="website-hero-content" align="left">
                 <div class="website-hero-head">
-                    <strong class="siimple-brand">siimple</strong>css
+                    <strong class="siimple">siimple</strong>css
                 </div>
                 <div class="website-hero-subhead" style="opacity:0.8;">
                     A <strong>flat</strong> and <strong>minimal</strong> CSS toolkit.
@@ -28,24 +28,24 @@ title: "Minimal and responsive CSS toolkit for flat and clean designs"
                 </div>
             </div>
         </div>
+        <div class="siimple-grid-col siimple-grid-col--5">
+            <img src="/assets/images/header.svg" class="website-hero-image" width="100%"/>
+        </div>
     </div>
 </div>
-<div class="siimple-content siimple-content--large siimple--py-5" align="center">
+<div class="siimple-content siimple-content--large siimple--py-5">
     <div class="siimple--py-4">
-        <div class="siimple-h2 siimple--mb-2 siimple--text-normal">
+        <div class="siimple-h2 siimple--mb-4 siimple--text-normal" align="center">
             Why <strong class="siimple-brand">siimple</strong>?
         </div>
-        <div class="siimple-paragraph siimple-paragraph--lead">
-            Build responsive, flat and clean web designs with the minimalist and flexible <strong>siimple</strong> CSS framework. 
-        </div>
         <div class="siimple-grid-row">
-            {{#each data.toolkits.css.features }}
-            <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col-sm--12 sw-toolkits-css-feature">
-                <div class="sw-toolkits-css-feature-image website-icons">
-                    <img src="" width="100%" height="100%" />
+            {{#each data.content.css.features }}
+            <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col-sm--12">
+                <div class="siimple--mb-2">
+                    <img src="{{this.image}}" width="60px" />
                 </div>
-                <div class="sw-toolkits-css-feature-title">{{ this.title }}</div>
-                <div class="sw-toolkits-css-feature-description">
+                <div class="siimple-h4">{{ this.title }}</div>
+                <div class="siimple-paragraph" style="opacity:0.8;">
                     {{{ this.description }}}
                 </div>
             </div>
@@ -79,7 +79,7 @@ title: "Minimal and responsive CSS toolkit for flat and clean designs"
             </div>
         </div>
         <div class="siimple-grid-col siimple-grid-col--7 siimple-grid-col--sm-12">
-<pre class="siimple-pre sw-code sw-code--small">
+<pre class="siimple-pre website-code website-code--small">
 <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-field"</span><span class="b">&gt;</span>
     <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-field-label"</span><span class="b">&gt;</span>Your email<span class="b">&lt;/div&gt;</span>
         <span class="b">&lt;input </span><span class="y">type=</span><span class="g">"email"</span> <span class="y">class=</span><span class="g">"siimple-input siimple-input--fluid"</span> <span class="y">value=</span><span class="g">"bob.smith@email.com"</span><span class="b">&gt;</span>
@@ -109,7 +109,7 @@ title: "Minimal and responsive CSS toolkit for flat and clean designs"
     </div>
     <div class="siimple-grid-row">
         <div class="siimple-grid-col siimple-grid-col--7 siimple-grid-col--sm-12">
-<pre class="siimple-pre sw-code sw-code--small">
+<pre class="siimple-pre website-code website-code--small">
 <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-grid"</span><span class="b">&gt;</span>
     <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-grid-row"</span><span class="b">&gt;</span>
         <span class="b">&lt;div </span><span class="y">class=</span><span class="g">"siimple-grid-col siimple-grid-col--5"</span><span class="b">&gt;</span>5<span class="b">&lt;/div&gt;</span>
@@ -123,50 +123,46 @@ title: "Minimal and responsive CSS toolkit for flat and clean designs"
 </pre>
         </div>
         <div class="siimple-grid-col siimple-grid-col--5 siimple-grid-col--sm-12">
-            <div class="siimple-grid sw-toolkits-css-example-grid">
-                <div class="siimple-grid-row">
-                    <div class="siimple-grid-col siimple-grid-col--5">
-                        <div class="sw-toolkits-css-example-grid-content">5</div>
+            <div class="siimple--bg-light siimple--rounded siimple--px-3 siimple--py-3">
+                <div class="siimple-grid">
+                    <div class="siimple-grid-row">
+                        <div class="siimple-grid-col siimple-grid-col--5">
+                            <div class="siimple--py-3 siimple--px-3 siimple--bg-primary siimple--rounded" align="center">
+                                <span class="siimple--color-white">5</span>
+                            </div>
+                        </div>
+                        <div class="siimple-grid-col siimple-grid-col--7">
+                            <div class="siimple--py-3 siimple--px-3 siimple--bg-primary siimple--rounded" align="center">
+                                <span class="siimple--color-white">7</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="siimple-grid-col siimple-grid-col--7">
-                        <div class="sw-toolkits-css-example-grid-content">7</div>
-                    </div>
-                </div>
-                <div class="siimple-grid-row">
-                    <div class="siimple-grid-col siimple-grid-col--8">
-                        <div class="sw-toolkits-css-example-grid-content">8</div>
-                    </div>
-                    <div class="siimple-grid-col siimple-grid-col--4">
-                        <div class="sw-toolkits-css-example-grid-content">4</div>
+                    <div class="siimple-grid-row">
+                        <div class="siimple-grid-col siimple-grid-col--8">
+                            <div class="siimple--py-3 siimple--px-3 siimple--bg-primary siimple--rounded" align="center">
+                                <span class="siimple--color-white">8</span>
+                            </div>
+                        </div>
+                        <div class="siimple-grid-col siimple-grid-col--4">
+                            <div class="siimple--py-3 siimple--px-3 siimple--bg-primary siimple--rounded" align="center">
+                                <span class="siimple--color-white">4</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="siimple-content siimple-content--large siimple--py-5 siimple--mb-4" align="center">
-    <div class="siimple-h3 siimple--mb-2 siimple--text-normal">
-        Let's get started with <strong class="siimple-brand">siimple</strong>
-    </div>
-    <div class="siimple-paragraph siimple-paragraph--lead">
-        You can get started with <strong>siimple</strong> reading the official documentation: 
-        learn how to add <strong>siimple</strong> to your project and discover how to style your buttons, forms and more!
-    </div>
-    <div align="center">
-        <a href="https://docs.siimple.xyz/css/" class="siimple-btn siimple-btn--primary">
-            Read the <strong>documentation</strong>
-        </a>
-    </div>
-</div>
 <div class="siimple-content siimple-content--large siimple--bg-light siimple--py-5">
     <div align="center">
-        <div class="website-icons website-icons-announcement"></div>
+        <img src="/assets/images/icons/bullhorn.svg" width="100px" height="100px" />
     </div>
     <div class="siimple-h3 siimple--mb-2 siimple--text-normal" align="center">
         What people say about <strong class="siimple-brand">siimple</strong>?
     </div>
     <div class="siimple-grid-row siimple--py-4">
-        {{#each data.toolkits.css.reviews }}
+        {{#each data.content.css.reviews }}
         <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col--sm-12 sw-toolkits-css-reviews-column">
             <div class="siimple-h5">{{ this.site }}</div>
             <div class="siimple-paragraph sw-toolkits-css-reviews-content">
@@ -181,19 +177,18 @@ title: "Minimal and responsive CSS toolkit for flat and clean designs"
         {{/each}}
     </div>
 </div>
-<div class="siimple-content siimple-content--large siimple--py-5" align="center">
-    <div class="siimple--py-4">
-        <div class="siimple-h3 siimple--mb-2 siimple--text-normal">
-            Contribute to <strong class="siimple-brand">siimple</strong>
-        </div>
-        <div class="siimple-paragraph siimple-paragraph--lead">
-            Contribute to our repository on <strong>GitHub</strong>. Bug reports, improvements and new ideas are always welcome!
-        </div>
-        <div>
-            <a href="https://github.com/siimple/siimple" class="siimple-btn siimple-btn--primary" target="_blank">
-                Contribute to <strong>siimple</strong>
-            </a>
-        </div>
+<div class="siimple-content siimple-content--large siimple--py-5 siimple--my-5" align="center">
+    <div class="siimple-h3 siimple--mb-2 siimple--text-normal">
+        Let's get started with <strong class="siimple-brand">siimple</strong>
+    </div>
+    <div class="siimple-paragraph siimple-paragraph--lead">
+        You can get started with <strong>siimple</strong> reading the official documentation: 
+        learn how to add <strong>siimple</strong> to your project and discover how to style your buttons, forms and more!
+    </div>
+    <div align="center">
+        <a href="/docs/css/" class="siimple-btn siimple-btn--primary">
+            Read the <strong>documentation</strong>
+        </a>
     </div>
 </div>
 
