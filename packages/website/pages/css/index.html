@@ -38,19 +38,7 @@ title: "Minimal and responsive CSS toolkit for flat and clean designs"
         <div class="siimple-h2 siimple--mb-4 siimple--text-normal" align="center">
             Why <strong class="siimple-brand">siimple</strong>?
         </div>
-        <div class="siimple-grid-row">
-            {{#each data.content.css.features }}
-            <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col-sm--12">
-                <div class="siimple--mb-2">
-                    <img src="{{this.image}}" width="60px" />
-                </div>
-                <div class="siimple-h4">{{ this.title }}</div>
-                <div class="siimple-paragraph" style="opacity:0.8;">
-                    {{{ this.description }}}
-                </div>
-            </div>
-            {{/each}}
-        </div>
+        {{> features.html items=data.content.css.features }}
     </div>
 </div>
 <div class="siimple-content siimple-content--large siimple--py-5">
