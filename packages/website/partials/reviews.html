@@ -1,0 +1,16 @@
+<div class="siimple-grid-row">
+    {{#each items }}
+    <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col--sm-12">
+        <div class="siimple-h5">{{ this.site }}</div>
+        <div class="siimple-paragraph">
+            <strong style="font-size:18px;">&#8220;</strong> 
+            <span style="opacity:0.8;">{{{ this.content }}}</span>
+            <strong style="font-size:18px;">&#8221;</strong>
+        </div>
+        <a href="{{{ this.url }}}" class="siimple-btn siimple-btn--primary" target="_blank">
+            Read <strong>more</strong> <strong>&raquo;</strong>
+        </a>
+    </div>
+    {{/each}}
+</div>
+
