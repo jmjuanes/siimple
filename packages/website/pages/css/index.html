@@ -149,20 +149,8 @@ title: "Minimal and responsive CSS toolkit for flat and clean designs"
     <div class="siimple-h3 siimple--mb-2 siimple--text-normal" align="center">
         What people say about <strong class="siimple-brand">siimple</strong>?
     </div>
-    <div class="siimple-grid-row siimple--py-4">
-        {{#each data.content.css.reviews }}
-        <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col--sm-12 sw-toolkits-css-reviews-column">
-            <div class="siimple-h5">{{ this.site }}</div>
-            <div class="siimple-paragraph sw-toolkits-css-reviews-content">
-                <strong class="sw-toolkits-css-reviews-quote">&#8220;</strong> 
-                {{{ this.content }}} 
-                <strong class="sw-toolkits-css-reviews-quote">&#8221;</strong>
-            </div>
-            <a href="{{{ this.url }}}" class="siimple-btn siimple-btn--primary sw-toolkits-css-reviews-btn" target="_blank">
-                Read <strong>more</strong> <strong>&raquo;</strong>
-            </a>
-        </div>
-        {{/each}}
+    <div class="siimple--py-4">
+        {{> reviews.html items=data.content.css.reviews }}
     </div>
 </div>
 <div class="siimple-content siimple-content--large siimple--py-5 siimple--my-5" align="center">
