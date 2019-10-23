@@ -3,5 +3,48 @@ layout: "default.html"
 title: "siimple"
 ---
 
-Hello world!
+<div class="website-hero siimple-content--large siimple--bg-light">
+    <div class="siimple-grid-row">
+        <div class="siimple-grid-col siimple-grid-col--7 siimple-grid-col--sm-12">
+            <div class="website-hero-content" align="left">
+                <div class="website-hero-head">
+                    <strong class="siimple">siimple</strong>
+                </div>
+                <div class="website-hero-subhead" style="opacity:0.8;">
+                    <strong>Design</strong> and <strong>build</strong> flat and minimalistic websites.
+                </div>
+                <div class="website-hero-text" style="opacity:0.8;">
+                    <strong>siimple </strong> is an open source project that provides a collection of toolkits for building fabulous websites and applications. 
+                </div>
+            </div>
+        </div>
+        <div class="siimple-grid-col siimple-grid-col--5">
+            <img src="/assets/images/header.svg" class="website-hero-image" width="100%"/>
+        </div>
+    </div>
+</div>
+<div class="siimple-content siimple-content--large siimple--py-5">
+    <div class="siimple--py-4">
+        <div class="siimple-h2 siimple--mb-4 siimple--text-normal" align="center">
+            Discover <strong>our toolkits</strong>
+        </div>
+        <div class="siimple-grid-row">
+            {{#each data.home}}
+            <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col--sm-12">
+                <a href="{{ this.url }}" style="text-decoration:none;">
+                    <div class="siimple--rounded siimple--bg-light" align="center">
+                        <img src="{{ this.image }}" width="250px" />
+                    </div>
+                </a>
+                <div class="siimple--mt-4">
+                    <div class="siimple-h4 siimple--text-normal">
+                        <strong class="siimple" style="padding-right:2px;">siimple</strong>{{ this.title }}
+                    </div>
+                    <div class="siimple-paragraph" style="opacity:0.8;">{{{ this.content }}}</div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
 
