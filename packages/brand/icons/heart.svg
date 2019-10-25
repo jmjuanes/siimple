@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg830"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="heart.svg">
+  <defs
+     id="defs824" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="36.428571"
+     inkscape:cy="50"
+     inkscape:document-units="px"
+     inkscape:current-layer="svg830"
+     showgrid="true"
+     units="px"
+     inkscape:window-width="1280"
+     inkscape:window-height="755"
+     inkscape:window-x="214"
+     inkscape:window-y="1051"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1375"
+       empspacing="5" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata827">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     style="fill:#4e91e4;stroke-width:1.43181825"
+     d="m 16.363636,25 c -14.318182,14.318182 0,28.636365 0,28.636365 l 21.477273,21.477272 c 7.159091,7.159091 14.318181,0 14.318181,0 L 73.636363,53.636365 c 0,0 14.318181,-14.318183 0,-28.636365 C 59.318182,10.681819 45,25 45,25 45,25 30.681818,10.681819 16.363636,25 Z"
+     id="path1023"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccccc" />
+  <path
+     sodipodi:nodetypes="cccccccc"
+     inkscape:connector-curvature="0"
+     id="path2137"
+     d="m 54.25,50 c -7.875,7.875 0,15.750001 0,15.750001 L 66.0625,77.5625 c 3.9375,3.9375 7.874999,0 7.874999,0 l 11.8125,-11.812499 c 0,0 7.875,-7.875001 0,-15.750001 C 77.875,42.125001 70,50 70,50 c 0,0 -7.875,-7.874999 -15.75,0 z"
+     style="fill:#4ccdac;stroke-width:0.55000001" />
+</svg>
