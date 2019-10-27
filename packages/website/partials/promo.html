@@ -1,0 +1,21 @@
+<div class="siimple-grid-row">
+    {{#each items}}
+    <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col--sm-12">
+        <a class="website-card siimple--bg-light siimple--color-dark" href="{{ this.url }}">
+            <div class="website-card-label" style="text-transform:uppercase;">
+                {{{ this.type }}}
+            </div>
+            <div class="website-card-title siimple--color-primary">
+                {{{ this.title }}}
+            </div>
+            <div class="website-card-description">
+                {{{ this.content }}}
+            </div>
+            <div class="website-card-action">
+                {{{ this.action }}}
+            </div>
+        </a>
+    </div>
+    {{/each}}
+</div>
+
