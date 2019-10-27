@@ -23,13 +23,14 @@ title: "siimple"
         </div>
     </div>
 </div>
+<!-- Toolkits list -->
 <div class="siimple-content siimple-content--large siimple--py-5">
     <div class="siimple--py-4">
         <div class="siimple-h2 siimple--mb-4 siimple--text-normal" align="center">
             Discover <strong>our toolkits</strong>
         </div>
         <div class="siimple-grid-row">
-            {{#each data.home}}
+            {{#each data.home.toolkits}}
             <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col--sm-12">
                 <a href="{{ this.url }}" style="text-decoration:none;">
                     <div class="siimple--rounded siimple--bg-light" align="center">
@@ -46,5 +47,9 @@ title: "siimple"
             {{/each}}
         </div>
     </div>
+</div>
+<!-- Promos -->
+<div class="siimple-content siimple-content--large siimple--py-5">
+    {{> promo.html items=data.home.promos }}
 </div>
 
