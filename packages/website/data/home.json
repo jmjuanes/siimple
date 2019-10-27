@@ -1,0 +1,25 @@
+{
+    "toolkits": {
+        "css": {
+            "title": "css",
+            "content": "Our original open source <strong>CSS toolkit</strong> for designing flat and clean websites.",
+            "image": "/assets/images/headers/css.svg",
+            "url": "/css/index.html"
+        },
+        "colors": {
+            "title": "colors",
+            "content": "A flat color palette",
+            "image": "/assets/images/headers/colors.svg",
+            "url": "/colors/index.html"
+        }
+    },
+    "promos": {        
+        "documentation": {
+            "type": "documentation",
+            "title": "Documentation",
+            "content": "Our documentation covers all you need to know to start building your website with <strong>siimple</strong>!",
+            "action": "Read our <strong>documentation</strong> &raquo;",
+            "url": "/docs/index.html"
+        }
+    }
+}
