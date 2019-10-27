@@ -11,11 +11,12 @@ process.nextTick(function () {
     //Import packages to document
     let docsPkgs = Object.entries(websitePkg.documentation).map(function (item) {
         //Import the local package
-        let localPkg = packages[item[0]]; 
+        let pkg = packages[item[0]]; 
         return {
-            "name": localPkg.name,
-            "description": localPkg.description,
-            "version": localPkg.version,
+            "type": "documentation",
+            "title": pkg.name,
+            "content": pkg.description,
+            "action": `Documentation for <strong>${pkg.version}</strong>`,
             "url": path.join("/docs/", item[1], "index.html")
         };
     });
