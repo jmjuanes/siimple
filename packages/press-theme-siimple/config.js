@@ -20,7 +20,9 @@ module.exports = {
         //Breadcrumb links
         "breadcrumbLinks": [],
         //Navbar links
-        "navbarLinks": [],
+        "navbarLinks": [
+            {"text": "siimple.xyz", "url": "https://www.siimple.xyz"}
+        ],
         //Footer links
         "footerLinks": [],
         //Analytics tracking ID
