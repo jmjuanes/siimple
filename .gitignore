@@ -9,6 +9,5 @@ packages/*/www
 
 # Custom paths
 packages/siimple-colors/docs/data
-packages/website/public
-packages/docs/public
+packages/website/data/documentation.json
 
