@@ -1,4 +1,16 @@
 {
+    "hero": {
+        "head": "css",
+        "subhead": "A <strong>flat</strong> and <strong>minimal</strong> CSS toolkit.",
+        "text": "<strong>siimple css</strong> is an open source CSS toolkit that provides a clean starting point for designing flat and responsive websites.",
+        "links": {
+            "docs": {
+                "text": "Let's <strong>get started</strong>",
+                "url": "/docs/css/index.html"
+            }
+        },
+        "image": "/assets/images/headers/css.svg"
+    },
     "features": {
         "modular": {
             "title": "Modular",
@@ -34,6 +46,22 @@
             "title": "9 Best Responsive Web Design Frameworks",
             "content": "Flexible, aesthetically built and a concise front-end CSS framework to accomplish clean web pages.",
             "url": "https://blog.templatetoaster.com/best-responsive-web-design-frameworks/"
+        }
+    },
+    "getstarted": {
+        "documentation": {
+            "type": "documentation",
+            "title": "Read the documentation",
+            "content": "Learn how to add <strong>siimple-css</strong> to your project and discover how to style your buttons, forms and more!",
+            "action": "Let's <strong>get started</strong> &raquo;",
+            "url": "/docs/css/index.html"
+        },
+        "help": {
+            "type": "support",
+            "title": "Get support",
+            "content": "Need more help? Join our <strong>Gitter</strong> chat for getting help from the <strong>siimple</strong> community!",
+            "action": "Join <strong>our chat on Gitter</strong> &raquo;",
+            "url": "https://gitter.im/siimple/siimple"
         }
     }
 }
