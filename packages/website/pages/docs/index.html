@@ -20,18 +20,18 @@ title: "Documentation"
 </div>
 <div class="siimple-content siimple-content--large">
     <div class="siimple-grid-row">
-        {{#each data.documentation}}
+        {{#each data.documentation }}
         <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col--sm-12">
-            <a class="website-card siimple--bg-primary" href="{{this.folder}}">
+            <a class="website-card siimple--bg-primary" href="{{ this.url }}">
                 <div class="website-card-label">DOCUMENTATION</div>
-                <div class="website-card-title">{{this.name}}</div>
-                <div class="website-card-description">{{this.description}}</div>
+                <div class="website-card-title">{{ this.name }}</div>
+                <div class="website-card-description">{{ this.description }}</div>
                 <div class="website-card-action">
-                    Documentation for <strong>v{{this.version}}</strong>
+                    Documentation for <strong>v{{ this.version }}</strong>
                 </div>
             </a>
         </div>
-        {{/each}}
+        {{/each }}
     </div>
 </div>
 <div class="siimple-content siimple-content--large" align="center">
