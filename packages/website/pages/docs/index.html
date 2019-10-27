@@ -2,7 +2,7 @@
 layout: "default.html"
 title: "Documentation"
 ---
-
+<!-- Header -->
 <div class="website-hero siimple-content--large siimple--bg-light">
     <div class="siimple-grid-row">
         <div class="siimple-grid-col siimple-grid-col--8 siimple-grid-col--sm-12">
@@ -18,22 +18,11 @@ title: "Documentation"
         </div>
     </div>
 </div>
+<!-- Documentation links -->
 <div class="siimple-content siimple-content--large">
-    <div class="siimple-grid-row">
-        {{#each data.documentation }}
-        <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col--sm-12">
-            <a class="website-card siimple--bg-primary" href="{{ this.url }}">
-                <div class="website-card-label">DOCUMENTATION</div>
-                <div class="website-card-title">{{ this.name }}</div>
-                <div class="website-card-description">{{ this.description }}</div>
-                <div class="website-card-action">
-                    Documentation for <strong>v{{ this.version }}</strong>
-                </div>
-            </a>
-        </div>
-        {{/each }}
-    </div>
+    {{> promo.html items=data.documentation }}
 </div>
+<!-- Get help -->
 <div class="siimple-content siimple-content--large" align="center">
     <div class="siimple--py-5">
         <div class="siimple-h3 siimple--text-normal siimple--mb-1">
