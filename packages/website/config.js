@@ -7,16 +7,20 @@ module.exports = {
     "theme": "@siimple/press-theme-siimple/config.js",
     "base": "/",
     "site": {
-        "name": null,
-        "description": null,
-        "version": null,
-        "license": "MIT License",
-        //Navbr links
+        //Global site links
+        "links": {
+            "documentation": "#",
+            "privacy": "#",
+            "repository": "https://github.com/siimplie/siimple",
+            "twitter": "https://twitter.com/siimplecss",
+            "gitter": "https://gitter.im/siimple", 
+            "issues_bug": "https://github.com/siimple/siimple/issues/new?template=BUG_REPORT.md",
+            "issues_feature": "https://github.com/siimple/siimple/issues/new?template=FEATURE_REQUEST.md"
+        },
+        //Navbar links
         "navbarLinks": [
-            {"text": "Docs", "url": "/docs/index.html"}
-        ],
-        //Footer links
-        "footerLinks": []
+            {"text": "Docs", "url": "#"}
+        ]
     },
     //Custom head tags
     "head": [
