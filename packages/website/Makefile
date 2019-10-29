@@ -5,17 +5,24 @@ NODE_BIN=../../node_modules/.bin
 
 # Build the website
 build:
-	@# Build website
+	@# Build website pages
 	cd ../../ && ./node_modules/@siimple/press/cli.js --config ./packages/website/config.js
 	@# Build assets
-	mkdir -p ./public/assets/css ./public/assets/images ./public/assets/js
-	cp ../../node_modules/@siimple/css/dist/siimple.min.css ./public/assets/css/
+	mkdir -p ./www/assets/css ./www/assets/images ./www/assets/js
+	${NODE_BIN}/sass -I ../../node_modules ../press-theme-siimple/styles/index.scss ./www/assets/css/siimple-press.css
+	cp ../../node_modules/@siimple/css/dist/siimple.min.css ./www/assets/css/
+	@# Copy images and icons
+	mkdir -p ./www/assets/images/icons && cp ../brand/icons/*.svg ./www/assets/images/icons/
+	mkdir -p ./www/assets/images/headers/
+	cp ../brand/header.svg ./www/assets/images/headers/website.svg
+	cp ../siimple-css/header.svg ./www/assets/images/headers/css.svg
+	cp ../siimple-colors/header.svg ./www/assets/images/headers/colors.svg
 	# Building website styles
-	${NODE_BIN}/sass -I ../../node_modules ./styles/index.scss ./public/assets/css/siimple-website.css
+	${NODE_BIN}/sass -I ../../node_modules ./styles/index.scss ./www/assets/css/siimple-website.css
 
 # Serve the site
 test:
-	${NODE_BIN}/stattic --port 5000 --folder ./public --cors
+	${NODE_BIN}/stattic --port 5000 --folder ./www --cors
 
 # Publish the website
 publish: 
