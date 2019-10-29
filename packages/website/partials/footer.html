@@ -4,17 +4,60 @@
         <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col--sm-12">
             <div class="siimple-footer-title siimple">siimple</div>
         </div>
-        {{#each data.footer }}
+        <!-- Getting started -->
         <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col--sm-12">
-            <div class="siimple-footer-group">{{ this.title }}</div>
-            {{#each this.links }}
-            <a href="{{ this.url }}" class="siimple-footer-link" target="{{ this.target }}">
-                {{ this.title }}
-                <div class="siimple-footer-link-description">{{{ this.description }}}</div>
+            <div class="siimple-footer-group">Getting started</div>
+            <!-- Documentation link -->
+            <a href="{{ site.links.documentation }}" class="siimple-footer-link" target="">
+                Documentation
+                <div class="siimple-footer-link-description">
+                    Read the official docs of <strong>siimple</strong>
+                </div>
             </a>
-            {{/each}}
         </div>
-        {{/each}}
+        <!-- Community -->
+        <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col--sm-12">
+            <div class="siimple-footer-group">Community</div>
+            <!-- Repository -->
+            <a href="{{ site.links.repository }}" class="siimple-footer-link" target="_blank">
+                GitHub
+                <div class="siimple-footer-link-description">
+                    Star our repository on GitHub
+                </div>
+            </a>
+            <!-- Twitter -->
+            <a href="{{ site.links.twitter }}" class="siimple-footer-link" target="_blank">
+                Twitter
+                <div class="siimple-footer-link-description">
+                    Follow <strong>@siimplecss</strong> on Twitter
+                </div>
+            </a>
+            <!-- Gitter chat -->
+            <a href="{{ site.links.gitter }}" class="siimple-footer-link" target="_blank">
+                Gitter
+                <div class="siimple-footer-link-description">
+                    Join our chat room on Gitter
+                </div>
+            </a>
+        </div>
+        <!-- Support -->
+        <div class="siimple-grid-col siimple-grid-col--3 siimple-grid-col--sm-12">
+            <div class="siimple-footer-group">Support</div>
+            <!-- Report a bug -->
+            <a href="{{ site.links.issues_bug }}" class="siimple-footer-link" target="_blank">
+                Report a bug
+                <div class="siimple-footer-link-description">
+                    Create an issue for a bug
+                </div>
+            </a>
+            <!-- Request a feature -->
+            <a href="{{ site.links.issues_feature }}" class="siimple-footer-link" target="_blank">
+                Request a feature
+                <div class="siimple-footer-link-description">
+                    Suggest an idea for <strong>siimple</strong>
+                </div>
+            </a>
+        </div>
     </div>
     <!-- Legal links -->
     <div class="siimple-footer-rule"></div>
@@ -23,7 +66,7 @@
             &copy; 2015-present <strong>siimple</strong>
         </div>
         <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col--sm-hide" align="right">
-            <a href="#" class="siimple-footer-link siimple-footer-link--inline">
+            <a href="{{ site.links.privacy }}" class="siimple-footer-link siimple-footer-link--inline">
                 privacy
             </a>
         </div>
