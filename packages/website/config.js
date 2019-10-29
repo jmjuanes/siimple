@@ -10,7 +10,7 @@ module.exports = {
         //Global site links
         "links": {
             "documentation": "#",
-            "privacy": "#",
+            "privacy": "/privacy.html",
             "repository": "https://github.com/siimplie/siimple",
             "twitter": "https://twitter.com/siimplecss",
             "gitter": "https://gitter.im/siimple", 
