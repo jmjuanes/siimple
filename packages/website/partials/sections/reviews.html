@@ -1,0 +1,26 @@
+<div class="siimple-content siimple-content--large siimple--py-5">
+    <div align="center">
+        <img src="/assets/images/bullhorn.svg" width="100px" height="100px" />
+    </div>
+    <div class="siimple-h3 siimple--mb-3 siimple--mt-2 siimple--text-normal" align="center">
+        What people say about <strong>siimple</strong>?
+    </div>
+    <div class="siimple--py-4">
+        <div class="siimple-grid-row">
+            {{#each data.reviews }}
+            <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col--sm-12">
+                <div class="siimple-h5">{{ this.site }}</div>
+                <div class="siimple-paragraph">
+                    <strong style="font-size:18px;">&#8220;</strong> 
+                    <span style="opacity:0.8;">{{{ this.content }}}</span>
+                    <strong style="font-size:18px;">&#8221;</strong>
+                </div>
+                <a href="{{{ this.url }}}" class="siimple-btn siimple-btn--primary" target="_blank">
+                    Read <strong>more</strong> <strong>&raquo;</strong>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
