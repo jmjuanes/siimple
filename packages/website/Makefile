@@ -11,10 +11,10 @@ build:
 	mkdir -p ./www/assets/css ./www/assets/images ./www/assets/js
 	${NODE_BIN}/sass -I ../../node_modules ../press-theme-siimple/styles/index.scss ./www/assets/css/siimple-press.css
 	cp ../../node_modules/@siimple/css/dist/siimple.min.css ./www/assets/css/
-	@# Copy images and icons
-	mkdir -p ./www/assets/images/icons && cp ../brand/icons/*.svg ./www/assets/images/icons/
+	@# Copy images 
+	mkdir -p ./www/assets/images && cp ./images/*.svg ./www/assets/images/
 	mkdir -p ./www/assets/images/headers/
-	cp ../brand/header.svg ./www/assets/images/headers/website.svg
+	cp ./header.svg ./www/assets/images/headers/website.svg
 	cp ../siimple-css/header.svg ./www/assets/images/headers/css.svg
 	cp ../siimple-colors/header.svg ./www/assets/images/headers/colors.svg
 	# Building website styles
