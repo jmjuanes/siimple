@@ -11,7 +11,7 @@ module.exports = {
     },
     //Custom head tags
     "head": [
-        ["link", {"rel": "stylesheet", "href": "/assets/css/siimple-website.css"}]
+        ["link", {"rel": "stylesheet", "href": "/assets/css/style.css"}]
     ],
     //Plugins
     "plugins": []

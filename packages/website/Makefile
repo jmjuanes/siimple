@@ -19,7 +19,7 @@ build:
 	cp ../siimple-css/header.svg ./www/assets/images/toolkits/css.svg
 	cp ../siimple-colors/header.svg ./www/assets/images/toolkits/colors.svg
 	# Building website styles
-	${NODE_BIN}/sass -I ../../node_modules ./styles/index.scss ./www/assets/css/siimple-website.css
+	${NODE_BIN}/sass -I ../../node_modules ./styles/index.scss ./www/assets/css/style.css
 
 # Serve the site
 test:
