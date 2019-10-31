@@ -51,7 +51,7 @@ export const SideContent = function (props) {
         }
     };
     //Check the content position
-    if (props.position === "right" || props.position === "left") {
+    if (props.position === "right" || props.position === "left") {
         contentProps.style.width = props.size;
     }
     else {
