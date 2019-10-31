@@ -1,14 +1,14 @@
 {{#if site.analytics}}
-<div class="siimple-press-analytics-container" id="press-analytics-dialog" style="display:none">
-    <div class="siimple-press-analytics">
-        <div class="siimple-press-analytics-text">
+<div class="analytics__container" id="__analytics-dialog" style="display:none">
+    <div class="analytics__card">
+        <div class="analytics__text">
             This website uses cookies to ensure you get the best experience on our website.
-            <a href="{{site.privacy}}" class="siimple-press-analytics-link" target="_blank">
+            <a href="{{ site.privacy }}" class="analytics__link" target="_blank">
                 Learn more.
             </a>
         </div>
         <div align="right">
-            <div class="siimple-btn siimple-btn--success siimple-press-analytics-button" id="press-analytics-button">
+            <div class="siimple-btn siimple-btn--success siimple--ml-1" id="__analytics-button">
                 Allow cookies
             </div>
         </div>
@@ -16,7 +16,7 @@
 </div>
 <script type="text/javascript">
     window.addEventListener("DOMContentLoaded", function() {
-        return siimpleAnalytics("{{site.analytics}}");
+        return __init_analytics("{{ site.analytics }}", ".siimple.xyz");
     });
 </script>
 {{/if}}
