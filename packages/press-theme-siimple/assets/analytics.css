@@ -1,0 +1,39 @@
+ /* Analytics card */
+.analytics__card {
+    display: block;
+    width: calc(100% - 30px);
+    min-height: calc(110px - 30px);
+    max-width: 500px;
+    padding: 15px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    border-radius: 5px;
+    background-color: #000000; /* siimple-default-color("dark"); */
+    color: #ffffff;
+}
+/* Cookies container */
+.analytics__container {
+    width: calc(100% - 40px);
+    position: fixed;
+    bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    z-index: 900;
+}
+/* Dialog message text */
+.analytics__text {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+/* Link */
+.analytics__link {
+    color: #ffffff;
+    opacity: 0.7;
+    transform: underline;
+    transition: opacity 0.3s;
+}
+.analytics__link:hover {
+    opacity: 0.9;
+}
+
