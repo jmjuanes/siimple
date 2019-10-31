@@ -1,5 +1,5 @@
 //Initialize the analytics plugin
-let siimpleAnalytics = function(analyticsID) {
+let __init_analytics = function(analyticsID, domain) {
     //Load analytics
     (function (i, s, o, g, r, a, m) {
         i["GoogleAnalyticsObject"] = r;
@@ -14,9 +14,9 @@ let siimpleAnalytics = function(analyticsID) {
         m.parentNode.insertBefore(a, m);
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     //Cookies consent name
-    let name = "siimple-analytics-consent";
+    let name = "analytics-consent";
     //Method for registering the consent cookie
-    let registerConsentCookie = function (expireDate, domain) {
+    let registerConsentCookie = function (expireDate) {
         //console.log(`cookie ${name} registered`);
         document.cookie = `${name}=allow; expire=${expireDate}; domain=${domain}`;
     };
@@ -26,7 +26,7 @@ let siimpleAnalytics = function(analyticsID) {
         let expireDate = new Date();
         expireDate.setDate(expireDate.getDate() + 365);
         //Create the allow cookie
-        registerConsentCookie(expireDate.toUTCString(), ".siimple.xyz");
+        registerConsentCookie(expireDate.toUTCString());
         //Register analytics
         window.ga("create", analyticsID, "auto");
         window.ga("set", "anonymizeIp", true);
@@ -43,10 +43,10 @@ let siimpleAnalytics = function(analyticsID) {
             return cookiesAccepted();
         }
         //Display the dialog
-        document.getElementById("press-analytics-dialog").style.display = "block";
-        document.getElementById("press-analytics-button").addEventListener("click", function () {
+        document.getElementById("__analytics-dialog").style.display = "block";
+        document.getElementById("__analytics-button").addEventListener("click", function () {
             //Hide the dialog
-            document.getElementById("press-analytics-dialog").style.display = "none";
+            document.getElementById("__analytics-dialog").style.display = "none";
             //Cookies has been accepted
             return cookiesAccepted();
         });
