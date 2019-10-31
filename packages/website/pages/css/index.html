@@ -1,16 +1,53 @@
 ---
 layout: "default.html"
 title: "Minimal and responsive CSS toolkit for flat and clean designs"
+features:
+  - title: "Modular"
+    image: "/assets/images/features/modular.svg"
+    content: "<strong>siimple-css</strong> is built using SASS/SCSS, so you can import only the css elements that you really need!"
+  - title: "Responsive"
+    image: "/assets/images/features/responsive.svg"
+    content: "<strong>siimple-css</strong> allows you to design a web page that looks great on all devices such as desktops, tablets and phones."
+  - title: "Elegant"
+    image: "/assets/images/features/elegant.svg"
+    content: "<strong>siimple-css</strong> combines an elegant, modern, flat and minimalistic design with simplicity in mind."
+  - title: "Easy to learn"
+    image: "/assets/images/features/learning.svg"
+    content: "<strong>siimple-css</strong> is so intuitive, so you can learn it and start building your amazing website in minutes."
 ---
 <!-- Hero -->
-{{> hero.html content=data.content.css.hero }}
+<div class="website-hero siimple-content--large siimple--bg-light">
+    <div class="siimple-grid-row">
+        <div class="siimple-grid-col siimple-grid-col--7 siimple-grid-col--sm-12">
+            <div class="website-hero-content" align="left">
+                <div class="website-hero-head">
+                    <strong class="siimple">siimple</strong>css
+                </div>
+                <div class="website-hero-subhead" style="opacity:0.8;">
+                    A <strong>flat</strong> and <strong>minimal</strong> CSS toolkit.
+                </div>
+                <div class="website-hero-text" style="opacity:0.8;">
+                    <strong>siimple css</strong> is an open source CSS toolkit that provides a clean starting point for designing flat and responsive websites.
+                </div>
+                <div class="website-hero-buttons siimple--mt-4 siimple--mb-3">
+                    <a href="/docs/css/" class="siimple-btn siimple-btn--primary">
+                        Let's <strong>get started</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="siimple-grid-col siimple-grid-col--5">
+            <img src="/assets/images/toolkits/css.svg" class="website-hero-image" width="100%"/>
+        </div>
+    </div>
+</div>
 <!-- Features -->
 <div class="siimple-content siimple-content--large siimple--py-5">
     <div class="siimple--py-4">
         <div class="siimple-h2 siimple--mb-4 siimple--text-normal" align="center">
-            Why <strong class="siimple-brand">siimple</strong>?
+            Why build with <strong>siimple-css</strong>?
         </div>
-        {{> features.html items=data.content.css.features }}
+        {{> features.html items=page.data.features }}
     </div>
 </div>
 <!-- First using example -->
@@ -116,25 +153,11 @@ title: "Minimal and responsive CSS toolkit for flat and clean designs"
     </div>
 </div>
 <!-- Reviews -->
-<div class="siimple-content siimple-content--large siimple--bg-light siimple--py-5">
-    <div align="center">
-        <img src="/assets/images/icons/bullhorn.svg" width="100px" height="100px" />
-    </div>
-    <div class="siimple-h3 siimple--mb-3 siimple--mt-2 siimple--text-normal" align="center">
-        What people say about <strong>siimple-css</strong>?
-    </div>
-    <div class="siimple--py-4">
-        {{> reviews.html items=data.content.css.reviews }}
-    </div>
+<div class="siimple--bg-light">
+    {{> sections/reviews.html }}
 </div>
 <!-- Get started -->
-<div class="siimple-content siimple-content--large siimple--py-5 siimple--my-5">
-    <div align="center">
-        <img src="/assets/images/icons/rocket.svg" width="100px" height="100px" />
-    </div>
-    <div class="siimple-h3 siimple--text-normal siimple--mb-5 siimple--mt-3" align="center">
-        Let's <strong>get started!</strong>
-    </div>
-    {{> promo.html items=data.content.css.getstarted }}
+<div class="siimple--mb-0 siimple--mt-0">
+    {{> sections/get-started.html }}
 </div>
 
