@@ -5,26 +5,13 @@ module.exports = {
     "base": "/",
     //Site configuration
     "site": {
-        "name": "", //Package name
-        "description": null, //Package description
-        "version": null, //Package version
-        "license": null, //Package license
+        "name": "siimple",
         //Global links
-        "links": {
-            "home": "https://www.siimple.xyz",
-            "privacy": "https://www.siimple.xyz/legal/privacy.html",
-        },
+        "home": "https://www.siimple.xyz",
+        "privacy": "https://www.siimple.xyz/privacy.html",
         //Repository configuration
-        "repository": null,
+        "repository": "https://github.com/siimple/siimple",
         "issues": "https://github.com/siimple/siimple/issues",
-        //Breadcrumb links
-        "breadcrumbLinks": [],
-        //Navbar links
-        "navbarLinks": [
-            {"text": "siimple.xyz", "url": "https://www.siimple.xyz"}
-        ],
-        //Footer links
-        "footerLinks": [],
         //Analytics tracking ID
         "analytics": null,
         //Copyright notice
@@ -35,11 +22,11 @@ module.exports = {
         ["meta", {"name":"viewport", "content": "width=device-width,initial-scale=1"}],
         ["link", {"rel": "stylesheet", "href": "https://fonts.googleapis.com/css?family=Montserrat:700"}],
         ["link", {"rel": "stylesheet", "href": "/assets/css/siimple.min.css"}],
-        ["link", {"rel": "stylesheet", "href": "/assets/css/siimple-press.css"}],
-        ["script", {"type": "text/javascript", "src": "/assets/js/siimple-press-analytics.js"}]
+        ["link", {"rel": "stylesheet", "href": "/assets/analytics.css"}],
+        ["script", {"type": "text/javascript", "src": "/assets/analytics.js"}]
     ],
     //Default title template
-    "title": "{{page.data.title}} | siimple {{site.name}}",
+    "title": "{{page.data.title}} | siimple",
     //Plugins
     "plugins": [
     //    {
