@@ -43,7 +43,7 @@ $siimple-default-palette: (
         "base": $siimple-default-secondary,
         "light": lighten($siimple-default-secondary, $siimple-default-amount),
         "over": $siimple-default-white
-    ).
+    ),
     "success": (
         "dark": darken($siimple-default-success, $siimple-default-amount), 
         "base": $siimple-default-success, 
