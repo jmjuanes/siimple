@@ -5,11 +5,15 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   id="svg4"
-   viewBox="0 0 50 50"
-   version="1.1"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="50"
    width="50"
-   height="50">
+   version="1.1"
+   viewBox="0 0 50 50"
+   id="svg4"
+   sodipodi:docname="money.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -24,7 +28,53 @@
   </metadata>
   <defs
      id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1181"
+     inkscape:window-height="659"
+     id="namedview6"
+     showgrid="true"
+     inkscape:zoom="9.26"
+     inkscape:cx="25"
+     inkscape:cy="25"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4">
+    <inkscape:grid
+       type="xygrid"
+       id="grid817"
+       spacingx="1.25"
+       spacingy="1.25"
+       snapvisiblegridlinesonly="false"
+       empspacing="2"
+       empcolor="#3f26ff"
+       empopacity="0.25098039"
+       color="#ff4f71"
+       opacity="0.1254902" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid829"
+       color="#3fcd43"
+       opacity="0.1254902"
+       empspacing="2"
+       spacingx="0.625"
+       spacingy="0.625"
+       snapvisiblegridlinesonly="false"
+       empcolor="#e23f26"
+       empopacity="0.25098039"
+       enabled="false" />
+  </sodipodi:namedview>
   <path
+     d="M 2.5,10 C 0,10 0,12.5 0,12.5 v 25 c 0,0 0,2.5 2.5,2.5 h 45 C 50,40 50,37.5 50,37.5 v -25 c 0,0 0,-2.5 -2.5,-2.5 z m 7.5,5 h 30 c 0,5 5,5 5,5 v 10 c 0,0 -5,0 -5,5 H 10 C 10,30 5,30 5,30 V 20 c 0,0 5,0 5,-5 z m 15,2.5 c -3.75,0 -6.25,2.5 -6.25,7.5 0,5 2.5,7.5 6.25,7.5 3.75,0 6.25,-2.5 6.25,-7.5 0,-5 -2.5,-7.5 -6.25,-7.5 z"
      id="path822"
-     d="M 2.5,10 C 0,10 0,12.5 0,12.5 v 25 c 0,0 0,2.5 2.5,2.5 h 45 C 50,40 50,37.5 50,37.5 v -25 c 0,0 0,-2.5 -2.5,-2.5 z m 6.25,3.75 h 32.5 c 0,5 5,5 5,5 v 12.5 c 0,0 -5,0 -5,5 H 8.75 c 0,-5 -5,-5 -5,-5 v -12.5 c 0,0 5,0 5,-5 z M 25,17.5 c -3.75,0 -6.25,2.5 -6.25,7.5 0,5 2.5,7.5 6.25,7.5 3.75,0 6.25,-2.5 6.25,-7.5 0,-5 -2.5,-7.5 -6.25,-7.5 z" />
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="sccssccsscccccccccsssss" />
 </svg>
