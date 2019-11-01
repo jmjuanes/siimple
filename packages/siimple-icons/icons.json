@@ -782,6 +782,48 @@
         "unicode": 57455,
         "added": "v0.0.2",
         "keywords": ["eye", "hidden"]
+    },
+    {
+        "id": "print",
+        "categories": "office",
+        "unicode": 57456,
+        "added": "v0.0.2",
+        "keywords": ["printer", "printing"]
+    },
+    {
+        "id": "ruler",
+        "categories": "education",
+        "unicode": 57457,
+        "added": "v0.0.2",
+        "keywords": ["ruler", "rule"]
+    },
+    {
+        "id": "desktop",
+        "categories": "computer",
+        "unicode": 57458,
+        "added": "v0.0.2",
+        "keywords": ["computer", "desktop", "device"]
+    },
+    {
+        "id": "laptop",
+        "categories": "computer",
+        "unicode": 57459,
+        "added": "v0.0.2",
+        "keywords": ["computer", "laptop", "device"]
+    },
+    {
+        "id": "mobile",
+        "categories": "computer",
+        "unicode": 57460,
+        "added": "v0.0.2",
+        "keywords": ["mobile", "device"]
+    },
+    {
+        "id": "tablet",
+        "categories": "computer",
+        "unicode": 57461,
+        "added": "v0.0.2",
+        "keywords": ["tablet", "device"]
     }
 ]
 
