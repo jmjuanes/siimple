@@ -747,6 +747,41 @@
         "unicode": 57450,
         "added": "v0.0.1",
         "keywords": ["step", "forward", "controls", "next"]
+    },
+    {
+        "id": "code",
+        "categories": "computer",
+        "unicode": 57451,
+        "added": "v0.0.2",
+        "keywords": ["computer", "code", "programming", "develop"]
+    },
+    {
+        "id": "money",
+        "categories": "business",
+        "unicode": 57452,
+        "added": "v0.0.2",
+        "keywords": ["money", "bill", "payments"]
+    },
+    {
+        "id": "sliders",
+        "categories": "computer",
+        "unicode": 57453,
+        "added": "v0.0.2",
+        "keywords": ["sliders", "settings", "configuration"]
+    },
+    {
+        "id": "visible",
+        "categories": "interface",
+        "unicode": 57454,
+        "added": "v0.0.2",
+        "keywords": ["eye", "visible"]
+    },
+    {
+        "id": "hidden",
+        "categories": "interface",
+        "unicode": 57455,
+        "added": "v0.0.2",
+        "keywords": ["eye", "hidden"]
     }
 ]
 
