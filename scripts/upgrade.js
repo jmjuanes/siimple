@@ -20,8 +20,11 @@ fs.readdirSync(pkgsPath, "utf8").forEach(function (folder) {
     if (fs.statSync(folderPath).isDirectory() === false) {
         return null;
     }
-    //Read the package.json file
     let localPath = path.join(folderPath, "package.json");
+    //Check for no package.json on this folder
+    if (fs.existsSync(localPath) === false) {
+        return null;
+    }
     let localPkg = JSON.parse(fs.readFileSync(localPath, "utf8"));
     //Update version
     localPkg.version = pkg.packages[localPkg.name];
