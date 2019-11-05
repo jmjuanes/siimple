@@ -20,6 +20,7 @@ $siimple-default-amount: 20% !default;
 $siimple-default-white: #ffffff !default;
 $siimple-default-navy: #546778 !default;
 $siimple-default-primary: #4e91e4 !default;
+$siimple-default-secondary: #4ccdac !default;
 $siimple-default-success: #4acf7f !default;
 $siimple-default-warning: #fbc850 !default;
 $siimple-default-error: #ee675d !default;
@@ -35,6 +36,12 @@ $siimple-default-palette: (
         "dark": darken($siimple-default-primary, $siimple-default-amount), 
         "base": $siimple-default-primary, 
         "light": lighten($siimple-default-primary, $siimple-default-amount), 
+        "over": $siimple-default-white
+    ),
+    "secondary": (
+        "dark": darken($siimple-default-secondary, $siimple-default-amount),
+        "base": $siimple-default-secondary,
+        "light": lighten($siimple-default-secondary, $siimple-default-amount),
         "over": $siimple-default-white
     ),
     "success": (
@@ -70,8 +77,8 @@ $siimple-default-palette: (
 );
 
 //Default colors list
-$siimple-default-colors: ("primary", "success", "warning", "error", "dark", "light");
-$siimple-default-basic-colors: ("primary", "success", "warning", "error");
+$siimple-default-colors: ("primary", "secondary", "success", "warning", "error", "dark", "light");
+$siimple-default-basic-colors: ("primary", "secondary", "success", "warning", "error");
 
 //Default breakpoints variables
 $siimple-default-breakpoint-gap: 20px !default;

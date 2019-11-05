@@ -106,5 +106,15 @@
         border-bottom-right-radius: 0px;
         margin-right: -2px;
     }
+    //White button
+    &--white {
+        transition: opacity 0.3s !important;
+        background-color: $siimple-default-white;
+        opacity: 1.0;
+        &:hover {
+            background-color: $siimple-default-white !important;
+            opacity: 0.8;
+        }
+    }
 }
 

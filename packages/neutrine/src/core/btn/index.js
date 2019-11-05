@@ -35,7 +35,7 @@ export const Btn = function (props) {
 
 //Default properties values
 Btn.defaultProps = { 
-    "color": "primary", 
+    "color": null, 
     "disabled": false, 
     "fluid": false,
     "small": false

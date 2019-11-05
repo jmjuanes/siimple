@@ -1,3 +1,11 @@
+## v0.0.5 (2019-11-01)
+
+### Bug fixes
+
+- Fixed minor typo in `Side` component.
+- Fixed `classNames` helper.
+
+
 ## v0.0.4 (2019-10-03)
 
 ### New features

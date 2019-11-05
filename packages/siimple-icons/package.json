@@ -1,6 +1,6 @@
 {
     "name": "@siimple/icons",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A suite of scalable icons for web, desktop and mobile projects",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "license": "MIT",
@@ -10,6 +10,15 @@
     "homepage": "https://www.siimple.xyz",
     "repository": "https://github.com/siimple/siimple",
     "bugs": "https://github.com/siimple/siimple/issues",
+    "files": [
+        "dist",
+        "scss",
+        "svg",
+        "icons.json",
+        "categories.json",
+        "CHANGELOG.md",
+        "index.scss"
+    ],
     "dependencies": {},
     "devDependencies": {
         "get-args": "^2.0.0",
