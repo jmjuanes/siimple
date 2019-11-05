@@ -1,0 +1,33 @@
+@import "@siimple/css/scss/variables.scss";
+
+//Color option style
+.color {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.3s;
+    margin: 5px;
+    //Hover
+    &:hover {
+        opacity: 1.0;
+    }
+    //Active option color
+    &Active::before {
+        content: "";
+        //font-size: 16px;
+        position: absolute;
+        border-bottom: 3px solid #ffffff;
+        width: 6px;
+        height: 14px;
+        border-right: 3px solid #ffffff;
+        transform: rotate(45deg);
+        left: calc(50% - 4px);
+        top: calc(50% - 11px);
+        border-radius: 1px;
+    }
+}
+
