@@ -1,0 +1,28 @@
+@import "@siimple/css/scss/variables.scss";
+
+//List option
+.list {
+    display: block;
+    //List item block
+    &Item {
+        display: block;
+        border: 2px dashed siimple-default-color("light");
+        padding: 10px;
+        margin-top: 10px;
+    }
+    //Add a new list item
+    &Add {
+        display: block;
+        padding: 10px;
+        background-color: siimple-default-color("light");
+        color: siimple-default-color("dark", "light");
+        border-radius: 5px; 
+        margin-top: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+            color: siimple-default-color("dark");
+        }
+    }
+}
+
