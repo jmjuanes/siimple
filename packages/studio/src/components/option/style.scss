@@ -1,0 +1,10 @@
+@import "@siimple/css/scss/variables.scss";
+
+//Studio option
+.option {
+    &:not(:last-child) {
+        padding-bottom: 10px;
+        border-bottom: 1px solid siimple-default-color("light");
+    }
+}
+
