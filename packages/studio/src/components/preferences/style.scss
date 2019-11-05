@@ -1,13 +1,13 @@
 @import "@siimple/css/scss/variables.scss";
 
 //Preferences dialog
-.siimple-studio-preferences {
+.preferences {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 0px;
     //Preferences menu
-    &-menu {
+    &Menu {
         display: block;
         width: 200px;
         //height: calc(100% - 10px);
@@ -28,7 +28,7 @@
         }
     }
     //Preferences body
-    &-body {
+    &Body {
         display: block;
         width: calc(100% - 250px);
         padding: 15px;

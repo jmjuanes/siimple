@@ -7,7 +7,7 @@ import {Btn} from "@siimple/neutrine";
 
 import {Option} from "../option/index.js";
 
-import "./style.scss";
+import style from "./style.scss";
 
 //Export preferences component
 export class Preferences extends React.Component {
@@ -75,8 +75,8 @@ export class Preferences extends React.Component {
         return (
             <Modal size="medium">
                 <ModalHeader title={this.props.title} onClose={this.handleCancel} />
-                <ModalBody className="siimple-studio-preferences">
-                    <div className="siimple-studio-preferences-menu">
+                <ModalBody className={style.preferences}>
+                    <div className={style.preferencesMenu}>
                         <Menu>
                             <ForEach items={Object.keys(this.props.groups)} render={function (key) {
                                 let group = self.props.groups[key];
@@ -94,7 +94,7 @@ export class Preferences extends React.Component {
                             }} />
                         </Menu>
                     </div>
-                    <div className="siimple-studio-preferences-body">
+                    <div className={style.preferencesBody}>
                         {/* Editing content */}
                         <ForEach items={Object.keys(this.props.attributes)} render={function (key, index) {
                             let config = self.props.attributes[key];
