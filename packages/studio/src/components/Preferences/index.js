@@ -5,7 +5,7 @@ import {Menu, MenuItem} from "@siimple/neutrine";
 import {Icon} from "@siimple/neutrine";
 import {Btn} from "@siimple/neutrine";
 
-import {Option} from "../option/index.js";
+import {Option} from "../Option/index.js";
 
 import style from "./style.scss";
 
