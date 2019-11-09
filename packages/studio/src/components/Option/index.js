@@ -5,12 +5,12 @@ import {Field, FieldLabel, FieldHelper} from "@siimple/neutrine";
 import style from "./style.scss";
 
 //Option types
-import {ColorOption} from "./color/index.js";
-import {ListOption} from "./list/index.js";
-import {TextOption} from "./text/index.js";
-import {TextareaOption} from "./textarea/index.js";
-import {ThemeOption} from "./theme/index.js";
-import {SelectOption} from "./select/index.js";
+import {ColorOption} from "./Color/index.js";
+import {ListOption} from "./List/index.js";
+import {TextOption} from "./Text/index.js";
+import {TextareaOption} from "./Textarea/index.js";
+import {ThemeOption} from "./Theme/index.js";
+import {SelectOption} from "./Select/index.js";
 
 //Build options types
 let types = {
