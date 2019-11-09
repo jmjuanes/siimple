@@ -1,15 +1,10 @@
 import React from "react";
 
 //Import available elements
-import {renderJumbotron} from "./jumbotron.js";
-
-//Build renderers
-let render = {
-    "jumbotron": renderJumbotron
-};
+import {getElementRender} from "../../elements/index.js";
 
 //Export element renderer
 export function Element (props) {
-    return render[props.type](props.attributes);
+    return getElementRender(props.type)(props.attributes);
 };
 
