@@ -1,13 +1,20 @@
 import React from "react";
 import {If, ForEach} from "@siimple/neutrine";
+import {classNames} from "@siimple/neutrine";
 
 import {AddBlock} from "./AddBlock/index.js";
 import {Block} from "./Block/index.js";
+import style from "./style.scss";
 
 //Export page content
 export function PageContent (props) {
+    //Build page content styles
+    let classList = classNames({
+        [style.content]: true,
+        [style.contentEditable]: props.editable
+    });
     return (
-        <React.Fragment>
+        <div className={classList}>
             {/* Page navbar */}
             {/* Custom page blocks */}
             <ForEach items={props.page.content} render={function (content, index) {
@@ -27,7 +34,7 @@ export function PageContent (props) {
                 <AddBlock onClick={props.onAdd} />
             </If>
             {/* Page footer */}
-        </React.Fragment>
+        </div>
     );
 }
 
