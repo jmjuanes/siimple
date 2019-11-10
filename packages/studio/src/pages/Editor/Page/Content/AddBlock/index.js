@@ -19,7 +19,7 @@ export function AddBlock (props) {
                 </div>
             </div>
             <ForEach items={Object.keys(elements)} render={function (key) {
-                let element = elements[key];
+                let element = elements[key].props;
                 let onClick = function (event) {
                     return props.onClick(key);
                 };
