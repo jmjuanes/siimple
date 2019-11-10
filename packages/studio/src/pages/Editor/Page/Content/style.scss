@@ -1,13 +1,13 @@
 //Page content style
-.content {
+.root {
     display: block;
     padding-left: 0px;
     //padding-right: 45px;
     padding-right: 0px;
     transition: all 0.3s;
-    //Editable page
-    &Editable {
-        padding-right: 45px;
-    }
+}
+//Editable page
+.editable {
+    padding-right: 45px;
 }
 

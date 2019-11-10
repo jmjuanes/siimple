@@ -10,8 +10,8 @@ import style from "./style.scss";
 export function PageContent (props) {
     //Build page content styles
     let classList = classNames({
-        [style.content]: true,
-        [style.contentEditable]: props.editable
+        [style.root]: true,
+        [style.editable]: props.editable
     });
     return (
         <div className={classList}>
