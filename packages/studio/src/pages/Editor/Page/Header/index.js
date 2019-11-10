@@ -9,12 +9,12 @@ import style from "./style.scss";
 //Export page header
 export function PageHeader (props) {
     return (
-        <div className={style.header}>
+        <div className={style.root}>
             <div className="siimple--float-left">
                 {/* Page icon */}
-                <Icon icon="file" className={style.headerIcon} />
+                <Icon icon="file" className={style.icon} />
                 {/* Page title */}
-                <Heading type="h5" className={style.headerTitle}>
+                <Heading type="h5" className={style.title}>
                     <span>{props.page.name}</span>
                 </Heading>
             </div>
@@ -24,8 +24,8 @@ export function PageHeader (props) {
                 <Renderer render={function () {
                     let iconImage = (props.editable === true) ? "unlock" : "lock";
                     return (
-                        <div className={style.headerBtn} onClick={props.onEditableClick}>
-                            <Icon icon={iconImage} className={style.headerBtnIcon} />
+                        <div className={style.button} onClick={props.onEditableClick}>
+                            <Icon icon={iconImage} className={style.buttonIcon} />
                         </div>
                     );
                 }} />
