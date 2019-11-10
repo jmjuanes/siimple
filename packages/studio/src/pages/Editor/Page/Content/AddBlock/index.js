@@ -3,7 +3,7 @@ import {ForEach} from "@siimple/neutrine";
 import {Icon} from "@siimple/neutrine";
 import {Heading4} from "@siimple/neutrine";
 
-import {elements} from "../../../../../elements/index.js";
+import {getElements, getElementProps} from "../../../../../elements/index.js";
 import style from "./style.scss";
 
 //Add a new block
@@ -18,8 +18,8 @@ export function AddBlock (props) {
                     Add more content blocks to this page.
                 </div>
             </div>
-            <ForEach items={Object.keys(elements)} render={function (key) {
-                let element = elements[key].props;
+            <ForEach items={getElements()} render={function (key) {
+                let element = getElementProps(key);
                 let onClick = function (event) {
                     return props.onClick(key);
                 };
