@@ -8,7 +8,7 @@ import {DeleteBlockModal} from "./DeleteBlock/index.js";
 import {Preferences} from "../../../components/Preferences/index.js";
 import {getElementProps} from "../../../elements/index.js";
 
-import styles from "./style.scss";
+import style from "./style.scss";
 
 //Page component
 export class Page extends React.Component {
@@ -16,7 +16,6 @@ export class Page extends React.Component {
         super(props);
         //Initial state
         this.state = {
-            "editable": this.props.defaultEditable,
             "editBlock": false,
             "deleteBlock": false,
             "currentBlock": null
@@ -38,7 +37,7 @@ export class Page extends React.Component {
             "attributes": {},
             "index": null //this.props.page.content.length
         };
-        let element = elements[type];
+        let element = getElementProps(type);
         //Add the default block attributes
         Object.keys(element.attributes).forEach(function (key, index) {
             newBlock.attributes[key] = element.attributes[key].defaultValue;
@@ -110,14 +109,9 @@ export class Page extends React.Component {
     //Render the page
     render() {
         let self = this;
-        //Build the page classlist
-        let classList = classNames({
-            [styles.page]: true,
-            [styles.pageEditable]: this.state.editable
-        });
         //Render the page content
         return (
-            <div className={classList}>
+            <div className={style.root}>
                 {/* Editing view */}
                 <If condition={this.state.editBlock} render={function () {
                     //Return the editing action
@@ -136,7 +130,7 @@ export class Page extends React.Component {
                 {/* Block delete view */}
                 <If condition={this.state.deleteBlock} render={function () {
                     let block = self.props.page.content[self.state.currentBlock];
-                    let element = elements[block.type]
+                    let element = getElementProps(block.type);
                     return React.createElement(DeleteBlockModal, {
                         "title": `Delete ${element.title.toLowerCase()}`,
                         "item": "this block",
@@ -144,10 +138,18 @@ export class Page extends React.Component {
                         "onCancel": self.handleBlockCancel
                     });
                 }} />
+                {/* Page header */}
+                <Renderer render={function () {
+                    return React.createElement(PageHeader, {
+                        "page": self.props.page,
+                        "editable": self.props.editable,
+                        "onEditableClick": self.props.onEditableToggle
+                    });
+                }} />
                 {/* Render the page blocks */}
                 <Renderer render={function () {
                     return React.createElement(PageContent, {
-                        "editable": self.state.editable,
+                        "editable": self.props.editable,
                         "page": self.props.page,
                         "onEdit": self.handleBlockEdit,
                         "onDelete": self.handleBlockDelete,
@@ -163,7 +165,8 @@ export class Page extends React.Component {
 Page.defaultProps = {
     "site": null,
     "page": null,
-    "defaultEditable": true,
-    "onPageUpdate": null
+    "editable": false,
+    "onPageUpdate": null,
+    "onEditableToggle": null
 };
 
