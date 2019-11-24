@@ -1,37 +1,53 @@
 @import "@siimple/css/scss/variables.scss";
 
-//Preferences dialog
-.preferences {
+//Preferences menu
+.menu {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 0px;
-    //Preferences menu
-    &Menu {
+    margin-bottom: 20px;
+    margin-right: -5px;
+    margin-left: -5px;
+    //Menu item 
+    &Item {
         display: block;
-        width: 200px;
-        //height: calc(100% - 10px);
-        //background-color: siimple-default-color("light");
+        border: 2px solid siimple-default-color("light");
+        border-radius: 5px;
         padding: 10px;
-        //Menu item style
-        & .siimple-menu-item {
-            margin-bottom: 5px;
+        flex-basis: 100%;
+        //width: 80px;
+        margin-right: 5px;
+        margin-left: 5px;
+        color: siimple-default-color("dark");
+        opacity: 0.5;
+        transition: all 0.3s;
+        //Active theme item
+        &Active {
+            color: siimple-default-color("primary") !important;
+            border-color: rgba(siimple-default-color("primary"), 0.2) !important;
+            background-color: rgba(siimple-default-color("primary"), 0.2) !important;
+            //background-color: siimple-default-color("light");
+            opacity: 1.0;
         }
-        //Menu item selected
-        & .siimple-menu-item--selected {
-            background-color: siimple-default-color("primary") !important;
-            color: siimple-default-color("white") !important;
+        //Hover theme item
+        &:hover {
+            cursor: pointer;
+            opacity: 1.0;
         }
-        //Menu item hover
-        & .siimple-menu-item:hover {
-            background-color: siimple-default-color("light");
+        //Item icon
+        &Icon {
+            font-size: 24px;
+            //line-height: 34px;
+            vertical-align: top;
         }
-    }
-    //Preferences body
-    &Body {
-        display: block;
-        width: calc(100% - 250px);
-        padding: 15px;
+        //Item text
+        &Text {
+            //margin-top: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 22px;
+        }
     }
 }
 
