@@ -5,6 +5,7 @@ import {If, Renderer, ForEach} from "@siimple/neutrine";
 import {PageHeader} from "./Header/index.js";
 import {PageContent} from "./Content/index.js";
 import {DeleteBlockModal} from "./DeleteBlock/index.js";
+import {Dialog} from "../../../components/Dialog/index.js";
 import {Preferences} from "../../../components/Preferences/index.js";
 import {getElementProps} from "../../../elements/index.js";
 
@@ -113,20 +114,22 @@ export class Page extends React.Component {
         return (
             <div className={style.root}>
                 {/* Editing view */}
-                <If condition={this.state.editBlock} render={function () {
-                    //Return the editing action
-                    let block = self.props.page.content[self.state.currentBlock];
-                    let element = getElementProps(block.type);
-                    return React.createElement(Preferences, {
-                        "title": `Edit ${element.title.toLowerCase()}`,
-                        "visible": self.state.edit,
-                        "groups": element.groups,
-                        "attributes": element.attributes,
-                        "values": block.attributes,
-                        "onSubmit": self.handleBlockEditSubmit,
-                        "onCancel": self.handleBlockCancel
-                    });
-                }} />
+                <Dialog visible={this.state.editBlock} title="Edit block" size="60%">
+                    <If condition={this.state.editBlock} render={function () {
+                        //Return the editing action
+                        let block = self.props.page.content[self.state.currentBlock];
+                        let element = getElementProps(block.type);
+                        return React.createElement(Preferences, {
+                            "title": `Edit ${element.title.toLowerCase()}`,
+                            "visible": self.state.edit,
+                            "groups": element.groups,
+                            "attributes": element.attributes,
+                            "values": block.attributes,
+                            "onSubmit": self.handleBlockEditSubmit,
+                            "onCancel": self.handleBlockCancel
+                        });
+                    }} />
+                </Dialog>
                 {/* Block delete view */}
                 <If condition={this.state.deleteBlock} render={function () {
                     let block = self.props.page.content[self.state.currentBlock];
