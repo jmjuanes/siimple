@@ -71,7 +71,7 @@ let jumbotronProps = {
         "align": {
             "type": "select",
             "label": "Aligned jumbotron",
-            "helper": null,
+            "helper": "Specify how text should be aligned in the jumbotron.",
             "defaultValue": "left",
             "options": {
                 "left": "Align to left",
@@ -90,7 +90,7 @@ let jumbotronProps = {
         "color": {
             "type": "color",
             "label": "Background Color",
-            "helper": null,
+            "helper": "Choose a background color for the jumbotron.",
             "defaultValue": "dark",
             "group": "appearance"
         },
