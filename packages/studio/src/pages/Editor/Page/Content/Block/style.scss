@@ -17,8 +17,8 @@
     display: flex;
     position: absolute;
     width: 30px;
-    height: 100%;
-    top: 0px;
+    height: calc(100% - 10px);
+    top: 5px;
     right: -35px;
     flex-direction: column;
     //justify-content: center;
