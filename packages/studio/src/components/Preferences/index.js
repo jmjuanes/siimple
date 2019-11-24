@@ -1,12 +1,13 @@
 import React from "react";
+import {classNames} from "@siimple/neutrine";
 import {ForEach, If, Renderer} from "@siimple/neutrine";
-import {Modal, ModalHeader, ModalBody, ModalFooter} from "@siimple/neutrine";
-import {Menu, MenuItem} from "@siimple/neutrine";
+//import {Modal, ModalHeader, ModalBody, ModalFooter} from "@siimple/neutrine";
+//import {Menu, MenuItem} from "@siimple/neutrine";
 import {Icon} from "@siimple/neutrine";
 import {Btn} from "@siimple/neutrine";
 
 import {Option} from "../Option/index.js";
-
+import {Dialog} from "../Dialog/index.js";
 import style from "./style.scss";
 
 //Export preferences component
@@ -66,59 +67,63 @@ export class Preferences extends React.Component {
         let self = this;
         //Icon default style
         let iconStyle = {
-            "fontSize": "16px",
-            "lineHeight": "34px",
-            "verticalAlign": "top",
-            "marginRight": "5px"
         };
         //Return the preferences element
         return (
-            <Modal size="medium">
-                <ModalHeader title={this.props.title} onClose={this.handleCancel} />
-                <ModalBody className={style.preferences}>
-                    <div className={style.preferencesMenu}>
-                        <Menu>
-                            <ForEach items={Object.keys(this.props.groups)} render={function (key) {
-                                let group = self.props.groups[key];
-                                //Handle group change
-                                let onChange = function () {
-                                    return self.handleChange(key);
-                                };
-                                //Return the group
-                                return (
-                                    <MenuItem key={key} selected={self.state.current === key} onClick={onChange}>
-                                        <Icon icon={group.icon} style={iconStyle} />
-                                        {group.title}
-                                    </MenuItem>
-                                );
-                            }} />
-                        </Menu>
-                    </div>
-                    <div className={style.preferencesBody}>
-                        {/* Editing content */}
-                        <ForEach items={Object.keys(this.props.attributes)} render={function (key, index) {
-                            let config = self.props.attributes[key];
-                            //Check if this option is not on this group
-                            if (config.group !== self.state.current) {
-                                return null;
-                            }
-                            //Return the option
-                            return React.createElement(Option, Object.assign({}, config, {
-                                "key": index,
-                                "value": self.state.values[key],
-                                "ref": self.ref[key]
-                            }));
-                        }} />
-                    </div>
-                </ModalBody>
-                <ModalFooter className="siimple--bg-white">
-                    <div align="right">
-                        <Btn color="success" onClick={this.handleSubmit}>
-                            Save <strong>preferences</strong>
-                        </Btn>
-                    </div>
-                </ModalFooter>
-            </Modal>
+            <React.Fragment>
+                {/* Preferences menu */}
+                <div className={style.menu}>
+                    <ForEach items={Object.keys(this.props.groups)} render={function (key) {
+                        let group = self.props.groups[key];
+                        //Handle group change
+                        let onChange = function () {
+                            return self.handleChange(key);
+                        };
+                        //Build group item classlist
+                        let classList = classNames({
+                            [style.menuItem]: true,
+                            [style.menuItemActive]: self.state.current === key
+                        });
+                        //Return the group
+                        return (
+                            <div key={key} className={classList} onClick={onChange} align="center">
+                                <div align="center">
+                                    <Icon icon={group.icon} className={style.menuItemIcon} />
+                                </div>
+                                <div className={style.menuItemText}>
+                                    {group.title}
+                                </div>
+                            </div>
+                        );
+                    }} />
+                </div>
+                {/* Preferences content */}
+                <div className="">
+                    {/* Editing content */}
+                    <ForEach items={Object.keys(this.props.attributes)} render={function (key, index) {
+                        let config = self.props.attributes[key];
+                        //Check if this option is not on this group
+                        if (config.group !== self.state.current) {
+                            return null;
+                        }
+                        //Return the option
+                        return React.createElement(Option, Object.assign({}, config, {
+                            "key": index,
+                            "value": self.state.values[key],
+                            "ref": self.ref[key]
+                        }));
+                    }} />
+                </div>
+                {/* Submit or cancel */}
+                <div className="siimple--pt-4 siimple--mt-2" align="left">
+                    <Btn color="success" onClick={this.handleSubmit}>
+                        Save <strong>preferences</strong>
+                    </Btn>
+                    <Btn color="" onClick={this.handleCancel} className="siimple--ml-1">
+                        <strong>Cancel</strong>
+                    </Btn>
+                </div>
+            </React.Fragment>
         );
     }
 }
