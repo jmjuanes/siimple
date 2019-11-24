@@ -4,7 +4,8 @@
 .root {
     display: block;
     //background-color: darken(siimple-default-color("light"), 3%);
-    background-color: siimple-default-color("light");
+    //background-color: siimple-default-color("light");
+    border-bottom: 2px solid siimple-default-color("light");
     padding: 10px;
     //padding-top: 10px;
     //padding-bottom: 10px;
