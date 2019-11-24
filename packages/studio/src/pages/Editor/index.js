@@ -1,11 +1,13 @@
 import React from "react";
-
+import {If} from "@siimple/neutrine";
 import {Renderer, ForEach} from "@siimple/neutrine";
 import {Toolbar, ToolbarWrapper} from "@siimple/neutrine";
 import {ToolbarGroup, ToolbarSeparator, ToolbarToggle, ToolbarLogo, ToolbarItem} from "@siimple/neutrine";
 
 import {Page} from "./Page/index.js";
-import {createSite} from "../../store/site.js";
+import {CreatePage} from "./CreatePage/index.js";
+import {Dialog} from "../../components/Dialog/index.js";
+import {createSite} from "../../utils/site.js";
 
 //Create a test site
 let createTestSite = function () {
@@ -24,13 +26,19 @@ export class Editor extends React.Component {
         this.state = {
             "toolbarCollapsed": true,
             "site": createTestSite(),
-            "currentPage": 0
+            "editable": false,
+            "currentPage": 0,
+            "createPageVisible": false
         };
         //Bind methods
         this.handleToggle = this.handleToggle.bind(this);
         //Bind site methods
         this.handleSiteUpdate = this.handleSiteUpdate.bind(this);
         this.handlePageUpdate = this.handlePageUpdate.bind(this);
+        this.handleEditableToggle = this.handleEditableToggle.bind(this);
+        //Page creation
+        this.handleCreatePageToggle = this.handleCreatePageToggle.bind(this);
+        this.handleCreatePageSubmit = this.handleCreatePageSubmit.bind(this);
     }
     //Handle toolbar toggle
     handleToggle() {
@@ -67,6 +75,22 @@ export class Editor extends React.Component {
             };
         });
     }
+    //Handle page create component
+    handleCreatePageToggle() {
+        return this.setState({
+            "createPageVisible": !this.state.createPageVisible
+        });
+    }
+    //Handle save new page
+    handleCreatePageSubmit(newPage) {
+        //TODO
+    }
+    //Handle editable toggle
+    handleEditableToggle() {
+        return this.setState({
+            "editable": !this.state.editable
+        });
+    }
     //Get pages list
     getPagesList() {
         return this.state.site.pages;
@@ -99,7 +123,8 @@ export class Editor extends React.Component {
                         return React.createElement(ToolbarItem, {
                             "className": "siimple--mt-2",
                             "text": "Create page",
-                            "icon": "plus"
+                            "icon": "plus",
+                            "onClick": self.handleCreatePageToggle
                         });
                     }} />
                     {/* Toggle toolbar collapse */}
@@ -111,10 +136,21 @@ export class Editor extends React.Component {
                         "site": self.state.site,
                         "page": self.state.site.pages[self.state.currentPage],
                         "index": self.state.currentPage,
+                        "editable": self.state.editable,
                         "onPageUpdate": self.handlePageUpdate,
+                        "onEditableToggle": self.handleEditableToggle,
                         "key": self.state.currentPage
                     });
                 }} />
+                {/* Create a new page */}
+                <Dialog visible={this.state.createPageVisible} title="Create a new page">
+                    <Renderer render={function () {
+                        return React.createElement(CreatePage, {
+                            "onCancel": self.handleCreatePageToggle,
+                            "key": self.state.createPageVisible
+                        });
+                    }} />
+                </Dialog>
             </ToolbarWrapper>
         );
     }
