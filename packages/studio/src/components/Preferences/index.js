@@ -43,7 +43,7 @@ export class Preferences extends React.Component {
                 values[key] = self.ref[key].current.getValue();
             }
         });
-        console.log(values);
+        //console.log(values);
         //Return the parsed values
         return values;
     }
