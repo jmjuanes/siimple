@@ -22,8 +22,26 @@ let types = {
     "select": SelectOption
 };
 
+//Default helpers texts
+let defaultHelpers = {
+    "theme": "Use the light theme in lighten backgrounds, or the dark theme in darken backgrounds."
+};
+
 //Export option component
 export const Option = React.forwardRef(function (props, ref) {
+    let optionType = types[props.type];
+    let optionProps = Object.assign({}, props, {
+        "ref": ref
+    });
+    //Get the option helper
+    let optionHelper = null;
+    if (typeof props.helper === "string") {
+        optionHelper = props.helper; //Get helper text from props
+    }
+    else if (typeof defaultHelpers[props.type] === "string") {
+        optionHelper = defaultHelpers[props.type]; //Default helper
+    }
+    //Return the option wrapper
     return (
         <Field className={style.option}>
             {/* Option label */}
@@ -32,15 +50,13 @@ export const Option = React.forwardRef(function (props, ref) {
             </If>
             {/* Option content */}
             <Renderer render={function () {
-                let optionType = types[props.type];
-                let optionProps = Object.assign({}, props, {
-                    "ref": ref
-                });
                 return React.createElement(optionType, optionProps);
             }} />
             {/* Option helper */}
-            <If condition={typeof props.helper === "string"}>
-                <FieldHelper>{props.helper}</FieldHelper>
+            <If condition={typeof optionHelper === "string"}>
+                <FieldHelper className="siimple--mb-0 siimple--mt-2">
+                    {optionHelper}
+                </FieldHelper>
             </If>
         </Field>
     );
