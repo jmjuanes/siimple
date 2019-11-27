@@ -100,15 +100,9 @@ let jumbotronProps = {
             "helper": null,
             "defaultValue": [],
             "items": {
-                "text": {
-                    "type": "text",
-                    "label": "Link text",
-                    "helper": null,
-                    "defaultValue": null
-                },
-                "url": {
-                    "type": "text",
-                    "label": "Link url",
+                "link": {
+                    "type": "link",
+                    "label": null,
                     "helper": null,
                     "defaultValue": null
                 }
