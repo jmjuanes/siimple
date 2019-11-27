@@ -1,3 +1,12 @@
+## v0.0.6 (2019-11-27)
+
+### New features
+- Added vertical stepper components: `Stepper` and `StepperItem`.
+
+### Bug fixes
+- Fixed missing `padding-left` and `padding-right` attributes in `Appbar` component.
+
+
 ## v0.0.5 (2019-11-01)
 
 ### Bug fixes
