@@ -24,7 +24,7 @@ export function AddBlock (props) {
                     let onClick = function (event) {
                         return props.onClick(key);
                     };
-                    //Renturn the block element
+                    //Return the block element
                     return (
                         <div className={style.item} align="center" key={key} onClick={onClick}>
                             <Icon icon={element.icon} style={{"fontSize":"28px"}} /> 
