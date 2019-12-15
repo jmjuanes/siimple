@@ -39,7 +39,7 @@ export class LinkOption extends React.Component {
                             return React.createElement(Input, {
                                 "type": "text",
                                 "ref": self.ref.text,
-                                "value": value.text,
+                                "defaultValue": value.text,
                                 "fluid": true
                             });
                         }} />
@@ -53,7 +53,7 @@ export class LinkOption extends React.Component {
                             return React.createElement(Input, {
                                 "type": "text",
                                 "ref": self.ref.url,
-                                "value": value.url,
+                                "defaultValue": value.url,
                                 "fluid": true
                             });
                         }} />
