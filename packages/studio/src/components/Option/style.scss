@@ -2,6 +2,11 @@
 
 //Studio option
 .option {
+    //Last child
+    &:last-child {
+        margin-bottom: 0px !important;
+    }
+    //Not last child
     &:not(:last-child) {
         padding-bottom: 10px;
         border-bottom: 1px solid siimple-default-color("light");
