@@ -1,12 +1,18 @@
 @import "@siimple/css/scss/variables.scss";
 
-//Color option style
-.color {
-    display: inline-block;
-    width: 50px;
+//Color option
+.root {
+    display: flex;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+//Color option item
+.item {
+    display: block;
+    width: 100%;
     height: 30px;
     border-radius: 5px;
-    position: relative;
+    //position: relative;
     cursor: pointer;
     opacity: 0.8;
     transition: all 0.3s;
@@ -16,19 +22,17 @@
     &:hover {
         opacity: 1.0;
     }
+    //Item icon
+    &Icon {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-size: 24px;
+        opacity: 0.0;
+        transition: opacity 0.3s;
+    }
     //Active option color
-    &Active::before {
-        content: "";
-        //font-size: 16px;
-        position: absolute;
-        border-bottom: 3px solid #ffffff;
-        width: 6px;
-        height: 14px;
-        border-right: 3px solid #ffffff;
-        transform: rotate(45deg);
-        left: calc(50% - 4px);
-        top: calc(50% - 11px);
-        border-radius: 1px;
+    &Active &Icon {
+        opacity: 1.0;
     }
 }
 

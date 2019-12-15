@@ -1,6 +1,7 @@
 import React from "react";
 import {ForEach} from "@siimple/neutrine";
 import {classNames} from "@siimple/neutrine";
+import {Icon} from "@siimple/neutrine";
 
 import style from "./style.scss";
 
@@ -32,19 +33,22 @@ export class ColorOption extends React.Component {
     render() {
         let self = this;
         return (
-            <div align="left">
+            <div className={style.root}>
                 <ForEach items={Object.keys(colors)} render={function (key, index) {
-                    return React.createElement("div", {
-                        "className": classNames({
-                            [style.color]: true,
+                    let itemClass = classNames({
+                            [style.item]: true,
                             [colors[key].className]: true,
-                            [style.colorActive]: self.state.selected === key
-                        }),
-                        "onClick": function (event) {
+                            [style.itemActive]: self.state.selected === key
+                        });
+                    let itemClick = function (event) {
                             return self.handleClick(key);
-                        },
-                        "key": index
-                    });
+                    };
+                    //Return the color item
+                    return (
+                        <div className={itemClass} key={index} onClick={itemClick} align="center">
+                            <Icon icon="check" className={style.itemIcon} />
+                        </div>
+                    );
                 }} />
             </div>
         );
