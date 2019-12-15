@@ -17,6 +17,9 @@ export const colors = {
     },
     "dark": {
         "className": "siimple--bg-dark siimple--color-white"
+    },
+    "light": {
+        "className": "siimple--bg-light siimple--color-dark"
     }
 };
 
