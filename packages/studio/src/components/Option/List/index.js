@@ -71,6 +71,7 @@ export class ListOption extends React.Component {
     }
     //Handle item remove
     handleRemove(index) {
+        let self = this;
         let newLength = this.state.length - 1;
         let newValues = this.getValue();
         //Remove this index from the references
@@ -78,9 +79,15 @@ export class ListOption extends React.Component {
         //Remove this index from the values list
         newValues.splice(index, 1);
         //Update the state
-        return this.setState({
-            "length": newLength,
-            "value": newValues
+        let newState = {
+            "length": 0,
+            "value": []
+        };
+        return this.setState(newState, function () {
+            return self.setState({
+                "length": newLength, 
+                "value": newValues
+            });
         });
     }
     //Render the text element
