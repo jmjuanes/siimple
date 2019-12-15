@@ -1,6 +1,8 @@
 import React from "react";
-import {If} from "@siimple/neutrine";
+import {classNames} from "@siimple/neutrine";
+import {If, ForEach} from "@siimple/neutrine";
 import {Jumbotron, JumbotronTitle, JumbotronSubtitle, JumbotronDetail} from "@siimple/neutrine";
+import {Btn} from "@siimple/neutrine";
 
 //Render jumbotron
 let jumbotronRender = function (props) {
@@ -21,6 +23,26 @@ let jumbotronRender = function (props) {
             </If>
             <If condition={props.detail !== null && props.detail !== ""}>
                 <JumbotronDetail>{props.detail}</JumbotronDetail>
+            </If>
+            {/* Render jumbotron links */}
+            <If condition={props.links.length > 0}>
+                <div className="siimple--mt-3">
+                    <ForEach items={props.links} render={function (item, index) {
+                        return React.createElement(Btn, {
+                            "onClick": function () {
+                                //TODO
+                            },
+                            "className": classNames({
+                                "siimple--bg-white": props.theme === "dark",
+                                "siimple--bg-dark": props.theme === "light",
+                                ["siimple--color-" + props.color]: true,
+                                "siimple--mr-1": true,
+                                "siimple--text-bold": true
+                            }),
+                            "key": index
+                        }, item.link.text);
+                    }} />
+                </div>
             </If>
         </Jumbotron>
     );
