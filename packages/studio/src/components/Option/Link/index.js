@@ -32,7 +32,7 @@ export class LinkOption extends React.Component {
         return (
             <GridRow>
                 {/* Link text column */}
-                <GridCol size="6">
+                <GridCol className="siimple--py-0" size="6">
                     <Field className="siimple--mb-0">
                         <FieldLabel>Link text</FieldLabel>
                         <Renderer render={function () {
@@ -46,7 +46,7 @@ export class LinkOption extends React.Component {
                     </Field>
                 </GridCol>
                 {/* Link url column */}
-                <GridCol size="6">
+                <GridCol className="siimple--py-0" size="6">
                     <Field className="siimple--mb-0">
                         <FieldLabel>Link URL</FieldLabel>
                         <Renderer render={function () {
