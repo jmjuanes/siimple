@@ -1,28 +1,63 @@
 @import "@siimple/css/scss/variables.scss";
 
 //List option
-.list {
+.root {
     display: block;
-    //List item block
-    &Item {
-        display: block;
-        border: 2px dashed siimple-default-color("light");
-        padding: 10px;
-        margin-top: 10px;
+}
+//List item block
+.item {
+    display: block;
+    position: relative;
+    border: 2px dashed siimple-default-color("light");
+    border-radius: 5px;
+    padding: 10px;
+    padding-right: 30px;
+    margin-top: 10px;
+    //Item title 
+    &Title {
+        display: none !important;
+        margin-bottom: 0px;
+        font-weight: bold;
     }
-    //Add a new list item
-    &Add {
-        display: block;
-        padding: 10px;
-        background-color: siimple-default-color("light");
-        color: siimple-default-color("dark", "light");
-        border-radius: 5px; 
-        margin-top: 10px;
+    //Item remove
+    &Remove {
+        position: absolute;
+        font-size: 20px;
+        //color: rgba(siimple-default-color("dark"), 0.3);
+        //transition: color 0.3s;
         cursor: pointer;
-        transition: all 0.3s;
+        top: 5px;
+        right: 5px;
+        opacity: 0.4;
+        transition: opacity 0.3s;
+        //Remove item hover
         &:hover {
-            color: siimple-default-color("dark");
+            //color: siimple-default-color("error");
+            opacity: 1.0;
         }
+    }
+}
+//Add a new list item
+.add {
+    display: block;
+    padding: 10px;
+    background-color: siimple-default-color("light");
+    color: siimple-default-color("dark", "light");
+    border-radius: 5px; 
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+        color: siimple-default-color("dark");
+    }
+    //Add element icom
+    &Icon {
+        font-size: 19px;
+        margin-right: 5px;
+    }
+    //Add element text
+    &Text {
+        vertical-align: top;
     }
 }
 

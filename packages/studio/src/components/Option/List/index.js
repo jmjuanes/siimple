@@ -23,7 +23,8 @@ export class ListOption extends React.Component {
         //Initial state
         this.state = {
             "value": this.props.value,
-            "length": this.props.value.length
+            "length": this.props.value.length,
+            "time": Date.now()
         };
         //Referenced elements
         this.ref = [];
@@ -64,7 +65,8 @@ export class ListOption extends React.Component {
         //Update the length
         return this.setState({
             "length": newLength,
-            "value": newValues
+            "value": newValues,
+            "time": Date.now()
         });
     }
     //Handle item remove
@@ -85,21 +87,26 @@ export class ListOption extends React.Component {
     render() {
         let self = this;
         return (
-            <div className={style.list}>
+            <div className={style.root}>
                 {/* Render items */}
                 <For from={0} to={this.state.length} render={function (index) {
+                    let onRemove = function () {
+                        return self.handleRemove(index);
+                    };
                     return (
-                        <div className={style.listItem} key={index}>
+                        <div className={style.item} key={index}>
                             {/* Item title */}
-                            <div className="siimple--mb-2">
-                                <strong>Item {index + 1}</strong>
+                            <div className={style.itemTitle}>
+                                Item {index + 1}
                             </div>
+                            {/* Item remove */}
+                            <Icon className={style.itemRemove} icon="cross" onClick={onRemove} />
                             {/* Item content */}
                             <ForEach items={Object.keys(self.props.items)} render={function (key) {
                                 let itemProps = Object.assign({}, self.props.items[key], {
                                     "ref": self.ref[index][key],
                                     "value": self.state.value[index][key],
-                                    "key": key
+                                    "key": key + self.state.time
                                 });
                                 return React.createElement(Option, itemProps);
                             }} />
@@ -107,14 +114,17 @@ export class ListOption extends React.Component {
                     );
                 }} />
                 {/* Add a new item to the list */}
-                <div className={style.listAdd} onClick={this.handleAdd}>
-                    <Icon icon="plus" style={{"fontSize":"19px","marginRight":"5px"}} />
-                    <span style={{"verticalAlign":"top"}}>
-                        Add a new item
-                    </span>
+                <div className={style.add} onClick={this.handleAdd}>
+                    <Icon icon="plus" className={style.addIcon} />
+                    <span className={style.addText}>{this.props.addText}</span>
                 </div>
             </div>
         );
     }
 }
+
+//List default props
+ListOption.defaultProps = {
+    "addText": "Add a new item"
+};
 
