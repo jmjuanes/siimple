@@ -19,7 +19,7 @@ export class TextareaOption extends React.Component {
             "type": "text",
             "fluid": true,
             "ref": this.ref,
-            "defaultValue": this.props.value
+            "value": this.props.value
         });
     }
 }
