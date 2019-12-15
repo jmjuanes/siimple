@@ -1,12 +1,20 @@
 @import "@siimple/css/scss/variables.scss";
 
+//Theme option wrapper
+.root {
+    display: flex;
+    margin-left: -5px;
+    margin-right: -5px;
+}
 //Studio theme option
-.theme {
-    display: inline-block;
+.item {
+    display: block;
     border: 2px solid siimple-default-color("light");
     border-radius: 5px;
     padding: 10px;
-    width: 80px;
+    //width: 80px;
+    width: 100%;
+    margin-left: 5px;
     margin-right: 5px;
     color: siimple-default-color("dark");
     opacity: 0.5;
@@ -28,6 +36,10 @@
         margin-top: 5px;
         font-weight: bold;
         font-size: 14px;
+    }
+    //Icon 
+    &Icon {
+        font-size: 24px;
     }
 }
 

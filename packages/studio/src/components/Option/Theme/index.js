@@ -31,12 +31,12 @@ export class ThemeOption extends React.Component {
     render() {
         let self = this;
         return (
-            <React.Fragment>
+            <div className={style.root}>
                 <ForEach items={Object.keys(themes)} render={function (key) {
                     let theme = themes[key];
                     let classList = classNames({
-                        [style.theme]: true,
-                        [style.themeActive]: self.state.value === key
+                        [style.item]: true,
+                        [style.itemActive]: self.state.value === key
                     });
                     //Handle click
                     let handleClick = function () {
@@ -46,15 +46,15 @@ export class ThemeOption extends React.Component {
                     return (
                         <div className={classList} onClick={handleClick} align="center" key={key}>
                             <div align="center">
-                                <Icon icon={themes[key].icon} style={{"fontSize":"24px"}} />
+                                <Icon icon={themes[key].icon} className={style.itemIcon} />
                             </div>
-                            <div className={style.themeLabel}>
+                            <div className={style.itemLabel}>
                                 {themes[key].label}
                             </div>
                         </div>
                     );
                 }} />
-            </React.Fragment>
+            </div>
         );
     }
 }
