@@ -17,6 +17,7 @@ export class TextareaOption extends React.Component {
     render() {
         return React.createElement(Textarea, {
             "type": "text",
+            "rows": "5",
             "fluid": true,
             "ref": this.ref,
             "defaultValue": this.props.value
