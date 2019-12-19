@@ -52,6 +52,9 @@ export class ListOption extends React.Component {
     }
     //Add a new item to the list
     handleAdd() {
+        if (this.state.length >= this.props.max) {
+            return null;
+        }
         let newLength = this.state.length + 1;
         let newValues = this.getValue();
         //Add a new reference
@@ -132,6 +135,7 @@ export class ListOption extends React.Component {
 
 //List default props
 ListOption.defaultProps = {
+    "max": 4, //Max number of items allowed in the list
     "addText": "Add a new item"
 };
 
