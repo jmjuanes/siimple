@@ -63,13 +63,24 @@ $siimple-checkbox-height: 18px;
         opacity: 1;
         border-color: $siimple-default-white;
     }
-    //Checked -> change background
-    & input[type=checkbox]:checked + label {
+    //Checked/Indeterminate -> change background
+    & input[type=checkbox]:checked + label,
+    & input[type=checkbox]:indeterminate + label {
         background-color: siimple-default-color("primary");
+    }
+    //Indeterminate -> change tick
+    & input[type=checkbox]:indeterminate + label:after {
+        opacity: 1;
+        border-color: $siimple-default-white;
+        border-left: 0px;
+        transform: rotate(0);
+        top: 4px;
+        left: 5px;
     }
     //Checkbox colors
     @each $color in $siimple-default-form-colors {
-        &--#{$color} input[type=checkbox]:checked + label {
+        &--#{$color} input[type=checkbox]:checked + label,
+        &--#{$color} input[type=checkbox]:indeterminate + label {
             background-color: siimple-default-color($color);
         }
     }
