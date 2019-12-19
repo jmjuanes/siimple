@@ -28,14 +28,14 @@ export const features = {
                 "type": "theme",
                 "label": "Theme",
                 "helper": null,
-                "defaultValue": "dark",
+                "defaultValue": "light",
                 "group": "appearance"
             },
             "color": {
                 "type": "color",
                 "label": "Background Color",
-                "helper": "Choose a background color for the jumbotron.",
-                "defaultValue": "dark",
+                "helper": "Choose a background color for the features block.",
+                "defaultValue": "white",
                 "group": "appearance"
             },
             "items": {
@@ -49,13 +49,13 @@ export const features = {
                         "type": "text",
                         "label": "Feature title",
                         "helper": "Short text to describe your feature",
-                        "defaultValue": "Feature title"
+                        "defaultValue": ""
                     },
                     "description": {
                         "type": "textarea",
                         "label": "Feature description",
                         "helper": "Large text to describe your feature",
-                        "defaultValue": "Feature large description"
+                        "defaultValue": ""
                     }
                 },
                 "group": "items"
@@ -64,28 +64,35 @@ export const features = {
     },
     //Features renderer
     "render": function (props) {
+        let themeClass = (props.theme === "dark") ? "siimple--color-white" : "siimple--color-dark";
+        let contentClass = classNames({
+            "siimple--py-5": true,
+            [themeClass]: true,
+            ["siimple--bg-" + props.color]: true
+        }); 
         let columnStyle = {
-            "maxWidth": "300px",
+            "maxWidth": "600px",
             "marginLeft": "auto",
             "marginRight": "auto"
         };
+        let columnAlign = (props.items.length === 1) ? "center" : "left";
         let columnSize = (props.items.length > 0) ? 12 / props.items.length : 0;
         return (
-            <Content size="large">
+            <Content size="large" className={contentClass}>
                 <GridRow>
                     <ForEach items={props.items} render={function (item, index) {
                         return (
                             <GridCol size={columnSize} small={12} index={index}>
-                                <div style={columnStyle}>
+                                <div style={columnStyle} align={columnAlign}>
                                     {/* Feature title */}
                                     <If condition={item.title.length > 0}>
-                                        <Heading type="h4">
+                                        <Heading type="h4" className={themeClass}>
                                             {item.title}
                                         </Heading>
                                     </If>
                                     {/* Feature description */}
                                     <If condition={item.description.length > 0}>
-                                        <Paragraph style={"opacity":"0.8"}>
+                                        <Paragraph className={themeClass} style={{"opacity":"0.8"}}>
                                             {item.description}
                                         </Paragraph>
                                     </If>
