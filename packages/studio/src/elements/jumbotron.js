@@ -121,6 +121,7 @@ let jumbotronProps = {
             "label": "Links",
             "helper": null,
             "defaultValue": [],
+            "max": 4,
             "items": {
                 "link": {
                     "type": "link",
