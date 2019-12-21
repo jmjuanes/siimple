@@ -12,6 +12,7 @@ import {TextareaOption} from "./Textarea/index.js";
 import {ThemeOption} from "./Theme/index.js";
 import {SelectOption} from "./Select/index.js";
 import {LinkOption} from "./Link/index.js";
+import {IconOption} from "./Icon/index.js";
 
 //Build options types
 let types = {
@@ -21,7 +22,8 @@ let types = {
     "textarea": TextareaOption,
     "theme": ThemeOption,
     "select": SelectOption,
-    "link": LinkOption
+    "link": LinkOption,
+    "icon": IconOption
 };
 
 //Default helpers texts
