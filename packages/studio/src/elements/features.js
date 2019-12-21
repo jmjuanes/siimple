@@ -1,7 +1,8 @@
 import React from "react";
 import {classNames} from "@siimple/neutrine";
-import {If, ForEach} from "@siimple/neutrine";
+import {If, ForEach, Renderer} from "@siimple/neutrine";
 import {Content} from "@siimple/neutrine";
+import {Icon} from "@siimple/neutrine";
 import {GridRow, GridCol} from "@siimple/neutrine";
 import {Heading, Paragraph} from "@siimple/neutrine";
 
@@ -45,6 +46,12 @@ export const features = {
                 "defaultValue": [],
                 "max": 4,
                 "items": {
+                    "icon": {
+                        "type": "icon",
+                        "label": "Feature icon",
+                        "helper": null,
+                        "defaultValue": "rocket"
+                    },
                     "title": {
                         "type": "text",
                         "label": "Feature title",
@@ -75,6 +82,10 @@ export const features = {
             "marginLeft": "auto",
             "marginRight": "auto"
         };
+        let titleClass = classNames({
+            [themeClass]: true,
+            "siimple--mt-3": true
+        });
         let columnAlign = (props.items.length === 1) ? "center" : "left";
         let columnSize = (props.items.length > 0) ? 12 / props.items.length : 0;
         return (
@@ -84,9 +95,19 @@ export const features = {
                         return (
                             <GridCol size={columnSize} small={12} index={index}>
                                 <div style={columnStyle} align={columnAlign}>
+                                    {/* Feature icon */}
+                                    <Renderer render={function () {
+                                        return React.createElement(Icon, {
+                                            "icon": item.icon,
+                                            "style": {
+                                                "fontSize": "45px"
+                                            },
+                                            "className": themeClass
+                                        });
+                                    }} />
                                     {/* Feature title */}
                                     <If condition={item.title.length > 0}>
-                                        <Heading type="h4" className={themeClass}>
+                                        <Heading type="h4" className={titleClass}>
                                             {item.title}
                                         </Heading>
                                     </If>
