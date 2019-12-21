@@ -1,0 +1,42 @@
+@import "@siimple/css/scss/variables.scss";
+
+//Icons option wrapper
+.root {
+    //display: flex;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+//Icons option item
+.item {
+    //display: block;
+    display: inline-block;
+    border: 2px solid siimple-default-color("light");
+    border-radius: 5px;
+    padding: 10px;
+    //width: 80px;
+    //width: 100%;
+    //flex-basis: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    color: siimple-default-color("dark");
+    opacity: 0.5;
+    transition: all 0.3s;
+    //Active theme item
+    &Active {
+        //border-color: siimple-default-color("primary") !important;
+        //color: siimple-default-color("primary") !important;
+        background-color: siimple-default-color("light");
+        opacity: 1.0;
+    }
+    //Hover theme item
+    &:hover {
+        cursor: pointer;
+        opacity: 1.0;
+    }
+    //Icon 
+    &Icon {
+        font-size: 24px;
+    }
+}
+
