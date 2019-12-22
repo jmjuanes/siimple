@@ -1,10 +1,12 @@
 import {jumbotron} from "./jumbotron.js";
 import {features} from "./features.js";
+import {pricing} from "./pricing.js";
 
 //Export element types
 export const elements = {
     "jumbotron": jumbotron,
-    "features": features
+    "features": features,
+    "pricing": pricing
 };
 
 //Get available elements
