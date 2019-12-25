@@ -1,7 +1,15 @@
+@import "@siimple/css/scss/variables.scss";
+
 //Page style
 .root {
     display: block;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding: 5px;
+    background-color: siimple-default-color("light", "dark");
+    min-height: calc(100% - 10px);
+}
+
+//Page content
+.content {
+    background-color: #ffffff;
 }
 
