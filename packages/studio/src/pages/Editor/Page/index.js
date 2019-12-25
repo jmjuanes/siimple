@@ -150,15 +150,17 @@ export class Page extends React.Component {
                     });
                 }} />
                 {/* Render the page blocks */}
-                <Renderer render={function () {
-                    return React.createElement(PageContent, {
-                        "editable": self.props.editable,
-                        "page": self.props.page,
-                        "onEdit": self.handleBlockEdit,
-                        "onDelete": self.handleBlockDelete,
-                        "onAdd": self.handleBlockAdd
-                    });
-                }} />
+                <div className={style.content}>
+                    <Renderer render={function () {
+                        return React.createElement(PageContent, {
+                            "editable": self.props.editable,
+                            "page": self.props.page,
+                            "onEdit": self.handleBlockEdit,
+                            "onDelete": self.handleBlockDelete,
+                            "onAdd": self.handleBlockAdd
+                        });
+                    }} />
+                </div>
             </div>
         );
     }
