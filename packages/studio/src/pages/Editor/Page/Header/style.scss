@@ -2,39 +2,52 @@
 
 //Page header style
 .root {
-    display: block;
+    display: flex;
     //background-color: darken(siimple-default-color("light"), 3%);
     //background-color: siimple-default-color("light");
-    border-bottom: 2px solid siimple-default-color("light");
-    padding: 10px;
+    //border-bottom: 1px solid #ffffff;
+    padding: 5px;
+    padding-bottom: 10px;
     //padding-top: 10px;
     //padding-bottom: 10px;
     height: 34px;
     vertical-align: middle;
 }
-//Header title
-.title {
-    display: inline-block;
-    margin-top: 6px !important;
-    margin-bottom: 6px !important;
+//Header url
+.url {
+    display: block;
     vertical-align: top;
-}
-//Header icon
-.icon {
-    font-size: 25px;
-    width: 30px;
-    height: 34px;
-    line-height: 34px;
-    color: siimple-default-color("dark");
-    //margin-right: 5px;
-    vertical-align: top;
+    border-radius: 100px;
+    background-color: #ffffff;
+    width: 100%;
+    vertical-align: middle;
+    padding: 5px;
+    height: 24px;
+    line-height: 24px;
+    //Url bar icon
+    &Icon {
+        vertical-align: middle;
+        font-size: 20px;
+        margin-left: 5px;
+        margin-right: 10px;
+        opacity: 0.6;
+    }
+    //Url bar text
+    &Text {
+        vertical-align: middle;
+        opacity: 0.6;
+        font-size: 14px;
+        //font-weight: bold;
+    }
 }
 //Header button
 .button {
-    display: inline-block;
+    display: block;
+    flex-basis: 0;
     width: 18px;
     height: 34px;
     line-height: 34px;
+    margin-left: 8px;
     padding-left: 8px;
     padding-right: 8px;
     //background-color: darken(siimple-default-color("light"), 0%); 
