@@ -9,67 +9,44 @@
 @import "../functions.scss";
 @import "../mixins.scss";
 
-//Navbar default variables
-$siimple-navbar-height: 34px;
-$siimple-navbar-padding: 20px;
-
 //Navbar class
 .#{$siimple-prefix}-navbar {
     display: block;
     //position: absolute; top: 0px; left: 0px;
     z-index: 3;
-    //width: 100%;
-    max-width: calc(100% - 2 * #{$siimple-navbar-padding});
-    height: $siimple-navbar-height;
+    width: 100%;
+    //max-width: calc(100% - 2 * #{$siimple-navbar-padding});
+    min-height: 54px; 
     //font-family: $siimple-default-text-font;
     //margin: $siimple-navbar-margin;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: $siimple-navbar-padding;
-    padding-right: $siimple-navbar-padding;
-    //vertical-align: middle;
+    //padding-top: 15px;
+    //padding-bottom: 15px;
+    vertical-align: top;
     @include siimple-sizing();
-    //Navbar title
-    &-title {
+    //Common navbar brand and navbar item styles
+    &-brand,
+    &-item {
         display: inline-block;
-        height: $siimple-navbar-height;
-        line-height: $siimple-navbar-height;
+        height: 34px;
+        line-height: 34px;
         text-decoration: none;
-        font-weight: bold;
-        font-size: 21px;
-        padding-left: 0px;
-        padding-right: 0px;
-        //transition: all 0.3s;
+        padding: 10px;
         cursor: pointer;
-        //vertical-align: middle;
+        vertical-align: top;
     }
-    //Navbar subtitle
-    &-subtitle {
-        display: inline-block;
-        height: $siimple-navbar-height;
-        line-height: $siimple-navbar-height;
-        font-size: 16px;
-        //font-weight: 600;
-        text-decoration: none;
-        cursor: pointer;
-        padding-left: 5px;
-        //vertical-align: middle;
-        opacity: 0.8;
+    //Navbar brand (previous navbar-title)
+    &-brand {
+        //font-weight: bold;
+        font-size: 20px;
+        //transition: all 0.3s;
     }
     //Navbar item
-    &-item, 
-    &-link {
-        display: inline-block;
-        height: $siimple-navbar-height;
-        line-height: $siimple-navbar-height;
-        padding-left: 10px;
-        padding-right: 10px;
-        text-decoration: none;
+    &-item {
         text-align: center;
         font-weight: 600;
         font-size: $siimple-default-font-size;
         transition: opacity 0.3s;
-        cursor: pointer;
+        //cursor: pointer;
         opacity: 0.7;
         //vertical-align: middle;
         &:hover {
@@ -81,7 +58,8 @@ $siimple-navbar-padding: 20px;
         color: siimple-default-color("dark");
         background-color: siimple-default-color("light");
     }
-    &--light &-title, &--light &-subtitle, &--light &-item, &--light &-link {
+    &--light &-brand,
+    &--light &-item {
         color: siimple-default-color("dark");
     }
     //Dark navbar
@@ -89,7 +67,8 @@ $siimple-navbar-padding: 20px;
         color: siimple-default-color("white");
         background-color: siimple-default-color("dark");
     }
-    &--dark &-title, &--dark &-subtitle, &--dark &-link, &--dark &-item {
+    &--dark &-brand,
+    &--dark &-item {
         color: siimple-default-color("white");
     }
 }
