@@ -9,7 +9,7 @@ import style from "./style.scss";
 //Add a new block
 export function AddBlock (props) {
     return (
-        <div className="siimple--py-2">
+        <div className="siimple--py-3">
             <div className={style.root}>
                 <div className={style.content}>
                     <div className="siimple--mb-3" align="center">

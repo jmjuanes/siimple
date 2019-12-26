@@ -5,7 +5,7 @@
     display: block;
     margin: 10px;
     padding: 15px;
-    border: 2px dashed siimple-default-color("light");
+    border: 2px dashed rgba(siimple-default-color("dark"), 0.3);
     border-radius: 5px;
 }
 //Block content
@@ -19,7 +19,7 @@
 .item {
     display: inline-block;
     @include siimple-utils-select(none);
-    width: 130px;
+    width: 120px;
     //height: 100px;
     color: rgba(siimple-default-color("dark"), 0.7);
     //padding: 10px;
@@ -28,19 +28,19 @@
     padding-top: 20px;
     padding-bottom: 20px;
     margin: 5px;
-    border: 2px dashed siimple-default-color("light");
+    //border: 2px dashed rgba(siimple-default-color("dark"), 0.5);
     border-radius: 5px;
-    //background-color: rgba(siimple-default-color("light"), 0.8);
+    background-color: rgba(siimple-default-color("white"), 0.3);
     transition: all 0.3s;
     cursor: pointer;
     //Item hover
     &:hover {
         background-color: rgba(siimple-default-color("primary"), 0.2);
-        //color: rgba(siimple-default-color("primary"), 0.9);
         //background-color: rgba(siimple-default-color("light"), 0.8);
-        border-color: rgba(siimple-default-color("primary"), 0.8);
+        //border-color: rgba(siimple-default-color("primary"), 0.8);
         //border-style: solid;
-        color: rgba(siimple-default-color("dark"), 0.9);
+        //color: rgba(siimple-default-color("dark"), 0.9);
+        color: rgba(siimple-default-color("primary"), 1.0);
     }
 }
 
