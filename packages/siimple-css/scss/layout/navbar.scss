@@ -171,5 +171,21 @@
     &--dark &-navicon::after {
         background-color: siimple-default-color("white");
     }
+    //Fixed navbar
+    &--fixed-top,
+    &--fixed-bottom {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 50;
+    }
+    //Fixed navbar to top
+    &--fixed-top {
+        top: 0;
+    }
+    //Fixed navbar to bottom
+    &--fixed-bottom {
+        bottom: 0;
+    }
 }
 
