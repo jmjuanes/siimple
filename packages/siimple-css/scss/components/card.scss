@@ -76,10 +76,12 @@
         }
     }
     //Card hover --> active link
-    &:hover &-link {
+    &:hover &-link,
+    &-link:hover {
         opacity: 1.0;
     }
-    &:hover &-link:before {
+    &:hover &-link::before,
+    &-link:hover &-link::before {
         right: 15px;
     }
     //Light card --> default style
