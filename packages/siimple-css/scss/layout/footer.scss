@@ -10,7 +10,7 @@
 @import "../mixins.scss";
 
 //Footer variables
-$siimple-footer-light-text: siimple-default-color("dark", "light");
+$siimple-footer-light-text: lighten(siimple-default-color("dark"), 40%);
 $siimple-footer-dark-text: rgba(siimple-default-color("white"), 0.8);
 
 //Footer class
