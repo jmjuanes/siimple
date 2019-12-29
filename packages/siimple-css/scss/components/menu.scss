@@ -11,7 +11,7 @@
 //Menu class
 .#{$siimple-prefix}-menu {
     display: block;
-    width: 100%;
+    //width: 100%;
     //margin-top: 0px;
     margin-bottom: $siimple-default-margin-bottom;
     //padding: 0px;
@@ -68,8 +68,7 @@
         }
     }
     //Submenu
-    &-sub, 
-    &-submenu {
+    & #{&} { 
         display: block;
         padding-left: 10px;
         margin-left: 10px; 
