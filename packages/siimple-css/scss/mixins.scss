@@ -24,6 +24,17 @@
     }
 }
 
+//Striped background
+@mixin siimple-utils-stripedbg ($first-bg, $second-bg) {
+    background: repeating-linear-gradient(
+        45deg,
+        $first-bg,
+        $first-bg  7px,
+        $second-bg 7px,
+        $second-bg 12px
+    );
+}
+
 //Fluid content
 @mixin siimple-fluid () {
     width: calc(100% - #{2 * $siimple-default-breakpoint-gap});
