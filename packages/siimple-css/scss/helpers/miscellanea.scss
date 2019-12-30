@@ -19,5 +19,15 @@
     &--pointer {
         cursor: pointer !important;
     }
+    //Borders
+    &--border-light {
+        border: 2px solid siimple-default-color("light");
+    }
+    &--border-white {
+        border: 2px solid siimple-default-color("white");
+    }
+    &--border-dark {
+        border: 2px solid siimple-default-color("dark");
+    }
 }
 
