@@ -76,5 +76,13 @@
         margin-bottom: 5px;
         border-left: 1px solid siimple-default-color("light", "dark");
     }
+    //Menu divider
+    &-divider {
+        display: block;
+        height: 2px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: siimple-default-color("light");
+    }
 }
 
