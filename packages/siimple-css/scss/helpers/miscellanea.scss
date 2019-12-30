@@ -32,7 +32,7 @@
     //Striped light background
     //&--striped-light {
     &--striped {
-        @include siimple-utils-stripebgd(siimple-default-color("light"), transparent);
+        @include siimple-utils-stripedbg (siimple-default-color("light"), transparent);
     }
     ////Striped dark background
     //&--striped-dark {
