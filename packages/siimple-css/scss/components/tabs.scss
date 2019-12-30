@@ -25,7 +25,7 @@ $siimple-tabs-height: 40px;
     border-bottom: 2px solid siimple-default-color("light");
     //Disable user selection
     @include siimple-utils-select(none);
-    &-tab, 
+    //Tab item
     &-item {
         display: inline-block;
         float: left;
@@ -40,12 +40,13 @@ $siimple-tabs-height: 40px;
         border-top-left-radius: $siimple-default-border-radius;
         border-top-right-radius: $siimple-default-border-radius;
         cursor: pointer;
-        transition: all 0.3s;
+        transition: color 0.3s;
         //Hover tab
-        &:hover {
-            border-top-color: siimple-default-color("light");
-            border-left-color: siimple-default-color("light");
-            border-right-color: siimple-default-color("light");
+        &:not(#{&}--selected):hover {
+            //border-top-color: siimple-default-color("light");
+            //border-left-color: siimple-default-color("light");
+            //border-right-color: siimple-default-color("light");
+            color: siimple-default-color("primary");
         }
         //Selected tab
         &--selected {
@@ -54,7 +55,7 @@ $siimple-tabs-height: 40px;
             border-right-color: siimple-default-color("light") !important;
             border-bottom-color: $siimple-default-white !important;
             background-color: $siimple-default-white !important;
-            color: siimple-default-color("dark");
+            color: siimple-default-color("dark") !important;
         }
     }
 }
