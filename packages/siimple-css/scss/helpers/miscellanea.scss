@@ -32,22 +32,13 @@
     //Striped light background
     //&--striped-light {
     &--striped {
-        background: repeating-linear-gradient(
-            45deg,
-            siimple-default-color("light"),
-            siimple-default-color("light")  7px,
-            transparent 7px,
-            transparent 12px
-        );
+        @include siimple-utils-stripebgd(siimple-default-color("light"), transparent);
     }
     ////Striped dark background
     //&--striped-dark {
-    //    background: repeating-linear-gradient(
-    //        45deg,
+    //    @include siimple-utils-stripedbg(
     //        siimple-default-color("dark"),
-    //        siimple-default-color("dark")  10px,
-    //        siimple-default-color("dark", "light") 10px,
-    //        siimple-default-color("dark", "light") 20px
+    //        siimple-default-color("dark", "light")
     //    );
     //}
 }
