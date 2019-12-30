@@ -9,8 +9,15 @@
 @import "../variables.scss";
 @import "../functions.scss";
 
-//Rounded corners
-.#{$siimple-prefix}--rounded {
-    border-radius: $siimple-default-border-radius;
+//Miscellanea styles
+.#{$siimple-prefix} {
+    //Rounded corners
+    &--rounded {
+        border-radius: $siimple-default-border-radius;
+    }
+    //Pointer cursor
+    &--pointer {
+        cursor: pointer !important;
+    }
 }
 
