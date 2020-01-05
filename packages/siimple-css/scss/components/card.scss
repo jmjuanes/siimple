@@ -15,6 +15,7 @@
     width: 100%;
     margin-bottom: $siimple-default-margin-bottom;
     border-radius: $siimple-default-border-radius;
+    text-decoration: none !important;
     //color: $siimple-default-color;
     //font-size: $siimple-default-font-size;
     //Common styles
@@ -89,6 +90,9 @@
         background-color: siimple-default-color("light");
         color: siimple-default-color("dark");
     }
+    &--light &-link {
+        color: siimple-default-color("dark");
+    }
     &--light &-link::before {
         border-top-color: siimple-default-color("dark");
         border-right-color: siimple-default-color("dark");
@@ -96,6 +100,9 @@
     //Dark card
     &--dark {
         background-color: siimple-default-color("dark");
+        color: siimple-default-color("white");
+    }
+    &--dark &-link {
         color: siimple-default-color("white");
     }
     &--dark &-link::before {
