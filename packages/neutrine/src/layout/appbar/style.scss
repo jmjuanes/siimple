@@ -1,97 +1,73 @@
-//Import dependencies
 @import "@siimple/css/scss/variables.scss";
 
-//AppBar styles
-.neutrine-appbar {
+//Neutrine appbar style
+.neutrine__appbar {
     display: block;
-    //position: sticky;
-    top: 0px;
-    padding-left: 15px;
-    padding-right: 15px;
-    //padding-top: 10px;
-    //padding-bottom: 10px;
-    height: 50px;
-    line-height: 50px;
-    //Light appbar 
-    &--light {
-        background-color: siimple-default-color("light");
-        color: siimple-default-color("dark");
+    position: fixed;
+    width: 40px; //calc(260px - 30px);
+    height: calc(100% - 30px);
+    padding: 15px;
+    transition: all 0.3s;
+    top: 0px !important;
+    left: 0px;
+    background-color: siimple-default-color("dark");
+    color: #ffffff;
+    //Appbar wrapper
+    &-wrapper {
+        display: block;
+        //min-height: 100%;
+        padding-left: 70px;
+        transition: all 0.3s;
+        position: relative;
     }
-    //Dark appbar
-    &--dark {
-        background-color: siimple-default-color("dark");
-        color: #ffffff;
-    }
-    //Fixed appbar
-    &--fixed {
-        position: sticky;
-    }
-    //Appbar logo style
-    &-logo {
-        display: inline-block;
-        //position: relative;
-        padding-left: 40px;
-        padding-right: 10px;
-        height: 40px;
+    //Appbar item and brand common styles
+    &-item,
+    &-brand {
+        display: block;
+        width: 24px;
+        padding-left: 8px;
+        padding-right: 8px;
+        min-height: 40px;
         line-height: 40px;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        //text-overflow: clip;
+        overflow: hidden;
+    }
+    //Appbar item
+    &-item {
+        font-size: 24px;
+        font-weight: normal !important;
+        color: rgba(#ffffff, 0.6);
+        //Active item
+        &--active {
+            color: #ffffff !important;
+            //font-weight: 600;
+            background-color: rgba(#ffffff, 0.2) !important;
+        }
+        //Item hover 
+        &:hover {
+            color: #ffffff;
+            background-color: rgba(#ffffff, 0.1);
+        }
+    }
+    //Appbar brand
+    &-brand {
         font-size: 16px;
         font-weight: bold;
-        cursor: pointer;
-        text-overflow: clip;
-        overflow: hidden;
-        background-position: 8px 8px;
+        background-position: 8px 13px;
         background-repeat: no-repeat;
         background-size: 24px 24px;
         background-image: url("./images/logo.png");
-        //Center the logo in the appbar
-        margin-top: 5px;
-        margin-bottom: 5px;
-        vertical-align: top;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
-    //Appbar item
-    &-item{
-        display: inline-block;
-        height: calc(100% - 2px);
-        //line-height: calc(100% - 2px);
-        //color: rgba(#ffffff, 0.5);
-        border-bottom: 2px solid transparent;
-        transition: all 0.3s;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: normal;
-        padding-left: 10px;
-        padding-right: 10px;
-        vertical-align: top;
-        opacity: 0.5;
-        //Appbar item hover or active
-        &:hover,
-        &--active {
-            //color: #ffffff;
-            //border-bottom-color: siimple-default-color("primary");
-            opacity: 1.0;
-        }
-        //Appbar item icon
-        &-icon {
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 4px;
-            font-size: 16px;
-        }
-        //Appbar item text
-        &-text {
-            display: inline-block;
-            vertical-align: middle;
-        }
-    }
-    //Light appbar --> change item active color
-    &--light &-item:hover,
-    &--light &-item--active {
-        border-bottom-color: siimple-default-color("dark");
-    }
-    //Dark appbar --> change item active color
-    &--dark &-item:hover,
-    &--dark &-item--active {
-        border-bottom-color: siimple-default-color("white");
-    }
+}
+
+//Terrible hack: appbar + toolbar
+.neutrine__appbar-wrapper .neutrine__toolbar {
+    left: 70px !important;
 }
 
