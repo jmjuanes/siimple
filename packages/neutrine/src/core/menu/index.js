@@ -39,3 +39,10 @@ MenuItem.defaultProps = {
     "selected": false
 };
 
+//Menu divider
+export const MenuDivider = function (props) {
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-menu-divider"
+    });
+};
+
