@@ -1,7 +1,5 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
-
-//Import menu styles
 import "@siimple/css/scss/components/menu.scss";
 
 //Menu component
@@ -20,23 +18,20 @@ export const MenuGroup = function (props) {
 
 //Menu item
 export const MenuItem = function (props) {
-    //Clone the properties 
-    let newProps = helpers.filterProps(props, ["selected", "className"]);
-    //Initialize the menu item class list
-    let classList = ["siimple-menu-item"];
-    //Check the selected attribute
-    if (props.selected === true) {
-        classList.push("siimple-menu-item--selected");
-    }
-    //Generate the menu item classname
-    newProps.className = helpers.classNames(classList, props.className);
+    let newProps = helpers.filterProps(props, ["active", "className"]);
+    Object.assign(newProps, {
+        "className": helpers.classNames({
+            "siimple-menu-item": true,
+            "siimple-menu-item--active": props.active
+        }, props.className)
+    });
     //Return the menu item element
     return React.createElement("div", newProps, props.children);
 };
 
 //Menu item default props
 MenuItem.defaultProps = {
-    "selected": false
+    "active": false
 };
 
 //Menu divider
