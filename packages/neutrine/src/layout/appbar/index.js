@@ -44,22 +44,32 @@ AppbarItem.defaultProps = {
     "onClick": null,
 };
 
-//Export appbar brand component
 export const AppbarBrand = function (props) {
-    //Build the brand props
-    let brandProps = {
+    return React.createElement("div", {
         "className": helpers.classNames(baseClass + "-brand", props.className),
         "style": Object.assign({}, props.style, {
             "backgroundImage": (props.image !== null) ? "url(" + props.image + ")" : null
         }),
         "onClick": props.onClick
-    };
-    //Return the appbar brand component wrapper
-    return React.createElement("div", brandProps, props.children);
+    });
 };
 
-//Appbar brand default props
 AppbarBrand.defaultProps = {
+    "image": null,
+    "style": {}
+};
+
+export const AppbarAvatar = function (props) {
+    return React.createElement("div", {
+        "className": helpers.classNames(baseClass + "-avatar", props.className),
+        "style": Object.assign({}, props.style, {
+            "backgroundImage": (props.image !== null) ? "url(" + props.image + ")" : null
+        }),
+        "onClick": props.onClick
+    });
+};
+
+AppbarAvatar.defaultProps = {
     "image": null,
     "style": {}
 };

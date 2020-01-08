@@ -20,9 +20,9 @@
         transition: all 0.3s;
         position: relative;
     }
-    //Appbar item and brand common styles
     &-item,
-    &-brand {
+    &-brand,
+    &-avatar {
         display: block;
         width: 24px;
         padding-left: 8px;
@@ -49,20 +49,23 @@
         }
         //Item hover 
         &:hover {
-            color: #ffffff;
+            //color: #ffffff;
             background-color: rgba(#ffffff, 0.1);
         }
     }
-    //Appbar brand
-    &-brand {
-        font-size: 16px;
-        font-weight: bold;
+    &-brand,
+    &-avatar {
         background-position: 8px 13px;
         background-repeat: no-repeat;
         background-size: 24px 24px;
-        background-image: url("./images/logo.png");
         padding-top: 5px;
         padding-bottom: 5px;
+    }
+    &-brand {
+        background-image: url("./images/logo.png");
+    }
+    &-avatar {
+        background-image: url("./images/user.png");
     }
 }
 
