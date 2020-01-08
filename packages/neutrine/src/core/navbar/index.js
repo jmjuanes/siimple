@@ -60,7 +60,8 @@ export const NavbarMenu = function (props) {
 export const NavbarToggle = function (props) {
     let newProps = helpers.filterProps(props, ["className"]);
     Object.assign(newProps, {
-        "className": helpers.classNames("siimple-navbar-toggle", props.className)
+        "className": helpers.classNames("siimple-navbar-toggle", props.className),
+        "tabIndex": "0"
     });
     let icon = React.createElement("div", {
         "className": "siimple-navbar-navicon"
