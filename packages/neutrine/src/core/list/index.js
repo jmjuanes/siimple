@@ -41,10 +41,3 @@ ListItem.defaultProps = {
     "selected": false
 };
 
-//List title component 
-export const ListTitle = function (props) {
-    return helpers.createMergedElement("div", props, {
-        "className": "siimple-list-title"
-    });
-};
-
