@@ -22,8 +22,7 @@
     border-radius: $siimple-default-border-radius;
     border: 0px;
     //Breadcrumb item
-    &-item,
-    &-crumb {
+    &-item {
         display: inline-block;
         float: left;
         position: relative;
@@ -37,7 +36,7 @@
         color: siimple-default-color("primary");
         transition: color 0.3s;
         cursor: pointer;
-        &:not(:first-of-type) {
+        &:not(:first-child) {
             padding-left: 8px;
         }
         //Crumb hover
@@ -45,14 +44,14 @@
             color: siimple-default-color("primary", "dark");
         }
         //Crumb before
-        &:not(:first-of-type)::before {
+        &:not(:first-child)::before {
             content: "/";
             color: siimple-default-color("dark", "light");
             font-weight: bold !important;
             padding-right: 8px;
         }
-        //Selected crumb
-        &--selected {
+        //Active crumb
+        &--active {
             color: siimple-default-color("dark") !important;
             cursor: default !important;
             font-weight: normal !important;
