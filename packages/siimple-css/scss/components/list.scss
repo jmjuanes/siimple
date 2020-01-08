@@ -46,12 +46,12 @@
         //border-bottom: 1px solid siimple-default-color("light", "dark");
         margin-bottom: 2px;
     }
-    &--hover &-item:not(#{&}-item--selected):hover {
+    &--hover &-item:not(#{&}-item--active):hover {
         background-color: darken(siimple-default-color("light"), 10%);
         cursor: pointer;
     }
-    //Item selected
-    &-item--selected {
+    //Active list item
+    &-item--active {
         background-color: siimple-default-color("primary", "light");
     }
 }
