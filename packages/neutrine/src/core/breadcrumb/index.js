@@ -23,3 +23,7 @@ export const BreadcrumbItem = function (props) {
     return React.createElement("div", newProps, props.children);
 };
 
+BreadcrumbItem.defaultProps = {
+    "active": false
+};
+
