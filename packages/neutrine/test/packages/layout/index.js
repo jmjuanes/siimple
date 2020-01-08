@@ -20,7 +20,8 @@ Neutrine.ready(function () {
                     <Neutrine.Appbar>
                         <Neutrine.AppbarBrand />
                         <Neutrine.AppbarItem icon="menu" />
-                        <Neutrine.AppbarItem icon="gear" />
+                        <Neutrine.AppbarItem active icon="gear" />
+                        <Neutrine.AppbarAvatar />
                     </Neutrine.Appbar>
                     <Neutrine.ToolbarWrapper collapsed={this.state.collapsed}>
                         <Neutrine.Toolbar theme="dark">
