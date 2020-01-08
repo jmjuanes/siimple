@@ -9,8 +9,7 @@ export const Card = function (props) {
         "className": helpers.classNames({
             "siimple-card": true,
             ["siimple-card--" + props.theme]: props.theme === "light" || props.theme === "dark"
-            [props.className]: typeof props.className === "string"
-        })
+        }, props.className)
     });
     return React.createElement("div", newProps, props.children);
 };
