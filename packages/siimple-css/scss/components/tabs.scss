@@ -48,8 +48,8 @@ $siimple-tabs-height: 40px;
             //border-right-color: siimple-default-color("light");
             color: siimple-default-color("primary");
         }
-        //Selected tab
-        &--selected {
+        //Active tab
+        &--active {
             border-top-color: siimple-default-color("light") !important;
             border-left-color: siimple-default-color("light") !important;
             border-right-color: siimple-default-color("light") !important;
