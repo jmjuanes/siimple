@@ -1,11 +1,13 @@
 # @siimple/neutrine 
 
-> A collection of React UI components based on siimple.
+> An experimental collection of React UI components based on @siimple/css.
 
 [![npm](https://img.shields.io/npm/v/@siimple/neutrine.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/neutrine)
 [![npm](https://img.shields.io/npm/dt/@siimple/neutrine.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/neutrine)
 [![npm](https://img.shields.io/npm/l/@siimple/neutrine.svg?style=flat-square)](https://github.com/siimple/@siimple/neutrine)
 [![pr](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
+
+**Its API is not as stable as that of @siimple/css, and does not follow the common versioning scheme.**
 
 ## Installation
 
@@ -27,11 +29,6 @@ export default class App extends React.Component {
     }
 }
 ```
-
-## Documentation
-
-This package is on development. We will publish a detailed documentation in `v0.1.0`.
-
 
 ## License 
 
