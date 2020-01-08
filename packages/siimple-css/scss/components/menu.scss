@@ -60,8 +60,8 @@
             text-decoration: none !important;
             color: siimple-default-color("primary");
         }
-        //Selected item
-        &--selected {
+        //Active item
+        &--active {
             background-color: siimple-default-color("light");
             color: siimple-default-color("dark");
             //font-weight: bold;
