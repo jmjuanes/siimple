@@ -15,9 +15,8 @@ export const BreadcrumbItem = function (props) {
     Object.assign(newProps, {
         "className": helpers.classNames({
             "siimple-breadcrumb-item": true,
-            "siimple-breadcrumb-item--active": props.active === true,
-            [props.className]: typeof props.className === "string"
-        })
+            "siimple-breadcrumb-item--active": props.active === true
+        }, props.className)
     });
     //Return the breadcrumb item
     return React.createElement("div", newProps, props.children);
