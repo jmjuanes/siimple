@@ -1,6 +1,6 @@
 {
     "name": "@siimple/css",
-    "version": "4.0.0-alpha.1",
+    "version": "4.0.0-alpha.2",
     "description": "Minimal CSS toolkit for flat and clean designs.",
     "style": "dist/siimple.css",
     "main": "index.scss",
