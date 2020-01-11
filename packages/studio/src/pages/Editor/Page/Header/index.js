@@ -10,6 +10,13 @@ import style from "./style.scss";
 export function PageHeader (props) {
     return (
         <div className={style.root}>
+            {/* Menu icon */}
+            <If condition={props.showMenu}>
+                <div className={style.button} onClick={props.onMenuClick}>
+                    <Icon icon="menu" className={style.buttonIcon} />
+                </div>
+            </If>
+            {/* Url bar */}
             <div className={style.url}>
                 <Icon className={style.urlIcon} icon="file" />
                 <span className={style.urlText}>
@@ -36,6 +43,8 @@ export function PageHeader (props) {
 //Page header default props
 PageHeader.defaultProps = {
     "page": null,
-    "editable": false
+    "editable": false,
+    "showMenu": true,
+    "onMenuClick": null
 };
 
