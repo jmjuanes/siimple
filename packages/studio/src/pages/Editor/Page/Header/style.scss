@@ -24,6 +24,10 @@
     padding: 5px;
     height: 24px;
     line-height: 24px;
+    //Not first child
+    &:not(:first-child) {
+        margin-left: 5px;
+    }
     //Url bar icon
     &Icon {
         vertical-align: middle;
@@ -44,17 +48,21 @@
 .button {
     display: block;
     flex-basis: 0;
-    width: 18px;
+    width: 20px;
     height: 34px;
     line-height: 34px;
-    margin-left: 5px;
-    padding-left: 8px;
-    padding-right: 8px;
+    //margin-left: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
     //background-color: darken(siimple-default-color("light"), 0%); 
     background-color: transparent;
     transition: all 0.3s;
     color: siimple-default-color("dark");
     border-radius: 5px;
+    //Not first child
+    &:not(:first-child) {
+        margin-left: 5px;
+    }
     //Button hover
     &:hover {
         cursor: pointer;
@@ -63,7 +71,7 @@
     }
     //Button icon
     &Icon {
-        font-size: 18px;
+        font-size: 20px;
     }
 }
 
