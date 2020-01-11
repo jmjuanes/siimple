@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import * as Router from "rouct";
 import kofi from "kofi";
 
+import {Appbar, AppbarWrapper, AppbarItem, AppbarBrand, AppbarAvatar} from "@siimple/neutrine";
 import {global} from "@siimple/neutrine";
 import {createToaster} from "@siimple/neutrine";
 
@@ -25,15 +26,20 @@ class App extends React.Component {
     //Render the app component
     render() {
         return (
-            <React.Fragment>
-                <Router.HashbangRouter>
+            <Router.HashbangRouter>
+                <AppbarWrapper>
+                    <Appbar>
+                        <AppbarBrand />
+                        <AppbarItem icon="gear" />
+                        <AppbarAvatar />
+                    </Appbar>
                     <Router.Switch>
                         <Router.Route exact path="/" component={Home} />
                         <Router.Route exact path="/editor/:site" component={Editor} />
                         <Router.Route exact path="/editor" component={Editor} />
                     </Router.Switch>
-                </Router.HashbangRouter>
-            </React.Fragment>
+                </AppbarWrapper>
+            </Router.HashbangRouter>
         );
     }
 }
