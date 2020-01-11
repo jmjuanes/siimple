@@ -93,7 +93,7 @@ export const features = {
                 <GridRow>
                     <ForEach items={props.items} render={function (item, index) {
                         return (
-                            <GridCol size={columnSize} small={12} index={index}>
+                            <GridCol size={columnSize} small={12} key={index}>
                                 <div style={columnStyle} align={columnAlign}>
                                     {/* Feature icon */}
                                     <Renderer render={function () {

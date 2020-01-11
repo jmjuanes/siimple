@@ -166,7 +166,7 @@ export const pricing = {
                 <GridRow align="center" className="siimple--py-4">
                     <ForEach items={props.plans} render={function (plan, index) {
                         return (
-                            <GridCol size={4} small={12} index={index} style={{"float":"none"}}>
+                            <GridCol size={4} small={12} key={index} style={{"float":"none"}}>
                                 <div className={planContainerClass} style={planContainerStyle}>
                                     {/* Plan name */}
                                     <If condition={plan.name.length > 0}>
