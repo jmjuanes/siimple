@@ -2,7 +2,7 @@ import React from "react";
 import {If} from "@siimple/neutrine";
 import {Renderer, ForEach} from "@siimple/neutrine";
 import {Toolbar, ToolbarWrapper} from "@siimple/neutrine";
-import {ToolbarGroup, ToolbarSeparator, ToolbarToggle, ToolbarLogo, ToolbarItem} from "@siimple/neutrine";
+import {ToolbarGroup, ToolbarSeparator, ToolbarBrand, ToolbarItem} from "@siimple/neutrine";
 
 import {Page} from "./Page/index.js";
 import {CreatePage} from "./CreatePage/index.js";
@@ -24,26 +24,25 @@ export class Editor extends React.Component {
         super(props);
         //Initial state
         this.state = {
-            "toolbarCollapsed": true,
+            "menuVisible": true,
             "site": createTestSite(),
             "editable": false,
             "currentPage": 0,
             "createPageVisible": false
         };
-        //Bind methods
-        this.handleToggle = this.handleToggle.bind(this);
         //Bind site methods
         this.handleSiteUpdate = this.handleSiteUpdate.bind(this);
         this.handlePageUpdate = this.handlePageUpdate.bind(this);
-        this.handleEditableToggle = this.handleEditableToggle.bind(this);
+        this.handleEditableClick = this.handleEditableClick.bind(this);
+        this.handleMenuClick = this.handleMenuClick.bind(this);
         //Page creation
         this.handleCreatePageToggle = this.handleCreatePageToggle.bind(this);
         this.handleCreatePageSubmit = this.handleCreatePageSubmit.bind(this);
     }
-    //Handle toolbar toggle
-    handleToggle() {
+    //Handle menu click
+    handleMenuClick() {
         return this.setState({
-            "toolbarCollapsed": !this.state.toolbarCollapsed
+            "menuVisible": !this.state.menuVisible
         });
     }
     //Handle site update
@@ -86,7 +85,7 @@ export class Editor extends React.Component {
         //TODO
     }
     //Handle editable toggle
-    handleEditableToggle() {
+    handleEditableClick() {
         return this.setState({
             "editable": !this.state.editable
         });
@@ -98,14 +97,13 @@ export class Editor extends React.Component {
     render() {
         let self = this;
         return (
-            <ToolbarWrapper collapsed={this.state.toolbarCollapsed}>
+            <ToolbarWrapper collapsed={!this.state.menuVisible}>
                 {/* Editor toolbar */}
                 <Toolbar theme="light">
                     {/* App logo */}
-                    <ToolbarLogo>
-                        <span className="siimple-brand">siimple</span>
-                        <span className="siimple--text-normal">studio</span>
-                    </ToolbarLogo>
+                    <ToolbarBrand>
+                        My site
+                    </ToolbarBrand>
                     {/* Pages list */} 
                     <ToolbarGroup text="Pages" />
                     <div style={{"width":"100%"}}>
@@ -128,7 +126,9 @@ export class Editor extends React.Component {
                         });
                     }} />
                     {/* Toggle toolbar collapse */}
+                    {/*
                     <ToolbarToggle onClick={this.handleToggle} />
+                    */}
                 </Toolbar>
                 {/* Editor content */}
                 <Renderer render={function () {
@@ -138,7 +138,8 @@ export class Editor extends React.Component {
                         "index": self.state.currentPage,
                         "editable": self.state.editable,
                         "onPageUpdate": self.handlePageUpdate,
-                        "onEditableToggle": self.handleEditableToggle,
+                        "onEditableClick": self.handleEditableClick,
+                        "onMenuClick": self.handleMenuClick,
                         "key": self.state.currentPage
                     });
                 }} />
