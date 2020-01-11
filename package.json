@@ -47,10 +47,10 @@
     },
     "packages": {
         "@siimple/colors": "0.0.1",
-        "@siimple/css": "4.0.0-alpha.1",
+        "@siimple/css": "4.0.0-alpha.2",
         "@siimple/experiments": "0.0.1",
         "@siimple/icons": "0.0.2",
-        "@siimple/neutrine": "0.0.5",
+        "@siimple/neutrine": "0.1.0",
         "@siimple/press": "0.1.1",
         "@siimple/press-plugin-copyfiles": "0.0.1",
         "@siimple/press-plugin-sass": "0.0.1",

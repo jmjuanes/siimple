@@ -9,103 +9,105 @@
 @import "../functions.scss";
 @import "../mixins.scss";
 
-//Card variables
-$siimple-card-border-color: siimple-default-color("light");
-$siimple-card-border-width: 2px;
-
 //Card element class
 .#{$siimple-prefix}-card {
     display: block;
     width: 100%;
     margin-bottom: $siimple-default-margin-bottom;
-    color: $siimple-default-color;
-    font-size: $siimple-default-font-size;
+    border-radius: $siimple-default-border-radius;
+    text-decoration: none !important;
+    //color: $siimple-default-color;
+    //font-size: $siimple-default-font-size;
     //Common styles
-    &-header, 
-    &-body, 
-    &-footer, 
+    &-image,
+    &-content, 
     &-link {
         display: block;
-        line-height: $siimple-default-line-height;
-        border-left: $siimple-card-border-width solid $siimple-card-border-color;
-        border-right: $siimple-card-border-width solid $siimple-card-border-color;
-        border-top: $siimple-card-border-width solid $siimple-card-border-color;
+         //First child of the card --> add border top radius
         &:first-child {
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
         }
+        //Last child of the card --> add border bottom radius
         &:last-child {
-            border-bottom: $siimple-card-border-width solid $siimple-card-border-color;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
         }
     }
-    //Card header and footer styles
-    &-header, 
-    &-footer {
-        //display: block;
-        padding: 12px;
-        background-color: $siimple-card-border-color;
+    //Card image
+    &-image {
+        background-color: siimple-default-color("dark", "light");
+        //font-weight: bold;
     }
-    //Card header
-    &-header {
-        font-weight: bold;
-    }
-    //Card body
-    &-body {
+    //Card content
+    &-content {
         //display: block;
-        padding: 12px;
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        //Last card content child
+        &:last-child {
+            padding-bottom: 15px;
+        }
     }
     //Card link 
     &-link {
         position: relative;
-        color: siimple-default-color("primary");
-        font-weight: bold;
-        font-size: 15px;
-        padding: 12px;
+        //color: siimple-default-color("primary");
+        //font-weight: bold;
+        //font-size: 15px;
+        padding: 15px;
         cursor: pointer;
-        transition: background-color 0.3s;
+        transition: opacity 0.3s;
+        opacity: 0.5;
         //Card link arrow
         &::before {
             display: block;
             content: "";
             width: 11px;
             height: 11px;
-            border-top: 3px solid siimple-default-color("primary");
-            border-right: 3px solid siimple-default-color("primary");
+            border-top: 4px solid transparent; 
+            border-right: 4px solid transparent;
             transform: rotate(45deg);
             border-radius: 2px;
             position: absolute;
             top: 17px;
-            right: 15px;
+            right: 18px;
             transition: right 0.3s;
         }
-        //Hovered card link
-        &:hover {
-            background-color: $siimple-card-border-color;
-        }
-        &:hover::before {
-            right: 12px;
-        }
     }
-    //Card title
-    &-title {
-        display: block;
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 5px;    
+    //Card hover --> active link
+    &:hover &-link,
+    &-link:hover {
+        opacity: 1.0;
     }
-    //Card subtitle 
-    &-subtitle {
-        display: block;
-        font-size: 15px;
-        color: siimple-default-color("dark", "light");
-        margin-bottom: 5px;
-        line-height: 23px;
+    &:hover &-link::before,
+    &-link:hover &-link::before {
+        right: 15px;
     }
-    //Card title after a subtitle
-    &-title + &-subtitle {
-        margin-top: -5px !important;
+    //Light card --> default style
+    &--light {
+        background-color: siimple-default-color("light");
+        color: siimple-default-color("dark");
+    }
+    &--light &-link {
+        color: siimple-default-color("dark");
+    }
+    &--light &-link::before {
+        border-top-color: siimple-default-color("dark");
+        border-right-color: siimple-default-color("dark");
+    }
+    //Dark card
+    &--dark {
+        background-color: siimple-default-color("dark");
+        color: siimple-default-color("white");
+    }
+    &--dark &-link {
+        color: siimple-default-color("white");
+    }
+    &--dark &-link::before {
+        border-top-color: siimple-default-color("white");
+        border-right-color: siimple-default-color("white");
     }
 }
 

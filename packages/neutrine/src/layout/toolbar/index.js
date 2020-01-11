@@ -2,11 +2,8 @@ import React from "react";
 import {Icon} from "../../icon/index.js";
 import * as helpers from "../../helpers.js";
 
-//Import toolbar styles
 import "./style.scss";
-
-//Base class
-let baseClass = "neutrine-toolbar";
+let baseClass = "neutrine__toolbar";
 
 //Export toolbar wrapper component
 export const ToolbarWrapper = function (props) {
@@ -124,24 +121,23 @@ ToolbarGroup.defaultProps = {
     "text": null
 };
 
-//Export toolbar logo component
-export const ToolbarLogo = function (props) {
-    //Build the logo props
-    let logoProps = {
-        "className": helpers.classNames(baseClass + "-logo", props.className),
+//Export toolbar brand component
+export const ToolbarBrand = function (props) {
+    //Build the brand props
+    let brandProps = {
+        "className": helpers.classNames(baseClass + "-brand", props.className),
         "style": Object.assign({}, props.style, {
             "backgroundImage": (props.image !== null) ? "url(" + props.image + ")" : null
         }),
         "onClick": props.onClick
     };
-    //Return the toolbar logo component wrapper
-    return React.createElement("div", logoProps, props.children);
+    //Return the toolbar brand component wrapper
+    return React.createElement("div", brandProps, props.children);
 };
 
-//Toolbar logo default props
-ToolbarLogo.defaultProps = {
+//Toolbar brand default props
+ToolbarBrand.defaultProps = {
     "image": null,
     "style": {}
 };
-
 

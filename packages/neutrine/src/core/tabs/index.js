@@ -13,22 +13,19 @@ export const Tabs = function (props) {
 
 //Tabs item component 
 export const TabsItem = function (props) {
-    //Extend the tabs item properties
-    let newProps = reactUtils.filterProps(props, ["selected", "className"]);
-    //Initialize the tabs item class list
-    let classList = ["siimple-tabs-item"];
-    //Check the selected attribute 
-    if (props.selected === true) {
-        classList.push("siimple-tabs-item--selected");
-    }
-    //Generate the tabs item classname
-    newProps.className = reactUtils.classNames(classList, props.className);
+    let newProps = helpers.filterProps(props, ["active", "className"]);
+    Object.assign(newProps, {
+        "className": helpers.classNames({
+            "siimple-tabs-item": true,
+            "siimple-tabs-item--active": props.active
+        }, props.className)
+    });
     //Return the tab item
     return React.createElement("div", newProps, props.children);
 };
 
 //Tabs item default props 
 TabsItem.defaultProps = {
-    "selected": false
+    "active": false
 };
 

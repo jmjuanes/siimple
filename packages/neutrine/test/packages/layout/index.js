@@ -16,35 +16,30 @@ Neutrine.ready(function () {
         }
         render(props) {
             return (
-                <Neutrine.ToolbarWrapper collapsed={this.state.collapsed}>
-                    <Neutrine.Toolbar theme="dark">
-                        <Neutrine.ToolbarLogo>
-                            Dashboard
-                        </Neutrine.ToolbarLogo>
-                        <Neutrine.ToolbarGroup text="Group 1" />
-                        <Neutrine.ToolbarItem text="Home" icon="home" active={true} />
-                        <Neutrine.ToolbarItem text="Profile" icon="user" />
-                        <Neutrine.ToolbarSeparator />
-                        <Neutrine.ToolbarItem text="Admin" icon="gear" />
+                <Neutrine.AppbarWrapper>
+                    <Neutrine.Appbar>
+                        <Neutrine.AppbarBrand />
+                        <Neutrine.AppbarItem icon="menu" />
+                        <Neutrine.AppbarItem active icon="gear" />
+                        <Neutrine.AppbarAvatar />
+                    </Neutrine.Appbar>
+                    <Neutrine.ToolbarWrapper collapsed={this.state.collapsed}>
+                        <Neutrine.Toolbar theme="dark">
+                            <Neutrine.ToolbarBrand>
+                                    Dashboard
+                            </Neutrine.ToolbarBrand>
+                            <Neutrine.ToolbarGroup text="Group 1" />
+                            <Neutrine.ToolbarItem text="Home" icon="home" active={true} />
+                            <Neutrine.ToolbarItem text="Profile" icon="user" />
+                            <Neutrine.ToolbarSeparator />
+                            <Neutrine.ToolbarItem text="Admin" icon="gear" />
+                        </Neutrine.Toolbar>
                         <Neutrine.ToolbarToggle onClick={this.handleToggleClick} />
-                    </Neutrine.Toolbar>
-                    <div>
-                        <Neutrine.Appbar theme="dark">
-                            <Neutrine.AppbarLogo>
-                                Dashboard
-                            </Neutrine.AppbarLogo>
-                            <Neutrine.AppbarItem icon="home">
-                                Go to <strong>home</strong>
-                            </Neutrine.AppbarItem>
-                            <Neutrine.AppbarItem icon="save">
-                                Save <strong>session</strong>
-                            </Neutrine.AppbarItem>
-                        </Neutrine.Appbar>
                         <div style={{"minHeight":"2000px"}}>
                             Hello world!
                         </div>
-                    </div>
-                </Neutrine.ToolbarWrapper>
+                    </Neutrine.ToolbarWrapper>
+                </Neutrine.AppbarWrapper>
             );
         }
     };

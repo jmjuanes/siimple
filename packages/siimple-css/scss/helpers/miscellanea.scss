@@ -9,8 +9,37 @@
 @import "../variables.scss";
 @import "../functions.scss";
 
-//Rounded corners
-.#{$siimple-prefix}--rounded {
-    border-radius: $siimple-default-border-radius;
+//Miscellanea styles
+.#{$siimple-prefix} {
+    //Rounded corners
+    &--rounded {
+        border-radius: $siimple-default-border-radius;
+    }
+    //Pointer cursor
+    &--pointer {
+        cursor: pointer !important;
+    }
+    //Borders
+    &--border-light {
+        border: 2px solid siimple-default-color("light");
+    }
+    &--border-white {
+        border: 2px solid siimple-default-color("white");
+    }
+    &--border-dark {
+        border: 2px solid siimple-default-color("dark");
+    }
+    //Striped light background
+    //&--striped-light {
+    &--striped {
+        @include siimple-utils-stripedbg (siimple-default-color("light"), transparent);
+    }
+    ////Striped dark background
+    //&--striped-dark {
+    //    @include siimple-utils-stripedbg(
+    //        siimple-default-color("dark"),
+    //        siimple-default-color("dark", "light")
+    //    );
+    //}
 }
 

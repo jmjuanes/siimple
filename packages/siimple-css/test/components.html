@@ -73,7 +73,7 @@
         <div class="siimple-breadcrumb-item">Home</div>
         <div class="siimple-breadcrumb-item">Route1</div>
         <div class="siimple-breadcrumb-item">Route2</div>
-        <div class="siimple-breadcrumb-item siimple-breadcrumb-item--selected">Post</div>
+        <span class="siimple-breadcrumb-item siimple-breadcrumb-item--active">Post</span>
     </div>
 </div>
 
@@ -158,32 +158,44 @@
 <div class="demo">
     <div class="siimple-h2">Card</div>
     <div class="siimple-grid siimple-grid-row">
-        <div class="siimple-grid-col siimple-grid-col--3">
-            <div class="siimple-card">
-                <div class="siimple-card-body">This is the content of the card.</div>
-            </div>
-            <div class="siimple-card">
-                <div class="siimple-card-body">This is the content of the card.</div>
-            </div>
-        </div>
-        <div class="siimple-grid-col siimple-grid-col--3">
-            <div class="siimple-card">
-                <div class="siimple-card-header">My card</div>
-                <div class="siimple-card-body">
-                    <div class="siimple-card-title">Card title</div>
-                    <div class="siimple-card-subtitle">Card subtitle</div>
-                    <p class="siimple-paragraph">Hello world! Here goes the card content.</p>
-                    <a href="#" class="siimple-btn siimple-btn--success">Button</a>
+        <div class="siimple-grid-col siimple-grid-col--4">
+            <div class="siimple-card siimple-card--light">
+                <div class="siimple-card-image">
+                    <div class="siimple--py-5 siimple--color-white" align="center">
+                        Image
+                    </div>
                 </div>
-                <div class="siimple-card-footer">Card footer</div>
-            </div> 
+                <div class="siimple-card-content">
+                    This is the content of the card.
+                </div>
+            </div>
         </div>
-        <div class="siimple-grid-col siimple-grid-col--3">
-            <div class="siimple-card">
-                <div class="siimple-card-header">My card</div>
-                <div class="siimple-card-body">This is the content of the card.</div>
-                <div class="siimple-card-body">This is the content of the card.</div>
-                <div class="siimple-card-footer">Card footer</div>
+        <div class="siimple-grid-col siimple-grid-col--4">
+            <a href="#" class="siimple-card siimple-card--light">
+                <div class="siimple-card-content">
+                    <div class="siimple-h5 siimple--mb-1">Card title</div>
+                    <div class="siimple--text-small">Card subtitle</div>
+                </div>
+                <div class="siimple-card-content">
+                    <p class="siimple-paragraph">Hello world! Here goes the card content.</p>
+                </div>
+                <div class="siimple-card-link">
+                    Card <strong>link</strong>
+                </div>
+            </a> 
+        </div>
+        <div class="siimple-grid-col siimple-grid-col--4">
+            <div class="siimple-card siimple-card--dark">
+                <div class="siimple-card-content">
+                    <div class="siimple-h5 siimple--mb-1">Card title</div>
+                    <div class="siimple--text-small">Card subtitle</div>
+                </div>
+                <div class="siimple-card-content">
+                    <p class="siimple-paragraph">Hello world! Here goes the card content.</p>
+                </div>
+                <div class="siimple-card-link">
+                    Card <strong>link</strong>
+                </div>
             </div> 
         </div> 
     </div> 
@@ -202,11 +214,11 @@
         <div class="siimple-grid-col siimple-grid-col--3">
             <div class="siimple-list siimple-list--hover">
                 <div class="siimple-list-item">
-                    <div class="siimple-list-title">List title</div>
+                    <div class="siimple-h6 siimple--mb-0">List title</div>
                     This is the list content.
                 </div>
-                <div class="siimple-list-item">
-                    <div class="siimple-list-title">List title</div>
+                <div class="siimple-list-item siimple-list-item--active">
+                    <div class="siimple-h6 siimple--mb-0">List title</div>
                     This is the list content.
                 </div>
             </div>

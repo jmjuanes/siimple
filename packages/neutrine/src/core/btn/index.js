@@ -30,7 +30,7 @@ export const Btn = function (props) {
     //Append the provided class names
     newProps.className = helpers.classNames(classList, props.className);
     //Return the button element
-    return React.createElement("div", newProps, props.children);
+    return React.createElement("div", newProps, (props.content !== null) ? props.content : props.children);
 };
 
 //Default properties values
@@ -38,7 +38,8 @@ Btn.defaultProps = {
     "color": null, 
     "disabled": false, 
     "fluid": false,
-    "small": false
+    "small": false,
+    "content": null
 };
 
 //Button groups

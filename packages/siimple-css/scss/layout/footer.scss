@@ -10,7 +10,7 @@
 @import "../mixins.scss";
 
 //Footer variables
-$siimple-footer-light-text: siimple-default-color("dark", "light");
+$siimple-footer-light-text: lighten(siimple-default-color("dark"), 40%);
 $siimple-footer-dark-text: rgba(siimple-default-color("white"), 0.8);
 
 //Footer class
@@ -80,10 +80,10 @@ $siimple-footer-dark-text: rgba(siimple-default-color("white"), 0.8);
             margin-right: 10px;
         }
         //Hover link
-        &:hover {
-            //text-decoration: underline;
-            color: siimple-default-color("primary") !important;
-        }
+        //&:hover {
+        //    //text-decoration: underline;
+        //    color: siimple-default-color("primary") !important;
+        //}
         //Link description
         &-description {
             display: block;
@@ -96,15 +96,21 @@ $siimple-footer-dark-text: rgba(siimple-default-color("white"), 0.8);
     //Colored link
     &--light &-link {
         color: $siimple-footer-light-text;
+        &:hover {
+            color: siimple-default-color("primary");
+        }
     }
     &--light &-link-description {
-        color: $siimple-footer-light-text !important;
+        color: $siimple-footer-light-text;
     }
     &--dark &-link {
         color: $siimple-footer-dark-text;
+        &:hover {
+            color: siimple-default-color("secondary");
+        }
     }
     &--dark &-link-description {
-        color: $siimple-footer-dark-text !important;
+        color: $siimple-footer-dark-text;
     }
     //Footer paragraph 
     &-paragraph {

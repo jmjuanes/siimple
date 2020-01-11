@@ -10,17 +10,25 @@
 //Colors helpers
 .#{$siimple-prefix} {
     @each $color in $siimple-default-colors {
-        &--color-#{$color} {
+        //Text color
+        &--color-#{$color},
+        &--hcolor-#{$color}:hover {
             color: siimple-default-color($color, "base") !important;
         }
-        &--bg-#{$color} {
+        //Background color
+        &--bg-#{$color},
+        &--hbg-#{$color}:hover {
             background-color: siimple-default-color($color, "base") !important;
         }
     }
-    &--color-white {
+    //White text color
+    &--color-white,
+    &--hcolor-white:hover {
         color: $siimple-default-white !important;
     }
-    &--bg-white {
+    //White background color
+    &--bg-white,
+    &--hbg-white:hover {
         background-color: $siimple-default-white !important;
     }
 }

@@ -1,7 +1,5 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
-
-//Import breadcrumb styles
 import "@siimple/css/scss/components/breadcrumb.scss";
 
 //Breadcrumb parent component
@@ -13,8 +11,18 @@ export const Breadcrumb = function (props) {
 
 //Breadcrumb item component
 export const BreadcrumbItem = function (props) {
-    return helpers.createMergedElement("div", props, {
-        "className": "siimple-breadcrumb-item"
+    let newProps = helpers.filterProps(props, ["active", "className"]);
+    Object.assign(newProps, {
+        "className": helpers.classNames({
+            "siimple-breadcrumb-item": true,
+            "siimple-breadcrumb-item--active": props.active === true
+        }, props.className)
     });
+    //Return the breadcrumb item
+    return React.createElement("div", newProps, props.children);
+};
+
+BreadcrumbItem.defaultProps = {
+    "active": false
 };
 
