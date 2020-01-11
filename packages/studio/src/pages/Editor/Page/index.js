@@ -146,7 +146,9 @@ export class Page extends React.Component {
                     return React.createElement(PageHeader, {
                         "page": self.props.page,
                         "editable": self.props.editable,
-                        "onEditableClick": self.props.onEditableToggle
+                        "showMenu": true,
+                        "onMenuClick": self.props.onMenuClick,
+                        "onEditableClick": self.props.onEditableClick
                     });
                 }} />
                 {/* Render the page blocks */}
@@ -172,6 +174,7 @@ Page.defaultProps = {
     "page": null,
     "editable": false,
     "onPageUpdate": null,
-    "onEditableToggle": null
+    "onEditableClick": null,
+    "onMenuClick": null
 };
 
