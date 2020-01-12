@@ -115,7 +115,7 @@ export const faq = {
                 <div className="siimple--mt-5">
                     <ForEach items={props.faqs} render={function (item, index) {
                         return (
-                            <div align="left">
+                            <div align="left" key={index}>
                                 <Heading type="h4" className={themeClass}>
                                     {item.question}
                                 </Heading>
