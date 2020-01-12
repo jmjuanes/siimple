@@ -25,6 +25,6 @@
         "index.scss"
     ],
     "dependencies": {
-        "@siimple/css": "^4.0.0-alpha.0"
+        "@siimple/css": "^4.0.0-alpha.2"
     }
 }
