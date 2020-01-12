@@ -1,13 +1,19 @@
+@import "@siimple/css/scss/variables.scss";
+
 //Page content style
 .root {
     display: block;
     padding-left: 0px;
     //padding-right: 45px;
-    padding-right: 0px;
+    //padding-right: 0px;
+    margin-right: 0px;
     transition: all 0.3s;
+    border: 2px solid siimple-default-color("light", "dark");
+    min-height: calc(100% - 60px);
 }
 //Editable page
 .editable {
-    padding-right: 45px;
+    //padding-right: 45px;
+    margin-right: 45px;
 }
 
