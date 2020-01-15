@@ -1,0 +1,32 @@
+@import "@siimple/css/scss/variables.scss";
+
+.neutrine__loading {
+    display: block;
+    position: fixed;
+    background-color: siimple-default-color("primary");
+    top: 0px;
+    left: 0px;
+    height: 3px;
+    transition: width 0.3s;
+    //opacity: 1;
+    //Completed loading bar
+    &--completed {
+        opacity: 0;
+        width: 0%;
+        animation: neutrine__loading-animation 0.5s linear;
+    }
+}
+
+//Loading bar animation keyframes
+@keyframes neutrine__loading-animation {
+    0% {
+        width: 100%;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        width: 100%;
+    }
+}
+
+
