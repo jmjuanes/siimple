@@ -91,3 +91,17 @@ export function createMergedElement (tag, originalProps, newProps) {
     return React.createElement(tag, mergeProps(originalProps, newProps), originalProps.children);
 }
 
+//Join styles
+export function styles () {
+    let output = {};
+    //Join all styles
+    for (let i = 0; i < arguments.length; i++) {
+        let arg = arguments[i];
+        if (typeof arg === "object" && arg !== null) {
+            Object.assign(output, arg);
+        }
+    }
+    //Return merged styles
+    return output;
+}
+
