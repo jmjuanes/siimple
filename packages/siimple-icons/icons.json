@@ -824,6 +824,13 @@
         "unicode": 57461,
         "added": "v0.0.2",
         "keywords": ["tablet", "device"]
+    },
+    {
+        "id": "sun",
+        "categories": "weather",
+        "unicode": 57462,
+        "added": "v0.0.3",
+        "keywords": ["sun"]
     }
 ]
 
