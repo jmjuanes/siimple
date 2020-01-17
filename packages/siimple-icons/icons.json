@@ -845,6 +845,13 @@
         "unicode": 57464,
         "added": "v0.0.3",
         "keywords": ["mouse", "computer", "desktop"]
+    },
+    {
+        "id": "text",
+        "categories": "interface",
+        "unicode": 57465,
+        "added": "v0.0.3",
+        "keywords": ["text", "editor"]
     }
 ]
 
