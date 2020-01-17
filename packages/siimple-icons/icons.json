@@ -852,6 +852,27 @@
         "unicode": 57465,
         "added": "v0.0.3",
         "keywords": ["text", "editor"]
+    },
+    {
+        "id": "circle",
+        "categories": "interface",
+        "unicode": 57466,
+        "added": "v0.0.3",
+        "keywords": ["geometry", "shape"]
+    },
+    {
+        "id": "square",
+        "categories": "interface",
+        "unicode": 57467,
+        "added": "v0.0.3",
+        "keywords": ["geometry", "shape"]
+    },
+    {
+        "id": "diamond",
+        "categories": "interface",
+        "unicode": 57468,
+        "added": "v0.0.3",
+        "keywords": ["geometry", "shape"]
     }
 ]
 
