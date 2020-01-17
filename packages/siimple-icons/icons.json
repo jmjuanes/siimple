@@ -830,7 +830,21 @@
         "categories": "weather",
         "unicode": 57462,
         "added": "v0.0.3",
-        "keywords": ["sun"]
+        "keywords": ["sun", "day", "light"]
+    },
+    {
+        "id": "moon",
+        "categories": "weather",
+        "unicode": 57463,
+        "added": "v0.0.3",
+        "keywords": ["moon", "night", "dark"]
+    },
+    {
+        "id": "pointer",
+        "categories": "interface",
+        "unicode": 57464,
+        "added": "v0.0.3",
+        "keywords": ["mouse", "computer", "desktop"]
     }
 ]
 
