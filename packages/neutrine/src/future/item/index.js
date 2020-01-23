@@ -5,7 +5,7 @@ import "./style.scss";
 //Export item style
 export function Item (props) {
     return helpers.createMergedElement("div", props, {
-        "className": "neutrune__item"
+        "className": "neutrine__item"
     });
 }
 
@@ -26,7 +26,7 @@ export function ItemContent (props) {
 //Export item action wrapper
 export function ItemAction (props) {
     return helpers.createMergedElement("div", props, {
-        "classNames": "neutrine__item-action"
+        "className": "neutrine__item-action"
     });
 }
 
