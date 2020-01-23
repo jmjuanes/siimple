@@ -16,6 +16,11 @@
     &-icon {
         display: block;
         border-radius: 5px;
+        min-width: 24px;
+        min-height: 24px;
+        line-height: 24px;
+        padding: 5px;
+        text-align: center;
     }
     //Item content
     &-content {
