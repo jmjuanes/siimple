@@ -1,0 +1,37 @@
+@import "@siimple/css/scss/variables.scss";
+
+//Item style
+.neutrine__item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    //Icon iand action common style
+    &-icon,
+    &-action {
+        flex-grow: 0;
+        flex-shrink: 0; //No shrink
+        flex-basis: auto;
+    }
+    //Icon style
+    &-icon {
+        display: block;
+        border-radius: 5px;
+    }
+    //Item content
+    &-content {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+        overflow-x: hidden;
+        //overflow-y: hidden;
+        //Not first child --> add padding-left
+        &:not(:first-child) {
+            padding-left: 8px;
+        }
+        //Not last child --> add padding-right
+        &:not(:last-child) {
+            padding-right: 8px;
+        }
+    }
+}
+
