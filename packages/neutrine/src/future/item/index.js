@@ -1,6 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
-import "style.scss";
+import "./style.scss";
 
 //Export item style
 export function Item (props) {
