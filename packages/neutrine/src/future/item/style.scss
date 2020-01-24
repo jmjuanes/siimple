@@ -5,25 +5,44 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    //Icon iand action common style
-    &-icon,
-    &-action {
+    //Item after and before elements
+    &-before,
+    &-after {
+        display: flex;
         flex-grow: 0;
         flex-shrink: 0; //No shrink
         flex-basis: auto;
     }
-    //Icon style
-    &-icon {
-        //display: block;
-        border-radius: 5px;
-        min-width: 24px;
-        min-height: 24px;
-        line-height: 24px;
-        padding: 5px;
-        text-align: center;
+    //Item before style
+    &-before {
+        order: 1; //First element
     }
-    //Item content
+    //Item after style
+    &-after {
+        order: 3; //Last element
+    }
+    //Item icon style 
+    &-icon {
+        display: block;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        font-size: 24px;
+        text-align: center;
+        padding: 0px;
+        //border-radius: 5px;
+        //Square icon
+        &--square {
+            border-radius: 5px;
+        }
+        //Circle icon
+        &--circle {
+            border-radius: 50%;
+        }
+    }   
+    //Item content style
     &-content {
+        order: 2; //Important!!
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: auto;
@@ -31,11 +50,11 @@
         //overflow-y: hidden;
         //Not first child --> add padding-left
         &:not(:first-child) {
-            padding-left: 8px;
+            padding-left: 10px;
         }
         //Not last child --> add padding-right
         &:not(:last-child) {
-            padding-right: 8px;
+            padding-right: 10px;
         }
     }
 }
