@@ -1,7 +1,7 @@
 {
     "name": "@siimple/neutrine",
     "description": "A collection of React UI components based on siimple",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": "Josemi Juanes <josemijuanes@gmail.com>",
     "license": "MIT",
     "main": "index.js",
