@@ -1,0 +1,16 @@
+//Export centered style
+.neutrine__centered {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    //width: 100%;
+    //height: 100%;
+    //Row centered: left to right
+    &--row {
+        flex-direction: row !important;
+    }
+    //Comlumn centered: top to bottom
+    &--column {
+        flex-direction: column !important;
+    }
+}
