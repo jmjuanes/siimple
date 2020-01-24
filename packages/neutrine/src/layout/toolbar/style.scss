@@ -139,10 +139,12 @@
     //Collapsed toolbar
     &-wrapper--collapsed & {
         width: 0px !important;    
+        padding-left: 0px !important;
         padding-right: 0px !important;
     }
     &-wrapper--collapsed {
-        padding-left: 15px;
+        //padding-left: 15px;
+        padding-left: 0px !important;
     }
 }
 
