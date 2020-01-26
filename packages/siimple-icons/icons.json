@@ -873,6 +873,83 @@
         "unicode": 57468,
         "added": "v0.0.3",
         "keywords": ["geometry", "shape"]
+    },
+    {
+        "id": "clone",
+        "categories": "interface",
+        "unicode": 57469,
+        "added": "v0.0.3",
+        "keywords": ["clone", "copy"]
+    },
+    {
+        "id": "opacity",
+        "categories": "interface",
+        "unicode": 57470,
+        "added": "v0.0.3",
+        "keywords": ["opacity", "alpha", "image"]
+    },
+    {
+        "id": "fill",
+        "categories": "interface",
+        "unicode": 57471,
+        "added": "v0.0.3",
+        "keywords": ["fill", "color", "background", "image"]
+    },
+    {
+        "id": "gift",
+        "categories": "shopping",
+        "unicode": 57472,
+        "added": "v0.0.3",
+        "keywords": ["gift", "present"]
+    },
+    {
+        "id": "filter",
+        "categories": "interface",
+        "unicode": 57473,
+        "added": "v0.0.3",
+        "keywords": ["filter"]
+    },
+    {
+        "id": "font",
+        "categories": "interface",
+        "unicode": 57474,
+        "added": "v0.0.3",
+        "keywords": ["font", "text"]
+    },
+    {
+        "id": "send-backward",
+        "categories": "interface",
+        "unicode": 57475,
+        "added": "v0.0.3",
+        "keywords": ["send", "backward", "move", "order"]
+    },
+    {
+        "id": "bring-forward",
+        "categories": "interface",
+        "unicode": 57476,
+        "added": "v0.0.3",
+        "keywords": ["bring", "forward", "move", "order"]
+    },
+    {
+        "id": "download",
+        "categories": "computer",
+        "unicode": 57477,
+        "added": "v0.0.3",
+        "keywords": ["download", "internet", "content"]
+    },
+    {
+        "id": "upload",
+        "categories": "computer",
+        "unicode": 57478,
+        "added": "v0.0.3",
+        "keywords": ["upload", "content", "internet"]
+    },
+    {
+        "id": "corner",
+        "categories": "interface",
+        "unicode": 57479,
+        "added": "v0.0.3",
+        "keywords": ["corner", "frame", "border"]
     }
 ]
 
