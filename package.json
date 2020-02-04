@@ -50,12 +50,6 @@
         "@siimple/css": "4.0.0-alpha.2",
         "@siimple/experiments": "0.0.1",
         "@siimple/icons": "0.0.2",
-        "@siimple/neutrine": "0.1.1",
-        "@siimple/press": "0.1.1",
-        "@siimple/press-plugin-copyfiles": "0.0.1",
-        "@siimple/press-plugin-sass": "0.0.1",
-        "@siimple/press-theme-siimple": "0.0.1",
-        "@siimple/studio": "0.0.1",
-        "@siimple/website": "0.0.1"
+        "@siimple/neutrine": "0.1.1"
     }
 }
