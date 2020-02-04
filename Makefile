@@ -1,21 +1,11 @@
-.PHONY: build publish test docs website bootstrap install update upgrade
-
-NODE_BIN=./node_modules/.bin
-
-# Print help
-help: 
-	@echo "Available commands: "
-	@echo ""
-	@echo "  make install                  Install all dependencies"
-	@echo "  make upgrade                  Upgrade the package.json file of all packages"
-	@echo "  make build pkg=<PKG>          Run the build command of the provided package"
-	@echo "  make test pkg=<PKG>           Run the test command of the provided package"
-	@echo "  make publish pkg=<PKG>        Run the publish command of the provided package"
-	@echo "  make website                  Build and serve the siimple website"
-	@echo "  make lint                     Run sass-lint"
-	@echo ""
+node_bin=./node_modules/.bin
+pkgs_folder=./packages
+apps_folder=./apps
+docs_folder=./docs
+website_folder=./website
 
 # Initialize the env
+.PHONY: install
 install:
 	@# Install node dependencies
 	-rm -rf node_modules
@@ -24,11 +14,13 @@ install:
 	${MAKE} bootstrap
 
 # Create a symlink in node_modules to packages
+.PHONY: bootstrap
 bootstrap:
 	-rm -r ./node_modules/\@siimple
 	node ./scripts/bootstrap.js
 
 # Update dependencies
+.PHONY: update
 update:
 	-rm -r ./node_modules/\@siimple
 	npm install
@@ -36,31 +28,70 @@ update:
 	${MAKE} bootstrap
 
 # Upgrade all package.json files
+.PHONY: upgrade
 upgrade:
 	node ./scripts/upgrade.js
 
 # Run sass-lint
+.PHONY: lint
 lint: 
-	${NODE_BIN}/sass-lint -v
+	${node_bin}/sass-lint -v
 
-# Build the provided package
+# Build the provided package or application
 # Example: make build pkg="siimple-css"
+.PHONY: build
 build: 
-	cd ./packages/${pkg}/ && ${MAKE} build
+ifdef pkg
+	cd ${pkgs_folder}/${pkg}/ && ${MAKE} build
+else ifdef app
+	cd ${apps_folder}/${app} && ${MAKE} build 
+endif
 
-# Run tests of the provided package
+# Build siimple website and documentation
+.PHONY: build-docs build-website
+build-docs:
+	cd ./docs/ && ${MAKE} build
+build-website:
+	cd ./website/ && ${MAKE} build
+
+# Run tests of the provided package or application
 # Example: make test pkg="siimple-css"
+.PHONY: test
 test:
-	cd ./packages/${pkg}/ && ${MAKE} test
+ifdef pkg
+	cd ${pkgs_folder}/${pkg}/ && ${MAKE} test
+else ifdef app
+	cd ${apps_folder}/${app} && ${MAKE} test
+endif
 
-# Publish the provided package
+# Test siimple documentation and website
+.PHONY: test-docs test-website
+test-docs:
+	cd ./docs/ && ${MAKE} test
+test-website:
+	cd ./website/ && ${MAKE} test
+
+# Publish the provided package or application
 # Example: make publish pkg="siimple-css"
+.PHONY: publish
 publish:
-	cd ./packages/${pkg}/ && ${MAKE} publish
+ifdef pkg
+	cd ${pkgs_folder}/${pkg}/ && ${MAKE} publish
+else ifdef app
+	cd ${apps_folder}/${app} && ${MAKE} publish
+endif
+
+# Build and serve siimple documentation site
+# Sortcut for 'make build-website && make test-website'
+.PHONY: docs
+docs:
+	${MAKE} build-docs
+	${MAKE} test-docs
 
 # Build and serve siimple website
-# Sortcut for 'make build pkg="website" && make test pkg="website"'
+# Sortcut for 'make build-website && make test-website'
+.PHONY: website
 website:
-	${MAKE} build pkg="website"
-	${MAKE} test pkg="website"
+	${MAKE} build-website
+	${MAKE} test-website
 
