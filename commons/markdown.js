@@ -224,7 +224,7 @@ let getBlockNodes = function () {
             "test": tokens.paragraph,
             "parse": function (element, line, index, parser) {
                 if (line.trim().length !== 0) {
-                    parser(line.trim()).forEach(function (item) {
+                    parser(line).forEach(function (item) {
                         element.children.push(item);
                     });
                     return true; //Parse next paragraph line
