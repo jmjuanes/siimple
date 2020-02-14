@@ -267,8 +267,8 @@ let matchNode = function (nodes, str, callback) {
 
 //Container default options
 let containerDefaultOptions = {
-    //"parseContent": true, //Parse content of the block
-    //"allowEmptyLines": true, //Allow empty lines
+    "parseContent": true, //Parse content
+    "allowEmptyLines": true, //Allow empty lines
     "delimiter": ":::" //Default container delimiter
 };
 
@@ -296,9 +296,19 @@ let createContainerNode = function (name, options) {
             }
             //Check for valid line --> parse line
             else if (containerEndRegex.test(line.trim()) === false) {
-                parser(line).forEach(function (item) {
-                    element.children.push(item); //Save line
-                });
+                if (options.allowEmptyLines === false && line.trim().length === 0) {
+                    return true; //Empty line --> continue
+                }
+                //Check if user wants to parse the lines
+                if (options.parseContent === true) {
+                    parser(line).forEach(function (item) {
+                        element.children.push(item); //Save parsed line
+                    });
+                }
+                else {
+                    //Save the line without parsing
+                    element.children.push(line);
+                }
                 return true; //process next line
             }
             //Default: stop parsing lines
