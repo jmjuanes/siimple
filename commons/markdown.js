@@ -76,6 +76,12 @@ let tokens = {
     // Link: capture link url and content
     // [My website](https://website.me)
     "link": /^\[(.*?)\]\(([^\t\n\s]*?)\)/,
+    //
+    // list
+    "list": /^[\t\s]*?(?:-|\+|\*)\s+(.*)/,
+    // 
+    // Ordered list
+    "orderedList": /^[\t\s]*?(?:\d(?:\)|\.))\s+(.*)/,
     // 
     // Inline html code block
     // <strong>Hello</strong>
@@ -181,6 +187,21 @@ let getBlockNodes = function () {
                     return true;
                 }
                 //Default --> end of block
+                return false;
+            }
+        },
+        "list": {
+            "test": tokens.list,
+            "parse": function (element, line, index, parser) {
+                if (index === 0 || tokens.list.test(line) === true) {
+                    let item = createElement("listItem", {});
+                    matchRegex(line, tokens.list, function (full, content) {
+                        item["children"] = parser(content);
+                    });
+                    element["children"].push(item); //Save list item
+                    return true; //Parse next lie
+                }
+                //Default --> line not valid
                 return false;
             }
         },
