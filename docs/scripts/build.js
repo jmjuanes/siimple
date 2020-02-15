@@ -30,6 +30,9 @@ process.nextTick(function () {
     tips.forEach(function (name) {
         return markdown.registerContainer("tip:" + name, {});
     });
+    markdown.registerContainer("snippet", {
+        "parseContent": false
+    });
     let data = {}; //Store global data object
     //walkDir(paths.dataSrc, [".json"], function (file) {
     //    let name = path.basename(file, ".json"); //Get data name
