@@ -12,6 +12,11 @@ let compile = function (content, options) {
     return handlebars.compile(content)(options);
 };
 
+//Read json file
+let readJSON = function (file) {
+    return JSON.parse(fs.readFileSync(file, "utf8"));
+};
+
 //Convert JSON to string
 let jsonToString = function (content) {
     return JSON.stringify(content, null, "    "); //Normal
@@ -25,7 +30,7 @@ let encodePath = function (filePath) {
 };
 
 process.nextTick(function () {
-    let config = JSON.parse(fs.readFileSync(paths.config, "utf8")); //Import site config
+    let config = readJSON(paths.config); //Import site config
     //Initialize markdown configuration
     tips.forEach(function (name) {
         return markdown.registerContainer("tip:" + name, {});
@@ -41,17 +46,18 @@ process.nextTick(function () {
     //Build packages
     Object.keys(config.packages).forEach(function (name) {
         //Import package info
-        let pkgPath = path.join(paths.packages, config.packages[name].folder, "package.json");
-        let package = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
+        let pkgPath = path.join(paths.packages, config.packages[name]);
+        let package = readJSON(path.join(pkgPath, "package.json"));
+        let pages = readJSON(path.join(pkgPath, "docs", "config.json")); //Import pages
         //Add package metadata
-        Object.assign(config.packages[name], {
+        config.packages[name] = Object.assign({}, {
             "name": package.name,
             "version": package.version,
             "description": package.description
         });
-        delete config.packages[name].folder; //Delete folder key
+        //delete config.packages[name].folder; //Delete folder key
         //Parse sidebar items
-        config.packages[name].sidebar = config.packages[name].sidebar.map(function (item) {
+        config.packages[name].sidebar = pages.map(function (item) {
             //Check for group item
             if (typeof item.group === "string") {
                 return {
@@ -60,15 +66,15 @@ process.nextTick(function () {
                 };
             }
             let file = item.page;
-            let vfile = virtualFile(path.join(paths.pagesSrc, file)); //Create the new virtual file
+            let vfile = virtualFile(path.join(pkgPath, "docs", file)); //Create the new virtual file
             virtualFile.read(vfile); //Read virtual file content
             //Build the output filename
-            let outputFilePath = path.format({
+            let outputFilePath = path.normalize(path.format({
                 "root": "/",
-                "dir": path.join("/", path.dirname(file)),
+                "dir": path.join("/", name, path.dirname(file)),
                 "name": path.basename(file, path.extname(file)),
                 "ext": ".html"
-            });
+            }));
             //Parse the markdown
             let fileContent = {
                 "title": vfile.data.title,

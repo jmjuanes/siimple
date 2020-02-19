@@ -8,8 +8,6 @@ let resolveTo = function (to) {
 let buildPath = resolveTo("../www");
 
 module.exports = {
-    "dataSrc": resolveTo("../data/"),
-    "pagesSrc": resolveTo("../pages/"),
     "packages": resolveTo("../../packages"),
     "config": resolveTo("../config.json"),
     "build": buildPath,
