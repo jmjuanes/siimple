@@ -1,0 +1,34 @@
+@import "@siimple/css/scss/variables.scss";
+
+//Snippet container
+.root {
+    display: block;
+    border-radius: 5px;
+    background-color: siimple-default-color("light");
+    padding: 15px;
+    margin-bottom: 20px;
+}
+//Snippet example
+.example {
+    display: block;
+    overflow-x: auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    margin-top: 10px;
+}
+//Snippet code
+.code {
+    display: block;
+    margin-top: 0px;
+    border-radius: 5px;
+    //margin-bottom: 10px;
+    overflow-x: auto;
+    width: calc(100% - 20px);
+    padding: 10px;
+    line-height: 18px;
+    font-size: 12px;
+    background-color: rgba(255,255,255,0.5);
+}
+
