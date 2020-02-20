@@ -1,6 +1,5 @@
 node_bin=./node_modules/.bin
 pkgs_folder=./packages
-apps_folder=./apps
 docs_folder=./docs
 website_folder=./website
 
@@ -41,11 +40,7 @@ lint:
 # Example: make build pkg="siimple-css"
 .PHONY: build
 build: 
-ifdef pkg
 	cd ${pkgs_folder}/${pkg}/ && ${MAKE} build
-else ifdef app
-	cd ${apps_folder}/${app} && ${MAKE} build 
-endif
 
 # Build siimple website and documentation
 .PHONY: build-docs build-website
@@ -58,11 +53,7 @@ build-website:
 # Example: make test pkg="siimple-css"
 .PHONY: test
 test:
-ifdef pkg
 	cd ${pkgs_folder}/${pkg}/ && ${MAKE} test
-else ifdef app
-	cd ${apps_folder}/${app} && ${MAKE} test
-endif
 
 # Test siimple documentation and website
 .PHONY: test-docs test-website
@@ -75,11 +66,7 @@ test-website:
 # Example: make publish pkg="siimple-css"
 .PHONY: publish
 publish:
-ifdef pkg
 	cd ${pkgs_folder}/${pkg}/ && ${MAKE} publish
-else ifdef app
-	cd ${apps_folder}/${app} && ${MAKE} publish
-endif
 
 # Build and serve siimple documentation site
 # Sortcut for 'make build-website && make test-website'
