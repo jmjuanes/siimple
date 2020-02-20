@@ -1,0 +1,163 @@
+//
+// @siimple/lib - core scss library for siimple
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/develop/LICENSE.md
+// Repository: https://github.com/siimple/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Default class prefix
+$siimple-prefix: "siimple";
+
+//Darker/lighter color amount
+$siimple-darker-amount: 20% !default;
+$siimple-lighter-amount: 20% !default;
+
+//Default colors
+$siimple-white: #ffffff !default;
+$siimple-navy: #34495e !default;
+$siimple-primary: #4e91e4 !default;
+$siimple-secondary: #4ccdac !default;
+$siimple-success: #4acf7f !default;
+$siimple-warning: #fbc850 !default;
+$siimple-error: #ee675d !default;
+$siimple-light: #eef2f7 !default; //Light color
+$siimple-light2: #cbd8e6 !default; //Second light color
+$siimple-light3: #dde5ee !default; //Third light color
+
+//Default color palette
+$siimple-palette: (
+    "primary": (
+        "darker": darken($siimple-primary, $siimple-darker-amount), 
+        "base": $siimple-primary, 
+        "lighter": lighten($siimple-primary, $siimple-lighter-amount), 
+        "invert": $siimple-white
+    ),
+    "secondary": (
+        "darker": darken($siimple-secondary, $siimple-darker-amount),
+        "base": $siimple-secondary,
+        "lighter": lighten($siimple-secondary, $siimple-lighter-amount),
+        "invert": $siimple-white
+    ),
+    "success": (
+        "darker": darken($siimple-success, $siimple-darker-amount), 
+        "base": $siimple-success, 
+        "lighter": lighten($siimple-success, $siimple-lighter-amount), 
+        "invert": $siimple-white
+    ),
+    "warning": (
+        "darker": darken($siimple-warning, $siimple-darker-amount), 
+        "base": $siimple-warning, 
+        "lighter": lighten($siimple-warning, $siimple-lighter-amount), 
+        "invert": $siimple-white
+    ),
+    "error": (
+        "darker": darken($siimple-error, $siimple-darker-amount), 
+        "base": $siimple-error, 
+        "lighter": lighten($siimple-error, $siimple-lighter-amount), 
+        "invert": $siimple-white
+    ),
+    "dark": (
+        "darker": darken($siimple-navy, $siimple-darker-amount), 
+        "base": $siimple-navy, 
+        "lighter": lighten($siimple-navy, $siimple-lighter-amount), 
+        "invert": $siimple-white
+    ),
+    "light": (
+        "darker": $siimple-grey, 
+        "base": $siimple-light, 
+        "lighter":$siimple-white, 
+        "invert": $siimple-navy
+    ) 
+);
+
+//Default colors list
+$siimple-colors: ("primary", "secondary", "success", "warning", "error", "dark", "light") !default;
+$siimple-basic-colors: ("primary", "secondary", "success", "warning", "error") !default;
+$siimple-status-colors: ("success", "error", "warning") !default; //Status colors
+$siimple-theme-colors: ("light", "dark") !default; //Theme colors
+
+//Default breakpoints variables
+$siimple-gap: 20px !default; //Gap for breakpoints
+$siimple-breakpoint-fluid: 100% !default;
+$siimple-breakpoint-extra-small: 480px !default;
+$siimple-breakpoint-small: 600px !default;
+$siimple-breakpoint-medium: 768px !default;
+$siimple-breakpoint-large: 960px !default;
+$siimple-breakpoint-extra-large: 1280px !default;
+
+//Default breakpoints map
+$siimple-breakpoint: (
+    "xl": $siimple-breakpoint-extra-large,
+    "lg": $siimple-breakpoint-large,
+    "md": $siimple-breakpoint-medium,
+    "sm": $siimple-breakpoint-small,
+    "xs": $siimple-breakpoint-extra-small
+);
+
+//Default text color
+$siimple-text: $siimple-navy !default;
+
+//Default font variables
+$siimple-font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700";
+$siimple-font-size: 15px !default;
+$siimple-font-weight: 400 !default;
+$siimple-font-family: "Roboto", sans-serif !default;
+
+//Default line-height
+$siimple-line-height: 22px !default;
+
+//Default border values
+$siimple-border-radius: 5px !default;
+
+//Default margin values
+$siimple-margin-top: 0px !default;
+$siimple-margin-bottom: 15px !default;
+
+//Default heading values
+$siimple-headings: (
+    "1": ("size": 40px, "line-height": 51px, "margin-bottom": 20px, "margin-top": 30px),
+    "2": ("size": 32px, "line-height": 40px, "margin-bottom": 16px, "margin-top": 30px),
+    "3": ("size": 28px, "line-height": 29px, "margin-bottom": 14px, "margin-top": 30px),
+    "4": ("size": 24px, "line-height": 25px, "margin-bottom": 12px, "margin-top": 30px),
+    "5": ("size": 20px, "line-height": 22px, "margin-bottom": 10px, "margin-top": 30px),
+    "6": ("size": 16px, "line-height": 20px, "margin-bottom": 8px, "margin-top": 30px)
+);
+
+//Default grid sizes
+$siimple-grid: (
+    "1": "8.33%", 
+    "2": "16.66%",
+    "3": "24.99%", 
+    "4": "33.33%",
+    "5": "41.66%", 
+    "6": "49.99%",
+    "7": "58.33%", 
+    "8": "66.66%",
+    "9": "74.99%", 
+    "10": "83.33%",
+    "11": "91.66%", 
+    "12": "99.99%"
+);
+
+//Default percentages values 
+$siimple-percentages : (
+    "0": 0%,
+    "25": 25%,
+    "50": 50%,
+    "75": 75%,
+    "100": 100%
+);
+
+//Default spacing variables
+$siimple-spacing: (
+    "0": 0px,
+    "1": 5px,
+    "2": 10px,
+    "3": 15px,
+    "4": 25px,
+    "5": 45px,
+    "auto": auto
+) !default;
+
+
