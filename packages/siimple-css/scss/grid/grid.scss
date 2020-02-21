@@ -5,32 +5,28 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Grid variables
-$siimple-grid-margin-left: auto;
-$siimple-grid-margin-right: auto;
-
-//Grid row variables
-$siimple-grid-row-margin: -12px;
-
-//Gird colum variables
-$siimple-grid-column-margin: 10px;
-$siimple-grid-column-padding: 12px;
-$siimple-grid-column-sizes: $siimple-default-grid; 
+$grid-margin-left: auto;
+$grid-margin-right: auto;
+$grid-row-margin: -12px;
+$grid-column-margin: 10px;
+$grid-column-padding: 12px;
 
 //Grid class
-.#{$siimple-prefix}-grid {
+.#{siimple.$name}-grid {
     display: block;
     width: 100%;
-    margin-left: $siimple-grid-margin-left;
-    margin-right: $siimple-grid-margin-right;
+    margin-left: $grid-margin-left;
+    margin-right: $grid-margin-right;
     //Grid row
     &-row {
         display: block;
         //width: 100%;
-        margin-left: $siimple-grid-row-margin;
-        margin-right: $siimple-grid-row-margin;
+        margin-left: $grid-row-margin;
+        margin-right: $grid-row-margin;
         &:after {
             content: " ";
             clear: both;
@@ -43,27 +39,23 @@ $siimple-grid-column-sizes: $siimple-default-grid;
         display: inline-block;
         vertical-align: top;
         float: left;
-        padding: $siimple-grid-column-padding;
-        //margin: {
-        //    left: $siimple-grid-column-margin;
-        //    right: $siimple-grid-column-margin;
-        //}
+        padding: $grid-column-padding;
     }
     //Grid default column sizes
-    @each $grid-name, $grid-width in $siimple-grid-column-sizes {
+    @each $grid-name, $grid-width in siimple.$grid {
         &-col--#{$grid-name} {
             //width: #{$grid-width};
-            width: calc(#{$grid-width} - 2 * #{$siimple-grid-column-padding});
+            width: calc(#{$grid-width} - 2 * #{$grid-column-padding});
         }
     }
     //Grid columns for each breakpoint
-    @each $grid-breakpoint, $grid-screen in $siimple-default-breakpoint {
+    @each $grid-breakpoint, $grid-screen in siimple.$breakpoints {
         @media (max-width: $grid-screen) {
-            @each $grid-name, $grid-width in $siimple-grid-column-sizes {
+            @each $grid-name, $grid-width in siimple.$grid {
                 &-col--#{$grid-breakpoint}-#{$grid-name},
                 &-col-#{$grid-breakpoint}--#{$grid-name} {
                     //width: #{$grid-width};
-                    width: calc(#{$grid-width} - 2 * #{$siimple-grid-column-padding});
+                    width: calc(#{$grid-width} - 2 * #{$grid-column-padding});
                 }
             }
             //Hide grid column
