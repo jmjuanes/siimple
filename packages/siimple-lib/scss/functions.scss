@@ -23,23 +23,23 @@
 
 //Make a color darker
 @function color-darker ($color: "dark") {
-    @return utils.darken(color($color), variables.$darker-amount);
+    @return utils.darken(color($color), defaults.$darker-amount);
 }
 
 //Make a color lighter
 @function color-lighter ($color: "dark") {
-    @return utils.lighten(color($color), variables.$lighter-amount);
+    @return utils.lighten(color($color), defaults.$lighter-amount);
 }
 
 //Invert a color
 @function color-invert ($color) {
-    @if utils.is-string($color) == false {
+    @if utils.is-string($color) == true {
         $color: color($color); //Get siimple color
     }
     @if utils.luminance($color) > 0.55 {
-        @return variables.$dark; //Return dark color
+        @return defaults.$dark; //Return dark color
     } @else {
-        @return variables.$white; //Default: white color
+        @return defaults.$white; //Default: white color
     }
 }
 
