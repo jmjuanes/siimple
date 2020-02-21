@@ -5,17 +5,18 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Paragraph class
-.#{$siimple-prefix}-paragraph, 
-.#{$siimple-prefix}-p {
+.#{siimple.$name}-paragraph, 
+.#{siimple.$name}-p {
     display: block;
     //font-family: $siimple-default-text-font;
-    line-height: $siimple-default-line-height;
-    font-size: $siimple-default-font-size;
+    //line-height: siimple.$line-height;
+    //font-size: siimple.$text-size;
     margin-top: 0px;
-    margin-bottom: $siimple-default-margin-bottom;
+    margin-bottom: siimple.$margin-bottom;
     //Paragraph lead modifier
     &--lead {
         font-size: 20px;

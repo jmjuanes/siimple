@@ -5,29 +5,31 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Pre vriables
-$siimple-pre-padding: 15px;
+$pre-text-size: 14px !default;
+$pre-line-height: 20px !default;
+$pre-padding: 15px !default;
 
 //Pre class
-.#{$siimple-prefix}-pre {
+.#{siimple.$name}-pre {
     display: block;
     overflow-x: auto;
-    width: calc(100% - 2 * #{$siimple-pre-padding});
-    color: siimple-default-color("dark");
-    line-height: 22px;
-    font-size: 14px;
-    background-color: siimple-default-color("light");
-    border-radius: $siimple-default-border-radius;
-    padding: $siimple-pre-padding;
-    margin-bottom: $siimple-default-margin-bottom;
+    width: calc(100% - 2 * #{$pre-padding});
+    color: siimple.color("dark");
+    line-height: $pre-line-height;
+    font-size: $pre-text-size;
+    background-color: siimple.color("light");
+    border-radius: siimple.$border-radius;
+    padding: $pre-padding;
+    margin-bottom: siimple.$margin-bottom;
     margin-top: 0px;
     //Pre dark mode
     &--dark {
-        background-color: siimple-default-color("dark") !important;
-        color: $siimple-default-white;
+        background-color: siimple.color("dark") !important;
+        color: siimple.$white;
     }
 }
 

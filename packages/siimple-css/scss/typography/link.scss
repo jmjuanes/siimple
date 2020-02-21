@@ -5,13 +5,13 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Link class
-.#{$siimple-prefix}-link {
+.#{siimple.$name}-link {
     //font-family: $siimple-default-font-size;
-    color: siimple-default-color("primary");
+    color: siimple.color("primary");
     font-weight: 600;
     text-decoration: none;
     transition: color 0.3s;
@@ -19,7 +19,7 @@
     &:hover {
         //text-decoration: underline;
         //cursor: pointer;
-        color: siimple-default-color("primary", "dark");
+        color: siimple.color-darker("primary");
     }
 }
 

@@ -5,25 +5,23 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+
+@use "@siimple/lib" as siimple;
+
+//Code variables
+$code-text-size: 13px;
 
 //Code class
-.#{$siimple-prefix}-code {
-    color: siimple-default-color("error");
+.#{siimple.$name}-code {
+    color: siimple.color("error");
     text-decoration: none;
-    font-size: 13px;
+    font-size: $code-text-size;
     font-weight: 600;
-    background-color: siimple-default-color("light");
-    border-radius: 3px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    //Code block dark color
-    &--dark {
-        background-color: siimple-default-color("dark") !important;
-        color: $siimple-default-white;
-    }
+    //background-color: siimple.color("light");
+    //border-radius: 3px;
+    //padding-top: 2px;
+    //padding-bottom: 2px;
+    //padding-left: 5px;
+    //padding-right: 5px;
 }
 
