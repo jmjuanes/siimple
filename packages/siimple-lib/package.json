@@ -1,0 +1,22 @@
+{
+    "name": "@siimple/lib",
+    "version": "0.0.1",
+    "description": "Core scss library for siimple",
+    "style": "index.scss",
+    "main": "index.scss",
+    "author": "Josemi Juanes <josemijuanes@gmail.com>",
+    "license": "MIT",
+    "homepage": "https://www.siimple.xyz/",
+    "repository": "https://github.com/siimple/siimple",
+    "bugs": "https://github.com/siimple/siimple/issues",
+    "keywords": [
+        "siimple",
+        "css",
+        "scss",
+        "sass"
+    ],
+    "files": [
+        "scss",
+        "index.scss"
+    ]
+}
