@@ -1,0 +1,57 @@
+//
+// @siimple/lib - core scss library for siimple
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/develop/LICENSE.md
+// Repository: https://github.com/siimple/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Default class prefix
+$name: "siimple" !default;
+
+//Darker/lighter color amount
+$darker-amount: 20% !default;
+$lighter-amount: 20% !default;
+
+//Default colors
+$white: #ffffff !default;
+$navy: #34495e !default;
+$primary: #4e91e4 !default;
+$secondary: #4ccdac !default;
+$success: #4acf7f !default;
+$warning: #fbc850 !default;
+$error: #ee675d !default;
+$light: #eef2f7 !default; //Light color
+$light2: #cbd8e6 !default; //Second light color
+$light3: #dde5ee !default; //Third light color
+
+//Default breakpoints variables
+$gap: 20px !default; //Gap for breakpoints
+$breakpoint-fluid: 100% !default;
+$breakpoint-extra-small: 480px !default;
+$breakpoint-small: 600px !default;
+$breakpoint-medium: 768px !default;
+$breakpoint-large: 960px !default;
+$breakpoint-extra-large: 1280px !default;
+
+//Default text properties
+$text-color: $navy !default;
+$text-size: 15px !default;
+$text-weight: 400 !default;
+
+//Default font variables
+$font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700" !default;
+$font-family: "Roboto", sans-serif !default;
+
+//Default line-height
+$line-height: 22px !default;
+
+//Default border values
+$border-radius: 5px !default;
+
+//Default margin values
+$margin-top: 0px !default;
+$margin-bottom: 15px !default;
+
+
+
