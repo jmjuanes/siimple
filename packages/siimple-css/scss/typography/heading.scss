@@ -9,6 +9,9 @@
 @use "sass:map";
 @use "@siimple/lib" as siimple;
 
+//Headings default variables
+$heading-margin-bottom: 0.5em !default;
+
 //Heading class
 .#{siimple.$name}-h {
     @each $heading-number,$heading-variables in siimple.$headings {
@@ -22,7 +25,7 @@
             //color: $siimple-default-color;
             padding: 0px;
             //margin-bottom: map-get($heading_variables, "margin-bottom");
-            margin-bottom: 0.5em;
+            margin-bottom: $heading-margin-bottom;
             //Not first child
             &:not(:first-child) {
                 margin-top: map.get($heading-variables, "margin-top");

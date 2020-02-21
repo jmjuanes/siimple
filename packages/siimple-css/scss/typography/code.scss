@@ -9,7 +9,7 @@
 @use "@siimple/lib" as siimple;
 
 //Code variables
-$code-text-size: 13px;
+$code-text-size: 13px !default;
 
 //Code class
 .#{siimple.$name}-code {
