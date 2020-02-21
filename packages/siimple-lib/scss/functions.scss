@@ -1,0 +1,45 @@
+//
+// @siimple/lib - core scss library for siimple
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/develop/LICENSE.md
+// Repository: https://github.com/siimple/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@use "sass:map";
+@use "./variables.scss" as variables;
+@use "./utils.scss" as utils;
+
+//Get a color from the color palette
+@function color ($color: "dark", $index: "base") {
+    //Check for white color
+    @if $color == "white" {
+        @return variables.$white;
+    }
+    //Check for dark or light color indexes
+    @if $index == "dark" {
+        $index: "darken";
+    }
+    @if $index == "light" {
+        $index: "lighten";
+    }
+    $list: map.get(variables.$palette, "#{$color}");
+    $value: map.get($list, "#{$index}");
+    @return $value;
+}
+
+//Invert a color
+@function color-invert ($color) {
+    @if utils.is-string($color) == false {
+        $color: color($color, "base"); //Get siimple color
+    }
+    @if utils.luminance($color) > 0.55 {
+        @return variables.$dark; //Return dark color
+    } @else {
+        @return variables.$white; //Default: white color
+    }
+}
+
+
+
+
