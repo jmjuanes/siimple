@@ -15,12 +15,12 @@ $lighter-amount: 20% !default;
 
 //Default colors
 $white: #ffffff !default;
-$navy: #34495e !default;
 $primary: #4e91e4 !default;
 $secondary: #4ccdac !default;
 $success: #4acf7f !default;
 $warning: #fbc850 !default;
 $error: #ee675d !default;
+$dark: #34495e !default;
 $light: #eef2f7 !default; //Light color
 $light2: #cbd8e6 !default; //Second light color
 $light3: #dde5ee !default; //Third light color
@@ -35,7 +35,7 @@ $breakpoint-large: 960px !default;
 $breakpoint-extra-large: 1280px !default;
 
 //Default text properties
-$text-color: $navy !default;
+$text-color: $dark !default;
 $text-size: 15px !default;
 $text-weight: 400 !default;
 
