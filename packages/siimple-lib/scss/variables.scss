@@ -38,11 +38,11 @@ $status-colors: (
 
 //Default breakpoints map
 $breakpoints: (
-    "xl": $breakpoint-extra-large,
-    "lg": $breakpoint-large,
-    "md": $breakpoint-medium,
-    "sm": $breakpoint-small,
-    "xs": $breakpoint-extra-small
+    "xl": defaults.$breakpoint-extra-large,
+    "lg": defaults.$breakpoint-large,
+    "md": defaults.$breakpoint-medium,
+    "sm": defaults.$breakpoint-small,
+    "xs": defaults.$breakpoint-extra-small
 );
 
 //Default heading values
