@@ -5,13 +5,14 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Rule class 
-.#{$siimple-prefix}-rule {
+.#{siimple.$name}-rule {
     display: block;
     height: 2px;
-    background-color: siimple-default-color("light");
+    background-color: siimple.color("light");
     padding: 0px;
     margin-top: 15px;
     margin-bottom: 15px;

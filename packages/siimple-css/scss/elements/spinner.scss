@@ -5,14 +5,16 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
+
+@use "sass:map";
+@use "@siimple/lib" as siimple;
 
 //Base spinner mixin
 @mixin siimple-spinner-base {
     width: 12px;
     height: 12px;
     //content: "";
-    background-color: siimple-default-color("white");
+    background-color: siimple.color("white");
     animation: siimple-spinner-animation 0.6s infinite alternate;
     animation-fill-mode: both;
     border-radius: 100px;
@@ -28,7 +30,7 @@
 }
 
 //Spinner class
-.#{$siimple-prefix}-spinner {
+.#{siimple.$name}-spinner {
     @include siimple-spinner-base();
     display: block;
     text-indent: -9999em;
@@ -58,11 +60,11 @@
         top: 5px;
     }
     //Spinner colors
-    @each $color in $siimple-default-colors {
+    @each $color in map.keys(siimple.$colors) {
         &#{&}--#{$color}, 
         &#{&}--#{$color}:after,
         &#{&}--#{$color}:before {
-            background-color: siimple-default-color($color, "base");
+            background-color: siimple.color($color);
         }
     }
 }

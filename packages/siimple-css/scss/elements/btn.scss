@@ -5,52 +5,49 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
 
-//Button variables
-//$siimple-btn-height: 34px;
-//$siimple-btn-small-height: 24px;
-//$siimple-btn-big-height: 48px;
+@use "sass:map";
+@use "@siimple/lib" as siimple;
 
 //Button class
-.#{$siimple-prefix}-btn {
+.#{siimple.$name}-btn {
     display: inline-block;
     //min-height: 24px;
     //transition: opacity 0.3s;
     transition: background-color 0.3s;
     cursor: pointer;
-    line-height: 24px;
+    line-height: 20px;
     text-align: center;
     text-decoration: none;
-    font-size: $siimple-default-font-size;
+    font-size: 14px;
     //font-weight: bold;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 12px;
+    padding-right: 12px;
     padding-top: 5px;
     padding-bottom: 5px;
-    border-radius: $siimple-default-border-radius;
+    border-radius: siimple.$border-radius;
     //Disable default button element borders
     //https://github.com/siimple/siimple/pull/17
     border: 0px;
     //Disable user selection
-    @include siimple-utils-select(none);
+    @include siimple.user-select(none);
     //Default button style
-    color: $siimple-default-color;
-    background-color: $siimple-default-white;
+    color: siimple.$text-color;
+    background-color: siimple.$white;
     //Button hover style
     &:hover {
         text-decoration: none;
         //opacity: 0.8;
-        background-color: siimple-default-color("light");
+        background-color: siimple.color("light");
     }
     //Button colors
-    @each $color in $siimple-default-colors {
+    @each $color in map.keys(siimple.$colors) {
         &#{&}--#{$color} {
-            background-color: siimple-default-color($color, "base");
-            color: siimple-default-color($color, "over");
+            background-color: siimple.color($color);
+            color: siimple.color-invert($color);
             //Button hover
             &:hover {
-                background-color: siimple-default-color($color, "dark");
+                background-color: siimple.color-darker($color);
             }
         }
     }
@@ -67,9 +64,8 @@
         padding-right: 10px;
         padding-top: 4px;
         padding-bottom: 4px;
-        font-size: 12px;
-        //min-height: 24px;
-        line-height: 16px;
+        font-size: 10px;
+        line-height: 15px;
     }
     //Big button
     &--big {
@@ -77,8 +73,7 @@
         padding-right: 20px;
         padding-top: 9px;
         padding-bottom: 9px;
-        font-size: 20px;
-        //min-height: 48px;
+        font-size: 18px;
         line-height: 30px;
     }
     //Fluid button
@@ -86,7 +81,6 @@
         width: 100%;
         padding-left: 0px !important;
         padding-right: 0px !important;
-        //width: calc(100% - #{$siimple-btn-padding-left} - #{$siimple-btn-padding-right});
     }
     //Rounded button
     &--rounded {
@@ -109,10 +103,10 @@
     //White button
     &--white {
         transition: opacity 0.3s !important;
-        background-color: $siimple-default-white;
+        background-color: siimple.$white;
         opacity: 1.0;
         &:hover {
-            background-color: $siimple-default-white !important;
+            background-color: siimple.$white !important;
             opacity: 0.8;
         }
     }
