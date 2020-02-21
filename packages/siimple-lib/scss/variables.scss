@@ -6,115 +6,44 @@
 // Website:    https://www.siimple.xyz
 //
 
+@use "./defaults.scss" as defaults;
 @use "./utils.scss" as utils;
 
-//Default class prefix
-$name: "siimple";
-
-//Darker/lighter color amount
-$darker-amount: 20% !default;
-$lighter-amount: 20% !default;
-
-//Default colors
-$white: #ffffff !default;
-$navy: #34495e !default;
-$primary: #4e91e4 !default;
-$secondary: #4ccdac !default;
-$success: #4acf7f !default;
-$warning: #fbc850 !default;
-$error: #ee675d !default;
-$light: #eef2f7 !default; //Light color
-$light2: #cbd8e6 !default; //Second light color
-$light3: #dde5ee !default; //Third light color
-
 //Default color palette
-$palette: (
-    "primary": (
-        "darker": utils.darken($primary, $darker-amount), 
-        "base": $primary, 
-        "lighter": utils.lighten($primary, $lighter-amount), 
-        "invert": $white
-    ),
-    "secondary": (
-        "darker": utils.darken($secondary, $darker-amount),
-        "base": $secondary,
-        "lighter": utils.lighten($secondary, $lighter-amount),
-        "invert": $white
-    ),
-    "success": (
-        "darker": utils.darken($success, $darker-amount), 
-        "base": $success, 
-        "lighter": utils.lighten($success, $lighter-amount), 
-        "invert": $white
-    ),
-    "warning": (
-        "darker": utils.darken($warning, $darker-amount), 
-        "base": $warning, 
-        "lighter": utils.lighten($warning, $lighter-amount), 
-        "invert": $white
-    ),
-    "error": (
-        "darker": utils.darken($error, $darker-amount), 
-        "base": $error, 
-        "lighter": utils.lighten($error, $lighter-amount), 
-        "invert": $white
-    ),
-    "dark": (
-        "darker": utils.darken($navy, $darker-amount), 
-        "base": $navy, 
-        "lighter": utils.lighten($navy, $lighter-amount), 
-        "invert": $white
-    ),
-    "light": (
-        "darker": $light2, 
-        "base": $light, 
-        "lighter":$white, 
-        "invert": $navy
-    ) 
+$colors: (
+    "primary": defaults.$primary,
+    "secondary": defaults.$secondary,
+    "success": defaults.$success,
+    "warning": defaults.$warning,
+    "error": defaults.$error,
+    "dark": defaults.$dark,
+    "light": defaults.$light
 );
 
-//Default colors list
-$colors: ("primary", "secondary", "success", "warning", "error", "dark", "light") !default;
-$basic-colors: ("primary", "secondary", "success", "warning", "error") !default;
-$status-colors: ("success", "error", "warning") !default; //Status colors
-$theme-colors: ("light", "dark") !default; //Theme colors
+//Basic colors
+$basic-colors: (
+    "primary": defaults.$primary,
+    "secondary": defaults.$secondary,
+    "success": defaults.$success,
+    "warning": defaults.$warning,
+    "error": defaults.$error
+);
 
-//Default breakpoints variables
-$gap: 20px !default; //Gap for breakpoints
-$breakpoint-fluid: 100% !default;
-$breakpoint-extra-small: 480px !default;
-$breakpoint-small: 600px !default;
-$breakpoint-medium: 768px !default;
-$breakpoint-large: 960px !default;
-$breakpoint-extra-large: 1280px !default;
+//Status colors
+$status-colors: (
+    "success": defaults.$success,
+    "warning": defaults.$warning,
+    "error": defaults.$error
+);
 
 //Default breakpoints map
-$breakpoint: (
+$breakpoints: (
     "xl": $breakpoint-extra-large,
     "lg": $breakpoint-large,
     "md": $breakpoint-medium,
     "sm": $breakpoint-small,
     "xs": $breakpoint-extra-small
 );
-
-//Default text color
-$text: $navy !default;
-
-//Default font variables
-$font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700";
-$font-size: 15px !default;
-$font-weight: 400 !default;
-$font-family: "Roboto", sans-serif !default;
-
-//Default line-height
-$line-height: 22px !default;
-
-//Default border values
-$border-radius: 5px !default;
-
-//Default margin values
-$margin-top: 0px !default;
-$margin-bottom: 15px !default;
 
 //Default heading values
 $headings: (
@@ -124,7 +53,7 @@ $headings: (
     "4": ("size": 24px, "line-height": 25px, "margin-bottom": 12px, "margin-top": 30px),
     "5": ("size": 20px, "line-height": 22px, "margin-bottom": 10px, "margin-top": 30px),
     "6": ("size": 16px, "line-height": 20px, "margin-bottom": 8px, "margin-top": 30px)
-) !default;
+);
 
 //Default grid sizes
 $grid: (
@@ -140,7 +69,7 @@ $grid: (
     "10": "83.33%",
     "11": "91.66%", 
     "12": "99.99%"
-) !default;
+);
 
 //Default percentages values 
 $percentages : (
@@ -149,7 +78,7 @@ $percentages : (
     "50": 50%,
     "75": 75%,
     "100": 100%
-) !default;
+);
 
 //Default spacing variables
 $spacing: (
@@ -160,6 +89,5 @@ $spacing: (
     "4": 25px,
     "5": 45px,
     "auto": auto
-) !default;
-
+);
 
