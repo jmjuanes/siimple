@@ -5,25 +5,22 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
 
-//Blockquote variables
-$siimple-blockquote-color: siimple-default-color("dark", "light");
+@use "@siimple/lib" as siimple;
 
 //Blockquote class
-.#{$siimple-prefix}-blockquote {
+.#{siimple.$name}-blockquote {
     display: block;
     //font-family: $siimple-default-text-font;
-    color: $siimple-blockquote-color;
-    font-size: $siimple-default-font-size;
-    line-height: $siimple-default-line-height;
-    border-left: 4px solid $siimple-blockquote-color;
+    color: siimple.color-lighter("dark");
+    //font-size: $siimple-default-font-size;
+    //line-height: $siimple-default-line-height;
+    border-left: 4px solid siimple.color-lighter("dark");
     padding-top: 5px;
     padding-bottom: 5px;
     padding-right: 10px;
     padding-left: 20px;
-    margin-bottom: $siimple-default-margin-bottom;
+    margin-bottom: siimple.$margin-bottom;
     //Fix default margin values in blockquote element
     margin-left: 0px;
     margin-right: 0px;
