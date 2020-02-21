@@ -21,7 +21,7 @@
 }
 
 //Alias for disabling user selection
-@mixin disable-select () {
+@mixin disable-select () {
     @include user-select("none");
 }
 
