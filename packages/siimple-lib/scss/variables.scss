@@ -6,126 +6,128 @@
 // Website:    https://www.siimple.xyz
 //
 
+@use "./utils.scss" as utils;
+
 //Default class prefix
-$siimple-prefix: "siimple";
+$name: "siimple";
 
 //Darker/lighter color amount
-$siimple-darker-amount: 20% !default;
-$siimple-lighter-amount: 20% !default;
+$darker-amount: 20% !default;
+$lighter-amount: 20% !default;
 
 //Default colors
-$siimple-white: #ffffff !default;
-$siimple-navy: #34495e !default;
-$siimple-primary: #4e91e4 !default;
-$siimple-secondary: #4ccdac !default;
-$siimple-success: #4acf7f !default;
-$siimple-warning: #fbc850 !default;
-$siimple-error: #ee675d !default;
-$siimple-light: #eef2f7 !default; //Light color
-$siimple-light2: #cbd8e6 !default; //Second light color
-$siimple-light3: #dde5ee !default; //Third light color
+$white: #ffffff !default;
+$navy: #34495e !default;
+$primary: #4e91e4 !default;
+$secondary: #4ccdac !default;
+$success: #4acf7f !default;
+$warning: #fbc850 !default;
+$error: #ee675d !default;
+$light: #eef2f7 !default; //Light color
+$light2: #cbd8e6 !default; //Second light color
+$light3: #dde5ee !default; //Third light color
 
 //Default color palette
-$siimple-palette: (
+$palette: (
     "primary": (
-        "darker": darken($siimple-primary, $siimple-darker-amount), 
-        "base": $siimple-primary, 
-        "lighter": lighten($siimple-primary, $siimple-lighter-amount), 
-        "invert": $siimple-white
+        "darker": utils.darken($primary, $darker-amount), 
+        "base": $primary, 
+        "lighter": utils.lighten($primary, $lighter-amount), 
+        "invert": $white
     ),
     "secondary": (
-        "darker": darken($siimple-secondary, $siimple-darker-amount),
-        "base": $siimple-secondary,
-        "lighter": lighten($siimple-secondary, $siimple-lighter-amount),
-        "invert": $siimple-white
+        "darker": utils.darken($secondary, $darker-amount),
+        "base": $secondary,
+        "lighter": utils.lighten($secondary, $lighter-amount),
+        "invert": $white
     ),
     "success": (
-        "darker": darken($siimple-success, $siimple-darker-amount), 
-        "base": $siimple-success, 
-        "lighter": lighten($siimple-success, $siimple-lighter-amount), 
-        "invert": $siimple-white
+        "darker": utils.darken($success, $darker-amount), 
+        "base": $success, 
+        "lighter": utils.lighten($success, $lighter-amount), 
+        "invert": $white
     ),
     "warning": (
-        "darker": darken($siimple-warning, $siimple-darker-amount), 
-        "base": $siimple-warning, 
-        "lighter": lighten($siimple-warning, $siimple-lighter-amount), 
-        "invert": $siimple-white
+        "darker": utils.darken($warning, $darker-amount), 
+        "base": $warning, 
+        "lighter": utils.lighten($warning, $lighter-amount), 
+        "invert": $white
     ),
     "error": (
-        "darker": darken($siimple-error, $siimple-darker-amount), 
-        "base": $siimple-error, 
-        "lighter": lighten($siimple-error, $siimple-lighter-amount), 
-        "invert": $siimple-white
+        "darker": utils.darken($error, $darker-amount), 
+        "base": $error, 
+        "lighter": utils.lighten($error, $lighter-amount), 
+        "invert": $white
     ),
     "dark": (
-        "darker": darken($siimple-navy, $siimple-darker-amount), 
-        "base": $siimple-navy, 
-        "lighter": lighten($siimple-navy, $siimple-lighter-amount), 
-        "invert": $siimple-white
+        "darker": utils.darken($navy, $darker-amount), 
+        "base": $navy, 
+        "lighter": utils.lighten($navy, $lighter-amount), 
+        "invert": $white
     ),
     "light": (
-        "darker": $siimple-grey, 
-        "base": $siimple-light, 
-        "lighter":$siimple-white, 
-        "invert": $siimple-navy
+        "darker": $light2, 
+        "base": $light, 
+        "lighter":$white, 
+        "invert": $navy
     ) 
 );
 
 //Default colors list
-$siimple-colors: ("primary", "secondary", "success", "warning", "error", "dark", "light") !default;
-$siimple-basic-colors: ("primary", "secondary", "success", "warning", "error") !default;
-$siimple-status-colors: ("success", "error", "warning") !default; //Status colors
-$siimple-theme-colors: ("light", "dark") !default; //Theme colors
+$colors: ("primary", "secondary", "success", "warning", "error", "dark", "light") !default;
+$basic-colors: ("primary", "secondary", "success", "warning", "error") !default;
+$status-colors: ("success", "error", "warning") !default; //Status colors
+$theme-colors: ("light", "dark") !default; //Theme colors
 
 //Default breakpoints variables
-$siimple-gap: 20px !default; //Gap for breakpoints
-$siimple-breakpoint-fluid: 100% !default;
-$siimple-breakpoint-extra-small: 480px !default;
-$siimple-breakpoint-small: 600px !default;
-$siimple-breakpoint-medium: 768px !default;
-$siimple-breakpoint-large: 960px !default;
-$siimple-breakpoint-extra-large: 1280px !default;
+$gap: 20px !default; //Gap for breakpoints
+$breakpoint-fluid: 100% !default;
+$breakpoint-extra-small: 480px !default;
+$breakpoint-small: 600px !default;
+$breakpoint-medium: 768px !default;
+$breakpoint-large: 960px !default;
+$breakpoint-extra-large: 1280px !default;
 
 //Default breakpoints map
-$siimple-breakpoint: (
-    "xl": $siimple-breakpoint-extra-large,
-    "lg": $siimple-breakpoint-large,
-    "md": $siimple-breakpoint-medium,
-    "sm": $siimple-breakpoint-small,
-    "xs": $siimple-breakpoint-extra-small
+$breakpoint: (
+    "xl": $breakpoint-extra-large,
+    "lg": $breakpoint-large,
+    "md": $breakpoint-medium,
+    "sm": $breakpoint-small,
+    "xs": $breakpoint-extra-small
 );
 
 //Default text color
-$siimple-text: $siimple-navy !default;
+$text: $navy !default;
 
 //Default font variables
-$siimple-font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700";
-$siimple-font-size: 15px !default;
-$siimple-font-weight: 400 !default;
-$siimple-font-family: "Roboto", sans-serif !default;
+$font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700";
+$font-size: 15px !default;
+$font-weight: 400 !default;
+$font-family: "Roboto", sans-serif !default;
 
 //Default line-height
-$siimple-line-height: 22px !default;
+$line-height: 22px !default;
 
 //Default border values
-$siimple-border-radius: 5px !default;
+$border-radius: 5px !default;
 
 //Default margin values
-$siimple-margin-top: 0px !default;
-$siimple-margin-bottom: 15px !default;
+$margin-top: 0px !default;
+$margin-bottom: 15px !default;
 
 //Default heading values
-$siimple-headings: (
+$headings: (
     "1": ("size": 40px, "line-height": 51px, "margin-bottom": 20px, "margin-top": 30px),
     "2": ("size": 32px, "line-height": 40px, "margin-bottom": 16px, "margin-top": 30px),
     "3": ("size": 28px, "line-height": 29px, "margin-bottom": 14px, "margin-top": 30px),
     "4": ("size": 24px, "line-height": 25px, "margin-bottom": 12px, "margin-top": 30px),
     "5": ("size": 20px, "line-height": 22px, "margin-bottom": 10px, "margin-top": 30px),
     "6": ("size": 16px, "line-height": 20px, "margin-bottom": 8px, "margin-top": 30px)
-);
+) !default;
 
 //Default grid sizes
-$siimple-grid: (
+$grid: (
     "1": "8.33%", 
     "2": "16.66%",
     "3": "24.99%", 
@@ -138,19 +140,19 @@ $siimple-grid: (
     "10": "83.33%",
     "11": "91.66%", 
     "12": "99.99%"
-);
+) !default;
 
 //Default percentages values 
-$siimple-percentages : (
+$percentages : (
     "0": 0%,
     "25": 25%,
     "50": 50%,
     "75": 75%,
     "100": 100%
-);
+) !default;
 
 //Default spacing variables
-$siimple-spacing: (
+$spacing: (
     "0": 0px,
     "1": 5px,
     "2": 10px,
