@@ -7,6 +7,7 @@
 //
 
 @use "sass:map";
+@use "./defaults.scss" as defaults;
 @use "./variables.scss" as variables;
 @use "./utils.scss" as utils;
 
@@ -54,16 +55,16 @@
 
 //Fluid content
 @mixin fluid-content () {
-    width: calc(100% - #{2 * variables.$gap});
-    padding-left: variables.$gap;
-    padding-right: variables.$gap;
+    width: calc(100% - #{2 * defaults.$gap});
+    padding-left: defaults.$gap;
+    padding-right: defaults.$gap;
 }
 
 //Sizing mixin
 @mixin sizing-content ($size: 0px) {
     //Check for string size
     @if utils.is-string($size) == true {
-        $size: map.get(variables.$breakpoint, $size); //Get size from breakpoints
+        $size: map.get(variables.$breakpoints, $size); //Get size from breakpoints
     }
     //Apply the provided size only in screen widts > $size
     @media screen and (min-width: $size) {
