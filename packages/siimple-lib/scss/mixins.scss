@@ -53,22 +53,22 @@
     );
 }
 
-//Fluid content
-@mixin fluid-content () {
+//Fluid content size
+@mixin fluid () {
     width: calc(100% - #{2 * defaults.$gap});
     padding-left: defaults.$gap;
     padding-right: defaults.$gap;
 }
 
 //Sizing mixin
-@mixin sizing-content ($size: 0px) {
+@mixin sizing ($size: 0px) {
     //Check for string size
     @if utils.is-string($size) == true {
-        $size: map.get(variables.$breakpoints, $size); //Get size from breakpoints
+        $size: map.get(variables.$sizes, $size); //Get size from breakpoints
     }
     //Apply the provided size only in screen widts > $size
     @media screen and (min-width: $size) {
-        max-width: $size;
+        width: $size;
         padding-left: calc(50% - #{$size} / 2);
         padding-right: calc(50% - #{$size} / 2);
     }
