@@ -20,20 +20,20 @@ $colors: (
     "light": defaults.$light
 );
 
-//Basic colors
-$basic-colors: (
-    "primary": defaults.$primary,
-    "secondary": defaults.$secondary,
-    "success": defaults.$success,
-    "warning": defaults.$warning,
-    "error": defaults.$error
-);
-
 //Status colors
 $status-colors: (
     "success": defaults.$success,
     "warning": defaults.$warning,
     "error": defaults.$error
+);
+
+//Sizing variables
+$sizes: (
+    "extra-large": defaults.$breakpoint-extra-large - 2 * defaults.$gap,
+    "large": defaults.$breakpoint-large - 2 * defaults.$gap,
+    "medium": defaults.$breakpoint-medium - 2 * defaults.$gap,
+    "small": defaults.$breakpoint-small - 2 * defaults.$gap,
+    "extra-small": defaults.$breakpoint-extra-small - 2 * defaults.$gap
 );
 
 //Default breakpoints map
