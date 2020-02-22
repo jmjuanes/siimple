@@ -5,57 +5,57 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
-@import "../mixins.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Tabs variables
-$siimple-tabs-height: 40px;
+$tabs-height: 34px;
+$tabs-text-size: 14px;
+$tabs-padding: 15px;
 
 //Tabs class
-.#{$siimple-prefix}-tabs {
+.#{siimple.$name}-tabs {
     display: block;
     position: relative;
     width: 100%;
-    height: $siimple-tabs-height;
-    //line-height: $siimple-tabs-height;
-    //font-family: $siimple-default-font-family;
-    font-size: $siimple-default-font-size;
-    margin-bottom: $siimple-default-margin-bottom;
-    border-bottom: 2px solid siimple-default-color("light");
+    height: $tabs-height;
+    //font-size: siimple.$text-size;
+    margin-bottom: siimple.$margin-bottom;
+    border-bottom: 2px solid siimple.color("light");
     //Disable user selection
-    @include siimple-utils-select(none);
+    @include siimple.user-select(none);
     //Tab item
     &-item {
         display: inline-block;
         float: left;
-        height: calc(#{$siimple-tabs-height} - 2px);
-        line-height: $siimple-tabs-height;
+        height: calc(#{$tabs-height} - 2px);
+        line-height: $tabs-height;
         font-weight: 600;
-        color: siimple-default-color("dark", "light");
-        padding-left: 15px;
-        padding-right: 15px;
+        font-size: $tabs-text-size;
+        color: siimple.color-lighter("dark");
+        padding-left: $tabs-padding;
+        padding-right: $tabs-padding;
         margin-bottom: -1px;
         border: 2px solid transparent;
-        border-top-left-radius: $siimple-default-border-radius;
-        border-top-right-radius: $siimple-default-border-radius;
+        border-top-left-radius: siimple.$border-radius;
+        border-top-right-radius: siimple.$border-radius;
         cursor: pointer;
         transition: color 0.3s;
         //Hover tab
-        &:not(#{&}--selected):hover {
-            //border-top-color: siimple-default-color("light");
-            //border-left-color: siimple-default-color("light");
-            //border-right-color: siimple-default-color("light");
-            color: siimple-default-color("primary");
+        &:not(#{&}--active):hover {
+            //border-top-color: siimple.color("light");
+            //border-left-color: siimple.color("light");
+            //border-right-color: siimple.color("light");
+            color: siimple.color("primary");
         }
         //Active tab
         &--active {
-            border-top-color: siimple-default-color("light") !important;
-            border-left-color: siimple-default-color("light") !important;
-            border-right-color: siimple-default-color("light") !important;
-            border-bottom-color: $siimple-default-white !important;
-            background-color: $siimple-default-white !important;
-            color: siimple-default-color("dark") !important;
+            border-top-color: siimple.color("light") !important;
+            border-left-color: siimple.color("light") !important;
+            border-right-color: siimple.color("light") !important;
+            border-bottom-color: siimple.color("white") !important;
+            background-color: siimple.color("white") !important;
+            color: siimple.color("dark") !important;
         }
     }
 }
