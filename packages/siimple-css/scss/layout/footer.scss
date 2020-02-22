@@ -5,33 +5,24 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
-@import "../mixins.scss";
+
+@use "sass:map";
+@use "@siimple/lib" as siimple;
 
 //Footer variables
-$siimple-footer-light-text: lighten(siimple-default-color("dark"), 40%);
-$siimple-footer-dark-text: rgba(siimple-default-color("white"), 0.8);
+$footer-light-text: siimple.lighten(siimple.color("dark"), 40%);
+$footer-padding: 50px;
+$footer-text-size: 14px;
+$footer-line-height: 20px;
 
 //Footer class
-.#{$siimple-prefix}-footer {
+.#{siimple.$name}-footer {
     display: block;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    font-size: 14px;
-    line-height: 21px;
-    //Footer sizes
-    @include siimple-sizing();
-    //Light footer style
-    &--light {
-        color: $siimple-footer-light-text;
-        background-color: siimple-default-color("light");
-    }
-    //Dark footer style
-    &--dark {
-        color: $siimple-footer-dark-text;
-        background-color: siimple-default-color("dark");
-    }
+    padding-top: $footer-padding;
+    padding-bottom: $footer-padding;
+    font-size: $footer-text-size;
+    line-height: $footer-line-height;
+    @include siimple.fluid(); //Default footer size
     //Footer title
     &-title {
         display: block;
@@ -43,9 +34,9 @@ $siimple-footer-dark-text: rgba(siimple-default-color("white"), 0.8);
     //Footer subtitle
     &-subtitle {
         display: block;
-        font-size: 15px;
+        font-size: siimple.$text-size;
+        line-height: siimple.$line-height;
         opacity: 0.8;
-        //line-height: 23px;
         text-decoration: none;
     }
     //Footer group
@@ -53,69 +44,24 @@ $siimple-footer-dark-text: rgba(siimple-default-color("white"), 0.8);
         display: block;
         text-transform: uppercase;
         text-decoration: none;
-        font-size: 15px;
+        font-size: siimple.$text-size;
+        line-height: siimple.$line-height;
         font-weight: bold;
         margin-bottom: 5px;
-    }
-    //Footer group colors
-    &--light &-group {
-        color: $siimple-footer-light-text;
-    }
-    &--dark &-group {
-        color: $siimple-footer-dark-text;
     }
     //Footer text link
     &-link {
         display: block;
         text-decoration: none;
         font-weight: 600;
-        transition: color 0.3s;
+        //transition: color 0.3s;
+        transition: opacity 0.3s;
         cursor: pointer;
         opacity: 0.85;
-        //Inline link
-        &--inline {
-            display: inline !important;
-        }
-        &--inline:not(:last-child) {
-            margin-right: 10px;
-        }
         //Hover link
-        //&:hover {
-        //    //text-decoration: underline;
-        //    color: siimple-default-color("primary") !important;
-        //}
-        //Link description
-        &-description {
-            display: block;
-            font-size: 12px;
-            font-weight: normal;
-            margin-bottom: 3px;
-            margin-top: -4px;
-        }
-    }
-    //Colored link
-    &--light &-link {
-        color: $siimple-footer-light-text;
         &:hover {
-            color: siimple-default-color("primary");
+            opacity: 1.0;
         }
-    }
-    &--light &-link-description {
-        color: $siimple-footer-light-text;
-    }
-    &--dark &-link {
-        color: $siimple-footer-dark-text;
-        &:hover {
-            color: siimple-default-color("secondary");
-        }
-    }
-    &--dark &-link-description {
-        color: $siimple-footer-dark-text;
-    }
-    //Footer paragraph 
-    &-paragraph {
-        display: block;
-        margin-bottom: 10px;
     }
     //Footer rule
     &-rule {
@@ -125,13 +71,25 @@ $siimple-footer-dark-text: rgba(siimple-default-color("white"), 0.8);
         margin-top: 20px;
         margin-bottom: 20px;
         opacity: 0.6;
+        background-color: siimple.color-darker("light");
     }
-    //Colored rule
-    &--light &-rule {
-        background-color: siimple-default-color("light", "dark");
+    //Footer colors
+    @each $color in map.keys(siimple.$colors) {
+        //Footer color
+        &--#{$color} {
+            background-color: siimple.color($color);
+            color: siimple.color-invert($color);
+        }
+        //Rule color
+        &--#{$color} &-rule {
+            background-color: rgba(siimple.color-invert($color), 0.8);
+        }
     }
-    &--dark &-rule {
-        background-color: rgba(siimple-default-color("white"), 0.6);
+    //Footer sizes
+    @each $size in map.keys(siimple.$sizes) {
+        &--#{$size} {
+            @include siimple.sizing($size);
+        }
     }
 }
 
