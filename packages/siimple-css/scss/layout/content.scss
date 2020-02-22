@@ -5,15 +5,22 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../mixins.scss";
+
+@use "sass:map";
+@use "@siimple/lib" as siimple;
 
 //Content class
-.#{$siimple-prefix}-content {
+.#{siimple.$name}-content {
     display: block;
     padding-top: 30px;
     padding-bottom: 30px;
+    //Default content size
+    @include siimple.fluid();
     //Content sizes
-    @include siimple-sizing();
+    @each $size in map.keys(siimple.$sizes) {
+        &--#{$size} {
+            @include siimple.sizing($size);
+        }
+    }
 }
 
