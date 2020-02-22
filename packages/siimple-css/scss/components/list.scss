@@ -5,29 +5,30 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
-@import "../mixins.scss";
+
+@use "@siimple/lib" as siimple;
 
 //List class
-.#{$siimple-prefix}-list {
+.#{siimple.$name}-list {
     display: block;
     width: 100%;
-    margin-bottom: $siimple-default-margin-bottom;
-    color: $siimple-default-color;
-    font-size: $siimple-default-font-size;
-    line-height: $siimple-default-line-height;
+    margin-bottom: siimple.$margin-bottom;
+    //color: siimple.$text-color;
+    //font-size: siimple.$text-size;
+    //line-height: siimple.$line-height;
     //List item 
     &-item {
         display: block;
         padding: 10px;
-        background-color: siimple-default-color("light");
+        background-color: siimple.color("light");
         transition: all 0.3s ease;
         text-decoration: none;
-        color: $siimple-default-color;
+        color: siimple.$text-color;
+        font-size: siimple.$text-size;
+        line-height: siimple.$line-height;
         //position: relative;
         //List with tag
-        & .#{$siimple-prefix}-tag {
+        & .#{siimple.$name}-tag {
             //position: absolute;
             //top: 0px;
             //right: 0px;
@@ -35,24 +36,24 @@
         }
     }
     &-item:first-child {
-        border-top-left-radius: $siimple-default-border-radius;
-        border-top-right-radius: $siimple-default-border-radius;
+        border-top-left-radius: siimple.$border-radius;
+        border-top-right-radius: siimple.$border-radius;
     }
     &-item:last-child {
-        border-bottom-left-radius: $siimple-default-border-radius;
-        border-bottom-right-radius: $siimple-default-border-radius;
+        border-bottom-left-radius: siimple.$border-radius;
+        border-bottom-right-radius: siimple.$border-radius;
     }
     &-item:not(:last-child) {
-        //border-bottom: 1px solid siimple-default-color("light", "dark");
         margin-bottom: 2px;
     }
     &--hover &-item:not(#{&}-item--active):hover {
-        background-color: darken(siimple-default-color("light"), 10%);
+        background-color: siimple.darken(siimple.color("light"), 10%);
         cursor: pointer;
     }
     //Active list item
     &-item--active {
-        background-color: siimple-default-color("primary", "light");
+        background-color: siimple.color-lighter("primary");
     }
+    //Dark list [TODO]
 }
 
