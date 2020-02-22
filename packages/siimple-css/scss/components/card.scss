@@ -5,19 +5,21 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
-@import "../mixins.scss";
+
+@use "@siimple/lib" as siimple;
+
+//Card variables
+$card-padding: 15px;
 
 //Card element class
-.#{$siimple-prefix}-card {
+.#{siimple.$name}-card {
     display: block;
     width: 100%;
-    margin-bottom: $siimple-default-margin-bottom;
-    border-radius: $siimple-default-border-radius;
+    margin-bottom: siimple.$margin-bottom;
+    border-radius: siimple.$border-radius;
     text-decoration: none !important;
-    //color: $siimple-default-color;
-    //font-size: $siimple-default-font-size;
+    background-color: siimple.color("light");
+    color: siimple.color("dark");
     //Common styles
     &-image,
     &-content, 
@@ -36,27 +38,27 @@
     }
     //Card image
     &-image {
-        background-color: siimple-default-color("dark", "light");
+        background-color: siimple.color-lighter("dark");
         //font-weight: bold;
     }
     //Card content
     &-content {
         //display: block;
-        padding-top: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-top: $card-padding;
+        padding-left: $card-padding;
+        padding-right: $card-padding;
         //Last card content child
         &:last-child {
-            padding-bottom: 15px;
+            padding-bottom: $card-padding;
         }
     }
     //Card link 
     &-link {
         position: relative;
-        //color: siimple-default-color("primary");
         //font-weight: bold;
         //font-size: 15px;
-        padding: 15px;
+        padding: $card-padding;
+        color: siimple.color("dark");
         cursor: pointer;
         transition: opacity 0.3s;
         opacity: 0.5;
@@ -66,8 +68,8 @@
             content: "";
             width: 11px;
             height: 11px;
-            border-top: 4px solid transparent; 
-            border-right: 4px solid transparent;
+            border-top: 4px solid siimple.color("dark"); 
+            border-right: 4px solid siimple.color("dark");
             transform: rotate(45deg);
             border-radius: 2px;
             position: absolute;
@@ -86,28 +88,28 @@
         right: 15px;
     }
     //Light card --> default style
-    &--light {
-        background-color: siimple-default-color("light");
-        color: siimple-default-color("dark");
-    }
-    &--light &-link {
-        color: siimple-default-color("dark");
-    }
-    &--light &-link::before {
-        border-top-color: siimple-default-color("dark");
-        border-right-color: siimple-default-color("dark");
-    }
+    //&--light {
+    //    background-color: siimple.color("light");
+    //    color: siimple.color("dark");
+    //}
+    //&--light &-link {
+    //    color: siimple.color("dark");
+    //}
+    //&--light &-link::before {
+    //    border-top-color: siimple.color("dark");
+    //    border-right-color: siimple.color("dark");
+    //}
     //Dark card
     &--dark {
-        background-color: siimple-default-color("dark");
-        color: siimple-default-color("white");
+        background-color: siimple.color("dark");
+        color: siimple.color("white");
     }
     &--dark &-link {
-        color: siimple-default-color("white");
+        color: siimple.color("white");
     }
     &--dark &-link::before {
-        border-top-color: siimple-default-color("white");
-        border-right-color: siimple-default-color("white");
+        border-top-color: siimple.color("white");
+        border-right-color: siimple.color("white");
     }
 }
 
