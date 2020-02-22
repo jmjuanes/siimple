@@ -5,12 +5,14 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+
+@use "sass:map";
+@use "@siimple/lib" as siimple;
 
 //Table cell variables
-$siimple-table-cell-sizes: $siimple-default-grid;
-$siimple-table-colors: (
+$table-cell-padding: 8px;
+$table-cell-sizes: siimple.$grid;
+$table-colors: (
     "primary": 15%, 
     "secondary": 15%,
     "success": 15%, 
@@ -19,16 +21,15 @@ $siimple-table-colors: (
 );
 
 //Table class
-.#{$siimple-prefix}-table {
+.#{siimple.$name}-table {
     display: table;
     width: 100%;
-    font-size: $siimple-default-font-size;
-    //font-family: $siimple-default-font-family;
-    color: $siimple-default-color;
+    font-size: siimple.$text-size;
+    color: siimple.$text-color;
     border-collapse: separate;
     border-spacing: 0;
     border-width: 0px;
-    margin-bottom: $siimple-default-margin-bottom;
+    margin-bottom: siimple.$margin-bottom;
     background-color: transparent;
     box-sizing: border-box;
     //Table row
@@ -38,7 +39,7 @@ $siimple-table-colors: (
         box-sizing: border-box;
         //border-bottom: 2px solid $siimple-default-white;
         &:hover {
-            //background-color: siimple-default-color("light");
+            //background-color: siimple.color("light");
         }
         &:last-child {
             //border-bottom: 0px;
@@ -48,8 +49,8 @@ $siimple-table-colors: (
     &-cell {
         display: table-cell;
         //position: relative;
-        line-height: $siimple-default-line-height;
-        padding: 10px;
+        line-height: siimple.$line-height;
+        padding: $table-cell-padding;
         //white-space: nowrap;
         //overflow: hidden;
         transition: background-color 0.3s;
@@ -77,32 +78,32 @@ $siimple-table-colors: (
             //Sortable triangle up
             &::before {
                 top: 12px;
-                border-bottom: 8px solid siimple-default-color("light");
+                border-bottom: 8px solid siimple.color("light");
             }
             //Sortable triangle down
             &::after {
                 bottom: 12px;
-                border-top: 8px solid siimple-default-color("light");
+                border-top: 8px solid siimple.color("light");
             }
         }
         //Asc order
         &--asc::before {
-            border-bottom-color: siimple-default-color("primary");
+            border-bottom-color: siimple.color("primary");
         }
         //Desc order
         &--desc::after {
-            border-top-color: siimple-default-color("primary");
+            border-top-color: siimple.color("primary");
         }
     }
     //Table cell sizes
-    @each $cell-name, $cell-width in $siimple-table-cell-sizes {
+    @each $cell-name, $cell-width in $table-cell-sizes {
         &-cell--#{$cell-name} {
             width: #{$cell-width};
         }
     }
     //Table with border
     &--border &-cell {
-        border: 1px solid siimple-default-color("light", "dark");
+        border: 1px solid siimple.darken(siimple.color("light"), 5%);
     }
     //Table header
     &-header {
@@ -113,11 +114,11 @@ $siimple-table-colors: (
     }
     //Bordered table with rouded corners
     &--border &-header &-row:first-child &-cell:first-child {
-        border-top-left-radius: $siimple-default-border-radius;
+        border-top-left-radius: siimple.$border-radius;
         border-left-width: 2px;
     }
     &--border &-header &-row:first-child &-cell:last-child {
-        border-top-right-radius: $siimple-default-border-radius;
+        border-top-right-radius: siimple.$border-radius;
         border-right-width: 2px;
     }
     &--border &-header &-row:first-child &-cell {
@@ -127,7 +128,7 @@ $siimple-table-colors: (
         //border-bottom-right-radius: 0px !important;
         //border-bottom-left-radius: 0px !important;
         vertical-align: bottom;
-        border-bottom: 2px solid siimple-default-color("light", "dark");
+        border-bottom: 2px solid siimple.darken(siimple.color("light"), 5%);
         font-weight: 600;
     }
     //Table body
@@ -136,19 +137,18 @@ $siimple-table-colors: (
         vertical-align: middle;
     }
     &-body &-cell {
-        border-top: 1px solid siimple-default-color("light", "dark");
-        //background-color: rgba(siimple-default-color("light", "light"), 0.4);
+        border-top: 1px solid siimple.darken(siimple.color("light"), 5%);
     }
     //Not last row of the table body
     &-body &-row:not(:last-child) &-cell {
-        border-bottom: 1px solid siimple-default-color("light", "dark");
+        border-bottom: 1px solid siimple.darken(siimple.color("light"), 5%);
     }
     //Bordered table with rouded corners
     &--border &-body &-row:last-child &-cell:first-child {
-        border-bottom-left-radius: $siimple-default-border-radius;
+        border-bottom-left-radius: siimple.$border-radius;
     }
     &--border &-body &-row:last-child &-cell:last-child {
-        border-bottom-right-radius: $siimple-default-border-radius;
+        border-bottom-right-radius: siimple.$border-radius;
     }
     &--border &-body &-row:last-child &-cell {
         border-bottom-width: 2px;
@@ -161,11 +161,11 @@ $siimple-table-colors: (
     }
     //Striped table
     &--striped &-body &-row:nth-child(odd) &-cell {
-        background-color: lighten(siimple-default-color("light"), 3%);
+        background-color: siimple.lighten(siimple.color("light"), 3%);
     }
     //Hovered table
     &--hover &-body &-row:hover &-cell {
-        background-color: lighten(siimple-default-color("light"), 0%);
+        background-color: siimple.lighten(siimple.color("light"), 0%);
     }
     //Fixed columns width
     &--fixed {
@@ -178,11 +178,13 @@ $siimple-table-colors: (
         overflow-x: auto;
     }
     //Colored table rows
-    @each $color in $siimple-default-basic-colors {
-        &-row--#{$color},
-        &-row--#{$color} &-cell {
-            $color-lighten: map-get($siimple-table-colors, $color);
-            background-color: lighten(siimple-default-color($color, "light"), $color-lighten) !important;
+    @each $color in map.keys(siimple.$colors) {
+        @if $color != "dark" and $color != "light" {
+            &-row--#{$color},
+            &-row--#{$color} &-cell {
+                $color-lighten: map.get($table-colors, $color);
+                background-color: siimple.lighten(siimple.color-lighter($color), $color-lighten) !important;
+            }
         }
     }
 }
