@@ -5,35 +5,39 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+
+@use "@siimple/lib" as siimple;
+
+//Breadcrumb variables
+$breadcrumb-height: 20px;
+$breadcrumb-text-size: 14px;
 
 //Breadcrumb class
-.#{$siimple-prefix}-breadcrumb {
+.#{siimple.$name}-breadcrumb {
     display: block;
     //width: 100%;
-    height: 24px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    height: $breadcrumb-height;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 15px;
     padding-right: 15px;
-    margin-bottom: $siimple-default-margin-bottom;
-    background-color: siimple-default-color("light");
-    border-radius: $siimple-default-border-radius;
+    margin-bottom: siimple.$margin-bottom;
+    background-color: siimple.color("light");
+    border-radius: siimple.$border-radius;
     border: 0px;
     //Breadcrumb item
     &-item {
         display: inline-block;
         float: left;
         position: relative;
-        height: 24px;
-        line-height: 24px;
+        height: $breadcrumb-height;
+        font-size: $breadcrumb-text-size;
+        line-height: $breadcrumb-height;
         //text-align: center;
         //font-family: $siimple-default-text-font;
-        font-size: 14px;
         font-weight: 600;
         text-decoration: none;
-        color: siimple-default-color("primary");
+        color: siimple.color("primary");
         transition: color 0.3s;
         cursor: pointer;
         &:not(:first-child) {
@@ -41,20 +45,20 @@
         }
         //Crumb hover
         &:hover {
-            color: siimple-default-color("primary", "dark");
+            color: siimple.color-darker("primary");
         }
         //Crumb before
         &:not(:first-child)::before {
             content: "/";
-            color: siimple-default-color("dark", "light");
+            color: siimple.color-lighter("dark");
             font-weight: bold !important;
             padding-right: 8px;
         }
         //Active crumb
         &--active {
-            color: siimple-default-color("dark") !important;
+            color: siimple.color("dark") !important;
             cursor: default !important;
-            font-weight: normal !important;
+            //font-weight: normal !important;
         }
     }
 }
