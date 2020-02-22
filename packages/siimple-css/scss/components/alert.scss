@@ -5,34 +5,35 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+
+@use "sass:map";
+@use "@siimple/lib" as siimple;
 
 //Alert global variables
-$siimple-alert-padding-top: 10px;
-$siimple-alert-padding-bottom: 10px;
-$siimple-alert-padding-left: 15px;
-$siimple-alert-padding-right: 30px;
+$alert-padding-top: 10px;
+$alert-padding-bottom: 10px;
+$alert-padding-left: 15px;
+$alert-padding-right: 30px;
 
 //Alert class
-.#{$siimple-prefix}-alert {
+.#{siimple.$name}-alert {
     display: block;
-    width: calc(100% - #{$siimple-alert-padding-left} - #{$siimple-alert-padding-right});
+    width: calc(100% - #{$alert-padding-left} - #{$alert-padding-right});
     //color: $siimple-navy;
-    line-height: $siimple-default-line-height;
-    font-size: $siimple-default-font-size;
+    line-height: siimple.$line-height;
+    font-size: siimple.$text-size;
     //font-family: $siimple-default-text-font;
     position: relative;
-    border-radius: $siimple-default-border-radius;
+    border-radius: siimple.$border-radius;
     //Default background and text color
-    background-color: siimple-default-color("light");
-    color: siimple-default-color("dark");
-    padding-top: $siimple-alert-padding-top;
-    padding-right: $siimple-alert-padding-right;
-    padding-bottom: $siimple-alert-padding-bottom;
-    padding-left: $siimple-alert-padding-left;
-    //margin-top: $siimple-alert-margin-top;
-    margin-bottom: $siimple-default-margin-bottom;
+    background-color: siimple.color("light");
+    color: siimple.color("dark");
+    padding-top: $alert-padding-top;
+    padding-right: $alert-padding-right;
+    padding-bottom: $alert-padding-bottom;
+    padding-left: $alert-padding-left;
+    //margin-top: $alert-margin-top;
+    margin-bottom: siimple.$margin-bottom;
     //Alert title
     &-title {
         font-size: 19px;
@@ -59,7 +60,7 @@ $siimple-alert-padding-right: 30px;
             content: "";
             width: 16px;
             height: 3px;
-            background-color: siimple-default-color("dark");
+            background-color: siimple.color("dark");
             position: absolute;
             border-radius: 1px;
             top: 6px;
@@ -72,15 +73,15 @@ $siimple-alert-padding-right: 30px;
         }
     }
     //Alert colors 
-    @each $color in $siimple-default-basic-colors {
+    @each $color in map.keys(siimple.$colors) {
         &#{&}--#{$color} {
-            background-color: lighten(siimple-default-color($color), 30%);
-            color: siimple-default-color($color, "dark");
+            background-color: siimple.lighten(siimple.color($color), 30%);
+            color: siimple.color-darker($color);
         }
         //Close icon color
         &--#{$color} &-close::before,
         &--#{$color} &-close::after {
-            background-color: siimple-default-color($color, "dark");
+            background-color: siimple.color-darker($color);
         }
     }
 }
