@@ -6,61 +6,13 @@
 // Website:    https://www.siimple.xyz
 //
 
-//Import base style
 @use "./scss/base.scss";
 @use "./scss/reset.scss";
-
-//Import typography
-@use "./scss/typography/blockquote.scss";
-@use "./scss/typography/code.scss";
-@use "./scss/typography/heading.scss";
-@use "./scss/typography/link.scss";
-@use "./scss/typography/paragraph.scss";
-@use "./scss/typography/pre.scss";
-@use "./scss/typography/small.scss";
-
-//Import elements
-@use "./scss/elements/btn.scss";
-@use "./scss/elements/rule.scss";
-@use "./scss/elements/spinner.scss";
-@use "./scss/elements/tag.scss";
-@use "./scss/elements/tip.scss";
-
-//Import components
-@use "./scss/components/alert.scss";
-@use "./scss/components/breadcrumb.scss";
-@use "./scss/components/card.scss";
-@use "./scss/components/list.scss";
-@use "./scss/components/menu.scss";
-@use "./scss/components/table.scss";
-@use "./scss/components/tabs.scss";
-
-//Import layout
-@use "./scss/layout/content.scss";
-@use "./scss/layout/footer.scss";
-@use "./scss/layout/jumbotron.scss";
-@use "./scss/layout/navbar.scss";
-
-//Import form elements
-@use "./scss/form/checkbox.scss";
-@use "./scss/form/field.scss";
-@use "./scss/form/input.scss";
-@use "./scss/form/label.scss";
-@use "./scss/form/radio.scss";
-@use "./scss/form/select.scss";
-@use "./scss/form/switch.scss";
-@use "./scss/form/textarea.scss";
-
-//Import grid
+@use "./scss/typography/index.scss";
+@use "./scss/elements/index.scss";
+@use "./scss/components/index.scss";
+@use "./scss/layout/index.scss";
+@use "./scss/form/index.scss";
+@use "./scss/helpers/index.scss";
 @use "./scss/grid/grid.scss";
-
-//Import helpers
-@use "./scss/helpers/colors.scss";
-@use "./scss/helpers/content.scss";
-@use "./scss/helpers/display.scss";
-@use "./scss/helpers/float.scss";
-@use "./scss/helpers/sizing.scss";
-@use "./scss/helpers/spacing.scss";
-@use "./scss/helpers/text.scss";
-@use "./scss/helpers/miscellanea.scss";
 

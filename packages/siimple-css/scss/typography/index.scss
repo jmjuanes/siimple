@@ -1,0 +1,17 @@
+//
+// @siimple/css - minimal css toolkit for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Export all typography styles
+@use "./blockquote.scss";
+@use "./code.scss";
+@use "./heading.scss";
+@use "./link.scss";
+@use "./paragraph.scss";
+@use "./pre.scss";
+@use "./small.scss";
+
