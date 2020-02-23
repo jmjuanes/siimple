@@ -5,66 +5,69 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
-@import "../mixins.scss";
+
+@use "sass:map";
+@use "@siimple/lib" as siimple;
 
 //Jumbotron variables
-$siimple-jumbotron-padding: 85px;
+$jumbotron-padding: 85px;
+$jumbotron-title-text-size: 40px;
+$jumbotron-title-line-height: 48px;
+$jumbotron-subtitle-text-size: 24px;
+$jumbotron-subtitle-line-height: 29px;
 
 //Jumbotron class
-.#{$siimple-prefix}-jumbotron {
+.#{siimple.$name}-jumbotron {
     display: block;
     //font-family: $siimple-default-text-font;
-    padding-top: $siimple-jumbotron-padding;
-    padding-bottom: $siimple-jumbotron-padding;
-    @include siimple-sizing();
+    padding-top: $jumbotron-padding;
+    padding-bottom: $jumbotron-padding;
+    @include siimple.fluid(); //Default jumbotron size
     //Common styles
     &-title, 
     &-subtitle,
-    &-detail {
+    &-text {
         display: block;
         text-decoration: none;
     }
     //Jumbotron title
     &-title {
-        //line-height: 60px;
+        line-height: $jumbotron-title-line-height;
+        font-size: $jumbotron-title-text-size;
         font-weight: bold;
-        font-size: 40px;
-        //margin-top: 0px;
-        //margin-bottom: 0px;
     }
     //Jumbotron subtitle
     &-subtitle {
-        //line-height: 40px;
-        font-size: 24px;
-        font-weight: 600;
+        line-height: $jumbotron-subtitle-line-height;
+        font-size: $jumbotron-subtitle-text-size;
+        font-weight: bold;
         opacity: 0.8;
-        //margin-top: 10px;
-        //margin-bottom: 10px;
     }
-    //Jumbotron detail
-    &-detail {
-        line-height: 22px;
-        font-size: 16px;
+    //Jumbotron text
+    &-text {
+        line-height: siimple.$line-height;
+        font-size: siimple.$text-size;
         opacity: 0.6;
         //margin-top: 10px;
         //margin-bottom: 10px;
     }
     &-title + &-subtitle,
-    &-title + &-detail,
-    &-subtitle + &-detail {
-        margin-top: 5px;
+    &-title + &-text,
+    &-subtitle + &-text {
+        margin-top: 8px;
     }
-    //Light jumbotron
-    &--light {
-        background-color: siimple-default-color("light");
-        color: siimple-default-color("dark");
+    //Colored jumbotron
+    @each $color in map.keys(siimple.$colors) {
+        &--#{$color} {
+            background-color: siimple.color($color);
+            color: siimple.color-invert($color);
+        }
     }
-    //Dark jumbotron
-    &--dark {
-        background-color: siimple-default-color("dark");
-        color: siimple-default-color("white");
+    //Jumbotron sizes
+    @each $size in map.keys(siimple.$sizes) {
+        &--#{$size} {
+            @include siimple.sizing($size);
+        }
     }
 }
 
