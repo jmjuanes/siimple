@@ -6,26 +6,22 @@
 // Website:    https://www.siimple.xyz
 //
 
-@import "./variables.scss";
-@import "./mixins.scss";
+@use "@siimple/lib" as siimple;
 
 //Import font from Google Fonts
-@import url(#{$siimple-default-font-url});
+@import url(#{siimple.$font-url});
 
 //Default html style
 html {
-    font-family: $siimple-default-font-family;
-    font-weight: $siimple-default-font-weight;
-    font-size: $siimple-default-font-size;
-    color: $siimple-default-color;
+    font-family: siimple.$font-family;
+    font-weight: siimple.$text-weight;
+    font-size: siimple.$text-size;
+    color: siimple.$text-color;
+    line-height: siimple.$line-height;
     font-smooth: antialiased;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
 
-//Remove the margin in all browsers
-body {
-    margin: 0;
-}
 
