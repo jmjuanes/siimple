@@ -5,29 +5,25 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+
+@use "@siimple/lib" as siimple;
+
+//Label variables
+$label-text-size: siimple.$text-size;
+$label-line-height: siimple.$line-height;
 
 //Label class
-.#{$siimple-prefix}-label {
+.#{siimple.$name}-label {
     display: inline-block;
-    //height: 34px;
-    min-height: 34px;
-    line-height: 34px;
-    //font-size: $siimple-default-font-size;
-    font-size: 15px;
-    color: $siimple-default-color;
+    //min-height: 34px;
+    line-height: $label-line-height;
+    font-size: $label-text-size;
+    color: siimple.$text-color;
     font-weight: 600;
     padding-right: 10px;
     padding-left: 0px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     vertical-align: top;
-    //Light label style
-    //&--light {
-    //    color: $siimple-default-white;
-    //}
-    ////Dark label style
-    //&--dark {
-    //    color: siimple-default-color("dark");
-    //}
 }
 

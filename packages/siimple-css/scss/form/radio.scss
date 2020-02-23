@@ -5,37 +5,38 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+
+@use "sass:map";
+@use "@siimple/lib" as siimple;
 
 //Radio variables
-$siimple-radio-width: 18px;
-$siimple-radio-height: 18px;
-$siimple-radio-margin: 8px;
-$siimple-radio-border: 3px;
-$siimple-radio-circle: 6px;
+$radio-width: 18px;
+$radio-height: 18px;
+$radio-margin: 6px;
+$radio-border: 3px;
+$radio-circle: 6px;
 
 //Radio class
-.#{$siimple-prefix}-radio {
+.#{siimple.$name}-radio {
     display: inline-block;
-    width: $siimple-radio-width;
-    height: $siimple-radio-height;
+    width: $radio-width;
+    height: $radio-height;
     position: relative;
     vertical-align: top;
-    margin: $siimple-radio-margin;
+    margin: $radio-margin;
     cursor: pointer;
     //Radio outer circle
     & > label {
         display: block;
-        width: calc(#{$siimple-radio-width} - 2 * #{$siimple-radio-border});
-        height: calc(#{$siimple-radio-height} - 2 * #{$siimple-radio-border});
+        width: calc(#{$radio-width} - 2 * #{$radio-border});
+        height: calc(#{$radio-height} - 2 * #{$radio-border});
         position: absolute;
         top: 0px;
         left: 0px;
         border-radius: 100px;
-        border-width: $siimple-radio-border;
+        border-width: $radio-border;
         border-style: solid;
-        border-color: siimple-default-color("light");
+        border-color: siimple.color("light");
         transition: border-color 0.3s ease;
         cursor: pointer;
     }
@@ -44,16 +45,16 @@ $siimple-radio-circle: 6px;
         position: absolute;
         display: block;
         content: "";
-        width: $siimple-radio-circle;
-        height: $siimple-radio-circle;
+        width: $radio-circle;
+        height: $radio-circle;
         background-color: transparent;
         border-radius: 100px;
-        top: calc(50% - #{$siimple-radio-circle} / 2);
-        left: calc(50% - #{$siimple-radio-circle} / 2);
+        top: calc(50% - #{$radio-circle} / 2);
+        left: calc(50% - #{$radio-circle} / 2);
         transition: all 0.3s ease;
     }
     &:hover > label:after {
-        background-color: siimple-default-color("light");
+        background-color: siimple.color("light");
     }
     //Hide radio input
     & input[type=radio] {
@@ -61,19 +62,19 @@ $siimple-radio-circle: 6px;
     }
     //Checked -> change tick
     & input[type=radio]:checked + label:after {
-        background-color: siimple-default-color("primary");
+        background-color: siimple.color("primary");
     }
     //Checked -> change background
     & input[type=radio]:checked + label {
-        border-color: siimple-default-color("primary");
+        border-color: siimple.color("primary");
     }
     //Radio colors
-    @each $color in $siimple-default-form-colors {
+    @each $color in map.keys(siimple.$status-colors) {
         &--#{$color} input[type=radio]:checked + label:after {
-            background-color: siimple-default-color($color);
+            background-color: siimple.color($color);
         }
         &--#{$color} input[type=radio]:checked + label {
-            border-color: siimple-default-color($color);
+            border-color: siimple.color($color);
         }
     }
 }

@@ -5,24 +5,25 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Textarea variables
-$siimple-textarea-padding: 10px;
+$textarea-padding: 10px;
+$textarea-text-size: 14px;
+$textarea-line-height: 20px;
 
 //Textarea class
-.#{$siimple-prefix}-textarea {
+.#{siimple.$name}-textarea {
     display: inline-block;
-    line-height: 20px;
-    //font-family: $siimple-default-text-font;
-    font-size: 14px;
-    color: $siimple-default-color;
-    padding: $siimple-textarea-padding;
+    line-height: $textarea-line-height;
+    font-size: $textarea-text-size;
+    color: siimple.$text-color;
+    padding: $textarea-padding;
     border: 0px;
-    border-radius: $siimple-default-border-radius;
+    border-radius: siimple.$border-radius;
     outline: 0px;
-    background-color: siimple-default-color("light");
+    background-color: siimple.color("light");
     vertical-align: top;
     box-sizing: border-box;
     resize: vertical;
@@ -30,14 +31,10 @@ $siimple-textarea-padding: 10px;
     &--fluid {
         width: 100%;
     }
-    //Light textarea style
-    &--light {
-        background-color: $siimple-default-white;
-    }
     //Dark textarea style
     &--dark {
-        background-color: siimple-default-color("dark");
-        color: $siimple-default-white;
+        background-color: siimple.color("dark");
+        color: siimple.color("white");
     }
 }
 

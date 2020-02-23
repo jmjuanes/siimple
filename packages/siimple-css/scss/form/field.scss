@@ -5,23 +5,29 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+
+@use "@siimple/lib" as siimple;
+
+//Field variables
+$field-label-text-size: 15px;
+$field-label-line-height: 22px;
+$field-helper-text-size: 13px;
+$field-helper-line-height: 19px;
 
 //Form field class
-.#{$siimple-prefix}-field {
+.#{siimple.$name}-field {
     display: block;
     vertical-align: top;
-    margin-bottom: $siimple-default-margin-bottom;
+    margin-bottom: siimple.$margin-bottom;
     margin-top: 0px;
     //Field label
     &-label {
         display: block;
-        //width: 100%;
         vertical-align: top;
         font-weight: 600;
-        font-size: 15px;
-        color: $siimple-default-color;
+        font-size: $field-label-text-size;
+        line-height: $field-label-line-height;
+        color: siimple.$text-color;
         margin-top: 0px;
         margin-bottom: 5px;
     }
@@ -29,10 +35,11 @@
         display: block;
         vertical-align: top;
         font-weight: normal;
-        font-size: 13px;
-        color: siimple-default-color("dark", "light");
+        font-size: $field-helper-text-size;
+        line-height: $field-helper-line-height;
+        color: siimple.color-lighter("dark");
         margin-top: 5px;
-        margin-bottom: $siimple-default-margin-bottom;
+        margin-bottom: siimple.$margin-bottom;
     }
 }
 

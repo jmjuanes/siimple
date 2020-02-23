@@ -5,46 +5,40 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Select variables
-$siimple-select-padding: 10px;
+$select-padding: 10px;
+$select-height: 30px;
+$select-text-size: 14px;
 
 //Select class
-.#{$siimple-prefix}-select {
+.#{siimple.$name}-select {
     display: inline-block;
-    height: 34px;
-    line-height: 34px;
-    //font-family: $siimple-default-text-font;
-    font-size: 14px;
+    height: $select-height;
+    line-height: $select-height;
+    font-size: $select-text-size;
     font-weight: normal;
-    color: $siimple-default-color;
-    padding-left: $siimple-select-padding;
-    padding-right: $siimple-select-padding;
+    color: siimple.$text-color;
+    padding-left: $select-padding;
+    padding-right: $select-padding;
     padding-top: 0px;
     padding-bottom: 0px;
     border: 0px;
-    border-radius: $siimple-default-border-radius;
+    border-radius: siimple.$border-radius;
     outline: 0px;
-    background-color: siimple-default-color("light");
+    background-color: siimple.color("light");
     vertical-align: top;
     box-sizing: border-box;
-    //Disable default appearance
-    //-webkit-appearance: none;
-    //-moz-appearance: none;
     //Fluid select
     &--fluid {
         width: 100%;
     }
-    //Light select style
-    &--light {
-        background-color: $siimple-default-white;
-    }
     //Dark select style
     &--dark {
-        background-color: siimple-default-color("dark");
-        color: $siimple-default-white;
+        background-color: siimple.color("dark");
+        color: siimple.color("white");
     }
 }
 

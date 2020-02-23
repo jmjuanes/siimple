@@ -5,34 +5,29 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+
+@use "sass:map";
+@use "@siimple/lib" as siimple;
 
 //Switch variables
-$siimple-switch-width: 32px;
-$siimple-switch-height: 18px;
-$siimple-switch-border-radius: 50px;
-$siimple-switch-margin-left: 10px;
-$siimple-switch-margin-right: 10px;
-$siimple-switch-margin-top: 8px;
-$siimple-switch-margin-bottom: 8px;
+$switch-width: 32px;
+$switch-height: 18px;
+$switch-border-radius: 50px;
+$switch-margin: 6px;
 
 //Switch class
-.#{$siimple-prefix}-switch {
+.#{siimple.$name}-switch {
     //Structure:
     //<div class="siimple-switch" id="switchDiv">
     //	<input type="checkbox" value="1" id="mySwitch" name="" />
     //	<label for="mySwitch"></label>
     //</div>
     display: inline-block;
-    width: $siimple-switch-width;
-    height: $siimple-switch-height;
+    width: $switch-width;
+    height: $switch-height;
     position: relative;
-    border-radius: $siimple-switch-border-radius;
-    margin-left: $siimple-switch-margin-left;
-    margin-right: $siimple-switch-margin-right;
-    margin-top: $siimple-switch-margin-top;
-    margin-bottom: $siimple-switch-margin-bottom;
+    border-radius: $switch-border-radius;
+    margin: $switch-margin;
     //cursor: pointer;
     vertical-align: top;
     //Label style -> circle
@@ -43,10 +38,10 @@ $siimple-switch-margin-bottom: 8px;
             content: "";
             width: 14px;
             height: 14px;
-            border-radius: $siimple-switch-border-radius;
+            border-radius: $switch-border-radius;
             transition: all 0.3s ease;
             //cursor: pointer;
-            background: siimple-default-color("dark", "light");
+            background: siimple.color-lighter("dark");
             position: absolute;
             top: 2px;
             left: 2px;
@@ -62,8 +57,8 @@ $siimple-switch-margin-bottom: 8px;
             content: "";
             width: 100%;
             height: 100%;
-            background-color: siimple-default-color("light");
-            border-radius: $siimple-switch-border-radius;
+            background-color: siimple.color("light");
+            border-radius: $switch-border-radius;
             transition: all 0.3s;
             position: absolute;
             top: 0px;
@@ -76,18 +71,18 @@ $siimple-switch-margin-bottom: 8px;
     }
     //Checkbox active -> background color
     & input[type=checkbox]:checked ~ label::before {
-        background-color: siimple-default-color("primary");
+        background-color: siimple.color("primary");
     }
     //Checkbox active -> move circle
     & input[type=checkbox]:checked ~ label::after {
         left: 16px;
         opacity: 1.0;
-        background-color: siimple-default-color("white");
+        background-color: siimple.color("white");
     }
     //Colored switch 
-    @each $color in $siimple-default-form-colors {
+    @each $color in map.keys(siimple.$status-colors) {
         &--#{$color} input[type=checkbox]:checked ~ label::before {
-            background-color: siimple-default-color($color);
+            background-color: siimple.color($color);
         }
     }
 }
