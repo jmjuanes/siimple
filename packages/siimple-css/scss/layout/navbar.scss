@@ -10,21 +10,26 @@
 @use "@siimple/lib" as siimple;
 
 //Navbar variables
-$navbar-height: 50px;
-$navbar-breakpoint: 1024px;
+$navbar-height: 30px;
+$navbar-padding: 10px;
+$navbar-breakpoint-desktop: 1024px;
+$navbar-breakpoint-mobile: 1023px;
 
 //Navbar class
 .#{siimple.$name}-navbar {
-    //display: block;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     //position: absolute; top: 0px; left: 0px;
     z-index: 3;
-    width: 100%;
+    //width: 100%;
     //max-width: calc(100% - 2 * #{$siimple-navbar-padding});
     min-height: $navbar-height; 
     //font-family: $siimple-default-text-font;
     //margin: $siimple-navbar-margin;
-    //padding-top: 15px;
-    //padding-bottom: 15px;
+    padding-top: $navbar-padding;
+    padding-bottom: $navbar-padding;
     vertical-align: top;
     @include siimple.fluid(); //Default navbar size
     position: relative;
@@ -44,9 +49,8 @@ $navbar-breakpoint: 1024px;
     &-brand {
         //font-weight: bold;
         font-size: 18px;
+        margin-right: 10px;
         //transition: all 0.3s;
-        padding-top: 10px;
-        padding-bottom: 10px;
     }
     //Navbar link
     &-link {
@@ -55,7 +59,7 @@ $navbar-breakpoint: 1024px;
         font-weight: bold;
         font-size: 14px; //siimple.$text-size;
         transition: opacity 0.3s;
-        opacity: 0.8;
+        opacity: 0.6;
         //cursor: pointer;
         //vertical-align: middle;
         &:hover {
@@ -63,12 +67,7 @@ $navbar-breakpoint: 1024px;
         }
     }
     //Styles for desktop
-    @media screen and (min-width: $navbar-breakpoint) {
-        //Navbar
-        & {
-            display: flex;
-            align-items: stretch;
-        }
+    @media screen and (min-width: $navbar-breakpoint-desktop) {
         //Menu navbar
         &-menu {
             display: flex;
@@ -77,7 +76,8 @@ $navbar-breakpoint: 1024px;
         }
         //Menu item
         &-item {
-            padding: 10px;
+            padding-left: 8px;
+            padding-right: 8px;
         }
         //Navbar toggle
         &-toggle {
@@ -85,31 +85,24 @@ $navbar-breakpoint: 1024px;
         }
     }
     //Styles for mobile devices
-    @media screen and (max-width: $navbar-breakpoint) {
+    @media screen and (max-width: $navbar-breakpoint-mobile) {
         //Menu navbar for mobile devices
         &-menu {
-            //padding-top: 10px;
-            //padding-bottom: 10px;
             display: block;
+            width: 100%;
             max-height: 0px;
             overflow: hidden;
             transition: max-height 0.3s;
         }
         //Menu items
         &-item {
-            //min-height: 34px;
-            padding-bottom: 10px;
-            //border-radius: 5px;
+            padding-top: 10px;
         }
         //Navbar toggle
         &-toggle {
             display: block;
-            position: absolute;
-            width: 25px;
+            width: 24px;
             height: 30px;
-            padding: 10px;
-            top: 0px;
-            right: 0px;
             //outline: 0;
             cursor: pointer;
         }
