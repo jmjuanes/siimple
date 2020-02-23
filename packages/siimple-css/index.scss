@@ -8,11 +8,11 @@
 
 @use "./scss/base.scss";
 @use "./scss/reset.scss";
-@use "./scss/typography/index.scss";
-@use "./scss/elements/index.scss";
-@use "./scss/components/index.scss";
-@use "./scss/layout/index.scss";
-@use "./scss/form/index.scss";
-@use "./scss/helpers/index.scss";
-@use "./scss/grid/grid.scss";
+@use "./scss/typography/index.scss" as typography;
+@use "./scss/elements/index.scss" as elements;
+@use "./scss/components/index.scss" as components;
+@use "./scss/layout/index.scss" as layout;
+@use "./scss/form/index.scss" as form;
+@use "./scss/helpers/index.scss" as helpers;
+@use "./scss/grid/grid.scss" as grid;
 
