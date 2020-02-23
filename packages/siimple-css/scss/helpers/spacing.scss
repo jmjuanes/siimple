@@ -5,12 +5,12 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../functions.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Spacing class
-.#{$siimple-prefix} {
-    @each $key,$value in $siimple-default-spacing {
+.#{siimple.$name} {
+    @each $key,$value in siimple.$spacing {
         //Margin attributes
         &--mt-#{$key} {
             margin-top: $value !important;

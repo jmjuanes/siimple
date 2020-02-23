@@ -5,46 +5,20 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../mixins.scss";
+
+@use "sass:map";
+@use "@siimple/lib" as siimple;
 
 //Breakpoints class
-.#{$siimple-prefix} {
+.#{siimple.$name} {
     //Fluid content
     &--fluid { 
-        @include siimple-fluid();
+        @include siimple.fluid();
     }
-    //Small content
-    &--small {
-        width: $siimple-default-breakpoint-small;
-        padding: {
-            left: calc(50% - #{$siimple-default-breakpoint-small / 2});
-            right: calc(50% - #{$siimple-default-breakpoint-small / 2});
-        }
-        @media screen and (max-width: $siimple-default-breakpoint-small) {
-            @include siimple-fluid();
-        }
-    }
-    //Medium content
-    &--medium {
-        width: $siimple-default-breakpoint-medium;
-        padding: {
-            left: calc(50% - #{$siimple-default-breakpoint-medium / 2});
-            right: calc(50% - #{$siimple-default-breakpoint-medium / 2});
-        }
-        @media screen and (max-width: $siimple-default-breakpoint-medium) {
-            @include siimple-fluid();
-        }
-    }
-    //Large content
-    &--large {
-        width: $siimple-default-breakpoint-large;
-        padding: {
-            left: calc(50% - #{$siimple-default-breakpoint-large / 2});
-            right: calc(50% - #{$siimple-default-breakpoint-large / 2});
-        }
-        @media screen and (max-width: $siimple-default-breakpoint-large) {
-            @include siimple-fluid();
+    //Content sizes
+    @each $size in map.keys(siimple.$sizes) {
+        &--#{$size} {
+            @include siimple.sizing($size);
         }
     }
 }

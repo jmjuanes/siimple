@@ -5,10 +5,11 @@
 // Repository: https://github.com/siimple/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Text helpers
-.#{$siimple-prefix}--text {
+.#{siimple.$name}--text {
     //Text alignment
     &-justify {
         text-align: justify !important;

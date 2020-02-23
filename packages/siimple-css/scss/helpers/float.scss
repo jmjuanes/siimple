@@ -5,11 +5,11 @@
 // Repository: https://github.com/siimple/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../mixins.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Float mixin
-@mixin siimple-helpers-float {
+@mixin helpers-float {
     &-left {
         float: left !important;
     }
@@ -20,22 +20,23 @@
         float: none !important;
     }
 }
+
 //Float helpers
-.#{$siimple-prefix}--float {
+.#{$siimple.$name}--float {
     //Default float
-    @include siimple-helpers-float();
+    @include helpers-float();
     //Responsive float
-    @each $name, $size in $siimple-default-breakpoint {
-        @media (max-width: $size) {
-            &-#{$name} {
-                @include siimple-helpers-float()
-            }
-        }
-    }
+    //@each $name, $size in siimple.$breakpoints {
+    //    @media (max-width: $size) {
+    //        &-#{$name} {
+    //            @include helpers-float()
+    //        }
+    //    }
+    //}
 }
 
 //Clear floated content
-.#{$siimple-prefix}--clearfix {
-    @include siimple-utils-clear();
+.#{siimple.$name}--clearfix {
+    @include siimple.clearfix();
 }
 

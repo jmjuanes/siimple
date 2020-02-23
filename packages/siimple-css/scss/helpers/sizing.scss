@@ -5,12 +5,13 @@
 // Repository: https://github.com/siimple/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Sizing helpers
-.#{$siimple-prefix} {
+.#{siimple.$name} {
     //Sizes 
-    @each $key,$value in $siimple-default-percentages {
+    @each $key,$value in siimple.$percentages {
         &--width-#{$key} {
             width: $value !important;
         }

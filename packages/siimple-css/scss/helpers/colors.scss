@@ -5,31 +5,33 @@
 // Repository: https://github.com/siimple/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
+
+@use "sass:map";
+@use "@siimple/lib" as siimple;
 
 //Colors helpers
-.#{$siimple-prefix} {
-    @each $color in $siimple-default-colors {
+.#{siimple.$name} {
+    @each $color in map.keys(siimple.$colors) {
         //Text color
         &--color-#{$color},
         &--hcolor-#{$color}:hover {
-            color: siimple-default-color($color, "base") !important;
+            color: siimple.color($color) !important;
         }
         //Background color
         &--bg-#{$color},
         &--hbg-#{$color}:hover {
-            background-color: siimple-default-color($color, "base") !important;
+            background-color: siimple.color($color) !important;
         }
     }
     //White text color
     &--color-white,
     &--hcolor-white:hover {
-        color: $siimple-default-white !important;
+        color: siimple.color("white") !important;
     }
     //White background color
     &--bg-white,
     &--hbg-white:hover {
-        background-color: $siimple-default-white !important;
+        background-color: siimple.color("white") !important;
     }
 }
 

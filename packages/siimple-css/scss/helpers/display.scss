@@ -5,11 +5,11 @@
 // Repository: https://github.com/siimple/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "../variables.scss";
-@import "../mixins.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Display mixin
-@mixin siimple-helpers-display () {
+@mixin helpers-display () {
     &-none {
         display: none !important;
     }
@@ -40,16 +40,16 @@
 }
 
 //Display helpers
-.#{$siimple-prefix}--display {
+.#{siimple.$name}--display {
     //Base display
-    @include siimple-helpers-display();
+    @include helpers-display();
     //Responsive display 
-    @each $name,$size in $siimple-default-breakpoint {
-        @media (max-width: $size) {
-            &-#{$name} {
-                @include siimple-helpers-display();
-            }
-        }
-    }
+    //@each $name,$size in siimple.$breakpoints {
+    //    @media (max-width: $size) {
+    //        &-#{$name} {
+    //            @include elpers-display();
+    //        }
+    //    }
+    //}
 }
 

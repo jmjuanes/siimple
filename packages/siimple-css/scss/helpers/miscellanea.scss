@@ -6,14 +6,13 @@
 // Website:    https://www.siimple.xyz
 //
 
-@import "../variables.scss";
-@import "../functions.scss";
+@use "@siimple/lib" as siimple;
 
 //Miscellanea styles
-.#{$siimple-prefix} {
+.#{siimple.$name} {
     //Rounded corners
     &--rounded {
-        border-radius: $siimple-default-border-radius;
+        border-radius: siimple.$border-radius;
     }
     //Pointer cursor
     &--pointer {
@@ -21,25 +20,25 @@
     }
     //Borders
     &--border-light {
-        border: 2px solid siimple-default-color("light");
+        border: 2px solid siimple.color("light");
     }
     &--border-white {
-        border: 2px solid siimple-default-color("white");
+        border: 2px solid siimple.color("white");
     }
     &--border-dark {
-        border: 2px solid siimple-default-color("dark");
+        border: 2px solid siimple.color("dark");
     }
     //Striped light background
-    //&--striped-light {
     &--striped {
-        @include siimple-utils-stripedbg (siimple-default-color("light"), transparent);
+        @include siimple.striped-bg(siimple.color("light"), transparent);
     }
-    ////Striped dark background
-    //&--striped-dark {
-    //    @include siimple-utils-stripedbg(
-    //        siimple-default-color("dark"),
-    //        siimple-default-color("dark", "light")
-    //    );
-    //}
+    //Line height
+    &--lh {
+        line-height: siimple.$line-height !important;
+    }
+    //Condensed line height
+    &--lh-condensed {
+        line-height: 18px !important;
+    }
 }
 
