@@ -9,7 +9,7 @@
 @use "sass:map";
 @use "@siimple/lib" as siimple;
 
-//Breakpoints class
+//Content helpers
 .#{siimple.$name} {
     //Fluid content
     &--fluid { 

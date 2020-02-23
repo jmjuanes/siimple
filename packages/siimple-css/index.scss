@@ -6,65 +6,60 @@
 // Website:    https://www.siimple.xyz
 //
 
-//Import default variables and utilities
-@import "./scss/variables.scss";
-@import "./scss/mixins.scss";
-
 //Import base style
-@import "./scss/base.scss";
+@use "./scss/base.scss";
 
 //Import typography
-@import "./scss/typography/blockquote.scss";
-@import "./scss/typography/code.scss";
-@import "./scss/typography/heading.scss";
-@import "./scss/typography/link.scss";
-@import "./scss/typography/paragraph.scss";
-@import "./scss/typography/pre.scss";
-@import "./scss/typography/small.scss";
+@use "./scss/typography/blockquote.scss";
+@use "./scss/typography/code.scss";
+@use "./scss/typography/heading.scss";
+@use "./scss/typography/link.scss";
+@use "./scss/typography/paragraph.scss";
+@use "./scss/typography/pre.scss";
+@use "./scss/typography/small.scss";
 
 //Import elements
-@import "./scss/elements/btn.scss";
-@import "./scss/elements/rule.scss";
-@import "./scss/elements/spinner.scss";
-@import "./scss/elements/tag.scss";
-@import "./scss/elements/tip.scss";
+@use "./scss/elements/btn.scss";
+@use "./scss/elements/rule.scss";
+@use "./scss/elements/spinner.scss";
+@use "./scss/elements/tag.scss";
+@use "./scss/elements/tip.scss";
 
 //Import components
-@import "./scss/components/alert.scss";
-@import "./scss/components/breadcrumb.scss";
-@import "./scss/components/card.scss";
-@import "./scss/components/list.scss";
-@import "./scss/components/menu.scss";
-@import "./scss/components/table.scss";
-@import "./scss/components/tabs.scss";
+@use "./scss/components/alert.scss";
+@use "./scss/components/breadcrumb.scss";
+@use "./scss/components/card.scss";
+@use "./scss/components/list.scss";
+@use "./scss/components/menu.scss";
+@use "./scss/components/table.scss";
+@use "./scss/components/tabs.scss";
 
 //Import layout
-@import "./scss/layout/content.scss";
-@import "./scss/layout/footer.scss";
-@import "./scss/layout/jumbotron.scss";
-@import "./scss/layout/navbar.scss";
+@use "./scss/layout/content.scss";
+@use "./scss/layout/footer.scss";
+@use "./scss/layout/jumbotron.scss";
+@use "./scss/layout/navbar.scss";
 
 //Import form elements
-@import "./scss/form/checkbox.scss";
-@import "./scss/form/field.scss";
-@import "./scss/form/form.scss";
-@import "./scss/form/input.scss";
-@import "./scss/form/label.scss";
-@import "./scss/form/radio.scss";
-@import "./scss/form/select.scss";
-@import "./scss/form/switch.scss";
-@import "./scss/form/textarea.scss";
+@use "./scss/form/checkbox.scss";
+@use "./scss/form/field.scss";
+@use "./scss/form/input.scss";
+@use "./scss/form/label.scss";
+@use "./scss/form/radio.scss";
+@use "./scss/form/select.scss";
+@use "./scss/form/switch.scss";
+@use "./scss/form/textarea.scss";
 
 //Import grid
-@import "./scss/grid/grid.scss";
+@use "./scss/grid/grid.scss";
 
 //Import helpers
-@import "./scss/helpers/colors.scss";
-@import "./scss/helpers/display.scss";
-@import "./scss/helpers/float.scss";
-@import "./scss/helpers/line-height.scss";
-@import "./scss/helpers/sizing.scss";
-@import "./scss/helpers/spacing.scss";
-@import "./scss/helpers/text.scss";
-@import "./scss/helpers/miscellanea.scss";
+@use "./scss/helpers/colors.scss";
+@use "./scss/helpers/content.scss";
+@use "./scss/helpers/display.scss";
+@use "./scss/helpers/float.scss";
+@use "./scss/helpers/sizing.scss";
+@use "./scss/helpers/spacing.scss";
+@use "./scss/helpers/text.scss";
+@use "./scss/helpers/miscellanea.scss";
 
