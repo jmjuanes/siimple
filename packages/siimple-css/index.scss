@@ -8,6 +8,7 @@
 
 //Import base style
 @use "./scss/base.scss";
+@use "./scss/reset.scss";
 
 //Import typography
 @use "./scss/typography/blockquote.scss";
