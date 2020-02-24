@@ -27,7 +27,7 @@
     //line-height: $siimple-default-line-height;
     //Tip colors
     @each $color in map.keys(siimple.$colors) {
-        &#{&}--#{$color} {
+        &--#{$color} {
             background-color: lighten(siimple.color-lighter($color), 8%);
             border-left-color: siimple.color($color);
         }

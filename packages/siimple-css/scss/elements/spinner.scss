@@ -61,9 +61,9 @@
     }
     //Spinner colors
     @each $color in map.keys(siimple.$colors) {
-        &#{&}--#{$color}, 
-        &#{&}--#{$color}:after,
-        &#{&}--#{$color}:before {
+        &--#{$color}, 
+        &--#{$color}:after,
+        &--#{$color}:before {
             background-color: siimple.color($color);
         }
     }

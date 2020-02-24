@@ -28,7 +28,7 @@
     }
     //Tag colors
     @each $color in map.keys(siimple.$colors) {
-        &#{&}--#{$color} {
+        &--#{$color} {
             background-color: siimple.color($color);
             color: siimple.color-invert($color);
         }
