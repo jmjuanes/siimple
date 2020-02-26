@@ -6,12 +6,11 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "@siimple/lib" as siimple;
 
 //Colors helpers
 .#{siimple.$name} {
-    @each $color in map.keys(siimple.$colors) {
+    @each $color in siimple.utils-keys(siimple.$colors) {
         //Text color
         &--color-#{$color},
         &--hcolor-#{$color}:hover {

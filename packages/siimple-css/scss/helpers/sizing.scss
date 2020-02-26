@@ -7,11 +7,12 @@
 //
 
 @use "@siimple/lib" as siimple;
+@use "../variables.scss";
 
 //Sizing helpers
 .#{siimple.$name} {
     //Sizes 
-    @each $key,$value in siimple.$percentages {
+    @each $key,$value in variables.$percentages {
         &--width-#{$key} {
             width: $value !important;
         }

@@ -6,7 +6,6 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "@siimple/lib" as siimple;
 
 //Content helpers
@@ -16,7 +15,7 @@
         @include siimple.fluid();
     }
     //Content sizes
-    @each $size in map.keys(siimple.$sizes) {
+    @each $size in siimple.utils-keys(siimple.$breakpoints) {
         &--#{$size} {
             @include siimple.sizing($size);
         }
