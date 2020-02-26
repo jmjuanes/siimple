@@ -85,7 +85,7 @@
     }
     //Check for list --> return a list: 1, 2, ... length($list)
     @if is-list($items) == true {
-        $list = (); //List with indexes
+        $list: (); //List with indexes
         @for $i from 1 through list.length($items) {
             $list: list.append($list, $i); //Append the value
         }
