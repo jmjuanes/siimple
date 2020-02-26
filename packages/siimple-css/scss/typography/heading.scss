@@ -6,29 +6,28 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "@siimple/lib" as siimple;
+@use "../variables.scss" as variables;
 
 //Headings default variables
 $heading-margin-bottom: 0.5em !default;
 
 //Heading class
 .#{siimple.$name}-h {
-    @each $heading-number,$heading-variables in siimple.$headings {
+    @each $heading-name,$heading in variables.$headings {
         //Add this heading size
-        &#{$heading-number} {
+        &#{$heading-name} {
             display: block;
-            font-size: map.get($heading-variables, "size");
+            font-size: siimple.utils-get($heading, "size");
             //font-family: $siimple-default-text-font;
             font-weight: 600;
-            line-height: map.get($heading-variables, "line-height");
+            line-height: siimple.utils-get($heading, "line-height");
             //color: $siimple-default-color;
             padding: 0px;
-            //margin-bottom: map-get($heading_variables, "margin-bottom");
             margin-bottom: $heading-margin-bottom;
             //Not first child
             &:not(:first-child) {
-                margin-top: map.get($heading-variables, "margin-top");
+                margin-top: siimple.utils-get($heading, "margin-top");
             }
         }
     }

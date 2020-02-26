@@ -12,7 +12,7 @@
 .#{siimple.$name}-link {
     //font-family: $siimple-default-font-size;
     color: siimple.color("primary");
-    font-weight: 600;
+    font-weight: siimple.$weight-bold;
     text-decoration: none;
     transition: color 0.3s;
     cursor: pointer;

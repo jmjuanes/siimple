@@ -21,6 +21,7 @@ $pre-padding: 15px !default;
     color: siimple.color("dark");
     line-height: $pre-line-height;
     font-size: $pre-text-size;
+    font-family: siimple.$font-monospace;
     background-color: siimple.color("light");
     border-radius: siimple.$border-radius;
     padding: $pre-padding;
@@ -29,7 +30,7 @@ $pre-padding: 15px !default;
     //Pre dark mode
     &--dark {
         background-color: siimple.color("dark") !important;
-        color: siimple.$white;
+        color: siimple.color("white");
     }
 }
 

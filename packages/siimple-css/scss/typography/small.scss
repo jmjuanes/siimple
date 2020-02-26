@@ -9,11 +9,10 @@
 @use "@siimple/lib" as siimple;
 
 //Small text variables
-$small-text-size: 12px !default;
+$small-text-size: siimple.$text-size-small !default;
 
 //Small class
 .#{siimple.$name}-small {
-    //font-family: $siimple-default-text-font;
     font-size: $small-text-size;
     color: siimple.color-lighter("dark");
 }
