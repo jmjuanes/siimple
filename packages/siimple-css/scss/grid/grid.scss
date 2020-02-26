@@ -7,6 +7,7 @@
 //
 
 @use "@siimple/lib" as siimple;
+@use "../variables.scss" as variables;
 
 //Grid variables
 $grid-margin-left: auto;
@@ -14,6 +15,7 @@ $grid-margin-right: auto;
 $grid-row-margin: -12px;
 $grid-column-margin: 10px;
 $grid-column-padding: 12px;
+$grid-sizes: variables.$grid;
 
 //Grid class
 .#{siimple.$name}-grid {
@@ -42,16 +44,16 @@ $grid-column-padding: 12px;
         padding: $grid-column-padding;
     }
     //Grid default column sizes
-    @each $grid-name, $grid-width in siimple.$grid {
+    @each $grid-name, $grid-width in $grid-sizes {
         &-col--#{$grid-name} {
             //width: #{$grid-width};
             width: calc(#{$grid-width} - 2 * #{$grid-column-padding});
         }
     }
     //Grid columns for each breakpoint
-    @each $grid-breakpoint, $grid-screen in siimple.$breakpoints {
+    @each $grid-breakpoint, $grid-screen in variables.$breakpoints-alias {
         @media (max-width: $grid-screen) {
-            @each $grid-name, $grid-width in siimple.$grid {
+            @each $grid-name, $grid-width in $grid-sizes {
                 &-col--#{$grid-breakpoint}-#{$grid-name},
                 &-col-#{$grid-breakpoint}--#{$grid-name} {
                     //width: #{$grid-width};
