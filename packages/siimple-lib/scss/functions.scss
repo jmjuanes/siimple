@@ -6,7 +6,6 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "./variables.scss" as variables;
 @use "./lists.scss" as lists
 @use "./utils.scss" as utils;
@@ -18,7 +17,7 @@
         @return variables.$white;
     }
     //Return the base color from the list of colors
-    @return map.get(lists.$colors, "#{$color}");
+    @return utils.get(lists.$colors, "#{$color}");
 }
 
 //Make a color darker
@@ -45,7 +44,7 @@
 
 //Get a breakpoint value by name
 @function breakpoint ($name) {
-    @return map.get(lists.$breakpoints, $name);
+    @return utils.get(lists.$breakpoints, $name);
 }
 
 
