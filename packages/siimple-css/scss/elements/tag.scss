@@ -6,7 +6,6 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "@siimple/lib" as siimple;
 
 //Tag class
@@ -27,7 +26,7 @@
         border-radius: 15px;        
     }
     //Tag colors
-    @each $color in map.keys(siimple.$colors) {
+    @each $color in siimple.utils-keys(siimple.$colors) {
         &--#{$color} {
             background-color: siimple.color($color);
             color: siimple.color-invert($color);

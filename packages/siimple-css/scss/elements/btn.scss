@@ -6,7 +6,6 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "@siimple/lib" as siimple;
 
 //Button class
@@ -33,7 +32,7 @@
     @include siimple.user-select(none);
     //Default button style
     color: siimple.$text-color;
-    background-color: siimple.$white;
+    background-color: siimple.color("white");
     //Button hover style
     &:hover {
         text-decoration: none;
@@ -41,7 +40,7 @@
         background-color: siimple.color("light");
     }
     //Button colors
-    @each $color in map.keys(siimple.$colors) {
+    @each $color in siimple.utils-keys(siimple.$colors) {
         &--#{$color} {
             background-color: siimple.color($color);
             color: siimple.color-invert($color);
@@ -103,10 +102,10 @@
     //White button
     &--white {
         transition: opacity 0.3s !important;
-        background-color: siimple.$white;
+        background-color: siimple.color("white");
         opacity: 1.0;
         &:hover {
-            background-color: siimple.$white !important;
+            background-color: siimple.color("white") !important;
             opacity: 0.8;
         }
     }

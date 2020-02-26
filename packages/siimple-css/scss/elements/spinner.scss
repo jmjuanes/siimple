@@ -6,7 +6,6 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "@siimple/lib" as siimple;
 
 //Base spinner mixin
@@ -60,7 +59,7 @@
         top: 5px;
     }
     //Spinner colors
-    @each $color in map.keys(siimple.$colors) {
+    @each $color in siimple.utils-keys(siimple.$colors) {
         &--#{$color}, 
         &--#{$color}:after,
         &--#{$color}:before {
