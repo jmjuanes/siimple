@@ -7,6 +7,7 @@
 //
 
 @use "sass:color";
+@use "sass:list";
 @use "sass:map";
 @use "sass:meta";
 
@@ -52,18 +53,54 @@
     @return meta.type-of($value) == "string";
 }
 
+//Check if the provided value is a map
+@function is-map ($value) {
+    @return meta.type-of($value) == "map";
+}
+
+//Check if the provided value is a list
+@function is-list ($value) {
+    @return meta.type-of($value) == "list";
+}
+
 //Alias for map.get
-@function get ($map, $key) {
-    @return map.get($map, $key);
+@function get ($items, $key) {
+    //Check for map --> return the value using map.get
+    @if is-map($items) == true {
+        @return map.get($items, $key);
+    }
+    //Check for list --> return the value using nth
+    @if is-list($items) == true {
+        @return list.nth($items, $key);
+    }
+    //Other type --> error
+    @error "'get' method only accepts a list or a map";
 }
 
-//Alist for map.keys
-@function keys ($map) {
-    @return map.keys($map);
+//Alias for map.keys
+@function keys ($items) {
+    //Check for map --> return the list of keys using map.keys
+    @if is-map($items) == true {
+        @return map.keys($items);
+    }
+    //Check for list --> return a list: 1, 2, ... length($list)
+    @if is-list($items) == true {
+        $list = (); //List with indexes
+        @for $i from 1 through list.length($items) {
+            $list: list.append($list, $i); //Append the value
+        }
+        @return $list; //Return the list keys
+    }
+    @return $items;
 }
 
-//Aliast for map.values
-@function values ($map) {
-    @return map.values($map);
+//Alias for map.values
+@function values ($items) {
+    //Check for map --> return the list of values using map.values
+    @if is-map($items) == true {
+        @return map.values($items);
+    }
+    //Otherwise: return the value provided
+    @return $list;
 }
 
