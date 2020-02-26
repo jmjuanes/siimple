@@ -6,119 +6,19 @@
 // Website:    https://www.siimple.xyz
 //
 
-//Import dependencies
-@import "./functions.scss";
-@import "./mixins.scss";
+@use "@siimple/lib" as siimple;
 
-//Default class prefix
-$siimple-prefix: "siimple";
-
-//Darker/lighter amount
-$siimple-default-amount: 20% !default;
-
-//Default colors
-$siimple-default-white: #ffffff !default;
-$siimple-default-navy: #34495e !default;
-$siimple-default-primary: #4e91e4 !default;
-$siimple-default-secondary: #4ccdac !default;
-$siimple-default-success: #4acf7f !default;
-$siimple-default-warning: #fbc850 !default;
-$siimple-default-error: #ee675d !default;
-
-//Grey colors
-$siimple-default-grey: #dde5ee !default;
-$siimple-default-grey-dark: #cbd8e6 !default;
-$siimple-default-grey-light: #eef2f7 !default;
-
-//Default color palette
-$siimple-default-palette: (
-    "primary": (
-        "dark": darken($siimple-default-primary, $siimple-default-amount), 
-        "base": $siimple-default-primary, 
-        "light": lighten($siimple-default-primary, $siimple-default-amount), 
-        "over": $siimple-default-white
-    ),
-    "secondary": (
-        "dark": darken($siimple-default-secondary, $siimple-default-amount),
-        "base": $siimple-default-secondary,
-        "light": lighten($siimple-default-secondary, $siimple-default-amount),
-        "over": $siimple-default-white
-    ),
-    "success": (
-        "dark": darken($siimple-default-success, $siimple-default-amount), 
-        "base": $siimple-default-success, 
-        "light": lighten($siimple-default-success, $siimple-default-amount), 
-        "over": $siimple-default-white
-    ),
-    "warning": (
-        "dark": darken($siimple-default-warning, $siimple-default-amount), 
-        "base": $siimple-default-warning, 
-        "light": lighten($siimple-default-warning, $siimple-default-amount), 
-        "over": $siimple-default-white
-    ),
-    "error": (
-        "dark": darken($siimple-default-error, $siimple-default-amount), 
-        "base": $siimple-default-error, 
-        "light": lighten($siimple-default-error, $siimple-default-amount), 
-        "over": $siimple-default-white
-    ),
-    "dark": (
-        "dark": darken($siimple-default-navy, $siimple-default-amount), 
-        "base": $siimple-default-navy, 
-        "light": lighten($siimple-default-navy, $siimple-default-amount), 
-        "over": $siimple-default-white
-    ),
-    "light": (
-        "dark": $siimple-default-grey, 
-        "base": $siimple-default-grey-light, 
-        "light":$siimple-default-white, 
-        "over": $siimple-default-navy
-    ) 
+//Breakpoints aliases
+$breakpoints-alias: (
+    "xl": siimple.$breakpoint-extra-large,
+    "lg": siimple.$breakpoint-large,
+    "md": siimple.$breakpoint-medium,
+    "sm": siimple.$breakpoint-small,
+    "xs": siimple.$breakpoint-extra-small
 );
-
-//Default colors list
-$siimple-default-colors: ("primary", "secondary", "success", "warning", "error", "dark", "light");
-$siimple-default-basic-colors: ("primary", "secondary", "success", "warning", "error");
-
-//Default breakpoints variables
-$siimple-default-breakpoint-gap: 20px !default;
-$siimple-default-breakpoint-fluid: 100% !default;
-$siimple-default-breakpoint-extra-small: 480px !default;
-$siimple-default-breakpoint-small: 600px !default;
-$siimple-default-breakpoint-medium: 768px !default;
-$siimple-default-breakpoint-large: 960px !default;
-$siimple-default-breakpoint-extra-large: 1280px !default;
-
-//Default breakpoints map
-$siimple-default-breakpoint: (
-    "xl": $siimple-default-breakpoint-extra-large,
-    "lg": $siimple-default-breakpoint-large,
-    "md": $siimple-default-breakpoint-medium,
-    "sm": $siimple-default-breakpoint-small,
-    "xs": $siimple-default-breakpoint-extra-small
-);
-
-//Default text color
-$siimple-default-color: $siimple-default-navy !default;
-
-//Default font variables
-$siimple-default-font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700";
-$siimple-default-font-size: 16px !default;
-$siimple-default-font-weight: 400 !default;
-$siimple-default-font-family: "Roboto", sans-serif !default;
-
-//Default line-height
-$siimple-default-line-height: 24px !default;
-
-//Default border values
-$siimple-default-border-radius: 5px !default;
-
-//Default margin values
-$siimple-default-margin-top: 0px !default;
-$siimple-default-margin-bottom: 20px !default;
 
 //Default heading values
-$siimple-default-headings: (
+$headings: (
     "1": ("size": 40px, "line-height": 51px, "margin-bottom": 20px, "margin-top": 30px),
     "2": ("size": 32px, "line-height": 40px, "margin-bottom": 16px, "margin-top": 30px),
     "3": ("size": 28px, "line-height": 29px, "margin-bottom": 14px, "margin-top": 30px),
@@ -128,7 +28,7 @@ $siimple-default-headings: (
 );
 
 //Default grid sizes
-$siimple-default-grid: (
+$grid: (
     "1": "8.33%", 
     "2": "16.66%",
     "3": "24.99%", 
@@ -144,7 +44,7 @@ $siimple-default-grid: (
 );
 
 //Default percentages values 
-$siimple-default-percentages : (
+$percentages : (
     "0": 0%,
     "25": 25%,
     "50": 50%,
@@ -153,7 +53,7 @@ $siimple-default-percentages : (
 );
 
 //Default spacing variables
-$siimple-default-spacing: (
+$spacing: (
     "0": 0px,
     "1": 5px,
     "2": 10px,
@@ -161,8 +61,5 @@ $siimple-default-spacing: (
     "4": 25px,
     "5": 45px,
     "auto": auto
-) !default;
-
-//Form checked colors
-$siimple-default-form-colors: ("success", "error", "warning");
+);
 
