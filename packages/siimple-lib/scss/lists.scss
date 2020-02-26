@@ -1,0 +1,44 @@
+//
+// @siimple/lib - core scss library for siimple
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/develop/LICENSE.md
+// Repository: https://github.com/siimple/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@use "./variables.scss" as variables;
+@use "./utils.scss" as utils;
+
+//Default color palette
+$colors: (
+    "primary": variables.$primary,
+    "secondary": variables.$secondary,
+    "success": variables.$success,
+    "warning": variables.$warning,
+    "error": variables.$error,
+    "dark": variables.$dark,
+    "light": variables.$light
+) !default;
+
+//Status colors
+$status-colors: (
+    "success": variables.$success,
+    "warning": variables.$warning,
+    "error": variables.$error
+) !default;
+
+//Default theming colors
+$theme-colors: (
+    "light": variables.$light,
+    "dark": variables.$dark
+) !default;
+
+//Default breakpoints map
+$breakpoints: (
+    "extra-large": variables.$breakpoint-extra-large,
+    "large": variables.$breakpoint-large,
+    "medium": variables.$breakpoint-medium,
+    "small": variables.$breakpoint-small,
+    "extra-small": variables.$breakpoint-extra-small
+) !default;
+
