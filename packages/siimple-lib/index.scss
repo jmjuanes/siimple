@@ -10,5 +10,5 @@
 @forward "./scss/variables.scss";
 @forward "./scss/functions.scss";
 @forward "./scss/mixins.scss";
-@forward "./scss/utils.scss";
+@forward "./scss/utils.scss" as utils-*;
 
