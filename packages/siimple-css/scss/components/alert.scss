@@ -6,7 +6,6 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "@siimple/lib" as siimple;
 
 //Alert global variables
@@ -22,7 +21,6 @@ $alert-padding-right: 30px;
     //color: $siimple-navy;
     line-height: siimple.$line-height;
     font-size: siimple.$text-size;
-    //font-family: $siimple-default-text-font;
     position: relative;
     border-radius: siimple.$border-radius;
     //Default background and text color
@@ -73,9 +71,9 @@ $alert-padding-right: 30px;
         }
     }
     //Alert colors 
-    @each $color in map.keys(siimple.$colors) {
+    @each $color in siimple.utils-keys(siimple.$colors) {
         &#{&}--#{$color} {
-            background-color: siimple.lighten(siimple.color($color), 30%);
+            background-color: siimple.utils-lighten(siimple.color($color), 30%);
             color: siimple.color-darker($color);
         }
         //Close icon color

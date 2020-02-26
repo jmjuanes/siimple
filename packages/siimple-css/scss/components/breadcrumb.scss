@@ -35,7 +35,7 @@ $breadcrumb-text-size: 14px;
         line-height: $breadcrumb-height;
         //text-align: center;
         //font-family: $siimple-default-text-font;
-        font-weight: 600;
+        font-weight: siimple.$weight-bold;
         text-decoration: none;
         color: siimple.color("primary");
         transition: color 0.3s;

@@ -47,7 +47,7 @@
         margin-bottom: 2px;
     }
     &--hover &-item:not(#{&}-item--active):hover {
-        background-color: siimple.darken(siimple.color("light"), 10%);
+        background-color: siimple.utils-darken(siimple.color("light"), 10%);
         cursor: pointer;
     }
     //Active list item

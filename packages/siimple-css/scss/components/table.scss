@@ -6,12 +6,12 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "@siimple/lib" as siimple;
+@use "../variables.scss" as variables;
 
 //Table cell variables
 $table-cell-padding: 8px;
-$table-cell-sizes: siimple.$grid;
+$table-cell-sizes: variables.$grid;
 $table-colors: (
     "primary": 15%, 
     "secondary": 15%,
@@ -103,7 +103,7 @@ $table-colors: (
     }
     //Table with border
     &--border &-cell {
-        border: 1px solid siimple.darken(siimple.color("light"), 5%);
+        border: 1px solid siimple.utils-darken(siimple.color("light"), 5%);
     }
     //Table header
     &-header {
@@ -128,7 +128,7 @@ $table-colors: (
         //border-bottom-right-radius: 0px !important;
         //border-bottom-left-radius: 0px !important;
         vertical-align: bottom;
-        border-bottom: 2px solid siimple.darken(siimple.color("light"), 5%);
+        border-bottom: 2px solid siimple.utils-darken(siimple.color("light"), 5%);
         font-weight: 600;
     }
     //Table body
@@ -137,11 +137,11 @@ $table-colors: (
         vertical-align: middle;
     }
     &-body &-cell {
-        border-top: 1px solid siimple.darken(siimple.color("light"), 5%);
+        border-top: 1px solid siimple.utils-darken(siimple.color("light"), 5%);
     }
     //Not last row of the table body
     &-body &-row:not(:last-child) &-cell {
-        border-bottom: 1px solid siimple.darken(siimple.color("light"), 5%);
+        border-bottom: 1px solid siimple.utils-darken(siimple.color("light"), 5%);
     }
     //Bordered table with rouded corners
     &--border &-body &-row:last-child &-cell:first-child {
@@ -161,11 +161,11 @@ $table-colors: (
     }
     //Striped table
     &--striped &-body &-row:nth-child(odd) &-cell {
-        background-color: siimple.lighten(siimple.color("light"), 3%);
+        background-color: siimple.utils-lighten(siimple.color("light"), 3%);
     }
     //Hovered table
     &--hover &-body &-row:hover &-cell {
-        background-color: siimple.lighten(siimple.color("light"), 0%);
+        background-color: siimple.utils-lighten(siimple.color("light"), 0%);
     }
     //Fixed columns width
     &--fixed {
@@ -178,12 +178,12 @@ $table-colors: (
         overflow-x: auto;
     }
     //Colored table rows
-    @each $color in map.keys(siimple.$colors) {
+    @each $color in siimple.utils-keys(siimple.$colors) {
         @if $color != "dark" and $color != "light" {
             &-row--#{$color},
             &-row--#{$color} &-cell {
-                $color-lighten: map.get($table-colors, $color);
-                background-color: siimple.lighten(siimple.color-lighter($color), $color-lighten) !important;
+                $color-lighten: siimple.utils-get($table-colors, $color);
+                background-color: siimple.utils-lighten(siimple.color-lighter($color), $color-lighten) !important;
             }
         }
     }
