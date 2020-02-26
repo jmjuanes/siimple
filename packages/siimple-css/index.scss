@@ -6,6 +6,8 @@
 // Website:    https://www.siimple.xyz
 //
 
+@forward "@siimple/lib"; //Forward lib variables
+
 @use "./scss/base.scss";
 @use "./scss/reset.scss";
 @use "./scss/typography/index.scss" as typography;
