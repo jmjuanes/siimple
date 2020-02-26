@@ -54,9 +54,9 @@
 
 //Fluid content size
 @mixin fluid () {
-    width: calc(100% - #{2 * defaults.$gap});
-    padding-left: defaults.$gap;
-    padding-right: defaults.$gap;
+    width: calc(100% - #{2 * variables.$gap});
+    padding-left: variables.$gap;
+    padding-right: variables.$gap;
 }
 
 //Sizing mixin
@@ -68,8 +68,8 @@
     //Apply the provided size only in screen widts > $size
     @media screen and (min-width: $size) {
         width: $size;
-        padding-left: calc(50% - (#{$size} - 2 * defaults.$gap) / 2);
-        padding-right: calc(50% - (#{$size} - 2 * defaults.$gap) / 2);
+        padding-left: calc(50% - (#{$size} - 2 * variables.$gap) / 2);
+        padding-right: calc(50% - (#{$size} - 2 * variables.$gap) / 2);
     }
 }
 
