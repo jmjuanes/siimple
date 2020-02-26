@@ -52,4 +52,18 @@
     @return meta.type-of($value) == "string";
 }
 
+//Alias for map.get
+@function get ($map, $key) {
+    @return map.get($map, $key);
+}
+
+//Alist for map.keys
+@function keys ($map) {
+    @return map.keys($map);
+}
+
+//Aliast for map.values
+@function values ($map) {
+    @return map.values($map);
+}
 
