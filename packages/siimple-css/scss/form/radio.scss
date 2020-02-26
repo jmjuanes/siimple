@@ -6,7 +6,6 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "@siimple/lib" as siimple;
 
 //Radio variables
@@ -69,7 +68,7 @@ $radio-circle: 6px;
         border-color: siimple.color("primary");
     }
     //Radio colors
-    @each $color in map.keys(siimple.$status-colors) {
+    @each $color in siimple.utils-keys(siimple.$status-colors) {
         &--#{$color} input[type=radio]:checked + label:after {
             background-color: siimple.color($color);
         }

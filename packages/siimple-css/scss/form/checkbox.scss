@@ -6,7 +6,6 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "@siimple/lib" as siimple;
 
 //Checkbox variables
@@ -77,7 +76,7 @@ $checkbox-margin: 6px;
         left: 5px;
     }
     //Checkbox colors
-    @each $color in map.keys(siimple.$status-colors) {
+    @each $color in siimple.utils-keys(siimple.$status-colors) {
         &--#{$color} input[type=checkbox]:checked + label,
         &--#{$color} input[type=checkbox]:indeterminate + label {
             background-color: siimple.color($color);

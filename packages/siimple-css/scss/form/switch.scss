@@ -6,7 +6,6 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "@siimple/lib" as siimple;
 
 //Switch variables
@@ -80,7 +79,7 @@ $switch-margin: 6px;
         background-color: siimple.color("white");
     }
     //Colored switch 
-    @each $color in map.keys(siimple.$status-colors) {
+    @each $color in siimple.utils-keys(siimple.$status-colors) {
         &--#{$color} input[type=checkbox]:checked ~ label::before {
             background-color: siimple.color($color);
         }
