@@ -6,11 +6,10 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "@siimple/lib" as siimple;
 
 //Footer variables
-$footer-light-text: siimple.lighten(siimple.color("dark"), 40%);
+$footer-light-text: siimple.utils-lighten(siimple.color("dark"), 40%);
 $footer-padding: 50px;
 $footer-text-size: 14px;
 $footer-line-height: 20px;
@@ -74,7 +73,7 @@ $footer-line-height: 20px;
         background-color: siimple.color-darker("light");
     }
     //Footer colors
-    @each $color in map.keys(siimple.$colors) {
+    @each $color in siimple.utils-keys(siimple.$colors) {
         //Footer color
         &--#{$color} {
             background-color: siimple.color($color);
@@ -86,7 +85,7 @@ $footer-line-height: 20px;
         }
     }
     //Footer sizes
-    @each $size in map.keys(siimple.$sizes) {
+    @each $size in siimple.utils-keys(siimple.$breakpoints) {
         &--#{$size} {
             @include siimple.sizing($size);
         }

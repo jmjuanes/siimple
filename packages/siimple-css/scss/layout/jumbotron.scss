@@ -6,7 +6,6 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "sass:map";
 @use "@siimple/lib" as siimple;
 
 //Jumbotron variables
@@ -57,14 +56,14 @@ $jumbotron-subtitle-line-height: 29px;
         margin-top: 8px;
     }
     //Colored jumbotron
-    @each $color in map.keys(siimple.$colors) {
+    @each $color in siimple.utils-keys(siimple.$colors) {
         &--#{$color} {
             background-color: siimple.color($color);
             color: siimple.color-invert($color);
         }
     }
     //Jumbotron sizes
-    @each $size in map.keys(siimple.$sizes) {
+    @each $size in siimple.utils-keys(siimple.$breakpoints) {
         &--#{$size} {
             @include siimple.sizing($size);
         }
