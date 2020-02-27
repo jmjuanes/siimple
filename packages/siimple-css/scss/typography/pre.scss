@@ -9,22 +9,28 @@
 @use "@siimple/lib" as siimple;
 
 //Pre vriables
-$pre-text-size: 14px !default;
-$pre-line-height: 20px !default;
-$pre-padding: 15px !default;
+$pre-text-size: 13px !default;
+$pre-line-height: 18px !default;
+$pre-padding-left: 15px !default;
+$pre-padding-right: 15px !default;
+$pre-padding-top: 10px !default;
+$pre-padding-bottom: 10px !default;
 
 //Pre class
 .#{siimple.$name}-pre {
     display: block;
     overflow-x: auto;
-    width: calc(100% - 2 * #{$pre-padding});
+    width: calc(100% - #{$pre-padding-left} - #{$pre-padding-right});
     color: siimple.color("dark");
     line-height: $pre-line-height;
     font-size: $pre-text-size;
     font-family: siimple.$font-monospace;
     background-color: siimple.color("light");
     border-radius: siimple.$border-radius;
-    padding: $pre-padding;
+    padding-top: $pre-padding-top;
+    padding-bottom: $pre-padding-bottom;
+    padding-left: $pre-padding-left;
+    padding-right: $pre-padding-right;
     margin-bottom: siimple.$margin-bottom;
     margin-top: 0px;
     //Pre dark mode
