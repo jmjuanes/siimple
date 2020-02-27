@@ -78,9 +78,9 @@
     }
     //Apply the provided size only in screen widts > $size
     @media screen and (min-width: $size) {
-        width: $size;
-        padding-left: calc(50% - (#{$size} - 2 * variables.$gap) / 2);
-        padding-right: calc(50% - (#{$size} - 2 * variables.$gap) / 2);
+        width: $size - 2 * variables.$gap;
+        padding-left: calc(50% - #{$size - 2 * variables.$gap} / 2);
+        padding-right: calc(50% - #{$size - 2 * variables.$gap} / 2);
     }
 }
 
