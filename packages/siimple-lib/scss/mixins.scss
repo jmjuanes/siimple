@@ -63,7 +63,18 @@
 @mixin sizing ($size: 0px) {
     //Check for string size
     @if utils.is-string($size) == true {
-        $size: functions.breakpoint($size); //Get size from breakpoints
+        //Check for deprecated 'extra-large' breakpoint
+        @if $size == "extra-large" {
+            $size: "xlarge"; //Replace with xlarge name
+            @warn "The 'extra-large' breakpoint is deprectated. Please use 'xlarge' instead";
+        }
+        //Check for deprecated 'extra-small' breakpoint
+        @if $size == "extra-small" {
+            $size: "xsmall"; //Replace with xsmall name
+            @warn "The 'extra-small' breakpoint is deprecated. Please use 'xsmall' instead";
+        }
+        //Get size from breakpoints
+        $size: functions.breakpoint($size);
     }
     //Apply the provided size only in screen widts > $size
     @media screen and (min-width: $size) {
