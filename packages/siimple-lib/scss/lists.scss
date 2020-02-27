@@ -35,10 +35,10 @@ $theme-colors: (
 
 //Default breakpoints map
 $breakpoints: (
-    "extra-large": variables.$breakpoint-extra-large,
+    "xlarge": variables.$breakpoint-xlarge,
     "large": variables.$breakpoint-large,
     "medium": variables.$breakpoint-medium,
     "small": variables.$breakpoint-small,
-    "extra-small": variables.$breakpoint-extra-small
+    "xsmall": variables.$breakpoint-xsmall
 ) !default;
 

@@ -28,13 +28,13 @@ $light3: #dde5ee !default; //Third light color
 //Default breakpoints variables
 $gap: 20px !default; //Gap for breakpoints
 $breakpoint-fluid: 100% !default;
-$breakpoint-extra-small: 480px !default;
+$breakpoint-xsmall: 480px !default;
 $breakpoint-small: 600px !default;
 $breakpoint-medium: 768px !default;
 $breakpoint-large: 960px !default;
-$breakpoint-extra-large: 1280px !default;
-$breakpoint-extra-small-enabled: true !default; //Extra-small breakpoint is enabled
-$breakpoint-extra-large-enabled: true !default; //Extra-large breakpoint is enabled
+$breakpoint-xlarge: 1280px !default;
+$breakpoint-xsmall-enabled: true !default; //Extra-small breakpoint is enabled
+$breakpoint-xlarge-enabled: true !default; //Extra-large breakpoint is enabled
 
 //Default font variables
 $font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700" !default;
