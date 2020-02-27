@@ -10,11 +10,11 @@
 
 //Breakpoints aliases
 $breakpoints-alias: (
-    "xl": siimple.$breakpoint-extra-large,
+    "xl": siimple.$breakpoint-xlarge,
     "lg": siimple.$breakpoint-large,
     "md": siimple.$breakpoint-medium,
     "sm": siimple.$breakpoint-small,
-    "xs": siimple.$breakpoint-extra-small
+    "xs": siimple.$breakpoint-xsmall
 );
 
 //Default heading values
