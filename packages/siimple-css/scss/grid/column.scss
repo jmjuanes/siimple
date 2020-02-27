@@ -1,0 +1,47 @@
+//
+// @siimple/css - minimal css toolkit for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@use "@siimple/lib" as siimple;
+@use "../variables.scss" as variables;
+
+//Grid variables
+//$column-margin: 10px;
+$column-padding: 10px;
+$column-sizes: variables.$grid;
+
+//Grid column class
+.#{siimple.$name}-column {
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    padding: $column-padding;
+    //Grid default column sizes
+    @each $name, $width in $column-sizes {
+        &--#{$name} {
+            //width: #{$grid-width};
+            width: calc(#{$width} - 2 * #{$column-padding});
+        }
+    }
+    //Grid columns for each breakpoint
+    @each $breakpoint, $screen in variables.$breakpoints-alias {
+        @media (max-width: $screen) {
+            @each $name, $width in $column-sizes {
+                &--#{$breakpoint}-#{$name},
+                &-#{$breakpoint}--#{$name} {
+                    //width: #{$grid-width};
+                    width: calc(#{$width} - 2 * #{$column-padding});
+                }
+            }
+            //Hide grid column
+            &--#{$breakpoint}-hide {
+                display: none !important;
+            }
+        }
+    }
+}
+

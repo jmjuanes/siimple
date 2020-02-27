@@ -1,0 +1,23 @@
+//
+// @siimple/css - minimal css toolkit for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@use "@siimple/lib" as siimple;
+
+//Grid row variables
+$row-margin: -10px !default;
+
+//Grid Row class
+.#{siimple.$name}-row {
+    display: block;
+    //width: 100%;
+    margin-left: $row-margin;
+    margin-right: $row-margin;
+    //Clearfix
+    @include siimple.clearfix();
+}
+
