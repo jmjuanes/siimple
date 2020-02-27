@@ -72,7 +72,7 @@ $alert-padding-right: 30px;
     }
     //Alert colors 
     @each $color in siimple.utils-keys(siimple.$colors) {
-        &#{&}--#{$color} {
+        &--#{$color} {
             background-color: siimple.utils-lighten(siimple.color($color), 30%);
             color: siimple.color-darker($color);
         }
