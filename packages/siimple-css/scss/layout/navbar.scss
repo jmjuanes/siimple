@@ -111,10 +111,10 @@ $navbar-breakpoint-mobile: 1023px;
             max-height: 100vh;
         }
     }
-    //Navicon
-    &-navicon,
-    &-navicon::before,
-    &-navicon::after {
+    //Navigation hamburger icon
+    &-icon,
+    &-icon::before,
+    &-icon::after {
         content: "";
         display: block;
         width: 100%;
@@ -122,16 +122,16 @@ $navbar-breakpoint-mobile: 1023px;
         border-radius: 10px;
         background-color: siimple.color("dark"); //Default color
     }
-    &-navicon {
+    &-icon {
         position: relative;
         margin-top: 13px;
         margin-bottom: 13px;
     }
-    &-navicon::before {
+    &-icon::before {
         position: absolute;
         top: -8px;
     }
-    &-navicon::after {
+    &-icon::after {
         position: absolute;
         bottom: -8px;
     }
@@ -158,9 +158,9 @@ $navbar-breakpoint-mobile: 1023px;
             color: siimple.color-invert($color);
         }
         //Navicon color
-        &--#{$color} &-navicon,
-        &--#{$color} &-navicon::before,
-        &--#{$color} &-navicon::after {
+        &--#{$color} &-icon,
+        &--#{$color} &-icon::before,
+        &--#{$color} &-icon::after {
             background-color: siimple.color-invert($color);
         }
     }
