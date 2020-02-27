@@ -11,10 +11,10 @@
 //Tag class
 .#{siimple.$name}-tag {
     display: inline-block;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: bold;
     text-decoration: none;
-    line-height: 19px;
+    line-height: 20px;
     border-radius: 4px;
     padding-left: 8px;
     padding-right: 8px;
@@ -31,6 +31,20 @@
             background-color: siimple.color($color);
             color: siimple.color-invert($color);
         }
+    }
+    //Grouped tag
+    &-group {
+        //font-size: 0px; //To remove spacing between tags
+        vertical-align: text-top;
+        display: inline-flex; //Important!!!
+    }
+    &-group > &:not(:first-child) {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    &-group > &:not(:last-child) {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
     }
 }
 
