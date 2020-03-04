@@ -31,9 +31,11 @@ module.exports = {
                         "loader": "sass-loader",
                         "options": {
                             "implementation": require("sass"),
-                            "includePaths": [
-                                path.resolve(process.cwd(), "../../node_modules/")
-                            ]
+                            "sassOptions": {
+                                "includePaths": [
+                                    path.resolve(process.cwd(), "../../node_modules/")
+                                ]
+                            }
                         }
                     }
                 ]
