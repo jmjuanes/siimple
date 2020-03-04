@@ -48,13 +48,6 @@ export const FooterGroup = function (props) {
     });
 };
 
-//Footer paragraph
-export const FooterParagraph = function (props) {
-    return helpers.createMergedElement("div", props, {
-        "className": "siimple-footer-paragraph"
-    });
-};
-
 //Footer link
 export const FooterLink = function (props) {
     return helpers.createMergedElement("a", props, {
