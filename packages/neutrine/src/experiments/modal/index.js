@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import modal styles
-import "@siimple/experiments/scss/modal.scss";
-
 //Render modal content
 let modalContent = function (props) {
     let contentProps = {

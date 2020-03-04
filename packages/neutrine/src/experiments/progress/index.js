@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import rogress styles
-import "@siimple/experiments/scss/progress.scss";
-
 //Build the progress bar content
 let progressBar = function (props) {
     let barProps = {

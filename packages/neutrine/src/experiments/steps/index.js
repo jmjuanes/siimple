@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import styles
-import "@siimple/experiments/scss/steps.scss";
-
 //Step component
 export const Steps = function (props) {
     let newProps = helpers.filterProps(props, ["className", "color"]);
