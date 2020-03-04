@@ -6,13 +6,11 @@
 // Website:    https://www.siimple.xyz
 //
 
-@import "@siimple/css/scss/variables.scss";
-@import "@siimple/css/scss/functions.scss";
-@import "@siimple/css/scss/base.scss";
+@forward "@siimple/lib"; //Forward lib variables
 
 //Import experiments
-@import "./scss/dropdown.scss";
-@import "./scss/modal.scss";
-@import "./scss/progress.scss";
-@import "./scss/steps.scss";
+@use "./scss/dropdown.scss";
+@use "./scss/modal.scss";
+@use "./scss/progress.scss";
+@use "./scss/steps.scss";
 
