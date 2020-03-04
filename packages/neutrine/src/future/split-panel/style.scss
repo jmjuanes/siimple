@@ -1,7 +1,7 @@
-@import "@siimple/css/scss/variables.scss";
+@use "@siimple/lib" as siimple;
 
 //SplitPanel styles
-.neutrine-splitpanel {
+.neutrine__splitpanel {
     display: flex;
     flex: 1;
     height: 100%;
@@ -29,7 +29,7 @@
     //SplitPanel separator
     &-separator {
         display: block;
-        background-color: siimple-default-color("light");
+        background-color: siimple.color("light");
         //Vertical separator
         &--vertical {
             width: 5px;

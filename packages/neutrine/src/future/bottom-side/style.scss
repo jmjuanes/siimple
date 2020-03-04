@@ -1,4 +1,4 @@
-@import "@siimple/css/scss/variables.scss";
+@use "@siimple/lib" as siimple;
 
 //Bottom side component
 .neutrine-bottom-side {
@@ -9,7 +9,7 @@
     bottom: 0px;
     left: 0px;
     background-color: #ffffff;
-    border-top: 2px solid siimple-default-color("light");
+    border-top: 2px solid siimple.color("light");
     transition: bottom 0.3s;
     z-index: 90;
     //Bottom side header
@@ -24,7 +24,7 @@
         padding-bottom: 12px;
         padding-left: 20px;
         padding-right: 20px;
-        border-bottom: 2px solid siimple-default-color("light");
+        border-bottom: 2px solid siimple.color("light");
     }
     //Chevron icon
     &-chevron {
@@ -42,7 +42,7 @@
             height: 4px;
             position: absolute;
             top: 10px;
-            background-color: siimple-default-color("dark", "light");
+            background-color: siimple.color-lighter("dark");
             border-radius: 1px;
         }
         &::before {

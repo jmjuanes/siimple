@@ -1,9 +1,9 @@
-@import "@siimple/css/scss/variables.scss";
+@use "@siimple/lib" as siimple;
 
 //Neutrine group style
 .neutrine-group {
     display: block;
-    margin-bottom: $siimple-default-margin-bottom;
+    margin-bottom: siimple.$margin-bottom;
     //Group row style
     &-row {
         display: flex;
@@ -11,7 +11,7 @@
         align-items: center;
         padding: 10px;
         width: calc(100% - 20px);
-        border-radius: $siimple-default-border-radius;
+        border-radius: siimple.$border-radius;
         //margin-bottom: 11px;
         position: relative;
         border: 2px solid transparent;
@@ -19,7 +19,7 @@
         transition: background-color 0.3s;
         //Group on hover
         &--hover:hover {
-            background-color: siimple-default-color("light");
+            background-color: siimple.color("light");
             //cursor: pointer;
         }
         //Not last child
@@ -36,14 +36,14 @@
                 position: absolute;
                 height: 1px;
                 width: 100%;
-                background-color: siimple-default-color("light");
+                background-color: siimple.color("light");
                 bottom: -8px;
                 left: 0px;
             }
         }
         //Daashed row
         &--dashed {
-            border: 2px dashed siimple-default-color("light");
+            border: 2px dashed siimple.color("light");
         }
     }
     //Group column
@@ -73,12 +73,11 @@
         display: block;
         font-weight: bold;
         font-size: 15px;
-        //color: siimple-default-color("primary");
         line-height: 23px;
         transition: color 0.3s;
     }
     &-row:hover &-title {
-        color: siimple-default-color("primary");
+        color: siimple.color("primary");
     }
     //Group text
     &-text {
@@ -92,7 +91,7 @@
         //margin-top: 3px;
         line-height: 20px;
         font-size: 13px;
-        color: siimple-default-color("dark", "light");
+        color: siimple.color-lighter("dark");
     }
     //Group icon and add elements
     &-icon {
@@ -102,31 +101,31 @@
         line-height: 40px;
         text-align: center;
         font-size: 24px;
-        color: #ffffff; //Default icon color
+        color: siimple.color("white");
         border-radius: 100px;
     }
     //Group icon specific styles
     &-icon {
-        background-color: siimple-default-color("primary"); //Default icon background color
+        background-color: siimple.color("primary"); //Default icon background color
     }
     //Group add specific styles
     &-add {
         transition: all 0.3s;
         opacity: 0.5;
-        color: siimple-default-color("dark");
+        color: siimple.color("dark");
         font-size: 28px;
-        //background-color: siimple-default-color("light", "light");
+        //background-color: siimple.color-lighter("light");
     }
     //Row hover --> change add group
     &-row:hover &-add {
-        //color: siimple-default-color("dark");
-        //background-color: #ffffff;
+        //color: siimple.color("dark");
+        //background-color: siimple.color("white");
         opacity: 1.0;
     }
     //Group action icon
     &-action {
-        color: siimple-default-color("dark");
-        //color: siimple-default-color("dark", "light");
+        color: siimple.color("dark");
+        //color: siimple.color-lighter("dark");
         transition: opacity 0.3s;
         font-size: 22px;
         height: 34px;
@@ -136,7 +135,7 @@
         opacity: 0.4;
         //Action icon hover
         &:hover {
-            //color: siimple-default-color("dark");
+            //color: siimple.color("dark");
             opacity: 1.0;
         }
     }
@@ -151,10 +150,10 @@
         padding-bottom: 5px;
         border-radius: 100px;
         //Label colors
-        @each $color in $siimple-default-colors {
+        @each $color in siimple.utils-keys(siimple.$colors) {
             &--#{$color} {
-                background-color: rgba(siimple-default-color($color, "light"), 0.5);
-                color: siimple-default-color($color, "dark");
+                background-color: rgba(siimple.color-lighter($color), 0.5);
+                color: siimple.color-darker($color);
             }
         }
     }

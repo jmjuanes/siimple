@@ -5,7 +5,7 @@ import * as helpers from "../../helpers.js";
 import "./style.scss";
 
 //Side base class
-let baseClass = "neutrine-side";
+let baseClass = "neutrine__side";
 
 //Available positions
 let sidePositions = ["left", "right", "top", "bottom"];

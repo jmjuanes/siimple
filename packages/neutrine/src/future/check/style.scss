@@ -1,4 +1,4 @@
-@import "@siimple/css/scss/variables.scss";
+@use "@siimple/lib" as siimple;
 
 //Fake checkbox styles
 .neutrine-check {
@@ -8,7 +8,7 @@
     cursor: pointer;
     position: relative;
     border-radius: 2px;
-    background-color: siimple-default-color("light");
+    background-color: siimple.color("light");
     transition: background-color 0.3s;
     //Tick
     &::after {
@@ -20,14 +20,14 @@
         top: 5px;
         left: 4px;
         background: transparent;
-        border: 2px solid siimple-default-color("dark");
+        border: 2px solid siimple.color("dark");
         border-top: 0px;
         border-right: 0px;
         position: absolute;
     }
     //Checked
     &--checked {
-        background-color: siimple-default-color("primary");
+        background-color: siimple.color("primary");
     }
     &--checked::after {
         opacity: 1.0;

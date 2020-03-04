@@ -3,7 +3,7 @@ import * as helpers from "../../helpers.js";
 import "./style.scss";
 
 //Global styles
-let baseClass = "neutrine-splitpanel";
+let baseClass = "neutrine__splitpanel";
 let separatorSize = 5;
 
 //Get children elements

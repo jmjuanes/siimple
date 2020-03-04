@@ -4,7 +4,7 @@ import * as helpers from "../../helpers.js";
 import "./style.scss";
 
 //Stepper variables
-let baseClass = "neutrine-stepper";
+let baseClass = "neutrine__stepper";
 
 //Buidl teh stepper icon
 let buildStepperIcon = function (index, current) {

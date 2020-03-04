@@ -1,4 +1,4 @@
-@import "@siimple/css/scss/variables.scss";
+@use "@siimple/lib" as siimple;
 
 //Thumb mixin
 @mixin neutrine-range-thumb () {
@@ -7,7 +7,7 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: siimple-default-color("primary");
+    background: siimple.color("primary");
     cursor: pointer;
 }
 
@@ -16,7 +16,7 @@
     -webkit-appearance: none;
     //width: 100%;
     height: 12px;
-    background: siimple-default-color("light", "light");
+    background: siimple.color-lighter("light");
     outline: none;
     //opacity: 0.7;
     border-radius: 5px;
@@ -40,7 +40,7 @@
         &::-webkit-slider-thumb,
         &::-moz-range-thumb,
         &::-ms-thumb {
-            background: siimple-default-color("dark") !important;
+            background: siimple.color("dark") !important;
         }
     }
     //Thumb style

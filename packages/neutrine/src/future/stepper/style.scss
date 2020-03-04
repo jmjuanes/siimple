@@ -1,7 +1,7 @@
-@import "@siimple/css/scss/variables.scss";
+@use "@siimple/lib" as siimple;
 
 //Vertical step component
-.neutrine-stepper {
+.neutrine__stepper {
     display: block;
     margin-bottom: 15px;
     //Stepper header
@@ -19,8 +19,8 @@
             height: 24px;
             border-radius: 100px;
             margin-right: 16px;
-            background-color: siimple-default-color("dark");
-            color: #ffffff !important;
+            background-color: siimple.color("dark");
+            color: siimple.color("white") !important;
             line-height: 24px;
             text-align: center;
             transition: background-color 0.3s;
@@ -46,7 +46,7 @@
             content: "";
             display: none;
             position: absolute;
-            border-left: 2px solid siimple-default-color("light");
+            border-left: 2px solid siimple.color("light");
             top: -5px;
             bottom: -5px;
             left: -29px;
@@ -59,11 +59,11 @@
     }
     //Step item current --> change header icon color
     &-item--current &-header-icon {
-        background-color: siimple-default-color("primary") !important;
+        background-color: siimple.color("primary") !important;
     }
     //Step item completed --> change header icon color
     &-item--completed &-header-icon {
-        background-color: siimple-default-color("success") !important;
+        background-color: siimple.color("success") !important;
     }
     //Step item current --> display body border
     &-item--current &-body::before {

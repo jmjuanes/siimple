@@ -8,7 +8,7 @@ import "./style.scss";
 //A Scrim is a semi-transparent gradient layer that helps Text appear more readable against backgrounds
 export const Scrim = function (props) {
     return helpers.createMergedElement("div", props, {
-        "className": "neutrine-scrim"
+        "className": "neutrine__scrim"
     });
 }
 
