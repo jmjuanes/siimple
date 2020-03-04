@@ -1,9 +1,8 @@
 //Export general modules
-export {version} from "./src/version.js";
 export * from "./src/global.js";
 
 //Import global styles
-import "./src/style.scss";
+import "@siimple/css/index.scss";
 
 //Export helpers
 export * from "./src/global.js";
