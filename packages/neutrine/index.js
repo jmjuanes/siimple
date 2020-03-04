@@ -4,6 +4,7 @@ export * from "./src/global.js";
 //Import global styles
 import "@siimple/css/index.scss";
 import "@siimple/experiments/index.scss";
+import "@siimple/icons/dist/siimple-icons.css";
 
 //Export helpers
 export * from "./src/global.js";

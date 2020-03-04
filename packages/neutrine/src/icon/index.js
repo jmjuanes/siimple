@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../helpers.js";
 
-//Import icons
-import "@siimple/icons/dist/siimple-icons.css";
-
 //Export icon component
 export const Icon = function (props) {
     //Filter props
