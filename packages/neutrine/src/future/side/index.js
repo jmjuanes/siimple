@@ -67,36 +67,3 @@ SideContent.defaultProps = {
     "size": "400px"
 };
 
-//Side close icon
-export const SideClose = function (props) {
-    return helpers.createMergedElement("div", props, {
-        "className": baseClass + "-close"
-    });
-};
-
-//Side header
-export const SideHeader = function (props) {
-    //let close = React.createElement("div", {
-    //    "className": baseClass + "-close",
-    //    "onClick": props.onClose
-    //});
-    ////Return the side header
-    //return React.createElement("div", {"className": baseClass + "-header"}, props.title, close);
-    return helpers.createMergedElement("div", props, {
-        "className": baseClass + "-header"
-    });
-};
-
-//Side header default props
-SideHeader.defaultProps = {
-    //"title": null,
-    //"onClose": null
-};
-
-//Side body
-export const SideBody = function (props) {
-    return helpers.createMergedElement("div", props, {
-        "className": baseClass + "-body"
-    });
-};
-
