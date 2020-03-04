@@ -1,6 +1,5 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
-import "@siimple/css/scss/layout/navbar.scss";
 
 //Navbar default class
 export const Navbar = function (props) {

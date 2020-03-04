@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import textarea utils
-import "@siimple/css/scss/form/textarea.scss";
-
 //Textarea component 
 export const Textarea = React.forwardRef(function (props, ref) {
     //Extend the props 

@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import tabg styles
-import "@siimple/css/scss/elements/tag.scss";
-
 //Export tag component 
 export const Tag = function (props) {
     //Clone the tag component props

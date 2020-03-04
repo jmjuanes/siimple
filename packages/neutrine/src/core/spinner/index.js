@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import spinner styles
-import "@siimple/css/scss/elements/spinner.scss";
-
 //Spinner element
 export const Spinner = function (props) {
     let newProps = helpers.filterProps(props, ["className", "color"]);

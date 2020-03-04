@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import switch styles
-import "@siimple/css/scss/form/switch.scss";
-
 //Generate a random id
 let randomId = function () {
     return Math.random().toString(36).slice(2, 15);

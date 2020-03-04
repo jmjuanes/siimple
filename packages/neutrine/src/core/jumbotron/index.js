@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import jumbotron styles
-import "@siimple/css/scss/layout/jumbotron.scss";
-
 //Jumbotron base component
 export const Jumbotron = function (props) {
     //Clone the jumbotron props 

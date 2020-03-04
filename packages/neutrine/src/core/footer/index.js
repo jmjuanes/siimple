@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import footer styles
-import "@siimple/css/scss/layout/footer.scss";
-
 //Footer layout component
 export const Footer = function (props) {
     //Clone the footer props 

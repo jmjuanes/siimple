@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import tab styles
-import "@siimple/css/scss/components/tabs.scss";
-
 //Export tabs component
 export const Tabs = function (props) {
     return helpers.createMergedElement("div", props, {

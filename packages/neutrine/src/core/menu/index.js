@@ -1,6 +1,5 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
-import "@siimple/css/scss/components/menu.scss";
 
 //Menu component
 export const Menu = function (props) {

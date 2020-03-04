@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import content styles
-import "@siimple/css/scss/layout/content.scss";
-
 //Content layout component
 export const Content = function (props) {
     //Content props

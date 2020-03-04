@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import table styles
-import "@siimple/css/scss/components/table.scss";
-
 //Export main table component
 export const Table = function (props) {
     //Extract props

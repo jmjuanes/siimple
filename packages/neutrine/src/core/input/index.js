@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import input styles
-import "@siimple/css/scss/form/input.scss";
-
 //Input component
 export const Input = React.forwardRef(function (props, ref) {
     //Clone the input props

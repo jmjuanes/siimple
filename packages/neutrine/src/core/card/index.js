@@ -1,6 +1,5 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
-import "@siimple/css/scss/components/card.scss";
 
 //Card base component
 export const Card = function (props) {

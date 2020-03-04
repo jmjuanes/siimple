@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import button styles
-import "@siimple/css/scss/elements/btn.scss";
-
 //Button component
 export const Btn = function (props) {
     //Initialize the button props 

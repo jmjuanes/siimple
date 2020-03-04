@@ -1,6 +1,5 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
-import "@siimple/css/scss/components/breadcrumb.scss";
 
 //Breadcrumb parent component
 export const Breadcrumb = function (props) {

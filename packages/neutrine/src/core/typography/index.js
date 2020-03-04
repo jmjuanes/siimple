@@ -1,15 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import typography styles
-import "@siimple/css/scss/typography/blockquote.scss";
-import "@siimple/css/scss/typography/code.scss";
-import "@siimple/css/scss/typography/heading.scss";
-import "@siimple/css/scss/typography/link.scss";
-import "@siimple/css/scss/typography/paragraph.scss";
-import "@siimple/css/scss/typography/pre.scss";
-import "@siimple/css/scss/typography/small.scss";
-
 //Export blockquote component 
 export const Blockquote = function (props) {
     return helpers.createMergedElement("div", props, {

@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import grid styles
-import "@siimple/css/scss/grid/grid.scss";
-
 //Grid class
 export const Grid = function (props) {
     return helpers.createMergedElement("div", props, {

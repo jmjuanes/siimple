@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import tip styles
-import "@siimple/css/scss/elements/tip.scss";
-
 //Tip class
 export const Tip = function (props) {
     let newProps = helpers.filterProps(props, ["className", "color", "icon"]);

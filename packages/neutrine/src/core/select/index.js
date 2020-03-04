@@ -1,9 +1,6 @@
 import React from "react";
 import * as helpers from "../../helpers.js";
 
-//Import select styles
-import "@siimple/css/scss/form/select.scss";
-
 //Select component
 export const Select = React.forwardRef(function (props, ref) {
     //Clone the select props
