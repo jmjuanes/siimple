@@ -73,7 +73,7 @@
         display: block;
         font-weight: bold;
         font-size: 15px;
-        line-height: 23px;
+        line-height: 22px;
         transition: color 0.3s;
     }
     &-row:hover &-title {
@@ -82,15 +82,15 @@
     //Group text
     &-text {
         display: block;
-        font-size: 15px;
-        line-height: 23px;
+        font-size: 14px;
+        line-height: 20px;
     }
     //Group description
     &-description {
         display: block;
         //margin-top: 3px;
-        line-height: 20px;
-        font-size: 13px;
+        line-height: 18px;
+        font-size: 12px;
         color: siimple.color-lighter("dark");
     }
     //Group icon and add elements
