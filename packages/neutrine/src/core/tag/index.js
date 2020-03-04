@@ -27,3 +27,10 @@ Tag.defaultProps = {
     "rounded": false
 };
 
+//Grouped tag
+export const TagGroup = function (props) {
+    return helpers.createMergedElement("span", props, {
+        "className": "siimple-tag-group"
+    });
+};
+
