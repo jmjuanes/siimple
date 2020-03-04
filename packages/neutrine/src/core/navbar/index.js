@@ -63,7 +63,7 @@ export const NavbarToggle = function (props) {
         "tabIndex": "0"
     });
     let icon = React.createElement("div", {
-        "className": "siimple-navbar-navicon"
+        "className": "siimple-navbar-icon"
     });
     //Return the navbar toggle element
     return React.createElement("div", newProps, icon);
