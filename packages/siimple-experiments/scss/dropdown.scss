@@ -5,11 +5,11 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "@siimple/css/scss/variables.scss";
-@import "@siimple/css/scss/functions.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Dropdown experimental component
-.#{$siimple-prefix}-dropdown {
+.#{siimple.$name}-dropdown {
     position: relative;
     //Dropdown toggle arrow
     &-toggle::after {
@@ -18,18 +18,18 @@
         height: 0px;
         width: 0px;
         margin-left: 4px;
-        border-top: 6px solid $siimple-default-white;
+        border-top: 6px solid siimple.color("white");
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
         vertical-align: middle;
     }
     //Toggle light color
     &-toggle--light::after {
-        border-top-color: $siimple-default-white;
+        border-top-color: siimple.color("white");
     }
     //Toggle dark color
     &-toggle--dark::after {
-        border-top-color: $siimple-default-color;
+        border-top-color: siimple.$text-color;
     }
     //Dropdown content
     &-content {
@@ -38,12 +38,10 @@
         top: calc(100% + 12px);
         left: 0px;
         min-width: 150px;
-        color: $siimple-default-color;
+        color: siimple.$text-color;
         text-align: left;
-        //background-color: $siimple-default-white;
-        background-color: siimple-default-color("light");
-        border-radius: $siimple-default-border-radius;
-        //border: 1px solid siimple-default-color("light");
+        background-color: siimple.color("light");
+        border-radius: siimple.$border-radius;
         //Dropdown arrow
         &:before {
             position: absolute;
@@ -52,7 +50,7 @@
             content: "";
             display: block;
             border: 7px solid transparent;
-            border-bottom-color: siimple-default-color("light");
+            border-bottom-color: siimple.color("light");
             top: -14px;
             right: 15px;
         }
@@ -63,17 +61,17 @@
     }
     //Dark dropdown item
     &--dark &-content {
-        background-color: siimple-default-color("dark");
+        background-color: siimple.color("dark");
         //Dark theme arrow color
         &::before {
-            border-bottom-color: siimple-default-color("dark");
+            border-bottom-color: siimple.color("dark");
         }
     }
     //Dropdown item 
     &-item {
         display: block;
-        line-height: $siimple-default-line-height;
-        font-size: $siimple-default-font-size;
+        line-height: siimple.$line-height;
+        font-size: siimple.$text-size;
         padding-left: 15px;
         padding-right: 15px;
         padding-top: 5px;
@@ -83,9 +81,8 @@
         transition: all 0.3s;
         //Dropdown item hover
         &:hover {
-            //background-color: siimple-default-color("light");
-            background-color: siimple-default-color("primary");
-            color: siimple-default-color("white");
+            background-color: siimple.color("primary");
+            color: siimple.color("white");
         }
         //First item
         &:first-child {
@@ -100,24 +97,23 @@
     }
     //Dark dropdown
     &--dark &-item {
-        color: rgba($siimple-default-white, 0.8);
+        color: rgba(siimple.color("white"), 0.8);
         //Item hover
         &:hover {
-            color: rgba(siimple-default-color("white"), 1.0);
+            color: rgba(siimple.color("white"), 1.0);
         }
     }
     //Dropdown rule separator
     &-separator {
         display: block;
         height: 2px;
-        //border-top: 2px solid siimple-default-color("light", "dark");
-        background-color: siimple-default-color("light", "dark");
+        background-color: siimple.color-darker("light");
         //margin-top: 5px;
         //margin-bottom: 5px;
     }
     //Dark separator
     &--dark &-separator {
-        background-color: rgba(siimple-default-color("white"), 0.2);
+        background-color: rgba(siimple.color("white"), 0.2);
     }
 }
 
