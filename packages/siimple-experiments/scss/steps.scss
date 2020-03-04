@@ -5,11 +5,11 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "@siimple/css/scss/variables.scss";
-@import "@siimple/css/scss/functions.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Steps class
-.#{$siimple-prefix}-steps {
+.#{siimple.$name}-steps {
     display: flex;
     flex-direction: row;
     flex-wrap: no-wrap;
@@ -24,7 +24,7 @@
         //Step circle element
         &::after {
             content: "";
-            background-color: siimple-default-color("primary");
+            background-color: siimple.color("primary");
             width: 18px;
             height: 18px;
             border-radius: 50px;
@@ -35,7 +35,7 @@
         }
         &:not(:first-child)::before {
             content: "";
-            background-color: siimple-default-color("primary");
+            background-color: siimple.color("primary");
             width: 100%;
             height: 2px;
             position: absolute;
@@ -64,7 +64,7 @@
         font-size: 15px;
         line-height: 23px;
         font-weight: 700;
-        color: siimple-default-color("dark");
+        color: siimple.color("dark");
         opacity: 0.4;
         text-align: center;
     }
@@ -75,24 +75,26 @@
         padding-right: 5px;
         font-size: 13px;
         line-height: 20px;
-        color: siimple-default-color("dark", "light");
+        color: siimple.color-lighter("dark");
         opacity: 0.4;
         text-align: center;
     }
     //Current item
     &-item--current ~ &-item::after,
     &-item--current ~ &-item::before {
-        background-color: siimple-default-color("light") !important;
+        background-color: siimple.color("light") !important;
     }
     &-item--current &-title, 
     &-item--current &-description {
         opacity: 1.0;
     }
     //Colored steps
-    @each $color in $siimple-default-basic-colors {
-        &--#{$color} &-item::after,
-        &--#{$color} &-item::before {
-            background-color: siimple-default-color($color);
+    @each $color in siimple.utils-keys(siimple.$colors) {
+        @if $color != "dark" and $color != "light" {
+            &--#{$color} &-item::after,
+            &--#{$color} &-item::before {
+                background-color: siimple.color($color);
+            }
         }
     }
 }
