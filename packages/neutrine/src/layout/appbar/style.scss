@@ -1,4 +1,4 @@
-@import "@siimple/css/scss/variables.scss";
+@use "@siimple/lib" as siimple;
 
 //Neutrine appbar style
 .neutrine__appbar {
@@ -10,8 +10,8 @@
     transition: all 0.3s;
     top: 0px !important;
     left: 0px;
-    background-color: siimple-default-color("dark");
-    color: #ffffff;
+    background-color: siimple.color("dark");
+    color: siimple.color("white");
     //Appbar wrapper
     &-wrapper {
         display: block;
@@ -37,7 +37,7 @@
         padding: 8px;
         transition: background-color 0.3s;
         &:hover {
-            background-color: rgba(#ffffff, 0.2);
+            background-color: rgba(siimple.color("white"), 0.2);
         }
     }
     //Appbar item
@@ -45,12 +45,12 @@
         font-size: 24px;
         font-weight: normal !important;
         line-height: 24px;
-        color: rgba(#ffffff, 0.6);
+        color: rgba(siimple.color("white"), 0.6);
         border-radius: 3px;
         &--active {
-            color: #ffffff !important;
+            color: siimple.color("white") !important;
             //font-weight: 600;
-            background-color: rgba(#ffffff, 0.2) !important;
+            background-color: rgba(siimple.color("white"), 0.2) !important;
         }
     }
     &-brand {
