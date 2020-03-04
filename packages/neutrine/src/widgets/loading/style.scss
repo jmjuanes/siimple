@@ -1,9 +1,9 @@
-@import "@siimple/css/scss/variables.scss";
+@use "@siimple/lib" as siimple;
 
 .neutrine__loading {
     display: block;
     position: fixed;
-    background-color: siimple-default-color("primary");
+    background-color: siimple.color("primary");
     top: 0px;
     left: 0px;
     height: 3px;
