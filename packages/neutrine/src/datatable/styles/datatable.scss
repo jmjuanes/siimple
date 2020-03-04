@@ -1,21 +1,17 @@
-//Import dependencies
-@import "@siimple/css/scss/variables.scss";
+@use "@siimple/lib" as siimple;
 
 //DataTable class
 .neutrine-datatable {
     display: block;
     width: 100%;
     max-width: 100%;
-    font-size: $siimple-default-font-size;
-    color: $siimple-default-color;
-    margin-bottom: $siimple-default-margin-bottom;
+    font-size: siimple.$text-size;
+    color: siimple.$text-color;
+    margin-bottom: siimple.$margin-bottom;
     //Table container 
     &-container {
         display: block;
         width: 100%;
-        //font-family: $siimple-default-font-family;
-        //font-size: $siimple-default-font-size;
-        //color: $siimple-default-color;
         overflow-x: auto;
         overflow-y: auto;
     }
@@ -42,7 +38,7 @@
     }
     //Highlighted row
     &-row--highlighted &-cell {
-        background-color: rgba(siimple-default-color("primary", "light"), 0.7) !important;
+        background-color: rgba(siimple.color-lighter("primary"), 0.7) !important;
     }
     //Table header
     &-header {
@@ -119,8 +115,8 @@
         }
         //Pagination buttons
         &-btn {
-            background-color: siimple-default-color("light") !important;
-            color: siimple-default-color("dark") !important;
+            background-color: siimple.color("light") !important;
+            color: siimple.color("dark") !important;
         }
     }
 }
