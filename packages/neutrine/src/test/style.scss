@@ -1,4 +1,4 @@
-@import "@siimple/css/scss/variables.scss";
+@use "@siimple/lib" as siimple;
 
 //Test component
 .neutrine-test {
@@ -24,7 +24,7 @@
         padding: 15px;
         margin-right: 10px;
         border-radius: 5px;
-        border: 2px solid siimple-default-color("light");
+        border: 2px solid siimple.color("light");
     }
     //Options section
     &-options {
@@ -35,7 +35,7 @@
         max-width: 300px;
         flex: 0 0 auto;
         border-radius: 5px;
-        background-color: siimple-default-color("light");
+        background-color: siimple.color("light");
         padding: 15px;
         //Control
         &-control {
