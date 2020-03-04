@@ -24,5 +24,8 @@
         "dist",
         "scss",
         "index.scss"
-    ]
+    ],
+    "dependencies": {
+        "@siimple/lib": "^0.0.1"
+    }
 }
