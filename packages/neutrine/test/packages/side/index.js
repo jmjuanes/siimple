@@ -5,7 +5,7 @@ Neutrine.ready(function () {
             super(props);
             this.state = {
                 "visible": true,
-                "position": "top",
+                "position": "right",
                 "width": "300px"
             };
             //Bind methods
@@ -27,17 +27,14 @@ Neutrine.ready(function () {
                     <Neutrine.Side visible={this.state.visible}>
                         <Neutrine.SideBackground onClick={this.handleToggle} />
                         <Neutrine.SideContent position={this.state.position} size={this.state.width}>
-                            <Neutrine.SideHeader>
-                                Title
-                                <Neutrine.SideClose onClick={this.handleToggle} />
-                            </Neutrine.SideHeader>
-                            <Neutrine.SideBody>
+                            <Neutrine.Content size="fluid">
+                                <Neutrine.Btn onClick={this.handleToggle} content="Close" />
                                 Content of the side component 1
                                 <br />
                                 Content of the side component 2
                                 <br />
                                 Content of the side component 3
-                            </Neutrine.SideBody>
+                            </Neutrine.Content>
                         </Neutrine.SideContent>
                     </Neutrine.Side>
                 </React.Fragment>
