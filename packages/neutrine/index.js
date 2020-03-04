@@ -3,6 +3,7 @@ export * from "./src/global.js";
 
 //Import global styles
 import "@siimple/css/index.scss";
+import "@siimple/experiments/index.scss";
 
 //Export helpers
 export * from "./src/global.js";
