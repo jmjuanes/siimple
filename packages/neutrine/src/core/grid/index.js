@@ -2,42 +2,42 @@ import React from "react";
 import * as helpers from "../../helpers.js";
 
 //Grid class
+//DEPRECATED --> not used anymore
 export const Grid = function (props) {
-    return helpers.createMergedElement("div", props, {
-        "className": "siimple-grid"
-    });
+    console.log("@siimple/neutrine: Grid component has been removed");
+    return React.createElement(React.Fragment, {}, props.children);
 };
 
-//Grid row class
-export const GridRow = function (props) {
+//Grid row
+export const Row = function (props) {
     return helpers.createMergedElement("div", props, {
-        "className": "siimple-grid-row"
+        "className": "siimple-row"
     });
 };
 
 //Grid column class
-export const GridCol = function (props) {
+export const Column = function (props) {
     //Extract props
     let newProps = helpers.filterProps(props, ["className", "size", "extraLarge", "large", "medium", "small", "extraSmall"]);
-    let classList = ["siimple-grid-col"];
+    let classList = ["siimple-column"];
     //Check the column size
     if (typeof props.size === "number" || typeof props.size === "string") {
-        classList.push("siimple-grid-col--" + props.size);
+        classList.push("siimple-column--" + props.size);
     }
     if (typeof props.extraLarge === "number" || typeof props.extraLarge === "string") {
-        classList.push("siimple-grid-col--xl-" + props.extraLarge);
+        classList.push("siimple-column--xl-" + props.extraLarge);
     }
     if (typeof props.large === "number" || typeof props.large === "string") {
-        classList.push("siimple-grid-col--lg-" + props.large);
+        classList.push("siimple-column--lg-" + props.large);
     }
     if (typeof props.medium === "number" || typeof props.medium === "string") {
-        classList.push("siimple-grid-col--md-" + props.medium);
+        classList.push("siimple-column--md-" + props.medium);
     }
     if (typeof props.small === "number" || typeof props.small === "string") {
-        classList.push("siimple-grid-col--sm-" + props.medium);
+        classList.push("siimple-column--sm-" + props.medium);
     }
     if (typeof props.extraSmall === "number" || typeof props.extraSmall === "string") {
-        classList.push("siimple-grid-col--xs-" + props.extraSmall);
+        classList.push("siimple-column--xs-" + props.extraSmall);
     }
     //Join all class names
     newProps.className = helpers.classNames(classList, props.className);
@@ -46,7 +46,7 @@ export const GridCol = function (props) {
 };
 
 //Column default props
-GridCol.defaultProps = {
+Column.defaultProps = {
     "size": null, 
     "extraLarge": null,
     "large": null, 
