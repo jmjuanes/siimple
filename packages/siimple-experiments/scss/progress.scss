@@ -5,12 +5,12 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "@siimple/css/scss/variables.scss";
-@import "@siimple/css/scss/functions.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Progress variables 
-$siimple-progress-height: 20px;
-$siimple-progress-striped: $siimple-default-white;
+$progress-height: 20px;
+$progress-striped: siimple.color("white");
 
 //Progress animation
 @keyframes siimple-progress-animation {
@@ -23,15 +23,15 @@ $siimple-progress-striped: $siimple-default-white;
 }
 
 //Progress class
-.#{$siimple-prefix}-progress {
+.#{siimple.$name}-progress {
     display: block;
     width: 100%;
-    height: $siimple-progress-height;
+    height: $progress-height;
     padding: 0px !important;
     margin-top: 0px;
-    margin-bottom: $siimple-default-margin-bottom;
-    border-radius: $siimple-default-border-radius;
-    background-color: siimple-default-color("light"); 
+    margin-bottom: siimple.$margin-bottom;
+    border-radius: siimple.$border-radius;
+    background-color: siimple.color("light"); 
     overflow: hidden;
     //Disable default appearance in webkit and gecko
     -webkit-appearance: none;
@@ -44,7 +44,7 @@ $siimple-progress-striped: $siimple-default-white;
         transition: all 0.3s;
         position: relative;
         text-align: center;
-        line-height: $siimple-progress-height;
+        line-height: $progress-height;
         font-size: 12px;
     }
     //Striped progress bar
@@ -60,11 +60,11 @@ $siimple-progress-striped: $siimple-default-white;
         z-index: 1px;
         background-size: 50px 50px;
         background-image : linear-gradient(-45deg, 
-            rgba($siimple-progress-striped, 0.15) 25%, 
+            rgba($progress-striped, 0.15) 25%, 
             transparent 25%, 
             transparent 50%, 
-            rgba($siimple-progress-striped, 0.15) 50%, 
-            rgba($siimple-progress-striped, 0.15) 75%, 
+            rgba($progress-striped, 0.15) 50%, 
+            rgba($progress-striped, 0.15) 75%, 
             transparent 75%, 
             transparent);
     }
@@ -78,10 +78,10 @@ $siimple-progress-striped: $siimple-default-white;
         animation: siimple-progress-animation 4s linear infinite;
     }
     //Colored progress bar
-    @each $color in $siimple-default-colors {
+    @each $color in siimple.utils-keys(siimple.$colors) {
         &#{&}--#{$color} > span {
-            background-color: siimple-default-color($color, "base");
-            color: siimple-default-color($color, "over");
+            background-color: siimple.color($color);
+            color: siimple.color-invert($color);
         }
     }
     //Small progress bar
