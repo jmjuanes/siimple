@@ -5,34 +5,34 @@
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
-@import "@siimple/css/scss/variables.scss";
-@import "@siimple/css/scss/functions.scss";
+
+@use "@siimple/lib" as siimple;
 
 //Modal variables
-$siimple-modal-padding: 15px;
+$modal-padding: 15px !default;
 
 //Modal class
-.#{$siimple-prefix}-modal {
+.#{siimple.$name}-modal {
     display: flex;
-    width: calc(100% - 2 * #{$siimple-modal-padding});
-    height: calc(100% - 2 * #{$siimple-modal-padding});
+    width: calc(100% - 2 * #{$modal-padding});
+    height: calc(100% - 2 * #{$modal-padding});
     position: fixed;
     top: 0px;
     left: 0px;
     z-index: 400;
-    padding: $siimple-modal-padding;
+    padding: $modal-padding;
     overflow-x: hidden;
     overflow-y: hidden;
     justify-content: center;
     align-items: center;
-    background-color: rgba(siimple-default-color("dark", "dark"), 0.4);
+    background-color: rgba(siimple.color-darker("dark"), 0.4);
     //Modal content
     &-content {
         display: block;
         width: 100%;
         //max-width: 960px;
-        background-color: $siimple-default-white;
-        border-radius: $siimple-default-border-radius;
+        background-color: siimple.color("white");
+        border-radius: siimple.$border-radius;
         padding: 0px;
     }
     //Modal header
@@ -42,7 +42,7 @@ $siimple-modal-padding: 15px;
         padding: 20px;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
-        border-bottom: 1px solid siimple-default-color("light");
+        border-bottom: 1px solid siimple.color("light");
         //Modal header title
         &-title {
             float: left;
@@ -69,7 +69,7 @@ $siimple-modal-padding: 15px;
                 content: "";
                 width: 16px;
                 height: 3px;
-                background-color: siimple-default-color("dark");
+                background-color: siimple.color("dark");
                 position: absolute;
                 border-radius: 1px;
                 top: 10px;
@@ -97,20 +97,20 @@ $siimple-modal-padding: 15px;
     &-footer {
         display: block;
         padding: 20px;
-        color: siimple-default-color("dark", "light");
-        background-color: siimple-default-color("light");
-        border-bottom-left-radius: $siimple-default-border-radius;
-        border-bottom-right-radius: $siimple-default-border-radius;
+        color: siimple.color-lighter("dark");
+        background-color: siimple.color("light");
+        border-bottom-left-radius: siimple.$border-radius;
+        border-bottom-right-radius: siimple.$border-radius;
     }
     //Modal sizes
     &--small &-content {
-        max-width: $siimple-default-breakpoint-small;
+        max-width: siimple.breakpoint("small");
     }
     &--medium &-content {
-        max-width: $siimple-default-breakpoint-medium;
+        max-width: siimple.breakpoint("medium");
     }
     &--large &-content {
-        max-width: $siimple-default-breakpoint-large;
+        max-width: siimple.breakpoint("large");
     }
 }
 
