@@ -16,24 +16,24 @@ $ npm install --save @siimple/lib
 Import this library as a module in your `.scss` files using the [@use rule](https://sass-lang.com/documentation/at-rules/use). There is a basic example:
 
 ```scss
-@use "@siimple/lib" as lib;
+@use "@siimple/lib" as siimple;
 
 .button {
-    background-color: lib.$primary;
-    color: lib.$white;
+    background-color: siimple.$primary;
+    color: siimple.$white;
 }
 ```
 
 You can override the default variables defined in the library. Check the [configuring modules](https://sass-lang.com/documentation/at-rules/use#configuring-modules) section of the Sass documentation.
 
 ```scss
-@use "@siimple/lib" as lib with (
+@use "@siimple/lib" as siimple with (
     $primary: #000000
 );
 
 .button {
-    background-color: lib.$primary;
-    color: lib.$white;
+    background-color: siimple.$primary;
+    color: siimple.$white;
 }
 ```
 
