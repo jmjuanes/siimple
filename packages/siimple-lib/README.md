@@ -43,8 +43,6 @@ You can override the default variables defined in the library. Check the [config
 }
 ```
 
-See the [@siimple/lib documentation site](#) for a full description of all variables, mixins and functions defined in the library.
-
 
 ## License
 
