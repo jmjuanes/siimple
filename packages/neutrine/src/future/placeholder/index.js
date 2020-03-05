@@ -3,7 +3,7 @@ import * as helpers from "../../helpers.js";
 import "./style.scss";
 
 export function Placeholder (props) {
-    let newProps = helpers.filterProps(props, ["className", "hover", "border", "fill"]);
+    let newProps = helpers.filterProps(props, ["className", "hover", "border", "fill", "active"]);
     //Assign classname props
     Object.assign(newProps, {
         "className": helpers.classNames(props.className, {
