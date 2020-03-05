@@ -1,5 +1,17 @@
+# @siimple/neutrine changelog
 
-## v0.1.0 (2020-01-11)
+
+## v0.1.2 (2020-03-05)
+
+#### :boom: Breaking changes
+- Switched to new sass modules system using the `@use` rule (https://sass-lang.com/blog/the-module-system-is-launched).
+- Removed `FooterParagraph`, `SideHeader`, `SideBody` and `Panel` components.
+
+#### :rocket: New features
+- Added `Placeholder` component for displaying.
+
+
+## v0.1.1 (2020-01-11)
 
 #### :rocket: New features
 - Added `Loading` widget to display a loading bar. Added `createLoader` alias to automatically mount a `Loading` component.
@@ -19,16 +31,16 @@
 
 ## v0.0.6 (2019-11-27)
 
-### New features
+#### :rocket: New features
 - Added vertical stepper components: `Stepper` and `StepperItem`.
 
-### Bug fixes
+#### :bug: Bug fixes
 - Fixed missing `padding-left` and `padding-right` attributes in `Appbar` component.
 
 
 ## v0.0.5 (2019-11-01)
 
-### Bug fixes
+#### :bug: Bug fixes
 
 - Fixed minor typo in `Side` component.
 - Fixed `classNames` helper.
@@ -36,47 +48,47 @@
 
 ## v0.0.4 (2019-10-03)
 
-### New features
+#### :rocket: New features
 - Added `createToaster` method to create a new toaster component.
 - Introduced `Toast.show` method that replaces the deprecated `Toast.display` methods.
 
-### Bug fixes
+#### :bug: Bug fixes
 - Fixed bug displaying item text in `ToolbarItem` component.
 
-### Deprecations
+#### :warning: Deprecations
 - Removed `Spinner` size prop.
 - Deprecated `Toast.display`, `Toast.displayError`, `Toast.displayWarning` and `Toast.displaySuccess` methods on `Toast` component.
 
 
 ## v0.0.3 (2019-09-18)
 
-### Improvements
+#### :hammer: Improvements
 - Renamed `AppToolbar` component as `Toolbar`.
 - Renamed `AppBar` component as `AppBar`.
 - Merge `AppLogo` component in `Toolbar` and `Appbar`.
 
-### Deprecations
+#### :warning: Deprecations
 - Deprecated app components: `AppMain`, `AppToolbar`, `AppBar` and `AppLogo`.
 
 
 ## v0.0.2 (2019-09-18)
 
-### New features
+#### :rocket: New features
 - Added app components: `AppMain`, `AppToolbar`, `AppBar` and `AppLogo`.
 
-### Improvements
+#### :hammer: Improvements
 - Allow multiple selectable columns in `DataTable` component.
 - Moved selection API in `DataTable` component to columns.
 - Allow top and bottom positions in `Side` component.
 
-### Bug fixes 
+#### :bug: Bug fixes 
 - Fixed bug in `DataTableRender` component.
 
-### Deprecations
+#### :warning: Deprecations
 - Removed `Dashboard` components.
 
 
 ## v0.0.1 (2019-09-07)
 
-- First release.
+- First release :tada:
 
