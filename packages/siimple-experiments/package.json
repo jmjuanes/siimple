@@ -1,6 +1,6 @@
 {
     "name": "@siimple/experiments",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Experimental css components based on siimple",
     "style": "dist/siimple-experiments.css",
     "browser": "dist/siimple-experiments.css",
