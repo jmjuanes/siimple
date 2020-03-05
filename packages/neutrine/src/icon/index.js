@@ -4,23 +4,27 @@ import * as helpers from "../helpers.js";
 //Export icon component
 export const Icon = function (props) {
     //Filter props
-    let filteredProps = helpers.filterProps(props, ["className", "icon", "iconTag"]);
-    //Initialize the icon class name list
-    let iconClassNames = ["si"];
-    //Add the icon class name
-    if (typeof props.icon === "string") {
-        iconClassNames.push("si-" + props.icon);
-    }
-    //Add the class names
-    filteredProps.className = helpers.classNames(iconClassNames, props.className);
+    let newProps = helpers.filterProps(props, ["className", "icon", "iconTag", "size"]);
+    //Update icon props
+    Object.assign(newProps, {
+        "className": helpers.classNames(props.className, {
+            "si": true,
+            ["si-" + props.icon]: props.icon !== ""
+        }),
+        "style": helpers.styles({
+            "fontSize": props.size,
+            "lineHeight": "normal"
+        }, props.style)
+    });
     //Return the icon
-    return React.createElement(props.iconTag, filteredProps, props.children);
+    return React.createElement(props.iconTag, newProps, props.children);
 };
 
 //Icon default props
 Icon.defaultProps = {
-    "icon": null,
+    "icon": "",
     "className": null,
-    "iconTag": "span"
+    "iconTag": "span",
+    "size": null
 };
 
