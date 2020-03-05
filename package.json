@@ -48,7 +48,7 @@
     "packages": {
         "@siimple/colors": "0.0.1",
         "@siimple/css": "4.0.0-alpha.2",
-        "@siimple/experiments": "0.0.1",
+        "@siimple/experiments": "0.0.2",
         "@siimple/icons": "0.0.2",
         "@siimple/lib": "0.0.1",
         "@siimple/neutrine": "0.1.1"
