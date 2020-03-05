@@ -7,7 +7,7 @@
 [![npm](https://img.shields.io/npm/l/@siimple/neutrine.svg?style=flat-square)](https://github.com/siimple/@siimple/neutrine)
 [![pr](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
 
-**Its API is not as stable as that of @siimple/css, and does not follow the common versioning scheme.**
+:construction: This package is currently under development. **Use it at your own risk**.
 
 ## Installation
 
