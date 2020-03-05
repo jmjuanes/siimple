@@ -1,6 +1,12 @@
 # @siimple/lib
 
+[![npm](https://img.shields.io/npm/v/@siimple/lib.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/lib)
+[![npm](https://img.shields.io/npm/dt/@siimple/lib.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/lib)
+[![npm](https://img.shields.io/npm/l/@siimple/lib.svg?style=flat-square)](https://github.com/siimple/siimple)
+[![Join us on Gitter](https://img.shields.io/badge/chat-on_gitter-4EB897.svg?style=flat-square)](https://gitter.im/siimple/siimple)
+
 **@siimple/lib**  is the core scss library for the siimple ecosystem.
+
 
 ## Installation
 
