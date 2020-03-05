@@ -18,7 +18,7 @@ Neutrine.ready(function () {
                 </Neutrine.Placeholder>
                 {/* Placeholder state */}
                 <Neutrine.Placeholder fill style={{"padding":"50px"}}>
-                    <Neutrine.Icon icon="archive" style={{"fontSize":"50px","lineHeight":"normal"}} />
+                    <Neutrine.Icon icon="archive" size="50px" />
                     <div className="siimple--mt-2">
                         <Neutrine.Heading type="h5" className="siimple--mb-1">
                             No files available
