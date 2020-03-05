@@ -1,12 +1,11 @@
 # @siimple/experiments
 
-> Under development
+:construction: This package is currently under development. **Use it at your own risk**.
 
 
 
 ## License 
 
-Code and documentation &copy; 2019-present the **siimple team**. 
-The code is released under the [MIT License](../../LICENSE) and the documentation is released under the [Creative Commons CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
+Code and documentation &copy; 2019-present the **siimple team**. Released under the MIT License.
 
 
