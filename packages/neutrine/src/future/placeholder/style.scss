@@ -1,0 +1,41 @@
+@use "@siimple/lib" as siimple;
+
+//Placeholder component
+.neutrine__placeholder {
+    display: block;
+    color: siimple.color-lighter("dark");
+    //border: 2px dashed siimple.color("light");
+    border-width: 0px;
+    padding: 15px;
+    flex-basis: 100%;
+    opacity: 1.0;
+    border-radius: 5px;
+    margin-bottom: siimple.$margin-bottom;
+    transition: all 0.3s;
+    //Filled placeholder
+    &--fill {
+        background-color: siimple.color("light");
+    }
+    //Hoverable or active
+    &--hover:hover,
+    &--active {
+        cursor: pointer;
+        background-color: rgba(siimple.color("primary"), 0.1);
+        border-color: siimple.color("primary") !important;
+        color: siimple.color("primary") !important;
+    }
+    //Active only styles
+    //&--active {
+    //    background-color: rgba(siimple.color("primary"), 0.1);
+    //}
+    //Dashed border
+    &--border-dashed {
+        border: 2px dashed siimple.color("light");
+    }
+    //Solid border
+    &--border-solid {
+        border: 2px solid siimple.color("light");
+    }
+}
+
+
