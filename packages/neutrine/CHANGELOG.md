@@ -1,6 +1,13 @@
 # @siimple/neutrine changelog
 
 
+## v0.1.3 (2020-03-06)
+
+#### :bug: Bug fixes
+- Fixed bug displaying icons in toolbar component.
+- Fixed bug displaying icon in item component.
+
+
 ## v0.1.2 (2020-03-05)
 
 #### :boom: Breaking changes
