@@ -40,10 +40,10 @@
     &-item,
     &-brand {
         display: block;
-        padding-left: 40px;
+        padding-left: 36px;
         padding-right: 10px;
-        min-height: 40px;
-        line-height: 40px;
+        min-height: 36px;
+        line-height: 36px;
         margin-bottom: 5px;
         border-radius: 3px;
         transition: background-color 0.3s;
@@ -64,14 +64,14 @@
         &-icon {
             position: absolute;
             left: 8px;
-            font-size: 24px;
-            line-height: 40px;
+            font-size: 20px;
+            line-height: 36px !important;
             font-weight: normal !important;
         }
         //Text props
         &-text {
-            line-height: 40px;
-            height: 40px;
+            line-height: 36px;
+            //height: 40px;
         }
         //Item active
         &--active {
@@ -84,13 +84,13 @@
     &-brand {
         font-size: 16px;
         font-weight: bold;
-        background-position: 8px 13px;
+        background-position: 6px 11px;
         background-repeat: no-repeat;
         background-size: 24px 24px;
         background-image: url("./images/logo.png");
         padding-top: 5px;
         padding-bottom: 5px;
-        background-color: siimple.color-darker("light");
+        background-color: rgba(siimple.color-darker("light"), 0.2);
     }
     //Toolbar separator
     &-separator {
@@ -105,8 +105,8 @@
         display: block;
         //position: fixed;
         //position: sticky;
-        width: 34px;
-        height: 34px;
+        width: 30px;
+        height: 30px;
         border-radius: 5px;
         //line-height: 30px;
         top: 20px;
@@ -127,7 +127,7 @@
             //position: absolute;
             //left: 13px;
             font-size: 18px;
-            line-height: 34px;
+            line-height: 30px !important;
             font-weight: normal !important;
             transition: all 0.3s;
         }
