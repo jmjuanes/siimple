@@ -6,8 +6,7 @@
 //
 
 //Import dependencies
-@import "./scss/icons.scss";
-@import "./scss/functions.scss";
+@use "./scss/functions.scss" as icons;
 
 //Font face
 @font-face {
@@ -24,6 +23,7 @@
     display: inline-block;
     font-family: "SiimpleIcons";
     font-size: 14px;
+    line-height: normal;
     font-weight: normal !important;
     font-style: normal;
     text-rendering: auto;
@@ -33,9 +33,9 @@
         box-sizing: inherit;
     }
     //For each icon in the list
-    @each $icon, $unicode in $siimple-icons {
+    @each $icon in icons.get-list() {
         &-#{$icon}:before {
-            content: siimple-icon($icon);
+            content: icons.use-icon($icon);
         }
     }
 }
