@@ -5,12 +5,22 @@
 // Website:    https://icons.siimple.xyz
 //
 
-//Import icons
-@import "./icons.scss";
+@use "sass:map";
+@use "sass:string" as str;
+@use "./icons.scss" as icons;
 
-//Get an icon by name
-@function siimple-icon($icon) {
-    $value: map-get($siimple-icons, "#{$icon}");
-    @return unquote("\"") + unquote(str-insert($value, "\\", 1)) + unquote("\"");
+//Get list of icons names
+@function get-list() {
+    @return map.keys(icons.$list);
+}
+
+//Get a single icon
+@function get-icon($name) {
+    @return map.get(icons.$list, "#{$name}");
+}
+
+//Use an icon by name
+@function use-icon($name) {
+    @return str.unquote("\"") + str.unquote(str.insert(get-icon($name), "\\", 1)) + str.unquote("\"");
 }
 
