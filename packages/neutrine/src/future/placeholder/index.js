@@ -27,3 +27,10 @@ Placeholder.defaultProps = {
     "border": "dashed"
 };
 
+//Placeholder group
+export function PlaceholderGroup (props) {
+    return helpers.createMergedElement("div", props, {
+        "className": "neutrine__placeholder-group"
+    });
+}
+

@@ -36,6 +36,14 @@
     &--border-solid {
         border: 2px solid siimple.color("light");
     }
+    //Group of placeholders
+    &-group {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    &-group & {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }
-
 
