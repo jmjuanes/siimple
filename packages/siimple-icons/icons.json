@@ -950,6 +950,34 @@
         "unicode": 57479,
         "added": "v0.0.3",
         "keywords": ["corner", "frame", "border"]
+    },
+    {
+        "id": "external-link",
+        "categories": "interface",
+        "unicode": 57480,
+        "added": "v0.0.3",
+        "keywords": ["external", "link", "open"]
+    },
+    {
+        "id": "camera",
+        "categories": "media",
+        "unicode": 57481,
+        "added": "v0.0.3",
+        "keywords": ["camera", "photo", "snapshot"]
+    },
+    {
+        "id": "dna",
+        "categories": "health",
+        "unicode": 57482,
+        "added": "v0.0.3",
+        "keywords": ["dna", "gene", "genomics"]
+    },
+    {
+        "id": "crop",
+        "categories": "interface",
+        "unicode": 57483,
+        "added": "v0.0.3",
+        "keywords": ["crop", "cut", "edit"]
     }
 ]
 
