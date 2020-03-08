@@ -1,6 +1,12 @@
 # @siimple/neutrine changelog
 
 
+## v0.1.4 (2020-03-08)
+
+#### :rocket: New features
+- Added `PlaceholderGroup` component.
+
+
 ## v0.1.3 (2020-03-06)
 
 #### :bug: Bug fixes
