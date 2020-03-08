@@ -51,6 +51,6 @@
         "@siimple/experiments": "0.0.2",
         "@siimple/icons": "0.0.2",
         "@siimple/lib": "0.0.1",
-        "@siimple/neutrine": "0.1.3"
+        "@siimple/neutrine": "0.1.4"
     }
 }
