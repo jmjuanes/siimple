@@ -1,5 +1,7 @@
+@use "@siimple/lib" as siimple;
+
 //Website hero component
-.#{$website-prefix}-hero {
+.website-hero {
     display: block;
     overflow: hidden;
     //max-width: 960px;
@@ -16,7 +18,7 @@
     &-head {
         font-size: 65px;
         line-height: 90px;
-        color: siimple-default-color("primary");
+        color: siimple.color("primary");
     }
     //Hero subheading
     &-subhead {
@@ -24,14 +26,14 @@
         line-height: 50px;
         //opacity: 0.8;
         margin-bottom: 10px;
-        color: siimple-default-color("primary");
+        color: siimple.color("primary");
     }
     //Hero text
     &-text {
         font-size: 18px;
         line-height: 27px;
         margin-bottom: 10px;
-        color: siimple-default-color("primary");
+        color: siimple.color("primary");
         //opacity: 0.8;
     }
     //Buttons wrapper
