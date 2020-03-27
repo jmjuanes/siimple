@@ -3,9 +3,9 @@ layout: "default.html"
 title: "siimple"
 ---
 <!-- Hero -->
-<div class="website-hero siimple-content--large siimple--bg-light">
-    <div class="siimple-grid-row">
-        <div class="siimple-grid-col siimple-grid-col--7 siimple-grid-col--sm-12">
+<div class="siimple-content website-hero siimple-content--large siimple--bg-light">
+    <div class="siimple-row">
+        <div class="siimple-column siimple-column--7 siimple-column--sm-12">
             <div class="website-hero-content" align="left">
                 <div class="website-hero-head">
                     <strong class="siimple">siimple</strong>
@@ -18,7 +18,7 @@ title: "siimple"
                 </div>
             </div>
         </div>
-        <div class="siimple-grid-col siimple-grid-col--5">
+        <div class="siimple-column siimple-column--5">
             <img src="/assets/images/header.svg" class="website-hero-image" width="100%"/>
         </div>
     </div>
@@ -29,9 +29,9 @@ title: "siimple"
         <div class="siimple-h2 siimple--mb-4 siimple--text-normal" align="center">
             Discover <strong>our toolkits</strong>
         </div>
-        <div class="siimple-grid-row">
+        <div class="siimple-row">
             {{#each data.toolkits}}
-            <div class="siimple-grid-col siimple-grid-col--4 siimple-grid-col--sm-12">
+            <div class="siimple-column siimple-column--4 siimple-column--sm-12">
                 <a href="{{ this.url }}" style="text-decoration:none;">
                     <div class="siimple--rounded siimple--bg-light" align="center">
                         <img src="{{ this.image }}" width="200px" />
