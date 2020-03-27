@@ -29,13 +29,14 @@ $footer-line-height: 20px;
         font-weight: bold;
         text-decoration: none;
         line-height: 30px;
+        opacity: 0.8;
     }
     //Footer subtitle
     &-subtitle {
         display: block;
         font-size: siimple.$text-size;
         line-height: siimple.$line-height;
-        opacity: 0.8;
+        opacity: 0.6;
         text-decoration: none;
     }
     //Footer group
@@ -56,7 +57,7 @@ $footer-line-height: 20px;
         //transition: color 0.3s;
         transition: opacity 0.3s;
         cursor: pointer;
-        opacity: 0.85;
+        opacity: 0.80;
         //Hover link
         &:hover {
             opacity: 1.0;
@@ -77,6 +78,10 @@ $footer-line-height: 20px;
         //Footer color
         &--#{$color} {
             background-color: siimple.color($color);
+            color: siimple.color-invert($color);
+        }
+        //Footer link color
+        &--#{$color} &-link {
             color: siimple.color-invert($color);
         }
         //Rule color
