@@ -1,11 +1,4 @@
-//Import dependencies
-@import "@siimple/css/scss/variables.scss";
-
-//Global variables
-$website-prefix: "website";
-
 //Import global styles
-@import "./card.scss";
-@import "./code.scss";
-@import "./hero.scss";
+@use "./code.scss";
+@use "./hero.scss";
 
