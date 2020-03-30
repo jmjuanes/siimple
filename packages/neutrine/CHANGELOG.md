@@ -1,5 +1,15 @@
 # @siimple/neutrine changelog
 
+## v0.1.5 (2020-03-30)
+
+#### :rocket: New features
+
+- Added `apperance` property to `GroupIcon` component for displaying the icon inside a square or a circle.
+
+#### :bug: Bug fixes
+
+- Fixed bug displaying icons in group element.
+
 
 ## v0.1.4 (2020-03-08)
 
