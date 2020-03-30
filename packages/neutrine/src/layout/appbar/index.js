@@ -74,4 +74,11 @@ AppbarAvatar.defaultProps = {
     "style": {}
 };
 
+//Appbar divider
+export function AppbarDivider (props) {
+    return helpers.createMergedElement("div", props, {
+        "className": "neutrine__appbar-divider"
+    });
+}
+
 
