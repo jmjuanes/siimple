@@ -1,7 +1,7 @@
 @use "@siimple/lib" as siimple;
 
 //Neutrine group style
-.neutrine-group {
+.neutrine__group {
     display: block;
     margin-bottom: siimple.$margin-bottom;
     //Group row style
@@ -102,11 +102,16 @@
         text-align: center;
         font-size: 24px;
         color: siimple.color("white");
-        border-radius: 100px;
-    }
-    //Group icon specific styles
-    &-icon {
+        //border-radius: 100px;
         background-color: siimple.color("primary"); //Default icon background color
+        //Square icon
+        &--square {
+            border-radius: 5px;
+        }
+        //Circle icon
+        &--circle {
+            border-radius: 50%;
+        }
     }
     //Group add specific styles
     &-add {
