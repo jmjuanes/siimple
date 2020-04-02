@@ -978,6 +978,13 @@
         "unicode": 57483,
         "added": "v0.0.3",
         "keywords": ["crop", "cut", "edit"]
+    },
+    {
+        "id": "server",
+        "categories": "computer",
+        "unicode": 57484,
+        "added": "v0.0.3",
+        "keywords": ["server", "data", "computer"]
     }
 ]
 
