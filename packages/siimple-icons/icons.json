@@ -985,6 +985,13 @@
         "unicode": 57484,
         "added": "v0.0.3",
         "keywords": ["server", "data", "computer"]
+    },
+    {
+        "id": "window",
+        "categories": "computer",
+        "unicode": 57485,
+        "added": "v0.0.4",
+        "keywords": ["window", "program"]
     }
 ]
 
