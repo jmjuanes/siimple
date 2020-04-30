@@ -9,6 +9,19 @@
 @use "./variables.scss" as variables;
 @use "./utils.scss" as utils;
 
+//Grey color palette
+$greys: (
+    "grey1": variables.$grey1,
+    "grey2": variables.$grey2,
+    "grey3": variables.$grey3,
+    "grey4": variables.$grey4,
+    "grey5": variables.$grey5,
+    "grey6": variables.$grey6,
+    "grey7": variables.$grey7,
+    "grey8": variables.$grey8,
+    "grey9": variables.$grey9
+) !default;
+
 //Default color palette
 $colors: (
     "primary": variables.$primary,
@@ -38,7 +51,7 @@ $breakpoints: (
     "xlarge": variables.$breakpoint-xlarge,
     "large": variables.$breakpoint-large,
     "medium": variables.$breakpoint-medium,
-    "small": variables.$breakpoint-small,
-    "xsmall": variables.$breakpoint-xsmall
+    "small": variables.$breakpoint-small
+    //"xsmall": variables.$breakpoint-xsmall
 ) !default;
 
