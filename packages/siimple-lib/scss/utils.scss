@@ -10,6 +10,7 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:meta";
+@use "sass:string" as str;
 
 //Alias for lighten($color, $amount)
 //https://sass-lang.com/documentation/modules/color#lighten
@@ -102,5 +103,14 @@
     }
     //Otherwise: return the value provided
     @return $list;
+}
+
+//String replace
+@function replace($string, $search, $replace: "") {
+    $index: str.index($string, $search);
+    @if $index {
+        @return str.slice($string, 1, $index - 1) + $replace + str.replace(str-slice($string, $index + str.length($search)), $search, $replace);
+    }
+    @return $string;
 }
 
