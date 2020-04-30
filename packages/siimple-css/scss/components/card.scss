@@ -9,17 +9,17 @@
 @use "@siimple/lib" as siimple;
 
 //Card variables
-$card-padding: 15px;
+$card-padding: 20px;
 
 //Card element class
-.#{siimple.$name}-card {
+.#{siimple.$prefix}card {
     display: block;
     width: 100%;
     margin-bottom: siimple.$margin-bottom;
     border-radius: siimple.$border-radius;
     text-decoration: none !important;
-    background-color: siimple.color("light");
-    color: siimple.color("dark");
+    background-color: siimple.color("white"); //Default using white color
+    color: siimple.$text-color; //siimple.color("dark");
     //Common styles
     &-image,
     &-content, 
@@ -27,13 +27,13 @@ $card-padding: 15px;
         display: block;
          //First child of the card --> add border top radius
         &:first-child {
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
+            border-top-left-radius: siimple.$border-radius;
+            border-top-right-radius: siimple.$border-radius;
         }
         //Last child of the card --> add border bottom radius
         &:last-child {
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: siimple.$border-radius;
+            border-bottom-right-radius: siimple.$border-radius;
         }
     }
     //Card image
@@ -58,9 +58,9 @@ $card-padding: 15px;
         //font-weight: bold;
         //font-size: 15px;
         padding: $card-padding;
-        color: siimple.color("dark");
+        color: siimple.$text-color; //siimple.color("dark");
         cursor: pointer;
-        transition: opacity 0.3s;
+        //transition: opacity 0.3s;
         opacity: 0.5;
         //Card link arrow
         &::before {
@@ -73,7 +73,7 @@ $card-padding: 15px;
             transform: rotate(45deg);
             border-radius: 2px;
             position: absolute;
-            top: 17px;
+            top: 24px;
             right: 18px;
             transition: right 0.3s;
         }
@@ -81,6 +81,7 @@ $card-padding: 15px;
     //Card hover --> active link
     &:hover &-link,
     &-link:hover {
+        transition: opacity 0.3s;
         opacity: 1.0;
     }
     &:hover &-link::before,
@@ -88,17 +89,17 @@ $card-padding: 15px;
         right: 15px;
     }
     //Light card --> default style
-    //&--light {
-    //    background-color: siimple.color("light");
-    //    color: siimple.color("dark");
-    //}
-    //&--light &-link {
-    //    color: siimple.color("dark");
-    //}
-    //&--light &-link::before {
-    //    border-top-color: siimple.color("dark");
-    //    border-right-color: siimple.color("dark");
-    //}
+    &--light {
+        background-color: siimple.color("light");
+        //color: siimple.color("dark");
+    }
+    &--light &-link {
+        color: siimple.$text-color; //siimple.color("dark");
+    }
+    &--light &-link::before {
+        border-top-color: siimple.color("dark");
+        border-right-color: siimple.color("dark");
+    }
     //Dark card
     &--dark {
         background-color: siimple.color("dark");
