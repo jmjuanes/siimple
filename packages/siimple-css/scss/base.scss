@@ -13,10 +13,11 @@
 
 //Default html style
 html {
+    background-color: siimple.$body-bg;
+    color: siimple.$body-color; //text-color;
     font-family: siimple.$font-default;
     font-weight: siimple.$text-weight;
     font-size: siimple.$text-size;
-    color: siimple.$text-color;
     line-height: siimple.$line-height;
     font-smooth: antialiased;
     -webkit-font-smoothing: antialiased;
