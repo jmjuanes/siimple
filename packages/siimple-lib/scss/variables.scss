@@ -8,10 +8,22 @@
 
 //Default class prefix
 $name: "siimple" !default;
+$prefix: "siimple-" !default;
 
 //Darker/lighter color amount
 $darker-amount: 20% !default;
 $lighter-amount: 20% !default;
+
+//Grey color schema
+$grey1: #f1f2f3 !default;
+$grey2: #e3e6e8 !default;
+$grey3: #d5dadd !default;
+$grey4: #c6ced2 !default;
+$grey5: #a9b6bc !default;
+$grey6: #70858f !default;
+$grey7: #4f5d64 !default;
+$grey8: #384247 !default;
+$grey9: #22282b !default;
 
 //Default colors
 $white: #ffffff !default;
@@ -20,20 +32,18 @@ $secondary: #4ccdac !default;
 $success: #4acf7f !default;
 $warning: #fbc850 !default;
 $error: #ee675d !default;
-$dark: #34495e !default;
-$light: #eef2f7 !default; //Light color
-$light2: #cbd8e6 !default; //Second light color
-$light3: #dde5ee !default; //Third light color
+$light: $grey2 !default; //Default light color
+$dark: $grey8 !default; //Default dark color
 
 //Default breakpoints variables
 $gap: 20px !default; //Gap for breakpoints
 $breakpoint-fluid: 100% !default;
-$breakpoint-xsmall: 480px !default;
+//$breakpoint-xsmall: 480px !default;
 $breakpoint-small: 600px !default;
 $breakpoint-medium: 768px !default;
-$breakpoint-large: 960px !default;
+$breakpoint-large: 1024px !default;
 $breakpoint-xlarge: 1280px !default;
-$breakpoint-xsmall-enabled: true !default; //Extra-small breakpoint is enabled
+//$breakpoint-xsmall-enabled: true !default; //Extra-small breakpoint is enabled
 $breakpoint-xlarge-enabled: true !default; //Extra-large breakpoint is enabled
 
 //Default font variables
@@ -46,20 +56,24 @@ $weight-normal: 400 !default;
 $weight-bold: 600 !default;
 
 //Default text properties
-$text-size-small: 12px !default; //Small text size
-$text-size: 15px !default;
-$text-color: $dark !default;
+$text-size-small: 13px !default; //Small text size
+$text-size: 16px !default;
+$text-color: $grey7 !default; //$dark !default;
 $text-font: $font-default !default;
 $text-weight: $weight-normal !default;
 
 //Line height values
-$line-height-small: 18px !default;
-$line-height: 22px !default;
+$line-height-small: 20px !default;
+$line-height: 24px !default;
 
 //Default border values
-$border-radius: 5px !default;
+$border-radius: 8px !default;
 
 //Default margin values
 $margin-top: 0px !default;
 $margin-bottom: 15px !default;
+
+//Default body values
+$body-bg: $grey1 !default;
+$body-color: $grey7 !default;
 
