@@ -105,8 +105,9 @@ $table-colors: (
     //Table with border
     &--border &-cell {
         //border: 1px solid siimple.utils-darken(siimple.color("light"), 5%);
-        border-right: 2px solid siimple.grey("1");
-        border-bottom: 2px solid siimple.grey("1");
+        border: 0px solid siimple.grey("1");
+        border-right-width: 2px;
+        border-bottom-width: 2px;
     }
     //Table header
     &-header {
