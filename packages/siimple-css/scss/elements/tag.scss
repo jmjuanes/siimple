@@ -8,13 +8,16 @@
 
 @use "@siimple/lib" as siimple;
 
+$tag-text-size: 12px;
+$tag-line-height: 20px;
+
 //Tag class
-.#{siimple.$name}-tag {
+.#{siimple.$prefix}tag {
     display: inline-block;
-    font-size: 12px;
+    font-size: $tag-text-size;
     font-weight: bold;
     text-decoration: none;
-    line-height: 20px;
+    line-height: $tag-line-height;
     border-radius: 4px;
     padding-left: 8px;
     padding-right: 8px;
