@@ -9,56 +9,70 @@
 @use "@siimple/lib" as siimple;
 
 //Breadcrumb variables
-$breadcrumb-height: 20px;
-$breadcrumb-text-size: 14px;
+$breadcrumb-text-size: 15px;
+$breadcrumb-item-height: 24px;
+$breadcrumb-item-padding-top: 8px;
+$breadcrumb-item-padding-bottom: 8px;
+$breadcrumb-item-padding-left: 15px;
+$breadcrumb-item-padding-right: 25px;
 
 //Breadcrumb class
-.#{siimple.$name}-breadcrumb {
-    display: block;
+.#{siimple.$prefix}breadcrumb {
+    display: flex;
+    flex-wrap: no-wrap;
     //width: 100%;
-    height: $breadcrumb-height;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+    //height: $breadcrumb-height;
     margin-bottom: siimple.$margin-bottom;
     background-color: siimple.color("light");
     border-radius: siimple.$border-radius;
-    border: 0px;
+    //border: 0px;
+    overflow: hidden;
+    overflow-x: auto;
     //Breadcrumb item
     &-item {
-        display: inline-block;
-        float: left;
+        //display: block;
+        //float: left;
         position: relative;
-        height: $breadcrumb-height;
+        height: $breadcrumb-item-height;
         font-size: $breadcrumb-text-size;
-        line-height: $breadcrumb-height;
+        line-height: $breadcrumb-item-height;
+        padding-left: $breadcrumb-item-padding-left;
+        padding-right: $breadcrumb-item-padding-right;
+        padding-top: $breadcrumb-item-padding-top;
+        padding-bottom: $breadcrumb-item-padding-bottom;
+        background-color: siimple.color("light");
         //text-align: center;
         //font-family: $siimple-default-text-font;
         font-weight: siimple.$weight-bold;
         text-decoration: none;
         color: siimple.color("primary");
-        transition: color 0.3s;
+        //transition: color 0.3s;
         cursor: pointer;
-        &:not(:first-child) {
-            padding-left: 8px;
-        }
         //Crumb hover
         &:hover {
+            transition: color 0.3s;
             color: siimple.color-darker("primary");
         }
-        //Crumb before
-        &:not(:first-child)::before {
-            content: "/";
-            color: siimple.color-lighter("dark");
-            font-weight: bold !important;
-            padding-right: 8px;
+        //Crumb after
+        &:not(:last-child)::after {
+            display: block;
+            content: "";
+            //background-color: siimple.color-lighter("dark");
+            width: 6px;
+            height: 6px;
+            border-top: 2px solid siimple.color-lighter("dark");
+            border-right: 2px solid siimple.color-lighter("dark");
+            position: absolute;
+            top: 16px;
+            right: 3px;
+            transform: rotate(45deg);
         }
         //Active crumb
         &--active {
             color: siimple.color("dark") !important;
             cursor: default !important;
             //font-weight: normal !important;
+            pointer-events: none; //Disable clicks
         }
     }
 }
