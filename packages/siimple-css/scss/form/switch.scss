@@ -10,12 +10,12 @@
 
 //Switch variables
 $switch-width: 32px;
-$switch-height: 18px;
+$switch-height: 20px;
 $switch-border-radius: 50px;
-$switch-margin: 6px;
+$switch-margin: 5px;
 
 //Switch class
-.#{siimple.$name}-switch {
+.#{siimple.$prefix}switch {
     //Structure:
     //<div class="siimple-switch" id="switchDiv">
     //	<input type="checkbox" value="1" id="mySwitch" name="" />
@@ -38,17 +38,17 @@ $switch-margin: 6px;
             width: 14px;
             height: 14px;
             border-radius: $switch-border-radius;
-            transition: all 0.3s ease;
+            transition: left 0.3s ease;
             //cursor: pointer;
-            background: siimple.color-lighter("dark");
+            background: siimple.color("white");
             position: absolute;
-            top: 2px;
-            left: 2px;
+            top: 3px;
+            left: 3px;
             z-index: 2;
-            opacity: 0.6;
-            &:hover {
-                opacity: 1.0;
-            }
+            //opacity: 0.6;
+            //&:hover {
+            //    opacity: 1.0;
+            //}
         }
         //Switch background
         &::before {
@@ -58,7 +58,7 @@ $switch-margin: 6px;
             height: 100%;
             background-color: siimple.color("light");
             border-radius: $switch-border-radius;
-            transition: all 0.3s;
+            transition: background-color 0.3s;
             position: absolute;
             top: 0px;
             z-index: 1;
@@ -74,9 +74,9 @@ $switch-margin: 6px;
     }
     //Checkbox active -> move circle
     & input[type=checkbox]:checked ~ label::after {
-        left: 16px;
-        opacity: 1.0;
-        background-color: siimple.color("white");
+        left: 15px;
+        //opacity: 1.0;
+        //background-color: siimple.color("white");
     }
     //Colored switch 
     @each $color in siimple.utils-keys(siimple.$status-colors) {
