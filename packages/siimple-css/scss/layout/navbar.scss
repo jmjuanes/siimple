@@ -16,7 +16,7 @@ $navbar-breakpoint-mobile: siimple.$desktop - 1px;
 $navbar-item-padding: 10px;
 
 //Navbar class
-.#{siimple.$name}-navbar {
+.#{siimple.$prefix}navbar {
     display: flex; 
     flex-wrap: wrap;
     justify-content: space-between;
