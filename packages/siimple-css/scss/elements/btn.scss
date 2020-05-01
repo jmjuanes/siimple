@@ -8,22 +8,27 @@
 
 @use "@siimple/lib" as siimple;
 
+$btn-padding-left: 15px;
+$btn-padding-right: 15px;
+$btn-padding-top: 8px;
+$btn-padding-bottom: 8px;
+
 //Button class
-.#{siimple.$name}-btn {
+.#{siimple.$prefix}btn {
     display: inline-block;
     //min-height: 24px;
     //transition: opacity 0.3s;
-    transition: background-color 0.3s;
+    //transition: background-color 0.3s;
     cursor: pointer;
-    line-height: 20px;
+    line-height: siimple.$line-height;
     text-align: center;
     text-decoration: none;
-    font-size: 14px;
+    font-size: siimple.$text-size;
     //font-weight: bold;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-left: $btn-padding-left;
+    padding-right: $btn-padding-right;
+    padding-top: $btn-padding-top;
+    padding-bottom: $btn-padding-bottom;
     border-radius: siimple.$border-radius;
     //Disable default button element borders
     //https://github.com/siimple/siimple/pull/17
@@ -38,6 +43,7 @@
         text-decoration: none;
         //opacity: 0.8;
         background-color: siimple.color("light");
+        transition: background-color 0.3s;
     }
     //Button colors
     @each $color in siimple.utils-keys(siimple.$colors) {
@@ -58,23 +64,23 @@
         cursor: not-allowed !important;
     }
     //Small button
-    &--small {
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        font-size: 10px;
-        line-height: 15px;
-    }
-    //Big button
-    &--big {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 9px;
-        padding-bottom: 9px;
-        font-size: 18px;
-        line-height: 30px;
-    }
+    //&--small {
+    //    padding-left: 10px;
+    //    padding-right: 10px;
+    //    padding-top: 4px;
+    //    padding-bottom: 4px;
+    //    font-size: 10px;
+    //    line-height: 15px;
+    //}
+    ////Big button
+    //&--big {
+    //    padding-left: 20px;
+    //    padding-right: 20px;
+    //    padding-top: 9px;
+    //    padding-bottom: 9px;
+    //    font-size: 18px;
+    //    line-height: 30px;
+    //}
     //Fluid button
     &--fluid {
         width: 100%;
@@ -82,9 +88,9 @@
         padding-right: 0px !important;
     }
     //Rounded button
-    &--rounded {
-        border-radius: 50px !important;
-    }
+    //&--rounded {
+    //    border-radius: 50px !important;
+    //}
     //Group buttons
     &-group {
         display: inline-block;
@@ -101,7 +107,7 @@
     }
     //White button
     &--white {
-        transition: opacity 0.3s !important;
+        //transition: opacity 0.3s !important;
         background-color: siimple.color("white");
         opacity: 1.0;
         &:hover {
