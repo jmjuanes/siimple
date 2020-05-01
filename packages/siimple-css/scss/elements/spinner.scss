@@ -25,7 +25,7 @@ $spinner-border-color: siimple.color("white") !default;
 }    
 
 //Spinner class
-.#{siimple.$name}-spinner {
+.#{siimple.$prefix}spinner {
     display: inline-block;
     position: relative;
     width: $spinner-width;
