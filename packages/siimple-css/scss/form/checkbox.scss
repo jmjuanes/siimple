@@ -12,9 +12,10 @@
 $checkbox-width: 18px;
 $checkbox-height: 18px;
 $checkbox-margin: 6px;
+$checkbox-border-radius: 3px;
 
 //Checkbox class
-.#{siimple.$name}-checkbox {
+.#{siimple.$prefix}checkbox {
     display: inline-block;
     position: relative;
     width: $checkbox-width;
@@ -26,30 +27,21 @@ $checkbox-margin: 6px;
         width: $checkbox-width;
         height: $checkbox-height;
         cursor: pointer;
-        transition: all 0.3s;
+        //transition: all 0.3s;
         position: absolute;
         top: 0;
         left: 0;
-        border-radius: 2px;
+        border-radius: $checkbox-border-radius;
         background: siimple.color("light");
-        //Tick
+        //Label icon
+        //Check icon for checked status
+        //Minus icon for indeterminate status
         &:after {
             content: "";
-            opacity: 0.2;
             width: 8px;
             height: 4px;
-            transform: rotate(-45deg);
-            transition: all 0.3s;
             position: absolute;
-            top: 5px;
-            left: 4px;
             background: transparent;
-            border: 2px solid siimple.color("dark");
-            border-top: 0px;
-            border-right: 0px;
-        }
-        &:hover::after {
-            opacity: 0.5;
         }
     }
     //Input style
@@ -58,20 +50,24 @@ $checkbox-margin: 6px;
     }
     //Checked -> change tick
     & input[type=checkbox]:checked + label:after {
-        opacity: 1;
-        border-color: siimple.color("white");
+        //opacity: 1;
+        transform: rotate(-45deg);
+        border-left: 2px solid siimple.color("white");
+        border-bottom: 2px solid siimple.color("white");
+        top: 5px;
+        left: 4px;
     }
     //Checked/Indeterminate -> change background
     & input[type=checkbox]:checked + label,
     & input[type=checkbox]:indeterminate + label {
         background-color: siimple.color("primary");
+        transition: background-color 0.3s;
     }
     //Indeterminate -> change tick
     & input[type=checkbox]:indeterminate + label:after {
-        opacity: 1;
-        border-color: siimple.color("white");
-        border-left: 0px;
-        transform: rotate(0);
+        //opacity: 1;
+        border-bottom: 2px solid siimple.color("white");
+        //transform: rotate(0);
         top: 4px;
         left: 5px;
     }
