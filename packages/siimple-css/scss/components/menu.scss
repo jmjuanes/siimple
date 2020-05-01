@@ -9,7 +9,7 @@
 @use "@siimple/lib" as siimple;
 
 //Menu class
-.#{siimple.$name}-menu {
+.#{siimple.$prefix}menu {
     display: block;
     //width: 100%;
     //margin-top: 0px;
@@ -21,7 +21,7 @@
         width: 100%;
         height: 25px;
         line-height: 24px;
-        transition: color 0.3s;
+        //transition: color 0.3s;
         font-size: 15px;
         font-weight: bold;
         text-decoration: none;
@@ -49,21 +49,22 @@
         text-decoration: none;
         padding-left: 10px;
         padding-right: 10px;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding-top: 8px;
+        padding-bottom: 8px;
         //margin-bottom: 5px;
         //opacity: 1.0;
-        transition: all ease 0.3s;
+        //transition: all ease 0.3s;
         cursor: pointer;
         //Hover styles
         &:not(#{&}--selected):hover {
+            transition: all ease 0.3s;
             text-decoration: none !important;
             color: siimple.color("primary");
         }
         //Active item
         &--active {
             background-color: siimple.color("light");
-            color: siimple.color("dark");
+            color: siimple.color("dark") !important;
             //font-weight: bold;
         }
     }
