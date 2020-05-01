@@ -8,11 +8,13 @@
 
 @use "@siimple/lib" as siimple;
 
+$content-padding: 40px;
+
 //Content class
-.#{siimple.$name}-content {
+.#{siimple.$prefix}content {
     display: block;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: $content-padding;
+    padding-bottom: $content-padding;
     //Default content size
     @include siimple.fluid();
     //Content sizes
