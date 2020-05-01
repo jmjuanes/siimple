@@ -8,14 +8,18 @@
 
 @use "@siimple/lib" as siimple;
 
+$rule-height: 2px;
+$rule-margin-top: 15px;
+$rule-margin-bottom: 15px;
+
 //Rule class 
-.#{siimple.$name}-rule {
+.#{siimple.$prefix}rule {
     display: block;
-    height: 2px;
+    height: $rule-height;
     background-color: siimple.color("light");
     padding: 0px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: $rule-margin-top;
+    margin-bottom: $rule-margin-bottom;
     border: 0px;
     //Rule first and last child
     &:first-child {
