@@ -12,11 +12,11 @@
 $radio-width: 18px;
 $radio-height: 18px;
 $radio-margin: 6px;
-$radio-border: 3px;
-$radio-circle: 6px;
+$radio-border: 4px;
+$radio-circle: 4px;
 
 //Radio class
-.#{siimple.$name}-radio {
+.#{siimple.$prefix}radio {
     display: inline-block;
     width: $radio-width;
     height: $radio-height;
@@ -36,7 +36,7 @@ $radio-circle: 6px;
         border-width: $radio-border;
         border-style: solid;
         border-color: siimple.color("light");
-        transition: border-color 0.3s ease;
+        //transition: border-color 0.3s ease;
         cursor: pointer;
     }
     //Radio inner circle
@@ -50,7 +50,7 @@ $radio-circle: 6px;
         border-radius: 100px;
         top: calc(50% - #{$radio-circle} / 2);
         left: calc(50% - #{$radio-circle} / 2);
-        transition: all 0.3s ease;
+        //transition: all 0.3s ease;
     }
     &:hover > label:after {
         background-color: siimple.color("light");
