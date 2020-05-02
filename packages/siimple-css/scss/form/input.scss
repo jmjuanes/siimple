@@ -14,7 +14,7 @@ $input-text-size: 15px;
 $input-padding: 15px;
 
 //Input style
-.#{siimple.$name}-input {
+.#{siimple.$prefix}input {
     display: inline-block;
     height: $input-height;
     line-height: $input-height;
