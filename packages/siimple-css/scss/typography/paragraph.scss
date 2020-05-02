@@ -9,18 +9,13 @@
 @use "@siimple/lib" as siimple;
 
 //Paragraph class
-.#{siimple.$name}-paragraph, 
-.#{siimple.$name}-p {
+.#{siimple.$prefix}paragraph, 
+.#{siimple.$prefix}p {
     display: block;
     //font-family: $siimple-default-text-font;
     //line-height: siimple.$line-height;
     //font-size: siimple.$text-size;
     margin-top: 0px;
     margin-bottom: siimple.$margin-bottom;
-    //Paragraph lead modifier
-    &--lead {
-        font-size: 20px;
-        line-height: 30px;
-    }
 }
 
