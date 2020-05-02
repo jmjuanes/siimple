@@ -9,12 +9,12 @@
 @use "@siimple/lib" as siimple;
 
 //Textarea variables
-$textarea-padding: 10px;
-$textarea-text-size: 14px;
-$textarea-line-height: 20px;
+$textarea-padding: 15px;
+$textarea-text-size: 15px;
+$textarea-line-height: 22px;
 
 //Textarea class
-.#{siimple.$name}-textarea {
+.#{siimple.$prefix}textarea {
     display: inline-block;
     line-height: $textarea-line-height;
     font-size: $textarea-text-size;
