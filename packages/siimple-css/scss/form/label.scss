@@ -9,21 +9,24 @@
 @use "@siimple/lib" as siimple;
 
 //Label variables
+$label-padding-top: 3px;
+$label-padding-bottom: 3px;
+$label-padding-right: 10px;
 $label-text-size: siimple.$text-size;
 $label-line-height: siimple.$line-height;
 
 //Label class
-.#{siimple.$name}-label {
+.#{siimple.$prefix}label {
     display: inline-block;
     //min-height: 34px;
     line-height: $label-line-height;
     font-size: $label-text-size;
     color: siimple.$text-color;
-    font-weight: 600;
-    padding-right: 10px;
+    font-weight: siimple.$weight-bold;
+    padding-right: $label-padding-right;
     padding-left: 0px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: $label-padding-top;
+    padding-bottom: $label-padding-bottom;
     vertical-align: top;
 }
 
