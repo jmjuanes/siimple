@@ -9,54 +9,66 @@
 @use "@siimple/lib" as siimple;
 
 //Tabs variables
-$tabs-height: 34px;
-$tabs-text-size: 14px;
-$tabs-padding: 15px;
+$tabs-min-width: 100px;
+$tabs-height: 40px;
+$tabs-padding: 10px;
 
 //Tabs class
-.#{siimple.$name}-tabs {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: $tabs-height;
+.#{siimple.$prefix}tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+    background-color: siimple.color("light");
+    padding-top: $tabs-padding;
+    padding-right: $tabs-padding;
+    //position: relative;
+    //width: 100%;
+    //height: $tabs-height;
     //font-size: siimple.$text-size;
     margin-bottom: siimple.$margin-bottom;
-    border-bottom: 2px solid siimple.color("light");
+    border-radius: siimple.$border-radius;
     //Disable user selection
     @include siimple.user-select(none);
     //Tab item
     &-item {
-        display: inline-block;
-        float: left;
-        height: calc(#{$tabs-height} - 2px);
-        line-height: $tabs-height;
+        display: block;
+        flex-grow: 1;
+        min-width: $tabs-min-width;
+        min-height: calc(#{$tabs-height} - 2 * #{$tabs-padding});
+        padding: $tabs-padding;;
+        line-height: calc(#{$tabs-height} - 2 * #{$tabs-padding});
         font-weight: 600;
-        font-size: $tabs-text-size;
+        text-align: center;
+        //font-size: $tabs-text-size;
         color: siimple.color-lighter("dark");
-        padding-left: $tabs-padding;
-        padding-right: $tabs-padding;
-        margin-bottom: -1px;
-        border: 2px solid transparent;
-        border-top-left-radius: siimple.$border-radius;
-        border-top-right-radius: siimple.$border-radius;
+        //padding-left: $tabs-padding;
+        //padding-right: $tabs-padding;
+        //margin-bottom: -1px;
+        //border: 2px solid transparent;
+        border-radius: siimple.$border-radius;
         cursor: pointer;
-        transition: color 0.3s;
+        //transition: color 0.3s;
+        //Tabs margin
+        margin-left: $tabs-padding;
+        margin-bottom: $tabs-padding;
         //Hover tab
         &:not(#{&}--active):hover {
             //border-top-color: siimple.color("light");
             //border-left-color: siimple.color("light");
             //border-right-color: siimple.color("light");
             color: siimple.color("primary");
+            transition: color 0.3s;
         }
         //Active tab
         &--active {
-            border-top-color: siimple.color("light") !important;
-            border-left-color: siimple.color("light") !important;
-            border-right-color: siimple.color("light") !important;
-            border-bottom-color: siimple.color("white") !important;
             background-color: siimple.color("white") !important;
             color: siimple.color("dark") !important;
         }
+    }
+    //Tab style for mobile devices
+    @media screen and (max-width: siimple.$mobile) {
+        flex-direction: column;
     }
 }
 
