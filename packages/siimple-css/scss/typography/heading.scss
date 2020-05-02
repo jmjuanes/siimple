@@ -13,14 +13,14 @@
 $heading-margin-bottom: 0.5em !default;
 
 //Heading class
-.#{siimple.$name}-h {
+.#{siimple.$prefix}h {
     @each $heading-name,$heading in variables.$headings {
         //Add this heading size
         &#{$heading-name} {
             display: block;
             font-size: siimple.utils-get($heading, "size");
             //font-family: $siimple-default-text-font;
-            font-weight: 600;
+            font-weight: siimple.$weight-bold;
             line-height: siimple.utils-get($heading, "line-height");
             //color: $siimple-default-color;
             padding: 0px;

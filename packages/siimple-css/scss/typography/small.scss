@@ -10,10 +10,11 @@
 
 //Small text variables
 $small-text-size: siimple.$text-size-small !default;
+$small-color: siimple.color-lighter("dark") !default;
 
 //Small class
-.#{siimple.$name}-small {
+.#{siimple.$prefix}small {
     font-size: $small-text-size;
-    color: siimple.color-lighter("dark");
+    color: $small-color;
 }
 

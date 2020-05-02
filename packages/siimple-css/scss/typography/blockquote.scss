@@ -9,15 +9,15 @@
 @use "@siimple/lib" as siimple;
 
 //Blockquote class
-.#{siimple.$name}-blockquote {
+.#{siimple.$prefix}blockquote {
     display: block;
     //font-family: $siimple-default-text-font;
     color: siimple.color-lighter("dark");
     //font-size: $siimple-default-font-size;
     //line-height: $siimple-default-line-height;
     border-left: 4px solid siimple.color-lighter("dark");
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-right: 10px;
     padding-left: 20px;
     margin-bottom: siimple.$margin-bottom;

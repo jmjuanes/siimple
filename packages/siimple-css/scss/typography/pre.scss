@@ -11,21 +11,23 @@
 //Pre vriables
 $pre-text-size: 13px !default;
 $pre-line-height: 18px !default;
-$pre-padding-left: 15px !default;
-$pre-padding-right: 15px !default;
-$pre-padding-top: 10px !default;
-$pre-padding-bottom: 10px !default;
+$pre-padding-left: 20px !default;
+$pre-padding-right: 20px !default;
+$pre-padding-top: 15px !default;
+$pre-padding-bottom: 15px !default;
+$pre-color: siimple.color("white");
+$pre-background: siimple.color("dark");
 
 //Pre class
-.#{siimple.$name}-pre {
+.#{siimple.$prefix}pre {
     display: block;
     overflow-x: auto;
     width: calc(100% - #{$pre-padding-left} - #{$pre-padding-right});
-    color: siimple.color("dark");
+    color: $pre-color;
     line-height: $pre-line-height;
     font-size: $pre-text-size;
     font-family: siimple.$font-monospace;
-    background-color: siimple.color("light");
+    background-color: $pre-background;
     border-radius: siimple.$border-radius;
     padding-top: $pre-padding-top;
     padding-bottom: $pre-padding-bottom;
@@ -34,9 +36,9 @@ $pre-padding-bottom: 10px !default;
     margin-bottom: siimple.$margin-bottom;
     margin-top: 0px;
     //Pre dark mode
-    &--dark {
-        background-color: siimple.color("dark") !important;
-        color: siimple.color("white");
-    }
+    //&--dark {
+    //    background-color: siimple.color("dark") !important;
+    //    color: siimple.color("white");
+    //}
 }
 
