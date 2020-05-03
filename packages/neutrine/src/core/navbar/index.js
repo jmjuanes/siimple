@@ -57,15 +57,9 @@ export const NavbarMenu = function (props) {
 
 //Navbar toggle element
 export const NavbarToggle = function (props) {
-    let newProps = helpers.filterProps(props, ["className"]);
-    Object.assign(newProps, {
-        "className": helpers.classNames("siimple-navbar-toggle", props.className),
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-navbar-toggle",
         "tabIndex": "0"
     });
-    let icon = React.createElement("div", {
-        "className": "siimple-navbar-icon"
-    });
-    //Return the navbar toggle element
-    return React.createElement("div", newProps, icon);
 };
 
