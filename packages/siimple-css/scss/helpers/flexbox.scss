@@ -1,0 +1,33 @@
+//
+// @siimple/css - minimal css toolkit for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@use "@siimple/lib" as siimple;
+
+//Flexbox helpers
+.#{siimple.$prefix-helpers} {
+    &flex {
+        display: flex !important;
+    }
+    //Flex direction
+    &flex-row {
+        //display: flex !important;
+        flex-direction: row !important;
+    }
+    &flex-col {
+        //display: flex !important;
+        flex-direction: column !important;
+    }
+    //Reversed flex direction
+    &flex-row-rev {
+        flex-direction: row-reverse !important;
+    }
+    &flex-col-rev {
+        flex-direction: column-reverse !important;
+    }
+}
+
