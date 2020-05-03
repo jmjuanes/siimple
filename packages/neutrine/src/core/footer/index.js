@@ -7,9 +7,9 @@ export const Footer = function (props) {
     let newProps = helpers.filterProps(props, ["className", "color", "size"]);
     //Initialize the footer class list
     let classList = ["siimple-footer"];
-    //Check the color
-    if (typeof props.color === "string") {
-        classList.push("siimple-footer--" + props.color.toLowerCase());
+    //Check the footer theme
+    if (typeof props.theme === "string") {
+        classList.push("siimple-footer--" + props.theme.toLowerCase());
     }
     //Check the content size
     if (typeof props.size === "string") {
@@ -23,7 +23,7 @@ export const Footer = function (props) {
 
 //Default props
 Footer.defaultProps = {
-    "color": null, 
+    "theme": null, 
     "size": null 
 };
 
@@ -41,24 +41,10 @@ export const FooterSubtitle = function (props) {
     });
 };
 
-//Footer group
-export const FooterGroup = function (props) {
-    return helpers.createMergedElement("div", props, {
-        "className": "siimple-footer-group"
-    });
-};
-
 //Footer link
 export const FooterLink = function (props) {
     return helpers.createMergedElement("a", props, {
         "className": "siimple-footer-link"
-    });
-};
-
-//Footer rule
-export const FooterRule = function (props) {
-    return helpers.createMergedElement("div", props, {
-        "className": "siimple-footer-rule"
     });
 };
 
