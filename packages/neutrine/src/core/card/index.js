@@ -14,7 +14,7 @@ export const Card = function (props) {
 };
 
 Card.defaultProps = {
-    "theme": "light"
+    "theme": ""
 };
 
 //Card content component 
