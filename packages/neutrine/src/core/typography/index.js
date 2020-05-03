@@ -77,23 +77,16 @@ export const Link = function (props) {
 
 //Paragraph component
 export const Paragraph = function (props) {
-    //Initialize the button props 
-    let newProps = helpers.filterProps(props, ["className", "lead"]);
-    //Initialize the class names list 
-    let classList = ["siimple-paragraph"];
-    //Check for lead parargraph
-    if (typeof props.lead === "boolean" && props.lead === true) {
-        classList.push("siimple-paragraph--lead");
-    }
-    //Append the provided class names
-    newProps.className = helpers.classNames(classList, props.className);
-    //Return the paragraph element
-    return React.createElement("div", newProps, props.children);
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-paragraph"
+    });
 };
 
-//Paragraph default props
-Paragraph.defaultProps = {
-    "lead": false
+//Lead paragraph component
+export const Lead = function (props) {
+    return helpers.createMergedElement("div", props, {
+        "className": "siimple-lead"
+    });
 };
 
 //Export pre component 
