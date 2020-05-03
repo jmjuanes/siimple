@@ -18,12 +18,17 @@ export const Side = function (props) {
     if (props.visible === true) {
         classList.push(baseClass + "--visible");
     }
+    //Check for rounded content
+    if (props.rounded === true) {
+        classList.push(baseClass + "--rounded");
+    }
     //Return the side wrapper
     return React.createElement("div", {"className": classList.join(" ")}, props.children);
 };
 
 //Side default props
 Side.defaultProps = {
+    "rounded": false,
     "visible": true
 };
 
