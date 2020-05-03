@@ -9,27 +9,27 @@
 @use "@siimple/lib" as siimple;
 
 //Colors helpers
-.#{siimple.$name} {
+.#{siimple.$prefix-helpers} {
     @each $color in siimple.utils-keys(siimple.$colors) {
         //Text color
-        &--color-#{$color},
-        &--hcolor-#{$color}:hover {
+        &color-#{$color},
+        &hcolor-#{$color}:hover {
             color: siimple.color($color) !important;
         }
         //Background color
-        &--bg-#{$color},
-        &--hbg-#{$color}:hover {
+        &bg-#{$color},
+        &hbg-#{$color}:hover {
             background-color: siimple.color($color) !important;
         }
     }
     //White text color
-    &--color-white,
-    &--hcolor-white:hover {
+    &color-white,
+    &hcolor-white:hover {
         color: siimple.color("white") !important;
     }
     //White background color
-    &--bg-white,
-    &--hbg-white:hover {
+    &bg-white,
+    &hbg-white:hover {
         background-color: siimple.color("white") !important;
     }
 }

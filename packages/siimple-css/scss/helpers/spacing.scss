@@ -10,48 +10,54 @@
 @use "../variables.scss";
 
 //Spacing class
-.#{siimple.$name} {
+.#{siimple.$prefix-helpers} {
     @each $key,$value in variables.$spacing {
         //Margin attributes
-        &--mt-#{$key} {
+        &mt-#{$key} {
             margin-top: $value !important;
         }
-        &--mb-#{$key} {
+        &mb-#{$key} {
             margin-bottom: $value !important;
         }
-        &--ml-#{$key} {
+        &ml-#{$key} {
             margin-left: $value !important;
         }
-        &--mr-#{$key} {
+        &mr-#{$key} {
             margin-right: $value !important;
         }
-        &--mx-#{$key} {
+        &mx-#{$key} {
             margin-left: $value !important;
             margin-right: $value !important;
         }
-        &--my-#{$key} {
+        &my-#{$key} {
             margin-top: $value !important;
             margin-bottom: $value !important;
         }
         //Padding attributes only if key is not auto
         @if $key != "auto" {
-            &--pt-#{$key} {
+            &m-#{$key} {
+                margin: $value !important;
+            }
+            &p-#{$key} {
+                padding: $value !important;
+            }
+            &pt-#{$key} {
                 padding-top: $value !important;
             }
-            &--pb-#{$key} {
+            &pb-#{$key} {
                 padding-bottom: $value !important;
             }
-            &--pl-#{$key} {
+            &pl-#{$key} {
                 padding-left: $value !important;
             }
-            &--pr-#{$key} {
+            &pr-#{$key} {
                 padding-right: $value !important;
             }
-            &--px-#{$key} {
+            &px-#{$key} {
                 padding-left: $value !important;
                 padding-right: $value !important;
             }
-            &--py-#{$key} {
+            &py-#{$key} {
                 padding-top: $value !important;
                 padding-bottom: $value !important;
             }

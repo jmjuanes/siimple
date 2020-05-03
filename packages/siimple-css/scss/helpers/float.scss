@@ -22,7 +22,7 @@
 }
 
 //Float helpers
-.#{siimple.$name}--float {
+.#{siimple.$prefix-helpers}float {
     //Default float
     @include helpers-float();
     //Responsive float
@@ -36,7 +36,7 @@
 }
 
 //Clear floated content
-.#{siimple.$name}--clearfix {
+.#{siimple.$prefix-helpers}clearfix {
     @include siimple.clearfix();
 }
 
