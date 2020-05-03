@@ -23,7 +23,7 @@ $progress-striped: siimple.color("white");
 }
 
 //Progress class
-.#{siimple.$name}-progress {
+.#{siimple.$prefix}progress {
     display: block;
     width: 100%;
     height: $progress-height;

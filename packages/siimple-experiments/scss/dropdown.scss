@@ -9,7 +9,7 @@
 @use "@siimple/lib" as siimple;
 
 //Dropdown experimental component
-.#{siimple.$name}-dropdown {
+.#{siimple.$prefix}dropdown {
     position: relative;
     //Dropdown toggle arrow
     &-toggle::after {
