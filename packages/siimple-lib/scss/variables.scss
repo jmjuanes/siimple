@@ -8,7 +8,8 @@
 
 //Default class prefix
 $name: "siimple" !default;
-$prefix: "siimple-" !default;
+$prefix: $name + "-" !default;
+$prefix-helpers: $name + "--" !default;
 
 //Darker/lighter color amount
 $darker-amount: 20% !default;
