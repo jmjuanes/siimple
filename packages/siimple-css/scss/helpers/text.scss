@@ -11,43 +11,26 @@
 //Text helpers
 .#{siimple.$prefix-helpers}text {
     //Text alignment
-    &-justify {
-        text-align: justify !important;
-    }
-    &-left {
-        text-align: left !important;
-    }
-    &-center {
-        text-align: center !important;
-    }
-    &-right {
-        text-align: right !important;
-    }
+    &-justify { text-align: justify !important; }
+    &-left { text-align: left !important; }
+    &-center { text-align: center !important; }
+    &-right { text-align: right !important; }
     //Text transformation
-    &-uppercase {
-        text-transform: uppercase !important;
-    }
-    &-lowercase {
-        text-transform: lowercase !important;
-    }
-    &-capitalize {
-        text-transform: capitalize !important;
-    }
-    &-bold {
-        font-weight: 700 !important;
-    }
-    &-italic {
-        font-style: italic !important;
-    }
-    &-underline {
-        text-decoration: underline !important;
-    }
-    &-normal {
-        font-weight: 400 !important;
-    }
+    &-uppercase { text-transform: uppercase !important; }
+    &-lowercase { text-transform: lowercase !important; }
+    &-capitalize { text-transform: capitalize !important; }
+    &-bold { font-weight: 700 !important; }
+    &-italic { font-style: italic !important; }
+    &-underline { text-decoration: underline !important; }
+    &-normal { font-weight: 400 !important; }
     //Text sizes
-    &-small {
-        font-size: 14px !important; 
+    &-small { font-size: 14px !important; }
+    //Text color
+    @each $color in siimple.utils-keys(siimple.$colors) {
+        &-#{$color} {
+            color: siimple.color($color) !important;
+        }
     }
+    &-white { color: siimple.color("white") !important; }
 }
 
