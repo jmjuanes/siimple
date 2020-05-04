@@ -16,13 +16,13 @@
         &width-#{$key} {
             width: $value !important;
         }
-        &mwidth-#{$key} {
+        &max-width-#{$key} {
             max-width: $value !important;
         }
         &height-#{$key} {
             height: $value !important;
         }
-        &mheight-#{$key} {
+        &max-height-#{$key} {
             max-height: $value !important;
         }
     }
