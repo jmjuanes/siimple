@@ -9,54 +9,54 @@
 @use "@siimple/lib" as siimple;
 @use "../variables.scss";
 
+$positions: (
+    "t": "top",
+    "b": "bottom",
+    "l": "left",
+    "r": "right"
+);
+
 //Spacing class
 .#{siimple.$prefix-helpers} {
     @each $key,$value in variables.$spacing {
-        //Margin attributes
-        &mt-#{$key} {
-            margin-top: $value !important;
+        //Margin positions
+        @each $position-key, $position-value in $positions {
+            &m#{$position-key}-#{$key} {
+                margin-#{$position-value}: $value !important;
+            }
         }
-        &mb-#{$key} {
-            margin-bottom: $value !important;
-        }
-        &ml-#{$key} {
-            margin-left: $value !important;
-        }
-        &mr-#{$key} {
-            margin-right: $value !important;
-        }
+        //Margin left and right
         &mx-#{$key} {
             margin-left: $value !important;
             margin-right: $value !important;
         }
+        //Margin top and bottom
         &my-#{$key} {
             margin-top: $value !important;
             margin-bottom: $value !important;
         }
         //Padding attributes only if key is not auto
         @if $key != "auto" {
+            //Margin alias
             &m-#{$key} {
                 margin: $value !important;
             }
+            //Padding alias
             &p-#{$key} {
                 padding: $value !important;
             }
-            &pt-#{$key} {
-                padding-top: $value !important;
+            //Padding positions
+            @each $position-key, $position-value in $positions {
+                &p#{$position-key}-#{$key} {
+                    position-#{$position-value}: $value !important;
+                }
             }
-            &pb-#{$key} {
-                padding-bottom: $value !important;
-            }
-            &pl-#{$key} {
-                padding-left: $value !important;
-            }
-            &pr-#{$key} {
-                padding-right: $value !important;
-            }
+            //Padding left and right
             &px-#{$key} {
                 padding-left: $value !important;
                 padding-right: $value !important;
             }
+            //Padding top and bottom
             &py-#{$key} {
                 padding-top: $value !important;
                 padding-bottom: $value !important;
