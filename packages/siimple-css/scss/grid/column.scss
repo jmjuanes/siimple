@@ -31,8 +31,7 @@ $column-sizes: variables.$grid;
     @each $breakpoint, $screen in variables.$breakpoints-alias {
         @media (max-width: $screen) {
             @each $name, $width in $column-sizes {
-                &--#{$breakpoint}-#{$name},
-                &-#{$breakpoint}--#{$name} {
+                &--#{$breakpoint}-#{$name} {
                     //width: #{$grid-width};
                     width: calc(#{$width} - 2 * #{$column-padding});
                 }
