@@ -48,10 +48,17 @@ $theme-colors: (
 
 //Default breakpoints map
 $breakpoints: (
-    "xlarge": variables.$breakpoint-xlarge,
-    "large": variables.$breakpoint-large,
-    "medium": variables.$breakpoint-medium,
-    "small": variables.$breakpoint-small
-    //"xsmall": variables.$breakpoint-xsmall
+    "xl": variables.$breakpoint-xl,
+    "lg": variables.$breakpoint-lg,
+    "md": variables.$breakpoint-md,
+    "sm": variables.$breakpoint-sm
+) !default;
+
+//Default content sizes map
+$contents: (
+    "small": variables.$content-small,
+    "medium": variables.$content-medium,
+    "large": variables.$content-large,
+    "xlarge": variables.$content-xlarge
 ) !default;
 
