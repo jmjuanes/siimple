@@ -36,16 +36,19 @@ $error: #ee675d !default;
 $light: $grey2 !default; //Default light color
 $dark: $grey8 !default; //Default dark color
 
-//Default breakpoints variables
-$gap: 20px !default; //Gap for breakpoints
-$breakpoint-fluid: 100% !default;
-//$breakpoint-xsmall: 480px !default;
-$breakpoint-small: 600px !default;
-$breakpoint-medium: 768px !default;
-$breakpoint-large: 1024px !default;
-$breakpoint-xlarge: 1280px !default;
-//$breakpoint-xsmall-enabled: true !default; //Extra-small breakpoint is enabled
-$breakpoint-xlarge-enabled: true !default; //Extra-large breakpoint is enabled
+//Default content sizes variables
+$content-gap: 20px !default; //Gap for breakpoints
+//$content-fluid: 100% !default;
+$content-small: 600px !default;
+$content-medium: 768px !default;
+$content-large: 1024px !default;
+$content-xlarge: 1280px !default;
+
+//Breakpoint variables
+$breakpoint-sm: 544px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-lg: 1024px !default;
+$breakpoint-xl: 1280px !default;
 
 //Default font variables
 $font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700" !default;
