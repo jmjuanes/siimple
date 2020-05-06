@@ -31,7 +31,7 @@ $navbar-item-padding: 10px;
     padding-top: $navbar-padding;
     padding-bottom: $navbar-padding;
     vertical-align: top;
-    @include siimple.fluid(); //Default navbar size
+    @include siimple.content-fluid(); //Default navbar size
     position: relative;
     background-color: siimple.color("white");
     color: siimple.$text-color;
@@ -208,9 +208,9 @@ $navbar-item-padding: 10px;
         }
     }
     //Navbar sizes
-    @each $size in siimple.utils-keys(siimple.$breakpoints) {
+    @each $size in siimple.utils-keys(siimple.$contents) {
         &--#{$size} {
-            @include siimple.sizing($size);
+            @include siimple.content-size($size);
         }
     }
 }

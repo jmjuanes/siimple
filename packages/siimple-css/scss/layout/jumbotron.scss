@@ -23,7 +23,7 @@ $jumbotron-subtitle-line-height: 30px;
     padding-bottom: $jumbotron-padding;
     color: siimple.$text-color;
     background-color: siimple.color("white");
-    @include siimple.fluid(); //Default jumbotron size
+    @include siimple.content-fluid(); //Default jumbotron size
     //Jumbotron title
     &-title {
         display: block;
@@ -52,9 +52,9 @@ $jumbotron-subtitle-line-height: 30px;
         }
     }
     //Jumbotron sizes
-    @each $size in siimple.utils-keys(siimple.$breakpoints) {
+    @each $size in siimple.utils-keys(siimple.$contents) {
         &--#{$size} {
-            @include siimple.sizing($size);
+            @include siimple.content-size($size);
         }
     }
 }

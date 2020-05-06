@@ -23,7 +23,7 @@ $footer-line-height: 20px;
     font-size: $footer-text-size;
     line-height: $footer-line-height;
     background-color: $footer-background;
-    @include siimple.fluid(); //Default footer size
+    @include siimple.content-fluid(); //Default footer size
     //Footer text link
     &-link {
         display: block;
@@ -50,9 +50,9 @@ $footer-line-height: 20px;
         //TODO
     }
     //Footer sizes
-    @each $size in siimple.utils-keys(siimple.$breakpoints) {
+    @each $size in siimple.utils-keys(siimple.$contents) {
         &--#{$size} {
-            @include siimple.sizing($size);
+            @include siimple.content-size($size);
         }
     }
 }
