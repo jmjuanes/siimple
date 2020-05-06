@@ -53,35 +53,23 @@
 }
 
 //Fluid content size
-@mixin fluid () {
-    width: calc(100% - #{2 * variables.$gap});
-    padding-left: variables.$gap;
-    padding-right: variables.$gap;
+@mixin content-fluid () {
+    width: calc(100% - #{2 * variables.$content-gap});
+    padding-left: variables.$content-gap;
+    padding-right: variables.$content-gap;
 }
 
 //Sizing mixin
-@mixin sizing ($size: 0px) {
+@mixin content-size ($size: 0px) {
     //Check for string size
     @if utils.is-string($size) == true {
-        //Check for deprecated 'extra-large' breakpoint
-        @if $size == "extra-large" {
-            $size: "xlarge"; //Replace with xlarge name
-            @warn "The 'extra-large' breakpoint is deprectated. Please use 'xlarge' instead";
-        }
-        //Check for deprecated 'extra-small' breakpoint
-        @if $size == "extra-small" {
-            $size: "xsmall"; //Replace with xsmall name
-            @warn "The 'extra-small' breakpoint is deprecated. Please use 'xsmall' instead";
-        }
-        //Get size from breakpoints
-        $size: functions.breakpoint($size);
+        $size: functions.content($size); //Get the content size
     }
     //Apply the provided size only in screen widts > $size
     @media screen and (min-width: $size) {
-        width: $size - 2 * variables.$gap;
-        padding-left: calc(50% - #{$size - 2 * variables.$gap} / 2);
-        padding-right: calc(50% - #{$size - 2 * variables.$gap} / 2);
+        width: $size - 2 * variables.$content-gap;
+        padding-left: calc(50% - #{$size - 2 * variables.$content-gap} / 2);
+        padding-right: calc(50% - #{$size - 2 * variables.$content-gap} / 2);
     }
 }
-
 
