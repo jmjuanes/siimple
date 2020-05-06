@@ -30,7 +30,7 @@ $column-sizes: variables.$grid;
         }
     }
     //Grid columns for each breakpoint
-    @each $breakpoint, $screen in variables.$breakpoints-alias {
+    @each $breakpoint, $screen in siimple.$breakpoints {
         @media (max-width: $screen) {
             @each $name, $width in $column-sizes {
                 &--#{$breakpoint}-#{$name} {
