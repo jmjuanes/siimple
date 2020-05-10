@@ -16,15 +16,16 @@ $darker-amount: 20% !default;
 $lighter-amount: 20% !default;
 
 //Grey color schema
-$grey1: #f1f2f3 !default;
-$grey2: #e3e6e8 !default;
-$grey3: #d5dadd !default;
-$grey4: #c6ced2 !default;
-$grey5: #a9b6bc !default;
-$grey6: #70858f !default;
-$grey7: #4f5d64 !default;
-$grey8: #384247 !default;
-$grey9: #22282b !default;
+$grey0: #f6f6f9 !default;
+$grey1: #edeff3 !default;
+$grey2: #e1e5ea !default;
+$grey3: #cbd1d7 !default;
+$grey4: #abb3ba !default;
+$grey5: #6a727c !default;
+$grey6: #58606a !default;
+$grey7: #434c56 !default;
+$grey8: #2f363d !default;
+$grey9: #24292e !default;
 
 //Default colors
 $white: #ffffff !default;
@@ -33,8 +34,18 @@ $secondary: #4ccdac !default;
 $success: #4acf7f !default;
 $warning: #fbc850 !default;
 $error: #ee675d !default;
-$light: $grey2 !default; //Default light color
-$dark: $grey8 !default; //Default dark color
+$light: $grey1 !default;
+$dark: $grey7 !default;
+$black: #000000 !default;
+
+//Code colors (only for internal use)
+$code-blue: #9be0fd !default;
+$code-green: #b4f4a4 !default;
+$code-red: #ff9999 !default;
+$code-yellow: #ffe999 !default;
+$code-purple: #d199ff !default;
+$code-black: #2d3648 !default;
+$code-white: #ffffff !default;
 
 //Default content sizes variables
 $content-gap: 20px !default; //Gap for breakpoints
@@ -57,7 +68,8 @@ $font-monospace: monospace !default;
 
 //Weight values
 $weight-normal: 400 !default;
-$weight-bold: 600 !default;
+$weight-medium: 500 !default;
+$weight-bold: 700 !default;
 
 //Default text properties
 $text-size-small: 13px !default; //Small text size
@@ -76,10 +88,6 @@ $border-radius: 8px !default;
 //Default margin values
 $margin-top: 0px !default;
 $margin-bottom: 15px !default;
-
-//Default body values
-$body-bg: $grey1 !default;
-$body-color: $grey7 !default;
 
 //Screen sizes
 $mobile: 600px;
