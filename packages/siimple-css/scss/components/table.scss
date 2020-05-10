@@ -10,15 +10,19 @@
 @use "../variables.scss" as variables;
 
 //Table cell variables
-$table-cell-padding: 15px;
+$table-cell-padding: 15px !default;
+$table-cell-padding-small: 10px !default;
+$table-cell-padding-big: 10px !default;
 $table-cell-sizes: variables.$grid;
 $table-colors: (
-    "primary": 15%, 
-    "secondary": 15%,
-    "success": 15%, 
-    "warning": 10%,
-    "error": 10%
-);
+    "primary": siimple.utils-lighten(siimple.color-lighter("primary"), 15%), 
+    "secondary": siimple.utils-lighten(siimple.color-lighter("secondary"), 15%), 
+    "success": siimple.utils-lighten(siimple.color-lighter("success"), 15%), 
+    "warning": siimple.utils-lighten(siimple.color-lighter("warning"), 10%), 
+    "error": siimple.utils-lighten(siimple.color-lighter("error"), 10%)
+) !default;
+$table-cell-border-width: 2px !default;
+$table-cell-border-color: siimple.$grey2 !default;
 
 //Table class
 .#{siimple.$prefix}table {
@@ -103,12 +107,12 @@ $table-colors: (
         }
     }
     //Table with border
-    &--border &-cell {
-        //border: 1px solid siimple.utils-darken(siimple.color("light"), 5%);
-        border: 0px solid siimple.grey("1");
-        border-right-width: 2px;
-        border-bottom-width: 2px;
-    }
+    //&--border &-cell {
+    //    //border: 1px solid siimple.utils-darken(siimple.color("light"), 5%);
+    //    border: 0px solid siimple.grey("1");
+    //    border-right-width: 2px;
+    //    border-bottom-width: 2px;
+    //}
     //Table header
     &-header {
         display: table-header-group;
@@ -124,7 +128,7 @@ $table-colors: (
     //&--border &-header &-row:first-child &-cell:last-child {
     &-header &-row:first-child &-cell:last-child {
         border-top-right-radius: siimple.$border-radius;
-        border-right-width: 0px !important;
+        //border-right-width: 0px !important;
     }
     //&--border &-header &-row:first-child &-cell {
     //    border-top-width: 2px;
@@ -163,8 +167,12 @@ $table-colors: (
     //&--border &-body &-row &-cell:first-child {
     //    border-left-width: 2px;
     //}
-    &--border &-body &-row &-cell:last-child {
-        border-right-width: 0px !important;
+    //&--border &-body &-row &-cell:last-child {
+    //    border-right-width: 0px !important;
+    //}
+    //Table with rows divider
+    &--divider &-body &-cell {
+        border-top: $table-cell-border-width solid $table-cell-border-color;
     }
     //Striped table
     &--striped &-body &-row:nth-child(odd) &-cell {
@@ -190,8 +198,7 @@ $table-colors: (
         @if $color != "dark" and $color != "light" {
             &-row--#{$color},
             &-row--#{$color} &-cell {
-                $color-lighten: siimple.utils-get($table-colors, $color);
-                background-color: siimple.utils-lighten(siimple.color-lighter($color), $color-lighten) !important;
+                background-color: siimple.utils-get($table-colors, $color) !important;
             }
         }
     }
