@@ -7,14 +7,15 @@
 //
 
 @use "@siimple/lib" as siimple;
+@use "./variables.scss" as variables;
 
 //Import font from Google Fonts
 @import url(#{siimple.$font-url});
 
 //Default html style
 html {
-    background-color: siimple.$body-bg;
-    color: siimple.$body-color; //text-color;
+    background-color: variables.$body-bg;
+    color: variables.$body-color; //text-color;
     font-family: siimple.$font-default;
     font-weight: siimple.$text-weight;
     font-size: siimple.$text-size;
