@@ -9,6 +9,7 @@
 @use "@siimple/lib" as siimple;
 
 //Breadcrumb variables
+$breadcrumb-padding: 5px;
 $breadcrumb-text-size: 15px;
 $breadcrumb-item-height: 24px;
 $breadcrumb-item-padding-top: 8px;
@@ -19,12 +20,13 @@ $breadcrumb-item-padding-right: 25px;
 //Breadcrumb class
 .#{siimple.$prefix}breadcrumb {
     display: flex;
-    flex-wrap: no-wrap;
+    flex-wrap: nowrap;
     //width: 100%;
     //height: $breadcrumb-height;
     margin-bottom: siimple.$margin-bottom;
     background-color: siimple.color("light");
     border-radius: siimple.$border-radius;
+    padding: $breadcrumb-padding;
     //border: 0px;
     overflow: hidden;
     overflow-x: auto;
@@ -40,7 +42,7 @@ $breadcrumb-item-padding-right: 25px;
         padding-right: $breadcrumb-item-padding-right;
         padding-top: $breadcrumb-item-padding-top;
         padding-bottom: $breadcrumb-item-padding-bottom;
-        background-color: siimple.color("light");
+        //background-color: siimple.color("light");
         //text-align: center;
         //font-family: $siimple-default-text-font;
         font-weight: siimple.$weight-bold;
