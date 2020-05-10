@@ -15,9 +15,19 @@
             background-color: siimple.color($color) !important;
         }
     }
+    //Grey colors
+    @each $color in siimple.utils-keys(siimple.$greys) {
+        &bg-#{$color} {
+            background-color: siimple.grey($color) !important;
+        }
+    }
     //White background color
     &bg-white {
         background-color: siimple.color("white") !important;
+    }
+    //Transparent background color
+    &bg-transparent {
+        background-color: transparent !important;
     }
     //Striped light background
     &bg-striped {
