@@ -9,23 +9,23 @@
 @use "@siimple/lib" as siimple;
 
 //Alert global variables
-$alert-padding-top: 10px;
-$alert-padding-bottom: 10px;
-$alert-padding-left: 15px;
-$alert-padding-right: 30px;
+$alert-padding-top: 20px;
+$alert-padding-bottom: 20px;
+$alert-padding-left: 25px;
+$alert-padding-right: 40px;
 
 //Alert class
-.#{siimple.$name}-alert {
+.#{siimple.$prefix}alert {
     display: block;
-    width: calc(100% - #{$alert-padding-left} - #{$alert-padding-right});
+    //width: calc(100% - #{$alert-padding-left} - #{$alert-padding-right});
     //color: $siimple-navy;
     line-height: siimple.$line-height;
     font-size: siimple.$text-size;
     position: relative;
     border-radius: siimple.$border-radius;
     //Default background and text color
-    background-color: siimple.color("light");
-    color: siimple.color("dark");
+    background-color: siimple.color("white");
+    //color: siimple.color("dark");
     padding-top: $alert-padding-top;
     padding-right: $alert-padding-right;
     padding-bottom: $alert-padding-bottom;
@@ -34,17 +34,17 @@ $alert-padding-right: 30px;
     margin-bottom: siimple.$margin-bottom;
     //Alert title
     &-title {
-        font-size: 19px;
+        font-size: 20px;
         font-weight: bold;
-        //margin-bottom: 5px;
-        line-height: 26px;
+        margin-bottom: 5px;
+        line-height: 30px;
     }
     //Alert close button
     &-close {
         display: block;
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 15px;
+        right: 15px;
         width: 16px;
         height: 16px;
         cursor: pointer;

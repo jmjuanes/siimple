@@ -1,7 +1,7 @@
 {
     "name": "@siimple/neutrine",
     "description": "A collection of React UI components based on siimple",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "author": "Josemi Juanes <josemijuanes@gmail.com>",
     "license": "MIT",
     "main": "index.js",
@@ -23,7 +23,7 @@
         "@siimple/lib": "^0.0.1",
         "@siimple/css": "^4.0.0-rc",
         "@siimple/experiments": "^0.0.2",
-        "@siimple/icons": "^0.0.2",
+        "@siimple/icons": "^0.0.3",
         "react": "^16.8.6"
     }
 }

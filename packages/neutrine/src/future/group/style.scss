@@ -1,7 +1,7 @@
 @use "@siimple/lib" as siimple;
 
 //Neutrine group style
-.neutrine-group {
+.neutrine__group {
     display: block;
     margin-bottom: siimple.$margin-bottom;
     //Group row style
@@ -9,7 +9,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 10px;
+        padding: 15px;
         width: calc(100% - 20px);
         border-radius: siimple.$border-radius;
         //margin-bottom: 11px;
@@ -17,6 +17,7 @@
         border: 2px solid transparent;
         cursor: pointer;
         transition: background-color 0.3s;
+        background-color: siimple.color("white");
         //Group on hover
         &--hover:hover {
             background-color: siimple.color("light");
@@ -24,27 +25,27 @@
         }
         //Not last child
         &:not(:last-child) {
-            margin-bottom: 5px;
+            margin-bottom: 15px;
         }
         //Bordered row
-        &--border:not(:last-child) {
-            margin-bottom: 12px;
-            //Bottom border
-            &::after {
-                content: "";
-                display: block;
-                position: absolute;
-                height: 1px;
-                width: 100%;
-                background-color: siimple.color("light");
-                bottom: -8px;
-                left: 0px;
-            }
-        }
-        //Daashed row
-        &--dashed {
-            border: 2px dashed siimple.color("light");
-        }
+        //&--border:not(:last-child) {
+        //    margin-bottom: 12px;
+        //    //Bottom border
+        //    &::after {
+        //        content: "";
+        //        display: block;
+        //        position: absolute;
+        //        height: 1px;
+        //        width: 100%;
+        //        background-color: siimple.color("light");
+        //        bottom: -8px;
+        //        left: 0px;
+        //    }
+        //}
+        ////Daashed row
+        //&--dashed {
+        //    border: 2px dashed siimple.color("light");
+        //}
     }
     //Group column
     &-column {
@@ -72,8 +73,8 @@
     &-title {
         display: block;
         font-weight: bold;
-        font-size: 15px;
-        line-height: 22px;
+        font-size: 16px;
+        line-height: 24px;
         transition: color 0.3s;
     }
     &-row:hover &-title {
@@ -82,15 +83,15 @@
     //Group text
     &-text {
         display: block;
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 24px;
     }
     //Group description
     &-description {
         display: block;
         //margin-top: 3px;
-        line-height: 18px;
-        font-size: 12px;
+        line-height: 20px;
+        font-size: 14px;
         color: siimple.color-lighter("dark");
     }
     //Group icon and add elements
@@ -102,11 +103,16 @@
         text-align: center;
         font-size: 24px;
         color: siimple.color("white");
-        border-radius: 100px;
-    }
-    //Group icon specific styles
-    &-icon {
+        //border-radius: 100px;
         background-color: siimple.color("primary"); //Default icon background color
+        //Square icon
+        &--square {
+            border-radius: siimple.$border-radius;
+        }
+        //Circle icon
+        &--circle {
+            border-radius: 50%;
+        }
     }
     //Group add specific styles
     &-add {

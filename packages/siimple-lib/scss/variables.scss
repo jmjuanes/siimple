@@ -8,10 +8,24 @@
 
 //Default class prefix
 $name: "siimple" !default;
+$prefix: $name + "-" !default;
+$prefix-helpers: $name + "--" !default;
 
 //Darker/lighter color amount
 $darker-amount: 20% !default;
 $lighter-amount: 20% !default;
+
+//Gray color schema
+$gray0: #f6f6f9 !default;
+$gray1: #edeff3 !default;
+$gray2: #e1e5ea !default;
+$gray3: #cbd1d7 !default;
+$gray4: #abb3ba !default;
+$gray5: #6a727c !default;
+$gray6: #58606a !default;
+$gray7: #434c56 !default;
+$gray8: #2f363d !default;
+$gray9: #24292e !default;
 
 //Default colors
 $white: #ffffff !default;
@@ -20,21 +34,33 @@ $secondary: #4ccdac !default;
 $success: #4acf7f !default;
 $warning: #fbc850 !default;
 $error: #ee675d !default;
-$dark: #34495e !default;
-$light: #eef2f7 !default; //Light color
-$light2: #cbd8e6 !default; //Second light color
-$light3: #dde5ee !default; //Third light color
+$light: $gray1 !default;
+$muted: $gray5 !default;
+$dark: $gray7 !default;
+$black: #000000 !default;
 
-//Default breakpoints variables
-$gap: 20px !default; //Gap for breakpoints
-$breakpoint-fluid: 100% !default;
-$breakpoint-xsmall: 480px !default;
-$breakpoint-small: 600px !default;
-$breakpoint-medium: 768px !default;
-$breakpoint-large: 960px !default;
-$breakpoint-xlarge: 1280px !default;
-$breakpoint-xsmall-enabled: true !default; //Extra-small breakpoint is enabled
-$breakpoint-xlarge-enabled: true !default; //Extra-large breakpoint is enabled
+//Code colors (only for internal use)
+$code-blue: #9be0fd !default;
+$code-green: #b4f4a4 !default;
+$code-red: #ff9999 !default;
+$code-yellow: #ffe999 !default;
+$code-purple: #d199ff !default;
+$code-black: #2d3648 !default;
+$code-white: #ffffff !default;
+
+//Default content sizes variables
+$content-gap: 20px !default; //Gap for breakpoints
+//$content-fluid: 100% !default;
+$content-small: 600px !default;
+$content-medium: 768px !default;
+$content-large: 1024px !default;
+$content-xlarge: 1280px !default;
+
+//Breakpoint variables
+$breakpoint-sm: 544px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-lg: 1024px !default;
+$breakpoint-xl: 1280px !default;
 
 //Default font variables
 $font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700" !default;
@@ -43,23 +69,29 @@ $font-monospace: monospace !default;
 
 //Weight values
 $weight-normal: 400 !default;
-$weight-bold: 600 !default;
+$weight-medium: 500 !default;
+$weight-bold: 700 !default;
 
 //Default text properties
-$text-size-small: 12px !default; //Small text size
-$text-size: 15px !default;
-$text-color: $dark !default;
+$text-size-small: 14px !default; //Small text size
+$text-size-large: 20px !default; //Large text size
+$text-size: 16px !default;
+$text-color: $gray7 !default; //$dark !default;
 $text-font: $font-default !default;
 $text-weight: $weight-normal !default;
 
 //Line height values
-$line-height-small: 18px !default;
-$line-height: 22px !default;
+//$line-height-small: 20px !default;
+$line-height: 1.5 !default; //24px !default;
 
 //Default border values
-$border-radius: 5px !default;
+$border-radius: 8px !default;
 
 //Default margin values
 $margin-top: 0px !default;
 $margin-bottom: 15px !default;
+
+//Screen sizes
+$mobile: 600px;
+$desktop: 1024px;
 

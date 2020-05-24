@@ -8,29 +8,30 @@
 
 @use "@siimple/lib" as siimple;
 
-//Colors helpers
-.#{siimple.$name} {
+//Background colors helpers
+.#{siimple.$prefix-helpers} {
     @each $color in siimple.utils-keys(siimple.$colors) {
-        //Text color
-        &--color-#{$color},
-        &--hcolor-#{$color}:hover {
-            color: siimple.color($color) !important;
-        }
-        //Background color
-        &--bg-#{$color},
-        &--hbg-#{$color}:hover {
+        &bg-#{$color} {
             background-color: siimple.color($color) !important;
         }
     }
-    //White text color
-    &--color-white,
-    &--hcolor-white:hover {
-        color: siimple.color("white") !important;
+    //Gray colors
+    @each $color in siimple.utils-keys(siimple.$grays) {
+        &bg-#{$color} {
+            background-color: siimple.gray($color) !important;
+        }
     }
     //White background color
-    &--bg-white,
-    &--hbg-white:hover {
+    &bg-white {
         background-color: siimple.color("white") !important;
+    }
+    //Transparent background color
+    &bg-transparent {
+        background-color: transparent !important;
+    }
+    //Striped light background
+    &bg-striped {
+        @include siimple.striped-bg(siimple.color("light"), transparent);
     }
 }
 

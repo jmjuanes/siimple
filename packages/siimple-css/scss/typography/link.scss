@@ -8,18 +8,22 @@
 
 @use "@siimple/lib" as siimple;
 
+$link-color: siimple.color("primary");
+$link-color-hover: siimple.color-darker("primary");
+
 //Link class
-.#{siimple.$name}-link {
+.#{siimple.$prefix}link {
     //font-family: $siimple-default-font-size;
-    color: siimple.color("primary");
-    font-weight: siimple.$weight-bold;
+    color: $link-color;
+    //font-weight: siimple.$weight-bold;
     text-decoration: none;
-    transition: color 0.3s;
+    //transition: color 0.3s;
     cursor: pointer;
     &:hover {
-        //text-decoration: underline;
         //cursor: pointer;
-        color: siimple.color-darker("primary");
+        text-decoration: underline;
+        color: $link-color-hover;
+        transition: color 0.3s;
     }
 }
 

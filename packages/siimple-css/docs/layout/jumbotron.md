@@ -4,28 +4,28 @@ description: "A lightweight component for showcasing content"
 keywords: "jumbotron,content,title,subtitle,hero,layouts"
 --- 
 
-The **jumbotron** is full width container. You can use it for example to display a banner in your website. A jumbotron usually contains up to three elements:
+The **jumbotron** is full width container specially designed for calling attention in something special. You can use it for example to display a banner in your website. A jumbotron is created adding a `siimple-jumbotron` class to a `<div>` tag and usually contains the following elements:
 
 - **Title**: is the title of the jumbotron, with the class `siimple-jumbotron-title`.
 - **Subtitle**: is the subtitle of the jumbotron, with the class `siimple-jumbotron-subtitle`.
-- **Detail text**: is a container for additional text of the jumbotron, with the class `siimple-jumbotron-detail`.
 
 Here is a full example of a jumbotron element:
 
-:::snippet lang="html" title="Basic jumbotron"
-<div class="siimple-jumbotron siimple-jumbotron--dark">
-    <div class="siimple-jumbotron-title">Welcome page</div>
-    <div class="siimple-jumbotron-subtitle">This is the subtitle</div>
-    <div class="siimple-jumbotron-detail">And this is the detail of the jumbotron element</div>
+```html preview="true"
+<div class="siimple-jumbotron siimple-jumbotron--primary">
+    <div class="siimple-jumbotron-title">
+        Jumbotron title
+    </div>
+    <div class="siimple-jumbotron-subtitle">
+        This is the jumbotron subtitle
+    </div>
 </div>
-:::
+```
 
 
-#### Jumbotron theme
+#### Colors
 
-> Added in **v4.0.0**.
-
-Use `siimple-jumbotron--light` or `siimple-jumbotron--dark` to switch the jumbotron to a light or dark theme. 
+Costomize the jumbotron adding one of the siimple colors described in the [theming page](/css/getting-started/theming.html).
 
 ```html
 <div class="siimple-jumbotron siimple-jumbotron--dark">
@@ -33,14 +33,22 @@ Use `siimple-jumbotron--light` or `siimple-jumbotron--dark` to switch the jumbot
 </div>
 ```
 
-You can then use a helper background color to customize the background color of the jumbotron. For example, you can combine a dark footer theme with a secondary background color.
+#### Breakpoints
+
+By default the jumbotron has the maximun width minus the `20px` of padding left and right. You can change the width of the jumbotron element using one of the following breakpoints class names:
+
+| Class | Description |
+| `siimple-jumbotron--small` | It will have a maximum width of `600px`. |
+| `siimple-jumbotron--medium` | It will have a maximum width of `768px`. |
+| `siimple-jumbotron--large` | It will have a maximum width of `960px`. |
+| `siimple-jumbotron--xlarge` | It will have a maximum width of `1280px`. |
+
+On screens with sizes lower than the specified in the breakpoint class, the jumbotron will have the maximun width.
 
 ```html
-<div class="siimple-jumbotron siimple-jumbotron--dark siimple--bg-secondary">
+<div class="siimple-jumbotron siimple-jumbotron--medium">
     <!-- Jumbotron content -->
 </div>
 ```
-
-
 
 

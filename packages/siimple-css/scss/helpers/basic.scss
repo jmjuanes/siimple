@@ -1,0 +1,34 @@
+//
+// @siimple/css - minimal css toolkit for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@use "@siimple/lib" as siimple;
+
+//Basic helpers
+.#{siimple.$prefix-helpers} {
+    //Border helpers
+    &border-rounded { border-radius: siimple.$border-radius !important; }
+    &border-circle { border-radius: 50% !important; }
+    //Clearing and floating
+    &float-left { float: left !important; }
+    &float-right { float: right !important; }
+    &clearfix {
+        @include siimple.clearfix();
+    }
+    //Cursor helpers
+    &cursor-auto { cursor: auto !important; }
+    &cursor-none { cursor: none !important; }
+    &cursor-pointer { cursor: pointer !important; }
+    //Display helpers
+    &display-block { display: block !important; }
+    &display-inline { display: inline !important; }
+    &display-inline-block { display: inline-block !important; }
+    //Overflow helpers
+    &overflow-hidden { overflow: hidden !important;}
+    &overflow-auto { overflow: auto !important; }
+}
+

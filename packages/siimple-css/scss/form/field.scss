@@ -15,7 +15,7 @@ $field-helper-text-size: 13px;
 $field-helper-line-height: 19px;
 
 //Form field class
-.#{siimple.$name}-field {
+.#{siimple.$prefix}field {
     display: block;
     vertical-align: top;
     margin-bottom: siimple.$margin-bottom;
@@ -24,9 +24,9 @@ $field-helper-line-height: 19px;
     &-label {
         display: block;
         vertical-align: top;
-        font-weight: 600;
-        font-size: $field-label-text-size;
-        line-height: $field-label-line-height;
+        font-weight: siimple.$weight-bold;
+        //font-size: $field-label-text-size;
+        //line-height: $field-label-line-height;
         color: siimple.$text-color;
         margin-top: 0px;
         margin-bottom: 5px;

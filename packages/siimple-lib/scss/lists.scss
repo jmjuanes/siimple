@@ -9,6 +9,20 @@
 @use "./variables.scss" as variables;
 @use "./utils.scss" as utils;
 
+//Gray color palette
+$grays: (
+    "gray0": variables.$gray0,
+    "gray1": variables.$gray1,
+    "gray2": variables.$gray2,
+    "gray3": variables.$gray3,
+    "gray4": variables.$gray4,
+    "gray5": variables.$gray5,
+    "gray6": variables.$gray6,
+    "gray7": variables.$gray7,
+    "gray8": variables.$gray8,
+    "gray9": variables.$gray9
+) !default;
+
 //Default color palette
 $colors: (
     "primary": variables.$primary,
@@ -35,10 +49,17 @@ $theme-colors: (
 
 //Default breakpoints map
 $breakpoints: (
-    "xlarge": variables.$breakpoint-xlarge,
-    "large": variables.$breakpoint-large,
-    "medium": variables.$breakpoint-medium,
-    "small": variables.$breakpoint-small,
-    "xsmall": variables.$breakpoint-xsmall
+    "xl": variables.$breakpoint-xl,
+    "lg": variables.$breakpoint-lg,
+    "md": variables.$breakpoint-md,
+    "sm": variables.$breakpoint-sm
+) !default;
+
+//Default content sizes map
+$contents: (
+    "small": variables.$content-small,
+    "medium": variables.$content-medium,
+    "large": variables.$content-large,
+    "xlarge": variables.$content-xlarge
 ) !default;
 

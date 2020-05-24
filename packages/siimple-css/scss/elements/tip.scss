@@ -8,22 +8,29 @@
 
 @use "@siimple/lib" as siimple;
 
+$tip-padding: 20px;
+$tip-border-width: 40px;
+
 //Tip class
-.#{siimple.$name}-tip {
+.#{siimple.$prefix}tip {
     display: block;
     position: relative;
     //width: calc(100% - 25px - 20px - 5px);
     border-left-style: solid;
-    border-left-width: 40px;
+    border-left-width: $tip-border-width;
     border-radius: siimple.$border-radius;
-    padding-top: 15px;
-    padding-right: 15px !important;
-    padding-bottom: 15px;
-    padding-left: 15px !important;
+    padding: $tip-padding;
+    //padding-top: $tip-padding;
+    //padding-right: $tip-padding !important;
+    //padding-bottom: $tip-padding;
+    //padding-left: $tip-padding !important;
     margin-bottom: siimple.$margin-bottom;
     //font-size: $siimple-default-font-size;
     color: siimple.$text-color;
     //line-height: $siimple-default-line-height;
+    //Default tip color style
+    background-color: siimple.color("white");
+    border-left-color: siimple.color("light");
     //Tip colors
     @each $color in siimple.utils-keys(siimple.$colors) {
         &--#{$color} {

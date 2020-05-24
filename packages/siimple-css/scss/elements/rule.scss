@@ -8,21 +8,26 @@
 
 @use "@siimple/lib" as siimple;
 
+$rule-background: siimple.$gray2 !default;
+$rule-height: 2px !default;
+$rule-margin-top: 15px !default;
+$rule-margin-bottom: 15px !default;
+
 //Rule class 
-.#{siimple.$name}-rule {
+.#{siimple.$prefix}rule {
     display: block;
-    height: 2px;
-    background-color: siimple.color("light");
+    height: $rule-height;
+    background-color: $rule-background; //siimple.color("light");
     padding: 0px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    //margin-top: $rule-margin-top;
+    //margin-bottom: $rule-margin-bottom;
     border: 0px;
     //Rule first and last child
-    &:first-child {
-        margin-top: 0px !important;
+    &:not(:first-child) {
+        margin-top: $rule-margin-top;
     }
-    &:last-child {
-        margin-bottom: 0px !important;
+    &:not(:last-child) {
+        margin-bottom: $rule-margin-bottom;
     }
 }
 

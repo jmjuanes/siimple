@@ -1,0 +1,38 @@
+//
+// @siimple/css - minimal css toolkit for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@use "@siimple/lib" as siimple;
+
+//Flexbox helpers
+.#{siimple.$prefix-helpers} {
+    &flex { display: flex !important; }
+    &flex-inline { display: inline-flex !important; }
+    //Flex direction
+    &flex-row { flex-direction: row !important; }
+    &flex-column { flex-direction: column !important; }
+    &flex-row-rev { flex-direction: row-reverse !important; }
+    &flex-column-rev { flex-direction: column-reverse !important; }
+    //Horizontal alignment
+    &flex-left { justify-content: flex-start !important; }
+    &flex-center { justify-content: center !important; }
+    &flex-right { justify-content: flex-end !important; }
+    &flex-between { justify-content: space-between !important; }
+    &flex-around { justify-content: space-around !important; }
+    //Vertical alignment
+    &flex-stretch { align-items: stretch !important; }
+    &flex-top { align-items: flex-start !important; }
+    &flex-middle { align-items: center !important; }
+    &flex-bottom { align-items: flex-end !important; }
+    //Wrap items
+    &flex-nowrap { flex-wrap: nowrap !important; }
+    &flex-wrap { flex-wrap: wrap !important; }
+    //Item order
+    &flex-first { order: -1 !important;}
+    &flex-last { order: 99 !important;}
+}
+

@@ -7,11 +7,10 @@
 //
 
 //Export all helpers
-@use "./colors.scss";
-@use "./display.scss";
-@use "./float.scss";
+@use "./basic.scss";
+@use "./background.scss";
+@use "./flexbox.scss";
 @use "./sizing.scss";
 @use "./spacing.scss";
 @use "./text.scss";
-@use "./miscellanea.scss";
 

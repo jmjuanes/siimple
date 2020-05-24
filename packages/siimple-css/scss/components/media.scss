@@ -1,0 +1,41 @@
+//
+// @siimple/css - minimal css toolkit for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@use "@siimple/lib" as siimple;
+
+$media-margin: 15px;
+
+//Media class
+.#{siimple.$prefix}media {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    //Media start and end elements
+    &-start,
+    &-end {
+        flex-basis: auto; //Default size
+        flex-grow: 0; //Disable grow
+        flex-shrink: 0;
+    }
+    &-start {
+        margin-right: $media-margin;
+        order: 1; //Always at the start
+    }
+    &-end {
+        margin-left: $media-margin;
+        order: 3; //Always at the end
+    }
+    //Media content
+    &-content {
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 1;
+        order: 2; //Always centered
+    }
+}
+

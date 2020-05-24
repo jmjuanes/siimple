@@ -10,18 +10,22 @@
 @use "../variables.scss" as variables;
 
 //Table cell variables
-$table-cell-padding: 8px;
+$table-cell-padding: 15px !default;
+$table-cell-padding-small: 8px !default;
+$table-cell-padding-large: 25px !default;
 $table-cell-sizes: variables.$grid;
 $table-colors: (
-    "primary": 15%, 
-    "secondary": 15%,
-    "success": 15%, 
-    "warning": 10%,
-    "error": 10%
-);
+    "primary": siimple.utils-lighten(siimple.color-lighter("primary"), 15%), 
+    "secondary": siimple.utils-lighten(siimple.color-lighter("secondary"), 15%), 
+    "success": siimple.utils-lighten(siimple.color-lighter("success"), 15%), 
+    "warning": siimple.utils-lighten(siimple.color-lighter("warning"), 10%), 
+    "error": siimple.utils-lighten(siimple.color-lighter("error"), 10%)
+) !default;
+$table-cell-border-width: 2px !default;
+$table-cell-border-color: siimple.$gray2 !default;
 
 //Table class
-.#{siimple.$name}-table {
+.#{siimple.$prefix}table {
     display: table;
     width: 100%;
     font-size: siimple.$text-size;
@@ -53,10 +57,11 @@ $table-colors: (
         padding: $table-cell-padding;
         //white-space: nowrap;
         //overflow: hidden;
-        transition: background-color 0.3s;
+        //transition: background-color 0.3s;
         //border-top: 1px solid siimple-default-color("light", "dark");
         box-sizing: border-box;
         vertical-align: top;
+        background-color: siimple.color("white");
         //Sortable cell
         &--sortable {
             padding-right: 20px !important;
@@ -77,12 +82,12 @@ $table-colors: (
             }
             //Sortable triangle up
             &::before {
-                top: 12px;
+                top: 15px;
                 border-bottom: 8px solid siimple.color("light");
             }
             //Sortable triangle down
             &::after {
-                bottom: 12px;
+                bottom: 15px;
                 border-top: 8px solid siimple.color("light");
             }
         }
@@ -101,9 +106,26 @@ $table-colors: (
             width: #{$cell-width};
         }
     }
+    //Small table --> reduce table cell padding
+    &--small &-cell {
+        padding: $table-cell-padding-small;
+        &::before {
+            top: 8px
+        }
+        &::after {
+            bottom: 8px;
+        }
+    }
+    //Large table --> increase table cell padding
+    &--large &-cell {
+        padding: $table-cell-padding-large;
+    }
     //Table with border
     &--border &-cell {
-        border: 1px solid siimple.utils-darken(siimple.color("light"), 5%);
+        border: $table-cell-border-width solid $table-cell-border-color;
+    }
+    &--border &-cell:not(:last-child) {
+        border-right: 0px !important;
     }
     //Table header
     &-header {
@@ -113,22 +135,23 @@ $table-colors: (
         //font-weight: bold;
     }
     //Bordered table with rouded corners
-    &--border &-header &-row:first-child &-cell:first-child {
+    //&--border &-header &-row:first-child &-cell:first-child {
+    &-header &-row:first-child &-cell:first-child {
         border-top-left-radius: siimple.$border-radius;
-        border-left-width: 2px;
     }
-    &--border &-header &-row:first-child &-cell:last-child {
+    //&--border &-header &-row:first-child &-cell:last-child {
+    &-header &-row:first-child &-cell:last-child {
         border-top-right-radius: siimple.$border-radius;
-        border-right-width: 2px;
+        //border-right-width: 0px !important;
     }
-    &--border &-header &-row:first-child &-cell {
-        border-top-width: 2px;
-    }
+    //&--border &-header &-row:first-child &-cell {
+    //    border-top-width: 2px;
+    //}
     &-header &-cell {
         //border-bottom-right-radius: 0px !important;
         //border-bottom-left-radius: 0px !important;
         vertical-align: bottom;
-        border-bottom: 2px solid siimple.utils-darken(siimple.color("light"), 5%);
+        //border-bottom: 2px solid siimple.utils-darken(siimple.color("light"), 5%);
         font-weight: 600;
     }
     //Table body
@@ -136,28 +159,35 @@ $table-colors: (
         display: table-row-group;
         vertical-align: middle;
     }
-    &-body &-cell {
-        border-top: 1px solid siimple.utils-darken(siimple.color("light"), 5%);
-    }
+    //&-body &-cell {
+    //    border-top: 1px solid siimple.utils-darken(siimple.color("light"), 5%);
+    //}
     //Not last row of the table body
-    &-body &-row:not(:last-child) &-cell {
-        border-bottom: 1px solid siimple.utils-darken(siimple.color("light"), 5%);
-    }
-    //Bordered table with rouded corners
-    &--border &-body &-row:last-child &-cell:first-child {
+    //&-body &-row:not(:last-child) &-cell {
+    //    border-bottom: 1px solid siimple.utils-darken(siimple.color("light"), 5%);
+    //}
+    //Rounded table borders
+    //&--border &-body &-row:last-child &-cell:first-child {
+    &-body &-row:last-child &-cell:first-child {
         border-bottom-left-radius: siimple.$border-radius;
     }
-    &--border &-body &-row:last-child &-cell:last-child {
+    //&--border &-body &-row:last-child &-cell:last-child {
+    &-body &-row:last-child &-cell:last-child {
         border-bottom-right-radius: siimple.$border-radius;
     }
-    &--border &-body &-row:last-child &-cell {
-        border-bottom-width: 2px;
+    //Bordered table
+    &--border &-body &-row:not(:last-child) &-cell {
+        border-bottom: 0px !important;
     }
-    &--border &-body &-row &-cell:first-child {
-        border-left-width: 2px;
-    }
-    &--border &-body &-row &-cell:last-child {
-        border-right-width: 2px;
+    //&--border &-body &-row &-cell:first-child {
+    //    border-left-width: 2px;
+    //}
+    //&--border &-body &-row &-cell:last-child {
+    //    border-right-width: 0px !important;
+    //}
+    //Table with rows divider
+    &--divider &-body &-cell {
+        border-top: $table-cell-border-width solid $table-cell-border-color;
     }
     //Striped table
     &--striped &-body &-row:nth-child(odd) &-cell {
@@ -165,7 +195,8 @@ $table-colors: (
     }
     //Hovered table
     &--hover &-body &-row:hover &-cell {
-        background-color: siimple.utils-lighten(siimple.color("light"), 0%);
+        background-color: siimple.color("light");
+        transition: background-color 0.3s;
     }
     //Fixed columns width
     &--fixed {
@@ -182,8 +213,7 @@ $table-colors: (
         @if $color != "dark" and $color != "light" {
             &-row--#{$color},
             &-row--#{$color} &-cell {
-                $color-lighten: siimple.utils-get($table-colors, $color);
-                background-color: siimple.utils-lighten(siimple.color-lighter($color), $color-lighten) !important;
+                background-color: siimple.utils-get($table-colors, $color) !important;
             }
         }
     }

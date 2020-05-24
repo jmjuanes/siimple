@@ -20,6 +20,7 @@ Neutrine.ready(function () {
                     <Neutrine.Appbar>
                         <Neutrine.AppbarBrand />
                         <Neutrine.AppbarItem icon="menu" />
+                        <Neutrine.AppbarDivider />
                         <Neutrine.AppbarItem active icon="gear" />
                         <Neutrine.AppbarAvatar />
                     </Neutrine.Appbar>

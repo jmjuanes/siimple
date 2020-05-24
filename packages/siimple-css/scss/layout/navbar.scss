@@ -9,13 +9,14 @@
 @use "@siimple/lib" as siimple;
 
 //Navbar variables
-$navbar-height: 30px;
-$navbar-padding: 10px;
-$navbar-breakpoint-desktop: 1024px;
-$navbar-breakpoint-mobile: 1023px;
+$navbar-height: 40px;
+$navbar-padding: 15px;
+$navbar-breakpoint-desktop: siimple.$desktop;
+$navbar-breakpoint-mobile: siimple.$desktop - 1px;
+$navbar-item-padding: 10px;
 
 //Navbar class
-.#{siimple.$name}-navbar {
+.#{siimple.$prefix}navbar {
     display: flex; 
     flex-wrap: wrap;
     justify-content: space-between;
@@ -30,15 +31,17 @@ $navbar-breakpoint-mobile: 1023px;
     padding-top: $navbar-padding;
     padding-bottom: $navbar-padding;
     vertical-align: top;
-    @include siimple.fluid(); //Default navbar size
+    @include siimple.content-fluid(); //Default navbar size
     position: relative;
+    background-color: siimple.color("white");
+    color: siimple.$text-color;
     //Common navbar brand and navbar link styles
     &-brand,
     &-link {
         display: block;
         //height: 34px;
-        height: 30px;
-        line-height: 30px;
+        height: $navbar-height;
+        line-height: $navbar-height;
         //padding: 10px;
         //vertical-align: top;
         text-decoration: none;
@@ -49,20 +52,34 @@ $navbar-breakpoint-mobile: 1023px;
         //font-weight: bold;
         font-size: 18px;
         margin-right: 10px;
+        color: siimple.$text-color;
         //transition: all 0.3s;
     }
     //Navbar link
     &-link {
         display: block;
         //text-align: center;
-        font-weight: bold;
-        font-size: 14px; //siimple.$text-size;
-        transition: opacity 0.3s;
+        //font-weight: bold;
+        font-size: siimple.$text-size;
+        //transition: opacity 0.3s;
         opacity: 0.6;
+        color: siimple.$text-color; //Default text color
         //cursor: pointer;
         //vertical-align: middle;
         &:hover {
             opacity: 1.0;
+            transition: opacity 0.3s;
+        }
+        //Navbar link active
+        &--active {
+            font-weight: bold;
+            opacity: 1.0 !important;
+        }
+        //Navbar link disabled
+        &--disabled {
+            opacity: 0.4 !important;
+            cursor: not-allowed;
+            pointer-events: none; //Disable clicks
         }
     }
     //Styles for desktop
@@ -75,8 +92,8 @@ $navbar-breakpoint-mobile: 1023px;
         }
         //Menu item
         &-item {
-            padding-left: 8px;
-            padding-right: 8px;
+            padding-left: $navbar-item-padding;
+            padding-right: $navbar-item-padding;
         }
         //Navbar toggle
         &-toggle {
@@ -95,15 +112,34 @@ $navbar-breakpoint-mobile: 1023px;
         }
         //Menu items
         &-item {
-            padding-top: 10px;
+            padding-top: $navbar-item-padding;
         }
         //Navbar toggle
         &-toggle {
             display: block;
-            width: 24px;
+            position: relative;
+            width: 26px;
             height: 30px;
             //outline: 0;
             cursor: pointer;
+        }
+        //Toggle icon
+        &-toggle::before {
+            content: "";
+            position: absolute;
+            border-top: 4px solid siimple.color("dark");
+            border-bottom: 4px solid siimple.color("dark");
+            width: 100%;
+            height: 16px;
+            top: 3px;
+        }
+        &-toggle::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: siimple.color("dark");
+            top: 13px;
         }
         //Toggle focus --> display navbarmenu
         &-toggle:focus + &-menu {
@@ -112,29 +148,29 @@ $navbar-breakpoint-mobile: 1023px;
         }
     }
     //Navigation hamburger icon
-    &-icon,
-    &-icon::before,
-    &-icon::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 4px;
-        border-radius: 10px;
-        background-color: siimple.color("dark"); //Default color
-    }
-    &-icon {
-        position: relative;
-        margin-top: 13px;
-        margin-bottom: 13px;
-    }
-    &-icon::before {
-        position: absolute;
-        top: -8px;
-    }
-    &-icon::after {
-        position: absolute;
-        bottom: -8px;
-    }
+    //&-icon,
+    //&-icon::before,
+    //&-icon::after {
+    //    content: "";
+    //    display: block;
+    //    width: 100%;
+    //    height: 4px;
+    //    border-radius: 10px;
+    //    background-color: siimple.color("dark"); //Default color
+    //}
+    //&-icon {
+    //    position: relative;
+    //    margin-top: 13px;
+    //    margin-bottom: 13px;
+    //}
+    //&-icon::before {
+    //    position: absolute;
+    //    top: -8px;
+    //}
+    //&-icon::after {
+    //    position: absolute;
+    //    bottom: -8px;
+    //}
     //Fixed navbar
     &--fixed-top,
     &--fixed-bottom {
@@ -157,17 +193,24 @@ $navbar-breakpoint-mobile: 1023px;
             background-color: siimple.color($color);
             color: siimple.color-invert($color);
         }
-        //Navicon color
-        &--#{$color} &-icon,
-        &--#{$color} &-icon::before,
-        &--#{$color} &-icon::after {
+        //Links and brand colors
+        &--#{$color} &-link,
+        &--#{$color} &-brand {
+            color: siimple.color-invert($color);
+        }
+        //Toggle icon color
+        &--#{$color} &-toggle::before {
+            border-top-color: siimple.color-invert($color);
+            border-bottom-color: siimple.color-invert($color);
+        }
+        &--#{$color} &-toggle::after {
             background-color: siimple.color-invert($color);
         }
     }
     //Navbar sizes
-    @each $size in siimple.utils-keys(siimple.$breakpoints) {
+    @each $size in siimple.utils-keys(siimple.$contents) {
         &--#{$size} {
-            @include siimple.sizing($size);
+            @include siimple.content-size($size);
         }
     }
 }

@@ -9,20 +9,22 @@
 @use "@siimple/lib" as siimple;
 
 //Code variables
-$code-text-size: 13px !default;
+$code-text-size: 14px !default;
+$code-line-height: 21px !default;
+$code-color: siimple.color("error") !default;
+$code-padding: 3px !default;
 
 //Code class
-.#{siimple.$name}-code {
-    color: siimple.color("error");
+.#{siimple.$prefix}code {
+    color: $code-color;
     text-decoration: none;
+    line-height: $code-line-height;
     font-size: $code-text-size;
-    font-weight: 600;
+    font-weight: siimple.$weight-bold;
     font-family: siimple.$font-monospace;
-    //background-color: siimple.color("light");
-    //border-radius: 3px;
-    //padding-top: 2px;
-    //padding-bottom: 2px;
-    //padding-left: 5px;
-    //padding-right: 5px;
+    padding-left: $code-padding;
+    padding-right: $code-padding;
+    word-wrap: break-word;
+    //text-size-adjust: 100%;
 }
 

@@ -12,7 +12,7 @@ All the different sections of the form should be contained in `fields`. This way
 
 Separate the different sections depending on their purpose with fields and add `labels` (using the class `siimple-field-label`) and `helpers` (using the class `siimple-field-helper`) to them. You'll end up with a clear and intuitive form that will provide a great user experience:
 
-:::snippet lang="html" title="Basic field example"
+```html preview="true"
 <div class="siimple-field">
     <div class="siimple-field-label">Your email</div>
     <input type="text" class="siimple-input siimple-input--fluid" placeholder="you@company.com">
@@ -23,6 +23,6 @@ Separate the different sections depending on their purpose with fields and add `
     <textarea class="siimple-textarea siimple-textarea--fluid"></textarea>
     <div class="siimple-field-helper">This field can't be empty</div>
 </div>
-:::
+```
 
 

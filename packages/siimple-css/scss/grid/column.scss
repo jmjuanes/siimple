@@ -16,25 +16,27 @@ $column-sizes: variables.$grid;
 
 //Grid column class
 .#{siimple.$name}-column {
-    display: inline-block;
-    vertical-align: top;
-    float: left;
+    //display: inline-block;
+    //vertical-align: top;
+    //float: left;
+    flex: 1; //Allow flex grow
     padding: $column-padding;
     //Grid default column sizes
     @each $name, $width in $column-sizes {
         &--#{$name} {
             //width: #{$grid-width};
             width: calc(#{$width} - 2 * #{$column-padding});
+            flex: none; //Disable flex grow
         }
     }
     //Grid columns for each breakpoint
-    @each $breakpoint, $screen in variables.$breakpoints-alias {
+    @each $breakpoint, $screen in siimple.$breakpoints {
         @media (max-width: $screen) {
             @each $name, $width in $column-sizes {
-                &--#{$breakpoint}-#{$name},
-                &-#{$breakpoint}--#{$name} {
+                &--#{$breakpoint}-#{$name} {
                     //width: #{$grid-width};
                     width: calc(#{$width} - 2 * #{$column-padding});
+                    flex: none; //Disable flex grow
                 }
             }
             //Hide grid column

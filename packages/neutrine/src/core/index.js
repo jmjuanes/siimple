@@ -11,6 +11,7 @@ export * from "./input/index.js";
 export * from "./jumbotron/index.js";
 export * from "./label/index.js";
 export * from "./list/index.js";
+export * from "./media/index.js";
 export * from "./menu/index.js";
 export * from "./navbar/index.js";
 export * from "./radio/index.js";

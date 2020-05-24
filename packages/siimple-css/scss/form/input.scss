@@ -9,12 +9,12 @@
 @use "@siimple/lib" as siimple;
 
 //Input variables
-$input-height: 30px;
-$input-text-size: 14px;
-$input-padding: 10px;
+$input-height: 40px;
+$input-text-size: 15px;
+$input-padding: 15px;
 
 //Input style
-.#{siimple.$name}-input {
+.#{siimple.$prefix}input {
     display: inline-block;
     height: $input-height;
     line-height: $input-height;

@@ -13,7 +13,8 @@ $row-margin: -10px !default;
 
 //Grid Row class
 .#{siimple.$name}-row {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     //width: 100%;
     margin-left: $row-margin;
     margin-right: $row-margin;

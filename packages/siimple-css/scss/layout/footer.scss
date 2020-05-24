@@ -9,90 +9,45 @@
 @use "@siimple/lib" as siimple;
 
 //Footer variables
-$footer-light-text: siimple.utils-lighten(siimple.color("dark"), 40%);
-$footer-padding: 50px;
+$footer-background: siimple.gray("0") !default;
+$footer-padding-top: 40px !default;
+$footer-padding-bottom: 80px !default;
 $footer-text-size: 14px;
-$footer-line-height: 20px;
+//$footer-line-height: 20px;
+$footer-color: siimple.$muted !default;
 
 //Footer class
-.#{siimple.$name}-footer {
+.#{siimple.$prefix}footer {
     display: block;
-    padding-top: $footer-padding;
-    padding-bottom: $footer-padding;
+    padding-top: $footer-padding-top;
+    padding-bottom: $footer-padding-bottom;
     font-size: $footer-text-size;
-    line-height: $footer-line-height;
-    @include siimple.fluid(); //Default footer size
-    //Footer title
-    &-title {
-        display: block;
-        font-size: 20px;
-        font-weight: bold;
-        text-decoration: none;
-        line-height: 30px;
-        opacity: 0.8;
-    }
-    //Footer subtitle
-    &-subtitle {
-        display: block;
-        font-size: siimple.$text-size;
-        line-height: siimple.$line-height;
-        opacity: 0.6;
-        text-decoration: none;
-    }
-    //Footer group
-    &-group {
-        display: block;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-size: siimple.$text-size;
-        line-height: siimple.$line-height;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
+    //line-height: $footer-line-height;
+    background-color: $footer-background;
+    color: $footer-color;
+    @include siimple.content-fluid(); //Default footer size
     //Footer text link
     &-link {
-        display: block;
+        //display: block;
         text-decoration: none;
-        font-weight: 600;
+        font-weight: siimple.$weight-bold;
         //transition: color 0.3s;
-        transition: opacity 0.3s;
+        //transition: opacity 0.3s;
         cursor: pointer;
-        opacity: 0.80;
+        color: siimple.color("dark");
+        //opacity: 0.80;
         //Hover link
         &:hover {
-            opacity: 1.0;
-        }
-    }
-    //Footer rule
-    &-rule {
-        display: block;
-        width: 100%;
-        height: 2px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        opacity: 0.6;
-        background-color: siimple.color-darker("light");
-    }
-    //Footer colors
-    @each $color in siimple.utils-keys(siimple.$colors) {
-        //Footer color
-        &--#{$color} {
-            background-color: siimple.color($color);
-            color: siimple.color-invert($color);
-        }
-        //Footer link color
-        &--#{$color} &-link {
-            color: siimple.color-invert($color);
-        }
-        //Rule color
-        &--#{$color} &-rule {
-            background-color: rgba(siimple.color-invert($color), 0.8);
+            color: siimple.color("primary");
+            text-decoration: underline;
+            transition: all 0.3s;
+            //opacity: 1.0;
         }
     }
     //Footer sizes
-    @each $size in siimple.utils-keys(siimple.$breakpoints) {
+    @each $size in siimple.utils-keys(siimple.$contents) {
         &--#{$size} {
-            @include siimple.sizing($size);
+            @include siimple.content-size($size);
         }
     }
 }

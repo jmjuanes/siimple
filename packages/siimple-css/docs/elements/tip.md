@@ -3,28 +3,26 @@ title: "Tip"
 description: "A special alert to grab attention in something important"
 ---
 
-> Redesigned in **v4.0.0**.
-
 <style>
 .siimple-tip:last-child {
     margin-bottom: 0px !important;
 }
 </style>
 
-Add `siimple-tip` to a `div` tag to create a tip element.
+A **siimple tip** is a special alert element designed to grab attention in something important in your website or application. To create a basic tip element, just add the `siimple-tip` class to a `<div>` element:
 
-:::snippet title="Basic tip example" lang="html"
+```html preview="true"
 <div class="siimple-tip siimple-tip--primary">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </div>
-:::
+```
 
 
 #### Colored tip
 
-Set the tip color by adding a `siimple-tip--[COLOR]` class with the desired color.
+All the different colors specified in the [theming](/css/getting-started/theming.html) section can be used to customize your tip element:
 
-:::snippet title="Colored tip example" lang="html"
+```html preview="true"
 <div class="siimple-tip siimple-tip--primary">
     Primary tip
 </div>
@@ -40,33 +38,31 @@ Set the tip color by adding a `siimple-tip--[COLOR]` class with the desired colo
 <div class="siimple-tip siimple-tip--error">
     Error tip
 </div>
-:::
+```
 
 
-#### Tip with an icon
+#### Icons
 
-You can also add a heart icon adding the `siimple-tip--heart` class, an exclamation icon adding the `siimple-tip--exclamation` class or a question icon adding the `siimple-tip--question` class.
+Customize your tip element displaying an icon in the left side of the tip. Add one of the following classes to display an icon:
 
-:::snippet title="Tip with an icon" lang="html"
+| Class | Description |
+| `siimple-tip--heart` | Adds a **heart** icon to the tip. |
+| `siimple-tip--exclamation` | Adds an **exclamation** icon to the tip. |
+| `siimple-tip--question` | Adds a **question** icon to the tip. |
+| `siimple-tip--info` | Adds an **info** icon to the tip. |
+| `siimple-tip--check` | Adds a **check** icon to the tip. |
+| `siimple-tip--cross` | Adds a **cross** icon to the tip. |
+
+```html preview="true"
 <div class="siimple-tip siimple-tip--error siimple-tip--heart">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </div>
 <div class="siimple-tip siimple-tip--warning siimple-tip--exclamation">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </div>
-<div class="siimple-tip siimple-tip--primary siimple-tip--question">
+<div class="siimple-tip siimple-tip--secondary siimple-tip--question">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </div>
-:::
-
-
-#### New tip icons
-
-> Added in **v4.0.0**
-
-Tip now accepts `siimple-tip--info` for displaying an info icon, `siimple-tip--check` for displaying a check icon  and `siimple-tip--cross` for displaying a cross icon.
-
-:::snippet title="New tip icons example" lang="html"
 <div class="siimple-tip siimple-tip--primary siimple-tip--info">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </div>
@@ -76,6 +72,6 @@ Tip now accepts `siimple-tip--info` for displaying an info icon, `siimple-tip--c
 <div class="siimple-tip siimple-tip--error siimple-tip--cross">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </div>
-:::
+```
 
 

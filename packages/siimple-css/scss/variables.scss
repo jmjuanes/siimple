@@ -8,15 +8,6 @@
 
 @use "@siimple/lib" as siimple;
 
-//Breakpoints aliases
-$breakpoints-alias: (
-    "xl": siimple.$breakpoint-xlarge,
-    "lg": siimple.$breakpoint-large,
-    "md": siimple.$breakpoint-medium,
-    "sm": siimple.$breakpoint-small,
-    "xs": siimple.$breakpoint-xsmall
-);
-
 //Default heading values
 $headings: (
     "1": ("size": 40px, "line-height": 50px, "margin-bottom": 20px, "margin-top": 30px),
@@ -62,4 +53,8 @@ $spacing: (
     "5": 45px,
     "auto": auto
 );
+
+//Body variables
+$body-bg: siimple.$white !default;
+$body-color: siimple.$dark !default;
 

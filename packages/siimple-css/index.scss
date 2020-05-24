@@ -7,8 +7,10 @@
 //
 
 @forward "@siimple/lib"; //Forward lib variables
+@forward "./scss/variables.scss"; //Forward package variables
 
 @use "./scss/base.scss";
+@use "./scss/root.scss";
 @use "./scss/reset.scss";
 @use "./scss/typography/index.scss" as typography;
 @use "./scss/elements/index.scss" as elements;

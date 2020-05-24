@@ -10,49 +10,38 @@
 
 //Jumbotron variables
 $jumbotron-padding: 85px;
-$jumbotron-title-text-size: 40px;
-$jumbotron-title-line-height: 48px;
-$jumbotron-subtitle-text-size: 24px;
-$jumbotron-subtitle-line-height: 29px;
+$jumbotron-title-text-size: 50px;
+$jumbotron-title-line-height: 50px;
+$jumbotron-subtitle-text-size: 30px;
+$jumbotron-subtitle-line-height: 30px;
 
 //Jumbotron class
-.#{siimple.$name}-jumbotron {
+.#{siimple.$prefix}jumbotron {
     display: block;
     //font-family: $siimple-default-text-font;
     padding-top: $jumbotron-padding;
     padding-bottom: $jumbotron-padding;
-    @include siimple.fluid(); //Default jumbotron size
-    //Common styles
-    &-title, 
-    &-subtitle,
-    &-text {
-        display: block;
-        text-decoration: none;
-    }
+    color: siimple.$text-color;
+    background-color: siimple.color("white");
+    @include siimple.content-fluid(); //Default jumbotron size
     //Jumbotron title
     &-title {
+        display: block;
         line-height: $jumbotron-title-line-height;
         font-size: $jumbotron-title-text-size;
         font-weight: bold;
+        text-decoration: none;
     }
     //Jumbotron subtitle
     &-subtitle {
+        display: block;
         line-height: $jumbotron-subtitle-line-height;
         font-size: $jumbotron-subtitle-text-size;
         font-weight: bold;
         opacity: 0.8;
+        text-decoration: none;
     }
-    //Jumbotron text
-    &-text {
-        line-height: siimple.$line-height;
-        font-size: siimple.$text-size;
-        opacity: 0.6;
-        //margin-top: 10px;
-        //margin-bottom: 10px;
-    }
-    &-title + &-subtitle,
-    &-title + &-text,
-    &-subtitle + &-text {
+    &-title + &-subtitle {
         margin-top: 8px;
     }
     //Colored jumbotron
@@ -63,9 +52,9 @@ $jumbotron-subtitle-line-height: 29px;
         }
     }
     //Jumbotron sizes
-    @each $size in siimple.utils-keys(siimple.$breakpoints) {
+    @each $size in siimple.utils-keys(siimple.$contents) {
         &--#{$size} {
-            @include siimple.sizing($size);
+            @include siimple.content-size($size);
         }
     }
 }

@@ -41,10 +41,3 @@ export const JumbotronSubtitle = function (props) {
     });
 };
 
-//Jumbotron detail component 
-export const JumbotronDetail = function (props) {
-    return helpers.createMergedElement("div", props, {
-        "className": "siimple-jumbotron-detail"
-    });
-};
-

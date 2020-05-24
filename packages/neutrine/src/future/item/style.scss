@@ -1,3 +1,5 @@
+@use "@siimple/lib" as siimple;
+
 //Item style
 .neutrine__item {
     display: flex;
@@ -31,7 +33,7 @@
         //border-radius: 5px;
         //Square icon
         &--square {
-            border-radius: 5px;
+            border-radius: siimple.$border-radius;
         }
         //Circle icon
         &--circle {

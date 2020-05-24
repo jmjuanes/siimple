@@ -8,8 +8,11 @@
 
 @use "@siimple/lib" as siimple;
 
+//List variables
+$list-padding: 15px;
+
 //List class
-.#{siimple.$name}-list {
+.#{siimple.$prefix}list {
     display: block;
     width: 100%;
     margin-bottom: siimple.$margin-bottom;
@@ -19,16 +22,16 @@
     //List item 
     &-item {
         display: block;
-        padding: 10px;
+        padding: $list-padding;
         background-color: siimple.color("light");
-        transition: all 0.3s ease;
+        //transition: all 0.3s ease;
         text-decoration: none;
         color: siimple.$text-color;
         font-size: siimple.$text-size;
         line-height: siimple.$line-height;
         //position: relative;
         //List with tag
-        & .#{siimple.$name}-tag {
+        & .#{siimple.$prefix}tag {
             //position: absolute;
             //top: 0px;
             //right: 0px;
@@ -48,6 +51,7 @@
     }
     &--hover &-item:not(#{&}-item--active):hover {
         background-color: siimple.utils-darken(siimple.color("light"), 10%);
+        transition: background-color 0.3s;
         cursor: pointer;
     }
     //Active list item

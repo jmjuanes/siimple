@@ -47,5 +47,16 @@
     @return utils.get(lists.$breakpoints, $name);
 }
 
+//Get a content size by name
+@function content ($name) {
+    @return utils.get(lists.$contents, $name);
+}
+
+//Get a gray color
+//Usage: gray("1") or gray("gray1")
+@function gray ($name) {
+    $name: "gray" + utils.replace($name, "gray", "");
+    @return utils.get(lists.$grays, $name);
+}
 
 

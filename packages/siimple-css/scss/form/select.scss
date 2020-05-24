@@ -9,12 +9,12 @@
 @use "@siimple/lib" as siimple;
 
 //Select variables
-$select-padding: 10px;
-$select-height: 30px;
-$select-text-size: 14px;
+$select-padding: 15px;
+$select-height: 40px;
+$select-text-size: 15px; //siimple.$text-size;
 
 //Select class
-.#{siimple.$name}-select {
+.#{siimple.$prefix}select {
     display: inline-block;
     height: $select-height;
     line-height: $select-height;
@@ -23,8 +23,8 @@ $select-text-size: 14px;
     color: siimple.$text-color;
     padding-left: $select-padding;
     padding-right: $select-padding;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    //padding-top: 0px;
+    //padding-bottom: 0px;
     border: 0px;
     border-radius: siimple.$border-radius;
     outline: 0px;

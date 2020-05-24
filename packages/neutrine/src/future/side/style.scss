@@ -1,5 +1,8 @@
 @use "@siimple/lib" as siimple;
 
+//Side variables
+$side-border-radius: 2 * siimple.$border-radius;
+
 //Side styles
 .neutrine__side {
     //Background 
@@ -75,6 +78,23 @@
     }
     &--visible &-content--bottom {
         bottom: 0px;
+    }
+    //Rounded side
+    &--rounded &-content--right {
+        border-top-left-radius: $side-border-radius;
+        border-bottom-left-radius: $side-border-radius;
+    }
+    &--rounded &-content--left {
+        border-top-right-radius: $side-border-radius;
+        border-bottom-right-radius: $side-border-radius;
+    }
+    &--rounded &-content--top {
+        border-bottom-left-radius: $side-border-radius;
+        border-bottom-right-radius: $side-border-radius;
+    }
+    &--rounded &-content--bottom {
+        border-top-left-radius: $side-border-radius;
+        border-top-right-radius: $side-border-radius;
     }
 }
 
