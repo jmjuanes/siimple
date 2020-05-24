@@ -9,11 +9,12 @@
 @use "@siimple/lib" as siimple;
 
 //Footer variables
-$footer-background: siimple.color("white");
-$footer-padding-top: 40px;
-$footer-padding-bottom: 80px;
+$footer-background: siimple.gray("0") !default;
+$footer-padding-top: 40px !default;
+$footer-padding-bottom: 80px !default;
 $footer-text-size: 14px;
-$footer-line-height: 20px;
+//$footer-line-height: 20px;
+$footer-color: siimple.$muted !default;
 
 //Footer class
 .#{siimple.$prefix}footer {
@@ -21,17 +22,19 @@ $footer-line-height: 20px;
     padding-top: $footer-padding-top;
     padding-bottom: $footer-padding-bottom;
     font-size: $footer-text-size;
-    line-height: $footer-line-height;
+    //line-height: $footer-line-height;
     background-color: $footer-background;
+    color: $footer-color;
     @include siimple.content-fluid(); //Default footer size
     //Footer text link
     &-link {
-        display: block;
+        //display: block;
         text-decoration: none;
         font-weight: siimple.$weight-bold;
         //transition: color 0.3s;
         //transition: opacity 0.3s;
         cursor: pointer;
+        color: siimple.color("dark");
         //opacity: 0.80;
         //Hover link
         &:hover {
@@ -40,14 +43,6 @@ $footer-line-height: 20px;
             transition: all 0.3s;
             //opacity: 1.0;
         }
-    }
-    //Light footer
-    &--light {
-        //TODO
-    }
-    //Dark footer
-    &--dark {
-        //TODO
     }
     //Footer sizes
     @each $size in siimple.utils-keys(siimple.$contents) {
