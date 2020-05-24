@@ -48,7 +48,7 @@ $positions: (
             //Padding positions
             @each $position-key, $position-value in $positions {
                 &p#{$position-key}-#{$key} {
-                    position-#{$position-value}: $value !important;
+                    padding-#{$position-value}: $value !important;
                 }
             }
             //Padding left and right
