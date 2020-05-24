@@ -18,9 +18,10 @@
     //Default colors
     @include variables-from-list("", siimple.$colors);
     --siimple-white: #{siimple.$white};
+    --siimple-muted: #{siimple.$muted};
     --siimple-black: #{siimple.$black};
-    //Grey colors
-    @include variables-from-list("", siimple.$greys);
+    //Gray colors
+    @include variables-from-list("", siimple.$grays);
     //Breakpoints
     @include variables-from-list("-breakpoint", siimple.$breakpoints);
     @include variables-from-list("-content", siimple.$contents);
