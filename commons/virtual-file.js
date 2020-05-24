@@ -31,6 +31,12 @@ let readVFile = function (vfile) {
 
 //Write a vfile
 let writeVFile = function (vfile) {
+    if (fs.existsSync(vfile.dirname) === false) {
+        fs.mkdirSync(vfile.dirname, {
+            "recursive": true
+        });
+    }
+    //Write the file content
     return fs.writeFileSync(getVFilePath(vfile), vfile.content, "utf8");
 };
 
