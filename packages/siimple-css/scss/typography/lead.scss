@@ -8,8 +8,8 @@
 
 @use "@siimple/lib" as siimple;
 
-$lead-text-size: 20px !default;
-$lead-line-height: 30px !default;
+$lead-text-size: siimple.$text-size-large !default;
+$lead-line-height: siimple.$line-height !default;
 $lead-color: siimple.color-lighter("dark") !default;
 
 //Paragraph lead class

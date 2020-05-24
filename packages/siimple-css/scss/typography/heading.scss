@@ -11,6 +11,8 @@
 
 //Headings default variables
 $heading-margin-bottom: 0.5em !default;
+$heading-line-height: siimple.$line-height !default;
+$heading-font-weight: siimple.$weight-bold !default;
 
 //Heading class
 .#{siimple.$prefix}h {
@@ -20,8 +22,9 @@ $heading-margin-bottom: 0.5em !default;
             display: block;
             font-size: siimple.utils-get($heading, "size");
             //font-family: $siimple-default-text-font;
-            font-weight: siimple.$weight-bold;
-            line-height: siimple.utils-get($heading, "line-height");
+            font-weight: $heading-font-weight;
+            //line-height: siimple.utils-get($heading, "line-height");
+            line-height: $heading-line-height;
             //color: $siimple-default-color;
             padding: 0px;
             margin-bottom: $heading-margin-bottom;

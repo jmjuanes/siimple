@@ -15,8 +15,8 @@ $pre-padding-left: 20px !default;
 $pre-padding-right: 20px !default;
 $pre-padding-top: 15px !default;
 $pre-padding-bottom: 15px !default;
-$pre-color: siimple.color("white");
-$pre-background: siimple.color("dark");
+$pre-color: siimple.color("dark") !default; //siimple.color("white");
+$pre-background: siimple.color("light") !default; //siimple.color("dark");
 
 //Pre class
 .#{siimple.$prefix}pre {
