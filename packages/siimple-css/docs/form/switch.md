@@ -4,52 +4,33 @@ description: "A redesigned checkbox element that looks like a switch"
 keywords: "switch,checkbox,form,input"
 ---
 
-You can style a checkbox like a switch. First create a `div` element with a `siimple-switch` class:
+The `siimple-switch` class is a wrapper to display your checkbox element like a **switch element**. To create a switch, the following structure is required:
 
-```html
-<div class="siimple-switch"></div>
-```
+- A `<div>` wrapper element with the class `siimple-switch`.
+- An `<input type="checkbox">` element, with an **id** attribute.
+- A `<label>` element bound to the previous `<input>` element.
 
-Then add a `input` element inside the `div`, and add the `type="checkbox"` attribute. You must also assign an `id` to the `input` element.
+By default, the switch will be displayed inactive, but you can add a **checked** attribute to the `<input>` element to display the switch as actived.
 
-```html
-<div class="siimple-switch">
-    <input type="checkbox" id="mySwitch">
-</div>
-```
-
-Finally, add a `label` bound to the previously `input`.
-
-```html
-<div class="siimple-switch">
-    <input type="checkbox" id="mySwitch">
-    <label for="mySwitch"></label>
-</div>
-```
-
-Final result:
-
-:::snippet lang="html" title="Basic switch"
-<label class="siimple-label">Your switch:</label>
+```html preview="true"
+<label class="siimple-label">Allow cookies </label>
 <div class="siimple-switch">
     <input type="checkbox" id="mySwitch" checked>
     <label for="mySwitch"></label>
 </div>
-:::
+```
 
 
 #### Colored switch
 
-> Added in **v3.2.0**.
-
 Use `siimple-switch--error`, `siimple-switch--warning` and `siimple-switch--success` to change the color of the checked checkbox.
 
-:::snippet lang="html" title="Colored switch"
-<label class="siimple-label">Your switch:</label>
+```html preview="true"
+<label class="siimple-label">Allow cookies </label>
 <div class="siimple-switch siimple-switch--error">
     <input type="checkbox" id="mySwitch2" checked>
     <label for="mySwitch2"></label>
 </div>
-:::
+```
 
 

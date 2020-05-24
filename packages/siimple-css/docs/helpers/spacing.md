@@ -3,43 +3,43 @@ title: "Spacing"
 description: "Customize the padding and the margin of an element"
 ---
 
-> Added in **v3.2.0**.
+Customize the **padding** and the **margin** properties of anly element using these classes. The following **sizes** for the classes described in this document are available:
 
-Modify the **padding** or the **margin** of an element adding the class `siimple--{attribute}-{size}`, where `attribute` is one of the following attributes:
+| Size | Description |
+| **0** | Forces the margin or padding to 0px |
+| **1** | Forces the margin or padding to 5px |
+| **2** | Forces the margin or padding to 10px |
+| **3** | Forces the margin or padding to 15px |
+| **4** | Forces the margin or padding to 25px |
+| **5** | Forces the margin or padding to 45px |
 
-- `mt` to change the `margin-top`.
-- `pt` to change the `padding-top`.
-- `mb` to change the `margin-bottom`. 
-- `pb` to change the `padding-bottom`.
-- `ml` to change the `margin-left`.  
-- `pl` to change the `padding-left`.
-- `mr` to change the `margin-right`.
-- `pr` to change the `padding-top`.
-- `mx` to change the `margin-left` and the `margin-right`.
-- `px` to change the `padding-left` and the `padding-right`.
-- `my` to change the `margin-top` and the `margin-bottom`.
-- `py` to change the `padding-top` and the `padding-bottom`.
 
-And `size` is one of the following values:
+#### Uniform padding or margin
 
-- `0`: to set the `padding` or the `margin` to `0px`.
-- `1`: to set the `padding` or the `margin` to `5px`.
-- `2`: to set the `padding` or the `margin` to `10px`.
-- `3`: to set the `padding` or the `margin` to `15px`.
-- `4`: to set the `padding` or the `margin` to `20px`.
-- `5`: to set the `padding` or the `margin` to `25px`.
-- `auto`: to set the `margin` to `auto`.
+Use `siimple--p-[size]` to set the **padding** of all sides of the element, or `siimple--m-[size]` to set the **margin** of all sizes of the element.
 
-:::snippet
-<style>
-.example {
-    width: 150px;
-    padding: 10px;
-    text-align: center;
-}
-</style>
-<div class="example siimple--mx-auto siimple--bg-light">
+
+#### Directional padding or margin
+
+Use `siimple--p-[side]-[size]` or `siimple--m-[side]-[size]` to set the **padding or margin of one side**, **on the x-axis** or **the y-axis** of the element. The following sides are available:
+
+| Side | Description |
+| **t** | To set the margin or padding **top**. |
+| **b** | To set the margin or padding **bottom**. |
+| **l** | To set the margin or padding **left**. |
+| **r** | To set the margin or padding **right**. |
+| **x** | To set the margin or padding **left and right**. |
+| **y** | To set the margin or padding **top and bottom**. |
+
+
+#### Centering elements
+
+We provide an additional `siimple--mx-auto` classname to set the margin left and right to **auto**. This will center the block with a fixed width.
+
+```html preview="true"
+<div class="siimple--mx-auto siimple--p-3 siimple--bg-light" style="width:200px">
     Centered element
 </div>
-:::
+```
+
 

@@ -4,54 +4,33 @@ description: "The redesigned radio button element"
 keywords: "radio,button,form,input"
 ---
 
-> Added in **v3.1.0**.
+The `siimple-radio` class is a wrapper to style the default radio element. To create a radio, the following structure is required:
 
-To create a radio button element, first create a `div` with a `siimple-radio` class:
+- A `<div>` wrapper element with the class `siimple-radio`.
+- An `<input type="radio">` element, with an **id** attribute.
+- A `<label>` element bound to the previous `<input>` element.
 
-```html
-<div class="siimple-radio"></div>
-```
+By default, the radio will be displayed unchecked, but you can add a **checked** attribute to the `<input>` element to display the radio as checked.
 
-Then add a `input` element inside, and add the `type="radio"` attribute. You must also assign an `id` to the `input` element.
-
-```html
-<div class="siimple-radio">
-    <input type="radio" id="myRadio">
-</div>
-```
-
-Finally, add a `label` bound to the previously `input` element.
-
-```html
+```html preview="true"
 <div class="siimple-radio">
     <input type="radio" id="myRadio">
     <label for="myRadio"></label>
 </div>
+<label class="siimple-label">Option 1</label>
 ```
-
-Your radio component is ready:
-
-:::snippet lang="html" title="Basic radio"
-<label class="siimple-label">Your radio:</label>
-<div class="siimple-radio">
-    <input type="radio" id="myRadio">
-    <label for="myRadio"></label>
-</div>
-:::
 
 
 #### Colored radio
 
-> Added in **v3.2.0**.
+Use `siimple-radio--error`, `siimple-radio--warning` and `siimple-radio--success` to change the color of the radio element.
 
-Use `siimple-radio--error`, `siimple-radio--warning` and `siimple-radio--success` to change the color of the checked checkbox.
-
-:::snippet lang="html" title="Colored radio example"
-<label class="siimple-label">Your radio:</label>
+```html preview="true"
 <div class="siimple-radio siimple-radio--warning">
     <input type="radio" id="myRadio2">
     <label for="myRadio2"></label>
 </div>
-:::
+<label class="siimple-label">Option 1</label>
+```
 
 

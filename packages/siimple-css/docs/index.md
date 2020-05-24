@@ -20,7 +20,7 @@ $ npm install --save @siimple/css
 $ yarn add --save @siimple/css
 ```
 
-:::tip:info title="Other installation methods"
+:::info title="Other installation methods"
 Are you looking for alternative installation methods? [Read the installation docs](/css/getting-started/installation.html).
 :::
 

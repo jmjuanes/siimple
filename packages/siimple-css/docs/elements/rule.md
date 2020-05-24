@@ -3,11 +3,9 @@ title: "Rule"
 description: "Simple element to separate content in your page"
 ---
 
-> Added in **v3.1.0**.
+The **rule** element helps you to separate content in your page. Add `siimple-rule` class to a `<div>` or a `<span>` tag to style it as a horizontal rule.
 
-Add `siimple-rule` class to a `div` or a `span` tag to style it as a horizontal rule.
-
-:::snippet title="Rule example" lang="html"
+```html preview="true"
 <div class="siimple-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </div>
@@ -15,6 +13,6 @@ Add `siimple-rule` class to a `div` or a `span` tag to style it as a horizontal 
 <div class="siimple-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </div>
-:::
+```
 
 

@@ -4,52 +4,33 @@ description: "The redesigned checkbox element"
 keywords: "checkbox,check,checked,form"
 ---
 
-For adding a checkbox element to your project, first you must create a `div` with the class `siimple-checkbox`:
+The `siimple-checkbox` class is a wrapper to style the default checkbox element. To create a checkbox, the following structure is required:
 
-```html
-<div class="siimple-checkbox></div>
-```
+- A `<div>` wrapper element with the class `siimple-checkbox`.
+- An `<input type="checkbox">` element, with an **id** attribute.
+- A `<label>` element bound to the previous `<input>` element.
 
-Inside it, create an `input` with the attribute `type="checkbox"`. Also, you must add an `id` attribute that will be used in the last step.
+By default, the checkbox will be displayed unchecked, but you can add a **checked** attribute to the `<input>` element to display the checkbox as checked.
 
-```html
-<div class="siimple-checkbox">
-    <input type="checkbox" id="myCheckbox">
-</div>
-```
-
-Finally, create a `label` element bound to the previous `input` element.
-
-```html
-<div class="siimple-checkbox">
-    <input type="checkbox" id="myCheckbox">
-    <label for="myCheckbox"></label>
-</div>
-```
-
-Final result:
-
-:::snippet lang="html" title="Basic checkbox"
-<label class="siimple-label">Your checkbox:</label>
+```html preview="true"
 <div class="siimple-checkbox">
     <input type="checkbox" id="myCheckbox" checked>
     <label for="myCheckbox"></label>
 </div>
-:::
+<label class="siimple-label">I agree with the terms and conditions.</label>
+```
 
 
 #### Colored checkbox
 
-> Added in **v3.2.0**.
-
 Use `siimple-checkbox--error`, `siimple-checkbox--warning` and `siimple-checkbox--success` to change the color of the checked checkbox.
 
-:::snippet lang="html" title="Colored checkbox"
-<label class="siimple-label">Your checkbox:</label>
+```html preview="true"
 <div class="siimple-checkbox siimple-checkbox--success">
     <input type="checkbox" id="myCheckbox2" checked>
     <label for="myCheckbox2"></label>
 </div>
-:::
+<label class="siimple-label">I agree with the terms and conditions.</label>
+```
 
 
