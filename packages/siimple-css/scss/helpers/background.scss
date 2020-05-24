@@ -15,10 +15,10 @@
             background-color: siimple.color($color) !important;
         }
     }
-    //Grey colors
-    @each $color in siimple.utils-keys(siimple.$greys) {
+    //Gray colors
+    @each $color in siimple.utils-keys(siimple.$grays) {
         &bg-#{$color} {
-            background-color: siimple.grey($color) !important;
+            background-color: siimple.gray($color) !important;
         }
     }
     //White background color
