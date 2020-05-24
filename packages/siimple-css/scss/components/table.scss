@@ -11,8 +11,8 @@
 
 //Table cell variables
 $table-cell-padding: 15px !default;
-$table-cell-padding-small: 10px !default;
-$table-cell-padding-big: 10px !default;
+$table-cell-padding-small: 8px !default;
+$table-cell-padding-large: 25px !default;
 $table-cell-sizes: variables.$grid;
 $table-colors: (
     "primary": siimple.utils-lighten(siimple.color-lighter("primary"), 15%), 
@@ -22,7 +22,7 @@ $table-colors: (
     "error": siimple.utils-lighten(siimple.color-lighter("error"), 10%)
 ) !default;
 $table-cell-border-width: 2px !default;
-$table-cell-border-color: siimple.$grey2 !default;
+$table-cell-border-color: siimple.$gray2 !default;
 
 //Table class
 .#{siimple.$prefix}table {
@@ -106,13 +106,27 @@ $table-cell-border-color: siimple.$grey2 !default;
             width: #{$cell-width};
         }
     }
+    //Small table --> reduce table cell padding
+    &--small &-cell {
+        padding: $table-cell-padding-small;
+        &::before {
+            top: 8px
+        }
+        &::after {
+            bottom: 8px;
+        }
+    }
+    //Large table --> increase table cell padding
+    &--large &-cell {
+        padding: $table-cell-padding-large;
+    }
     //Table with border
-    //&--border &-cell {
-    //    //border: 1px solid siimple.utils-darken(siimple.color("light"), 5%);
-    //    border: 0px solid siimple.grey("1");
-    //    border-right-width: 2px;
-    //    border-bottom-width: 2px;
-    //}
+    &--border &-cell {
+        border: $table-cell-border-width solid $table-cell-border-color;
+    }
+    &--border &-cell:not(:last-child) {
+        border-right: 0px !important;
+    }
     //Table header
     &-header {
         display: table-header-group;
@@ -161,8 +175,9 @@ $table-cell-border-color: siimple.$grey2 !default;
     &-body &-row:last-child &-cell:last-child {
         border-bottom-right-radius: siimple.$border-radius;
     }
-    &--border &-body &-row:last-child &-cell {
-        border-bottom-width: 0px !important;
+    //Bordered table
+    &--border &-body &-row:not(:last-child) &-cell {
+        border-bottom: 0px !important;
     }
     //&--border &-body &-row &-cell:first-child {
     //    border-left-width: 2px;

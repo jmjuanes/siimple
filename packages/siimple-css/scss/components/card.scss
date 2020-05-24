@@ -9,7 +9,7 @@
 @use "@siimple/lib" as siimple;
 
 //Card variables
-$card-padding: 20px;
+$card-padding: 25px;
 
 //Card element class
 .#{siimple.$prefix}card {
@@ -62,6 +62,7 @@ $card-padding: 20px;
         cursor: pointer;
         //transition: opacity 0.3s;
         opacity: 0.5;
+        text-decoration: none;
         //Card link arrow
         &::before {
             display: block;
@@ -73,8 +74,8 @@ $card-padding: 20px;
             transform: rotate(45deg);
             border-radius: 2px;
             position: absolute;
-            top: 24px;
-            right: 18px;
+            top: calc(#{$card-padding} + 4px);
+            right: calc(#{$card-padding} + 2px);
             transition: right 0.3s;
         }
     }
@@ -86,7 +87,7 @@ $card-padding: 20px;
     }
     &:hover &-link::before,
     &-link:hover &-link::before {
-        right: 15px;
+        right: calc(#{$card-padding} - 3px);
     }
     //Light card --> default style
     &--light {
