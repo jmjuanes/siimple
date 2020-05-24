@@ -24,13 +24,24 @@
     &-underline { text-decoration: underline !important; }
     &-normal { font-weight: 400 !important; }
     //Text sizes
-    &-small { font-size: 14px !important; }
+    &-small { font-size: siimple.$text-size-small !important; }
+    &-large { font-size: siimple.$text-size-large !important; }
     //Text color
     @each $color in siimple.utils-keys(siimple.$colors) {
         &-#{$color} {
             color: siimple.color($color) !important;
         }
     }
+    &-muted { color: siimple.$muted !important; }
     &-white { color: siimple.color("white") !important; }
+    //Text wrapping
+    //&-wrap { white-space: normal !important; }
+    &-nowrap { white-space: nowrap!important; }
+    &-truncate {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    &-break { word-wrap: break-word !important; }
 }
 
