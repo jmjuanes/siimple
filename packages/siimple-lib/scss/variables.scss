@@ -15,17 +15,17 @@ $prefix-helpers: $name + "--" !default;
 $darker-amount: 20% !default;
 $lighter-amount: 20% !default;
 
-//Grey color schema
-$grey0: #f6f6f9 !default;
-$grey1: #edeff3 !default;
-$grey2: #e1e5ea !default;
-$grey3: #cbd1d7 !default;
-$grey4: #abb3ba !default;
-$grey5: #6a727c !default;
-$grey6: #58606a !default;
-$grey7: #434c56 !default;
-$grey8: #2f363d !default;
-$grey9: #24292e !default;
+//Gray color schema
+$gray0: #f6f6f9 !default;
+$gray1: #edeff3 !default;
+$gray2: #e1e5ea !default;
+$gray3: #cbd1d7 !default;
+$gray4: #abb3ba !default;
+$gray5: #6a727c !default;
+$gray6: #58606a !default;
+$gray7: #434c56 !default;
+$gray8: #2f363d !default;
+$gray9: #24292e !default;
 
 //Default colors
 $white: #ffffff !default;
@@ -34,8 +34,9 @@ $secondary: #4ccdac !default;
 $success: #4acf7f !default;
 $warning: #fbc850 !default;
 $error: #ee675d !default;
-$light: $grey1 !default;
-$dark: $grey7 !default;
+$light: $gray1 !default;
+$muted: $gray5 !default;
+$dark: $gray7 !default;
 $black: #000000 !default;
 
 //Code colors (only for internal use)
@@ -72,15 +73,16 @@ $weight-medium: 500 !default;
 $weight-bold: 700 !default;
 
 //Default text properties
-$text-size-small: 13px !default; //Small text size
+$text-size-small: 14px !default; //Small text size
+$text-size-large: 20px !default; //Large text size
 $text-size: 16px !default;
-$text-color: $grey7 !default; //$dark !default;
+$text-color: $gray7 !default; //$dark !default;
 $text-font: $font-default !default;
 $text-weight: $weight-normal !default;
 
 //Line height values
-$line-height-small: 20px !default;
-$line-height: 24px !default;
+//$line-height-small: 20px !default;
+$line-height: 1.5 !default; //24px !default;
 
 //Default border values
 $border-radius: 8px !default;

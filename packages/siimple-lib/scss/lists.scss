@@ -9,18 +9,18 @@
 @use "./variables.scss" as variables;
 @use "./utils.scss" as utils;
 
-//Grey color palette
-$greys: (
-    "grey0": variables.$grey0,
-    "grey1": variables.$grey1,
-    "grey2": variables.$grey2,
-    "grey3": variables.$grey3,
-    "grey4": variables.$grey4,
-    "grey5": variables.$grey5,
-    "grey6": variables.$grey6,
-    "grey7": variables.$grey7,
-    "grey8": variables.$grey8,
-    "grey9": variables.$grey9
+//Gray color palette
+$grays: (
+    "gray0": variables.$gray0,
+    "gray1": variables.$gray1,
+    "gray2": variables.$gray2,
+    "gray3": variables.$gray3,
+    "gray4": variables.$gray4,
+    "gray5": variables.$gray5,
+    "gray6": variables.$gray6,
+    "gray7": variables.$gray7,
+    "gray8": variables.$gray8,
+    "gray9": variables.$gray9
 ) !default;
 
 //Default color palette

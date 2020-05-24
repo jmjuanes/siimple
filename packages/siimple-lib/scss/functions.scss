@@ -52,11 +52,11 @@
     @return utils.get(lists.$contents, $name);
 }
 
-//Get a grey color
-//Usage: grey("1") or grey("grey1")
-@function grey ($name) {
-    $name: "grey" + utils.replace($name, "grey", "");
-    @return utils.get(lists.$greys, $name);
+//Get a gray color
+//Usage: gray("1") or gray("gray1")
+@function gray ($name) {
+    $name: "gray" + utils.replace($name, "gray", "");
+    @return utils.get(lists.$grays, $name);
 }
 
 
