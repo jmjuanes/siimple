@@ -1,0 +1,22 @@
+{
+    "title": "siimple",
+    "copyright": "&copy; 2015-present <strong>siimple</strong>. Made with love by the <strong>siimple team</strong>.",
+    "header": [
+        ["meta", {"name":"viewport", "content": "width=device-width,initial-scale=1"}],
+        ["link", {"rel": "stylesheet", "href": "/assets/style.css"}],
+        ["link", {"rel": "stylesheet", "href": "/assets/siimple.min.css"}],
+        ["link", {"rel": "stylesheet", "href": "/assets/siimple-icons.min.css"}]
+    ],
+    "packages": {
+        "css": "siimple-css"
+    },
+    "navbarLinks": [
+        {"name": "Toolkits", "url": "/index.html#toolkits", "startsWith": "/toolkits"},
+        {"name": "Docs", "url": "/docs/", "startsWith": "/docs"}
+    ],
+    "footerLinks": [
+        {"name": "GitHub", "url": "https://github.com/siimple/siimple"},
+        {"name": "Twitter", "url": "https://twitter.com/siimplecss"},
+        {"name": "Report a bug", "url": "https://github.com/siimple/siimple/issues"}
+    ]
+}
