@@ -1,0 +1,44 @@
+{{> header.html }}
+
+<div class="siimple-content siimple-content--large">
+    <div class="siimple-row">
+        <!-- Menu column -->
+        <div class="siimple-column siimple-column--3 siimple-column--sm-12">
+            <div class="siimple-media siimple--bg-light siimple--p-2 siimple--border-rounded siimple--mb-4">
+                <div class="siimple-media-start siimple--mr-2">
+                    <div class="siimple--bg-primary siimple--border-rounded" style="padding:7px;">
+                        <i class="si si-archive siimple--text-white" style="font-size:24px;"></i>
+                    </div>
+                </div>
+                <div class="siimple-media-content">
+                    <div class="siimple-h6 siimple--mb-0">{{package.name}}</div>
+                    <div class="siimple-small" style="line-height:1.5">
+                        Version: <strong>v{{package.version}}</strong>
+                    </div>
+                </div> 
+            </div>
+            <div class="siimple-menu">
+                {{#each page.sidebar}}
+                {{#if (eq this.type "group")}}
+                <a href="{{this.link}}" class="siimple-menu-group">{{this.title}}</a>
+                {{else}}
+                <a href="{{this.link}}" class="siimple-menu-item {{#if this.active}}siimple-menu-item--active{{/if}}">{{this.title}}</a>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+        <!-- Content column -->
+        <div class="siimple-column siimple-column--9 siimple-column--sm-12">
+            <div class="siimple-breadcrumb siimple--mb-4">
+                {{#each page.breadcrumb}}
+                <a href="{{this.link}}" class="siimple-breadcrumb-item {{#if this.active}}siimple-breadcrumb-item--active{{/if}}">{{this.title}}</a>
+                {{/each}}
+            </div>
+            <div class="siimple-h2">{{ page.title }}</div>
+            {{ content }}
+        </div>
+    </div>
+</div>
+
+{{> footer.html }}
+
