@@ -2,13 +2,13 @@
     "css": {
         "title": "css",
         "content": "Our original open source <strong>CSS toolkit</strong> for designing flat and clean websites.",
-        "image": "/assets/images/toolkits/css.svg",
-        "url": "/css/index.html"
+        "image": "/assets/brand/siimple-css.svg",
+        "url": "/toolkits/css.html"
     },
     "colors": {
         "title": "colors",
-        "content": "A flat color palette",
-        "image": "/assets/images/toolkits/colors.svg",
-        "url": "/colors/index.html"
+        "content": "A flat color palette for extending the <strong>siimple CSS</strong> toolkit.",
+        "image": "/assets/brand/siimple-colors.svg",
+        "url": "/toolkits/colors.html"
     }
 }
