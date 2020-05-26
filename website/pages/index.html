@@ -19,13 +19,14 @@ title: "siimple"
             </div>
         </div>
         <div class="siimple-column siimple-column--5">
-            <img src="/assets/images/header.svg" class="website-hero-image" width="100%"/>
+            <img src="/assets/brand/website.svg" class="website-hero-image" width="100%"/>
         </div>
     </div>
 </div>
 <!-- Toolkits list -->
 <div class="siimple-content siimple-content--large siimple--pt-5 siimple--pb-0">
     <div class="siimple--py-4">
+        <a name="toolkits"></a>
         <div class="siimple-h2 siimple--mb-4 siimple--text-normal" align="center">
             Discover <strong>our toolkits</strong>
         </div>
@@ -33,7 +34,7 @@ title: "siimple"
             {{#each data.toolkits}}
             <div class="siimple-column siimple-column--4 siimple-column--sm-12">
                 <a href="{{ this.url }}" style="text-decoration:none;">
-                    <div class="siimple--rounded siimple--bg-light" align="center">
+                    <div class="siimple--border-rounded siimple--bg-light" align="center">
                         <img src="{{ this.image }}" width="200px" />
                     </div>
                 </a>
