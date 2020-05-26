@@ -20,6 +20,13 @@ handlebars.registerHelper({
     "eq": function (a, b) {
         return a === b;
     },
+    "startsWith": function (prefix, str, options) {
+        if (typeof str === "string" && str.indexOf(prefix) === 0) {
+            return options.fn(this);
+        }
+        //Default --> render nothing
+        return "";
+    },
     //Reverse a string/array
     "reverse": function (value) {
         return value.split("").reverse().join("");
