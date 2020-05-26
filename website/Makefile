@@ -1,29 +1,26 @@
 # Binaries paths
-NODE_BIN=../node_modules/.bin
+node_bin=../node_modules/.bin
 
 # Build the website
 .PHONY: build
 build:
+	mkdir -p ./www
 	@# Build website pages
-	cd ../ && ./node_modules/@siimple/press/cli.js --config ./website/config.js
+	node ./scripts/build.js
 	@# Build assets
-	mkdir -p ./www/assets/css 
-	#${NODE_BIN}/sass -I ../../node_modules ../press-theme-siimple/styles/index.scss ./www/assets/css/siimple-press.css
-	cp ../node_modules/@siimple/css/dist/siimple.min.css ./www/assets/css/
+	mkdir -p ./www/assets
+	${node_bin}/sass -I ../node_modules ./styles/index.scss ./www/assets/style.css
+	cp ../packages/siimple-css/dist/siimple.min.css ./www/assets/
+	cp ../packages/siimple-icons/dist/siimple-icons.min.css ./www/assets/
+	cp -R ../packages/siimple-icons/dist/fonts ./www/assets/
 	@# Copy images 
-	#mkdir -p ./www/assets/images && cp ./images/*.svg ./www/assets/images/
-	cp -R ./images ./www/assets/images
-	cp ./header.svg ./www/assets/images/header.svg
-	mkdir -p ./www/assets/images/toolkits/
-	cp ../packages/siimple-css/header.svg ./www/assets/images/toolkits/css.svg
-	cp ../packages/siimple-colors/header.svg ./www/assets/images/toolkits/colors.svg
-	# Building website styles
-	${NODE_BIN}/sass -I ../node_modules ./styles/index.scss ./www/assets/css/style.css
+	mkdir -p ./www/assets/brand && cp -R ../art/brand/. ./www/assets/brand/
+	mkdir -p ./www/assets/icons && cp -R ../art/icons/. ./www/assets/icons/
 
 # Serve the site
 .PHONY: test
 test:
-	${NODE_BIN}/stattic --port 5000 --folder ./www --cors
+	${node_bin}/stattic --port 5000 --folder ./www --cors
 
 # Publish the website
 .PHONY: publish
