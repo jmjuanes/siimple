@@ -24,13 +24,13 @@ module.exports = function (config, data) {
         //Build the output filename
         let outputPagePath = path.normalize(path.format({
             "root": "/",
-            "dir": path.dirname(file),
+            "dir": path.join("/", path.dirname(file)),
             "name": path.basename(file, path.extname(file)),
             "ext": ".html"
         }));
         //Generate page content
         let pageContent = template.compile(compilePageTemplate(page.content), {
-            "site": {},
+            "site": config,
             "page": {
                 "url": outputPagePath,
                 "title": page.data.title,
