@@ -129,11 +129,11 @@ module.exports = function (config, data) {
         }
         //Generate a preview wrapper
         let content = [];
-        content.push("<div class=\"sd-snippet\">");
-        content.push("<div class=\"sd-snippet-demo\">");
+        content.push("<div class=\"website-snippet\">");
+        content.push("<div class=\"website-snippet-demo\">");
         content.push(children.join("\n"));
         content.push("</div>");
-        content.push("<pre class=\"siimple-pre sd-snippet-code\">");
+        content.push("<pre class=\"siimple-pre website-snippet-code\">");
         content.push(codeContent);
         content.push("</pre>");
         content.push("</div>");
