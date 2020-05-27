@@ -1,6 +1,5 @@
 node_bin=./node_modules/.bin
 pkgs_folder=./packages
-docs_folder=./docs
 website_folder=./website
 
 # Initialize the env
@@ -43,11 +42,9 @@ build:
 	cd ${pkgs_folder}/${pkg}/ && ${MAKE} build
 
 # Build siimple website and documentation
-.PHONY: build-docs build-website
-build-docs:
-	cd ./docs/ && ${MAKE} build
+.PHONY: build-website
 build-website:
-	cd ./website/ && ${MAKE} build
+	cd ${website_folder} && ${MAKE} build
 
 # Run tests of the provided package or application
 # Example: make test pkg="siimple-css"
@@ -56,11 +53,9 @@ test:
 	cd ${pkgs_folder}/${pkg}/ && ${MAKE} test
 
 # Test siimple documentation and website
-.PHONY: test-docs test-website
-test-docs:
-	cd ./docs/ && ${MAKE} test
+.PHONY: test-website
 test-website:
-	cd ./website/ && ${MAKE} test
+	cd ${website_folder} && ${MAKE} test
 
 # Publish the provided package or application
 # Example: make publish pkg="siimple-css"
@@ -68,17 +63,14 @@ test-website:
 publish:
 	cd ${pkgs_folder}/${pkg}/ && ${MAKE} publish
 
-# Build and serve siimple documentation site
-# Sortcut for 'make build-website && make test-website'
-.PHONY: docs
-docs:
-	${MAKE} build-docs
-	${MAKE} test-docs
-
 # Build and serve siimple website
 # Sortcut for 'make build-website && make test-website'
-.PHONY: website
+.PHONY: docs website
 website:
 	${MAKE} build-website
 	${MAKE} test-website
+docs:
+	# [WARNING] The docs command is deprecated --> documentation has been merged with website
+	# [WARNING] Run $ make website instead
+	${MAKE} website
 
