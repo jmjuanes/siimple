@@ -20,7 +20,7 @@ build:
 	node ./scripts/templates.js --source test
 	@# Compile CSS files
 	mkdir -p ${OUTPUT_FONTS}
-	${NODE_BIN}/sass index.scss ${OUTPUT_CSS} 
+	${NODE_BIN}/sass -I ../../node_modules/ index.scss ${OUTPUT_CSS} 
 	#node ./scripts/header.js > ./dist/header.txt
 	#cat ./dist/header.txt ${OUTPUT_CSS} > ${OUTPUT_CSS}.temp
 	#rm ./dist/header.txt

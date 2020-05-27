@@ -6,6 +6,7 @@
 //
 
 //Import dependencies
+@use "@siimple/lib" as siimple;
 @use "./scss/functions.scss" as icons;
 
 //Font face
@@ -19,7 +20,7 @@
 }
 
 //Icon class
-.si {
+.#{siimple.$prefix}icon {
     display: inline-block;
     font-family: "SiimpleIcons";
     font-size: 14px;
@@ -39,3 +40,4 @@
         }
     }
 }
+
