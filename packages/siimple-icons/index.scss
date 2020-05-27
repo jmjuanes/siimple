@@ -6,38 +6,9 @@
 //
 
 //Import dependencies
-@use "@siimple/lib" as siimple;
-@use "./scss/functions.scss" as icons;
+@forward "@siimple/lib"; //Forward lib variables
+@forward "./scss/variables.scss"; //Forward icons variables
 
-//Font face
-@font-face {
-    font-family: "SiimpleIcons";
-    src: url("./fonts/siimple-icons.font.ttf") format("truetype"),
-    url("./fonts/siimple-icons.font.woff") format("woff"),
-    url("./fonts/siimple-icons.font.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
+@use "./scss/base.scss";
 
-//Icon class
-.#{siimple.$prefix}icon {
-    display: inline-block;
-    font-family: "SiimpleIcons";
-    font-size: 14px;
-    line-height: normal;
-    font-weight: normal !important;
-    font-style: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    &::before {
-        box-sizing: inherit;
-    }
-    //For each icon in the list
-    @each $icon in icons.get-list() {
-        &-#{$icon}:before {
-            content: icons.use-icon($icon);
-        }
-    }
-}
 
