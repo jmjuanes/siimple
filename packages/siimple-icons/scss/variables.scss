@@ -5,10 +5,12 @@
 // Website:    https://icons.siimple.xyz
 //
 
+@use "@siimple/lib" as siimple;
+
 //Global variables
 $font-name: "siimple-icons" !default;
 $font-url-ttf: "./fonts/siimple-icons.font.ttf" !default;
 $font-url-woff: "./fonts/siimple-icons.font.woff" !default;
 $font-url-woff2: "./fonts/siimple-icons.font.woff2" !default;
-$font-size: 14px !default;
+$font-size: siimple.$text-size !default;
 
