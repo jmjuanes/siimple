@@ -20,6 +20,9 @@ handlebars.registerHelper({
     "eq": function (a, b) {
         return a === b;
     },
+    "equal": function (a, b, options) {
+        return (a === b) ? options.fn(this) : "";
+    },
     "startsWith": function (prefix, str, options) {
         if (typeof str === "string" && str.indexOf(prefix) === 0) {
             return options.fn(this);
@@ -49,6 +52,10 @@ handlebars.registerHelper({
             }
         }
         return output;
+    },
+    //Unicode parser
+    "unicodeParser": function (value) {
+        return value.toString(16).toLowerCase();
     }
 });
 
