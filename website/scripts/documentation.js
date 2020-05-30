@@ -76,7 +76,8 @@ let buildPackageTree = function (pkgName, pkgPath, items) {
 };
 
 //Build page sidebar
-let buildPageSidebar = function (groups, groupIndex, pageIndex) {
+let buildPageSidebar = function (groups, groupIndex, pageIndex, config) {
+    let sidebarCollapsed = config.sidebarCollapsed;
     let sidebarItems = []; //Initialize sidebar items
     groups.forEach(function (group, i) {
         let groupActive = i === groupIndex;
@@ -87,7 +88,7 @@ let buildPageSidebar = function (groups, groupIndex, pageIndex) {
             "type": "group"
         });
         //Check if this group is not active
-        if (groupActive === false) {
+        if (groupActive === false && sidebarCollapsed === true) {
             return; //Continue with the next group
         }
         //Add pages of this group
@@ -95,7 +96,7 @@ let buildPageSidebar = function (groups, groupIndex, pageIndex) {
             sidebarItems.push({
                 "title": page.title,
                 "link": page.link,
-                "active": j === pageIndex,
+                "active": j === pageIndex && groupActive,
                 "type": "page"
             });
         });
@@ -147,16 +148,26 @@ module.exports = function (config, data) {
     let compilePageTemplate = function (content) {
         return pageTemplate.replace(/\{\{(?:\s*)(content)(?:\s*)\}\}/g, content);
     };
-    //Initialize data packages
-    data["packages"] = {};
+    //Add data content
+    data["packages"] = {};
+    data["iconsList"] = util.readJSON(path.join(paths.packages, "siimple-icons", "icons.json"));
+    data["iconsCategories"] = util.readJSON(path.join(paths.packages, "siimple-icons", "categories.json"));
+    //Sort icons by name
+    data["iconsList"] = data["iconsList"].sort(function (a, b) {
+        return (a.id < b.id) ? -1 : +1;
+    });
+    data["iconsList"].forEach(function (icon) {
+        let category = data["iconsCategories"][icon.categories];
+        category.count = category.count + 1;
+    });
     //Build packages
     Object.keys(config.packages).forEach(function (name) {
         //Import package info
         let pkgPath = path.join(paths.packages, config.packages[name]);
         let package = util.readJSON(path.join(pkgPath, "package.json"));
-        let pages = util.readJSON(path.join(pkgPath, "docs", "config.json")); //Import pages
+        let docsConfig = util.readJSON(path.join(pkgPath, "docs", "config.json")); //Import docs config
         //delete config.packages[name].folder; //Delete folder key
-        let packageTree = buildPackageTree(name, pkgPath, pages); //Build package tree
+        let packageTree = buildPackageTree(name, pkgPath, docsConfig.content); //Build package tree
         let firstPage = packageTree[0].pages[0]; //Get first page
         //Add package metadata
         data.packages[name] = Object.assign({}, {
@@ -171,7 +182,7 @@ module.exports = function (config, data) {
             return group.pages.forEach(function (page, pageIndex) {
                 //Compile page content
                 let pageContentTree = markdown.render(markdown.parse(page.file.content));
-                let pageSidebar = buildPageSidebar(packageTree, groupIndex, pageIndex);
+                let pageSidebar = buildPageSidebar(packageTree, groupIndex, pageIndex, docsConfig);
                 let pageBreadcrumb = [
                     {"title": package.name, "link": firstPage.link},
                     {"title": group.title, "link": group.link},
