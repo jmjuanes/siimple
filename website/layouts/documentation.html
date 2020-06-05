@@ -1,13 +1,19 @@
 {{> header.html }}
 
 <div class="siimple-content siimple-content--large">
+    <div class="siimple-breadcrumb siimple--mb-3">
+        <a href="/docs/index.html" class="siimple-breadcrumb-item">Docs</a>
+        {{#each page.breadcrumb}}
+        <a href="{{this.link}}" class="siimple-breadcrumb-item {{#if this.active}}siimple-breadcrumb-item--active{{/if}}">{{this.title}}</a>
+        {{/each}}
+    </div>
     <div class="siimple-row">
         <!-- Menu column -->
         <div class="siimple-column siimple-column--3 siimple-column--sm-12">
             <div class="siimple-media siimple--bg-light siimple--p-2 siimple--border-rounded siimple--mb-4">
                 <div class="siimple-media-start siimple--mr-2">
                     <div class="siimple--bg-primary siimple--border-rounded" style="padding:7px;">
-                        <i class="si si-archive siimple--text-white" style="font-size:24px;"></i>
+                        <i class="siimple-icon siimple-icon-book siimple--text-white" style="font-size:24px;"></i>
                     </div>
                 </div>
                 <div class="siimple-media-content">
@@ -29,11 +35,6 @@
         </div>
         <!-- Content column -->
         <div class="siimple-column siimple-column--9 siimple-column--sm-12">
-            <div class="siimple-breadcrumb siimple--mb-4">
-                {{#each page.breadcrumb}}
-                <a href="{{this.link}}" class="siimple-breadcrumb-item {{#if this.active}}siimple-breadcrumb-item--active{{/if}}">{{this.title}}</a>
-                {{/each}}
-            </div>
             <div class="siimple-h2">{{ page.title }}</div>
             {{ content }}
         </div>
