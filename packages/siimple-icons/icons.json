@@ -539,11 +539,11 @@
         "keywords": ["image", "file", "photo", "picture"]
     },
     {
-        "id": "message",
+        "id": "envelope",
         "categories": "communication",
         "unicode": 57421,
         "added": "v0.0.1",
-        "keywords": ["message", "sms", "email", "mail", "inbox", "correspondence", "post"]
+        "keywords": ["envelope","message","sms","email","mail","inbox","correspondence","post"]
     },
     {
         "id": "save",
@@ -990,8 +990,127 @@
         "id": "window",
         "categories": "computer",
         "unicode": 57485,
-        "added": "v0.0.4",
-        "keywords": ["window", "program"]
+        "added": "v0.1.0",
+        "keywords": ["window", "program","application","app"]
+    },
+    {
+        "id": "comment",
+        "categories": "social",
+        "unicode": 57486,
+        "added": "v0.1.0",
+        "keywords": ["comment","chat","message"]
+    },
+    {
+        "id": "vector",
+        "categories": "interface",
+        "unicode": 57487,
+        "added": "v0.1.0",
+        "keywords": ["vector","svg","bezier","curve"]
+    },
+    {
+        "id": "dashboard",
+        "categories": "interface",
+        "unicode": 57488,
+        "added": "v0.1.0",
+        "keywords": ["dashboard","panel","admin"]
+    },
+    {
+        "id": "keyboard",
+        "categories": "computer",
+        "unicode": 57489,
+        "added": "v0.1.0",
+        "keywords": ["keyboard","type","text","board"]
+    },
+    {
+        "id": "directions",
+        "categories": "travels",
+        "unicode": 57490,
+        "added": "v0.1.0",
+        "keywords": ["directions","sign","road","map"]
+    },
+    {
+        "id": "terminal",
+        "categories": "computer",
+        "unicode": 57491,
+        "added": "v0.1.0",
+        "keywords": ["terminal","cli","command","line"]
+    },
+    {
+        "id": "share",
+        "categories": "interface",
+        "unicode": 57492,
+        "added": "v0.1.0",
+        "keywords": ["share"]
+    },
+    {
+        "id": "inbox",
+        "categories": "communication",
+        "unicode": 57493,
+        "added": "v0.1.0",
+        "keywords": ["inbox","email"]
+    },
+    {
+        "id": "coffee",
+        "categories": "food",
+        "unicode": 57494,
+        "added": "v0.1.0",
+        "keywords": ["coffee","mug","drik"]
+    },
+    {
+        "id": "backpack",
+        "categories": "travels",
+        "unicode": 57495,
+        "added": "v0.1.0",
+        "keywords": ["backpack","travel"]
+    },
+    {
+        "id": "note",
+        "categories": "office",
+        "unicode": 57496,
+        "added": "v0.1.0",
+        "keywords": ["note","sticky"]
+    },
+    {
+        "id": "notepad",
+        "categories": "office",
+        "unicode": 57497,
+        "added": "v0.1.0",
+        "keywords": ["notepad","notes"]
+    },
+    {
+        "id": "shapes",
+        "categories": "interface",
+        "unicode": 57498,
+        "added": "v0.1.0",
+        "keywords": ["figures","geoms"]
+    },
+    {
+        "id": "mouse",
+        "categories": "computer",
+        "unicode": 57499,
+        "added": "v0.1.0",
+        "keywords": ["mouse","device"]
+    },
+    {
+        "id": "ticket",
+        "categories": "shopping",
+        "unicode": 57500,
+        "added": "v0.1.0",
+        "keywords": ["ticket","coupon"]
+    },
+    {
+        "id": "discount",
+        "categories": "shopping",
+        "unicode": 57501,
+        "added": "v0.1.0",
+        "keywords": ["discount","shop","coupon"]
+    },
+    {
+        "id": "basket",
+        "categories": "shopping",
+        "unicode": 57502,
+        "added": "v0.1.0",
+        "keywords": ["basket","shop","market"]
     }
 ]
 
