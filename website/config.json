@@ -8,7 +8,8 @@
         ["link", {"rel": "stylesheet", "href": "/assets/siimple-icons.min.css"}]
     ],
     "packages": {
-        "css": "siimple-css"
+        "css": "siimple-css",
+        "icons": "siimple-icons"
     },
     "navbarLinks": [
         {"name": "Toolkits", "url": "/index.html#toolkits", "startsWith": "/toolkits"},
