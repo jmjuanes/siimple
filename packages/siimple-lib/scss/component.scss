@@ -1,0 +1,55 @@
+@use "sass:map";
+@use "siimple-utils" as utils;
+
+@use "./naming.scss" as naming;
+@use "./sheet.scss" as sheet;
+@use "./theme.scss" as theme;
+@use "./plugins.scss" as plugins;
+
+// Build component styles
+@function build-component-styles($sheet, $component) {
+    $component-name: utils.get($component, "name", "");
+    $component-prefix: utils.get($component, "prefix", null);
+    @if not utils.is-string($component-prefix) {
+        $component-prefix: map.get($sheet, "prefix");
+    }
+    $component-classname: naming.get-classname((
+        "component": $component-name,
+        "prefix": $component-prefix,
+    ));
+    //$sheet: sheet.add-classname-to-sheet($sheet, $component-name, $component-classname);
+    $sheet: sheet.add-styles-to-sheet($sheet, $component-classname, map.get($component, "styles"));
+    // Register each variant style
+    //$component-variants: utils.get($component, "variants", utils.create-empty-map());
+    @each $variant-name,$variant-styles in map.get($component, "variants") {
+        $variant-classname: $component-classname; // Default variant classname is component classname
+        @if $variant-name != "default" {
+            $variant-classname: naming.get-classname((
+                "component": $component-name,
+                "variant": $variant-name,
+                "prefix": $component-prefix,
+            ));
+            //$variant-name: $component-name + "." + $variant-name;
+            // Register this variant class
+            //$sheet: sheet.add-classname-to-sheet($sheet, $variant-name, $variant-classname);
+        }
+        // Register styles for this variant
+        $sheet: sheet.add-styles-to-sheet($sheet, $variant-classname, $variant-styles);
+    }
+    //Return the updated sheet
+    @return $sheet;
+}
+
+// Shortcode method for including a component from registry
+@mixin component($component: null, $theme: null) {
+    // Generate component rules and variants
+    @if not plugins.is-component-plugin($component) {
+        @error "No valid component plugin provided";
+    }
+    // Build the component
+    $sheet: sheet.create-sheet();
+    $sheet: map.set($sheet, "theme", theme.parse-theme($theme));
+    $sheet: build-component($sheet, $component);
+    @include sheet.compile-sheet($sheet);
+}
+

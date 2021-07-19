@@ -1,0 +1,178 @@
+@use "siimple-colors" as colors;
+@use "siimple-utils" as utils;
+@use "./constants.scss" as constants;
+
+// 
+// Colors configuration
+// At least primary, dark and light colors are required
+//
+$default-colors: (
+    "primary": colors.get("blue", "500"),
+    "light-primary": colors.get("blue", "200"),
+    "dark-primary": colors.get("blue", "800"),
+    "success": colors.get("green", "500"),
+    "light-success": colors.get("green", "200"),
+    "dark-success": colors.get("green", "800"),
+    "warning": colors.get("yellow", "500"),
+    "light-warning": colors.get("yellow", "200"),
+    "dark-warning": colors.get("yellow", "800"),
+    "error": colors.get("red", "500"),
+    "light-error": colors.get("red", "200"),
+    "dark-error": colors.get("red", "800"),
+    "light": colors.get("coolgray", "300"),
+    "dark": colors.get("coolgray", "700"),
+    "muted": colors.get("coolgray", "500"),
+);
+
+// Default content sizes variables
+// @TO_BE_DEPRECATED
+$content-gap: 24px !default; //Gap for breakpoints
+$content-sizes: (
+    "small": 608px,   //--> 560px
+    "medium": 768px,  //--> 720px
+    "large": 1008px,  //--> 960px
+    "xlarge": 1188px, //--> 1140px
+    "huge": 1328px,   //--> 1280px
+);
+
+//Default font variables
+//WARNING: we are not importing fonts automatically --> use a <link> tag instead
+//$font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700" !default;
+$default-fonts: (
+    "default": constants.$font-sans, 
+    //"serif": constants.$font-serif,
+    "mono": constants.$font-mono,
+);
+
+// 
+// Default font Weight values
+//
+$default-font-weights: (
+    "light": 300,
+    "normal": 400,
+    "medium": 500,
+    "bold": 700,
+);
+
+//
+// Default font size values
+//
+$default-font-sizes: (
+    "tiny": 0.75rem,
+    "small": 0.875rem,
+    "default": 16px,
+    "large": 1.25rem,
+    "huge": 2rem,
+);
+
+//List of available font sizes
+//$font-sizes: (
+//    "1": $font-size-base * 2.5,
+//    "2": $font-size-base * 2,
+//    "3": $font-size-base * 1.75,
+//    "4": $font-size-base * 1.5,
+//    "5": $font-size-base * 1.25,
+//    "6": $font-size-base,
+//) !default;
+
+// Default line height values
+$default-line-heights: (
+    "small": 1.25,
+    "default": 1.5,
+    "large": 1.75,
+);
+
+// Default radius values
+$default-radius: (
+    "small": 0.25rem,
+    "default": 0.5rem,
+    "large": 1rem,
+);
+
+//Screen sizes
+$screens: (
+    "tablet": 600px,
+    "desktop": 1200px,
+    "fullhd": 1800px,
+) !default;
+
+// Breakpoints variables
+// TODO
+//$breakpoints: (
+//    "mobile": ("min": 0px, "max": $tablet - 1px),
+//    "tablet": ("min": $tablet, "max": null),
+//    "desktop": ("min": $desktop, "max": null),
+//    "fullhd": ("min": $fullhd, "max": null)
+//) !default;
+
+//Default columns values
+//$column-count: 12 !default;
+//$column-size: 100% / $column-count !default;
+$columns: (
+    "1": "8.33%", 
+    "2": "16.66%",
+    "3": "24.99%", 
+    "4": "33.33%",
+    "5": "41.66%", 
+    "6": "49.99%",
+    "7": "58.33%", 
+    "8": "66.66%",
+    "9": "74.99%", 
+    "10": "83.33%",
+    "11": "91.66%", 
+    "12": "99.99%"
+) !default;
+
+//Sizes mapping
+$default-sizes: (
+    "0": 0px,
+    "1": 0.25rem,
+    "2": 0.5rem,
+    "3": 0.75rem,
+    "4": 1rem,
+    "6": 1.5rem,
+    "8": 2rem,
+    "10": 2.5rem,
+    "12": 3rem,
+    "20": 5rem,
+    "24": 6rem,
+    "32": 8rem,
+    "40": 10rem,
+    "64": 16rem,
+    "80": 20rem,
+    "120": 30rem,
+);
+
+// 
+// Theme global map
+//
+$default-theme: (
+    //"breakpoints": $breakpoints,
+    "colors": $default-colors,
+    "fonts": $default-fonts,
+    "font-sizes": $default-font-sizes,
+    "font-weights": $default-font-weights,
+    "line-heights": $default-line-heights,
+    "sizes": $default-sizes,
+    "radius": $default-radius,
+);
+
+// 
+// @description Parse a theme object
+//
+@function parse-theme($theme) {
+    @if not utils.is-map($theme) {
+        $theme: utils.create-empty-map();
+    }
+    // Check default theme options
+    @each $key,$value in $default-theme {
+        $current: utils.get($theme, $key, null);
+        @if not utils.is-map($current) {
+            $current: $value; //Set default value
+        }
+        $theme: map.set($theme, $key, $current);
+    }
+    // Returm theme config
+    @return $theme;
+}
+

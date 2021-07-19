@@ -1,0 +1,49 @@
+@use "siimple-utils" as utils;
+
+// Naming global variables
+$default-prefix: "siimple-"; // Default prefix for components and variables
+
+//
+// @description Generate classname
+//
+@function get-classname($options) {
+    // Check for utility value provided --> Generate utility classname
+    $utility-name: utils.get($options, "utility", null);
+    @if utils.is-string($utility-name) {
+        @return ".has-#{$utility-name}";
+    }
+    // Generate the component name
+    $prefix: utils.get($options, "prefix", null);
+    @if not utils.is-string($prefix) {
+        $prefix: $default-prefix;
+    }
+    $component-name: utils.get($options, "component", null);
+    $variant-name: utils.get($options, "variant", null);
+    @if utils.is-string($component-name) and utils.is-string($variant-name) {
+        @return ".#{$prefix}#{$component-name}.is-#{$variant-name}";
+    }
+    @else if utils.is-string($component-name) {
+        @return ".#{$prefix}#{$component-name}";
+    }
+    @else if utils.is-string($variant-name) {
+        @return ".is-#{$variant-name}";
+    }
+    // Other value --> return empty classname
+    @return "";
+}
+
+// Generate a variable name
+@function get-varname($options) {
+    // Check for variable name provided
+    $variable-name: utils.get($options, "variable", null);
+    $prefix: utils.get($options, "prefix", null);
+    @if not utils.is-string($prefix) {
+        $prefix: $default-prefix;
+    }
+    @if utils.is-string($variable-name) {
+        @return "#{$prefix}#{$variable-name}";
+    }
+    // Other value --> return empty varname
+    @return "";
+}
+

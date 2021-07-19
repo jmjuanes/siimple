@@ -1,0 +1,155 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:string";
+@use "siimple-utils" as utils;
+
+@use "./constants.scss" as constants;
+@use "./naming.scss" as naming;
+
+// 
+// @description Generate a flat version fo the specified rules
+//
+@function _parse-styles($classname, $rules) {
+    $styles: utils.create-empty-map();
+    $styles: map.set($styles, $classname, utils.create-empty-map());
+    @each $key,$rule in $rules {
+        // Check for string rule 
+        @if utils.is-string($rule) {
+            // Check for alias -> register the same value in all aliases keys
+            @if map.has-key(constants.$css-aliases, $key) {
+                $key-aliases: map.get(constants.$css-aliases, $key);
+                @each $key-alias in $key-aliases {
+                    $styles: utils.set($styles, ($classname $key-alias), $rule);
+                } 
+            }
+            // If no aliases are defined --> register this rule
+            @else {
+                $styles: utils.set($styles, ($classname $key), $rule);
+            }
+        }
+        // Check for map value
+        @else if utils.is-map($rule) {
+            // Check if rule starts with the '@' character
+            @if utils.starts-with($key, "@") {
+                $new-styles: _parse-styles($classname, $rule);
+                $styles: utils.set($styles, $key, $new-styles);
+            }
+            // Other value --> parse as nested styles
+            @else {
+                $new-classname: utils.replace($key, "&", $classname);
+                $new-styles: _parse-styles($new-classname, $rule);
+                $styles: utils.merge($styles, $new-styles, $deep-merge: true);
+            }
+        }
+    }
+    // Return styles
+    @return $styles;
+}
+
+// 
+// @description Merge two styles objects
+//
+@function _merge-styles($source, $target) {
+    @return utils.merge($source, $target, $deep-merge: true);
+}
+
+// 
+// @description Build styles
+//
+@mixin _build-styles($sheet, $styles) {
+    $theme: map.get($sheet, "theme");
+    @each $selector,$rules in $styles {
+        #{utils.unquote($selector)} {
+            // Check if we should preprocess the selector
+            //@if string.index($selector, "{{") and string.index($selector, "}}") {
+            //    @each $key,$value in $classnames {
+            //        $selector: utils.replace($selector, "{{#{$key}}}", $value);
+            //        //$selector: utils.replace($selector, "{{ #{$key} }}", $value);
+            //    }
+            //}
+            // Check for media rules --> process as nested rules
+            @if utils.starts-with($selector, "@") {
+                @include _build-styles($sheet, $rules);
+            }
+            // If is not a media rule, add each rule
+            @else {
+                @each $prop,$value in $rules {
+                    // Check if the property is registered in the css mappings
+                    @if map.has-key(constants.$css-mappings, $prop) {
+                        $theme-prop: map.get(constants.$css-mappings, $prop);
+                        $theme-value: utils.get($theme, ($theme-prop $value), null);
+                        @if $theme-value != null {
+                            $value: $theme-value;
+                        }
+                    }
+                    // Add the css property
+                    #{utils.unquote($prop)}: utils.unquote($value);
+                }
+            }
+        }
+    }
+}
+
+// 
+// @description Build variables block
+//
+@mixin _build-variables($sheet, $variables) {
+    :root {
+        @each $varname,$value in $variables {
+            --#{$varname}: #{utils.unquote($value)};
+        }
+    }
+}
+
+
+// 
+// @description Create a new empty sheet object
+//
+@function create-sheet () {
+    @return (
+        //"classnames": utils.create-empty-map(),
+        "styles": utils.create-empty-map(),
+        "variables": utils.create-empty-map(),
+        //"theme": theme.parse-theme(null),
+        "theme": utils.create-empty-map(),
+        "prefix": naming.$default-prefix,
+    );
+}
+
+// 
+// @description Register a new classname to the sheet
+// @param {string} $key classname key to be used in rules
+// @param {string} $name classname to assign to the previous key
+//
+//@function add-classname-to-sheet($sheet: (), $key: "", $name: "") {
+//    @return utils.set($sheet, ("classnames" $key), $name);
+//}
+
+// 
+// @description Add a new rule to the object
+//
+@function add-styles-to-sheet($sheet, $classname, $rules) {
+    @debug "Adding '#{$classname}' styles to sheet... OK";
+    $old-styles: utils.get($sheet, "styles", utils.create-empty-map());
+    $new-styles: _parse-styles($classname, $rules);
+    $merged-styles: _merge-styles($old-styles, $new-styles);
+    @return map.set($sheet, "styles", $merged-styles); 
+} 
+
+// 
+// @description Register a new variable in the sheet
+//
+@function add-variable-to-sheet($sheet, $varname, $value) {
+    @debug "Adding '#{$varname}' variable to sheet... OK";
+    @return utils.set($sheet, ("variables" $varname), $value);
+}
+
+// 
+// @description Compile sheet
+//
+@mixin compile-sheet($sheet, $options: null) {
+    @debug "Compiling sheet";
+    @include _build-variables($sheet, map.get($sheet, "variables"));
+    @include _build-styles($sheet, map.get($sheet, "styles"));
+}
+

@@ -1,0 +1,40 @@
+// Fonts
+$font-sans: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+$font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+$font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+// CSS aliases
+$css-aliases: (
+    "bg": ("background-color"),
+    "m": ("margin"),
+    "mb": ("margin-bottom"),
+    "ml": ("margin-left"),
+    "mr": ("margin-right"),
+    "mt": ("margin-top"),
+    "mx": ("margin-left" "margin-right"),
+    "my": ("margin-top" "margin-bottom"),
+    "p":  ("padding"),
+    "pb": ("padding-bottom"),
+    "pl": ("padding-left"),
+    "pr": ("padding-right"),
+    "pt": ("padding-top"),
+    "px": ("padding-left" "padding-right"),
+    "py": ("padding-top" "padding-bottom"),
+    "radius": ("border-radius"),
+    "size": ("width" "height"),
+);
+
+// Map css properties to theme fields
+$css-mappings: (
+    "background-color": "colors",
+    "border-color": "colors",
+    "color": "colors",
+);
+
+// Theme to variables map
+$theme-mappings: (
+    "colors": "color-",
+    "fonts": "font-",
+);
+
+

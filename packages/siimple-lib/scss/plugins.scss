@@ -1,0 +1,65 @@
+@use "sass:list";
+@use "sass:map";
+@use "siimple-utils" as utils;
+
+// Internal variables
+$__type: "$type";
+$__types: ("__component", "__utility");
+
+// 
+// @description Creates a new component with the specified options
+// @param {map} options: component options
+// @returns {map} component: parsed component map
+//
+@function create-component($options: null) {
+    @if not $options {
+        @error "plugin.add-component needs a component options map";
+    }
+    @if not map.has-key($options, "name") {
+        @error "You should provide a valid component name";
+    }
+    @if not map.has-key($options, "styles") {
+        @error "You should provide a valid component styles";
+    }
+    @if not map.has-key($options, "variants") {
+        $options: map.set($options, "variants", utils.create-empty-map());
+    }
+    // Register component keys
+    $options: map.set($options, $__type, list.nth($__types, 1)); 
+    @return $options;
+}
+
+// 
+// @description Creates an utility plugin
+//
+@function create-utility($options) {
+    // TODO
+    @return $options;
+}
+
+// 
+// @description Validates if the specified map is a valid plugin
+//
+@function is-plugin($options) {
+    $type: map.get($options, $__type);
+    @if not $type or not list.index($__types, $type) {
+        @return false;
+    }
+    // Other case, it is a valid plugin
+    @return true;
+}
+
+// 
+// @description Check if the plugin is a component plugin
+//
+@function is-component-plugin($plugin) {
+    @return utils.is-map($plugin) and map.get($plugin, $__type) == list.nth($__types, 1);
+}
+
+// 
+// @description Check if the plugin is an utility plugin
+//
+@function is-utility-plugin($plugin) {
+    @return utils.is-map($plugin) and map.get($plugin, $__type) == list.nth($__types, 2);
+}
+
