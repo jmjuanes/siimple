@@ -101,7 +101,6 @@
     }
 }
 
-
 // 
 // @description Create a new empty sheet object
 //
@@ -110,6 +109,7 @@
         //"classnames": utils.create-empty-map(),
         "styles": utils.create-empty-map(),
         "variables": utils.create-empty-map(),
+        "keyframes": utils.create-empty-map(),
         //"theme": theme.parse-theme(null),
         "theme": utils.create-empty-map(),
         "prefix": naming.$default-prefix,
@@ -145,11 +145,37 @@
 }
 
 // 
+// @description Register a new keyframe in the sheet
+//
+@function add-keyframes-to-sheet($sheet, $keyframes) {
+    $new-keyframes: map.get($sheet, "keyframes");
+    @each $name,$steps in $keyframes {
+        @debug "Adding '#{$name}' keyframe to sheet... OK";
+        $parsed-steps: utils.create-empty-map();
+        @each $step-name,$step-rules in $steps {
+            $parsed-steps: map.merge(
+                $parsed-steps,
+                _parse-styles($step-name, $step-rules)
+            );
+        }
+        $new-keyframes: map.set($new-keyframes, $name, $parsed-steps);
+    }
+    // Return sheet with keyframes
+    @return map.set($sheet, "keyframes", $new-keyframes);
+}
+
+// 
 // @description Compile sheet
 //
 @mixin compile-sheet($sheet, $options: null) {
     @debug "Compiling sheet";
     @include _build-variables($sheet, map.get($sheet, "variables"));
     @include _build-styles($sheet, map.get($sheet, "styles"));
+    // Register keyframes
+    @each $keyframe-name,$keyframe-rules in map.get($sheet, "keyframes") {
+        @keyframes #{utils.unquote($keyframe-name)} {
+            @include _build-styles($sheet, $keyframe-rules);
+        }
+    }
 }
 
