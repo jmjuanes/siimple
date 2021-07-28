@@ -59,20 +59,22 @@
 @mixin _build-styles($sheet, $styles) {
     $theme: map.get($sheet, "theme");
     @each $selector,$rules in $styles {
-        #{utils.unquote($selector)} {
-            // Check if we should preprocess the selector
-            //@if string.index($selector, "{{") and string.index($selector, "}}") {
-            //    @each $key,$value in $classnames {
-            //        $selector: utils.replace($selector, "{{#{$key}}}", $value);
-            //        //$selector: utils.replace($selector, "{{ #{$key} }}", $value);
-            //    }
-            //}
-            // Check for media rules --> process as nested rules
-            @if utils.starts-with($selector, "@") {
+        // Check if we should preprocess the selector
+        //@if string.index($selector, "{{") and string.index($selector, "}}") {
+        //    @each $key,$value in $classnames {
+        //        $selector: utils.replace($selector, "{{#{$key}}}", $value);
+        //        //$selector: utils.replace($selector, "{{ #{$key} }}", $value);
+        //    }
+        //}
+        // Check for media rules --> process as nested rules
+        @if utils.starts-with($selector, "@media") {
+            @media #{utils.unquote(utils.replace($selector, "@media ", ""))} {
                 @include _build-styles($sheet, $rules);
             }
-            // If is not a media rule, add each rule
-            @else {
+        }
+        // If is not a media rule, add each rule
+        @else if not utils.starts-with($selector, "@") {
+            #{utils.unquote($selector)} {
                 @each $prop,$value in $rules {
                     // Check if the property is registered in the css mappings
                     @if map.has-key(constants.$css-mappings, $prop) {
@@ -86,6 +88,10 @@
                     #{utils.unquote($prop)}: utils.unquote($value);
                 }
             }
+        }
+        // Other rule --> throw error
+        @else {
+            @error "Unexpected rule '#{$selector}'.";
         }
     }
 }
