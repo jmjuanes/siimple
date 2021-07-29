@@ -1,0 +1,89 @@
+@use "sass:list";
+@use "sass:map";
+@use "siimple-utils" as utils;
+
+@use "./constants.scss" as constants;
+@use "./naming.scss" as naming;
+@use "./plugins.scss" as plugins;
+@use "./sheet.scss" as sheet;
+@use "./theme.scss" as theme;
+
+// Helper method to check if a plugin should be included
+@function should-include-plugin($plugin, $exclude) {
+    $plugin-name: utils.get($plugin, "name", null);
+    //$plugin-type: utils.get($plugin, "type", null);
+    @if not plugins.is-plugin($plugin) or $plugin-name == null {
+        @return false; //Not valid plugin
+    }
+    //@if list.index($exclude, "*") or list.index($exclude, $plugin-name) {
+    @if list.index($exclude, $plugin-name) {
+        @return false;
+    }
+    // Include this plugin
+    @return true;
+}
+
+// Build siimple mixin
+@mixin build($options: ()) {
+    $prefix: utils.get($options, "prefix", "siimple-");
+    $theme: utils.get($options, "theme", utils.create-empty-map());
+    $body: utils.get($options, "body", utils.create-empty-map());
+    //$presets: utils.create-empty-list() !default; //Presets to load
+    $plugins: utils.get($options, "plugins", ());
+    $variants: utils.get($options, "variants", utils.create-empty-map());
+    //$include: utils.create-empty-list() !default; //List of components to include
+    $exclude: utils.get($options, "exclude", ());
+
+    // Initialize sheet configuration
+    $sheet: sheet.create-sheet();
+    $sheet: map.set($sheet, "prefix", $prefix); // Assign prefix
+    $sheet: map.set($sheet, "theme", theme.parse-theme($theme)); // Assign theme config
+
+    // Register global variables
+    @each $key,$name in constants.$theme-mappings {
+        @each $theme-key,$theme-value in utils.get($sheet, ("theme" $key)) {
+            $theme-varname: naming.get-varname((
+                "prefix": map.get($sheet, "prefix"),
+                "variable": "#{$name}#{$theme-key}",
+            ));
+            // Register variable name
+            $sheet: sheet.add-variable-to-sheet($sheet, $theme-varname, $theme-value);
+        }
+    }
+
+    // Register body styles
+    // TODO
+
+    // Register plugins
+    @each $plugin in utils.flatten($plugins) {
+        //$plugin: list.nth($plugins, $index);
+        @if should-include-plugin($plugin, $exclude) {
+            $plugin-name: map.get($plugin, "name");
+            // Check for component plugin
+            @if plugins.is-component-plugin($plugin) {
+                $plugin-variants: utils.get($plugin, "variants", utils.create-empty-map());
+                // Check for custom variants provided
+                $custom-variants: utils.get($variants, $plugin-name, null);
+                @if utils.is-map($custom-variants) {
+                    $plugin-variants: $custom-variants;
+                }
+                //$plugin-prefix: utils.get($plugin, "prefix", null);
+                $sheet: sheet.build-component-styles($sheet, (
+                    "name": $plugin-name,
+                    "prefix": utils.get($plugin, "prefix", null),
+                    "styles": utils.get($plugin, "styles", utils.create-empty-map()),
+                    "variants": $plugin-variants,
+                    "keyframes": utils.get($plugin, "keyframes", null),
+                ));
+            }
+            // Check for utility plugin
+            @if plugins.is-utility-plugin($plugin) {
+                //TODO
+            }
+        }
+    }
+
+    // Compile sheet
+    @include sheet.compile-sheet($sheet);
+}
+
