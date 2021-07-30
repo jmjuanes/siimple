@@ -2,6 +2,7 @@
 @use "sass:map";
 @use "siimple-utils" as utils;
 
+@use "./component.scss" as component;
 @use "./constants.scss" as constants;
 @use "./naming.scss" as naming;
 @use "./plugins.scss" as plugins;
@@ -68,7 +69,7 @@
                     $plugin-variants: $custom-variants;
                 }
                 //$plugin-prefix: utils.get($plugin, "prefix", null);
-                $sheet: sheet.build-component-styles($sheet, (
+                $sheet: component.build-component-styles($sheet, (
                     "name": $plugin-name,
                     "prefix": utils.get($plugin, "prefix", null),
                     "styles": utils.get($plugin, "styles", utils.create-empty-map()),

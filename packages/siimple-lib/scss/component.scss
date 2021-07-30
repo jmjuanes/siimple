@@ -38,7 +38,7 @@
     }
     // Register keyfreames
     $component-keyframes: utils.get($component, "keyframes", null);
-    @debug $component-keyframes;
+    //@debug $component-keyframes;
     @if utils.is-map($component-keyframes) {
         $sheet: sheet.add-keyframes-to-sheet($sheet, $component-keyframes);
     }
