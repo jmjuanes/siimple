@@ -1,0 +1,95 @@
+@use "sass:map";
+@use "siimple-utils" as utils;
+
+//Screen sizes
+$default-screens: (
+    "tablet": 600px,
+    "desktop": 1200px,
+    "fullhd": 1800px,
+) !default;
+
+//Breakpoints variables
+$default-breakpoints: (
+    "mobile": (
+        "min": 0px, 
+        "max": map.get($default-screens, "tablet"),
+    ),
+    "tablet": (
+        "min": map.get($default-screens, "tablet"), 
+        "max": null,
+    ),
+    "desktop": (
+        "min": map.get($default-screens, "desktop"), 
+        "max": null,
+    ),
+    "fullhd": (
+        "min": map.get($default-screens, "fullhd"),
+        "max": null,
+    ),
+) !default;
+
+// Get default breakpoints keys
+@function get-breakpoints-keys() {
+    @return map.keys($default-breakpoints);
+};
+
+// Parse breakpoints values
+@function parse-breakpoints($breakpoints) {
+    $new-breakpoints: utils.create-empty-map();
+    @each $key,$default-value in $default-breakpoints {
+        $value: utils.get($breakpoints, $key, null);
+        // Check for map value --> set the map
+        @if utils.is-map($value) {
+            $new-breakpoints: map.set($new-breakpoints, $key, $value);
+        }
+        // Check for truthly value --> set as min value in the breakpoint
+        @else if $value {
+            $new-breakpoints: map.set($new-breakpoints, $key, (
+                "min": $value,
+                "max": null
+            ));
+        }
+        // Check if not value has been provided --> use default breakpoint
+        @else if not map.has-key($breakpoints, $key) {
+            $new-breakpoints: map.set($new-breakpoints, $key, $default-value);
+        }
+    }
+    // Return parsed breakpoints
+    @return $new-breakpoints;
+}
+
+// Check if the provided selector is a breakpoint selector
+@function is-breakpoint-selector($selector) {
+    @return utils.starts-with($selector, "@breakpoint");
+}
+
+// Get breakpoint from selector
+@function get-breakpoint-from-selector($selector) {
+    @return utils.trim(utils.replace($selector, "@breakpoint", ""));
+}
+
+//Define breakpoint
+@mixin use-breakpoint ($breakpoint: null, $mode: "only") {
+    @if not utils.is-map($breakpoint) {
+        $breakpoint: utils.create-empty-map();
+    }
+    $min: utils.unquote(utils.get($breakpoint, "min", null));
+    $max: utils.unquote(utils.get($breakpoint, "max", null));
+    //Check for min and max values
+    @if $min != null and $max != null {
+        @media screen and (min-width: #{$min}) and (max-width: #{$max}) {
+            @content;
+        }
+    }
+    //Check for only min value provided --> use min-width
+    @else if $max == null {
+        @media screen and (min-width: #{$min}) { @content; }
+    }
+    //Check for only max value provided --> use max-width
+    @else if $min == null {
+        @media screen and (max-width: #{$max}) { @content; }
+    }
+    // If no min or max value has been provided --> do not create the breakpoint
+    // Exit
+}
+

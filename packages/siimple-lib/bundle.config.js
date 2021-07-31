@@ -11,6 +11,7 @@ module.exports = {
         "./constants.scss",
         "./theme.scss",
         "./naming.scss",
+        "./breakpoints.scss",
         "./component.scss",
         "./sheet.scss",
         "./plugins.scss",

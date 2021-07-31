@@ -3,6 +3,7 @@
 @use "sass:string";
 @use "siimple-utils" as utils;
 
+@use "./breakpoints.scss" as breakpoints;
 @use "./constants.scss" as constants;
 @use "./naming.scss" as naming;
 
@@ -66,8 +67,16 @@
         //        //$selector: utils.replace($selector, "{{ #{$key} }}", $value);
         //    }
         //}
+        // Check for breakpoint selector
+        @if breakpoints.is-breakpoint-selector($selector) {
+            $breakpoint-key: breakpoints.get-breakpoint-from-selector($selector);
+            $breakpoint-value: utils.get($sheet, ("breakpoints" $breakpoint-key), null);
+            @include breakpoints.use-breakpoint($breakpoint-value) {
+                @include _build-styles($sheet, $rules);
+            }
+        }
         // Check for media rules --> process as nested rules
-        @if utils.starts-with($selector, "@media") {
+        @else if utils.starts-with($selector, "@media") {
             @media #{utils.unquote(utils.replace($selector, "@media ", ""))} {
                 @include _build-styles($sheet, $rules);
             }
@@ -116,9 +125,9 @@
         "styles": utils.create-empty-map(),
         "variables": utils.create-empty-map(),
         "keyframes": utils.create-empty-map(),
-        //"theme": theme.parse-theme(null),
         "theme": utils.create-empty-map(),
         "prefix": naming.$default-prefix,
+        "breakpoints": utils.create-empty-map(),
     );
 }
 

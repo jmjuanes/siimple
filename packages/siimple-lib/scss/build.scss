@@ -2,6 +2,7 @@
 @use "sass:map";
 @use "siimple-utils" as utils;
 
+@use "./breakpoints.scss" as breakpoints;
 @use "./component.scss" as component;
 @use "./constants.scss" as constants;
 @use "./naming.scss" as naming;
@@ -30,6 +31,7 @@
     $theme: utils.get($options, "theme", utils.create-empty-map());
     $body: utils.get($options, "body", utils.create-empty-map());
     //$presets: utils.create-empty-list() !default; //Presets to load
+    $breakpoints: utils.get($options, "breakpoints", utils.create-empty-map());
     $plugins: utils.get($options, "plugins", ());
     $variants: utils.get($options, "variants", utils.create-empty-map());
     //$include: utils.create-empty-list() !default; //List of components to include
@@ -39,6 +41,7 @@
     $sheet: sheet.create-sheet();
     $sheet: map.set($sheet, "prefix", $prefix); // Assign prefix
     $sheet: map.set($sheet, "theme", theme.parse-theme($theme)); // Assign theme config
+    $sheet: map.set($sheet, "breakpoints", breakpoints.parse-breakpoints($breakpoints));
 
     // Register global variables
     @each $key,$name in constants.$theme-mappings {
