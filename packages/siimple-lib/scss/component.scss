@@ -1,15 +1,15 @@
 @use "sass:map";
-@use "siimple-utils" as utils;
 
 @use "./naming.scss" as naming;
 @use "./sheet.scss" as sheet;
 @use "./theme.scss" as theme;
 @use "./plugins.scss" as plugins;
+@use "./utils.scss" as utils;
 
 // Build component styles
 @function build-component-styles($sheet, $component) {
-    $component-name: utils.get($component, "name", "");
-    $component-prefix: utils.get($component, "prefix", null);
+    $component-name: utils.get-in($component, "name", "");
+    $component-prefix: utils.get-in($component, "prefix", null);
     @if not utils.is-string($component-prefix) {
         $component-prefix: map.get($sheet, "prefix");
     }
@@ -20,7 +20,7 @@
     //$sheet: sheet.add-classname-to-sheet($sheet, $component-name, $component-classname);
     $sheet: sheet.add-styles-to-sheet($sheet, $component-classname, map.get($component, "styles"));
     // Register each variant style
-    //$component-variants: utils.get($component, "variants", utils.create-empty-map());
+    //$component-variants: utils.get-in($component, "variants", utils.create-empty-map());
     @each $variant-name,$variant-styles in map.get($component, "variants") {
         $variant-classname: $component-classname; // Default variant classname is component classname
         @if $variant-name != "default" {
@@ -37,7 +37,7 @@
         $sheet: sheet.add-styles-to-sheet($sheet, $variant-classname, $variant-styles);
     }
     // Register keyfreames
-    $component-keyframes: utils.get($component, "keyframes", null);
+    $component-keyframes: utils.get-in($component, "keyframes", null);
     //@debug $component-keyframes;
     @if utils.is-map($component-keyframes) {
         $sheet: sheet.add-keyframes-to-sheet($sheet, $component-keyframes);

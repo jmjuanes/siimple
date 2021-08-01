@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "siimple-utils" as utils;
+@use "./utils.scss" as utils;
 
 //Screen sizes
 $default-screens: (
@@ -35,9 +35,9 @@ $default-breakpoints: (
 
 // Parse breakpoints values
 @function parse-breakpoints($breakpoints) {
-    $new-breakpoints: utils.create-empty-map();
+    $new-breakpoints: utils.empty-map();
     @each $key,$default-value in $default-breakpoints {
-        $value: utils.get($breakpoints, $key, null);
+        $value: utils.get-in($breakpoints, $key, null);
         // Check for map value --> set the map
         @if utils.is-map($value) {
             $new-breakpoints: map.set($new-breakpoints, $key, $value);
@@ -71,10 +71,10 @@ $default-breakpoints: (
 //Define breakpoint
 @mixin use-breakpoint ($breakpoint: null, $mode: "only") {
     @if not utils.is-map($breakpoint) {
-        $breakpoint: utils.create-empty-map();
+        $breakpoint: utils.empty-map();
     }
-    $min: utils.unquote(utils.get($breakpoint, "min", null));
-    $max: utils.unquote(utils.get($breakpoint, "max", null));
+    $min: utils.unquote(utils.get-in($breakpoint, "min", null));
+    $max: utils.unquote(utils.get-in($breakpoint, "max", null));
     //Check for min and max values
     @if $min != null and $max != null {
         @media screen and (min-width: #{$min}) and (max-width: #{$max}) {

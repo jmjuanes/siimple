@@ -1,6 +1,5 @@
 @use "sass:list";
 @use "sass:map";
-@use "siimple-utils" as utils;
 
 @use "./breakpoints.scss" as breakpoints;
 @use "./component.scss" as component;
@@ -9,10 +8,11 @@
 @use "./plugins.scss" as plugins;
 @use "./sheet.scss" as sheet;
 @use "./theme.scss" as theme;
+@use "./utils.scss" as utils;
 
 // Helper method to check if a plugin should be included
 @function should-include-plugin($plugin, $exclude) {
-    $plugin-name: utils.get($plugin, "name", null);
+    $plugin-name: utils.get-in($plugin, "name", null);
     //$plugin-type: utils.get($plugin, "type", null);
     @if not plugins.is-plugin($plugin) or $plugin-name == null {
         @return false; //Not valid plugin
@@ -27,15 +27,15 @@
 
 // Build siimple mixin
 @mixin build($options: ()) {
-    $prefix: utils.get($options, "prefix", "siimple-");
-    $theme: utils.get($options, "theme", utils.create-empty-map());
-    $body: utils.get($options, "body", utils.create-empty-map());
-    //$presets: utils.create-empty-list() !default; //Presets to load
-    $breakpoints: utils.get($options, "breakpoints", utils.create-empty-map());
-    $plugins: utils.get($options, "plugins", ());
-    $variants: utils.get($options, "variants", utils.create-empty-map());
-    //$include: utils.create-empty-list() !default; //List of components to include
-    $exclude: utils.get($options, "exclude", ());
+    $prefix: utils.get-in($options, "prefix", "siimple-");
+    $theme: utils.get-in($options, "theme", utils.empty-map());
+    $body: utils.get-in($options, "body", utils.empty-map());
+    //$presets: utils.empty-list() !default; //Presets to load
+    $breakpoints: utils.get-in($options, "breakpoints", utils.empty-map());
+    $plugins: utils.get-in($options, "plugins", ());
+    $variants: utils.get-in($options, "variants", utils.empty-map());
+    //$include: utils.empty-list() !default; //List of components to include
+    $exclude: utils.get-in($options, "exclude", ());
 
     // Initialize sheet configuration
     $sheet: sheet.create-sheet();
@@ -45,7 +45,7 @@
 
     // Register global variables
     @each $key,$name in constants.$theme-mappings {
-        @each $theme-key,$theme-value in utils.get($sheet, ("theme" $key)) {
+        @each $theme-key,$theme-value in utils.get-in($sheet, ("theme" $key)) {
             $theme-varname: naming.get-varname((
                 "prefix": map.get($sheet, "prefix"),
                 "variable": "#{$name}#{$theme-key}",
@@ -65,19 +65,19 @@
             $plugin-name: map.get($plugin, "name");
             // Check for component plugin
             @if plugins.is-component-plugin($plugin) {
-                $plugin-variants: utils.get($plugin, "variants", utils.create-empty-map());
+                $plugin-variants: utils.get-in($plugin, "variants", utils.empty-map());
                 // Check for custom variants provided
-                $custom-variants: utils.get($variants, $plugin-name, null);
+                $custom-variants: utils.get-in($variants, $plugin-name, null);
                 @if utils.is-map($custom-variants) {
                     $plugin-variants: $custom-variants;
                 }
                 //$plugin-prefix: utils.get($plugin, "prefix", null);
                 $sheet: component.build-component-styles($sheet, (
                     "name": $plugin-name,
-                    "prefix": utils.get($plugin, "prefix", null),
-                    "styles": utils.get($plugin, "styles", utils.create-empty-map()),
+                    "prefix": utils.get-in($plugin, "prefix", null),
+                    "styles": utils.get-in($plugin, "styles", utils.empty-map()),
                     "variants": $plugin-variants,
-                    "keyframes": utils.get($plugin, "keyframes", null),
+                    "keyframes": utils.get-in($plugin, "keyframes", null),
                 ));
             }
             // Check for utility plugin

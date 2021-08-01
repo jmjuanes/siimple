@@ -8,6 +8,7 @@ module.exports = {
     },
     "cwd": path.resolve(__dirname, "./scss"),
     "entry": [
+        "./utils.scss",
         "./constants.scss",
         "./theme.scss",
         "./naming.scss",
@@ -20,7 +21,6 @@ module.exports = {
     "resolve": {
         //"siimple-components": "./components.scss",
         "siimple-colors": "./colors.scss",
-        "siimple-utils": "./utils.scss",
     },
 };
 

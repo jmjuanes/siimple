@@ -1,5 +1,6 @@
 @use "siimple-colors" as colors;
-@use "siimple-utils" as utils;
+
+@use "./utils.scss" as utils;
 @use "./constants.scss" as constants;
 
 // 
@@ -162,11 +163,11 @@ $default-theme: (
 //
 @function parse-theme($theme) {
     @if not utils.is-map($theme) {
-        $theme: utils.create-empty-map();
+        $theme: utils.empty-map();
     }
     // Check default theme options
     @each $key,$value in $default-theme {
-        $current: utils.get($theme, $key, null);
+        $current: utils.get-in($theme, $key, null);
         @if not utils.is-map($current) {
             $current: $value; //Set default value
         }

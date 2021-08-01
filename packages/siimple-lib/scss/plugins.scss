@@ -1,6 +1,6 @@
 @use "sass:list";
 @use "sass:map";
-@use "siimple-utils" as utils;
+@use "./utils.scss" as utils;
 
 // Internal variables
 $__type: "$type";
@@ -22,7 +22,7 @@ $__types: ("__component", "__utility");
         @error "You should provide a valid component styles";
     }
     @if not map.has-key($options, "variants") {
-        $options: map.set($options, "variants", utils.create-empty-map());
+        $options: map.set($options, "variants", utils.empty-map());
     }
     // Register component keys
     $options: map.set($options, $__type, list.nth($__types, 1)); 
