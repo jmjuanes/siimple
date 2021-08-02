@@ -1,5 +1,4 @@
 @use "siimple-colors" as colors;
-
 @use "./utils.scss" as utils;
 @use "./constants.scss" as constants;
 
@@ -8,21 +7,13 @@
 // At least primary, dark and light colors are required
 //
 $default-colors: (
-    "primary": colors.get("blue", "500"),
-    "light-primary": colors.get("blue", "200"),
-    "dark-primary": colors.get("blue", "800"),
-    "success": colors.get("green", "500"),
-    "light-success": colors.get("green", "200"),
-    "dark-success": colors.get("green", "800"),
-    "warning": colors.get("yellow", "500"),
-    "light-warning": colors.get("yellow", "200"),
-    "dark-warning": colors.get("yellow", "800"),
-    "error": colors.get("red", "500"),
-    "light-error": colors.get("red", "200"),
-    "dark-error": colors.get("red", "800"),
-    "light": colors.get("coolgray", "300"),
-    "dark": colors.get("coolgray", "700"),
-    "muted": colors.get("coolgray", "500"),
+    "primary": colors.get-color("blue", "500"),
+    "success": colors.get-color("green", "500"),
+    "warning": colors.get-color("yellow", "500"),
+    "error": colors.get-color("red", "500"),
+    "light": colors.get-color("coolgray", "300"),
+    "dark": colors.get-color("coolgray", "700"),
+    "muted": colors.get-color("coolgray", "500"),
 );
 
 // Default content sizes variables
