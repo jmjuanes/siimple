@@ -4,16 +4,19 @@
 
 // Internal variables
 $__type: "$type";
-$__types: ("__component", "__utility");
+$__types: (
+    "__component", 
+    "__utility",
+    "__font",
+    "__keyframes",
+);
 
-// 
 // @description Creates a new component with the specified options
 // @param {map} options: component options
 // @returns {map} component: parsed component map
-//
 @function create-component($options: null) {
     @if not $options {
-        @error "plugin.add-component needs a component options map";
+        @error "create-component needs a component options map";
     }
     @if not map.has-key($options, "name") {
         @error "You should provide a valid component name";
@@ -29,17 +32,33 @@ $__types: ("__component", "__utility");
     @return $options;
 }
 
-// 
-// @description Creates an utility plugin
-//
+// Create an utility
 @function create-utility($options) {
     // TODO
     @return $options;
 }
 
-// 
+// Create font
+@function create-font($options) {
+    @if not $options {
+        @error "create-font needs a font options map";
+    }
+    // TODO: validate font options
+    $options: map.set($options, $__type, list.nth($__types, 3));
+    @return $options;
+}
+
+// @description Create a new keyframes plugin
+@function create-keyframes($options) {
+    @if not $options {
+        @error "create-keyframes needs a keyframes options map";
+    }
+    // TODO: validate keyframes options
+    $options: map.set($options, $__type, list.nth($__types, 4));
+    @return $options;
+}
+
 // @description Validates if the specified map is a valid plugin
-//
 @function is-plugin($options) {
     $type: map.get($options, $__type);
     @if not $type or not list.index($__types, $type) {
@@ -49,17 +68,29 @@ $__types: ("__component", "__utility");
     @return true;
 }
 
-// 
-// @description Check if the plugin is a component plugin
-//
-@function is-component-plugin($plugin) {
-    @return utils.is-map($plugin) and map.get($plugin, $__type) == list.nth($__types, 1);
+// @scope private
+// @description Internal method to check if the plugin is of the specified type
+@function __check-plugin-type($plugin, $index) {
+    @return utils.is-map($plugin) and map.get($plugin, $__type) == list.nth($__types, $index);
 }
 
-// 
+// @description Check if the plugin is a component plugin
+@function is-component-plugin($plugin) {
+    @return __check-plugin-type($plugin, 1);
+}
+
 // @description Check if the plugin is an utility plugin
-//
 @function is-utility-plugin($plugin) {
-    @return utils.is-map($plugin) and map.get($plugin, $__type) == list.nth($__types, 2);
+    @return __check-plugin-type($plugin, 2);
+}
+
+// @description Check if the plugin is a font plugin
+@function is-font-plugin($plugin) {
+    @return __check-plugin-type($plugin, 3);
+}
+
+// @description Check if the plugin is a keyframes plugin
+@function is-keyframes-plugin($plugin) {
+    @return __check-plugin-type($plugin, 4);
 }
 

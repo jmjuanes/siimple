@@ -2,7 +2,6 @@
 @use "sass:map";
 
 @use "./breakpoints.scss" as breakpoints;
-@use "./component.scss" as component;
 @use "./constants.scss" as constants;
 @use "./naming.scss" as naming;
 @use "./plugins.scss" as plugins;
@@ -11,19 +10,19 @@
 @use "./utils.scss" as utils;
 
 // Helper method to check if a plugin should be included
-@function should-include-plugin($plugin, $exclude) {
-    $plugin-name: utils.get-in($plugin, "name", null);
-    //$plugin-type: utils.get($plugin, "type", null);
-    @if not plugins.is-plugin($plugin) or $plugin-name == null {
-        @return false; //Not valid plugin
-    }
-    //@if list.index($exclude, "*") or list.index($exclude, $plugin-name) {
-    @if list.index($exclude, $plugin-name) {
-        @return false;
-    }
-    // Include this plugin
-    @return true;
-}
+//@function should-include-plugin($plugin, $exclude) {
+//    $plugin-name: utils.get-in($plugin, "name", null);
+//    //$plugin-type: utils.get($plugin, "type", null);
+//    @if not plugins.is-plugin($plugin) or $plugin-name == null {
+//        @return false; //Not valid plugin
+//    }
+//    //@if list.index($exclude, "*") or list.index($exclude, $plugin-name) {
+//    @if list.index($exclude, $plugin-name) {
+//        @return false;
+//    }
+//    // Include this plugin
+//    @return true;
+//}
 
 // Build siimple mixin
 @mixin build($options: ()) {
@@ -35,7 +34,7 @@
     $plugins: utils.get-in($options, "plugins", ());
     $variants: utils.get-in($options, "variants", utils.empty-map());
     //$include: utils.empty-list() !default; //List of components to include
-    $exclude: utils.get-in($options, "exclude", ());
+    //$exclude: utils.get-in($options, "exclude", ());
 
     // Initialize sheet configuration
     $sheet: sheet.create-sheet();
@@ -61,33 +60,74 @@
     // Register plugins
     @each $plugin in utils.flatten($plugins) {
         //$plugin: list.nth($plugins, $index);
-        @if should-include-plugin($plugin, $exclude) {
-            $plugin-name: map.get($plugin, "name");
-            // Check for component plugin
-            @if plugins.is-component-plugin($plugin) {
-                $plugin-variants: utils.get-in($plugin, "variants", utils.empty-map());
-                // Check for custom variants provided
-                $custom-variants: utils.get-in($variants, $plugin-name, null);
-                @if utils.is-map($custom-variants) {
-                    $plugin-variants: $custom-variants;
-                }
-                //$plugin-prefix: utils.get($plugin, "prefix", null);
-                $sheet: component.build-component-styles($sheet, (
-                    "name": $plugin-name,
-                    "prefix": utils.get-in($plugin, "prefix", null),
-                    "styles": utils.get-in($plugin, "styles", utils.empty-map()),
-                    "variants": $plugin-variants,
-                    "keyframes": utils.get-in($plugin, "keyframes", null),
-                ));
+        $plugin-name: map.get($plugin, "name");
+        // Check for component plugin
+        @if plugins.is-component-plugin($plugin) {
+            $plugin-variants: utils.get-in($plugin, "variants", utils.empty-map());
+            // Check for custom variants provided
+            $custom-variants: utils.get-in($variants, $plugin-name, null);
+            @if utils.is-map($custom-variants) {
+                $plugin-variants: $custom-variants;
             }
-            // Check for utility plugin
-            @if plugins.is-utility-plugin($plugin) {
-                //TODO
-            }
+            //$plugin-prefix: utils.get($plugin, "prefix", null);
+            $sheet: build-component-styles($sheet, (
+                "name": $plugin-name,
+                "prefix": utils.get-in($plugin, "prefix", null),
+                "styles": utils.get-in($plugin, "styles", utils.empty-map()),
+                "variants": $plugin-variants,
+                //"keyframes": utils.get-in($plugin, "keyframes", null),
+            ));
+        }
+        // Check for utility plugin
+        @else if plugins.is-utility-plugin($plugin) {
+            //TODO
+        }
+        // Check for font plugin
+        @else if plugins.is-font-plugin($plugin) {
+            $sheet: sheet.add-font-to-sheet($sheet, $plugin);
+        }
+        // Check for keyframes plugin
+        @else if plugins.is-keyframes-plugin($plugin) {
+            $sheet: sheet.add-keyframes-to-sheet($sheet, $plugin);
         }
     }
 
     // Compile sheet
     @include sheet.compile-sheet($sheet);
 }
+
+// Build component styles
+@function build-component-styles($sheet, $component) {
+    $component-name: utils.get-in($component, "name", "");
+    $component-prefix: utils.get-in($component, "prefix", null);
+    @if not utils.is-string($component-prefix) {
+        $component-prefix: map.get($sheet, "prefix");
+    }
+    $component-classname: naming.get-classname((
+        "component": $component-name,
+        "prefix": $component-prefix,
+    ));
+    //$sheet: sheet.add-classname-to-sheet($sheet, $component-name, $component-classname);
+    $sheet: sheet.add-styles-to-sheet($sheet, $component-classname, map.get($component, "styles"));
+    // Register each variant style
+    //$component-variants: utils.get-in($component, "variants", utils.create-empty-map());
+    @each $variant-name,$variant-styles in map.get($component, "variants") {
+        $variant-classname: $component-classname; // Default variant classname is component classname
+        @if $variant-name != "default" {
+            $variant-classname: naming.get-classname((
+                "component": $component-name,
+                "variant": $variant-name,
+                "prefix": $component-prefix,
+            ));
+            //$variant-name: $component-name + "." + $variant-name;
+            // Register this variant class
+            //$sheet: sheet.add-classname-to-sheet($sheet, $variant-name, $variant-classname);
+        }
+        // Register styles for this variant
+        $sheet: sheet.add-styles-to-sheet($sheet, $variant-classname, $variant-styles);
+    }
+    //Return the updated sheet
+    @return $sheet;
+}
+
 

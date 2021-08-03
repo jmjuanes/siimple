@@ -7,9 +7,7 @@
 @use "./naming.scss" as naming;
 @use "./utils.scss" as utils;
 
-// 
 // @description Generate a flat version fo the specified rules
-//
 @function _parse-styles($classname, $rules) {
     $styles: utils.empty-map();
     $styles: map.set($styles, $classname, utils.empty-map());
@@ -47,17 +45,13 @@
     @return $styles;
 }
 
-// 
 // @description Merge two styles objects
-//
 @function _merge-styles($source, $target) {
     //@return utils.merge($source, $target, $deep-merge: true);
     @return map.deep-merge($source, $target);
 }
 
-// 
 // @description Build styles
-//
 @mixin _build-styles($sheet, $styles) {
     $theme: map.get($sheet, "theme");
     @each $selector,$rules in $styles {
@@ -106,9 +100,7 @@
     }
 }
 
-// 
 // @description Build variables block
-//
 @mixin _build-variables($sheet, $variables) {
     :root {
         @each $varname,$value in $variables {
@@ -117,13 +109,12 @@
     }
 }
 
-// 
 // @description Create a new empty sheet object
-//
 @function create-sheet () {
     @return (
         //"classnames": utils.empty-map(),
         "styles": utils.empty-map(),
+        "fonts": utils.empty-list(),
         "variables": utils.empty-map(),
         "keyframes": utils.empty-map(),
         "theme": utils.empty-map(),
@@ -132,18 +123,14 @@
     );
 }
 
-// 
 // @description Register a new classname to the sheet
 // @param {string} $key classname key to be used in rules
 // @param {string} $name classname to assign to the previous key
-//
 //@function add-classname-to-sheet($sheet: (), $key: "", $name: "") {
 //    @return utils.set-in($sheet, ("classnames" $key), $name);
 //}
 
-// 
 // @description Add a new rule to the object
-//
 @function add-styles-to-sheet($sheet, $classname, $rules) {
     @debug "Adding '#{$classname}' styles to sheet... OK";
     $old-styles: utils.get-in($sheet, "styles", utils.empty-map());
@@ -152,46 +139,67 @@
     @return map.set($sheet, "styles", $merged-styles); 
 } 
 
-// 
 // @description Register a new variable in the sheet
-//
 @function add-variable-to-sheet($sheet, $varname, $value) {
     @debug "Adding '#{$varname}' variable to sheet... OK";
     @return utils.set-in($sheet, ("variables" $varname), $value);
 }
 
-// 
 // @description Register a new keyframe in the sheet
-//
 @function add-keyframes-to-sheet($sheet, $keyframes) {
     $new-keyframes: map.get($sheet, "keyframes");
-    @each $name,$steps in $keyframes {
-        @debug "Adding '#{$name}' keyframe to sheet... OK";
-        $parsed-steps: utils.empty-map();
-        @each $step-name,$step-rules in $steps {
-            $parsed-steps: map.merge(
-                $parsed-steps,
-                _parse-styles($step-name, $step-rules)
-            );
-        }
-        $new-keyframes: map.set($new-keyframes, $name, $parsed-steps);
+    $name: map.get($keyframes, "name");
+    //$steps: map.get($keyframes, "steps");
+    $steps: utils.empty-map();
+    @each $step-name,$step-rules in map.get($keyframes, "steps") {
+        $steps: map.merge(
+            $steps,
+            _parse-styles($step-name, $step-rules)
+        );
     }
-    // Return sheet with keyframes
+    @debug "Adding '#{$name}' keyframe to sheet... OK";
+    $new-keyframes: map.set($new-keyframes, $name, $steps);
     @return map.set($sheet, "keyframes", $new-keyframes);
 }
 
-// 
+// @description Register a new font in the sheet
+@function add-font-to-sheet($sheet, $options) {
+    $name: map.get($options, "name");
+    $sources: "";
+    @each $type,$url in map.get($options, "sources") {
+        $sources: $sources + ",url(#{$url}) format(\"#{$type}\")"; 
+    }
+    $new-fonts: map.get($sheet, "fonts");
+    $new-fonts: list.append($new-fonts, (
+        "font-family": $name,
+        "font-style": utils.get-in($options, "style", "normal"),
+        "font-weight": utils.get-in($options, "weight", "normal"),
+        "src": string.slice($sources, 2),
+    ));
+    @debug "Adding '#{$name}' font to sheet... OK";
+    @return map.set($sheet, "fonts", $new-fonts);
+}
+
 // @description Compile sheet
-//
 @mixin compile-sheet($sheet, $options: null) {
     @debug "Compiling sheet";
     @include _build-variables($sheet, map.get($sheet, "variables"));
-    @include _build-styles($sheet, map.get($sheet, "styles"));
+    // Register fonts
+    $sheet-fonts: map.get($sheet, "fonts");
+    @each $font-rules in $sheet-fonts {
+        @font-face {
+            font-family: map.get($font-rules, "font-family");
+            font-style: utils.unquote(map.get($font-rules, "font-style"));
+            font-weight: utils.unquote(map.get($font-rules, "font-weight"));
+            src: utils.unquote(map.get($font-rules, "src"));
+        }
+    }
     // Register keyframes
     @each $keyframe-name,$keyframe-rules in map.get($sheet, "keyframes") {
         @keyframes #{utils.unquote($keyframe-name)} {
             @include _build-styles($sheet, $keyframe-rules);
         }
     }
+    @include _build-styles($sheet, map.get($sheet, "styles"));
 }
 
