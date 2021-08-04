@@ -47,7 +47,7 @@
         @each $theme-key,$theme-value in utils.get-in($sheet, ("theme" $key)) {
             $theme-varname: naming.get-varname((
                 "prefix": map.get($sheet, "prefix"),
-                "variable": "#{$name}#{$theme-key}",
+                "name": "#{$name}#{$theme-key}",
             ));
             // Register variable name
             $sheet: sheet.add-variable-to-sheet($sheet, $theme-varname, $theme-value);
@@ -78,9 +78,9 @@
                 //"keyframes": utils.get-in($plugin, "keyframes", null),
             ));
         }
-        // Check for utility plugin
-        @else if plugins.is-utility-plugin($plugin) {
-            //TODO
+        // Check for helper plugin
+        @else if plugins.is-helper-plugin($plugin) {
+            $sheet: build-helper-styles($sheet, $plugin);
         }
         // Check for font plugin
         @else if plugins.is-font-plugin($plugin) {
@@ -96,15 +96,15 @@
     @include sheet.compile-sheet($sheet);
 }
 
-// Build component styles
+// @description Build component styles
 @function build-component-styles($sheet, $component) {
     $component-name: utils.get-in($component, "name", "");
     $component-prefix: utils.get-in($component, "prefix", null);
     @if not utils.is-string($component-prefix) {
         $component-prefix: map.get($sheet, "prefix");
     }
-    $component-classname: naming.get-classname((
-        "component": $component-name,
+    $component-classname: naming.get-component-classname((
+        "name": $component-name,
         "prefix": $component-prefix,
     ));
     //$sheet: sheet.add-classname-to-sheet($sheet, $component-name, $component-classname);
@@ -114,9 +114,9 @@
     @each $variant-name,$variant-styles in map.get($component, "variants") {
         $variant-classname: $component-classname; // Default variant classname is component classname
         @if $variant-name != "default" {
-            $variant-classname: naming.get-classname((
-                "component": $component-name,
-                "variant": $variant-name,
+            $variant-classname: naming.get-component-classname((
+                "name": $component-name,
+                "modifier": $variant-name,
                 "prefix": $component-prefix,
             ));
             //$variant-name: $component-name + "." + $variant-name;
@@ -127,6 +127,64 @@
         $sheet: sheet.add-styles-to-sheet($sheet, $variant-classname, $variant-styles);
     }
     //Return the updated sheet
+    @return $sheet;
+}
+
+// @description Build a helper styles
+@function build-helper-styles ($sheet, $helper) {
+    $helper-name: map.get($helper, "name");
+    $helper-properties: map.get($helper, "properties");
+    $helper-values: utils.empty-map();
+    $helper-theme: utils.get-in($helper, "theme", null);
+    // Check if we need to get values from theme field
+    @if $helper-theme {
+        $theme: map.get($sheet, "theme");
+        @if map.has-key($theme, $helper-theme) {
+            $helper-values: map.get($theme, $helper-theme);
+        }
+    }
+    // Check for custom values to merge
+    @if map.has-key($helper, "values") {
+        $helper-values: map.merge($helper-values, map.get($helper, "values"));
+    }
+    // Get helper variants
+    $helper-variants: utils.get-in($helper, "variants", null);
+    @if not utils.is-list($helper-variants) {
+        $helper-variants: ("default");
+    }
+    // Generate styles for this helper
+    @each $key,$value in $helper-values {
+        $styles: utils.empty-map();
+        @each $prop in $helper-properties {
+            $styles: map.set($styles, $prop, $value);
+        }
+        @each $variant in $helper-variants {
+            // Register in each helper variant type
+            @if $variant != "responsive" {
+                $classname: naming.get-helper-classname((
+                    "name": $helper-name,
+                    "property": $key,
+                    "variant": $variant,
+                ));
+                $sheet: sheet.add-styles-to-sheet($sheet, $classname, $styles);
+            }
+            // For responsive variants, we will register the style
+            // for each breakpoint in the list of breakpoints
+            @else {
+                @each $breakpoint in breakpoints.get-breakpoints-keys() {
+                    $classname: naming.get-helper-classname((
+                        "name": $helper-name,
+                        "property": $key,
+                        "variant": $breakpoint,
+                    ));
+                    $breakpoint-styles: map.set(utils.empty-map(), "@breakpoint #{$breakpoint}", $styles);
+                    $sheet: sheet.add-styles-to-sheet($sheet, $classname, $breakpoint-styles);
+                }
+            }
+        }
+        //@debug map.get($sheet, "styles");
+    }
+    // Return parsed sheet
     @return $sheet;
 }
 

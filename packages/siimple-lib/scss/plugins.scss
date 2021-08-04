@@ -6,7 +6,7 @@
 $__type: "$type";
 $__types: (
     "__component", 
-    "__utility",
+    "__helper",
     "__font",
     "__keyframes",
 );
@@ -32,10 +32,10 @@ $__types: (
     @return $options;
 }
 
-// Create an utility
-@function create-utility($options) {
+// Create a helper plugin
+@function create-helper($options) {
     // TODO
-    @return $options;
+    @return map.set($options, $__type, list.nth($__types, 2)); 
 }
 
 // Create font
@@ -79,8 +79,8 @@ $__types: (
     @return __check-plugin-type($plugin, 1);
 }
 
-// @description Check if the plugin is an utility plugin
-@function is-utility-plugin($plugin) {
+// @description Check if the plugin is a helper plugin
+@function is-helper-plugin($plugin) {
     @return __check-plugin-type($plugin, 2);
 }
 
