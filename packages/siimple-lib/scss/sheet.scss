@@ -12,22 +12,8 @@
     $styles: utils.empty-map();
     $styles: map.set($styles, $classname, utils.empty-map());
     @each $key,$rule in $rules {
-        // Check for string rule 
-        @if utils.is-string($rule) {
-            // Check for alias -> register the same value in all aliases keys
-            @if map.has-key(constants.$css-aliases, $key) {
-                $key-aliases: map.get(constants.$css-aliases, $key);
-                @each $key-alias in $key-aliases {
-                    $styles: utils.set-in($styles, ($classname $key-alias), $rule);
-                } 
-            }
-            // If no aliases are defined --> register this rule
-            @else {
-                $styles: utils.set-in($styles, ($classname $key), $rule);
-            }
-        }
         // Check for map value
-        @else if utils.is-map($rule) {
+        @if utils.is-map($rule) {
             // Check if rule starts with the '@' character
             @if utils.starts-with($key, "@") {
                 $new-styles: _parse-styles($classname, $rule);
@@ -38,6 +24,20 @@
                 $new-classname: utils.replace($key, "&", $classname);
                 $new-styles: _parse-styles($new-classname, $rule);
                 $styles: map.merge($styles, $new-styles);
+            }
+        }
+        //@if utils.is-string($rule) {
+        @else {
+            // Check for alias -> register the same value in all aliases keys
+            @if map.has-key(constants.$css-aliases, $key) {
+                $key-aliases: map.get(constants.$css-aliases, $key);
+                @each $key-alias in $key-aliases {
+                    $styles: utils.set-in($styles, ($classname $key-alias), $rule);
+                } 
+            }
+            // If no aliases are defined --> register this rule
+            @else {
+                $styles: utils.set-in($styles, ($classname $key), $rule);
             }
         }
     }
@@ -81,7 +81,7 @@
             #{utils.unquote($selector)} {
                 @each $prop,$value in $rules {
                     // Check if the property is registered in the css mappings
-                    @if map.has-key(constants.$css-mappings, $prop) {
+                    @if utils.is-string($value) and map.has-key(constants.$css-mappings, $prop) {
                         $theme-prop: map.get(constants.$css-mappings, $prop);
                         $theme-value: utils.get-in($theme, ($theme-prop $value), null);
                         @if $theme-value != null {
