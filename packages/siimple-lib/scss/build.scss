@@ -136,6 +136,7 @@
     $helper-properties: map.get($helper, "properties");
     $helper-values: utils.empty-map();
     $helper-theme: utils.get-in($helper, "theme", null);
+    $helper-important: utils.get-in($helper, "important", false);
     // Check if we need to get values from theme field
     @if $helper-theme {
         $theme: map.get($sheet, "theme");
@@ -169,6 +170,14 @@
             @each $prop in $helper-properties {
                 $styles: map.set($styles, $prop, $value);
             }
+        }
+        // Check for important helper flag
+        @if $helper-important {
+            $new-styles: utils.empty-map(); // Map to generate new styles
+            @each $prop,$value in $styles {
+                $new-styles: map.set($new-styles, $prop, ($value "important"));
+            }
+            $styles: $new-styles;
         }
         // Register helpers classes for each variant
         @each $variant in $helper-variants {
