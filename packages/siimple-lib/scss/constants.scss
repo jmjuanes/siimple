@@ -3,6 +3,39 @@ $font-sans: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ub
 $font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 $font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
+//Opacity values
+$opacity: (
+    "0": 0,
+    "5": 0.05,
+    "10": 0.1,
+    "15": 0.15,
+    "20": 0.2,
+    "25": 0.25,
+    "30": 0.3,
+    "35": 0.35,
+    "40": 0.4,
+    "45": 0.45,
+    "50": 0.5,
+    "55": 0.55,
+    "60": 0.6,
+    "65": 0.65,
+    "70": 0.7,
+    "75": 0.75,
+    "80": 0.8,
+    "85": 0.85,
+    "90": 0.9,
+    "95": 0.95,
+    "100": 100
+);
+
+//Shadow
+$shadow-color: black;
+$shadow-ring: 0 0 0 1px rgba($shadow-color, 0.02);
+$shadow: 0 0.5rem 1rem -0.25rem rgba($shadow-color, 0.2), $shadow-ring;
+//$shadow-small: 0 0.25rem 1rem -0.125rem rgba($shadow-color, 0.15), $shadow-ring;
+//$shadow-large: 0rem 1rem 1rem -0.5rem rgba($dark, 0.25), $shadow-ring;
+//$shadow-old: 0 0.5em 1em -0.125em rgba($shadow-color,0.15), 0 0 0 1px rgba($shadow-color,0.02);
+
 // CSS aliases
 $css-aliases: (
     "bg": ("background-color"),
@@ -28,7 +61,22 @@ $css-aliases: (
 $css-mappings: (
     "background-color": "colors",
     "border-color": "colors",
+    "border-radius": "radius",
     "color": "colors",
+    "font-family": "fonts",
+    "font-size": "font-sizes",
+    "font-weight": "font-weights",
+    "line-height": "line-heights",
+    "margin": "sizes",
+    "margin-bottom": "sizes",
+    "margin-left": "sizes",
+    "margin-right": "sizes",
+    "margin-top": "sizes",
+    "padding": "sizes",
+    "padding-bottom": "sizes",
+    "padding-left": "sizes",
+    "padding-right": "sizes",
+    "padding-top": "sizes",
 );
 
 // Theme to variables map
