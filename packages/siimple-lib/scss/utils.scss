@@ -88,6 +88,15 @@
     @return $result;
 }
 
+// @description get first item of list
+@function first-item ($items) {
+    @return list.nth($items, 1);
+}
+
+// @description get las item of list
+@function last-item ($items) {
+    @return list.nth($items, list.length($items));
+}
 
 // 
 // @description Improved version for map.get
