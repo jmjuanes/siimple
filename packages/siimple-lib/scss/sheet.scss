@@ -80,6 +80,15 @@
         @else if not utils.starts-with($selector, "@") {
             #{utils.unquote($selector)} {
                 @each $prop,$value in $rules {
+                    $is-important: false;
+                    // Check for list value --> check for flags
+                    @if utils.is-list($value) {
+                        $last-item: utils.last-item($value);
+                        @if $last-item == "important" or $last-item == "!important" {
+                            $is-important: true;
+                        }
+                        $value: utils.first-item($value);
+                    }
                     // Check if the property is registered in the css mappings
                     @if utils.is-string($value) and map.has-key(constants.$css-mappings, $prop) {
                         $theme-prop: map.get(constants.$css-mappings, $prop);
@@ -88,8 +97,13 @@
                             $value: $theme-value;
                         }
                     }
-                    // Add the css property
-                    #{utils.unquote($prop)}: utils.unquote($value);
+                    // Check for important flag added
+                    @if $is-important {
+                        #{utils.unquote($prop)}: utils.unquote($value) !important;
+                    }
+                    @else {
+                        #{utils.unquote($prop)}: utils.unquote($value);
+                    }
                 }
             }
         }
