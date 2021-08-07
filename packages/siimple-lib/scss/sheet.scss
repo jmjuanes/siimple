@@ -146,7 +146,7 @@
 
 // @description Add a new rule to the object
 @function add-styles-to-sheet($sheet, $classname, $rules) {
-    @debug "Adding '#{$classname}' styles to sheet... OK";
+    //@debug "Adding '#{$classname}' styles to sheet... OK";
     $old-styles: utils.get-in($sheet, "styles", utils.empty-map());
     $new-styles: _parse-styles($classname, $rules);
     $merged-styles: _merge-styles($old-styles, $new-styles);
@@ -155,7 +155,7 @@
 
 // @description Register a new variable in the sheet
 @function add-variable-to-sheet($sheet, $varname, $value) {
-    @debug "Adding '#{$varname}' variable to sheet... OK";
+    //@debug "Adding '#{$varname}' variable to sheet... OK";
     @return utils.set-in($sheet, ("variables" $varname), $value);
 }
 
@@ -171,7 +171,7 @@
             _parse-styles($step-name, $step-rules)
         );
     }
-    @debug "Adding '#{$name}' keyframe to sheet... OK";
+    //@debug "Adding '#{$name}' keyframe to sheet... OK";
     $new-keyframes: map.set($new-keyframes, $name, $steps);
     @return map.set($sheet, "keyframes", $new-keyframes);
 }
@@ -190,13 +190,13 @@
         "font-weight": utils.get-in($options, "weight", "normal"),
         "src": string.slice($sources, 2),
     ));
-    @debug "Adding '#{$name}' font to sheet... OK";
+    //@debug "Adding '#{$name}' font to sheet... OK";
     @return map.set($sheet, "fonts", $new-fonts);
 }
 
 // @description Compile sheet
 @mixin compile-sheet($sheet, $options: null) {
-    @debug "Compiling sheet";
+    //@debug "Compiling sheet";
     @include _build-variables($sheet, map.get($sheet, "variables"));
     // Register fonts
     $sheet-fonts: map.get($sheet, "fonts");

@@ -1,10 +1,12 @@
 @use "sass:list";
 @use "sass:map";
 
+@use "./body.scss" as bodystyles;
 @use "./breakpoints.scss" as breakpoints;
 @use "./constants.scss" as constants;
 @use "./naming.scss" as naming;
 @use "./plugins.scss" as plugins;
+@use "./reboot.scss" as reboot;
 @use "./sheet.scss" as sheet;
 @use "./theme.scss" as theme;
 @use "./utils.scss" as utils;
@@ -35,6 +37,8 @@
     $variants: utils.get-in($options, "variants", utils.empty-map());
     //$include: utils.empty-list() !default; //List of components to include
     //$exclude: utils.get-in($options, "exclude", ());
+    $add-body-styles: utils.get-in($options, "add-body-styles", true);
+    $add-reboot-styles: utils.get-in($options, "add-reboot-styles", true);
 
     // Initialize sheet configuration
     $sheet: sheet.create-sheet();
@@ -55,7 +59,14 @@
     }
 
     // Register body styles
-    // TODO
+    @if $add-body-styles == true {
+        $sheet: bodystyles.register-body-styles($sheet, null);
+    }
+
+    // Register reboot styles
+    @if $add-reboot-styles {
+        $sheet: reboot.register-reboot-styles($sheet, null);
+    }
 
     // Register plugins
     @each $plugin in utils.flatten($plugins) {

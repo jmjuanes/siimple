@@ -1,0 +1,22 @@
+@use "./sheet.scss" as sheet;
+
+// @description register body styles to sheet
+@function register-body-styles ($sheet, $options) {
+    @return sheet.add-styles-to-sheet($sheet, "body", (
+        "-moz-osx-font-smoothing": "grayscale",
+        "-webkit-font-smoothing": "antialiased",
+        "background-color": "background",
+        "color": "text",
+        "font-family": "default",
+        "font-size": "default",
+        "font-smooth": "antialiased",
+        "font-weight": "normal",
+        "line-height": "default",
+        "margin": "0",
+        "min-height": "100vh",
+        "padding": "0",
+        "text-rendering": "optimizeLegibility",
+    ));
+}
+
+
