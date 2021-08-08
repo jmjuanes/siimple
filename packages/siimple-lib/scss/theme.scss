@@ -8,12 +8,10 @@
 //
 $default-colors: (
     "primary": colors.get-color("blue", "500"),
-    "success": colors.get-color("green", "500"),
-    "warning": colors.get-color("yellow", "500"),
-    "error": colors.get-color("red", "500"),
-    "light": colors.get-color("coolgray", "300"),
-    "dark": colors.get-color("coolgray", "700"),
+    "text": colors.get-color("coolgray", "700"),
+    "background": colors.$white,
     "muted": colors.get-color("coolgray", "500"),
+    "accent": colors.get-color("coolgray", "300"),
 );
 
 // Default content sizes variables
@@ -139,7 +137,6 @@ $default-sizes: (
 // Theme global map
 //
 $default-theme: (
-    //"breakpoints": $breakpoints,
     "colors": $default-colors,
     "fonts": $default-fonts,
     "font-sizes": $default-font-sizes,

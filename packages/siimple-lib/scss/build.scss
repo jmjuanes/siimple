@@ -29,12 +29,12 @@
 // Build siimple mixin
 @mixin build($options: ()) {
     $prefix: utils.get-in($options, "prefix", "siimple-");
-    $theme: utils.get-in($options, "theme", utils.empty-map());
-    $body: utils.get-in($options, "body", utils.empty-map());
+    //$theme: utils.get-in($options, "theme", utils.empty-map());
     //$presets: utils.empty-list() !default; //Presets to load
     $breakpoints: utils.get-in($options, "breakpoints", utils.empty-map());
     $plugins: utils.get-in($options, "plugins", ());
     $variants: utils.get-in($options, "variants", utils.empty-map());
+    $custom-styles: utils.get-in($options, "styles", utils.empty-map());
     //$include: utils.empty-list() !default; //List of components to include
     //$exclude: utils.get-in($options, "exclude", ());
     $add-body-styles: utils.get-in($options, "add-body-styles", true);
@@ -43,20 +43,20 @@
     // Initialize sheet configuration
     $sheet: sheet.create-sheet();
     $sheet: map.set($sheet, "prefix", $prefix); // Assign prefix
-    $sheet: map.set($sheet, "theme", theme.parse-theme($theme)); // Assign theme config
+    $sheet: map.set($sheet, "theme", theme.parse-theme($options)); // Assign theme config
     $sheet: map.set($sheet, "breakpoints", breakpoints.parse-breakpoints($breakpoints));
 
     // Register global variables
-    @each $key,$name in constants.$theme-mappings {
-        @each $theme-key,$theme-value in utils.get-in($sheet, ("theme" $key)) {
-            $theme-varname: naming.get-varname((
-                "prefix": map.get($sheet, "prefix"),
-                "name": "#{$name}#{$theme-key}",
-            ));
-            // Register variable name
-            $sheet: sheet.add-variable-to-sheet($sheet, $theme-varname, $theme-value);
-        }
-    }
+    // @each $key,$name in constants.$theme-mappings {
+    //     @each $theme-key,$theme-value in utils.get-in($sheet, ("theme" $key)) {
+    //         $theme-varname: naming.get-varname((
+    //             "prefix": map.get($sheet, "prefix"),
+    //             "name": "#{$name}#{$theme-key}",
+    //         ));
+    //         // Register variable name
+    //         $sheet: sheet.add-variable-to-sheet($sheet, $theme-varname, $theme-value);
+    //     }
+    // }
 
     // Register body styles
     @if $add-body-styles == true {
@@ -66,6 +66,13 @@
     // Register reboot styles
     @if $add-reboot-styles {
         $sheet: reboot.register-reboot-styles($sheet, null);
+    }
+
+    // Register custom styles
+    @if utils.is-map($custom-styles) {
+        @each $selector,$rules in $custom-styles {
+            $sheet: sheet.add-styles-to-sheet($sheet, $selector, $rules);
+        }
     }
 
     // Register plugins
