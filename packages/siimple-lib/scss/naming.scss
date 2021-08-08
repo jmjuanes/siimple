@@ -7,19 +7,23 @@ $default-prefix: "siimple-"; // Default prefix for components and variables
 // @description Generate classname for helper
 // @option name: name of the helper
 // @option property: property of the helper
-// @option variant: variant of the helper (default, hover or responsive breakpoint)
+// @option state: state of the helper (default, hover, active)
+// @option breakpoint: responsive breakpoint
 @function get-helper-classname($options) {
     $classname: ".has-#{map.get($options, "name")}";
     $property: map.get($options, "property");
     @if $property != "default" {
         $classname: "#{$classname}-#{$property}";
     }
-    $variant: utils.get-in($options, "variant", "default");
-    @if $variant == "hover" {
-        @return "#{$classname}\\:hover:hover";
+    // Check for breakpoint provided
+    $breakpoint: utils.get-in($options, "breakpoint", null);
+    @if utils.is-string($breakpoint) {
+        @return "#{$classname}\\:#{$breakpoint}";
     }
-    @else if $variant != "default" {
-        @return "#{$classname}\\:#{$variant}";
+    // Apply for state
+    $state: utils.get-in($options, "state", "default");
+    @if $state == "hover" {
+        @return "#{$classname}\\:hover:hover";
     }
     // Default --> return the default helper class
     //@return ".has-#{$name}-#{$property}";

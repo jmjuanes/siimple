@@ -166,10 +166,10 @@
     @if map.has-key($helper, "values") {
         $helper-values: map.merge($helper-values, map.get($helper, "values"));
     }
-    // Get helper variants
-    $helper-variants: utils.get-in($helper, "variants", null);
-    @if not utils.is-list($helper-variants) {
-        $helper-variants: ("default");
+    $helper-responsive: utils.get-in($helper, "responsive", false);
+    $helper-states: utils.get-in($helper, "states", null);
+    @if not utils.is-list($helper-states) {
+        $helper-states: ("default");
     }
     // Generate styles for this helper
     @each $key,$value in $helper-values {
@@ -197,29 +197,26 @@
             }
             $styles: $new-styles;
         }
-        // Register helpers classes for each variant
-        @each $variant in $helper-variants {
-            // Register in each helper variant type
-            @if $variant != "responsive" {
+        // Register helpers classes for each state
+        @each $state in $helper-states {
+            $classname: naming.get-helper-classname((
+                "name": $helper-name,
+                "property": $key,
+                "state": $state,
+            ));
+            $sheet: sheet.add-styles-to-sheet($sheet, $classname, $styles);
+        }
+        // For responsive variants, we will register the style
+        // for each breakpoint in the list of breakpoints
+        @if $helper-responsive {
+            @each $breakpoint in breakpoints.get-breakpoints-keys() {
                 $classname: naming.get-helper-classname((
                     "name": $helper-name,
                     "property": $key,
-                    "variant": $variant,
+                    "breakpoint": $breakpoint,
                 ));
-                $sheet: sheet.add-styles-to-sheet($sheet, $classname, $styles);
-            }
-            // For responsive variants, we will register the style
-            // for each breakpoint in the list of breakpoints
-            @else {
-                @each $breakpoint in breakpoints.get-breakpoints-keys() {
-                    $classname: naming.get-helper-classname((
-                        "name": $helper-name,
-                        "property": $key,
-                        "variant": $breakpoint,
-                    ));
-                    $breakpoint-styles: map.set(utils.empty-map(), "@breakpoint #{$breakpoint}", $styles);
-                    $sheet: sheet.add-styles-to-sheet($sheet, $classname, $breakpoint-styles);
-                }
+                $breakpoint-styles: map.set(utils.empty-map(), "@breakpoint #{$breakpoint}", $styles);
+                $sheet: sheet.add-styles-to-sheet($sheet, $classname, $breakpoint-styles);
             }
         }
         //@debug map.get($sheet, "styles");
