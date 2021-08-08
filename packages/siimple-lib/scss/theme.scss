@@ -1,17 +1,14 @@
-@use "siimple-colors" as colors;
 @use "./utils.scss" as utils;
 @use "./constants.scss" as constants;
 
-// 
 // Colors configuration
-// At least primary, dark and light colors are required
-//
+// Primary, text, background, muted and accent colors are required
 $default-colors: (
-    "primary": colors.get-color("blue", "500"),
-    "text": colors.get-color("coolgray", "700"),
-    "background": colors.$white,
-    "muted": colors.get-color("coolgray", "500"),
-    "accent": colors.get-color("coolgray", "300"),
+    "primary": constants.$color-primary,
+    "text": constants.$color-text,
+    "background": constants.$color-background,
+    "muted": constants.$color-muted,
+    "accent": constants.$color-accent,
 );
 
 // Default content sizes variables
