@@ -1,11 +1,12 @@
 @use "sass:map";
+@use "./constants.scss" as constants;
 @use "./utils.scss" as utils;
 
 //Screen sizes
 $default-screens: (
-    "tablet": 600px,
-    "desktop": 1200px,
-    "fullhd": 1800px,
+    "tablet": constants.$screen-tablet,
+    "desktop": constants.$screen-desktop,
+    "fullhd": constants.$screen-fullhd,
 ) !default;
 
 //Breakpoints variables
@@ -26,7 +27,7 @@ $default-breakpoints: (
         "min": map.get($default-screens, "fullhd"),
         "max": null,
     ),
-) !default;
+);
 
 // Get default breakpoints keys
 @function get-breakpoints-keys() {

@@ -9,17 +9,7 @@ $default-colors: (
     "background": constants.$color-background,
     "muted": constants.$color-muted,
     "accent": constants.$color-accent,
-);
-
-// Default content sizes variables
-// @TO_BE_DEPRECATED
-$content-gap: 24px !default; //Gap for breakpoints
-$content-sizes: (
-    "small": 608px,   //--> 560px
-    "medium": 768px,  //--> 720px
-    "large": 1008px,  //--> 960px
-    "xlarge": 1188px, //--> 1140px
-    "huge": 1328px,   //--> 1280px
+    "highlight": constants.$color-highlight,
 );
 
 //Default font variables
@@ -31,9 +21,7 @@ $default-fonts: (
     "mono": constants.$font-mono,
 );
 
-// 
 // Default font Weight values
-//
 $default-font-weights: (
     "light": 300,
     "normal": 400,
@@ -41,9 +29,7 @@ $default-font-weights: (
     "bold": 700,
 );
 
-//
 // Default font size values
-//
 $default-font-sizes: (
     "tiny": 0.75rem,
     "small": 0.875rem,
@@ -51,16 +37,6 @@ $default-font-sizes: (
     "large": 1.25rem,
     "huge": 2rem,
 );
-
-//List of available font sizes
-//$font-sizes: (
-//    "1": $font-size-base * 2.5,
-//    "2": $font-size-base * 2,
-//    "3": $font-size-base * 1.75,
-//    "4": $font-size-base * 1.5,
-//    "5": $font-size-base * 1.25,
-//    "6": $font-size-base,
-//) !default;
 
 // Default line height values
 $default-line-heights: (
@@ -75,40 +51,6 @@ $default-radius: (
     "default": 0.5rem,
     "large": 1rem,
 );
-
-//Screen sizes
-$screens: (
-    "tablet": 600px,
-    "desktop": 1200px,
-    "fullhd": 1800px,
-) !default;
-
-// Breakpoints variables
-// TODO
-//$breakpoints: (
-//    "mobile": ("min": 0px, "max": $tablet - 1px),
-//    "tablet": ("min": $tablet, "max": null),
-//    "desktop": ("min": $desktop, "max": null),
-//    "fullhd": ("min": $fullhd, "max": null)
-//) !default;
-
-//Default columns values
-//$column-count: 12 !default;
-//$column-size: 100% / $column-count !default;
-$columns: (
-    "1": "8.33%", 
-    "2": "16.66%",
-    "3": "24.99%", 
-    "4": "33.33%",
-    "5": "41.66%", 
-    "6": "49.99%",
-    "7": "58.33%", 
-    "8": "66.66%",
-    "9": "74.99%", 
-    "10": "83.33%",
-    "11": "91.66%", 
-    "12": "99.99%"
-) !default;
 
 //Sizes mapping
 $default-sizes: (
@@ -130,9 +72,7 @@ $default-sizes: (
     "120": 30rem,
 );
 
-// 
 // Theme global map
-//
 $default-theme: (
     "colors": $default-colors,
     "fonts": $default-fonts,
@@ -143,10 +83,8 @@ $default-theme: (
     "radius": $default-radius,
 );
 
-// 
 // @description Parse a theme object
-//
-@function parse-theme($theme) {
+@function parse-theme ($theme) {
     @if not utils.is-map($theme) {
         $theme: utils.empty-map();
     }

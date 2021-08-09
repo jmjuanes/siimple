@@ -1,8 +1,14 @@
+// Screen sizes
+$screen-tablet: 600px;
+$screen-desktop: 1200px;
+$screen-fullhd: 1800px;
+
 // Default colors
-$color-primary: #307ad5;  // blue-500
-$color-text: #363f4f;     // coolgray-700
-$color-muted: #747c8b;    // coolgray-500
-$color-accent: #d4d8dd;   // coolgray-300
+$color-primary: #307ad5;   // blue-500
+$color-highlight: #e5effb; // blue-200
+$color-text: #363f4f;      // coolgray-700
+$color-muted: #747c8b;     // coolgray-500
+$color-accent: #d4d8dd;    // coolgray-300
 $color-background: #ffffff;
 
 // Fonts
