@@ -6,7 +6,9 @@ $screen-fullhd: 1800px;
 // Default colors
 $color-primary: #307ad5;   // blue-500
 $color-highlight: #e5effb; // blue-200
+$color-secondary: #ffffff; //
 $color-text: #363f4f;      // coolgray-700
+$color-heading: #363f4f;   // coolgray-700
 $color-muted: #747c8b;     // coolgray-500
 $color-accent: #d4d8dd;    // coolgray-300
 $color-background: #ffffff;
@@ -14,10 +16,20 @@ $color-background: #ffffff;
 // Fonts
 $font-sans: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
 $font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
-$font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+// Common headings sizes
+$headings: (
+    "1": 2.5rem,
+    "2": 2rem,
+    "3": 1.75rem,
+    "4": 1.5rem,
+    "5": 1.25rem,
+    "6": 1rem,
+);
 
 //Opacity values
-$opacity: (
+$opacities: (
     "0": 0,
     "5": 0.05,
     "10": 0.1,
@@ -44,10 +56,30 @@ $opacity: (
 //Shadow
 $shadow-color: black;
 $shadow-ring: 0 0 0 1px rgba($shadow-color, 0.02);
-$shadow: 0 0.5rem 1rem -0.25rem rgba($shadow-color, 0.2), $shadow-ring;
-//$shadow-small: 0 0.25rem 1rem -0.125rem rgba($shadow-color, 0.15), $shadow-ring;
-//$shadow-large: 0rem 1rem 1rem -0.5rem rgba($dark, 0.25), $shadow-ring;
+$shadow-normal: 0 0.5rem 1rem -0.25rem rgba($shadow-color, 0.2), $shadow-ring;
+$shadow-small: 0 0.25rem 1rem -0.125rem rgba($shadow-color, 0.15), $shadow-ring;
+$shadow-large: 0rem 1rem 1rem -0.5rem rgba($dark, 0.25), $shadow-ring;
 //$shadow-old: 0 0.5em 1em -0.125em rgba($shadow-color,0.15), 0 0 0 1px rgba($shadow-color,0.02);
+
+//Sizes mapping
+$sizes: (
+    "0": 0px,
+    "1": 0.25rem,
+    "2": 0.5rem,
+    "3": 0.75rem,
+    "4": 1rem,
+    "6": 1.5rem,
+    "8": 2rem,
+    "12": 3rem,
+    "16": 4rem,
+    "24": 6rem,
+    "32": 8rem,
+    "48": 12rem,
+    "64": 16rem,
+    "96": 24rem,
+    "128": 32rem,
+    "256": 64rem,
+);
 
 // CSS aliases
 $css-aliases: (
@@ -75,21 +107,35 @@ $css-mappings: (
     "background-color": "colors",
     "border-color": "colors",
     "border-radius": "radius",
+    "bottom": "spacing",
+    "box-shadow": "shadows",
     "color": "colors",
+    "fill": "colors",
     "font-family": "fonts",
     "font-size": "font-sizes",
     "font-weight": "font-weights",
+    "height": "sizes",
+    "left": "spacing",
     "line-height": "line-heights",
-    "margin": "sizes",
-    "margin-bottom": "sizes",
-    "margin-left": "sizes",
-    "margin-right": "sizes",
-    "margin-top": "sizes",
-    "padding": "sizes",
-    "padding-bottom": "sizes",
-    "padding-left": "sizes",
-    "padding-right": "sizes",
-    "padding-top": "sizes",
+    "margin": "spacing",
+    "margin-bottom": "spacing",
+    "margin-left": "spacing",
+    "margin-right": "spacing",
+    "margin-top": "spacing",
+    "max-height": "sizes",
+    "max-width": "sizes",
+    "min-height": "sizes",
+    "min-width": "sizes",
+    "opacity": "opacities",
+    "padding": "spacing",
+    "padding-bottom": "spacing",
+    "padding-left": "spacing",
+    "padding-right": "spacing",
+    "padding-top": "spacing",
+    "right": "spacing",
+    "text-shadow": "shadows",
+    "top": "spacing",
+    "width": "sizes",
 );
 
 // Theme to variables map
