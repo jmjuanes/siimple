@@ -26,7 +26,6 @@ $default-fonts: (
 
 // Default font Weight values
 $default-font-weights: (
-    "normal": 400,
     "body": 400,
     "heading": 700,
     "bold": 700,
@@ -54,6 +53,7 @@ $default-radius: (
     "default": 0.5rem, // deprecated, use normal instead
     "normal": 0.5rem, 
     "large": 1rem,
+    "circle": 50%,
 );
 
 // Default shadows
@@ -61,7 +61,7 @@ $default-shadows: (
     "small": constants.$shadow-small,
     "normal": constants.$shadow-normal,
     "large": constants.$shadow-large,
-    //"none": none,
+    "none": "none",
 );
 
 // Default sizing variables
@@ -111,7 +111,7 @@ $default-theme: (
         }
         // If map has been provided, then merge with defaults
         @else {
-            $current: map.deep-merge($value, $current);
+            $current: map.merge($value, $current);
         }
         // Add to theme object
         $new-theme: map.set($new-theme, $key, $current);
