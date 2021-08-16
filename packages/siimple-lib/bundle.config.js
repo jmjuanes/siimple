@@ -13,12 +13,14 @@ module.exports = {
         "./naming.scss",
         "./breakpoints.scss",
         "./sheet.scss",
+        "./reboot.scss",
+        "./body.scss",
         "./plugins.scss",
         "./build.scss",
     ],
     "resolve": {
         //"siimple-components": "./components.scss",
-        "siimple-colors": "siimple-colors/index.scss",
+        //"siimple-colors": "siimple-colors/index.scss",
     },
 };
 
