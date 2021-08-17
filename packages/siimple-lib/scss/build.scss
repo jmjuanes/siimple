@@ -175,19 +175,18 @@
     @each $key,$value in $helper-values {
         $styles: utils.empty-map();
         //Check if we have provided a list of values
-        @if utils.is-list($value) {
-            @for $i from 1 through list.length($value) {
-                $current-value: list.nth($value, $i);
-                $current-prop: list.nth($helper-properties, $i);
-                $styles: map.set($styles, $current-prop, $current-value);
-            }
-        }
+        //@if utils.is-list($value) {
+        //    @for $i from 1 through list.length($value) {
+        //        $current-value: list.nth($value, $i);
+        //        $current-prop: list.nth($helper-properties, $i);
+        //        $styles: map.set($styles, $current-prop, $current-value);
+        //    }
+        //}
         // If values is not a list
-        @else {
-            //NOTE: we will assign the same value to all properties provided
-            @each $prop in $helper-properties {
-                $styles: map.set($styles, $prop, $value);
-            }
+        //@else {
+        //NOTE: we will assign the same value to all properties provided
+        @each $prop in $helper-properties {
+            $styles: map.set($styles, $prop, $value);
         }
         // Check for important helper flag
         @if $helper-important {
