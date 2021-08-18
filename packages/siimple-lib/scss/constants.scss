@@ -13,6 +13,20 @@ $color-muted: #747c8b;     // coolgray-500
 $color-accent: #d4d8dd;    // coolgray-300
 $color-background: #ffffff;
 
+// Column sizes
+$columns: (
+    "one-fifth": 20%,
+    "one-quarter": 25%,
+    "one-third": 33.33%,
+    "two-fifths": 40%,
+    "half": 50%,
+    "three-fifths": 60%,
+    "two-thirds": 66.66%,
+    "three-quarters": 75%,
+    "four-fifths": 80%,
+    "full": 100%,
+);
+
 // Fonts
 $font-sans: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
 $font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
@@ -58,7 +72,7 @@ $shadow-color: black;
 $shadow-ring: 0 0 0 1px rgba($shadow-color, 0.02);
 $shadow-normal: 0 0.5rem 1rem -0.25rem rgba($shadow-color, 0.2), $shadow-ring;
 $shadow-small: 0 0.25rem 1rem -0.125rem rgba($shadow-color, 0.15), $shadow-ring;
-$shadow-large: 0rem 1rem 1rem -0.5rem rgba($dark, 0.25), $shadow-ring;
+$shadow-large: 0rem 1rem 1rem -0.5rem rgba($shadow-color, 0.25), $shadow-ring;
 //$shadow-old: 0 0.5em 1em -0.125em rgba($shadow-color,0.15), 0 0 0 1px rgba($shadow-color,0.02);
 
 //Sizes mapping
