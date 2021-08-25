@@ -38,6 +38,16 @@
     @return ();
 }
 
+// @description check if the provided list is empty
+@function is-empty-list ($value) {
+    @return list.length($value) > 0;
+}
+
+// @description check if the provided map is empty
+@function is-empty-map ($value) {
+    @return is-empty-list(map.keys($value));
+}
+
 // 
 // @description Removes the first item of a list
 // @param {list} $list original
