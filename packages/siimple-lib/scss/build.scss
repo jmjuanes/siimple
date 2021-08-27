@@ -1,165 +1,49 @@
 @use "sass:list";
 @use "sass:map";
-
-@use "./body.scss" as bodystyles;
 @use "./breakpoints.scss" as breakpoints;
 @use "./constants.scss" as constants;
 @use "./naming.scss" as naming;
-@use "./plugins.scss" as plugins;
-@use "./reboot.scss" as reboot;
-@use "./sheet.scss" as sheet;
-@use "./theme.scss" as theme;
+@use "./scales.scss" as scales;
+@use "./selectors.scss" as selectors;
+@use "./variants.scss" as variants;
 @use "./utils.scss" as utils;
 
-// Helper method to check if a plugin should be included
-//@function should-include-plugin($plugin, $exclude) {
-//    $plugin-name: utils.get-in($plugin, "name", null);
-//    //$plugin-type: utils.get($plugin, "type", null);
-//    @if not plugins.is-plugin($plugin) or $plugin-name == null {
-//        @return false; //Not valid plugin
-//    }
-//    //@if list.index($exclude, "*") or list.index($exclude, $plugin-name) {
-//    @if list.index($exclude, $plugin-name) {
-//        @return false;
-//    }
-//    // Include this plugin
-//    @return true;
-//}
-
-// Build siimple mixin
-@mixin build($options: ()) {
-    $prefix: utils.get-in($options, "prefix", "siimple-");
-    //$theme: utils.get-in($options, "theme", utils.empty-map());
-    //$presets: utils.empty-list() !default; //Presets to load
-    $breakpoints: utils.get-in($options, "breakpoints", utils.empty-map());
-    $plugins: utils.get-in($options, "plugins", ());
-    $variants: utils.get-in($options, "variants", utils.empty-map());
-    $custom-styles: utils.get-in($options, "styles", utils.empty-map());
-    //$include: utils.empty-list() !default; //List of components to include
-    //$exclude: utils.get-in($options, "exclude", ());
-    $add-body-styles: utils.get-in($options, "add-body-styles", true);
-    $add-reboot-styles: utils.get-in($options, "add-reboot-styles", true);
-
-    // Initialize sheet configuration
+// @description Build component styles
+@mixin component ($component) {
     $sheet: sheet.create-sheet();
-    $sheet: map.set($sheet, "prefix", $prefix); // Assign prefix
-    $sheet: map.set($sheet, "theme", theme.parse-theme($options)); // Assign theme config
-    $sheet: map.set($sheet, "breakpoints", breakpoints.parse-breakpoints($breakpoints));
-
-    // Register global variables
-    // @each $key,$name in constants.$theme-mappings {
-    //     @each $theme-key,$theme-value in utils.get-in($sheet, ("theme" $key)) {
-    //         $theme-varname: naming.get-varname((
-    //             "prefix": map.get($sheet, "prefix"),
-    //             "name": "#{$name}#{$theme-key}",
-    //         ));
-    //         // Register variable name
-    //         $sheet: sheet.add-variable-to-sheet($sheet, $theme-varname, $theme-value);
-    //     }
-    // }
-
-    // Register body styles
-    @if $add-body-styles == true {
-        $sheet: bodystyles.register-body-styles($sheet, null);
-    }
-
-    // Register reboot styles
-    @if $add-reboot-styles {
-        $sheet: reboot.register-reboot-styles($sheet, null);
-    }
-
-    // Register custom styles
-    @if utils.is-map($custom-styles) {
-        @each $selector,$rules in $custom-styles {
-            $sheet: sheet.add-styles-to-sheet($sheet, $selector, $rules);
+    $component-name: utils.get-in($component, "name", "");
+    $component-classname: naming.get-component-classname($component-name);
+    //$sheet: sheet.add-classname-to-sheet($sheet, $component-name, $component-classname);
+    $sheet: sheet.add-styles-to-sheet($sheet, $component-classname, map.get($component, "styles"));
+    //Register fonts (if provided)
+    $component-fonts: utils.get-in($component, "fonts", null);
+    @if utils.is-map($component-fonts) {
+        @each $font-name, $font-options in $component-fonts {
+            $sheet: sheet.add-font-to-sheet($sheet, $font-name, $font-options);
         }
     }
-
-    // Register plugins
-    @each $plugin in utils.flatten($plugins) {
-        //$plugin: list.nth($plugins, $index);
-        $plugin-name: map.get($plugin, "name");
-        // Check for component plugin
-        @if plugins.is-component-plugin($plugin) {
-            $plugin-variants: utils.get-in($plugin, "variants", utils.empty-map());
-            // Check for custom variants provided
-            $custom-variants: utils.get-in($variants, $plugin-name, null);
-            @if utils.is-map($custom-variants) {
-                $plugin-variants: $custom-variants;
-            }
-            //$plugin-prefix: utils.get($plugin, "prefix", null);
-            $sheet: build-component-styles($sheet, (
-                "name": $plugin-name,
-                "prefix": utils.get-in($plugin, "prefix", null),
-                "styles": utils.get-in($plugin, "styles", utils.empty-map()),
-                "variants": $plugin-variants,
-                //"keyframes": utils.get-in($plugin, "keyframes", null),
-            ));
-        }
-        // Check for helper plugin
-        @else if plugins.is-helper-plugin($plugin) {
-            $sheet: build-helper-styles($sheet, $plugin);
-        }
-        // Check for font plugin
-        @else if plugins.is-font-plugin($plugin) {
-            $sheet: sheet.add-font-to-sheet($sheet, $plugin);
-        }
-        // Check for keyframes plugin
-        @else if plugins.is-keyframes-plugin($plugin) {
-            $sheet: sheet.add-keyframes-to-sheet($sheet, $plugin);
+    //Register component keyframes
+    $component-keyframes: utils.get-in($components, "keyframes", null);
+    @if utils.is-map($component-keyframes) {
+        @each $name, $keyframes in $component-keyframes {
+            $sheet: sheet.add-keyframes-to-sheet($sheet, $name, $keyframes);
         }
     }
-
     // Compile sheet
     @include sheet.compile-sheet($sheet);
 }
 
-// @description Build component styles
-@function build-component-styles($sheet, $component) {
-    $component-name: utils.get-in($component, "name", "");
-    $component-prefix: utils.get-in($component, "prefix", null);
-    @if not utils.is-string($component-prefix) {
-        $component-prefix: map.get($sheet, "prefix");
-    }
-    $component-classname: naming.get-component-classname((
-        "name": $component-name,
-        "prefix": $component-prefix,
-    ));
-    //$sheet: sheet.add-classname-to-sheet($sheet, $component-name, $component-classname);
-    $sheet: sheet.add-styles-to-sheet($sheet, $component-classname, map.get($component, "styles"));
-    // Register each variant style
-    //$component-variants: utils.get-in($component, "variants", utils.create-empty-map());
-    @each $variant-name,$variant-styles in map.get($component, "variants") {
-        $variant-classname: $component-classname; // Default variant classname is component classname
-        @if $variant-name != "default" {
-            $variant-classname: naming.get-component-classname((
-                "name": $component-name,
-                "modifier": $variant-name,
-                "prefix": $component-prefix,
-            ));
-            //$variant-name: $component-name + "." + $variant-name;
-            // Register this variant class
-            //$sheet: sheet.add-classname-to-sheet($sheet, $variant-name, $variant-classname);
-        }
-        // Register styles for this variant
-        $sheet: sheet.add-styles-to-sheet($sheet, $variant-classname, $variant-styles);
-    }
-    //Return the updated sheet
-    @return $sheet;
-}
-
 // @description Build a helper styles
-@function build-helper-styles ($sheet, $helper) {
+@mixin helper ($helper) {
     $helper-name: map.get($helper, "name");
     $helper-properties: map.get($helper, "properties");
     $helper-values: utils.empty-map();
-    $helper-theme: utils.get-in($helper, "theme", null);
+    $helper-scale: utils.get-in($helper, "scale", null);
     $helper-important: utils.get-in($helper, "important", false);
-    // Check if we need to get values from theme field
-    @if $helper-theme {
-        $theme: map.get($sheet, "theme");
-        @if map.has-key($theme, $helper-theme) {
-            $helper-values: map.get($theme, $helper-theme);
+    // Check if we need to get values from scales
+    @if $helper-scale {
+        @if scales.has-scale($helper-scale) {
+            $helper-values: scales.get-scale($helper-scale);
         }
     }
     // Check for custom values to merge
@@ -173,29 +57,6 @@
     }
     // Generate styles for this helper
     @each $key,$value in $helper-values {
-        $styles: utils.empty-map();
-        //Check if we have provided a list of values
-        //@if utils.is-list($value) {
-        //    @for $i from 1 through list.length($value) {
-        //        $current-value: list.nth($value, $i);
-        //        $current-prop: list.nth($helper-properties, $i);
-        //        $styles: map.set($styles, $current-prop, $current-value);
-        //    }
-        //}
-        // If values is not a list
-        //@else {
-        //NOTE: we will assign the same value to all properties provided
-        @each $prop in $helper-properties {
-            $styles: map.set($styles, $prop, $value);
-        }
-        // Check for important helper flag
-        @if $helper-important {
-            $new-styles: utils.empty-map(); // Map to generate new styles
-            @each $prop,$value in $styles {
-                $new-styles: map.set($new-styles, $prop, ($value "important"));
-            }
-            $styles: $new-styles;
-        }
         // Register helpers classes for each state
         @each $state in $helper-states {
             $classname: naming.get-helper-classname((
@@ -203,25 +64,31 @@
                 "property": $key,
                 "state": $state,
             ));
-            $sheet: sheet.add-styles-to-sheet($sheet, $classname, $styles);
+            //$sheet: sheet.add-styles-to-sheet($sheet, $classname, $styles);
+            @include selectors.use-state-selector($classname, $state) {
+                @each $prop in $helper-properties {
+                    @include scales.use-scale($prop, $value, $helper-important);
+                }
+            }
         }
         // For responsive variants, we will register the style
         // for each breakpoint in the list of breakpoints
         @if $helper-responsive {
-            @each $breakpoint in breakpoints.get-breakpoints-keys() {
+            @include breakpoints.use-breakpoints using ($breakpoint) {
                 $classname: naming.get-helper-classname((
                     "name": $helper-name,
                     "property": $key,
                     "breakpoint": $breakpoint,
                 ));
-                $breakpoint-styles: map.set(utils.empty-map(), "@breakpoint #{$breakpoint}", $styles);
-                $sheet: sheet.add-styles-to-sheet($sheet, $classname, $breakpoint-styles);
+                #{$classname} {
+                    @each $prop in $helper-properties {
+                        @include scales.use-scale($prop, $value, $helper-important);
+                    }
+                }
             }
         }
         //@debug map.get($sheet, "styles");
     }
-    // Return parsed sheet
-    @return $sheet;
 }
 
 
