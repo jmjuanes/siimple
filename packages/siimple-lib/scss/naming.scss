@@ -2,7 +2,31 @@
 @use "./utils.scss" as utils;
 
 // Naming global variables
-$default-prefix: "siimple-"; // Default prefix for components and variables
+$prefixes: (
+    "components": "siimple-",
+    "variants": "is-",
+    "helpers": "has-",
+    "variables": "siimple-",
+);
+
+// @description Update the prefixes used
+@mixin prefixes ($custom-prefixes: null) {
+    @if not utils.is-map($custom-prefixes) {
+        $custom-prefixes: utils.empty-map();
+    }
+    //$new-prefixes: utils.empty-map();
+    @each $prefix in map.keys($prefixes) {
+        $new-value: utils.get-in($custom-prefixes, $prefix, "");
+        @if utils.is-string($new-value) {
+            $prefixes: map.set($prefixes, $prefix, $new-value) !global;
+        }
+    }
+}
+
+// @description get prefix
+@function get-prefix ($name) {
+    @return utils.get-in($prefixes, $name, "");
+}
 
 // @description Generate classname for helper
 // @option name: name of the helper
@@ -10,8 +34,8 @@ $default-prefix: "siimple-"; // Default prefix for components and variables
 // @option state: state of the helper (default, hover, active)
 // @option breakpoint: responsive breakpoint
 @function get-helper-classname($options) {
-    $classname: ".has-#{map.get($options, "name")}";
-    $property: map.get($options, "property");
+    $classname: ".#{get-prefix("helpers")}#{map.get($options, "name")}";
+    $property: utils.get-in($options, "property", "default");
     @if $property != "default" {
         $classname: "#{$classname}-#{$property}";
     }
@@ -22,8 +46,8 @@ $default-prefix: "siimple-"; // Default prefix for components and variables
     }
     // Apply for state
     $state: utils.get-in($options, "state", "default");
-    @if $state == "hover" {
-        @return "#{$classname}\\:hover:hover";
+    @if $state != "default" {
+        @return "#{$classname}\\:#{$state}";
     }
     // Default --> return the default helper class
     //@return ".has-#{$name}-#{$property}";
@@ -31,39 +55,19 @@ $default-prefix: "siimple-"; // Default prefix for components and variables
 }
 
 // @description Generate component classname
-@function get-component-classname($options) {
-    // Generate the component name
-    $prefix: utils.get-in($options, "prefix", "");
-    // @if not utils.is-string($prefix) {
-    //     $prefix: $default-prefix;
-    // }
-    $name: utils.get-in($options, "name", null);
-    $modifier: utils.get-in($options, "modifier", null);
-    @if utils.is-string($name) and utils.is-string($modifier) {
-        @return ".#{$prefix}#{$name}.is-#{$modifier}";
-    }
-    @else if utils.is-string($name) {
-        @return ".#{$prefix}#{$name}";
-    }
-    @else if utils.is-string($modifier) {
-        @return ".is-#{$modifier}";
-    }
-    // Other value --> return empty classname
-    @return "";
+@function get-component-classname ($name) {
+    //$name: utils.get-in($options, "name", "");
+    @return ".#{get-prefix("components")}#{$name}";
+}
+
+// @description generage variant classname
+@function get-variant-classname ($name) {
+    //$name: utils.get-in($options, "name", "");
+    @return ".#{get-prefix("variants")}#{$name}";
 }
 
 // Generate a variable name
-@function get-varname($options) {
-    // Check for variable name provided
-    $name: utils.get-in($options, "name", null);
-    $prefix: utils.get-in($options, "prefix", "");
-    // @if not utils.is-string($prefix) {
-    //     $prefix: $default-prefix;
-    // }
-    @if utils.is-string($name) {
-        @return "#{$prefix}#{$name}";
-    }
-    // Other value --> return empty varname
-    @return "";
+@function get-varname ($name) {
+    @return "--#{get-prefix("variables")}#{$name}";
 }
 
