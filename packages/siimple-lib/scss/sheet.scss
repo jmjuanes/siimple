@@ -5,10 +5,11 @@
 @use "./breakpoints.scss" as breakpoints;
 @use "./constants.scss" as constants;
 @use "./naming.scss" as naming;
+@use "./scales.scss" as scales;
 @use "./utils.scss" as utils;
 
 // @description Generate a flat version fo the specified rules
-@function _parse-styles($classname, $rules) {
+@function parse-styles ($classname, $rules) {
     $styles: utils.empty-map();
     $styles: map.set($styles, $classname, utils.empty-map());
     @each $key,$rule in $rules {
@@ -16,13 +17,13 @@
         @if utils.is-map($rule) {
             // Check if rule starts with the '@' character
             @if utils.starts-with($key, "@") {
-                $new-styles: _parse-styles($classname, $rule);
+                $new-styles: parse-styles($classname, $rule);
                 $styles: utils.set-in($styles, $key, $new-styles);
             }
             // Other value --> parse as nested styles
             @else {
                 $new-classname: utils.replace($key, "&", $classname);
-                $new-styles: _parse-styles($new-classname, $rule);
+                $new-styles: parse-styles($new-classname, $rule);
                 $styles: map.merge($styles, $new-styles);
             }
         }
@@ -46,34 +47,24 @@
 }
 
 // @description Merge two styles objects
-@function _merge-styles($source, $target) {
-    //@return utils.merge($source, $target, $deep-merge: true);
+@function merge-styles ($source, $target) {
     @return map.deep-merge($source, $target);
 }
 
 // @description Build styles
-@mixin _build-styles($sheet, $styles) {
-    $theme: map.get($sheet, "theme");
+@mixin build-styles ($styles) {
     @each $selector,$rules in $styles {
-        // Check if we should preprocess the selector
-        //@if string.index($selector, "{{") and string.index($selector, "}}") {
-        //    @each $key,$value in $classnames {
-        //        $selector: utils.replace($selector, "{{#{$key}}}", $value);
-        //        //$selector: utils.replace($selector, "{{ #{$key} }}", $value);
-        //    }
-        //}
         // Check for breakpoint selector
         @if breakpoints.is-breakpoint-selector($selector) {
-            $breakpoint-key: breakpoints.get-breakpoint-from-selector($selector);
-            $breakpoint-value: utils.get-in($sheet, ("breakpoints" $breakpoint-key), null);
-            @include breakpoints.use-breakpoint($breakpoint-value) {
-                @include _build-styles($sheet, $rules);
+            $breakpoint: breakpoints.get-breakpoint-from-selector($selector);
+            @include breakpoints.use-breakpoint($breakpoint) {
+                @include build-styles($rules);
             }
         }
         // Check for media rules --> process as nested rules
         @else if utils.starts-with($selector, "@media") {
             @media #{utils.unquote(utils.replace($selector, "@media ", ""))} {
-                @include _build-styles($sheet, $rules);
+                @include build-styles($rules);
             }
         }
         // If is not a media rule, add each rule
@@ -89,21 +80,8 @@
                         }
                         $value: utils.first-item($value);
                     }
-                    // Check if the property is registered in the css mappings
-                    @if utils.is-string($value) and map.has-key(constants.$css-mappings, $prop) {
-                        $theme-prop: map.get(constants.$css-mappings, $prop);
-                        $theme-value: utils.get-in($theme, ($theme-prop $value), null);
-                        @if $theme-value != null {
-                            $value: $theme-value;
-                        }
-                    }
-                    // Check for important flag added
-                    @if $is-important {
-                        #{utils.unquote($prop)}: utils.unquote($value) !important;
-                    }
-                    @else {
-                        #{utils.unquote($prop)}: utils.unquote($value);
-                    }
+                    // Generate this property
+                    @include scales.use-scale($prop, $value, $is-important);
                 }
             }
         }
@@ -115,9 +93,12 @@
 }
 
 // @description Build variables block
-@mixin _build-variables($sheet, $variables) {
+@mixin build-variables ($variables) {
     :root {
         @each $varname,$value in $variables {
+            @if utils.starts-with($varname, "--") {
+                $varname: string.slice($varname, 3);
+            }
             --#{$varname}: #{utils.unquote($value)};
         }
     }
@@ -126,14 +107,10 @@
 // @description Create a new empty sheet object
 @function create-sheet () {
     @return (
-        //"classnames": utils.empty-map(),
         "styles": utils.empty-map(),
         "fonts": utils.empty-list(),
         "variables": utils.empty-map(),
         "keyframes": utils.empty-map(),
-        "theme": utils.empty-map(),
-        "prefix": naming.$default-prefix,
-        "breakpoints": utils.empty-map(),
     );
 }
 
@@ -145,7 +122,7 @@
 //}
 
 // @description Add a new rule to the object
-@function add-styles-to-sheet($sheet, $classname, $rules) {
+@function add-styles-to-sheet ($sheet, $classname, $rules) {
     //@debug "Adding '#{$classname}' styles to sheet... OK";
     $old-styles: utils.get-in($sheet, "styles", utils.empty-map());
     $new-styles: _parse-styles($classname, $rules);
@@ -154,21 +131,22 @@
 } 
 
 // @description Register a new variable in the sheet
-@function add-variable-to-sheet($sheet, $varname, $value) {
+@function add-variable-to-sheet ($sheet, $varname, $value) {
     //@debug "Adding '#{$varname}' variable to sheet... OK";
     @return utils.set-in($sheet, ("variables" $varname), $value);
 }
 
 // @description Register a new keyframe in the sheet
-@function add-keyframes-to-sheet($sheet, $keyframes) {
+@function add-keyframes-to-sheet ($sheet, $name, $options) {
     $new-keyframes: map.get($sheet, "keyframes");
-    $name: map.get($keyframes, "name");
+    //$name: map.get($keyframes, "name");
     //$steps: map.get($keyframes, "steps");
     $steps: utils.empty-map();
-    @each $step-name,$step-rules in map.get($keyframes, "steps") {
+    //@each $step-name,$step-rules in map.get($options, "steps") {
+    @each $step-name,$step-rules in $options {
         $steps: map.merge(
             $steps,
-            _parse-styles($step-name, $step-rules)
+            parse-styles($step-name, $step-rules)
         );
     }
     //@debug "Adding '#{$name}' keyframe to sheet... OK";
@@ -177,8 +155,8 @@
 }
 
 // @description Register a new font in the sheet
-@function add-font-to-sheet($sheet, $options) {
-    $name: map.get($options, "name");
+@function add-font-to-sheet ($sheet, $name, $options) {
+    //$name: map.get($options, "name");
     $sources: "";
     @each $type,$url in map.get($options, "sources") {
         $sources: $sources + ",url(#{$url}) format(\"#{$type}\")"; 
@@ -195,9 +173,9 @@
 }
 
 // @description Compile sheet
-@mixin compile-sheet($sheet, $options: null) {
+@mixin compile-sheet ($sheet) {
     //@debug "Compiling sheet";
-    @include _build-variables($sheet, map.get($sheet, "variables"));
+    @include build-variables($sheet, map.get($sheet, "variables"));
     // Register fonts
     $sheet-fonts: map.get($sheet, "fonts");
     @each $font-rules in $sheet-fonts {
@@ -211,9 +189,9 @@
     // Register keyframes
     @each $keyframe-name,$keyframe-rules in map.get($sheet, "keyframes") {
         @keyframes #{utils.unquote($keyframe-name)} {
-            @include _build-styles($sheet, $keyframe-rules);
+            @include build-styles($keyframe-rules);
         }
     }
-    @include _build-styles($sheet, map.get($sheet, "styles"));
+    @include build-styles(map.get($sheet, "styles"));
 }
 
