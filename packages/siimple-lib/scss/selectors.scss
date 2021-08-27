@@ -1,0 +1,20 @@
+@use "./naming.scss" as naming;
+
+// @description Generate state selector
+@mixin use-state-selector ($classname, $state) {
+    @if $state == "default" {
+        #{$classname} { @content; }
+    }
+    @if $state == "hover" {
+        #{$classname}:hover { @content; }
+    }
+    @if $state == "focus" {
+        #{$classname}:focus { @content; }
+    }
+}
+
+// @description Generate a component selector
+@mixin use-component-selector ($name) {
+    #{naming.get-component-classname($name)} { @content; }
+}
+
