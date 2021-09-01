@@ -2,17 +2,25 @@
 @use "./utils.scss" as utils;
 @use "./constants.scss" as constants;
 
+// Backgrounds configuration
+// Used for backgrounds and borders
+$backgrounds-scale: (
+    "body": constants.$white,
+    "fill": constants.$light,
+    "primary": constants.$primary,
+    "secondary": constants.$secondary,
+    "highlight": constants.$highlight,
+);
+
 // Colors configuration
 // Primary, text, background, muted and accent colors are required
 $colors-scale: (
-    "primary": constants.$color-primary,
-    "secondary": constants.$color-secondary,
-    "text": constants.$color-text,
-    "heading": constants.$color-heading,
-    "background": constants.$color-background,
-    "muted": constants.$color-muted,
-    "accent": constants.$color-accent,
-    "highlight": constants.$color-highlight,
+    "primary": constants.$primary,
+    "secondary": constants.$secondary,
+    "accent": constants.$accent,
+    "body": constants.$dark,
+    "heading": constants.$dark,
+    "muted": constants.$muted,
 );
 
 //Default font variables
@@ -85,6 +93,7 @@ $spacing-scale: map.merge(constants.$sizes, (
 
 // Scales global map
 $scales: (
+    "backgrounds": $backgrounds-scale,
     "colors": $colors-scale,
     "fonts": $fonts-scale,
     "font-sizes": $font-sizes-scale,

@@ -2,29 +2,22 @@
 @use "./constants.scss" as constants;
 @use "./utils.scss" as utils;
 
-// Screen sizes
-$screens: (
-    "tablet": constants.$screen-tablet,
-    "desktop": constants.$screen-desktop,
-    "fullhd": constants.$screen-fullhd,
-);
-
 // Breakpoints variables
 $current-breakpoints: (
     "mobile": (
         "min": 0px, 
-        "max": map.get($screens, "tablet"),
+        "max": constants.$tablet,
     ),
     "tablet": (
-        "min": map.get($screens, "tablet"), 
+        "min": constants.$tablet, 
         "max": null,
     ),
     "desktop": (
-        "min": map.get($screens, "desktop"), 
+        "min": constants.$desktop, 
         "max": null,
     ),
     "fullhd": (
-        "min": map.get($screens, "fullhd"),
+        "min": constants.$fullhd,
         "max": null,
     ),
 );

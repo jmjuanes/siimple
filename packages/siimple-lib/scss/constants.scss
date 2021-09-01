@@ -1,17 +1,18 @@
 // Screen sizes
-$screen-tablet: 600px;
-$screen-desktop: 1200px;
-$screen-fullhd: 1800px;
+$tablet: 600px;
+$desktop: 1200px;
+$fullhd: 1800px;
 
 // Default colors
-$color-primary: #307ad5;   // blue-500
-$color-highlight: #e5effb; // blue-200
-$color-secondary: #ffffff; //
-$color-text: #363f4f;      // coolgray-700
-$color-heading: #363f4f;   // coolgray-700
-$color-muted: #747c8b;     // coolgray-500
-$color-accent: #d4d8dd;    // coolgray-300
-$color-background: #ffffff;
+$primary: #307ad5;     // blue-500
+$highlight: #e5effb;   // blue-200
+$secondary: #ffffff;   //
+$accent: #ffffff;      //
+$light: #ebedef;       // coolgray-200
+$dark: #363f4f;        // coolgray-700
+$muted: #747c8b;       // coolgray-500
+$black: #000000;
+$white: #ffffff;
 
 // Column sizes
 $columns: (
@@ -97,6 +98,7 @@ $sizes: (
 
 // CSS aliases
 $css-aliases: (
+    "bc": ("border-color"),
     "bg": ("background-color"),
     "m": ("margin"),
     "mb": ("margin-bottom"),
@@ -118,13 +120,13 @@ $css-aliases: (
 
 // Map css properties to theme fields
 $css-mappings: (
-    "background-color": "colors",
-    "border-color": "colors",
+    "background-color": "backgrounds",
+    "border-color": "backgrounds",
     "border-radius": "radius",
     "bottom": "spacing",
     "box-shadow": "shadows",
     "color": "colors",
-    "fill": "colors",
+    "fill": "backgrounds",
     "font-family": "fonts",
     "font-size": "font-sizes",
     "font-weight": "font-weights",
