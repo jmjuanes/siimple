@@ -91,4 +91,27 @@
     }
 }
 
+// @description Generate a color helper
+@mixin color-helper ($helper) {
+    @debug $helper;
+    $helper-name: utils.get-in($helper, "name", "");
+    $helper-property: utils.get-in($helper, "property", "");
+    $helper-states: utils.get-in($helper, "states", utils.empty-list());
+    $helper-colors: utils.get-in($helper, "colors", utils.empty-map());
+    // Register color helpers
+    @each $state in $helper-states {
+        $varname: naming.get-varname("#{$helper-property}-opacity");
+        @each $key,$value in $helper-colors {
+            $classname: naming.get-helper-classname((
+                "name": $helper-name,
+                "property": $key,
+                "state": $state,
+            ));
+            @include selectors.use-state-selector($classname, $state) {
+                #{$varname}: 1;
+                #{$helper-property}: rgba($value, var(#{$varname}));
+            }
+        }
+    }
+}
 
