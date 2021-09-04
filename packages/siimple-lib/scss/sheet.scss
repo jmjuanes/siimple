@@ -195,3 +195,22 @@
     @include build-styles(map.get($sheet, "styles"));
 }
 
+// @description shortcut for building sheets
+@mixin use-sheet ($options) {
+    @error "Not implemented yet...";
+}
+
+// @description generate a fort-face
+@mixin use-font ($name, $options) {
+    $sheet: create-sheet();
+    $sheet: add-font-to-sheet($sheet, $name, $options);
+    @include compile-sheet($sheet);
+}
+
+// @description sortcut to generate a keyframes
+@mixin use-keyframes ($name, $options) {
+    $sheet: create-sheet();
+    $sheet: add-keyframes-to-sheet($sheet, $name, $options);
+    @include compile-sheet($sheet);
+}
+
