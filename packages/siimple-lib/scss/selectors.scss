@@ -18,3 +18,8 @@
     #{naming.get-component-classname($name)} { @content; }
 }
 
+// @description generate a variant selector
+@mixin use-variant-selector ($name) {
+    &#{naming.get-variant-classname($name)} { @content; }
+}
+
