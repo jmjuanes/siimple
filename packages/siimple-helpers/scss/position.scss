@@ -1,0 +1,35 @@
+@use "siimple-lib" as lib;
+//@use "./constants.scss" as constants;
+
+//Register position utils
+@mixin position () {
+    //$positions: ("bottom" "left" "right" "top");
+    @include lib.helper((
+        "name": "position",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("position"),
+        "values": (
+            "relative": "relative",
+            "absolute": "absolute",
+            "sticky": "sticky",
+            "fixed": "fixed",
+            "initial": "initial",
+        ),
+    ));
+    // Arrange positions
+    //@each $pos in $positions {
+    //    @include lib.helper((
+    //        "name": $pos,
+    //        "states": ("default"),
+    //        "responsive": true,
+    //        "properties": ($pos),
+    //        "values": (
+    //            "0": 0%, 
+    //            "50": 50%, 
+    //            "100": 100%,
+    //        ),
+    //    ));
+    //}
+}
+

@@ -1,0 +1,133 @@
+@use "sass:list";
+@use "sass:map";
+@use "siimple-lib" as lib;
+@use "./constants.scss" as constants;
+
+// @description generate color helpers
+@mixin color () {
+    @each $name,$options in constants.$color-properties {
+        //$property: map.get($options, "property");
+        $scale: map.get($options, "scale");
+        @include lib.color-helper((
+            "name": $name,
+            "property": map.get($options, "property"),
+            "states": map.get($options, "states"),
+            "colors": map.merge(lib.get-scale($scale), (
+                "white": lib.$white,
+                "black": lib.$black,
+            )),
+        ));
+    }
+}
+
+// @description generate font-family helpers
+@mixin font () {
+    @include lib.helper((
+        "name": "font",
+        "states": ("default"),
+        "properties": ("font-family"),
+        "scale": "fonts",
+    ));
+}
+
+// @description generate font weight helpers
+@mixin font-weight () {
+    @include lib.helper((
+        "name": "weight",
+        "states": ("default"),
+        "properties": ("font-weight"),
+        "scale": "font-weights",
+    ));
+}
+
+// @description generate font size  helpers
+@mixin font-size () {
+    @include lib.helper((
+        "name": "size",
+        "states": ("default"),
+        "properties": ("font-size"),
+        "scale": "font-sizes",
+    ));
+}
+
+// @description generate line height helpers
+@mixin line-height () {
+    @include lib.helper((
+        "name": "lh",
+        "states": ("default"),
+        "properties": ("line-height"),
+        "scale": "line-heights",
+    ));
+}
+
+// @description generate opacity helpers
+@mixin opacity () {
+    // General opacity values
+    @include lib.helper((
+        "name": "opacity",
+        "states": ("default" "hover"),
+        "responsive": true,
+        "properties": ("opacity"),
+        "scale": "opacities",
+    ));
+    // Opacity for text, background, border...
+    @each $name,$options in constants.$color-properties {
+        @include lib.variable-helper((
+            "name": "#{$name}-opacity",
+            "states": map.get($options, "states"),
+            "values": lib.get-scale("opacities"),
+        ));
+    }
+}
+
+// @description Generate radius helpers
+@mixin radius () {
+    @include lib.helper((
+        "name": "radius",
+        "states": ("default" "hover"),
+        "responsive": true,
+        "properties": ("border-radius"),
+        "scale": "radius",
+    ));
+}
+
+// @description generate shadow utils
+@mixin shadow () {
+    @include lib.helper((
+        "name": "shadow",
+        "states": ("default"),
+        "properties": ("box-shadow"),
+        "scale": "shadows",
+    ));
+}
+
+// @description Wrapper for all sizing helpers
+@mixin sizing () {
+    @each $name,$prop in constants.$sizing-properties {
+        $screen-value: if(lib.ends-with($prop, "height"), 100vh, 100vw);
+        @include lib.helper((
+            "name": $name,
+            "states": ("default"),
+            "properties": ($prop),
+            "scale": "sizes",
+            "values": (
+                "screen": $screen-value,
+            ), 
+        ));
+    }
+}
+
+// @description register spacing helpers
+@mixin spacing () {
+    @each $name,$prop in constants.$spacing-properties {
+        @include lib.helper((
+            "name": $name,
+            "states": ("default"),
+            "responsive": true,
+            "properties": $prop,
+            "important": true,
+            "scale": "sizes",
+        ));
+    }
+}
+

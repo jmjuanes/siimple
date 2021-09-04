@@ -1,0 +1,78 @@
+@use "siimple-lib" as lib;
+
+// @description generate text overflow utils
+@mixin text-overflow () {
+    @include lib.helper((
+        "name": "text",
+        "states": ("default"),
+        "properties": ("white-space"),
+        "values": (
+            "wrap": "normal",
+            "nowrap": "nowrap",
+        ),
+    ));
+    @include lib.helper((
+        "name": "text",
+        "states": ("default"),
+        "properties": ("text-overflow"),
+        "values": (
+            "ellipsis": ellipsis,
+            "clip": clip,
+        ),
+    ));
+}
+
+// @description generate text transform helpers
+@mixin text-transform () {
+    @include lib.helper((
+        "name": "text",
+        "states": ("default" "hover"),
+        "properties": ("font-style"),
+        "values": (
+            "italic": "italic",
+        ),
+    ));
+    @include lib.helper((
+        "name": "text",
+        "states": ("default" "hover"),
+        "properties": ("text-transform"),
+        "values": (
+            "capitalize": "capitalize",
+            "uppercase": "uppercase",
+            "lowercase": "lowercase",
+        ),
+    ));
+    @include lib.helper((
+        "name": "text",
+        "states": ("default" "hover"),
+        "properties": ("text-decoration"),
+        "values": (
+            "underline": "underline",
+            "no-underline": "none",
+        ),
+    ));
+}
+
+// @description generate text align helpers
+@mixin text-align () {
+    @include lib.helper((
+        "name": "text",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("text-align"),
+        "values": (
+            "justify": justify, 
+            "left": left, 
+            "center": center, 
+            "right": right,
+        ),
+    ));
+}
+
+// @description include all text helpers
+@mixin text () {
+    @include text-overflow();
+    @include text-transform();
+    @include text-align();
+}
+

@@ -1,0 +1,127 @@
+@use "siimple-lib" as lib;
+
+// @description generate flexbox utils
+@mixin flexbox () {
+    @include lib.helper((
+        "name": "flex",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("display"),
+        "values": (
+            "default": "flex",
+            "inline": "inline-flex",
+        ),
+    ));
+    @include lib.helper((
+        "name": "flex",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("flex"),
+        "values": (
+            "none": "none",
+            "initial": "initial",
+            "auto": "auto",
+        ),
+    ));
+    @include lib.helper((
+        "name": "flex",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("flex-direction"),
+        "values": (
+            "row": "row", 
+            "column": "column", 
+            "row-rev": "row-reverse", 
+            "column-rev": "column-reverse",
+        ),
+    ));
+    @include lib.helper((
+        "name": "flex",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("flex-wrap"),
+        "values": (
+            "wrap": "wrap",
+            "nowrap": "nowrap",
+        ),
+    ));
+    @include lib.helper((
+        "name": "flex",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("flex-grow"),
+        "values": (
+            "grow": 1,
+            "nogrow": 0,
+        ),
+    ));
+    @include lib.helper((
+        "name": "flex",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("flex-shrink"),
+        "values": (
+            "shrink": 1,
+            "noshrink": 0,
+        ),
+    ));
+    //Align content
+    @include lib.helper((
+        "name": "content",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("align-content"),
+        "values": (
+            "start": "flex-start",
+            "end": "flex-end",
+            "center": "center",
+            "between": "space-between",
+            "around": "space-around",
+            "evenly": "space-evenly",
+        ),
+    ));
+    //Align items
+    //https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+    @include lib.helper((
+        "name": "items",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("align-items"),
+        "values": (
+            "start": "flex-start",
+            "end": "flex-end",
+            "center": "center",
+            "stretch": "stretch",
+            "baseline": "baseline",
+        ),
+    ));
+    //Justify content
+    //https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+    @include lib.helper((
+        "name": "justify",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("justify-content"),
+        "values": (
+            "start": "flex-start",
+            "end": "flex-end",
+            "center": "center",
+            "between": "space-between",
+            "around": "space-around",
+            "evenly": "space-evenly",
+        ),
+    ));
+    //Flexbox order
+    @include lib.helper((
+        "name": "order",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("order"),
+        "values": (
+            "none": 0,
+            "first": -999,
+            "last": 999,
+        ),
+    ));
+}
+

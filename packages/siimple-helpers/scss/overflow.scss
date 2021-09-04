@@ -1,0 +1,24 @@
+@use "siimple-lib" as lib;
+
+// @description create overflow helpers
+@mixin overflow () {
+    $overflow-values: (
+        "auto": auto,
+        "scroll": scroll,
+        "hidden": hidden,
+    );
+    $overflow-properties: (
+        "overflow",
+        "overflow-x",
+        "overflow-y",
+    );
+    @each $prop in $overflow-properties {
+        @include lib.helper((
+            "name": $prop,
+            "states": ("default"),
+            "properties": ($prop),
+            "values": $overflow-values,
+        ));
+    }
+}
+

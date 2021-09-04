@@ -1,0 +1,20 @@
+@use "siimple-lib" as lib;
+
+// @description generate display utils
+@mixin display () {
+    @include lib.helper((
+        "name": "d",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("display"),
+        "values": (
+            "none": "none",
+            "inline": "inline",
+            "block": "block",
+            "inline-block": "inline-block",
+            "flex": "flex",
+            "inline-flex": "inline-flex",
+        ),
+    ));
+}
+

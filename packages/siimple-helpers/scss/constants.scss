@@ -1,0 +1,60 @@
+// Cursors
+$cursors: (
+    "hand": pointer,
+    "pointer": pointer,
+    "move": move,
+    "none": none,
+    "zoom-in": zoom-in,
+    "zoom-out": zoom-out,
+    "not-allowed": not-allowed,
+);
+
+// Properties for colors helpers
+$color-properties: (
+    "bg": (
+        "property": "background-color",
+        "scale": "backgrounds",
+        "states": ("default" "hover" "focus"),
+    ),
+    "text": (
+        "property": "color",
+        "scale": "colors",
+        "states": ("default" "hover"),
+    ),
+    //"border": "border-color",
+    //"fill": "fill",
+);
+
+// Properties for sizing helpers
+$sizing-properties: (
+    "w": "width",
+    "minw": "min-width",
+    "maxw": "max-width",
+    "h": "height",
+    "minh": "min-height",
+    "maxh": "max-height",
+);
+
+// Properties for spacing helpers
+$spacing-properties: (
+    "p": ("padding"),
+    "px": ("padding-left" "padding-right"),
+    "py": ("padding-top" "padding-bottom"),
+    "pt": ("padding-top"),
+    "pb": ("padding-bottom"),
+    "pl": ("padding-left"),
+    "pr": ("padding-right"),
+    "m": ("margin"),
+    "mx": ("margin-left" "margin-right"),
+    "my": ("margin-top" "margin-bottom"),
+    "mt": ("margin-top"),
+    "mb": ("margin-bottom"),
+    "ml": ("margin-left"),
+    "mr": ("margin-right"),
+    "bottom": ("bottom"),
+    "left": ("left"),
+    "right": ("right"),
+    "top": ("top"),
+);
+
+

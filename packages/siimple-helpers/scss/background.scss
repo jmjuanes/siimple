@@ -1,0 +1,49 @@
+@use "siimple-lib" as lib;
+
+// @description Register background helpers
+@function background () {
+    // Background color
+    $bg-color: lib.create-helper((
+        "name": "bg",
+        "states": ("default" "hover"),
+        "properties": ("background-color"),
+        "theme": "colors",
+    ));
+    // Background size
+    $bg-size: lib.create-helper((
+        "name": "bg",
+        "states": ("default"),
+        "properties": ("background-size"),
+        "values": (
+            "auto": "auto",
+            "cover": "cover", 
+            "contain": "contain",
+        ),
+    ));
+    // Background repeat
+    $bg-repeat: lib.create-helper((
+        "name": "bg",
+        "states": ("default"),
+        "properties": ("background-repeat"),
+        "values": (
+            "repeat": repeat,
+            "repeat-x": repeat-x,
+            "repeat-y": repeat-y,
+            "no-repeat": no-repeat,
+        ),
+    ));
+    // Background opacity
+    // $bg-opacity: lib.utility((
+    //     "name": "bg-opacity",
+    //     "states": ("default" "hover"),
+    //     "variables": ("bg-opacity"),
+    //     "values": lib.$opacity
+    // ));
+    // Return background configs
+    @return (
+        $bg-size,
+        $bg-color,
+        $bg-repeat,
+    );
+}
+
