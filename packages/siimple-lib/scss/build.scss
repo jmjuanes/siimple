@@ -93,14 +93,13 @@
 
 // @description Generate a color helper
 @mixin color-helper ($helper) {
-    @debug $helper;
+    //@debug $helper;
     $helper-name: utils.get-in($helper, "name", "");
     $helper-property: utils.get-in($helper, "property", "");
     $helper-states: utils.get-in($helper, "states", utils.empty-list());
     $helper-colors: utils.get-in($helper, "colors", utils.empty-map());
-    // Register color helpers
+    $varname: naming.get-varname("#{$helper-name}-opacity");
     @each $state in $helper-states {
-        $varname: naming.get-varname("#{$helper-property}-opacity");
         @each $key,$value in $helper-colors {
             $classname: naming.get-helper-classname((
                 "name": $helper-name,
@@ -110,6 +109,26 @@
             @include selectors.use-state-selector($classname, $state) {
                 #{$varname}: 1;
                 #{$helper-property}: rgba($value, var(#{$varname}));
+            }
+        }
+    }
+}
+
+// @description generate a variable helper
+@mixin variable-helper ($helper) {
+    $helper-name: utils.get-in($helper, "name", "");
+    $helper-states: utils.get-in($helper, "states", utils.empty-list());
+    $helper-values: utils.get-in($helper, "values", utils.empty-map());
+    $varname: naming.get-varname($helper-name);
+    @each $state in $helper-states {
+        @each $key,$value in $helper-values {
+            $classname: naming.get-helper-classname((
+                "name": $helper-name,
+                "property": $key,
+                "state": $state,
+            ));
+            @include selectors.use-state-selector($classname, $state) {
+                #{$varname}: utils.unquote($value);
             }
         }
     }
