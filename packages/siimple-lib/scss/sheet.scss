@@ -175,7 +175,7 @@
 // @description Compile sheet
 @mixin compile-sheet ($sheet) {
     //@debug "Compiling sheet";
-    @include build-variables($sheet, map.get($sheet, "variables"));
+    @include build-variables(map.get($sheet, "variables"));
     // Register fonts
     $sheet-fonts: map.get($sheet, "fonts");
     @each $font-rules in $sheet-fonts {
