@@ -2,6 +2,14 @@ const fs = require("fs");
 const path = require("path");
 const args = require("get-args");
 
+//Export constants values
+module.exports.endl = "\n";
+
+// Convert he provided value to array
+module.exports.toArray = (value) => {
+    return [value].flat(2);
+};
+
 //Check if the provided value is an string
 module.exports.isString = function (value) {
     return typeof value === "string";
@@ -10,6 +18,15 @@ module.exports.isString = function (value) {
 //Check if the provided value is a valid object
 module.exports.isObject = function (value) {
     return typeof value === "object" && value !== null;
+};
+
+//Get module configuration
+module.exports.getConfig = (options) => {
+    const configPath = path.resolve(
+        process.cwd(), 
+        path.join(options.config || ".", "module.config.js")
+    );
+    return require(configPath);
 };
 
 //Get env variables
