@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const glob = require("glob");
 const getArgs = require("get-args");
+
+const utils = require("./utils.js");
 const generateBanner = require("./banner.js");
 
 //Global variables
@@ -171,29 +173,23 @@ const bundleScss = function (config, cwd) {
 };
 
 // Parse output configuration
-const parseOutput = (output) => ({
-    "path": output.path || "./",
-    "filename": output.filename || "index.scss",
+const parseOutput = (config, cwd) => ({
+    "path": path.resolve(cwd, config.output || "."),
+    "filename": `${config.name || "index"}.scss`,
 });
 
 //Start bundle cli
-process.nextTick(function () {
-    let options = getArgs().options;
+process.nextTick(() => {
+    let options = getArgs().options || {};
     //TODO: check if no config or output option has been provided
-    const configPath = path.resolve(
-        process.cwd(), 
-        path.join(options.config || ".", "bundle.config.js")
-    );
-    const config = require(configPath);
+    const config = utils.getConfig(options);
     const cwd = config.cwd || path.dirname(configPath);
-    //Generate bundle
-    return bundleScss(config, cwd).then(function (scss) {
-        const output = parseOutput(config.output || {});
-        const outputPath = path.resolve(
-            process.cwd(), 
-            path.join(output.path, output.filename)
-        );
-        return fs.writeFileSync(outputPath, scss, "utf8");
+    return utils.toArray(config.bundle).forEach((bundleConfig) => {
+        return bundleScss(bundleConfig, cwd).then(function (content) {
+            const output = parseOutput(bundleConfig, cwd);
+            const outputPath = path.join(output.path, output.filename);
+            return fs.writeFileSync(outputPath, content, "utf8");
+        });
     });
 });
 
