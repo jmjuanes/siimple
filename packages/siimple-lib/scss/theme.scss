@@ -1,122 +1,35 @@
 @use "sass:map";
 @use "./utils.scss" as utils;
-@use "./constants.scss" as constants;
+@use "./breakpoints.scss" as breakpoints;
+@use "./scales.scss" as scales;
+@use "./variants.scss" as variants;
 
-// Colors configuration
-// Primary, text, background, muted and accent colors are required
-$default-colors: (
-    "primary": constants.$color-primary,
-    "secondary": constants.$color-secondary,
-    "text": constants.$color-text,
-    "heading": constants.$color-heading,
-    "background": constants.$color-background,
-    "muted": constants.$color-muted,
-    "accent": constants.$color-accent,
-    "highlight": constants.$color-highlight,
-);
-
-//Default font variables
-//WARNING: we are not importing fonts automatically --> use a <link> tag instead
-//$font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700" !default;
-$default-fonts: (
-    "body": constants.$font-sans, 
-    "heading": constants.$font-sans,
-    "monospace": constants.$font-monospace,
-);
-
-// Default font Weight values
-$default-font-weights: (
-    "body": 400,
-    "heading": 700,
-    "bold": 700,
-);
-
-// Default font size values
-$default-font-sizes: (
-    "small": 0.875rem,
-    "body": "16px",
-    "large": 1.25rem,
-    "huge": 2rem,
-);
-
-// Default line height values
-$default-line-heights: (
-    "small": 1.25,
-    "normal": normal,
-    "body": 1.5,
-    "heading": 1.125,
-);
-
-// Default radius values
-$default-radius: (
-    "small": 0.25rem,
-    "default": 0.5rem, // deprecated, use normal instead
-    "normal": 0.5rem, 
-    "large": 1rem,
-    "circle": 50%,
-);
-
-// Default shadows
-$default-shadows: (
-    "small": constants.$shadow-small,
-    "normal": constants.$shadow-normal,
-    "large": constants.$shadow-large,
-    "none": "none",
-);
-
-// Default sizing variables
-$default-sizes: map.merge(constants.$sizes, (
-    "auto": auto,
-    "full": 100%,
-    "half": 50%,
-    "none": 0px,
-    "one": 1px,
-    "min": min-content,
-    "max": max-content,
-));
-
-// Default spacing variables
-$default-spacing: map.merge(constants.$sizes, (
-    "auto": auto,
-    "full": 100%,
-    "half": 50%,
-    "none": 0px,
-));
-
-// Theme global map
-$default-theme: (
-    "colors": $default-colors,
-    "fonts": $default-fonts,
-    "font-sizes": $default-font-sizes,
-    "font-weights": $default-font-weights,
-    "line-heights": $default-line-heights,
-    "opacities": constants.$opacities,
-    "radius": $default-radius,
-    "shadows": $default-shadows,
-    "sizes": $default-sizes,
-    "spacing": $default-spacing,
-);
-
-// @description Parse a theme object
-@function parse-theme ($theme) {
-    $new-theme: utils.empty-map();
-    @if not utils.is-map($theme) {
-        $theme: utils.empty-map();
-    }
-    // Check default theme options
-    @each $key,$value in $default-theme {
-        $current: utils.get-in($theme, $key, null);
-        @if not utils.is-map($current) {
-            $current: $value; //Set default value
+// @description Configure the theme used in siimple
+@mixin theme ($theme: null) {
+    $new-breakpoints: null;
+    $new-scales: utils.empty-map();
+    $new-variants: utils.empty-map();
+    // Iterate over all keys in the new theme object
+    @each $key,$value in $theme {
+        // Check for breakpoints
+        @if $key == "breakpoints" {
+            $new-breakpoints: $value; 
         }
-        // If map has been provided, then merge with defaults
+        // Check if key is a scale key
+        @else if scales.has-scale($key) {
+            $new-scales: map.set($new-scales, $key, $value);
+        }
+        // Other item, set as a custom variant
         @else {
-            $current: map.merge($value, $current);
+            $new-variants: map.set($new-variants, $key, $value);
         }
-        // Add to theme object
-        $new-theme: map.set($new-theme, $key, $current);
     }
-    // Returm theme config
-    @return $new-theme;
+    // Update breakpoints
+    @if $new-breakpoints {
+        @include breakpoints.breakpoints($new-breakpoints);
+    }
+    // Update scales and variants
+    @include scales.scales($new-scales);
+    @include variants.variants($new-variants);
 }
 

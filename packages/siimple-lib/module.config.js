@@ -16,6 +16,7 @@ module.exports = {
             "./scss/variants.scss",
             "./scss/selectors.scss",
             "./scss/build.scss",
+            "./scss/theme.scss",
             "./scss/base.scss",
         ],
         "resolve": {
