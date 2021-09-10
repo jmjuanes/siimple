@@ -1,0 +1,42 @@
+@use "siimple-lib" as lib;
+
+// Generate close component configuration
+@mixin close() {
+    @include lib.use-component-selector("close") {
+        appearance: none;
+        background-color: transparent;
+        border: none;
+        color: currentColor;
+        cursor: pointer;
+        display: inline-flex;
+        height: 1rem;
+        opacity: 0.6;
+        //position: absolute;
+        position: relative;
+        //"right": "1rem",
+        //top: 1rem;
+        transition: opacity 0.3s;
+        width: 1rem;
+        &:hover {
+            opacity: 1.0;
+        }
+        &::before,
+        &::after {
+            background-color: currentColor;
+            border-radius: 1px;
+            content: "";
+            height: 3px;
+            left: 0px;
+            position: absolute;
+            top: 6px;
+            width: 1rem;
+        }
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+}
+

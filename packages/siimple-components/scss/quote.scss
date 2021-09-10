@@ -1,0 +1,28 @@
+@use "siimple-lib" as lib;
+
+// Generate blockquote component configuration
+// TODO: change text color instead of changing the opacity
+@mixin quote () {
+    @include lib.use-component-selector("quote") {
+        border-left-color: currentColor;
+        border-left-style: solid;
+        border-left-width: 0.25rem;
+        display: block;
+        margin-bottom: 1rem;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-bottom: 0.75rem;
+        padding-left: 1.25rem;
+        padding-rigkt: 0.75rem;
+        padding-top: 0.75rem;
+
+        // Include quote variants
+        @include lib.use-variant("text.quote", (
+            "default": (
+                "color": "text",
+                "opacity": "0.5",
+            ),
+        ));
+    }
+}
+

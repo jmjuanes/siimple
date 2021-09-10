@@ -1,0 +1,36 @@
+@use "siimple-lib" as lib;
+
+// Default options for content
+$content-default-gap: 1.5rem;
+$content-default-sizes: (
+    "small":  "608px",    //--> 560px
+    "medium": "768px",    //--> 720px
+    "large":  "1008px",   //--> 960px
+    "xlarge": "1188px",   //--> 1140px
+    "huge":   "1328px",   //--> 1280px
+);
+
+// Generate content component configuration
+@mixin content () {
+    $content-variants: lib.empty-map();
+    @each $name,$size in $content-default-sizes {
+        $content-media: "@media screen and (min-width: #{$size})";
+        $content-variants: lib.set-in($content-variants, $name, (
+            "#{$content-media}": (
+                "max-width": $size,
+            ),
+        ));
+    }
+    @include lib.use-component-selector("content") {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: $content-default-gap;
+        padding-right: $content-default-gap;
+        width: 100%;
+
+        //Load content variants
+        @include lib.use-variant("layout.content", $content-variants);
+    }
+}
+

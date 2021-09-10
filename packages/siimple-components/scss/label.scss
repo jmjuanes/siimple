@@ -1,0 +1,21 @@
+@use "siimple-lib" as lib;
+
+// Generate label component configuration
+@mixin label() {
+    @include lib.use-component-selector("label") {
+        align-items: center;
+        display: flex;
+        font-size: 0.857rem;
+        min-width: 0px;
+        width: 100%;
+
+        // Include label variants
+        @include lib.use-variant("form.label", (
+            "default": (
+                "color": "inherit",
+                "font-weight": "bold",
+            ),
+        ));
+    }
+}
+

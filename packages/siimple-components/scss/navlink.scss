@@ -1,0 +1,32 @@
+@use "siimple-lib" as lib;
+
+// Generate navigation link component
+@mixin navlink () {
+    $active-variant: (
+        "background-color": "highlight",
+        "color": "primary",
+    );
+    // Navigation link component
+    @include lib.use-component-selector("navlink") {
+        color: inherit;
+        cursor: pointer;
+        display: block;
+        margin: 0px;
+        min-width: 0px;
+        padding: 0.5rem;
+        text-decoration: none !important;
+        user-selection: none;
+        width: 100%;
+        // Include navlink scales
+        @include lib.use-scale("border-radius", "default");
+        @include lib.use-scale("font-weight", "bold");
+        // Include navlink variant
+        @include lib.use-variant("navigation.link", (
+            "default": (
+                "&:hover": $active-variant,
+            ),
+            "active": $active-variant,
+        ));
+    }
+}
+

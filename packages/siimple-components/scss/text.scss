@@ -1,0 +1,37 @@
+@use "siimple-lib" as lib;
+
+// @description generate text styles
+@mixin text () {
+    @include lib.use-component-selector("text") {
+        @include lib.use-variant("text", (
+            "bold": (
+                "font-weight": "bold",
+            ),
+            "small": (
+                "color": "muted",
+                "font-size": "small",
+            ),
+            "code": (
+                "color": "primary",
+                "font-family": "monospace",
+                "font-size": "0.8rem",
+                "font-weight": "bold",
+                "padding-left": "0.25rem",
+                "padding-right": "0.25rem",
+                "text-decoration": "none",
+                "word-wrap": "break-word",
+            ),
+            "link": (
+                "color": "primary",
+                "cursor": "pointer",
+                "text-decoration": "none",
+                "&:hover": (
+                    "color": "primary",
+                    "text-decoration": "underline",
+                    "transition": "color 0.3s",
+                ),
+            ),
+        ));
+    }
+}
+

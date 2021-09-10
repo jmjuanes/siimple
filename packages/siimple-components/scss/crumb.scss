@@ -1,0 +1,62 @@
+@use "siimple-lib" as lib;
+
+// Generate breadcrumb component configuration
+@mixin crumb () {
+    // Crumbs wrapper component
+    @include lib.use-component-selector("crumbs") {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        overflow-x: auto;
+        padding: 0.5rem;
+        white-space: nowrap !important;
+        // Include crumbs scales
+        @include lib.use-scale("radius", "default");
+    }
+    //Breadcrumb item
+    @include lib.use-component-selector("crumb") {
+        color: currentColor;
+        cursor: pointer;
+        opacity: 0.6;
+        padding-bottom: 0.5rem;
+        padding-left: 0.75rem;
+        padding-right: 1.5rem;
+        padding-top: 0.5rem;
+        position: relative;
+        //"text-align: center;
+        text-decoration: none;
+        //"transition: color 0.3s;
+        @include lib.use-scale("font-weight", "bold");
+        // Crumb hover styles
+        &:hover {
+            opacity: 1.0;
+            transition: opacity 0.3s;
+        }
+        &:not(:last-child)::after {
+            border-right-color: currentColor;
+            border-right-width: 2px;
+            border-right-style: solid;
+            border-top-width: 2px;
+            border-top-style: solid;
+            border-top-color: currentColor;
+            content: "";
+            display: block;
+            height: 0.5rem;
+            position: absolute;
+            right: 0.25rem;
+            top: 1rem;
+            transform: rotate(45deg);
+            width: 0.5rem;
+        }
+        // Load crumb styles
+        @include lib.use-variant("navigation.crumb", (
+            "active": (
+                "cursor": "default", //!important;
+                "opacity": "1.0",
+                "pointer-events": "none", //Disable clicks
+            ),
+        ));
+    }
+}
+

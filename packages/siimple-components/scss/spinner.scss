@@ -1,0 +1,56 @@
+@use "siimple-lib" as lib;
+
+// Generate spinner component configuration
+@mixin spinner () {
+    $options: lib.empty-map();
+    $animation-name: lib.get-in($options, "animation.name", "siimple-spinner-animation");
+    $animation-duration: lib.get-in($options, "animation.duration", 1s);
+    //$border-width: lib.get($options, "border.width", 4px);
+    //$border-color: lib.get($options, "border.color", lib.get-color("white"));
+    //$border-opacity: lib.get($options, "border.opacity", 0.2);
+    //Create spinner component
+    @include lib.use-component-selector("spinner") {
+        display: inline-block;
+        height: 2rem;
+        position: relative;
+        width: 2rem;
+        //Spinner anlimation elements
+        &:before,
+        &:after {
+            border: 0.25rem solid transparent;
+            border-radius: 100%;
+            content: "";
+            display: block;
+            height: 2rem;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 2rem;
+        }
+        &:before {
+            border-color: currentColor;
+            opacity: 0.2;
+        }
+        &:after {
+            border-top-color: currentColor;
+            animation: #{lib.unquote($animation-name)} #{$animation-duration} infinite linear;
+        }
+
+        // Load spinner variants
+        @include lib.use-variant("spinner", (
+            "default": (
+                "color": "primary",
+            ),
+        ));
+    }
+    // Spinner keyframes
+    @include lib.use-keyframes($animation-name, (
+        "from": (
+            "transform": "rotate(0deg)",
+        ),
+        "to": (
+            "transform": "rotate(359deg)",
+        ),
+    ));
+}
+

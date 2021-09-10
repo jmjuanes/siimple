@@ -1,0 +1,55 @@
+@use "siimple-lib" as lib;
+
+// Tab mixin
+@mixin tab () {
+    // Tabs wrapper styles
+    @include lib.use-component-selector("tabs") {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        overflow-x: auto;
+        //width: 100%;
+        //margin-top: 0px;
+        margin-bottom: 1rem;
+        //padding: 0.5rem;
+        user-select: none;
+        //Tab style for mobile devices
+        //@media screen and (max-width: lib.$mobile) {
+        @include lib.use-breakpoint("mobile") {
+            flex-direction: column;
+        }
+        // Register scales
+        @include lib.use-scale("background-color", "fill");
+        @include lib.use-scale("radius", "default");
+    }
+
+    // Single tab style
+    @include lib.use-component-selector("tab") {
+        color: currentColor;
+        cursor: pointer;
+        display: block;
+        flex-grow: 1 !important;
+        margin: 0.75rem;
+        //opacity: 1.0;
+        padding: 0.5rem;
+        text-align: center !important;
+        text-decoration: none !important;
+        //Tab scales
+        @include lib.use-scale("font-weight", "bold");
+        @include lib.use-scale("radius", "default");
+        // Tab variants
+        @include lib.use-variant("navigation.tab", (
+            "default": (
+                "background-color": "transparent",
+                "&:hover": (
+                    "color": "primary",
+                ),
+            ),
+            "active": (
+                "background-color": "white",
+                "color": "primary",
+            ),
+        ));
+    }
+}
+

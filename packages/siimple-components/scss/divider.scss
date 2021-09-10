@@ -1,0 +1,28 @@
+@use "siimple-lib" as lib;
+
+// Generate divider component configuration
+@mixin divider() {
+    @include lib.use-component-selector("divider") {
+        border: 0px;
+        display: block;
+        height: 0.125rem;
+        //margin-top: $rule-margin-top;
+        //margin-bottom: $rule-margin-bottom;
+        padding: 0px;
+        //Divider first and last child
+        &:not(:first-child) {
+            margin-top: 1rem;
+        }
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+        
+        // Load divider variants
+        @include lib.use-variant("divider", (
+            "default": (
+                "background-color": "fill",
+            ),
+        ));
+    }
+}
+
