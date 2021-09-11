@@ -10,7 +10,7 @@
 @use "./vertical-align.scss" as valign;
 
 // @description: include all helpers generators
-@mixin all-helpers () {
+@mixin all () {
     @include themed.color();
     @include themed.font();
     @include themed.font-weight();
