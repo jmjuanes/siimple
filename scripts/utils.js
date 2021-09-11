@@ -20,15 +20,6 @@ module.exports.isObject = function (value) {
     return typeof value === "object" && value !== null;
 };
 
-//Get module configuration
-module.exports.getConfig = (options) => {
-    const configPath = path.resolve(
-        process.cwd(), 
-        path.join(options.config || ".", "module.config.js")
-    );
-    return require(configPath);
-};
-
 //Get env variables
 module.exports.getEnv = function (callback) {
     return callback(args().options || {});
@@ -64,21 +55,21 @@ module.exports.readJSON = function (file) {
 
 //Write a JSON file
 module.exports.writeJSON = function (file, content) {
-    return fs.writeFileSync(file, JSON.stringify(content), "utf8");
+    return fs.writeFileSync(file, JSON.stringify(content, null, "    "), "utf8");
 };
 
 //For displaying basic logs
 module.exports.log = {
-    "info": function (message) {
+    "info": (message) => {
         return console.log(`[INFO] ${message}`);
     },
-    "warn": function (message) {
+    "warn": (message) => {
         return console.warn(`[WARNING] ${message}`);
     },
-    "error": function (message) {
+    "error": (message) => {
         console.error(`[ERROR] ${message}`);
         return process.exit(1); //Stop process
-    }
+    },
 };
 
 //Remove a folder recursive

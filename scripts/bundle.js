@@ -172,25 +172,19 @@ const bundleScss = function (config, cwd) {
     });
 };
 
-// Parse output configuration
-const parseOutput = (config, cwd) => ({
-    "path": path.resolve(cwd, config.output || "."),
-    "filename": `${config.name || "index"}.scss`,
-});
-
 //Start bundle cli
 process.nextTick(() => {
-    let options = getArgs().options || {};
+    const options = getArgs().options || {};
     //TODO: check if no config or output option has been provided
-    const config = utils.getConfig(options);
+    const configPath = path.resolve(
+        process.cwd(), 
+        path.join(options.config || ".", "bundle.config.js")
+    );
+    const config = require(configPath);
     const cwd = config.cwd || path.dirname(configPath);
-    return utils.toArray(config.bundle).forEach((bundleConfig) => {
-        return bundleScss(bundleConfig, cwd).then(function (content) {
-            const output = parseOutput(bundleConfig, cwd);
-            const outputPath = path.join(output.path, output.filename);
-            return fs.writeFileSync(outputPath, content, "utf8");
-        });
+    return bundleScss(config, cwd).then((content) => {
+        const output = path.resolve(cwd, config.output || "./index.scss");
+        return fs.writeFileSync(output, content, "utf8");
     });
 });
-
 
