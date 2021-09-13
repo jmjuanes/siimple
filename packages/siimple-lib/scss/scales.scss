@@ -10,6 +10,8 @@ $backgrounds-scale: (
     "primary": constants.$primary,
     "secondary": constants.$secondary,
     "highlight": constants.$highlight,
+    "dark": constants.$dark,
+    "light": constants.$light,
 );
 
 // Colors configuration
@@ -134,6 +136,11 @@ $scales: (
 // @description get a scale
 @function get-scale ($name) {
     @return utils.get-in($scales, $name, utils.empty-map());
+}
+
+//Get a single value from the scale
+@function get-scale-value ($name, $key) {
+    @return utils.get-in($scales, ($name $key), null);
 }
 
 // Use a specific value from scale as a property
