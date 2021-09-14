@@ -1,0 +1,30 @@
+@use "siimple-lib" as lib;
+@use "./index.scss" as colors;
+
+// @description generate background color helpers
+@mixin background-colors () {
+    @include lib.color-helper((
+        "name": "bg",
+        "states": ("default" "hover"),
+        "properties": ("background-color"),
+        "colors": colors.get-all-colors(),
+    ));
+}
+
+// @description generate text color helpers
+@mixin text-colors () {
+    @include lib.color-helper((
+        "name": "text",
+        "states": ("default" "hover"),
+        "properties": ("color"),
+        "colors": colors.get-all-colors(),
+    ));
+}
+
+// Wrapper to generate all colors
+@mixin all () {
+    @include background-colors();
+    @include text-colors();
+}
+
+

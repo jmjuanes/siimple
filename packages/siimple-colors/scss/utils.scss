@@ -1,0 +1,43 @@
+@use "sass:color";
+@use "sass:map";
+
+//Alias for lighten($color, $amount)
+//https://sass-lang.com/documentation/modules/color#lighten
+@function lighten-color ($color, $amount: 0) {
+   @return color.adjust($color, $lightness: $amount); 
+}
+
+//Alias for darken ($color, $amount)
+//https://sass-lang.com/documentation/modules/color#darken 
+@function darken-color ($color, $amount: 0) {
+    @return color.adjust($color, $lightness: -$amount);
+}
+
+//Return the luminance of a color
+//From: https://css-tricks.com/snippets/sass/luminance-color-function/ 
+//Reference: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef 
+@function luminance ($color) {
+    $colors: (
+        "red": red($color), 
+        "green": green($color), 
+        "blue": blue($color),
+    );
+    @each $name, $value in $colors {
+        $adjusted: 0;
+        $value: $value / 255;
+        @if $value < 0.03928 {
+            $value: $value / 12.92;
+        } @else {
+            $value: ($value + .055) / 1.055;
+            //Terrible hack to calculate pow($value, 2.4)
+            $value: $value * $value;
+        }
+        $colors: map.set($colors, $name, $value);
+    }
+    //Generate colors
+    $color-red: (map.get($colors, "red") * .2126);
+    $color-green: (map.get($colors, "green") * .7152);
+    $color-blue: (map.get($colors, "blue") * .0722);
+    @return $color-red + $color-green + $color-blue;
+}
+
