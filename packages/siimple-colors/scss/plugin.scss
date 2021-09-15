@@ -6,7 +6,7 @@
     @include lib.color-helper((
         "name": "bg",
         "states": ("default" "hover"),
-        "properties": ("background-color"),
+        "property": "background-color",
         "colors": colors.get-all-colors(),
     ));
 }
@@ -16,7 +16,7 @@
     @include lib.color-helper((
         "name": "text",
         "states": ("default" "hover"),
-        "properties": ("color"),
+        "property": "color",
         "colors": colors.get-all-colors(),
     ));
 }
