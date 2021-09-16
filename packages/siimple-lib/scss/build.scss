@@ -108,7 +108,7 @@
             ));
             @include selectors.use-state-selector($classname, $state) {
                 #{$varname}: 1;
-                #{$helper-property}: rgba($value, var(#{$varname}));
+                #{$helper-property}: rgba($value, var(#{$varname})) !important;
             }
         }
     }
