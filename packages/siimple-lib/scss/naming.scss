@@ -10,7 +10,7 @@ $prefixes: (
 );
 
 // @description Update the prefixes used
-@mixin prefixes ($custom-prefixes: null) {
+@mixin prefix ($custom-prefixes: null) {
     @if not utils.is-map($custom-prefixes) {
         $custom-prefixes: utils.empty-map();
     }
@@ -34,7 +34,7 @@ $prefixes: (
 // @option state: state of the helper (default, hover, active)
 // @option breakpoint: responsive breakpoint
 @function get-helper-classname($options) {
-    $classname: ".#{get-prefix("helpers")}#{map.get($options, "name")}";
+    $classname: "#{get-prefix("helpers")}#{map.get($options, "name")}";
     $property: utils.get-in($options, "property", "default");
     @if $property != "default" {
         $classname: "#{$classname}-#{$property}";
@@ -42,16 +42,18 @@ $prefixes: (
     // Check for breakpoint provided
     $breakpoint: utils.get-in($options, "breakpoint", null);
     @if utils.is-string($breakpoint) {
-        @return "#{$classname}\\:#{$breakpoint}";
+        //@return "#{$classname}\\:#{$breakpoint}";
+        @return ".#{$breakpoint}\\:#{$classname}";
     }
     // Apply for state
     $state: utils.get-in($options, "state", "default");
     @if $state != "default" {
-        @return "#{$classname}\\:#{$state}";
+        //@return "#{$classname}\\:#{$state}";
+        @return ".#{$state}\\:#{$classname}";
     }
     // Default --> return the default helper class
     //@return ".has-#{$name}-#{$property}";
-    @return $classname;
+    @return "." + $classname;
 }
 
 // @description Generate component classname
