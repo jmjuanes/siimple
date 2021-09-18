@@ -108,6 +108,7 @@
         @include lib.helper((
             "name": $name,
             "states": ("default"),
+            "responsive": true,
             "properties": ($prop),
             "scale": "sizes",
             "values": (
