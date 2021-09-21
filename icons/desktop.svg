@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg4"
+   viewBox="0 0 50 50"
+   version="1.1"
+   width="50"
+   height="50">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <path
+     id="path816"
+     d="M 6.25,5 C 6.25,5 2.5,5 2.5,8.75 v 25 c 0,0 0,3.75 3.75,3.75 H 20 V 40 c 0,0 0,1.25 -1.25,1.25 H 15 c 0,0 -1.25,0 -1.25,1.25 v 1.25 c 0,0 0,1.25 1.25,1.25 h 20 c 0,0 1.25,0 1.25,-1.25 V 42.5 c 0,0 0,-1.25 -1.25,-1.25 h -3.75 c 0,0 -1.269924,-1.59e-4 -1.25,-1.25 v -2.5 h 13.75 c 0,0 3.75,0 3.75,-3.75 v -25 c 0,0 0,-3.75 -3.75,-3.75 z M 10,10 h 30 c 2.5,0 2.5,2.5 2.5,2.5 V 30 c 0,2.5 -2.5,2.5 -2.5,2.5 H 10 C 7.5,32.5 7.5,30 7.5,30 V 12.5 C 7.5,10 10,10 10,10 Z" />
+</svg>
