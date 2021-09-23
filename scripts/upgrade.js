@@ -1,33 +1,24 @@
-const fs = require("fs");
-const path = require("path");
-const getArgs = require("get-args");
+const through = require("through2");
 
-const {packages} = require("../package.json");
-const utils = require("./utils.js");
-const paths = require("../config/paths.js");
-
-//Upgrade the version in all package.json files
-process.nextTick(() => {
-    return Object.keys(packages).forEach((packageName) => {
-        const packagePath = path.join(paths.packages.folder, packageName, "package.json");
-        const content = utils.readJSON(packagePath);
-
-        if (content.version === packages[packageName]) {
-            return null; //Nothing to update
+// Upgrade the version in all package.json files
+module.exports = (options) => {
+    const packages = options.packages || {};
+    return through.obj((file, enc, callback) => {
+        const content = JSON.parse(file.contents.toString());
+        const name = content.name; //Get package name
+        if (typeof packages[name] === "undefined" || content.version === packages[name]) {
+            return callback(); //Nothing to update
         }
-
         //Update package.json fields
-        content.version = packages[packageName];
-        Object.keys(content.dependencies || {}).forEach((name) => {
-            if (typeof packages[name] === "undefined") {
-                return null;
+        content.version = packages[name];
+        Object.keys(content.dependencies || {}).forEach((n) => {
+            if (typeof packages[n] !== "undefined") {
+                content.dependencies[n] = `^${packages[n]}`;
             }
-            //Update the version
-            content.dependencies[name] = `^${packages[name]}`;
         });
-
         //Save package.json file
-        return utils.writeJSON(packagePath, content);
+        file.contents = Buffer.from(JSON.stringify(content, null, "    "));
+        return callback(null, file);
     });
-});
+};
 
