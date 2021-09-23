@@ -4,24 +4,20 @@
 [![npm](https://img.shields.io/npm/dt/siimple-colors.svg?style=flat-square)](https://www.npmjs.com/package/siimple-colors)
 [![npm](https://img.shields.io/npm/l/siimple-colors.svg?style=flat-square)](https://github.com/siimple/siimple)
 
-**siimple colors** is an elegant and minimalistic color palette plugin for **siimple**. It provides a color palette for your project, and a collection of helpers to customize the color of your UI elements.
+> An elegant and minimalistic color palette plugin for the siimple toolkit.
 
 
-## Getting started
+## Installation
 
-**siimple colors** can be installed using [npm](https://www.npmjs.com/package/siimple-colors):
+Use npm to install this plugin in your project:
 
 ```bash
 $ npm install --save siimple-colors
 ```
 
-## Color palette
-
-Visit https://www.siimple.xyz/colors.
-
 ## Usage 
 
-Import this plugin in your main SCSS file:
+Import this plugin in your theme configuration file.
 
 ```scss
 @use "siimple-colors" as colors;
@@ -44,7 +40,7 @@ This will generate color helpers for text and backgrounds. You can do a separate
 
 ### Using colors functions
 
-This package also provides a collection of methods for working with colors.
+This plugin also provides a collection of SASS functions for working with colors.
 
 #### colors.get-color($name, $shade: "500")
 
@@ -58,6 +54,17 @@ $red: colors.get-color("red", "600"); //Red color with 600 of shade
 #### colors.has-color($name)
 
 Returns `True` if the specified color name exists in the palette, `False` if not. 
+
+
+## Using the CSS styles
+
+This plugin generates CSS classes that can be used to change the color of your elements. We use the helpers naming convention of siimple, followd the color name (red, blue, green...) and the numeric scale of the color (where 100 is the lightest, 900 is the darkest).
+
+```html
+<button class="siimple-btn has-text-blue-900 has-text-blue-100">
+    Light blue button
+</button>
+```
 
 
 ## License
