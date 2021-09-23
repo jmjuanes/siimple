@@ -1,10 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const glob = require("glob");
-const getArgs = require("get-args");
-
-const utils = require("./utils.js");
-const generateBanner = require("./banner.js");
+const through = require("through2");
 
 //Global variables
 const endl = "\n";
@@ -172,19 +169,19 @@ const bundleScss = function (config, cwd) {
     });
 };
 
-//Start bundle cli
-process.nextTick(() => {
-    const options = getArgs().options || {};
-    //TODO: check if no config or output option has been provided
-    const configPath = path.resolve(
-        process.cwd(), 
-        path.join(options.config || ".", "bundle.config.js")
-    );
-    const config = require(configPath);
-    const cwd = config.cwd || path.dirname(configPath);
-    return bundleScss(config, cwd).then((content) => {
-        const output = path.resolve(cwd, config.output || "./index.scss");
-        return fs.writeFileSync(output, content, "utf8");
+// Export bundle generator
+module.exports = (options) => {
+    return through.obj((file, enc, callback) => {
+        console.log(file.path);
+        const config = require(file.path); //Import bundle file
+        if (config.skip === true) {
+            return callback(); //Ignore this bundle
+        }
+        const cwd = config.cwd || path.dirname(configPath);
+        return bundleScss(config, cwd).then((content) => {
+            file.contents = new Buffer.from(content);
+            file.basename = config.output || "index.scss";
+            return callback(null, file);
+        });
     });
-});
-
+};
