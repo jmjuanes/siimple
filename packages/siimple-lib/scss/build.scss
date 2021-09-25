@@ -55,10 +55,9 @@
     @if not utils.is-list($helper-states) {
         $helper-states: ("default");
     }
-    // Generate styles for this helper
-    @each $key,$value in $helper-values {
-        // Register helpers classes for each state
-        @each $state in $helper-states {
+    // Register helpers classes for each state
+    @each $state in $helper-states {
+        @each $key,$value in $helper-values {
             $classname: naming.get-helper-classname((
                 "name": $helper-name,
                 "property": $key,
@@ -71,10 +70,12 @@
                 }
             }
         }
-        // For responsive variants, we will register the style
-        // for each breakpoint in the list of breakpoints
-        @if $helper-responsive {
-            @include breakpoints.use-breakpoints using ($breakpoint) {
+    }
+    // For responsive variants, we will register the style
+    // for each breakpoint in the list of breakpoints
+    @if $helper-responsive {
+        @include breakpoints.use-breakpoints using ($breakpoint) {
+            @each $key,$value in $helper-values {
                 $classname: naming.get-helper-classname((
                     "name": $helper-name,
                     "property": $key,
@@ -87,8 +88,8 @@
                 }
             }
         }
-        //@debug map.get($sheet, "styles");
     }
+    //@debug map.get($sheet, "styles");
 }
 
 // @description Generate a color helper
@@ -128,7 +129,7 @@
                 "state": $state,
             ));
             @include selectors.use-state-selector($classname, $state) {
-                #{$varname}: utils.unquote($value);
+                #{$varname}: utils.unquote($value) !important;
             }
         }
     }
