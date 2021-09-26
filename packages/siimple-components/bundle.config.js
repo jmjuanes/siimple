@@ -3,7 +3,7 @@
 module.exports = {
     "name": "siimple-components",
     "cwd": __dirname,
-    "output": "./index.scss",
+    "output": "index.scss",
     "entry": [
         "./scss/*.scss",
     ],

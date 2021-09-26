@@ -1,9 +1,7 @@
-//const path = require("path");
-
 module.exports = {
     "name": "siimple-lib",
     "cwd": __dirname,
-    "output": "./index.scss",
+    "output": "index.scss",
     "entry": [
         "./scss/utils.scss",
         "./scss/constants.scss",
@@ -22,4 +20,3 @@ module.exports = {
         //"siimple-colors": "siimple-colors/index.scss",
     },
 };
-

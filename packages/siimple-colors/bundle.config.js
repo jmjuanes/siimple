@@ -26,7 +26,7 @@ const generateColorsVirtualFile = () => {
 module.exports = {
     "name": "siimple-colors",
     "cwd": __dirname,
-    "output": "./index.scss",
+    "output": "index.scss",
     "entry": [
         "./scss/colors.scss",
         "./scss/*.scss",
