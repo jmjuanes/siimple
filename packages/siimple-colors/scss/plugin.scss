@@ -22,7 +22,7 @@
 }
 
 // Wrapper to generate all colors
-@mixin all () {
+@mixin all-colors () {
     @include background-colors();
     @include text-colors();
 }
