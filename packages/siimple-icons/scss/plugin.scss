@@ -21,7 +21,7 @@
 }
 
 // Generate icons component configuration
-@mixin all ($options: lib.empty-map()) {
+@mixin all-icons ($options: lib.empty-map()) {
     $icons-name: lib.get-in($options, "name", "siimple-icons");
     $icons-path: lib.get-in($options, "path", "../fonts/");
     $include: lib.get-in($options, "include", ());
@@ -31,7 +31,7 @@
         "sources": (
             "truetype": "#{$icons-path}#{$icons-name}.ttf",
             "woff": "#{$icons-path}#{$icons-name}.woff",
-            "woff2": "#{$icons-path}#{$icons-name}.woff2",
+            //"woff2": "#{$icons-path}#{$icons-name}.woff2",
         ),
         "weight": "normal",
         "style": "normal",
