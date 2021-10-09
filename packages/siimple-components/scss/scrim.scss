@@ -1,0 +1,26 @@
+@use "siimple-lib" as lib;
+
+// @description Scrim component
+// @experimental true
+@mixin scrim () {
+    //$bg-color: lib.get($options, "background", lib.get-color("dark"));
+    //$bg-opacity: lib.get($options, "opacity", 0.5);
+    @include lib.use-component-selector("scrim") {
+        align-items: center;
+        background-color: rgba(black, 0.5);
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        left: 0px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 400;
+
+        // Include scrim variants
+        @include lib.use-variant("dialog.scrim", ());
+    }
+}
+

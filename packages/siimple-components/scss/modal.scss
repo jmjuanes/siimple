@@ -1,0 +1,31 @@
+@use "siimple-lib" as lib;
+
+// @description Modal component for siimple
+// @experimental true
+@mixin modal ($options: ()) {
+    @include lib.use-component-selector("modal") {
+        background-color: white;
+        display: block;
+        max-height: 50vh;
+        overflow-y: auto;
+        padding: 2rem;
+        width: 100%;
+
+        //Include scales
+        @include lib.use-scale("radius", "default");
+
+        // Include variants
+        @include lib.use-variant("dialog.modal", (
+            "default": (
+                "max-width": 500px,
+            ),
+            "small": (
+                "max-width": 300px,
+            ),
+            "large": (
+                "max-width": 900px,
+            ),
+        ));
+    }
+}
+

@@ -1,0 +1,50 @@
+@use "siimple-lib" as lib;
+
+// @description Placeholder component
+// @experimental true
+@mixin placeholder () {
+    $default-active-variant: (
+        "background-color": rgba(lib.get-scale-value("colors", "primary"), 0.1),
+        "border-color": "primary",
+        "color": "primary",
+        "cursor": "pointer",
+    );
+    @include lib.use-component-selector("placeholder") {
+        border-width: 0px;
+        color: inherit;
+        display: block;
+        flex-basis: 100%;
+        margin-bottom: 1rem;
+        opacity: 1.0;
+        padding: 1rem;
+        //transition: background-color 0.3s;
+
+        // Include scale values
+        @include lib.use-scale("radius", "default");
+
+        //Include placeholder variants
+        @include lib.use-variant("placeholder", (
+            "default": (
+                "color": "muted",
+            ),
+            "filled": (
+                "background-color": "fill",
+            ),
+            "dashed": (
+                "border-color": "fill",
+                "border-style": "dashed",
+                "border-width": 2px,
+            ),
+            "solid": (
+                "border-color": "fill",
+                "border-style": "solid",
+                "border-width": 2px,
+            ),
+            "active": $default-active-variant,
+            "hoverable": (
+                "&:hover": $default-active-variant,
+            ),
+        ));
+    }
+}
+
