@@ -33,7 +33,7 @@
         @include lib.use-scale("radius", "default");
 
         // Include button variants
-        @include lib.use-variant("btn", (
+        @include lib.use-variant("button", (
             "default": (
                 "bg": "primary",
                 "color": "white",
