@@ -37,6 +37,9 @@
         &::after {
             transform: rotate(-45deg);
         }
+
+        // Include button variants
+        @include lib.use-variant("button.close", ());
     }
 }
 
