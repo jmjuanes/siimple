@@ -1,0 +1,175 @@
+@use "siimple-lib" as lib;
+
+// Table class
+@mixin table () {
+    // Default table style
+    @include lib.use-component-selector("table") {
+        background-color: transparent;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-width: 0px;
+        box-sizing: border-box;
+        display: table;
+        margin-bottom: 1rem;
+        width: 100%;
+        // Table row
+        & tr {
+            box-sizing: border-box;
+            display: table-row;
+        }
+        // Table cell
+        & th,
+        & td {
+            // background-color: lib.get-color("white");
+            // border-top: 1px solid siimple-default-color("light", "dark");
+            box-sizing: border-box;
+            display: table-cell;
+            line-height: inherit;
+            // overflow: hidden;
+            // white-space: nowrap;
+        }
+        // Table header
+        & thead {
+            box-sizing: border-box;
+            display: table-header-group;
+            // font-weight: bold;
+        }
+        & thead th {
+            text-align: left;
+            vertical-align: bottom;
+            @include lib.use-scale("font-weight", "bold");
+        }
+        // Table body
+        & tbody {
+            display: table-row-group;
+            vertical-align: middle;
+        }
+        & tbody td {
+            vertical-align: top;
+        }
+        // Default table will be rounded
+        //Bordered table with rouded corners
+        //&--border &-header &-row:first-child &-cell:first-child {
+        & thead tr:first-child th:first-child {
+            @include lib.use-scale("border-top-left-radius", "normal");
+        }
+        //&--border &-header &-row:first-child &-cell:last-child {
+        & thead tr:first-child th:last-child {
+            @include lib.use-scale("border-top-right-radius", "normal");
+        }
+        //&--border &-body &-row:last-child &-cell:first-child {
+        & tbody tr:last-child td:first-child {
+            @include lib.use-scale("border-bottom-left-radius", "normal");
+        }
+        //&--border &-body &-row:last-child &-cell:last-child {
+        & tbody tr:last-child td:last-child {
+            @include lib.use-scale("border-bottom-right-radius", "normal");
+        }
+        // Table variants
+        @include lib.use-variant("table", (
+            "default": (
+                "& th, & td": (
+                    "background-color": "white",
+                    "padding": "1rem",
+                ),
+            ),
+            "divided": (
+                "& thead th": (
+                    "border-bottom-color": "fill",
+                    "border-bottom-style": "solid",
+                    "border-bottom-width": "0.125rem",
+                ),
+                "& tbody td": (
+                    "border-top-color": "fill",
+                    "border-top-style": "solid",
+                    "border-top-width": "0.125rem",
+                ),
+            ),
+            "bordered": (
+                "& th, & td": (
+                    "border-color": "fill",
+                    "border-style": "solid",
+                    "border-width": "0.125rem",
+                ),
+                "& th:not(:last-child), & td:not(:last-child)": (
+                    "border-right-width": "0px !important",
+                ),
+                "& tbody tr:not(:last-child) td": (
+                    "border-bottom-width": "0px !important",
+                ),
+            ),
+            "hoverable": (
+                "& tbody tr:hover td": (
+                    "background-color": "highlight",
+                    "transition": "background-color 0.3s",
+                ),
+            ),
+            "striped": (
+                "& tbody tr:nth-child(odd) td": (
+                    "background-color": "fill",
+                ),
+            ),
+            "fixed": (
+                "table-layout": "fixed",
+            ),
+        ));
+    }
+
+    // Responsive table container
+    @include lib.use-component-selector("table-responsive") {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+    }
+    
+    // Table cell style
+    @include lib.use-component-selector("cell") {
+        cursor: pointer;
+        //padding-right: 20px !important;
+        position: relative;
+        // Sortable triangles common styles
+        &::before,
+        &::after {
+            border-left: 0.375rem solid transparent;
+            border-right: 0.375rem solid transparent;
+            content: "";
+            display: block;
+            height: 0px;
+            position: absolute;
+            right: 0.25rem;
+            transition: all 0.3s;
+            width: 0px;
+        }
+        // Sortable triangle up
+        &::before {
+            top: 1rem;
+            border-bottom: 0.5rem solid transparent;
+        }
+        // Sortable triangle down
+        &::after {
+            bottom: 1rem;
+            border-top: 0.5rem solid transparent;
+        }
+        // Include table cell variants
+        @include lib.use-variant("cell", (
+            "sortable": (
+                "&::before": (
+                    "border-bottom-color": "fill",
+                ),
+                "&::after": (
+                    "border-top-color": "fill",
+                ),
+            ),
+            "asc": (
+                "&::before": (
+                    "border-bottom-color": "primary",
+                ),
+            ),
+            "desc": (
+                "&::after": (
+                    "border-top-color": "primary",
+                ),
+            ),
+        ));
+    }
+}
