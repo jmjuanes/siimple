@@ -58,6 +58,16 @@ $current-breakpoints: (
     @return utils.trim(utils.replace($selector, "@breakpoint", ""));
 }
 
+// @description Get the list of available breakpoints
+@function get-breakpoints() {
+    @return $current-breakpoints;
+}
+
+// @description Get a list with all breakpoints names
+@function get-breakpoints-names() {
+    @return map.keys($current-breakpoints);
+}
+
 // @description Use a single breakpoint by name
 @mixin use-breakpoint ($name: "", $mode: "only") {
     $breakpoint: utils.get-in($current-breakpoints, $name, null);
