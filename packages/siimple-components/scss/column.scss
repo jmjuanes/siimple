@@ -10,11 +10,29 @@
             "width": $size,
         ));
     }
+    // Register responsive breakpoints
+    @each $breakpoint in lib.get-breakpoints-names() {
+        @each $name,$size in lib.$columns {
+            $column-variants: map.set($column-variants, "#{$name}-#{$breakpoint}", (
+                "@breakpoint #{$breakpoint}": (
+                    "flex": none,
+                    "width": $size,
+                ),
+            ));
+        }
+        // Additional hidden column variant
+        $column-variants: map.set($column-variants, "hidden-#{$breakpoint}", (
+            "@breakpoint #{$breakpoint}": (
+                "display": "none",
+            ),
+        ));
+    }
     // Generate column component config
     @include lib.use-component-selector("column") {
         flex: 1;
         min-height: 0;
         padding: 0.75rem;
+        width: 100%;
         // Load columns variants
         @include lib.use-variant("column", $column-variants);
     }
