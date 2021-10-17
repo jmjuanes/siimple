@@ -1,0 +1,39 @@
+---
+title: "Tab"
+description: "A navigation component"
+--- 
+
+# Tab
+
+A simple navigation component. Style your tabs using the `siimple-tab` class, and group all of them using our additional class `siimple-tabs`. 
+
+We also provide an `active` variant to mark the current tab.
+
+```html live=true
+<div class="siimple-tabs has-mb-0">
+    <a class="siimple-tab">Link 1</a>
+    <a class="siimple-tab is-active">Link 2</a>
+    <a class="siimple-tab">Link 3</a>
+</div>
+```
+
+### Variants
+
+Variants for this component can be defined in the `navigation.tab` section of the theme configuration:
+
+```scss
+siimple.theme((
+    "navigation.tab": (
+        "default": (
+            "background-color": "transparent",
+            "&:hover": (
+                "color": "primary",
+            ),
+        ),
+        "active": (
+            "background-color": "white",
+            "color": "primary",
+        ),
+    ),
+));
+```

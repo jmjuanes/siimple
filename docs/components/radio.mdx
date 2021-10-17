@@ -1,0 +1,38 @@
+---
+title: "Radio"
+description: "Form radio component"
+---
+
+# Radio
+
+Add a `siimple-radio` class to an `<input type="radio">` element to style it as a radio. 
+
+```html live=true
+<label class="siimple-label" for="radio0">
+    <input type="radio" id="radio0" class="siimple-radio has-mr-3">
+    Default radio
+</label>
+```
+
+By default, the radio will be displayed unchecked, but you can add a `checked` attribute to the `<input>` element for displaying the radio as checked.
+
+```html live=true
+<label class="siimple-label" for="radio1">
+    <input type="radio" id="radio1" class="siimple-radio has-mr-2" checked >
+    Active radio
+</label>
+```
+
+### Variants
+
+Variants for this component can be defined in the `form.radio` section of the theme configuration:
+
+```scss
+siimple.theme((
+    "form.radio": (
+        "default": (
+            "color": "primary",
+        ),
+    ),
+));
+```

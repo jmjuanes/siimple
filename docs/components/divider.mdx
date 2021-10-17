@@ -1,0 +1,32 @@
+---
+title: "Divider"
+description: "Simple element to separate content in your page"
+---
+
+# Divider
+
+The **divider** element helps you to separate content in your page. Add `siimple-divider` class to a `<div>` or a `<span>` tag to style it as a horizontal rule.
+
+```html live=true
+<div class="siimple-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</div>
+<div class="siimple-divider"></div>
+<div class="siimple-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</div>
+```
+
+### Variants
+
+Variants for this component can be defined in the `divider` section of the theme configuration:
+
+```scss
+siimple.theme((
+    "divider": (
+        "default": (
+            "background-color": "fill",
+        ),
+    ),
+));
+```

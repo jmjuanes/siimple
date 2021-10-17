@@ -1,0 +1,47 @@
+---
+title: "Modal"
+--- 
+
+# Modal
+
+> This component is part of the **experimental** components module.
+
+Use the `siimple-modal` class to create a wrapper for your modal dialogs. Usually you will need to use also the `siimple-scrim` class to block the interaction with the background elements, and the `siimple-close` for displaying a close button in the modal.
+
+<ModalExample />
+
+```html
+<div class="siimple-scrim">
+    <div class="siimple-modal">
+        <div class="has-flex has-items-center">
+            <div class="siimple-title is-4 has-mb-0">Modal</div>
+            <div class="siimple-close has-ml-auto"></div>
+        </div>
+        <div class="has-pt-6">
+            Content of the modal
+        </div>
+    </div>
+</div>
+```
+
+
+### Variants
+
+Variants for this component can be defined in the `dialog.modal` section of the theme configuration:
+
+```scss
+siimple.theme((
+    "dialog.modal": (
+        "default": (
+            "max-width": 500px,
+        ),
+        "small": (
+            "max-width": 300px,
+        ),
+        "large": (
+            "max-width": 900px,
+        ),
+    ),
+));
+```
+

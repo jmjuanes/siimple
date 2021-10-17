@@ -1,0 +1,60 @@
+---
+title: "Checkbox"
+description: "Checkbox input component"
+---
+
+# Checkbox
+
+Style your checkbox elements adding the `siimple-checkbox` style to the `<input>` element. 
+
+```html live=true
+<label class="siimple-label" for="checkbox0">
+    <span class="has-mr-2">Default checkbox</span>
+    <input type="checkbox" id="checkbox0" class="siimple-checkbox" />
+</label>
+```
+
+By default, the checkbox will be displayed unchecked, but you can add a **checked** attribute to the `<input>` element to display the checkbox as checked, or use the `is-active` modifier to manually display it as active.
+
+```html live=true
+<label class="siimple-label" for="checkbox1">
+    <span class="has-mr-2">Active checkbox</span>
+    <input type="checkbox" id="checkbox1" class="siimple-checkbox" checked />
+</label>
+```
+
+Checkboxes can also display the **indeterminate** state. Remember that there is no HTML attribute to set this state, the only way to set this state is via [JavaScript](https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate).
+
+```html
+<input type="checkbox" id="checkbox4" class="siimple-checkbox" />
+
+<!-- Set the indeterminate state via javascript -->
+<script type="text/javascript">
+    document.getElementById("checkbox4").indeterminate = true;
+</script>
+```
+
+### Variants
+
+Variants for this component can be defined in the `form.checkbox` section of the theme configuration:
+
+```scss
+siimple.theme((
+    "form.checkbox": (
+        "default": (
+            "background-color": "fill",
+            "color": "white",
+            "&:checked, &:indeterminate": (
+                "background-color": "primary",
+            ),
+            "&:indeterminate:after": (
+                "border-bottom-color": "white",
+            ),
+            "&:checked:after": (
+                "border-bottom-color": "white",
+                "border-left-color": "white",
+            ),
+        ),
+    ),
+));
+```

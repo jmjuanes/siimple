@@ -1,0 +1,29 @@
+---
+title: "Slider"
+--- 
+
+# Slider
+
+> This component is part of the **experimental** components module.
+
+Use the `siimple-slider` class to style your range input elements:
+
+```html live=true
+<input type="range" class="siimple-slider" value="50" />
+```
+
+
+### Variants
+
+Variants for this component can be defined in the `form.slider` section of the theme configuration:
+
+```scss
+siimple.theme((
+    "form.slider": (
+        "default": (
+            "background-color": "fill",
+            "color": "primary",
+        ),
+    ),
+));
+```
