@@ -12,6 +12,7 @@ $backgrounds-scale: (
     "highlight": constants.$highlight,
     "dark": constants.$dark,
     "light": constants.$light,
+    "muted": constants.$muted,
 );
 
 // Colors configuration
@@ -138,12 +139,12 @@ $scales: (
     @return utils.get-in($scales, $name, utils.empty-map());
 }
 
-//Get a single value from the scale
-@function get-scale-value ($name, $key) {
-    @return utils.get-in($scales, ($name $key), null);
+// @description Get a single value from the scale
+@function get-scale-value ($name, $key, $default-value: null) {
+    @return utils.get-in($scales, ($name $key), $default-value);
 }
 
-// Use a specific value from scale as a property
+// @description Use a specific value from scale as a property
 @mixin use-scale ($name, $value, $important: false) {
     //$theme: $current-theme; //theme.get-current-theme();
     $properties: ($name); 
