@@ -167,3 +167,307 @@ $css-mappings: (
     "width": "sizes",
 );
 
+// Overflow properties
+$overflow-properties: (
+    "overflow": "overflow",
+    "overflow.x": "overflow-x",
+    "overflow.y": "overflow-y",
+);
+
+// Properties for sizing helpers
+$sizing-properties: (
+    "width": (
+        "name": "w",
+        "properties": ("width"),
+    ),
+    "width.min": (
+        "name": "minw",
+        "properties": ("min-width"),
+    ),
+    "width.max": (
+        "name": "maxw",
+        "properties": ("max-width"),
+    ),
+    "height": (
+        "name": "h",
+        "properties": ("height"),
+    ),
+    "height.min": (
+        "name": "minh",
+        "properties": ("min-height"),
+    ),
+    "height.max": (
+        "name": "maxh",
+        "properties": ("max-height"),
+    ),
+);
+
+// Properties for spacing helpers
+$spacing-properties: (
+    "padding": (
+        "name": "p",
+        "properties": ("padding"),
+    ),
+    "padding.x": (
+        "name": "px",
+        "properties": ("padding-left" "padding-right"),
+    ),
+    "padding.y": (
+        "name": "py",
+        "properties": ("padding-top" "padding-bottom"),
+    ),
+    "padding.top": (
+        "name": "pt",
+        "properties": ("padding-top"),
+    ),
+    "padding.bottom": (
+        "name": "pb",
+        "properties": ("padding-bottom"),
+    ),
+    "padding.left": (
+        "name": "pl",
+        "properties": ("padding-left"),
+    ),
+    "padding.right": (
+        "name": "pr",
+        "properties": ("padding-right"),
+    ),
+    "margin": (
+        "name": "m",
+        "properties": ("margin"),
+    ),
+    "margin.x": (
+        "name": "mx",
+        "properties": ("margin-left" "margin-right"),
+    ),
+    "margin.y": (
+        "name": "my",
+        "properties": ("margin-top" "margin-bottom"),
+    ),
+    "margin.top": (
+        "name": "mt",
+        "properties": ("margin-top"),
+    ),
+    "margin.bottom": (
+        "name": "mb",
+        "properties": ("margin-bottom"),
+    ),
+    "margin.left": (
+        "name": "ml",
+        "properties": ("margin-left"),
+    ),
+    "margin.right": (
+        "name": "mr",
+        "properties": ("margin-right"),
+    ),
+    "bottom": (
+        "name": "bottom",
+        "properties": ("bottom"),
+    ),
+    "left": (
+        "name": "left",
+        "properties": ("left"),
+    ),
+    "right": (
+        "name": "right",
+        "properties": ("right"),
+    ),
+    "top": (
+        "name": "top",
+        "properties": ("top"),
+    ),
+);
+
+// Background sizes
+$background-size-values: (
+    "auto": auto,
+    "cover": cover, 
+    "contain": contain,
+);
+
+// Background repeat
+$background-repeat-values: (
+    "repeat": repeat,
+    "repeat-x": repeat-x,
+    "repeat-y": repeat-y,
+    "no-repeat": no-repeat,
+);
+
+// Cursors
+$cursor-values: (
+    "hand": pointer,
+    "pointer": pointer,
+    "move": move,
+    "none": none,
+    "zoom-in": zoom-in,
+    "zoom-out": zoom-out,
+    "not-allowed": not-allowed,
+);
+
+// Display values
+$display-values: (
+    "none": none,
+    "inline": inline,
+    "block": block,
+    "inline-block": inline-block,
+    "flex": flex,
+    "inline-flex": inline-flex,
+) !default;
+
+// Display flex values
+$display-flex-values: (
+    "default": flex,
+    "inline": inline-flex,
+) !default;
+
+// Flex values
+$flex-values: (
+    "none": none,
+    "initial": initial,
+    "auto": auto,
+) !default;
+
+// Flex direction values
+$flex-direction-values: (
+    "row": row, 
+    "column": column, 
+    "row-rev": row-reverse, 
+    "column-rev": column-reverse,
+) !default;
+
+// Flex wrap values
+$flex-wrap-values: (
+    "wrap": wrap,
+    "no-wrap": nowrap,
+) !default;
+
+// Flex grow values
+$flex-grow-values: (
+    "grow": 1,
+    "no-grow": 0,
+) !default;
+
+// Flex shring values
+$flex-shrink-values: (
+    "shrink": 1,
+    "no-shrink": 0,
+) !default;
+
+// Align content values
+$align-content-values: (
+    "start": flex-start,
+    "end": flex-end,
+    "center": center,
+    "between": space-between,
+    "around": space-around,
+    "evenly": space-evenly,
+) !default;
+
+// Align items
+// https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+$align-items-values: (
+    "start": flex-start,
+    "end": flex-end,
+    "center": center,
+    "stretch": stretch,
+    "baseline": baseline,
+) !default;
+
+// Justify content values
+// https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+$justify-content-values: (
+    "start": flex-start,
+    "end": flex-end,
+    "center": center,
+    "between": space-between,
+    "around": space-around,
+    "evenly": space-evenly,
+) !default;
+
+// Order values
+$order-values: (
+    "none": 0,
+    "first": -999,
+    "last": 999,
+) !default;
+
+// Float values
+$float-values: (
+    "left": left,
+    "right": right,
+    "none": none,
+) !default;
+
+// Overflow values
+$overflow-values: (
+    "auto": auto,
+    "scroll": scroll,
+    "hidden": hidden,
+) !default;
+
+// Position values
+$position-values: (
+    "relative": relative,
+    "absolute": absolute,
+    "sticky": sticky,
+    "fixed": fixed,
+    "initial": initial,
+) !default;
+
+// Text white-space values
+$text-white-space-values: (
+    "wrap": normal,
+    "no-wrap": nowrap,
+) !default;
+
+// Text overflow values
+$text-overflow-values: (
+    "ellipsis": ellipsis,
+    "clip": clip,
+) !default;
+
+// Text transform values
+$text-transform-values: (
+    "capitalize": capitalize,
+    "uppercase": uppercase,
+    "lowercase": lowercase,
+) !default;
+
+// Text decoration values
+$text-decoration-values: (
+    "underline": underline,
+    "no-underline": none,
+) !default;
+
+// Text align values
+$text-align-values: (
+    "justify": justify, 
+    "left": left, 
+    "center": center, 
+    "right": right,
+) !default;
+
+// Font-style values
+$font-style-values: (
+    "italic": italic,
+    "no-italic": normal,
+) !default;
+
+// Font weight values
+$font-weight-values: (
+    "light": 300,
+    "normal": 400,
+    "medium": 500,
+    "bold": 700,
+    "black": 900,
+) !default;
+
+// Vertical aligns values
+$vertical-align-values: (
+    "baseline": baseline,
+    "top": top,
+    "middle": middle,
+    "bottom": bottom,
+    "text-top": text-top,
+    "text-bottom": text-bottom,
+) !default;
