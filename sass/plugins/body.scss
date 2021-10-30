@@ -1,0 +1,13 @@
+@use "../scales.scss" as scales;
+
+// @description Add body base styles
+@mixin body () {
+    body {
+        @include scales.use-scale("background-color", "body");
+        @include scales.use-scale("color", "body");
+        @include scales.use-scale("font-family", "body");
+        @include scales.use-scale("font-size", "body");
+        // @include scales.use-scale("font-weight", "body");
+        @include scales.use-scale("line-height", "body");
+    }
+}
