@@ -1,11 +1,12 @@
-@use "siimple-lib" as lib;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // @description Scrim component
 // @experimental true
 @mixin scrim () {
     //$bg-color: lib.get($options, "background", lib.get-color("dark"));
     //$bg-opacity: lib.get($options, "opacity", 0.5);
-    @include lib.use-component-selector("scrim") {
+    @include selectors.use-component-selector("scrim") {
         align-items: center;
         background-color: rgba(black, 0.5);
         display: flex;
@@ -20,7 +21,7 @@
         z-index: 400;
 
         // Include scrim variants
-        @include lib.use-variant("dialog.scrim", ());
+        @include variants.use-variant("dialog.scrim", ());
     }
 }
 

@@ -1,4 +1,5 @@
-@use "siimple-lib" as lib;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 //Thumb mixin
 @mixin slider-thumb () {
@@ -15,7 +16,7 @@
 @mixin slider ($options: ()) {
     //$thumb-size: lib.get($options, "thumb.size", 16px);
     //$thumb-background: lib.get($options, "thumb.background", lib.get-color("primary"));
-    @include lib.use-component-selector("slider") {
+    @include selectors.use-component-selector("slider") {
         appearance: none;
         border-radius: 1rem;
         cursor: pointer;
@@ -43,7 +44,7 @@
         }
 
         //Include slider variants
-        @include lib.use-variant("form.slider", (
+        @include variants.use-variant("form.slider", (
             "default": (
                 "background-color": "fill",
                 "color": "primary",

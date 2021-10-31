@@ -1,9 +1,11 @@
-@use "siimple-lib" as lib;
+@use "../scales.scss" as scales;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // @description Modal component for siimple
 // @experimental true
 @mixin modal ($options: ()) {
-    @include lib.use-component-selector("modal") {
+    @include selectors.use-component-selector("modal") {
         background-color: white;
         display: block;
         max-height: 50vh;
@@ -12,10 +14,10 @@
         width: 100%;
 
         //Include scales
-        @include lib.use-scale("radius", "default");
+        @include scales.use-scale("radius", "default");
 
         // Include variants
-        @include lib.use-variant("dialog.modal", (
+        @include variants.use-variant("dialog.modal", (
             "default": (
                 "max-width": 500px,
             ),

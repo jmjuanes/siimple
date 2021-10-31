@@ -1,9 +1,10 @@
-@use "siimple-lib" as lib;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // @description Progress component
 // @experimental true
 @mixin progress () {
-    @include lib.use-component-selector("progress") {
+    @include selectors.use-component-selector("progress") {
         appearance: none;
         border: none;
         border-radius: 999px;
@@ -26,7 +27,7 @@
         }
 
         //Include progress variants
-        @include lib.use-variant("form.progress", (
+        @include variants.use-variant("form.progress", (
             "default": (
                 "background-color": "fill",
                 "color": "primary",
@@ -67,4 +68,3 @@
     //    }
     //}
 }
-
