@@ -3,15 +3,15 @@
 
 @use "../constants.scss" as constants;
 @use "../utils.scss" as utils;
-@use "../lib.scss" as lib;
+@use "../api.scss" as api;
 
 // @description Helpers plugin
 @mixin helpers ($options: utils.empty-map()) {
     $include: utils.get-in($options, "include", ());
     $exclude: utils.get-in($options, "exclude", ());
     // Background helpers
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("background.color", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("background.color", $include, $exclude),
         "name": "bg",
         "property": "background-color",
         "states": ("default" "hover" "focus"),
@@ -22,31 +22,31 @@
             "white": constants.$white,
         ),
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("background.size", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("background.size", $include, $exclude),
         "name": "bg",
         "states": ("default"),
         "properties": ("background-size"),
         "values": constants.$background-size-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("background.repeat", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("background.repeat", $include, $exclude),
         "name": "bg",
         "states": ("default"),
         "properties": ("background-repeat"),
         "values": constants.$background-repeat-values,
     ));
     // Cursor helpers
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("cursor", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("cursor", $include, $exclude),
         "name": "cursor",
         "states": ("default"),
         "properties": ("cursor"),
         "values": constants.$cursor-values,
     ));
     // Display helpers
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("display", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("display", $include, $exclude),
         "name": "d",
         "states": ("default"),
         "responsive": true,
@@ -54,80 +54,80 @@
         "values": constants.$display-values,
     ));
     // Flexbox helpers
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("display.flex", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("display.flex", $include, $exclude),
         "name": "flex",
         "states": ("default"),
         "responsive": true,
         "properties": ("display"),
         "values": constants.$display-flex-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("flex", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("flex", $include, $exclude),
         "name": "flex",
         "states": ("default"),
         "responsive": true,
         "properties": ("flex"),
         "values": constants.$flex-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("flex.direction", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("flex.direction", $include, $exclude),
         "name": "flex",
         "states": ("default"),
         "responsive": true,
         "properties": ("flex-direction"),
         "values": constants.$flex-direction-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("flex.wrap", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("flex.wrap", $include, $exclude),
         "name": "flex",
         "states": ("default"),
         "responsive": true,
         "properties": ("flex-wrap"),
         "values": constants.$flex-wrap-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("flex.grow", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("flex.grow", $include, $exclude),
         "name": "flex",
         "states": ("default"),
         "responsive": true,
         "properties": ("flex-grow"),
         "values": constants.$flex-grow-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("flex.shrink", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("flex.shrink", $include, $exclude),
         "name": "flex",
         "states": ("default"),
         "responsive": true,
         "properties": ("flex-shrink"),
         "values": constants.$flex-shrink-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("align.content", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("align.content", $include, $exclude),
         "name": "content",
         "states": ("default"),
         "responsive": true,
         "properties": ("align-content"),
         "values": constants.$align-content-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("align.items", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("align.items", $include, $exclude),
         "name": "items",
         "states": ("default"),
         "responsive": true,
         "properties": ("align-items"),
         "values": constants.$align-items-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("justify.content", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("justify.content", $include, $exclude),
         "name": "justify",
         "states": ("default"),
         "responsive": true,
         "properties": ("justify-content"),
         "values": constants.$justify-content-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("order", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("order", $include, $exclude),
         "name": "order",
         "states": ("default"),
         "responsive": true,
@@ -136,8 +136,8 @@
     ));
     // Float helpers
     // TODO: we also need the clearfix helper
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("float", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("float", $include, $exclude),
         "name": "float",
         "states": ("default"),
         "responsive": true,
@@ -145,45 +145,45 @@
         "values": $float-values,
     ));
     // Font helpers
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("font", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("font", $include, $exclude),
         "name": "font",
         "states": ("default"),
         "properties": ("font-family"),
         "scale": "fonts",
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("font.style", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("font.style", $include, $exclude),
         "name": "style",
         "states": ("default" "hover"),
         "properties": ("font-style"),
         "values": $font-style-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("font.weight", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("font.weight", $include, $exclude),
         "name": "weight",
         "states": ("default"),
         "properties": ("font-weight"),
         "values": constants.$font-weight-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("font.size", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("font.size", $include, $exclude),
         "name": "size",
         "states": ("default"),
         "properties": ("font-size"),
         "scale": "font-sizes",
     ));
     // Line height helper
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("line-height", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("line-height", $include, $exclude),
         "name": "lh",
         "states": ("default"),
         "properties": ("line-height"),
         "scale": "line-heights",
     ));
     // Opacity helpers
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("opacity", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("opacity", $include, $exclude),
         "name": "opacity",
         "states": ("default" "hover"),
         "responsive": true,
@@ -192,8 +192,8 @@
     ));
     // Overflow helpers
     @each $name,$value in constants.$overflow-properties {
-        @include lib.create-helper((
-            "enabled": lib.is-enabled($name, $include, $exclude),
+        @include api.create-helper((
+            "enabled": api.is-enabled($name, $include, $exclude),
             "name": $value,
             "states": ("default"),
             "properties": ($value),
@@ -201,8 +201,8 @@
         ));
     }
     // Position values
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("position", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("position", $include, $exclude),
         "name": "position",
         "states": ("default"),
         "responsive": true,
@@ -210,44 +210,44 @@
         "values": constants.$position-values,
     ));
     // Text helpers
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("text.white-space", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("text.white-space", $include, $exclude),
         "name": "text",
         "states": ("default"),
         "properties": ("white-space"),
         "values": constants.$text-white-space-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("text.overflow", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("text.overflow", $include, $exclude),
         "name": "text",
         "states": ("default"),
         "properties": ("text-overflow"),
         "values": constants.$text-overflow-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("text.transform", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("text.transform", $include, $exclude),
         "name": "text",
         "states": ("default" "hover"),
         "properties": ("text-transform"),
         "values": constants.$text-transform-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("text.decoration", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("text.decoration", $include, $exclude),
         "name": "text",
         "states": ("default" "hover"),
         "properties": ("text-decoration"),
         "values": constants.$text-decoration-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("text.align", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("text.align", $include, $exclude),
         "name": "text",
         "states": ("default"),
         "responsive": true,
         "properties": ("text-align"),
         "values": constants.$text-align-values,
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("text.color", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("text.color", $include, $exclude),
         "name": "text",
         "property": "color",
         "states": ("default" "hover"),
@@ -259,16 +259,16 @@
         ),
     ));
     // Radius helpers
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("border.radius", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("border.radius", $include, $exclude),
         "name": "radius",
         "states": ("default" "hover"),
         "responsive": true,
         "properties": ("border-radius"),
         "scale": "radius",
     ));
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("shadow", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("shadow", $include, $exclude),
         "name": "shadow",
         "states": ("default"),
         "properties": ("box-shadow"),
@@ -277,8 +277,8 @@
     // Sizing helpers
     @each $name,$props in constants.$sizing-properties {
         $screen-value: if(utils.starts-with($name, "height"), 100vh, 100vw);
-        @include lib.helper((
-            "enabled": lib.is-enabled($name, $include, $exclude),
+        @include api.helper((
+            "enabled": api.is-enabled($name, $include, $exclude),
             "name": utils.get-in($props, "name"),
             "states": ("default"),
             "responsive": true,
@@ -291,8 +291,8 @@
     }
     // Spacing helpers
     @each $name,$props in constants.$spacing-properties {
-        @include lib.create-helper((
-            "enabled": lib.is-enabled($name, $include, $exclude),
+        @include api.create-helper((
+            "enabled": api.is-enabled($name, $include, $exclude),
             "name": utils.get-in($props, "name"),
             "states": ("default"),
             "responsive": true,
@@ -302,8 +302,8 @@
         ));
     }
     // vertical-align helpers
-    @include lib.create-helper((
-        "enabled": lib.is-enabled("vertical-align", $include, $exclude),
+    @include api.create-helper((
+        "enabled": api.is-enabled("vertical-align", $include, $exclude),
         "name": "valign",
         "states": ("default"),
         "properties": ("vertical-align"),
