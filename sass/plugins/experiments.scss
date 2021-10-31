@@ -1,0 +1,7 @@
+// @description Experiments plugin
+@mixin all-experiments() {
+    @include modal();
+    @include progress();
+    @include scrim();
+    @include slider();
+}
