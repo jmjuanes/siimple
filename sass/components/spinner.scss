@@ -1,15 +1,18 @@
-@use "siimple-lib" as lib;
+@use "../selectors.scss" as selectors;
+@use "../sheet.scss" as sheet;
+@use "../variants.scss" as variants;
+@use "../utils.scss" as utils;
 
 // Generate spinner component configuration
-@mixin spinner () {
-    $options: lib.empty-map();
-    $animation-name: lib.get-in($options, "animation.name", "siimple-spinner-animation");
-    $animation-duration: lib.get-in($options, "animation.duration", 1s);
+@mixin spinner ($options: utils.empty-map()) {
+    //$options: utils.empty-map();
+    $animation-name: utils.get-in($options, "animation.name", "siimple-spinner-animation");
+    $animation-duration: utils.get-in($options, "animation.duration", 1s);
     //$border-width: lib.get($options, "border.width", 4px);
     //$border-color: lib.get($options, "border.color", lib.get-color("white"));
     //$border-opacity: lib.get($options, "border.opacity", 0.2);
     //Create spinner component
-    @include lib.use-component-selector("spinner") {
+    @include selectors.use-component-selector("spinner") {
         display: inline-block;
         height: 2rem;
         position: relative;
@@ -33,18 +36,18 @@
         }
         &:after {
             border-top-color: currentColor;
-            animation: #{lib.unquote($animation-name)} #{$animation-duration} infinite linear;
+            animation: #{utils.unquote($animation-name)} #{$animation-duration} infinite linear;
         }
 
         // Load spinner variants
-        @include lib.use-variant("spinner", (
+        @include variants.use-variant("spinner", (
             "default": (
                 "color": "primary",
             ),
         ));
     }
     // Spinner keyframes
-    @include lib.use-keyframes($animation-name, (
+    @include sheet.use-keyframes($animation-name, (
         "from": (
             "transform": "rotate(0deg)",
         ),
@@ -53,4 +56,3 @@
         ),
     ));
 }
-

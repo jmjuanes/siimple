@@ -1,8 +1,9 @@
-@use "siimple-lib" as lib;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // Generate checkbox component configuration
 @mixin checkbox() {
-    @include lib.use-component-selector("checkbox") {
+    @include selectors.use-component-selector("checkbox") {
         appearance: none;
         border-radius: 0.25rem;
         box-sizing: border-box;
@@ -41,7 +42,7 @@
             width: 0.625rem;
         }
         // Include checkbox variants
-        @include lib.use-variant("form.checkbox", (
+        @include variants.use-variant("form.checkbox", (
             "default": (
                 "background-color": "fill",
                 "color": "white",
@@ -59,4 +60,3 @@
         ));
     }
 }
-

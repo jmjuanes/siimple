@@ -1,9 +1,11 @@
-@use "siimple-lib" as lib;
+@use "../scales.scss" as scales;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // Generate breadcrumb component configuration
 @mixin crumb () {
     // Crumbs wrapper component
-    @include lib.use-component-selector("crumbs") {
+    @include selectors.use-component-selector("crumbs") {
         display: flex;
         flex-wrap: nowrap;
         margin-bottom: 1rem;
@@ -12,12 +14,13 @@
         padding: 0.5rem;
         white-space: nowrap !important;
         // Include crumbs scales
-        @include lib.use-scale("radius", "default");
+        @include scales.use-scale("radius", "default");
     }
     //Breadcrumb item
-    @include lib.use-component-selector("crumb") {
+    @include selectors.use-component-selector("crumb") {
         color: currentColor;
         cursor: pointer;
+        font-weight: 600;
         opacity: 0.6;
         padding-bottom: 0.5rem;
         padding-left: 0.75rem;
@@ -27,7 +30,7 @@
         //"text-align: center;
         text-decoration: none;
         //"transition: color 0.3s;
-        @include lib.use-scale("font-weight", "bold");
+        // @include scales.use-scale("font-weight", "bold");
         // Crumb hover styles
         &:hover {
             opacity: 1.0;
@@ -50,7 +53,7 @@
             width: 0.5rem;
         }
         // Load crumb styles
-        @include lib.use-variant("navigation.crumb", (
+        @include variants.use-variant("navigation.crumb", (
             "active": (
                 "cursor": "default", //!important;
                 "opacity": "1.0",
@@ -59,4 +62,3 @@
         ));
     }
 }
-

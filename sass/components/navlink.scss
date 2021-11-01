@@ -1,4 +1,6 @@
-@use "siimple-lib" as lib;
+@use "../scales.scss" as scales;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // Generate navigation link component
 @mixin navlink () {
@@ -7,7 +9,7 @@
         "color": "primary",
     );
     // Navigation link component
-    @include lib.use-component-selector("navlink") {
+    @include selectors.use-component-selector("navlink") {
         color: inherit;
         cursor: pointer;
         display: block;
@@ -18,10 +20,10 @@
         user-selection: none;
         width: 100%;
         // Include navlink scales
-        @include lib.use-scale("border-radius", "default");
-        @include lib.use-scale("font-weight", "bold");
+        @include scales.use-scale("border-radius", "default");
+        @include scales.use-scale("font-weight", "bold");
         // Include navlink variant
-        @include lib.use-variant("navigation.link", (
+        @include variants.use-variant("navigation.link", (
             "default": (
                 "&:hover": $active-variant,
             ),

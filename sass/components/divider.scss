@@ -1,8 +1,9 @@
-@use "siimple-lib" as lib;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // Generate divider component configuration
 @mixin divider() {
-    @include lib.use-component-selector("divider") {
+    @include selectors.use-component-selector("divider") {
         border: 0px;
         display: block;
         height: 0.125rem;
@@ -18,7 +19,7 @@
         }
         
         // Load divider variants
-        @include lib.use-variant("divider", (
+        @include variants.use-variant("divider", (
             "default": (
                 "background-color": "fill",
             ),

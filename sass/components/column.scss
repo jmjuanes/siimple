@@ -1,18 +1,22 @@
 @use "sass:map";
-@use "siimple-lib" as lib;
+@use "../breakpoints.scss" as breakpoints;
+@use "../constants.scss" as constants;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
+@use "../utils.scss" as utils;
 
 // Generate colum component configuration
 @mixin column () {
-    $column-variants: lib.empty-map();
-    @each $name,$size in lib.$columns {
+    $column-variants: utils.empty-map();
+    @each $name,$size in constants.$columns {
         $column-variants: map.set($column-variants, $name, (
             "flex": none,
             "width": $size,
         ));
     }
     // Register responsive breakpoints
-    @each $breakpoint in lib.get-breakpoints-names() {
-        @each $name,$size in lib.$columns {
+    @each $breakpoint in breakpoints.get-breakpoints-names() {
+        @each $name,$size in constants.$columns {
             $column-variants: map.set($column-variants, "#{$name}-#{$breakpoint}", (
                 "@breakpoint #{$breakpoint}": (
                     "flex": none,
@@ -28,17 +32,17 @@
         ));
     }
     // Generate column component config
-    @include lib.use-component-selector("column") {
+    @include selectors.use-component-selector("column") {
         flex: 1;
         min-height: 0;
         padding: 0.75rem;
         width: 100%;
         // Load columns variants
-        @include lib.use-variant("column", $column-variants);
+        @include variants.use-variant("column", $column-variants);
     }
 
     // Columns wrapper configuration
-    @include lib.use-component-selector("columns") {
+    @include selectors.use-component-selector("columns") {
         display: flex;
         flex-wrap: wrap;
         margin-left: -0.75rem;
@@ -46,4 +50,3 @@
         //width: 100%;
     }
 }
-

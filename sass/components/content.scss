@@ -1,4 +1,6 @@
-@use "siimple-lib" as lib;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
+@use "../utils.scss" as utils;
 
 // Default options for content
 $content-default-gap: 1.5rem;
@@ -12,16 +14,16 @@ $content-default-sizes: (
 
 // Generate content component configuration
 @mixin content () {
-    $content-variants: lib.empty-map();
+    $content-variants: utils.empty-map();
     @each $name,$size in $content-default-sizes {
         $content-media: "@media screen and (min-width: #{$size})";
-        $content-variants: lib.set-in($content-variants, $name, (
+        $content-variants: utils.set-in($content-variants, $name, (
             "#{$content-media}": (
                 "max-width": $size,
             ),
         ));
     }
-    @include lib.use-component-selector("content") {
+    @include selectors.use-component-selector("content") {
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -30,7 +32,7 @@ $content-default-sizes: (
         width: 100%;
 
         //Load content variants
-        @include lib.use-variant("layout.content", $content-variants);
+        @include variants.use-variant("layout.content", $content-variants);
     }
 }
 

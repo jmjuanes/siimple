@@ -1,7 +1,5 @@
-@use "siimple-lib" as lib;
-
 // @description Load essential components of siimple
-@mixin basic-components () {
+@mixin all-components () {
     @include alert();
     @include badge();
     @include btn();
@@ -14,7 +12,6 @@
     @include divider();
     @include input();
     @include label();
-    //@include link();
     @include navlink();
     @include paragraph();
     @include quote();
@@ -27,19 +24,4 @@
     @include text();
     @include textarea();
     @include title();
-}
-
-// @description Load experimental component
-@mixin experimental-components () {
-    @include modal();
-    @include placeholder();
-    @include progress();
-    @include scrim();
-    @include slider();
-}
-
-// @description Load all components
-@mixin all-components () {
-    @include basic-components();
-    @include experimental-components();
 }

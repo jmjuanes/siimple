@@ -1,8 +1,10 @@
-@use "siimple-lib" as lib;
+@use "../scales.scss" as scales;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // Generate btn component configuration
 @mixin btn() {
-    @include lib.use-component-selector("btn") {
+    @include selectors.use-component-selector("btn") {
         appearance: none;
         //Disable default button element borders
         //https://github.com/siimple/siimple/pull/17
@@ -30,10 +32,10 @@
         }
 
         // Include scales
-        @include lib.use-scale("radius", "default");
+        @include scales.use-scale("radius", "default");
 
         // Include button variants
-        @include lib.use-variant("button", (
+        @include variants.use-variant("button", (
             "default": (
                 "bg": "primary",
                 "color": "white",
@@ -52,4 +54,3 @@
         ));
     }
 }
-

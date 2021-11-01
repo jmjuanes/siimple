@@ -1,9 +1,10 @@
-@use "siimple-lib" as lib;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // Generate blockquote component configuration
 // TODO: change text color instead of changing the opacity
 @mixin quote () {
-    @include lib.use-component-selector("quote") {
+    @include selectors.use-component-selector("quote") {
         border-left-color: currentColor;
         border-left-style: solid;
         border-left-width: 0.25rem;
@@ -17,7 +18,7 @@
         padding-top: 0.75rem;
 
         // Include quote variants
-        @include lib.use-variant("text.quote", (
+        @include variants.use-variant("text.quote", (
             "default": (
                 "color": "text",
                 "opacity": "0.5",

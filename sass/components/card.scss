@@ -1,18 +1,20 @@
-@use "siimple-lib" as lib;
+@use "../scales.scss" as scales;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // Generate card component configuration
 @mixin card() {
-    @include lib.use-component-selector("card") {
+    @include selectors.use-component-selector("card") {
         display: block;
         padding: 1.75rem;
         text-decoration: none !important;
         width: 100%;
         
         // Include scales
-        @include lib.use-scale("radius", "default");
+        @include scales.use-scale("radius", "default");
     
         // Include card variants
-        @include lib.use-variant("card", (
+        @include variants.use-variant("card", (
             "default": (
                 "background-color": "white",
                 "box-shadow": "0 0 0.5rem rgba(0, 0, 0, 0.125)",
@@ -21,4 +23,3 @@
         ));
     }
 }
-

@@ -1,9 +1,10 @@
-@use "siimple-lib" as lib;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // @description generate text styles
 @mixin text () {
-    @include lib.use-component-selector("text") {
-        @include lib.use-variant("text", (
+    @include selectors.use-component-selector("text") {
+        @include variants.use-variant("text", (
             "bold": (
                 "font-weight": "bold",
             ),
@@ -34,4 +35,3 @@
         ));
     }
 }
-

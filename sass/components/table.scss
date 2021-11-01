@@ -1,9 +1,11 @@
-@use "siimple-lib" as lib;
+@use "../scales.scss" as scales;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // Table class
 @mixin table () {
     // Default table style
-    @include lib.use-component-selector("table") {
+    @include selectors.use-component-selector("table") {
         background-color: transparent;
         border-collapse: separate;
         border-spacing: 0;
@@ -37,7 +39,7 @@
         & thead th {
             text-align: left;
             vertical-align: bottom;
-            @include lib.use-scale("font-weight", "bold");
+            @include scales.use-scale("font-weight", "bold");
         }
         // Table body
         & tbody {
@@ -51,22 +53,22 @@
         //Bordered table with rouded corners
         //&--border &-header &-row:first-child &-cell:first-child {
         & thead tr:first-child th:first-child {
-            @include lib.use-scale("border-top-left-radius", "normal");
+            @include scales.use-scale("border-top-left-radius", "normal");
         }
         //&--border &-header &-row:first-child &-cell:last-child {
         & thead tr:first-child th:last-child {
-            @include lib.use-scale("border-top-right-radius", "normal");
+            @include scales.use-scale("border-top-right-radius", "normal");
         }
         //&--border &-body &-row:last-child &-cell:first-child {
         & tbody tr:last-child td:first-child {
-            @include lib.use-scale("border-bottom-left-radius", "normal");
+            @include scales.use-scale("border-bottom-left-radius", "normal");
         }
         //&--border &-body &-row:last-child &-cell:last-child {
         & tbody tr:last-child td:last-child {
-            @include lib.use-scale("border-bottom-right-radius", "normal");
+            @include scales.use-scale("border-bottom-right-radius", "normal");
         }
         // Table variants
-        @include lib.use-variant("table", (
+        @include variants.use-variant("table", (
             "default": (
                 "& th, & td": (
                     "background-color": "white",
@@ -116,14 +118,14 @@
     }
 
     // Responsive table container
-    @include lib.use-component-selector("table-responsive") {
+    @include selectors.use-component-selector("table-responsive") {
         display: block;
         overflow-x: auto;
         width: 100%;
     }
     
     // Table cell style
-    @include lib.use-component-selector("cell") {
+    @include selectors.use-component-selector("cell") {
         cursor: pointer;
         //padding-right: 20px !important;
         position: relative;
@@ -151,7 +153,7 @@
             border-top: 0.5rem solid transparent;
         }
         // Include table cell variants
-        @include lib.use-variant("cell", (
+        @include variants.use-variant("cell", (
             "sortable": (
                 "&::before": (
                     "border-bottom-color": "fill",

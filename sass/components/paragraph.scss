@@ -1,14 +1,15 @@
-@use "siimple-lib" as lib;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // Generate paragraph component configuration
 @mixin paragraph() {
-    @include lib.use-component-selector("paragraph") {
+    @include selectors.use-component-selector("paragraph") {
         display: block;
         margin-bottom: 1rem;
         margin-top: 0px;
 
         // Load paragraph variants
-        @include lib.use-variant("text.paragraph", (
+        @include variants.use-variant("text.paragraph", (
             "lead": (
                 "color": "muted",
                 "font-size": "large",

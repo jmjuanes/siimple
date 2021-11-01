@@ -1,9 +1,12 @@
-@use "siimple-lib" as lib;
+@use "../breakpoints.scss" as breakpoints;
+@use "../scales.scss" as scales;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // Tab mixin
 @mixin tab () {
     // Tabs wrapper styles
-    @include lib.use-component-selector("tabs") {
+    @include selectors.use-component-selector("tabs") {
         display: flex;
         flex-wrap: nowrap;
         overflow: hidden;
@@ -15,16 +18,16 @@
         user-select: none;
         //Tab style for mobile devices
         //@media screen and (max-width: lib.$mobile) {
-        @include lib.use-breakpoint("mobile") {
+        @include breakpoints.use-breakpoint("mobile") {
             flex-direction: column;
         }
         // Register scales
-        @include lib.use-scale("background-color", "fill");
-        @include lib.use-scale("radius", "default");
+        @include scales.use-scale("background-color", "fill");
+        @include scales.use-scale("radius", "default");
     }
 
     // Single tab style
-    @include lib.use-component-selector("tab") {
+    @include selectors.use-component-selector("tab") {
         color: currentColor;
         cursor: pointer;
         display: block;
@@ -35,10 +38,10 @@
         text-align: center !important;
         text-decoration: none !important;
         //Tab scales
-        @include lib.use-scale("font-weight", "bold");
-        @include lib.use-scale("radius", "default");
+        @include scales.use-scale("font-weight", "bold");
+        @include scales.use-scale("radius", "default");
         // Tab variants
-        @include lib.use-variant("navigation.tab", (
+        @include variants.use-variant("navigation.tab", (
             "default": (
                 "background-color": "transparent",
                 "&:hover": (
@@ -52,4 +55,3 @@
         ));
     }
 }
-

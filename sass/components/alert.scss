@@ -1,0 +1,32 @@
+@use "../scales.scss" as scales;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
+
+// Alert component mixin
+@mixin alert () {
+    @include selectors.use-component-selector("alert") {
+        align-items: center;
+        display: flex;
+        min-width: 0px;
+        position: relative;
+
+        // Include scale values
+        @include scales.use-scale("font-weight", "bold");
+        @include scales.use-scale("margin-bottom", "1rem");
+        @include scales.use-scale("margin-top", "0px");
+        @include scales.use-scale("padding", "1rem");
+        @include scales.use-scale("radius", "default");
+
+        // Include alert variants
+        @include variants.use-variant("alert", (
+            "default": (
+                "background-color": "primary",
+                "color": "white",
+            ),
+            "secondary": (
+                "background-color": "secondary",
+                "color": "white",
+            ),
+        ));
+    }
+}

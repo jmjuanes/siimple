@@ -1,15 +1,17 @@
-@use "siimple-lib" as lib;
+@use "../scales.scss" as scales;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // @description Placeholder component
 // @experimental true
 @mixin placeholder () {
     $default-active-variant: (
-        "background-color": rgba(lib.get-scale-value("colors", "primary"), 0.1),
+        "background-color": rgba(scales.get-scale-value("colors", "primary"), 0.1),
         "border-color": "primary",
         "color": "primary",
         "cursor": "pointer",
     );
-    @include lib.use-component-selector("placeholder") {
+    @include selectors.use-component-selector("placeholder") {
         border-width: 0px;
         color: inherit;
         display: block;
@@ -20,10 +22,10 @@
         //transition: background-color 0.3s;
 
         // Include scale values
-        @include lib.use-scale("radius", "default");
+        @include scales.use-scale("radius", "default");
 
         //Include placeholder variants
-        @include lib.use-variant("placeholder", (
+        @include variants.use-variant("placeholder", (
             "default": (
                 "color": "muted",
             ),
@@ -47,4 +49,3 @@
         ));
     }
 }
-

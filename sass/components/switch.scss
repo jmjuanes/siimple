@@ -1,8 +1,10 @@
-@use "siimple-lib" as lib;
+@use "../scales.scss" as scales;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // Generate switch component configuration
 @mixin switch () {
-    @include lib.use-component-selector("switch") {
+    @include selectors.use-component-selector("switch") {
         appearance: none;
         box-sizing: border-box;
         cursor: pointer;
@@ -22,7 +24,7 @@
             width: 0.875rem;
             z-index: 2;
             //Include scale values
-            @include lib.use-scale("background-color", "white");
+            @include scales.use-scale("background-color", "white");
         }
         &:before {
             border-radius: 2rem;
@@ -36,7 +38,7 @@
             width: 100%;
             z-index: 1;
             // Include scale values
-            @include lib.use-scale("background-color", "fill");
+            @include scales.use-scale("background-color", "fill");
         }
         &:checked:after {
             left: 1rem;
@@ -45,11 +47,10 @@
             background-color: currentColor;
         }
         // Load switch variants
-        @include lib.use-variant("form.switch", (
+        @include variants.use-variant("form.switch", (
             "default": (
                 "color": "primary",
             ),
         ));
     }
 }
-

@@ -1,8 +1,9 @@
-@use "siimple-lib" as lib;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // Generate close component configuration
 @mixin close() {
-    @include lib.use-component-selector("close") {
+    @include selectors.use-component-selector("close") {
         appearance: none;
         background-color: transparent;
         border: none;
@@ -39,7 +40,6 @@
         }
 
         // Include button variants
-        @include lib.use-variant("button.close", ());
+        @include variants.use-variant("button.close", ());
     }
 }
-

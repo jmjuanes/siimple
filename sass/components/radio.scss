@@ -1,8 +1,10 @@
-@use "siimple-lib" as lib;
+@use "../scales.scss" as scales;
+@use "../selectors.scss" as selectors;
+@use "../variants.scss" as variants;
 
 // Generate radio component configuration
 @mixin radio () {
-    @include lib.use-component-selector("radio") {
+    @include selectors.use-component-selector("radio") {
         appearance: none;
         box-sizing: border-box;
         cursor: pointer;
@@ -22,7 +24,7 @@
             position: absolute;
             top: 0px;
             width: 1.25rem;
-            @include lib.use-scale("border-color", "fill");
+            @include scales.use-scale("border-color", "fill");
         }
         &:after {
             background-color: transparent;
@@ -36,7 +38,7 @@
             width: 0.5rem;
         }
         &:hover:after {
-            @include lib.use-scale("background-color", "fill");
+            @include scales.use-scale("background-color", "fill");
         }
         &:checked:after {
             background-color: currentColor !important;
@@ -45,11 +47,10 @@
             border-color: currentColor !important; 
         }
         // Include radio variants
-        @include lib.use-variant("form.radio", (
+        @include variants.use-variant("form.radio", (
             "default": (
                 "color": "primary",
             ),
         ));
     }
 }
-
