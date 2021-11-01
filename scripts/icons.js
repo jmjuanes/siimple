@@ -4,7 +4,7 @@ const SVGIcons2SVGFontStream = require("svgicons2svgfont");
 const svg2ttf = require("svg2ttf");
 const through = require("through2");
 const ttf2woff = require("ttf2woff");
-const ttf2woff2 = require("ttf2woff2");
+//const ttf2woff2 = require("ttf2woff2");
 const Vinyl = require("vinyl");
 
 const paths = require("../paths.js");
@@ -38,17 +38,17 @@ module.exports = (options) => {
                 "path": path.join(file.base, name + ".woff"),
                 "contents": Buffer.from(ttf2woff(new Uint8Array(ttfContent), {})),
             }));
-            self.push(new Vinyl({
-                "base": file.base,
-                "path": path.join(file.base, name + ".woff2"),
-                "contents": ttf2woff2(ttfContent),
-            }));
-            //End font creation
+            // self.push(new Vinyl({
+            //     "base": file.base,
+            //     "path": path.join(file.base, name + ".woff2"),
+            //     "contents": ttf2woff2(ttfContent),
+            // }));
+            // End font creation
             return callback();
         });
-        //Add each icon in the font stream
+        // Add each icon in the font stream
         icons.forEach((icon) => {
-            //process.stdout.write("Adding icon '" + icon.id + "' to SVG font");
+            // process.stdout.write("Adding icon '" + icon.id + "' to SVG font");
             const iconPath = path.join(paths.icons, `${icon.id}.svg`);
             const iconReader = fs.createReadStream(iconPath);
             iconReader.metadata = {
