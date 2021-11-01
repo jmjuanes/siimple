@@ -35,7 +35,7 @@
 
 // @description Build a helper styles
 @mixin create-helper ($helper) {
-    $helper-enabled: utils.ger-in($helper, "enabled", true);
+    $helper-enabled: utils.get-in($helper, "enabled", true);
     @if $helper-enabled {
         $helper-name: map.get($helper, "name");
         $helper-properties: map.get($helper, "properties");
