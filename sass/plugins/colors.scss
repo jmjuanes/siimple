@@ -42,7 +42,7 @@ $global-colors: (
         //"enabled": api.is-enabled("background.color", $include, $exclude),
         "enabled": true,
         "name": "bg",
-        "property": "background-color",
+        "properties": ("background-color"),
         "states": ("default" "hover" "focus"),
         "values": get-all-colors(),
     ));
@@ -51,7 +51,7 @@ $global-colors: (
         //"enabled": api.is-enabled("text.color", $include, $exclude),
         "enabled": true,
         "name": "text",
-        "property": "color",
+        "properties": ("color"),
         "states": ("default" "hover"),
         "values": get-all-colors(),
     ));

@@ -13,7 +13,7 @@
     @include api.create-helper((
         "enabled": api.is-enabled("background.color", $include, $exclude),
         "name": "bg",
-        "property": "background-color",
+        "properties": ("background-color"),
         "states": ("default" "hover" "focus"),
         "scale": "backgrounds",
         "values": (
@@ -249,7 +249,7 @@
     @include api.create-helper((
         "enabled": api.is-enabled("text.color", $include, $exclude),
         "name": "text",
-        "property": "color",
+        "properties": ("color"),
         "states": ("default" "hover"),
         "scale": "colors",
         "values": (
@@ -277,7 +277,7 @@
     // Sizing helpers
     @each $name,$props in constants.$sizing-properties {
         $screen-value: if(utils.starts-with($name, "height"), 100vh, 100vw);
-        @include api.helper((
+        @include api.create-helper((
             "enabled": api.is-enabled($name, $include, $exclude),
             "name": utils.get-in($props, "name"),
             "states": ("default"),
