@@ -64,7 +64,8 @@ $radius-scale: (
     "default": 0.5rem, // deprecated, use normal instead
     "normal": 0.5rem, 
     "large": 1rem,
-    "circle": 50%,
+    "full": 9999px,
+    "none": 0px,
 );
 
 // Default shadows
