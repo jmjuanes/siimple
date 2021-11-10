@@ -1,0 +1,59 @@
+@use "sass:map";
+@use "./utils.scss" as utils;
+
+// Internal variables
+$plugin-types: (
+    "component": "siimple::component", 
+    "helper": "siimple::helper",
+    "font": "siimple::font",
+    "keyframes": "siimple::keyframes",
+    "styles", "siimple::styles"
+);
+
+// @description Creates a new component with the specified options
+// @param {map} options: component options
+// @returns {map} component: parsed component map
+@function create-component-plugin($options: null) {
+    @if not $options {
+        @error "create-component-plugin needs a component options map";
+    }
+    @if not map.has-key($options, "name") {
+        @error "You should provide a valid component name";
+    }
+    @if not map.has-key($options, "styles") {
+        @error "You should provide a valid component styles";
+    }
+    @if not map.has-key($options, "variants") {
+        $options: map.set($options, "variants", utils.empty-map());
+    }
+    // Register component keys
+    @return map.set($options, "$type", map.get($plugin-types, "component"));
+}
+
+// @description create a helper plugin
+@function create-helper-plugin($options) {
+    @return map.set($options, "$type", map.get($plugin-types, "helper"));
+}
+
+// @description create font
+@function create-font-plugin($options) {
+    // TODO: validate font options
+    @return map.set($options, "$type", map.get($plugin-types, "font"));
+}
+
+// @description Create a new keyframes plugin
+@function create-keyframes-plugin($options) {
+    // TODO: validate keyframes options
+    @return map.set($options, "$type", map.get($plugin-types, "keyframes"));
+}
+
+// @description Create a new styles plugin
+@function create-styles-plugin($options) {
+    @return map.set($options, "$type", map.get($plugin-types, "styles"));
+}
+
+// @scope private
+// @description Internal method to check if the plugin is of the specified type
+@function is-plugin($plugin, $type) {
+    @return utils.is-map($plugin) and map.get($plugin, "$type") == map.get($plugin-types, $type);
+}
