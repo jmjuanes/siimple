@@ -1,13 +1,16 @@
-@use "../scales.scss" as scales;
+@use "../lib.scss" as lib;
 
-// @description Add body base styles
-@mixin body () {
-    body {
-        @include scales.use-scale("background-color", "body");
-        @include scales.use-scale("color", "body");
-        @include scales.use-scale("font-family", "body");
-        @include scales.use-scale("font-size", "body");
-        // @include scales.use-scale("font-weight", "body");
-        @include scales.use-scale("line-height", "body");
-    }
+// @description Generate body base styles
+@function body () {
+    @return lib.create-styles-plugin((
+        "body": (
+            "background-color": "body",
+            "color": "body",
+            "font-family": "body",
+            "font-size": "body",
+            // "font-weight": "body",
+            "font-weight": "400", // Fixed value
+            "line-height": "body",
+        ),
+    ));
 }
