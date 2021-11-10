@@ -1,7 +1,7 @@
 @use "../lib.scss" as lib;
 
 // @description Generate body base styles
-@function body () {
+@function body() {
     @return lib.create-styles-plugin((
         "body": (
             "background-color": "body",
