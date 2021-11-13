@@ -10,13 +10,13 @@ $prefixes: (
 );
 
 // @description Update the prefixes used
-@mixin prefix ($custom-prefixes: null) {
+@mixin prefix($custom-prefixes: null) {
     @if not utils.is-map($custom-prefixes) {
         $custom-prefixes: utils.empty-map();
     }
     //$new-prefixes: utils.empty-map();
     @each $prefix in map.keys($prefixes) {
-        $new-value: utils.get-in($custom-prefixes, $prefix, "");
+        $new-value: utils.get-in($custom-prefixes, $prefix, null);
         @if utils.is-string($new-value) {
             $prefixes: map.set($prefixes, $prefix, $new-value) !global;
         }
@@ -24,7 +24,7 @@ $prefixes: (
 }
 
 // @description get prefix
-@function get-prefix ($name) {
+@function get-prefix($name) {
     @return utils.get-in($prefixes, $name, "");
 }
 
@@ -57,19 +57,19 @@ $prefixes: (
 }
 
 // @description Generate component classname
-@function get-component-classname ($name) {
+@function get-component-classname($name) {
     //$name: utils.get-in($options, "name", "");
     @return ".#{get-prefix("components")}#{$name}";
 }
 
 // @description generage variant classname
-@function get-variant-classname ($name) {
+@function get-variant-classname($name) {
     //$name: utils.get-in($options, "name", "");
     @return ".#{get-prefix("variants")}#{$name}";
 }
 
 // Generate a variable name
-@function get-varname ($name) {
+@function get-varname($name) {
     @return "--#{get-prefix("variables")}#{$name}";
 }
 
