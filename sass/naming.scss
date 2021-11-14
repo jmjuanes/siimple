@@ -31,7 +31,7 @@ $prefixes: (
 // @description Generate classname for helper
 // @option name: name of the helper
 // @option property: property of the helper
-// @option state: state of the helper (default, hover, active)
+// @option state: state of the helper (default, hover, focus)
 // @option breakpoint: responsive breakpoint
 @function get-helper-classname($options) {
     $classname: "#{get-prefix("helpers")}#{map.get($options, "name")}";
@@ -47,9 +47,11 @@ $prefixes: (
     }
     // Apply for state
     $state: utils.get-in($options, "state", "default");
-    @if $state != "default" {
-        //@return "#{$classname}\\:#{$state}";
-        @return ".#{$state}\\:#{$classname}";
+    @if $state == "hover" {
+        @return ".hover\\:#{$classname}:hover";
+    }
+    @else if $state == "focus" {
+        @return ".focus\\:#{$classname}:focus";
     }
     // Default --> return the default helper class
     //@return ".has-#{$name}-#{$property}";
