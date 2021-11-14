@@ -2,25 +2,26 @@ const fs = require("fs");
 const path = require("path");
 const glob = require("glob");
 const through = require("through2");
+const Vinyl = require("vinyl");
 
 //Global variables
 const endl = "\n";
 const useRegexp = /@use\s+\"([^"]*)\"(?:\s+as\s+([^;].*))?\s*;/; //For capturing includes
 
 //Parse entry files
-const getEntryFiles = function (entry, options) {
+const getEntryFiles = (entry, options) => {
     if (typeof entry === "string") {
         entry = [entry];
     }
     //Build for each entry
-    return entry.map(function (entryPath) {
+    return entry.map(entryPath => {
         return entryPath.indexOf("*") > -1 ? glob.sync(entryPath, options) : entryPath;
         //return glob.sync(entryPath, options);
     }).flat(2);
 };
 
 //Get entry content
-const getEntryContent = function (cwd, entry, virtualFiles) {
+const getEntryContent = (cwd, entry, virtualFiles) => {
     if (typeof virtualFiles[entry] !== "undefined") {
         return virtualFiles[entry];
     }
@@ -29,13 +30,13 @@ const getEntryContent = function (cwd, entry, virtualFiles) {
 };
 
 //Split lines
-const splitLines = function (lines) {
+const splitLines = lines => {
     return lines.replace(/\r/g, "").split(endl);
 };
 
 //Parse a SCSS import line
 //index and filePath are used for displaying errors and warnings
-const parseSCSSImport = function (line, index) {
+const parseSCSSImport = (line, index) => {
     let match = line.match(useRegexp);
     //Check for no match ---> throw error
     if (match === null) {
@@ -57,9 +58,9 @@ const parseSCSSImport = function (line, index) {
 };
 
 //Parse a SCSS file string
-const parseScss = function (content, options) {
+const parseScss = (content, options) => {
     let allImports = []; //To store files includes
-    content = splitLines(content).filter(function (line, index) {
+    content = splitLines(content).filter((line, index) => {
         line = line.trim();
         if (line.length === 0 || line.startsWith("//")) {
             return false; //Ignore empty lines or comments
@@ -73,16 +74,16 @@ const parseScss = function (content, options) {
     });
     //Remove local imports namespaces
     if (options.removeNamespaces === true) {
-        let localImports = allImports.filter(function (lib) {
+        let localImports = allImports.filter(lib => {
             return lib.isLocal === true; //Get only local imports
-        }).map(function (lib) {
+        }).map(lib => {
             return lib.as; //Get lib name
         });
         //console.log(filePath);
         //console.log(localImports);
         if (localImports.length > 0) {
             //Find the import and replace in all lines
-            content = content.map(function (line) {
+            content = content.map(line => {
                 return line.replace(new RegExp(`(${localImports.join("|")})\\.`, "g"), "");
             });
         }
@@ -90,7 +91,7 @@ const parseScss = function (content, options) {
     //Resolve modules
     if (typeof options.resolve === "object" && options.resolve !== null) {
         //Resolve scss imports
-        allImports = allImports.map(function (m) {
+        allImports = allImports.map(m => {
             if (typeof options.resolve[m.name] === "undefined") {
                 return m; //Not in the list
             }
@@ -112,10 +113,10 @@ const parseScss = function (content, options) {
 };
 
 //Convert a SCSS file object to string
-const stringifyScss = function (file) {
+const stringifyScss = file => {
     let content = file.content; //Initialize the content
     //Add the modules at the start of the file
-    file.modules.forEach(function (m) {
+    file.modules.forEach(m => {
         let moduleImport = (m.as !== null) ? `@use "${m.name}" as ${m.as};` : `@use "${m.name}";`
         content = moduleImport + endl + content;
     });
@@ -128,14 +129,14 @@ const stringifyScss = function (file) {
 };
 
 //Sass bundle generator
-const bundleScss = function (config, cwd) {
+const bundleScss = (config, cwd) => {
     const virtualFiles = config.virtualFiles || {}; //Get virtual files
-    return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
         const files = getEntryFiles(config.entry, {"cwd": cwd});
         const bundle = {"content": "", "modules": {}, "header": null}; //Output bundle
         //console.log(files);
         //Process all files in the list
-        files.forEach(function (filePath) {
+        files.forEach(filePath => {
             const file = parseScss(getEntryContent(cwd, filePath, virtualFiles), {
                 "removeNamespaces": true,
                 "resolve": config.resolve || {}
@@ -143,7 +144,7 @@ const bundleScss = function (config, cwd) {
             const metadata = ["//", `//@bundle ${path.basename(filePath)}`, "//"].join(endl);
             bundle.content = bundle.content + endl + metadata + endl + file.content + endl; 
             //Parse modules
-            file.modules.forEach(function (m) {
+            file.modules.forEach(m => {
                 if (m.isLocal === true) {
                     return null; //This is not a global module --> ignore
                 }
@@ -151,7 +152,8 @@ const bundleScss = function (config, cwd) {
                 if (typeof bundle.modules[m.name] !== "undefined") {
                     if (bundle.modules[m.name].as !== m.as) {
                         //Different as attributes ---> throw error and abort
-                        console.error(`Different modules renamed for module '${m.name}': '${bundle.modules[m.name].as}' !== '${m.as}'`);
+                        console.error(`ERROR processing file '${filePath}':`);
+                        console.error(`  Different modules renamed for module '${m.name}': '${bundle.modules[m.name].as}' !== '${m.as}'`);
                         return process.exit(1); //TODO: reject promise
                     }
                     return; //This module is already in the list
@@ -165,23 +167,36 @@ const bundleScss = function (config, cwd) {
             "modules": Object.values(bundle.modules)
         });
         //Resolve with the parsed scss
-        return resolve(stringifyScss(bundle));
+        return resolve({
+            "name": config.output || "index.scss",
+            "content": stringifyScss(bundle),
+        });
     });
 };
 
 // Export bundle generator
-module.exports = (options) => {
-    return through.obj((file, enc, callback) => {
-        console.log(file.path);
+module.exports = options => {
+    return through.obj(function (file, enc, callback) {
+        // console.log(file.path);
+        const self = this;
         const config = require(file.path); //Import bundle file
-        if (config.skip === true) {
-            return callback(); //Ignore this bundle
-        }
-        const cwd = config.cwd || path.dirname(configPath);
-        return bundleScss(config, cwd).then((content) => {
-            file.contents = new Buffer.from(content);
-            file.basename = config.output || "index.scss";
-            return callback(null, file);
+        const cwd = path.dirname(file.path); // Get current working directory
+        const allPromises = [config].flat().map(c => {
+            return bundleScss(c, cwd);
+        });
+
+        Promise.all(allPromises).then(outputFiles => {
+            outputFiles.forEach(output => {
+                self.push(new Vinyl({
+                    "base": file.base,
+                    "path": path.join(file.base, output.name),
+                    "contents": new Buffer.from(output.content),
+                }));
+            });
+            // file.contents = new Buffer.from(content);
+            // file.basename = config.output || "index.scss";
+            // return callback(null, file);
+            return callback();
         });
     });
 };
