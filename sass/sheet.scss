@@ -47,8 +47,20 @@
 }
 
 // @description Merge two styles objects
+// Improved map.deep-merge implementation to fix the map order.
+// Related issue: https://github.com/sass/dart-sass/issues/1385
 @function merge-styles($source, $target) {
-    @return map.deep-merge($source, $target);
+    $merged-map: $source;
+    @each $key, $target-value in $target {
+        $source-value: map.get($source, $key);
+        @if utils.is-map($source-value) and utils.is-map($target-value) {
+            $sub-merged-map: merge-styles($source-value, $target-value);
+            $merged-map: map.set($merged-map, $key, $sub-merged-map);
+        } @else {
+            $merged-map: map.set($merged-map, $key, $target-value);
+        }
+    }
+    @return $merged-map;
 }
 
 // @description Build styles
