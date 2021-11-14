@@ -1,7 +1,12 @@
+@use "siimple:lib" as lib;
+
 // @description Experiments plugin
-@mixin all-experiments() {
-    @include modal();
-    @include progress();
-    @include scrim();
-    @include slider();
+@function experiments() {
+    @return lib.flatten((
+        modal(),
+        placeholder(),
+        progress(),
+        scrim(),
+        slider(),
+    ));
 }

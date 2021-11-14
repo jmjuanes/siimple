@@ -1,4 +1,4 @@
-@use "../lib.scss" as lib;
+@use "siimple:lib" as lib;
 
 // @description Generate body base styles
 @function body() {

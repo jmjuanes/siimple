@@ -1,75 +1,58 @@
 @use "sass:map";
-@use "sass:string";
-@use "../api.scss" as api;
-@use "../selectors.scss" as selectors;
-@use "../sheet.scss" as sheet;
-@use "../utils.scss" as utils;
-
-//Get an icon
-@function get-icon ($name) {
-    @return map.get($icons, "#{$name}");
-}
-
-// Get a list of all available icons
-@function get-all-icons() {
-    @return map.keys($icons);
-}
-
-// Check if the specified icon exists
-@function has-icon($name) {
-    @return map.has-key($icons, "#{$name}");
-}
-
-//Include an icon by name
-@function include-icon($name) {
-    $icon-str: string.unquote(string.insert(get-icon($name), "\\", 1));
-    @return string.unquote("\"") + $icon-str + string.unquote("\"");
-}
+@use "siimple:lib" as lib;
+@use "siimple:icons" as icons;
 
 // @description Icons plugin entrypoint
-@mixin icons ($options: utils.empty-map()) {
-    $icons-name: utils.get-in($options, "name", "siimple-icons");
-    $icons-path: utils.get-in($options, "path", "../fonts/");
-    $include: utils.get-in($options, "include", ());
-    $exclude: utils.get-in($options, "exclude", ());
-    //Build sheet
-    @include sheet.use-font($icons-name, (
-        "sources": (
-            "truetype": "#{$icons-path}#{$icons-name}.ttf",
-            "woff": "#{$icons-path}#{$icons-name}.woff",
-            //"woff2": "#{$icons-path}#{$icons-name}.woff2",
-        ),
-        "weight": "normal",
-        "style": "normal",
-    ));
-    // Build icons component config
-    @include selectors.use-component-selector("icon") {
-        align-self: center;
-        display: inline-flex;
-        font-family: utils.unquote($icons-name);
-        //font-size": "default",
-        font-style: normal;
-        font-weight: normal !important;
-        line-height: utils.get-in($options, "line-height", 1);
-        text-rendering: auto;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        &::before {
-            box-sizing: border-box; //inherit;
-            display: block;
-        }
-        //Icons list
-        @each $icon in get-all-icons() {
-            @if api.is-enabled($icon, $include, $exclude) {
-                @include selectors.use-variant-selector($icon) {
-                    &::before {
-                        content: include-icon($icon);
-                    }
-                }
-            }
+@function icons($options: lib.empty-map()) {
+    $icons-name: lib.get-in($options, "name", "siimple-icons");
+    $icons-path: lib.get-in($options, "path", "../fonts/");
+    $include: lib.get-in($options, "include", ());
+    $exclude: lib.get-in($options, "exclude", ());
+    // Generate icons variants
+    $icons-variants: lib.empty-map();
+    @each $icon in icons.get-icons() {
+        @if lib.is-enabled($icon, $include, $exclude) {
+            $icons-variants: map.set($icons-variants, $icon, (
+                "&::before": (
+                    "content": icons.include-icon($icon),
+                ),
+            ));
         }
     }
-    // Build font sources
-    //@include lib.compile-sheet($icons-sheet);
+    // Generate icons plugin
+    @return (
+        // Icons font
+        lib.create-font-plugin((
+            "name": $icons-name,
+            "sources": (
+                "truetype": "#{$icons-path}#{$icons-name}.ttf",
+                "woff": "#{$icons-path}#{$icons-name}.woff",
+                //"woff2": "#{$icons-path}#{$icons-name}.woff2",
+            ),
+            "weight": "normal",
+            "style": "normal",
+        )),
+        // Icons component
+        lib.create-component-plugin((
+            "name": "icon",
+            "styles": (
+                "align-self": center,
+                "display": inline-flex,
+                "font-family": $icons-name,
+                //"font-size": "default",
+                "font-style": normal,
+                "font-weight": (normal "important"),
+                "line-height": lib.get-in($options, "line-height", 1),
+                "text-rendering": auto,
+                "-moz-osx-font-smoothing": grayscale,
+                "-webkit-font-smoothing": antialiased,
+                "&::before": (
+                    "box-sizing": border-box, //inherit;
+                    "display": block,
+                ),
+            ),
+            "variants": $icons-variants,
+        )),
+    );
 }
 

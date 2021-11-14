@@ -1,27 +1,31 @@
+@use "siimple:lib" as lib;
+
 // @description Load essential components of siimple
-@mixin all-components () {
-    @include alert();
-    @include badge();
-    @include btn();
-    @include card();
-    @include checkbox();
-    @include close();
-    @include column();
-    @include content();
-    @include crumb();
-    @include divider();
-    @include input();
-    @include label();
-    @include navlink();
-    @include paragraph();
-    @include quote();
-    @include radio();
-    @include select();
-    @include spinner();
-    @include switch();
-    @include tab();
-    @include table();
-    @include text();
-    @include textarea();
-    @include title();
+@function components () {
+    @return lib.flatten((
+        alert(),
+        badge(),
+        btn(),
+        card(),
+        checkbox(),
+        close(),
+        column(),
+        content(),
+        crumb(),
+        divider(),
+        input(),
+        label(),
+        navlink(),
+        paragraph(),
+        quote(),
+        radio(),
+        select(),
+        spinner(),
+        switch(),
+        tab(),
+        table(),
+        text(),
+        textarea(),
+        title(),
+    ));
 }

@@ -1,58 +1,28 @@
 @use "sass:map";
-@use "../constants.scss" as constants;
-@use "../api.scss" as api;
-@use "../utils.scss" as utils;
-
-// Global colors
-$global-colors: (
-    "white": constants.$white,
-    "black": constants.$black,
-    "transparent": transparent,
-);
-
-// @description Get all colors
-@function get-all-colors () {
-    @return map.merge($colors, $global-colors);
-}
-
-//Get color by name
-@function get-color($name, $shade: "500", $fallback: constants.$white) {
-    @if map.has-key($global-colors, $name) {
-        @return map.get($global-colors, $name);
-    }
-    // Check if this color exists in the color palette
-    $color-name: "#{$name}-#{$shade}";
-    @if map.has-key($colors, $color-name) {
-        @return map.get($colors, $color-name);
-    }
-    // Color not found --> return fallback color
-    @return $fallback;
-}
-
-// Check if the specified color name and variant exists
-// TODO
-@function has-color($name, $variant: "500") {
-    @return false;
-}
+@use "siimple:colors" as colors;
+@use "siimple:lib" as lib;
 
 // Colors plugin entrypoint
-@mixin colors ($options: utils.empty-map()) {
-    // Background colors
-    @include api.create-helper((
-        //"enabled": api.is-enabled("background.color", $include, $exclude),
-        "enabled": true,
-        "name": "bg",
-        "properties": ("background-color"),
-        "states": ("default" "hover" "focus"),
-        "values": get-all-colors(),
-    ));
-    // Text colors
-    @include api.create-helper((
-        //"enabled": api.is-enabled("text.color", $include, $exclude),
-        "enabled": true,
-        "name": "text",
-        "properties": ("color"),
-        "states": ("default" "hover"),
-        "values": get-all-colors(),
-    ));
+@function colors($options: lib.empty-map()) {
+    $all-colors: colors.get-colors();
+    @return (
+        // Background colors
+        lib.create-helper-plugin((
+            //"enabled": api.is-enabled("background.color", $include, $exclude),
+            "enabled": true,
+            "name": "bg",
+            "properties": ("background-color"),
+            "states": ("default" "hover" "focus"),
+            "values": $all-colors,
+        )),
+        // Text colors
+        lib.create-helper-plugin((
+            //"enabled": api.is-enabled("text.color", $include, $exclude),
+            "enabled": true,
+            "name": "text",
+            "properties": ("color"),
+            "states": ("default" "hover"),
+            "values": $all-colors,
+        )),
+    );
 }
