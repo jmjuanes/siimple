@@ -1,4 +1,6 @@
+@use "sass:list";
 @use "sass:map";
+
 @use "./utils.scss" as utils;
 
 // Internal variables
@@ -7,7 +9,7 @@ $plugin-types: (
     "helper": "siimple::helper",
     "font": "siimple::font",
     "keyframes": "siimple::keyframes",
-    "styles", "siimple::styles"
+    "styles": "siimple::styles",
 );
 
 // @description Creates a new component with the specified options
@@ -48,12 +50,32 @@ $plugin-types: (
 }
 
 // @description Create a new styles plugin
-@function create-styles-plugin($options) {
-    @return map.set($options, "$type", map.get($plugin-types, "styles"));
+@function create-styles-plugin($styles) {
+    @return (
+        "$type": map.get($plugin-types, "styles"),
+        "styles": $styles,
+    );
 }
 
 // @scope private
 // @description Internal method to check if the plugin is of the specified type
 @function is-plugin($plugin, $type) {
     @return utils.is-map($plugin) and map.get($plugin, "$type") == map.get($plugin-types, $type);
+}
+
+// @description Check if the provided item is enabled
+@function is-enabled($value, $include: (), $exclude: ()) {
+    @if list.length($include) == 0 and list.length($exclude) == 0 {
+        @return true; //No include/exclude list provided
+    }
+    // Check if this value is excluded
+    @if list.index($exclude, $value) {
+        @return false; // Icon excluded
+    }
+    // Check if this value is included
+    @else if list.index($include, $value) {
+        @return true;
+    }
+    // Fallback --> exclude the value
+    @return false;
 }
