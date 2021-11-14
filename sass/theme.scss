@@ -3,12 +3,10 @@
 @use "./breakpoints.scss" as breakpoints;
 @use "./scales.scss" as scales;
 @use "./variants.scss" as variants;
-@use "./naming.scss" as naming;
 
 // @description Configure the theme used in siimple
-@mixin theme ($theme: null) {
+@mixin theme($theme: null) {
     $new-breakpoints: null;
-    $new-prefixes: null;
     $new-scales: utils.empty-map();
     $new-variants: utils.empty-map();
     // Iterate over all keys in the new theme object
@@ -17,29 +15,21 @@
         @if $key == "breakpoints" {
             $new-breakpoints: $value; 
         }
-        // Check for prefixes
-        @else if $key == "prefix" {
-            $new-prefixes: $value;
+        // Check for custom variant list
+        @else if $key == "variants" {
+            $new-variants: $value;
         }
         // Check if key is a scale key
         @else if scales.has-scale($key) {
             $new-scales: map.set($new-scales, $key, $value);
         }
-        // Other item, set as a custom variant
-        @else {
-            $new-variants: map.set($new-variants, $key, $value);
-        }
+        // Ignore other items
     }
     // Update breakpoints
     @if $new-breakpoints {
         @include breakpoints.breakpoints($new-breakpoints);
     }
-    // Update prefixes
-    @if $new-prefixes {
-        @include naming.prefix($new-prefixes);
-    }
     // Update scales and variants
     @include scales.scales($new-scales);
     @include variants.variants($new-variants);
 }
-
