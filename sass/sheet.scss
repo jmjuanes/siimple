@@ -9,7 +9,7 @@
 @use "./utils.scss" as utils;
 
 // @description Generate a flat version fo the specified rules
-@function parse-styles ($classname, $rules) {
+@function parse-styles($classname, $rules) {
     $styles: utils.empty-map();
     $styles: map.set($styles, $classname, utils.empty-map());
     @each $key,$rule in $rules {
@@ -47,12 +47,12 @@
 }
 
 // @description Merge two styles objects
-@function merge-styles ($source, $target) {
+@function merge-styles($source, $target) {
     @return map.deep-merge($source, $target);
 }
 
 // @description Build styles
-@mixin build-styles ($styles) {
+@mixin build-styles($styles) {
     @each $selector,$rules in $styles {
         // Check for breakpoint selector
         @if breakpoints.is-breakpoint-selector($selector) {
@@ -93,7 +93,7 @@
 }
 
 // @description Build variables block
-@mixin build-variables ($variables) {
+@mixin build-variables($variables) {
     :root {
         @each $varname,$value in $variables {
             @if utils.starts-with($varname, "--") {
@@ -105,7 +105,7 @@
 }
 
 // @description Create a new empty sheet object
-@function create-sheet () {
+@function create-sheet() {
     @return (
         "styles": utils.empty-map(),
         "fonts": utils.empty-list(),
@@ -122,32 +122,27 @@
 //}
 
 // @description Add a new rule to the object
-@function add-styles-to-sheet ($sheet, $classname, $rules) {
+@function add-styles-to-sheet($sheet, $classname, $rules) {
     //@debug "Adding '#{$classname}' styles to sheet... OK";
     $old-styles: utils.get-in($sheet, "styles", utils.empty-map());
-    $new-styles: _parse-styles($classname, $rules);
-    $merged-styles: _merge-styles($old-styles, $new-styles);
+    $new-styles: parse-styles($classname, $rules);
+    $merged-styles: merge-styles($old-styles, $new-styles);
     @return map.set($sheet, "styles", $merged-styles); 
 } 
 
 // @description Register a new variable in the sheet
-@function add-variable-to-sheet ($sheet, $varname, $value) {
+@function add-variable-to-sheet($sheet, $varname, $value) {
     //@debug "Adding '#{$varname}' variable to sheet... OK";
     @return utils.set-in($sheet, ("variables" $varname), $value);
 }
 
 // @description Register a new keyframe in the sheet
-@function add-keyframes-to-sheet ($sheet, $name, $options) {
+@function add-keyframes-to-sheet($sheet, $options) {
     $new-keyframes: map.get($sheet, "keyframes");
-    //$name: map.get($keyframes, "name");
-    //$steps: map.get($keyframes, "steps");
+    $name: map.get($options, "name");
     $steps: utils.empty-map();
-    //@each $step-name,$step-rules in map.get($options, "steps") {
-    @each $step-name,$step-rules in $options {
-        $steps: map.merge(
-            $steps,
-            parse-styles($step-name, $step-rules)
-        );
+    @each $step-name,$step-rules in map.get($options, "steps") {
+        $steps: map.merge($steps, parse-styles($step-name, $step-rules));
     }
     //@debug "Adding '#{$name}' keyframe to sheet... OK";
     $new-keyframes: map.set($new-keyframes, $name, $steps);
@@ -155,8 +150,8 @@
 }
 
 // @description Register a new font in the sheet
-@function add-font-to-sheet ($sheet, $name, $options) {
-    //$name: map.get($options, "name");
+@function add-font-to-sheet($sheet, $options) {
+    $name: map.get($options, "name");
     $sources: "";
     @each $type,$url in map.get($options, "sources") {
         $sources: $sources + ",url(#{$url}) format(\"#{$type}\")"; 
@@ -173,7 +168,7 @@
 }
 
 // @description Compile sheet
-@mixin compile-sheet ($sheet) {
+@mixin compile-sheet($sheet) {
     //@debug "Compiling sheet";
     @include build-variables(map.get($sheet, "variables"));
     // Register fonts
@@ -196,21 +191,20 @@
 }
 
 // @description shortcut for building sheets
-@mixin use-sheet ($options) {
+@mixin use-sheet($options) {
     @error "Not implemented yet...";
 }
 
 // @description generate a fort-face
-@mixin use-font ($name, $options) {
+@mixin use-font($name, $options) {
     $sheet: create-sheet();
     $sheet: add-font-to-sheet($sheet, $name, $options);
     @include compile-sheet($sheet);
 }
 
 // @description sortcut to generate a keyframes
-@mixin use-keyframes ($name, $options) {
+@mixin use-keyframes($name, $options) {
     $sheet: create-sheet();
     $sheet: add-keyframes-to-sheet($sheet, $name, $options);
     @include compile-sheet($sheet);
 }
-
