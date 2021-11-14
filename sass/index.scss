@@ -1,0 +1,156 @@
+@use "sass:map";
+@use "siimple:lib" as lib;
+
+// Default values
+$theme: lib.empty-map() !default;
+$prefix: "siimple-" !default;
+$plugins: lib.empty-list() !default;
+$styles: lib.empty-map() !default;
+
+// Build siimple mixin
+@mixin build() {
+    // Initialize sheet configuration
+    $sheet: lib.create-sheet();
+    // $sheet: map.set($sheet, "prefix", $prefix); // Assign prefix
+    // $sheet: map.set($sheet, "theme", theme.parse-theme($options)); // Assign theme config
+    // $sheet: map.set($sheet, "breakpoints", breakpoints.parse-breakpoints($breakpoints));
+    // Initialize prefix
+    @if lib.is-string($prefix) {
+        @include lib.prefix(("components": $prefix));
+    }
+    // Initialize theme values
+    @if lib.is-map($theme) {
+        @include lib.theme($theme);
+    }
+    // Register custom styles
+    @if lib.is-map($styles) {
+        @each $selector,$rules in $styles {
+            $sheet: lib.add-styles-to-sheet($sheet, $selector, $rules);
+        }
+    }
+    // Register plugins
+    @each $plugin in lib.flatten($plugins) {
+        //$plugin: list.nth($plugins, $index);
+        // Check for component plugin
+        @if lib.is-plugin($plugin, "component") {
+            $sheet: build-component-styles($sheet, $plugin);
+        }
+        // Check for helper plugin
+        @else if lib.is-plugin($plugin, "helper") {
+            $sheet: build-helper-styles($sheet, $plugin);
+        }
+        // Check for font plugin
+        @else if lib.is-plugin($plugin, "font") {
+            $sheet: lib.add-font-to-sheet($sheet, $plugin);
+        }
+        // Check for keyframes plugin
+        @else if lib.is-plugin($plugin, "keyframes") {
+            $sheet: lib.add-keyframes-to-sheet($sheet, $plugin);
+        }
+        // Check for styles plugin
+        @else if lib.is-plugin($plugin, "styles") {
+            @each $selector,$rules in lib.get-in($plugin, "styles", lib.empty-map()) {
+                $sheet: lib.add-styles-to-sheet($sheet, $selector, $rules);
+            }
+        }
+    }
+    // Compile sheet
+    @include lib.compile-sheet($sheet);
+}
+
+// @description Build component styles
+@function build-component-styles($sheet, $component) {
+    $component-id: lib.get-in($component, "id", "");
+    $component-name: lib.get-in($component, "name", "");
+    $component-styles: lib.get-in($component, "styles", null);
+    $component-classname: lib.get-component-classname($component-name);
+    //$sheet: sheet.add-classname-to-sheet($sheet, $component-name, $component-classname);
+    @if $component-styles {
+        $sheet: lib.add-styles-to-sheet($sheet, $component-classname, $component-styles);
+    }
+    // Register each variant style
+    $component-variants: lib.get-in($component, "variants", lib.empty-map());
+    @each $variant-name,$variant-styles in lib.parse-variants($component-id, $component-variants) {
+        $variant-classname: $component-classname; // Default variant classname is component classname
+        // Check for no default variant
+        @if $variant-name != "default" {
+            $variant-classname: $component-classname + lib.get-variant-classname($variant-name);
+        }
+        // Register styles for this variant
+        $sheet: lib.add-styles-to-sheet($sheet, $variant-classname, $variant-styles);
+    }
+    //Return the updated sheet
+    @return $sheet;
+}
+
+// @description Build a helper styles
+@function build-helper-styles($sheet, $helper) {
+    $helper-enabled: lib.get-in($helper, "enabled", true);
+    @if $helper-enabled {
+        $helper-name: lib.get-in($helper, "name", "");
+        $helper-properties: lib.get-in($helper, "properties", null);
+        $helper-values: lib.empty-map();
+        $helper-scale: lib.get-in($helper, "scale", null);
+        $helper-important: lib.get-in($helper, "important", false);
+        // Check if we need to get values from scales
+        @if $helper-scale and lib.has-scale($helper-scale) {
+            $helper-values: lib.get-scale($helper-scale);
+        }
+        // Check for custom values to merge
+        @if map.has-key($helper, "values") {
+            $helper-values: map.merge($helper-values, map.get($helper, "values"));
+        }
+        $helper-responsive: lib.get-in($helper, "responsive", false);
+        $helper-states: lib.get-in($helper, "states", null);
+        @if not lib.is-list($helper-states) {
+            $helper-states: ("default");
+        }
+        // Generate helper styles
+        $helper-styles: lib.empty-map();
+        @each $key,$value in $helper-values {
+            $current-styles: lib.empty-map();
+            //NOTE: we will assign the same value to all properties provided
+            @each $prop in $helper-properties {
+                $style-value: if($helper-important, ($value "important"), $value);
+                $current-styles: map.set($current-styles, $prop, $style-value);
+            }
+            // Save parsed styles
+            $helper-styles: map.set($helper-styles, $key, $current-styles);
+        }
+        // Register helpers classes for each state
+        @each $state in $helper-states {
+            @each $key,$values in $helper-styles {
+                $classname: lib.get-helper-classname((
+                    "name": $helper-name,
+                    "property": $key,
+                    "state": $state,
+                ));
+                $sheet: lib.add-styles-to-sheet($sheet, $classname, $values);
+            }
+        }
+        // For responsive variants, we will register the style
+        // for each breakpoint in the list of breakpoints
+        @if $helper-responsive {
+            @each $breakpoint in lib.get-breakpoints-names() {
+                @each $key,$values in $helper-styles {
+                    $classname: lib.get-helper-classname((
+                        "name": $helper-name,
+                        "property": $key,
+                        "breakpoint": $breakpoint,
+                    ));
+                    // $breakpoint-styles: map.set(lib.empty-map(), "@breakpoint #{$breakpoint}", $styles);
+                    $sheet: lib.add-styles-to-sheet($sheet, $classname, (
+                        "@breakpoint #{$breakpoint}": $values,
+                    ));
+                }
+            }
+        }
+        //@debug map.get($sheet, "styles");
+    }
+    // Return parsed sheet
+    @return $sheet;
+}
+
+
+// Build siimple
+@include build();
