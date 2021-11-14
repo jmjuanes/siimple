@@ -26,18 +26,28 @@ $variants: utils.empty-map();
 }
 
 // @description check if the provided variant is defined
-@function has-variant ($name) {
+@function has-variant($name) {
     //@return not utils.is-empty-map(map.get($variants, $name));
     @return map.has-key($variants, $name);
 }
 
 // @description get a variant by name
-@function get-variant ($name) {
+@function get-variant($name) {
     @return map.get($variants, $name);
 }
 
+// Parse variants
+@function parse-variants($name, $default-variants) {
+    @if not has-variant($name) {
+        @return $default-variants;
+    }
+    // If exists, use custom variants instead
+    // TODO: check for extend flag to merge both variants maps
+    @return get-variant($name);
+}
+
 // @description Use the specified variant
-@mixin use-variant ($name, $variants-list) {
+@mixin use-variant($name, $variants-list) {
     //Check if this mixin has been called outside of any styles rules
     @if not & {
         @error("siimple.use-variant mixin can not be used outside a style rules");
