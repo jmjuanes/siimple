@@ -1,50 +1,48 @@
-@use "../selectors.scss" as selectors;
-@use "../variants.scss" as variants;
-
-//Thumb mixin
-@mixin slider-thumb () {
-    background-color: currentColor;
-    border: none;
-    border-radius: 50%;
-    box-sizing: border-box;
-    height: 1rem;
-    width: 1rem;
-}
+@use "sass:map";
+@use "siimple:lib" as lib;
 
 // @description Slider component
 // @experimental true
-@mixin slider ($options: ()) {
+@function slider($options: ()) {
     //$thumb-size: lib.get($options, "thumb.size", 16px);
     //$thumb-background: lib.get($options, "thumb.background", lib.get-color("primary"));
-    @include selectors.use-component-selector("slider") {
-        appearance: none;
-        border-radius: 1rem;
-        cursor: pointer;
-        display: block;
-        height: 0.25rem;
-        margin-bottom: 0.5rem;
-        margin-top: 0.5rem;
-        min-width: 0px;
-        outline: none;
-        transition: opacity .2s;
-        width: 100%;
-
-        //Thumb style
-        &::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            @include slider-thumb();
-        }
-        &::-moz-range-thumb {
-            @include slider-thumb();
-        }
-        &::-ms-thumb {
-            margin-top: 0px;
-            @include slider-thumb();
-        }
-
-        //Include slider variants
-        @include variants.use-variant("form.slider", (
+    // Slider thumb styles
+    $slider-thumb-styles: (
+        "background-color": currentColor,
+        "border": none,
+        "border-radius": 999px,
+        "box-sizing": border-box,
+        "height": 1rem,
+        "width": 1rem,
+    );
+    // Generate slider plugin
+    @return lib.create-component-plugin((
+        "id": "form.slider",
+        "name": "slider",
+        "styles": (
+            "appearance": none,
+            "border-radius": 1rem,
+            "cursor": pointer,
+            "display": block,
+            "height": 0.25rem,
+            "margin-bottom": 0.5rem,
+            "margin-top": 0.5rem,
+            "min-width": 0px,
+            "outline": none,
+            "transition-duration": 0.2s,
+            "transition-property": opacity,
+            "width": 100%,
+            //Thumb style
+            "&::-webkit-slider-thumb": map.merge($slider-thumb-styles, (
+                "-webkit-appearance": none,
+                "appearance": none,
+            )),
+            "&::-moz-range-thumb": $slider-thumb-styles,
+            "&::-ms-thumb": map.merge($slider-thumb-styles, (
+                "margin-top": 0px,
+            )),
+        ),
+        "variants": (
             "default": (
                 "background-color": "fill",
                 "color": "primary",
@@ -54,7 +52,6 @@
                 "cursor": "not-allowed",
                 "opacity": 0.7,
             ),
-        ));
-    }
+        )
+    ));
 }
-

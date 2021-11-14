@@ -1,39 +1,39 @@
-@use "../selectors.scss" as selectors;
-@use "../variants.scss" as variants;
+@use "siimple:lib" as lib;
 
 // @description Progress component
 // @experimental true
-@mixin progress () {
-    @include selectors.use-component-selector("progress") {
-        appearance: none;
-        border: none;
-        border-radius: 999px;
-        display: block;
-        height: 0.5rem;
-        margin: 0px !important;
-        overflow: hidden;
-        padding: 0px !important;
-        width: 100%;
-
-        //Progress bar styles
-        &::-webkit-progress-bar {
-            background-color: transparent;
-        }
-        &::-webkit-progress-value {
-            background-color: currentColor;
-        }
-        &::-moz-progress-bar {
-            background-color: currentColor;
-        }
-
-        //Include progress variants
-        @include variants.use-variant("form.progress", (
+@function progress() {
+    @return lib.create-component-plugin((
+        "id": "form.progress",
+        "name": "progress",
+        "styles": (
+            "appearance": none,
+            "border": none,
+            "border-radius": 999px,
+            "display": block,
+            "height": 0.5rem,
+            "margin": (0px "important"),
+            "overflow": hidden,
+            "padding": (0px "important"),
+            "width": 100%,
+            //Progress bar styles
+            "&::-webkit-progress-bar": (
+                "background-color": transparent,
+            ),
+            "&::-webkit-progress-value": (
+                "background-color": currentColor,
+            ),
+            "&::-moz-progress-bar": (
+                "background-color": currentColor,
+            ),
+        ),
+        "variants": (
             "default": (
                 "background-color": "fill",
                 "color": "primary",
             ),
-        ));
-    }
+        )
+    ));
 
     ////Striped progress bar
     //&.is-striped > span::after  {
