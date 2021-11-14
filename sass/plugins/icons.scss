@@ -34,6 +34,7 @@
         )),
         // Icons component
         lib.create-component-plugin((
+            "id": "icon",
             "name": "icon",
             "styles": (
                 "align-self": center,
