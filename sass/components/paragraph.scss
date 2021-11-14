@@ -1,22 +1,21 @@
-@use "../selectors.scss" as selectors;
-@use "../variants.scss" as variants;
+@use "siimple:lib" as lib;
 
 // Generate paragraph component configuration
-@mixin paragraph() {
-    @include selectors.use-component-selector("paragraph") {
-        display: block;
-        margin-bottom: 1rem;
-        margin-top: 0px;
-
-        // Load paragraph variants
-        @include variants.use-variant("text.paragraph", (
+@function paragraph() {
+    @return lib.create-component-plugin((
+        "id": "text.paragraph",
+        "name": "paragraph",
+        "styles": (
+            "display": block,
+            "margin-bottom": 1rem,
+            "margin-top": 0px,
+        ),
+        "variants": (
             "lead": (
                 "color": "muted",
                 "font-size": "large",
                 "font-weight": "bold",
             ),
-        ));
-    }
+        ),
+    ));
 }
-
-

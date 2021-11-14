@@ -1,40 +1,40 @@
-@use "../scales.scss" as scales;
-@use "../selectors.scss" as selectors;
-@use "../variants.scss" as variants;
+@use "siimple:lib" as lib;
 
 // Generate textarea component configuration
-@mixin textarea () {
-    @include selectors.use-component-selector("textarea") {
-        border-color: transparent;
-        border-style: solid;
-        border-width: 0.125rem;
-        box-sizing: border-box;
-        color: inherit;
-        display: block;
-        font-size: inherit;
-        line-height: inherit;
-        margin: 0px;
-        min-width: 0px;
-        outline: 0px;
-        padding-bottom: 0.375rem;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        padding-top: 0.375rem;
-        resize: vertical;
-        vertical-align: top;
-        width: 100%;
-        // Load textarea scales
-        @include scales.use-scale("radius", "default");
-        // Load textarea variants
-        @include variants.use-variant("form.textarea", (
+@function textarea () {
+    @return lib.create-component-plugin((
+        "id": "form.textarea",
+        "name": "textarea",
+        "styles": (
+            "border-color": transparent,
+            "border-style": solid,
+            "border-width": 0.125rem,
+            "box-sizing": border-box,
+            "color": inherit,
+            "display": block,
+            "font-size": inherit,
+            "line-height": inherit,
+            "margin": 0px,
+            "min-width": 0px,
+            "outline": 0px,
+            "padding-bottom": 0.375rem,
+            "padding-left": 0.5rem,
+            "padding-right": 0.5rem,
+            "padding-top": 0.375rem,
+            "resize": vertical,
+            "vertical-align": top,
+            "width": 100%,
+        ),
+        "variants": (
             "default": (
                 "background-color": "fill",
                 //"background-color": "white",
                 //"border-color": "muted",
+                "border-radius": "normal",
                 "&:focus": (
                     "border-color": "primary",
                 ),
             ),
-        ));
-    }
+        ),
+    ));
 }

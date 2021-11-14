@@ -1,10 +1,12 @@
-@use "../selectors.scss" as selectors;
-@use "../variants.scss" as variants;
+@use "siimple:lib" as lib;
 
 // @description generate text styles
-@mixin text () {
-    @include selectors.use-component-selector("text") {
-        @include variants.use-variant("text", (
+@function text () {
+    @return lib.create-component-plugin((
+        "id": "text",
+        "name": "text",
+        "styles": lib.empty-map(),
+        "variants": (
             "bold": (
                 "font-weight": "bold",
             ),
@@ -32,6 +34,6 @@
                     "transition": "color 0.3s",
                 ),
             ),
-        ));
-    }
+        ),
+    ));
 }

@@ -1,22 +1,22 @@
-@use "../selectors.scss" as selectors;
-@use "../variants.scss" as variants;
+@use "siimple:lib" as lib;
 
 // Generate label component configuration
-@mixin label() {
-    @include selectors.use-component-selector("label") {
-        align-items: center;
-        display: flex;
-        font-size: 0.857rem;
-        min-width: 0px;
-        width: 100%;
-
-        // Include label variants
-        @include variants.use-variant("form.label", (
+@function label() {
+    @return lib.create-component-plugin((
+        "id": "form.label",
+        "name": "label",
+        "styles": (
+            "align-items": center,
+            "display": flex,
+            "font-size": 0.857rem,
+            "min-width": 0px,
+            "width": 100%,
+        ),
+        "variants": (
             "default": (
                 "color": "inherit",
                 "font-weight": "bold",
             ),
-        ));
-    }
+        ),
+    ));
 }
-

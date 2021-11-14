@@ -1,43 +1,42 @@
-@use "../scales.scss" as scales;
-@use "../selectors.scss" as selectors;
-@use "../variants.scss" as variants;
+@use "siimple:lib" as lib;
 
 // Generate btn component configuration
-@mixin btn() {
-    @include selectors.use-component-selector("btn") {
-        appearance: none;
-        //Disable default button element borders
-        //https://github.com/siimple/siimple/pull/17
-        border: 0px;
-        cursor: pointer;
-        display: inline-block;
-        font-family: inherit; 
-        font-size: inherit;
-        font-weight: bold;
-        //min-height: 24px;
-        line-height: inherit;
-        min-width: 0px;
-        padding-bottom: 0.5rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-top: 0.5rem;
-        text-align: center;
-        text-decoration: none;
-        user-select: none;
-        //Button hover style
-        &:hover {
-            //opacity: 0.8;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        // Include scales
-        @include scales.use-scale("radius", "default");
-
-        // Include button variants
-        @include variants.use-variant("button", (
+@function btn() {
+    @return lib.create-component-plugin((
+        "id": "button",
+        "name": "btn",
+        "styles": (
+            "appearance": none,
+            //Disable default button element borders
+            //https://github.com/siimple/siimple/pull/17
+            "border": 0px,
+            "cursor": pointer,
+            "display": inline-block,
+            "font-family": inherit,
+            "font-size": inherit,
+            "font-weight": bold,
+            //min-height": 24px,
+            "line-height": inherit,
+            "min-width": 0px,
+            "padding-bottom": 0.5rem,
+            "padding-left": 1rem,
+            "padding-right": 1rem,
+            "padding-top": 0.5rem,
+            "text-align": center,
+            "text-decoration": none,
+            "user-select": none,
+            //Button hover style
+            "&:hover": (
+                //"opacity": 0.8,
+                "text-decoration": none,
+                "transition-duration": 0.3s,
+                "transition-property": background-color,
+            ),
+        ),
+        "variants": (
             "default": (
-                "bg": "primary",
+                "background-color": "primary",
+                "border-radius": "normal",
                 "color": "white",
             ),
             "disabled": (
@@ -51,6 +50,6 @@
                 "display": "block",
                 "width": "100%",
             ),
-        ));
-    }
+        ),
+    ));
 }

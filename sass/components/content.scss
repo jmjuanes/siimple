@@ -1,6 +1,4 @@
-@use "../selectors.scss" as selectors;
-@use "../variants.scss" as variants;
-@use "../utils.scss" as utils;
+@use "siimple:lib" as lib;
 
 // Default options for content
 $content-default-gap: 1.5rem;
@@ -13,26 +11,29 @@ $content-default-sizes: (
 );
 
 // Generate content component configuration
-@mixin content () {
-    $content-variants: utils.empty-map();
+@function content() {
+    // $content-gap: lib.get-in($options, "gap", 1.5rem);
+    $content-variants: lib.empty-map();
     @each $name,$size in $content-default-sizes {
         $content-media: "@media screen and (min-width: #{$size})";
-        $content-variants: utils.set-in($content-variants, $name, (
+        $content-variants: lib.set-in($content-variants, $name, (
             "#{$content-media}": (
                 "max-width": $size,
             ),
         ));
     }
-    @include selectors.use-component-selector("content") {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: $content-default-gap;
-        padding-right: $content-default-gap;
-        width: 100%;
-
-        //Load content variants
-        @include variants.use-variant("layout.content", $content-variants);
-    }
+    // Return content component configuration
+    @return lib.create-component-plugin((
+        "id": "layout.content",
+        "name": "content",
+        "styles": (
+            "display": block,
+            "margin-left": auto,
+            "margin-right": auto,
+            "padding-left": $content-default-gap,
+            "padding-right": $content-default-gap,
+            "width": 100%,
+        ),
+        "variants": $content-variants,
+    ));
 }
-

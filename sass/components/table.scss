@@ -1,177 +1,190 @@
-@use "../scales.scss" as scales;
-@use "../selectors.scss" as selectors;
-@use "../variants.scss" as variants;
+@use "siimple:lib" as lib;
 
 // Table class
-@mixin table () {
-    // Default table style
-    @include selectors.use-component-selector("table") {
-        background-color: transparent;
-        border-collapse: separate;
-        border-spacing: 0;
-        border-width: 0px;
-        box-sizing: border-box;
-        display: table;
-        margin-bottom: 1rem;
-        width: 100%;
-        // Table row
-        & tr {
-            box-sizing: border-box;
-            display: table-row;
-        }
-        // Table cell
-        & th,
-        & td {
-            // background-color: lib.get-color("white");
-            // border-top: 1px solid siimple-default-color("light", "dark");
-            box-sizing: border-box;
-            display: table-cell;
-            line-height: inherit;
-            // overflow: hidden;
-            // white-space: nowrap;
-        }
-        // Table header
-        & thead {
-            box-sizing: border-box;
-            display: table-header-group;
-            // font-weight: bold;
-        }
-        & thead th {
-            text-align: left;
-            vertical-align: bottom;
-            @include scales.use-scale("font-weight", "bold");
-        }
-        // Table body
-        & tbody {
-            display: table-row-group;
-            vertical-align: middle;
-        }
-        & tbody td {
-            vertical-align: top;
-        }
-        // Default table will be rounded
-        //Bordered table with rouded corners
-        //&--border &-header &-row:first-child &-cell:first-child {
-        & thead tr:first-child th:first-child {
-            @include scales.use-scale("border-top-left-radius", "normal");
-        }
-        //&--border &-header &-row:first-child &-cell:last-child {
-        & thead tr:first-child th:last-child {
-            @include scales.use-scale("border-top-right-radius", "normal");
-        }
-        //&--border &-body &-row:last-child &-cell:first-child {
-        & tbody tr:last-child td:first-child {
-            @include scales.use-scale("border-bottom-left-radius", "normal");
-        }
-        //&--border &-body &-row:last-child &-cell:last-child {
-        & tbody tr:last-child td:last-child {
-            @include scales.use-scale("border-bottom-right-radius", "normal");
-        }
-        // Table variants
-        @include variants.use-variant("table", (
-            "default": (
-                "& th, & td": (
-                    "background-color": "white",
-                    "padding": "1rem",
+@function table() {
+    @return (
+        // Core table styles
+        lib.create-component-plugin((
+            "id": "table",
+            "name": "table",
+            "styles": (
+                "background-color": transparent,
+                "border-collapse": separate,
+                "border-spacing": 0,
+                "border-width": 0px,
+                "box-sizing": border-box,
+                "display": table,
+                "margin-bottom": 1rem,
+                "width": 100%,
+                // Table row
+                "& tr": (
+                    "box-sizing": border-box,
+                    "display": table-row,
                 ),
-            ),
-            "divided": (
+                // Table cell
+                "& th,& td": (
+                    "box-sizing": border-box,
+                    "display": table-cell,
+                    "line-height": inherit,
+                    // "overflow": hidden,
+                    // "white-space": nowrap,
+                ),
+                // Table header
+                "& thead": (
+                    "box-sizing": border-box,
+                    "display": table-header-group,
+                ),
                 "& thead th": (
-                    "border-bottom-color": "fill",
-                    "border-bottom-style": "solid",
-                    "border-bottom-width": "0.125rem",
+                    "font-weight": 600,
+                    "text-align": left,
+                    "vertical-align": bottom,
+                ),
+                // Table body
+                "& tbody": (
+                    "display": table-row-group,
+                    "vertical-align": middle,
                 ),
                 "& tbody td": (
-                    "border-top-color": "fill",
-                    "border-top-style": "solid",
-                    "border-top-width": "0.125rem",
+                    "vertical-align": top,
+                ),
+                // Default table will be rounded
+                //Bordered table with rouded corners
+                //&--border &-header &-row:first-child &-cell:first-child {
+                "& thead tr:first-child th:first-child": (
+                    "border-top-left-radius": "normal",
+                ),
+                //&--border &-header &-row:first-child &-cell:last-child {
+                "& thead tr:first-child th:last-child": (
+                    "border-top-right-radius": "normal",
+                ),
+                //&--border &-body &-row:last-child &-cell:first-child {
+                "& tbody tr:last-child td:first-child": (
+                    "border-bottom-left-radius": "normal",
+                ),
+                //&--border &-body &-row:last-child &-cell:last-child {
+                "& tbody tr:last-child td:last-child": (
+                    "border-bottom-right-radius": "normal",
                 ),
             ),
-            "bordered": (
-                "& th, & td": (
-                    "border-color": "fill",
-                    "border-style": "solid",
-                    "border-width": "0.125rem",
+            "variants": (
+                "default": (
+                    "& th, & td": (
+                        "background-color": "white",
+                        "padding": "1rem",
+                    ),
                 ),
-                "& th:not(:last-child), & td:not(:last-child)": (
-                    "border-right-width": "0px !important",
+                "divided": (
+                    "& thead th": (
+                        "border-bottom-color": "fill",
+                        "border-bottom-style": "solid",
+                        "border-bottom-width": "0.125rem",
+                    ),
+                    "& tbody td": (
+                        "border-top-color": "fill",
+                        "border-top-style": "solid",
+                        "border-top-width": "0.125rem",
+                    ),
                 ),
-                "& tbody tr:not(:last-child) td": (
-                    "border-bottom-width": "0px !important",
+                "bordered": (
+                    "& th, & td": (
+                        "border-color": "fill",
+                        "border-style": "solid",
+                        "border-width": "0.125rem",
+                    ),
+                    "& th:not(:last-child), & td:not(:last-child)": (
+                        "border-right-width": "0px !important",
+                    ),
+                    "& tbody tr:not(:last-child) td": (
+                        "border-bottom-width": "0px !important",
+                    ),
+                ),
+                "hoverable": (
+                    "& tbody tr:hover td": (
+                        "background-color": "highlight",
+                        "transition": "background-color 0.3s",
+                    ),
+                ),
+                "striped": (
+                    "& tbody tr:nth-child(odd) td": (
+                        "background-color": "fill",
+                    ),
+                ),
+                "fixed": (
+                    "table-layout": "fixed",
                 ),
             ),
-            "hoverable": (
-                "& tbody tr:hover td": (
-                    "background-color": "highlight",
-                    "transition": "background-color 0.3s",
+        )),
+        // Responsive table container
+        lib.create-component-plugin((
+            "id": "table.responsive",
+            "name": "table-responsive",
+            "styles": (
+                "display": block,
+                "overflow-x": auto,
+                "width": 100%,
+            ),
+            "variants": lib.empty-map(),
+        )),
+        // Table cell style
+        lib.create-component-plugin((
+            "id": "table.cell",
+            "name": "cell",
+            "styles": (
+                "cursor": pointer,
+                //"padding-right": 20px !important,
+                "position": relative,
+                // Sortable triangles common styles
+                "&::before, &::after": (
+                    "border-left-color": transparent,
+                    "border-left-style": solid,
+                    "border-left-width": 0.375rem,
+                    "border-right-color": transparent,
+                    "border-right-style": solid,
+                    "border-right-width": 0.375rem,
+                    "content": '""',
+                    "display": block,
+                    "height": 0px,
+                    "position": absolute,
+                    "right": 0.25rem,
+                    "transition-duration": 0.3s,
+                    "transition-property": all,
+                    "width": 0px,
                 ),
-            ),
-            "striped": (
-                "& tbody tr:nth-child(odd) td": (
-                    "background-color": "fill",
-                ),
-            ),
-            "fixed": (
-                "table-layout": "fixed",
-            ),
-        ));
-    }
-
-    // Responsive table container
-    @include selectors.use-component-selector("table-responsive") {
-        display: block;
-        overflow-x: auto;
-        width: 100%;
-    }
-    
-    // Table cell style
-    @include selectors.use-component-selector("cell") {
-        cursor: pointer;
-        //padding-right: 20px !important;
-        position: relative;
-        // Sortable triangles common styles
-        &::before,
-        &::after {
-            border-left: 0.375rem solid transparent;
-            border-right: 0.375rem solid transparent;
-            content: "";
-            display: block;
-            height: 0px;
-            position: absolute;
-            right: 0.25rem;
-            transition: all 0.3s;
-            width: 0px;
-        }
-        // Sortable triangle up
-        &::before {
-            top: 1rem;
-            border-bottom: 0.5rem solid transparent;
-        }
-        // Sortable triangle down
-        &::after {
-            bottom: 1rem;
-            border-top: 0.5rem solid transparent;
-        }
-        // Include table cell variants
-        @include variants.use-variant("cell", (
-            "sortable": (
+                // Sortable triangle up
                 "&::before": (
-                    "border-bottom-color": "fill",
+                    "top": 1rem,
+                    "border-bottom-color": transparent,
+                    "border-bottom-style": solid,
+                    "border-bottom-width": 0.5rem,
                 ),
+                // Sortable triangle down
                 "&::after": (
-                    "border-top-color": "fill",
+                    "bottom": 1rem,
+                    "border-top-color": transparent,
+                    "border-top-style": solid,
+                    "border-top-width": 0.5rem,
                 ),
             ),
-            "asc": (
-                "&::before": (
-                    "border-bottom-color": "primary",
+            "variants": (
+                "sortable": (
+                    "&::before": (
+                        "border-bottom-color": "fill",
+                    ),
+                    "&::after": (
+                        "border-top-color": "fill",
+                    ),
+                ),
+                "asc": (
+                    "&::before": (
+                        "border-bottom-color": "primary",
+                    ),
+                ),
+                "desc": (
+                    "&::after": (
+                        "border-top-color": "primary",
+                    ),
                 ),
             ),
-            "desc": (
-                "&::after": (
-                    "border-top-color": "primary",
-                ),
-            ),
-        ));
-    }
+        )),
+    );
 }

@@ -1,25 +1,23 @@
-@use "../scales.scss" as scales;
-@use "../selectors.scss" as selectors;
-@use "../variants.scss" as variants;
+@use "siimple:lib" as lib;
 
 // Generate card component configuration
-@mixin card() {
-    @include selectors.use-component-selector("card") {
-        display: block;
-        padding: 1.75rem;
-        text-decoration: none !important;
-        width: 100%;
-        
-        // Include scales
-        @include scales.use-scale("radius", "default");
-    
-        // Include card variants
-        @include variants.use-variant("card", (
+@function card() {
+    @return lib.create-component-plugin((
+        "id": "card",
+        "name": "card",
+        "styles": (
+            "display": block,
+            "padding": 1.75rem,
+            "text-decoration": (none "important"),
+            "width": 100%,
+        ),
+        "variants": (
             "default": (
                 "background-color": "white",
+                "border-radius": "normal",
                 "box-shadow": "0 0 0.5rem rgba(0, 0, 0, 0.125)",
                 "color": "inherit",
             ),
-        ));
-    }
+        ),
+    ));
 }

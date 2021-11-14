@@ -1,32 +1,31 @@
 @use "../scales.scss" as scales;
-@use "../selectors.scss" as selectors;
-@use "../variants.scss" as variants;
+@use "siimple:lib" as lib;
 
 // Alert component mixin
-@mixin alert () {
-    @include selectors.use-component-selector("alert") {
-        align-items: center;
-        display: flex;
-        min-width: 0px;
-        position: relative;
-
-        // Include scale values
-        @include scales.use-scale("font-weight", "bold");
-        @include scales.use-scale("margin-bottom", "1rem");
-        @include scales.use-scale("margin-top", "0px");
-        @include scales.use-scale("padding", "1rem");
-        @include scales.use-scale("radius", "default");
-
-        // Include alert variants
-        @include variants.use-variant("alert", (
+@function alert() {
+    @return lib.create-component-plugin((
+        "id": "alert",
+        "name": "alert",
+        "styles": (
+            "align-items": center,
+            "display": flex,
+            "font-weight": bold,
+            "margin-bottom": 1rem,
+            "margin-top": 0px,
+            "min-width": 0px,
+            "padding": 1rem,
+            "position": relative,
+        ),
+        "variants": (
             "default": (
                 "background-color": "primary",
+                "border-radius": "normal",
                 "color": "white",
             ),
             "secondary": (
                 "background-color": "secondary",
                 "color": "white",
             ),
-        ));
-    }
+        ),
+    ));
 }

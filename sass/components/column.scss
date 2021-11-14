@@ -1,52 +1,58 @@
 @use "sass:map";
-@use "../breakpoints.scss" as breakpoints;
-@use "../constants.scss" as constants;
-@use "../selectors.scss" as selectors;
-@use "../variants.scss" as variants;
-@use "../utils.scss" as utils;
+@use "siimple:lib" as lib;
 
 // Generate colum component configuration
-@mixin column () {
-    $column-variants: utils.empty-map();
-    @each $name,$size in constants.$columns {
+@function column() {
+    $column-variants: lib.empty-map();
+    @each $name,$size in lib.$columns {
         $column-variants: map.set($column-variants, $name, (
             "flex": none,
             "width": $size,
         ));
     }
-    // Register responsive breakpoints
-    @each $breakpoint in breakpoints.get-breakpoints-names() {
-        @each $name,$size in constants.$columns {
-            $column-variants: map.set($column-variants, "#{$name}-#{$breakpoint}", (
-                "@breakpoint #{$breakpoint}": (
-                    "flex": none,
-                    "width": $size,
-                ),
-            ));
-        }
-        // Additional hidden column variant
-        $column-variants: map.set($column-variants, "hidden-#{$breakpoint}", (
-            "@breakpoint #{$breakpoint}": (
-                "display": "none",
+    // TODO: Register responsive breakpoints
+    // @each $breakpoint in breakpoints.get-breakpoints-names() {
+    //     @each $name,$size in constants.$columns {
+    //         $column-variants: map.set($column-variants, "#{$name}-#{$breakpoint}", (
+    //             "@breakpoint #{$breakpoint}": (
+    //                 "flex": none,
+    //                 "width": $size,
+    //             ),
+    //         ));
+    //     }
+    //     // Additional hidden column variant
+    //     $column-variants: map.set($column-variants, "hidden-#{$breakpoint}", (
+    //         "@breakpoint #{$breakpoint}": (
+    //             "display": "none",
+    //         ),
+    //     ));
+    // }
+    // Return column plugin
+    @return (
+        // Base column component
+        lib.create-component-plugin((
+            "id": "column",
+            "name": "column",
+            "styles": (
+                "flex": 1,
+                "min-height": 0,
+                "padding": 0.75rem,
+                "width": 100%,
             ),
-        ));
-    }
-    // Generate column component config
-    @include selectors.use-component-selector("column") {
-        flex: 1;
-        min-height: 0;
-        padding: 0.75rem;
-        width: 100%;
-        // Load columns variants
-        @include variants.use-variant("column", $column-variants);
-    }
-
-    // Columns wrapper configuration
-    @include selectors.use-component-selector("columns") {
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: -0.75rem;
-        margin-right: -0.75rem;
-        //width: 100%;
-    }
+            "variants": $column-variants,
+        )),
+        // Columns wrapper component
+        lib.create-component-plugin((
+            "id": "columns",
+            "name": "columns",
+            "styles": (
+                "display": flex,
+                "flex-wrap": wrap,
+                "margin-left": -0.75rem,
+                "margin-right": -0.75rem,
+                //"width": 100%,
+            ),
+            "variants": lib.empty-map(),
+        )),
+    );
 }
