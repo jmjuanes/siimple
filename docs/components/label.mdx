@@ -16,15 +16,17 @@ Style your form **label** element adding a `siimple-label` class, useful with ra
 
 ### Variants
 
-Variants for this component can be defined in the `form.label` section of the theme configuration:
+Variants for this component can be defined in the `form.label` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "form.label": (
-        "default": (
-            "color": "inherit",
-            "font-weight": "bold",
+@use "siimple" with (
+    $variants: (
+        "form.label": (
+            "default": (
+                "color": "inherit",
+                "font-weight": "bold",
+            ),
         ),
     ),
-));
+);
 ```

@@ -19,14 +19,16 @@ The **divider** element helps you to separate content in your page. Add `siimple
 
 ### Variants
 
-Variants for this component can be defined in the `divider` section of the theme configuration:
+Variants for this component can be defined in the `divider` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "divider": (
-        "default": (
-            "background-color": "fill",
+@use "siimple" with (
+    $variants: (
+        "divider": (
+            "default": (
+                "background-color": "fill",
+            ),
         ),
     ),
-));
+);
 ```

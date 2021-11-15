@@ -15,15 +15,17 @@ Style your `<progress>` elements using the class `siimple-progress`:
 
 ### Variants
 
-Variants for this component can be defined in the `form.progress` section of the theme configuration:
+Variants for this component can be defined in the `form.progress` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "form.progress": (
-        "default": (
-            "background-color": "fill",
-            "color": "primary",
+@use "siimple" with (
+    $variants: (
+        "form.progress": (
+            "default": (
+                "background-color": "fill",
+                "color": "primary",
+            ),
         ),
     ),
-));
+);
 ```

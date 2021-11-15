@@ -28,16 +28,18 @@ We provide an `active` variant to mark a crumb as active, for example to inform 
 
 ### Variants
 
-Variants for this component can be defined in the `navigation.crumb` section of the theme configuration:
+Variants for this component can be defined in the `navigation.crumb` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "navigation.crumb": (
-        "active": (
-            "cursor": "default",
-            "opacity": "1.0",
-            "pointer-events": "none",
+@use "siimple" with (
+    $variants: (
+        "navigation.crumb": (
+            "active": (
+                "cursor": "default",
+                "opacity": "1.0",
+                "pointer-events": "none",
+            ),
         ),
     ),
-));
+);
 ```

@@ -24,14 +24,16 @@ You can add a close button to the alert using the `siimple-close` component:
 
 ### Variants
 
-Variants for this component can be defined in the `alert` section of the theme configuration:
+Variants for this component can be defined in the `alert` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "alert": (
-        "default": (
-            "background-color": "primary",
-            "color": "white",
+@use "siimple" with (
+    $variants: (
+        "alert": (
+            "default": (
+                "background-color": "primary",
+                "color": "white",
+            ),
         ),
     ),
 ));

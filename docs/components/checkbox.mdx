@@ -36,25 +36,27 @@ Checkboxes can also display the **indeterminate** state. Remember that there is 
 
 ### Variants
 
-Variants for this component can be defined in the `form.checkbox` section of the theme configuration:
+Variants for this component can be defined in the `form.checkbox` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "form.checkbox": (
-        "default": (
-            "background-color": "fill",
-            "color": "white",
-            "&:checked, &:indeterminate": (
-                "background-color": "primary",
-            ),
-            "&:indeterminate:after": (
-                "border-bottom-color": "white",
-            ),
-            "&:checked:after": (
-                "border-bottom-color": "white",
-                "border-left-color": "white",
+@use "siimple" with (
+    $variants: (
+        "form.checkbox": (
+            "default": (
+                "background-color": "fill",
+                "color": "white",
+                "&:checked, &:indeterminate": (
+                    "background-color": "primary",
+                ),
+                "&:indeterminate:after": (
+                    "border-bottom-color": "white",
+                ),
+                "&:checked:after": (
+                    "border-bottom-color": "white",
+                    "border-left-color": "white",
+                ),
             ),
         ),
     ),
-));
+);
 ```

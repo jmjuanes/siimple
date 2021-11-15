@@ -13,14 +13,16 @@ Add the `siimple-textarea` class to your `<textarea>` element.
 
 ### Variants
 
-Variants for this component can be defined in the `form.textarea` section of the theme configuration:
+Variants for this component can be defined in the `form.textarea` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "form.textarea": (
-        "default": (
-            "background-color": "fill",
+@use "siimple" with (
+    $variants: (
+        "form.textarea": (
+            "default": (
+                "background-color": "fill",
+            ),
         ),
     ),
-));
+);
 ```

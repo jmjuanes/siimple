@@ -27,21 +27,23 @@ We provide an `active` variant to mark a navigation link as active.
 
 ### Variants
 
-Variants for this component can be defined in the `navigation.link` section of the theme configuration:
+Variants for this component can be defined in the `navigation.link` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "navigation.link": (
-        "default": (
-            "&:hover": (
+@use "siimple" with (
+    $variants: (
+        "navigation.link": (
+            "default": (
+                "&:hover": (
+                    "background-color": "highlight",
+                    "color": "primary",
+                ),
+            ),
+            "active": (
                 "background-color": "highlight",
                 "color": "primary",
             ),
         ),
-        "active": (
-            "background-color": "highlight",
-            "color": "primary",
-        ),
     ),
-));
+);
 ```

@@ -49,29 +49,31 @@ You can also use the special `siimple-table-responsive` class to allow creating 
 
 ### Variants
 
-Variants for this component can be defined in the `table` section of the theme configuration:
+Variants for this component can be defined in the `table` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "table": (
-        "default": (
-            "& th, & td": (
-                "background-color": "white",
-                "padding": "1rem",
+@use "siimple" with (
+    $variants: (
+        "table": (
+            "default": (
+                "& th, & td": (
+                    "background-color": "white",
+                    "padding": "1rem",
+                ),
             ),
-        ),
-        "divided": (
-            "& thead th": (
-                "border-bottom-color": "fill",
-                "border-bottom-style": "solid",
-                "border-bottom-width": "0.125rem",
-            ),
-            "& tbody td": (
-                "border-top-color": "fill",
-                "border-top-style": "solid",
-                "border-top-width": "0.125rem",
+            "divided": (
+                "& thead th": (
+                    "border-bottom-color": "fill",
+                    "border-bottom-style": "solid",
+                    "border-bottom-width": "0.125rem",
+                ),
+                "& tbody td": (
+                    "border-top-color": "fill",
+                    "border-top-style": "solid",
+                    "border-top-width": "0.125rem",
+                ),
             ),
         ),
     ),
-));
+);
 ```

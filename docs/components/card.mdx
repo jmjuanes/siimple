@@ -16,16 +16,18 @@ A **card** is a flexible container component that holds content and actions abou
 
 ### Variants
 
-Variants for this component can be defined in the `card` section of the theme configuration:
+Variants for this component can be defined in the `card` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "card": (
-        "default": (
-            "background-color": "white",
-            "box-shadow": "0 0 0.5rem rgba(0, 0, 0, 0.125)",
-            "color": "inherit",
+@use "siimple" with (
+    $variants: (
+        "card": (
+            "default": (
+                "background-color": "white",
+                "box-shadow": "0 0 0.5rem rgba(0, 0, 0, 0.125)",
+                "color": "inherit",
+            ),
         ),
     ),
-));
+);
 ```

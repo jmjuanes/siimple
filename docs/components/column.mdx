@@ -74,14 +74,16 @@ You can hide a column at a specific breakpoint using the responsive `hidden` var
 
 ### Variants
 
-Variants for this component can be defined in the `column` section of the theme configuration:
+Variants for this component can be defined in the `column` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "column": (
-        "default": (
-            "padding": "0.75rem",
+@use "siimple" with (
+    $variants: (
+        "column": (
+            "default": (
+                "padding": "0.75rem",
+            ),
         ),
     ),
-));
+);
 ```

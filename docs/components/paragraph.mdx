@@ -24,16 +24,18 @@ We provide a `lead` variant class to highlight a paragraph:
 
 ### Variants
 
-Variants for this component can be defined in the `text.paragraph` section of the theme configuration:
+Variants for this component can be defined in the `text.paragraph` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "text.paragraph": (
-        "lead": (
-            "color": "muted",
-            "font-size": "large",
-            "font-weight": "bold",
+@use "siimple" with (
+    $variants: (
+        "text.paragraph": (
+            "lead": (
+                "color": "muted",
+                "font-size": "large",
+                "font-weight": "bold",
+            ),
         ),
     ),
-));
+);
 ```

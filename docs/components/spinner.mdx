@@ -13,14 +13,16 @@ The **siimple spinner** is a pure CSS loading indicator used for showing the loa
 
 ### Variants
 
-Variants for this component can be defined in the `spinner` section of the theme configuration:
+Variants for this component can be defined in the `spinner` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "spinner": (
-        "default": (
-            "color": "primary",
+@use "siimple" with (
+    $variants: (
+        "spinner": (
+            "default": (
+                "color": "primary",
+            ),
         ),
     ),
-));
+);
 ```

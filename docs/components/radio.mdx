@@ -25,14 +25,16 @@ By default, the radio will be displayed unchecked, but you can add a `checked` a
 
 ### Variants
 
-Variants for this component can be defined in the `form.radio` section of the theme configuration:
+Variants for this component can be defined in the `form.radio` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "form.radio": (
-        "default": (
-            "color": "primary",
+@use "siimple" with (
+    $variants: (
+        "form.radio": (
+            "default": (
+                "color": "primary",
+            ),
         ),
     ),
-));
+);
 ```

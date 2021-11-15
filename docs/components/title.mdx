@@ -17,15 +17,18 @@ Use `siimple-title` to style your headings. By default we provide six different 
 
 ### Variants
 
-Variants for this component can be defined in the `text.headings` section of the theme configuration:
+Variants for this component can be defined in the `text.headings` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "text.headings": (
-        "default": (
-            "color": "heading",
+@use "siimple" with (
+    $variants: (
+        "text.headings": (
+            "default": (
+                "color": "heading",
+                "font-weight": 600,
+            ),
         ),
     ),
-));
+);
 ```
 

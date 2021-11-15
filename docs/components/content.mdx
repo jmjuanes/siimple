@@ -34,14 +34,16 @@ On screens with sizes lower than the specified in the sizing modifier, the conta
 
 ### Variants
 
-Variants for this component can be defined in the `layout.content` section of the theme configuration:
+Variants for this component can be defined in the `layout.content` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "layout.content": (
-        "default": (
-            "max-width": "560px",
+@use "siimple" with (
+    $variants: (
+        "layout.content": (
+            "default": (
+                "max-width": "560px",
+            ),
         ),
     ),
-));
+);
 ```

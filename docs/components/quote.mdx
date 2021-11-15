@@ -14,15 +14,17 @@ Use `siimple-quote` class to style your blockquotes:
 
 ### Variants
 
-Variants for this component can be defined in the `text.quote` section of the theme configuration:
+Variants for this component can be defined in the `text.quote` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "text.quote": (
-        "default": (
-            "color": "text",
-            "opacity": "0.5",
+@use "siimple" with (
+    $variants: (
+        "text.quote": (
+            "default": (
+                "color": "text",
+                "opacity": "0.5",
+            ),
         ),
     ),
-));
+);
 ```

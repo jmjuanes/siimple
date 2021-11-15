@@ -27,21 +27,23 @@ Use the `siimple-modal` class to create a wrapper for your modal dialogs. Usuall
 
 ### Variants
 
-Variants for this component can be defined in the `dialog.modal` section of the theme configuration:
+Variants for this component can be defined in the `dialog.modal` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "dialog.modal": (
-        "default": (
-            "max-width": 500px,
-        ),
-        "small": (
-            "max-width": 300px,
-        ),
-        "large": (
-            "max-width": 900px,
+@use "siimple" with (
+    $variants: (
+        "dialog.modal": (
+            "default": (
+                "max-width": 500px,
+            ),
+            "small": (
+                "max-width": 300px,
+            ),
+            "large": (
+                "max-width": 900px,
+            ),
         ),
     ),
-));
+);
 ```
 

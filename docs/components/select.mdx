@@ -18,14 +18,16 @@ You can style your `<select>` elements adding a `siimple-select` class.
 
 ### Variants
 
-Variants for this component can be defined in the `form.select` section of the theme configuration:
+Variants for this component can be defined in the `form.select` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "form.select": (
-        "default": (
-            "background-color": "fill",
+@use "siimple" with (
+    $variants: (
+        "form.select": (
+            "default": (
+                "background-color": "fill",
+            ),
         ),
     ),
-));
+);
 ```

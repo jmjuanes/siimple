@@ -14,14 +14,16 @@ Add the `siimple-input` class to your text-based `<input>` tags (text, password,
 
 ### Variants
 
-Variants for this component can be defined in the `form.input` section of the theme configuration:
+Variants for this component can be defined in the `form.input` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "form.input": (
-        "default": (
-            "background-color": "fill",
+@use "siimple" with (
+    $variants: (
+        "form.input": (
+            "default": (
+                "background-color": "fill",
+            ),
         ),
     ),
-));
+);
 ```

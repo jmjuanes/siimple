@@ -19,21 +19,23 @@ We also provide an `active` variant to mark the current tab.
 
 ### Variants
 
-Variants for this component can be defined in the `navigation.tab` section of the theme configuration:
+Variants for this component can be defined in the `navigation.tab` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "navigation.tab": (
-        "default": (
-            "background-color": "transparent",
-            "&:hover": (
+@use "siimple" with (
+    $variants: (
+        "navigation.tab": (
+            "default": (
+                "background-color": "transparent",
+                "&:hover": (
+                    "color": "primary",
+                ),
+            ),
+            "active": (
+                "background-color": "white",
                 "color": "primary",
             ),
         ),
-        "active": (
-            "background-color": "white",
-            "color": "primary",
-        ),
     ),
-));
+);
 ```

@@ -15,15 +15,17 @@ Use the `siimple-slider` class to style your range input elements:
 
 ### Variants
 
-Variants for this component can be defined in the `form.slider` section of the theme configuration:
+Variants for this component can be defined in the `form.slider` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "form.slider": (
-        "default": (
-            "background-color": "fill",
-            "color": "primary",
+@use "siimple" with (
+    $variants: (
+        "form.slider": (
+            "default": (
+                "background-color": "fill",
+                "color": "primary",
+            ),
         ),
     ),
-));
+);
 ```

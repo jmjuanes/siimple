@@ -30,23 +30,25 @@ We also provide an special variant to change the button width to the **full pare
 
 ### Variants
 
-Variants for this component can be defined in the `button` section of the theme configuration:
+Variants for this component can be defined in the `button` section of the variants configuration:
 
 ```scss
-siimple.theme((
-    "button": (
-        "default": (
-            "background-color": "primary",
-            "color": "white",
-        ),
-        "disabled": (
-            "cursor": "not-allowed !important",
-            "opacity": "0.6 !important",
-        ),
-        "full": (
-            "display": "block",
-            "width": "100%",
+@use "siimple" with (
+    $variants: (
+        "button": (
+            "default": (
+                "background-color": "primary",
+                "color": "white",
+            ),
+            "disabled": (
+                "cursor": "not-allowed !important",
+                "opacity": "0.6 !important",
+            ),
+            "full": (
+                "display": "block",
+                "width": "100%",
+            ),
         ),
     ),
-));
+);
 ```
