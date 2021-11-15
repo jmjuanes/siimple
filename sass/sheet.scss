@@ -85,12 +85,12 @@
                 @each $prop,$value in $rules {
                     $is-important: false;
                     // Check for list value --> check for flags
-                    @if utils.is-list($value) {
+                    @if utils.is-list($value) and list.length($value) == 2 {
                         $last-item: utils.last-item($value);
                         @if $last-item == "important" or $last-item == "!important" {
                             $is-important: true;
+                            $value: utils.first-item($value);
                         }
-                        $value: utils.first-item($value);
                     }
                     // Generate this property
                     @include scales.use-scale($prop, $value, $is-important);
