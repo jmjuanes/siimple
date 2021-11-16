@@ -1,0 +1,58 @@
+---
+title: "Shadow"
+---
+
+# Shadow
+
+Use the following shadow helpers to apply a box shadow effect to the desired element:
+
+> This helper will extract the values from the **shadows** section of the theme. You may have extra or different classes based on your theme configuration.
+
+
+| Class | Property |
+|-------|----------|
+| `has-shadow-normal` | `box-shadow: 0 .5rem 1rem -.25rem rgba(54,63,79,.2),0 0 0 1px rgba(54,63,79,.02);` |
+| `has-shadow-small`  | `box-shadow: 0 .25rem 1rem -.125rem rgba(54,63,79,.15),0 0 0 1px rgba(54,63,79,.02);` |
+| `has-shadow-large`  | `box-shadow: 0 1rem 1rem -.5rem rgba(54,63,79,.25),0 0 0 1px rgba(54,63,79,.02);` |
+| `has-shadow-none`   | `box-shadow: none;` |
+
+
+Control the shadow applied to any element using the shadow helpers:
+
+```html live=true centered=true bg=blue-200
+<div class="has-shadow-small has-m-2 has-p-6 has-radius has-bg-white">
+    .has-shadow-small
+</div>
+<div class="has-shadow-normal has-m-2 has-p-6 has-radius has-bg-white">
+    .has-shadow-normal
+</div>
+<div class="has-shadow-large has-m-2 has-p-6 has-radius has-bg-white">
+    .has-shadow-large
+</div>
+```
+
+Remove the shadow of any element using `has-shadow-none`:
+
+```html live=true centered=true bg=blue-200
+<div class="has-shadow-none has-m-2 has-p-6 has-radius has-bg-white">
+    .has-shadow-none
+</div>
+```
+
+### Disabling shadow helpers
+
+If you do not need the shadow helpers in your project, you can disable them by adding to the `exclude` list in the `helpers` plugin configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.helpers((
+            "exclude": (
+                "shadow",
+            ),
+        ),
+    ),
+);
+```

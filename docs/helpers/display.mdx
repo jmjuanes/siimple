@@ -1,0 +1,72 @@
+---
+title: "Display"
+description: ""
+---
+
+# Display
+
+Control how elements will be displayed using the following classes: 
+
+| Class | Property | 
+|-------|----------|
+| `has-d-none`         | `display: none;` |
+| `has-d-inline`       | `display: inline;` |
+| `has-d-block`        | `display: block;` |
+| `has-d-inline-block` | `display: inline-block;` |
+| `has-d-flex`         | `display: flex;` |
+| `has-d-inline-flex`  | `display: inline-flex;` |
+
+
+Use `has-d-none` to hide an element:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-bg-primary has-p-3 has-mx-2 has-w-24 has-radius">1</div>
+<div class="has-bg-primary has-p-3 has-mx-2 has-w-24 has-radius has-d-none">2</div>
+<div class="has-bg-primary has-p-3 has-mx-2 has-w-24 has-radius">3</div>
+```
+
+Use `has-d-block` to generate a block-level element: 
+
+```html live=true bg=blue-200 color=white
+<span class="has-bg-primary has-p-3 has-m-2 has-radius has-d-block">1</span>
+<span class="has-bg-primary has-p-3 has-m-2 has-radius has-d-block">2</span>
+<span class="has-bg-primary has-p-3 has-m-2 has-radius has-d-block">3</span>
+```
+
+Use `has-d-inline-block` to generate an inline block element: 
+
+```html live=true bg=blue-200 color=primary
+<div class="has-bg-primary has-radius has-p-2">
+    <div class="has-bg-white has-p-3 has-m-2 has-radius has-d-inline-block">1</div>
+    <div class="has-bg-white has-p-3 has-m-2 has-radius has-d-inline-block">2</div>
+    <div class="has-bg-white has-p-3 has-m-2 has-radius has-d-inline-block">3</div>
+</div>
+```
+
+### Responsive display
+
+Control the display of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the display class. For example, to hide an element only on mobile screens, use the class `mobile:has-display-none`.
+
+```html
+<div class="has-d-block mobile:has-d-none">
+    . . . 
+</div>
+```
+
+### Disabling display helpers
+
+If you do not need the display helpers in your project, you can disable them by adding to the `exclude` list in the `helpers` plugin configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.helpers((
+            "exclude": (
+                "display",
+            ),
+        ),
+    ),
+);
+```

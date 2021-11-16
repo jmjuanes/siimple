@@ -1,0 +1,298 @@
+---
+title: "Flexbox"
+---
+
+# Flexbox
+
+Use the following flexbox helpers to distribute and align items in a container. If you are new to flexbox, you can start with this awesome [guide to flexbox by CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+
+
+### Flex
+
+Use the following classes to control the behaviour of flex items:
+
+| Class | Property |
+|-------|----------|
+| `has-flex-auto`    | `flex: auto;`    |
+| `has-flex-initial` | `flex: initial;` |
+| `has-flex-none`    | `flex: none;`    |
+
+
+You can use `has-flex-auto` helper to allow the item to grow and shrink to fit the container:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex">
+    <div class="has-flex-auto has-m-2 has-p-4 has-radius has-bg-primary">
+        Small
+    </div>
+    <div class="has-flex-auto has-m-2 has-p-4 has-radius has-bg-primary">
+        Medium content
+    </div>
+    <div class="has-flex-auto has-m-2 has-p-4 has-radius has-bg-primary">
+        Large content for this flexbox item
+    </div>
+</div>
+```
+
+You can use the `has-flex-initial` helper to allow the item to shrink, but prevent the item to grow to fit the container.
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex">
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-full">
+        Item
+    </div>
+    <div class="has-flex-initial has-m-2 has-p-4 has-radius has-bg-blue-700">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Qui ad labore ipsam, aut rem quo repellat esse tempore id, quidem.
+    </div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-full">
+        Item
+    </div>
+</div>
+```
+
+Use the `has-flex-none` helper to prevent a flex item from growing and shrinking:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex">
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-full">
+        Item
+    </div>
+    <div class="has-flex-none has-m-2 has-p-4 has-radius has-bg-blue-700">
+        This can not grow or shrink
+    </div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-full">
+        Item
+    </div>
+</div>
+```
+
+
+### Flex direction
+
+Use the following classes to control the direction of the items of a flex container:
+
+| Class | Property |
+|-------|----------|
+| `has-flex-row`        | `flex-direction: row;`           |
+| `has-flex-row-rev`    | `flex-direction: row-reverse`    |
+| `has-flex-column`     | `flex-direction: column;`        |
+| `has-flex-column-rev` | `flex-direction: column-reverse` |
+
+
+Use `has-flex-row` to position flex items horizontailly (row direction):
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-flex-row">
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+</div>
+```
+
+Or just use `has-flex-column` to position flex items vertically (in a column direction):
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-flex-column">
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+</div>
+```
+
+
+### Align items
+
+Use the following classes to define the alignment of the flex items along the **cross axis**.
+
+| Class | Property |
+|-------|----------|
+| `has-items-start`    | `align-items: flex-start;` |
+| `has-items-end`      | `align-items: flex-end;`   |
+| `has-items-center`   | `align-items: center;`     |
+| `has-items-stretch`  | `align-items: stretch;`    |
+
+
+You can use `has-items-start` to align flex items to the start of the cross axis:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-items-start has-text-center has-h-32">
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary">1</div>
+    <div class="has-flex-grow has-m-2 has-p-8 has-radius has-bg-primary">2</div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+</div>
+```
+
+Use `has-items-center` to align flex items to the center of the cross axis:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-items-center has-text-center has-h-32">
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary">1</div>
+    <div class="has-flex-grow has-m-2 has-p-8 has-radius has-bg-primary">2</div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+</div>
+```
+
+Use `has-items-end` helper to align flex items to the end of the cross axis:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-items-end has-text-center has-h-32">
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary">1</div>
+    <div class="has-flex-grow has-m-2 has-p-8 has-radius has-bg-primary">2</div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+</div>
+```
+
+
+### Justify content
+
+Use the following classes to define how the browser should distribute the space between and around items along the **main axis**:
+
+| Class | Property |
+|-------|----------|
+| `has-justify-left`    | `justify-content: flex-start;`    |
+| `has-justify-center`  | `justify-content: center;`        |
+| `has-justify-right`   | `justify-content: flex-end;`      |
+| `has-justify-between` | `justify-content: space-between;` |
+| `has-justify-around`  | `justify-content: space-around;`  |
+| `has-justify-evenly`  | `justify-content: space-evenly;`  |
+
+
+Use the `has-justify-start` helper to pack items from the start of the main axis:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-justify-start has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+</div>
+```
+
+Use the `has-justify-center` helper to pack items around the center of the main axis:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-justify-center has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+</div>
+```
+
+Use the `has-justify-end` helper to pack items from the end of the main axis:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-justify-end has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+</div>
+```
+
+Use the `has-justify-between` helper to distribute items evenly, and where the first item is flush with the start and the last item is flush with the end.
+
+```html live=true bg=blue-300 color=white
+<div class="has-d-flex has-justify-between has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+</div>
+```
+
+Use the `has-justify-around` helper to distribute items evenly, and items will have a half-size space on either end:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-justify-around has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+</div>
+```
+
+Use the `has-justify-evenly` helper to distribute items evenly:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-justify-evenly has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+</div>
+```
+
+
+### Flex wrap
+
+Use the following classes to define how items will wrap.
+
+| Class | Property |
+|-------|----------|
+| `has-flex-wrap`   | `flex-wrap: wrap;`   |
+| `has-flex-no-wrap` | `flex-wrap: nowrap;` |
+
+
+Use `has-flex-no-wrap` helper to prevent items from wrapping:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-flex-no-wrap has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-128">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-128">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-128">3</div>
+</div>
+```
+
+
+### Flex order
+
+Use the following classes to control the order of flex items.
+
+| Class | Property |
+|-------|----------|
+| `has-order-none`  | `order: 0;`    |
+| `has-order-first` | `order: -999;` |
+| `has-order-last`  | `order: 999;`  |
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-justify-between">
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-order-last">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-order-first">3</div>
+</div>
+```
+
+
+
+### Responsive flexbox helpers
+
+Control the flexbox properties of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the flexbox helper class. For example, you can change the direction of the flexbox items to column only on mobile devices adding the `mobile:has-flex-column` class to the container element:
+
+```html
+<div class="has-d-flex mobile:has-flex-column">
+    . . . 
+</div>
+```
+
+### Disabling flexbox helpers
+
+If you do not need the flexbox helpers in your project, you can disable them by adding to the `exclude` list in the `helpers` plugin configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.helpers((
+            "exclude": (
+                "flex",
+                "flex.direction",
+                "flex.grow",
+                "flex.shrink",
+                "flex.wrap",
+                "align.content",
+                "align.items",
+                "justify.content",
+                "order",
+            ),
+        ),
+    ),
+);
+```
+

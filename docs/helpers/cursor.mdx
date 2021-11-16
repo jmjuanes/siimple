@@ -1,0 +1,78 @@
+---
+title: "Cursor helpers"
+--- 
+
+# Cursor
+
+Use the following classes to control the cursor property of any element:
+
+| Class | Property |
+|-------|----------|
+| `has-cursor-pointer`     | `cursor: pointer;` |
+| `has-cursor-move`        | `cursor: move;` |
+| `has-cursor-none`        | `cursor: none;` |
+| `has-cursor-zoom-in`     | `cursor: zoom-in;` |
+| `has-cursor-zoom-out`    | `cursor: zoom-out;` |
+| `has-cursor-not-allowed` | `cursor: not-allowed;` |
+| `has-cursor-wait`        | `cursor: wait;` |
+
+
+Use `has-cursor-hand` for displaying a pointer cursor to indicate a link or an interactive element:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-bg-primary has-text-center has-p-3 has-w-64 has-cursor-pointer">
+    Pointer
+</div>
+```
+
+Use `has-cursor-move` to indicate that the element can be moved:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-bg-primary has-text-center has-p-3 has-w-64 has-cursor-move">
+    Move
+</div>
+```
+
+
+Use `has-cursor-none` to hide the mouse cursor:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-bg-primary has-text-center has-p-3 has-w-64 has-cursor-none">
+    Cursor disabled
+</div>
+```
+
+Use `has-cursor-zoom-in` and `has-cursor-zoom-out` for displaying zooming cursors:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-bg-primary has-text-center has-p-3 has-mx-2 has-w-32 has-cursor-zoom-in">
+    Zoom in
+</div>
+<div class="has-bg-primary has-text-center has-p-3 has-mx-2 has-w-32 has-cursor-zoom-out">
+    Zoom out
+</div>
+```
+
+
+
+
+
+
+
+### Disabling cursor helpers
+
+If you do not need the cursor helpers in your project, you can disable them by adding to the `exclude` list in the `helpers` plugin configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.helpers((
+            "exclude": (
+                "cursor",
+            ),
+        ),
+    ),
+);
+```

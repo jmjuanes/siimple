@@ -1,0 +1,125 @@
+---
+title: "Font"
+---
+
+# Font
+
+### Font family
+
+Use the following classes to set the font family for the text:
+
+> This helper will extract the values from the **fonts** section of the theme. You may have extra or different classes based on your theme configuration.
+
+| Class | Property |
+|-------|----------|
+| `has-font-body` | `font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Noto Sans", "Helvetica Neue", Arial, sans-serif;` |
+| `has-font-heading` | `font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Noto Sans", "Helvetica Neue", Arial, sans-serif;` |
+| `has-font-monospace` | `font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;` |
+
+
+Use `has-font-body` to apply the same font as in the document (by default a **sans-serif** font family):
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-font-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+Use `has-font-heading` to apply the same font as in the headings (by default a **sans-serif** font family): 
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-font-heading">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+Use `has-font-monospace` to apply a monospace font (for example for `code` blocks): 
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-font-monospace">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+
+### Font Weight
+
+Use the following classes to set the weight of your text:
+
+
+| Class | Property |
+|-------|----------|
+| `has-weight-light`  | `font-weight: 300;` |
+| `has-weight-normal` | `font-weight: 400;` |
+| `has-weight-medium` | `font-weight: 500;` |
+| `has-weight-bold`   | `font-weight: 700;` |
+| `has-weight-black`  | `font-weight: 900;` |
+
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-weight-light">Text using has-weight-light</div>
+<div class="has-weight-normal">Text using has-weight-normal</div>
+<div class="has-weight-medium">Text using has-weight-medium</div>
+<div class="has-weight-bold">Test using has-weight-bold</div>
+<div class="has-weight-black">Text using has-weight-black</div>
+```
+
+
+### Font size
+
+Use the following classes to set the size of your text:
+
+> This helper will extract the values from the **font-sizes** section of the theme. You may have extra or different classes based on your theme configuration.
+
+
+| Class | Property |
+|-------|----------|
+| `has-size-small` | `font-size: 0.875rem;` |
+| `has-size-body` | `font-size: 16px;` |
+| `has-size-large` | `font-size: 1.25rem;` |
+| `has-size-huge` | `font-size: 2rem;` |
+
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-size-small">Small text</div>
+<div class="has-size-body">Body text</div>
+<div class="has-size-large">Large text</div>
+<div class="has-size-huge">Huge text</div>
+```
+
+### Font style
+
+Use the following classes to set the font style of your text:
+
+| Class | Property |
+|-------|----------|
+| `has-style-italic` | `font-style: italic;` |
+| `has-style-no-italic` | `font-style: normal;` |
+
+```html live=true bg=blue-200 color=blue-700
+<strong class="has-style-italic">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```
+
+### Disabling font helpers
+
+If you do not need the font helpers in your project, you can disable them by adding to the `exclude` list in the `helpers` plugin configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.helpers((
+            "exclude": (
+                "font",
+                "font.size",
+                "font.style",
+                "font.weight",
+            ),
+        ),
+    ),
+);
+```
+
