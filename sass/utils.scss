@@ -100,12 +100,12 @@
 }
 
 // @description get first item of list
-@function first-item ($items) {
+@function first-item($items) {
     @return list.nth($items, 1);
 }
 
 // @description get las item of list
-@function last-item ($items) {
+@function last-item($items) {
     @return list.nth($items, list.length($items));
 }
 
@@ -269,20 +269,20 @@
 
 //Alias for lighten($color, $amount)
 //https://sass-lang.com/documentation/modules/color#lighten
-@function lighten-color ($color, $amount: 0) {
+@function lighten-color($color, $amount: 0) {
    @return color.adjust($color, $lightness: $amount); 
 }
 
 //Alias for darken ($color, $amount)
 //https://sass-lang.com/documentation/modules/color#darken 
-@function darken-color ($color, $amount: 0) {
+@function darken-color($color, $amount: 0) {
     @return color.adjust($color, $lightness: -$amount);
 }
 
 //Return the luminance of a color
 //From: https://css-tricks.com/snippets/sass/luminance-color-function/ 
 //Reference: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef 
-@function luminance ($color) {
+@function luminance($color) {
     $colors: (
         "red": red($color), 
         "green": green($color), 
