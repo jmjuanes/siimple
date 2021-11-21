@@ -27,8 +27,6 @@ $colors-scale: (
 );
 
 //Default font variables
-//WARNING: we are not importing fonts automatically --> use a <link> tag instead
-//$font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700" !default;
 $fonts-scale: (
     "body": constants.$font-sans, 
     "heading": constants.$font-sans,
@@ -76,25 +74,6 @@ $shadows-scale: (
     "none": "none",
 );
 
-// Default sizing variables
-$sizes-scale: map.merge(constants.$sizes, (
-    "auto": auto,
-    "full": 100%,
-    "half": 50%,
-    "none": 0px,
-    "one": 1px,
-    "min": min-content,
-    "max": max-content,
-));
-
-// Default spacing variables
-$spacing-scale: map.merge(constants.$sizes, (
-    "auto": auto,
-    "full": 100%,
-    "half": 50%,
-    "none": 0px,
-));
-
 // Scales global map
 $scales: (
     "backgrounds": $backgrounds-scale,
@@ -103,15 +82,12 @@ $scales: (
     "font-sizes": $font-sizes-scale,
     "font-weights": $font-weights-scale,
     "line-heights": $line-heights-scale,
-    "opacities": constants.$opacities,
     "radius": $radius-scale,
     "shadows": $shadows-scale,
-    "sizes": $sizes-scale,
-    "spacing": $spacing-scale,
 );
 
 // @description Configure the scales used in siimple
-@mixin scales ($custom-scales: null) {
+@mixin scales($custom-scales: null) {
     //$new-scales: utils.empty-map();
     @if not utils.is-map($custom-scales) {
         $custom-scales: utils.empty-map();
@@ -131,22 +107,22 @@ $scales: (
 }
 
 // @description Check if the provided key is a scale field
-@function has-scale ($name: "") {
+@function has-scale($name: "") {
     @return map.has-key($scales, $name);
 }
 
 // @description get a scale
-@function get-scale ($name) {
+@function get-scale($name) {
     @return utils.get-in($scales, $name, utils.empty-map());
 }
 
 // @description Get a single value from the scale
-@function get-scale-value ($name, $key, $default-value: null) {
+@function get-scale-value($name, $key, $default-value: null) {
     @return utils.get-in($scales, ($name $key), $default-value);
 }
 
 // @description Use a specific value from scale as a property
-@mixin use-scale ($name, $value, $important: false) {
+@mixin use-scale($name, $value, $important: false) {
     //$theme: $current-theme; //theme.get-current-theme();
     $properties: ($name); 
     // Check for alias -> register the same value in all aliases keys
@@ -174,4 +150,3 @@ $scales: (
         }
     }
 }
-
