@@ -1,0 +1,35 @@
+@use "sass:list";
+@use "sass:map";
+@use "siimple:lib" as lib;
+
+@function sizing() {
+    $sizing-helpers: lib.empty-list();
+    @each $name,$props in lib.$sizing-properties {
+        $sizing-extra-values: (
+            "auto": auto,
+            "full": 100%,
+            "half": 50%,
+            "none": 0px,
+            "one": 1px,
+        );
+        // Check for height sizing (height, height.min and height.max)
+        @if lib.starts-with($name, "height") {
+            $sizing-extra-values: map.set($sizing-extra-values, "screen", 100vh);
+        }
+        // Check for width sizing (width, width.min and width.max)
+        @if lib.starts-with($name, "width") {
+            $sizing-extra-values: map.set($sizing-extra-values, "screen", 100vw);
+        }
+        $sizing-helpers: list.append($sizing-helpers, lib.create-helper-plugin((
+            // "enabled": lib.is-enabled($name, $include, $exclude),
+            "name": lib.get-in($props, "name"),
+            "states": ("default"),
+            "responsive": true,
+            "properties": lib.get-in($props, "properties", ()),
+            // "scale": "sizes",
+            "values": map.merge(lib.$sizes, $sizing-extra-values),
+        )));
+    }
+    // Return sizing helpers
+    @return $sizing-helpers;
+}

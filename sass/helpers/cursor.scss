@@ -1,0 +1,12 @@
+@use "siimple:lib" as lib;
+
+@function cursor() {
+    @return lib.create-helper-plugin((
+        // "enabled": lib.is-enabled("cursor", $include, $exclude),
+        "name": "cursor",
+        "states": ("default"),
+        "responsive": false,
+        "properties": ("cursor"),
+        "values": lib.$cursor-values,
+    ));
+}

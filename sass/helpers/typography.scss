@@ -1,0 +1,82 @@
+@use "siimple:lib" as lib;
+
+// @description Generate typography helpers
+@function typography() {
+    @return (
+        // Font family helper
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("font", $include, $exclude),
+            "name": "font",
+            "states": ("default"),
+            "properties": ("font-family"),
+            "values": lib.$font-family-values,
+        )),
+        // Font style
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("font.style", $include, $exclude),
+            "name": "text",
+            "states": ("default" "hover"),
+            "properties": ("font-style"),
+            "values": lib.$font-style-values,
+        )),
+        // Font weight
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("font.weight", $include, $exclude),
+            "name": "weight",
+            "states": ("default"),
+            "properties": ("font-weight"),
+            "values": lib.$font-weight-values,
+        )),
+        // Font size
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("font.size", $include, $exclude),
+            "name": "text",
+            "states": ("default"),
+            "properties": ("font-size"),
+            // "scale": "font-sizes",
+            "values": lib.$font-size-values,
+        )),
+        // Line height
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("line-height", $include, $exclude),
+            "name": "lh",
+            "states": ("default"),
+            "properties": ("line-height"),
+            // "scale": "line-heights",
+            "values": lib.$line-height-values,
+        )),
+        // Text transform (lowercase, uppercase, ...)
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("text.transform", $include, $exclude),
+            "name": "text",
+            "states": ("default" "hover"),
+            "properties": ("text-transform"),
+            "values": lib.$text-transform-values,
+        )),
+        // Text decoration (underline)
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("text.decoration", $include, $exclude),
+            "name": "text",
+            "states": ("default" "hover"),
+            "properties": ("text-decoration"),
+            "values": lib.$text-decoration-values,
+        )),
+        // Text align
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("text.align", $include, $exclude),
+            "name": "text",
+            "states": ("default"),
+            "responsive": true,
+            "properties": ("text-align"),
+            "values": lib.$text-align-values,
+        )),
+        // Vertical align
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("vertical-align", $include, $exclude),
+            "name": "valign",
+            "states": ("default"),
+            "properties": ("vertical-align"),
+            "values": lib.$vertical-align-values,
+        )),
+    );
+}

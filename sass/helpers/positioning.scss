@@ -1,0 +1,36 @@
+@use "sass:list";
+@use "siimple:lib" as lib;
+
+// @description Generate positioning helpers
+@function positioning() {
+    $position-helpers: (
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("position", $include, $exclude),
+            "name": "float",
+            "states": ("default"),
+            "responsive": true,
+            "properties": ("float"),
+            "values": lib.$float-values,
+        )),
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("position", $include, $exclude),
+            "name": "position",
+            "states": ("default"),
+            "responsive": true,
+            "properties": ("position"),
+            "values": lib.$position-values,
+        )),
+    );
+    // Register placement helpers
+    @each $name,$props in lib.$placement-properties {
+        $position-helpers: list.append($position-helpers, lib.create-helper-plugin((
+            "name": lib.get-in($props, "name"),
+            "states": ("default"),
+            "responsive": true,
+            "properties": lib.get-in($props, "properties", ()),
+            "values": lib.$placement-values,
+        )));
+    }
+    // Return position helpers
+    @return $position-helpers;
+}
