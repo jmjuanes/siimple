@@ -8,9 +8,9 @@ You can use the following helpers to control the behavior for an element's overf
 
 | Class | Property |
 |-------|----------|
-| `has-overflow-auto`    | `overflow: auto;` |
-| `has-overflow-scroll`  | `overflow: scroll;` |
-| `has-overflow-hidden`  | `overflow: hidden;` |
+| `has-overflow-auto`     | `overflow: auto;` |
+| `has-overflow-scroll`   | `overflow: scroll;` |
+| `has-overflow-hidden`   | `overflow: hidden;` |
 | `has-overflow-x-auto`   | `overflow-x: auto;` |
 | `has-overflow-x-scroll` | `overflow-x: scroll;` |
 | `has-overflow-x-hidden` | `overflow-x: hidden;` |
@@ -19,10 +19,26 @@ You can use the following helpers to control the behavior for an element's overf
 | `has-overflow-y-hidden` | `overflow-y: hidden;` |
 
 
+### Enable this plugin
+
+This plugin is included as part of the `plugins.helpers` collection. You can manually include this plugin calling `plugins.overflow()` in the `$plugins` section of the configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.overflow(),
+    ),
+);
+```
+
+### Usage
+
 Use the `has-overflow-auto` to display scrollbars only if content does not fit inside the padding box of the container:
 
 ```html live=true color=white bg=blue-200 centered=true
-<div class="has-overflow-auto has-h-32 has-maxw-64 has-p-6 has-bg-primary has-radius">
+<div class="has-overflow-auto has-h-32 has-maxw-64 has-p-6 has-bg-blue-500 has-radius">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
     incididunt ut labore et dolore magna aliqua. 
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
@@ -33,7 +49,7 @@ Use the `has-overflow-auto` to display scrollbars only if content does not fit i
 Use the `has-overflow-scroll` to always display scrollbars in both directions (but keep in mind that some OS will hide scrollbars when not neccesary). Instead of displaying scrollbars in both directions, you can always use `has-overflow-x-scroll` to enable only horizontal scrolling or `has-overflow-y-scroll` to enable only vertical scrolling. 
 
 ```html live=true color=white bg=blue-200 centered=true
-<div class="has-overflow-scroll has-h-32 has-maxw-64 has-p-6 has-bg-primary has-radius">
+<div class="has-overflow-scroll has-h-32 has-maxw-64 has-p-6 has-bg-blue-500 has-radius">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
     incididunt ut labore et dolore magna aliqua. 
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
@@ -44,31 +60,10 @@ Use the `has-overflow-scroll` to always display scrollbars in both directions (b
 On the other hand, you can use `has-overflow-hidden` helper to clip all neccesary content to fit the container size. Note that no scrollbars will be displayed and the user scrolling will be disabled.
 
 ```html live=true color=white bg=blue-200 centered=true
-<div class="has-overflow-hidden has-h-32 has-maxw-64 has-p-6 has-bg-primary has-radius">
+<div class="has-overflow-hidden has-h-32 has-maxw-64 has-p-6 has-bg-blue-500 has-radius">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
     incididunt ut labore et dolore magna aliqua. 
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
     aliquip ex ea commodo consequat.
 </div>
 ```
-
-### Disabling overflow helpers
-
-If you do not need the overflow helpers in your project, you can disable them by adding to the `exclude` list in the `helpers` plugin configuration:
-
-```scss
-@use "siimple/plugins" as plugins;
-
-@use "siimple" with (
-    $plugins: (
-        plugins.helpers((
-            "exclude": (
-                "overflow",
-                "overflow.x",
-                "overflow.y",
-            ),
-        ),
-    ),
-);
-```
-

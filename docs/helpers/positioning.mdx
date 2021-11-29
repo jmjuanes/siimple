@@ -1,0 +1,125 @@
+---
+title: "Positioning"
+---
+
+# Positioning
+
+The **positioning** plugin provides a collection of helpers to control the position of any element.
+
+### Enable this plugin
+
+This plugin is included as part of the `plugins.helpers` collection. You can manually include this plugin calling `plugins.positioning()` in the `$plugins` section of the configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.positioning(),
+    ),
+);
+```
+
+
+### Position 
+
+Use the following classes to change the position of an element:
+
+| Class | Property | 
+|-------|----------|
+| `has-position-initial`  | `position: initial;` |
+| `has-position-relative` | `position: relative;` |
+| `has-position-absolute` | `position: absolute;` |
+| `has-position-sticky`   | `position: sticky;` |
+| `has-position-fixed`    | `position: fixed;` |
+
+
+### Float
+
+Use the following classes for positioning and formatting content, for example to wrap text around images.
+
+| Class | Property | 
+|-------|----------|
+| `has-float-left`  | `float: left;` |
+| `has-float-right` | `float: right;` |
+| `has-float-none`  | `float: none;` |
+
+
+You can use `has-float-left` to float an element to the left side of it's containing block:
+
+```html live=true bg=blue-200 color=blue-700 padding=12
+<img class="has-float-left has-w-32 has-mr-8" src="/placeholder.png">
+<p class="has-text-justify has-mb-0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+    sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+```
+
+Use `has-float-right` to float an element to the right side of it's containing block:
+
+```html live=true bg=blue-200 color=blue-700 padding=12
+<img class="has-float-right has-w-32 has-ml-8" src="/placeholder.png">
+<p class="has-text-justify has-mb-0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+    sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+```
+
+Use `has-float-none` to reset the float property applied to any element:
+
+```html live=true bg=blue-200 color=blue-700 padding=12
+<img class="has-float-none has-w-32 has-mb-8" src="/placeholder.png">
+<p class="has-text-justify has-mb-0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+    sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+```
+
+
+### Placement
+
+Use the following classes to set the placement of an element:
+
+| Class | Property |
+|-------|----------|
+| `has-bottom-auto` | `bottom: auto;` |
+| `has-bottom-0`    | `bottom: 0px;`  |
+| `has-bottom-half` | `bottom: 50%;`  |
+| `has-bottom-full` | `bottom: 100%;` |
+| `has-left-auto`   | `left: auto;` |
+| `has-left-0`      | `left: 0px;`  |
+| `has-left-half`   | `left: 50%;`  |
+| `has-left-full`   | `left: 100%;` |
+| `has-right-auto`  | `right: auto;` |
+| `has-right-0`     | `right: 0px;`  |
+| `has-right-half`  | `right: 50%;`  |
+| `has-right-full`  | `right: 100%;` |
+| `has-top-auto`    | `top: auto;` |
+| `has-top-0`       | `top: 0px;`  |
+| `has-top-half`    | `top: 50%;`  |
+| `has-top-full`    | `top: 100%;` |
+
+
+
+### Responsive position
+
+Control the position of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the position or placement class helper.
+
+```html
+<div class="mobile:has-position-fixed mobile:has-top-0">
+    . . .
+</div>
+```
+

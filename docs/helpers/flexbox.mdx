@@ -7,6 +7,21 @@ title: "Flexbox"
 Use the following flexbox helpers to distribute and align items in a container. If you are new to flexbox, you can start with this awesome [guide to flexbox by CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 
+### Enable this plugin
+
+This plugin is included as part of the `plugins.helpers` collection. You can manually include this plugin calling `plugins.flexbox()` in the `$plugins` section of the configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.flexbox(),
+    ),
+);
+```
+
+
 ### Flex
 
 Use the following classes to control the behaviour of flex items:
@@ -22,13 +37,13 @@ You can use `has-flex-auto` helper to allow the item to grow and shrink to fit t
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex">
-    <div class="has-flex-auto has-m-2 has-p-4 has-radius has-bg-primary">
+    <div class="has-flex-auto has-m-2 has-p-4 has-radius has-bg-blue-500">
         Small
     </div>
-    <div class="has-flex-auto has-m-2 has-p-4 has-radius has-bg-primary">
+    <div class="has-flex-auto has-m-2 has-p-4 has-radius has-bg-blue-500">
         Medium content
     </div>
-    <div class="has-flex-auto has-m-2 has-p-4 has-radius has-bg-primary">
+    <div class="has-flex-auto has-m-2 has-p-4 has-radius has-bg-blue-500">
         Large content for this flexbox item
     </div>
 </div>
@@ -38,14 +53,14 @@ You can use the `has-flex-initial` helper to allow the item to shrink, but preve
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex">
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-full">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-full">
         Item
     </div>
     <div class="has-flex-initial has-m-2 has-p-4 has-radius has-bg-blue-700">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
         Qui ad labore ipsam, aut rem quo repellat esse tempore id, quidem.
     </div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-full">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-full">
         Item
     </div>
 </div>
@@ -55,13 +70,13 @@ Use the `has-flex-none` helper to prevent a flex item from growing and shrinking
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex">
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-full">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-full">
         Item
     </div>
     <div class="has-flex-none has-m-2 has-p-4 has-radius has-bg-blue-700">
         This can not grow or shrink
     </div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-full">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-full">
         Item
     </div>
 </div>
@@ -84,9 +99,9 @@ Use `has-flex-row` to position flex items horizontailly (row direction):
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex has-flex-row">
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
 </div>
 ```
 
@@ -94,9 +109,9 @@ Or just use `has-flex-column` to position flex items vertically (in a column dir
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex has-flex-column">
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
 </div>
 ```
 
@@ -117,9 +132,9 @@ You can use `has-items-start` to align flex items to the start of the cross axis
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex has-items-start has-text-center has-h-32">
-    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary">1</div>
-    <div class="has-flex-grow has-m-2 has-p-8 has-radius has-bg-primary">2</div>
-    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-flex-grow has-m-2 has-p-8 has-radius has-bg-blue-500">2</div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
 </div>
 ```
 
@@ -127,9 +142,9 @@ Use `has-items-center` to align flex items to the center of the cross axis:
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex has-items-center has-text-center has-h-32">
-    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary">1</div>
-    <div class="has-flex-grow has-m-2 has-p-8 has-radius has-bg-primary">2</div>
-    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-flex-grow has-m-2 has-p-8 has-radius has-bg-blue-500">2</div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
 </div>
 ```
 
@@ -137,9 +152,9 @@ Use `has-items-end` helper to align flex items to the end of the cross axis:
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex has-items-end has-text-center has-h-32">
-    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary">1</div>
-    <div class="has-flex-grow has-m-2 has-p-8 has-radius has-bg-primary">2</div>
-    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-flex-grow has-m-2 has-p-8 has-radius has-bg-blue-500">2</div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
 </div>
 ```
 
@@ -162,9 +177,9 @@ Use the `has-justify-start` helper to pack items from the start of the main axis
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex has-justify-start has-text-center">
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
 </div>
 ```
 
@@ -172,9 +187,9 @@ Use the `has-justify-center` helper to pack items around the center of the main 
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex has-justify-center has-text-center">
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
 </div>
 ```
 
@@ -182,9 +197,9 @@ Use the `has-justify-end` helper to pack items from the end of the main axis:
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex has-justify-end has-text-center">
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
 </div>
 ```
 
@@ -192,9 +207,9 @@ Use the `has-justify-between` helper to distribute items evenly, and where the f
 
 ```html live=true bg=blue-300 color=white
 <div class="has-d-flex has-justify-between has-text-center">
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
 </div>
 ```
 
@@ -202,9 +217,9 @@ Use the `has-justify-around` helper to distribute items evenly, and items will h
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex has-justify-around has-text-center">
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
 </div>
 ```
 
@@ -212,9 +227,9 @@ Use the `has-justify-evenly` helper to distribute items evenly:
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex has-justify-evenly has-text-center">
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">1</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">3</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
 </div>
 ```
 
@@ -233,9 +248,9 @@ Use `has-flex-no-wrap` helper to prevent items from wrapping:
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex has-flex-no-wrap has-text-center">
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-128">1</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-128">2</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-w-128">3</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-128">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-128">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-128">3</div>
 </div>
 ```
 
@@ -252,9 +267,9 @@ Use the following classes to control the order of flex items.
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex has-justify-between">
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-order-last">1</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary">2</div>
-    <div class="has-m-2 has-p-4 has-radius has-bg-primary has-order-first">3</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-order-last">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-order-first">3</div>
 </div>
 ```
 
@@ -269,30 +284,3 @@ Control the flexbox properties of an element at a specific breakpoint adding a `
     . . . 
 </div>
 ```
-
-### Disabling flexbox helpers
-
-If you do not need the flexbox helpers in your project, you can disable them by adding to the `exclude` list in the `helpers` plugin configuration:
-
-```scss
-@use "siimple/plugins" as plugins;
-
-@use "siimple" with (
-    $plugins: (
-        plugins.helpers((
-            "exclude": (
-                "flex",
-                "flex.direction",
-                "flex.grow",
-                "flex.shrink",
-                "flex.wrap",
-                "align.content",
-                "align.items",
-                "justify.content",
-                "order",
-            ),
-        ),
-    ),
-);
-```
-

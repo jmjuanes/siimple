@@ -5,9 +5,27 @@ description: "Customize the padding and the margin of an element"
 
 # Spacing
 
-Customize the **padding** and the **margin** properties of anly element using these classes. The following **sizes** for the classes described in this document are available:
+Customize the **padding** and the **margin** properties of anly element using these classes.
 
-> This helper will extract the values from the **sizes** section of the theme. You may have extra or different classes based on your theme configuration.
+
+### Enable this plugin
+
+This plugin is included as part of the `plugins.helpers` collection. You can manually include this plugin calling `plugins.spacing()` in the `$plugins` section of the configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.spacing(),
+    ),
+);
+```
+
+
+### Available spacing values
+
+The following **sizes** for the classes described in this document are available:
 
 | Size     | Value     |
 |----------|-----------|
@@ -37,7 +55,7 @@ Customize the **padding** and the **margin** properties of anly element using th
 Use `has-p-{size}` to set the **padding** of all sides of the element, or `has-m-{size}` to set the **margin** of all sizes of the element.
 
 ```html live=true centered=true bg=blue-200 color=white
-<div class="has-p-6 has-bg-primary has-radius">
+<div class="has-p-6 has-bg-blue-500 has-radius">
     <strong>has-p-6</strong>
 </div>
 ```
@@ -45,10 +63,10 @@ Use `has-p-{size}` to set the **padding** of all sides of the element, or `has-m
 
 ### Directional padding or margin
 
-Use `has-p-{direction}-{size}` or `has-m-{direction}-{size}` to set the **padding or margin of one side**, **on the x-axis** or **the y-axis** of the element. The following sides are available:
+Use `has-p{direction}-{size}` or `has-m{direction}-{size}` to set the **padding or margin of one side**, **on the x-axis** or **the y-axis** of the element. The following sides are available:
 
 | Direction | Description |
-|------|-------------|
+|-----------|-------------|
 | **t** | To set the margin or padding **top**. |
 | **b** | To set the margin or padding **bottom**. |
 | **l** | To set the margin or padding **left**. |
@@ -57,16 +75,16 @@ Use `has-p-{direction}-{size}` or `has-m-{direction}-{size}` to set the **paddin
 | **y** | To set the margin or padding **top and bottom**. |
 
 ```html live=true centered=true bg=blue-200 color=white padding=12
-<div class="has-p-4 has-pt-12 has-m-4 has-bg-primary has-radius">
+<div class="has-p-4 has-pt-12 has-m-4 has-bg-blue-500 has-radius">
     <strong>has-pt-12</strong>
 </div>
-<div class="has-p-4 has-pr-12 has-m-4 has-bg-primary has-radius">
+<div class="has-p-4 has-pr-12 has-m-4 has-bg-blue-500 has-radius">
     <strong>has-pr-12</strong>
 </div>
-<div class="has-p-4 has-pb-12 has-m-4 has-bg-primary has-radius">
+<div class="has-p-4 has-pb-12 has-m-4 has-bg-blue-500 has-radius">
     <strong>has-pb-12</strong>
 </div>
-<div class="has-p-4 has-pl-12 has-m-4 has-bg-primary has-radius">
+<div class="has-p-4 has-pl-12 has-m-4 has-bg-blue-500 has-radius">
     <strong>has-pl-12</strong>
 </div>
 ```
@@ -77,7 +95,7 @@ Use `has-p-{direction}-{size}` or `has-m-{direction}-{size}` to set the **paddin
 We provide an additional `has-mx-auto` classname to set the margin left and right to `auto`. This will center the block with a fixed width.
 
 ```html live=true bg=blue-200 color=white
-<div class="has-mx-auto has-p-3 has-w-32 has-bg-primary has-radius">
+<div class="has-mx-auto has-p-3 has-w-32 has-bg-blue-500 has-radius">
     <strong>Centered</strong>
 </div>
 ```
@@ -91,28 +109,3 @@ You can control the spacing of an element at a specific breakpoint adding a `{br
     . . .
 </div>
 ``` 
-
-### Disabling spacing helpers
-
-If you do not need the spacing helpers in your project, you can disable them by adding to the `exclude` list in the `helpers` plugin configuration:
-
-```scss
-@use "siimple/plugins" as plugins;
-
-@use "siimple" with (
-    $plugins: (
-        plugins.helpers((
-            "exclude": (
-                "margin",
-                "margin.x",
-                "margin.y",
-                "margin.bottom",
-                "margin.left",
-                "margin.right",
-                "margin.top",
-                ...
-            ),
-        ),
-    ),
-);
-```

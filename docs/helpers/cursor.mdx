@@ -17,10 +17,26 @@ Use the following classes to control the cursor property of any element:
 | `has-cursor-wait`        | `cursor: wait;` |
 
 
+### Enable this plugin
+
+This plugin is included as part of the `plugins.helpers` collection. You can manually include this plugin calling `plugins.cursor()` in the `$plugins` section of the configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.cursor(),
+    ),
+);
+```
+
+### Usage
+
 Use `has-cursor-hand` for displaying a pointer cursor to indicate a link or an interactive element:
 
 ```html live=true centered=true bg=blue-200 color=white
-<div class="has-bg-primary has-text-center has-p-3 has-w-64 has-cursor-pointer">
+<div class="has-bg-blue-500 has-text-center has-p-3 has-w-64 has-cursor-pointer">
     Pointer
 </div>
 ```
@@ -28,7 +44,7 @@ Use `has-cursor-hand` for displaying a pointer cursor to indicate a link or an i
 Use `has-cursor-move` to indicate that the element can be moved:
 
 ```html live=true centered=true bg=blue-200 color=white
-<div class="has-bg-primary has-text-center has-p-3 has-w-64 has-cursor-move">
+<div class="has-bg-blue-500 has-text-center has-p-3 has-w-64 has-cursor-move">
     Move
 </div>
 ```
@@ -37,7 +53,7 @@ Use `has-cursor-move` to indicate that the element can be moved:
 Use `has-cursor-none` to hide the mouse cursor:
 
 ```html live=true centered=true bg=blue-200 color=white
-<div class="has-bg-primary has-text-center has-p-3 has-w-64 has-cursor-none">
+<div class="has-bg-blue-500 has-text-center has-p-3 has-w-64 has-cursor-none">
     Cursor disabled
 </div>
 ```
@@ -45,34 +61,10 @@ Use `has-cursor-none` to hide the mouse cursor:
 Use `has-cursor-zoom-in` and `has-cursor-zoom-out` for displaying zooming cursors:
 
 ```html live=true centered=true bg=blue-200 color=white
-<div class="has-bg-primary has-text-center has-p-3 has-mx-2 has-w-32 has-cursor-zoom-in">
+<div class="has-bg-blue-500 has-text-center has-p-3 has-mx-2 has-w-32 has-cursor-zoom-in">
     Zoom in
 </div>
-<div class="has-bg-primary has-text-center has-p-3 has-mx-2 has-w-32 has-cursor-zoom-out">
+<div class="has-bg-blue-500 has-text-center has-p-3 has-mx-2 has-w-32 has-cursor-zoom-out">
     Zoom out
 </div>
-```
-
-
-
-
-
-
-
-### Disabling cursor helpers
-
-If you do not need the cursor helpers in your project, you can disable them by adding to the `exclude` list in the `helpers` plugin configuration:
-
-```scss
-@use "siimple/plugins" as plugins;
-
-@use "siimple" with (
-    $plugins: (
-        plugins.helpers((
-            "exclude": (
-                "cursor",
-            ),
-        ),
-    ),
-);
 ```
