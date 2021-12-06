@@ -1,0 +1,187 @@
+---
+title: Theme configuration
+---
+
+# Theme Configuration
+
+The `$theme` section of the **siimple** configuration is where you can define your colors, sizes, breakpoints, variants and more.
+
+
+### Breakpoints
+
+You can customize the breakpoints used in **siimple** adding a map in the `$theme.breakpoints` section with your custom breakpoints. The keys in this map are the breakpoints names, and the value can be one of the following:
+
+- A screen size in `px`, that will be set as the `min-width` value.
+- A map with the values for `min-width` and `max-width`. For example, `("min": 0px, "max": 600px)` will generate `@media screen and (min-width: 0px) and (max-width: 600px)`.
+
+This is the default breakpoints configuration: 
+
+```scss
+@use "siimple" with (
+    $theme: (
+        "breakpoints": (
+            "mobile": ("min": 0px, "max": 600px),
+            "tablet": ("min": 600px),
+            "desktop": ("min": 1200px),
+            "fullhd": ("min": 1800px),
+        ),
+    ),
+);
+```
+
+### Scales
+
+The following scales can be defined in the `$theme` section:
+
+| Scale | CSS Properties |
+|-------|----------------|
+| `colors` | `color` |
+| `backgrounds` | `background-color`, `border-color`, `border-top-color`, `border-left-color`, `border-bottom-color`, `border-right-color` |
+| `fonts` | `font-family` |
+| `font-sizes` | `font-size` |
+| `font-weights` | `font-weight` |
+| `line-heights` | `line-height` |
+| `radius` | `border-radius`, `border-top-left-radius`, `border-top-right-radius`, `border-bottom-left-radius`, `border-bottom-right-radius` |
+
+
+
+#### Colors
+
+In the `$theme.colors` section you can provide your custom color palette. To allow creating interoperable themes for **siimple**, the following colors must be always provided ina color scale:
+
+- `primary`: the primary color used in your theme.
+- `secodary`: the secondary color used in your theme.
+- `body`: color used for body text.
+- `heading`: color used in headings.
+
+
+#### Backgrounds
+
+In the `$theme.backgrounds` section you can provide your custom color palette for backgrounds. Following the same logic as in tbe colors scale, the following background colors must be always provided in all themes:
+
+- `primary`: primary color for backgrounds. Usually it has the same value as `$theme.colors.primary`.
+- `secondary`: secondary color for backgrounds. Usually it has the same value as `$theme.colors.secondary`.
+- `body`: background color for the body.
+- `fill`: background color used in some components like inputs or textarea.
+- `highlight`: background color to highlight the text or element.
+
+
+#### Font family
+
+In the `$theme.fonts` section you can define the fonts used in your theme. The following fonts should be always provided: 
+
+- `body`: font used for the body text.
+- `heading`: font used in heading elements. 
+- `monospace`: font used in `<code>` or `<pre>` elements.
+
+This is the list of the default font sizes defined in **siimple**: 
+
+```scss
+@use "siimple/lib" as lib;
+
+@use "siimple" with (
+    $theme: (
+        "fonts": (
+            "body": lib.$font-sans,
+            "heading": lib.$font-sans,
+            "monospace": lib.$font-monospace,
+        ),
+    ),
+);
+```
+
+
+#### Font size
+
+In the `$theme.font-sizes` section you can define the font sizes used in your theme. The following sizes should be always provided: 
+
+- `body`: font size used in the body text.
+- `small`: font size used in `<small>` elements.
+
+This is the list of the default font sizes defined in **siimple**: 
+
+```scss
+@use "siimple" with (
+    $theme: (
+        "font-sizes": (
+            "small": 0.875rem,
+            "body": 16px,
+            "large": 1.25rem,
+            "huge": 2rem,
+        ),
+    ),
+);
+```
+
+#### Font weight
+
+In the `$theme.font-weights` section you can define the `font-weight` values used in your theme. The following weights should be always provided in a font weights scale map: 
+
+- `body`: font-weight used for the body text.
+- `heading`: font-weight used for heading elements.
+- `body`: font-weight used for `<strong>` elements.
+
+This is the list of the default font weights defined in **siimple**: 
+
+```scss
+@use "siimple" with (
+    $theme: (
+        "font-weights": (
+            "body": 400,
+            "heading": 700,
+            "bold": 700,
+        ),
+    ),
+);
+```
+
+
+#### Line height
+
+In the `$theme.line-heights` section you can define the line heights used in your theme. The following line heights should be always provided:
+
+- `body`: line height used for the body text.
+- `heading`: line height used for headings.
+
+This is the list of the default line heights defined in **siimple**: 
+
+```scss
+@use "siimple" with (
+    $theme: (
+        "line-heights": (
+            "small": 1.25,
+            "body": 1.5,
+            "heading": 1.125,
+        ),
+    ),
+);
+```
+
+
+#### Radius
+
+In the `$theme.radius` section you can provide a list of sizes to be used as values for the `border-radius` property. The following radius sizes should be always provided in your radius scale:
+
+- `normal`: default radius size.
+
+This is the list of the default radius sizes defined in **siimple**: 
+
+```scss
+@use "siimple" with (
+    $theme: (
+        "radius": (
+            "small": 0.25rem,
+            "normal": 0.5rem,
+            "large": 1rem,
+        ),
+    ),
+);
+```
+
+
+### Variants
+
+
+
+
+
