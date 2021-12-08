@@ -1,0 +1,241 @@
+---
+title: Styles Syntax
+---
+
+# Styles Syntax
+
+**Siimple** allows you to define custom styles following an approach similar to **CSS in JS**. We call this approach **CSS in Map** and allows you to specify your styles in a **SASS Map**. You can think in this like declaring all your styles in a JSON format, but following the rules specified in this document.
+
+This is an example of a **CSS in Map** declaration: 
+
+```scss
+$my-styles: (
+    ".button": (
+        "background-color": #3b82f6,
+        "color": #ffffff,
+        "display": block,
+        "font-weight": bold,
+        "padding": 0.5rem,
+        "&:hover": (
+            "background-color": #1d4ed8,
+            "cursor": pointer,
+        ),
+    ),
+);
+```
+
+You can easily transform this map in pure CSS styles, right?
+
+```css
+.button {
+    background-color: #3b82f6;
+    collor: #ffffff;
+    display: block;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+.button:hover {
+    background-color: #1d4ed8;
+    cursor: pointer;
+}
+```
+
+You will need to use this syntax in the `$variants`, `$styles` and `$body` sections or for building your custom plugins for **siimple**.
+
+
+### Naming properties
+
+All properties must be in [Kebab Case](https://en.wikipedia.org/wiki/Letter_case#Kebab_case) and surrounded by double quotes.
+
+```scss
+$my-styles: (
+    ".button": (
+        "border-top-left-radius": 0px,
+        "border-top-right-radius": 0px,
+        "font-size": 1rem,
+    ),
+);
+```
+
+### Values
+
+CSS values (`block`, `inline-block`, etc.), colors and units (`px`, `rem`, `%`, etc.) are supported, so you can use them without any problem. 
+
+```scss
+$my-styles: (
+    ".small": (
+        "color": grey,
+        "font-size": 0.875rem,
+    ),
+);
+```
+
+##### Themed values
+
+Values from theme scales can be included providing the **scale key surrounded by double quotes**: 
+
+```scss
+$my-styles: (
+    ".small": (
+        "color": "body",
+        "font-size": "small",
+    ),
+);
+```
+
+##### Adding the !important flag
+
+You can mark a value with the `!important` flag passing a list where the first position is the value we want to include and the second position is the `"!important"` keyword.
+
+```scss
+$my-styles: (
+    ".small": (
+        "color": ("body" "!important"),
+        "font-size": (0.875rem "!important"),
+    ),
+);
+```
+
+### Aliases
+
+We provide some aliases for applying some styles like margins, paddings and more.
+
+| Alias | Properties |
+|-------|------------|
+| `bc` | `border-color`|
+| `bg` | `background-color` |
+| `m` | `margin` |
+| `mb` | `margin-bottom` |
+| `ml` | `margin-left` |
+| `mr` | `margin-right` |
+| `mt` | `margin-top` |
+| `mx` | `margin-left` and `margin-right` |
+| `my` | `margin-top` and `margin-bottom` |
+| `p` | `padding` |
+| `pb` | `padding-bottom` |
+| `pl` | `padding-left` |
+| `pr` | `padding-right` |
+| `pt` | `padding-top` |
+| `px` | `padding-left` and `padding-right` |
+| `py` | `padding-top` and `padding-bottom` |
+| `radius` | `border-radius` |
+| `size` | `width` and `height` |
+
+
+The following style definition:
+
+```scss
+$my-styles: (
+    ".box": (
+        "size": 100%,      /* width and height */
+        "p": 2rem,         /* padding */
+        "radius": 0.5rem,  /* border-radius */
+    ),
+);
+```
+
+Will generate: 
+
+```css
+.box {
+    border-radius: 0.5rem;
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+}
+```
+
+
+### Media queries
+
+You can use [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) query selectors to conditionally apply styles.
+
+```scss
+$my-styles: (
+    ".columns": (
+        "display": flex,
+        "flex-direction": row,
+        "flex-wrap": nowrap,
+        "overflow": hidden,
+    ),
+    "@media screen and (max-width: 600px)": (
+        ".columns": (
+            "flex-direction": column,
+        ),
+    ),
+);
+```
+
+
+### Breakpoints
+
+You can generate `@media` queries with breakpoints defined in your theme just using the `@breakpoint` query followed with the breakpoint name you want to apply:
+
+```scss
+$my-styles: (
+    ".columns": (
+        "display": flex,
+        "flex-direction": row,
+        "flex-wrap": nowrap,
+        "overflow": hidden,
+    ),
+    "@breakpoint mobile": (
+        ".columns": (
+            "flex-direction": column,
+        ),
+    ),
+);
+```
+
+
+### Parent selector
+
+We provide support for using the **parent selector**, `&`, in the same way that works in [Sass](https://sass-lang.com/documentation/style-rules/parent-selector): used in an inline selector will be automatically replaced with the corresponding outer selector.
+
+```scss
+$my-styles: (
+    ".button": (
+        "color": white,
+        "display": block,
+        "&:hover": (
+            "color": black,
+            "cursor": pointer;
+        ),
+    ),
+);
+```
+
+Will generate the following CSS files: 
+
+```css
+.button {
+    color: white;
+    display: block;
+}
+.button:hover {
+    color: black;
+    cursor: pointer;
+}
+```
+
+
+### Pseudo elements
+
+Pseudo-elements selectors like `::before` and `::after` are support. Also remember that you must wrap the value of the `content` property into single quotes:
+
+```scss
+$my-styles: (
+    ".button": (
+        "&::before": (
+            "content": '""',
+            "display": block,
+        ),
+    ),
+);
+```
+
+
+### Nesting styles
+
+Nesting styles is not supported, but you can use the parent selector `&` instead.
+
