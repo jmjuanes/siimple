@@ -1,0 +1,41 @@
+---
+title: Components plugin
+---
+
+# Components Plugin
+
+We provide a collection of built-in UI components that you can customize and reuse across your projects. We have divided our components collection into two groups: 
+
+- **Core components**: primary and most common used components, that includes alerts, buttons, navigation links, and more!
+- **Experimental components**: additional components that will be merged in a future with the core components.
+
+**Components are always enabled by default**, so you do not need to import them as a plugin. In case that you do not need components in your output CSS, you can disable them using a **configuration flag**:
+
+```scss
+@use "siimple" with (
+    $flags: (
+        "add-core-components": false,  // Skip core components
+        "add-experimental-components": false, // Skip experimental components 
+    ),
+);
+```
+
+Also, in case that you only need some components in your output CSS, you can import each component as a single plugin in the `$plugins` section of the configuration. Remember that you must import the `siimple/plugins` module for adding plugins to the configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $flags: (
+        "add-core-components": false,
+        "add-experimental-components": false,
+    ),
+    $plugins: (
+        plugins.btn(),
+        plugins.column(),
+        plugins.text(),
+    ),
+);
+```
+
+
