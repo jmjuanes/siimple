@@ -3,6 +3,16 @@ $tablet: 600px;
 $desktop: 1200px;
 $fullhd: 1800px;
 
+// Default body styles
+$body: (
+    "background-color": "body",
+    "color": "body",
+    "font-family": "body",
+    "font-size": "body",
+    "font-weight": 400,
+    "line-height": "body",
+);
+
 // Default colors
 $primary: #307ad5;     // blue-500
 $highlight: #e5effb;   // blue-200

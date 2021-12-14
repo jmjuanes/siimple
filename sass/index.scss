@@ -1,11 +1,14 @@
 @use "sass:map";
 @use "siimple:lib" as lib;
+@use "siimple:plugins" as plugins;
 
 // Default values
 $theme: lib.empty-map() !default;
 $prefix: "siimple-" !default;
 $plugins: lib.empty-list() !default;
 $styles: lib.empty-map() !default;
+$flags: lib.empty-map() !default;
+$body: lib.empty-map() !default;
 
 // Build siimple mixin
 @mixin build() {
@@ -21,6 +24,10 @@ $styles: lib.empty-map() !default;
     // Initialize theme values
     @if lib.is-map($theme) {
         @include lib.theme($theme);
+    }
+    // Register body styles
+    @if lib.get-in($flags, "add-body-styles", true) {
+        $sheet: lib.add-styles-to-sheet($sheet, "body", map.merge(lib.$body, $body));
     }
     // Register custom styles
     @if lib.is-map($styles) {
