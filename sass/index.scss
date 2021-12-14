@@ -1,6 +1,5 @@
 @use "sass:map";
 @use "siimple:lib" as lib;
-@use "siimple:plugins" as plugins;
 
 // Default values
 $theme: lib.empty-map() !default;
