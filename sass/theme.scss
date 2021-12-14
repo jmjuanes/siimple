@@ -2,22 +2,16 @@
 @use "./utils.scss" as utils;
 @use "./breakpoints.scss" as breakpoints;
 @use "./scales.scss" as scales;
-@use "./variants.scss" as variants;
 
 // @description Configure the theme used in siimple
 @mixin theme($theme: null) {
     $new-breakpoints: null;
     $new-scales: utils.empty-map();
-    $new-variants: utils.empty-map();
     // Iterate over all keys in the new theme object
     @each $key,$value in $theme {
         // Check for breakpoints
         @if $key == "breakpoints" {
             $new-breakpoints: $value; 
-        }
-        // Check for custom variant list
-        @else if $key == "variants" {
-            $new-variants: $value;
         }
         // Check if key is a scale key
         @else if scales.has-scale($key) {
@@ -31,5 +25,4 @@
     }
     // Update scales and variants
     @include scales.scales($new-scales);
-    @include variants.variants($new-variants);
 }

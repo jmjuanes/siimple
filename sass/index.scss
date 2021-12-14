@@ -4,6 +4,7 @@
 // Default values
 $theme: lib.empty-map() !default;
 $prefix: "siimple-" !default;
+$variants: lib.empty-map() !default;
 $plugins: lib.empty-list() !default;
 $styles: lib.empty-map() !default;
 $flags: lib.empty-map() !default;
@@ -23,6 +24,10 @@ $body: lib.empty-map() !default;
     // Initialize theme values
     @if lib.is-map($theme) {
         @include lib.theme($theme);
+    }
+    // Initialize variants
+    @if lib.is-map($variants) {
+        @include lib.variants($variants);
     }
     // Register body styles
     @if lib.get-in($flags, "add-body-styles", true) {
