@@ -1,15 +1,30 @@
+# General files and folders
 .DS_Store
 node_modules
 *.iml
 .idea
 *.swp
 package-lock.json
-packages/*/dist
-packages/*/www
-docs/www
-website/www
+firebase-debug.log
+*.tgz
+*.log
+.cache
 
-# Custom paths
-packages/siimple-colors/docs/data
-packages/website/data/documentation.json
+# Env files
+.env
+.env.development
+.env.production
+.env.test
 
+# Release folders
+dist
+distributions
+release
+
+# Applications output folders
+public
+
+# Other folders and files
+old-scripts
+drafts
+packages
