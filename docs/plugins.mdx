@@ -1,0 +1,162 @@
+---
+title: "Plugins"
+---
+
+# Plugins
+
+Plugins allows you to extend **siimple** adding more styles like components, helpers or icons. You will need to import the `siimple/plugins` module in your configuration file:
+
+```scss
+@use "siimple/plugins" as plugins;
+```
+
+
+## Components plugin
+
+We provide a collection of built-in UI components that you can customize and reuse across your projects, that includes buttons, alerts, navigation links, and more!
+
+**Components are always enabled by default**, so you do not need to import them as a plugin. In case that you do not need components in your output CSS, you can disable them using a **configuration flag**:
+
+```scss
+@use "siimple" with (
+    $flags: (
+        "add-components": false,
+    ),
+);
+```
+
+You can manually import individual components as a single plugin in the `$plugins` section of the configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $flags: (
+        "add-core-components": false,
+    ),
+    $plugins: (
+        plugins.btn(),
+        plugins.column(),
+        plugins.text(),
+    ),
+);
+```
+
+## Experimental plugins
+
+The **experimental** plugin provides additional components that in a future will be merged with the core components. Just call the `plugins.experiments` function in the `$plugins` section of your configuration to include them in your output CSS:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.experiments(),
+    ),
+);
+```
+
+## Helpers plugin
+
+The **helpers** plugin provides a collection of **small functional CSS classes** that can be used for creating or customizing components. The main aim of this plugin is to provide a collection of reusable classes to replace the conventional style of writting CSS classes.
+
+To load the helpers plugin, just add the `plugins.helpers()` function in the `$plugins` section of your configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.helpers(),
+    ),
+);
+```
+
+Additionally, in case that you are only interested in some helpers you can load each helper individually instead of loading all helpers:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.color(),
+        plugins.spacing(),
+        plugins.sizing(),
+    ),
+));
+```
+
+
+## Icons plugin
+
+The icons plugin can be enabled just adding the `plugins.icons()` function in the `$plugins` section of your configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.icons(),
+    ),
+);
+```
+
+This will add the `siimple-icon` component to your output CSS, and will generate one variant for each icon.
+
+### Customization
+
+The following options can be used to customize the icons plugin:
+
+- `path`: path to the fonts folder. By default is `./`. **The path must end with a `/`**.
+- `include`: if provided, only icons in this list will be included for the output CSS.
+- `exclude`: if provided, icons in this list will be excluded from the output CSS.
+
+Example: 
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.icons((
+            "path": "./fonts/",
+            "include": (
+                "star",
+                "user",
+            ),
+        )),
+    ),
+);
+```
+
+Remember to copy all fonts in the `siimple` package to your project assets folder and use the `path` option to set the path to the fonts folder.
+
+
+### Using icons
+
+Create a `<i>` tag with the following classes: 
+
+- `siimple-icon`: is the icon component base classname. 
+- `is-[ICON]`, where `[ICON]` is the name of the desired icon.
+
+```html 
+<!-- Add a left arrow icon -->
+<i class="siimple-icon is-arrow-left"></i>
+
+<!-- Add a star icon -->
+<i class="siimple-icon is-star"></i>
+```
+
+You can style your icon using `font-size` and `color` style properties:
+
+```html 
+<!-- Using style attribute -->
+<i class="siimple-icon is-star" style="color:#ffea66;font-size:20px;"></i>
+
+<!-- Using helpers -->
+<i class="siimple-icon is-star has-color-red-500 has-size-xl"></i>
+```
+
+> **Note**: in case that you have changed or removed the prefix using the `$prefix` section of the configuration, the component classname will be different.
+
+
