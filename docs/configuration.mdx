@@ -52,8 +52,6 @@ For example, you can use `si-` as prefix by setting the `$prefix` section:
 ```scss
 @use "siimple" with (
     $prefix: "si-",
-
-    // ...
 );
 ```
 
@@ -76,8 +74,6 @@ You can disable the prefix passing an empty string to the `$prefix` section:
 ```scss
 @use "siimple" with (
     $prefix: "",
-
-    // ...
 );
 ```
 
@@ -111,11 +107,10 @@ The `$theme` section allows you to specify your custom theme configuration. A th
             "monospace": monospace,
         ),
     ),
-    // ...
 );
 ```
 
-Visit the [theming customization guide](/customize/theme) to read more about how to define your custom theme.
+Visit the [theming customization guide](/theme) to read more about how to define your custom theme.
 
 
 ### Variants
@@ -127,15 +122,63 @@ You can use the `$variants` section to customize the style of the components pro
     $variants: (
         "button": (
             "default": (
-                "border-radius": 0px,
+                "background-color": "primary",
+                "color": "white",
+            ),
+            "secondary": (
+                "background-color": "secondary",
             ),
         ),
     ),
-    // ...
 );
 ```
 
-Visit the [variants customization guide](/customize/variants) to read more about using variants.
+There are two types of variants: **default variants** and **custom variants**. On the one hand, in the `default` field you can provide the styles that will be applied to the default component styles. For example, all styles defined in `$variants.button.default` will be applied to the `siimple-btn` class name: 
+
+```scss
+@use "siimple" with (
+    $variants: (
+        "button": (
+            "default": (
+                "background-color": "primary",
+                "color": "white",
+            ),
+        ),
+    ),
+);
+```
+
+Will generate: 
+
+```css
+.siimple-btn {
+    background-color: #33333;
+    color: white;
+    /* Other default button styles */
+}
+```
+
+On the other hand, any other field will generate an additional class that can be only applied to the corresponding component, with the class `.is-{variant_name}`. For example, this variant:
+
+```scss
+@use "siimple" with (
+    $variants: (
+        "button": (
+            "secondary": (
+                "background-color": #000000,
+            ),
+        ),
+    ),
+);
+```
+
+Will generate:
+
+```css
+.siimple-btn.is-secondary {
+    background-color: #000000;
+}
+```
 
 
 ### Plugins
@@ -182,18 +225,16 @@ Use the `$flags` to enable or disable some features of **siimple**.
 
 | Flag | Description |
 |------|-------------|
-| `"add-body-styles"` | Enable or disable applying styles to the `<body>` element. Default is `true`. |
-| `"add-core-components"` | Enable or disable core components. Default is `true`. |
-| `"add-experimental-components"` | Enable or disable experimental components. Default is `true`. |
+| `"add-body"` | Enable or disable applying styles to the `<body>` element. Default is `true`. |
+| `"add-components"` | Enable or disable core components. Default is `true`. |
 
 This is the default flags configuration:
 
 ```scss
 @use "siimple" with (
     $flags: (
-        "add-body-styles": true,
-        "add-core-components": true,
-        "add-experimental-components": true,
+        "add-body": true,
+        "add-components": true,
     ),
 );
 ```
