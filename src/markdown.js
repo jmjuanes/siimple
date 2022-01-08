@@ -1,16 +1,18 @@
 import React from "react";
+import kofi from "kofi";
 import {Link} from "gatsby";
-import {LiveCode} from "./components/LiveCode.js";
-//import {Tip} from "siimple-react";
-import {createHtmlElement} from "siimple-react";
 
-// Custom examples
+import {LiveCode} from "./components/LiveCode.js";
 import {ModalExample} from "./components/ModalExample.js";
 
 // Alias to create a HTML element
 const html = (type, className) => {
-    return (props) => {
-        return React.createElement(type, {}, props.children);
+    return props => {
+        const newProps = {
+            "className": kofi.classNames(className, props.className),
+            "style": props.style,
+        };
+        return React.createElement(type, newProps, props.children);
     };
 };
 
@@ -18,26 +20,25 @@ const html = (type, className) => {
 export const shortcodes = {
     "Tip": () => null,
     "Link": Link,
-    "h1": createHtmlElement("div", "siimple-title is-1"),
-    "h2": createHtmlElement("div", "siimple-title is-2"),
-    "h3": createHtmlElement("div", "siimple-title is-3"),
-    "h4": createHtmlElement("div", "siimple-title is-4"),
-    "h5": createHtmlElement("div", "siimple-title is-5"),
-    "h6": createHtmlElement("div", "siimple-title is-6"),
-    "pre": createHtmlElement("div", ""),
-    //"code": createHtmlElement("code", "siimple-code"),
+    "h1": html("div", "siimple-title is-1"),
+    "h2": html("div", "siimple-title is-2"),
+    "h3": html("div", "siimple-title is-3"),
+    "h4": html("div", "siimple-title is-4"),
+    "h5": html("div", "siimple-title is-5"),
+    "h6": html("div", "siimple-title is-6"),
+    "pre": html("div", ""),
     "code": LiveCode,
-    "inlineCode": createHtmlElement("code", "siimple-text is-code"),
-    "p": createHtmlElement("div", "siimple-paragraph"),
-    "blockquote": createHtmlElement("div", "siimple-quote"),
-    "a": createHtmlElement("a", "siimple-text is-link"),
-    "li": createHtmlElement("li", "has-mb-1"),
-    "table": createHtmlElement("table", "siimple-table is-bordered"),
-    //"thead": createHtmlElement("thead", "siimple-table-head"),
-    //"tbody": createHtmlElement("tbody", "siimple-table-body"),
-    //"tr": createHtmlElement("tr", "siimple-table-row"),
-    //"td": createHtmlElement("td", "siimple-table-cell"),
-    //"th": createHtmlElement("th", "siimple-table-cell has-text-left"),
+    "inlineCode": html("code", "siimple-text is-code"),
+    "p": html("div", "siimple-paragraph"),
+    "blockquote": html("div", "siimple-quote"),
+    "a": html("a", "siimple-text is-link"),
+    "li": html("li", "has-mb-1"),
+    "table": html("table", "siimple-table is-bordered"),
+    //"thead": html("thead", "siimple-table-head"),
+    //"tbody": html("tbody", "siimple-table-body"),
+    //"tr": html("tr", "siimple-table-row"),
+    //"td": html("td", "siimple-table-cell"),
+    //"th": html("th", "siimple-table-cell has-text-left"),
     // Examples
     ModalExample,
 };
