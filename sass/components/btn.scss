@@ -1,0 +1,55 @@
+@use "siimple:lib" as lib;
+
+// Generate btn component configuration
+@function btn() {
+    @return lib.create-component-plugin((
+        "id": "button",
+        "name": "btn",
+        "styles": (
+            "appearance": none,
+            //Disable default button element borders
+            //https://github.com/siimple/siimple/pull/17
+            "border": 0px,
+            "cursor": pointer,
+            "display": inline-block,
+            "font-family": inherit,
+            "font-size": inherit,
+            "font-weight": bold,
+            //min-height": 24px,
+            "line-height": inherit,
+            "min-width": 0px,
+            "padding-bottom": 0.5rem,
+            "padding-left": 1rem,
+            "padding-right": 1rem,
+            "padding-top": 0.5rem,
+            "text-align": center,
+            "text-decoration": none,
+            "user-select": none,
+            //Button hover style
+            "&:hover": (
+                //"opacity": 0.8,
+                "text-decoration": none,
+                "transition-duration": 0.3s,
+                "transition-property": background-color,
+            ),
+        ),
+        "variants": (
+            "default": (
+                "background-color": "primary",
+                "border-radius": "normal",
+                "color": "white",
+            ),
+            "disabled": (
+                //background-color: $siimple-btn-disabled-background !important;
+                //color: rgba($siimple-btn-disabled-color, $siimple-btn-disabled-color-alpha) !important;
+                "cursor": "not-allowed !important",
+                "opacity": "0.6 !important",
+                //"pointer-events": "none",
+            ),
+            "full": (
+                "display": "block",
+                "width": "100%",
+            ),
+        ),
+    ));
+}

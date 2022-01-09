@@ -1,0 +1,21 @@
+@use "siimple:lib" as lib;
+
+// Generate paragraph component configuration
+@function paragraph() {
+    @return lib.create-component-plugin((
+        "id": "text.paragraph",
+        "name": "paragraph",
+        "styles": (
+            "display": block,
+            "margin-bottom": 1rem,
+            "margin-top": 0px,
+        ),
+        "variants": (
+            "lead": (
+                "color": "muted",
+                "font-size": "large",
+                "font-weight": "bold",
+            ),
+        ),
+    ));
+}

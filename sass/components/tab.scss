@@ -1,0 +1,63 @@
+@use "siimple:lib" as lib;
+
+// Tab mixin
+@function tab() {
+    @return (
+        // Tabs wrapper styles
+        lib.create-component-plugin((
+            "id": "navigation.tabs",
+            "name": "tabs",
+            "styles": (
+                "display": flex,
+                "flex-wrap": nowrap,
+                "overflow": hidden,
+                "overflow-x": auto,
+                "margin-bottom": 1rem,
+                //"margin-top": 0px,
+                //"padding": 0.5rem,
+                "user-select": none,
+                //Tab style for mobile devices
+                // @include breakpoints.use-breakpoint("mobile") {
+                "@media screen and (max-width: #{lib.$tablet})": (
+                    "flex-direction": column,
+                ),
+            ),
+            "variants": (
+                "default": (
+                    "background-color": "fill",
+                    "border-radius": "normal",
+                ),
+            ),
+        )),
+        // Single tab style
+        lib.create-component-plugin((
+            "id": "navigation.tab",
+            "name": "tab",
+            "styles": (
+                "color": currentColor,
+                "cursor": pointer,
+                "display": block,
+                "flex-grow": (1 "important"),
+                "font-weight": 600,
+                "margin": 0.75rem,
+                //"opacity": 1.0,
+                "padding": 0.5rem,
+                "text-align": (center "important"),
+                "text-decoration": (none "important"),
+            ),
+            "variants": (
+                "default": (
+                    "background-color": "transparent",
+                    "border-radius": "normal",
+                    "&:hover": (
+                        "color": "primary",
+                    ),
+                ),
+                "active": (
+                    "background-color": "white",
+                    "color": "primary",
+                ),
+            ),
+        )),
+    );
+}

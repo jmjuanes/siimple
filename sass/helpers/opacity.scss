@@ -1,0 +1,14 @@
+@use "siimple:lib" as lib;
+
+// @description generate opacity helpers
+@function opacity() {
+    @return lib.create-helper-plugin((
+        // "enabled": lib.is-enabled("opacity", $include, $exclude),
+        "name": "opacity",
+        "states": ("default" "hover"),
+        "responsive": false,
+        "properties": ("opacity"),
+        // "scale": "opacities",
+        "values": lib.$opacity-values,
+    ));
+}

@@ -1,0 +1,28 @@
+@use "siimple:lib" as lib;
+
+// Generate divider component configuration
+@function divider() {
+    @return lib.create-component-plugin((
+        "id": "divider",
+        "name": "divider",
+        "styles": (
+            "border": 0px,
+            "display": block,
+            "height": 0.125rem,
+            "padding": 0px,
+            //Divider first and last child
+            "&:not(:first-child)": (
+                "margin-top": 1rem,
+            ),
+            "&:not(:last-child)": (
+                "margin-bottom": 1rem,
+            ),
+        ),
+        "variants": (
+            "default": (
+                "background-color": "fill",
+            ),
+        ),
+    ));
+}
+

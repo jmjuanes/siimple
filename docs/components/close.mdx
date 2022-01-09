@@ -1,0 +1,29 @@
+---
+title: "Close"
+description: "A close button"
+---
+
+# Close
+
+Use the `siimple-close` class to create a close button:
+
+```html align=center live=true
+<div class="siimple-close"></div>
+```
+
+
+### Variants
+
+Variants for this component can be defined in the `button.close` section of the variants configuration:
+
+```scss
+@use "siimple" with (
+    $variants: (
+        "button.close": (
+            "default": (
+                "color": "currentColor",
+            ),
+        ),
+    ),
+);
+```

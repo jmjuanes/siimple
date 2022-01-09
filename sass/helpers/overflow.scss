@@ -1,0 +1,17 @@
+@use "sass:list";
+@use "siimple:lib" as lib;
+
+@function overflow() {
+    $overflow-helpers: lib.empty-list();
+    @each $name,$value in lib.$overflow-properties {
+        $overflow-helpers: list.append($overflow-helpers, lib.create-helper-plugin((
+            // "enabled": lib.is-enabled($name, $include, $exclude),
+            "name": $value,
+            "states": ("default"),
+            "properties": ($value),
+            "values": lib.$overflow-values,
+        )));
+    }
+    // Return overflow helpers
+    @return $overflow-helpers;
+}

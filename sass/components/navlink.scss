@@ -1,0 +1,33 @@
+@use "siimple:lib" as lib;
+
+// Generate navigation link component
+@function navlink () {
+    $active-variant: (
+        "background-color": "highlight",
+        "color": "primary",
+    );
+    // Navigation link component
+    @return lib.create-component-plugin((
+        "id": "navigation.link",
+        "name": "navlink",
+        "styles": (
+            "color": inherit,
+            "cursor": pointer,
+            "display": block,
+            "font-weight": 600,
+            "margin": 0px,
+            "min-width": 0px,
+            "padding": 0.5rem,
+            "text-decoration": (none "important"),
+            "user-selection": none,
+            "width": 100%,
+        ),
+        "variants": (
+            "default": (
+                "border-radius": "normal",
+                "&:hover": $active-variant,
+            ),
+            "active": $active-variant,
+        ),
+    ));
+}

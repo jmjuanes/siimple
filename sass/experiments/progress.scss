@@ -1,0 +1,70 @@
+@use "siimple:lib" as lib;
+
+// @description Progress component
+// @experimental true
+@function progress() {
+    @return lib.create-component-plugin((
+        "id": "form.progress",
+        "name": "progress",
+        "styles": (
+            "appearance": none,
+            "border": none,
+            "border-radius": 999px,
+            "display": block,
+            "height": 0.5rem,
+            "margin": (0px "important"),
+            "overflow": hidden,
+            "padding": (0px "important"),
+            "width": 100%,
+            //Progress bar styles
+            "&::-webkit-progress-bar": (
+                "background-color": transparent,
+            ),
+            "&::-webkit-progress-value": (
+                "background-color": currentColor,
+            ),
+            "&::-moz-progress-bar": (
+                "background-color": currentColor,
+            ),
+        ),
+        "variants": (
+            "default": (
+                "background-color": "fill",
+                "color": "primary",
+            ),
+        )
+    ));
+
+    ////Striped progress bar
+    //&.is-striped > span::after  {
+    //    content: "";
+    //    position: absolute;
+    //    top: 0px;
+    //    left: 0px;
+    //    right: 0px;
+    //    bottom: 0px;
+    //    z-index: 1px;
+    //    background-size: 50px 50px;
+    //    background-image : linear-gradient(-45deg, 
+    //        rgba($progress-striped-background, 0.15) 25%, 
+    //        transparent 25%, 
+    //        transparent 50%, 
+    //        rgba($progress-striped-background, 0.15) 50%, 
+    //        rgba($progress-striped-background, 0.15) 75%, 
+    //        transparent 75%, 
+    //        transparent);
+    //}
+    //&.is-striped > span::after {
+    //    animation: lib.unquote($animation-name) $animation-duration linear infinite;
+    //}
+
+    //Progress animation
+    //@keyframes #{lib.unquote($animation-name)} {
+    //    0% { 
+    //        background-position: 0 0; 
+    //    }
+    //    100% { 
+    //        background-position: 50px 50px; 
+    //    }
+    //}
+}

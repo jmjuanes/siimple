@@ -1,0 +1,31 @@
+@use "siimple:lib" as lib;
+
+// @description Modal component for siimple
+// @experimental true
+@function modal($options: ()) {
+    @return lib.create-component-plugin((
+        "id": "dialog.modal",
+        "name": "modal",
+        "styles": (
+            "background-color": white,
+            "border-radius": "normal",
+            "display": block,
+            "max-height": 50vh,
+            "overflow-y": auto,
+            "padding": 2rem,
+            "width": 100%,
+        ),
+        "variants": (
+            "default": (
+                "max-width": 500px,
+            ),
+            "small": (
+                "max-width": 300px,
+            ),
+            "large": (
+                "max-width": 900px,
+            ),
+        ),
+    ));
+}
+

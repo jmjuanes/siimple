@@ -1,0 +1,26 @@
+@use "siimple:colors" as colors;
+@use "siimple:lib" as lib;
+
+@function color() {
+    $color-values: colors.get-colors();
+    @return (
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("background.color", $include, $exclude),
+            "name": "bg",
+            "properties": ("background-color"),
+            "states": ("default" "hover"),
+            "responsive": false,
+            // "scale": "backgrounds",
+            "values": $color-values,
+        )),
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("text.color", $include, $exclude),
+            "name": "text",
+            "properties": ("color"),
+            "states": ("default" "hover"),
+            "responsive": false,
+            // "scale": "colors",
+            "values": $color-values,
+        )),
+    );
+}

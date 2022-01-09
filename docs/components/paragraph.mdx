@@ -1,0 +1,41 @@
+---
+title: "Paragraph"
+--- 
+
+# Paragraph
+
+Style your paragraph tag by adding the `siimple-paragraph` class:
+
+```html live=true
+<p class="siimple-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+```
+
+We provide a `lead` variant class to highlight a paragraph:
+
+```html live=true
+<p class="siimple-paragraph is-lead">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+```
+
+### Variants
+
+Variants for this component can be defined in the `text.paragraph` section of the variants configuration:
+
+```scss
+@use "siimple" with (
+    $variants: (
+        "text.paragraph": (
+            "lead": (
+                "color": "muted",
+                "font-size": "large",
+                "font-weight": "bold",
+            ),
+        ),
+    ),
+);
+```

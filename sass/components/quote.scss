@@ -1,0 +1,29 @@
+@use "siimple:lib" as lib;
+
+// Generate blockquote component configuration
+// TODO: change text color instead of changing the opacity
+@function quote () {
+    @return lib.create-component-plugin((
+        "id": "text.quote",
+        "name": "quote",
+        "styles": (
+            "border-left-color": currentColor,
+            "border-left-style": solid,
+            "border-left-width": 0.25rem,
+            "display": block,
+            "margin-bottom": 1rem,
+            "margin-left": 0px,
+            "margin-right": 0px,
+            "padding-bottom": 0.75rem,
+            "padding-left": 1.25rem,
+            "padding-right": 0.75rem,
+            "padding-top": 0.75rem,
+        ),
+        "variants": (
+            "default": (
+                "color": "text",
+                "opacity": "0.5",
+            ),
+        ),
+    ));
+}

@@ -1,0 +1,1179 @@
+[
+    {
+        "id": "announcement",
+        "categories": "communication",
+        "unicode": 57344,
+        "added": "v0.0.1",
+        "keywords": ["announcement", "notice", "bullhorn"]
+    },
+    {
+        "id": "arrow-down",
+        "categories": "arrows",
+        "unicode": 57345,
+        "added": "v0.0.1",
+        "keywords": ["arrow", "down"]
+    },
+    {
+        "id": "arrow-left",
+        "categories": "arrows",
+        "unicode": 57346,
+        "added": "v0.0.1",
+        "keywords": ["arrow", "left"]
+    },
+    {
+        "id": "arrow-right",
+        "categories": "arrows",
+        "unicode": 57347,
+        "added": "v0.0.1",
+        "keywords": ["arrow", "right"]
+    },
+    {
+        "id": "arrow-up",
+        "categories": "arrows",
+        "unicode": 57348,
+        "added": "v0.0.1",
+        "keywords": ["arrow", "up"]
+    },
+    {
+        "id": "arrows",
+        "categories": "arrows",
+        "unicode": 57349,
+        "added": "v0.0.1",
+        "keywords": ["arrow", "move"]
+    },
+    {
+        "id": "box",
+        "categories": "misc",
+        "unicode": 57350,
+        "added": "v0.0.1",
+        "keywords": ["box", "paper", "container"]
+    },
+    {
+        "id": "calendar",
+        "categories": "interface",
+        "unicode": 57351,
+        "added": "v0.0.1",
+        "keywords": ["calendar", "days", "week", "month", "year", "time"]
+    },
+    {
+        "id": "check",
+        "categories": "interface",
+        "unicode": 57352,
+        "added": "v0.0.1",
+        "keywords": ["check", "mark", "done", "accept"]
+    },
+    {
+        "id": "quote",
+        "categories": "interface",
+        "unicode": 57353,
+        "added": "v0.0.1",
+        "keywords": ["quote", "cite"]
+    },
+    {
+        "id": "tasks",
+        "categories": "interface",
+        "unicode": 57354,
+        "added": "v0.0.1",
+        "keywords": ["tasks", "list", "todo"]
+    },
+    {
+        "id": "list-ol",
+        "categories": "interface",
+        "unicode": 57355,
+        "added": "v0.0.1",
+        "keywords": ["list", "order", "ordered"]
+    },
+    {
+        "id": "table",
+        "categories": "interface",
+        "unicode": 57356,
+        "added": "v0.0.1",
+        "keywords": ["table", "tbody", "thead", "rows", "columns"]
+    },
+    {
+        "id": "chevron-down",
+        "categories": "arrows",
+        "unicode": 57357,
+        "added": "v0.0.1",
+        "keywords": ["arrow", "chevron", "down"]
+    },
+    {
+        "id": "chevron-left",
+        "categories": "arrows",
+        "unicode": 57358,
+        "added": "v0.0.1",
+        "keywords": ["arrow", "chevron", "left"]
+    },
+    {
+        "id": "chevron-right",
+        "categories": "arrows",
+        "unicode": 57359,
+        "added": "v0.0.1",
+        "keywords": ["arrow", "chevron", "right"]
+    },
+    {
+        "id": "chevron-up",
+        "categories": "arrows",
+        "unicode": 57360,
+        "added": "v0.0.1",
+        "keywords": ["arrow", "chevron", "up"]
+    },
+    {
+        "id": "cloud-download",
+        "categories": "computer",
+        "unicode": 57361,
+        "added": "v0.0.1",
+        "keywords": ["cloud", "download", "server"]
+    },
+    {
+        "id": "cloud-upload",
+        "categories": "computer",
+        "unicode": 57362,
+        "added": "v0.0.1",
+        "keywords": ["cloud", "upload", "server"]
+    },
+    {
+        "id": "cloud",
+        "categories": "weather",
+        "unicode": 57363,
+        "added": "v0.0.1",
+        "keywords": ["cloud", "server"]
+    },
+    {
+        "id": "chart-bar",
+        "categories": "business",
+        "unicode": 57364,
+        "added": "v0.0.1",
+        "keywords": ["chart", "bars", "data"]
+    },
+    {
+        "id": "cross",
+        "categories": "interface",
+        "unicode": 57365,
+        "added": "v0.0.1",
+        "keywords": ["cross", "delete", "exit", "cancel", "close"]
+    },
+    {
+        "id": "edit",
+        "categories": "education",
+        "unicode": 57366,
+        "added": "v0.0.1",
+        "keywords": ["edit", "write", "pen", "pencil"]
+    },
+    {
+        "id": "chart-line",
+        "categories": "education",
+        "unicode": 57367,
+        "added": "v0.0.1",
+        "keywords": ["chart", "line", "data"]
+    },
+    {
+        "id": "exclamation",
+        "categories": "interface",
+        "unicode": 57368,
+        "added": "v0.0.1",
+        "keywords": ["exclamation", "mark", "warning", "notice"]
+    },
+    {
+        "id": "expand",
+        "categories": "arrows",
+        "unicode": 57369,
+        "added": "v0.0.1",
+        "keywords": ["expand", "resize"]
+    },
+    {
+        "id": "file-empty",
+        "categories": "computer",
+        "unicode": 57370,
+        "added": "v0.0.1",
+        "keywords": ["file", "empty", "archive", "blank"]
+    },
+    {
+        "id": "file",
+        "categories": "computer",
+        "unicode": 57371,
+        "added": "v0.0.1",
+        "keywords": ["file", "filesystem", "archive"]
+    },
+    {
+        "id": "flask",
+        "categories": "education",
+        "unicode": 57372,
+        "added": "v0.0.1",
+        "keywords": ["flask", "experiment", "laboratory", "science"]
+    },
+    {
+        "id": "folder",
+        "categories": "computer",
+        "unicode": 57373,
+        "added": "v0.0.1",
+        "keywords": ["folder", "file", "filesystem", "directory"]
+    },
+    {
+        "id": "heart",
+        "categories": "social",
+        "unicode": 57374,
+        "added": "v0.0.1",
+        "keywords": ["heart", "love", "favourite"]
+    },
+    {
+        "id": "home",
+        "categories": "misc",
+        "unicode": 57375,
+        "added": "v0.0.1",
+        "keywords": ["home", "house", "building"]
+    },
+    {
+        "id": "briefcase",
+        "categories": "business",
+        "unicode": 57376,
+        "added": "v0.0.1",
+        "keywords": ["briefcase", "executive", "case", "bag", "documents", "business"]
+    },
+    {
+        "id": "info",
+        "categories": "interface",
+        "unicode": 57377,
+        "added": "v0.0.1",
+        "keywords": ["info", "information"]
+    },
+    {
+        "id": "lightbulb",
+        "categories": "misc",
+        "unicode": 57378,
+        "added": "v0.0.1",
+        "keywords": ["lightbulb", "light", "bulb", "illumination"]
+    },
+    {
+        "id": "list-ul",
+        "categories": "interface",
+        "unicode": 57379,
+        "added": "v0.0.1",
+        "keywords": ["list", "items", "ul"]
+    },
+    {
+        "id": "location",
+        "categories": "travels",
+        "unicode": 57380,
+        "added": "v0.0.1",
+        "keywords": ["location", "position", "mark"]
+    },
+    {
+        "id": "lock",
+        "categories": "interface",
+        "unicode": 57381,
+        "added": "v0.0.1",
+        "keywords": ["lock", "security"]
+    },
+    {
+        "id": "menu",
+        "categories": "interface",
+        "unicode": 57382,
+        "added": "v0.0.1",
+        "keywords": ["menu", "hamburger"]
+    },
+    {
+        "id": "trophy",
+        "categories": "sports",
+        "unicode": 57383,
+        "added": "v0.0.1",
+        "keywords": ["trophy", "price", "cup", "winner"]
+    },
+    {
+        "id": "minus",
+        "categories": "interface",
+        "unicode": 57384,
+        "added": "v0.0.1",
+        "keywords": ["minus", "less"]
+    },
+    {
+        "id": "palette",
+        "categories": "education",
+        "unicode": 57385,
+        "added": "v0.0.1",
+        "keywords": ["palette", "color", "colour", "colors", "draw", "paint"]
+    },
+    {
+        "id": "brush",
+        "categories": "education",
+        "unicode": 57386,
+        "added": "v0.0.1",
+        "keywords": ["prush", "paint", "painting"]
+    },
+    {
+        "id": "plus",
+        "categories": "interface",
+        "unicode": 57387,
+        "added": "v0.0.1",
+        "keywords": ["plus", "add", "extra"]
+    },
+    {
+        "id": "factory",
+        "categories": "business",
+        "unicode": 57388,
+        "added": "v0.0.2",
+        "keywords": ["factory", "industry", "production"]
+    },
+    {
+        "id": "cart",
+        "categories": "shopping",
+        "unicode": 57389,
+        "added": "v0.0.1",
+        "keywords": ["cart", "shop", "shopping", "market", "buy"]
+    },
+    {
+        "id": "question",
+        "categories": "interface",
+        "unicode": 57390,
+        "added": "v0.0.1",
+        "keywords": ["question", "mark"]
+    },
+    {
+        "id": "redo",
+        "categories": "arrows",
+        "unicode": 57391,
+        "added": "v0.0.1",
+        "keywords": ["redo"]
+    },
+    {
+        "id": "resize",
+        "categories": "arrows",
+        "unicode": 57392,
+        "added": "v0.0.1",
+        "keywords": ["resize"]
+    },
+    {
+        "id": "search",
+        "categories": "interface",
+        "unicode": 57393,
+        "added": "v0.0.1",
+        "keywords": ["search", "find", "look", "glass", "loupe"]
+    },
+    {
+        "id": "gear",
+        "categories": "computer",
+        "unicode": 57394,
+        "added": "v0.0.2",
+        "keywords": ["settings", "configuration", "gear"]
+    },
+    {
+        "id": "star",
+        "categories": "social",
+        "unicode": 57395,
+        "added": "v0.0.1",
+        "keywords": ["star", "favourite"]
+    },
+    {
+        "id": "clock",
+        "categories": "communication",
+        "unicode": 57396,
+        "added": "v0.0.2",
+        "keywords": ["time", "clock", "tic", "hours", "minutes", "seconds"]
+    },
+    {
+        "id": "trash",
+        "categories": "computer",
+        "unicode": 57397,
+        "added": "v0.0.1",
+        "keywords": ["trash", "waste", "delete", "remove"]
+    },
+    {
+        "id": "undo",
+        "categories": "arrows",
+        "unicode": 57398,
+        "added": "v0.0.1",
+        "keywords": ["undo", "back", "go-back"]
+    },
+    {
+        "id": "unlock",
+        "categories": "interface",
+        "unicode": 57399,
+        "added": "v0.0.1",
+        "keywords": ["lock", "unclock", "security", "open"]
+    },
+    {
+        "id": "user-plus",
+        "categories": "computer",
+        "unicode": 57400,
+        "added": "v0.0.2",
+        "keywords": ["user", "plus", "add", "new", "create"]
+    },
+    {
+        "id": "user-minus",
+        "categories": "computer",
+        "unicode": 57401,
+        "added": "v0.0.2",
+        "keywords": ["user", "remove", "minus", "delete"]
+    },
+    {
+        "id": "user",
+        "categories": "computer",
+        "unicode": 57402,
+        "added": "v0.0.1",
+        "keywords": ["user", "person"]
+    },
+    {
+        "id": "volume-down",
+        "categories": "media",
+        "unicode": 57403,
+        "added": "v0.0.1",
+        "keywords": ["volume", "sound", "music"]
+    },
+    {
+        "id": "volume-mute",
+        "categories": "media",
+        "unicode": 57404,
+        "added": "v0.0.1",
+        "keywords": ["volume", "sound", "music", "silence"]
+    },
+    {
+        "id": "volume-up",
+        "categories": "media",
+        "unicode": 57405,
+        "added": "v0.0.1",
+        "keywords": ["volume", "sound", "music"]
+    },
+    {
+        "id": "search-plus",
+        "categories": "interface",
+        "unicode": 57406,
+        "added": "v0.0.2",
+        "keywords": ["zoom", "search", "plus"]
+    },
+    {
+        "id": "search-minus",
+        "categories": "interface",
+        "unicode": 57407,
+        "added": "v0.0.2",
+        "keywords": ["zoom", "out", "search", "minus"]
+    },
+    {
+        "id": "bell",
+        "categories": "communication",
+        "unicode": 57408,
+        "added": "v0.0.1",
+        "keywords": ["notification", "alert", "ring", "bell"]
+    },
+    {
+        "id": "attachment",
+        "categories": "interface",
+        "unicode": 57409,
+        "added": "v0.0.1",
+        "keywords": ["attachment", "attach", "file", "clip"]
+    },
+    {
+        "id": "folder-open",
+        "categories": "computer",
+        "unicode": 57410,
+        "added": "v0.0.1",
+        "keywords": ["folder", "directory", "open"]
+    },
+    {
+        "id": "copy",
+        "categories": "interface",
+        "unicode": 57411,
+        "added": "v0.0.1",
+        "keywords": ["copy", "files"]
+    },
+    {
+        "id": "paste",
+        "categories": "interface",
+        "unicode": 57412,
+        "added": "v0.0.1",
+        "keywords": ["paste", "files", "clipboard"]
+    },
+    {
+        "id": "clipboard",
+        "categories": "interface",
+        "unicode": 57413,
+        "added": "v0.0.1",
+        "keywords": ["clipboard", "paste"]
+    },
+    {
+        "id": "cut",
+        "categories": "education",
+        "unicode": 57414,
+        "added": "v0.0.1",
+        "keywords": ["cut", "scissors", "edit"]
+    },
+    {
+        "id": "pen",
+        "categories": "education",
+        "unicode": 57415,
+        "added": "v0.0.1",
+        "keywords": ["pen", "edit"]
+    },
+    {
+        "id": "archive",
+        "categories": "office",
+        "unicode": 57416,
+        "added": "v0.0.1",
+        "keywords": ["archive", "files", "container"]
+    },
+    {
+        "id": "book",
+        "categories": "education",
+        "unicode": 57417,
+        "added": "v0.0.1",
+        "keywords": ["book", "cover", "pages", "content"]
+    },
+    {
+        "id": "layers",
+        "categories": "interface",
+        "unicode": 57418,
+        "added": "v0.0.1",
+        "keywords": ["layers"]
+    },
+    {
+        "id": "file-archive",
+        "categories": "computer",
+        "unicode": 57419,
+        "added": "v0.0.2",
+        "keywords": ["file", "archive", "compress", "zip"]
+    },
+    {
+        "id": "file-image",
+        "categories": "computer",
+        "unicode": 57420,
+        "added": "v0.0.2",
+        "keywords": ["image", "file", "photo", "picture"]
+    },
+    {
+        "id": "envelope",
+        "categories": "communication",
+        "unicode": 57421,
+        "added": "v0.0.1",
+        "keywords": ["envelope","message","sms","email","mail","inbox","correspondence","post"]
+    },
+    {
+        "id": "save",
+        "categories": "interface",
+        "unicode": 57422,
+        "added": "v0.0.1",
+        "keywords": ["save", "disk"]
+    },
+    {
+        "id": "rocket",
+        "categories": "misc",
+        "unicode": 57423,
+        "added": "v0.0.1",
+        "keywords": ["rocket", "space", "spaceship", "stars"]
+    },
+    {
+        "id": "shield",
+        "categories": "computer",
+        "unicode": 57424,
+        "added": "v0.0.1",
+        "keywords": ["shield", "security"]
+    },
+    {
+        "id": "shield-check",
+        "categories": "computer",
+        "unicode": 57425,
+        "added": "v0.0.1",
+        "keywords": ["shield", "security", "checked"]
+    },
+    {
+        "id": "tag",
+        "categories": "shopping",
+        "unicode": 57426,
+        "added": "v0.0.1",
+        "keywords": ["tag", "label"]
+    },
+    {
+        "id": "map",
+        "categories": "travels",
+        "unicode": 57427,
+        "added": "v0.0.1",
+        "keywords": ["map", "location"]
+    },
+    {
+        "id": "bookmark",
+        "categories": "computer",
+        "unicode": 57428,
+        "added": "v0.0.1",
+        "keywords": ["bookmark", "mark", "book"]
+    },
+    {
+        "id": "image",
+        "categories": "computer",
+        "unicode": 57429,
+        "added": "v0.0.1",
+        "keywords": ["image", "img", "picture", "photography"]
+    },
+    {
+        "id": "grid",
+        "categories": "interface",
+        "unicode": 57430,
+        "added": "v0.0.1",
+        "keywords": ["grid", "menu", "apps", "list"]
+    },
+    {
+        "id": "presentation",
+        "categories": "business",
+        "unicode": 57431,
+        "added": "v0.0.1",
+        "keywords": ["presentation", "slides", "class"]
+    },
+    {
+        "id": "align-center",
+        "categories": "interface",
+        "unicode": 57432,
+        "added": "v0.0.1",
+        "keywords": ["align", "text", "centering", "content"]
+    },
+    {
+        "id": "align-left",
+        "categories": "interface",
+        "unicode": 57433,
+        "added": "v0.0.1",
+        "keywords": ["align", "text", "left", "content"]
+    },
+    {
+        "id": "align-right",
+        "categories": "interface",
+        "unicode": 57434,
+        "added": "v0.0.1",
+        "keywords": ["align", "text", "right", "content"]
+    },
+    {
+        "id": "align-justify",
+        "categories": "interface",
+        "unicode": 57435,
+        "added": "v0.0.1",
+        "keywords": ["align", "text", "right", "content"]
+    },
+    {
+        "id": "compress",
+        "categories": "arrows",
+        "unicode": 57436,
+        "added": "v0.0.2",
+        "keywords": ["compress", "arrows"]
+    },
+    {
+        "id": "puzzle",
+        "categories": "misc",
+        "unicode": 57437,
+        "added": "v0.0.1",
+        "keywords": ["puzzle", "piece"]
+    },
+    {
+        "id": "bold",
+        "categories": "interface",
+        "unicode": 57438,
+        "added": "v0.0.1",
+        "keywords": ["bold", "text", "content", "strong"]
+    },
+    {
+        "id": "italic",
+        "categories": "interface",
+        "unicode": 57439,
+        "added": "v0.0.1",
+        "keywords": ["italic", "oblique", "text", "content"]
+    },
+    {
+        "id": "underline",
+        "categories": "interface",
+        "unicode": 57440,
+        "added": "v0.0.1",
+        "keywords": ["underline", "text", "content"]
+    },
+    {
+        "id": "erase",
+        "categories": "interface",
+        "unicode": 57441,
+        "added": "v0.0.1",
+        "keywords": ["erase", "delete", "rubber"]
+    },
+    {
+        "id": "link",
+        "categories": "interface",
+        "unicode": 57442,
+        "added": "v0.0.1",
+        "keywords": ["link", "anchor"]
+    },
+    {
+        "id": "shield-cross",
+        "categories": "computer",
+        "unicode": 57443,
+        "added": "v0.0.1",
+        "keywords": ["shield", "security", "error", "danger"]
+    },
+    {
+        "id": "play",
+        "categories": "media",
+        "unicode": 57444,
+        "added": "v0.0.1",
+        "keywords": ["play", "resume", "controls"]
+    },
+    {
+        "id": "stop",
+        "categories": "media",
+        "unicode": 57445,
+        "added": "v0.0.1",
+        "keywords": ["stop", "controls"]
+    },
+    {
+        "id": "pause",
+        "categories": "media",
+        "unicode": 57446,
+        "added": "v0.0.1",
+        "keywords": ["pause", "controls"]
+    },
+    {
+        "id": "credit-card",
+        "categories": "shopping",
+        "unicode": 57447,
+        "added": "v0.0.1",
+        "keywords": ["credit", "card", "money", "pay"]
+    },
+    {
+        "id": "wallet",
+        "categories": "shopping",
+        "unicode": 57448,
+        "added": "v0.0.1",
+        "keywords": ["cash", "wallet", "money", "pocket", "coins", "cards"]
+    },
+    {
+        "id": "step-backward",
+        "categories": "media",
+        "unicode": 57449,
+        "added": "v0.0.1",
+        "keywords": ["step", "backward", "controls", "back", "previous"]
+    },
+    {
+        "id": "step-forward",
+        "categories": "media",
+        "unicode": 57450,
+        "added": "v0.0.1",
+        "keywords": ["step", "forward", "controls", "next"]
+    },
+    {
+        "id": "code",
+        "categories": "computer",
+        "unicode": 57451,
+        "added": "v0.0.2",
+        "keywords": ["computer", "code", "programming", "develop"]
+    },
+    {
+        "id": "money",
+        "categories": "business",
+        "unicode": 57452,
+        "added": "v0.0.2",
+        "keywords": ["money", "bill", "payments"]
+    },
+    {
+        "id": "sliders",
+        "categories": "computer",
+        "unicode": 57453,
+        "added": "v0.0.2",
+        "keywords": ["sliders", "settings", "configuration"]
+    },
+    {
+        "id": "visible",
+        "categories": "interface",
+        "unicode": 57454,
+        "added": "v0.0.2",
+        "keywords": ["eye", "visible"]
+    },
+    {
+        "id": "hidden",
+        "categories": "interface",
+        "unicode": 57455,
+        "added": "v0.0.2",
+        "keywords": ["eye", "hidden"]
+    },
+    {
+        "id": "print",
+        "categories": "office",
+        "unicode": 57456,
+        "added": "v0.0.2",
+        "keywords": ["printer", "printing"]
+    },
+    {
+        "id": "ruler",
+        "categories": "education",
+        "unicode": 57457,
+        "added": "v0.0.2",
+        "keywords": ["ruler", "rule"]
+    },
+    {
+        "id": "desktop",
+        "categories": "computer",
+        "unicode": 57458,
+        "added": "v0.0.2",
+        "keywords": ["computer", "desktop", "device"]
+    },
+    {
+        "id": "laptop",
+        "categories": "computer",
+        "unicode": 57459,
+        "added": "v0.0.2",
+        "keywords": ["computer", "laptop", "device"]
+    },
+    {
+        "id": "mobile",
+        "categories": "computer",
+        "unicode": 57460,
+        "added": "v0.0.2",
+        "keywords": ["mobile", "device"]
+    },
+    {
+        "id": "tablet",
+        "categories": "computer",
+        "unicode": 57461,
+        "added": "v0.0.2",
+        "keywords": ["tablet", "device"]
+    },
+    {
+        "id": "sun",
+        "categories": "weather",
+        "unicode": 57462,
+        "added": "v0.0.3",
+        "keywords": ["sun", "day", "light"]
+    },
+    {
+        "id": "moon",
+        "categories": "weather",
+        "unicode": 57463,
+        "added": "v0.0.3",
+        "keywords": ["moon", "night", "dark"]
+    },
+    {
+        "id": "pointer",
+        "categories": "interface",
+        "unicode": 57464,
+        "added": "v0.0.3",
+        "keywords": ["mouse", "computer", "desktop"]
+    },
+    {
+        "id": "text",
+        "categories": "interface",
+        "unicode": 57465,
+        "added": "v0.0.3",
+        "keywords": ["text", "editor"]
+    },
+    {
+        "id": "circle",
+        "categories": "interface",
+        "unicode": 57466,
+        "added": "v0.0.3",
+        "keywords": ["geometry", "shape"]
+    },
+    {
+        "id": "square",
+        "categories": "interface",
+        "unicode": 57467,
+        "added": "v0.0.3",
+        "keywords": ["geometry", "shape"]
+    },
+    {
+        "id": "diamond",
+        "categories": "interface",
+        "unicode": 57468,
+        "added": "v0.0.3",
+        "keywords": ["geometry", "shape"]
+    },
+    {
+        "id": "clone",
+        "categories": "interface",
+        "unicode": 57469,
+        "added": "v0.0.3",
+        "keywords": ["clone", "copy"]
+    },
+    {
+        "id": "opacity",
+        "categories": "interface",
+        "unicode": 57470,
+        "added": "v0.0.3",
+        "keywords": ["opacity", "alpha", "image"]
+    },
+    {
+        "id": "fill",
+        "categories": "interface",
+        "unicode": 57471,
+        "added": "v0.0.3",
+        "keywords": ["fill", "color", "background", "image"]
+    },
+    {
+        "id": "gift",
+        "categories": "shopping",
+        "unicode": 57472,
+        "added": "v0.0.3",
+        "keywords": ["gift", "present"]
+    },
+    {
+        "id": "filter",
+        "categories": "interface",
+        "unicode": 57473,
+        "added": "v0.0.3",
+        "keywords": ["filter"]
+    },
+    {
+        "id": "font",
+        "categories": "interface",
+        "unicode": 57474,
+        "added": "v0.0.3",
+        "keywords": ["font", "text"]
+    },
+    {
+        "id": "send-backward",
+        "categories": "interface",
+        "unicode": 57475,
+        "added": "v0.0.3",
+        "keywords": ["send", "backward", "move", "order"]
+    },
+    {
+        "id": "bring-forward",
+        "categories": "interface",
+        "unicode": 57476,
+        "added": "v0.0.3",
+        "keywords": ["bring", "forward", "move", "order"]
+    },
+    {
+        "id": "download",
+        "categories": "computer",
+        "unicode": 57477,
+        "added": "v0.0.3",
+        "keywords": ["download", "internet", "content"]
+    },
+    {
+        "id": "upload",
+        "categories": "computer",
+        "unicode": 57478,
+        "added": "v0.0.3",
+        "keywords": ["upload", "content", "internet"]
+    },
+    {
+        "id": "corner",
+        "categories": "interface",
+        "unicode": 57479,
+        "added": "v0.0.3",
+        "keywords": ["corner", "frame", "border"]
+    },
+    {
+        "id": "external-link",
+        "categories": "interface",
+        "unicode": 57480,
+        "added": "v0.0.3",
+        "keywords": ["external", "link", "open"]
+    },
+    {
+        "id": "camera",
+        "categories": "media",
+        "unicode": 57481,
+        "added": "v0.0.3",
+        "keywords": ["camera", "photo", "snapshot"]
+    },
+    {
+        "id": "dna",
+        "categories": "health",
+        "unicode": 57482,
+        "added": "v0.0.3",
+        "keywords": ["dna", "gene", "genomics"]
+    },
+    {
+        "id": "crop",
+        "categories": "interface",
+        "unicode": 57483,
+        "added": "v0.0.3",
+        "keywords": ["crop", "cut", "edit"]
+    },
+    {
+        "id": "server",
+        "categories": "computer",
+        "unicode": 57484,
+        "added": "v0.0.3",
+        "keywords": ["server", "data", "computer"]
+    },
+    {
+        "id": "window",
+        "categories": "computer",
+        "unicode": 57485,
+        "added": "v0.1.0",
+        "keywords": ["window", "program","application","app"]
+    },
+    {
+        "id": "comment",
+        "categories": "social",
+        "unicode": 57486,
+        "added": "v0.1.0",
+        "keywords": ["comment","chat","message"]
+    },
+    {
+        "id": "vector",
+        "categories": "interface",
+        "unicode": 57487,
+        "added": "v0.1.0",
+        "keywords": ["vector","svg","bezier","curve"]
+    },
+    {
+        "id": "dashboard",
+        "categories": "interface",
+        "unicode": 57488,
+        "added": "v0.1.0",
+        "keywords": ["dashboard","panel","admin"]
+    },
+    {
+        "id": "keyboard",
+        "categories": "computer",
+        "unicode": 57489,
+        "added": "v0.1.0",
+        "keywords": ["keyboard","type","text","board"]
+    },
+    {
+        "id": "directions",
+        "categories": "travels",
+        "unicode": 57490,
+        "added": "v0.1.0",
+        "keywords": ["directions","sign","road","map"]
+    },
+    {
+        "id": "terminal",
+        "categories": "computer",
+        "unicode": 57491,
+        "added": "v0.1.0",
+        "keywords": ["terminal","cli","command","line"]
+    },
+    {
+        "id": "share",
+        "categories": "interface",
+        "unicode": 57492,
+        "added": "v0.1.0",
+        "keywords": ["share"]
+    },
+    {
+        "id": "inbox",
+        "categories": "communication",
+        "unicode": 57493,
+        "added": "v0.1.0",
+        "keywords": ["inbox","email"]
+    },
+    {
+        "id": "coffee",
+        "categories": "food",
+        "unicode": 57494,
+        "added": "v0.1.0",
+        "keywords": ["coffee","mug","drik"]
+    },
+    {
+        "id": "backpack",
+        "categories": "travels",
+        "unicode": 57495,
+        "added": "v0.1.0",
+        "keywords": ["backpack","travel"]
+    },
+    {
+        "id": "note",
+        "categories": "office",
+        "unicode": 57496,
+        "added": "v0.1.0",
+        "keywords": ["note","sticky"]
+    },
+    {
+        "id": "notepad",
+        "categories": "office",
+        "unicode": 57497,
+        "added": "v0.1.0",
+        "keywords": ["notepad","notes"]
+    },
+    {
+        "id": "shapes",
+        "categories": "interface",
+        "unicode": 57498,
+        "added": "v0.1.0",
+        "keywords": ["figures","geoms"]
+    },
+    {
+        "id": "mouse",
+        "categories": "computer",
+        "unicode": 57499,
+        "added": "v0.1.0",
+        "keywords": ["mouse","device"]
+    },
+    {
+        "id": "ticket",
+        "categories": "shopping",
+        "unicode": 57500,
+        "added": "v0.1.0",
+        "keywords": ["ticket","coupon"]
+    },
+    {
+        "id": "discount",
+        "categories": "shopping",
+        "unicode": 57501,
+        "added": "v0.1.0",
+        "keywords": ["discount","shop","coupon"]
+    },
+    {
+        "id": "basket",
+        "categories": "shopping",
+        "unicode": 57502,
+        "added": "v0.1.0",
+        "keywords": ["basket","shop","market"]
+    },
+    {
+        "id": "tools",
+        "categories": "misc",
+        "unicode": 57503,
+        "added": "v0.1.0",
+        "keywords": ["tools"]
+    },
+    {
+        "id": "thumbtack",
+        "categories": "office",
+        "unicode": 57504,
+        "added": "v0.1.0",
+        "keywords": ["pin"]
+    },
+    {
+        "id": "siimple",
+        "categories": "misc",
+        "unicode": 57505,
+        "added": "v0.1.0",
+        "keywords": ["siimple", "logo", "brand"]
+    },
+    {
+        "id": "face-laugh",
+        "categories": "faces",
+        "unicode": 57506,
+        "added": "v4.0.0-alpha",
+        "keywords": ["face", "laugh"]
+    },
+    {
+        "id": "face-smile",
+        "categories": "faces",
+        "unicode": 57507,
+        "added": "v4.0.0-alpha",
+        "keywords": ["face", "smile"]
+    },
+    {
+        "id": "face-sad",
+        "categories": "faces",
+        "unicode": 57508,
+        "added": "v4.0.0-alpha",
+        "keywords": ["face", "sad"]
+    },
+    {
+        "id": "face-surprise",
+        "categories": "faces",
+        "unicode": 57509,
+        "added": "v4.0.0-alpha",
+        "keywords": ["face", "surprise"]
+    },
+    {
+        "id": "face-meh",
+        "categories": "faces",
+        "unicode": 57510,
+        "added": "v4.0.0-alpha",
+        "keywords": ["face", "meh"]
+    },
+    {
+        "id": "face-wink",
+        "categories": "faces",
+        "unicode": 57511,
+        "added": "v4.0.0-alpha",
+        "keywords": ["face", "wink"]
+    }
+]
+

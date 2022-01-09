@@ -1,0 +1,231 @@
+---
+title: "Typography"
+---
+
+# Typography
+
+Customize the text properties using the clasess included in the **typography** plugin.
+
+
+### Enable this plugin
+
+This plugin is included as part of the `plugins.helpers` collection. You can manually include this plugin calling `plugins.typography()` in the `$plugins` section of the configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.typography(),
+    ),
+);
+```
+
+
+### Font family
+
+Use the following classes to set the font family for the text:
+
+| Class | Property |
+|-------|----------|
+| `has-font-sams`  | `font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Noto Sans", "Helvetica Neue", Arial, sans-serif;` |
+| `has-font-serif` | `font-family: Georgia, Cambria, "Times New Roman", Times, serif;` |
+| `has-font-mono`  | `font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;` |
+
+
+Use `has-font-sans` to apply a **sans-serif** font family to your text:
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-font-sans">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+Use `has-font-serif` to apply a **serif** font family to your text: 
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-font-serif">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+Use `has-font-mono` to apply a monospace font (for example for `code` blocks): 
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-font-mono">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+
+### Font size
+
+Use the following classes to set the size of your text:
+
+| Class | Property |
+|-------|----------|
+| `has-text-xs`   | `font-size: 0.75rem;` |
+| `has-text-sm`   | `font-size: 0.875rem;`|
+| `has-text-base` | `font-size: 1rem;`    |
+| `has-text-lg`   | `font-size: 1.25rem;` |
+| `has-text-xl`   | `font-size: 1.5rem;`  |
+| `has-text-2xl`  | `font-size: 2rem;`    |
+| `has-text-3xl`  | `font-size: 2.5rem;`  |
+| `has-text-4xl`  | `font-size: 3.5rem;`  |
+
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-text-xs">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-sm">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-base">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-lg">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-xl">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-2xl">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-3xl">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-4xl">The quick brown fox jumps over the lazy dog.</div>
+```
+
+
+### Font style
+
+Use the following classes to set the font style of your text:
+
+| Class | Property |
+|-------|----------|
+| `has-text-italic`    | `font-style: italic;` |
+| `has-text-no-italic` | `font-style: normal;` |
+
+
+Use `has-text-italic` to display text in italic style: 
+
+```html live=true bg=blue-200 color=blue-700
+<strong class="has-text-italic">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```
+
+Use `has-text-no-italic` to reset italic style of the text: 
+
+```html live=true bg=blue-200 color=blue-700
+<strong class="has-text-no-italic">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```
+
+
+### Font Weight
+
+Use the following classes to set the weight of your text:
+
+
+| Class | Property |
+|-------|----------|
+| `has-weight-light`  | `font-weight: 300;` |
+| `has-weight-normal` | `font-weight: 400;` |
+| `has-weight-medium` | `font-weight: 500;` |
+| `has-weight-bold`   | `font-weight: 700;` |
+| `has-weight-black`  | `font-weight: 900;` |
+
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-weight-light">Text using has-weight-light</div>
+<div class="has-weight-normal">Text using has-weight-normal</div>
+<div class="has-weight-medium">Text using has-weight-medium</div>
+<div class="has-weight-bold">Test using has-weight-bold</div>
+<div class="has-weight-black">Text using has-weight-black</div>
+```
+
+
+### Text alignment
+
+Use one of the following classes to set the horizontal align of your text inside the container element:
+
+| Class | Property |
+|-------|----------|
+| `has-text-justify` | `text-align: justify;` |
+| `has-text-left`    | `text-align: left;` |
+| `has-text-center`  | `text-align: center;` |
+| `has-text-right`   | `text-align: right;` |
+
+Use the `has-text-justify` helper to justify the inline contents:
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-text-justify">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</div>
+```
+
+Use the `has-text-left` helper to align inline contents to the left: 
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-text-left">Left aligned text</div>
+```
+
+Use the `has-text-center` helper to center inline contents:
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-text-center">Centered text</div>
+```
+
+Use the `has-text-right` helper to align inline contents to the right:
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-text-right">Right aligned text</div>
+```
+
+
+### Text transform
+
+You can use these classes to apply text transformations: 
+
+| Class | Property |
+|-------|----------|
+| `has-text-uppercase` | `text-transform: uppercase;` |
+| `has-text-lowercase` | `text-transform: lowercase;` |
+| `has-text-capitalize` | `text-transform: capitalize;` |
+
+
+Use the `has-text-uppercase` helper to convert all characters of your text to uppercase:
+
+```html live=true bg=blue-200 color=blue-700
+<strong class="has-text-uppercase">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```
+
+Use the `has-text-lowercase` helper to convert all characters of your text to lowercase:
+
+```html live=true bg=blue-200 color=blue-700
+<strong class="has-text-lowercase">
+    Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit...
+</strong>
+```
+
+Use the `has-text-capitalize` helper to convert the first character of each word of your text to uppercase:
+
+```html live=true bg=blue-200 color=blue-700
+<strong class="has-text-capitalize">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```
+
+
+### Text decoration
+
+Use the following classes to set the `text-decoration` property of your text:
+
+| Class | Property |
+|-------|----------|
+| `has-text-underline` | `text-decoration: underline;` |
+| `has-text-no-underline` | `text-decoration: none;` |
+
+
+Use the `has-text-underline` to underline the text:
+
+```html live=true bg=blue-200 color=blue-700
+<strong class="has-text-underline">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```

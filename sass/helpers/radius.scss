@@ -1,0 +1,14 @@
+@use "siimple:lib" as lib;
+
+// @description Generate radius helpers
+@function radius() {
+    @return lib.create-helper-plugin((
+        // "enabled": lib.is-enabled("border.radius", $include, $exclude),
+        "name": "radius",
+        "states": ("default"),
+        "responsive": false,
+        "properties": ("border-radius"),
+        // "scale": "radius",
+        "values": lib.$border-radius-values,
+    ));
+}

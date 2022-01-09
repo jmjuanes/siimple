@@ -1,0 +1,65 @@
+@use "siimple:lib" as lib;
+
+// Generate spinner component configuration
+@function spinner ($options: lib.empty-map()) {
+    //$options: utils.empty-map();
+    $animation-name: lib.get-in($options, "animation.name", "siimple-spinner-animation");
+    $animation-duration: lib.get-in($options, "animation.duration", 1s);
+    //$border-width: lib.get($options, "border.width", 4px);
+    //$border-color: lib.get($options, "border.color", lib.get-color("white"));
+    //$border-opacity: lib.get($options, "border.opacity", 0.2);
+    //Create spinner component
+    @return (
+        lib.create-component-plugin((
+            "id": "spinner",
+            "name": "spinner",
+            "styles": (
+                "display": inline-block,
+                "height": 2rem,
+                "position": relative,
+                "width": 2rem,
+                //Spinner anlimation elements
+                "&:before,&:after": (
+                    "border": 0.25rem solid transparent,
+                    "border-radius": 100%,
+                    "content": '""',
+                    "display": block,
+                    "height": 2rem,
+                    "left": 0px,
+                    "position": absolute,
+                    "top": 0px,
+                    "width": 2rem,
+                ),
+                "&:before": (
+                    "border-color": currentColor,
+                    "opacity": 0.2,
+                ),
+                "&:after": (
+                    // animation: #{utils.unquote($animation-name)} #{$animation-duration} infinite linear;
+                    "animation-duration": $animation-duration,
+                    "animation-iteration-count": infinite,
+                    "animation-name": $animation-name,
+                    "animation-timing-function": linear,
+                    "border-top-color": currentColor,
+                ),
+            ),
+            "variants": (
+                "default": (
+                    "color": "primary",
+                ),
+            ),
+        )),
+        // Spinner keyframes
+        lib.create-keyframes-plugin((
+            "name": $animation-name,
+            "steps": (
+                "from": (
+                    "transform": "rotate(0deg)",
+                ),
+                "to": (
+                    "transform": "rotate(359deg)",
+                ),
+            ),
+        )),
+    );
+}

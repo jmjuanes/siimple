@@ -1,0 +1,38 @@
+---
+title: "Responsive"
+description: "Understanding the responsive design of siimple"
+---
+
+# Responsive
+
+The **siimple** toolkit has been designed to be fully responsive, so you can design an fully adaptative user interface.
+
+A high number of helpers and components of the **siimple** toolkit can be conditionally applied at different breakpoints, so you can customize how the user interface will be presented on different screen sizes.
+
+By default, we provide four screen breakpoints:
+
+| Prefix | Description | CSS media query |
+|--------|-------------|-----------------|
+| mobile | Applied to screen sizes up to `599px`. | `@media (max-width: 599px)` |
+| tablet | Applied to screen sizes from `600px`. | `@media (min-width: 600px)` |
+| desktop | Applied to screen sizes from `1200px`. | `@media (min-width: 1200px)` |
+| fullhd | Applied to screen sizes from `1800px`. | `@media (min-width: 1800px)` |
+
+
+The following example uses these responsive variants to customize how the card will be displayed for different screen sizes:
+
+```html live=true bg=blue-200
+<div class="has-radius has-bg-white has-overflow-hidden has-flex mobile:has-flex-column">
+    <div>
+        <img class="has-w-64 has-h-full mobile:has-w-full" src="/landscape1.jpg" />
+    </div>
+    <div class="has-p-6">
+        <div class="siimple-title is-4">Hello world!</div>
+        <div class="siimple-paragraph has-mb-0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua.
+        </div>
+    </div>
+</div>
+``` 
+

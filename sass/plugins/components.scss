@@ -1,0 +1,31 @@
+@use "siimple:lib" as lib;
+
+// @description Load essential components of siimple
+@function components () {
+    @return lib.flatten((
+        alert(),
+        badge(),
+        btn(),
+        card(),
+        checkbox(),
+        close(),
+        column(),
+        content(),
+        crumb(),
+        divider(),
+        input(),
+        label(),
+        navlink(),
+        paragraph(),
+        quote(),
+        radio(),
+        select(),
+        spinner(),
+        switch(),
+        tab(),
+        table(),
+        text(),
+        textarea(),
+        title(),
+    ));
+}

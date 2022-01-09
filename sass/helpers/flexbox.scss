@@ -1,0 +1,87 @@
+@use "siimple:lib" as lib;
+
+// @description Generate all flexbox helpers
+@function flexbox() {
+    @return (
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("display.flex", $include, $exclude),
+            "name": "flex",
+            "states": ("default"),
+            "responsive": true,
+            "properties": ("display"),
+            "values": lib.$display-flex-values,
+        )),
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("flex", $include, $exclude),
+            "name": "flex",
+            "states": ("default"),
+            "responsive": true,
+            "properties": ("flex"),
+            "values": lib.$flex-values,
+        )),
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("flex.direction", $include, $exclude),
+            "name": "flex",
+            "states": ("default"),
+            "responsive": true,
+            "properties": ("flex-direction"),
+            "values": lib.$flex-direction-values,
+        )),
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("flex.wrap", $include, $exclude),
+            "name": "flex",
+            "states": ("default"),
+            "responsive": true,
+            "properties": ("flex-wrap"),
+            "values": lib.$flex-wrap-values,
+        )),
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("flex.grow", $include, $exclude),
+            "name": "flex",
+            "states": ("default"),
+            "responsive": true,
+            "properties": ("flex-grow"),
+            "values": lib.$flex-grow-values,
+        )),
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("flex.shrink", $include, $exclude),
+            "name": "flex",
+            "states": ("default"),
+            "responsive": true,
+            "properties": ("flex-shrink"),
+            "values": lib.$flex-shrink-values,
+        )),
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("align.content", $include, $exclude),
+            "name": "content",
+            "states": ("default"),
+            "responsive": true,
+            "properties": ("align-content"),
+            "values": lib.$align-content-values,
+        )),
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("align.items", $include, $exclude),
+            "name": "items",
+            "states": ("default"),
+            "responsive": true,
+            "properties": ("align-items"),
+            "values": lib.$align-items-values,
+        )),
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("justify.content", $include, $exclude),
+            "name": "justify",
+            "states": ("default"),
+            "responsive": true,
+            "properties": ("justify-content"),
+            "values": lib.$justify-content-values,
+        )),
+        lib.create-helper-plugin((
+            // "enabled": lib.is-enabled("order", $include, $exclude),
+            "name": "order",
+            "states": ("default"),
+            "responsive": true,
+            "properties": ("order"),
+            "values": lib.$order-values,
+        )),
+    );
+}

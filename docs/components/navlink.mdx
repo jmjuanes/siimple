@@ -1,0 +1,49 @@
+---
+title: "NavLink"
+description: "Navigation link component"
+--- 
+
+# NavLink
+
+A navigation link component that you can use in your navigation sections, for example in the navbar. Just add a `siimple-navlink` class to your link to style it as a navigation link.
+
+```html live=true
+<div class="">
+    <a class="siimple-navlink">Link 1</a>
+    <a class="siimple-navlink">Link 2</a>
+    <a class="siimple-navlink">Link 3</a>
+</div>
+```
+
+We provide an `active` variant to mark a navigation link as active.
+
+```html live=true
+<div class="has-mb-0">
+    <a class="siimple-navlink">Link 1</a>
+    <a class="siimple-navlink is-active">Link 2</a>
+    <a class="siimple-navlink">Link 3</a>
+</div>
+```
+
+### Variants
+
+Variants for this component can be defined in the `navigation.link` section of the variants configuration:
+
+```scss
+@use "siimple" with (
+    $variants: (
+        "navigation.link": (
+            "default": (
+                "&:hover": (
+                    "background-color": "highlight",
+                    "color": "primary",
+                ),
+            ),
+            "active": (
+                "background-color": "highlight",
+                "color": "primary",
+            ),
+        ),
+    ),
+);
+```

@@ -1,0 +1,308 @@
+@use "sass:color";
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
+
+//Check if the provided value is a color
+@function is-color ($value) {
+    @return meta.type-of($value) == "color";
+}
+
+//Check if the provided value is a string
+@function is-string ($value) {
+    @return meta.type-of($value) == "string";
+}
+
+//Check if the provided value is a map
+@function is-map ($value) {
+    @return meta.type-of($value) == "map";
+}
+
+//Check if the provided value is a list
+@function is-list ($value) {
+    @return meta.type-of($value) == "list";
+}
+
+//Check if the provided value is a number
+@function is-number ($value) {
+    @return meta.type-of($value) == "number";
+}
+
+// Creates a new empty map
+@function empty-map() {
+    @return map.remove(("default": null), "default");
+}
+
+// Create an empty list
+@function empty-list() {
+    @return ();
+}
+
+// @description check if the provided list is empty
+@function is-empty-list ($value) {
+    @return list.length($value) > 0;
+}
+
+// @description check if the provided map is empty
+@function is-empty-map ($value) {
+    @return is-empty-list(map.keys($value));
+}
+
+// 
+// @description Removes the first item of a list
+// @param {list} $list original
+// @return {list} a clone of $list without the first item
+//
+@function pop($list) {
+    $length: list.length($list);
+    $index: 2; //Skip the first item
+    $result: ();
+    @while $index <= $length {
+        $result: list.append($result, list.nth($list, $index));
+        $index: $index + 1;
+    }
+    // Return the list without the first item
+    @return $result;
+}
+
+// 
+// @description Convert a value to a list
+//
+@function to-list($value) {
+    @if is-list($value) {
+        @return $value; // Nothing to do
+    }
+    // Over value --> wrap inside a list
+    @return list.append((), $value);
+}
+
+// 
+// @description Creates a new list with all sub-list elements concatenated into it recursively.
+//
+@function flatten($items) {
+    $result: ();
+    @each $item in $items {
+        // Check if this item is another list
+        @if is-list($item) {
+            $item: flatten($item); // Deep flatten this item
+            @each $sub-item in $item {
+                $result: list.append($result, $sub-item);
+            }
+        }
+        // Other value, append it to our result list
+        @else {
+            $result: list.append($result, $item);
+        }
+    }
+    // Return flatten list
+    @return $result;
+}
+
+// @description get first item of list
+@function first-item($items) {
+    @return list.nth($items, 1);
+}
+
+// @description get las item of list
+@function last-item($items) {
+    @return list.nth($items, list.length($items));
+}
+
+// 
+// @description Improved version for map.get
+//
+@function get-in($items, $keys, $default-value: null) {
+    // Check for string path provided
+    @if is-string($keys) {
+        @if map.has-key($items, $keys) {
+            @return map.get($items, $keys);
+        }
+    }
+    // Check for list of keys
+    @else if is-list($keys) {
+        $current: $items;
+        @each $key in $keys {
+            // Check if map does not contain this key
+            @if not map.has-key($current, $key) {
+                @return $default-value;
+            }
+            // Get current key
+            $current: map.get($current, $key);
+        }
+        // Return the last item
+        @return $current;
+    }
+    //Key not found --> return the default value
+    @return $default-value;
+}
+
+// 
+// @description Adds a new value to the map
+//
+@function set-in($items, $keys, $value) {
+    // Check if key is a string 
+    @if is-string($keys) {
+        @return map.set($items, $keys, $value);
+    }
+    // Check if keys is a list
+    @else if is-list($keys) {
+        @if list.length($keys) == 1 {
+            @return map.set($items, list.nth($keys, 1), $value);
+        }
+        // Build recursive
+        $key: list.nth($keys, 1); // Get first key
+        $other-keys: pop($keys); // Remove first key from keys
+        @if not map.has-key($items, $key) {
+            $items: map.set($items, $key, create-empty-map());
+        }
+        $new-items: set-in(map.get($items, $key), $other-keys, $value);
+        @return map.set($items, $key, $new-items);
+    }
+    // Unable to set new value
+    @return $items;
+}
+
+// 
+// @description Checks if the provided path exists in the map
+//
+@function has-in($items, $keys) {
+    @if is-string($keys) {
+        @return map.has-key($items, $keys);
+    }
+    // Check for list of keys
+    @else if is-list($keys) {
+        // Deep check if keys exists
+        $current: $items;
+        $keys-length: list.length($keys);
+        @for $index from 1 to $keys-length {
+            $key: list.nth($keys, $index);
+            @if not map.has-key($current, $key) {
+                @return false;
+            }
+            $current: map.get($current, $key);
+        }
+        // Check for last key
+        $key-last: list.nth($keys, $keys-length);
+        @return map.has-key($current, $key-last);
+    }
+    //Other value --> return false
+    @return false;
+}
+
+// Splits a string using the $delimiter character
+@function split($str, $delimiter: "") {
+    // Check if delimiter has not been provided --> split in chars instead
+    @if not $delimiter or $delimiter == "" {
+        $result: ();
+        @if string.length($str) >= 1 {
+            @for $index from 1 through string.length($str) {
+                $result: list.append(
+                    $result, 
+                    string.unquote(string.slice($str, $index, $index))
+                );
+            }
+        }
+        // Return list of characters
+        @return $result;
+    }
+    // Check if the delimiter character exists in the string
+    $index: string.index($str, $delimiter);
+    @if not $index {
+        @return list.append((), $str);
+    }
+    // Recursive split the string
+    @return list.join(
+        list.append((), string.slice($str, 1, $index - 1)),
+        split(
+            string.slice($str, $index + string.length($delimiter)),
+            $delimiter
+        )
+    );
+}
+
+// Recursive string replace
+@function replace($str, $search, $replace: "") {
+    $index: string.index($str, $search);
+    @if $index {
+        $str-start: string.slice($str, 1, $index - 1);
+        $str-rest: string.slice($str, $index + string.length($search));
+        $str-replace: replace($str-rest, $search, $replace);
+        @return $str-start + $replace + $str-replace;
+    }
+    //No match found --> return the original string
+    @return $str;
+}
+
+// Secure string unquote
+// This method will check first if the provided value is a string
+@function unquote($str) {
+    @if is-string($str) == true {
+        @return string.unquote($str);
+    }
+    //If is not a string --> return the value
+    @return $str;
+}
+
+// Checks if the provided string starts with the substring
+@function starts-with($str, $search) {
+    @return string.index($str, $search) == 1;
+}
+
+// Checks if the string ends with the provided substring
+@function ends-with($str, $find) {
+    @return string.index($str, $find) == (string.length($str) - string.length($find) + 1);
+}
+
+// Removes leading and trailing whitespace chars from `$string`
+@function trim($str) {
+    // Remove leading whitespace chars
+    @while string.slice($str, 0, 1) == " " {
+        $str: string.slice($str, 2);
+    }
+    // Remove trailing whitespace chars
+    @while string.slice($str, -1) == " " {
+        $str: string.slice($str, 0, -2);
+    }
+    @return $str;
+}
+
+//Alias for lighten($color, $amount)
+//https://sass-lang.com/documentation/modules/color#lighten
+@function lighten-color($color, $amount: 0) {
+   @return color.adjust($color, $lightness: $amount); 
+}
+
+//Alias for darken ($color, $amount)
+//https://sass-lang.com/documentation/modules/color#darken 
+@function darken-color($color, $amount: 0) {
+    @return color.adjust($color, $lightness: -$amount);
+}
+
+//Return the luminance of a color
+//From: https://css-tricks.com/snippets/sass/luminance-color-function/ 
+//Reference: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef 
+@function luminance($color) {
+    $colors: (
+        "red": red($color), 
+        "green": green($color), 
+        "blue": blue($color),
+    );
+    @each $name, $value in $colors {
+        $adjusted: 0;
+        $value: $value / 255;
+        @if $value < 0.03928 {
+            $value: $value / 12.92;
+        } @else {
+            $value: ($value + .055) / 1.055;
+            //Terrible hack to calculate pow($value, 2.4)
+            $value: $value * $value;
+        }
+        $colors: map.set($colors, $name, $value);
+    }
+    //Generate colors
+    $color-red: (map.get($colors, "red") * .2126);
+    $color-green: (map.get($colors, "green") * .7152);
+    $color-blue: (map.get($colors, "blue") * .0722);
+    @return $color-red + $color-green + $color-blue;
+}

@@ -1,0 +1,23 @@
+@use "siimple:lib" as lib;
+
+// Generate card component configuration
+@function card() {
+    @return lib.create-component-plugin((
+        "id": "card",
+        "name": "card",
+        "styles": (
+            "display": block,
+            "padding": 1.75rem,
+            "text-decoration": (none "important"),
+            "width": 100%,
+        ),
+        "variants": (
+            "default": (
+                "background-color": "white",
+                "border-radius": "normal",
+                "box-shadow": "0 0 0.5rem rgba(0, 0, 0, 0.125)",
+                "color": "inherit",
+            ),
+        ),
+    ));
+}

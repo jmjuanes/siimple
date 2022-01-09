@@ -1,0 +1,49 @@
+---
+title: "Text"
+description: "Customize the text"
+---
+
+# Text
+
+Use the `siimple-text` class to customize your text blocks.
+
+
+### Variants
+
+Variants for this component can be defined in the `text` section of the variants configuration:
+
+```scss
+@use "siimple" with (
+    $variants: (
+        "text": (
+            "bold": (
+                "font-weight": "bold",
+            ),
+            "small": (
+                "color": "muted",
+                "font-size": "small",
+            ),
+            "code": (
+                "color": "primary",
+                "font-family": "monospace",
+                "font-size": "0.8rem",
+                "font-weight": "bold",
+                "padding-left": "0.25rem",
+                "padding-right": "0.25rem",
+                "text-decoration": "none",
+                "word-wrap": "break-word",
+            ),
+            "link": (
+                "color": "primary",
+                "cursor": "pointer",
+                "text-decoration": "none",
+                "&:hover": (
+                    "color": "primary",
+                    "text-decoration": "underline",
+                    "transition": "color 0.3s",
+                ),
+            ),
+        ),
+    ),
+);
+```

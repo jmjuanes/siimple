@@ -1,0 +1,54 @@
+---
+title: "Btn"
+description: "The essential and classic button element"
+---
+
+# Buttons
+
+Buttons are essential elements in any website or application for **actions**. The `siimple-btn` class can be used in a `<button>`, `<input type="submit">`, `<a>` or `<div>` tag.
+
+```html live=true align=center
+<button class="siimple-btn">Primary button</button>
+<button class="siimple-btn is-secondary">Secondary button</button>
+```
+
+We provide a `disabled` variant to the button to make it disabled or inactive:
+
+```html live=true align=center
+<button class="siimple-btn is-disabled">
+    Disabled button
+</button>
+```
+
+We also provide an special variant to change the button width to the **full parent width**:
+
+```html live=true
+<button class="siimple-btn is-full">
+    Ful width button
+</button>
+```
+
+### Variants
+
+Variants for this component can be defined in the `button` section of the variants configuration:
+
+```scss
+@use "siimple" with (
+    $variants: (
+        "button": (
+            "default": (
+                "background-color": "primary",
+                "color": "white",
+            ),
+            "disabled": (
+                "cursor": "not-allowed !important",
+                "opacity": "0.6 !important",
+            ),
+            "full": (
+                "display": "block",
+                "width": "100%",
+            ),
+        ),
+    ),
+);
+```

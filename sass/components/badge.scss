@@ -1,0 +1,32 @@
+@use "siimple:lib" as lib;
+
+// Generate badge component configuration
+@function badge() {
+    @return lib.create-component-plugin((
+        "id": "badge",
+        "name": "badge",
+        "styles": (
+            "display": inline-block,
+            "font-size": 0.75rem,
+            "font-weight": bold,
+            "line-height": 1.25rem,
+            //"margin-bottom": 8px,
+            //"margin-right": 1px,
+            "padding-left": 0.5rem,
+            "padding-right": 0.5rem,
+            "text-decoration": none,
+            "vertical-align": text-top,
+        ),
+        "variants": (
+            "default": (
+                "background-color": "primary",
+                "border-radius": "small",
+                "color": "white",
+            ),
+            "secondary": (
+                "background-color": "secondary",
+                "color": "white",
+            ),
+        ),
+    ));
+}

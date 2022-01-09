@@ -1,0 +1,40 @@
+---
+title: "Alert"
+description: "Display block messages"
+---
+
+# Alert
+
+An **alert** is a colored notification block generally used to catch the attention of your users of something important. An alert can be created adding the `siimple-alert` class to a `<div>` tag.
+
+```html live=true
+<div class="siimple-alert">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</div>
+```
+
+You can add a close button to the alert using the `siimple-close` component:
+
+```html live=true
+<div class="siimple-alert">
+    <div>Content of the alert message</div>
+    <div class="siimple-close has-ml-auto"></div>
+</div>
+```
+
+### Variants
+
+Variants for this component can be defined in the `alert` section of the variants configuration:
+
+```scss
+@use "siimple" with (
+    $variants: (
+        "alert": (
+            "default": (
+                "background-color": "primary",
+                "color": "white",
+            ),
+        ),
+    ),
+));
+```

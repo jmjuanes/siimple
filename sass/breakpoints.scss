@@ -1,0 +1,106 @@
+@use "sass:map";
+@use "./constants.scss" as constants;
+@use "./utils.scss" as utils;
+
+// Breakpoints variables
+$current-breakpoints: (
+    "mobile": (
+        "min": 0px, 
+        "max": constants.$tablet,
+    ),
+    "tablet": (
+        "min": constants.$tablet, 
+        "max": null,
+    ),
+    "desktop": (
+        "min": constants.$desktop, 
+        "max": null,
+    ),
+    "fullhd": (
+        "min": constants.$fullhd,
+        "max": null,
+    ),
+);
+
+// @description set breakpoints
+@mixin breakpoints ($custom-breakpoints) {
+    $new-breakpoints: utils.empty-map();
+    @if not utils.is-map($custom-breakpoints) {
+        $custom-breakpoints: utils.empty-map();
+    }
+    // Register breakpoints
+    @each $key,$value in $custom-breakpoints {
+        @if utils.is-map($value) {
+            //Nothing to do
+        }
+        // Check for truthly value --> set as min value in the breakpoint
+        @else if $value {
+            $value: ("min": $value, "max": null);
+        }
+        // Check if not value has been provided --> reset breakpoint
+        @else {
+            $value: utins.empty-map();
+        }
+        // Save breakpoint value
+        $new-breakpoints: map.set($new-breakpoints, $key, $value);
+    }
+    // Merge breakpoints
+    $current-breakpoints: map.merge($current-breakpoints, $new-breakpoints) !global;
+}
+
+// Check if the provided selector is a breakpoint selector
+@function is-breakpoint-selector($selector) {
+    @return utils.starts-with($selector, "@breakpoint");
+}
+
+// Get breakpoint from selector
+@function get-breakpoint-from-selector($selector) {
+    @return utils.trim(utils.replace($selector, "@breakpoint", ""));
+}
+
+// @description Get the list of available breakpoints
+@function get-breakpoints() {
+    @return $current-breakpoints;
+}
+
+// @description Get a list with all breakpoints names
+@function get-breakpoints-names() {
+    @return map.keys($current-breakpoints);
+}
+
+// @description Use a single breakpoint by name
+@mixin use-breakpoint ($name: "", $mode: "only") {
+    $breakpoint: utils.get-in($current-breakpoints, $name, null);
+    @if not utils.is-map($breakpoint) {
+        $breakpoint: utils.empty-map();
+    }
+    $min: utils.unquote(utils.get-in($breakpoint, "min", null));
+    $max: utils.unquote(utils.get-in($breakpoint, "max", null));
+    //Check for min and max values
+    @if $min != null and $max != null {
+        @media screen and (min-width: #{$min}) and (max-width: #{$max}) {
+            @content;
+        }
+    }
+    //Check for only min value provided --> use min-width
+    @else if $max == null {
+        @media screen and (min-width: #{$min}) { @content; }
+    }
+    //Check for only max value provided --> use max-width
+    @else if $min == null {
+        @media screen and (max-width: #{$max}) { @content; }
+    }
+    // If no min or max value has been provided --> do not create the breakpoint
+    // Exit
+}
+
+// @description Use all breakpoints
+@mixin use-breakpoints () {
+    $breakpoints-names: map.keys($current-breakpoints);
+    @each $name in $breakpoints-names {
+        @include use-breakpoint($name) {
+            @content($name);
+        }
+    }
+}
+

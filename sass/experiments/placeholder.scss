@@ -1,0 +1,49 @@
+@use "siimple:lib" as lib;
+
+// @description Placeholder component
+// @experimental true
+@function placeholder () {
+    $default-active-variant: (
+        // "background-color": rgba(scales.get-scale-value("colors", "primary"), 0.1),
+        "border-color": "primary",
+        "color": "primary",
+        "cursor": "pointer",
+    );
+    @return lib.create-component-plugin((
+        "id": "placeholder",
+        "name": "placeholder",
+        "styles": (
+            "border-width": 0px,
+            "color": inherit,
+            "display": block,
+            "flex-basis": 100%,
+            "margin-bottom": 1rem,
+            "opacity": 1.0,
+            "padding": 1rem,
+            //"transition": background-color 0.3s,
+        ),
+        "variants": (
+            "default": (
+                "border-radius": "normal",
+                "color": "muted",
+            ),
+            "filled": (
+                "background-color": "fill",
+            ),
+            "dashed": (
+                "border-color": "fill",
+                "border-style": "dashed",
+                "border-width": 2px,
+            ),
+            "solid": (
+                "border-color": "fill",
+                "border-style": "solid",
+                "border-width": 2px,
+            ),
+            "active": $default-active-variant,
+            "hoverable": (
+                "&:hover": $default-active-variant,
+            ),
+        ),
+    ));
+}

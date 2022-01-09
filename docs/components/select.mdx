@@ -1,0 +1,33 @@
+---
+title: "Select"
+description: "A basic dropdown selection element"
+---
+
+# Select
+
+You can style your `<select>` elements adding a `siimple-select` class.
+
+```html live=true
+<select class="siimple-select">
+    <option selected>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+</select>
+```
+
+
+### Variants
+
+Variants for this component can be defined in the `form.select` section of the variants configuration:
+
+```scss
+@use "siimple" with (
+    $variants: (
+        "form.select": (
+            "default": (
+                "background-color": "fill",
+            ),
+        ),
+    ),
+);
+```

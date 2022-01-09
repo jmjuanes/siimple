@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "./utils.scss" as utils;
+@use "./breakpoints.scss" as breakpoints;
+@use "./scales.scss" as scales;
+
+// @description Configure the theme used in siimple
+@mixin theme($theme: null) {
+    $new-breakpoints: null;
+    $new-scales: utils.empty-map();
+    // Iterate over all keys in the new theme object
+    @each $key,$value in $theme {
+        // Check for breakpoints
+        @if $key == "breakpoints" {
+            $new-breakpoints: $value; 
+        }
+        // Check if key is a scale key
+        @else if scales.has-scale($key) {
+            $new-scales: map.set($new-scales, $key, $value);
+        }
+        // Ignore other items
+    }
+    // Update breakpoints
+    @if $new-breakpoints {
+        @include breakpoints.breakpoints($new-breakpoints);
+    }
+    // Update scales and variants
+    @include scales.scales($new-scales);
+}

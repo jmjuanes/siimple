@@ -1,0 +1,172 @@
+---
+title: "Sizing"
+description: "Modify the width or the height of an element"
+---
+
+# Sizing
+
+Modify the width or the height of any element with the classes described on this document.
+
+
+### Enable this plugin
+
+This plugin is included as part of the `plugins.helpers` collection. You can manually include this plugin calling `plugins.sizing()` in the `$plugins` section of the configuration:
+
+```scss
+@use "siimple/plugins" as plugins;
+
+@use "siimple" with (
+    $plugins: (
+        plugins.sizing(),
+    ),
+);
+```
+
+
+### Available sizes values
+
+The following sizes are available for all clasess:
+
+| Size     | Value     | Width | Height | Uniform |
+|----------|-----------|-------|--------|---------|
+| `auto`   | `auto`    | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `0`      | `0px`     | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `1`      | `0.25rem` | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `2`      | `0.5rem`  | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `3`      | `0.75rem` | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `4`      | `1rem`    | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `6`      | `1.5rem`  | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `8`      | `2rem`    | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `12`     | `3rem`    | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `16`     | `4rem`    | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `24`     | `6rem`    | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `32`     | `8rem`    | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `48`     | `12rem`   | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `64`     | `16rem`   | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `96`     | `24rem`   | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `128`    | `32rem`   | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `256`    | `64rem`   | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `half`   | `50%`     | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `full`   | `100%`    | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-check has-text-green-700"></i> | 
+| `screen` | `100vw`   | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-cross has-text-red-600"></i>   | <i className="siimple-icon is-cross has-text-red-600"></i> | 
+| `screen` | `100vh`   | <i className="siimple-icon is-cross has-text-red-600"></i>   | <i className="siimple-icon is-check has-text-green-700"></i> | <i className="siimple-icon is-cross has-text-red-600"></i> | 
+
+
+
+### Width
+
+Add any of the `has-w-{size}` classnames to modify the `width` property of the element.
+
+
+Use `has-w-auto` to let the browser to automatically calculate the width of the element: 
+
+```html
+<div class="has-w-auto ..."></div>
+```
+
+Use `has-w-screen` to fit the width of the screen:
+
+```html
+<div class="has-w-screen ..."></div>
+```
+
+Use the other clasess to set a fixed width:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-w-64 has-p-4 has-bg-blue-500 has-radius">
+    <strong>.has-w-64</strong>
+</div>
+```
+
+
+### Max Width
+
+Use `has-maxw-{size}` classes to set the `max-width` property of any element.
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-w-full has-maxw-64 has-p-4 has-bg-blue-500 has-radius">
+    <strong>.has-maxw-64</strong>
+</div>
+```
+
+
+### Min Width
+
+Use `has-minw-{size}` classes to modify the `min-width` property of any element.
+
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-minw-64 has-p-4 has-bg-blue-500 has-radius">
+    <strong>.has-minw-64</strong>
+</div>
+```
+
+
+## Height
+
+Add any of the `has-h-{size}` classnames to modify the `height` property of the element.
+
+Use `has-h-auto` to let the browser to automatically calculate the height of the element: 
+
+```html
+<div class="has-h-auto ..."></div>
+```
+
+Use `has-h-screen` to fit the height of the screen:
+
+```html
+<div class="has-h-screen ..."></div>
+```
+
+Use the other clasess to set a fixed height:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-h-32 has-w-64 has-p-4 has-bg-blue-500 has-radius">
+    <strong>has-h-32</strong>
+</div>
+```
+
+
+## Max Height
+
+Use `has-maxh-{size}` classes to modify the `max-height` property of any element.
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-h-full has-maxh-64 has-w-64 has-p-4 has-bg-blue-500 has-radius">
+    <strong>.has-maxh-64</strong>
+</div>
+```
+
+
+## Min Height
+
+Use `has-minh-{size}` classes to modify the `min-height` property of any element.
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-minh-64 has-w-64 has-p-4 has-bg-blue-500 has-radius">
+    <strong>.has-minh-64</strong>
+</div>
+```
+
+
+### Uniform width and height
+
+Use `has-s-{size}` classes to set both the `width` and `height` properties of any element.
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-s-32 has-p-4 has-bg-blue-500 has-radius">
+    <strong>.has-s-32</strong>
+</div>
+```
+
+
+### Responsive sizing
+
+You can control the sizing of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the sizing class.
+
+```html
+<div class="has-w-half mobile:has-w-full">
+    . . .
+</div>
+``` 
+

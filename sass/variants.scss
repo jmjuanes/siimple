@@ -1,0 +1,71 @@
+@use "sass:list";
+@use "sass:map";
+@use "./constants.scss" as constants;
+@use "./naming.scss" as naming;
+@use "./sheet.scss" as sheet;
+@use "./utils.scss" as utils;
+
+// Current variants list
+$variants: utils.empty-map();
+
+// @description load variants
+@mixin variants ($custom-variants) {
+    $new-variants: utils.empty-map();
+    @if not utils.is-map($custom-variants) {
+        $custom-variants: utils.empty-map();
+    }
+    @each $key,$value in $custom-variants {
+        // Check if the value is not a vaild object --> reset the value
+        @if not utils.is-map($value) {
+            $value: utils.empty-map();
+        }
+        $new-variants: map.set($new-variants, $key, $value);
+    }
+    // Merge with custom variants
+    $variants: map.merge($variants, $new-variants) !global;
+}
+
+// @description check if the provided variant is defined
+@function has-variant($name) {
+    //@return not utils.is-empty-map(map.get($variants, $name));
+    @return map.has-key($variants, $name);
+}
+
+// @description get a variant by name
+@function get-variant($name) {
+    @return map.get($variants, $name);
+}
+
+// Parse variants
+@function parse-variants($name, $default-variants) {
+    @if not has-variant($name) {
+        @return $default-variants;
+    }
+    // If exists, use custom variants instead
+    // TODO: check for extend flag to merge both variants maps
+    @return get-variant($name);
+}
+
+// @description Use the specified variant
+@mixin use-variant($name, $variants-list) {
+    //Check if this mixin has been called outside of any styles rules
+    @if not & {
+        @error("siimple.use-variant mixin can not be used outside a style rules");
+    }
+    @if has-variant($name) {
+        $variants-list: get-variant($name);
+    }
+    // Register each variant block
+    @each $variant-name, $variant-styles in $variants-list {
+        $classname: "&"; //By default we will use the parent selector
+        @if $variant-name != "default" {
+            $classname: $classname + naming.get-variant-classname($variant-name);
+        }
+        //Build variant styles
+        @include sheet.build-styles(
+            sheet.parse-styles($classname, $variant-styles)
+        );
+    }
+}
+
+

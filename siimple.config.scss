@@ -1,0 +1,18 @@
+@use "./dist/lib.scss" as lib;
+@use "./dist/plugins.scss" as plugins;
+
+// Load siimple
+@use "./dist/index.scss" with (
+    $prefix: "siimple-",
+    $theme: lib.empty-map(),
+    $plugins: (
+        plugins.reboot(),
+        plugins.components(),
+        plugins.experiments(),
+        plugins.icons((
+            "path": "../fonts/",
+        )),
+        plugins.helpers(),
+        // plugins.themed(),
+    ),   
+);

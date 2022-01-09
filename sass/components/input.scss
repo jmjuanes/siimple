@@ -1,0 +1,39 @@
+@use "siimple:lib" as lib;
+
+// Generate input component configuration
+@function input() {
+   @return lib.create-component-plugin((
+       "id": "form.input",
+       "name": "input",
+       "styles": (
+            "border-color": transparent,
+            "border-style": solid,
+            "border-width": 0.125rem,
+            "box-sizing": border-box,
+            "color": inherit,
+            "display": block,
+            "font-size": inherit,
+            "line-height": inherit,
+            "margin": 0px,
+            "min-width": 0px,
+            "outline": 0px,
+            "padding-bottom": 0.375rem,
+            "padding-left": 0.5rem,
+            "padding-right": 0.5rem,
+            "padding-top": 0.375rem,
+            "vertical-align": top,
+            "width": 100%,
+        ),
+        "variants": (
+            "default": (
+                "background-color": "fill",
+                //"background-color": "white",
+                //"border-color": "muted",
+                "border-radius": "normal",
+                "&:focus": (
+                    "border-color": "primary",
+                ),
+            ),
+        ),
+    ));
+}

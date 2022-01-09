@@ -1,0 +1,31 @@
+@use "siimple:lib" as lib;
+
+// Generate title component configuration
+@function title() {
+    $title-variants: lib.empty-map();
+    $title-variants: lib.set-in($title-variants, "default", (
+        "color": "heading",
+        "line-height": "heading",
+    ));
+    @each $key,$size in lib.$headings {
+        $title-variants: lib.set-in($title-variants, $key, (
+            "font-size": "#{$size}",
+        ));
+    }
+    //@debug $title-variants;
+    @return lib.create-component-plugin((
+        "id": "text.heading",
+        "name": "title",
+        "styles": (
+            "display": block,
+            "font-weight": 600,
+            "margin-bottom": 0.5em,
+            "padding": 0px,
+            // Not first child --> add margin top
+            "&:not(:first-child)": (
+                "margin-top": 2rem,
+            ),
+        ),
+        "variants": $title-variants,
+    ));
+}
