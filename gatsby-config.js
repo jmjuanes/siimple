@@ -13,14 +13,6 @@ module.exports = {
         {
             "resolve": "gatsby-source-filesystem",
             "options": {
-                "name": "data",
-                "path": path.join(__dirname, "/src/data/")
-            }
-        },
-        "gatsby-transformer-json",
-        {
-            "resolve": "gatsby-source-filesystem",
-            "options": {
                 "name": "docs",
                 "path": path.resolve(__dirname, "./docs/")
             }

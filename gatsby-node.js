@@ -1,7 +1,7 @@
-const fs = require("fs");
 const path = require("path");
-const {createFilePath} = require("gatsby-source-filesystem");
-const paths = require("./config/paths.js");
+// const fs = require("fs");
+// const {createFilePath} = require("gatsby-source-filesystem");
+// const paths = require("./config/paths.js");
 //const env = require("./config/env.js");
 //const MiniCssExtract = require("mini-css-extract-plugin");
 
@@ -11,7 +11,7 @@ exports.onCreateWebpackConfig = ({getConfig, plugins, actions}) => {
         "devtool": false,
         "resolve": {
             "modules": [
-                path.resolve(__dirname, "./packages"),
+                // path.resolve(__dirname, "./packages"),
                 path.resolve(__dirname, "./node_modules"),
             ],
             //"alias": {
@@ -45,14 +45,14 @@ exports.onCreateNode = function ({ node, getNode }) {
 
 // Create extra pages
 exports.createPages = async ({actions}) => {
-    const toolsPath = path.join(__dirname, "src", "tools");
-    // Generate tools pages
-    fs.readdirSync(toolsPath, "utf8").forEach(name => {
-        const entryPath = path.join(toolsPath, name, "index.js");
-        return fs.existsSync(entryPath) && actions.createPage({
-            "path": `/${name}`,
-            "component": entryPath,
-            "context": {},
-        });
-    });
+    // const toolsPath = path.join(__dirname, "src", "tools");
+    // // Generate tools pages
+    // fs.readdirSync(toolsPath, "utf8").forEach(name => {
+    //     const entryPath = path.join(toolsPath, name, "index.js");
+    //     return fs.existsSync(entryPath) && actions.createPage({
+    //         "path": `/${name}`,
+    //         "component": entryPath,
+    //         "context": {},
+    //     });
+    // });
 };
