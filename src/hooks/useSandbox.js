@@ -2,63 +2,28 @@ import React from "react";
 import kofi from "kofi";
 import lzString from "lz-string";
 import {getCDNPath} from "../cdn.js";
-// import template from "../templates/playground.js";
-
-const defaultMeta = [];
-const defaultIncludes = [
-    {"pkg": "siimple", "type": "style", "file": "siimple.min.css"}
-];
-
-// Generate script content
-const generateScript = js => {
-    const scriptContent = js; //TODO: add try-catch wrapper to the js script
-    const tagContent = `
-    //console.clear();
-    document.addEventListener("DOMContentLoaded", function () {
-        let script = document.createElement("script");
-        script.innerHTML = ${JSON.stringify(scriptContent)};
-        document.body.appendChild(script);
-    });`;
-    //Return the js script tag
-    return kofi.element("script", {"type": "text/javascript"}, tagContent);
-};
-
-//Generate style content
-const generateStyle = css => {
-    return kofi.element("style", {}, css);
-};
+import {getPlaygroundTemplate} from "../templates/playground.js";
 
 //Generate external script tag
-const generateExternalScriptTag = src => {
-    return kofi.element("script", {
-        "type": "text/javascript", 
-        "src": src,
-    });
+const generateScriptTag = src => {
+    return kofi.element("script", {"type": "text/javascript", "src": src});
 };
 
 //Generate external style tag
-const generateExternalStyleTag = src => {
-    return kofi.element("link", {
-        "rel": "stylesheet",
-        "type": "text/css",
-        "href": src,
-    });
+const generateStyleTag = src => {
+    return kofi.element("link", {"rel": "stylesheet", "type": "text/css", "href": src});
 };
 
 // Generate document
 const generateDocument = content => {
     const bodyContent = content?.data || ""; // Body content
-    const headContent = []; // Initialize head content
+    const headContent = [
+        generateStyleTag(getCDNPath("latest", "siimple.min.css")),
+    ];
     // Check for meta content
     // (content.meta || []).forEach(meta => {
     //     return headContent.push(kofi.element("meta", meta, null));
     // });
-    //Add siimple files
-    //TODO: check the package file to import
-    defaultIncludes.forEach(item => {
-        const url = getCDNPath(item.pkg, "latest", item.file);
-        return headContent.push(generateExternalStyleTag(url));
-    });
     // Add external sources (TODO)
     (content?.external || []).forEach(item => {
         return null;
@@ -95,7 +60,7 @@ export const renderSandbox = (parent, content, options) => {
 export const createSandbox = () => ({
     "version": "1",      //Sandbox version 
     "external": [],      //External scripts or styles
-    "data": "",
+    "data": getPlaygroundTemplate(),
 });
 
 //Migrate a sandbox from older to new versions
@@ -171,12 +136,12 @@ export const exportSandbox = sandbox => {
 
 // Sandbox hooks
 export const useSandbox = () => {
-    const [sandbox, setSandbox] = React.useState({
+    const [sandbox, setSandbox] = React.useState(() => ({
         content: createSandbox(),
         key: null,
-    });
+    }));
     // First rendering --> initialize sandbox
-    const sandboxInit = () => {
+    React.useEffect(() => {
         if (sandbox.key) { return; } // Sandobx already initialized
         sandbox.key = Date.now();
         // Register sandbox merhods
@@ -196,8 +161,7 @@ export const useSandbox = () => {
                 return sandbox.update(content);
             });
         };
-    };
-    React.useEffect(sandboxInit, []);
+    }, []);
     // Return sandbox reference
     return sandbox;
 };
