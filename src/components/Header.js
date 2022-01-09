@@ -1,7 +1,7 @@
 import React from "react";
+import kofi from "kofi";
 import {Link} from "./Link.js";
 import {Icon} from "./Icon.js";
-import {classNames} from "../utils/classnames.js";
 
 //const HEADER_CLASS = "siimple-content is-xlarge has-py-6 has-flex";
 //const HEADER_CLASS = "siimple-navbar is-xlarge has-bg-coolgray-100";
@@ -16,7 +16,7 @@ const HEADER_ITEMS = [
 export const Header = props => {
     const size = props.size || "xlarge";
     const items = props.items || HEADER_ITEMS;
-    const itemClass = classNames({
+    const itemClass = kofi.classNames({
         "has-flex has-radius has-opacity-100": true,
         "has-py-2 has-px-3 tablet:has-ml-2": true,
         "has-text-coolgray-600 has-text-no-underline": true,

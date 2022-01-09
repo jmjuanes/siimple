@@ -1,7 +1,7 @@
 import React from "react";
+import kofi from "kofi";
 import {Link} from "./Link.js";
 import {Icon} from "./Icon.js";
-import {classNames} from "../utils/classnames.js";
 
 //Get list of expanded groups
 const getExpandedGroups = current => {
@@ -21,7 +21,7 @@ export const AccordionNav = props => {
             {(props.items || []).map((item, key) => {
                 //Return link to the provided item
                 const isActive = props.pathname === item.url;
-                const itemClass = classNames({
+                const itemClass = kofi.classNames({
                     "siimple-navlink has-mb-1 has-px-3": true,
                     "has-weight-normal": true,
                     //"is-active": isActive,
@@ -36,9 +36,9 @@ export const AccordionNav = props => {
                 return (
                     <React.Fragment key={key}>
                         {/* Group item */}
-                        <If condition={displayGroup} render={() => {
+                        {kofi.when(displayGroup, () => {
                             const groupIcon = expanded[item.group] === true ? "chevron-down" : "chevron-right";
-                            const groupClass = classNames({
+                            const groupClass = kofi.classNames({
                                 "has-cursor-hand": true,
                                 "has-mt-6": currentGroup === null,
                             });
@@ -62,11 +62,11 @@ export const AccordionNav = props => {
                                     </div>
                                 </div>
                             );
-                        }} />
+                        })}
                         {/* Page link */}
-                        <If condition={itemVisible} render={() => (
+                        {kofi.when(itemVisible, () => (
                             <Link to={item.url} className={itemClass}>{item.label}</Link>
-                        )} />
+                        ))}
                     </React.Fragment>
                 );
             })}

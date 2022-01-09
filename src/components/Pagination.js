@@ -1,11 +1,10 @@
 import React from "react";
+import kofi from "kofi";
 import {Link} from "./Link.js";
-import {If} from "../utils/components.js";
-import {classNames} from "../utils/classnames.js";
 
 //Pagination item
 const PaginationItem = props => {
-    const paginationClass = classNames([
+    const paginationClass = kofi.classNames([
         "has-d-block",
         "has-radius has-p-4",
         "hover:has-bg-coolgray-100",
@@ -20,23 +19,29 @@ const PaginationItem = props => {
 };
 
 //Export pagination item
-export const Pagination = (props) => {
-    return (
-        <div className="siimple-columns has-pt-4">
-            {/* Prev navigation item */}
-            <div className="siimple-column has-py-0" align="left">
-                <If condition={props.prev !== null} render={() => (
-                    <PaginationItem label="Prev" url={props.prev.url} title={props.prev.label} />
-                )} />
-            </div>
-            {/* Separator */}
-            <div className="siimple-column has-py-0 mobile:has-d-none"></div>
-            {/* Next navigation item */}
-            <div className="siimple-column has-py-0" align="right">
-                <If condition={props.next !== null} render={() => (
-                    <PaginationItem label="Next" url={props.next.url} label={props.next.label} />
-                )} />
-            </div>
+export const Pagination = (props) => (
+    <div className="siimple-columns has-pt-4">
+        {/* Prev navigation item */}
+        <div className="siimple-column has-py-0" align="left">
+            {kofi.when(props.prev, () => (
+                <PaginationItem
+                    label="Prev"
+                    url={props.prev.url}
+                    title={props.prev.label}
+                />
+            ))}
         </div>
-    );
-};
+        {/* Separator */}
+        <div className="siimple-column has-py-0 mobile:has-d-none" />
+        {/* Next navigation item */}
+        <div className="siimple-column has-py-0" align="right">
+            {kofi.when(props.next, () => (
+                <PaginationItem
+                    label="Next"
+                    url={props.next.url}
+                    label={props.next.label}
+                />
+            ))}
+        </div>
+    </div>
+);

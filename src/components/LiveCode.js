@@ -1,17 +1,16 @@
 import React from "react";
-import {classNames} from "siimple-react";
-import {colorize} from "../colorize.js";
+import kofi from "kofi";
+import {highlightStr} from "codecake/highlight.js";
 
 //Export live code component
-export const LiveCode = (props) => {
-    //console.log(props);
+export const LiveCode = props => {
     let codeChildren = props.children; //Code children
     const codeProps = {};
-    const lang = (props.className || "").replace("language-", "");
+    const lang = (props.className || "").replace("language-", "").replace("javascript", "js");
     const codeClass = "siimple-code has-bg-coolgray-700 has-text-white";
-    if (["html", "css", "scss"].includes(lang)) {
+    if (["html", "css", "scss", "js"].includes(lang)) {
         codeProps["dangerouslySetInnerHTML"] = {
-            "__html": colorize(props.children, lang, "dark"),
+            "__html": highlight(props.children, lang),
         };
         codeChildren = null; //Ignore children
     }
@@ -20,7 +19,7 @@ export const LiveCode = (props) => {
         return <pre className={`${codeClass} has-mb-6`} {...codeProps}>{codeChildren}</pre>;
     }
     //const {padding, bg, color} = props;
-    const demoClass = classNames("has-mb-6 has-radius has-overflow-x-hidden", [
+    const demoClass = kofi.classNames("has-mb-6 has-radius has-overflow-x-hidden", [
         `has-p-${props.padding}`,
         // `has-bg-${props.bg}`,
         "has-bg-coolgray-100",
@@ -33,7 +32,10 @@ export const LiveCode = (props) => {
         <div className="has-mb-12 has-mt-6">
             {/* Live code block */}
             <div align={props.align} className={demoClass}>
-                <div className={contentClass} dangerouslySetInnerHTML={{"__html": props.children}} />
+                <div
+                    className={contentClass}
+                    dangerouslySetInnerHTML={{"__html": props.children}}
+                />
             </div>
             {/* Code */}
             <pre className={`${codeClass} has-my-0`} {...codeProps}>{codeChildren}</pre>
