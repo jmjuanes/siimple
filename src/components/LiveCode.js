@@ -7,10 +7,10 @@ export const LiveCode = props => {
     let codeChildren = props.children; //Code children
     const codeProps = {};
     const lang = (props.className || "").replace("language-", "").replace("javascript", "js");
-    const codeClass = "siimple-code has-bg-coolgray-700 has-text-white";
+    const codeClass = "siimple-code has-bg-coolgray-700 CodeCake-dark";
     if (["html", "css", "scss", "js"].includes(lang)) {
         codeProps["dangerouslySetInnerHTML"] = {
-            "__html": highlight(props.children, lang),
+            "__html": highlightStr(props.children, lang),
         };
         codeChildren = null; //Ignore children
     }
@@ -25,7 +25,7 @@ export const LiveCode = props => {
         "has-bg-coolgray-100",
         `has-text-${props.color}`,
     ]);
-    const contentClass = classNames("has-w-full has-overflow-y", {
+    const contentClass = kofi.classNames("has-w-full has-overflow-y", {
         "has-d-flex has-items-center has-justify-center": props.centered === "true",
     });
     return (
