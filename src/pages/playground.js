@@ -2,9 +2,8 @@ import React from "react";
 import kofi from "kofi";
 
 import Layout from "../layouts/application.js";
-import {importSandbox, exportSandbox, createSandbox} from "../sandbox.js";
-import {renderSandbox} from "../sandbox.js";
 import {useEditor} from "../hooks/useEditor.js";
+import {useSandbox} from "../hooks/useSandbox.js";
 
 // Export playground application wrapper
 export default props => {
@@ -12,31 +11,35 @@ export default props => {
     const resultRef = React.useRef();
     const fileRef = React.useRef();
     const editor = useEditor(codeRef, {});
-    const [sandbox, setSandbox] = React.useState(createSandbox({}));
-    const [theme, setTheme] = React.useState(props.defaultTheme || "light");
+    const sandbox = useSandbox();
+    // const [theme, setTheme] = React.useState(props.defaultTheme || "light");
     // Get sandbox content
     const getSandbox = () => {
-        return Object.assign({}, sandbox, {
+        return Object.assign({}, sandbox.content, {
             data: editor.current?.getCode() || "",
-            key: Date.now(),
         });
     };
     // Run after app is rendered for the first time
     const loadSandbox = () => {
-        if (window.location.hash.length < 2) {
-            return editor.current.setCode(sandbox.data);
-        }
-        const source = kofi.qs.decode(window.location.hash.slice(1));
-        importSandbox(source).then(content => {
-            //setWelcomeVisible(false); //Hide welcome screen
-            setSandbox(content); //Update sandbox
-            return editor.current.setCode(content.data);
-        }).catch(error => {
-            //Error importing pad content
-            //TODO:displat error in console
-        });
+        editor.current.setCode(sandbox.content.data);
+        // if (window.location.hash.length < 2) {
+        //     return editor.current.setCode(sandbox.content.data);
+        // }
+        // const source = kofi.qs.decode(window.location.hash.slice(1));
+        // importSandbox(source).then(content => {
+        //     //setWelcomeVisible(false); //Hide welcome screen
+        //     setSandbox(content); //Update sandbox
+        //     return editor.current.setCode(content.data);
+        // }).catch(error => {
+        //     //Error importing pad content
+        //     //TODO:displat error in console
+        // });
+    };
+    const renderSandbox = () => {
+        sandbox.render(resultRef);
     };
     React.useEffect(loadSandbox, []);
+    React.useEffect(renderSandbox, [sandbox.key]);
     // Handle file change --> load the selected file
     const handleLoad = () => {
         const file = fileRef.current.files[0];
@@ -57,10 +60,10 @@ export default props => {
         return fileRef.current.click();
     };
     // Handle run
-    const handleRun = () => {
-        const newSandbox = getSandbox(); //Get current sandbox
-        setSandbox(newSandbox);
-    };
+    // const handleRun = () => {
+    //     const newSandbox = getSandbox(); //Get current sandbox
+    //     setSandbox(newSandbox);
+    // };
     const codeClass = kofi.classNames({
         "has-p-6 has-radius has-s-full": true,
         "CodeCake": true,
@@ -77,7 +80,7 @@ export default props => {
                 <div ref={codeRef} className={codeClass} />
                 <div className="has-h-full has-w-4" />
                 <div className={resultClass}>
-                    <iframe key={sandbox.key} ref={resultRef} />
+                    <iframe key={sandbox.key || 0} ref={resultRef} />
                 </div>
             </div>
             {/* Load file input */}
