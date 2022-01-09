@@ -1,16 +1,15 @@
 import React from "react";
 import {Link} from "gatsby";
-import {Icon} from "siimple-react";
-//import EmptyLayout from "../layouts/empty.js";
+import {Icon} from "../components/Icon.js";
 
 //Export 404 error page
-export default (props) => {
+export default props => {
     return (
         <div className="has-flex has-items-center has-justify-center has-w-full has-h-screen">
             <div className="has-p-12 has-radius has-bg-coolgray-100" style={{"maxWidth":"600px"}}>
                 {/* Siimple logo */}
                 <div className="has-mb-4">
-                    <Link to="/" className="has-text-no-underline has-text-body">
+                    <Link to="/" className="has-text-no-underline has-text-coolgray-700">
                         <strong className="siimple" style={{"fontSize":"56px"}}>siimple.</strong>
                     </Link>
                 </div>
@@ -30,6 +29,4 @@ export default (props) => {
             </div>
         </div>
     );
-}
-
-
+};
