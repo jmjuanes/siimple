@@ -1,8 +1,8 @@
-import react from "react";
+import React from "react";
 import kofi from "kofi";
 import lzString from "lz-string";
 import {getCDNPath} from "../cdn.js";
-import template from "../templates/playground.js";
+// import template from "../templates/playground.js";
 
 const defaultMeta = [];
 const defaultIncludes = [
@@ -47,7 +47,7 @@ const generateExternalStyleTag = src => {
 
 // Generate document
 const generateDocument = content => {
-    const bodyContent = content || ""; // Body content
+    const bodyContent = content?.data || ""; // Body content
     const headContent = []; // Initialize head content
     // Check for meta content
     // (content.meta || []).forEach(meta => {
@@ -59,12 +59,10 @@ const generateDocument = content => {
         const url = getCDNPath(item.pkg, "latest", item.file);
         return headContent.push(generateExternalStyleTag(url));
     });
-    //Add external sources
-    //if (isArray(content.external)) {
-    //    headContent = headContent.concat(content.external.map(function (src) {
-    //        return generateExternalStyleTag(src);
-    //    }));
-    //}
+    // Add external sources (TODO)
+    (content?.external || []).forEach(item => {
+        return null;
+    });
     // Return the document content
     return kofi.stringify(
         kofi.element("html", {}, 
@@ -85,14 +83,6 @@ export const renderSandbox = (parent, content, options) => {
     parent.style.height = options?.height || "100%"; // Iframe height
     parent.style.backgroundColor = options.background || "#ffffff";
     parent.style.border = "0"; // Remove iframe borders 
-    //Bind iframe console
-    //consoleMethods.forEach(function (method) {
-    //    self.iframe.contentWindow.console[method] = function () {
-    //        let args = arguments; //Get console arguments
-    //        //window.console[method].apply(window.console, args); //Call parent console
-    //        return self.fireEventListener(`console:${method}`, args);
-    //    };
-    //});
     // Load iframe content
     parent.contentWindow.document.open();
     parent.contentWindow.document.write(generateDocument(content));
@@ -133,27 +123,23 @@ const decodeSandbox = content => {
 
 // Fetch sandbox from source
 export const importSandbox = source => {
-    //Check for version provided --> create an empty sandbox
-    if (typeof source.version === "string") {
-        return Promise.resolve({"siimple": source.version});
-    }
-    //Check for sandbox encoded in source
+    // Check for version provided --> create an empty sandbox
+    // if (typeof source.version === "string") {
+    //     return Promise.resolve({"siimple": source.version});
+    // }
+    // Check for sandbox encoded in source
     if (typeof source.data === "string") {
         return decodeSandbox(source.data);
     }
-    //Check for url to fetch 
+    // Check for url to fetch 
     if (typeof source.url === "string") {
         return kofi.http.json(source.url);
     }
-    //Check for local sandbox
-    //if (typeof source.file !== "undefined" && source.file instanceof File) {
-    //    return kofi.file.readAsJSON(source.file);
-    //}
-    //Fallback --> empty sandbox
+    // Fallback --> empty sandbox
     return Promise.resolve({});
 };
 
-// Share pad and get the url to the new sandbox
+// Share the sandbox via URL
 export const shareSandbox = (content, options) => {
     //let key = null; //Encryption key
     //return Promise.resolve(JSON.stringify(content)).then(function (strContent) {
@@ -174,6 +160,7 @@ export const exportSandbox = sandbox => {
     const content = JSON.stringify({
         data: sandbox.data || "",
         version: sandbox.version || "1",
+        external: sandbox.external || [],
     }); 
     const fileContent = URL.createObjectURL(new Blob([content], {
         type: "application/json",
@@ -185,23 +172,32 @@ export const exportSandbox = sandbox => {
 // Sandbox hooks
 export const useSandbox = () => {
     const [sandbox, setSandbox] = React.useState({
-        data: "",
-        key: "",
+        content: createSandbox(),
+        key: null,
     });
     // First rendering --> initialize sandbox
     const sandboxInit = () => {
         if (sandbox.key) { return; } // Sandobx already initialized
+        sandbox.key = Date.now();
         // Register sandbox merhods
+        sandbox.update = newContent => {
+            Object.assign(sandbox, {
+                content: Object.assign(sandbox.content, newContent),
+                key: Date.now(),
+            });
+            return setSandbox(sandbox);
+        };
         sandbox.render = parent => {
-            return renderSandbox(parent.current, sandbox.data);
+            return renderSandbox(parent.current, sandbox.content);
         };
-        sandbox.export = () => exportSandbox(sandbox);
+        sandbox.export = () => exportSandbox(sandbox.content);
         sandbox.from = source => {
-            return importSandbox(source); // TODO: finish
+            return importSandbox(source).then(content => {
+                return sandbox.update(content);
+            });
         };
-
     };
-    React.useEffect(sandobxInit, []);
+    React.useEffect(sandboxInit, []);
     // Return sandbox reference
     return sandbox;
 };
