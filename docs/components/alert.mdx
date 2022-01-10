@@ -11,6 +11,9 @@ An **alert** is a colored notification block generally used to catch the attenti
 <div class="siimple-alert">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 </div>
+<div class="siimple-alert is-secondary">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</div>
 ```
 
 You can add a close button to the alert using the `siimple-close` component:
@@ -32,6 +35,10 @@ Variants for this component can be defined in the `alert` section of the variant
         "alert": (
             "default": (
                 "background-color": "primary",
+                "color": "white",
+            ),
+            "secondary": (
+                "background-color": "secondary",
                 "color": "white",
             ),
         ),
