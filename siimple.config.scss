@@ -5,14 +5,17 @@
 @use "./dist/index.scss" with (
     $prefix: "siimple-",
     $theme: lib.empty-map(),
+    $flags: (
+        "use-body-styles": true,
+        "use-custom-styles": false,
+        "use-components": true,
+    ),
     $plugins: (
         plugins.reboot(),
-        plugins.components(),
         plugins.experiments(),
         plugins.icons((
             "path": "../fonts/",
         )),
         plugins.helpers(),
-        // plugins.themed(),
     ),   
 );
