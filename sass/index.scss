@@ -1,5 +1,7 @@
 @use "sass:map";
+@use "sass:list";
 @use "siimple:lib" as lib;
+@use "siimple:plugins" as plugins;
 
 // Default values
 $theme: lib.empty-map() !default;
@@ -30,14 +32,18 @@ $body: lib.empty-map() !default;
         @include lib.variants($variants);
     }
     // Register body styles
-    @if lib.get-in($flags, "add-body-styles", true) {
+    @if lib.get-in($flags, "use-body-styles", true) {
         $sheet: lib.add-styles-to-sheet($sheet, "body", map.merge(lib.$body, $body));
     }
     // Register custom styles
-    @if lib.is-map($styles) {
+    @if lib.get-in($flags, "use-custom-styles", true) and lib.is-map($styles) {
         @each $selector,$rules in $styles {
             $sheet: lib.add-styles-to-sheet($sheet, $selector, $rules);
         }
+    }
+    // Add components plugin
+    @if lib.get-in($flags, "use-components", true) {
+        $plugins: list.join(plugins.components(), $plugins) !global;
     }
     // Register plugins
     @each $plugin in lib.flatten($plugins) {
