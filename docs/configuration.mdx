@@ -33,9 +33,9 @@ This is an example of a configuration file for **siimple**:
         ),
     ),
     $flags: (
-        "add-body-styles": true,
-        "add-core-components": true,
-        "add-experimental-components": true,
+        "use-body-styles": true,
+        "use-custom-styles": false,
+        "use-components": true,
     ),
     $plugins: (
         plugins.reboot(),
@@ -225,16 +225,18 @@ Use the `$flags` to enable or disable some features of **siimple**.
 
 | Flag | Description |
 |------|-------------|
-| `"add-body"` | Enable or disable applying styles to the `<body>` element. Default is `true`. |
-| `"add-components"` | Enable or disable core components. Default is `true`. |
+| `"use-body-styles"` | Enable or disable applying styles to the `<body>` element. Default is `true`. |
+| `"use-custom-styles"` | Enable or disable custom styles defined in the `$styles` section. Default is `true`. |
+| `"use-components"` | Enable or disable core components. Default is `true`. |
 
 This is the default flags configuration:
 
 ```scss
 @use "siimple" with (
     $flags: (
-        "add-body": true,
-        "add-components": true,
+        "use-body-styles": true,
+        "use-custom-styles": true,
+        "use-components": true,
     ),
 );
 ```
