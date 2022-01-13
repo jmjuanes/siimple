@@ -1,17 +1,19 @@
 @use "sass:map";
-@use "siimple:lib" as lib;
-@use "siimple:icons" as icons;
+
+@use "../icons.scss" as icons;
+@use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
 
 // @description Icons plugin entrypoint
-@function icons($options: lib.empty-map()) {
-    $icons-name: lib.get-in($options, "name", "siimple-icons");
-    $icons-path: lib.get-in($options, "path", "../fonts/");
-    $include: lib.get-in($options, "include", ());
-    $exclude: lib.get-in($options, "exclude", ());
+@function plugin-icons($options: utils.empty-map()) {
+    $icons-name: utils.get-in($options, "name", "siimple-icons");
+    $icons-path: utils.get-in($options, "path", "../fonts/");
+    $include: utils.get-in($options, "include", ());
+    $exclude: utils.get-in($options, "exclude", ());
     // Generate icons variants
-    $icons-variants: lib.empty-map();
+    $icons-variants: utils.empty-map();
     @each $icon in icons.get-icons() {
-        @if lib.is-enabled($icon, $include, $exclude) {
+        @if plugins.is-enabled($icon, $include, $exclude) {
             $icons-variants: map.set($icons-variants, $icon, (
                 "&::before": (
                     "content": icons.include-icon($icon),
@@ -22,7 +24,7 @@
     // Generate icons plugin
     @return (
         // Icons font
-        lib.create-font-plugin((
+        plugins.create-font-plugin((
             "name": $icons-name,
             "sources": (
                 "truetype": "#{$icons-path}#{$icons-name}.ttf",
@@ -33,7 +35,7 @@
             "style": "normal",
         )),
         // Icons component
-        lib.create-component-plugin((
+        plugins.create-component-plugin((
             "id": "icon",
             "name": "icon",
             "styles": (
@@ -56,4 +58,3 @@
         )),
     );
 }
-

@@ -1,18 +1,18 @@
-@use "siimple:lib" as lib;
+@use "../utils.scss" as utils;
 
 // @description Helpers plugin
-@function helpers() {
-    @return lib.flatten((
-        color(),
-        cursor(),
-        display(),
-        flexbox(),
-        opacity(),
-        overflow(),
-        positioning(),
-        radius(),
-        sizing(),
-        spacing(),
-        typography(),
+@function plugin-helpers() {
+    @return utils.flatten((
+        plugin-color(),
+        plugin-cursor(),
+        plugin-display(),
+        plugin-flexbox(),
+        plugin-opacity(),
+        plugin-overflow(),
+        plugin-positioning(),
+        plugin-radius(),
+        plugin-sizing(),
+        plugin-spacing(),
+        plugin-typography(),
     ));
 }

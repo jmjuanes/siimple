@@ -1,8 +1,8 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // @description add reboot styles
-@function reboot() {
-    @return lib.create-styles-plugin((
+@function plugin-reboot() {
+    @return plugins.create-styles-plugin((
         //Reset box sizing of all elements
         "*,*:before,*:after": (
             "box-sizing": inherit,
