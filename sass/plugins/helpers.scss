@@ -3,16 +3,16 @@
 // @description Helpers plugin
 @function plugin-helpers() {
     @return utils.flatten((
-        plugin-color(),
-        plugin-cursor(),
-        plugin-display(),
-        plugin-flexbox(),
-        plugin-opacity(),
-        plugin-overflow(),
-        plugin-positioning(),
-        plugin-radius(),
-        plugin-sizing(),
-        plugin-spacing(),
-        plugin-typography(),
+        plugin-color-helper(),
+        plugin-cursor-helper(),
+        plugin-display-helper(),
+        plugin-flexbox-helper(),
+        plugin-opacity-helper(),
+        plugin-overflow-helper(),
+        plugin-positioning-helper(),
+        plugin-radius-helper(),
+        plugin-sizing-helper(),
+        plugin-spacing-helper(),
+        plugin-typography-helper(),
     ));
 }
