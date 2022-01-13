@@ -23,7 +23,7 @@ $current-breakpoints: (
 );
 
 // @description set breakpoints
-@mixin breakpoints ($custom-breakpoints) {
+@mixin set-breakpoints($custom-breakpoints) {
     $new-breakpoints: utils.empty-map();
     @if not utils.is-map($custom-breakpoints) {
         $custom-breakpoints: utils.empty-map();
@@ -69,7 +69,7 @@ $current-breakpoints: (
 }
 
 // @description Use a single breakpoint by name
-@mixin use-breakpoint ($name: "", $mode: "only") {
+@mixin use-breakpoint($name: "", $mode: "only") {
     $breakpoint: utils.get-in($current-breakpoints, $name, null);
     @if not utils.is-map($breakpoint) {
         $breakpoint: utils.empty-map();
@@ -95,7 +95,7 @@ $current-breakpoints: (
 }
 
 // @description Use all breakpoints
-@mixin use-breakpoints () {
+@mixin use-breakpoints() {
     $breakpoints-names: map.keys($current-breakpoints);
     @each $name in $breakpoints-names {
         @include use-breakpoint($name) {

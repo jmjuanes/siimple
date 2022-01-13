@@ -87,7 +87,7 @@ $scales: (
 );
 
 // @description Configure the scales used in siimple
-@mixin scales($custom-scales: null) {
+@mixin set-scales($custom-scales: null) {
     //$new-scales: utils.empty-map();
     @if not utils.is-map($custom-scales) {
         $custom-scales: utils.empty-map();

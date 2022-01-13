@@ -9,7 +9,7 @@
 $variants: utils.empty-map();
 
 // @description load variants
-@mixin variants ($custom-variants) {
+@mixin set-variants($custom-variants) {
     $new-variants: utils.empty-map();
     @if not utils.is-map($custom-variants) {
         $custom-variants: utils.empty-map();
@@ -67,5 +67,3 @@ $variants: utils.empty-map();
         );
     }
 }
-
-

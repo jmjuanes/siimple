@@ -10,7 +10,7 @@ $prefixes: (
 );
 
 // @description Update the prefixes used
-@mixin prefix($custom-prefixes: null) {
+@mixin set-prefixes($custom-prefixes: null) {
     @if not utils.is-map($custom-prefixes) {
         $custom-prefixes: utils.empty-map();
     }
@@ -21,6 +21,11 @@ $prefixes: (
             $prefixes: map.set($prefixes, $prefix, $new-value) !global;
         }
     }
+}
+
+// @description Update a single prefix
+@mixin set-prefix($name, $value) {
+    // TODO
 }
 
 // @description get prefix
@@ -74,4 +79,3 @@ $prefixes: (
 @function get-varname($name) {
     @return "--#{get-prefix("variables")}#{$name}";
 }
-
