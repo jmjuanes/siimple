@@ -1,9 +1,9 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // @description Modal component for siimple
 // @experimental true
-@function modal($options: ()) {
-    @return lib.create-component-plugin((
+@function plugin-modal() {
+    @return plugins.create-component-plugin((
         "id": "dialog.modal",
         "name": "modal",
         "styles": (
@@ -28,4 +28,3 @@
         ),
     ));
 }
-

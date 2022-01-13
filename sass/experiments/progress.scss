@@ -1,9 +1,9 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // @description Progress component
 // @experimental true
-@function progress() {
-    @return lib.create-component-plugin((
+@function plugin-progress() {
+    @return plugins.create-component-plugin((
         "id": "form.progress",
         "name": "progress",
         "styles": (
