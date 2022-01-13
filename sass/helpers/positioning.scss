@@ -1,35 +1,38 @@
 @use "sass:list";
-@use "siimple:lib" as lib;
+@use "../constants.scss" as constants;
+@use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
 
 // @description Generate positioning helpers
-@function positioning() {
+@function plugin-positioning-helper() {
     $position-helpers: (
-        lib.create-helper-plugin((
+        plugins.create-helper-plugin((
             // "enabled": lib.is-enabled("position", $include, $exclude),
             "name": "float",
             "states": ("default"),
             "responsive": true,
             "properties": ("float"),
-            "values": lib.$float-values,
+            "values": constants.$float-values,
         )),
-        lib.create-helper-plugin((
+        plugins.create-helper-plugin((
             // "enabled": lib.is-enabled("position", $include, $exclude),
             "name": "position",
             "states": ("default"),
             "responsive": true,
             "properties": ("position"),
-            "values": lib.$position-values,
+            "values": constants.$position-values,
         )),
     );
     // Register placement helpers
-    @each $name,$props in lib.$placement-properties {
-        $position-helpers: list.append($position-helpers, lib.create-helper-plugin((
-            "name": lib.get-in($props, "name"),
+    @each $name,$props in constants.$placement-properties {
+        $p: plugins.create-helper-plugin((
+            "name": utils.get-in($props, "name"),
             "states": ("default"),
             "responsive": true,
-            "properties": lib.get-in($props, "properties", ()),
-            "values": lib.$placement-values,
-        )));
+            "properties": utils.get-in($props, "properties", ()),
+            "values": constants.$placement-values,
+        ));
+        $position-helpers: list.append($position-helpers, $p);
     }
     // Return position helpers
     @return $position-helpers;

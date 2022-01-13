@@ -1,12 +1,13 @@
-@use "siimple:lib" as lib;
+@use "../constants.scss" as constants;
+@use "../plugins.scss" as plugins;
 
-@function display() {
-    @return lib.create-helper-plugin((
+@function plugin-display-helper() {
+    @return plugins.create-helper-plugin((
         // "enabled": lib.is-enabled("display", $include, $exclude),
         "name": "d",
         "states": ("default"),
         "responsive": true,
         "properties": ("display"),
-        "values": lib.$display-values,
+        "values": constants.$display-values,
     ));
 }

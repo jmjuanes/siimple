@@ -1,87 +1,88 @@
-@use "siimple:lib" as lib;
+@use "../constants.scss" as constants;
+@use "../plugins.scss" as plugins;
 
 // @description Generate all flexbox helpers
-@function flexbox() {
+@function plugin-flexbox-helper() {
     @return (
-        lib.create-helper-plugin((
+        plugins.create-helper-plugin((
             // "enabled": lib.is-enabled("display.flex", $include, $exclude),
             "name": "flex",
             "states": ("default"),
             "responsive": true,
             "properties": ("display"),
-            "values": lib.$display-flex-values,
+            "values": constants.$display-flex-values,
         )),
-        lib.create-helper-plugin((
+        plugins.create-helper-plugin((
             // "enabled": lib.is-enabled("flex", $include, $exclude),
             "name": "flex",
             "states": ("default"),
             "responsive": true,
             "properties": ("flex"),
-            "values": lib.$flex-values,
+            "values": constants.$flex-values,
         )),
-        lib.create-helper-plugin((
+        plugins.create-helper-plugin((
             // "enabled": lib.is-enabled("flex.direction", $include, $exclude),
             "name": "flex",
             "states": ("default"),
             "responsive": true,
             "properties": ("flex-direction"),
-            "values": lib.$flex-direction-values,
+            "values": constants.$flex-direction-values,
         )),
-        lib.create-helper-plugin((
+        plugins.create-helper-plugin((
             // "enabled": lib.is-enabled("flex.wrap", $include, $exclude),
             "name": "flex",
             "states": ("default"),
             "responsive": true,
             "properties": ("flex-wrap"),
-            "values": lib.$flex-wrap-values,
+            "values": constants.$flex-wrap-values,
         )),
-        lib.create-helper-plugin((
+        plugins.create-helper-plugin((
             // "enabled": lib.is-enabled("flex.grow", $include, $exclude),
             "name": "flex",
             "states": ("default"),
             "responsive": true,
             "properties": ("flex-grow"),
-            "values": lib.$flex-grow-values,
+            "values": constants.$flex-grow-values,
         )),
-        lib.create-helper-plugin((
+        plugins.create-helper-plugin((
             // "enabled": lib.is-enabled("flex.shrink", $include, $exclude),
             "name": "flex",
             "states": ("default"),
             "responsive": true,
             "properties": ("flex-shrink"),
-            "values": lib.$flex-shrink-values,
+            "values": constants.$flex-shrink-values,
         )),
-        lib.create-helper-plugin((
+        plugins.create-helper-plugin((
             // "enabled": lib.is-enabled("align.content", $include, $exclude),
             "name": "content",
             "states": ("default"),
             "responsive": true,
             "properties": ("align-content"),
-            "values": lib.$align-content-values,
+            "values": constants.$align-content-values,
         )),
-        lib.create-helper-plugin((
+        plugins.create-helper-plugin((
             // "enabled": lib.is-enabled("align.items", $include, $exclude),
             "name": "items",
             "states": ("default"),
             "responsive": true,
             "properties": ("align-items"),
-            "values": lib.$align-items-values,
+            "values": constants.$align-items-values,
         )),
-        lib.create-helper-plugin((
+        plugins.create-helper-plugin((
             // "enabled": lib.is-enabled("justify.content", $include, $exclude),
             "name": "justify",
             "states": ("default"),
             "responsive": true,
             "properties": ("justify-content"),
-            "values": lib.$justify-content-values,
+            "values": constants.$justify-content-values,
         )),
-        lib.create-helper-plugin((
+        plugins.create-helper-plugin((
             // "enabled": lib.is-enabled("order", $include, $exclude),
             "name": "order",
             "states": ("default"),
             "responsive": true,
             "properties": ("order"),
-            "values": lib.$order-values,
+            "values": constants.$order-values,
         )),
     );
 }

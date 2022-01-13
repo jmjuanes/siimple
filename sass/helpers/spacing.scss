@@ -1,25 +1,29 @@
 @use "sass:list";
 @use "sass:map";
-@use "siimple:lib" as lib;
 
-@function spacing() {
-    $spacing-helpers: lib.empty-list();
-    @each $name,$props in lib.$spacing-properties {
-        $spacing-helpers: list.append($spacing-helpers, lib.create-helper-plugin((
+@use "../constants.scss" as constants;
+@use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
+
+@function plugin-spacing-helper() {
+    $spacing-helpers: utils.empty-list();
+    @each $name,$props in constants.$spacing-properties {
+        $p: plugins.create-helper-plugin((
             // "enabled": lib.is-enabled($name, $include, $exclude),
-            "name": lib.get-in($props, "name"),
+            "name": utils.get-in($props, "name"),
             "states": ("default"),
             "responsive": true,
-            "properties": lib.get-in($props, "properties", ()),
+            "properties": utils.get-in($props, "properties", ()),
             "important": true,
             // "scale": "sizes",
-            "values": map.merge(lib.$sizes, (
+            "values": map.merge(constants.$sizes, (
                 "auto": auto,
                 "full": 100%,
                 "half": 50%,
                 "none": 0px,
             )),
-        )));
+        ));
+        $spacing-helpers: list.append($spacing-helpers, $p);
     }
     // Return all spacing helpers
     @return $spacing-helpers;
