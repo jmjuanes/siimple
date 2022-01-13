@@ -1,9 +1,9 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // Generate blockquote component configuration
 // TODO: change text color instead of changing the opacity
-@function quote () {
-    @return lib.create-component-plugin((
+@function plugin-quote() {
+    @return plugins.create-component-plugin((
         "id": "text.quote",
         "name": "quote",
         "styles": (

@@ -1,13 +1,13 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // Generate navigation link component
-@function navlink () {
+@function plugin-navlink() {
     $active-variant: (
         "background-color": "highlight",
         "color": "primary",
     );
     // Navigation link component
-    @return lib.create-component-plugin((
+    @return plugins.create-component-plugin((
         "id": "navigation.link",
         "name": "navlink",
         "styles": (

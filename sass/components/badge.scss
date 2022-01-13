@@ -1,8 +1,8 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // Generate badge component configuration
-@function badge() {
-    @return lib.create-component-plugin((
+@function plugin-badge() {
+    @return plugins.create-component-plugin((
         "id": "badge",
         "name": "badge",
         "styles": (

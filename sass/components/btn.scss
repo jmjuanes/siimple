@@ -1,8 +1,8 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // Generate btn component configuration
-@function btn() {
-    @return lib.create-component-plugin((
+@function plugin-btn() {
+    @return plugins.create-component-plugin((
         "id": "button",
         "name": "btn",
         "styles": (

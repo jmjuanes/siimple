@@ -1,8 +1,8 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // Generate radio component configuration
-@function radio () {
-    @return lib.create-component-plugin((
+@function plugin-radio() {
+    @return plugins.create-component-plugin((
         "id": "form.radio",
         "name": "radio",
         "styles": (

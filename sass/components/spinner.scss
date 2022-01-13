@@ -1,16 +1,17 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
 
 // Generate spinner component configuration
-@function spinner ($options: lib.empty-map()) {
+@function plugin-spinner($options: utils.empty-map()) {
     //$options: utils.empty-map();
-    $animation-name: lib.get-in($options, "animation.name", "siimple-spinner-animation");
-    $animation-duration: lib.get-in($options, "animation.duration", 1s);
+    $animation-name: utils.get-in($options, "animation.name", "siimple-spinner-animation");
+    $animation-duration: utils.get-in($options, "animation.duration", 1s);
     //$border-width: lib.get($options, "border.width", 4px);
     //$border-color: lib.get($options, "border.color", lib.get-color("white"));
     //$border-opacity: lib.get($options, "border.opacity", 0.2);
     //Create spinner component
     @return (
-        lib.create-component-plugin((
+        plugins.create-component-plugin((
             "id": "spinner",
             "name": "spinner",
             "styles": (
@@ -50,7 +51,7 @@
             ),
         )),
         // Spinner keyframes
-        lib.create-keyframes-plugin((
+        plugins.create-keyframes-plugin((
             "name": $animation-name,
             "steps": (
                 "from": (

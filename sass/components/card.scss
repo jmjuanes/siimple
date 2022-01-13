@@ -1,8 +1,8 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // Generate card component configuration
-@function card() {
-    @return lib.create-component-plugin((
+@function plugin-card() {
+    @return plugins.create-component-plugin((
         "id": "card",
         "name": "card",
         "styles": (

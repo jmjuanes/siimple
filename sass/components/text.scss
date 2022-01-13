@@ -1,11 +1,12 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
 
 // @description generate text styles
-@function text () {
-    @return lib.create-component-plugin((
+@function plugin-text() {
+    @return plugins.create-component-plugin((
         "id": "text",
         "name": "text",
-        "styles": lib.empty-map(),
+        "styles": utils.empty-map(),
         "variants": (
             "bold": (
                 "font-weight": "bold",

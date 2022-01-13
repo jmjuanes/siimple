@@ -1,9 +1,8 @@
-@use "../scales.scss" as scales;
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // Alert component mixin
-@function alert() {
-    @return lib.create-component-plugin((
+@function plugin-alert() {
+    @return plugins.create-component-plugin((
         "id": "alert",
         "name": "alert",
         "styles": (

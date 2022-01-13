@@ -1,4 +1,5 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
 
 // Default options for content
 $content-default-gap: 1.5rem;
@@ -11,19 +12,19 @@ $content-default-sizes: (
 );
 
 // Generate content component configuration
-@function content() {
+@function plugin-content() {
     // $content-gap: lib.get-in($options, "gap", 1.5rem);
-    $content-variants: lib.empty-map();
+    $content-variants: utils.empty-map();
     @each $name,$size in $content-default-sizes {
         $content-media: "@media screen and (min-width: #{$size})";
-        $content-variants: lib.set-in($content-variants, $name, (
+        $content-variants: utils.set-in($content-variants, $name, (
             "#{$content-media}": (
                 "max-width": $size,
             ),
         ));
     }
     // Return content component configuration
-    @return lib.create-component-plugin((
+    @return plugins.create-component-plugin((
         "id": "layout.content",
         "name": "content",
         "styles": (
