@@ -1,0 +1,85 @@
+@use "sass:map";
+@use "sass:list";
+
+@use "./constants.scss" as constants;
+@use "./naming.scss" as naming;
+@use "./plugins.scss" as plugins;
+@use "./sheet.scss" as sheet;
+@use "./theme.scss" as theme;
+@use "./utils.scss" as utils;
+@use "./variants.scss" as utils;
+
+// Default plugins included with siimple
+@use "./plugins/components.scss";
+@use "./plugins/experiments.scss";
+
+// @description Render siimple css
+@mixin render($config: utils.empty-map()) {
+    $theme: utils.get-in($config, "theme", utils.empty-map());
+    $prefix: utils.get-in($config, "prefix", "siimple-");
+    $variants: utils.get-in($config, "variants", utils.empty-map());
+    $plugins: utils.get-in($config, "plugins", utils.empty-list());
+    $styles: utils.get-in($config, "styles", utils.empty-map());
+    $flags: utils.get-in($config, "flags", utils.empty-map());
+    $body: utils.get-in($config, "body", utils.empty-map());
+    // Initialize sheet configuration
+    $sheet: sheet.create-sheet();
+    @if utils.is-string($prefix) {
+        @include naming.set-prefixes(("components": $prefix));
+    }
+    // Initialize theme values
+    @if utils.is-map($theme) {
+        @include theme.set-theme($theme);
+    }
+    // Initialize variants
+    @if utils.is-map($variants) {
+        @include variants.set-variants($variants);
+    }
+    // Register body styles
+    @if utils.get-in($flags, "use-body-styles", true) {
+        $sheet: sheet.add-styles-to-sheet($sheet, "body", map.merge(constants.$body, $body));
+    }
+    // Register custom styles
+    @if utils.get-in($flags, "use-custom-styles", true) and utils.is-map($styles) {
+        @each $selector,$rules in $styles {
+            $sheet: sheet.add-styles-to-sheet($sheet, $selector, $rules);
+        }
+    }
+    // Add experiments plugin
+    // By default adding experiments plugin is disabled
+    @if utils.get-in($flags, "use-experiments", false) {
+        $plugins: list.join(plugin-helpers(), $plugins);
+    }
+    // Add components plugin
+    @if utils.get-in($flags, "use-components", true) {
+        $plugins: list.join(plugin-components(), $plugins);
+    }
+    // Register plugins
+    @each $plugin in utils.flatten($plugins) {
+        //$plugin: list.nth($plugins, $index);
+        // Check for component plugin
+        @if plugins.is-plugin($plugin, "component") {
+            $sheet: plugins.apply-component-plugin($sheet, $plugin);
+        }
+        // Check for helper plugin
+        @else if plugins.is-plugin($plugin, "helper") {
+            $sheet: plugins.apply-helper-plugin($sheet, $plugin);
+        }
+        // Check for font plugin
+        @else if plugins.is-plugin($plugin, "font") {
+            $sheet: sheet.add-font-to-sheet($sheet, $plugin);
+        }
+        // Check for keyframes plugin
+        @else if plugins.is-plugin($plugin, "keyframes") {
+            $sheet: sheet.add-keyframes-to-sheet($sheet, $plugin);
+        }
+        // Check for styles plugin
+        @else if plugins.is-plugin($plugin, "styles") {
+            @each $selector,$rules in utils.get-in($plugin, "styles", utils.empty-map()) {
+                $sheet: sheet.add-styles-to-sheet($sheet, $selector, $rules);
+            }
+        }
+    }
+    // Compile sheet
+    @include sheet.compile-sheet($sheet);
+}
