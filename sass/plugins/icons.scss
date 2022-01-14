@@ -45,7 +45,7 @@
                 //"font-size": "default",
                 "font-style": normal,
                 "font-weight": (normal "important"),
-                "line-height": lib.get-in($options, "line-height", 1),
+                "line-height": utils.get-in($options, "line-height", 1),
                 "text-rendering": auto,
                 "-moz-osx-font-smoothing": grayscale,
                 "-webkit-font-smoothing": antialiased,
