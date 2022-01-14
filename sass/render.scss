@@ -7,55 +7,55 @@
 @use "./sheet.scss" as sheet;
 @use "./theme.scss" as theme;
 @use "./utils.scss" as utils;
-@use "./variants.scss" as utils;
+@use "./variants.scss" as variants;
 
 // Default plugins included with siimple
-@use "./plugins/components.scss";
-@use "./plugins/experiments.scss";
+// @use "./plugins/components.scss";
+// @use "./plugins/experiments.scss";
 
 // @description Render siimple css
 @mixin render($config: utils.empty-map()) {
-    $theme: utils.get-in($config, "theme", utils.empty-map());
-    $prefix: utils.get-in($config, "prefix", "siimple-");
-    $variants: utils.get-in($config, "variants", utils.empty-map());
-    $plugins: utils.get-in($config, "plugins", utils.empty-list());
-    $styles: utils.get-in($config, "styles", utils.empty-map());
-    $flags: utils.get-in($config, "flags", utils.empty-map());
-    $body: utils.get-in($config, "body", utils.empty-map());
+    $custom-theme: utils.get-in($config, "theme", utils.empty-map());
+    $custom-prefix: utils.get-in($config, "prefix", "siimple-");
+    $custom-variants: utils.get-in($config, "variants", utils.empty-map());
+    $custom-plugins: utils.get-in($config, "plugins", utils.empty-list());
+    $custom-styles: utils.get-in($config, "styles", utils.empty-map());
+    $custom-flags: utils.get-in($config, "flags", utils.empty-map());
+    $custom-body: utils.get-in($config, "body", utils.empty-map());
     // Initialize sheet configuration
     $sheet: sheet.create-sheet();
-    @if utils.is-string($prefix) {
-        @include naming.set-prefixes(("components": $prefix));
+    @if utils.is-string($custom-prefix) {
+        @include naming.set-prefixes(("components": $custom-prefix));
     }
     // Initialize theme values
-    @if utils.is-map($theme) {
-        @include theme.set-theme($theme);
+    @if utils.is-map($custom-theme) {
+        @include theme.set-theme($custom-theme);
     }
     // Initialize variants
-    @if utils.is-map($variants) {
-        @include variants.set-variants($variants);
+    @if utils.is-map($custom-variants) {
+        @include variants.set-variants($custom-variants);
     }
     // Register body styles
-    @if utils.get-in($flags, "use-body-styles", true) {
-        $sheet: sheet.add-styles-to-sheet($sheet, "body", map.merge(constants.$body, $body));
+    @if utils.get-in($custom-flags, "use-body-styles", true) {
+        $sheet: sheet.add-styles-to-sheet($sheet, "body", map.merge(constants.$body, $custom-body));
     }
     // Register custom styles
-    @if utils.get-in($flags, "use-custom-styles", true) and utils.is-map($styles) {
-        @each $selector,$rules in $styles {
+    @if utils.get-in($custom-flags, "use-custom-styles", true) and utils.is-map($custom-styles) {
+        @each $selector,$rules in $custom-styles {
             $sheet: sheet.add-styles-to-sheet($sheet, $selector, $rules);
         }
     }
     // Add experiments plugin
     // By default adding experiments plugin is disabled
-    @if utils.get-in($flags, "use-experiments", false) {
-        $plugins: list.join(plugin-helpers(), $plugins);
+    @if utils.get-in($custom-flags, "use-experiments", false) {
+        $custom-plugins: list.join(plugin-helpers(), $custom-plugins);
     }
     // Add components plugin
-    @if utils.get-in($flags, "use-components", true) {
-        $plugins: list.join(plugin-components(), $plugins);
+    @if utils.get-in($custom-flags, "use-components", true) {
+        $custom-plugins: list.join(plugin-components(), $custom-plugins);
     }
     // Register plugins
-    @each $plugin in utils.flatten($plugins) {
+    @each $plugin in utils.flatten($custom-plugins) {
         //$plugin: list.nth($plugins, $index);
         // Check for component plugin
         @if plugins.is-plugin($plugin, "component") {
