@@ -4,9 +4,51 @@ const glob = require("glob");
 const through = require("through2");
 const Vinyl = require("vinyl");
 
+// const config = require("../config/bundle.json");
+const colors = require("../config/colors.json");
+const icons = require("../config/icons.json");
+
 //Global variables
 const endl = "\n";
 const useRegexp = /@use\s+\"([^"]*)\"(?:\s+as\s+([^;].*))?\s*;/; //For capturing includes
+
+//Generate colors file
+const generateColorsVirtualFile = () => {
+    const content = [];
+    const colorsList = []; //Colors list
+    Object.keys(colors).forEach(colorName => {
+        return Object.keys(colors[colorName]).forEach((colorIndex) => {
+            return colorsList.push({
+                "index": `${colorName}-${colorIndex}`,
+                "value": colors[colorName][colorIndex]
+            });
+        });
+    });
+    content.push("$colors: (");
+    colorsList.forEach(color => {
+        //const sep = (index === colorsList.length - 1) ? "" : ","; //Separator
+        return content.push(`    "${color.index}": ${color.value},`);
+    });
+    //content.push(") !default;");
+    content.push(");");
+    return content.join("\n");
+};
+
+//Unicode parser
+const parseUnicode = value => value.toString(16).toLowerCase();
+
+//Generate icons file
+const generateIconsVirtualFile = () => {
+    const content = [];
+    content.push("$icons: (");
+    icons.forEach(item => {
+        return content.push(`    "${item.id}": "${parseUnicode(item.unicode)}",`);
+    });
+    //content.push(") !default;");
+    content.push(");");
+    //Return the file content
+    return content.join("\n");
+};
 
 //Parse entry files
 const getEntryFiles = (entry, options) => {
@@ -23,7 +65,16 @@ const getEntryFiles = (entry, options) => {
 //Get entry content
 const getEntryContent = (cwd, entry, virtualFiles) => {
     if (typeof virtualFiles[entry] !== "undefined") {
-        return virtualFiles[entry];
+        const type = virtualFiles[entry];
+        if (type === "virtual::icons") {
+            return generateIconsVirtualFile();
+        }
+        if (type === "virtual::colors") {
+            return generateColorsVirtualFile();
+        }
+        // Other type --> throw error
+        console.log(`Unknown virtual file type "${type}"`);
+        process.exit(1);
     }
     //Default --> read the file content
     return fs.readFileSync(path.resolve(cwd, entry), "utf8");
@@ -176,11 +227,11 @@ const bundleScss = (config, cwd) => {
 
 // Export bundle generator
 module.exports = options => {
+    options = options || {};
     return through.obj(function (file, enc, callback) {
-        // console.log(file.path);
         const self = this;
         const config = require(file.path); //Import bundle file
-        const cwd = path.dirname(file.path); // Get current working directory
+        const cwd = options.cwd || path.dirname(file.path); // Get current working directory
         const allPromises = [config].flat().map(c => {
             return bundleScss(c, cwd);
         });
