@@ -1,21 +1,20 @@
-@use "./dist/lib.scss" as lib;
-@use "./dist/plugins.scss" as plugins;
+@use "./dist/index.scss" as siimple;
 
 // Load siimple
-@use "./dist/index.scss" with (
-    $prefix: "siimple-",
-    $theme: lib.empty-map(),
-    $flags: (
+@include siimple.render((
+    "prefix": "siimple-",
+    "theme": siimple.empty-map(),
+    "flags": (
         "use-body-styles": true,
         "use-custom-styles": false,
         "use-components": true,
     ),
-    $plugins: (
-        plugins.reboot(),
-        plugins.experiments(),
-        plugins.icons((
-            "path": "../fonts/",
+    "plugins": (
+        siimple.plugin-reboot(),
+        siimple.plugin-experiments(),
+        siimple.plugin-icons((
+            "path": "./",
         )),
-        plugins.helpers(),
+        siimple.plugin-helpers(),
     ),   
-);
+));
