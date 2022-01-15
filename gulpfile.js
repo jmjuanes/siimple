@@ -1,3 +1,4 @@
+const path = require("path");
 const autoprefixer = require("autoprefixer");
 const gulp = require("gulp");
 const postcss = require("gulp-postcss");
@@ -6,17 +7,17 @@ const rename = require("gulp-rename");
 const bundle = require("./scripts/bundle.js");
 const css = require("./scripts/css.js");
 const icons = require("./scripts/icons.js");
-const upgrade = require("./scripts/upgrade.js");
-const paths = require("./paths.js");
-const pkg = require("./package.json");
+// const pkg = require("./package.json");
 
 // Clean output directories
 gulp.task("clean", () => null);
 
 // Build bundle files
 gulp.task("build:bundle", () => {
-    return gulp.src("bundle.config.js")
-        .pipe(bundle())
+    return gulp.src("config/bundle.json")
+        .pipe(bundle({
+            cwd: __dirname,
+        }))
         .pipe(gulp.dest("dist/"));
 });
 
@@ -28,23 +29,28 @@ gulp.task("build:components", () => {
 // Build icons fonts
 gulp.task("build:icons", () => {
     return gulp.src("config/icons.json")
-        .pipe(icons())
-        .pipe(gulp.dest("dist/fonts/"));
+        .pipe(icons({
+            cwd: __dirname,
+            iconsFolder: path.join(__dirname, "icons"),
+        }))
+        .pipe(gulp.dest("dist/"));
 });
 
-// Generate dist files
-gulp.task("dist", () => {
+// Generate css files
+gulp.task("build:css", () => {
     return gulp.src("siimple.config.scss")
-        .pipe(css.compile({}))
+        .pipe(css.compile({
+            loadPaths: [__dirname],
+        }))
         .pipe(postcss([autoprefixer()]))
         .pipe(rename("siimple.css"))
-        .pipe(gulp.dest("dist/css/"))
+        .pipe(gulp.dest("dist/"))
         .pipe(css.minify({
             "compatibility": "*",
             "level": 2,
         }))
         .pipe(rename("siimple.min.css"))
-        .pipe(gulp.dest("dist/css/"));
+        .pipe(gulp.dest("dist/"));
 });
 
 // Build documentaation styles
@@ -72,13 +78,4 @@ gulp.task("docs:fonts", () => {
 // Copy documentation assets
 gulp.task("docs:assets", () => {
     return gulp.src("src/assets/*").pipe(gulp.dest("public/"));
-});
-
-// Upgrade package.json files
-gulp.task("upgrade", () => {
-    return gulp.src("packages/*/package.json")
-        .pipe(upgrade({
-            "packages": pkg.packages,
-        }))
-        .pipe(gulp.dest(file => file.base));
 });

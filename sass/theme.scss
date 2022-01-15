@@ -4,7 +4,7 @@
 @use "./scales.scss" as scales;
 
 // @description Configure the theme used in siimple
-@mixin theme($theme: null) {
+@mixin set-theme($theme: null) {
     $new-breakpoints: null;
     $new-scales: utils.empty-map();
     // Iterate over all keys in the new theme object
@@ -21,8 +21,13 @@
     }
     // Update breakpoints
     @if $new-breakpoints {
-        @include breakpoints.breakpoints($new-breakpoints);
+        @include breakpoints.set-breakpoints($new-breakpoints);
     }
     // Update scales and variants
-    @include scales.scales($new-scales);
+    @include scales.set-scales($new-scales);
+}
+
+// @description Get the current theme
+@function get-theme() {
+    @return utils.empty-map(); //TODO
 }

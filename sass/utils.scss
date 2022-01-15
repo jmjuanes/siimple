@@ -5,27 +5,27 @@
 @use "sass:string";
 
 //Check if the provided value is a color
-@function is-color ($value) {
+@function is-color($value) {
     @return meta.type-of($value) == "color";
 }
 
 //Check if the provided value is a string
-@function is-string ($value) {
+@function is-string($value) {
     @return meta.type-of($value) == "string";
 }
 
 //Check if the provided value is a map
-@function is-map ($value) {
+@function is-map($value) {
     @return meta.type-of($value) == "map";
 }
 
 //Check if the provided value is a list
-@function is-list ($value) {
+@function is-list($value) {
     @return meta.type-of($value) == "list";
 }
 
 //Check if the provided value is a number
-@function is-number ($value) {
+@function is-number($value) {
     @return meta.type-of($value) == "number";
 }
 
@@ -40,20 +40,18 @@
 }
 
 // @description check if the provided list is empty
-@function is-empty-list ($value) {
+@function is-empty-list($value) {
     @return list.length($value) > 0;
 }
 
 // @description check if the provided map is empty
-@function is-empty-map ($value) {
+@function is-empty-map($value) {
     @return is-empty-list(map.keys($value));
 }
 
-// 
 // @description Removes the first item of a list
 // @param {list} $list original
 // @return {list} a clone of $list without the first item
-//
 @function pop($list) {
     $length: list.length($list);
     $index: 2; //Skip the first item
@@ -66,9 +64,7 @@
     @return $result;
 }
 
-// 
 // @description Convert a value to a list
-//
 @function to-list($value) {
     @if is-list($value) {
         @return $value; // Nothing to do
@@ -77,9 +73,7 @@
     @return list.append((), $value);
 }
 
-// 
 // @description Creates a new list with all sub-list elements concatenated into it recursively.
-//
 @function flatten($items) {
     $result: ();
     @each $item in $items {
@@ -283,12 +277,12 @@
 //From: https://css-tricks.com/snippets/sass/luminance-color-function/ 
 //Reference: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef 
 @function luminance($color) {
-    $colors: (
+    $color-map: (
         "red": red($color), 
         "green": green($color), 
         "blue": blue($color),
     );
-    @each $name, $value in $colors {
+    @each $name,$value in $color-map {
         $adjusted: 0;
         $value: $value / 255;
         @if $value < 0.03928 {
@@ -298,11 +292,11 @@
             //Terrible hack to calculate pow($value, 2.4)
             $value: $value * $value;
         }
-        $colors: map.set($colors, $name, $value);
+        $color-map: map.set($color-map, $name, $value);
     }
     //Generate colors
-    $color-red: (map.get($colors, "red") * .2126);
-    $color-green: (map.get($colors, "green") * .7152);
-    $color-blue: (map.get($colors, "blue") * .0722);
+    $color-red: (map.get($color-map, "red") * .2126);
+    $color-green: (map.get($color-map, "green") * .7152);
+    $color-blue: (map.get($color-map, "blue") * .0722);
     @return $color-red + $color-green + $color-blue;
 }

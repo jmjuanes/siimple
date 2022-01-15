@@ -1,15 +1,16 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
 
 // @description add reboot styles
-@function reboot() {
-    @return lib.create-styles-plugin((
+@function plugin-reboot() {
+    @return utils.to-list(plugins.create-styles-plugin((
         //Reset box sizing of all elements
         "*,*:before,*:after": (
             "box-sizing": inherit,
         ),
         //Set default html style
         "html": (
-            "box-sizing": border-box,
+            // "box-sizing": border-box,
             "scroll-behavior": smooth,
         ),
         //Set default body style
@@ -54,5 +55,5 @@
         //"td, th": (
         //    "padding": 0,
         //),
-    ));
+    )));
 }

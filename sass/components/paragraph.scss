@@ -1,8 +1,8 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // Generate paragraph component configuration
-@function paragraph() {
-    @return lib.create-component-plugin((
+@function plugin-paragraph() {
+    @return plugins.create-component-plugin((
         "id": "text.paragraph",
         "name": "paragraph",
         "styles": (

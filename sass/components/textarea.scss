@@ -1,8 +1,8 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // Generate textarea component configuration
-@function textarea () {
-    @return lib.create-component-plugin((
+@function plugin-textarea() {
+    @return plugins.create-component-plugin((
         "id": "form.textarea",
         "name": "textarea",
         "styles": (

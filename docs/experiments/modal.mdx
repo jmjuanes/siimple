@@ -4,8 +4,6 @@ title: "Modal"
 
 # Modal
 
-> This component is part of the **experimental** components module.
-
 Use the `siimple-modal` class to create a wrapper for your modal dialogs. Usually you will need to use also the `siimple-scrim` class to block the interaction with the background elements, and the `siimple-close` for displaying a close button in the modal.
 
 <ModalExample />
@@ -30,7 +28,7 @@ Use the `siimple-modal` class to create a wrapper for your modal dialogs. Usuall
 Variants for this component can be defined in the `dialog.modal` section of the variants configuration:
 
 ```scss
-@use "siimple" with (
+@include siimple.configure(
     $variants: (
         "dialog.modal": (
             "default": (
@@ -46,4 +44,3 @@ Variants for this component can be defined in the `dialog.modal` section of the 
     ),
 );
 ```
-

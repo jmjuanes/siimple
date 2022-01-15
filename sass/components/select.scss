@@ -1,8 +1,8 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // Generate select component configuration
-@function select() {
-    @return lib.create-component-plugin((
+@function plugin-select() {
+    @return plugins.create-component-plugin((
         "id": "form.select",
         "name": "select",
         "styles": (

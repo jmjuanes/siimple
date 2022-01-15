@@ -17,7 +17,7 @@ You can customize the breakpoints used in **siimple** adding a map in the `$them
 This is the default breakpoints configuration: 
 
 ```scss
-@use "siimple" with (
+@include siimple.configure(
     $theme: (
         "breakpoints": (
             "mobile": ("min": 0px, "max": 600px),
@@ -61,14 +61,12 @@ In the `$theme.fonts` section you can define the fonts used in your theme. The f
 This is the list of the default font sizes defined in **siimple**: 
 
 ```scss
-@use "siimple/lib" as lib;
-
-@use "siimple" with (
+@include siimple.configure(
     $theme: (
         "fonts": (
-            "body": lib.$font-sans,
-            "heading": lib.$font-sans,
-            "monospace": lib.$font-monospace,
+            "body": siimple.$font-sans,
+            "heading": siimple.$font-sans,
+            "monospace": siimple.$font-monospace,
         ),
     ),
 );
@@ -85,7 +83,7 @@ In the `$theme.font-sizes` section you can define the font sizes used in your th
 This is the list of the default font sizes defined in **siimple**: 
 
 ```scss
-@use "siimple" with (
+@include siimple.configure(
     $theme: (
         "font-sizes": (
             "small": 0.875rem,
@@ -108,7 +106,7 @@ In the `$theme.font-weights` section you can define the `font-weight` values use
 This is the list of the default font weights defined in **siimple**: 
 
 ```scss
-@use "siimple" with (
+@include siimple.configure(
     $theme: (
         "font-weights": (
             "body": 400,
@@ -130,7 +128,7 @@ In the `$theme.line-heights` section you can define the line heights used in you
 This is the list of the default line heights defined in **siimple**: 
 
 ```scss
-@use "siimple" with (
+@include siimple.configure(
     $theme: (
         "line-heights": (
             "small": 1.25,
@@ -151,7 +149,7 @@ In the `$theme.radius` section you can provide a list of sizes to be used as val
 This is the list of the default radius sizes defined in **siimple**: 
 
 ```scss
-@use "siimple" with (
+@include siimple.configure(
     $theme: (
         "radius": (
             "small": 0.25rem,

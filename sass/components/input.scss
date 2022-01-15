@@ -1,8 +1,8 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // Generate input component configuration
-@function input() {
-   @return lib.create-component-plugin((
+@function plugin-input() {
+   @return plugins.create-component-plugin((
        "id": "form.input",
        "name": "input",
        "styles": (

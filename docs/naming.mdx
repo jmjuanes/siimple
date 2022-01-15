@@ -8,7 +8,7 @@ description: "Understanding how siimple classnames has been designed"
 The **siimple** toolkit uses a simplified version of the [**SMACSS** methodology](http://smacss.com) for naming classnames, as described on this section. We have divided the classnames used in **siimple** into three blocks:
 
 - **Components**: are the primary building blocks of **siimple**.
-- **State modifiers**: used to change the state of each component.
+- **Variant modifiers**: used to change the default style of each component.
 - **Helper modifiers**: low-level classnames that can be applied to any element.
  
 
@@ -17,50 +17,34 @@ The **siimple** toolkit uses a simplified version of the [**SMACSS** methodology
 We use the following syntax for naming **components** in siimple:
 
 ```
-.siimple-<ComponentName>[-<ChildName>]
+.siimple-<ComponentName>
 ```
 
-#### Namespace
+Each single component has been prefixed with the `siimple-` namespace. Adding a namespace to your classnames is always a good choice, because it prevents collisions between library styles and your custom styles. You can customize the components prefix in the `$prefix` section of the configuration.
 
-Each single component has been prefixed with the `siimple-` namespace. Adding a namespace to your classnames is always a good choice, because it prevents collisions between library styles and your custom styles.
-
-
-#### ComponentName
-
-We always use a single workd as a component name. For example, buttons have `btn` as the component name:
+Also, we always use a single word as a component name. For example, buttons have `btn` as the component name:
 
 ```html
 <button class="siimple-btn">Button</button>
 ```
 
-#### ChildName
+### Variant modifiers
 
-Used to name another component that is a descendant of the primary component. For example, a `siimple-nav` component always come with a collection of navigation items, named with the classname `siimple-nav-item`:
+**Variant modifiers** are special classnames used to change the default style of a component. Variant modifiers always use the following syntax:
+
+```
+.is-<VariantName>
+```
+
+The following example shows how to use the `secondary` variant of a button:
 
 ```html
-<div class="siimple-nav">
-    <a href="#" class="siimple-nav-item">Navigation item 1</a>
-    <a href="#" class="siimple-nav-item">Navigation item 2</a>
-    <a href="#" class="siimple-nav-item">Navigation item 3</a>
-</div>
+<button class="siimple-btn is-secondary">
+    Secondary button
+</button>
 ```
 
-
-### State modifiers
-
-**State modifiers** are special classnames used to change the state of a component. State modifiers always use the following syntax:
-
-```
-.is-<StateValue>
-```
-
-The following example shows how to change the default state of the button component to make it full-width and with the primary color:
-
-```html
-<button class="siimple-btn is-primary is-full">Primary button</button>
-```
-
-Every single component must define its own states, and some state modifiers that works for some components may not be available for another components. This means that `is-primary` modifier can be applied for example to a `siimple-btn` component, but has no effect when applied to `siimple-card`.
+Every component must define its own variants, and some variant modifiers that works for some components may not be available for another components. This means that `is-secondary` modifier can be applied for example to a `siimple-btn` component, but has no effect when applied to `siimple-card`.
 
 
 ### Helpers modifiers
@@ -71,23 +55,13 @@ Every single component must define its own states, and some state modifiers that
 .has-<HelperValue>
 ```
 
-Helpers modifiers are available as part of the **colors** and **helpers** plugins.
-
-
-
-### Conditional states and helpers
-
-
 #### Responsive modifiers
 
-Some state and helpers modifiers can be applied conditionally at different breakpoints, for building adaptative and responsive interfaces. 
+Some helpers modifiers can be applied conditionally at different breakpoints, for building adaptative and responsive interfaces. 
 
 ```
-.<BreakpointValue>:is-<StateValue>
 .<BreakpointValue>:has-<HelperValue>
 ```
-
-Take a look at the <Link to="/concepts/responsive" className="siimple-link">Responsive</Link> guide to learn more about the breakpoint values defined on **siimple**.
 
 
 #### Status modifiers
@@ -96,14 +70,10 @@ Similar to responsive modifiers, you can apply some helpers only in response to 
 
 ##### Hover status
 
-Add the `hover:` prefix to a helper class to apply it only on hover. Only **text** and **background** helpers have enabled this status modifier.
+Add the `hover:` prefix to a helper class to apply it only on hover: 
 
 ```html live=true align=center
 <div class="siimple-btn has-text-white has-bg-purple-500 hover:has-bg-purple-700">
     Hoverable button
 </div>
 ```
-
-
-
-

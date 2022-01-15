@@ -82,25 +82,30 @@
         // If is not a media rule, add each rule
         @else if not utils.starts-with($selector, "@") {
             #{utils.unquote($selector)} {
-                @each $prop,$value in $rules {
-                    $is-important: false;
-                    // Check for list value --> check for flags
-                    @if utils.is-list($value) and list.length($value) == 2 {
-                        $last-item: utils.last-item($value);
-                        @if $last-item == "important" or $last-item == "!important" {
-                            $is-important: true;
-                            $value: utils.first-item($value);
-                        }
-                    }
-                    // Generate this property
-                    @include scales.use-scale($prop, $value, $is-important);
-                }
+                @include build-rules($rules)
             }
         }
         // Other rule --> throw error
         @else {
             @error "Unexpected rule '#{$selector}'.";
         }
+    }
+}
+
+// @description generate style properties
+@mixin build-rules($rules) {
+    @each $prop,$value in $rules {
+        $is-important: false;
+        // Check for list value --> check for flags
+        @if utils.is-list($value) and list.length($value) == 2 {
+            $last-item: utils.last-item($value);
+            @if $last-item == "important" or $last-item == "!important" {
+                $is-important: true;
+                $value: utils.first-item($value);
+            }
+        }
+        // Generate this property
+        @include scales.use-scale($prop, $value, $is-important);
     }
 }
 
@@ -196,7 +201,12 @@
     // Register keyframes
     @each $keyframe-name,$keyframe-rules in map.get($sheet, "keyframes") {
         @keyframes #{utils.unquote($keyframe-name)} {
-            @include build-styles($keyframe-rules);
+            // @include build-styles($keyframe-rules);
+            @each $step-name,$step-rules in $keyframe-rules {
+                #{utils.unquote($step-name)} {
+                    @include build-rules(($step-rules));
+                }
+            }
         }
     }
     @include build-styles(map.get($sheet, "styles"));

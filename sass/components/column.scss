@@ -1,10 +1,13 @@
 @use "sass:map";
-@use "siimple:lib" as lib;
+
+@use "../constants.scss" as constants;
+@use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
 
 // Generate colum component configuration
-@function column() {
-    $column-variants: lib.empty-map();
-    @each $name,$size in lib.$columns {
+@function plugin-column() {
+    $column-variants: utils.empty-map();
+    @each $name,$size in constants.$columns {
         $column-variants: map.set($column-variants, $name, (
             "flex": none,
             "width": $size,
@@ -30,7 +33,7 @@
     // Return column plugin
     @return (
         // Base column component
-        lib.create-component-plugin((
+        plugins.create-component-plugin((
             "id": "column",
             "name": "column",
             "styles": (
@@ -42,7 +45,7 @@
             "variants": $column-variants,
         )),
         // Columns wrapper component
-        lib.create-component-plugin((
+        plugins.create-component-plugin((
             "id": "columns",
             "name": "columns",
             "styles": (
@@ -52,7 +55,7 @@
                 "margin-right": -0.75rem,
                 //"width": 100%,
             ),
-            "variants": lib.empty-map(),
+            "variants": utils.empty-map(),
         )),
     );
 }

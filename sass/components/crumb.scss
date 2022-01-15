@@ -1,10 +1,10 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // Generate breadcrumb component configuration
-@function crumb() {
+@function plugin-crumb() {
     @return (
         // Crumbs wrapper component
-        lib.create-component-plugin((
+        plugins.create-component-plugin((
             "id": "navigation.crumbs",
             "name": "crumbs",
             "styles": (
@@ -23,7 +23,7 @@
             )
         )),
         //Breadcrumb item
-        lib.create-component-plugin((
+        plugins.create-component-plugin((
             "id": "navigation.crumb",
             "name": "crumb",
             "styles": (

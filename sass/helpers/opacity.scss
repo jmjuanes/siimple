@@ -1,14 +1,15 @@
-@use "siimple:lib" as lib;
+@use "../constants.scss" as constants;
+@use "../plugins.scss" as plugins;
 
 // @description generate opacity helpers
-@function opacity() {
-    @return lib.create-helper-plugin((
+@function plugin-opacity-helper() {
+    @return plugins.create-helper-plugin((
         // "enabled": lib.is-enabled("opacity", $include, $exclude),
         "name": "opacity",
         "states": ("default" "hover"),
         "responsive": false,
         "properties": ("opacity"),
         // "scale": "opacities",
-        "values": lib.$opacity-values,
+        "values": constants.$opacity-values,
     ));
 }

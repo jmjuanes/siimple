@@ -1,15 +1,15 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // @description Placeholder component
 // @experimental true
-@function placeholder () {
+@function plugin-placeholder() {
     $default-active-variant: (
         // "background-color": rgba(scales.get-scale-value("colors", "primary"), 0.1),
         "border-color": "primary",
         "color": "primary",
         "cursor": "pointer",
     );
-    @return lib.create-component-plugin((
+    @return plugins.create-component-plugin((
         "id": "placeholder",
         "name": "placeholder",
         "styles": (

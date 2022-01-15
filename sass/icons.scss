@@ -1,25 +1,24 @@
 @use "sass:map";
 @use "sass:string";
 
-// Default icons map
-// $icons: lib.empty-map() !default;
-
-// Get an icon
+// @description Get the unicode value of the specified icon
+// @param {string} $name Icon name
+// @returns {string} $unicode Unicode value of the specified icon
 @function get-icon($name) {
     @return map.get($icons, "#{$name}");
 }
 
-// Get a list of all available icons
+// @description Get a list of all available icons
 @function get-icons() {
     @return map.keys($icons);
 }
 
-// Check if the specified icon exists
+// @description Check if the specified icon exists
 @function has-icon($name) {
     @return map.has-key($icons, "#{$name}");
 }
 
-// Include an icon by name
+// @description Include an icon by name
 @function include-icon($name) {
     $icon-str: string.unquote(string.insert(get-icon($name), "\\", 1));
     @return string.unquote("\"") + $icon-str + string.unquote("\"");

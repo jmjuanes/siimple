@@ -1,12 +1,13 @@
-@use "siimple:lib" as lib;
+@use "../constants.scss" as constants;
+@use "../plugins.scss" as plugins;
 
-@function cursor() {
-    @return lib.create-helper-plugin((
+@function plugin-cursor-helper() {
+    @return plugins.create-helper-plugin((
         // "enabled": lib.is-enabled("cursor", $include, $exclude),
         "name": "cursor",
         "states": ("default"),
         "responsive": false,
         "properties": ("cursor"),
-        "values": lib.$cursor-values,
+        "values": constants.$cursor-values,
     ));
 }

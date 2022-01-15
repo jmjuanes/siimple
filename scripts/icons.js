@@ -7,12 +7,11 @@ const ttf2woff = require("ttf2woff");
 //const ttf2woff2 = require("ttf2woff2");
 const Vinyl = require("vinyl");
 
-const paths = require("../paths.js");
-
 // Generate the svg files
-module.exports = (options) => {
+module.exports = options => {
     options = options || {};
     const name = options.name || "siimple-icons";
+    const folder = options.iconsFolder || path.join(process.cwd(), "icons");
     return through.obj(function (file, enc, callback) {
         const self = this;
         const icons = JSON.parse(file.contents.toString());
@@ -49,7 +48,7 @@ module.exports = (options) => {
         // Add each icon in the font stream
         icons.forEach((icon) => {
             // process.stdout.write("Adding icon '" + icon.id + "' to SVG font");
-            const iconPath = path.join(paths.icons, `${icon.id}.svg`);
+            const iconPath = path.join(folder, `${icon.id}.svg`);
             const iconReader = fs.createReadStream(iconPath);
             iconReader.metadata = {
                 "unicode": [String.fromCharCode(icon.unicode)], 

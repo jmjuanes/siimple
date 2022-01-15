@@ -1,8 +1,8 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // Generate divider component configuration
-@function divider() {
-    @return lib.create-component-plugin((
+@function plugin-divider() {
+    @return plugins.create-component-plugin((
         "id": "divider",
         "name": "divider",
         "styles": (

@@ -1,15 +1,12 @@
 @use "sass:color";
 @use "sass:map";
 @use "sass:math";
-@use "siimple:lib" as lib;
-
-// Default colors list
-// $colors: lib.empty-map() !default;
+@use "./constants.scss" as constants;
 
 // Global colors
 $global-colors: (
-    "white": lib.$white,
-    "black": lib.$black,
+    "white": constants.$white,
+    "black": constants.$black,
     "transparent": transparent,
     "current": currentColor,
 );
@@ -20,7 +17,7 @@ $global-colors: (
 }
 
 //Get color by name
-@function get-color($name, $shade: "500", $fallback: lib.$white) {
+@function get-color($name, $shade: "500", $fallback: constants.$white) {
     @if map.has-key($global-colors, $name) {
         @return map.get($global-colors, $name);
     }
@@ -33,8 +30,7 @@ $global-colors: (
     @return $fallback;
 }
 
-// Check if the specified color name and variant exists
-// TODO
-@function has-color($name, $variant: "500") {
-    @return false;
+// Check if the specified color name and shade exists
+@function has-color($name, $shade: "500") {
+    @return map.has-key($colors, "#{$name}-#{$shade}");
 }

@@ -30,7 +30,7 @@ You can add a close button to the alert using the `siimple-close` component:
 Variants for this component can be defined in the `alert` section of the variants configuration:
 
 ```scss
-@use "siimple" with (
+@include siimple.configure(
     $variants: (
         "alert": (
             "default": (
@@ -43,5 +43,5 @@ Variants for this component can be defined in the `alert` section of the variant
             ),
         ),
     ),
-));
+);
 ```

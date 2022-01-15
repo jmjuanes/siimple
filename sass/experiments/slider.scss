@@ -1,9 +1,9 @@
 @use "sass:map";
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
 
 // @description Slider component
 // @experimental true
-@function slider($options: ()) {
+@function plugin-slider($options: ()) {
     //$thumb-size: lib.get($options, "thumb.size", 16px);
     //$thumb-background: lib.get($options, "thumb.background", lib.get-color("primary"));
     // Slider thumb styles
@@ -16,7 +16,7 @@
         "width": 1rem,
     );
     // Generate slider plugin
-    @return lib.create-component-plugin((
+    @return plugins.create-component-plugin((
         "id": "form.slider",
         "name": "slider",
         "styles": (

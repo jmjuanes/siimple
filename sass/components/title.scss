@@ -1,19 +1,21 @@
-@use "siimple:lib" as lib;
+@use "../constants.scss" as constants;
+@use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
 
 // Generate title component configuration
-@function title() {
-    $title-variants: lib.empty-map();
-    $title-variants: lib.set-in($title-variants, "default", (
+@function plugin-title() {
+    $title-variants: utils.empty-map();
+    $title-variants: utils.set-in($title-variants, "default", (
         "color": "heading",
         "line-height": "heading",
     ));
-    @each $key,$size in lib.$headings {
-        $title-variants: lib.set-in($title-variants, $key, (
+    @each $key,$size in constants.$headings {
+        $title-variants: utils.set-in($title-variants, $key, (
             "font-size": "#{$size}",
         ));
     }
     //@debug $title-variants;
-    @return lib.create-component-plugin((
+    @return plugins.create-component-plugin((
         "id": "text.heading",
         "name": "title",
         "styles": (

@@ -1,10 +1,11 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
 
 // Table class
-@function table() {
+@function plugin-table() {
     @return (
         // Core table styles
-        lib.create-component-plugin((
+        plugins.create-component-plugin((
             "id": "table",
             "name": "table",
             "styles": (
@@ -115,7 +116,7 @@
             ),
         )),
         // Responsive table container
-        lib.create-component-plugin((
+        plugins.create-component-plugin((
             "id": "table.responsive",
             "name": "table-responsive",
             "styles": (
@@ -123,10 +124,10 @@
                 "overflow-x": auto,
                 "width": 100%,
             ),
-            "variants": lib.empty-map(),
+            "variants": utils.empty-map(),
         )),
         // Table cell style
-        lib.create-component-plugin((
+        plugins.create-component-plugin((
             "id": "table.cell",
             "name": "cell",
             "styles": (

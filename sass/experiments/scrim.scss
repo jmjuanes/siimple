@@ -1,11 +1,12 @@
-@use "siimple:lib" as lib;
+@use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
 
 // @description Scrim component
 // @experimental true
-@function scrim() {
+@function plugin-scrim() {
     //$bg-color: lib.get($options, "background", lib.get-color("dark"));
     //$bg-opacity: lib.get($options, "opacity", 0.5);
-    @return lib.create-component-plugin((
+    @return plugins.create-component-plugin((
         "id": "dialog.scrim",
         "name": "scrim",
         "styles": (
@@ -22,7 +23,7 @@
             "width": 100%,
             "z-index": 400,
         ),
-        "variants": lib.empty-map(),
+        "variants": utils.empty-map(),
     ));
 }
 

@@ -3,7 +3,7 @@ const sass = require("sass");
 const through = require("through2");
 
 // Minimal wrapper plugin around CleanCss
-module.exports.minify = (options) => {
+module.exports.minify = options => {
     return through.obj((file, enc, callback) => {
         const content = file.contents.toString() || "";
         new CleanCSS(options).minify(content, (errors, css) => {
@@ -17,19 +17,13 @@ module.exports.minify = (options) => {
 };
 
 // Compile SASS files to CSS
-module.exports.compile = (options) => {
+module.exports.compile = options => {
     return through.obj((file, enc, callback) => {
-        const renderOptions = {
-            ...options,
-            data: file.contents.toString() || "",
-        };
-        return sass.render(renderOptions, (error, result) => {
-            if (error) {
-                return callback(error.message);
-            }
-            file.contents = result.css;
-            return callback(null, file);
-        });
+        const data = file.contents.toString() || "";
+        const result = sass.compileString(data, options || {});
+        // Update file content and continue
+        // TODO: check error compiling the SASS file
+        file.contents = new Buffer.from(result.css);
+        return callback(null, file);
     });
 };
-

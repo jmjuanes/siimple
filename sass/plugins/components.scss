@@ -1,31 +1,31 @@
-@use "siimple:lib" as lib;
+@use "../utils.scss" as utils;
 
 // @description Load essential components of siimple
-@function components () {
-    @return lib.flatten((
-        alert(),
-        badge(),
-        btn(),
-        card(),
-        checkbox(),
-        close(),
-        column(),
-        content(),
-        crumb(),
-        divider(),
-        input(),
-        label(),
-        navlink(),
-        paragraph(),
-        quote(),
-        radio(),
-        select(),
-        spinner(),
-        switch(),
-        tab(),
-        table(),
-        text(),
-        textarea(),
-        title(),
+@function plugin-components() {
+    @return utils.flatten((
+        plugin-alert(),
+        plugin-badge(),
+        plugin-btn(),
+        plugin-card(),
+        plugin-checkbox(),
+        plugin-close(),
+        plugin-column(),
+        plugin-content(),
+        plugin-crumb(),
+        plugin-divider(),
+        plugin-input(),
+        plugin-label(),
+        plugin-navlink(),
+        plugin-paragraph(),
+        plugin-quote(),
+        plugin-radio(),
+        plugin-select(),
+        plugin-spinner(),
+        plugin-switch(),
+        plugin-tab(),
+        plugin-table(),
+        plugin-text(),
+        plugin-textarea(),
+        plugin-title(),
     ));
 }
