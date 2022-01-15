@@ -6,7 +6,7 @@
 @use "./utils.scss" as utils;
 
 // Current variants list
-$variants: utils.empty-map();
+$-variants: utils.empty-map();
 
 // @description load variants
 @mixin set-variants($custom-variants) {
@@ -22,18 +22,18 @@ $variants: utils.empty-map();
         $new-variants: map.set($new-variants, $key, $value);
     }
     // Merge with custom variants
-    $variants: map.merge($variants, $new-variants) !global;
+    $-variants: map.merge($-variants, $new-variants) !global;
 }
 
 // @description check if the provided variant is defined
 @function has-variant($name) {
     //@return not utils.is-empty-map(map.get($variants, $name));
-    @return map.has-key($variants, $name);
+    @return map.has-key($-variants, $name);
 }
 
 // @description get a variant by name
 @function get-variant($name) {
-    @return map.get($variants, $name);
+    @return map.get($-variants, $name);
 }
 
 // Parse variants
