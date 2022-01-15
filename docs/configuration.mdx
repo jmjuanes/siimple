@@ -11,11 +11,12 @@ This is an example of a configuration file for **siimple**:
 
 ```scss
 // index.scss 
-
 @use "siimple" as siimple;
-@include siimple.render((
-    "prefix": "siimple-",
-    "theme": (
+
+// Configure siimple
+@include siimple.configure(
+    $prefix: "siimple-",
+    $theme: (
         "backgrounds": (
             "body": #ffffff,
         ),
@@ -30,27 +31,31 @@ This is an example of a configuration file for **siimple**:
             "monospace": monospace,
         ),
     ),
-    "flags": (
-        "use-body-styles": true,
+    $flags: (
+        "use-custom-body": false,
         "use-custom-styles": false,
         "use-components": true,
+        "use-reboot": true,
     ),
-    "plugins": (
-        siimple.plugin-reboot(),
+    $plugins: (
+        siimple.plugin-helpers(),
     ),
-));
+);
+
+// Generate siimple
+@include siimple.css;
 ```
 
 ### Prefix
 
-The `prefix` section allows you to customize the prefix that will be used for naming the components of **siimple**. Using a prefix is really useful to prevent naming collision with your custom classes or with other CSS libraries.
+The `$prefix` section allows you to customize the prefix that will be used for naming the components of **siimple**. Using a prefix is really useful to prevent naming collision with your custom classes or with other CSS libraries.
 
-For example, you can use `si-` as prefix by setting the `prefix` section:
+For example, you can use `si-` as prefix by setting the `$prefix` section:
 
 ```scss
-@include siimple.render((
-    "prefix": "si-",
-));
+@include siimple.configure(
+    $prefix: "si-",
+);
 ```
 
 Now every component class will have the configured prefix:
@@ -70,23 +75,24 @@ Now every component class will have the configured prefix:
 You can disable the prefix passing an empty string to the `$prefix` section:
 
 ```scss
-@include siimple.render((
-    "prefix": "",
-));
+@include siimple.configure(
+    $prefix: "",
+);
 ```
 
 
 ### Theme
 
-The `theme` section allows you to specify your custom theme configuration. A theme should contain the following data objects: 
+The `$theme` section allows you to specify your custom theme configuration. A theme should contain the following data objects: 
 
 - **Breakpoints**: for adding or customizing the breakpoints used in your project to define responsive styles.
 - **Scales**: list of CSS properties specific for your project.
 
 ```scss
 @use "siimple" as siimple;
-@include siimple.render((
-    "theme": (
+
+@include siimple.configure(
+    $theme: (
         "breakpoints": (
             "mobile": ("max": 600px),
         ),
@@ -104,7 +110,7 @@ The `theme` section allows you to specify your custom theme configuration. A the
             "monospace": monospace,
         ),
     ),
-));
+);
 ```
 
 Visit the [theming customization guide](/theme) to read more about how to define your custom theme.
@@ -112,12 +118,13 @@ Visit the [theming customization guide](/theme) to read more about how to define
 
 ### Variants
 
-You can use the `variants` section to customize the style of the components provided by **siimple** or included using plugins. 
+You can use the `$variants` section to customize the style of the components provided by **siimple** or included using plugins. 
 
 ```scss
 @use "siimple" as siimple;
-@include siimple.render((
-    "variants": (
+
+@include siimple.configure(
+    $variants: (
         "button": (
             "default": (
                 "background-color": "primary",
@@ -128,15 +135,16 @@ You can use the `variants` section to customize the style of the components prov
             ),
         ),
     ),
-));
+);
 ```
 
-There are two types of variants: **default variants** and **custom variants**. On the one hand, in the `default` field you can provide the styles that will be applied to the default component styles. For example, all styles defined in `variants.button.default` will be applied to the `siimple-btn` class name: 
+There are two types of variants: **default variants** and **custom variants**. On the one hand, in the `default` field you can provide the styles that will be applied to the default component styles. For example, all styles defined in `$variants.button.default` will be applied to the `siimple-btn` class name: 
 
 ```scss
 @use "siimple" as siimple;
-@include siimple.render((
-    "variants": (
+
+@include siimple.configure(
+    $variants: (
         "button": (
             "default": (
                 "background-color": "primary",
@@ -144,7 +152,7 @@ There are two types of variants: **default variants** and **custom variants**. O
             ),
         ),
     ),
-));
+);
 ```
 
 Will generate: 
@@ -161,15 +169,16 @@ On the other hand, any other field will generate an additional class that can be
 
 ```scss
 @use "siimple" as siimple;
-@include siimple.render((
-    "variants": (
+
+@include siimple.configure(
+    $variants: (
         "button": (
             "secondary": (
                 "background-color": #000000,
             ),
         ),
     ),
-));
+);
 ```
 
 Will generate:
@@ -183,16 +192,15 @@ Will generate:
 
 ### Plugins
 
-The `plugins` section is where you can provide the list of plugins that you want to include. Plugins allow you to add extra components, helpers and styles for **siimple** that will use your custom theme configuration. 
+The `$plugins` section is where you can provide the list of plugins that you want to include. Plugins allow you to add extra components, helpers and styles for **siimple** that will use your custom theme configuration. 
 
 ```scss
-@use "siimple" as siimple;
-@include siimple.render((
-    "plugins": (
-        siimple.plugin-reboot(),
+@include siimple.configure(
+    $plugins: (
+        siimple.plugin-helpers(),
         siimple.plugin-icons(),
     ),
-));
+);
 ```
 
 You can read more about built-in plugins in the **Plugins** section.
@@ -200,12 +208,11 @@ You can read more about built-in plugins in the **Plugins** section.
 
 ### Body styles
 
-In the `body` section you can customize the `<body>` element styles. By default **siimple** will apply the following styles to the `<body>` element:
+In the `$body` section you can customize the `<body>` element styles. By default **siimple** will apply the following styles to the `<body>` element:
 
 ```scss
-@use "siimple" as siimple;
-@include siimple.render((
-    "body": (
+@include siimple.configure(
+    $body: (
         "background-color": "body",
         "color": "body",
         "font-family": "body",
@@ -213,44 +220,43 @@ In the `body` section you can customize the `<body>` element styles. By default 
         "font-weight": 400,
         "line-height": "body",
     ),
-));
+);
 ```
 
-You can prevent adding styles to the `<body>` element adding the `"add-body-styles": false` flag in the `flags` section.
+Custom body styles can be disabled adding a `"use-custom-body": false` flag in the `$flags` section of the configuration. In this case, the default body styles will be applied.
+
 
 
 ### Configuration flags
 
-Use the `flags` to enable or disable some features of **siimple**. 
+Use the `$flags` to enable or disable some features of **siimple**. 
 
 | Flag | Description |
 |------|-------------|
-| `"use-body-styles"` | Enable or disable applying styles to the `<body>` element. Default is `true`. |
-| `"use-custom-styles"` | Enable or disable custom styles defined in the `styles` section. Default is `true`. |
+| `"use-custom-body"` | Enable or disable applying custom styles to the `<body>` element defined in the `$body` section. Default is `true`. |
+| `"use-custom-styles"` | Enable or disable custom styles defined in the `$styles` section. Default is `true`. |
 | `"use-components"` | Enable or disable core components. Default is `true`. |
 
 This is the default flags configuration:
 
 ```scss
-@use "siimple" as siimple;
-@include siimple.render((
-    "flags": (
-        "use-body-styles": true,
+@include siimple.configure(
+    $flags: (
+        "use-custom-body": true,
         "use-custom-styles": true,
         "use-components": true,
     ),
-));
+);
 ```
 
 
 ### Additional styles
 
-You can define additional styles in the `styles` section. This is also the place where you can use the theme values defined in your `theme` section.
+You can define additional styles in the `$styles` section. This is also the place where you can use the theme values defined in your `$theme` section.
 
 ```scss
-@use "siimple" as siimple;
-@include siimple.render((
-    "styles": (
+@include siimple.configure(
+    $styles: (
         ".heading": (
             "color": "body",
             "font-size": 2rem,
@@ -259,7 +265,7 @@ You can define additional styles in the `styles` section. This is also the place
             "mb": 1rem,
         ),
     ),
-));
+);
 ```
 
 All styles declared in this section should follow the [styles syntax](/guides/styles).
