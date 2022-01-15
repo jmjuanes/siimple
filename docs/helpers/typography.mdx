@@ -9,14 +9,14 @@ Customize the text properties using the clasess included in the **typography** p
 
 ### Enable this plugin
 
-This plugin is included as part of the `plugins.helpers` collection. You can manually include this plugin calling `plugins.typography()` in the `$plugins` section of the configuration:
+This plugin is included as part of the `plugin-helpers` collection. You can manually include this plugin calling `plugin-typography-helpers()` in the `$plugins` section of the configuration:
 
 ```scss
-@use "siimple/plugins" as plugins;
+@use "siimple" as siimple;
 
-@use "siimple" with (
+@include siimple.configure(
     $plugins: (
-        plugins.typography(),
+        siimple.plugin-typography-helpers(),
     ),
 );
 ```
