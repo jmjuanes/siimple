@@ -1,8 +1,9 @@
 @use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
 
 // @description add reboot styles
 @function plugin-reboot() {
-    @return plugins.create-styles-plugin((
+    @return utils.to-list(plugins.create-styles-plugin((
         //Reset box sizing of all elements
         "*,*:before,*:after": (
             "box-sizing": inherit,
@@ -54,5 +55,5 @@
         //"td, th": (
         //    "padding": 0,
         //),
-    ));
+    )));
 }

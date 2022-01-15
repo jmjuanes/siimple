@@ -1,8 +1,9 @@
 @use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
 
 // @description border-box plugin
 @function plugin-borderbox() {
-    @return plugins.create-styles-plugin((
+    @return utils.to-list(plugins.create-styles-plugin((
         //Reset box sizing of all elements
         "*,*:before,*:after": (
             "box-sizing": inherit,
@@ -11,5 +12,5 @@
         "html": (
             "box-sizing": border-box,
         ),
-    ));
+    )));
 }

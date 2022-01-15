@@ -70,19 +70,19 @@ $-custom-styles: null;
     // Add experiments plugin
     // By default adding experiments plugin is disabled
     @if utils.get-in($-custom-flags, "use-experiments", false) {
-        $-custom-plugins: list.join(plugin-helpers(), $-custom-plugins);
+        $-custom-plugins: list.join(plugin-experiments(), $-custom-plugins) !global;
     }
     // Add components plugin
     @if utils.get-in($-custom-flags, "use-components", true) {
-        $-custom-plugins: list.join(plugin-components(), $-custom-plugins);
+        $-custom-plugins: list.join(plugin-components(), $-custom-plugins) !global;
     }
     // Add reboot styles
     @if utils.get-in($-custom-flags, "use-reboot", true) {
-        $-custom-plugins: list.join(plugin-reboot(), $-custom-plugins);
+        $-custom-plugins: list.join(plugin-reboot(), $-custom-plugins) !global;
     }
     // Add border-box
     @if utils.get-in($-custom-flags, "use-borderbox", true) {
-        $-custom-plugins: list.join(plugin-borderbox(), $-custom-plugins);
+        $-custom-plugins: list.join(plugin-borderbox(), $-custom-plugins) !global;
     }
     // Register plugins
     @each $plugin in utils.flatten($-custom-plugins) {
