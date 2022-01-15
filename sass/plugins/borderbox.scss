@@ -1,0 +1,15 @@
+@use "../plugins.scss" as plugins;
+
+// @description border-box plugin
+@function plugin-borderbox() {
+    @return plugins.create-styles-plugin((
+        //Reset box sizing of all elements
+        "*,*:before,*:after": (
+            "box-sizing": inherit,
+        ),
+        // Set border-box to all elements
+        "html": (
+            "box-sizing": border-box,
+        ),
+    ));
+}
