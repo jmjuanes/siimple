@@ -1,20 +1,24 @@
 @use "./dist/index.scss" as siimple;
 
-// Load siimple
-@include siimple.render((
-    "prefix": "siimple-",
-    "theme": siimple.empty-map(),
-    "flags": (
-        "use-body-styles": true,
+// Configure siimple
+@include siimple.configure(
+    $prefix: "siimple-",
+    $theme: siimple.empty-map(),
+    $flags: (
+        "use-custom-body": false,
         "use-custom-styles": false,
         "use-components": true,
+        "use-reboot": true,
+        "use-borderbox": true,
     ),
-    "plugins": (
-        siimple.plugin-reboot(),
+    $plugins: (
         siimple.plugin-experiments(),
         siimple.plugin-icons((
             "path": "./",
         )),
         siimple.plugin-helpers(),
     ),   
-));
+);
+
+// Render siimple
+@include siimple.css
