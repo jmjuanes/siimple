@@ -1,11 +1,8 @@
 ---
 title: "Progress"
-description: "Micro component to display the process of a task."
 ---
 
 # Progress
-
-> This component is part of the **experimental** components module.
 
 Style your `<progress>` elements using the class `siimple-progress`:
 
@@ -18,8 +15,9 @@ Style your `<progress>` elements using the class `siimple-progress`:
 Variants for this component can be defined in the `form.progress` section of the variants configuration:
 
 ```scss
-@use "siimple" with (
-    $variants: (
+@use "siimple" as siimple;
+@include siimple.render((
+    "variants": (
         "form.progress": (
             "default": (
                 "background-color": "fill",
@@ -27,5 +25,5 @@ Variants for this component can be defined in the `form.progress` section of the
             ),
         ),
     ),
-);
+));
 ```

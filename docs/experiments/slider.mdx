@@ -4,8 +4,6 @@ title: "Slider"
 
 # Slider
 
-> This component is part of the **experimental** components module.
-
 Use the `siimple-slider` class to style your range input elements:
 
 ```html live=true
@@ -18,8 +16,9 @@ Use the `siimple-slider` class to style your range input elements:
 Variants for this component can be defined in the `form.slider` section of the variants configuration:
 
 ```scss
-@use "siimple" with (
-    $variants: (
+@use "siimple" as siimple;
+@include siimple.render((
+    "variants": (
         "form.slider": (
             "default": (
                 "background-color": "fill",
@@ -27,5 +26,5 @@ Variants for this component can be defined in the `form.slider` section of the v
             ),
         ),
     ),
-);
+));
 ```

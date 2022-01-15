@@ -4,8 +4,6 @@ title: "Scrim"
 
 # Scrim
 
-> This component is part of the **experimental** components module.
-
 A **scrim** is a visual element that blocks the interaction with the background elements, allowing only to interact with the elements inside the scrim.
 
 You can create a scrim using the class `siimple-scrim`. By default, all elements inside the scrim will be centered in the screen.
@@ -21,13 +19,14 @@ You can create a scrim using the class `siimple-scrim`. By default, all elements
 Variants for this component can be defined in the `dialog.scrim` section of the variants configuration:
 
 ```scss
-@use "siimple" with (
-    $variants: (
+@use "siimple" as siimple;
+@include siimple.render((
+    "variants": (
         "dialog.scrim": (
             "default": (
                 "background-color": "rgba(black, 0.5)",
             ),
         ),
     ),
-);
+));
 ```
