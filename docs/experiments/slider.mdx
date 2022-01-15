@@ -16,9 +16,8 @@ Use the `siimple-slider` class to style your range input elements:
 Variants for this component can be defined in the `form.slider` section of the variants configuration:
 
 ```scss
-@use "siimple" as siimple;
-@include siimple.render((
-    "variants": (
+@include siimple.configure(
+    $variants: (
         "form.slider": (
             "default": (
                 "background-color": "fill",
@@ -26,5 +25,5 @@ Variants for this component can be defined in the `form.slider` section of the v
             ),
         ),
     ),
-));
+);
 ```
