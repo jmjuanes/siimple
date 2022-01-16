@@ -21,7 +21,7 @@ describe("build", () => {
     });
 
     it("should generate output css", () => {
-        epxect(files).toContain("siimple.css");
+        expect(files).toContain("siimple.css");
     });
 
     it("should generate minimized css", () => {
