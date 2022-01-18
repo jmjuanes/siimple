@@ -2,7 +2,6 @@ name: "Bug Report"
 description: "Okay, Houston... I think we've had a problem here..."
 title: "Bug: "
 labels: ["under-investigation"]
-asignees: "-"
 body:
   - type: textarea
     attributes:
