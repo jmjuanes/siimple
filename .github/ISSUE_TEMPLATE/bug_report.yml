@@ -1,0 +1,47 @@
+name: "Bug Report"
+description: "Okay, Houston... I think we've had a problem here..."
+title: "Bug: "
+labels: ["under-investigation"]
+asignees: "-"
+body:
+  - type: textarea
+    attributes:
+      label: "Describe the issue"
+      description: "Please provide a clear and concise description of the bug or issue."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "To reproduce"
+      description: "Steps to reproduce the issue. If possible, add a link to JSFiddle or similar where we can inspect the issue."
+    validations:
+      required: true
+  
+  - type: textarea
+    attributes:
+      label: "Screenshots"
+      description: "If applicable, add screenshots to help explain your problem."
+
+  - type: dropdown
+    attributes:
+      label: "What browser(s) are you seeing the problem on?"
+      multiple: true
+      options:
+        - Chrome
+        - Safari
+        - Firefox
+        - Microsoft Edge
+        - Opera
+
+  - type: input
+    attributes:
+      label: "What version of **siimple** are you using?"
+      placeholder: "e.g., v4.0.0"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "Additional context"
+      description: "You can add any other context about the problem here..."
