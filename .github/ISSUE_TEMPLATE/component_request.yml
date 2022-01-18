@@ -1,0 +1,35 @@
+name: "Component request"
+description: "Request a new component for siimple"
+title: "Component request: "
+labels: ["request-component"]
+asignees: "-"
+body:
+  - type: checkboxes
+    attributes:
+      label: Prerequisites
+      options:
+        - label: "The title of the issue starts with 'Component request: ' and is followed by the requested component name."
+          required: true
+        - label: "I have [searched](https://github.com/jmjuanes/siimple/issues?utf8=%E2%9C%93&q=is%3Aissue) for duplicate or closed issues."
+          required: true
+        - label: "I have read the [contributing guidelines](https://github.com/jmjuanes/siimple/blob/main/CONTRIBUTING.md)."
+          required: true
+  
+  - type: input
+    attributes:
+      label: "Component name"
+      description: "Name of the component you are requesting"
+    validations:
+      required: true
+  
+  - type: textarea
+    attributes:
+      label: "Component description"
+      description: "Please provide a brief description of the component."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "Component design"
+      description: "Please provide a draft of the component design (screenshots or links to live examples)."
