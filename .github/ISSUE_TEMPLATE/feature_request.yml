@@ -2,7 +2,6 @@ name: "Feature request"
 description: "Suggest an idea for siimple"
 title: ""
 labels: ["new-feature"]
-asignees: "-"
 body:
   - type: textarea
     attributes:

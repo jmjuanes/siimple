@@ -2,7 +2,6 @@ name: "Component request"
 description: "Request a new component for siimple"
 title: "Component request: "
 labels: ["request-component"]
-asignees: "-"
 body:
   - type: checkboxes
     attributes:
