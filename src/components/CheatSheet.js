@@ -13,6 +13,13 @@ const columnsData = [
     ["four-fifths", "one-fifth"],
 ];
 
+// Input status
+const inputStatus = [
+    "unchecked",
+    "checked",
+    "disabled",
+];
+
 // CheatSheet section
 const Section = props => (
     <div className="siimple-columns has-mb-12">
@@ -82,11 +89,11 @@ export const CheatSheet = props => {
             </Section>
             {/* Checkbox */}
             <Section title="Checkbox">
-                {["unchecked", "checked", "disabled"].map(status => (
-                    <label key={status} className="siimple-label has-mb-2" htmlFor={`checkbox${status}`}>
+                {inputStatus.map(status => (
+                    <label key={status} className="siimple-label has-mb-2" htmlFor={`c${status}`}>
                         <input
                             type="checkbox"
-                            id={`checkbox${status}`}
+                            id={`c${status}`}
                             className="siimple-checkbox has-mr-2"
                             defaultChecked={status === "checked"}
                             disabled={status === "disabled"}
@@ -151,6 +158,60 @@ export const CheatSheet = props => {
                     <a className="siimple-navlink">Default link</a>
                     <a className="siimple-navlink is-active">Active link</a>
                 </div>
+            </Section>
+            {/* Paragraph */}
+            <Section title="Paragraph">
+                <div className="siimple-paragraph">
+                    <ExampleText />
+                </div>
+            </Section>
+            {/* Quote */}
+            <Section title="Paragraph">
+                <div className="siimple-quote">
+                    <ExampleText />
+                </div>
+            </Section>
+            {/* Radio */}
+            <Section title="Radio">
+                {inputStatus.map(status => (
+                    <label key={status} className="siimple-label has-mb-2" htmlFor={`r${status}`}>
+                        <input
+                            type="radio"
+                            id={`r${status}`}
+                            className="siimple-radio has-mr-2"
+                            defaultChecked={status === "checked"}
+                            disabled={status === "disabled"}
+                        />
+                        Radio {status}
+                    </label>
+                ))}
+            </Section>
+            {/* Select example */}
+            <Section title="Select">
+                <select className="siimple-select">
+                    <option>Value 1</option>
+                    <option>Value 2</option>
+                    <option>Value 3</option>
+                </select>
+            </Section>
+            {/* Spinner */}
+            <Section title="Spinner">
+                <div className="siimple-spinner"></div>
+            </Section>
+            {/* Switch */}
+            <Section title="Switch">
+                {inputStatus.map(status => (
+                    <label key={status} className="siimple-label has-mb-2" htmlFor={`s${status}`}>
+                        <input
+                            type="checkbox"
+                            id={`s${status}`}
+                            className="siimple-switch has-mr-2"
+                            defaultChecked={status === "checked"}
+                            disabled={status === "disabled"}
+                        />
+                        Switch {status}
+                    </label>
+                ))}
             </Section>
         </React.Fragment>
     );
