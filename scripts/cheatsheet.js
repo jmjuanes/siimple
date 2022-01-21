@@ -4,6 +4,8 @@ import React from "react";
 import {renderToString} from "react-dom/server";
 
 import {CheatSheet} from "../src/components/CheatSheet.js";
+import colors from "../config/colors.json";
+import icons from "../config/icons.json";
 
 // Generate HTML template
 const generateHtmlTemplate = body => (`
@@ -32,7 +34,7 @@ const generateHtmlTemplate = body => (`
 
 // Build cheatsheet page
 process.nextTick(() => {
-    const body = renderToString(<CheatSheet />);
+    const body = renderToString(<CheatSheet colors={colors} icons={icons} />);
     const cheatsheetContent = generateHtmlTemplate(body);
     const cheatsheetPath = path.resolve(__dirname, "../dist/cheatsheet.html");
     // Save HTML file

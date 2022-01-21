@@ -1,5 +1,5 @@
 import React from "react";
-import {ModalExample} from "./ModalExample.js";
+// import {ModalExample} from "./ModalExample.js";
 
 // Columns example data
 const columnsData = [
@@ -62,7 +62,7 @@ const ColorsExample = props => (
                 {Object.keys(props.colors[name]).map(shade => (
                     <div
                         key={shade}
-                        classNme={`has-p-8 has-bg-${name}-${shade}`}
+                        className={`has-p-8 has-bg-${name}-${shade}`}
                     />
                 ))}
             </div>
@@ -272,11 +272,11 @@ export const CheatSheet = props => {
             </Section>
             {/* Modal and scrim example */}
             <Section title="Modal and Scrim" experimental>
-                <ModalExample />
+                {/* <ModalExample />*/}
             </Section>
             {/* Progress example */}
             <Section title="Progress" experimental>
-                <progress class="siimple-progress" max="1" defaultValue="0.5" />
+                <progress className="siimple-progress" max="1" defaultValue="0.5" />
             </Section>
             {/* Slider example */}
             <Section title="Slider" experimental></Section>
