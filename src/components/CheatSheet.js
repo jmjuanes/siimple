@@ -1,4 +1,5 @@
 import React from "react";
+import {ModalExample} from "./ModalExample.js";
 
 // Columns example data
 const columnsData = [
@@ -19,6 +20,9 @@ const inputStatus = [
     "checked",
     "disabled",
 ];
+
+// Headings
+const headings = ["1", "2", "3", "4", "5", "6"];
 
 // CheatSheet section
 const Section = props => (
@@ -45,6 +49,25 @@ const ExampleText = () => (
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </React.Fragment>
+);
+
+// Color palette example
+const ColorsExample = props => (
+    <div>
+        {Object.keys(props.colors).map(name => (
+            <div key={name}>
+                <div className="siimple-title is-5">
+                    <strong>{name}</strong>
+                </div>
+                {Object.keys(props.colors[name]).map(shade => (
+                    <div
+                        key={shade}
+                        classNme={`has-p-8 has-bg-${name}-${shade}`}
+                    />
+                ))}
+            </div>
+        ))}
+    </div>
 );
 
 // CheatSheet main component
@@ -212,6 +235,56 @@ export const CheatSheet = props => {
                         Switch {status}
                     </label>
                 ))}
+            </Section>
+            {/* Tab example */}
+            <Section title="Tab">
+                <div className="siimple-tabs">
+                    <a className="siimple-tab">Tab</a>
+                    <a className="siimple-tab is-active">Active tab</a>
+                    <a className="siimple-tab">Tab</a>
+                </div>
+            </Section>
+            {/* Table example */}
+            <Section title="Table">
+                <table className="siimple-table"></table>
+            </Section>
+            {/* Text example */}
+            <Section title="Text">
+                <div className="siimple-paragraph">
+                    This is text <span className="siimple-text is-bold">marked as bold</span>.
+                </div>
+            </Section>
+            {/* Textarea example */}
+            <Section title="Textarea">
+                <textarea
+                    className="siimple-textarea"
+                    defaultValue="Textarea content"
+                    rows="5"
+                />
+            </Section>
+            {/* Title example */}
+            <Section title="Title">
+                {headings.map(type => (
+                    <div key={type} className={`siimple-title is-${type}`}>
+                        Heading {type}
+                    </div>
+                ))}
+            </Section>
+            {/* Modal and scrim example */}
+            <Section title="Modal and Scrim" experimental>
+                <ModalExample />
+            </Section>
+            {/* Progress example */}
+            <Section title="Progress" experimental>
+                <progress class="siimple-progress" max="1" defaultValue="0.5" />
+            </Section>
+            {/* Slider example */}
+            <Section title="Slider" experimental></Section>
+            {/* Icons */}
+            <Section title="Icons"></Section>
+            {/* Colors */}
+            <Section title="Colors">
+                <ColorsExample colors={props.colors || {}} />
             </Section>
         </React.Fragment>
     );
