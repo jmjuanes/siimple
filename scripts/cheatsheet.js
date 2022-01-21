@@ -17,6 +17,15 @@ const generateHtmlTemplate = body => (`
             <div class="siimple-content is-xlarge">
                 ${body}
             </div>
+            <script type="text/javascript">
+                const el = s => document.querySelector(s);
+                el("div[data-role='open-modal']").addEventListener("click", () => {
+                    el("div[data-role='modal']").style.display = "block";
+                });
+                el("div[data-role='close-modal']").addEventListener("click", () => {
+                    el("div[data-role='modal']").style.display = "none";
+                });
+            </script>
         </body>
     </html>
 `);
