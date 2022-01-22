@@ -257,16 +257,18 @@ export const CheatSheet = props => {
                         <strong>Display modal</strong>
                     </div>
                 </div>
-                <div data-role="modal" className="siimple-scrim" style={{"display":"none"}}>
-                    <div className="siimple-modal">
-                        <div className="has-flex has-items-center">
-                            <div className="siimple-title is-4 has-mb-0">
-                                <strong>Modal</strong>
+                <div data-role="modal" style={{"display":"none"}}>
+                    <div className="siimple-scrim">
+                        <div className="siimple-modal">
+                            <div className="has-flex has-items-center">
+                                <div className="siimple-title is-4 has-mb-0">
+                                    <strong>Modal</strong>
+                                </div>
+                                <div className="siimple-close has-ml-auto" data-role="close-modal" />
                             </div>
-                            <div className="siimple-close has-ml-auto" data-role="close-modal" />
-                        </div>
-                        <div className="has-pt-6">
-                            Content of the modal
+                            <div className="has-pt-6">
+                                Content of the modal
+                            </div>
                         </div>
                     </div>
                 </div>
