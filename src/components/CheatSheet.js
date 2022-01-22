@@ -275,7 +275,7 @@ export const CheatSheet = props => {
             </Section>
             {/* Progress example */}
             <Section title="Progress">
-                <progress className="siimple-progress" max="1" defaultValue="0.5" />
+                <progress className="siimple-progress" max="100" value="50" />
             </Section>
             {/* Slider example */}
             <Section title="Slider">
