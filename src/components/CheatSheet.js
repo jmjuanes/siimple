@@ -1,5 +1,4 @@
 import React from "react";
-// import {ModalExample} from "./ModalExample.js";
 
 // Columns example data
 const columnsData = [
@@ -49,25 +48,6 @@ const ExampleText = () => (
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </React.Fragment>
-);
-
-// Color palette example
-const ColorsExample = props => (
-    <div>
-        {Object.keys(props.colors).map(name => (
-            <div key={name}>
-                <div className="siimple-title is-5">
-                    <strong>{name}</strong>
-                </div>
-                {Object.keys(props.colors[name]).map(shade => (
-                    <div
-                        key={shade}
-                        className={`has-p-8 has-bg-${name}-${shade}`}
-                    />
-                ))}
-            </div>
-        ))}
-    </div>
 );
 
 // CheatSheet main component
@@ -271,20 +251,33 @@ export const CheatSheet = props => {
                 ))}
             </Section>
             {/* Modal and scrim example */}
-            <Section title="Modal and Scrim" experimental>
-                {/* <ModalExample />*/}
+            <Section title="Modal">
+                <div align="center" className="has-mb-4">
+                    <div className="siimple-btn is-full" data-role="open-modal">
+                        <strong>Display modal</strong>
+                    </div>
+                </div>
+                <div data-role="modal" className="siimple-scrim" style={{"display":"none"}}>
+                    <div className="siimple-modal">
+                        <div className="has-flex has-items-center">
+                            <div className="siimple-title is-4 has-mb-0">
+                                <strong>Modal</strong>
+                            </div>
+                            <div className="siimple-close has-ml-auto" data-role="close-modal" />
+                        </div>
+                        <div className="has-pt-6">
+                            Content of the modal
+                        </div>
+                    </div>
+                </div>
             </Section>
             {/* Progress example */}
-            <Section title="Progress" experimental>
+            <Section title="Progress">
                 <progress className="siimple-progress" max="1" defaultValue="0.5" />
             </Section>
             {/* Slider example */}
-            <Section title="Slider" experimental></Section>
-            {/* Icons */}
-            <Section title="Icons"></Section>
-            {/* Colors */}
-            <Section title="Colors">
-                <ColorsExample colors={props.colors || {}} />
+            <Section title="Slider">
+                <input type="range" min="0" max="100" defaultValue="50" className="siimple-slider" />
             </Section>
         </React.Fragment>
     );
