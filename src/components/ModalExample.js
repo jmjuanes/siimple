@@ -9,25 +9,21 @@ export const ModalExample = () => {
                     <strong>Display modal</strong>
                 </div>
             </div>
-            {visible && (
+            {visible ? (
                 <div className="siimple-scrim">
                     <div className="siimple-modal">
                         <div className="has-flex has-items-center">
                             <div className="siimple-title is-4 has-mb-0">
                                 <strong>Modal</strong>
                             </div>
-                            <div
-                                className="siimple-close has-ml-auto"
-                                onClick={() => setVisible(false)}
-                            />
+                            <div className="siimple-close has-ml-auto" onClick={() => setVisible(false)} />
                         </div>
                         <div className="has-pt-6">
                             Content of the modal
                         </div>
                     </div>
                 </div>
-            )}
+            ) : null}
         </React.Fragment>
     );
 };
-
