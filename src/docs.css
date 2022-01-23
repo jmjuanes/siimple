@@ -1,0 +1,37 @@
+/* Siimple branding styles */
+.siimple {
+    font-family: 'Nunito', 'Ubuntu', 'Roboto', sans-serif !important;
+    font-weight: 800 !important;
+}
+
+/* Code style */
+.siimple-code {
+    border-radius: 0.5rem;
+    display: block;
+    font-family: monospace;
+    font-size: 0.8rem;
+    overflow-x: auto;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+/* Headline style */
+.siimple-headline {
+    background: linear-gradient(15deg, #307ad5, #363f4f);
+    background-clip: text;
+    font-size: 6.5rem;
+    font-weight: 800;
+    line-height: 1;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Subhead style */
+.siimple-subhead {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+/* Terrible hack to prevent the margin-bottom in the quote elements */
+.siimple-quote > .siimple-paragraph {
+    margin-bottom: 0px !important;
+}
