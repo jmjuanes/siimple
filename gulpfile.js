@@ -53,26 +53,16 @@ gulp.task("build:css", () => {
         .pipe(gulp.dest("dist/"));
 });
 
-// Build documentaation styles
-gulp.task("docs:styles", () => {
-    return gulp.src("src/styles.scss")
-        .pipe(css.compile({
-            includePaths: [
-                __dirname,
-            ]
-        }))
-        .pipe(postcss([autoprefixer()]))
-        .pipe(css.minify({
-            "compatibility": "*",
-            "level": 2,
-        }))
-        .pipe(rename("siimple.min.css"))
-        .pipe(gulp.dest("public/static/"));
-});
-
-// Copy documentation fonts
-gulp.task("docs:fonts", () => {
-    return gulp.src("dist/fonts/*").pipe(gulp.dest("public/static/fonts/"));
+// Copy static assets
+gulp.task("docs:static", () => {
+    const files = [
+        "dist/siimple.css.min",
+        "dist/siimple-icons.ttf",
+        "dist/siimple-icons.woff",
+        "src/docs.css",
+        "node_modules/codecake/codecake.css",
+    ];
+    return gulp.src(files).pipe(gulp.dest("public/static/"));
 });
 
 // Copy documentation assets
