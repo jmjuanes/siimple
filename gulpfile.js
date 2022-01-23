@@ -56,7 +56,7 @@ gulp.task("build:css", () => {
 // Copy static assets
 gulp.task("docs:static", () => {
     const files = [
-        "dist/siimple.css.min",
+        "dist/siimple.min.css",
         "dist/siimple-icons.ttf",
         "dist/siimple-icons.woff",
         "src/docs.css",
