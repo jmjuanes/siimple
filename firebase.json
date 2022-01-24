@@ -1,13 +1,22 @@
 {
-    "hosting": {
-        "target": "{{FIREBASE_TARGET}}",
+    "hosting": [{
+        "target": "devel",
         "public": "public",
         "ignore": [
             "firebase.json",
             "**/.*",
             "**/node_modules/**",
-            "env.js",
             ".env"
         ]
-    }
+    },
+    {
+        "target": "prod",
+        "public": "public",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**",
+            ".env"
+        ]
+    }]
 }
