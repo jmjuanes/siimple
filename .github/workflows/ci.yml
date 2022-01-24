@@ -85,17 +85,14 @@ jobs:
           path: dist
       - run: npm install
       - run: npm run docs
-      - uses: cschleiden/replace-tokens@v1
-        with:
-          tokenPrefix: "{{"
-          tokenSuffix: "}}"
-          files: "firebase.json"
+      - run: 'echo "$FIREBASE_CONFIG" > .firebaserc'
+        shell: bash
         env:
-          FIREBASE_TARGET: ${{ secrets.FIREBASE_TARGET_DEV }}
+          FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           projectId: "${{ secrets.FIREBASE_PROJECT }}"
           channelId: live
-          target: "${{ secrets.FIREBASE_TARGET_DEV }}"
+          target: devel
