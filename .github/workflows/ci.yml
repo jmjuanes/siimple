@@ -85,6 +85,13 @@ jobs:
           path: dist
       - run: npm install
       - run: npm run docs
+      - uses: cschleiden/replace-tokens@v1
+        with:
+          tokenPrefix: "{{"
+          tokenSuffix: "}}"
+          files: "firebase.json"
+        env:
+          FIREBASE_TARGET: ${{ secrets.FIREBASE_TARGET_DEV }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
