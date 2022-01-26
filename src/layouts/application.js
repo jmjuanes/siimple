@@ -15,7 +15,7 @@ const ApplicationLayout = props => {
             {/* Heading section */}
             <Header size="fluid" />
             {/* Application content */}
-            <div className="has-flex-grow has-p-4 has-w-full has-d-flex has-items-stretch">
+            <div className="has-flex-grow has-p-4 has-w-full has-d-flex has-items-stretch has-minh-0">
                 {props.children}
             </div>
         </div>

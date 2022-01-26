@@ -66,6 +66,7 @@ export default props => {
     // };
     const codeClass = kofi.classNames({
         "has-p-6 has-radius has-s-full": true,
+        "has-overflow-hidden": true,
         "CodeCake": true,
         "CodeCake-light has-bg-white": true,
     });
