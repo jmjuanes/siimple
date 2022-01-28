@@ -40,26 +40,11 @@ export default props => {
             updatePreview(previewRef, sandbox.current.content);
         }
     };
-    // Handle file change --> load the selected file
-    const handleLoad = () => {
-        const file = fileRef.current.files[0];
-        if (typeof file === "undefined") {
-            return null; // --> no file to load
-        }
-        // Read the file and import to the playground
-        // return kofi.file.readAsJSON(file).then(content => {
-        //     return playgroundRef.current.load(content);
-        // });
-    };
     // Handle save --> download pad content
     const handleSaveClick = () => {
         // return exportSandbox(getSandbox(), null);
     };
-    // Handle load --> load sandbox from file
-    const handleLoadClick = () => {
-        // return fileRef.current.click();
-    };
-    // Handle run
+    // Handle action button click --> run sandbox
     const handleRun = () => {
         sandbox.current.update({
             html: editor.current.getCode() || "",
@@ -73,26 +58,17 @@ export default props => {
         "CodeCake-light has-bg-white": true,
     });
     const resultClass = kofi.classNames({
-        "has-d-flex has-flex-column": true,
-        "has-s-full": true,
-        // "has-p-6 has-radius has-s-full": true,
+        "has-p-6 has-radius has-s-full": true,
+        "has-bg-white": true,
     });
     // Render app component
     return (
-        <Layout>
+        <Layout onActionClick={handleRun}>
             <div className="has-d-flex has-flex-row has-items-stretch has-flex-grow has-w-full">
                 <div ref={codeRef} className={codeClass} />
                 <div className="has-h-full has-w-4" />
                 <div className={resultClass}>
-                    <div className="has-bg-white has-radius has-p-6 has-mb-2 has-w-full">
-                        <button className="siimple-btn has-d-flex has-items-center" onClick={handleRun}>
-                            <div className="siimple-icon is-play has-mr-2" />
-                            <div>Run</div>
-                        </button>
-                    </div>
-                    <div className="has-bg-white has-radius has-s-full has-flex-grow has-p-6">
-                        <Preview ref={previewRef} onLoad={handlePreviewLoad} />
-                    </div>
+                    <Preview ref={previewRef} onLoad={handlePreviewLoad} />
                 </div>
             </div>
             {/* Load file input */}
