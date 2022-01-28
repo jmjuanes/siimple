@@ -2,26 +2,25 @@ import React from "react";
 import kofi from "kofi";
 
 import Layout from "../layouts/application.js";
+import {Preview, updatePreview} from "../components/Preview.js";
 import {useEditor} from "../hooks/useEditor.js";
 import {useSandbox} from "../hooks/useSandbox.js";
 
 // Export playground application wrapper
 export default props => {
     const codeRef = React.useRef();
-    const resultRef = React.useRef();
+    const previewRef = React.useRef();
     const fileRef = React.useRef();
+    // const versionRef = React.useRef();
     const editor = useEditor(codeRef, {});
     const sandbox = useSandbox();
     // const [theme, setTheme] = React.useState(props.defaultTheme || "light");
-    // Get sandbox content
-    const getSandbox = () => {
-        return Object.assign({}, sandbox.content, {
-            data: editor.current?.getCode() || "",
-        });
-    };
     // Run after app is rendered for the first time
-    const loadSandbox = () => {
-        editor.current.setCode(sandbox.content.data);
+    React.useEffect(() => {
+        sandbox.current.importFrom({}).then(() => {
+            editor.current.setCode(sandbox.current.content.html);
+            updatePreview(previewRef, sandbox.current.content);
+        });
         // if (window.location.hash.length < 2) {
         //     return editor.current.setCode(sandbox.content.data);
         // }
@@ -34,12 +33,13 @@ export default props => {
         //     //Error importing pad content
         //     //TODO:displat error in console
         // });
+    }, []);
+    // Handle preview frame loaded --> render sandbox content
+    const handlePreviewLoad = () => {
+        if (sandbox.current?.content) {
+            updatePreview(previewRef, sandbox.current.content);
+        }
     };
-    const renderSandbox = () => {
-        sandbox.render(resultRef);
-    };
-    React.useEffect(loadSandbox, []);
-    React.useEffect(renderSandbox, [sandbox.key]);
     // Handle file change --> load the selected file
     const handleLoad = () => {
         const file = fileRef.current.files[0];
@@ -53,17 +53,19 @@ export default props => {
     };
     // Handle save --> download pad content
     const handleSaveClick = () => {
-        return exportSandbox(getSandbox(), null);
+        // return exportSandbox(getSandbox(), null);
     };
     // Handle load --> load sandbox from file
     const handleLoadClick = () => {
-        return fileRef.current.click();
+        // return fileRef.current.click();
     };
     // Handle run
-    // const handleRun = () => {
-    //     const newSandbox = getSandbox(); //Get current sandbox
-    //     setSandbox(newSandbox);
-    // };
+    const handleRun = () => {
+        sandbox.current.update({
+            html: editor.current.getCode() || "",
+        });
+        return updatePreview(previewRef, sandbox.current.content);
+    };
     const codeClass = kofi.classNames({
         "has-p-6 has-radius has-s-full": true,
         "has-overflow-hidden": true,
@@ -71,8 +73,9 @@ export default props => {
         "CodeCake-light has-bg-white": true,
     });
     const resultClass = kofi.classNames({
-        "has-p-6 has-radius has-s-full": true,
-        "has-bg-white": true,
+        "has-d-flex has-flex-column": true,
+        "has-s-full": true,
+        // "has-p-6 has-radius has-s-full": true,
     });
     // Render app component
     return (
@@ -81,7 +84,15 @@ export default props => {
                 <div ref={codeRef} className={codeClass} />
                 <div className="has-h-full has-w-4" />
                 <div className={resultClass}>
-                    <iframe key={sandbox.key || 0} ref={resultRef} />
+                    <div className="has-bg-white has-radius has-p-6 has-mb-2 has-w-full">
+                        <button className="siimple-btn has-d-flex has-items-center" onClick={handleRun}>
+                            <div className="siimple-icon is-play has-mr-2" />
+                            <div>Run</div>
+                        </button>
+                    </div>
+                    <div className="has-bg-white has-radius has-s-full has-flex-grow has-p-6">
+                        <Preview ref={previewRef} onLoad={handlePreviewLoad} />
+                    </div>
                 </div>
             </div>
             {/* Load file input */}

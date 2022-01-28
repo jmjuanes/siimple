@@ -1,72 +1,13 @@
 import React from "react";
 import kofi from "kofi";
 import lzString from "lz-string";
-import {getCDNPath} from "../cdn.js";
-import {getPlaygroundTemplate} from "../templates/playground.js";
-
-//Generate external script tag
-const generateScriptTag = src => {
-    return kofi.element("script", {"type": "text/javascript", "src": src});
-};
-
-//Generate external style tag
-const generateStyleTag = src => {
-    return kofi.element("link", {"rel": "stylesheet", "type": "text/css", "href": src});
-};
-
-// Generate document
-const generateDocument = content => {
-    const bodyContent = content?.data || ""; // Body content
-    const headContent = [
-        generateStyleTag(getCDNPath("latest", "siimple.min.css")),
-    ];
-    // Check for meta content
-    // (content.meta || []).forEach(meta => {
-    //     return headContent.push(kofi.element("meta", meta, null));
-    // });
-    // Add external sources (TODO)
-    (content?.external || []).forEach(item => {
-        return null;
-    });
-    // Return the document content
-    return kofi.stringify(
-        kofi.element("html", {}, 
-            kofi.element("head", {}, headContent),
-            kofi.element("body", {html: bodyContent}),
-        )
-    );
-};
-
-//Render the pad
-export const renderSandbox = (parent, content, options) => {
-    options = options || {};
-    const permissions = options?.permissions || ["allow-scripts"];
-    // Add iframe permissions
-    parent.setAttribute("sandbox", permissions.join(" "));
-    parent.setAttribute("scrolling", "yes"); // Enable iframe scrolling
-    parent.style.width = options?.width || "100%"; // Iframe width
-    parent.style.height = options?.height || "100%"; // Iframe height
-    parent.style.backgroundColor = options.background || "#ffffff";
-    parent.style.border = "0"; // Remove iframe borders 
-    // Load iframe content
-    parent.contentWindow.document.open();
-    parent.contentWindow.document.write(generateDocument(content));
-    parent.contentWindow.document.close();
-    // Return the iframe instance
-    return parent;
-};
+import {getPlaygroundTemplate} from "../utils/getPlaygroundTemplate.js";
 
 //Create a new empty sandbox
-export const createSandbox = () => ({
-    "version": "1",      //Sandbox version 
-    "external": [],      //External scripts or styles
-    "data": getPlaygroundTemplate(),
+const createSandbox = () => ({
+    "version": "latest",      // siimple version 
+    "html": getPlaygroundTemplate(),
 });
-
-//Migrate a sandbox from older to new versions
-export const migrateSandbox = content => {
-    return Promise.resolve(content);
-};
 
 // Compress and decompress  string
 const compressStr = str => lzString.compressToBase64(str);
@@ -87,7 +28,8 @@ const decodeSandbox = content => {
 };
 
 // Fetch sandbox from source
-export const importSandbox = source => {
+const importSandbox = source => {
+    const baseSandbox = createSandbox();
     // Check for version provided --> create an empty sandbox
     // if (typeof source.version === "string") {
     //     return Promise.resolve({"siimple": source.version});
@@ -101,11 +43,11 @@ export const importSandbox = source => {
         return kofi.http.json(source.url);
     }
     // Fallback --> empty sandbox
-    return Promise.resolve({});
+    return Promise.resolve(baseSandbox);
 };
 
 // Share the sandbox via URL
-export const shareSandbox = (content, options) => {
+const shareSandbox = (content, options) => {
     //let key = null; //Encryption key
     //return Promise.resolve(JSON.stringify(content)).then(function (strContent) {
     //    return encryptPad(strContent);
@@ -121,11 +63,10 @@ export const shareSandbox = (content, options) => {
 };
 
 // Save sandbox in JSON format
-export const exportSandbox = sandbox => {
+const exportSandbox = sandbox => {
     const content = JSON.stringify({
-        data: sandbox.data || "",
-        version: sandbox.version || "1",
-        external: sandbox.external || [],
+        html: sandbox.html || "",
+        version: sandbox.version || "latest",
     }); 
     const fileContent = URL.createObjectURL(new Blob([content], {
         type: "application/json",
@@ -135,30 +76,22 @@ export const exportSandbox = sandbox => {
 };
 
 // Sandbox hooks
-export const useSandbox = () => {
-    const [sandbox, setSandbox] = React.useState(() => ({
-        content: createSandbox(),
-        key: null,
-    }));
+export const useSandbox = parent => {
+    const sandbox = React.useRef();
     // First rendering --> initialize sandbox
     React.useEffect(() => {
-        if (sandbox.key) { return; } // Sandobx already initialized
-        sandbox.key = Date.now();
+        if (sandbox.current) { return; } // Sandbox already initialized
+        sandbox.current = {
+            content: {},
+        };
         // Register sandbox merhods
-        sandbox.update = newContent => {
-            Object.assign(sandbox, {
-                content: Object.assign(sandbox.content, newContent),
-                key: Date.now(),
-            });
-            return setSandbox(sandbox);
+        sandbox.current.update = newContent => {
+            sandbox.current.content = Object.assign(sandbox.current.content, newContent);
         };
-        sandbox.render = parent => {
-            return renderSandbox(parent.current, sandbox.content);
-        };
-        sandbox.export = () => exportSandbox(sandbox.content);
-        sandbox.from = source => {
+        // sandbox.current.export = () => exportSandbox(sandbox.content);
+        sandbox.current.importFrom = source => {
             return importSandbox(source).then(content => {
-                return sandbox.update(content);
+                return sandbox.current.update(content);
             });
         };
     }, []);
