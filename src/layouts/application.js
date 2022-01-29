@@ -18,24 +18,20 @@ const ApplicationLayout = props => {
         "has-bg-white": props.theme === "light",
     });
     const buttonClass = kofi.classNames({
-        "has-flex has-radius has-opacity-100": true,
-        "has-py-2 has-px-3 tablet:has-ml-2": true,
+        "has-cursor-pointer": true,
+        "has-d-flex has-radius has-opacity-100": true,
+        "has-py-2 has-px-3 has-ml-2": true,
         "has-text-coolgray-600 has-text-no-underline": true,
-        "hover:has-bg-coolgray-100 hover:has-text-dark": true
+        "hover:has-bg-blue-200 hover:has-text-blue-700": true
     });
     return (
         <div className={rootClass}>
             {/* Heading section */}
             <div className={headerClass}>
-                <div className="has-mr-4">
-                    <Link to="/" className="has-text-coolgray-700 has-text-no-underline">
-                        <Icon icon="siimple" style={{"fontSize":"28px"}} />
+                <div className="has-mr-0">
+                    <Link to="/" className="has-d-block has-text-coolgray-700 has-text-no-underline">
+                        <Icon icon="siimple" style={{"fontSize":"40px"}} />
                     </Link>
-                </div>
-                {/* Action button */}
-                <div className="siimple-btn has-d-flex has-items-center" onClick={props.onActionClick}>
-                    <div className={`siimple-icon is-${props.actionIcon} has-mr-2`} />
-                    <div>{props.actionText}</div>
                 </div>
                 {/* Additional buttons */}
                 <div className="has-d-flex has-ml-auto">
@@ -43,7 +39,7 @@ const ApplicationLayout = props => {
                         <div key={key} className={buttonClass} onClick={item.onClick}>
                             <Icon icon={item.icon} style={{"fontSize":"22px"}} />
                             {item.text ? (
-                                <strong className="has-pl-2">{item.text}</strong>
+                                <strong className="has-pl-1">{item.text}</strong>
                             ) : null}
                         </div>
                     ))}
@@ -60,9 +56,6 @@ const ApplicationLayout = props => {
 //Layout default props
 ApplicationLayout.defaultProps = {
     theme: "light",
-    onActionClick: null,
-    actionText: "Run",
-    actionIcon: "play",
     buttons: [],
 };
 

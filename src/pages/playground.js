@@ -1,5 +1,6 @@
 import React from "react";
 import kofi from "kofi";
+import {navigate} from "gatsby";
 
 import Layout from "../layouts/application.js";
 import {Preview, updatePreview} from "../components/Preview.js";
@@ -8,6 +9,7 @@ import {useSandbox} from "../hooks/useSandbox.js";
 
 // Export playground application wrapper
 export default props => {
+    const buttons = []; // Header buttons list
     const codeRef = React.useRef();
     const previewRef = React.useRef();
     const fileRef = React.useRef();
@@ -51,6 +53,18 @@ export default props => {
         });
         return updatePreview(previewRef, sandbox.current.content);
     };
+    // Run sandbox button
+    buttons.push({
+        text: "Run",
+        icon: "play",
+        onClick: handleRun,
+    });
+    // Navigate to documentation button
+    buttons.push({
+        text: "Docs",
+        icon: "book",
+        onClick: () => navigate("/installation"),
+    });
     const codeClass = kofi.classNames({
         "has-p-6 has-radius has-s-full": true,
         "has-overflow-hidden": true,
@@ -63,7 +77,7 @@ export default props => {
     });
     // Render app component
     return (
-        <Layout onActionClick={handleRun}>
+        <Layout buttons={buttons}>
             <div className="has-d-flex has-flex-row has-items-stretch has-flex-grow has-w-full">
                 <div ref={codeRef} className={codeClass} />
                 <div className="has-h-full has-w-4" />
@@ -72,7 +86,7 @@ export default props => {
                 </div>
             </div>
             {/* Load file input */}
-            <input type="file" ref={fileRef} hidden onChange={handleLoad} />
+            <input type="file" ref={fileRef} hidden onChange={handlePreviewLoad} />
         </Layout>
     );
 };
