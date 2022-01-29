@@ -13,28 +13,16 @@ export default props => {
     const codeRef = React.useRef();
     const previewRef = React.useRef();
     const fileRef = React.useRef();
-    // const versionRef = React.useRef();
+    const [shareUrl, setShareUrl] = React.useState("");
     const editor = useEditor(codeRef, {});
     const sandbox = useSandbox();
     // const [theme, setTheme] = React.useState(props.defaultTheme || "light");
     // Run after app is rendered for the first time
     React.useEffect(() => {
-        sandbox.current.importFrom({}).then(() => {
+        sandbox.current.init().then(() => {
             editor.current.setCode(sandbox.current.content.html);
             updatePreview(previewRef, sandbox.current.content);
         });
-        // if (window.location.hash.length < 2) {
-        //     return editor.current.setCode(sandbox.content.data);
-        // }
-        // const source = kofi.qs.decode(window.location.hash.slice(1));
-        // importSandbox(source).then(content => {
-        //     //setWelcomeVisible(false); //Hide welcome screen
-        //     setSandbox(content); //Update sandbox
-        //     return editor.current.setCode(content.data);
-        // }).catch(error => {
-        //     //Error importing pad content
-        //     //TODO:displat error in console
-        // });
     }, []);
     // Handle preview frame loaded --> render sandbox content
     const handlePreviewLoad = () => {
@@ -42,12 +30,14 @@ export default props => {
             updatePreview(previewRef, sandbox.current.content);
         }
     };
-    // Handle save --> download pad content
-    const handleSaveClick = () => {
-        // return exportSandbox(getSandbox(), null);
+    // Handle share click --ª generate share url
+    const handleShareClick = () => {
+        return sandbox.current.share().then(url => {
+            return setShareUrl(url);
+        });
     };
     // Handle action button click --> run sandbox
-    const handleRun = () => {
+    const handleRunClick = () => {
         sandbox.current.update({
             html: editor.current.getCode() || "",
         });
@@ -57,7 +47,13 @@ export default props => {
     buttons.push({
         text: "Run",
         icon: "play",
-        onClick: handleRun,
+        onClick: handleRunClick,
+    });
+    // Share sandbox button
+    buttons.push({
+        text: "Share",
+        icon: "link",
+        onClick: handleShareClick,
     });
     // Navigate to documentation button
     buttons.push({
@@ -87,6 +83,23 @@ export default props => {
             </div>
             {/* Load file input */}
             <input type="file" ref={fileRef} hidden onChange={handlePreviewLoad} />
+            {/* Share sandbox modal */}
+            {!!shareUrl ? (
+                <div className="siimple-scrim">
+                    <div className="siimple-modal is-medium">
+                        <div className="siimple-title is-3">Share</div>
+                        <div className="siimple-paragraph">
+                            You can use the following URL for sharing your code:
+                        </div>
+                        <div className="has-mb-6">
+                            <textarea className="siimple-textarea" readOnly defaultValue={shareUrl} />
+                        </div>
+                        <div className="siimple-btn is-full" onClick={() => setShareUrl("")}>
+                            <strong>Close</strong>
+                        </div>
+                    </div>
+                </div>
+            ) : null}
         </Layout>
     );
 };

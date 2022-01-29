@@ -2,6 +2,7 @@ import React from "react";
 import kofi from "kofi";
 import lzString from "lz-string";
 import {getPlaygroundTemplate} from "../utils/getPlaygroundTemplate.js";
+import {getHost} from "../utils/host.js";
 
 //Create a new empty sandbox
 const createSandbox = () => ({
@@ -13,53 +14,37 @@ const createSandbox = () => ({
 const compressStr = str => lzString.compressToBase64(str);
 const decompressStr = str => lzString.decompressFromBase64(str);
 
-// Encode the provided pad
-const encodeSandbox = content => {
-    return new Promise((resolve, reject) => {
-        return resolve(compressStr(JSON.stringify(content)));
-    });
-};
-
-// Decode the provided sandbox
-const decodeSandbox = content => {
-    return new Promise((resolve, reject) => {
-        return resolve(JSON.parse(decompressStr(content)));
-    });
-};
-
 // Fetch sandbox from source
-const importSandbox = source => {
-    const baseSandbox = createSandbox();
-    // Check for version provided --> create an empty sandbox
-    // if (typeof source.version === "string") {
-    //     return Promise.resolve({"siimple": source.version});
-    // }
-    // Check for sandbox encoded in source
-    if (typeof source.data === "string") {
-        return decodeSandbox(source.data);
-    }
-    // Check for url to fetch 
-    if (typeof source.url === "string") {
-        return kofi.http.json(source.url);
-    }
-    // Fallback --> empty sandbox
-    return Promise.resolve(baseSandbox);
+const importSandbox = () => {
+    return new Promise((resolve, reject) => {
+        const content = createSandbox();
+        const query = new URLSearchParams(window.location.hash.substr(1) || "");
+        // Check for version provided --> create an empty sandbox
+        if (query.has("version")) {
+            content.version = query.get("version");
+        }
+        // Check for sandbox encoded in source
+        if (query.has("data")) {
+            content.html = decompressStr(query.get("data"));
+        }
+        // Continue
+        return resolve(content);
+    });
 };
 
 // Share the sandbox via URL
-const shareSandbox = (content, options) => {
-    //let key = null; //Encryption key
-    //return Promise.resolve(JSON.stringify(content)).then(function (strContent) {
-    //    return encryptPad(strContent);
-    //}).then(function (encrypted) {
-    //    key = encrypted.key; //Save encrypted key
-    //    return kofi.http.json(`/api/storage`, {
-    //        "method": "post",
-    //        "json": {"content": encrypted.content}
-    //    });
-    //}).then(function (response) {
-    //    return {"id": response.id, "key": key};
-    //});
+const shareSandbox = content => {
+    return Promise.resolve().then(() => {
+        const host = getHost();
+        const query = new URLSearchParams();
+        // Check for custom version
+        if (content.version !== "latest") {
+            query.set("version", "latest");
+        }
+        query.set("data", compressStr(content.html));
+        // Return processed URL
+        return `${host}/playground#${query.toString()}`;
+    });
 };
 
 // Save sandbox in JSON format
@@ -88,9 +73,10 @@ export const useSandbox = parent => {
         sandbox.current.update = newContent => {
             sandbox.current.content = Object.assign(sandbox.current.content, newContent);
         };
+        sandbox.current.share = () => shareSandbox(sandbox.current.content);
         // sandbox.current.export = () => exportSandbox(sandbox.content);
-        sandbox.current.importFrom = source => {
-            return importSandbox(source).then(content => {
+        sandbox.current.init = () => {
+            return importSandbox().then(content => {
                 return sandbox.current.update(content);
             });
         };
