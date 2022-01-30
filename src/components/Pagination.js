@@ -39,7 +39,7 @@ export const Pagination = (props) => (
                 <PaginationItem
                     label="Next"
                     url={props.next.url}
-                    label={props.next.label}
+                    title={props.next.label}
                 />
             ))}
         </div>
