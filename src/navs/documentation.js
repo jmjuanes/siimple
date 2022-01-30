@@ -4,7 +4,7 @@ export const documentationNav = [
     {"group": "getting-started", "url": "/responsive", "label": "Responsive"},
     {"group": "getting-started", "url": "/configuration", "label": "Configuration"},
     {"group": "getting-started", "url": "/theme", "label": "Theme"},
-    {"group": "getting-started", "url": "/plugins", "label": "Components"},
+    {"group": "getting-started", "url": "/plugins", "label": "Plugins"},
     {"group": "components", "url": "/components/alert", "label": "Alert"},
     {"group": "components", "url": "/components/badge", "label": "Badge"},
     {"group": "components", "url": "/components/btn", "label": "Button"},
