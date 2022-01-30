@@ -3,16 +3,16 @@ import {Link} from "./Link.js";
 
 // Footer links
 const FOOTER_LINKS = [
-    {"to": "", "target": "_blank", "text": "Follow us"},
-    {"to": "", "target": "_blank", "text": "GitHub"},
-    {"to": "", "target": "_blank", "text": "Issues"},
+    {"to": process.env.TWITTER_URL, "target": "_blank", "text": "Follow us"},
+    {"to": process.env.REPO_URL, "target": "_blank", "text": "GitHub"},
+    {"to": process.env.ISSUES_URL, "target": "_blank", "text": "Issues"},
     {"to": "/privacy", "text": "Privacy"},
 ];
 
 export const Footer = props => {
     const size = props.size || "xlarge";
     const items = props.links || FOOTER_LINKS;
-    const itemClass ="has-text-primary hover:has-text-blue-700 has-text-no-underline";
+    const itemClass ="has-text-coolgray-700 hover:has-text-blue-700 has-text-no-underline";
     return (
         <div className={`siimple-content has-bg-white is-${size} has-pt-12 has-pb-24`}>
             <div className="has-w-full" style={{"maxWidth":"500px"}}>

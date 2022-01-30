@@ -25,32 +25,41 @@ const Button = props => {
 };
 
 //Export home page
-export default props => {
-    const repoUrl = process.env.REPO_URL || "aaa";
-    return (
-        <Layout>
-            {/* Hero block */}
-            <div className="siimple-content is-xlarge tablet:has-pt-24 mobile:has-pt-12 has-pb-32">
-                <div className="siimple-headline has-mb-12">
-                    a minimal and themeable css toolkit.
-                </div>
-                <div className="has-text-muted" style={{"fontSize":"28px"}}>
-                    <strong>Siimple</strong> is an open source css toolkit that provides a 
-                    <strong> responsive</strong> and <strong>minimalistic</strong> starting 
-                    point for your next amazing website or application.
-                </div>
-                <div className="has-mt-12 mobile:has-mt-8">
-                    <Link to="/getting-started">
-                        <Button text="Getting started" icon="rocket" className="is-primary" />
-                    </Link>
-                    <Link to={repoUrl} target="_blank" className="has-text-no-underline tablet:has-ml-3">
-                        <Button text="View on GitHub" icon="external-link" className="has-bg-coolgray-700" />
-                    </Link>
-                </div>
+export default props => (
+    <Layout>
+        {/* Hero block */}
+        <div className="siimple-content is-xlarge tablet:has-pt-24 mobile:has-pt-12 has-pb-32">
+            <div className="siimple-headline has-mb-12">
+                a minimal and themeable css toolkit.
             </div>
-            {/* Features block */}
-            {/* Reviews block */}
-            <Testimonials />
-        </Layout>
-    );
-}
+            <div className="has-text-muted" style={{"fontSize":"28px"}}>
+                <strong>Siimple</strong> is an open source css toolkit that provides a 
+                <strong> responsive</strong> and <strong>minimalistic</strong> starting 
+                point for your next amazing website or application.
+            </div>
+            <div className="has-mt-12 mobile:has-mt-8">
+                <Link to="/installation">
+                    <Button
+                        text="Getting started"
+                        icon="rocket"
+                        className="is-primary"
+                    />
+                </Link>
+                <Link
+                    to={process.env.REPO_URL}
+                    target="_blank"
+                    className="has-text-no-underline tablet:has-ml-3"
+                >
+                    <Button
+                        text="View on GitHub"
+                        icon="external-link"
+                        className="has-bg-coolgray-700"
+                    />
+                </Link>
+            </div>
+        </div>
+        {/* Features block */}
+        {/* Reviews block */}
+        <Testimonials />
+    </Layout>
+);
