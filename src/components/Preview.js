@@ -21,7 +21,10 @@ const defaultDocument = `
                     document.body.innerHTML = html || "";
                 };
                 const updateSheet = url => {
-                    document.getElementById("sheet").setAttribute("href", url);
+                    const sheet = document.getElementById("sheet");
+                    if (sheet.getAttribute("href") !== url) {
+                        sheet.setAttribute("href", url);
+                    }
                 };
             </script>
         </head>
