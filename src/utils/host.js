@@ -6,5 +6,5 @@ export const isLocalhost = () => {
 
 //Get application host
 export const getHost = () => {
-    return "";
+    return window.location.origin;
 };

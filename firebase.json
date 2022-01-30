@@ -1,6 +1,6 @@
 {
-    "hosting": [{
-        "target": "devel",
+    "hosting": {
+        "target": "siimple",
         "public": "public",
         "ignore": [
             "firebase.json",
@@ -8,15 +8,5 @@
             "**/node_modules/**",
             ".env"
         ]
-    },
-    {
-        "target": "prod",
-        "public": "public",
-        "ignore": [
-            "firebase.json",
-            "**/.*",
-            "**/node_modules/**",
-            ".env"
-        ]
-    }]
+    }
 }
