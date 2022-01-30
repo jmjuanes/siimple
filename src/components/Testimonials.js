@@ -37,7 +37,7 @@ export const Testimonials = () => {
                             <div className="has-text-body has-text-opacity-50 has-mb-3">
                                 <Icon icon="quote" style={{"fontSize":"3.5rem"}} />
                             </div>
-                            <Link to={item.url} target="_blank" className="has-text-heading" style={null}>
+                            <Link to={item.url} target="_blank" className="has-text-coolgray-800">
                                 <div className="siimple-title is-4">{item.site}</div>
                             </Link>
                             <div className="has-mb-0 has-text-body has-text-opacity-80">
