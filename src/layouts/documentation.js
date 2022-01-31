@@ -5,6 +5,7 @@ import {Header} from "../components/Header.js";
 import {Footer} from "../components/Footer.js";
 import {AccordionNav} from "../components/AccordionNav.js";
 import {Pagination} from "../components/Pagination.js";
+import {Seo} from "../components/Seo.js";
 import {shortcodes} from "../markdown.js";
 import {documentationNav} from "../navs/documentation.js";
 
@@ -21,7 +22,6 @@ const getSidebarItem = i => {
 // Export layout component
 // const SIDEBAR_CLASS = "has-maxh-screen has-overflow-y-auto tablet:has-position-sticky has-top-0 has-pr-6";
 export default props => {
-    //console.log(props.location);
     //let sidebarItems = extractNodesFromGraphql(props.data.allSidebarJson); //Get sidebar items
     const pathname = props.location.pathname.replace(/(\/|\/index\.html)$/, ""); //Get current pathname
     const index = getCurrentSidebarIndex(pathname);
@@ -30,6 +30,7 @@ export default props => {
     const nextSidebarItem = getSidebarItem(index + 1);
     return (
         <React.Fragment>
+            <Seo title={props.pageContext?.frontmatter?.title} />
             {/* Header block */}
             <Header />
             {/* Main content */}

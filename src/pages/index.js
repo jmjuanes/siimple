@@ -25,8 +25,8 @@ const Button = props => {
 };
 
 //Export home page
-export default props => (
-    <Layout>
+export default () => (
+    <Layout title="Minimal and themeable CSS toolkit">
         {/* Hero block */}
         <div className="siimple-content is-xlarge tablet:has-pt-24 mobile:has-pt-12 has-pb-32">
             <div className="siimple-headline has-mb-12">

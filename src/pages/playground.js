@@ -73,7 +73,7 @@ export default props => {
     });
     // Render app component
     return (
-        <Layout buttons={buttons}>
+        <Layout buttons={buttons} title="Playground">
             <div className="has-d-flex has-flex-row has-items-stretch has-flex-grow has-w-full">
                 <div ref={codeRef} className={codeClass} />
                 <div className="has-h-full has-w-4" />

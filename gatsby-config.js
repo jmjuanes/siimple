@@ -6,10 +6,12 @@ const filterPlugins = p => p.filter(Boolean);
 //Export gatsby configuration
 module.exports = {
     "siteMetadata": {
-        "title": "siimple",
-        "siteUrl": "https://www.siimple.xyz/"
+        "title": "siimple CSS",
+        "description": "The minimal and themeable CSS toolkit",
+        "url": "https://www.siimple.xyz/",
     },
     "plugins": filterPlugins([
+        "gatsby-plugin-react-helmet",
         {
             "resolve": "gatsby-source-filesystem",
             "options": {
