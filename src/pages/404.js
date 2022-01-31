@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "gatsby";
 import {Icon} from "../components/Icon.js";
+import {Seo} from "../components/Seo.js";
 
 //Export 404 error page
 export default props => {
@@ -27,6 +28,7 @@ export default props => {
                     </Link>
                 </div>
             </div>
+            <Seo title="Not found" />
         </div>
     );
 };

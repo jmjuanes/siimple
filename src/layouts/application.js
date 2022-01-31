@@ -2,6 +2,7 @@ import React from "react";
 import kofi from "kofi";
 import {Link} from "../components/Link.js";
 import {Icon} from "../components/Icon.js";
+import {Seo} from "../components/Seo.js";
 
 // Layout base component
 const ApplicationLayout = props => {
@@ -49,12 +50,14 @@ const ApplicationLayout = props => {
             <div className="has-flex-grow has-w-full has-d-flex has-items-stretch has-minh-0">
                 {props.children}
             </div>
+            <Seo title={props.title} />
         </div>
     );
 }
 
 //Layout default props
 ApplicationLayout.defaultProps = {
+    title: "",
     theme: "light",
     buttons: [],
 };
