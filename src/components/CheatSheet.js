@@ -250,6 +250,10 @@ export const CheatSheet = props => {
                     </div>
                 ))}
             </Section>
+            {/* Toggler example */}
+            <Section title="Toggler">
+                <button className="siimple-toggler" />
+            </Section>
             {/* Modal and scrim example */}
             <Section title="Modal">
                 <div align="center" className="has-mb-4">
