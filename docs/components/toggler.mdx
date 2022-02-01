@@ -1,0 +1,29 @@
+---
+title: "Toggler"
+---
+
+# Toggler
+
+Use the `siimple-toggler` class to create a toggle button, useful for displaying hidden menus:
+
+```html align=center live=true
+<button class="siimple-toggler"></button>
+```
+
+
+### Variants
+
+Variants for this component can be defined in the `button.toggler` section of the variants configuration:
+
+```scss
+@include siimple.configure(
+    $variants: (
+        "button.toggler": (
+            "default": (
+                "border-color": currentColor,
+                "color": currentColor,
+            ),
+        ),
+    ),
+);
+```

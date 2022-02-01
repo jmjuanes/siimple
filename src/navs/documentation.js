@@ -29,6 +29,7 @@ export const documentationNav = [
     {"group": "components", "url": "/components/text", "label": "Text"},
     {"group": "components", "url": "/components/textarea", "label": "Textarea"},
     {"group": "components", "url": "/components/title", "label": "Title"},
+    {"group": "components", "url": "/components/toggler", "label": "Toggler"},
     {"group": "experiments", "url": "/experiments/modal", "label": "Modal"},
     {"group": "experiments", "url": "/experiments/progress", "label": "Progress"},
     {"group": "experiments", "url": "/experiments/scrim", "label": "Scrim"},
