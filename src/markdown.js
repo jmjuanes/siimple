@@ -4,13 +4,15 @@ import {Link} from "gatsby";
 
 import {LiveCode} from "./components/LiveCode.js";
 import {ModalExample} from "./components/ModalExample.js";
+import {NavbarExample} from "./components/NavbarExample.js";
 
 // Alias to create a HTML element
 const html = (type, className) => {
     return props => {
         const newProps = {
+            ...props,
             "className": kofi.classNames(className, props.className),
-            "style": props.style,
+            // "style": props.style,
         };
         return React.createElement(type, newProps, props.children);
     };
@@ -41,5 +43,5 @@ export const shortcodes = {
     //"th": html("th", "siimple-table-cell has-text-left"),
     // Examples
     ModalExample,
+    NavbarExample,
 };
-
