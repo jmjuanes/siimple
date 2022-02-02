@@ -8,7 +8,7 @@ export const NavbarExample = () => {
                 <a className="siimple-navbrand">Navbar</a>
                 <div
                     className="siimple-toggler tablet:has-d-none"
-                    onClick={() => setVisible(true)}
+                    onClick={() => setActive(!active)}
                 />
                 <div className={`siimple-navmenu ${active ? "is-active" : ""}`}>
                     <a className="siimple-navlink">Link 1</a>
