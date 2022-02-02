@@ -155,6 +155,19 @@ export const CheatSheet = props => {
             <Section title="Label">
                 <label className="siimple-label">Label content</label>
             </Section>
+            {/* Navbar element */}
+            <Section title="Navbar">
+                <div className="has-bg-coolgray-200 has-p-6">
+                    <div className="siimple-navbar has-radius">
+                        <div className="siimple-navbrand">Brand</div>
+                        <div className="siimple-toggler tablet:has-d-none" />
+                        <div className="siimple-navmenu is-active">
+                            <div className="siimple-navlink">Item 1</div>
+                            <div className="siimple-navlink">Item 2</div>
+                        </div>
+                    </div>
+                </div>
+            </Section>
             {/* Navlink element */}
             <Section title="NavLink">
                 <div className="has-d-flex has-flex-column has-maxw-64">

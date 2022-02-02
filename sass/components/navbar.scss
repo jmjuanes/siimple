@@ -1,0 +1,64 @@
+@use "../constants.scss" as constants;
+@use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
+
+// @description Navbar component
+@function plugin-navbar() {
+    @return (
+        // Navbar base class
+        plugins.create-component-plugin((
+            "id": "navigation.navbar",
+            "name": "navbar",
+            "styles": (
+                "align-items": center,
+                "color": currentColor,
+                "display": flex,
+                "flex-wrap": wrap,
+                "padding": 1.5rem,
+                "position": relative,
+                "vertical-align": top,
+                "width": 100%,
+                "z-index": 5,
+            ),
+            "variants": (
+                "default": (
+                    "background-color": white,
+                ),
+            ),
+        )),
+        // Brand element
+        plugins.create-component-plugin((
+            "id": "navigation.navbar.brand",
+            "name": "navbrand",
+            "styles": (
+                "font-size": 1.25rem,
+                "margin-right": auto,
+                "padding-bottom": 0.3125rem,
+                "padding-top": 0.3125rem,
+                "padding-right": 1rem,
+                "text-decoration": none,
+                "white-space": nowrap,
+            ),
+            "variants": utils.empty-map(),
+        )),
+        // Menu element
+        plugins.create-component-plugin((
+            "id": "navigation.navbar.menu",
+            "name": "navmenu",
+            "styles": (
+                "display": flex,
+                "@media screen and (max-width: #{constants.$tablet})": (
+                    "display": none,
+                    "flex-direction": column,
+                    "margin-top": 1.5rem,
+                    "width": 100%,
+                ),
+            ),
+            "variants": (
+                "active": (
+                    "display": (flex "important"),
+                ),
+            ),
+        )),
+    );
+}
