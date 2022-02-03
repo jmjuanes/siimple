@@ -1,0 +1,51 @@
+@use "sass:map";
+@use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
+
+// @description markup plugin
+@function plugin-markup() {
+    $markup-map: (
+        // Paragraph style
+        "p": (
+            "color": "body",
+            "font-family": "body",
+            "font-weight": "body",
+            "line-height": "body",
+        ),
+        // Anchor style
+        "a": (
+            "color": "primary",
+        ),
+        // Code block style
+        "pre": (
+            "font-family": "monospace",
+            "overflow-x": auto,
+            // Fix inline code blocks inside pre elements
+            "& code": (
+                "color": inherit,
+            ),
+        ),
+        // Inline code style
+        "code": (
+            "color": "primary",
+            "font-family": "monospace",
+            "font-size": inherit,
+        ),
+        // Table style
+        "table": (
+            "width": 100%,
+        ),
+    );
+    // Add base heading styles
+    @for $i from 1 through 6 {
+        $markup-map: map.set($markup-map, "h#{$i}", (
+            "color": "heading",
+            "font-family": "heading",
+            "font-size": "heading#{$i}",
+            "font-weight": "heading",
+            "line-height": "heading",
+        ));
+    }
+    // Return markup map
+    @return utils.to-list(plugins.create-styles-plugin($markup-map));
+}
