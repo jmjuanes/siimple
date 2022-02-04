@@ -44,8 +44,12 @@ $font-weights-scale: (
 $font-sizes-scale: (
     "small": 0.875rem,
     "body": "16px",
-    "large": 1.25rem,
-    "huge": 2rem,
+    "heading1": map.get(constants.$headings, "1"),
+    "heading2": map.get(constants.$headings, "2"),
+    "heading3": map.get(constants.$headings, "3"),
+    "heading4": map.get(constants.$headings, "4"),
+    "heading5": map.get(constants.$headings, "5"),
+    "heading6": map.get(constants.$headings, "6"),
 );
 
 // Default line height values
