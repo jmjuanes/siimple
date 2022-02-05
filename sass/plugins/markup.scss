@@ -1,59 +1,135 @@
 @use "sass:map";
+@use "sass:list";
 @use "../plugins.scss" as plugins;
 @use "../utils.scss" as utils;
 
 // @description markup plugin
 @function plugin-markup() {
-    $markup-map: (
+    $markup-list: (
         // Paragraph style
-        "p": (
-            "color": "body",
-            "font-family": "body",
-            "font-weight": "body",
-            "line-height": "body",
-        ),
-        // Anchor style
-        "a": (
-            "color": "primary",
-        ),
-        // Small text
-        "small": (
-            "font-size": "small",
-        ),
-        // Bold text
-        "strong,b": (
-            "font-weight": "bold",
-        ),
-        // Code block style
-        "pre": (
-            "font-family": "monospace",
-            "overflow-x": auto,
-            // Fix inline code blocks inside pre elements
-            "& code": (
-                "color": inherit,
+        plugins.create-markup-plugin((
+            "id": "text.paragraph",
+            "tag": "p",
+            "styles": (
+                "color": "body",
+                "display": block,
+                "font-weight": "body",
+                "line-height": "body",
+                "margin-bottom": 1rem,
+                "margin-top": 0px,
             ),
-        ),
+        )),
+        // Anchor style
+        plugins.create-markup-plugin((
+            "id": "text.link",
+            "tag": "a",
+            "styles": (
+                "color": "primary",
+            ),
+        )),
+        // Small text
+        plugins.create-markup-plugin((
+            "id": "text.small",
+            "tag": "small",
+            "styles": (
+                "font-size": "small",
+            ),
+        )),
+        // Bold text
+        plugins.create-markup-plugin((
+            "id": "text.bold",
+            "tag": "strong,b",
+            "styles": (
+                "font-weight": "bold",
+            ),
+        )),
+        // Code block style
+        plugins.create-markup-plugin((
+            "id": "code.block",
+            "tag": "pre",
+            "styles": (
+                "font-family": "monospace",
+                "overflow-x": auto,
+                // Fix inline code blocks inside pre elements
+                "& code": (
+                    "color": inherit,
+                ),
+            ),
+        )),
         // Inline code style
-        "code": (
-            "color": "primary",
-            "font-family": "monospace",
-            "font-size": inherit,
-        ),
+        plugins.create-markup-plugin((
+            "id": "code.inline",
+            "tag": "code",
+            "styles": (
+                "color": "primary",
+                "font-family": "monospace",
+                "font-size": inherit,
+                "text-decoration": "none",
+            ),
+        )),
+        // Rule style
+        plugins.create-markup-plugin((
+            "id": "rule",
+            "tag": "hr",
+            "styles": (
+                "background-color": "fill",
+                "border": 0px,
+                "display": block,
+                "height": 0.125rem,
+                "padding": 0px,
+                //Divider first and last child
+                "&:not(:first-child)": (
+                    "margin-top": 1rem,
+                ),
+                "&:not(:last-child)": (
+                    "margin-bottom": 1rem,
+                ),
+            ),
+        )),
+        // Blocquote style
+        plugins.create-markup-plugin((
+            "id": "text.quote",
+            "tag": "blockquote",
+            "styles": (
+                "border-left-color": currentColor,
+                "border-left-style": solid,
+                "border-left-width": 0.25rem,
+                "color": "body",
+                "display": block,
+                "margin-bottom": 1rem,
+                "margin-left": 0px,
+                "margin-right": 0px,
+                "opacity": 0.6,
+                "padding-bottom": 0.75rem,
+                "padding-left": 1.25rem,
+                "padding-right": 0.75rem,
+                "padding-top": 0.75rem,
+            ),
+        )),
         // Table style
-        "table": (
-            "width": 100%,
-        ),
+        plugins.create-markup-plugin((
+            "id": "table",
+            "tag": "table",
+            "styles": (
+                "width": 100%,
+            ),
+        )),
     );
     // Add base heading styles
-    @for $i from 1 through 6 {
-        $markup-map: map.set($markup-map, "h#{$i}", (
-            "color": "heading",
-            "font-family": "heading",
-            "font-size": "heading#{$i}",
-            "font-weight": "heading",
-            "line-height": "heading",
+    @for $index from 1 through 6 {
+        $markup-heading-plugin: plugins.create-markup-plugin((
+            "id": "text.heading",
+            "tag": "h#{$index}",
+            "styles": (
+                "color": "heading",
+                "font-family": "heading",
+                "font-size": "heading#{$i}",
+                "font-weight": "heading",
+                "line-height": "heading",
+            ),
         ));
+        $markup-list: list.append($markup-list, $markup-heading-plugin);
     }
-    // Return markup map
-    @return utils.to-list(plugins.create-styles-plugin($markup-map));
+    // Return markup plugins list
+    @return $markup-list;
 }
