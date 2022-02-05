@@ -1,14 +1,13 @@
 @use "../plugins.scss" as plugins;
 
 // @description Modal component for siimple
-// @experimental true
 @function plugin-modal() {
     @return plugins.create-component-plugin((
         "id": "dialog.modal",
         "name": "modal",
         "styles": (
             "background-color": white,
-            "border-radius": "normal",
+            "border-radius": 0.5rem,
             "display": block,
             "max-height": 50vh,
             "overflow-y": auto,
