@@ -67,14 +67,9 @@ $-custom-styles: null;
             $sheet: sheet.add-styles-to-sheet($sheet, $selector, $rules);
         }
     }
-    // Add experiments plugin
-    // By default adding experiments plugin is disabled
-    @if utils.get-in($-custom-flags, "use-experiments", false) {
-        $-custom-plugins: list.join(plugin-experiments(), $-custom-plugins) !global;
-    }
-    // Add components plugin
-    @if utils.get-in($-custom-flags, "use-components", true) {
-        $-custom-plugins: list.join(plugin-components(), $-custom-plugins) !global;
+    // Add markup plugin
+    @if utils.get-in($-custom-flags, "use-markup", true) {
+        $-custom-plugins: list.join(plugin-markup(), $-custom-plugins) !global;
     }
     // Add reboot styles
     @if utils.get-in($-custom-flags, "use-reboot", true) {
