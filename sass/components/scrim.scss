@@ -2,7 +2,6 @@
 @use "../utils.scss" as utils;
 
 // @description Scrim component
-// @experimental true
 @function plugin-scrim() {
     //$bg-color: lib.get($options, "background", lib.get-color("dark"));
     //$bg-opacity: lib.get($options, "opacity", 0.5);
@@ -26,4 +25,3 @@
         "variants": utils.empty-map(),
     ));
 }
-
