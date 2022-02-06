@@ -3,7 +3,7 @@
 @use "./utils.scss" as utils;
 
 // Breakpoints variables
-$current-breakpoints: (
+$-breakpoints: (
     "mobile": (
         "min": 0px, 
         "max": constants.$tablet,
@@ -45,7 +45,7 @@ $current-breakpoints: (
         $new-breakpoints: map.set($new-breakpoints, $key, $value);
     }
     // Merge breakpoints
-    $current-breakpoints: map.merge($current-breakpoints, $new-breakpoints) !global;
+    $-breakpoints: map.merge($-breakpoints, $new-breakpoints) !global;
 }
 
 // Check if the provided selector is a breakpoint selector
@@ -60,17 +60,17 @@ $current-breakpoints: (
 
 // @description Get the list of available breakpoints
 @function get-breakpoints() {
-    @return $current-breakpoints;
+    @return $-breakpoints;
 }
 
 // @description Get a list with all breakpoints names
 @function get-breakpoints-names() {
-    @return map.keys($current-breakpoints);
+    @return map.keys($-breakpoints);
 }
 
 // @description Use a single breakpoint by name
 @mixin use-breakpoint($name: "", $mode: "only") {
-    $breakpoint: utils.get-in($current-breakpoints, $name, null);
+    $breakpoint: utils.get-in($-breakpoints, $name, null);
     @if not utils.is-map($breakpoint) {
         $breakpoint: utils.empty-map();
     }
@@ -96,11 +96,10 @@ $current-breakpoints: (
 
 // @description Use all breakpoints
 @mixin use-breakpoints() {
-    $breakpoints-names: map.keys($current-breakpoints);
+    $breakpoints-names: map.keys($-breakpoints);
     @each $name in $breakpoints-names {
         @include use-breakpoint($name) {
             @content($name);
         }
     }
 }
-
