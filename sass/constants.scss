@@ -95,12 +95,12 @@ $css-aliases: (
 
 // Map css properties to theme fields
 $css-mappings: (
-    "background-color": "backgrounds",
-    "border-color": "backgrounds",
-    "border-bottom-color": "backgrounds",
-    "border-left-color": "backgrounds",
-    "border-right-color": "backgrounds",
-    "border-top-color": "backgrounds",
+    "background-color": "colors",
+    "border-color": "colors",
+    "border-bottom-color": "colors",
+    "border-left-color": "colors",
+    "border-right-color": "colors",
+    "border-top-color": "colors",
     "border-radius": "radius",
     "border-bottom-left-radius": "radius",
     "border-bottom-right-radius": "radius",
@@ -114,7 +114,7 @@ $css-mappings: (
     "bottom": "spacing",
     "box-shadow": "shadows",
     "color": "colors",
-    "fill": "backgrounds",
+    "fill": "colors",
     "font-family": "fonts",
     "font-size": "font-sizes",
     "font-weight": "font-weights",
