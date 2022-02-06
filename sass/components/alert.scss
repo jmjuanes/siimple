@@ -7,6 +7,7 @@
         "name": "alert",
         "styles": (
             "align-items": center,
+            "border-radius": 0.5rem,
             "display": flex,
             "font-weight": bold,
             "margin-bottom": 1rem,
@@ -18,7 +19,6 @@
         "variants": (
             "default": (
                 "background-color": "primary",
-                "border-radius": "normal",
                 "color": "white",
             ),
             "secondary": (

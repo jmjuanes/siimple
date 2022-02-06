@@ -6,6 +6,7 @@
         "id": "card",
         "name": "card",
         "styles": (
+            "border-radius": 0.5rem,
             "display": block,
             "padding": 1.75rem,
             "text-decoration": (none "important"),
@@ -14,7 +15,6 @@
         "variants": (
             "default": (
                 "background-color": "white",
-                "border-radius": "normal",
                 "box-shadow": "0 0 0.5rem rgba(0, 0, 0, 0.125)",
                 "color": "inherit",
             ),

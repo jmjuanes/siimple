@@ -10,6 +10,7 @@
             //Disable default button element borders
             //https://github.com/siimple/siimple/pull/17
             "border": 0px,
+            "border-radius": 0.5rem,
             "cursor": pointer,
             "display": inline-block,
             "font-family": inherit,
@@ -36,7 +37,6 @@
         "variants": (
             "default": (
                 "background-color": "primary",
-                "border-radius": "normal",
                 "color": "white",
             ),
             "secondary": (

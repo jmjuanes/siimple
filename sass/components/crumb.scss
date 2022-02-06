@@ -1,4 +1,5 @@
 @use "../plugins.scss" as plugins;
+@use "../utils.scss" as utils;
 
 // Generate breadcrumb component configuration
 @function plugin-crumb() {
@@ -8,6 +9,7 @@
             "id": "navigation.crumbs",
             "name": "crumbs",
             "styles": (
+                "border-radius": 0.5rem,
                 "display": flex,
                 "flex-wrap": nowrap,
                 "margin-bottom": 1rem,
@@ -16,11 +18,7 @@
                 "padding": 0.5rem,
                 "white-space": (nowrap "important"),
             ),
-            "variants": (
-                "default": (
-                    "border-radius": "normal",
-                ),
-            )
+            "variants": utils.empty-map(),
         )),
         //Breadcrumb item
         plugins.create-component-plugin((
@@ -64,7 +62,7 @@
             ),
             "variants": (
                 "active": (
-                    "cursor": "default", //!important;
+                    "cursor": default, //!important;
                     "opacity": "1.0",
                     "pointer-events": "none", //Disable clicks
                 ),
