@@ -9,8 +9,7 @@
     "repository": "https://github.com/siimple/siimple",
     "bugs": "https://github.com/siimple/siimple/issues",
     "scripts": {
-        "build": "gulp build:bundle build:icons && npm run build:css && npm run build:cheatsheet",
-        "build:cheatsheet": "babel-node scripts/cheatsheet.js",
+        "build": "gulp build:bundle build:icons && npm run build:css",
         "build:css": "gulp build:css",
         "build:bundle": "gulp build:bundle",
         "build:components": "gulp build:components",
@@ -23,9 +22,6 @@
         "test": "jest"
     },
     "devDependencies": {
-        "@babel/node": "^7.16.8",
-        "@babel/preset-env": "^7.16.8",
-        "@babel/preset-react": "^7.16.7",
         "@mdx-js/mdx": "^1.0.1",
         "@mdx-js/react": "^1.6.22",
         "autoprefixer": "^10.3.5",
@@ -55,20 +51,6 @@
         "svg2ttf": "^6.0.3",
         "svgicons2svgfont": "^10.0.5",
         "ttf2woff": "^3.0.0"
-    },
-    "babel": {
-        "presets": [
-            "@babel/preset-env",
-            "@babel/preset-react"
-        ],
-        "plugins": [
-            [
-                "@babel/plugin-transform-runtime",
-                {
-                    "useESModules": true
-                }
-            ]
-        ]
     },
     "jest": {
         "testEnvironment": "node",
