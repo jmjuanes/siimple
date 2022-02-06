@@ -5,7 +5,8 @@
 @use "./naming.scss" as naming;
 @use "./plugins.scss" as plugins;
 @use "./sheet.scss" as sheet;
-@use "./theme.scss" as theme;
+@use "./breakpoints.scss" as breakpoints;
+@use "./scales.scss" as scales;
 @use "./utils.scss" as utils;
 @use "./variants.scss" as variants;
 
@@ -16,18 +17,21 @@
 // Internal variables
 $-custom-plugins: utils.empty-list();
 $-custom-flags: utils.empty-map();
-$-custom-body: null;
 $-custom-styles: null;
 
 // @description Configure siimple css
-@mixin configure($prefix: nulll, $theme: null, $variants: null, $plugins: null, $styles: null, $flags: null, $body: null) {
+@mixin configure($prefix: nulll, $breakpoints: null, $scales: null, $variants: null, $plugins: null, $styles: null, $flags: null) {
     // Update prefix used in siimple
     @if $prefix and utils.is-string($prefix) {
         @include naming.set-prefixes(("components": $prefix));
     }
-    // Initialize theme values
-    @if $theme and utils.is-map($theme) {
-        @include theme.set-theme($theme);
+    // Initialize breakpoints
+    @if $breakpoints and utils.is-map($breakpoints) {
+        @include breakpoints.set-breakpoints($breakpoints);
+    }
+    // Initialize scales
+    @if $scales and utils.is-map($scales) {
+        @include scales.set-scales($scales);
     }
     // Initialize variants
     @if $variants and utils.is-map($variants) {
@@ -45,39 +49,24 @@ $-custom-styles: null;
     @if $styles and utils.is-map($styles) {
         $-custom-styles: $styles !global;
     }
-    // Initialize body styles
-    @if $body and utils.is-map($body) {
-        $-custom-body: $body !global;
-    }
 }
 
 // @description generate siimple css styles
 @mixin css() {
     $sheet: sheet.create-sheet();
-    // Register body styles
-    @if utils.get-in($-custom-flags, "use-custom-body", true) and utils.is-map($-custom-body) {
-        // $new-body: map.merge(constants.$default-body, $-custom-body);
-        $sheet: sheet.add-styles-to-sheet($sheet, "body", $-custom-body);
-    } @else {
-        $sheet: sheet.add-styles-to-sheet($sheet, "body", constants.$default-body);
+    // Register borderbox styles
+    @if utils.get-in($-custom-flags, "use-borderbox", true) {
+        $sheet: sheet.add-borderbox-to-sheet($sheet);
+    }
+    // Register root styles
+    @if utils.get-in($-custom-flags, "use-root-styles", true) {
+        $sheet: sheet.add-root-styles-to-sheet($sheet);
     }
     // Register custom styles
-    @if utils.get-in($-custom-flags, "use-custom-styles", true) and utils.is-map($-custom-styles) {
+    @if utils.is-map($-custom-styles) {
         @each $selector,$rules in $-custom-styles {
             $sheet: sheet.add-styles-to-sheet($sheet, $selector, $rules);
         }
-    }
-    // Add markup plugin
-    @if utils.get-in($-custom-flags, "use-markup", true) {
-        $-custom-plugins: list.join(plugin-markup(), $-custom-plugins) !global;
-    }
-    // Add reboot styles
-    @if utils.get-in($-custom-flags, "use-reboot", true) {
-        $-custom-plugins: list.join(plugin-reboot(), $-custom-plugins) !global;
-    }
-    // Add border-box
-    @if utils.get-in($-custom-flags, "use-borderbox", true) {
-        $-custom-plugins: list.join(plugin-borderbox(), $-custom-plugins) !global;
     }
     // Register plugins
     @each $plugin in utils.flatten($-custom-plugins) {

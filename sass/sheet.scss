@@ -184,6 +184,29 @@
     @return map.set($sheet, "fonts", $new-fonts);
 }
 
+// @description Apply border-box styles to sheet
+@function add-borderbox-to-sheet($sheet) {
+    $sheet: add-styles-to-sheet($sheet, "html", (
+        "box-sizing": border-box,
+    ));
+    $sheet: add-styles-to-sheet($sheet, "*,*:before,*:after", (
+        "box-sizing": inherit,
+    ));
+    @return $sheet;
+}
+
+// @description Apply root styles to sheet
+@function add-root-styles-to-sheet($sheet) {
+    @return add-styles-to-sheet($sheet, "html", (
+        "background-color": "background",
+        "color": "text",
+        "font-family": "body",
+        "font-size": "body",
+        "font-weight": "body",
+        "line-height": "body",
+    ));
+}
+
 // @description Compile sheet
 @mixin compile-sheet($sheet) {
     //@debug "Compiling sheet";
