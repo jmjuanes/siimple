@@ -3,9 +3,9 @@
 // Configure siimple
 @include siimple.configure(
     $prefix: "siimple-",
-    $theme: siimple.empty-map(),
     $flags: (
         "use-borderbox": true,
+        "use-root-styles": true,
     ),
     $plugins: (
         siimple.plugin-reboot(),
