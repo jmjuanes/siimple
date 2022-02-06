@@ -2,121 +2,69 @@
 @use "./utils.scss" as utils;
 @use "./constants.scss" as constants;
 
-// Backgrounds configuration
-// Used for backgrounds and borders
-$backgrounds-scale: (
-    "body": constants.$white,
-    "fill": constants.$light,
-    "primary": constants.$primary,
-    "secondary": constants.$secondary,
-    "highlight": constants.$highlight,
-    "dark": constants.$dark,
-    "light": constants.$light,
-    "muted": constants.$muted,
-);
-
-// Colors configuration
-// Primary, text, background, muted and accent colors are required
-$colors-scale: (
-    "primary": constants.$primary,
-    "secondary": constants.$secondary,
-    "accent": constants.$accent,
-    "body": constants.$dark,
-    "heading": constants.$dark,
-    "muted": constants.$muted,
-);
-
-//Default font variables
-$fonts-scale: (
-    "body": constants.$font-sans, 
-    "heading": constants.$font-sans,
-    "monospace": constants.$font-monospace,
-);
-
-// Default font Weight values
-$font-weights-scale: (
-    "body": 400,
-    "heading": 700,
-    "bold": 700,
-);
-
-// Default font size values
-$font-sizes-scale: (
-    "small": 0.875rem,
-    "body": "16px",
-);
-
-// Default line height values
-$line-heights-scale: (
-    "small": 1.25,
-    "normal": normal,
-    "body": 1.5,
-    "heading": 1.125,
-);
-
-// Default radius values
-$radius-scale: (
-    "small": 0.25rem,
-    "default": 0.5rem, // deprecated, use normal instead
-    "normal": 0.5rem, 
-    "large": 1rem,
-    "full": 9999px,
-    "none": 0px,
-);
-
-// Default shadows
-$shadows-scale: (
-    "small": constants.$shadow-small,
-    "normal": constants.$shadow-normal,
-    "large": constants.$shadow-large,
-    "none": "none",
-);
-
-// Scales global map
-$scales: (
-    "backgrounds": $backgrounds-scale,
-    "colors": $colors-scale,
-    "fonts": $fonts-scale,
-    "font-sizes": $font-sizes-scale,
-    "font-weights": $font-weights-scale,
-    "line-heights": $line-heights-scale,
-    "radius": $radius-scale,
-    "shadows": $shadows-scale,
+// Default scales
+$-scales: (
+    "colors": (
+        "text": constants.$dark,
+        "background": constants.$white,
+        "primary": contsnts.$primary,
+        "secondary": constants.$secondary,
+        "hightlight": constants.$highlight,
+        "accent": constants.$accent,
+        "muted": constants.$muted,
+        "fill": constants.$light,
+    ),
+    "fonts": (
+        "body": constants.$font-sans, 
+        "heading": inherit,
+        "monospace": constants.$font-monospace,
+    ),
+    "font-sizes": (
+        "small": 0.875rem,
+        "body": 16px,
+    ),
+    "font-weights": (
+        "body": 400,
+        "heading": 700,
+        "bodl": 700,
+    ),
+    "line-heights": (
+        "heading": 1.125,
+        "body": 1.5,
+    ),
+    "radius": (
+        "default": 0.5rem,
+    ),
+    "shadows": (
+        "default": constants.$shadow-normal,
+    ),
 );
 
 // @description Configure the scales used in siimple
 @mixin set-scales($custom-scales: null) {
     //$new-scales: utils.empty-map();
-    @if not utils.is-map($custom-scales) {
-        $custom-scales: utils.empty-map();
-    }
-    // Check default scales options
-    @each $key,$value in $custom-scales {
-        @if has-scale($key) {
-            // Check if the value is not a vaild object --> reset the value
-            @if not utils.is-map($value) {
-                $value: utils.empty-map();
+    @if utils.is-map($custom-scales) {
+        @each $key,$value in $custom-scales {
+            @if utils.is-map($value) {
+                $-scales: map.set($-scales, $key, $value) !global;
             }
-            $scales: map.set($scales, $key, $value) !global;
         }
     }
-    // Merge with custom scales
-    //$scales: map.merge($scales, $new-scales) !global;
 }
 
 // @description Check if the provided key is a scale field
 @function has-scale($name: "") {
-    @return map.has-key($scales, $name);
+    @return map.has-key($-scales, $name);
 }
 
 // @description get a scale
 @function get-scale($name) {
-    @return utils.get-in($scales, $name, utils.empty-map());
+    @return utils.get-in($-scales, $name, utils.empty-map());
 }
 
 // @description Get a single value from the scale
 @function get-scale-value($name, $key, $default-value: null) {
-    @return utils.get-in($scales, ($name $key), $default-value);
+    @return utils.get-in($-scales, ($name $key), $default-value);
 }
 
 // @description Use a specific value from scale as a property
@@ -132,7 +80,7 @@ $scales: (
         $prop: utils.first-item($properties);
         @if map.has-key(constants.$css-mappings, $prop) {
             $new-prop: map.get(constants.$css-mappings, $prop);
-            $new-value: utils.get-in($scales, ($new-prop $value), null);
+            $new-value: utils.get-in($-scales, ($new-prop $value), null);
             @if $new-value != null {
                 $value: $new-value; // Replace with new value
             }
