@@ -9,7 +9,6 @@
         "./sass/scales.scss",
         "./sass/breakpoints.scss",
         "./sass/variants.scss",
-        "./sass/theme.scss",
         "./sass/sheet.scss",
         "./sass/plugins.scss",
         "./sass/colors.scss",

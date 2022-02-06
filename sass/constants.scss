@@ -3,16 +3,6 @@ $tablet: 600px;
 $desktop: 1200px;
 $fullhd: 1800px;
 
-// Default body styles
-$default-body: (
-    "background-color": "body",
-    "color": "body",
-    "font-family": "body",
-    "font-size": "body",
-    "font-weight": 400,
-    "line-height": "body",
-);
-
 // Default colors
 $primary: #307ad5;     // blue-500
 $highlight: #e5effb;   // blue-200
@@ -105,12 +95,12 @@ $css-aliases: (
 
 // Map css properties to theme fields
 $css-mappings: (
-    "background-color": "backgrounds",
-    "border-color": "backgrounds",
-    "border-bottom-color": "backgrounds",
-    "border-left-color": "backgrounds",
-    "border-right-color": "backgrounds",
-    "border-top-color": "backgrounds",
+    "background-color": "colors",
+    "border-color": "colors",
+    "border-bottom-color": "colors",
+    "border-left-color": "colors",
+    "border-right-color": "colors",
+    "border-top-color": "colors",
     "border-radius": "radius",
     "border-bottom-left-radius": "radius",
     "border-bottom-right-radius": "radius",
@@ -124,7 +114,7 @@ $css-mappings: (
     "bottom": "spacing",
     "box-shadow": "shadows",
     "color": "colors",
-    "fill": "backgrounds",
+    "fill": "colors",
     "font-family": "fonts",
     "font-size": "font-sizes",
     "font-weight": "font-weights",

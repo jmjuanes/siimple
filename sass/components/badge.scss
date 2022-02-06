@@ -6,6 +6,7 @@
         "id": "badge",
         "name": "badge",
         "styles": (
+            "border-radius": 0.25rem,
             "display": inline-block,
             "font-size": 0.75rem,
             "font-weight": bold,
@@ -20,7 +21,6 @@
         "variants": (
             "default": (
                 "background-color": "primary",
-                "border-radius": "small",
                 "color": "white",
             ),
             "secondary": (

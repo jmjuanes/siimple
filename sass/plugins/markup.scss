@@ -8,7 +8,7 @@
     $markup-styles: (
         // Paragraph style
         "p": (
-            "color": "body",
+            "color": "text",
             "display": block,
             "font-weight": "body",
             "line-height": "body",
@@ -63,7 +63,7 @@
             "border-left-color": currentColor,
             "border-left-style": solid,
             "border-left-width": 0.25rem,
-            "color": "body",
+            "color": "text",
             "display": block,
             "margin-bottom": 1rem,
             "margin-left": 0px,

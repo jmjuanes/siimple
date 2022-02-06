@@ -9,6 +9,7 @@
             "border-color": transparent,
             "border-style": solid,
             "border-width": 0.125rem,
+            "border-radius": 0.5rem,
             "box-sizing": border-box,
             "color": inherit,
             "display": block,
@@ -27,9 +28,8 @@
         "variants": (
             "default": (
                 "background-color": "fill",
-                //"background-color": "white",
-                //"border-color": "muted",
-                "border-radius": "normal",
+                // "background-color": "white",
+                // "border-color": "muted",
                 "&:focus": (
                     "border-color": "primary",
                 ),

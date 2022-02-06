@@ -9,6 +9,7 @@
             "id": "navigation.tabs",
             "name": "tabs",
             "styles": (
+                "border-radius": 0.5rem,
                 "display": flex,
                 "flex-wrap": nowrap,
                 "overflow": hidden,
@@ -26,7 +27,6 @@
             "variants": (
                 "default": (
                     "background-color": "fill",
-                    "border-radius": "normal",
                 ),
             ),
         )),
