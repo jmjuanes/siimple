@@ -5,14 +5,12 @@
     $prefix: "siimple-",
     $theme: siimple.empty-map(),
     $flags: (
-        "use-custom-body": false,
-        "use-custom-styles": false,
-        "use-components": true,
-        "use-reboot": true,
         "use-borderbox": true,
     ),
     $plugins: (
-        siimple.plugin-experiments(),
+        siimple.plugin-reboot(),
+        siimple.plugin-markup(),
+        siimple.plugin-components(),
         siimple.plugin-icons((
             "path": "./",
         )),
