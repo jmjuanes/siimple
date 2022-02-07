@@ -32,6 +32,6 @@
 }
 
 /* Terrible hack to prevent the margin-bottom in the quote elements */
-.siimple-quote > .siimple-paragraph {
+blockquote > p {
     margin-bottom: 0px !important;
 }
