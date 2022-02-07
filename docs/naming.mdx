@@ -17,16 +17,14 @@ The **siimple** toolkit uses a simplified version of the [**SMACSS** methodology
 We use the following syntax for naming **components** in siimple:
 
 ```
-.siimple-<ComponentName>
+.<Prefix><ComponentName>
 ```
 
-Each single component has been prefixed with the `siimple-` namespace. Adding a namespace to your classnames is always a good choice, because it prevents collisions between library styles and your custom styles. You can customize the components prefix in the `$prefix` section of the configuration.
+Where:
 
-Also, we always use a single word as a component name. For example, buttons have `btn` as the component name:
+- `<Prefix>`: is the components prefix that can be customized in the `$prefix` section of the configuration. The default prefix applied in **siimple** is an empty string.
+- `<ComponentName>` is the component name, for example `btn` or `navbar`.
 
-```html
-<button class="siimple-btn">Button</button>
-```
 
 ### Variant modifiers
 
@@ -39,12 +37,12 @@ Also, we always use a single word as a component name. For example, buttons have
 The following example shows how to use the `secondary` variant of a button:
 
 ```html
-<button class="siimple-btn is-secondary">
+<button class="btn is-secondary">
     Secondary button
 </button>
 ```
 
-Every component must define its own variants, and some variant modifiers that works for some components may not be available for another components. This means that `is-secondary` modifier can be applied for example to a `siimple-btn` component, but has no effect when applied to `siimple-card`.
+Every component must define its own variants, and some variant modifiers that works for some components may not be available for another components. This means that `is-secondary` modifier can be applied for example to a `btn` component, but has no effect when applied to `card`.
 
 
 ### Helpers modifiers
@@ -73,7 +71,7 @@ Similar to responsive modifiers, you can apply some helpers only in response to 
 Add the `hover:` prefix to a helper class to apply it only on hover: 
 
 ```html live=true align=center
-<div class="siimple-btn has-text-white has-bg-purple-500 hover:has-bg-purple-700">
+<div class="btn has-text-white has-bg-purple-500 hover:has-bg-purple-700">
     Hoverable button
 </div>
 ```
