@@ -19,8 +19,29 @@ The following scales can be provided in the `$scales` section:
 | `opacities` | `opacity` |
 
 
-
 > You do not need to provide all scales in the configuration: just configure the scales that you really need for your project.
+
+Scales can be used in styles, variants and components. Just provide a string with the scale key as the CSS property and **siimple** will automatically set this property with the value specified in the scale:
+
+```scss
+@include siimple.configure(
+    $scales: (
+        "font-sizes": (
+            "small": 0.875rem,
+            "body": 16px,
+            "large": 1.5rem,
+        ),
+    ),
+    $styles: (
+        "h1": (
+            "font-size": "large", // <-- 1.5rem
+        ),
+        "p": (
+            "font-size": "body", // <-- 16px
+        ),
+    ),
+);
+```
 
 
 ## Colors
