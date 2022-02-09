@@ -1,0 +1,30 @@
+---
+title: Helpers
+---
+
+
+# Helpers
+
+The **helpers** plugin provides a collection of **small functional CSS classes** that can be used for creating or customizing components. The main aim of this plugin is to provide a collection of reusable classes to replace the conventional style of writting CSS classes.
+
+To load the helpers plugin, just add the `plugin-helpers()` function in the `$plugins` section of your configuration:
+
+```scss
+@include siimple.configure(
+    $plugins: (
+        siimple.plugin-helpers(),
+    ),
+);
+```
+
+Additionally, in case that you are only interested in some helpers you can load each helper individually instead of loading all helpers:
+
+```scss
+@include siimple.configure(
+    $plugins: (
+        siimple.plugin-color-helpers(),
+        siimple.plugin-spacing-helpers(),
+        siimple.plugin-sizing-helpers(),
+    ),
+);
+```
