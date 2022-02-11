@@ -15,14 +15,14 @@ export default props => {
                     </Link>
                 </div>
                 {/* Warning message */}
-                <div className="siimple-title is-2 has-mt-0">Something went wrong.</div>
-                <div className="siimple-paragraph">
+                <div className="title is-2 has-mt-0">Something went wrong.</div>
+                <div className="paragraph">
                     We are sorry, but we can not find the page you are trying to reach... 
                     Please check that you typed the address correctly or go back to your previous page. 
                 </div>
                 {/* Back to home page */}
                 <div className="has-mt-6">
-                    <Link to="/" className="siimple-btn is-primary has-flex-inline has-items-center">
+                    <Link to="/" className="btn is-primary has-flex-inline has-items-center">
                         <Icon icon="arrow-left" style={{"fontSize":"18px"}} />
                         <strong className="has-ml-2">Return to Home</strong>
                     </Link>

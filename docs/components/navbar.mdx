@@ -16,21 +16,21 @@ For displaying the navigation menu, we provide an `active` variant that can be a
 <NavbarExample />
 
 ```html
-<div class="siimple-navbar has-radius">
-    <a class="siimple-navbrand">Navbar</a>
+<div class="navbar has-radius">
+    <a class="navbrand">Navbar</a>
     <!-- The toggler button will be displayed only on mobile screens -->
-    <div class="siimple-toggler tablet:has-d-none"></div>
+    <div class="toggler tablet:has-d-none"></div>
     <!-- The navigation menu will be hiddien by default in mobile screens -->
     <!-- unless you add the 'is-active' variant class -->
-    <div class="siimple-navmenu">
-        <a class="siimple-navlink">Link 1</a>
-        <a class="siimple-navlink">Link 2</a>
+    <div class="navmenu">
+        <a class="navlink">Link 1</a>
+        <a class="navlink">Link 2</a>
     </div>
 </div>
 <!-- Very basic example implementation for displaying or hidding the menu -->
 <script type="text/javascript">
-    document.querySelector(".siimple-toggler").addEventListener("click", () => {
-        document.querySelector(".siimple-navmenu").classList.toggle("is-active");
+    document.querySelector(".toggler").addEventListener("click", () => {
+        document.querySelector(".navmenu").classList.toggle("is-active");
     });
 </script>
 ```

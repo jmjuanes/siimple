@@ -14,12 +14,12 @@ export const Footer = props => {
     const items = props.links || FOOTER_LINKS;
     const itemClass ="has-text-coolgray-700 hover:has-text-blue-700 has-text-no-underline";
     return (
-        <div className={`siimple-content has-bg-white is-${size} has-pt-12 has-pb-24`}>
+        <div className={`content has-bg-white is-${size} has-pt-12 has-pb-24`}>
             <div className="has-w-full" style={{"maxWidth":"500px"}}>
-                <div className="siimple-title is-4 has-text-dark has-mb-2">
+                <div className="title is-4 has-text-dark has-mb-2">
                     <strong className="siimple">siimple.</strong>
                 </div>
-                <div className="siimple-paragraph has-mb-0" style={{"opacity":"0.5"}}>
+                <div className="paragraph has-mb-0" style={{"opacity":"0.5"}}>
                     This website was build using <strong>the siimple toolkit</strong> and 
                     following the <strong>siimple design specification</strong>.
                 </div>

@@ -11,7 +11,7 @@ import {Testimonials} from "../components/Testimonials.js";
 // Action button component wrapper
 const Button = props => {
     const btnClass = kofi.classNames(props.className, [
-        "siimple-btn",
+        "btn",
         "has-d-inline-flex has-justify-center",
         "has-px-6 has-py-3",
         "mobile:has-w-full mobile:has-mb-2",
@@ -28,8 +28,8 @@ const Button = props => {
 export default () => (
     <Layout title="Minimal and themeable CSS toolkit">
         {/* Hero block */}
-        <div className="siimple-content is-xlarge tablet:has-pt-24 mobile:has-pt-12 has-pb-32">
-            <div className="siimple-headline has-mb-12">
+        <div className="content is-xlarge tablet:has-pt-24 mobile:has-pt-12 has-pb-32">
+            <div className="headline has-mb-12">
                 a minimal and themeable css toolkit.
             </div>
             <div className="has-text-muted" style={{"fontSize":"28px"}}>

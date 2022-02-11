@@ -20,9 +20,9 @@ const PaginationItem = props => {
 
 //Export pagination item
 export const Pagination = (props) => (
-    <div className="siimple-columns has-pt-4">
+    <div className="columns has-pt-4">
         {/* Prev navigation item */}
-        <div className="siimple-column has-py-0" align="left">
+        <div className="column has-py-0" align="left">
             {kofi.when(props.prev, () => (
                 <PaginationItem
                     label="Prev"
@@ -32,9 +32,9 @@ export const Pagination = (props) => (
             ))}
         </div>
         {/* Separator */}
-        <div className="siimple-column has-py-0 mobile:has-d-none" />
+        <div className="column has-py-0 mobile:has-d-none" />
         {/* Next navigation item */}
-        <div className="siimple-column has-py-0" align="right">
+        <div className="column has-py-0" align="right">
             {kofi.when(props.next, () => (
                 <PaginationItem
                     label="Next"

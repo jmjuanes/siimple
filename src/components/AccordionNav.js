@@ -22,7 +22,7 @@ export const AccordionNav = props => {
                 //Return link to the provided item
                 const isActive = props.pathname === item.url;
                 const itemClass = kofi.classNames({
-                    "siimple-navlink has-mb-1 has-px-3": true,
+                    "navlink has-mb-1 has-px-3": true,
                     "has-weight-normal": true,
                     //"is-active": isActive,
                     "has-bg-coolgray-700 has-text-white": isActive,

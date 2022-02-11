@@ -85,16 +85,16 @@ export default props => {
             <input type="file" ref={fileRef} hidden onChange={handlePreviewLoad} />
             {/* Share sandbox modal */}
             {!!shareUrl ? (
-                <div className="siimple-scrim">
-                    <div className="siimple-modal is-medium">
-                        <div className="siimple-title is-3">Share</div>
-                        <div className="siimple-paragraph">
+                <div className="scrim">
+                    <div className="modal is-medium">
+                        <div className="title is-3">Share</div>
+                        <div className="paragraph">
                             You can use the following URL for sharing your code:
                         </div>
                         <div className="has-mb-6">
-                            <textarea className="siimple-textarea" readOnly defaultValue={shareUrl} />
+                            <textarea className="textarea" readOnly defaultValue={shareUrl} />
                         </div>
-                        <div className="siimple-btn is-full" onClick={() => setShareUrl("")}>
+                        <div className="btn is-full" onClick={() => setShareUrl("")}>
                             <strong>Close</strong>
                         </div>
                     </div>

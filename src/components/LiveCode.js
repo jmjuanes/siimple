@@ -7,7 +7,7 @@ export const LiveCode = props => {
     let codeChildren = props.children; //Code children
     const codeProps = {};
     const lang = (props.className || "").replace("language-", "").replace("javascript", "js");
-    const codeClass = "siimple-code has-bg-coolgray-700 has-text-white CodeCake-dark";
+    const codeClass = "livecode has-bg-coolgray-700 has-text-white CodeCake-dark";
     if (["html", "css", "scss", "js"].includes(lang)) {
         codeProps["dangerouslySetInnerHTML"] = {
             "__html": highlightStr(props.children, lang),
@@ -39,7 +39,7 @@ export const LiveCode = props => {
             </div>
             {/* Code */}
             <pre className={`${codeClass} has-my-0`} {...codeProps}>{codeChildren}</pre>
-            {/* <pre className="siimple-codeblock has-mb-0">{props.children}</pre> */}
+            {/* <pre className="codeblock has-mb-0">{props.children}</pre> */}
         </div>
     );
 }

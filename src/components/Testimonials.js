@@ -26,19 +26,19 @@ const testimonialsData = [
 
 export const Testimonials = () => {
     return (
-        <div className="siimple-content is-xlarge has-pt-12 has-pb-24">
+        <div className="content is-xlarge has-pt-12 has-pb-24">
             <div align="center" className="has-mb-8">
-                <span className="siimple-subhead">What people say about siimple?</span>
+                <span className="subhead">What people say about siimple?</span>
             </div>
-            <div className="siimple-columns has-mb-0">
+            <div className="columns has-mb-0">
                 {testimonialsData.map((item, key) => (
-                    <div key={key} className="siimple-column is-4 mobile:is-12">
+                    <div key={key} className="column is-4 mobile:is-12">
                         <div style={{"minHeight": "300px"}} className="has-p-8 has-radius has-bg-coolgray-100">
                             <div className="has-text-body has-text-opacity-50 has-mb-3">
                                 <Icon icon="quote" style={{"fontSize":"3.5rem"}} />
                             </div>
                             <Link to={item.url} target="_blank" className="has-text-coolgray-800">
-                                <div className="siimple-title is-4">{item.site}</div>
+                                <div className="title is-4">{item.site}</div>
                             </Link>
                             <div className="has-mb-0 has-text-body has-text-opacity-80">
                                 {item.content}

@@ -2,7 +2,7 @@
 
 // Configure siimple
 @include siimple.configure(
-    $prefix: "siimple-",
+    $prefix: "",
     $flags: (
         "use-borderbox": true,
         "use-root-styles": true,
