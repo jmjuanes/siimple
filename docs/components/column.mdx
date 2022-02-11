@@ -4,17 +4,17 @@ title: "Column"
 
 # Column
 
-You can add **columns** to your grid row using the class `siimple-column`, and wrapp all columns in a `siimple-columns`. By default, you do not have to specify the size of the column: **each column will have by default an equal width**, proportional to the number of columns you have added.
+You can add **columns** to your grid row using the class `column`, and wrapp all columns in a `columns`. By default, you do not have to specify the size of the column: **each column will have by default an equal width**, proportional to the number of columns you have added.
 
 ```html live=true
-<div class="siimple-columns has-text-center">
-    <div class="siimple-column">
+<div class="columns has-text-center">
+    <div class="column">
         <div class="has-radius has-bg-primary has-text-white has-p-2">Column 1</div>
     </div>
-    <div class="siimple-column">
+    <div class="column">
         <div class="has-radius has-bg-primary has-text-white has-p-2">Column 2</div>
     </div>
-    <div class="siimple-column">
+    <div class="column">
         <div class="has-radius has-bg-primary has-text-white has-p-2">Column 3</div>
     </div>
 </div>
@@ -37,11 +37,11 @@ To customize the width of each column, we provide the following variants:
 
 
 ```html live=true
-<div class="siimple-columns has-text-center">
-    <div class="siimple-column is-two-thirds">
+<div class="columns has-text-center">
+    <div class="column is-two-thirds">
         <div class="has-radius has-bg-primary has-text-white has-p-2">2/3</div>
     </div>
-    <div class="siimple-column is-one-third">
+    <div class="column is-one-third">
         <div class="has-radius has-bg-primary has-text-white has-p-2">1/3</div>
     </div>
 </div>
@@ -52,20 +52,20 @@ You can also apply these variants in different breakpoints to customize the colu
 You can combine different column classes to specify how the grid will be displayed on different devices. For example, if you create a grid with two columns and add the class `is-half` and `is-full-mobile`, your grid will have two columns on tablet screens and up, and one column on mobile devices.
 
 ```html
-<div class="siimple-columns has-text-center">
-    <div class="siimple-column is-half is-full-mobile">Column</div>
-    <div class="siimple-column is-half is-full-mobile">Column</div>
+<div class="columns has-text-center">
+    <div class="column is-half is-full-mobile">Column</div>
+    <div class="column is-half is-full-mobile">Column</div>
 </div>
 ```
 
 You can hide a column at a specific breakpoint using the responsive `hidden` variant.
 
 ```html
-<div class="siimple-columns">
-    <div class="siimple-column is-one-third is-hidden-mobile">
+<div class="columns">
+    <div class="column is-one-third is-hidden-mobile">
         Hidden on mobile
     </div>
-    <div class="siimple-column is-two-thirds is-full-mobile">
+    <div class="column is-two-thirds is-full-mobile">
         Always visible
     </div>
 </div>
