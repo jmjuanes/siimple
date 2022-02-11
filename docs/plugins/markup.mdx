@@ -1,0 +1,81 @@
+---
+title: Markup
+---
+
+# Markup
+
+Use this plugin to style base markup elements, like headings, paragraphs, links... Just import the `plugin-markup()` function in the `$plugins` section of your configuration:
+
+```scss
+@use "siimple" as siimple;
+
+@include siimple.configure(
+    $plugins: (
+        siimple.plugin-markup(),
+    ),
+);
+```
+
+
+### Headings
+
+This plugin will style your heading elements, from `<h1>` through `<h6>`. For styling non heading HTML elements, you can use the [title](/components/title) component instead.
+
+```html live=true
+<h1>h1. Siimple heading</h1>
+<h2>h2. Siimple heading</h2>
+<h3>h3. Siimple heading</h3>
+<h4>h4. Siimple heading</h4>
+<h5>h5. Siimple heading</h5>
+<h6>h6. Siimple heading</h6>
+```
+
+
+### Paragraph
+
+This plugin will style your `<p>` elements. Paragraphs will use the `body` color defined in `$scales.color` and the `body` line height size defined in `$scales.line-heights`.
+
+```html live=true
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua.
+</p>
+<p class="has-mb-0">
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+    aliquip ex ea commodo consequat. 
+</p>
+```
+
+
+### Blockquotes
+
+This plugin will style your `<blockquote>` elements:
+
+```html live=true
+<blockquote>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua.
+</blockquote>
+```
+
+
+### Inline text elements
+
+This plugin will style your inline text elements, like `<small>` or `<code>` elements.
+
+```html live=true
+<p>You can style your <a href="">link</a> elements.</p>
+<p>You can style your <small>small text</small> elements.</p>
+<p class="has-mb-0">You can style your <code>inline code</code> elements.</p>
+```
+
+
+### Horizontal rule
+
+This plugin will style your `<hr>` elements. For styling non `<hr>` elements as an horizontal rule, you can use the [divider component](/components/divider) instead.
+
+```html live=true
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
+<hr>
+<p class="has-mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+```

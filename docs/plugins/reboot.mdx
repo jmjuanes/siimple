@@ -1,0 +1,20 @@
+---
+title: Reboot
+---
+
+# Reboot
+
+This plugin provides a modern and generic CSS reset that provides a collection of CSS rules used to reduce inconsistencies between different browsers.
+
+To enable this plugin just include the `plugin-reboot()` in the `$plugins` section of your configuration:
+
+```scss
+@use "siimple" as siimple;
+
+@include siimple.configure(
+    $plugins: (
+        siimple.plugin-reboot(),
+    ),
+);
+```
+

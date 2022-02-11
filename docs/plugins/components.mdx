@@ -1,0 +1,58 @@
+---
+title: Components
+---
+
+
+# Components
+
+We provide a collection of built-in UI components that you can customize and reuse across your projects, that includes buttons, alerts, navigation links, and more!
+
+You can load the components plugin calling the `plugin-components()` function in the `$plugins` section of your configuration:
+
+```scss
+@use "siimple" as siimple;
+
+@include siimple.configure(
+    $plugins: (
+        siimple.plugin-components(),
+    ),
+);
+```
+
+Also, instead of loading all components you can manually import individual components:
+
+```scss
+@use "siimple" as siimple;
+
+@include siimple.configure(
+    $plugins: (
+        siimple.plugin-btn(),
+        siimple.plugin-column(),
+    ),
+);
+```
+
+### Variants
+
+Variants can be used to customize and change the look and feel of components. Each component will look for a specific variant defined in the `$variants` section of your configuration.
+
+```scss
+@use "siimple" as siimple;
+
+@include siimple.configure(
+    $plugins: (
+        siimple.plugin-btn(),
+    ),
+    $variants: (
+        "button": (
+            "default": (
+                "background-color": "primary",
+                "color": "white",
+            ),
+            "secondary": (
+                "background-color": "secondary",
+            ),
+        ),
+    ),
+);
+```

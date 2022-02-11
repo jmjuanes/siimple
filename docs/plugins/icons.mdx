@@ -1,0 +1,71 @@
+---
+title: Icons
+---
+
+# Icons
+
+The icons plugin can be enabled just adding the `plugin-icons()` function in the `$plugins` section of your configuration:
+
+```scss
+@include siimple.configure(
+    $plugins: (
+        siimple.plugin-icons(),
+    ),
+);
+```
+
+This will add the `icon` component to your output CSS, and will generate one variant for each icon. 
+
+### Customization
+
+The following options can be used to customize the icons plugin:
+
+- `path`: path to the fonts folder. By default is `./`. **The path must end with a `/`**.
+- `include`: if provided, only icons in this list will be included for the output CSS.
+- `exclude`: if provided, icons in this list will be excluded from the output CSS.
+
+Example: 
+
+```scss
+@include siimple.configure(
+    $plugins: (
+        siimple.plugin-icons((
+            "path": "./fonts/",
+            "include": (
+                "star",
+                "user",
+            ),
+        )),
+    ),
+);
+```
+
+> Remember to copy all fonts in the `siimple` package to your project assets folder and use the `path` option to set the path to the fonts folder.
+
+
+### Using icons
+
+Create a `<i>` tag with the following classes: 
+
+- `icon`: is the icon component base classname. 
+- `is-[ICON]`, where `[ICON]` is the name of the desired icon.
+
+```html 
+<!-- Add a left arrow icon -->
+<i class="icon is-arrow-left"></i>
+
+<!-- Add a star icon -->
+<i class="icon is-star"></i>
+```
+
+You can style your icon using `font-size` and `color` style properties:
+
+```html 
+<!-- Using style attribute -->
+<i class="icon is-star" style="color:#ffea66;font-size:20px;"></i>
+
+<!-- Using helpers -->
+<i class="icon is-star has-color-red-500 has-size-xl"></i>
+```
+
+> **Note**: in case that you have changed or removed the prefix using the `$prefix` section of the configuration, the component classname will be different.
