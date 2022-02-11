@@ -6,7 +6,7 @@ import {If, Icon} from "../utils/components.js";
 //Card wrapper
 export const Card = props => {
     return (
-        <div className="siimple-card has-shadow-none has-bg-coolgray-100">
+        <div className="card has-shadow-none has-bg-coolgray-100">
             <div className="" style={{"minHeight": props.height}}>
                 {/* Card icon (only if props.icon is provided */}
                 <If condition={props.icon !== null} render={() => {
@@ -17,8 +17,8 @@ export const Card = props => {
                     );
                 }} />
                 {/* Card content */}
-                <div className="siimple-title is-4 has-mt-0">{props.title}</div>
-                <div className="siimple-paragraph has-mb-0 has-text-muted">
+                <div className="title is-4 has-mt-0">{props.title}</div>
+                <div className="paragraph has-mb-0 has-text-muted">
                     {props.content || props.children}
                 </div>
             </div>

@@ -12,7 +12,7 @@ const ApplicationLayout = props => {
         "has-bg-coolgray-800": props.theme === "dark",
         "has-bg-coolgray-100": props.theme === "light"
     });
-    const headerClass = kofi.classNames("siimple-content is-fluid", {
+    const headerClass = kofi.classNames("content is-fluid", {
         "has-py-6 has-mb-2": true,
         "has-radius": true,
         "has-d-flex has-items-center": true,

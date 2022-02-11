@@ -34,10 +34,10 @@ export default props => {
             {/* Header block */}
             <Header />
             {/* Main content */}
-            <div className="siimple-content is-xlarge has-pb-10 has-pt-0">
-                <div className="siimple-columns has-mb-0">
+            <div className="content is-xlarge has-pb-10 has-pt-0">
+                <div className="columns has-mb-0">
                     {/* Sidebar wrapper */}
-                    <div className="siimple-column mobile:is-hidden" style={{"maxWidth":"18rem"}}>
+                    <div className="column mobile:is-hidden" style={{"maxWidth":"18rem"}}>
                         <div className="has-pr-6">
                             <AccordionNav
                                 current={currentSidebarItem}
@@ -47,7 +47,7 @@ export default props => {
                         </div>
                     </div>
                     {/* Content column */}
-                    <div className="siimple-column mobile:is-12">
+                    <div className="column mobile:is-12">
                         <div className="has-mx-auto has-w-full" style={{"maxWidth":"768px"}}> 
                             <MDXProvider components={shortcodes}>
                                 {props.children}
