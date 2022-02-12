@@ -15,6 +15,7 @@ $plugin-types: (
     "font": "siimple::font",
     "keyframes": "siimple::keyframes",
     "styles": "siimple::styles",
+    "markup": "siimple:markup",
 );
 
 // @description Creates a new component with the specified options
@@ -40,6 +41,11 @@ $plugin-types: (
 // @description create a helper plugin
 @function create-helper-plugin($options) {
     @return map.set($options, "$type", map.get($plugin-types, "helper"));
+}
+
+// @description create a markup plugin
+@function create-markup-plugin($options) {
+    @return map.set($options, "$type", map.get($plugin-types, "markup"));
 }
 
 // @description create font
@@ -85,7 +91,7 @@ $plugin-types: (
     @return false;
 }
 
-// @description Appky a component plugin to the provided sheet
+// @description Apply a component plugin to the provided sheet
 @function apply-component-plugin($sheet, $component) {
     $component-id: utils.get-in($component, "id", "");
     $component-name: utils.get-in($component, "name", "");
@@ -107,6 +113,26 @@ $plugin-types: (
         $sheet: sheet.add-styles-to-sheet($sheet, $variant-classname, $variant-styles);
     }
     //Return the updated sheet
+    @return $sheet;
+}
+
+// @description Apply a markup plugin to the provided sheet
+@function apply-markup-plugin($sheet, $markup) {
+    $markup-id: utils.get-in($markup, "id", "");
+    $markup-tag: utils.get-in($markup, "tag", "");
+    $markup-styles: utils.get-in($markup, "styles", null);
+    // Apply markup styles
+    @if $markup-styles {
+        $sheet: sheet.add-styles-to-sheet($sheet, $markup-tag, $markup-styles);
+    }
+    // Register only default variants
+    $markup-default-variants: utils.get-in($markup, "variants", utils.empty-map());
+    $markup-variants: variants.parse-variants($markup-id, $markup-default-variants);
+    @if map.has-key($markup-variants, "default") {
+        $variant-styles: utils.get-in($markup-variants, "default", utils.empty-map());
+        $sheet: sheet.add-styles-to-sheet($sheet, $markup-tag, $variant-styles);
+    }
+    // Return the updated sheet
     @return $sheet;
 }
 
