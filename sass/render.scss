@@ -71,6 +71,10 @@ $-custom-styles: null;
     // Register plugins
     @each $plugin in utils.flatten($-custom-plugins) {
         //$plugin: list.nth($plugins, $index);
+        // Check for markup plugin
+        @if plugins.is-plugin($plugin, "markup") {
+            $sheet: plugins.apply-markup-plugin($sheet, $plugin);
+        }
         // Check for component plugin
         @if plugins.is-plugin($plugin, "component") {
             $sheet: plugins.apply-component-plugin($sheet, $plugin);
