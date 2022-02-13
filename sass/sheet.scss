@@ -64,10 +64,18 @@
 }
 
 // @description Build styles
-@mixin build-styles($styles) {
+@mixin build-styles($styles, $vars: utils.empty-map()) {
     @each $selector,$rules in $styles {
+        // Check for all breakpoints selector
+        @if utils.starts-with($selector, "@breakpoints") {
+            @include breakpoints.use-breakpoints() using ($breakpont) {
+                @include build-styles($rules, (
+                    "breakpoint": $breakpoint,
+                ));
+            }
+        }
         // Check for breakpoint selector
-        @if breakpoints.is-breakpoint-selector($selector) {
+        @else if breakpoints.is-breakpoint-selector($selector) {
             $breakpoint: breakpoints.get-breakpoint-from-selector($selector);
             @include breakpoints.use-breakpoint($breakpoint) {
                 @include build-styles($rules);
@@ -81,7 +89,8 @@
         }
         // If is not a media rule, add each rule
         @else if not utils.starts-with($selector, "@") {
-            #{utils.unquote($selector)} {
+            $parsed-selector: utils.template($selector, $vars);
+            #{utils.unquote($parsed-selector)} {
                 @include build-rules($rules)
             }
         }
