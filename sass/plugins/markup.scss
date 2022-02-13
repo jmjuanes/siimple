@@ -10,7 +10,13 @@
         plugins.create-markup-plugin((
             "id": "text.paragraph",
             "tag": "p",
-            "variants": constants.$default-paragraph-variant,
+            "styles": (
+                "margin-bottom": 1rem,
+                "margin-top": 0px,
+            ),
+            "variants": (
+                "default": constants.$default-paragraph-variant,
+            ),
         )),
         // Anchor style
         plugins.create-markup-plugin((
@@ -92,9 +98,7 @@
                 ),
             ),
             "variants": (
-                "default": (
-                    "background-color": "fill",
-                ),
+                "default": constants.$default-divider-variant,
             ),
         )),
         // Blockquote style
@@ -139,7 +143,9 @@
             "styles": (
                 "font-size": map.get(constants.$headings, "1"),
             ),
-            "variants": constants.$default-heading-variant,
+            "variants": (
+                "default": constants.$default-heading-variant,
+            ),
         )),
         // Heading 2
         plugins.create-markup-plugin((
@@ -148,7 +154,9 @@
             "styles": (
                 "font-size": map.get(constants.$headings, "2"),
             ),
-            "variants": constants.$default-heading-variant,
+            "variants": (
+                "default": constants.$default-heading-variant,
+            ),
         )),
         // Heading 3
         plugins.create-markup-plugin((
@@ -157,7 +165,9 @@
             "styles": (
                 "font-size": map.get(constants.$headings, "3"),
             ),
-            "variants": constants.$default-heading-variant,
+            "variants": (
+                "default": constants.$default-heading-variant,
+            ),
         )),
         // Heading 4
         plugins.create-markup-plugin((
@@ -166,7 +176,9 @@
             "styles": (
                 "font-size": map.get(constants.$headings, "4"),
             ),
-            "variants": constants.$default-heading-variant,
+            "variants": (
+                "default": constants.$default-heading-variant,
+            ),
         )),
         // Heading 5
         plugins.create-markup-plugin((
@@ -175,7 +187,9 @@
             "styles": (
                 "font-size": map.get(constants.$headings, "5"),
             ),
-            "variants": constants.$default-heading-variant,
+            "variants": (
+                "default": constants.$default-heading-variant,
+            ),
         )),
         // Heading 6
         plugins.create-markup-plugin((
@@ -184,7 +198,9 @@
             "styles": (
                 "font-size": map.get(constants.$headings, "6"),
             ),
-            "variants": constants.$default-heading-variant,
+            "variants": (
+                "default": constants.$default-heading-variant,
+            ),
         )),
     );
 }
