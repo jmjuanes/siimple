@@ -30,10 +30,27 @@ This plugin will style your heading elements, from `<h1>` through `<h6>`. For st
 <h6>h6. Siimple heading</h6>
 ```
 
+Headings will use the default variant of `text.heading` defined in the `$variants` section of your configuration:
+
+```scss
+@include siimple.configure((
+    $variants: (
+        "text.heading": (
+            "default": (
+                "color": "text",
+                "font-family": "heading",
+                "font-weight": "heading",
+                "line-height": "heading",
+            ),
+        ),
+    ),
+));
+```
+
 
 ### Paragraph
 
-This plugin will style your `<p>` elements. Paragraphs will use the `body` color defined in `$scales.color` and the `body` line height size defined in `$scales.line-heights`.
+This plugin will style your `<p>` elements. For style non paragraph HTML elements like `<div>` elements, you can use the [paragraph component](/components/paragraph) instead.
 
 ```html live=true
 <p>
@@ -44,6 +61,22 @@ This plugin will style your `<p>` elements. Paragraphs will use the `body` color
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
     aliquip ex ea commodo consequat. 
 </p>
+```
+
+This plugin will use the default variant of `text.paragraph` defined in the `$variants` section of your configuration:
+
+```scss
+@include siimple.configure((
+    $variants: (
+        "text.paragraph": (
+            "default": (
+                "color": "text",
+                "font-weight": "body",
+                "line-height": "body",
+            ),
+        ),
+    ),
+));
 ```
 
 
@@ -78,4 +111,18 @@ This plugin will style your `<hr>` elements. For styling non `<hr>` elements as 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
 <hr>
 <p class="has-mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+```
+
+The horizontal rule will use the default variant of `divider` defined in the `$variants` section of your configuration.
+
+```scss
+@include siimple.configure((
+    $variants: (
+        "divider": (
+            "default": (
+                "background-color": "fill",
+            ),
+        ),
+    ),
+));
 ```

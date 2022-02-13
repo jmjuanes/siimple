@@ -53,24 +53,22 @@ $shadow-large: 0rem 1rem 1rem -0.5rem rgba($shadow-color, 0.25), $shadow-ring;
 
 // Default heading variants
 $default-heading-variant: (
-    "default": (
-        "color": "heading",
-        "font-family": "heading",
-        "font-weight": "heading",
-        "line-height": "heading",
-    ),
+    "color": "text",
+    "font-family": "heading",
+    "font-weight": "heading",
+    "line-height": "heading",
 );
 
 // Default paragraph variant
 $default-paragraph-variant: (
-    "default": (
-        "color": "text",
-        "display": block,
-        "font-weight": "body",
-        "line-height": "body",
-        "margin-bottom": 1rem,
-        "margin-top": 0px,
-    ),
+    "color": "text",
+    "font-weight": "body",
+    "line-height": "body",
+);
+
+// Default divider variant
+$default-divider-variant: (
+    "background-color": "fill",
 );
 
 //Sizes mapping

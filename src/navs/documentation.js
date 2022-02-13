@@ -24,6 +24,7 @@ export const documentationNav = [
     {"group": "components", "url": "/components/label", "label": "Label"},
     {"group": "components", "url": "/components/modal", "label": "Modal"},
     {"group": "components", "url": "/components/navlink", "label": "Navlink"},
+    {"group": "components", "url": "/components/paragraph", "label": "Paragraph"},
     {"group": "components", "url": "/components/progress", "label": "Progress"},
     {"group": "components", "url": "/components/radio", "label": "Radio"},
     {"group": "components", "url": "/components/scrim", "label": "Scrim"},
