@@ -228,6 +228,16 @@
     @return $str;
 }
 
+// @description template substitution in string
+@function template($str: "", $vars: null, $start: "{{", $end: "}}") {
+    @if is-map($vars) {
+        @each $key,$value in $vars {
+            $str: replace($str, $start + $key + $end, $value);
+        }
+    }
+    @return $str;
+}
+
 // Secure string unquote
 // This method will check first if the provided value is a string
 @function unquote($str) {
