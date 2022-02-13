@@ -1,0 +1,26 @@
+@use "../constants.scss" as constants;
+@use "../plugins.scss" as plugins;
+
+// Generate divider component configuration
+@function plugin-divider() {
+    @return plugins.create-component-plugin((
+        "id": "divider",
+        "name": "divider",
+        "styles": (
+            "border": 0px,
+            "display": block,
+            "height": 0.125rem,
+            "padding": 0px,
+            //Divider first and last child
+            "&:not(:first-child)": (
+                "margin-top": 1rem,
+            ),
+            "&:not(:last-child)": (
+                "margin-bottom": 1rem,
+            ),
+        ),
+        "variants": (
+            "default": constants.$default-divider-variant,
+        ),
+    ));
+}
