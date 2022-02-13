@@ -4,11 +4,9 @@
 
 // Generate title component configuration
 @function plugin-title() {
-    $title-variants: utils.empty-map();
-    $title-variants: utils.set-in($title-variants, "default", (
-        "color": "heading",
-        "line-height": "heading",
-    ));
+    $title-variants: (
+        "default": constants.$default-heading-variant,
+    );
     @each $key,$size in constants.$headings {
         $title-variants: utils.set-in($title-variants, $key, (
             "font-size": "#{$size}",
