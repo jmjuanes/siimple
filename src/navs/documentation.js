@@ -23,7 +23,6 @@ export const documentationNav = [
     {"group": "components", "url": "/components/input", "label": "Input"},
     {"group": "components", "url": "/components/label", "label": "Label"},
     {"group": "components", "url": "/components/modal", "label": "Modal"},
-    {"group": "components", "url": "/components/navbar", "label": "Navbar"},
     {"group": "components", "url": "/components/navlink", "label": "Navlink"},
     {"group": "components", "url": "/components/progress", "label": "Progress"},
     {"group": "components", "url": "/components/radio", "label": "Radio"},
@@ -49,4 +48,5 @@ export const documentationNav = [
     {"group": "helpers", "url": "/helpers/spacing", "label": "Spacing"},
     {"group": "helpers", "url": "/helpers/typography", "label": "Typography"},
     {"group": "guides", "url": "/guides/styles", "label": "Styles syntax"},
+    {"group": "recipes", "url": "/recipes/navbar", "label": "Navbar"},
 ];
