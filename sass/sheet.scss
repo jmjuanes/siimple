@@ -68,7 +68,7 @@
     @each $selector,$rules in $styles {
         // Check for all breakpoints selector
         @if utils.starts-with($selector, "@breakpoints") {
-            @include breakpoints.use-breakpoints() using ($breakpont) {
+            @include breakpoints.use-breakpoints() using ($breakpoint) {
                 @include build-styles($rules, (
                     "breakpoint": $breakpoint,
                 ));
