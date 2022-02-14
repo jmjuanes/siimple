@@ -20,23 +20,15 @@
             ),
         ));
     }
-    // TODO: Register responsive breakpoints
-    // @each $breakpoint in breakpoints.get-breakpoints-names() {
-    //     @each $name,$size in constants.$columns {
-    //         $column-variants: map.set($column-variants, "#{$name}-#{$breakpoint}", (
-    //             "@breakpoint #{$breakpoint}": (
-    //                 "flex": none,
-    //                 "width": $size,
-    //             ),
-    //         ));
-    //     }
-    //     // Additional hidden column variant
-    //     $column-variants: map.set($column-variants, "hidden-#{$breakpoint}", (
-    //         "@breakpoint #{$breakpoint}": (
-    //             "display": "none",
-    //         ),
-    //     ));
-    // }
+    // Hidden column
+    $column-variants: map.set($column-variants, "hidden", (
+        "display": none,
+        "@breakpoints": (
+            "&-{{breakpoint}}": (
+                "display": none,
+            ),
+        ),
+    ));
     // Return column plugin
     @return (
         // Base column component
