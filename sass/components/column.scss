@@ -11,6 +11,13 @@
         $column-variants: map.set($column-variants, $name, (
             "flex": none,
             "width": $size,
+            // Responsive column size
+            "@breakpoints": (
+                "&-{{breakpoint}}": (
+                    "flex": none,
+                    "width": $size,
+                ),
+            ),
         ));
     }
     // TODO: Register responsive breakpoints
