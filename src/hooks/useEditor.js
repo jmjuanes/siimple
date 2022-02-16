@@ -7,11 +7,11 @@ import {lineNumbers} from "codecake/linenumbers.js";
 export const useEditor = (parent, options) => {
     const cake = React.useRef(null);
     React.useEffect(() => {
-        if (!cake.current) {
+        if (!cake.current && parent.current) {
             cake.current = CodeCake(parent.current, {});
             cake.current.addPlugin(highlight(options.lang || "html"));
             cake.current.addPlugin(lineNumbers());
         }
-    });
+    }, []);
     return cake;
 };

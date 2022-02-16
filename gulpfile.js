@@ -54,7 +54,7 @@ gulp.task("build:css", () => {
 });
 
 // Copy static assets
-gulp.task("docs:static", () => {
+gulp.task("static", () => {
     const files = [
         "dist/siimple.min.css",
         "dist/siimple-icons.ttf",
@@ -65,7 +65,7 @@ gulp.task("docs:static", () => {
     return gulp.src(files).pipe(gulp.dest("public/static/"));
 });
 
-// Copy documentation assets
-gulp.task("docs:assets", () => {
+// Copy assets
+gulp.task("assets", () => {
     return gulp.src("src/assets/*").pipe(gulp.dest("public/"));
 });

@@ -1,13 +1,13 @@
 import React from "react";
 import kofi from "kofi";
 import lzString from "lz-string";
-import {getPlaygroundTemplate} from "../utils/getPlaygroundTemplate.js";
+import {getSandboxTemplate} from "../utils/getSandboxTemplate.js";
 import {getHost} from "../utils/host.js";
 
 //Create a new empty sandbox
 const createSandbox = () => ({
     "version": "latest",      // siimple version 
-    "html": getPlaygroundTemplate(),
+    "html": getSandboxTemplate(),
 });
 
 // Compress and decompress  string
@@ -43,7 +43,7 @@ const shareSandbox = content => {
         }
         query.set("data", compressStr(content.html));
         // Return processed URL
-        return `${host}/playground#${query.toString()}`;
+        return `${host}/#${query.toString()}`;
     });
 };
 

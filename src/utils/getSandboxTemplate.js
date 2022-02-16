@@ -1,19 +1,13 @@
-const playgroundTemplate = `
-<!-- 
-    Welcome to Siimple Playground!
-    Here you can try siimple before you add it to your project.
-    
-    Found a bug? Tell us at https://github.com/jmjuanes/siimple/issues
-    Any problem? Join https://github.com/jmjuanes/siimple/discussions
-    Follow us on twitter: @siimplecss
--->
-
+const sandboxTemplate = `
 <div class="has-p-8">
-    <div class="has-mb-6">
-        <i class="icon is-siimple" style="font-size:80px;"></i>
+    <div class="has-mb-6 has-bg-coolgray-200 has-radius has-p-8">
+        <div class="has-d-flex has-items-center has-justify-center">
+            <i class="icon is-siimple has-text-5xl"></i>
+            <div class="has-pl-4 has-text-4xl has-weight-bold">Sandbox</div>
+        </div>
     </div>
     <div class="paragraph">
-        The <strong>siimple playground</strong> application is an online 
+        The <strong>Siimple Sandbox</strong> application is an online 
         editor that you can use for prototyping and trying the 
         <strong>siimple CSS toolkit</strong> before adding it to your 
         project.
@@ -50,5 +44,5 @@ const playgroundTemplate = `
 </div>
 `;
 
-// Generate a playground template
-export const getPlaygroundTemplate = () => playgroundTemplate;
+// Generate a sandbox template
+export const getSandboxTemplate = () => sandboxTemplate;

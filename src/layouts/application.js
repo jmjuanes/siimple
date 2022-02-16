@@ -1,8 +1,7 @@
 import React from "react";
 import kofi from "kofi";
-import {Link} from "../components/Link.js";
+// import {Link} from "../components/Link.js";
 import {Icon} from "../components/Icon.js";
-import {Seo} from "../components/Seo.js";
 
 // Layout base component
 const ApplicationLayout = props => {
@@ -30,9 +29,12 @@ const ApplicationLayout = props => {
             {/* Heading section */}
             <div className={headerClass}>
                 <div className="has-mr-0">
-                    <Link to="/" className="has-d-block has-text-coolgray-700 has-text-no-underline">
+                    <a href="/" className="has-d-flex has-items-center has-text-coolgray-700 has-text-no-underline">
                         <Icon icon="siimple" style={{"fontSize":"40px"}} />
-                    </Link>
+                        {kofi.when(!!props.title, () =>(
+                            <div class="has-pl-2 has-text-xl has-weight-bold">{props.title}</div>
+                        ))}
+                    </a>
                 </div>
                 {/* Additional buttons */}
                 <div className="has-d-flex has-ml-auto">
@@ -50,15 +52,14 @@ const ApplicationLayout = props => {
             <div className="has-flex-grow has-w-full has-d-flex has-items-stretch has-minh-0">
                 {props.children}
             </div>
-            <Seo title={props.title} />
         </div>
     );
 }
 
 //Layout default props
 ApplicationLayout.defaultProps = {
-    title: "",
     theme: "light",
+    title: "",
     buttons: [],
 };
 
