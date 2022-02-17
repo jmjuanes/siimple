@@ -51,7 +51,7 @@
                 "-webkit-font-smoothing": antialiased,
                 "&::before": (
                     "box-sizing": border-box, //inherit;
-                    "display": block,
+                    // "display": block,
                 ),
             ),
             "variants": $icons-variants,
