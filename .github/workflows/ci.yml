@@ -88,11 +88,12 @@ jobs:
       - run: 'echo "$FIREBASE_CONFIG" > .firebaserc'
         shell: bash
         env:
-          FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG_DEVEL }}
+          FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+      - run: npm run pre:deploy --target="docs-devel"
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           projectId: "${{ secrets.FIREBASE_PROJECT }}"
           channelId: live
-          target: siimple
+          target: docs-devel
