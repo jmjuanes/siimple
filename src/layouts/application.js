@@ -29,12 +29,12 @@ const ApplicationLayout = props => {
             {/* Heading section */}
             <div className={headerClass}>
                 <div className="has-mr-0">
-                    <a href="/" className="has-d-flex has-items-center has-text-coolgray-700 has-text-no-underline">
+                    <div className="has-d-flex has-items-center has-text-coolgray-700 has-text-no-underline">
                         <Icon icon="siimple" style={{"fontSize":"40px"}} />
                         {kofi.when(!!props.title, () =>(
                             <div class="has-pl-2 has-text-xl has-weight-bold">{props.title}</div>
                         ))}
-                    </a>
+                    </div>
                 </div>
                 {/* Additional buttons */}
                 <div className="has-d-flex has-ml-auto">

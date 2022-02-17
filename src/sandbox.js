@@ -3,45 +3,45 @@ import ReactDOM from "react-dom";
 import kofi from "kofi";
 
 import Layout from "./layouts/application.js";
-import {Preview, updatePreview} from "./components/Preview.js";
 import {useEditor} from "./hooks/useEditor.js";
 import {useSandbox} from "./hooks/useSandbox.js";
+import {copyTextToClipboard} from "./utils/clipboard.js";
 
 // Export playground application wrapper
 const SandboxApp = props => {
     const buttons = []; // Header buttons list
     const codeRef = React.useRef();
     const previewRef = React.useRef();
-    const fileRef = React.useRef();
+    // const fileRef = React.useRef();
     const [shareUrl, setShareUrl] = React.useState("");
+    const [shareUrlCopied, setShareUrlCopied] = React.useState(false);
     const editor = useEditor(codeRef, {});
     const sandbox = useSandbox();
     // const [theme, setTheme] = React.useState(props.defaultTheme || "light");
     // Run after app is rendered for the first time
-    React.useEffect(() => {
-        sandbox.current.init().then(() => {
-            editor.current.setCode(sandbox.current.content.html);
-            updatePreview(previewRef, sandbox.current.content);
+    const initSandbox = () => {
+        sandbox.init().then(() => {
+            editor.current.setCode(sandbox.content.html);
         });
-    }, []);
-    // Handle preview frame loaded --> render sandbox content
-    const handlePreviewLoad = () => {
-        if (sandbox.current?.content) {
-            updatePreview(previewRef, sandbox.current.content);
-        }
     };
+    React.useEffect(() => initSandbox(), []);
+    React.useEffect(() => sandbox.render(previewRef.current), [sandbox.key]);
     // Handle share click --> generate share url
     const handleShareClick = () => {
-        return sandbox.current.share().then(url => {
-            return setShareUrl(url);
+        return sandbox.share().then(url => {
+            setShareUrlCopied(false);
+            setShareUrl(url);
         });
     };
     // Handle action button click --> run sandbox
     const handleRunClick = () => {
-        sandbox.current.update({
+        return sandbox.update({
             html: editor.current.getCode() || "",
         });
-        return updatePreview(previewRef, sandbox.current.content);
+    };
+    // Handle copy click --> Copy sandbox url to clipboard
+    const handleCopyClick = () => {
+        copyTextToClipboard(shareUrl).then(() => setShareUrlCopied(true));
     };
     // Run sandbox button
     buttons.push({
@@ -56,11 +56,11 @@ const SandboxApp = props => {
         onClick: handleShareClick,
     });
     // Navigate to documentation button
-    buttons.push({
-        text: "Docs",
-        icon: "book",
-        // onClick: () => navigate("/installation"),
-    });
+    // buttons.push({
+    //     text: "Docs",
+    //     icon: "book",
+    //     // onClick: () => navigate("/installation"),
+    // });
     const codeClass = kofi.classNames({
         "has-p-6 has-radius has-s-full": true,
         "has-overflow-hidden": true,
@@ -78,24 +78,41 @@ const SandboxApp = props => {
                 <div ref={codeRef} className={codeClass} />
                 <div className="has-h-full has-w-4" />
                 <div className={resultClass}>
-                    <Preview ref={previewRef} onLoad={handlePreviewLoad} />
+                    <iframe
+                        ref={previewRef}
+                        key={sandbox.key || 0}
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            border: "0",
+                            backgroundColor: "#ffffff",
+                        }}
+                        sandbox="allow-scripts allow-same-origin"
+                        scrolling="yes"
+                    />
                 </div>
             </div>
-            {/* Load file input */}
-            <input type="file" ref={fileRef} hidden onChange={handlePreviewLoad} />
             {/* Share sandbox modal */}
             {!!shareUrl ? (
                 <div className="scrim">
                     <div className="modal is-medium">
-                        <div className="title is-3">Share</div>
+                        <div className="has-d-flex has-items-center has-mb-4">
+                            <div className="title is-3 has-mb-0">Share</div>
+                            <div className="close has-ml-auto" onClick={() => setShareUrl("")} />
+                        </div>
                         <div className="paragraph">
                             You can use the following URL for sharing your code:
                         </div>
                         <div className="has-mb-6">
-                            <textarea className="textarea" readOnly defaultValue={shareUrl} />
+                            <textarea
+                                className="textarea has-text-xs"
+                                rows="5"
+                                readOnly
+                                defaultValue={shareUrl}
+                            />
                         </div>
-                        <div className="btn is-full" onClick={() => setShareUrl("")}>
-                            <strong>Close</strong>
+                        <div className="btn is-full" onClick={() => handleCopyClick()}>
+                            <strong>{shareUrlCopied ? "Copied!" : "Copy to clipboard"}</strong>
                         </div>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ const sandboxTemplate = `
         side of this view. In the toolbar you can find the following buttons:
     </div>
     <div class="has-d-flex has-items-center has-mt-2">
-        <div class="has-radius-full has-p-2 has-bg-blue-200 has-text-blue-600">
+        <div class="has-radius-full has-p-2 has-bg-blue-200 has-text-blue-600 has-d-flex">
             <i class="icon is-play has-text-large"></i>
         </div>
         <div class="has-flex-grow has-ml-4">
@@ -25,7 +25,7 @@ const sandboxTemplate = `
         </div>
     </div>
     <div class="has-d-flex has-items-center has-mt-2">
-        <div class="has-radius-full has-p-2 has-bg-blue-200 has-text-blue-600">
+        <div class="has-radius-full has-p-2 has-bg-blue-200 has-text-blue-600 has-d-flex">
             <i class="icon is-link has-text-large"></i>
         </div>
         <div class="has-flex-grow has-ml-4">
@@ -34,7 +34,7 @@ const sandboxTemplate = `
         </div>
     </div>
     <div class="has-d-flex has-items-center has-mt-2">
-        <div class="has-radius-full has-p-2 has-bg-blue-200 has-text-blue-600">
+        <div class="has-radius-full has-p-2 has-bg-blue-200 has-text-blue-600 has-d-flex">
             <i class="icon is-book has-text-large"></i>
         </div>
         <div class="has-flex-grow has-ml-4">
