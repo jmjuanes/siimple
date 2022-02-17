@@ -18,7 +18,8 @@
         "docs": "gatsby build && gulp static assets",
         "sandbox": "webpack build --config ./webpack.config.js --env target=sandbox && gulp static",
         "serve": "stattic --folder ./public --port 5000",
-        "test": "jest"
+        "test": "jest",
+        "pre:deploy": "sed 's/{{target}}/'${npm_config_target}'/g' config/firebase.json > firebase.json"
     },
     "devDependencies": {
         "@mdx-js/mdx": "^1.0.1",
