@@ -35,6 +35,7 @@
             "id": "navigation.tab",
             "name": "tab",
             "styles": (
+                "border-radius": 0.5rem,
                 "color": currentColor,
                 "cursor": pointer,
                 "display": block,
@@ -49,7 +50,6 @@
             "variants": (
                 "default": (
                     "background-color": "transparent",
-                    "border-radius": "normal",
                     "&:hover": (
                         "color": "primary",
                     ),
