@@ -47,6 +47,7 @@
                 "font-weight": (normal "important"),
                 "line-height": utils.get-in($options, "line-height", 1),
                 "text-rendering": auto,
+                "vertical-align": -0.125em,
                 "-moz-osx-font-smoothing": grayscale,
                 "-webkit-font-smoothing": antialiased,
                 "&::before": (
