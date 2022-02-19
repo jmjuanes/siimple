@@ -6,6 +6,7 @@ import Layout from "../layouts/default.js";
 import {Link} from "../components/Link.js";
 import {Icon} from "../components/Icon.js";
 import {LiveCode} from "../components/LiveCode.js";
+import {copyTextToClipboard} from "../utils/clipboard.js";
 
 // Sorted icons list
 const sortedIcons = icons.sort((a, b) => a.id < b.id ? -1 : +1);
@@ -32,7 +33,17 @@ const getDisplayedIcons = query => {
 const IconsList = props => {
     const displayedIcons = getDisplayedIcons(props.query);
     if (displayedIcons.length === 0) {
-        return "No icons found...";
+        return (
+            <div align="center" className="has-mx-auto has-w-full has-maxw-128">
+                <div className="">
+                    <Icon icon="face-sad" style={{fontSize: "96px"}} />
+                </div>
+                <div className="title is-2 has-mt-3 has-mb-2">No icons found</div>
+                <div className="paragraph has-text-lg">
+                    There are no icons that matches <strong>"{props.query}"</strong>.
+                </div>
+            </div>
+        );
     }
     return (
         <div className="has-d-flex has-flex-wrap">
@@ -53,11 +64,18 @@ const IconsList = props => {
 };
 
 const IconModal = props => {
+    const [iconCopied, setIconCopied] = React.useState(false);
     const previewClass = kofi.classNames([
         "has-d-flex has-justify-center has-p-12 has-radius",
         "has-mb-4 has-mr-2",
         iconThemes[props.theme],
     ]);
+    const iconHtml = getIconUsage(props.icon);
+    const iconSvgUrl = `${process.env.RAW_URL}/icons/${props.icon.id}.svg`;
+    const handleIconCopy = () => {
+        copyTextToClipboard(iconHtml);
+        setIconCopied(true);
+    };
     return (
         <div className="scrim">
             <div className="modal is-large">
@@ -95,7 +113,28 @@ const IconModal = props => {
                     </div>
                     <div className="column is-three-fifths is-full-mobile">
                         <div className="paragraph">Using this icon:</div>
-                        <LiveCode className="html">{getIconUsage(props.icon)}</LiveCode>
+                        <LiveCode className="html">{iconHtml}</LiveCode>
+                        <div className="columns">
+                            <div className="column has-pt-0">
+                                <div
+                                    className="btn has-d-flex has-items-center has-justify-center"
+                                    onClick={() => handleIconCopy()}
+                                >
+                                    <Icon icon="copy" className="has-pr-2" />
+                                    <strong>{iconCopied ? "Copied!" : "Copy HTML"}</strong>
+                                </div>
+                            </div>
+                            <div className="column has-pt-0">
+                                <Link
+                                    to={iconSvgUrl}
+                                    target="_blank"
+                                    className="btn is-secondary has-d-flex has-items-center has-justify-center"
+                                >
+                                    <Icon icon="download" className="has-pr-2" />
+                                    <strong>Download SVG</strong>
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,12 +160,12 @@ export default () => {
                 </div>
             </div>
             {/* Icons list */}
-            <div className="content is-xlarge">
+            <div className="content is-xlarge has-mb-24">
                 <div className="has-d-flex has-items-center has-mb-4 has-bg-coolgray-200 has-radius">
-                    <Icon icon="search" className="has-text-xl has-pl-3 has-pr-2" />
+                    <Icon icon="search" className="has-text-2xl has-pl-3 has-pr-2" />
                     <input
                         type="text"
-                        className="input has-flex-grow"
+                        className="input has-flex-grow has-py-4"
                         placeholder="Search for icons..."
                         onChange={e => setQuery(e.target.value || "")}
                     />
