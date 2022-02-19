@@ -20,6 +20,7 @@ const env = (envFiles => {
 
 // Default values
 const REPO_URL = "https://github.com/jmjuanes/siimple";
+const RAW_URL = "https://raw.githubusercontent.com/jmjuanes/siimple/main";
 const TWITTER_URL = "https://twitter.com/siimplecss";
 // const IS_STAGING = Boolean(JSON.parse(process.env.STAGING || "false"));
 // const IS_LOCAL_SERVER = Boolean(JSON.stringify(process.env.LOCAL_SERVER));
@@ -49,4 +50,5 @@ module.exports = Object.assign(env, {
     "ISSUES_URL": env["ISSUES_URL"] || `${REPO_URL}/issues`,
     "DISCUSSIONS_URL": env["DISCUSSIONS_URL"] || `${REPO_URL}/discussions`,
     "TWITTER_URL": env["TWITTER_URL"] || TWITTER_URL,
+    "RAW_URL": env["RAW_URL"] || RAW_URL,
 });
