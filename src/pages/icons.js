@@ -112,7 +112,19 @@ const IconModal = props => {
                         </div>
                     </div>
                     <div className="column is-three-fifths is-full-mobile">
-                        <div className="paragraph">Using this icon:</div>
+                        <div className="has-p-4 has-radius has-bg-coolgray-200 has-mb-4 has-d-flex">
+                            <div className="has-pr-4">
+                                <div className="has-radius-full has-p-1 has-bg-blue-700 has-d-flex">
+                                    <Icon icon="info" className="has-text-white" />
+                                </div>
+                            </div>
+                            <div className="has-flex-grow has-text-sm">
+                                <div>Category: <strong className="has-text-capitalize">{props.icon.categories}</strong></div>
+                                <div>Tags: <strong>{props.icon.keywords.join(", ")}</strong></div>
+                                <div>Added in: <strong>{props.icon.added || "-"}</strong></div>
+                            </div>
+                        </div>
+                        <div className="paragraph">Using this icon as a webfont:</div>
                         <LiveCode className="html">{iconHtml}</LiveCode>
                         <div className="columns">
                             <div className="column has-pt-0">
@@ -120,7 +132,7 @@ const IconModal = props => {
                                     className="btn has-d-flex has-items-center has-justify-center"
                                     onClick={() => handleIconCopy()}
                                 >
-                                    <Icon icon="copy" className="has-pr-2" />
+                                    <Icon icon="copy" className="has-pr-1 has-text-lg" />
                                     <strong>{iconCopied ? "Copied!" : "Copy HTML"}</strong>
                                 </div>
                             </div>
@@ -130,7 +142,7 @@ const IconModal = props => {
                                     target="_blank"
                                     className="btn is-secondary has-d-flex has-items-center has-justify-center"
                                 >
-                                    <Icon icon="download" className="has-pr-2" />
+                                    <Icon icon="download" className="has-pr-1 has-text-lg" />
                                     <strong>Download SVG</strong>
                                 </Link>
                             </div>
