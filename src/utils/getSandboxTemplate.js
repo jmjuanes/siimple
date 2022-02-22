@@ -1,45 +1,31 @@
 const sandboxTemplate = `
-<div class="has-p-8">
-    <div class="has-mb-6 has-bg-coolgray-200 has-radius has-p-8">
-        <div class="has-d-flex has-items-center has-justify-center">
-            <i class="icon is-siimple has-text-5xl"></i>
-            <div class="has-pl-4 has-text-4xl has-weight-bold">Sandbox</div>
-        </div>
+<div class="has-p-12">
+    <div class="title is-1 has-d-flex has-items-center">
+        <i class="icon is-siimple has-pr-3"></i>
+        Welcome!
+    </div>
+    <div class="title is-3">What is this tool?</div>
+    <div class="paragraph">
+        This tiny tool allows you to try <strong>siimple</strong> in your browser,
+        without installing anything in your computer. Great for learning or
+        prototyping using the <strong>siimple toolkit</strong>.
     </div>
     <div class="paragraph">
-        The <strong>Siimple Sandbox</strong> application is an online 
-        editor that you can use for prototyping and trying the 
-        <strong>siimple CSS toolkit</strong> before adding it to your 
-        project.
+        For example, you can use this tool to design a notification using the 
+        <strong>Alert</strong> component: 
     </div>
+    <div class="alert is-secondary has-d-flex">
+        <div class="has-mr-8">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+        <div class="close has-ml-auto"></div>
+    </div>
+    <div class="title is-3">How to get started?</div>
     <div class="paragraph">
-        To get started, just edit this page using the code editor on the left 
-        side of this view. In the toolbar you can find the following buttons:
-    </div>
-    <div class="has-d-flex has-items-center has-mt-2">
-        <div class="has-radius-full has-p-2 has-bg-blue-200 has-text-blue-600 has-d-flex">
-            <i class="icon is-play has-text-large"></i>
-        </div>
-        <div class="has-flex-grow has-ml-4">
-            <strong>Run</strong>: click on this button to preview your code.
-        </div>
-    </div>
-    <div class="has-d-flex has-items-center has-mt-2">
-        <div class="has-radius-full has-p-2 has-bg-blue-200 has-text-blue-600 has-d-flex">
-            <i class="icon is-link has-text-large"></i>
-        </div>
-        <div class="has-flex-grow has-ml-4">
-            <strong>Share</strong>: generate an URL that you can use to share 
-            your current code.
-        </div>
-    </div>
-    <div class="has-d-flex has-items-center has-mt-2">
-        <div class="has-radius-full has-p-2 has-bg-blue-200 has-text-blue-600 has-d-flex">
-            <i class="icon is-book has-text-large"></i>
-        </div>
-        <div class="has-flex-grow has-ml-4">
-            <strong>Docs</strong>: navigate to the documentation of siimple. 
-        </div>
+        Feel free to edit and play with this code! And remember that you can 
+        use the <strong>Share</strong> button to generate a link for sharing your 
+        current code or saving it.
     </div>
 </div>
 `;
