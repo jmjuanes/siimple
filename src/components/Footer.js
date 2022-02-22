@@ -4,9 +4,9 @@ import {Link} from "./Link.js";
 // Footer links
 const FOOTER_LINKS = [
     {"to": process.env.TWITTER_URL, "target": "_blank", "text": "Follow us"},
-    {"to": process.env.REPO_URL, "target": "_blank", "text": "GitHub"},
+    {"to": process.env.REPO_URL, "target": "_blank", "text": "Repository"},
     {"to": process.env.ISSUES_URL, "target": "_blank", "text": "Issues"},
-    {"to": "/privacy", "text": "Privacy"},
+    // {"to": "/privacy", "text": "Privacy"},
 ];
 
 export const Footer = props => {
