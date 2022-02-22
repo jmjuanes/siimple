@@ -3,15 +3,12 @@ import kofi from "kofi";
 import lzString from "lz-string";
 import {getSandboxTemplate} from "../utils/getSandboxTemplate.js";
 import {getHost} from "../utils/host.js";
-import {getCDNPath} from "../cdn.js";
+// import {getCDNPath} from "../cdn.js";
 
 //Create a new empty sandbox
 const createSandbox = () => ({
-    content: {
-        version: "latest",      // siimple version 
-        html: getSandboxTemplate(),
-    },
-    key: null,
+    version: "latest",      // siimple version 
+    html: getSandboxTemplate(),
 });
 
 // Compress and decompress  string
@@ -21,15 +18,15 @@ const decompressStr = str => lzString.decompressFromBase64(str);
 // Fetch sandbox from source
 const importSandbox = () => {
     return new Promise((resolve, reject) => {
-        const content = createSandbox().content;
+        const content = {};
         const query = new URLSearchParams(window.location.hash.substr(1) || "");
-        // Check for version provided --> create an empty sandbox
-        if (query.has("version")) {
-            content.version = query.get("version");
-        }
+        // Check for custom version provided
+        // if (query.has("version")) {
+        //     content.version = query.get("version");
+        // }
         // Check for sandbox encoded in source
-        if (query.has("data")) {
-            content.html = decompressStr(query.get("data"));
+        if (query.has("html")) {
+            content.html = decompressStr(query.get("html"));
         }
         // Continue
         return resolve(content);
@@ -45,9 +42,9 @@ const shareSandbox = content => {
         if (content.version !== "latest") {
             query.set("version", "latest");
         }
-        query.set("data", compressStr(content.html));
+        query.set("html", compressStr(content.html));
         // Return processed URL
-        return `${host}/#${query.toString()}`;
+        return `${host}/try#${query.toString()}`;
     });
 };
 
@@ -64,56 +61,30 @@ const exportSandbox = sandbox => {
     return kofi.downloadFile(fileName, fileContent);
 };
 
-// Render sandbox
-const renderSandbox = (parent, content) => {
-    const cdnPath = getCDNPath(content.version, "siimple.min.css");
-    const documentTemplate = `
-        <html>
-            <head>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <link href="${cdnPath}" rel="stylesheet" type="text/css">
-                <script>
-                    // window.addEventListener("message", event => {});
-                </script>
-            </head>
-            <body>${content.html}</body>
-        </html>
-    `;
-    parent.setAttribute("sandbox", "allow-scripts allow-same-origin");
-    // parent.setAttribute("scrolling", "yes"); // Enable iframe scrolling
-    // parent.style.width = "100%"; // Iframe width
-    // parent.style.height = "100%"; // Iframe height
-    // parent.style.backgroundColor = "#ffffff";
-    // parent.style.border = "0"; // Remove iframe borders 
-    // Load iframe content
-    parent.contentWindow.document.open();
-    parent.contentWindow.document.write(documentTemplate);
-    parent.contentWindow.document.close(); 
-};
-
 // Sandbox hooks
 export const useSandbox = () => {
-    const [sandbox, setSandbox] = React.useState(() => {
-        return createSandbox();
-    });
-    // First rendering --> initialize sandbox
+    const sandbox = React.useRef(null);
     React.useEffect(() => {
-        if (!sandbox.key) { 
+        // Initialize sandbox content
+        sandbox.current = {
+            content: createSandbox(),
+            key: null,
+        };
+        // Register sandbox update method --> update sandbox content
+        sandbox.current.update = newContent => {
+            sandbox.content = Object.assign(sandbox.current.content, newContent);
             sandbox.key = Date.now();
-            // Register sandbox merhods
-            sandbox.update = newContent => {
-                sandbox.content = Object.assign(sandbox.content, newContent);
-                sandbox.key = Date.now();
-                setSandbox({...sandbox}); // Update sandbox
-            };
-            sandbox.share = () => shareSandbox(sandbox.content);
-            sandbox.render = parent => renderSandbox(parent, sandbox.content);
-            sandbox.init = () => {
-                return importSandbox().then(content => sandbox.update(content));
-            };
-        }
+        };
+        // Register sandbox init method --> initialize sandbox
+        sandbox.current.init = () => {
+            return importSandbox().then(content => sandbox.current.update(content));
+        };
+        // Register sandbox share method
+        sandbox.current.share = () => {
+            return shareSandbox(sandbox.current.content);
+        };
     }, []);
+
     // Return sandbox reference
     return sandbox;
 };

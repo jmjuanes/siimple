@@ -10,7 +10,7 @@ const HEADER_ITEMS = [
     {"text": "Getting started", "icon": "rocket", "href": "/installation"},
     {"text": "Icons", "icon": "shapes", "href": "/icons"},
     {"text": "Colors", "icon": "palette", "href": "/colors"},
-    {"text": "Try it", "icon": "external-link", "href": process.env.SANDBOX_URL},
+    {"text": "Try it", "icon": "code", "href": "/try"},
 ];
 
 export const Header = props => {

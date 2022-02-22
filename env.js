@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const dotenv = require("dotenv");
 const package = require("./package.json");
-const applications = require("./config/applications.json");
+// const applications = require("./config/applications.json");
 
 const DEVEL_MODE = "development";
 // const NODE_ENV = process.env.NODE_ENV || DEVEL_MODE;
@@ -41,9 +41,6 @@ module.exports = Object.assign(env, {
     "VERSION": package.version,
     // "HOST": env["HOST"] || getCurrentHost(),
     "STATIC_PATH": "/static",
-
-    // Online tools
-    "SANDBOX_URL": applications.sandbox.url,
 
     // Social configuration
     "REPO_URL": env["REPO_URL"] || REPO_URL,
