@@ -47,7 +47,7 @@ $-variants: utils.empty-map();
 }
 
 // @description Use the specified variant
-@mixin use-variant($name, $variants-list) {
+@mixin use-variant-from($name, $variants-list, $keys: null) {
     //Check if this mixin has been called outside of any styles rules
     @if not & {
         @error("siimple.use-variant mixin can not be used outside a style rules");
@@ -55,15 +55,33 @@ $-variants: utils.empty-map();
     @if has-variant($name) {
         $variants-list: get-variant($name);
     }
-    // Register each variant block
-    @each $variant-name, $variant-styles in $variants-list {
-        $classname: "&"; //By default we will use the parent selector
-        @if $variant-name != "default" {
-            $classname: $classname + naming.get-variant-classname($variant-name);
-        }
-        //Build variant styles
-        @include sheet.build-styles(
-            sheet.parse-styles($classname, $variant-styles)
-        );
+    // Check for not variants keys provided --> get all form variant list
+    @if not $keys {
+        $keys: map.keys($variants-list);
     }
+    // Register each variant block
+    // @each $variant-name, $variant-styles in $variants-list {
+    @each $variant-name in $keys {
+        @if map.has-key($variants-list, $variant-name) {
+            $variant-styles: map.get($variants-list, $variant-name);
+            $classname: "&"; //By default we will use the parent selector
+            @if $variant-name != "default" {
+                $classname: $classname + naming.get-variant-classname($variant-name);
+            }
+            //Build variant styles
+            @include sheet.build-styles(
+                sheet.parse-styles($classname, $variant-styles)
+            );
+        }
+    }
+}
+
+// @description Use the specified variant
+@mixin use-variant($name, $variants-list) {
+    @include use-variant-from($name, $variants-list);
+}
+
+// @description Use ony the default field of the specified variant
+@mixin use-default-variant($name, $variants-list) {
+    @include use-variant-from($name, $variants-list, ("default"));
 }
