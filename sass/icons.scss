@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "sass:string";
+@use "./naming.scss" as naming;
 @use "./variants.scss" as variants;
 @use "./utils.scss" as utils;
 
@@ -28,6 +29,7 @@
 
 // Icons module
 @mixin icons($options: utils.empty-map()) {
+    $icons-prefix: naming.get-prefix("icons");
     $icons-font-name: utils.get-in($options, "font-name", "siimple-icons");
     $icons-font-path: utils.get-in($options, "font-path", "./");
     // Generate fonts paths
@@ -41,8 +43,8 @@
         src: url(#{$font-ttf}) format("truetype"), url(#{$font-woff}) format("woff");
     }
     // Icons base styles
-    [class^="icon-"],
-    [class*=" icon-"] {
+    [class^="#{$icons-prefix}"],
+    [class*=" #{$icons-prefix"] {
         align-self: center;
         // display: inline-flex;
         font-family: #{$icons-name};
@@ -61,7 +63,8 @@
     }
     // All icons
     @each $icon in get-icons() {
-        icon-#{$icon}::before {
+        $icon-class: "#{$icon-prefix}#{$icon-name}";
+        #{$icon-class}::before {
             content: get-icon-str($icon);
         }
     }
