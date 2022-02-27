@@ -1,6 +1,7 @@
 @use "sass:list";
 @use "sass:map";
 @use "./breakpoints.scss" as breakpoints;
+@use "./colors.scss" as colors;
 @use "./constants.scss" as constants;
 @use "./naming.scss" as naming;
 @use "./utils.scss" as utils;
@@ -72,6 +73,21 @@
 
 // All utilities mixin
 @mixin utilities() {
+    // Colors utilities
+    @include utility((
+        "name": "bg",
+        "properties": ("background-color"),
+        "states": ("default" "hover"),
+        "responsive": false,
+        "values": colors.get-colors(),
+    ));
+    @include utility((
+        "name": "text",
+        "properties": ("color"),
+        "states": ("default" "hover"),
+        "responsive": false,
+        "values": colors.get-colors(),
+    ));
     // Cursor utilities
     @include utility((
         "name": "cursor",
