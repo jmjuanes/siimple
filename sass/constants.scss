@@ -547,3 +547,11 @@ $border-radius-values: (
     "full": 9999px,
     "none": 0px,
 ) !default;
+
+// Shadow values
+$shadow-values: (
+    "sm": $shadow-small,
+    "default": $shadow-normal,
+    "lg": $shadow-large,
+    "none": none,
+) !default;
