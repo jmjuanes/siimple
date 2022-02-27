@@ -1,0 +1,61 @@
+// @description Add reboot styles
+@mixin reboot() {
+    // Reset box sizing of all elements
+    // *,
+    // *:before,
+    // *:after {
+    //     box-sizing: border-box;
+    // }
+    // Set default html style
+    html {
+        // box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+     // Set default body style
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        // text-rendering: optimizeSpeed;
+    }
+    // Reset margins on lists
+    ul,
+    ol,
+    dl {
+        margin-bottom: 1rem; // lib.$margin-bottom;
+        margin-top: 0;
+    }
+    // Reset margins on paragraphs
+    p {
+        margin-bottom: 1rem; // lib.$margin-bottom;
+        margin-top: 0;
+    }
+    // Fix bold weight (in firefox)
+    strong,
+    b {
+        font-weight: bold;
+    }
+    // Make images and videos responsive by default
+    img,
+    video {
+        display: block;
+        height: auto;
+        max-width: 100%;
+    }
+    // Remove border from iframe
+    iframe {
+        border: 0;
+    }
+    // Reset table border
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    // td,
+    // th {
+    //     padding: 0;
+    // }
+}
