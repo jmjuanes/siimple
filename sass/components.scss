@@ -1,0 +1,500 @@
+@use "./constants.scss" as constants;
+@use "./selectors.scss" as selectors;
+@use "./variants.scss" as variants;
+@use "./utils.scss" as utils;
+
+// Default options for content
+$content-default-gap: 1.5rem;
+$content-default-sizes: (
+    "small":  "608px",    //--> 560px
+    "medium": "768px",    //--> 720px
+    "large":  "1008px",   //--> 960px
+    "xlarge": "1200px",   //--> 1152px
+    "huge":   "1360px",   //--> 1312px
+);
+
+// Alert component mixin
+@mixin alert() {
+    @include selectors.use-component-selector("alert") {
+        align-items: center;
+        border-radius: 0.5rem;
+        display: flex;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        margin-top: 0px;
+        min-width: 0px;
+        padding: 1.25rem;
+        position: relative;
+        @include variants.use-variants("alert", (
+            "default": (
+                "background-color": "primary",
+                "color": white,
+            ),
+            "secondary": (
+                "background-color": "secondary",
+                "color": white,
+            ),
+        ));
+    };
+}
+
+// Generate badge component configuration
+@mixin badge() {
+    @include selectors.use-component-selector("badge") {
+        border-radius: 0.25rem;
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: bold;
+        line-height: 1.25rem;
+        // margin-bottom: 8px;
+        // margin-right: 1px;
+        padding: 0.25rem 0.5rem;
+        text-decoration: none;
+        vertical-align: text-top;
+        @include variants.use-variants("badge", (
+            "default": (
+                "background-color": "primary",
+                "color": white,
+            ),
+            "secondary": (
+                "background-color": "secondary",
+                "color": white,
+            ),
+        ));
+    };
+}
+
+// Generate btn component configuration
+@mixin btn() {
+    @include selectors.use-component-selector("btn") {
+        appearance: none;
+        // Disable default button element borders
+        // https://github.com/siimple/siimple/pull/17
+        border: 0px;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        display: inline-block;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: bold;
+        line-height: inherit;
+        // min-height: 24px;
+        min-width: 0px;
+        padding: 0.75rem 1.5rem;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        vertical-align: middle;
+        // Button hover style
+        &:hover {
+            // opacity: 0.8;
+            text-decoration: none;
+            transition-duration: 0.3s;
+            transition-property: background-color;
+        }
+        @include variants.use-variants("button", (
+            "default": (
+                "background-color": "primary",
+                "color": white,
+            ),
+            "secondary": (
+                "background-color": "secondary",
+                "color": white,
+            ),
+            "disabled": (
+                // background-color: $siimple-btn-disabled-background !important;
+                // color: rgba($siimple-btn-disabled-color, $siimple-btn-disabled-color-alpha) !important;
+                "cursor": "not-allowed !important",
+                "opacity": "0.6 !important",
+                // "pointer-events": "none",
+            ),
+            "full": (
+                "display": block,
+                "width": 100%,
+            ),
+        ));
+    };
+}
+
+// Generate card component configuration
+@mixin card() {
+    @include selectors.use-component-selector("card") {
+        border-radius: 0.5rem;
+        display: block;
+        padding: 2rem;
+        text-decoration: none !important;
+        width: 100%;
+        @include variants.use-variants("card", (
+            "default": (
+                "background-color": white,
+                // "box-shadow": "0 0 0.5rem rgba(0, 0, 0, 0.125)",
+                "color": inherit,
+            ),
+        ));
+    }
+}
+
+// Generate checkbox component configuration
+@mixin checkbox() {
+    @include selectors.use-component-selector("checkbox") {
+        appearance: none;
+        border-radius: 0.25rem;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: inline-block;
+        height: 1.125rem;
+        margin: 0.1875rem;
+        position: relative;
+        width: 1.125rem;
+        vertical-align: top;
+        // Checkbox tick base configuration
+        &:after {
+           background-color: transparent;
+           content: "";
+           height: 0.375rem;
+           position: absolute;
+        }
+        // Transition
+        &:checked,
+        &:indeterminate {
+           transition-duration: 0.3s;
+           transition-property: background-color;
+        }
+        // Minus tick in indeterminate states
+        &:indeterminate:after {
+           border-bottom-style: solid;
+           border-bottom-width: 0.125rem;
+           left: 0.3125rem;
+           top: 0.25rem;
+           width: 0.5rem;
+        }
+        // Active state styles
+        &:checked:after {
+           border-bottom-style: solid;
+           border-bottom-width: 0.125rem;
+           border-left-style: solid;
+           border-left-width: 0.125rem;
+           left: 0.25rem;
+           top: 0.3125rem;
+           transform: rotate(-45deg);
+           width: 0.625rem;
+        }
+        @include variants.use-variants("form.checkbox", (
+            "default": (
+                "background-color": "fill",
+                "color": white,
+                "&:checked, &:indeterminate": (
+                    "background-color": "primary",
+                ),
+                "&:indeterminate:after": (
+                    "border-bottom-color": white,
+                ),
+                "&:checked:after": (
+                    "border-bottom-color": white,
+                    "border-left-color": white,
+                ),
+            ),
+        ));
+    }
+}
+
+// Generate close component configuration
+@mixin close() {
+    @include selectors.use-component-selector("checkbox") {
+        appearance: none;
+        background-color: transparent;
+        border: none;
+        color: currentColor;
+        cursor: pointer;
+        display: inline-flex;
+        height: 1rem;
+        opacity: 0.6;
+        position: relative;
+        // right: 1rem;
+        // top: 1rem;
+        transition: opacity 0.3s;
+        width: 1rem;
+        &:hover {
+           opacity: 1.0;
+        }
+        &::before
+        &::after {
+           background-color: currentColor;
+           border-radius: 1px;
+           content: "";
+           height: 3px;
+           left: 0px;
+           position: absolute;
+           top: 6px;
+           width: 1rem;
+        }
+        &::before {
+           transform: rotate(45deg);
+        }
+        &::after {
+           transform: rotate(-45deg);
+        }
+        @include variants.use-variants("button.close", utils.empty-map());
+    }
+}
+
+// Generate colum component configuration
+@mixin column() {
+    $column-variants: utils.empty-map();
+    @each $name,$size in constants.$columns {
+        $column-variants: map.set($column-variants, $name, (
+            "flex": none,
+            "width": $size,
+            // Responsive column size
+            "@breakpoints": (
+                "&-{{breakpoint}}": (
+                    "flex": none,
+                    "width": $size,
+                ),
+            ),
+        ));
+    }
+    // Hidden column
+    $column-variants: map.set($column-variants, "hidden", (
+        "display": none,
+        "@breakpoints": (
+            "&-{{breakpoint}}": (
+                "display": none,
+            ),
+        ),
+    ));
+    // Base column component
+    @include selectors.use-component-selector("column") {
+        flex: 1;
+        min-height: 0;
+        padding: 1rem;
+        width: 100%;
+        @include variants.use-variants("column", $column-variants);
+    };
+    // Columns wrapper component
+    @include selectors.use-component-selector("columns") {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        // width: 100%;
+        @include variants.use-variants("columns", utils.empty-map());
+    };
+}
+
+// Generate content component configuration
+@mixin content() {
+    // $content-gap: lib.get-in($options, "gap", 1.5rem);
+    $content-variants: utils.empty-map();
+    @each $name,$size in $content-default-sizes {
+        $content-media: "@media screen and (min-width: #{$size})";
+        $content-variants: utils.set-in($content-variants, $name, (
+            "#{$content-media}": (
+                "max-width": $size,
+            ),
+        ));
+    }
+    // Return content component configuration
+    @include selectors.use-component-selector("content") {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: $content-default-gap;
+        padding-right: $content-default-gap;
+        width: 100%;
+        @include variants.use-variants("content", $content-variants);
+    };
+}
+
+// Generate breadcrumb component configuration
+@mixin crumb() {
+    // Crumbs wrapper component
+    @include selectors.use-component-selector("crumbs") {
+        border-radius: 0.5rem;
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        overflow-x: auto;
+        padding: 0.5rem;
+        white-space: nowrap !important;
+        @include variants.use-variants("navigation.crumbs", utils.empty-map());
+    }
+    // Breadcrumb item
+    @include selectors.use-component-selector("crumb") {
+        color: currentColor;
+        cursor: pointer;
+        opacity: 0.6;
+        padding-bottom: 0.5rem;
+        padding-left: 0.75rem;
+        padding-right: 1.5rem;
+        padding-top: 0.5rem;
+        position: relative;
+        // text-align: center;
+        text-decoration: none;
+        // transition: color 0.3s;
+        // Crumb hover styles
+        &:hover {
+            opacity: 1.0;
+            transition: opacity 0.3s;
+        }
+        &:not(:last-child)::after {
+            border-right-color: currentColor;
+            border-right-width: 2px;
+            border-right-style: solid;
+            border-top-width: 2px;
+            border-top-style: solid;
+            border-top-color: currentColor;
+            content: "";
+            display: block;
+            height: 0.5rem;
+            position: absolute;
+            right: 0.25rem;
+            top: 1rem;
+            transform: rotate(45deg);
+            width: 0.5rem;
+        }
+        @include variants.use-variants("navigation.crumb", (
+            "default": (
+                "font-weight": "bold",
+            ),
+            "active": (
+                "cursor": default, // !important;
+                "opacity": 1.0,
+                "pointer-events": none, // Disable clicks
+            ),
+        ));
+    };
+}
+
+// Generate divider component configuration
+@mixin divider() {
+    @include selectors.use-component-selector("divider") {
+        border: 0px;
+        display: block;
+        height: 0.125rem;
+        padding: 0px;
+        // Divider first and last child
+        &:not(:first-child) {
+           margin-top: 1rem;
+        }
+        &:not(:last-child) {
+           margin-bottom: 1rem;
+        }
+        @include variants.use-variants("navigation.crumb", (
+            "default": constants.$default-divider-variant,
+        ));
+    }
+}
+
+// Generate input component configuration
+@mixin input() {
+    @include selectors.use-component-selector("input") {
+        border-color: transparent;
+        border-style: solid;
+        border-width: 0.125rem;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        color: inherit;
+        display: block;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        margin: 0px;
+        min-width: 0px;
+        outline: 0px;
+        padding: 0.625rem 1rem;
+        vertical-align: top;
+        width: 100%;
+        @include variants.use-variants("form.input", (
+            "default": (
+                "background-color": "fill",
+                // "background-color": "white",
+                // "border-color": "muted",
+                "font-weight": "normal",
+                "&:focus": (
+                    "border-color": "primary",
+                ),
+            ),
+        ));
+    };
+}
+
+// Generate label component configuration
+@mixin label() {
+    @include selectors.use-component-selector("label") {
+        align-items: center;
+        display: flex;
+        font-size: 1rem;
+        // line-height: normal;
+        min-width: 0px;
+        padding-bottom: 0.25rem;
+        padding-top: 0.25rem;
+        width: 100%;
+        @include variants.use-variants("form.label", (
+            "default": (
+                "color": inherit,
+                "font-weight": "bold",
+            ),
+        ));
+    };
+}
+
+// Modal component for siimple
+@mixin modal() {
+    @include selectors.use-component-selector("modal") {
+        background-color: white;
+        border-radius: 0.5rem;
+        display: block;
+        max-height: 90vh;
+        overflow-y: auto;
+        @include variants.use-variants("dialog.modal", (
+            "default": (
+                "max-width": 500px,
+            ),
+            "small": (
+                "max-width": 300px,
+            ),
+            "large": (
+                "max-width": 900px,
+            ),
+        ));
+    };
+}
+
+// Generate navigation link component
+@mixin navlink() {
+    @include selectors.use-component-selector("navlink") {
+        border-radius: 0.5rem;
+        color: inherit;
+        cursor: pointer;
+        display: block;
+        margin: 0px;
+        min-width: 0px;
+        padding: 0.75rem;
+        text-decoration: none !important;
+        user-select: none;
+        width: 100%;
+        @include variants.use-variants("navigation.link", (
+            "default": (
+                "font-weight": "bold",
+                "&:hover": (
+                    "color": "primary",
+                ),
+            ),
+            "active": (
+                "color": "primary",
+            ),
+            "disabled": (
+                "opacity": 0.5,
+                "pointer-events": none,
+            ),
+        ));
+    };
+}
+
+
+// Components wrapper
+@mixin components() {
+    @include alert();
+}
