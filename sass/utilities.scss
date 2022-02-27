@@ -40,13 +40,14 @@
     // Register helpers classes for each state
     @each $state in $helper-states {
         @each $key,$values in $helper-styles {
+            $utility-styles: utils.empty-map();
             $classname: naming.get-helper-classname((
                 "name": $name,
                 "property": $key,
                 "state": $state,
             ));
-            // Include helper styles
-            @include styles.use-styles($classname, $values);
+            $utility-styles: map.set($utility-styles, $classname, $values);
+            @include styles.use-styles($utility-styles);
         }
     }
     // For responsive variants, we will register the style
@@ -54,13 +55,15 @@
     @if $is-responsive {
         @each $breakpoint in breakpoints.get-breakpoints-names() {
             @each $key,$values in $styles {
+                $utility-styles: utils.empty-map();
                 $classname: naming.get-helper-classname((
                     "name": $name,
                     "property": $key,
                     "breakpoint": $breakpoint,
                 ));
+                $utility-styles: map.set($utility-styles, $classname, $values);
                 @include breakpoints.use-breakpoint($breakpoint) {
-                    @include styles.use-styles($classname, $values);
+                    @include styles.use-styles($utility-styles);
                 }
             }
         }
