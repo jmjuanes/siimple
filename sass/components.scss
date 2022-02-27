@@ -493,8 +493,625 @@ $content-default-sizes: (
     };
 }
 
+// Generate paragraph component configuration
+@mixin paragraph() {
+    @include selectors.use-component-selector("paragraph") {
+        display: block;
+        margin-bottom: 1rem;
+        margin-top: 0px;
+        @include variants.use-variants("text.paragraph", (
+            "default": constants.$default-paragraph-variant,
+            "lead": (
+                "color": "muted",
+                "font-size": "large",
+                "font-weight": "bold",
+            ),
+        ));
+    };
+}
+
+// Progress component
+@mixin progress() {
+    @include selectors.use-component-selector("progress") {
+        appearance: none;
+        border: none;
+        border-radius: 999px;
+        display: block;
+        height: 0.5rem;
+        margin: 0px !important;
+        overflow: hidden;
+        padding: 0px !important;
+        width: 100%;
+        // Progress bar styles
+        &::-webkit-progress-bar {
+           background-color: transparent;
+        }
+        &::-webkit-progress-value {
+           background-color: currentColor;
+        }
+        &::-moz-progress-bar {
+           background-color: currentColor;
+        }
+        @include variants.use-variants("form.progress", (
+            "default": (
+                "background-color": "fill",
+                "color": "primary",
+            ),
+        ));
+    };
+}
+
+// Generate radio component configuration
+@mixin radio() {
+    @include selectors.use-component-selector("radio") {
+        appearance: none;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: inline-block;
+        height: 1.25rem;
+        margin: 0.125rem;
+        position: relative;
+        width: 1.25rem;
+        &:before {
+            // border-color: "fill";
+            border-style: solid;
+            border-radius: 100%;
+            border-width: 0.1875rem;
+            content: "";
+            display: block;
+            height: 1.25rem;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 1.25rem;
+        }
+        &:after {
+            background-color: transparent;
+            border-radius: 999px;
+            content: "";
+            display: block;
+            height: 0.5rem;
+            left: 0.375rem;
+            position: absolute;
+            top: 0.375rem;
+            width: 0.5rem;
+        }
+        // &:hover:after {
+        //     // background-color: fill;
+        // }
+        &:checked:after {
+            background-color: currentColor !important;
+        }
+        &:checked:before {
+            border-color: currentColor !important;
+        }
+        @include variants.use-variants("form.radio", (
+            "default": (
+                "color": "primary",
+                "&:before": (
+                    "border-color": "fill",
+                ),
+                "&:hover:after": (
+                    "background-color": "fill",
+                ),
+            ),
+        ));
+    };
+}
+
+// Scrim component
+@mixin scrim() {
+    @include selectors.use-component-selector("scrim") {
+        align-items: center;
+        background-color: rgba(black, 0.5);
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        left: 0px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 400;
+        @include variants.use-variants("dialog.scrim", utils.empty-map());
+    };
+}
+
+// Generate select component configuration
+@mixin select() {
+    @include selectors.use-component-selector("select") {
+        // appearance: none;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 0.125rem;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        color: inherit;
+        display: block;
+        font-size: inherit;
+        line-height: inherit;
+        margin: 0px;
+        min-height: 3rem;
+        min-width: 0px;
+        outline: 0px;
+        padding: 0.625rem 1rem;
+        vertical-align: top;
+        width: 100%;
+        @include variants.use-variants("form.select", (
+            "default": (
+                "background-color": "fill",
+                //"background-color": "white",
+                //"border-color": "muted",
+                "&:focus": (
+                    "border-color": "primary",
+                ),
+            ),
+        ));
+    };
+}
+
+// @description Slider component
+@mixin slider() {
+    // Slider thumb styles
+    @mixin slider-thumb-styles {
+        background-color: currentColor;
+        border: none;
+        border-radius: 999px;
+        box-sizing: border-box;
+        height: 1rem;
+        width: 1rem;
+    };
+    // Generate slider plugin
+    @include selectors.use-component-selector("slider") {
+        appearance: none;
+        border-radius: 1rem;
+        cursor: pointer;
+        display: block;
+        height: 0.25rem;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        min-width: 0px;
+        outline: none;
+        transition: opacity 0.2s;
+        width: 100%;
+        // Thumb style
+        &::-webkit-slider-thumb {
+            @include slider-thumb-styles; 
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        &::-moz-range-thumb {
+            @include slider-thumb-styles;
+        }
+        &::-ms-thumb {
+            @include slider-thumb-styles;
+            margin-top: 0px;
+        }
+        @include variants.use-variants("form.slider", (
+            "default": (
+                "background-color": "fill",
+                "color": "primary",
+            ),
+            "disabled": (
+                "color": "muted",
+                "cursor": not-allowed,
+                "opacity": 0.7,
+            ),
+        ));
+    };
+}
+
+// Generate spinner component configuration
+@mixin spinner() {
+    @include selectors.use-component-selector("spinner") {
+        display: inline-block;
+        height: 2rem;
+        position: relative;
+        width: 2rem;
+        // Spinner anlimation elements
+        &:before,&:after {
+            border: 0.25rem solid transparent;
+            border-radius: 100%;
+            content: "";
+            display: block;
+            height: 2rem;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 2rem;
+        }
+        &:before {
+            border-color: currentColor;
+            opacity: 0.2;
+        }
+        &:after {
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-name: spinner-animation;
+            animation-timing-function: linear;
+            border-top-color: currentColor;
+        }
+        @include variants.use-variants("spinner", (
+            "default": (
+                "color": "primary",
+            ),
+        ));
+        // Spinner keyframes
+        @keyframes spinner-animation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(359deg);
+            }
+        }
+    };
+}
+
+// Generate switch component configuration
+@mixin switch() {
+    @include selectors.use-component-selector("switch") {
+        appearance: none;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: inline-block;
+        height: 1.25rem;
+        position: relative;
+        width: 2rem;
+        &:after {
+            background-color: white;
+            border-radius: 100%;
+            content: "";
+            display: block;
+            height: 0.875rem;
+            left: 0.1875rem;
+            position: absolute;
+            top: 0.1875rem;
+            transition: left 0.3s ease;
+            width: 0.875rem;
+            z-index: 2;
+        }
+        &:before {
+            border-radius: 2rem;
+            content: "";
+            display: block;
+            height: 100%;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            z-index: 1;
+        }
+        &:checked:after {
+            left: 1rem;
+        }
+        &:checked:before {
+            background-color: currentColor;
+        }
+        @include variants.use-variants("form.switch", (
+            "default": (
+                "color": "primary",
+                "&:before": (
+                    "background-color": "fill",
+                ),
+            ),
+        ));
+    };
+}
+
+// Table class
+@mixin table() {
+    @include selectors.use-component-selector("table") {
+        background-color: transparent;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-width: 0px;
+        box-sizing: border-box;
+        display: table;
+        margin-bottom: 2rem;
+        width: 100%;
+        // Table row
+        & tr {
+           box-sizing: border-box;
+           display: table-row;
+        }
+        // Table cell
+        & th,
+        & td {
+            box-sizing: border-box;
+            display: table-cell;
+            line-height: inherit;
+            // overflow: hidden;
+            // white-space: nowrap;
+        }
+        // Table header
+        & thead {
+            box-sizing: border-box;
+            display: table-header-group;
+        }
+        & thead th {
+            font-weight: 600;
+            text-align: left;
+            vertical-align: bottom;
+        }
+        // Table body
+        & tbody {
+            display: table-row-group;
+            vertical-align: middle;
+        }
+        & tbody td {
+            vertical-align: top;
+        }
+        // Default table will be rounded
+        // Bordered table with rouded corners
+        // &--border &-header &-row:first-child &-cell:first-child {
+        & thead tr:first-child th:first-child {
+            border-top-left-radius: 0.5rem;
+        }
+        // &--border &-header &-row:first-child &-cell:last-child {
+        & thead tr:first-child th:last-child {
+            border-top-right-radius: 0.5rem;
+        }
+        // &--border &-body &-row:last-child &-cell:first-child {
+        & tbody tr:last-child td:first-child {
+           border-bottom-left-radius: 0.5rem;
+        }
+        // &--border &-body &-row:last-child &-cell:last-child {
+        & tbody tr:last-child td:last-child {
+           border-bottom-right-radius: 0.5rem;
+        }
+        @include variants.use-variants("table", (
+            "default": (
+                "& th, & td": (
+                    "background-color": white,
+                    "padding": 1.5rem,
+                ),
+            ),
+            "divided": (
+                "& thead th": (
+                    "border-bottom-color": "fill",
+                    "border-bottom-style": solid,
+                    "border-bottom-width": 0.125rem,
+                ),
+                "& tbody td": (
+                    "border-top-color": "fill",
+                    "border-top-style": solid,
+                    "border-top-width": 0.125rem,
+                ),
+            ),
+            "bordered": (
+                "& th, & td": (
+                    "border-color": "fill",
+                    "border-style": solid,
+                    "border-width": 0.125rem,
+                ),
+                "& th:not(:last-child), & td:not(:last-child)": (
+                    "border-right-width": "0px !important",
+                ),
+                "& tbody tr:not(:last-child) td": (
+                    "border-bottom-width": "0px !important",
+                ),
+            ),
+            // "hoverable": (
+            //     "& tbody tr:hover td": (
+            //         "background-color": "highlight",
+            //         "transition": "background-color 0.3s",
+            //     ),
+            // ),
+            // "striped": (
+            //     "& tbody tr:nth-child(odd) td": (
+            //         "background-color": "fill",
+            //     ),
+            // ),
+            "fixed": (
+                "table-layout": fixed,
+            ),
+        ));
+    };
+    // Responsive table container
+    @include selectors.use-component-selector("table-responsive") {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+        @include variants.use-variants("table.responsive", utils.empty-map());
+    };
+    // Table cell style
+    // plugins.create-component-plugin((
+    //     "id": "table.cell",
+    //     "name": "cell",
+    //     "styles": (
+    //         "cursor": pointer,
+    //         //"padding-right": 20px !important,
+    //         "position": relative,
+    //         // Sortable triangles common styles
+    //         "&::before, &::after": (
+    //             "border-left-color": transparent,
+    //             "border-left-style": solid,
+    //             "border-left-width": 0.375rem,
+    //             "border-right-color": transparent,
+    //             "border-right-style": solid,
+    //             "border-right-width": 0.375rem,
+    //             "content": '""',
+    //             "display": block,
+    //             "height": 0px,
+    //             "position": absolute,
+    //             "right": 0.25rem,
+    //             "transition-duration": 0.3s,
+    //             "transition-property": all,
+    //             "width": 0px,
+    //         ),
+    //         // Sortable triangle up
+    //         "&::before": (
+    //             "top": 1rem,
+    //             "border-bottom-color": transparent,
+    //             "border-bottom-style": solid,
+    //             "border-bottom-width": 0.5rem,
+    //         ),
+    //         // Sortable triangle down
+    //         "&::after": (
+    //             "bottom": 1rem,
+    //             "border-top-color": transparent,
+    //             "border-top-style": solid,
+    //             "border-top-width": 0.5rem,
+    //         ),
+    //     ),
+    //     "variants": (
+    //         "sortable": (
+    //             "&::before": (
+    //                 "border-bottom-color": "fill",
+    //             ),
+    //             "&::after": (
+    //                 "border-top-color": "fill",
+    //             ),
+    //         ),
+    //         "asc": (
+    //             "&::before": (
+    //                 "border-bottom-color": "primary",
+    //             ),
+    //         ),
+    //         "desc": (
+    //             "&::after": (
+    //                 "border-top-color": "primary",
+    //             ),
+    //         ),
+    //     ),
+    // )),
+}
+
+// Generate textarea component configuration
+@mixin textarea() {
+    @include selectors.use-component-selector("textarea") {
+        border-color: transparent;
+        border-style: solid;
+        border-width: 0.125rem;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        color: inherit;
+        display: block;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        margin: 0px;
+        min-width: 0px;
+        outline: 0px;
+        padding: 0.625rem 1rem;
+        resize: vertical;
+        vertical-align: top;
+        width: 100%;
+        @include variants.use-variants("form.textarea", (
+            "default": (
+                "background-color": "fill",
+                //"background-color": "white",
+                //"border-color": "muted",
+                "&:focus": (
+                    "border-color": "primary",
+                ),
+            ),
+        ));
+    };
+}
+
+// Generate title component configuration
+@mixin title() {
+    $title-variants: (
+        "default": constants.$default-heading-variant,
+    );
+    @each $key,$size in constants.$headings {
+        $title-variants: utils.set-in($title-variants, $key, (
+            "font-size": "#{$size}",
+        ));
+    }
+    //@debug $title-variants;
+    @include selectors.use-component-selector("title") {
+        display: block;
+        // font-weight: 600;
+        margin-bottom: 0.5em;
+        padding: 0px;
+        // Not first child --> add margin top
+        &:not(:first-child) {
+            margin-top: 2rem;
+        }
+        @include variants.use-variants("text.heading", $title-variants);
+    };
+}
+
+// Toggler button
+@mixin toggler() {
+    @include selectors.use-component-selector("toggler") {
+        appearance: none;
+        background-color: transparent;
+        border-color: currentColor;
+        border-radius: 0.5rem;
+        border-style: solid;
+        border-width: 0.125rem;
+        color: currentColor;
+        cursor: pointer;
+        display: block;
+        height: 3rem;
+        opacity: 0.8;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        position: relative;
+        width: 3rem;
+        z-index: 400;
+        &:hover {
+            opacity: 1.0;
+        }
+        &::before {
+            border-top: 0.25rem solid currentColor;
+            border-bottom: 0.25rem solid currentColor;
+            content: "";
+            height: 1.25rem;
+            left: 0.5rem;
+            position: absolute;
+            width: 1.75rem;
+            top: 0.75rem;
+        }
+        &::after {
+            background-color: currentColor;
+            content: "";
+            height: 0.25rem;
+            left: 0.5rem;
+            position: absolute;
+            width: 1.75rem;
+            top: 1.25rem;
+        }
+        @include variants.use-variants("button.toggler", (
+            "default": (
+                "background-color": "fill",
+            ),
+        ));
+    };
+}
 
 // Components wrapper
 @mixin components() {
     @include alert();
+    @include badge();
+    @include btn();
+    @include card();
+    @include checkbox();
+    @include close();
+    @include column();
+    @include content();
+    @include crumb();
+    @include divider();
+    @include input();
+    @include label();
+    @include modal();
+    @include navlink();
+    @include paragraph();
+    @include progress();
+    @include radio();
+    @include scrim();
+    @include select();
+    @include slider();
+    @include spinner();
+    @include switch();
+    @include table();
+    @include textarea();
+    @include title();
+    @include toggler();        
 }
