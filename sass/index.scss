@@ -54,6 +54,10 @@
     @if flags.get-flag("use-borderbox", true) {
         @include borderbox();
     }
+    // Register reboot styles
+    @if flags.get-flag("use-reboot", true) {
+        @include reboot();
+    }
     // Register root styles
     @if flags.get-flag("use-root", true) {
         @include root();
