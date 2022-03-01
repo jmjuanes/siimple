@@ -77,7 +77,7 @@ $-variants: utils.empty-map();
 }
 
 // @description Use the specified variant
-@mixin use-variant($name, $variants-list) {
+@mixin use-variants($name, $variants-list) {
     @include use-variant-from($name, $variants-list);
 }
 
