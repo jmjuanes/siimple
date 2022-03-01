@@ -5,17 +5,12 @@
     $prefix: "",
     $flags: (
         "use-borderbox": true,
-        "use-root-styles": true,
+        "use-root": true,
+        "use-markup": true,
+        "use-components": true,
+        "use-utilities": true,
+        "use-icons": true,
     ),
-    $plugins: (
-        siimple.plugin-reboot(),
-        siimple.plugin-markup(),
-        siimple.plugin-components(),
-        siimple.plugin-icons((
-            "path": "./",
-        )),
-        siimple.plugin-helpers(),
-    ),   
 );
 
 // Render siimple
