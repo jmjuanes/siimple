@@ -1,92 +1,19 @@
-const fs = require("fs");
+// const fs = require("fs");
 const path = require("path");
-const glob = require("glob");
 const through = require("through2");
 const Vinyl = require("vinyl");
-
-// const config = require("../config/bundle.json");
-const colors = require("../config/colors.json");
-const icons = require("../config/icons.json");
 
 //Global variables
 const endl = "\n";
 const useRegexp = /@use\s+\"([^"]*)\"(?:\s+as\s+([^;].*))?\s*;/; //For capturing includes
 
-//Generate colors file
-const generateColorsVirtualFile = () => {
-    const content = [];
-    const colorsList = []; //Colors list
-    Object.keys(colors).forEach(colorName => {
-        return Object.keys(colors[colorName]).forEach((colorIndex) => {
-            return colorsList.push({
-                "index": `${colorName}-${colorIndex}`,
-                "value": colors[colorName][colorIndex]
-            });
-        });
-    });
-    content.push("$colors: (");
-    colorsList.forEach(color => {
-        //const sep = (index === colorsList.length - 1) ? "" : ","; //Separator
-        return content.push(`    "${color.index}": ${color.value},`);
-    });
-    //content.push(") !default;");
-    content.push(");");
-    return content.join("\n");
-};
-
-//Unicode parser
-const parseUnicode = value => value.toString(16).toLowerCase();
-
-//Generate icons file
-const generateIconsVirtualFile = () => {
-    const content = [];
-    content.push("$icons: (");
-    icons.forEach(item => {
-        return content.push(`    "${item.id}": "${parseUnicode(item.unicode)}",`);
-    });
-    //content.push(") !default;");
-    content.push(");");
-    //Return the file content
-    return content.join("\n");
-};
-
-//Parse entry files
-const getEntryFiles = (entry, options) => {
-    if (typeof entry === "string") {
-        entry = [entry];
-    }
-    //Build for each entry
-    return entry.map(entryPath => {
-        return entryPath.indexOf("*") > -1 ? glob.sync(entryPath, options) : entryPath;
-        //return glob.sync(entryPath, options);
-    }).flat(2);
-};
-
-//Get entry content
-const getEntryContent = (cwd, entry, virtualFiles) => {
-    if (typeof virtualFiles[entry] !== "undefined") {
-        const type = virtualFiles[entry];
-        if (type === "virtual::icons") {
-            return generateIconsVirtualFile();
-        }
-        if (type === "virtual::colors") {
-            return generateColorsVirtualFile();
-        }
-        // Other type --> throw error
-        console.log(`Unknown virtual file type "${type}"`);
-        process.exit(1);
-    }
-    //Default --> read the file content
-    return fs.readFileSync(path.resolve(cwd, entry), "utf8");
-};
-
-//Split lines
+// Split lines
 const splitLines = lines => {
     return lines.replace(/\r/g, "").split(endl);
 };
 
-//Parse a SCSS import line
-//index and filePath are used for displaying errors and warnings
+// Parse a SCSS import line
+// index and filePath are used for displaying errors and warnings
 const parseSCSSImport = (line, index) => {
     let match = line.match(useRegexp);
     //Check for no match ---> throw error
@@ -108,7 +35,7 @@ const parseSCSSImport = (line, index) => {
     };
 };
 
-//Parse a SCSS file string
+// Parse a SCSS file string
 const parseScss = (content, options) => {
     let allImports = []; //To store files includes
     content = splitLines(content).filter((line, index) => {
@@ -180,19 +107,30 @@ const stringifyScss = file => {
 };
 
 //Sass bundle generator
-const bundleScss = (config, cwd) => {
-    const virtualFiles = config.virtualFiles || {}; //Get virtual files
+const bundleScss = (files, config) => {
+    const bundle = {
+        content: "", 
+        modules: {},
+        header: null,
+    };
     return new Promise((resolve, reject) => {
-        const files = getEntryFiles(config.entry, {"cwd": cwd});
-        const bundle = {"content": "", "modules": {}, "header": null}; //Output bundle
-        //console.log(files);
+        // const files = getEntryFiles(config.entry, {"cwd": cwd});
+        // Initialize plugins
+        (config.plugins || []).forEach(plugin => {
+            return plugin({
+                addFile: (filePath, fileContent) => {
+                    files.push({path: filePath, content: fileContent});
+                },
+            });
+        });
         //Process all files in the list
-        files.forEach(filePath => {
-            const file = parseScss(getEntryContent(cwd, filePath, virtualFiles), {
+        files.forEach(f => {
+            // const file = parseScss(getEntryContent(cwd, filePath, virtualFiles), {
+            const file = parseScss(f.content.toString(), {
                 "removeNamespaces": true,
                 "resolve": config.resolve || {}
             });
-            const metadata = ["//", `//@bundle ${path.basename(filePath)}`, "//"].join(endl);
+            const metadata = ["//", `// @bundle ${path.basename(f.path)}`, "//"].join(endl);
             bundle.content = bundle.content + endl + metadata + endl + file.content + endl; 
             //Parse modules
             file.modules.forEach(m => {
@@ -203,7 +141,7 @@ const bundleScss = (config, cwd) => {
                 if (typeof bundle.modules[m.name] !== "undefined") {
                     if (bundle.modules[m.name].as !== m.as) {
                         //Different as attributes ---> throw error and abort
-                        console.error(`ERROR processing file '${filePath}':`);
+                        console.error(`ERROR processing file '${f.path}':`);
                         console.error(`  Different modules renamed for module '${m.name}': '${bundle.modules[m.name].as}' !== '${m.as}'`);
                         return process.exit(1); //TODO: reject promise
                     }
@@ -226,28 +164,38 @@ const bundleScss = (config, cwd) => {
 };
 
 // Export bundle generator
-module.exports = options => {
-    options = options || {};
-    return through.obj(function (file, enc, callback) {
-        const self = this;
-        const config = require(file.path); //Import bundle file
-        const cwd = options.cwd || path.dirname(file.path); // Get current working directory
-        const allPromises = [config].flat().map(c => {
-            return bundleScss(c, cwd);
+module.exports = config => {
+    config = config || {};
+    const files = [];
+    // Process provided files
+    const bufferContents = function (file, enc, callback) {
+        files.push({
+            base: file.base,
+            path: file.path,
+            content: file.contents,
         });
-
-        Promise.all(allPromises).then(outputFiles => {
-            outputFiles.forEach(output => {
-                self.push(new Vinyl({
-                    "base": file.base,
-                    "path": path.join(file.base, output.name),
-                    "contents": new Buffer.from(output.content),
-                }));
-            });
-            // file.contents = new Buffer.from(content);
-            // file.basename = config.output || "index.scss";
-            // return callback(null, file);
+        return callback();
+    };
+    // End stream parsing
+    const endStream = function (callback) {
+        const self = this;
+        bundleScss(files, config).then(output => {
+            self.push(new Vinyl({
+                "base": files[0].base,
+                "path": path.join(files[0].base, output.name),
+                "contents": new Buffer.from(output.content),
+            }));
             return callback();
         });
-    });
+    };
+    return through.obj(bufferContents, endStream);
+};
+
+// Virtual files plugin
+module.exports.virtualFilePlugin = virtualFiles => {
+    return actions => {
+        Object.keys(virtualFiles).forEach(name => {
+            return actions.addFile(key, virtualFiles[name]);
+        });
+    };
 };
