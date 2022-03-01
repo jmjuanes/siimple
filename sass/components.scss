@@ -217,8 +217,8 @@ $content-default-sizes: (
         &:hover {
            opacity: 1.0;
         }
-        &::before
-        &::after {
+        &:before,
+        &:after {
            background-color: currentColor;
            border-radius: 1px;
            content: "";
@@ -228,10 +228,10 @@ $content-default-sizes: (
            top: 6px;
            width: 1rem;
         }
-        &::before {
+        &:before {
            transform: rotate(45deg);
         }
-        &::after {
+        &:after {
            transform: rotate(-45deg);
         }
         @include variants.use-variants("button.close", utils.empty-map());
@@ -712,7 +712,8 @@ $content-default-sizes: (
         position: relative;
         width: 2rem;
         // Spinner anlimation elements
-        &:before,&:after {
+        &:before,
+        &:after {
             border: 0.25rem solid transparent;
             border-radius: 100%;
             content: "";
@@ -1043,8 +1044,8 @@ $content-default-sizes: (
 @mixin toggler() {
     @include selectors.use-component-selector("toggler") {
         appearance: none;
-        background-color: transparent;
-        border-color: currentColor;
+        // background-color: transparent;
+        border-color: transparent;
         border-radius: 0.5rem;
         border-style: solid;
         border-width: 0.125rem;
@@ -1061,7 +1062,7 @@ $content-default-sizes: (
         &:hover {
             opacity: 1.0;
         }
-        &::before {
+        &:before {
             border-top: 0.25rem solid currentColor;
             border-bottom: 0.25rem solid currentColor;
             content: "";
@@ -1071,7 +1072,7 @@ $content-default-sizes: (
             width: 1.75rem;
             top: 0.75rem;
         }
-        &::after {
+        &:after {
             background-color: currentColor;
             content: "";
             height: 0.25rem;
