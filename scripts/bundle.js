@@ -195,7 +195,7 @@ module.exports = config => {
 module.exports.virtualFilePlugin = virtualFiles => {
     return actions => {
         Object.keys(virtualFiles).forEach(name => {
-            return actions.addFile(key, virtualFiles[name]);
+            return actions.addFile(name, virtualFiles[name]);
         });
     };
 };
