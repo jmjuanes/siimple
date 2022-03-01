@@ -44,10 +44,10 @@
     }
     // Icons base styles
     [class^="#{$icons-prefix}"],
-    [class*=" #{$icons-prefix"] {
+    [class*=" #{$icons-prefix}"] {
         align-self: center;
         // display: inline-flex;
-        font-family: #{$icons-name};
+        font-family: #{$icons-font-name};
         // font-size: default;
         font-style: normal;
         font-weight: normal !important;
@@ -56,15 +56,15 @@
         vertical-align: -0.125em;
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
-        &::before {
+        &:before {
             box-sizing: border-box; //inherit;
             // display: block;
         }
     }
     // All icons
     @each $icon in get-icons() {
-        $icon-class: "#{$icon-prefix}#{$icon-name}";
-        #{$icon-class}::before {
+        $icon-class: "#{$icons-prefix}#{$icon}";
+        .#{$icon-class}:before {
             content: get-icon-str($icon);
         }
     }
