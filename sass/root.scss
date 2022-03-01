@@ -1,0 +1,26 @@
+// @use "./styles.scss" as styles;
+@use "./scales.scss" as scales;
+
+// @description Apply border-box styles to sheet
+@mixin borderbox() {
+    html {
+        box-sizing: border-box;
+    }
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+}
+
+// @description Apply root styles to sheet
+@mixin root() {
+    html {
+        @include scales.use-scale("background-color", "background");
+        @include scales.use-scale("color", "text");
+        @include scales.use-scale("font-family", "body");
+        @include scales.use-scale("font-size", "body");
+        @include scales.use-scale("font-weight", "body");
+        @include scales.use-scale("line-height", "body");
+    }
+}
