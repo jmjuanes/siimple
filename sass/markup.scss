@@ -53,12 +53,14 @@
     }
     // Inline code style
     code {
-        font-size: inherit;
+        // font-size: inherit;
         text-decoration: none;
         @include variants.use-default-variant("code.inline", (
             "default": (
                 "color": "primary",
                 "font-family": "monospace",
+                "font-size": "small",
+                "font-weight": "bold",
             ),
         ));
     }
