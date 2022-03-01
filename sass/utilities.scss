@@ -1,10 +1,23 @@
 @use "sass:list";
 @use "sass:map";
+
 @use "./breakpoints.scss" as breakpoints;
 @use "./colors.scss" as colors;
 @use "./constants.scss" as constants;
 @use "./naming.scss" as naming;
 @use "./utils.scss" as utils;
+
+// @description Include utility rule
+@mixin utility-rule($properties, $value, $is-important: false) {
+    @each $prop in $properties {
+        @if $is-important == true {
+            #{utils.unquote($prop)}: #{$value} !important;
+        }
+        @else {
+            #{utils.unquote($prop)}: #{$value};
+        }
+    }
+}
 
 // @description Utility generator
 @mixin utility($options) {
@@ -26,45 +39,33 @@
     @if not utils.is-list($states) {
         $states: ("default");
     }
-    // Generate helper styles
-    $styles: utils.empty-map();
-    @each $key,$value in $values {
-        $current-styles: utils.empty-map();
-        // NOTE: we will assign the same value to all properties provided
-        @each $prop in $properties {
-            $style-value: if($is-important, ($value "important"), $value);
-            $current-styles: map.set($current-styles, $prop, $style-value);
-        }
-        // Save parsed styles
-        $styles: map.set($styles, $key, $current-styles);
-    }
     // Register helpers classes for each state
-    @each $state in $helper-states {
-        @each $key,$values in $helper-styles {
-            $utility-styles: utils.empty-map();
+    @each $state in $states {
+        @each $key,$value in $values {
             $classname: naming.get-helper-classname((
                 "name": $name,
                 "property": $key,
                 "state": $state,
             ));
-            $utility-styles: map.set($utility-styles, $classname, $values);
-            @include styles.use-styles($utility-styles);
+            #{$classname} {
+                @include utility-rule($properties, $value, $is-important);
+            }
         }
     }
     // For responsive variants, we will register the style
     // for each breakpoint in the list of breakpoints
     @if $is-responsive {
         @each $breakpoint in breakpoints.get-breakpoints-names() {
-            @each $key,$values in $styles {
-                $utility-styles: utils.empty-map();
+            @each $key,$value in $values {
                 $classname: naming.get-helper-classname((
                     "name": $name,
                     "property": $key,
                     "breakpoint": $breakpoint,
                 ));
-                $utility-styles: map.set($utility-styles, $classname, $values);
                 @include breakpoints.use-breakpoint($breakpoint) {
-                    @include styles.use-styles($utility-styles);
+                    #{$classname} {
+                        @include utility-rule($properties, $value, $is-important);
+                    }
                 }
             }
         }
