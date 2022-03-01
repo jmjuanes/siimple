@@ -1,0 +1,85 @@
+@use "sass:map";
+@use "sass:list";
+
+@use "./breakpoints.scss" as breakpoints;
+@use "./constants.scss" as constants;
+@use "./flags.scss" as flags;
+@use "./naming.scss" as naming;
+@use "./scales.scss" as scales;
+@use "./utils.scss" as utils;
+@use "./variants.scss" as variants;
+
+// Default modules included with siimple
+// @use "./components.scss";
+// @use "./utilities.scss";
+// @use "./markup.scss";
+// @use "./root.scss";
+// @use "./reboot.scss";
+// @use "./icons.scss";
+
+// Internal variables
+// $-custom-styles: null;
+
+// @description Configure siimple css
+@mixin configure($prefix: nulll, $breakpoints: null, $scales: null, $variants: null, $flags: null) {
+    // Update prefix used in siimple
+    @if $prefix and utils.is-string($prefix) {
+        @include naming.set-prefixes(("components": $prefix));
+    }
+    // Initialize breakpoints
+    @if $breakpoints and utils.is-map($breakpoints) {
+        @include breakpoints.set-breakpoints($breakpoints);
+    }
+    // Initialize scales
+    @if $scales and utils.is-map($scales) {
+        @include scales.set-scales($scales);
+    }
+    // Initialize variants
+    @if $variants and utils.is-map($variants) {
+        @include variants.set-variants($variants);
+    }
+    // Initialize flags
+    @if $flags and utils.is-map($flags) {
+        @include flags.set-flags($flags);
+    }
+    // // Initialize styles
+    // @if $styles and utils.is-map($styles) {
+    //     $-custom-styles: $styles !global;
+    // }
+}
+
+// @description generate siimple css styles
+@mixin css() {
+    // Register borderbox styles
+    @if flags.get-flag("use-borderbox", true) {
+        @include borderbox();
+    }
+    // Register root styles
+    @if flags.get-flag("use-root", true) {
+        @include root();
+    }
+    // Register markup styles
+    @if flags.get-flag("use-markup", true) {
+        @include markup();
+    }
+    // Register components styles
+    @if flags.get-flag("use-components", true) {
+        @include components();
+    }
+    // Register utilities styles
+    @if flags.get-flag("use-utilities", true) {
+        @include utilities();
+    }
+    // Register icons styles
+    @if flags.get-flag("use-icons", true) {
+        @include icons();
+    }
+    // Compile sheet
+    // @include sheet.compile-sheet($sheet);
+    // Register custom styles
+    // @if utils.is-map($-custom-styles) {
+    //     @each $selector,$rules in $-custom-styles {
+    //         $sheet: sheet.add-styles-to-sheet($sheet, $selector, $rules);
+    //     }
+    // }
+}
