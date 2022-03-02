@@ -10,8 +10,8 @@ const css = require("./scripts/css.js");
 const icons = require("./scripts/icons.js");
 
 // Configurations
-const colorsList = require("./config/colors.json");
-const iconsList = require("./config/icons.json");
+const colorsList = require("./colors.json");
+const iconsList = require("./icons.json");
 // const pkg = require("./package.json");
 
 // Generate colors file
