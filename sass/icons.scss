@@ -1,5 +1,8 @@
 @use "sass:map";
 @use "sass:string";
+@use "./naming.scss" as naming;
+@use "./variants.scss" as variants;
+@use "./utils.scss" as utils;
 
 // @description Get the unicode value of the specified icon
 // @param {string} $name Icon name
@@ -18,8 +21,51 @@
     @return map.has-key($icons, "#{$name}");
 }
 
-// @description Include an icon by name
-@function include-icon($name) {
+// Get the icon str to include
+@function get-icon-str($name) {
     $icon-str: string.unquote(string.insert(get-icon($name), "\\", 1));
     @return string.unquote("\"") + $icon-str + string.unquote("\"");
+}
+
+// Icons module
+@mixin icons($options: utils.empty-map()) {
+    $icons-prefix: naming.get-prefix("icons");
+    $icons-font-name: utils.get-in($options, "font-name", "siimple-icons");
+    $icons-font-path: utils.get-in($options, "font-path", "./");
+    // Generate fonts paths
+    $font-ttf: "#{$icons-font-path}#{$icons-font-name}.ttf";
+    $font-woff: "#{$icons-font-path}#{$icons-font-name}.woff";
+    // Generate icons styles
+    @font-face {
+        font-family: $icons-font-name;
+        font-style: normal;
+        font-weight: normal;
+        src: url(#{$font-ttf}) format("truetype"), url(#{$font-woff}) format("woff");
+    }
+    // Icons base styles
+    [class^="#{$icons-prefix}"],
+    [class*=" #{$icons-prefix}"] {
+        align-self: center;
+        // display: inline-flex;
+        font-family: #{$icons-font-name};
+        // font-size: default;
+        font-style: normal;
+        font-weight: normal !important;
+        line-height: 1; // utils.get-in($options, "line-height", 1),
+        text-rendering: auto;
+        vertical-align: -0.125em;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        &:before {
+            box-sizing: border-box; //inherit;
+            // display: block;
+        }
+    }
+    // All icons
+    @each $icon in get-icons() {
+        $icon-class: "#{$icons-prefix}#{$icon}";
+        .#{$icon-class}:before {
+            content: get-icon-str($icon);
+        }
+    }
 }

@@ -1,0 +1,144 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:string";
+
+@use "./breakpoints.scss" as breakpoints;
+@use "./constants.scss" as constants;
+@use "./naming.scss" as naming;
+@use "./scales.scss" as scales;
+@use "./utils.scss" as utils;
+
+// @description Generate a flat version fo the specified rules
+@function parse-styles($classname, $rules) {
+    $styles: utils.empty-map();
+    $styles: map.set($styles, $classname, utils.empty-map());
+    @each $key,$rule in $rules {
+        // Check for map value
+        @if utils.is-map($rule) {
+            // Check if rule starts with the '@' character
+            @if utils.starts-with($key, "@") {
+                $new-styles: parse-styles($classname, $rule);
+                $styles: utils.set-in($styles, $key, $new-styles);
+            }
+            // Other value --> parse as nested styles
+            @else {
+                $new-classname: utils.replace($key, "&", $classname);
+                $new-styles: parse-styles($new-classname, $rule);
+                $styles: map.merge($styles, $new-styles);
+            }
+        }
+        //@if utils.is-string($rule) {
+        @else {
+            // Check for alias -> register the same value in all aliases keys
+            @if map.has-key(constants.$css-aliases, $key) {
+                $key-aliases: map.get(constants.$css-aliases, $key);
+                @each $key-alias in $key-aliases {
+                    $styles: utils.set-in($styles, ($classname $key-alias), $rule);
+                } 
+            }
+            // If no aliases are defined --> register this rule
+            @else {
+                $styles: utils.set-in($styles, ($classname $key), $rule);
+            }
+        }
+    }
+    // Return styles
+    @return $styles;
+}
+
+// @description Merge two styles objects
+// Improved map.deep-merge implementation to fix the map order.
+// Related issue: https://github.com/sass/dart-sass/issues/1385
+@function merge-styles($source, $target) {
+    $merged-map: $source;
+    @each $key, $target-value in $target {
+        $source-value: map.get($source, $key);
+        @if utils.is-map($source-value) and utils.is-map($target-value) {
+            $sub-merged-map: merge-styles($source-value, $target-value);
+            $merged-map: map.set($merged-map, $key, $sub-merged-map);
+        } @else {
+            $merged-map: map.set($merged-map, $key, $target-value);
+        }
+    }
+    @return $merged-map;
+}
+
+// @description Build styles
+@mixin build-styles($styles, $vars: utils.empty-map()) {
+    @each $selector,$rules in $styles {
+        // Check for all breakpoints selector
+        @if utils.starts-with($selector, "@breakpoints") {
+            @include breakpoints.use-breakpoints() using ($breakpoint) {
+                @include build-styles($rules, (
+                    "breakpoint": $breakpoint,
+                ));
+            }
+        }
+        // Check for breakpoint selector
+        @else if breakpoints.is-breakpoint-selector($selector) {
+            $breakpoint: breakpoints.get-breakpoint-from-selector($selector);
+            @include breakpoints.use-breakpoint($breakpoint) {
+                @include build-styles($rules);
+            }
+        }
+        // Check for media rules --> process as nested rules
+        @else if utils.starts-with($selector, "@media") {
+            @media #{utils.unquote(utils.replace($selector, "@media ", ""))} {
+                @include build-styles($rules);
+            }
+        }
+        // If is not a media rule, add each rule
+        @else if not utils.starts-with($selector, "@") {
+            $parsed-selector: utils.template($selector, $vars);
+            #{utils.unquote($parsed-selector)} {
+                @include build-rules($rules)
+            }
+        }
+        // Other rule --> throw error
+        @else {
+            @error "Unexpected rule '#{$selector}'.";
+        }
+    }
+}
+
+// @description generate style properties
+@mixin build-rules($rules) {
+    @each $prop,$value in $rules {
+        $is-important: false;
+        // Check for list value --> check for flags
+        @if utils.is-list($value) and list.length($value) == 2 {
+            $last-item: utils.last-item($value);
+            @if $last-item == "important" or $last-item == "!important" {
+                $is-important: true;
+                $value: utils.first-item($value);
+            }
+        }
+        // Generate this property
+        @include scales.use-scale($prop, $value, $is-important);
+    }
+}
+
+// @description Build variables block
+@mixin build-variables($variables) {
+    :root {
+        @each $varname,$value in $variables {
+            @if utils.starts-with($varname, "--") {
+                $varname: string.slice($varname, 3);
+            }
+            --#{$varname}: #{utils.unquote($value)};
+        }
+    }
+}
+
+// Hook for using styles
+@mixin use-styles($styles) {
+    $parsed-styles: utils.empty-map();
+    @each $name,$rules in $styles {
+        $parsed-styles: merge-styles(
+            $parsed-styles,
+            parse-styles($name, $rules)
+        );
+    }
+    // Build styles
+    @include build-styles($parsed-styles, utils.empty-map());
+}

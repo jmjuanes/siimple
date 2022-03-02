@@ -1,0 +1,341 @@
+@use "sass:list";
+@use "sass:map";
+
+@use "./breakpoints.scss" as breakpoints;
+@use "./colors.scss" as colors;
+@use "./constants.scss" as constants;
+@use "./naming.scss" as naming;
+@use "./utils.scss" as utils;
+
+// @description Include utility rule
+@mixin utility-rule($properties, $value, $is-important: false) {
+    @each $prop in $properties {
+        @if $is-important == true {
+            #{utils.unquote($prop)}: #{$value} !important;
+        }
+        @else {
+            #{utils.unquote($prop)}: #{$value};
+        }
+    }
+}
+
+// @description Utility generator
+@mixin utility($options) {
+    $name: utils.get-in($options, "name", "");
+    $properties: utils.get-in($options, "properties", null);
+    $values: utils.empty-map();
+    // $helper-scale: utils.get-in($helper, "scale", null);
+    // Check if we need to get values from scales
+    // @if $helper-scale and scales.has-scale($helper-scale) {
+    //     $helper-values: scales.get-scale($helper-scale);
+    // }
+    // Check for custom values to merge
+    @if map.has-key($options, "values") {
+        $values: map.merge($values, map.get($options, "values"));
+    }
+    $is-important: utils.get-in($options, "important", false);
+    $is-responsive: utils.get-in($options, "responsive", false);
+    $states: utils.get-in($options, "states", null);
+    @if not utils.is-list($states) {
+        $states: ("default");
+    }
+    // Register helpers classes for each state
+    @each $state in $states {
+        @each $key,$value in $values {
+            $classname: naming.get-helper-classname((
+                "name": $name,
+                "property": $key,
+                "state": $state,
+            ));
+            #{$classname} {
+                @include utility-rule($properties, $value, $is-important);
+            }
+        }
+    }
+    // For responsive variants, we will register the style
+    // for each breakpoint in the list of breakpoints
+    @if $is-responsive {
+        @each $breakpoint in breakpoints.get-breakpoints-names() {
+            @each $key,$value in $values {
+                $classname: naming.get-helper-classname((
+                    "name": $name,
+                    "property": $key,
+                    "breakpoint": $breakpoint,
+                ));
+                @include breakpoints.use-breakpoint($breakpoint) {
+                    #{$classname} {
+                        @include utility-rule($properties, $value, $is-important);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// All utilities mixin
+@mixin utilities() {
+    // Colors utilities
+    @include utility((
+        "name": "bg",
+        "properties": ("background-color"),
+        "states": ("default" "hover"),
+        "responsive": false,
+        "values": colors.get-colors(),
+    ));
+    @include utility((
+        "name": "text",
+        "properties": ("color"),
+        "states": ("default" "hover"),
+        "responsive": false,
+        "values": colors.get-colors(),
+    ));
+    // Cursor utilities
+    @include utility((
+        "name": "cursor",
+        "states": ("default"),
+        "responsive": false,
+        "properties": ("cursor"),
+        "values": constants.$cursor-values,
+    ));
+    // Display utilities
+    @include utility((
+        "name": "d",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("display"),
+        "values": constants.$display-values,
+    ));
+    // Flexbox
+    @include utility((
+        "name": "flex",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("display"),
+        "values": constants.$display-flex-values,
+    ));
+    @include utility((
+        "name": "flex",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("flex"),
+        "values": constants.$flex-values,
+    ));
+    @include utility((
+        "name": "flex",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("flex-direction"),
+        "values": constants.$flex-direction-values,
+    ));
+    @include utility((
+        "name": "flex",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("flex-wrap"),
+        "values": constants.$flex-wrap-values,
+    ));
+    @include utility((
+        "name": "flex",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("flex-grow"),
+        "values": constants.$flex-grow-values,
+    ));
+    @include utility((
+        "name": "flex",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("flex-shrink"),
+        "values": constants.$flex-shrink-values,
+    ));
+    @include utility((
+        "name": "content",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("align-content"),
+        "values": constants.$align-content-values,
+    ));
+    @include utility((
+        "name": "items",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("align-items"),
+        "values": constants.$align-items-values,
+    ));
+    @include utility((
+        "name": "justify",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("justify-content"),
+        "values": constants.$justify-content-values,
+    ));
+    @include utility((
+        "name": "order",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("order"),
+        "values": constants.$order-values,
+    ));
+    // Opacity
+    @include utility((
+        "name": "opacity",
+        "states": ("default" "hover"),
+        "responsive": false,
+        "properties": ("opacity"),
+        "values": constants.$opacity-values,
+    ));
+    // Overflow utilities
+    @each $name,$value in constants.$overflow-properties {
+        @include utility((
+            "name": $value,
+            "states": ("default"),
+            "properties": ($value),
+            "values": constants.$overflow-values,
+        ));
+    }
+    // Position utilities
+    @include utility((
+        "name": "float",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("float"),
+        "values": constants.$float-values,
+    ));
+    @include utility((
+        "name": "position",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("position"),
+        "values": constants.$position-values,
+    ));
+    // Register placement utilities
+    @each $name,$props in constants.$placement-properties {
+        @include utility((
+            "name": utils.get-in($props, "name"),
+            "states": ("default"),
+            "responsive": true,
+            "properties": utils.get-in($props, "properties", ()),
+            "values": constants.$placement-values,
+        ));
+    }
+    // Radius utilities
+    @include utility((
+        "name": "radius",
+        "states": ("default"),
+        "responsive": false,
+        "properties": ("border-radius"),
+        "values": constants.$border-radius-values,
+    ));
+    // Sizing utilities
+    @each $name,$props in constants.$sizing-properties {
+        $sizing-extra-values: (
+            "auto": auto,
+            "full": 100%,
+            "half": 50%,
+            "none": 0px,
+            "one": 1px,
+        );
+        // Check for height sizing (height, height.min and height.max)
+        @if utils.starts-with($name, "height") {
+            $sizing-extra-values: map.set($sizing-extra-values, "screen", 100vh);
+        }
+        // Check for width sizing (width, width.min and width.max)
+        @if utils.starts-with($name, "width") {
+            $sizing-extra-values: map.set($sizing-extra-values, "screen", 100vw);
+        }
+        @include utility((
+            "name": utils.get-in($props, "name"),
+            "states": ("default"),
+            "responsive": true,
+            "properties": utils.get-in($props, "properties", ()),
+            "values": map.merge(constants.$sizes, $sizing-extra-values),
+        ));
+    }
+    // Spacing utilities
+    @each $name,$props in constants.$spacing-properties {
+        @include utility((
+            "name": utils.get-in($props, "name"),
+            "states": ("default"),
+            "responsive": true,
+            "properties": utils.get-in($props, "properties", ()),
+            "important": true,
+            "values": map.merge(constants.$sizes, (
+                "auto": auto,
+                "full": 100%,
+                "half": 50%,
+                "none": 0px,
+            )),
+        ));
+    }
+    // Font family utilities
+    @include utility((
+        "name": "font",
+        "states": ("default"),
+        "properties": ("font-family"),
+        "values": constants.$font-family-values,
+    ));
+    // Font style
+    @include utility((
+        "name": "text",
+        "states": ("default" "hover"),
+        "properties": ("font-style"),
+        "values": constants.$font-style-values,
+    ));
+    // Font weight
+    @include utility((
+        "name": "weight",
+        "states": ("default"),
+        "properties": ("font-weight"),
+        "values": constants.$font-weight-values,
+    ));
+    // Font size
+    @include utility((
+        "name": "text",
+        "states": ("default"),
+        "properties": ("font-size"),
+        "values": constants.$font-size-values,
+    ));
+    // Line height
+    @include utility((
+        "name": "lh",
+        "states": ("default"),
+        "properties": ("line-height"),
+        "values": constants.$line-height-values,
+    ));
+    // Text transform (lowercase, uppercase, ...)
+    @include utility((
+        "name": "text",
+        "states": ("default" "hover"),
+        "properties": ("text-transform"),
+        "values": constants.$text-transform-values,
+    ));
+    // Text decoration (underline)
+    @include utility((
+        "name": "text",
+        "states": ("default" "hover"),
+        "properties": ("text-decoration"),
+        "values": constants.$text-decoration-values,
+    ));
+    // Text align
+    @include utility((
+        "name": "text",
+        "states": ("default"),
+        "responsive": true,
+        "properties": ("text-align"),
+        "values": constants.$text-align-values,
+    ));
+    // Vertical align
+    @include utility((
+        "name": "valign",
+        "states": ("default"),
+        "properties": ("vertical-align"),
+        "values": constants.$vertical-align-values,
+    ));
+    // Shadow utilities
+    @include utility((
+        "name": "shadow",
+        "states": ("default"),
+        "properties": ("box-shadow"),
+        "values": constants.$shadow-values,
+    ));
+}
