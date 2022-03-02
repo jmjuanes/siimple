@@ -68,7 +68,7 @@ gulp.task("build:components", () => {
 
 // Build icons fonts
 gulp.task("build:icons", () => {
-    return gulp.src("config/icons.json")
+    return gulp.src("icons.json")
         .pipe(icons({
             cwd: __dirname,
             iconsFolder: path.join(__dirname, "icons"),
