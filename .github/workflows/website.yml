@@ -1,0 +1,44 @@
+name: Deploy Website
+
+on:
+  push:
+    branches: [main]
+  release:
+    types: [published]
+
+jobs:
+  website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build siimple css
+        run: npm run build
+
+      - name: Install website dependencies
+        run: cd website && npm install
+
+      - name: Build website
+        run: npm run website:build
+
+      - name: Add configuration
+        run: 'echo "$FIREBASE_CONFIG" > ./website/.firebaserc'
+        shell: bash
+        env:
+          FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG_WEBSITE }}
+
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          projectId: "${{ secrets.FIREBASE_PROJECT }}"
+          channelId: "${{ (github.event_name == 'release' && 'live') || 'dev' }}"
+          target: siimple-website
+          entryPoint: website
+          expires: 30d
