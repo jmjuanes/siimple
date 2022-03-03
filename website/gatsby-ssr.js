@@ -9,7 +9,7 @@ exports.onRenderBody = body => {
     body.setHtmlAttributes({
         lang: "en",
         style: {
-            "backgroundColor": "#fafafa",
+            // "backgroundColor": "#fafafa",
         }
     });
     body.setHeadComponents([
