@@ -32,7 +32,6 @@ export const documentationNav = [
     {"group": "components", "url": "/components/slider", "label": "Slider"},
     {"group": "components", "url": "/components/spinner", "label": "Spinner"},
     {"group": "components", "url": "/components/switch", "label": "Switch"},
-    {"group": "components", "url": "/components/tab", "label": "Tab"},
     {"group": "components", "url": "/components/table", "label": "Table"},
     {"group": "components", "url": "/components/textarea", "label": "Textarea"},
     {"group": "components", "url": "/components/title", "label": "Title"},

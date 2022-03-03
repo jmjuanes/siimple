@@ -1,9 +1,8 @@
 const path = require("path");
-// const fs = require("fs");
-// const {createFilePath} = require("gatsby-source-filesystem");
-// const paths = require("./config/paths.js");
-const env = require("./env.js");
-// const MiniCssExtract = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+const package = require("../package.json");
+
+const s = str => JSON.stringify(str);
 
 // Write custom webpack configuration
 exports.onCreateWebpackConfig = ({getConfig, plugins, actions}) => {
@@ -14,14 +13,30 @@ exports.onCreateWebpackConfig = ({getConfig, plugins, actions}) => {
                 path.resolve(__dirname, "./node_modules"),
             ],
             "alias": {
-                "siimple-colors": path.resolve(__dirname, "./config/colors.json"),
-                "siimple-icons": path.resolve(__dirname, "./config/icons.json"),
+                "siimple-colors": path.resolve(__dirname, "../colors.json"),
+                "siimple-icons": path.resolve(__dirname, "../icons.json"),
             },
         },
         "plugins": [
-            plugins.define(Object.fromEntries(Object.entries(env).map(e => {
-                return [`process.env.${e[0]}`, JSON.stringify(e[1])];
-            }))),
+            plugins.define({
+                "process.env.VERSION": s(package.version),
+                "process.env.REPO_URL": s(package.repository),
+                "process.env.ISSUES_URL": s(package.bugs),
+                "process.env.DISCUSSIONS_URL": s(`${package.repository}/discussions`),
+                "process.env.TWITTER_URL": s(package.twitter),
+            }),
+            // Object.fromEntries(Object.entries(env).map(e => {
+            //     return [`process.env.${e[0]}`, JSON.stringify(e[1])];
+            // }))),
+            new CopyPlugin({
+                patterns: [
+                    path.resolve(__dirname, "../dist/siimple.min.css"),
+                    path.resolve(__dirname, "../dist/siimple-icons.ttf"),
+                    path.resolve(__dirname, "../dist/siimple-icons.woff"),
+                    "src/docs.css",
+                    "node_modules/codecake/codecake.css",
+                ],
+            }),
         ],
     });
 };

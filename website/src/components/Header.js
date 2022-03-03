@@ -23,7 +23,7 @@ export const Header = props => {
         "hover:has-bg-coolgray-100 hover:has-text-dark": true
     });
     return (
-        <div className={`content is-${size} has-py-6 has-d-flex has-bg-white`}>
+        <div className={`content is-${size} has-py-6 has-d-flex`}>
             <Link to="/" className="has-flex has-text-coolgray-700 has-text-no-underline">
                 <Icon icon="siimple" className="has-align-middle" style={{"fontSize":"28px"}} />
                 <strong className="has-ml-2 siimple" style={{"fontSize":"24px"}}>siimple.</strong>
@@ -43,6 +43,6 @@ export const Header = props => {
 
 // Header default props
 Header.defaultProps = {
-    "items": null,
-    "size": "xlarge",
+    items: null,
+    size: "xlarge",
 };

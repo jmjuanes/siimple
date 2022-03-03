@@ -19,10 +19,11 @@ export const LiveCode = props => {
         return <pre className={`${codeClass} has-mb-6`} {...codeProps}>{codeChildren}</pre>;
     }
     //const {padding, bg, color} = props;
-    const demoClass = kofi.classNames("has-mb-6 has-radius has-overflow-x-hidden", [
-        `has-p-${props.padding}`,
+    const demoClass = kofi.classNames("has-mb-6 has-overflow-x-hidden", [
+        "has-pt-4 has-pb-0",
+        // `has-p-${props.padding}`,
         // `has-bg-${props.bg}`,
-        "has-bg-coolgray-100",
+        // "has-bg-coolgray-100",
         `has-text-${props.color}`,
     ]);
     const contentClass = kofi.classNames("has-w-full has-overflow-y", {

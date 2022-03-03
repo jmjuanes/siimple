@@ -2,6 +2,10 @@ import React from "react";
 import kofi from "kofi";
 import {Link} from "gatsby";
 
+import {IconsGallery} from "./components/IconsGallery.js";
+import {Welcome} from "./components/Welcome.js";
+import {Testimonials} from "./components/Testimonials.js";
+import {Sandbox} from "./components/Sandbox.js";
 import {LiveCode} from "./components/LiveCode.js";
 import {ModalExample} from "./components/ModalExample.js";
 import {NavbarExample} from "./components/NavbarExample.js";
@@ -41,6 +45,11 @@ export const shortcodes = {
     //"tr": html("tr", "table-row"),
     //"td": html("td", "table-cell"),
     //"th": html("th", "table-cell has-text-left"),
+    // Pages components
+    IconsGallery,
+    Testimonials,
+    Welcome,
+    Sandbox,
     // Examples
     ModalExample,
     NavbarExample,

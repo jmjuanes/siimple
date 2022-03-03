@@ -16,23 +16,37 @@ module.exports = {
             "resolve": "gatsby-source-filesystem",
             "options": {
                 "name": "docs",
-                "path": path.resolve(__dirname, "./docs/")
-            }
+                "path": path.resolve(__dirname, "../docs/"),
+            },
         },
         {
             "resolve": "gatsby-plugin-page-creator",
             "options": {
-                "path": path.resolve(__dirname, "./docs/")
-            }
+                "path": path.resolve(__dirname, "../docs/"),
+            },
+        },
+        {
+            "resolve": "gatsby-source-filesystem",
+            "options": {
+                "name": "pages",
+                "path": path.resolve(__dirname, "./pages/"),
+            },
+        },
+        {
+            "resolve": "gatsby-plugin-page-creator",
+            "options": {
+                "path": path.resolve(__dirname, "./pages/"),
+            },
         },
         {
             "resolve": "gatsby-plugin-mdx",
             "options": {
                 "extensions": [".mdx", ".md"],
                 "defaultLayouts": {
-                    "docs": path.join(__dirname, "/src/layouts/documentation.js")
-                }
-            }
+                    "docs": path.join(__dirname, "src/layouts/documentation.js"),
+                    "pages": path.join(__dirname, "src/layouts/default.js"),
+                },
+            },
         },
     ]),
 };
