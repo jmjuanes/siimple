@@ -1,11 +1,10 @@
 import React from "react";
 import kofi from "kofi";
 
-import Layout from "../layouts/default.js";
 import {useEditor} from "../hooks/useEditor.js";
 import {useSandbox} from "../hooks/useSandbox.js";
 import {copyTextToClipboard} from "../utils/clipboard.js";
-import {Icon} from "../components/Icon.js";
+import {Icon} from "./Icon.js";
 
 // Default preview content
 const defaultPreviewDocument = `
@@ -13,7 +12,7 @@ const defaultPreviewDocument = `
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link id="sheet" href="/static/siimple.min.css" rel="stylesheet" type="text/css">
+            <link id="sheet" href="/siimple.min.css" rel="stylesheet" type="text/css">
             <script>
                 window.addEventListener("message", event => {
                     if (typeof event.data.sheet !== "undefined") {
@@ -59,23 +58,20 @@ const updatePreview = (preview, content) => {
 const ActionButton = props => {
     const buttonClass = kofi.classNames({
         "has-cursor-pointer": true,
-        "has-d-flex has-radius has-opacity-100": true,
-        "has-py-2 has-px-3 has-ml-2": true,
-        "has-text-coolgray-600 has-text-no-underline": true,
-        "hover:has-bg-blue-200 hover:has-text-blue-700": true
+        "has-d-flex has-radius": true,
+        "has-py-2 has-px-2 has-ml-3": true,
+        "has-bg-coolgray-200 has-text-no-underline": true,
+        // "hover:has-bg-blue-200 hover:has-text-blue-700": true
     });
     return (
         <div className={buttonClass} onClick={props.onClick}>
-            <Icon icon={props.icon} className="has-text-xl" />
-            {props.text && (
-                <strong className="has-pl-1">{props.text}</strong>
-            )}
+            <Icon icon={props.icon} className="has-text-2xl" />
         </div>
     );
 };
 
 // Export playground application wrapper
-export default props => {
+export const Sandbox = props => {
     const codeRef = React.useRef();
     const previewRef = React.useRef();
     const [shareUrl, setShareUrl] = React.useState("");
@@ -114,31 +110,32 @@ export default props => {
     };
     const parentClass = kofi.classNames({
         "has-d-flex has-flex-row has-items-stretch has-flex-grow": true,
-        "has-w-full has-h-screen has-p-4": true,
-        "has-bg-coolgray-200": true,
+        "has-w-full has-h-screen": true,
+        "has-py-3": true,
+        // "has-bg-coolgray-200": true,
     });
     const codePanelClass = kofi.classNames({
+        "has-d-flex has-flex-column": true,
         "has-p-6 has-radius has-s-full": true,
+        "has-bg-white has-shadow": true,
         "has-overflow-hidden": true,
-        "CodeCake": true,
-        "CodeCake-light has-bg-white": true,
+        // "CodeCake": true,
+        // "CodeCake-light has-bg-white": true,
     });
-    const actionsPanelClass = kofi.classNames({
-        "has-d-flex has-p-6 has-radius has-w-full has-minh-12 has-mb-4": true,
-        "has-bg-white": true,
-    });
+    // const actionsPanelClass = kofi.classNames({
+    //     "has-d-flex has-p-6 has-radius has-w-full has-minh-12 has-mb-4": true,
+    //     "has-bg-white": true,
+    // });
     const previewPanelClass = kofi.classNames({
         "has-p-6 has-radius has-s-full has-flex-grow": true,
-        "has-bg-white": true,
+        "has-bg-white has-shadow": true,
     });
     // Render app component
     return (
-        <Layout size="fluid" title="Try it">
+        <React.Fragment>
             <div className={parentClass}>
-                <div ref={codeRef} className={codePanelClass} />
-                <div className="has-h-full has-w-4 has-minw-4" />
-                <div className="has-d-flex has-flex-column has-s-full">
-                    <div className={actionsPanelClass}>
+                <div className={codePanelClass}>
+                    <div className="has-mb-4 has-d-flex has-items-center">
                         <button onClick={handleRunClick} className="btn has-d-flex has-items-center">
                             <Icon icon="play" className="has-text-lg has-pr-1" />
                             <strong>Run</strong>
@@ -147,16 +144,18 @@ export default props => {
                             <ActionButton icon="link" text="Share" onClick={handleShareClick} />
                         </div>
                     </div>
-                    <div className={previewPanelClass}>
-                        <iframe
-                            ref={previewRef}
-                            onLoad={handlePreviewLoad}
-                            style={defaultPreviewStyle}
-                            sandbox="allow-scripts allow-same-origin"
-                            scrolling="yes"
-                            srcDoc={defaultPreviewDocument}
-                        />
-                    </div>
+                    <div className="CodeCake CodeCake-light has-s-full has-flex-grow" ref={codeRef} />
+                </div>
+                <div className="has-h-full has-w-4 has-minw-4" />
+                <div className={previewPanelClass}>
+                    <iframe
+                        ref={previewRef}
+                        onLoad={handlePreviewLoad}
+                        style={defaultPreviewStyle}
+                        sandbox="allow-scripts allow-same-origin"
+                        scrolling="yes"
+                        srcDoc={defaultPreviewDocument}
+                    />
                 </div>
             </div>
             {/* Share sandbox modal */}
@@ -185,6 +184,6 @@ export default props => {
                     </div>
                 </div>
             ) : null}
-        </Layout>
+        </React.Fragment>
     );
 };

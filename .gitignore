@@ -7,6 +7,7 @@ node_modules
 package-lock.json
 firebase-debug.log
 *.tgz
+*.tar.gz
 *.log
 .cache
 
@@ -25,9 +26,7 @@ release
 public
 
 # Other folders and files
-old-scripts
 drafts
 packages
 .firebaserc
 .firebase
-firebase.json

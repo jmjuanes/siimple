@@ -61,11 +61,6 @@ gulp.task("build:bundle", () => {
         .pipe(gulp.dest("dist/"));
 });
 
-// Build components
-gulp.task("build:components", () => {
-    return null;
-});
-
 // Build icons fonts
 gulp.task("build:icons", () => {
     return gulp.src("icons.json")
@@ -91,21 +86,4 @@ gulp.task("build:css", () => {
         }))
         .pipe(rename("siimple.min.css"))
         .pipe(gulp.dest("dist/"));
-});
-
-// Copy static assets
-gulp.task("static", () => {
-    const files = [
-        "dist/siimple.min.css",
-        "dist/siimple-icons.ttf",
-        "dist/siimple-icons.woff",
-        "src/docs.css",
-        "node_modules/codecake/codecake.css",
-    ];
-    return gulp.src(files).pipe(gulp.dest("public/static/"));
-});
-
-// Copy assets
-gulp.task("assets", () => {
-    return gulp.src("src/assets/*").pipe(gulp.dest("public/"));
 });

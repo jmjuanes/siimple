@@ -12,9 +12,9 @@ const FOOTER_LINKS = [
 export const Footer = props => {
     const size = props.size || "xlarge";
     const items = props.links || FOOTER_LINKS;
-    const itemClass ="has-text-coolgray-700 hover:has-text-blue-700 has-text-no-underline";
+    const itemClass ="has-text-coolgray-700 hover:has-text-blue-500 has-text-no-underline";
     return (
-        <div className={`content has-bg-white is-${size} has-pt-12 has-pb-24`}>
+        <div className={`content is-${size} has-pt-12 has-pb-24`}>
             <div className="has-w-full" style={{"maxWidth":"500px"}}>
                 <div className="title is-4 has-text-dark has-mb-2">
                     <strong className="siimple">siimple.</strong>

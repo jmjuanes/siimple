@@ -5,8 +5,8 @@ import {classNames} from "../utils/classnames.js";
 export const Icon = props => {
     const newProps = {
         "className": classNames(
-            "icon",
-            typeof props.icon === "string" ? `is-${props.icon}` : null,
+            // "icon",
+            typeof props.icon === "string" ? `icon-${props.icon}` : null,
             props.className,
         ),
         "style": props.style || null,
