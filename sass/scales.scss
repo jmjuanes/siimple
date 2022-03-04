@@ -5,14 +5,14 @@
 // Default scales
 $-scales: (
     "colors": (
-        "text": constants.$dark,
-        "background": constants.$white,
+        "text": constants.$body-text,
+        "background": constants.$body-bg,
         "primary": constants.$primary,
         "secondary": constants.$secondary,
-        "hightlight": constants.$highlight,
+        "heading": constants.$heading,
         "accent": constants.$accent,
         "muted": constants.$muted,
-        "fill": constants.$light,
+        "fill": constants.$fill,
     ),
     "fonts": (
         "body": constants.$font-sans, 
@@ -27,7 +27,7 @@ $-scales: (
     "font-weights": (
         "body": 400,
         "heading": 700,
-        "bodl": 700,
+        "bold": 700,
     ),
     "line-heights": (
         "heading": 1.125,
