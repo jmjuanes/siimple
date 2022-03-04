@@ -2,6 +2,7 @@ import React from "react";
 import kofi from "kofi";
 import {Link} from "gatsby";
 
+import {ColorPalette} from "./components/ColorPalette.js";
 import {IconsGallery} from "./components/IconsGallery.js";
 import {Welcome} from "./components/Welcome.js";
 import {Testimonials} from "./components/Testimonials.js";
@@ -46,6 +47,7 @@ export const shortcodes = {
     //"td": html("td", "table-cell"),
     //"th": html("th", "table-cell has-text-left"),
     // Pages components
+    ColorPalette,
     IconsGallery,
     Testimonials,
     Welcome,
