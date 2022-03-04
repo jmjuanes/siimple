@@ -9,7 +9,7 @@
     "repository": "https://github.com/siimple/siimple",
     "bugs": "https://github.com/siimple/siimple/issues",
     "scripts": {
-        "clean": "rm -rf ./public",
+        "clean": "rm -rf public && rm -rf .cache",
         "build": "gatsby build",
         "serve": "stattic --folder ./public --port 5000"
     },
