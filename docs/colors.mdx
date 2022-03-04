@@ -4,3 +4,28 @@ title: "Colors"
 
 # Colors
 
+We provide a color palette that you can use to customize your theme in case that you do not have any brand colors.
+
+## Color palette
+
+<ColorPalette />
+
+## Using colors
+
+You can use the `siimple.get-color` function to get a color from the palette. This function accepts the color name as the first argument and the color shade as the second argument.
+
+```scss
+@use "siimple" as siimple;
+
+// Comfigure siimple using the color palette
+@include siimple.configure(
+    $scales: (
+        "colors": (
+            "primary": siimple.get-color("mint", "500"),
+            "secondary": siimple.get-color("royal", "600"),
+            "background": siimple.get-color("coolgray", "100"),
+            "text": siimple.get-color("coolgray", "700"),
+        ),
+    ),
+);
+```
