@@ -4,13 +4,16 @@ $desktop: 1200px;
 $fullhd: 1800px;
 
 // Default colors
-$primary: #307ad5;     // blue-500
-$highlight: #e5effb;   // blue-200
+$primary: #1c76fd;     // blue-500
 $secondary: #202ba2;   // royal-600
 $accent: #4622a0;      // purple-600
-$light: #ebedef;       // coolgray-200
-$dark: #363f4f;        // coolgray-700
+
+$body-bg: #ffffff;     // white
+$body-text: #363f4f;  // coolgray-700
+$heading: #1d2734; // coolgray-800
+$fill: #ebedef;       // coolgray-200
 $muted: #747c8b;       // coolgray-500
+
 $black: #000000;
 $white: #ffffff;
 
@@ -53,7 +56,7 @@ $shadow-large: 0rem 1rem 1rem -0.5rem rgba($shadow-color, 0.25), $shadow-ring;
 
 // Default heading variants
 $default-heading-variant: (
-    "color": "text",
+    "color": "heading",
     "font-family": "heading",
     "font-weight": "heading",
     "line-height": "heading",
@@ -61,7 +64,7 @@ $default-heading-variant: (
 
 // Default paragraph variant
 $default-paragraph-variant: (
-    "color": "text",
+    // "color": "text",
     "font-weight": "body",
     "line-height": "body",
 );
