@@ -1,0 +1,29 @@
+---
+title: Utilities
+---
+
+# Utilities
+
+The **utilities** module provides a collection of **small functional CSS classes** that can be used for creating or customizing components. The main aim of this module is to provide a collection of reusable classes to replace the conventional style of writting CSS classes.
+
+Utilities are enabled by default as part of the `siimple.css()` mixin. It can be disabled setting to `false` the `"use-utilities"` flag in the `$flags` section of the configuration.
+
+If you want to manually including the utilities module in your styles, just call the `siimple.utilities()` mixin:
+
+```scss
+@use "siimple" as siimple;
+
+// Include all utilities
+@include siimple.utilities();
+```
+
+Additionally, in case that you are only interested in some utilities you can load each helper individually instead of loading all utilities:
+
+```scss
+@use "siimple" as siimple;
+
+// Include only some utilities
+@include siimple.color-utilities();
+@include siimple.spacing-utilities();
+@include siimple.sizing-utilities();
+```
