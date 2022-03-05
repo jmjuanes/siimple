@@ -4,68 +4,56 @@ title: Icons
 
 # Icons
 
-The icons plugin can be enabled just adding the `plugin-icons()` function in the `$plugins` section of your configuration:
+The icons module is by default enabled as part of the `siimple.css()` mixin. It can be disabled setting a `false` value to the `"use-icons"` flag in the `$flags` section of the configuration.
+
+Also, it can be manually included in your styles just calling the `siimple.icons()` mixin:
 
 ```scss
-@include siimple.configure(
-    $plugins: (
-        siimple.plugin-icons(),
-    ),
-);
-```
+@use "siimple" as siimple;
 
-This will add the `icon` component to your output CSS, and will generate one variant for each icon. 
+// Include icons styles
+@include siimple.icons();
+```
 
 ### Customization
 
-The following options can be used to customize the icons plugin:
+The following options can be used to customize the icons module:
 
-- `path`: path to the fonts folder. By default is `./`. **The path must end with a `/`**.
-- `include`: if provided, only icons in this list will be included for the output CSS.
-- `exclude`: if provided, icons in this list will be excluded from the output CSS.
+- `"font-path"`: path where the icons fonts are placed. By default is `./`. **The path must end with a `/`**.
 
 Example: 
 
 ```scss
-@include siimple.configure(
-    $plugins: (
-        siimple.plugin-icons((
-            "path": "./fonts/",
-            "include": (
-                "star",
-                "user",
-            ),
-        )),
-    ),
-);
+@use "siimple" as siimple;
+
+// Include and configure icons
+@include siimple.icons((
+    "font-path": "./fonts/",
+));
 ```
 
-> Remember to copy all fonts in the `siimple` package to your project assets folder and use the `path` option to set the path to the fonts folder.
+> Remember to copy all fonts in the `siimple` package to your project assets folder and use the `"font-path"` option to set the path to the fonts folder.
 
 
 ### Using icons
 
-Create a `<i>` tag with the following classes: 
+Create a `<i>` tag and add the `icon-<IconName>` classname, where `<IconName>` is the name of the desired icon.
 
-- `icon`: is the icon component base classname. 
-- `is-[ICON]`, where `[ICON]` is the name of the desired icon.
 
 ```html 
 <!-- Add a left arrow icon -->
-<i class="icon is-arrow-left"></i>
+<i class="icon-arrow-left"></i>
 
 <!-- Add a star icon -->
-<i class="icon is-star"></i>
+<i class="icon-star"></i>
 ```
 
 You can style your icon using `font-size` and `color` style properties:
 
 ```html 
 <!-- Using style attribute -->
-<i class="icon is-star" style="color:#ffea66;font-size:20px;"></i>
+<i class="icon-star" style="color:#ffea66;font-size:20px;"></i>
 
 <!-- Using helpers -->
-<i class="icon is-star has-color-red-500 has-size-xl"></i>
+<i class="icon-star has-color-red-500 has-size-xl"></i>
 ```
-
-> **Note**: in case that you have changed or removed the prefix using the `$prefix` section of the configuration, the component classname will be different.
