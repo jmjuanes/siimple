@@ -5,7 +5,7 @@
 // Breakpoints variables
 $-breakpoints: (
     "mobile": (
-        "min": 0px, 
+        "min": null, 
         "max": constants.$tablet,
     ),
     "tablet": (
@@ -16,8 +16,8 @@ $-breakpoints: (
         "min": constants.$desktop, 
         "max": null,
     ),
-    "fullhd": (
-        "min": constants.$fullhd,
+    "widescreen": (
+        "min": constants.$widescreen,
         "max": null,
     ),
 );
