@@ -22,13 +22,10 @@ export const AccordionNav = props => {
                 //Return link to the provided item
                 const isActive = props.pathname === item.url;
                 const itemClass = kofi.classNames({
-                    "navlink has-mb-1 has-px-3": true,
+                    "navlink has-mb-1 has-pr-3 has-pl-6": true,
                     "has-weight-normal": true,
-                    //"is-active": isActive,
-                    "has-bg-coolgray-700 has-text-white": isActive,
-                    //"has-bg-blue-200": isActive,
-                    //"hover:has-bg-blue-200": true,
-                    "hover:has-bg-coolgray-200 has-text-dark": !isActive,
+                    "has-bg-coolgray-700 hover:has-text-white has-text-white has-weight-bold": isActive,
+                    "hover:has-bg-coolgray-200": !isActive,
                 });
                 const itemVisible = expanded[item.group] === true; // || item.group === "global";
                 const displayGroup = currentGroup !== item.group; // && item.group !== "global"; //Display group
@@ -52,7 +49,7 @@ export const AccordionNav = props => {
                             //currentGroup = item.group; //Change current group
                             return (
                                 <div className={groupClass} onClick={handleGroupClick}>
-                                    <div className="has-flex has-py-2">
+                                    <div className="has-flex has-py-3">
                                         <div className="has-flex-grow has-text-capitalize">
                                             <strong>{item.group.replace("-", " ")}</strong>
                                         </div>

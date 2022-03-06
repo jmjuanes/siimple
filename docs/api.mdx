@@ -1,0 +1,80 @@
+---
+title: API Reference
+---
+
+# API Reference
+
+### siimple.configure(...)
+
+A mixin for configuring the default values of siimple, like scales, breakpoints, flags, and more. See the [configure section](/configure) to learn more.
+
+
+### siimple.css()
+
+A mixin for including all configured modules of siimple. You can use the `$flags` section of the `siimple.configure` mixin to customize which modules will be included.
+
+
+### siimple.utility($options)
+
+A mixin that you can use to generate your own CSS utility classes. The `$options` argument is a map that accepts the following fields:
+
+- `"name"`: prefix of the utility.
+- `"values"`: a map with the values of the utility.
+- `"properties"`: a list of properties to apply each value.
+- `"states"`: a list of states for generating the utilities. Allowed values are `"default"`, `"hover"` and `"focus"`.
+- `"responsibe"`: a boolean to generate also responsive utilities.
+- `"important"`: a boolean for adding the `!important` flag.
+
+Example:
+
+```scss
+@use "siimple" as siimple;
+
+@include siimple.utility((
+    "name": "text",
+    "properties": ("text-align"),
+    "values": (
+        "left": "left",
+        "right": "right",
+    ),
+));
+
+// Will generate
+// .has-text-left { text-align: left; }
+// .has-text-right { text-align: right; }
+```
+
+Example using different states:
+
+```scss
+@use "siimple" as siimple;
+
+@include siimple.utility((
+    "name": "text",
+    "properties": ("color"),
+    "states": ("default", "hover"),
+    "values": (
+        "white": "#fff",
+        "black": "#000",
+    ),
+));
+
+// Will generate
+// .text-white { color: #fff; }
+// .text-black { color: #000; }
+// .text-white:hover { color: #fff; }
+// .text-black:hover { color: #000; }
+```
+
+
+### siimple.get-color($name, $shade)
+
+A function that returns the color from our [color palette](/colors) that matches the specified `$name` and with the `$shade`. If no `$shade` is provided we will use by default the `"500"`.
+
+```scss
+@use "siimple" as siimple;
+
+$blue: siimple.get-color("blue", "600");
+$red: siimple.get-color("red"); // == siimple.get-color("red", "500");
+```
+

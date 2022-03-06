@@ -60,7 +60,7 @@ const ActionButton = props => {
         "has-cursor-pointer": true,
         "has-d-flex has-radius": true,
         "has-py-2 has-px-2 has-ml-3": true,
-        "has-bg-coolgray-200 has-text-no-underline": true,
+        "has-bg-coolgray-600 has-text-white has-text-no-underline": true,
         // "hover:has-bg-blue-200 hover:has-text-blue-700": true
     });
     return (
@@ -115,11 +115,12 @@ export const Sandbox = props => {
         // "has-bg-coolgray-200": true,
     });
     const codePanelClass = kofi.classNames({
-        "has-d-flex has-flex-column": true,
+        "has-d-flex has-flex-column has-s-full": true,
         "has-p-6 has-radius has-s-full": true,
-        "has-bg-white has-shadow": true,
+        "has-bg-coolgray-700": true,
         "has-overflow-hidden": true,
         // "CodeCake": true,
+        // "CodeCake-dark has-bg-coolgray-700": true,
         // "CodeCake-light has-bg-white": true,
     });
     // const actionsPanelClass = kofi.classNames({
@@ -127,8 +128,9 @@ export const Sandbox = props => {
     //     "has-bg-white": true,
     // });
     const previewPanelClass = kofi.classNames({
-        "has-p-6 has-radius has-s-full has-flex-grow": true,
-        "has-bg-white has-shadow": true,
+        "has-d-flex has-flex-column": true,
+        "has-p-0 has-radius has-s-full": true,
+        "has-bg-white": true,
     });
     // Render app component
     return (
@@ -136,7 +138,10 @@ export const Sandbox = props => {
             <div className={parentClass}>
                 <div className={codePanelClass}>
                     <div className="has-mb-4 has-d-flex has-items-center">
-                        <button onClick={handleRunClick} className="btn has-d-flex has-items-center">
+                        <button
+                            className="btn has-d-flex has-items-center has-bg-white has-text-coolgray-800"
+                            onClick={handleRunClick}
+                        >
                             <Icon icon="play" className="has-text-lg has-pr-1" />
                             <strong>Run</strong>
                         </button>
@@ -144,16 +149,19 @@ export const Sandbox = props => {
                             <ActionButton icon="link" text="Share" onClick={handleShareClick} />
                         </div>
                     </div>
-                    <div className="CodeCake CodeCake-light has-s-full has-flex-grow" ref={codeRef} />
+                    <div
+                        className="CodeCake CodeCake-dark has-bg-coolgray-700 has-s-full has-p-0"
+                        ref={codeRef}
+                    />
                 </div>
-                <div className="has-h-full has-w-4 has-minw-4" />
+                <div className="has-h-full has-w-4 has-minw-8" />
                 <div className={previewPanelClass}>
                     <iframe
                         ref={previewRef}
                         onLoad={handlePreviewLoad}
                         style={defaultPreviewStyle}
                         sandbox="allow-scripts allow-same-origin"
-                        scrolling="yes"
+                        scrolling="no"
                         srcDoc={defaultPreviewDocument}
                     />
                 </div>

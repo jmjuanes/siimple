@@ -30,25 +30,9 @@ Use the following helpers classes to control the opacity of an element:
 | `has-opacity-95` | `opacity: 0.95;` |
 | `has-opacity-100` | `opacity: 1.00;` |
 
-
-### Enable this plugin
-
-This plugin is included as part of the `plugin-helpers` collection. You can manually include this plugin calling `plugin-opacity-helpers()` in the `$plugins` section of the configuration:
-
-```scss
-@use "siimple" as siimple;
-
-@include siimple.configure(
-    $plugins: (
-        siimple.plugin-opacity-helpers(),
-    ),
-);
-```
-
 ### Usage
 
 Add any of the `has-opacity-{value}` classes to set the opacity of an element:
-
 
 ```html live=true bg=blue-200 color=white
 <div class="has-flex has-text-center">

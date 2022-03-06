@@ -4,16 +4,18 @@ title: Markup
 
 # Markup
 
-Use this plugin to style base markup elements, like headings, paragraphs, links... Just import the `plugin-markup()` function in the `$plugins` section of your configuration:
+Use this module to style base markup elements, like headings, paragraphs, links... 
+
+The markup module is enabled by default as part of the `siimple.css()` mixin. It can be disabled setting to `false` the `"use-markup"` flag in the `$flags` section of the configuration.
+
+If you want to manually include the markup module in your styles, just call the `siimple.markup()` mixin:
+
 
 ```scss
 @use "siimple" as siimple;
 
-@include siimple.configure(
-    $plugins: (
-        siimple.plugin-markup(),
-    ),
-);
+// Include markup module 
+@include siimple.markup();
 ```
 
 
@@ -37,7 +39,7 @@ Headings will use the default variant of `text.heading` defined in the `$variant
     $variants: (
         "text.heading": (
             "default": (
-                "color": "text",
+                "color": "heading",
                 "font-family": "heading",
                 "font-weight": "heading",
                 "line-height": "heading",
@@ -70,7 +72,6 @@ This plugin will use the default variant of `text.paragraph` defined in the `$va
     $variants: (
         "text.paragraph": (
             "default": (
-                "color": "text",
                 "font-weight": "body",
                 "line-height": "body",
             ),

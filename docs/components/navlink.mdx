@@ -8,20 +8,20 @@ description: "Navigation link component"
 A navigation link component that you can use in your navigation sections, for example in the navbar. Just add a `navlink` class to your link to style it as a navigation link.
 
 ```html live=true
-<div class="">
+<div class="has-d-inline-flex">
     <a class="navlink">Link 1</a>
     <a class="navlink">Link 2</a>
     <a class="navlink">Link 3</a>
 </div>
 ```
 
-We provide an `active` variant to mark a navigation link as active.
+We provide an `active` variant to mark a navigation link as active, and a `disabled` variant to mark a navigation link as disabled.
 
 ```html live=true
-<div class="has-mb-0">
+<div class="has-d-inline-flex">
     <a class="navlink">Link 1</a>
     <a class="navlink is-active">Link 2</a>
-    <a class="navlink">Link 3</a>
+    <a class="navlink is-disabled">Link 3</a>
 </div>
 ```
 
@@ -34,14 +34,17 @@ Variants for this component can be defined in the `navigation.link` section of t
     $variants: (
         "navigation.link": (
             "default": (
+                "font-weight": "bold",
                 "&:hover": (
-                    "background-color": "highlight",
                     "color": "primary",
                 ),
             ),
             "active": (
-                "background-color": "highlight",
                 "color": "primary",
+            ),
+            "disabled": (
+                "opacity": 0.5,
+                "pointer-events": none,
             ),
         ),
     ),

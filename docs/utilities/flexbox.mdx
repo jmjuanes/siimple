@@ -4,23 +4,7 @@ title: "Flexbox"
 
 # Flexbox
 
-Use the following flexbox helpers to distribute and align items in a container. If you are new to flexbox, you can start with this awesome [guide to flexbox by CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
-
-
-### Enable this plugin
-
-This plugin is included as part of the `plugin-helpers` collection. You can manually include this plugin calling `plugin-flexbox-helpers()` in the `$plugins` section of the configuration:
-
-```scss
-@use "siimple" as siimple;
-
-@include siimple.configure(
-    $plugins: (
-        siimple.plugin-flexbox-helpers(),
-    ),
-);
-```
-
+Use the following flexbox utilities to distribute and align items in a container. If you are new to flexbox, you can start with this awesome [guide to flexbox by CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 ### Flex
 
@@ -31,7 +15,6 @@ Use the following classes to control the behaviour of flex items:
 | `has-flex-auto`    | `flex: auto;`    |
 | `has-flex-initial` | `flex: initial;` |
 | `has-flex-none`    | `flex: none;`    |
-
 
 You can use `has-flex-auto` helper to allow the item to grow and shrink to fit the container:
 
@@ -82,7 +65,6 @@ Use the `has-flex-none` helper to prevent a flex item from growing and shrinking
 </div>
 ```
 
-
 ### Flex direction
 
 Use the following classes to control the direction of the items of a flex container:
@@ -93,7 +75,6 @@ Use the following classes to control the direction of the items of a flex contai
 | `has-flex-row-rev`    | `flex-direction: row-reverse`    |
 | `has-flex-column`     | `flex-direction: column;`        |
 | `has-flex-column-rev` | `flex-direction: column-reverse` |
-
 
 Use `has-flex-row` to position flex items horizontailly (row direction):
 
@@ -115,7 +96,6 @@ Or just use `has-flex-column` to position flex items vertically (in a column dir
 </div>
 ```
 
-
 ### Align items
 
 Use the following classes to define the alignment of the flex items along the **cross axis**.
@@ -126,7 +106,6 @@ Use the following classes to define the alignment of the flex items along the **
 | `has-items-end`      | `align-items: flex-end;`   |
 | `has-items-center`   | `align-items: center;`     |
 | `has-items-stretch`  | `align-items: stretch;`    |
-
 
 You can use `has-items-start` to align flex items to the start of the cross axis:
 
@@ -158,7 +137,6 @@ Use `has-items-end` helper to align flex items to the end of the cross axis:
 </div>
 ```
 
-
 ### Justify content
 
 Use the following classes to define how the browser should distribute the space between and around items along the **main axis**:
@@ -171,7 +149,6 @@ Use the following classes to define how the browser should distribute the space 
 | `has-justify-between` | `justify-content: space-between;` |
 | `has-justify-around`  | `justify-content: space-around;`  |
 | `has-justify-evenly`  | `justify-content: space-evenly;`  |
-
 
 Use the `has-justify-start` helper to pack items from the start of the main axis:
 
@@ -233,7 +210,6 @@ Use the `has-justify-evenly` helper to distribute items evenly:
 </div>
 ```
 
-
 ### Flex wrap
 
 Use the following classes to define how items will wrap.
@@ -242,7 +218,6 @@ Use the following classes to define how items will wrap.
 |-------|----------|
 | `has-flex-wrap`   | `flex-wrap: wrap;`   |
 | `has-flex-no-wrap` | `flex-wrap: nowrap;` |
-
 
 Use `has-flex-no-wrap` helper to prevent items from wrapping:
 
@@ -253,7 +228,6 @@ Use `has-flex-no-wrap` helper to prevent items from wrapping:
     <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-128">3</div>
 </div>
 ```
-
 
 ### Flex order
 
@@ -272,8 +246,6 @@ Use the following classes to control the order of flex items.
     <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-order-first">3</div>
 </div>
 ```
-
-
 
 ### Responsive flexbox helpers
 

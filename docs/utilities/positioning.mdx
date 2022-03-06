@@ -6,21 +6,6 @@ title: "Positioning"
 
 The **positioning** plugin provides a collection of helpers to control the position of any element.
 
-### Enable this plugin
-
-This plugin is included as part of the `plugin-helpers` collection. You can manually include this plugin calling `plugin-positioning-helpers()` in the `$plugins` section of the configuration:
-
-```scss
-@use "siimple" as siimple;
-
-@include siimple.configure(
-    $plugins: (
-        siimple.plugin-positioning-helpers(),
-    ),
-);
-```
-
-
 ### Position 
 
 Use the following classes to change the position of an element:
@@ -33,7 +18,6 @@ Use the following classes to change the position of an element:
 | `has-position-sticky`   | `position: sticky;` |
 | `has-position-fixed`    | `position: fixed;` |
 
-
 ### Float
 
 Use the following classes for positioning and formatting content, for example to wrap text around images.
@@ -43,7 +27,6 @@ Use the following classes for positioning and formatting content, for example to
 | `has-float-left`  | `float: left;` |
 | `has-float-right` | `float: right;` |
 | `has-float-none`  | `float: none;` |
-
 
 You can use `has-float-left` to float an element to the left side of it's containing block:
 
@@ -87,7 +70,6 @@ Use `has-float-none` to reset the float property applied to any element:
 </p>
 ```
 
-
 ### Placement
 
 Use the following classes to set the placement of an element:
@@ -111,8 +93,6 @@ Use the following classes to set the placement of an element:
 | `has-top-half`    | `top: 50%;`  |
 | `has-top-full`    | `top: 100%;` |
 
-
-
 ### Responsive position
 
 Control the position of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the position or placement class helper.
@@ -122,4 +102,3 @@ Control the position of an element at a specific breakpoint adding a `{breakpoin
     . . .
 </div>
 ```
-

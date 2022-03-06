@@ -30,13 +30,8 @@ This is an example of a configuration file for **siimple**:
         ),
     ),
     $flags: (
-        "use-root-styles": true,
+        "use-root": true,
         "use-borderbox": true,
-    ),
-    $plugins: (
-        siimple.plugin-reboot(),
-        siimple.plugin-markup(),
-        siimple.plugin-components(),
     ),
 );
 
@@ -143,50 +138,17 @@ You can use the `$variants` section to customize the style of the components pro
 Visit the [variants guide](/variants) to read more about how to customize your components using variants.
 
 
-### Plugins
-
-The `$plugins` section is where you can provide the list of plugins that you want to include. Plugins allow you to add extra components, helpers and styles for **siimple** that will use your custom theme configuration. 
-
-```scss
-@include siimple.configure(
-    $plugins: (
-        siimple.plugin-helpers(),
-        siimple.plugin-icons(),
-    ),
-);
-```
-
-You can read more about built-in plugins in the [plugins guide](/plugins).
-
-
-
 ### Configuration flags
 
-Use the `$flags` to enable or disable some features of **siimple**. 
+Use the `$flags` to enable or disable the modules that will be included when calling the `siimple.css` mixin.
 
 | Flag | Description |
 |------|-------------|
-| `"use-root-styles"` | Add root styles to the `<html>` element. Default is `true`. |
+| `"use-reboot"` | Loads the reboot module. Default is `true`. |
+| `"use-root"` | Add root styles to the `<html>` element. Default is `true`. |
 | `"use-borderbox"` | Adds a global `box-sizing: border-box`. Default is `true`. |
+| `"use-markup"` | Loads the markup module. Default is `true`. |
+| `"use-components"` | Loads all components. Default is `true`. |
+| `"use-utilities"` | Loads all utilities. Default is `true`. |
+| `"use-icon"` | Loads the icons module. Default is `true`. |
 
-
-
-### Additional styles
-
-You can define additional styles in the `$styles` section. Custom scales and breakpoints can be applied here.
-
-```scss
-@include siimple.configure(
-    $styles: (
-        "h1": (
-            "color": "text",
-            "font-size": 2rem,
-            "font-weight": 700,
-            "mt": 0.5rem,
-            "mb": 1rem,
-        ),
-    ),
-);
-```
-
-All styles declared in this section should follow the [styles syntax](/guides/styles).

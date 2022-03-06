@@ -18,21 +18,6 @@ You can use the following helpers to control the behavior for an element's overf
 | `has-overflow-y-scroll` | `overflow-y: scroll;` |
 | `has-overflow-y-hidden` | `overflow-y: hidden;` |
 
-
-### Enable this plugin
-
-This plugin is included as part of the `plugin-helpers` collection. You can manually include this plugin calling `plugin-overflow-helpers()` in the `$plugins` section of the configuration:
-
-```scss
-@use "siimple" as siimple;
-
-@include siimple.configure(
-    $plugins: (
-        siimple.plugin-overflow-helpers(),
-    ),
-);
-```
-
 ### Usage
 
 Use the `has-overflow-auto` to display scrollbars only if content does not fit inside the padding box of the container:

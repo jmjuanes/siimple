@@ -1,7 +1,7 @@
 const sandboxTemplate = `
-<div class="has-p-12">
+<div class="has-p-0">
     <div class="title is-1 has-d-flex has-items-center">
-        <i class="icon is-siimple has-pr-3"></i>
+        <i class="icon-siimple has-pr-3"></i>
         Welcome!
     </div>
     <div class="title is-3">What is this tool?</div>

@@ -7,22 +7,6 @@ description: "Customize the padding and the margin of an element"
 
 Customize the **padding** and the **margin** properties of anly element using these classes.
 
-
-### Enable this plugin
-
-This plugin is included as part of the `plugin-helpers` collection. You can manually include this plugin calling `plugin-spacing-helpers()` in the `$plugins` section of the configuration:
-
-```scss
-@use "siimple" as siimple;
-
-@include siimple.configure(
-    $plugins: (
-        siimple.plugin-spacing-helpers(),
-    ),
-);
-```
-
-
 ### Available spacing values
 
 The following **sizes** for the classes described in this document are available:
@@ -49,7 +33,6 @@ The following **sizes** for the classes described in this document are available
 | `half`   | `50%`     |
 | `full`   | `100%`    |
 
-
 ### Uniform padding or margin
 
 Use `has-p-{size}` to set the **padding** of all sides of the element, or `has-m-{size}` to set the **margin** of all sizes of the element.
@@ -59,7 +42,6 @@ Use `has-p-{size}` to set the **padding** of all sides of the element, or `has-m
     <strong>has-p-6</strong>
 </div>
 ```
-
 
 ### Directional padding or margin
 
@@ -88,7 +70,6 @@ Use `has-p{direction}-{size}` or `has-m{direction}-{size}` to set the **padding 
     <strong>has-pl-12</strong>
 </div>
 ```
-
 
 ### Centering elements
 

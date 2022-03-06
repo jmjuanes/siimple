@@ -5,11 +5,12 @@ description: "Understanding how siimple classnames has been designed"
 
 # Naming methodology
 
-The **siimple** toolkit uses a simplified version of the [**SMACSS** methodology](http://smacss.com) for naming classnames, as described on this section. We have divided the classnames used in **siimple** into three blocks:
+The **siimple** toolkit uses a simplified version of the [**SMACSS** methodology](http://smacss.com) for naming classnames, as described on this section. We have divided the classnames used in **siimple** into four blocks:
 
 - **Components**: are the primary building blocks of **siimple**.
+- **Icons**: used for displaying icons.
 - **Variant modifiers**: used to change the default style of each component.
-- **Helper modifiers**: low-level classnames that can be applied to any element.
+- **Utility modifiers**: low-level classnames that can be applied to any element.
  
 
 ### Components 
@@ -24,6 +25,15 @@ Where:
 
 - `<Prefix>`: is the components prefix that can be customized in the `$prefix` section of the configuration. The default prefix applied in **siimple** is an empty string.
 - `<ComponentName>` is the component name, for example `btn` or `navbar`.
+
+
+### Icons
+
+Icons defined in siimple have the following classname pattern:
+
+```
+.icon-<IconName>
+```
 
 
 ### Variant modifiers
@@ -45,30 +55,30 @@ The following example shows how to use the `secondary` variant of a button:
 Every component must define its own variants, and some variant modifiers that works for some components may not be available for another components. This means that `is-secondary` modifier can be applied for example to a `btn` component, but has no effect when applied to `card`.
 
 
-### Helpers modifiers
+### Utility modifiers
 
-**Helpers modifiers** are a collection of low-level classnames that can be used in any element to modify some CSS properties. These modifiers follows this syntax:
+**Utility modifiers** are a collection of low-level classnames that can be used in any element to modify some CSS properties. These modifiers follows this syntax:
 
 ```
-.has-<HelperValue>
+.has-<UtilityValue>
 ```
 
 #### Responsive modifiers
 
-Some helpers modifiers can be applied conditionally at different breakpoints, for building adaptative and responsive interfaces. 
+Some utilities modifiers can be applied conditionally at different breakpoints, for building adaptative and responsive interfaces. 
 
 ```
-.<BreakpointValue>:has-<HelperValue>
+.<BreakpointValue>:has-<UtilityValue>
 ```
 
 
 #### Status modifiers
 
-Similar to responsive modifiers, you can apply some helpers only in response to an specific status of the element. 
+Similar to responsive modifiers, you can apply some utilities only in response to an specific status of the element. 
 
 ##### Hover status
 
-Add the `hover:` prefix to a helper class to apply it only on hover: 
+Add the `hover:` prefix to a utility class to apply it only on hover: 
 
 ```html live=true align=center
 <div class="btn has-text-white has-bg-purple-500 hover:has-bg-purple-700">

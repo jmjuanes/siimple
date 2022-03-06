@@ -10,7 +10,7 @@ const HEADER_ITEMS = [
     {"text": "Getting started", "icon": "rocket", "href": "/installation"},
     {"text": "Icons", "icon": "shapes", "href": "/icons"},
     {"text": "Colors", "icon": "palette", "href": "/colors"},
-    // {"text": "Try it", "icon": "code", "href": "/try"},
+    {"text": "Try it", "icon": "code", "href": "/try"},
 ];
 
 export const Header = props => {

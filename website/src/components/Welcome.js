@@ -24,7 +24,7 @@ const Button = props => {
 export const Welcome = () => (
     <div className="tablet:has-pt-24 mobile:has-pt-12 has-pb-32">
         <div className="headline has-mb-12">
-            a minimal and themeable css toolkit.
+            A minimal and themeable css toolkit.
         </div>
         <div className="has-text-muted" style={{"fontSize":"28px"}}>
             <strong>Siimple</strong> is an open source css toolkit that provides a 

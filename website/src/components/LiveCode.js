@@ -20,7 +20,7 @@ export const LiveCode = props => {
     }
     //const {padding, bg, color} = props;
     const demoClass = kofi.classNames("has-mb-6 has-overflow-x-hidden", [
-        "has-pt-4 has-pb-0",
+        "has-pt-4 has-pb-4",
         // `has-p-${props.padding}`,
         // `has-bg-${props.bg}`,
         // "has-bg-coolgray-100",
