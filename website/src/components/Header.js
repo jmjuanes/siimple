@@ -14,7 +14,7 @@ const HEADER_ITEMS = [
 ];
 
 export const Header = props => {
-    const size = props.size || "xlarge";
+    const size = props.size || "desktop";
     const items = props.items || HEADER_ITEMS;
     const itemClass = kofi.classNames({
         "has-flex has-radius has-opacity-100": true,
@@ -44,5 +44,5 @@ export const Header = props => {
 // Header default props
 Header.defaultProps = {
     items: null,
-    size: "xlarge",
+    size: "desktop",
 };

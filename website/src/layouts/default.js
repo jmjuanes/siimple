@@ -7,7 +7,7 @@ import {Seo} from "../components/Seo.js";
 import {shortcodes} from "../markdown.js";
 
 const DefaultLayout = props => {
-    const size = props.pageContext?.frontmatter?.pageSize || props.size || "xlarge";
+    const size = props.pageContext?.frontmatter?.pageSize || props.size || "desktop";
     const title = props.pageContext?.frontmatter?.title || props.title;
     return (
         <React.Fragment>
@@ -26,7 +26,7 @@ const DefaultLayout = props => {
 DefaultLayout.defaultProps = {
     className: "",
     title: "",
-    size: "xlarge",
+    size: "desktop",
 };
 
 export default DefaultLayout;

@@ -10,7 +10,7 @@ const FOOTER_LINKS = [
 ];
 
 export const Footer = props => {
-    const size = props.size || "xlarge";
+    const size = props.size || "desktop";
     const items = props.links || FOOTER_LINKS;
     const itemClass ="has-text-coolgray-700 hover:has-text-blue-500 has-text-no-underline";
     return (
