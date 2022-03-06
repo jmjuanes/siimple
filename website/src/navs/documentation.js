@@ -46,6 +46,7 @@ export const documentationNav = [
     {"group": "utilities", "url": "/utilities/overflow", "label": "Overflow"},
     {"group": "utilities", "url": "/utilities/positioning", "label": "Positioning"},
     {"group": "utilities", "url": "/utilities/radius", "label": "Radius"},
+    {"group": "utilities", "url": "/utilities/shadow", "label": "Shadow"},
     {"group": "utilities", "url": "/utilities/sizing", "label": "Sizing"},
     {"group": "utilities", "url": "/utilities/spacing", "label": "Spacing"},
     {"group": "utilities", "url": "/utilities/typography", "label": "Typography"},

@@ -4,35 +4,17 @@ title: "Color"
 
 # Color
 
-This plugin provides a collection of classes to customize the text and background color of any element. 
-
-
-### Enable this plugin
-
-This plugin is included as part of the `plugin-helpers` collection. You can manually include this plugin calling `plugin-color-helpers()` in the `$plugins` section of the configuration:
-
-```scss
-@use "siimple" as siimple;
-
-@include siimple.configure(
-    $plugins: (
-        siimple.plugin-color-helpers(),
-    ),
-);
-```
-
+A collection of utilities classes to customize the text and background color of any element. 
 
 ### Background color
 
 Use `has-bg-{color}` to set the background color of any element. 
-
 
 ```html live=true bg=blue-200 align=center
 <div class="btn has-bg-royal-600 has-text-white">
     <strong>Button</strong>
 </div>
 ```
-
 
 #### Background color on hover
 
@@ -44,7 +26,6 @@ You can change the background color of any element on hover adding the `hover:` 
 </div>
 ```
 
-
 ### Text color
 
 Use `has-text-{color}` to apply a different color to the text. 
@@ -54,8 +35,6 @@ Use `has-text-{color}` to apply a different color to the text.
     Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 </strong>
 ```
-
-
 
 #### Text color on hover
 
