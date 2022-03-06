@@ -21,7 +21,7 @@ A mixin that you can use to generate your own CSS utility classes. The `$options
 - `"name"`: prefix of the utility.
 - `"values"`: a map with the values of the utility.
 - `"properties"`: a list of properties to apply each value.
-- `"states"`: a list of states for generating the utilities. Allowed values are `"default"`, `"hover"` and `"focus"`).
+- `"states"`: a list of states for generating the utilities. Allowed values are `"default"`, `"hover"` and `"focus"`.
 - `"responsibe"`: a boolean to generate also responsive utilities.
 - `"important"`: a boolean for adding the `!important` flag.
 
@@ -42,6 +42,28 @@ Example:
 // Will generate
 // .has-text-left { text-align: left; }
 // .has-text-right { text-align: right; }
+```
+
+Example using different states:
+
+```scss
+@use "siimple" as siimple;
+
+@include siimple.utility((
+    "name": "text",
+    "properties": ("color"),
+    "states": ("default", "hover"),
+    "values": (
+        "white": "#fff",
+        "black": "#000",
+    ),
+));
+
+// Will generate
+// .text-white { color: #fff; }
+// .text-black { color: #000; }
+// .text-white:hover { color: #fff; }
+// .text-black:hover { color: #000; }
 ```
 
 
