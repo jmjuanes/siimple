@@ -17,14 +17,14 @@ export const AccordionNav = props => {
     const [expanded, setExpanded] = React.useState(getExpandedGroups(props.current));
     let currentGroup = null; //Current group
     return (
-        <div className="has-pt-4 has-pb-4 has-mb-0">
+        <div className="has-pt-0 has-pb-4 has-mb-0">
             {(props.items || []).map((item, key) => {
                 //Return link to the provided item
                 const isActive = props.pathname === item.url;
                 const itemClass = kofi.classNames({
                     "navlink has-mb-1 has-pr-3 has-pl-6": true,
                     "has-weight-normal": true,
-                    "has-bg-coolgray-700 hover:has-text-white has-text-white has-weight-bold": isActive,
+                    "has-bg-blue-500 hover:has-text-white has-text-white has-weight-bold": isActive,
                     "hover:has-bg-coolgray-200": !isActive,
                 });
                 const itemVisible = expanded[item.group] === true; // || item.group === "global";

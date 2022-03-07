@@ -12,7 +12,7 @@ const sortedIcons = icons.sort((a, b) => a.id < b.id ? -1 : +1);
 
 // Generate icon usage string
 const getIconUsage = icon => {
-    return `<i class="icon is-${icon.id}"></i>`;
+    return `<i class="icon-${icon.id}"></i>`;
 };
 
 // Get icon unicode
