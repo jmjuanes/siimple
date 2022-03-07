@@ -37,8 +37,8 @@ export default props => {
             <div className="content is-desktop has-pb-10 has-pt-0">
                 <div className="columns has-mb-0">
                     {/* Sidebar wrapper */}
-                    <div className="column mobile:is-hidden" style={{"maxWidth":"18rem"}}>
-                        <div className="has-pr-6">
+                    <div className="column is-full-mobile tablet:has-maxw-64">
+                        <div className="tablet:has-pr-6">
                             <AccordionNav
                                 current={currentSidebarItem}
                                 items={documentationNav}
@@ -47,8 +47,8 @@ export default props => {
                         </div>
                     </div>
                     {/* Content column */}
-                    <div className="column mobile:is-12">
-                        <div className="has-mx-auto has-w-full" style={{"maxWidth":"768px"}}> 
+                    <div className="column is-full-mobile">
+                        <div className="has-mx-auto has-w-full" style={{"maxWidth":"48rem"}}> 
                             <MDXProvider components={shortcodes}>
                                 {props.children}
                             </MDXProvider>
