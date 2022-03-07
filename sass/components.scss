@@ -1,3 +1,4 @@
+@use "./breakpoints.scss" as breakpoints;
 @use "./constants.scss" as constants;
 @use "./selectors.scss" as selectors;
 @use "./variants.scss" as variants;
@@ -285,22 +286,26 @@ $content-default-sizes: (
 // Generate content component configuration
 @mixin content() {
     // $content-gap: lib.get-in($options, "gap", 1.5rem);
+    $content-gap: 2rem;
     $content-variants: utils.empty-map();
-    @each $name,$size in $content-default-sizes {
-        $content-media: "@media screen and (min-width: #{$size})";
-        $content-variants: utils.set-in($content-variants, $name, (
-            "#{$content-media}": (
-                "max-width": $size,
-            ),
-        ));
+    @each $name,$values in breakpoints.get-breakpoints() {
+        $min-size: utils.get-in($values, "min", null);
+        @if $min-size not null {
+            $content-media: "@media screen and (min-width: #{$min-size})";
+            $content-variants: utils.set-in($content-variants, $name, (
+                "#{$content-media}": (
+                    "max-width": $min-size,
+                ),
+            ));
+        }
     }
     // Return content component configuration
     @include selectors.use-component-selector("content") {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        padding-left: $content-default-gap;
-        padding-right: $content-default-gap;
+        padding-left: $content-gap;
+        padding-right: $content-gap;
         width: 100%;
         @include variants.use-variants("content", $content-variants);
     };

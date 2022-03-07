@@ -34,7 +34,7 @@ export default props => {
             {/* Header block */}
             <Header />
             {/* Main content */}
-            <div className="content is-xlarge has-pb-10 has-pt-0">
+            <div className="content is-desktop has-pb-10 has-pt-0">
                 <div className="columns has-mb-0">
                     {/* Sidebar wrapper */}
                     <div className="column mobile:is-hidden" style={{"maxWidth":"18rem"}}>

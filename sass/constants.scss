@@ -1,7 +1,7 @@
 // Screen sizes
-$tablet: 600px;
-$desktop: 1200px;
-$fullhd: 1800px;
+$tablet: 640px; // 576px + 4rem
+$desktop: 1264px; // 1200px + 4rem
+$widescreen: 1504px; // 1440px + 4rem 
 
 // Default colors
 $primary: #1c76fd;     // blue-500

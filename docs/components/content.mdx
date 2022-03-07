@@ -14,21 +14,19 @@ A **content** is a layout component that divides your website in section and pla
 </div>
 ```
 
-By default the container has the maximun width minus the `24px` of padding left and right. You can change the width of the content element using one of the following sizing variants:
+By default the container has the maximun width minus the `32px` of padding left and right. You can change the width of the content element using one of the following sizing variants:
 
 | Variant | Description |
 |:------|:------------|
-| `small` | It will have a maximum width of `560px`. |
-| `medium` | It will have a maximum width of `720px`. |
-| `large` | It will have a maximum width of `960px`. |
-| `xlarge` | It will have a maximum width of `1140px`. |
-| `huge` | It will have a maximum width of `1280px`. |
+| `tablet` | It will have a maximum width of `640px`. |
+| `desktop` | It will have a maximum width of `1264px`. |
+| `widescreen` | It will have a maximum width of `1504px`. |
 
 On screens with sizes lower than the specified in the sizing modifier, the container will have the maximun width.
 
 ```html
-<div class="content is-medium">
-    Max 768px container
+<div class="content is-tablet">
+    Max 640px container
 </div>
 ```
 
