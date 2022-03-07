@@ -31,7 +31,9 @@ export const ColorPalette = props => (
         {Object.keys(colors).map(name => (
             <div className="columns" key={name}>
                 <div className="column is-one-quarter is-full-mobile">
-                    <div className="title is-4 has-mt-0 has-text-capitalize">{name}</div>    
+                    <div className="title is-5 has-mt-0 has-text-capitalize has-position-sticky has-top-0">
+                        <span>{name}</span>
+                    </div>    
                 </div>
                 <div className="column is-three-quarters is-full-mobile">
                     <ColorItems name={name} items={colors[name]} />
