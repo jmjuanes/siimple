@@ -10,6 +10,7 @@ import {Sandbox} from "./components/Sandbox.js";
 import {LiveCode} from "./components/LiveCode.js";
 import {ModalExample} from "./components/ModalExample.js";
 import {NavbarExample} from "./components/NavbarExample.js";
+import {Features} from "./components/Features.js";
 
 // Alias to create a HTML element
 const html = (type, className) => {
@@ -51,6 +52,7 @@ export const shortcodes = {
     IconsGallery,
     Testimonials,
     Welcome,
+    Features,
     Sandbox,
     // Examples
     ModalExample,
