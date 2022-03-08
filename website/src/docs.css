@@ -19,15 +19,17 @@
 .headline {
     background: linear-gradient(15deg, #1c76fd, #363f4f);
     background-clip: text;
-    font-size: 6.5rem;
-    font-weight: 800;
+    /* font-size: 6.5rem; */
+    font-size: min(16vw, 7rem);
+    font-weight: 900;
     line-height: 1;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 /* Subhead style */
 .subhead {
-    font-size: 3.5rem;
+    /* font-size: 3.5rem; */
+    font-size: min(16vw, 3.5rem);
     font-weight: 800;
 }
 
