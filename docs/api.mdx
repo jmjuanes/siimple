@@ -4,14 +4,35 @@ title: API Reference
 
 # API Reference
 
+Import the **siimple** package in your SCSS file using the `@use` rule:
+
+```scss
+@use "siimple" as siimple;
+```
+
+
 ### siimple.configure(...)
 
-A mixin for configuring the default values of siimple, like scales, breakpoints, flags, and more. See the [configure section](/configure) to learn more.
+A mixin for configuring the default values of siimple, like scales, breakpoints, flags, and more. See the [configuration section](/configuration) to learn more.
+
+```scss
+@include siimple.configure(
+    $prefix: "",
+    $breakpoints: (...),
+    $scales: (...),
+    $variants: (...),
+    $flags: (...),
+);
+```
 
 
 ### siimple.css()
 
 A mixin for including all configured modules of siimple. You can use the `$flags` section of the `siimple.configure` mixin to customize which modules will be included.
+
+```scss
+@include siimple.css;
+```
 
 
 ### siimple.utility($options)
