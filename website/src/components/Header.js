@@ -86,7 +86,7 @@ export const Header = props => {
                             </div>
                             <div className="column is-two-thirds is-full-mobile has-py-0">
                                 <div className="columns has-p-6">
-                                    <div className="column is-one-third is-full-mobile has-pt-0 mobile:has-mb-4">
+                                    <div className="column is-one-third is-full-mobile has-pt-0 mobile:has-mb-8">
                                         <div className="title is-5 has-mt-0 has-weight-normal">Explore</div>
                                         <div className="paragraph">
                                             Everything you need to build your website or application.
@@ -95,7 +95,7 @@ export const Header = props => {
                                         <NavLink icon="layers" to="/utilities/color" text="Utilities" />
                                         <NavLink icon="heart" to="/icons" text="Icons" />
                                     </div>
-                                    <div className="column is-one-third is-full-mobile has-pt-0 mobile:has-mb-4">
+                                    <div className="column is-one-third is-full-mobile has-pt-0 mobile:has-mb-8">
                                         <div className="title is-5 has-mt-0 has-weight-normal">Customize</div>
                                         <div className="paragraph">
                                             Extend and build your own version of <b>siimple</b>.
