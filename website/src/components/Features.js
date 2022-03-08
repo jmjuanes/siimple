@@ -1,5 +1,5 @@
 import React from "react"
-import kofi from "kofi";
+// import kofi from "kofi";
 import {Icon} from "./Icon.js";
 import {Link} from "./Link.js";
 
@@ -13,7 +13,7 @@ const data = [
     {
         title: "Themeable",
         icon: "brush",
-        content: "Easily customize siimple for building you own custom and unique version.",
+        content: "Easily customize siimple for building your own version that best fits your project.",
         link: "/configuration",
     },
     {
@@ -33,32 +33,25 @@ const data = [
 export const Features = () => (
     <div className="has-pt-12 has-pb-24">
         <div className="columns has-mb-0">
-            {data.map((item, index) => {
-                const headerClass = kofi.classNames({
-                    "has-text-white has-p-8": true,
-                    "has-bg-coolgray-700": index % 2 === 0,
-                    "has-bg-blue-500": index % 2 !== 0,
-                });
-                return (
-                    <div key={index} className="column is-full-mobile">
-                        <div className="has-radius has-overflow-hidden">
-                            <div className={headerClass} align="center">
-                                <Icon icon={item.icon} style={{"fontSize":"72px"}} />
-                            </div>
-                            <div className="has-bg-coolgray-100 has-px-8 has-pt-8 has-minh-48">
-                                <div className="title is-4 has-mb-2 has-weight-normal">{item.title}</div>
-                                <div className="paragraph has-mb-0">{item.content}</div>
-                            </div>
-                            <div className="has-bg-coolgray-100 has-p-8">
-                                <Link to={item.link} className="text is-link has-flex-inline has-items-center">
-                                    <strong className="has-mr-1">Learn more</strong>
-                                    <Icon icon="arrow-right" />
-                                </Link>
-                            </div>
+            {data.map((item, index) => (
+                <div key={index} className="column is-full-mobile">
+                    <div className="has-radius has-overflow-hidden has-bg-coolgray-100">
+                        <div className="has-text-blue-500 has-p-8" align="center">
+                            <Icon icon={item.icon} style={{"fontSize":"72px"}} />
+                        </div>
+                        <div className="has-px-8 has-minh-32">
+                            <div className="title is-5 has-mb-2">{item.title}</div>
+                            <div className="paragraph has-text-coolgray-600 has-mb-0">{item.content}</div>
+                        </div>
+                        <div className="has-p-8">
+                            <Link to={item.link} className="text is-link has-flex-inline has-items-center">
+                                <strong className="has-mr-1">Learn more</strong>
+                                <Icon icon="arrow-right" />
+                            </Link>
                         </div>
                     </div>
-                );
-            })}
+                </div>
+            ))}
         </div>
     </div>
 );
