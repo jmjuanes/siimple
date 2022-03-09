@@ -10,23 +10,80 @@ Import the **siimple** package in your SCSS file using the `@use` rule:
 @use "siimple" as siimple;
 ```
 
+This package exports the following variables, mixins and functions.
 
-### siimple.configure(...)
 
-A mixin for configuring the default values of siimple, like scales, breakpoints, flags, and more. See the [configuration section](/configuration) to learn more.
+### Variables
+
+You can access to the default values that has been defined in **siimple** using the following variables:
+
+```scss
+// Screen sizes
+$tablet: 640px; // 576px + 4rem
+$desktop: 1264px; // 1200px + 4rem
+$widescreen: 1504px; // 1440px + 4rem 
+
+// Default colors
+$primary: #1c76fd;    // blue-500
+$secondary: #202ba2;  // royal-600
+$accent: #4622a0;     // purple-600
+
+$body-bg: #ffffff;    // white
+$body-text: #363f4f;  // coolgray-700
+$heading: #1d2734;    // coolgray-800
+$fill: #ebedef;       // coolgray-200
+$muted: #747c8b;      // coolgray-500
+
+$black: #000000;
+$white: #ffffff;
+
+// Fonts
+$font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+$font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+```
+
+### Mixins
+
+#### siimple.configure(...)
+
+A mixin for extending the **siimple** default configuration using your project's color palette, font families, breakpoints, and more. 
+
 
 ```scss
 @include siimple.configure(
-    $prefix: "",
-    $breakpoints: (...),
-    $scales: (...),
-    $variants: (...),
-    $flags: (...),
+    $prefix: "si-",
+    $breakpoints: (
+        "sm": (
+            "max": 480px,
+        ),
+        "md": (
+            "min": 481px,
+            "max": 768px,
+        ),
+        "lg": (
+            "min": 769px,
+        ),
+    ),
+    $scales: (
+        "colors": (
+            "primary": #3333ee,
+            "secondary": #4c5aae,
+            "background": #fafafa,
+        ),
+        "fonts": (
+            "body": (Roboto, sans-serif),
+            "heading": (Roboto, sans-serif),
+            "monospace": monospace,
+        ),
+    ),
 );
 ```
 
+To learn more about the allowed values of this mixin, see the [configuration documentation](/configuration).
 
-### siimple.css()
+
+#### siimple.css()
 
 A mixin for including all configured modules of siimple. You can use the `$flags` section of the `siimple.configure` mixin to customize which modules will be included.
 
@@ -35,7 +92,7 @@ A mixin for including all configured modules of siimple. You can use the `$flags
 ```
 
 
-### siimple.utility($options)
+#### siimple.utility($options)
 
 A mixin that you can use to generate your own CSS utility classes. The `$options` argument is a map that accepts the following fields:
 
@@ -46,30 +103,9 @@ A mixin that you can use to generate your own CSS utility classes. The `$options
 - `"responsibe"`: a boolean to generate also responsive utilities.
 - `"important"`: a boolean for adding the `!important` flag.
 
-Example:
+The following example:
 
 ```scss
-@use "siimple" as siimple;
-
-@include siimple.utility((
-    "name": "text",
-    "properties": ("text-align"),
-    "values": (
-        "left": "left",
-        "right": "right",
-    ),
-));
-
-// Will generate
-// .has-text-left { text-align: left; }
-// .has-text-right { text-align: right; }
-```
-
-Example using different states:
-
-```scss
-@use "siimple" as siimple;
-
 @include siimple.utility((
     "name": "text",
     "properties": ("color"),
@@ -79,18 +115,23 @@ Example using different states:
         "black": "#000",
     ),
 ));
+```
 
-// Will generate
-// .text-white { color: #fff; }
-// .text-black { color: #000; }
-// .text-white:hover { color: #fff; }
-// .text-black:hover { color: #000; }
+Will generate the following CSS styles:
+
+```css
+.text-white { color: #fff; }
+.text-black { color: #000; }
+.text-white:hover { color: #fff; }
+.text-black:hover { color: #000; }
 ```
 
 
-### siimple.get-color($name, $shade)
+### Functions
 
-A function that returns the color from our [color palette](/colors) that matches the specified `$name` and with the `$shade`. If no `$shade` is provided we will use by default the `"500"`.
+#### siimple.get-color($name, $shade)
+
+A function that returns the color from our [color palette](/colors) that matches the specified `$name` and the provided `$shade` value. If no `$shade` is provided we will use by default `"500"`.
 
 ```scss
 @use "siimple" as siimple;
@@ -99,3 +140,14 @@ $blue: siimple.get-color("blue", "600");
 $red: siimple.get-color("red"); // == siimple.get-color("red", "500");
 ```
 
+
+#### siimple.get-icon($name)
+
+A function that returns the unicode value of the specified icon.
+
+```scss
+@use "siimple" as siimple;
+
+$arrow-left: siimple.get-icon("arrow-left");
+$arrow-right: siimple.get-icon("arrow-right");
+```
