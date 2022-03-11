@@ -3,10 +3,10 @@ import kofi from "kofi";
 import {Link} from "gatsby";
 
 import {ColorPalette} from "./components/ColorPalette.js";
-import {IconsGallery} from "./components/IconsGallery.js";
+// import {IconsGallery} from "./components/IconsGallery.js";
 import {Welcome} from "./components/Welcome.js";
 import {Testimonials} from "./components/Testimonials.js";
-import {Sandbox} from "./components/Sandbox.js";
+// import {Sandbox} from "./components/Sandbox.js";
 import {LiveCode} from "./components/LiveCode.js";
 import {ModalExample} from "./components/ModalExample.js";
 import {NavbarExample} from "./components/NavbarExample.js";
@@ -49,11 +49,11 @@ export const shortcodes = {
     //"th": html("th", "table-cell has-text-left"),
     // Pages components
     ColorPalette,
-    IconsGallery,
+    // IconsGallery,
     Testimonials,
     Welcome,
     Features,
-    Sandbox,
+    // Sandbox,
     // Examples
     ModalExample,
     NavbarExample,
