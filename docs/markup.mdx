@@ -6,10 +6,11 @@ title: Markup
 
 Use this module to style base markup elements, like headings, paragraphs, links... 
 
+### Enable markup module
+
 The markup module is enabled by default as part of the `siimple.css()` mixin. It can be disabled setting to `false` the `"use-markup"` flag in the `$flags` section of the configuration.
 
 If you want to manually include the markup module in your styles, just call the `siimple.markup()` mixin:
-
 
 ```scss
 @use "siimple" as siimple;
@@ -18,8 +19,9 @@ If you want to manually include the markup module in your styles, just call the 
 @include siimple.markup();
 ```
 
+### Markup styles
 
-### Headings
+#### Headings
 
 This plugin will style your heading elements, from `<h1>` through `<h6>`. For styling non heading HTML elements, you can use the [title](/components/title) component instead.
 
@@ -49,8 +51,7 @@ Headings will use the default variant of `text.heading` defined in the `$variant
 ));
 ```
 
-
-### Paragraph
+#### Paragraph
 
 This plugin will style your `<p>` elements. For style non paragraph HTML elements like `<div>` elements, you can use the [paragraph component](/components/paragraph) instead.
 
@@ -80,8 +81,7 @@ This plugin will use the default variant of `text.paragraph` defined in the `$va
 ));
 ```
 
-
-### Blockquotes
+#### Blockquotes
 
 This plugin will style your `<blockquote>` elements:
 
@@ -92,8 +92,7 @@ This plugin will style your `<blockquote>` elements:
 </blockquote>
 ```
 
-
-### Inline text elements
+#### Inline text elements
 
 This plugin will style your inline text elements, like `<small>` or `<code>` elements.
 
@@ -103,8 +102,7 @@ This plugin will style your inline text elements, like `<small>` or `<code>` ele
 <p class="has-mb-0">You can style your <code>inline code</code> elements.</p>
 ```
 
-
-### Horizontal rule
+#### Horizontal rule
 
 This plugin will style your `<hr>` elements. For styling non `<hr>` elements as an horizontal rule, you can use the [divider component](/components/divider) instead.
 
