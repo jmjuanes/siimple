@@ -4,6 +4,7 @@ import {Link} from "gatsby";
 
 import {ColorPalette} from "./components/ColorPalette.js";
 // import {IconsGallery} from "./components/IconsGallery.js";
+import {IconsCheatsheet} from "./components/IconsCheatsheet.js";
 import {Welcome} from "./components/Welcome.js";
 import {Testimonials} from "./components/Testimonials.js";
 // import {Sandbox} from "./components/Sandbox.js";
@@ -50,6 +51,7 @@ export const shortcodes = {
     // Pages components
     ColorPalette,
     // IconsGallery,
+    IconsCheatsheet,
     Testimonials,
     Welcome,
     Features,
