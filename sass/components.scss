@@ -477,10 +477,11 @@ $content-default-sizes: (
         cursor: pointer;
         display: block;
         margin: 0px;
-        min-width: 0px;
+        // min-width: 0px;
         padding: 0.75rem;
         text-decoration: none !important;
         user-select: none;
+        white-space: nowrap;
         width: 100%;
         @include variants.use-variants("navigation.link", (
             "default": (
