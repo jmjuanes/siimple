@@ -27,24 +27,28 @@ const getDisplayedIcons = query => {
 const IconsList = props => {
     const [page, setPage] = React.useState(0);
     const displayedIcons = getDisplayedIcons(props.query);
-    const totalPages = Math.ceil(displayedIcons.length / props.pagination);
-    const visibleIcons = !props.pagination ? displayedIcons : displayedIcons.slice(page, page + props.pageSize);
+    const totalPages = Math.ceil(displayedIcons.length / props.pageSize);
+    const start = props.pageSize * page;
+    const visibleIcons = !props.pagination ? displayedIcons : displayedIcons.slice(start, start + props.pageSize);
     return (
         <div>
-            <div className="has-radius has-bg-coolgray-200 has-p-6 has-mb-2">
+            <div className="has-radius has-bg-coolgray-200 has-p-6 has-mb-4">
                 {/* Current query */}
-                <div className="has-mb-2 has-d-inline-flex has-items-center">
-                    <span className="has-mr-4 has-weight-bold">${displayedIcons.length} icons</span>
+                <div className="has-mb-4 has-d-flex has-items-center">
+                    <div className="has-mr-4 has-text-xl">
+                        <strong>{displayedIcons.length}</strong>
+                        <span> icons</span>
+                    </div>
                     {kofi.when(!!props.query, () => (
-                        <span className="badge has-bg-coolgray-600 has-d-inline-flex has-items-center">
-                            <div className="has-size-lg has-pr-2">{props.query}</div>
-                            <div className="close" onClick={props.onQueryClear} />
-                        </span>
+                        <div className="has-bg-coolgray-600 has-d-flex has-items-center has-radius-full has-px-3 has-py-1">
+                            <div className="has-size-lg has-pr-3 has-text-white">{props.query}</div>
+                            <div className="icon-cross has-cursor-pointer has-text-white" onClick={props.onQueryClear} />
+                        </div>
                     ))}
                 </div>
                 {/* No icons found message */}
                 {kofi.when(displayedIcons.length === 0, () => (
-                    <div align="center" className="has-mx-auto has-w-full has-maxw-128">
+                    <div align="center" className="has-mx-auto has-w-full has-maxw-128 has-py-8">
                         <div className="">
                             <Icon icon="face-sad" style={{fontSize: "96px"}} />
                         </div>
@@ -77,28 +81,28 @@ const IconsList = props => {
             {kofi.when(props.pagination && displayedIcons.length > 0, () => {
                 const pages = Array.from(Array(totalPages).keys());
                 const firstClass = kofi.classNames({
-                    "has-p-3": true,
-                    "has-cursor-pointer": page > 0,
+                    "has-weight-bold has-py-3 has-px-4": true,
+                    "has-cursor-pointer hover:has-text-blue-500": page > 0,
                     "has-text-coolgray-400": page === 0,
                 });
                 const lastClass = kofi.classNames({
-                    "has-p-3": true,
-                    "has-cursor-pointer": page < totalPages - 1,
+                    "has-weight-bold has-py-3 has-px-4": true,
+                    "has-cursor-pointer hover:has-text-blue-500": page < totalPages - 1,
                     "has-text-coolgray-400": totalPages - 1 <= page,
                 });
                 return (
                     <div className="has-d-flex">
-                        <div className="has-ml-auto has-p-2 has-radius has-bg-coolgray-200">
+                        <div className="has-ml-auto has-p-2 has-radius has-bg-coolgray-200 has-d-flex">
                             <div className={firstClass} onClick={() => setPage(0)}>First</div>
                             {pages.map(index => {
                                 const itemClass = kofi.classNames({
-                                    "has-radius has-p-3": true,
+                                    "has-radius has-py-3 has-px-4": true,
                                     "has-cursor-pointer hover:has-text-blue-500": index !== page,
                                     "has-bg-white has-text-blue-500": index === page,
                                 });
                                 return (
                                     <div key={index} className={itemClass} onClick={() => setPage(index)}>
-                                        {(index + 1)}
+                                        <strong>{(index + 1)}</strong>
                                     </div>
                                 );
                             })}
@@ -167,13 +171,19 @@ const IconModal = props => {
 
 // Export Icons Gallery component
 export const IconsGallery = () => {
+    const queryRef = React.useRef();
     const [query, setQuery] = React.useState("");
     const [activeIcon, setActiveIcon] = React.useState(null);
+    const handleQueryClear = () => {
+        queryRef.current.value = ""; // Reset query in input
+        setQuery("");
+    };
     return (
         <div className="has-mb-24">
             <div className="has-d-flex has-items-center has-mb-4 has-bg-coolgray-200 has-radius">
                 <Icon icon="search" className="has-text-xl has-pl-3 has-pr-0" />
                 <input
+                    ref={queryRef}
                     type="text"
                     className="input has-flex-grow"
                     placeholder="Search for icons..."
@@ -186,7 +196,7 @@ export const IconsGallery = () => {
                 activeIcon={activeIcon}
                 query={query}
                 onIconClick={icon => setActiveIcon(icon)}
-                onQueryClear={() => setQuery("")}
+                onQueryClear={handleQueryClear}
                 pagination={true}
                 pageSize={48}
             />
