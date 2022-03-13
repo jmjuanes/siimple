@@ -24,6 +24,7 @@ const getDisplayedIcons = query => {
 };
 
 const IconsList = props => {
+    const [page, setPage] = React.useState(0);
     const displayedIcons = getDisplayedIcons(props.query);
     if (displayedIcons.length === 0) {
         return (
@@ -38,20 +39,34 @@ const IconsList = props => {
             </div>
         );
     }
+    const visibleIcons = !props.pagination ? displayedIcons : displayedIcons.slice(page, page + 48);
     return (
-        <div className="has-d-flex has-flex-wrap">
-            {displayedIcons.map(icon => {
-                const isActive = icon.id === props.activeIcon?.id;
-                const iconClass = kofi.classNames("has-p-6 has-w-24 has-radius has-d-flex has-cursor-pointer", {
-                    "hover:has-bg-white": !isActive,
-                    "has-bg-blue-500 has-text-white": isActive,
-                });
-                return (
-                    <div key={icon.id} className={iconClass} onClick={() => props.onIconClick(icon)}>
-                        <Icon icon={icon.id} className="has-text-4xl" />
+        <div>
+            <div className="has-radius has-bg-coolgray-200 has-p-6">
+                {kofi.when(!!props.query, () => (
+                    <div className="has-mb-2">
+                        <span className="badge has-bg-coolgray-600 has-d-inline-flex has-items-center">
+                            <div className="has-size-lg has-pr-2">{props.query}</div>
+                            <div className="close" onClick={props.onQueryClear} />
+                        </span>
                     </div>
-                );
-            })}
+                ))}
+                <div className="has-d-flex has-flex-wrap">
+                    {visibleIcons.map(icon => {
+                        const isActive = icon.id === props.activeIcon?.id;
+                        const iconClass = kofi.classNames({
+                            "has-p-6 has-w-24 has-radius has-d-flex has-cursor-pointer": true,
+                            "hover:has-bg-white": !isActive,
+                            "has-bg-blue-500 has-text-white": isActive,
+                        });
+                        return (
+                            <div key={icon.id} className={iconClass} onClick={() => props.onIconClick(icon)}>
+                                <Icon icon={icon.id} className="has-text-4xl" />
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
         </div>
     );
 };
@@ -114,37 +129,25 @@ export const IconsGallery = () => {
     const [query, setQuery] = React.useState("");
     const [activeIcon, setActiveIcon] = React.useState(null);
     return (
-        <React.Fragment>
-            {/* Hero block */}
-            <div className="tablet:has-pt-24 mobile:has-pt-12 has-pb-32">
-                <div className="has-mx-auto has-w-full has-maxw-128" align="center">
-                    <div className="title is-1">Hand-crafted icons toolkit</div>
-                    <div className="has-text-coolgray-500">
-                        An Open Source icon webfont that can be used in web and mobile projects. 
-                        Made with a lot of <Icon icon="heart" />.
-                    </div>
-                </div>
+        <div className="has-mb-24">
+            <div className="has-d-flex has-items-center has-mb-4 has-bg-coolgray-200 has-radius">
+                <Icon icon="search" className="has-text-xl has-pl-3 has-pr-0" />
+                <input
+                    type="text"
+                    className="input has-flex-grow"
+                    placeholder="Search for icons..."
+                    onChange={e => setQuery(e.target.value || "")}
+                />
             </div>
-            {/* Icons list */}
-            <div className="has-mb-24">
-                <div className="has-d-flex has-items-center has-mb-4 has-bg-coolgray-200 has-radius">
-                    <Icon icon="search" className="has-text-2xl has-pl-3 has-pr-2" />
-                    <input
-                        type="text"
-                        className="input has-flex-grow has-py-4"
-                        placeholder="Search for icons..."
-                        onChange={e => setQuery(e.target.value || "")}
-                    />
-                </div>
-                <div className="has-p-12 has-bg-coolgray-200 has-radius">
-                    <IconsList
-                        icons={sortedIcons}
-                        activeIcon={activeIcon}
-                        query={query}
-                        onIconClick={icon => setActiveIcon(icon)}
-                    />
-                </div>
-            </div>
+            <IconsList
+                key={query}
+                icons={sortedIcons}
+                activeIcon={activeIcon}
+                query={query}
+                onIconClick={icon => setActiveIcon(icon)}
+                onQueryClear={() => setQuery("")}
+                pagination={true}
+            />
             {/* Active Icon --> display modal */}
             {kofi.when(!!activeIcon, () => (
                 <IconModal
@@ -152,6 +155,6 @@ export const IconsGallery = () => {
                     onClose={() => setActiveIcon(null)}
                 />
             ))}
-        </React.Fragment>
+        </div>
     );
 };
