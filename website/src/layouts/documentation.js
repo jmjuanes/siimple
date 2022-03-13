@@ -47,7 +47,7 @@ export default props => {
                         </div>
                     </div>
                     {/* Content column */}
-                    <div className="column is-full-mobile">
+                    <div className="column is-three-quarters is-full-mobile">
                         <MDXProvider components={shortcodes}>
                             {props.children}
                         </MDXProvider>
