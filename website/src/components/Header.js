@@ -26,17 +26,16 @@ const NavLink = props => (
 );
 
 export const Header = props => {
-    const [active, setActive] = React.useState(true);
+    const [active, setActive] = React.useState(false);
     const size = props.size || "desktop";
     const menuClassName = kofi.classNames({
-        "tablet:has-d-flex": true,
+        "has-d-flex": true,
         "mobile:has-flex-column mobile:has-mt-4 mobile:has-w-full": true,
         "mobile:has-d-none": !active,
-        "mobile:has-d-flex": active,
     });
     return (
         <div className={`content is-${size} has-position-relative`}>
-            <div className="has-d-flex has-py-6">
+            <div className="has-d-flex has-py-6 has-flex-wrap has-items-center">
                 <Link to="/" className="has-flex has-text-coolgray-700 has-items-center has-mr-auto">
                     <Icon
                         icon="siimple"
@@ -46,7 +45,7 @@ export const Header = props => {
                     <strong className="has-ml-2 has-text-xl siimple">siimple.</strong>
                 </Link>
                 <div
-                    className="toggle tablet:has-d-none"
+                    className="toggler tablet:has-d-none"
                     onClick={() => setActive(!active)}
                 />
                 <div className={menuClassName}>
