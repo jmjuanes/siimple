@@ -60,11 +60,12 @@ const IconsList = props => {
                 ))}
                 {/* Display visible icons */}
                 {kofi.when(displayedIcons.length > 0, () => (
-                    <div className="has-d-flex has-flex-wrap">
+                    <div className="has-d-flex has-flex-wrap mobile:has-justify-between">
                         {visibleIcons.map(icon => {
                             const isActive = icon.id === props.activeIcon?.id;
                             const iconClass = kofi.classNames({
-                                "has-p-6 has-w-24 has-radius has-d-flex has-cursor-pointer": true,
+                                "has-radius has-d-flex has-cursor-pointer": true,
+                                "tablet:has-p-6 tablet:has-w-24 mobile:has-p-4": true,
                                 "hover:has-bg-white": !isActive,
                                 "has-bg-blue-500 has-text-white": isActive,
                             });
@@ -91,8 +92,8 @@ const IconsList = props => {
                     "has-text-coolgray-400": totalPages - 1 <= page,
                 });
                 return (
-                    <div className="has-d-flex">
-                        <div className="has-ml-auto has-p-2 has-radius has-bg-coolgray-200 has-d-flex">
+                    <div className="tablet:has-d-flex">
+                        <div className="has-ml-auto has-p-2 has-radius has-bg-coolgray-200 has-d-flex mobile:has-justify-between">
                             <div className={firstClass} onClick={() => setPage(0)}>First</div>
                             {pages.map(index => {
                                 const itemClass = kofi.classNames({
