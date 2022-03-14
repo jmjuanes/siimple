@@ -23,32 +23,92 @@ const getDisplayedIcons = query => {
     return !query ? sortedIcons : sortedIcons.filter(icon => icon.id.includes(query)); 
 };
 
+// Icons list component
 const IconsList = props => {
+    const [page, setPage] = React.useState(0);
     const displayedIcons = getDisplayedIcons(props.query);
-    if (displayedIcons.length === 0) {
-        return (
-            <div align="center" className="has-mx-auto has-w-full has-maxw-128">
-                <div className="">
-                    <Icon icon="face-sad" style={{fontSize: "96px"}} />
-                </div>
-                <div className="title is-2 has-mt-3 has-mb-2">No icons found</div>
-                <div className="paragraph has-text-lg">
-                    There are no icons that matches <strong>"{props.query}"</strong>.
-                </div>
-            </div>
-        );
-    }
+    const totalPages = Math.ceil(displayedIcons.length / props.pageSize);
+    const start = props.pageSize * page;
+    const visibleIcons = !props.pagination ? displayedIcons : displayedIcons.slice(start, start + props.pageSize);
     return (
-        <div className="has-d-flex has-flex-wrap">
-            {displayedIcons.map(icon => {
-                const isActive = icon.id === props.activeIcon?.id;
-                const iconClass = kofi.classNames("has-p-6 has-w-24 has-radius has-d-flex has-cursor-pointer", {
-                    "hover:has-bg-white": !isActive,
-                    "has-bg-blue-500 has-text-white": isActive,
+        <div>
+            <div className="has-radius has-bg-coolgray-200 has-p-6 has-mb-4">
+                {/* Current query */}
+                <div className="has-mb-4 has-d-flex has-items-center">
+                    <div className="has-mr-4 has-text-xl">
+                        <strong>{displayedIcons.length}</strong>
+                        <span> icons</span>
+                    </div>
+                    {kofi.when(!!props.query, () => (
+                        <div className="has-bg-coolgray-600 has-d-flex has-items-center has-radius-full has-px-3 has-py-1">
+                            <div className="has-size-lg has-pr-3 has-text-white">{props.query}</div>
+                            <div className="icon-cross has-cursor-pointer has-text-white" onClick={props.onQueryClear} />
+                        </div>
+                    ))}
+                </div>
+                {/* No icons found message */}
+                {kofi.when(displayedIcons.length === 0, () => (
+                    <div align="center" className="has-mx-auto has-w-full has-maxw-128 has-py-8">
+                        <div className="">
+                            <Icon icon="face-sad" style={{fontSize: "96px"}} />
+                        </div>
+                        <div className="title is-2 has-mt-3 has-mb-2">No icons found</div>
+                        <div className="paragraph has-text-lg">
+                            There are no icons that matches <strong>"{props.query}"</strong>.
+                        </div>
+                    </div>
+                ))}
+                {/* Display visible icons */}
+                {kofi.when(displayedIcons.length > 0, () => (
+                    <div className="has-d-flex has-flex-wrap mobile:has-justify-between">
+                        {visibleIcons.map(icon => {
+                            const isActive = icon.id === props.activeIcon?.id;
+                            const iconClass = kofi.classNames({
+                                "has-radius has-d-flex has-cursor-pointer": true,
+                                "tablet:has-p-6 tablet:has-w-24 mobile:has-p-4": true,
+                                "hover:has-bg-white": !isActive,
+                                "has-bg-blue-500 has-text-white": isActive,
+                            });
+                            return (
+                                <div key={icon.id} className={iconClass} onClick={() => props.onIconClick(icon)}>
+                                    <Icon icon={icon.id} className="has-text-4xl" />
+                                </div>
+                            );
+                        })}
+                    </div>
+                ))}
+            </div>
+            {/* Display pagination */}
+            {kofi.when(props.pagination && displayedIcons.length > 0, () => {
+                const pages = Array.from(Array(totalPages).keys());
+                const firstClass = kofi.classNames({
+                    "has-weight-bold has-py-3 has-px-4": true,
+                    "has-cursor-pointer hover:has-text-blue-500": page > 0,
+                    "has-text-coolgray-400": page === 0,
+                });
+                const lastClass = kofi.classNames({
+                    "has-weight-bold has-py-3 has-px-4": true,
+                    "has-cursor-pointer hover:has-text-blue-500": page < totalPages - 1,
+                    "has-text-coolgray-400": totalPages - 1 <= page,
                 });
                 return (
-                    <div key={icon.id} className={iconClass} onClick={() => props.onIconClick(icon)}>
-                        <Icon icon={icon.id} className="has-text-4xl" />
+                    <div className="tablet:has-d-flex">
+                        <div className="has-ml-auto has-p-2 has-radius has-bg-coolgray-200 has-d-flex mobile:has-justify-between">
+                            <div className={firstClass} onClick={() => setPage(0)}>First</div>
+                            {pages.map(index => {
+                                const itemClass = kofi.classNames({
+                                    "has-radius has-py-3 has-px-4": true,
+                                    "has-cursor-pointer hover:has-text-blue-500": index !== page,
+                                    "has-bg-white has-text-blue-500": index === page,
+                                });
+                                return (
+                                    <div key={index} className={itemClass} onClick={() => setPage(index)}>
+                                        <strong>{(index + 1)}</strong>
+                                    </div>
+                                );
+                            })}
+                            <div className={lastClass} onClick={() => setPage(totalPages - 1)}>Last</div>
+                        </div>
                     </div>
                 );
             })}
@@ -56,6 +116,7 @@ const IconsList = props => {
     );
 };
 
+// Icon modal component
 const IconModal = props => {
     const [iconCopied, setIconCopied] = React.useState(false);
     const previewClass = kofi.classNames([
@@ -111,40 +172,35 @@ const IconModal = props => {
 
 // Export Icons Gallery component
 export const IconsGallery = () => {
+    const queryRef = React.useRef();
     const [query, setQuery] = React.useState("");
     const [activeIcon, setActiveIcon] = React.useState(null);
+    const handleQueryClear = () => {
+        queryRef.current.value = ""; // Reset query in input
+        setQuery("");
+    };
     return (
-        <React.Fragment>
-            {/* Hero block */}
-            <div className="tablet:has-pt-24 mobile:has-pt-12 has-pb-32">
-                <div className="has-mx-auto has-w-full has-maxw-128" align="center">
-                    <div className="title is-1">Hand-crafted icons toolkit</div>
-                    <div className="has-text-coolgray-500">
-                        An Open Source icon webfont that can be used in web and mobile projects. 
-                        Made with a lot of <Icon icon="heart" />.
-                    </div>
-                </div>
+        <div className="has-mb-24">
+            <div className="has-d-flex has-items-center has-mb-4 has-bg-coolgray-200 has-radius">
+                <Icon icon="search" className="has-text-xl has-pl-3 has-pr-0" />
+                <input
+                    ref={queryRef}
+                    type="text"
+                    className="input has-flex-grow"
+                    placeholder="Search for icons..."
+                    onChange={e => setQuery(e.target.value || "")}
+                />
             </div>
-            {/* Icons list */}
-            <div className="has-mb-24">
-                <div className="has-d-flex has-items-center has-mb-4 has-bg-coolgray-200 has-radius">
-                    <Icon icon="search" className="has-text-2xl has-pl-3 has-pr-2" />
-                    <input
-                        type="text"
-                        className="input has-flex-grow has-py-4"
-                        placeholder="Search for icons..."
-                        onChange={e => setQuery(e.target.value || "")}
-                    />
-                </div>
-                <div className="has-p-12 has-bg-coolgray-200 has-radius">
-                    <IconsList
-                        icons={sortedIcons}
-                        activeIcon={activeIcon}
-                        query={query}
-                        onIconClick={icon => setActiveIcon(icon)}
-                    />
-                </div>
-            </div>
+            <IconsList
+                key={query}
+                icons={sortedIcons}
+                activeIcon={activeIcon}
+                query={query}
+                onIconClick={icon => setActiveIcon(icon)}
+                onQueryClear={handleQueryClear}
+                pagination={true}
+                pageSize={48}
+            />
             {/* Active Icon --> display modal */}
             {kofi.when(!!activeIcon, () => (
                 <IconModal
@@ -152,6 +208,6 @@ export const IconsGallery = () => {
                     onClose={() => setActiveIcon(null)}
                 />
             ))}
-        </React.Fragment>
+        </div>
     );
 };

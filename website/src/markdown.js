@@ -4,13 +4,13 @@ import {Link} from "gatsby";
 
 import {ColorPalette} from "./components/ColorPalette.js";
 import {IconsGallery} from "./components/IconsGallery.js";
+import {IconsCheatsheet} from "./components/IconsCheatsheet.js";
 import {Welcome} from "./components/Welcome.js";
 import {Testimonials} from "./components/Testimonials.js";
-import {Sandbox} from "./components/Sandbox.js";
 import {LiveCode} from "./components/LiveCode.js";
 import {ModalExample} from "./components/ModalExample.js";
 import {NavbarExample} from "./components/NavbarExample.js";
-import {Features} from "./components/Features.js";
+// import {Features} from "./components/Features.js";
 
 // Alias to create a HTML element
 const html = (type, className) => {
@@ -50,11 +50,10 @@ export const shortcodes = {
     // Pages components
     ColorPalette,
     IconsGallery,
+    IconsCheatsheet,
     Testimonials,
     Welcome,
-    Features,
-    Sandbox,
-    // Examples
+    // Features,
     ModalExample,
     NavbarExample,
 };

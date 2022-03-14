@@ -4,7 +4,7 @@ title: Building a Navbar
 
 # Building a Navbar
 
-You can create a navbar component using the [toggler component](/components/toggler) and some helpers:
+You can create a navbar component using the [toggler](/components/toggler), [navlink](/components/navlink) and some utilities:
 
 <NavbarExample />
 
@@ -24,14 +24,16 @@ You can create a navbar component using the [toggler component](/components/togg
 </div>
 ``` 
 
-> **Tip**: resize your screen to test how navbar works in mobile screens.
+You can resize your screen to test how navbar works in mobile screens.
 
 Remember that **siimple does not come with any JavaScript**. However, you can use the following JavaScript implementation example that toggles the visibility of the navigation menu when the toggler button is clicked:
 
 ```javascript
 const menu = document.querySelector("#navbar-menu");
-document.querySelector("#navbar-toggler").addEventListener("click", () => {
-    navbarMenu.classList.toggle("mobile:has-d-flex");
-    navbarMenu.classList.toggle("mobile:has-d-none");
+const toggler = document.querySelector("#navbar-toggler");
+
+toggler.addEventListener("click", () => {
+    menu.classList.toggle("mobile:has-d-flex");
+    menu.classList.toggle("mobile:has-d-none");
 });
 ```

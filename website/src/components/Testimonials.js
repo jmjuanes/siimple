@@ -25,26 +25,21 @@ const testimonialsData = [
 ];
 
 export const Testimonials = () => (
-    <div className="has-pt-12 has-pb-24">
-        <div align="center" className="has-mb-8">
-            <span className="subhead">What people say about siimple?</span>
-        </div>
-        <div className="columns has-mb-0">
-            {testimonialsData.map((item, key) => (
-                <div key={key} className="column is-4 mobile:is-12">
-                    <div style={{"minHeight": "300px"}} className="has-p-8 has-radius has-bg-coolgray-100">
-                        <div className="has-text-body has-text-opacity-50 has-mb-3">
-                            <Icon icon="quote" style={{"fontSize":"3.5rem"}} />
-                        </div>
-                        <Link to={item.url} target="_blank" className="has-text-coolgray-800">
-                            <div className="title is-4">{item.site}</div>
-                        </Link>
-                        <div className="has-mb-0 has-text-body has-text-opacity-80">
-                            {item.content}
-                        </div>
+    <div className="columns has-mb-0">
+        {testimonialsData.map((item, key) => (
+            <div key={key} className="column is-full-mobile">
+                <div style={{"minHeight": "300px"}} className="has-p-8 has-radius has-bg-coolgray-100">
+                    <div className="has-text-opacity-50 has-mb-3">
+                        <Icon icon="quote" style={{"fontSize":"3.5rem"}} />
+                    </div>
+                    <Link to={item.url} target="_blank" className="has-text-coolgray-800">
+                        <div className="title is-4">{item.site}</div>
+                    </Link>
+                    <div className="has-mb-0 has-text-coolgray-500">
+                        {item.content}
                     </div>
                 </div>
-            ))}
-        </div>
+            </div>
+        ))}
     </div>
 );

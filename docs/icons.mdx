@@ -4,6 +4,10 @@ title: Icons
 
 # Icons
 
+We provide a collection of hand-crafted and open source icons webfont that can be used in any web and mobile project.
+
+### Enable icons module
+
 The icons module is by default enabled as part of the `siimple.css()` mixin. It can be disabled setting a `false` value to the `"use-icons"` flag in the `$flags` section of the configuration.
 
 Also, it can be manually included in your styles just calling the `siimple.icons()` mixin:
@@ -15,7 +19,7 @@ Also, it can be manually included in your styles just calling the `siimple.icons
 @include siimple.icons();
 ```
 
-### Customization
+### Customize
 
 The following options can be used to customize the icons module:
 
@@ -39,7 +43,6 @@ Example:
 
 Create a `<i>` tag and add the `icon-<IconName>` classname, where `<IconName>` is the name of the desired icon.
 
-
 ```html 
 <!-- Add a left arrow icon -->
 <i class="icon-arrow-left"></i>
@@ -57,3 +60,7 @@ You can style your icon using `font-size` and `color` style properties:
 <!-- Using helpers -->
 <i class="icon-star has-color-red-500 has-size-xl"></i>
 ```
+
+### Icons cheatsheet
+
+<IconsCheatsheet />

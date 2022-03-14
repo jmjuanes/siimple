@@ -14,9 +14,11 @@ const ColorItems = props => (
                 <div key={item} className="column is-one-third is-half-mobile has-pt-0">
                     <div className={itemClassName} />
                     <div className="has-d-flex has-items-center">
-                        <div className="has-weight-bold">{item}</div>
+                        <div className="has-weight-bold has-text-sm">{item}</div>
                         <div className="has-ml-auto">
-                            <code className="has-text-coolgray-600">{props.items[item]}</code>
+                            <code className="has-text-coolgray-600 has-text-xs">
+                                {props.items[item]}
+                            </code>
                         </div>
                     </div>
                 </div>
@@ -30,12 +32,12 @@ export const ColorPalette = props => (
     <div className="has-mb-6">
         {Object.keys(colors).map(name => (
             <div className="columns" key={name}>
-                <div className="column is-one-quarter is-full-mobile">
-                    <div className="title is-5 has-mt-0 has-text-capitalize has-position-sticky has-top-0">
+                <div className="column is-one-fifth is-full-mobile">
+                    <div className="title is-6 has-mt-0 has-text-capitalize">
                         <span>{name}</span>
                     </div>    
                 </div>
-                <div className="column is-three-quarters is-full-mobile">
+                <div className="column is-four-fifths is-full-mobile">
                     <ColorItems name={name} items={colors[name]} />
                 </div>
             </div>

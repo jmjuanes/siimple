@@ -47,17 +47,11 @@ export default props => {
                         </div>
                     </div>
                     {/* Content column */}
-                    <div className="column is-full-mobile">
-                        <div className="has-mx-auto has-w-full" style={{"maxWidth":"48rem"}}> 
-                            <MDXProvider components={shortcodes}>
-                                {props.children}
-                            </MDXProvider>
-                            {/* Page navigation */}
-                            <Pagination
-                                next={nextSidebarItem}
-                                prev={prevSidebarItem}
-                            />
-                        </div>
+                    <div className="column is-three-quarters is-full-mobile">
+                        <MDXProvider components={shortcodes}>
+                            {props.children}
+                        </MDXProvider>
+                        <Pagination next={nextSidebarItem} prev={prevSidebarItem} />
                     </div>
                 </div>
             </div>
