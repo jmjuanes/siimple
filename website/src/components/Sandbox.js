@@ -139,7 +139,7 @@ export const Sandbox = props => {
                 <div className={codePanelClass}>
                     <div className="has-mb-4 has-d-flex has-items-center">
                         <button
-                            className="btn has-d-flex has-items-center has-bg-white has-text-coolgray-800"
+                            className="button has-d-flex has-items-center has-bg-white has-text-coolgray-800"
                             onClick={handleRunClick}
                         >
                             <Icon icon="play" className="has-text-lg has-pr-1" />
@@ -185,7 +185,7 @@ export const Sandbox = props => {
                                 defaultValue={shareUrl}
                             />
                         </div>
-                        <button className="btn has-w-full has-d-flex has-items-center has-justify-center" onClick={() => handleCopyClick()}>
+                        <button className="button has-w-full has-d-flex has-items-center has-justify-center" onClick={() => handleCopyClick()}>
                             <Icon icon="copy" className="has-pr-1 has-text-lg" />
                             <strong>{shareUrlCopied ? "Copied!" : "Copy to clipboard"}</strong>
                         </button>

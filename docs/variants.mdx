@@ -26,7 +26,7 @@ Variants can be used to register custom modifiers that are used to change the lo
 
 ## Default variant
 
-In the `default` field you can provide the styles that will be applied to the default component styles. For example, all styles defined in `$variants.button.default` will be applied directly to the `btn` class: 
+In the `default` field you can provide the styles that will be applied to the default component styles. For example, all styles defined in `$variants.button.default` will be applied directly to the `button` class: 
 
 ```scss
 @use "siimple" as siimple;
@@ -46,7 +46,7 @@ In the `default` field you can provide the styles that will be applied to the de
 Will generate: 
 
 ```css
-.btn {
+.button {
     background-color: #33333;
     color: white;
     /* Other default button styles */
@@ -74,7 +74,7 @@ Any other field will generate an additional class that can be only applied to th
 Will generate:
 
 ```css
-.btn.is-secondary {
+.button.is-secondary {
     background-color: #000000;
 }
 ```

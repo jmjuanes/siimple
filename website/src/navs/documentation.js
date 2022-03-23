@@ -14,7 +14,7 @@ export const documentationNav = [
     {"group": "modules", "url": "/icons", "label": "Icons"},
     {"group": "elements", "url": "/elements/alert", "label": "Alert"},
     {"group": "elements", "url": "/elements/badge", "label": "Badge"},
-    {"group": "elements", "url": "/elements/btn", "label": "Button"},
+    {"group": "elements", "url": "/elements/button", "label": "Button"},
     {"group": "elements", "url": "/elements/card", "label": "Card"},
     {"group": "elements", "url": "/elements/checkbox", "label": "Checkbox"},
     {"group": "elements", "url": "/elements/close", "label": "Close"},

@@ -5,7 +5,7 @@ export const ModalExample = () => {
     return (
         <React.Fragment>
             <div align="center" className="has-mb-4">
-                <div className="btn is-full" onClick={() => setVisible(true)}>
+                <div className="button is-full" onClick={() => setVisible(true)}>
                     <strong>Display modal</strong>
                 </div>
             </div>

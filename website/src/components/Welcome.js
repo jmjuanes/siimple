@@ -6,14 +6,14 @@ import {Icon} from "./Icon.js";
 
 // Action button component wrapper
 const Button = props => {
-    const btnClass = kofi.classNames(props.className, [
-        "btn",
+    const buttonClass = kofi.classNames(props.className, [
+        "button",
         "has-d-inline-flex has-justify-center",
         "has-px-6 has-py-3",
         "mobile:has-w-full mobile:has-mb-2",
     ]);
     return (
-        <div className={btnClass} style={{"fontSize": "24px"}}>
+        <div className={buttonClass} style={{"fontSize": "24px"}}>
             <Icon className="has-pr-3" icon={props.icon} />
             <strong>{props.text}</strong>
         </div>

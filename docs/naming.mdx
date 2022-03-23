@@ -21,7 +21,7 @@ We use the following syntax for naming **components** in siimple:
 ```
 
 - `<Prefix>`: is the components prefix that can be customized in the `$prefix` section of the configuration. The default prefix applied in **siimple** is an empty string.
-- `<ComponentName>` is the component name, for example `btn` or `card`.
+- `<ComponentName>` is the component name, for example `button` or `card`.
 
 ### Icons
 
@@ -42,12 +42,12 @@ Icons defined in siimple have the following classname pattern:
 The following example shows how to use the `secondary` variant of a button:
 
 ```html
-<button class="btn is-secondary">
+<button class="button is-secondary">
     Secondary button
 </button>
 ```
 
-Every component must define its own variants, and some variant modifiers that works for some components may not be available for another components. This means that `is-secondary` modifier can be applied for example to a `btn` component, but has no effect when applied to `card`.
+Every component must define its own variants, and some variant modifiers that works for some components may not be available for another components. This means that `is-secondary` modifier can be applied for example to a `button` component, but has no effect when applied to `card`.
 
 ### Utility modifiers
 
@@ -74,7 +74,7 @@ Similar to responsive modifiers, you can apply some utilities only in response t
 Add the `hover:` prefix to a utility class to apply it only on hover: 
 
 ```html live=true align=center
-<div class="btn has-text-white has-bg-purple-500 hover:has-bg-purple-700">
+<div class="button has-text-white has-bg-purple-500 hover:has-bg-purple-700">
     Hoverable button
 </div>
 ```

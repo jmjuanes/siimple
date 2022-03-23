@@ -147,7 +147,7 @@ const IconModal = props => {
                 <div className="columns">
                     <div className="column has-py-0">
                         <div
-                            className="btn has-d-flex has-items-center has-justify-center"
+                            className="button has-d-flex has-items-center has-justify-center"
                             onClick={() => handleIconCopy()}
                         >
                             <Icon icon="copy" className="has-pr-1 has-text-lg" />
@@ -158,7 +158,7 @@ const IconModal = props => {
                         <Link
                             to={iconSvgUrl}
                             target="_blank"
-                            className="btn is-secondary has-d-flex has-items-center has-justify-center"
+                            className="button is-secondary has-d-flex has-items-center has-justify-center"
                         >
                             <Icon icon="download" className="has-pr-1 has-text-lg" />
                             <strong>Download SVG</strong>
