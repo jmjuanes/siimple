@@ -49,31 +49,31 @@ You can also use the special `table-responsive` class to allow creating responsi
 
 ### Variants
 
-Variants for this component can be defined in the `table` section of the variants configuration:
+Variants for this element can be defined in the `table` section of the variants configuration:
 
-```scss
-@include siimple.configure(
-    $variants: (
-        "table": (
-            "default": (
-                "& th, & td": (
-                    "background-color": "white",
-                    "padding": "1rem",
-                ),
-            ),
-            "divided": (
-                "& thead th": (
-                    "border-bottom-color": "fill",
-                    "border-bottom-style": "solid",
-                    "border-bottom-width": "0.125rem",
-                ),
-                "& tbody td": (
-                    "border-top-color": "fill",
-                    "border-top-style": "solid",
-                    "border-top-width": "0.125rem",
-                ),
-            ),
-        ),
-    ),
-);
+```js
+export default {
+    variants: {
+        table: {
+            default: {
+                "& th, & td": {
+                    backgroundColor: "white",
+                    padding: "1rem",
+                },
+            },
+            divided: {
+                "& thead th": {
+                    borderBottomColor: "fill",
+                    borderBottomStyle: "solid",
+                    borderBottomWidth: "0.125rem",
+                },
+                "& tbody td": {
+                    borderTopColor: "fill",
+                    borderTopStyle: "solid",
+                    borderTopWidth: "0.125rem",
+                },
+            },
+        },
+    },
+};
 ```

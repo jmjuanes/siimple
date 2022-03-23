@@ -1,6 +1,6 @@
 ---
 title: "Switch"
-description: "Form switch component"
+description: "Form switch element"
 ---
 
 # Switch
@@ -25,16 +25,16 @@ By default, the switch will be displayed inactive, but you can add a **checked**
 
 ### Variants
 
-Variants for this component can be defined in the `form.switch` section of the variants configuration:
+Variants for this element can be defined in the `form.switch` section of the variants configuration:
 
-```scss
-@include siimple.configure(
-    $variants: (
-        "form.switch": (
-            "default": (
-                "color": "primary",
-            ),
-        ),
-    ),
-);
+```js
+export default {
+    variants: {
+        "form.switch": {
+            default: {
+                color: "primary",
+            },
+        },
+    },
+};
 ```

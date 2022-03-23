@@ -20,16 +20,16 @@ The **divider** element helps you to separate content in your page. Add `divider
 
 ### Variants
 
-Variants for this component can be defined in the `divider` section of the variants configuration:
+Variants for this element can be defined in the `divider` section of the variants configuration:
 
-```scss
-@include siimple.configure(
-    $variants: (
-        "divider": (
-            "default": (
-                "background-color": "fill",
-            ),
-        ),
-    ),
-);
+```js
+export default {
+    variants: {
+        divider: {
+            default: {
+                backgroundColor: "fill",
+            },
+        },
+    },
+};
 ```

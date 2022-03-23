@@ -14,17 +14,17 @@ Use `quote` class to style your blockquotes:
 
 ### Variants
 
-Variants for this component can be defined in the `text.quote` section of the variants configuration:
+Variants for this element can be defined in the `text.quote` section of the variants configuration:
 
-```scss
-@include siimple.configure(
-    $variants: (
-        "text.quote": (
-            "default": (
-                "color": "text",
-                "opacity": "0.5",
-            ),
-        ),
-    ),
-);
+```js
+export default {
+    variants: {
+        "text.quote": {
+            default: {
+                color: "text",
+                opacity: "0.5",
+            },
+        },
+    },
+};
 ```

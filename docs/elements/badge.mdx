@@ -14,21 +14,21 @@ description: "Small labelling element"
 
 ### Variants
 
-Variants for this component can be defined in the `badge` section of the variants configuration:
+Variants for this element can be defined in the `badge` section of the variants configuration:
 
-```scss
-@include siimple.configure(
-    $variants: (
-        "badge": (
-            "primary": (
-                "background-color": "primary",
-                "color": "white",
-            ),
-            "secondary": (
-                "background-color": "secondary",
-                "color": "white",
-            ),
-        ),
-    ),
-);
+```js
+export default {
+    variants: {
+        badge: {
+            primary: {
+                backgroundColor: "primary",
+                color: "white",
+            },
+            secondary: {
+                backgroundColor: "secondary",
+                color: "white",
+            },
+        },
+    },
+};
 ```

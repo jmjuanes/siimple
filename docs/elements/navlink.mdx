@@ -1,11 +1,11 @@
 ---
 title: "NavLink"
-description: "Navigation link component"
+description: "Navigation link element"
 --- 
 
 # NavLink
 
-A navigation link component that you can use in your navigation sections, for example in the navbar. Just add a `navlink` class to your link to style it as a navigation link.
+A navigation link element that you can use in your navigation sections, for example in the navbar. Just add a `navlink` class to your link to style it as a navigation link.
 
 ```html live=true
 <div class="has-d-inline-flex">
@@ -27,26 +27,26 @@ We provide an `active` variant to mark a navigation link as active, and a `disab
 
 ### Variants
 
-Variants for this component can be defined in the `navigation.link` section of the variants configuration:
+Variants for this element can be defined in the `navigation.link` section of the variants configuration:
 
-```scss
-@include siimple.configure(
-    $variants: (
-        "navigation.link": (
-            "default": (
-                "font-weight": "bold",
-                "&:hover": (
-                    "color": "primary",
-                ),
-            ),
-            "active": (
-                "color": "primary",
-            ),
-            "disabled": (
-                "opacity": 0.5,
-                "pointer-events": none,
-            ),
-        ),
-    ),
-);
+```js
+export default {
+    variants: {
+        "navigation.link": {
+            default: {
+                fontWeight: "bold",
+                "&:hover": {
+                    color: "primary",
+                },
+            },
+            active: {
+                color: "primary",
+            },
+            disabled: {
+                opacity: "0.5",
+                pointerEvents: "none",
+            },
+        },
+    },
+};
 ```

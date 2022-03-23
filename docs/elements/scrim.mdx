@@ -18,14 +18,14 @@ You can create a scrim using the class `scrim`. By default, all elements inside 
 
 Variants for this component can be defined in the `dialog.scrim` section of the variants configuration:
 
-```scss
-@include siimple.configure(
-    $variants: (
-        "dialog.scrim": (
-            "default": (
-                "background-color": "rgba(black, 0.5)",
-            ),
-        ),
-    ),
-);
+```js
+export default {
+    variants: {
+        "dialog.scrim": {
+            default: {
+                backgroundColor: "rgba(black, 0.5)",
+            },
+        },
+    },
+};
 ```

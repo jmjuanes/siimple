@@ -1,11 +1,11 @@
 ---
 title: "Card"
-description: "A minimal and flexible container component"
+description: "A minimal and flexible container element"
 --- 
 
 # Card
 
-A **card** is a flexible container component that holds content and actions about a single subject or topic. By default, cards have no fixed width. A card can be created adding a `card` class to a `<div>` tag.
+A **card** is a flexible container element that holds content and actions about a single subject or topic. By default, cards have no fixed width. A card can be created adding a `card` class to a `<div>` tag.
 
 
 ```html live=true
@@ -16,17 +16,17 @@ A **card** is a flexible container component that holds content and actions abou
 
 ### Variants
 
-Variants for this component can be defined in the `card` section of the variants configuration:
+Variants for this element can be defined in the `card` section of the variants configuration:
 
-```scss
-@include siimple.configure(
-    $variants: (
-        "card": (
-            "default": (
-                "background-color": "white",
-                "color": "inherit",
-            ),
-        ),
-    ),
-);
+```js
+export default {
+    variants: {
+        card: {
+            default: {
+                backgroundColor: "white",
+                color: "inherit",
+            },
+        },
+    },
+};
 ```

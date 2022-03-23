@@ -13,17 +13,17 @@ Use the `toggler` class to create a toggle button, useful for displaying hidden 
 
 ### Variants
 
-Variants for this component can be defined in the `button.toggler` section of the variants configuration:
+Variants for this element can be defined in the `button.toggler` section of the variants configuration:
 
-```scss
-@include siimple.configure(
-    $variants: (
-        "button.toggler": (
-            "default": (
-                "border-color": currentColor,
-                "color": currentColor,
-            ),
-        ),
-    ),
-);
+```js
+export default {
+    variants: {
+        "button.toggler": {
+            default: {
+                borderColor: "currentColor",
+                color: "currentColor",
+            },
+        },
+    },
+};
 ```

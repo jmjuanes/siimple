@@ -25,22 +25,22 @@ Use the `modal` class to create a wrapper for your modal dialogs. Usually you wi
 
 ### Variants
 
-Variants for this component can be defined in the `dialog.modal` section of the variants configuration:
+Variants for this element can be defined in the `dialog.modal` section of the variants configuration:
 
-```scss
-@include siimple.configure(
-    $variants: (
-        "dialog.modal": (
-            "default": (
-                "max-width": 500px,
-            ),
-            "small": (
-                "max-width": 300px,
-            ),
-            "large": (
-                "max-width": 900px,
-            ),
-        ),
-    ),
-);
+```js
+export default {
+    variants: {
+        "dialog.modal": {
+            default: {
+                maxWidth: "500px",
+            },
+            small: {
+                maxWidth: "300px",
+            },
+            large: {
+                maxWidth: "900px",
+            },
+        },
+    },
+};
 ```

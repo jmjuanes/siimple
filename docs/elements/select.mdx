@@ -18,16 +18,16 @@ You can style your `<select>` elements adding a `select` class.
 
 ### Variants
 
-Variants for this component can be defined in the `form.select` section of the variants configuration:
+Variants for this element can be defined in the `form.select` section of the variants configuration:
 
-```scss
-@include siimple.configure(
-    $variants: (
-        "form.select": (
-            "default": (
-                "background-color": "fill",
-            ),
-        ),
-    ),
-);
+```js
+export default {
+    variants: {
+        "form.select": {
+            default: {
+                backgroundColor: "fill",
+            },
+        },
+    },
+};
 ```
