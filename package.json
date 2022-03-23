@@ -4,24 +4,26 @@
     "private": true,
     "description": "A minimal and themeable CSS toolkit for flat and clean designs.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "type": "module",
     "license": "MIT",
     "homepage": "https://www.siimple.xyz/",
-    "repository": "https://github.com/siimple/siimple",
-    "bugs": "https://github.com/siimple/siimple/issues",
+    "repository": "https://github.com/jmjuanes/siimple",
+    "bugs": "https://github.com/jmjuanes/siimple/issues",
     "twitter": "https://twitter.com/siimplecss",
     "scripts": {
-        "build": "gulp build:bundle build:icons && npm run build:css",
-        "build:css": "gulp build:css",
-        "build:bundle": "gulp build:bundle",
-        "build:icons": "gulp build:icons",
+        "build": "npm run css && npm run icons",
+        "css": "node ./cli.js -c ./defaultConfig.js -o siimple.css && gulp autoprefix && gulp minify",
+        "icons": "gulp icons",
         "website:clean": "cd website && npm run clean",
         "website:build": "cd website && npm run build",
         "website:serve": "cd website && npm run serve",
-        "test": "jest",
-        "pre:deploy": "sed 's/{{target}}/'${npm_config_target}'/g' config/firebase.json > firebase.json"
+        "test": "jest"
     },
     "devDependencies": {
+        "@babel/core": "^7.17.8",
+        "@babel/preset-env": "^7.16.11",
         "autoprefixer": "^10.3.5",
+        "babel-jest": "^27.5.1",
         "clean-css": "^5.2.4",
         "gulp": "^4.0.2",
         "gulp-cli": "^2.3.0",
@@ -29,20 +31,8 @@
         "gulp-rename": "^2.0.0",
         "jest": "^27.5.1",
         "postcss": "^8.4.7",
-        "sass": "^1.49.9",
         "svg2ttf": "^6.0.3",
         "svgicons2svgfont": "^10.0.5",
         "ttf2woff": "^3.0.0"
-    },
-    "jest": {
-        "testEnvironment": "node",
-        "testPathIgnorePatterns": [
-            "/node_modules/",
-            "/docs/",
-            "/sass/",
-            "/scripts/",
-            "/website/"
-        ],
-        "transform": {}
     }
 }

@@ -17,10 +17,14 @@ firebase-debug.log
 .env.production
 .env.test
 
-# Release folders
+# Release folders and files
 dist
 distributions
 release
+siimple.css
+siimple.min.css
+siimple-icons.ttf
+siimple-icons.woff
 
 # Applications output folders
 public
