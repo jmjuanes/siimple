@@ -2,6 +2,11 @@ import React from "react";
 import kofi from "kofi";
 import colors from "siimple-colors";
 
+// Get visible colors keys
+const getVisibleColors = () => {
+    return Object.keys(colors).filter(name => typeof colors[name] === "object");
+};
+
 // Color items
 const ColorItems = props => (
     <div className="columns">
@@ -30,7 +35,7 @@ const ColorItems = props => (
 // Export color palette
 export const ColorPalette = props => (
     <div className="has-mb-6">
-        {Object.keys(colors).map(name => (
+        {getVisibleColors().map(name => (
             <div className="columns" key={name}>
                 <div className="column is-one-fifth is-full-mobile">
                     <div className="title is-6 has-mt-0 has-text-capitalize">
