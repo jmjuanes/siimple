@@ -237,7 +237,7 @@ const wrapCssRule = (ruleName, ruleContent, separator) => {
 };
 
 // Build css value
-const buildCssValue = (property, value, config) => {
+export const buildCssValue = (property, value, config) => {
     const values = [value].flat(1);
     if (config.scales && scales[property] && typeof values[0] === "string") {
         const key = scales[property];
@@ -247,9 +247,9 @@ const buildCssValue = (property, value, config) => {
 };
 
 // Build css rule
-const buildCssRule = (parent, styles, config, vars) => {
+export const buildCssRule = (parent, styles, config, vars) => {
     if (styles && Array.isArray(styles)) {
-        return styles.map(item => buildCssRule(parent, item)).flat();
+        return styles.map(item => buildCssRule(parent, item, config, vars)).flat();
     }
     const css = [""];
     Object.keys(styles).forEach(key => {
