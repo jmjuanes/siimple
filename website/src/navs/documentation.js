@@ -1,5 +1,6 @@
 export const documentationNav = [
     {"group": "getting-started", "url": "/installation", "label": "Installation"},
+    {"group": "getting-started", "url": "/usage", "label": "Usage"},
     {"group": "getting-started", "url": "/naming", "label": "Naming methodology"},
     {"group": "getting-started", "url": "/responsive", "label": "Responsive"},
     {"group": "customize", "url": "/api", "label": "API"},
