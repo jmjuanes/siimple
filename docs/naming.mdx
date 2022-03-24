@@ -7,21 +7,21 @@ description: "Understanding how siimple classnames has been designed"
 
 The **siimple** toolkit uses a simplified version of the [**SMACSS** methodology](http://smacss.com) for naming classnames, as described on this section. We have divided the classnames used in **siimple** into four blocks:
 
-- **Components**: are the primary building blocks of **siimple**.
+- **Elements**: are the primary building blocks of **siimple**.
 - **Icons**: used for displaying icons.
 - **Variant modifiers**: used to change the default style of each component.
 - **Utility modifiers**: low-level classnames that can be applied to any element.
  
-### Components 
+### Elements
 
-We use the following syntax for naming **components** in siimple:
+We use the following syntax for naming **elements** in siimple:
 
 ```
-.<Prefix><ComponentName>
+.<Prefix><ElementName>
 ```
 
-- `<Prefix>`: is the components prefix that can be customized in the `$prefix` section of the configuration. The default prefix applied in **siimple** is an empty string.
-- `<ComponentName>` is the component name, for example `button` or `card`.
+- `<Prefix>`: is the elements prefix that can be customized in the `prefix` section of the configuration. The default prefix applied in **siimple** is an empty string.
+- `<ElementName>` is the element name, for example `button` or `card`.
 
 ### Icons
 
@@ -33,7 +33,7 @@ Icons defined in siimple have the following classname pattern:
 
 ### Variant modifiers
 
-**Variant modifiers** are special classnames used to change the default style of a component. Variant modifiers always use the following syntax:
+**Variant modifiers** are special classnames used to change the default style of an element. Variant modifiers always use the following syntax:
 
 ```
 .is-<VariantName>
@@ -47,7 +47,7 @@ The following example shows how to use the `secondary` variant of a button:
 </button>
 ```
 
-Every component must define its own variants, and some variant modifiers that works for some components may not be available for another components. This means that `is-secondary` modifier can be applied for example to a `button` component, but has no effect when applied to `card`.
+Every element must define its own variants, and some variant modifiers that works for some compelementsonents may not be available for another elements. This means that `is-secondary` modifier can be applied for example to a `button` element, but has no effect when applied to `card`.
 
 ### Utility modifiers
 
