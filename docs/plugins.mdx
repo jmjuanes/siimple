@@ -1,0 +1,48 @@
+---
+title: Plugins
+---
+
+# Plugins
+
+In the configuration object you can provide a list of plugins that allows you to register new styles, utilities and elements into the output CSS.
+
+A plugin is just a JavaScript function that will receive a single object containing a collection of functions (we call them **actions**).
+
+```js title=siimple.config.js
+export default {
+    plugins: [
+        ({addStyles, addUtilities, getConfig}) => {
+            // use the actions functions to register new styles
+        },        
+    ],
+};
+```
+
+The following functions are available in the actions object:
+
+- `addStyles()`, for registering new styles.
+- `addElement()`, for registering a new element.
+- `addUtility()`, for registering a new utility.
+- `getConfig()`,  for getting the current configuration.
+
+
+### Adding new styles
+
+The action `addStyles` can be used to inject new styles into the output CSS. This function accepts an object with the wanted styles, following the styles syntax [specified in this guide](/guides/styles).
+
+```js title=siimple.config.js
+export default {
+    plugins: [
+        ({addStyles}) => {
+            addStyles({
+                ".text-small": {
+                    fontSize: "small",
+                },
+                ".text-large": {
+                    fontSize: "large",
+                },
+            });
+        },
+    ],
+};
+```
