@@ -49,7 +49,7 @@ export const AccordionNav = props => {
                             //currentGroup = item.group; //Change current group
                             return (
                                 <div className={groupClass} onClick={handleGroupClick}>
-                                    <div className="has-flex has-py-3">
+                                    <div className="has-d-flex has-py-3">
                                         <div className="has-flex-grow has-text-capitalize">
                                             <strong>{item.group.replace("-", " ")}</strong>
                                         </div>

@@ -12,7 +12,7 @@ export const ModalExample = () => {
             {visible ? (
                 <div className="scrim">
                     <div className="modal">
-                        <div className="has-flex has-items-center">
+                        <div className="has-d-flex has-items-center">
                             <div className="title is-4 has-mb-0">
                                 <strong>Modal</strong>
                             </div>
