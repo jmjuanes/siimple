@@ -16,7 +16,14 @@ export const LiveCode = props => {
     }
     //Check for no live preview --> render the code wrapped in a <pre> element
     if (props.live !== "true") {
-        return <pre className={`${codeClass} has-mb-6`} {...codeProps}>{codeChildren}</pre>;
+        return (
+            <div className={`${codeClass} has-mb-6`}>
+                {kofi.when(!!props.title, () => (
+                    <div>{props.title}</div>
+                ))}
+                <pre {...codeProps}>{codeChildren}</pre>
+            </div>
+        );
     }
     //const {padding, bg, color} = props;
     const demoClass = kofi.classNames("has-mb-6 has-overflow-x-hidden", [
@@ -39,7 +46,12 @@ export const LiveCode = props => {
                 />
             </div>
             {/* Code */}
-            <pre className={`${codeClass} has-my-0`} {...codeProps}>{codeChildren}</pre>
+            <div className={`${codeClass} has-my-0`}>
+                {kofi.when(!!props.title, () => (
+                    <div>{props.title}</div>
+                ))}
+                <pre {...codeProps}>{codeChildren}</pre>
+            </div>
             {/* <pre className="codeblock has-mb-0">{props.children}</pre> */}
         </div>
     );
