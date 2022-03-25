@@ -46,3 +46,51 @@ export default {
     ],
 };
 ```
+
+### Adding new utilities
+
+You can generate your own utilities using the `addUtility` function. This function accepts an object as an argument, where the configuration of the utility must be provided:
+
+- `name`: name of the new utility. Will be used as a prefix for all utility classes.
+- `properties`: a list of CSS properties to set in the utility.
+- `values`: a list of values to set in each CSS property specified in the `properties` field.
+- `responsive`: a boolean to generate responsive variants of this utility.
+- `states`: a list of states to generate utilities. Allowed values: `default`, `hover` and `focus`.
+
+The following code shows a simple example of a custom helper that will generate utilities to set the `background-color` property:
+
+```js title=siimple.config.js
+export default {
+    plugins: [
+        ({addUtility}) => {
+            addUtility({
+                name: "bg",
+                properties: [
+                    "background-color",
+                ],
+                states: [
+                    "default",
+                    "hover",
+                ],
+                responsive: false,
+                values: {
+                    transparent: "transparent",
+                    black: "#000000",
+                    white: "#ffffff",
+                },
+            });
+        },
+    ],
+};
+```
+
+Will generatethe following utilities
+
+```css
+.has-bg-transparent {background-color: transparent;}
+.has-bg-black {background-color: #000;}
+.has-bg-white {background-color: #fff;}
+.hover\:has-bg-transparent:hover {background-color: transparent;}
+.hover\:has-bg-black:hover {background-color: #000;}
+.hover\:has-bg-white:hover {background-color: #fff;}
+```
