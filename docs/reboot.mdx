@@ -4,18 +4,16 @@ title: Reboot
 
 # Reboot
 
-This module provides a modern and generic CSS reset that must be used to reduce inconsistencies between different browsers.
+This core plugin provides a modern and generic CSS reset that must be used to reduce inconsistencies between different browsers.
 
-### Enable reboot module
+### Enable reboot plugin
 
-The reboot module is enabled by default as part of the `siimple.css()` mixin. It can be disabled setting to `false` the `"use-reboot"` flag in the `$flags` section of the configuration.
+The reboot plugin are enabled by default, but can be disabled setting to `false` the `reboot` field in the `corePlugins` section of the configuration.
 
-If you want to manually include the reboot module in your styles, just call the `siimple.reboot()` mixin:
-
-```scss
-@use "siimple" as siimple;
-
-// Include reboot module
-@include siimple.reboot();
+```js title=siimple.config.js
+export default {
+    corePlugins: {
+        reboot: false, // Skip reboot
+    },
+};
 ```
-

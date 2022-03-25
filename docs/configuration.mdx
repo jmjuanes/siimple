@@ -37,7 +37,7 @@ export default {
 
 The `prefix` section allows you to customize the prefix that will be used for naming the elements of **siimple**. Using a prefix is useful to prevent naming collision with your custom classes or with other CSS libraries.
 
-For example, you can use `si-` as prefix by setting the `$prefix` section:
+For example, you can use `si-` as prefix by setting the `prefix` section:
 
 ```js title=siimple.config.js
 export default {
@@ -139,11 +139,8 @@ Visit the [variants guide](/variants) to read more about how to customize your c
 
 Use the `flags` to enable or disable some features of **siimple**:
 
-| Flag | Description |
-|------|-------------|
-| `useRootStyles` | Add root styles to the `<html>` element. Default is `true`. |
-| `useBorderBox` | Adds a global `box-sizing: border-box`. Default is `true`. |
-
+- `useRootStyles`: add root styles to the `<html>` element. Default is `true`.
+- `useBorderBox`: adds a global `box-sizing: border-box`. Default is `true`.
 
 ### Core plugins
 

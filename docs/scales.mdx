@@ -4,49 +4,47 @@ title: Scales
 
 # Scales
 
-The following scales can be provided in the `$scales` section:
+The following scales can be provided in the `scales` section, and are applied to specific CSS properties:
 
-| Scale | CSS Properties |
-|-------|----------------|
-| `colors` | `background-color`, `border-color`, `border-bottom-color`, `border-left-color`, `border-right-color`, `border-top-color`, `color`, `fill` |
-| `fonts` | `font-family` |
-| `font-sizes` | `font-size` |
-| `font-weights` | `font-weight` |
-| `line-heights` | `line-height` |
-| `radius` | `border-radius`, `border-bottom-left-radius`, `border-bottom-right-radius`, `border-top-left-radius`, `border-top-right-radius` |
-| `sizes` | `height`, `max-height`, `max-width`, `min-height`, `min-width`, `width` |
-| `spacing` | `bottom`, `left`, `margin`, `margin-bottom`, `margin-left`, `margin-right`, `margin-top`, `padding`, `padding-bottom`, `padding-left`, `padding-right`, `padding-top`, `right`, `top` |
-| `opacities` | `opacity` |
+- `colors`: `background-color`, `border-color`, `border-bottom-color`, `border-left-color`, `border-right-color`, `border-top-color`, `color` and `fill`.
+- `fonts`: `font-family`.
+- `fontSizes`: `font-size`.
+- `fontWeights`: `font-weight`.
+- `lineHeights`: `line-height`.
+- `radius`: `border-radius`, `border-bottom-left-radius`, `border-bottom-right-radius`, `border-top-left-radius` and `border-top-right-radius`.
+- `sizes`: `height`, `max-height`, `max-width`, `min-height`, `min-width` and `width`.
+- `spacing`: `bottom`, `left`, `margin`, `margin-bottom`, `margin-left`, `margin-right`, `margin-top`, `padding`, `padding-bottom`, `padding-left`, `padding-right`, `padding-top`, `right` and `top`.
+- `opacities`: `opacity`.
 
 
 > You do not need to provide all scales in the configuration: just configure the scales that you really need for your project.
 
-Scales can be used in styles, variants and components. Just provide a string with the scale key as the CSS property and **siimple** will automatically set this property with the value specified in the scale:
+Scales can be used in styles, variants and elements. Just provide a string with the scale key as the CSS property and **siimple** will automatically set this property with the value specified in the scale:
 
-```scss
-@include siimple.configure(
-    $scales: (
-        "font-sizes": (
-            "small": 0.875rem,
-            "body": 16px,
-            "large": 1.5rem,
-        ),
-    ),
-    $styles: (
-        "h1": (
-            "font-size": "large", // <-- 1.5rem
-        ),
-        "p": (
-            "font-size": "body", // <-- 16px
-        ),
-    ),
-);
+```js title=siimple.config.js
+export default {
+    scales: {
+        fontSizes: {
+            small: "0.875rem",
+            body: "16px",
+            large: "1.5rem",
+        },
+    },
+    styles: {
+        "h1": {
+            fontSize: "large", // <-- 1.5rem
+        },
+        "p": {
+            fontSize: "body", // <-- 16px
+        },
+    },
+};
 ```
 
 
 ## Colors
 
-In the `$scales.colors` section you can provide your custom color palette. To allow creating interoperable themes for **siimple**, the following colors must be always provided ina color scale:
+In the `scales.colors` section you can provide your custom color palette. To allow creating interoperable themes for **siimple**, the following colors must be always provided in a color scale:
 
 - `primary`: the primary color used in your theme.
 - `secodary`: the secondary color used in your theme.
@@ -58,7 +56,7 @@ In the `$scales.colors` section you can provide your custom color palette. To al
 
 ## Font family
 
-In the `$scales.fonts` section you can define the fonts used in your theme. The following fonts should be always provided: 
+In the `scales.fonts` section you can define the fonts used in your theme. The following fonts should be always provided: 
 
 - `body`: font used for the body text.
 - `heading`: font used in heading elements. 
@@ -66,42 +64,58 @@ In the `$scales.fonts` section you can define the fonts used in your theme. The 
 
 This is the list of the default font sizes defined in **siimple**: 
 
-```scss
-@include siimple.configure(
-    $scales: (
-        "fonts": (
-            "body": siimple.$font-sans,
-            "heading": inherit,
-            "monospace": siimple.$font-monospace,
-        ),
-    ),
-);
+```js title=siimple.config.js
+export default {
+    scales: {
+        fonts: {
+            body: [
+                "-apple-system", 
+                "BlinkMacSystemFont", 
+                "'Segoe UI'", 
+                "Roboto", 
+                "'Helvetica Neue'", 
+                "Arial", 
+                "sans-serif",
+            ],
+            heading: "inherit",
+            monospace: [
+                "SFMono-Regular", 
+                "Menlo", 
+                "Monaco", 
+                "Consolas", 
+                "'Liberation Mono'", 
+                "'Courier New'", 
+                "monospace",
+            ],
+        },
+    },
+};
 ```
 
 
 ## Font size
 
-In the `$scales.font-sizes` section you can define the font sizes used in your theme. The following sizes should be always provided: 
+In the `scales.fontSizes` section you can define the font sizes used in your theme. The following sizes should be always provided: 
 
 - `body`: font size used in the body text.
 - `small`: font size used in `<small>` elements.
 
 This is the list of the default font sizes defined in **siimple**: 
 
-```scss
-@include siimple.configure(
-    $scales: (
-        "font-sizes": (
-            "small": 0.875rem,
-            "body": 16px,
-        ),
-    ),
-);
+```js title=siimple.config.js
+export default {
+    scales: {
+        fontSizes: {
+            small: "0.875rem",
+            body: "16px",
+        },
+    },
+};
 ```
 
 ## Font weight
 
-In the `$scales.font-weights` section you can define the `font-weight` values used in your theme. The following weights should be always provided in a font weights scale map: 
+In the `scales.fontWeights` section you can define the `font-weight` values used in your theme. The following weights should be always provided in a font weights scale map: 
 
 - `body`: font-weight used for the body text.
 - `heading`: font-weight used for heading elements.
@@ -109,35 +123,34 @@ In the `$scales.font-weights` section you can define the `font-weight` values us
 
 This is the list of the default font weights defined in **siimple**: 
 
-```scss
-@include siimple.configure(
-    $scales: (
-        "font-weights": (
-            "body": 400,
-            "heading": 700,
-            "bold": 700,
-        ),
-    ),
-);
+```js title=siimple.config.js
+export default {
+    scales: {
+        fontWeights: {
+            body: "400",
+            heading: "700",
+            bold: "700",
+        },
+    },
+};
 ```
-
 
 ## Line height
 
-In the `$scales.line-heights` section you can define the line heights used in your theme. The following line heights should be always provided:
+In the `scales.lineHeights` section you can define the line heights used in your theme. The following line heights should be always provided:
 
 - `body`: line height used for the body text.
 - `heading`: line height used for headings.
 
 This is the list of the default line heights defined in **siimple**: 
 
-```scss
-@include siimple.configure(
-    $scales: (
-        "line-heights": (
-            "body": 1.5,
-            "heading": 1.125,
-        ),
-    ),
-);
+```js title=siimple.config.js
+export default {
+    scales: {
+        lineHeights: {
+            body: "1.5",
+            heading: "1.125",
+        },
+    },
+};
 ```

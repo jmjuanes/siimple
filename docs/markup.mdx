@@ -4,26 +4,25 @@ title: Markup
 
 # Markup
 
-Use this module to style base markup elements, like headings, paragraphs, links... 
+Use this plugin to style base markup elements, like headings, paragraphs, links... 
 
-### Enable markup module
+### Enable markup plugin
 
-The markup module is enabled by default as part of the `siimple.css()` mixin. It can be disabled setting to `false` the `"use-markup"` flag in the `$flags` section of the configuration.
+Markup styles are enabled by default, but can be disabled setting to `false` the `markup` field in the `corePlugins` section of the configuration.
 
-If you want to manually include the markup module in your styles, just call the `siimple.markup()` mixin:
-
-```scss
-@use "siimple" as siimple;
-
-// Include markup module 
-@include siimple.markup();
+```js title=siimple.config.js
+export default {
+    corePlugins: {
+        markup: false, // Skip markup styles
+    },
+};
 ```
 
 ### Markup styles
 
 #### Headings
 
-This plugin will style your heading elements, from `<h1>` through `<h6>`. For styling non heading HTML elements, you can use the [title](/components/title) component instead.
+This plugin will style your heading elements, from `<h1>` through `<h6>`. For styling non heading HTML elements, you can use the [title](/elements/title) element instead.
 
 ```html live=true
 <h1>h1. Siimple heading</h1>
@@ -34,51 +33,47 @@ This plugin will style your heading elements, from `<h1>` through `<h6>`. For st
 <h6>h6. Siimple heading</h6>
 ```
 
-Headings will use the default variant of `text.heading` defined in the `$variants` section of your configuration:
+Headings will use the default variant of `text.heading` defined in the `variants` section of your configuration:
 
-```scss
-@include siimple.configure((
-    $variants: (
-        "text.heading": (
-            "default": (
-                "color": "heading",
-                "font-family": "heading",
-                "font-weight": "heading",
-                "line-height": "heading",
-            ),
-        ),
-    ),
-));
+```js title=siimple.config.js
+export default {
+    variants: {
+        "text.heading": {
+            default: {
+                color: "heading",
+                fontFamily: "heading",
+                fontWeight: "heading",
+                lineHeight: "heading",
+            },
+        },
+    },
+};
 ```
 
 #### Paragraph
 
-This plugin will style your `<p>` elements. For style non paragraph HTML elements like `<div>` elements, you can use the [paragraph component](/components/paragraph) instead.
+This plugin will style your `<p>` elements. For style non paragraph HTML elements like `<div>` elements, you can use the [paragraph](/elements/paragraph) element instead.
 
 ```html live=true
-<p>
+<p class="has-mb-0">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
     incididunt ut labore et dolore magna aliqua.
 </p>
-<p class="has-mb-0">
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-    aliquip ex ea commodo consequat. 
-</p>
 ```
 
-This plugin will use the default variant of `text.paragraph` defined in the `$variants` section of your configuration:
+This plugin will use the default variant of `text.paragraph` defined in the `variants` section of your configuration:
 
-```scss
-@include siimple.configure((
-    $variants: (
-        "text.paragraph": (
-            "default": (
-                "font-weight": "body",
-                "line-height": "body",
-            ),
-        ),
-    ),
-));
+```js title=siimple.config.js
+export default {
+    variants: {
+        "text.paragraph": {
+            default: {
+                fontWeight: "body",
+                lineHeight: "body",
+            },
+        },
+    },
+};
 ```
 
 #### Blockquotes
@@ -104,7 +99,7 @@ This plugin will style your inline text elements, like `<small>` or `<code>` ele
 
 #### Horizontal rule
 
-This plugin will style your `<hr>` elements. For styling non `<hr>` elements as an horizontal rule, you can use the [divider component](/components/divider) instead.
+This plugin will style your `<hr>` elements. For styling non `<hr>` elements as an horizontal rule, you can use the [divider](/elements/divider) element instead.
 
 ```html live=true
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
@@ -112,16 +107,16 @@ This plugin will style your `<hr>` elements. For styling non `<hr>` elements as 
 <p class="has-mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
 ```
 
-The horizontal rule will use the default variant of `divider` defined in the `$variants` section of your configuration.
+The horizontal rule will use the default variant of `divider` defined in the `variants` section of your configuration.
 
-```scss
-@include siimple.configure((
-    $variants: (
-        "divider": (
-            "default": (
-                "background-color": "fill",
-            ),
-        ),
-    ),
-));
+```js title=siimple.config.js
+export default {
+    variants: {
+        divider: {
+            default: {
+                backgroundColor: "fill",
+            },
+        },
+    },
+};
 ```
