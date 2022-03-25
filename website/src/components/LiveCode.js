@@ -2,6 +2,19 @@ import React from "react";
 import kofi from "kofi";
 import {highlightStr} from "codecake/highlight.js";
 
+// Render title element
+const CodeTitle = props => {
+    if (props.title) {
+        return (
+            <div className="has-mb-4 has-text-blue-300 has-opacity-50">
+                <strong className="has-text-italic">{props.title}</strong>
+            </div>
+        );
+    }
+    // No title provided
+    return null;
+};
+
 //Export live code component
 export const LiveCode = props => {
     let codeChildren = props.children; //Code children
@@ -18,10 +31,8 @@ export const LiveCode = props => {
     if (props.live !== "true") {
         return (
             <div className={`${codeClass} has-mb-6`}>
-                {kofi.when(!!props.title, () => (
-                    <div>{props.title}</div>
-                ))}
-                <pre {...codeProps}>{codeChildren}</pre>
+                <CodeTitle title={props.title} />
+                <pre className="has-my-0" {...codeProps}>{codeChildren}</pre>
             </div>
         );
     }
@@ -47,10 +58,8 @@ export const LiveCode = props => {
             </div>
             {/* Code */}
             <div className={`${codeClass} has-my-0`}>
-                {kofi.when(!!props.title, () => (
-                    <div>{props.title}</div>
-                ))}
-                <pre {...codeProps}>{codeChildren}</pre>
+                <CodeTitle title={props.title} />
+                <pre className="has-my-0" {...codeProps}>{codeChildren}</pre>
             </div>
             {/* <pre className="codeblock has-mb-0">{props.children}</pre> */}
         </div>
