@@ -10,7 +10,7 @@ export const documentationNav = [
     {"group": "customize", "url": "/colors", "label": "Colors"},
     {"group": "core-plugins", "url": "/reboot", "label": "Reboot"},
     {"group": "core-plugins", "url": "/markup", "label": "Markup"},
-    {"group": "core-plugins", "url": "/components", "label": "Components"},
+    {"group": "core-plugins", "url": "/elements", "label": "Elements"},
     {"group": "core-plugins", "url": "/utilities", "label": "Utilities"},
     {"group": "core-plugins", "url": "/icons", "label": "Icons"},
     {"group": "elements", "url": "/elements/alert", "label": "Alert"},
