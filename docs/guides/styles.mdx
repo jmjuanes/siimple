@@ -4,24 +4,24 @@ title: Styles Syntax
 
 # Styles Syntax
 
-**Siimple** allows you to define custom styles following an approach similar to **CSS in JS**. We call this approach **CSS in Map** and allows you to specify your styles in a **SASS Map**. You can think in this like declaring all your styles in a JSON format, but following the rules specified in this document.
+**Siimple** allows you to define custom styles following the **CSS in JS** approach. You can think in this like declaring all your styles in a JSON format, but following the rules specified in this document.
 
-This is an example of a **CSS in Map** declaration: 
+This is an example of a **CSS in JS** declaration: 
 
-```scss
-$my-styles: (
-    ".button": (
-        "background-color": #3b82f6,
-        "color": #ffffff,
-        "display": block,
-        "font-weight": bold,
-        "padding": 0.5rem,
-        "&:hover": (
-            "background-color": #1d4ed8,
-            "cursor": pointer,
-        ),
-    ),
-);
+```js
+const styles = {
+    ".button": {
+        backgroundColor: "#3b82f6",
+        color: "#ffffff",
+        display: "block",
+        fontWeight: "bold",
+        padding: "0.5rem",
+        "&:hover": {
+            backgroundColor: "#1d4ed8",
+            cursor: "pointer",
+        },
+    },
+};
 ```
 
 You can easily transform this map in pure CSS styles, right?
@@ -42,55 +42,56 @@ You can easily transform this map in pure CSS styles, right?
 
 ### Naming properties
 
-All properties must be in [Kebab Case](https://en.wikipedia.org/wiki/Letter_case#Kebab_case) and surrounded by double quotes.
+Properties must be in Camel Case:
 
-```scss
-$my-styles: (
-    ".button": (
-        "border-top-left-radius": 0px,
-        "border-top-right-radius": 0px,
-        "font-size": 1rem,
-    ),
-);
+```js
+const styles = {
+    ".button": {
+        borderTopLeftRadius: "0px",
+        borderTopRightRadius: "0px",
+        fontSize: "1rem",
+    },
+};
 ```
 
 ### Values
 
-CSS values (`block`, `inline-block`, etc.), colors and units (`px`, `rem`, `%`, etc.) are supported, so you can use them without any problem. 
+CSS values should be always provided surrounded by double quotes:
 
-```scss
-$my-styles: (
-    ".small": (
-        "color": grey,
-        "font-size": 0.875rem,
-    ),
-);
+```js
+const styles = {
+    ".small": {
+        color: "grey",
+        fontSize: "0.875rem",
+    },
+};
 ```
 
 ##### Themed values
 
 Values from theme scales can be included providing the **scale key surrounded by double quotes**: 
 
-```scss
-$my-styles: (
-    ".small": (
-        "color": "body",
-        "font-size": "small",
-    ),
-);
+
+```js
+const styles = {
+    ".small": {
+        color: "primary",
+        fontSize: "small",
+    },
+};
 ```
 
 ##### Adding the !important flag
 
-You can mark a value with the `!important` flag passing a list where the first position is the value we want to include and the second position is the `"!important"` keyword.
+You can mark a value with the `!important` flag providing an array where the first position is the value we want to include and the second position is the `"!important"` keyword.
 
-```scss
-$my-styles: (
-    ".small": (
-        "color": ("body" "!important"),
-        "font-size": (0.875rem "!important"),
-    ),
-);
+```js
+const styles = {
+    ".small": {
+        color: ["primary", "!important"],
+        fontSize: ["small", "!important"],
+    },
+};
 ```
 
 ### Aliases
@@ -121,14 +122,14 @@ We provide some aliases for applying some styles like margins, paddings and more
 
 The following style definition:
 
-```scss
-$my-styles: (
-    ".box": (
-        "size": 100%,      /* width and height */
-        "p": 2rem,         /* padding */
-        "radius": 0.5rem,  /* border-radius */
-    ),
-);
+```js
+const styles = {
+    ".box": {
+        size: "100%",      /* width and height */
+        p: "2rem",         /* padding */
+        radius: "0.5rem",  /* border-radius */
+    },
+};
 ```
 
 Will generate: 
@@ -142,46 +143,44 @@ Will generate:
 }
 ```
 
-
 ### Media queries
 
 You can use [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) query selectors to conditionally apply styles.
 
-```scss
-$my-styles: (
-    ".columns": (
-        "display": flex,
-        "flex-direction": row,
-        "flex-wrap": nowrap,
-        "overflow": hidden,
-    ),
-    "@media screen and (max-width: 600px)": (
-        ".columns": (
-            "flex-direction": column,
-        ),
-    ),
-);
+```js
+const styles = {
+    ".columns": {
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "nowrap",
+        overflow: "hidden",
+    },
+    "@media screen and (max-width: 600px)": {
+        ".columns": {
+            flexDirection: "column",
+        },
+    },
+};
 ```
-
 
 ### Breakpoints
 
 You can generate `@media` queries with breakpoints defined in your theme just using the `@breakpoint` query followed with the breakpoint name you want to apply:
 
-```scss
-$my-styles: (
-    ".columns": (
-        "display": flex,
-        "flex-direction": row,
-        "flex-wrap": nowrap,
-        "overflow": hidden,
-    ),
-    "@breakpoint mobile": (
-        ".columns": (
-            "flex-direction": column,
-        ),
-    ),
-);
+```js
+const styles = {
+    ".columns": {
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "nowrap",
+        overflow: "hidden",
+    },
+    "@breakpoint mobile": {
+        ".columns": {
+            flexDirection: "column",
+        },
+    },
+};
 ```
 
 
@@ -189,20 +188,20 @@ $my-styles: (
 
 We provide support for using the **parent selector**, `&`, in the same way that works in [Sass](https://sass-lang.com/documentation/style-rules/parent-selector): used in an inline selector will be automatically replaced with the corresponding outer selector.
 
-```scss
-$my-styles: (
-    ".button": (
-        "color": white,
-        "display": block,
-        "&:hover": (
-            "color": black,
-            "cursor": pointer;
-        ),
-    ),
-);
+```js
+const styles = {
+    ".button": {
+        color: "white",
+        display: "block",
+        "&:hover": {
+            color: "black",
+            cursor: "pointer",
+        },
+    },
+};
 ```
 
-Will generate the following CSS files: 
+Will generate the following styles: 
 
 ```css
 .button {
@@ -215,20 +214,19 @@ Will generate the following CSS files:
 }
 ```
 
-
 ### Pseudo elements
 
 Pseudo-elements selectors like `::before` and `::after` are supported. Also remember that you must wrap the value of the `content` property into single quotes:
 
-```scss
-$my-styles: (
-    ".button": (
-        "&::before": (
-            "content": '""',
-            "display": block,
-        ),
-    ),
-);
+```js
+const styles = {
+    ".button": {
+        "&::before": {
+            content: '""',
+            display: "block",
+        },
+    },
+};
 ```
 
 
