@@ -10,9 +10,9 @@ const items = [
         href: "/installation",
     },
     {
-        text: "Try it",
+        text: "Playground",
         icon: "code",
-        href: "/try",
+        href: process.env.PLAYGROUND_URL,
         target: "_blank",
     },
 ];
