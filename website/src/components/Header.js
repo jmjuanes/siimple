@@ -10,9 +10,9 @@ const items = [
         href: "/installation",
     },
     {
-        text: "Try it",
+        text: "Playground",
         icon: "code",
-        href: "/try",
+        href: process.env.PLAYGROUND_URL,
         target: "_blank",
     },
 ];
@@ -36,7 +36,7 @@ export const Header = props => {
     return (
         <div className={`content is-${size} has-position-relative`}>
             <div className="has-d-flex has-py-6 has-flex-wrap has-items-center">
-                <Link to="/" className="has-flex has-text-coolgray-700 has-items-center has-mr-auto">
+                <Link to="/" className="has-d-flex has-text-coolgray-700 has-items-center has-mr-auto">
                     <Icon
                         icon="siimple"
                         className="has-align-middle"

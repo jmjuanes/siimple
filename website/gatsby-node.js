@@ -13,8 +13,8 @@ exports.onCreateWebpackConfig = ({getConfig, plugins, actions}) => {
                 path.resolve(__dirname, "./node_modules"),
             ],
             "alias": {
-                "siimple-colors": path.resolve(__dirname, "../colors.json"),
-                "siimple-icons": path.resolve(__dirname, "../icons.json"),
+                "siimple-colors": path.resolve(__dirname, "../colors.js"),
+                "siimple-icons": path.resolve(__dirname, "../icons.js"),
             },
         },
         "plugins": [
@@ -24,15 +24,16 @@ exports.onCreateWebpackConfig = ({getConfig, plugins, actions}) => {
                 "process.env.ISSUES_URL": s(package.bugs),
                 "process.env.DISCUSSIONS_URL": s(`${package.repository}/discussions`),
                 "process.env.TWITTER_URL": s(package.twitter),
+                "process.env.PLAYGROUND_URL": s(package.playground),
             }),
             // Object.fromEntries(Object.entries(env).map(e => {
             //     return [`process.env.${e[0]}`, JSON.stringify(e[1])];
             // }))),
             new CopyPlugin({
                 patterns: [
-                    path.resolve(__dirname, "../dist/siimple.min.css"),
-                    path.resolve(__dirname, "../dist/siimple-icons.ttf"),
-                    path.resolve(__dirname, "../dist/siimple-icons.woff"),
+                    path.resolve(__dirname, "../siimple.min.css"),
+                    path.resolve(__dirname, "../siimple-icons.ttf"),
+                    path.resolve(__dirname, "../siimple-icons.woff"),
                     "src/docs.css",
                     "node_modules/codecake/codecake.css",
                 ],

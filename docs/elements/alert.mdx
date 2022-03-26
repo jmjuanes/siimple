@@ -1,0 +1,47 @@
+---
+title: "Alert"
+description: "Display block messages"
+---
+
+# Alert
+
+An **alert** is a colored notification block generally used to catch the attention of your users of something important. An alert can be created adding the `alert` class to a `<div>` tag.
+
+```html live=true
+<div class="alert">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</div>
+<div class="alert is-secondary has-mb-0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</div>
+```
+
+You can add a close button to the alert using the `close` element:
+
+```html live=true
+<div class="alert has-mb-0">
+    <div>Content of the alert message</div>
+    <div class="close has-ml-auto"></div>
+</div>
+```
+
+### Variants
+
+Variants for this element can be defined in the `alert` section of the variants configuration:
+
+```js
+export default {
+    variants: {
+        alert: {
+            default: {
+                backgroundColor: "primary",
+                color: "white",
+            },
+            secondary: {
+                backgroundColor: "secondary",
+                color: "white",
+            },
+        },
+    },
+};
+```

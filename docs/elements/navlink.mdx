@@ -1,0 +1,52 @@
+---
+title: "NavLink"
+description: "Navigation link element"
+--- 
+
+# NavLink
+
+A navigation link element that you can use in your navigation sections, for example in the navbar. Just add a `navlink` class to your link to style it as a navigation link.
+
+```html live=true
+<div class="has-d-inline-flex">
+    <a class="navlink">Link 1</a>
+    <a class="navlink">Link 2</a>
+    <a class="navlink">Link 3</a>
+</div>
+```
+
+We provide an `active` variant to mark a navigation link as active, and a `disabled` variant to mark a navigation link as disabled.
+
+```html live=true
+<div class="has-d-inline-flex">
+    <a class="navlink">Link 1</a>
+    <a class="navlink is-active">Link 2</a>
+    <a class="navlink is-disabled">Link 3</a>
+</div>
+```
+
+### Variants
+
+Variants for this element can be defined in the `navigation.link` section of the variants configuration:
+
+```js
+export default {
+    variants: {
+        "navigation.link": {
+            default: {
+                fontWeight: "bold",
+                "&:hover": {
+                    color: "primary",
+                },
+            },
+            active: {
+                color: "primary",
+            },
+            disabled: {
+                opacity: "0.5",
+                pointerEvents: "none",
+            },
+        },
+    },
+};
+```

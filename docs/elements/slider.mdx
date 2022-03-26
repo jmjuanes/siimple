@@ -1,0 +1,29 @@
+---
+title: "Slider"
+--- 
+
+# Slider
+
+Use the `slider` class to style your range input elements:
+
+```html live=true
+<input type="range" class="slider" value="50" />
+```
+
+
+### Variants
+
+Variants for this element can be defined in the `form.slider` section of the variants configuration:
+
+```js
+export default {
+    variants: {
+        "form.slider": {
+            default: {
+                backgroundColor: "fill",
+                color: "primary",
+            },
+        },
+    },
+};
+```

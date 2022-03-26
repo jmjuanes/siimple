@@ -1,0 +1,34 @@
+---
+title: "Badge"
+description: "Small labelling element"
+---
+
+# Badge
+
+**Badges** are useful elements for indicating status, attach metadata to another element or displaying numbers for counts. You can easily turn a `<span>` or `<div>` element to a badge adding the `badge` class.
+
+```html live=true
+<span class="badge">Badge</span>
+<span class="badge is-secondary">Badge</span>
+```
+
+### Variants
+
+Variants for this element can be defined in the `badge` section of the variants configuration:
+
+```js
+export default {
+    variants: {
+        badge: {
+            primary: {
+                backgroundColor: "primary",
+                color: "white",
+            },
+            secondary: {
+                backgroundColor: "secondary",
+                color: "white",
+            },
+        },
+    },
+};
+```

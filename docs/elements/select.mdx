@@ -1,0 +1,33 @@
+---
+title: "Select"
+description: "A basic dropdown selection element"
+---
+
+# Select
+
+You can style your `<select>` elements adding a `select` class.
+
+```html live=true
+<select class="select">
+    <option selected>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+</select>
+```
+
+
+### Variants
+
+Variants for this element can be defined in the `form.select` section of the variants configuration:
+
+```js
+export default {
+    variants: {
+        "form.select": {
+            default: {
+                backgroundColor: "fill",
+            },
+        },
+    },
+};
+```

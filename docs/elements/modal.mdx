@@ -1,0 +1,46 @@
+---
+title: "Modal"
+--- 
+
+# Modal
+
+Use the `modal` class to create a wrapper for your modal dialogs. Usually you will need to use also the `scrim` class to block the interaction with the background elements, and the `close` for displaying a close button in the modal.
+
+<ModalExample />
+
+```html
+<div class="scrim">
+    <div class="modal">
+        <div class="has-d-flex has-items-center">
+            <div class="title is-4 has-mb-0">Modal</div>
+            <div class="close has-ml-auto"></div>
+        </div>
+        <div class="has-pt-6">
+            Content of the modal
+        </div>
+    </div>
+</div>
+```
+
+
+### Variants
+
+Variants for this element can be defined in the `dialog.modal` section of the variants configuration:
+
+```js
+export default {
+    variants: {
+        "dialog.modal": {
+            default: {
+                maxWidth: "500px",
+            },
+            small: {
+                maxWidth: "300px",
+            },
+            large: {
+                maxWidth: "900px",
+            },
+        },
+    },
+};
+```

@@ -6,7 +6,7 @@ import {Seo} from "../components/Seo.js";
 //Export 404 error page
 export default props => {
     return (
-        <div className="has-flex has-items-center has-justify-center has-w-full has-h-screen">
+        <div className="has-d-flex has-items-center has-justify-center has-w-full has-h-screen">
             <div className="has-p-12 has-radius has-bg-coolgray-100" style={{"maxWidth":"600px"}}>
                 {/* Siimple logo */}
                 <div className="has-mb-4">
@@ -22,7 +22,7 @@ export default props => {
                 </div>
                 {/* Back to home page */}
                 <div className="has-mt-6">
-                    <Link to="/" className="btn is-primary has-flex-inline has-items-center">
+                    <Link to="/" className="button is-primary has-flex-inline has-items-center">
                         <Icon icon="arrow-left" style={{"fontSize":"18px"}} />
                         <strong className="has-ml-2">Return to Home</strong>
                     </Link>

@@ -1,0 +1,32 @@
+---
+title: "Label"
+description: "Style your form labels"
+---
+
+# Label
+
+Style your form **label** element adding a `label` class, useful with radio, checkbox and switch elements.
+
+```html live=true
+<label for="my-checkbox" class="label">
+    <input type="checkbox" class="checkbox has-mr-3" id="my-checkbox" />
+    I agree with the terms of service.
+</label>
+```
+
+### Variants
+
+Variants for this element can be defined in the `form.label` section of the variants configuration:
+
+```js
+export default {
+    variants: {
+        "form.label": {
+            default: {
+                color: "inherit",
+                fontWeight: "bold",
+            },
+        },
+    },
+};
+```

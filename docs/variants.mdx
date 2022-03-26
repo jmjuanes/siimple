@@ -4,49 +4,45 @@ title: Variants
 
 # Variants
 
-Variants can be used to register custom modifiers that are used to change the look and feel of components. 
+Variants can be used to register custom modifiers that are used to change the look and feel of elements. 
 
-```scss
-@use "siimple" as siimple;
-
-@include siimple.configure(
-    $variants: (
-        "button": (
-            "default": (
-                "background-color": "primary",
-                "color": "white",
-            ),
-            "secondary": (
-                "background-color": "secondary",
-            ),
-        ),
-    ),
-);
+```js title=siimple.config.js
+export default {
+    variants: {
+        button: {
+            default: {
+                backgroundColor: "primary",
+                color: "white",
+            },
+            secondary: {
+                backgroundColor: "secondary",
+            },
+        },
+    },
+};
 ```
 
 ## Default variant
 
-In the `default` field you can provide the styles that will be applied to the default component styles. For example, all styles defined in `$variants.button.default` will be applied directly to the `btn` class: 
+In the `default` field you can provide the styles that will be applied to the default component styles. For example, all styles defined in `variants.button.default` will be applied directly to the `button` class: 
 
-```scss
-@use "siimple" as siimple;
-
-@include siimple.configure(
-    $variants: (
-        "button": (
-            "default": (
-                "background-color": "primary",
-                "color": "white",
-            ),
-        ),
-    ),
-);
+```js title=siimple.config.js
+export default {
+    variants: {
+        button: {
+            default: {
+                backgroundColor: "primary",
+                color: "white",
+            },
+        },
+    },
+};
 ```
 
 Will generate: 
 
 ```css
-.btn {
+.button {
     background-color: #33333;
     color: white;
     /* Other default button styles */
@@ -57,24 +53,22 @@ Will generate:
 
 Any other field will generate an additional class that can be only applied to the corresponding component, with the class `.is-{variant_name}`. For example, this variant:
 
-```scss
-@use "siimple" as siimple;
-
-@include siimple.configure(
-    $variants: (
-        "button": (
-            "secondary": (
-                "background-color": #000000,
-            ),
-        ),
-    ),
-);
+```js title=siimple.config.js
+export default {
+    variants: {
+        button: {
+            secondary: {
+                backgroundColor: "#000000",
+            },
+        },
+    },
+};
 ```
 
 Will generate:
 
 ```css
-.btn.is-secondary {
+.button.is-secondary {
     background-color: #000000;
 }
 ```

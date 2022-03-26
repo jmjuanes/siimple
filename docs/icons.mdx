@@ -6,38 +6,17 @@ title: Icons
 
 We provide a collection of hand-crafted and open source icons webfont that can be used in any web and mobile project.
 
-### Enable icons module
+### Enable icons plugin
 
-The icons module is by default enabled as part of the `siimple.css()` mixin. It can be disabled setting a `false` value to the `"use-icons"` flag in the `$flags` section of the configuration.
+Icons are enabled by default, but can be disabled setting to `false` the `icons` field in the `corePlugins` section of the configuration.
 
-Also, it can be manually included in your styles just calling the `siimple.icons()` mixin:
-
-```scss
-@use "siimple" as siimple;
-
-// Include icons styles
-@include siimple.icons();
+```js title=siimple.config.js
+export default {
+    corePlugins: {
+        icons: false, // Skip icons
+    },
+};
 ```
-
-### Customize
-
-The following options can be used to customize the icons module:
-
-- `"font-path"`: path where the icons fonts are placed. By default is `./`. **The path must end with a `/`**.
-
-Example: 
-
-```scss
-@use "siimple" as siimple;
-
-// Include and configure icons
-@include siimple.icons((
-    "font-path": "./fonts/",
-));
-```
-
-> Remember to copy all fonts in the `siimple` package to your project assets folder and use the `"font-path"` option to set the path to the fonts folder.
-
 
 ### Using icons
 

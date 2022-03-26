@@ -1,0 +1,29 @@
+---
+title: "Input"
+description: "The universal text input element"
+---
+
+# Input
+
+Add the `input` class to your text-based `<input>` tags (text, password, number and email types).
+
+```html live=true
+<label class="label">Type your email:</label>
+<input type="text" class="input" placeholder="you@company.com">
+```
+
+### Variants
+
+Variants for this element can be defined in the `form.input` section of the variants configuration:
+
+```js
+export default {
+    variants: {
+        "form.input": {
+            default: {
+                backgroundColor: "fill",
+            },
+        },
+    },
+};
+```

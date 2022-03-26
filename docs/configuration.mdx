@@ -4,151 +4,210 @@ title: "Configuration"
 
 # Configuration
 
-
-**Siimple** is based in a set of configuration rules written in SCSS, where you can define your theme, the components that you need to include and additional plugins and styles.
+**Siimple** is based in a set of configuration rules written in JavaScript, where you can define your theme, the core plugins that you need to include and additional plugins and styles.
 
 This is an example of a configuration file for **siimple**: 
 
-```scss
-// index.scss 
-@use "siimple" as siimple;
+```js title=siimple.config.js
+import colors from "siimple/colors.js";
 
-// Configure siimple
-@include siimple.configure(
-    $prefix: "",
-    $scales: (
-        "colors": (
-            "primary": siimple.get-color("blue", 500),
-            "secondary": siimple.get-color("mint", 600),
-            "text": siimple.get-color("gray", 800),
-            "background": #ffffff,
-        ),
-        "fonts": (
-            "body": (Roboto, sans-serif),
-            "heading": (Montserrat, sans-serif),
-            "monospace": monospace,
-        ),
-    ),
-    $flags: (
-        "use-root": true,
-        "use-borderbox": true,
-    ),
-);
-
-// Generate siimple
-@include siimple.css;
+export default {
+    prefix: "",
+    scales: {
+        colors: {
+            primary: colors.blue["500"],
+            secondary: colors.mint["600"],
+            text: colors.gray["800"],
+            background: "#ffffff",
+        },
+        fonts: {
+            body: ["Roboto", "sans-serif"],
+            heading: ["Montserrat", "sans-serif"],
+            monospace: ["monospace"],
+        },
+    },
+    flags: {
+        useRootS: true,
+        useBorderBox: true,
+    },
+};
 ```
 
 ### Prefix
 
-The `$prefix` section allows you to customize the prefix that will be used for naming the components of **siimple**. Using a prefix is useful to prevent naming collision with your custom classes or with other CSS libraries.
+The `prefix` section allows you to customize the prefix that will be used for naming the elements of **siimple**. Using a prefix is useful to prevent naming collision with your custom classes or with other CSS libraries.
 
-For example, you can use `si-` as prefix by setting the `$prefix` section:
+For example, you can use `si-` as prefix by setting the `prefix` section:
 
-```scss
-@include siimple.configure(
-    $prefix: "si-",
-);
+```js title=siimple.config.js
+export default {
+    prefix: "si-",
+}
 ```
 
 Now every component class will have the configured prefix:
 
 ```css
-.si-btn {
+.si-button {
     /* ... */
 }
-.si-btn.is-primary {
+.si-button.is-primary {
     /* ... */
 }
-.si-btn.is-secondary {
+.si-button.is-secondary {
     /* ... */
 }
 ```
 
 ### Breakpoints
 
-You can customize the breakpoints used in **siimple** adding a map in the `$breakpoints` section with your custom breakpoints. The keys in this map are the breakpoints names, and the value can be one of the following:
+You can customize the breakpoints used in **siimple** adding an object in the `breakpoints` section with your custom breakpoints. The keys in this object are the breakpoints names, and the value can be one of the following:
 
-- A screen size in `px`, that will be set as the `min-width` value.
-- A map with the values for `min-width` and `max-width`. For example, `("min": 0px, "max": 600px)` will generate `@media screen and (min-width: 0px) and (max-width: 600px)`.
+- A string with the screen size in `px`, that will be set as the `min-width` value.
+- An object with the values for `min-width` and `max-width`. For example, `{min: "0px", max: "600px"}` will generate `@media screen and (min-width: 0px) and (max-width: 600px)`.
 
 This is the default breakpoints configuration: 
 
-```scss
-@include siimple.configure(
-    $breakpoints: (
-        "mobile": ("min": 0px, "max": 600px),
-        "tablet": ("min": 600px),
-        "desktop": ("min": 1200px),
-        "fullhd": ("min": 1800px),
-    ),
-);
+```js title=siimple.config.js
+export default {
+    breakpoints: {
+        mobile: {
+            max: "600px",
+        },
+        tablet: {
+            min: "600px",
+        },
+        desktop: {
+            min: "1200px",
+        },
+        fullhd: {
+            min: "1800px",
+        },
+    },
+};
 ```
-
 
 ### Scales
 
-In the `$scales` section you can configure the list of CSS properties specific for your project.
+In the `scales` section you can configure the list of CSS properties specific for your project, that includes colors, fonts, sizes, and more!
 
-```scss
-@use "siimple" as siimple;
+```js title=siimple.config.js
+import colors from "siimple/colors";
 
-@include siimple.configure(
-    $scales: (
-        "colors": (
-            "primary": siimple.get-color("blue", 500),
-            "secondary": siimple.get-color("mint", 600),
-            "text": siimple.get-color("gray", 800),
-            "background": #ffffff,
-        ),
-        "fonts": (
-            "body": (Roboto, sans-serif),
-            "heading": (Montserrat, sans-serif),
-            "monospace": monospace,
-        ),
-    ),
-);
+export default {
+    scales: {
+        colors: {
+            primary: colors.blue["500"],
+            secondary: colors.mint["600"],
+            text: colors.gray["800"],
+            background: "#ffffff",
+        },
+        fonts: {
+            body: ["Roboto", "sans-serif"],
+            heading: ["Montserrat", "sans-serif"],
+            monospace: ["monospace"],
+        },
+    },
+};
 ```
 
 Visit the [scales guide](/scales) to read more about how to define your custom scales.
 
-
 ### Variants
 
-You can use the `$variants` section to customize the style of the components provided by **siimple** or included using plugins. 
+You can use the `variants` section to customize the style of the elements provided by **siimple** or included using plugins. 
 
-```scss
-@use "siimple" as siimple;
-
-@include siimple.configure(
-    $variants: (
-        "button": (
-            "default": (
-                "background-color": "primary",
-                "color": "white",
-            ),
-            "secondary": (
-                "background-color": "secondary",
-            ),
-        ),
-    ),
-);
+```js title=siimple.config.js
+export default {
+    variants: {
+        button: {
+            default: {
+                backgroundColor: "primary",
+                color: "white",
+            },
+            secondary: {
+                backgroundColor: "secondary",
+            },
+        },
+    },
+};
 ```
 
 Visit the [variants guide](/variants) to read more about how to customize your components using variants.
 
-
 ### Configuration flags
 
-Use the `$flags` to enable or disable the modules that will be included when calling the `siimple.css` mixin.
+Use the `flags` to enable or disable some features of **siimple**:
 
-| Flag | Description |
-|------|-------------|
-| `"use-reboot"` | Loads the reboot module. Default is `true`. |
-| `"use-root"` | Add root styles to the `<html>` element. Default is `true`. |
-| `"use-borderbox"` | Adds a global `box-sizing: border-box`. Default is `true`. |
-| `"use-markup"` | Loads the markup module. Default is `true`. |
-| `"use-components"` | Loads all components. Default is `true`. |
-| `"use-utilities"` | Loads all utilities. Default is `true`. |
-| `"use-icon"` | Loads the icons module. Default is `true`. |
+- `useRootStyles`: add root styles to the `<html>` element. Default is `true`.
+- `useBorderBox`: adds a global `box-sizing: border-box`. Default is `true`.
 
+### Core plugins
+
+The `corePlugins` section allows to enable or disable the core plugins of **siimple**. This is just an object where the key is the plugin name, and the value is a `Boolean` that will be used to add or skip this plugin when generation the output CSS.
+
+```js title=siimple.config.js
+export default {
+    corePlugins: {
+        reboot: true,
+        markup: true,
+        elements: true,
+        utilities: true,
+        icons: true,
+    },
+};
+```
+
+### Plugins
+
+The `plugins` section allows to extend **siimple** adding additional styles, elements or utilities.
+
+```js title=siimple.config.js
+import extraUtilities from "extra-utilities-for-siimple";
+
+export default {
+    plugins: [
+        extraUtilities(),
+    ],
+};
+```
+
+Learn more about how to create your own plugins in the [plugins guide](/plugins);
+
+
+### Root styles
+
+Add additional styles to the `<html>` element using the `root` section: 
+
+```js title=siimple.config.js
+export default {
+    root: {
+        margin: "0px",
+        padding: "0px",
+    },
+};
+```
+
+### Additional styles
+
+You can include additional styles on **siimple** using the `styles` section of the configuration. Styles in this section have access to values defined in the scales section, such as colors and fonts.
+
+```js title=siimple.config.js
+export default {
+    styles: {
+        "h1": {
+            fontFamily: "heading",
+            fontSize: "2.5rem",
+        },
+        ".my-button": {
+            backgroundColor: "primary",
+            display: "block",
+            "&:hover": {
+                backgroundColor: "secondary",
+            },
+        },
+    },
+};
+```
+
+Styles defined in this section must follow the [styles syntax](/guides/styles) specification.

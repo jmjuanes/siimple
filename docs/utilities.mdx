@@ -4,28 +4,28 @@ title: Utilities
 
 # Utilities
 
-The **utilities** module provides a collection of **small functional CSS classes** that can be used for creating or customizing components. The main aim of this module is to provide a collection of reusable classes to replace the conventional style of writting CSS classes.
+The **utilities** plugin provides a collection of **small functional CSS classes** that can be used for creating or customizing components. The main aim of this plugin is to provide a collection of reusable classes to replace the conventional style of writting CSS classes.
 
-### Enable utilities module
+### Enable utilities plugin
 
-Utilities are enabled by default as part of the `siimple.css()` mixin. It can be disabled setting to `false` the `"use-utilities"` flag in the `$flags` section of the configuration.
+The utilities plugin are enabled by default, but can be disabled setting to `false` the `utilities` field in the `corePlugins` section of the configuration.
 
-If you want to manually including the utilities module in your styles, just call the `siimple.utilities()` mixin:
-
-```scss
-@use "siimple" as siimple;
-
-// Include all utilities
-@include siimple.utilities();
+```js title=siimple.config.js
+export default {
+    corePlugins: {
+        utilities: false, // Skip utilities
+    },
+};
 ```
 
-Additionally, in case that you are only interested in some utilities you can load each helper individually instead of loading all utilities:
+Also, you can disable only individual utilities just setting to `false` the utility name in the `corePlugins` section of the configuration:
 
-```scss
-@use "siimple" as siimple;
-
-// Include only some utilities
-@include siimple.color-utilities();
-@include siimple.spacing-utilities();
-@include siimple.sizing-utilities();
+```js title=siimple.config.js
+export default {
+    corePlugins: {
+        backgroundColor: false,
+        display: false,
+        textColor: false,
+    },
+};
 ```

@@ -4,28 +4,28 @@ title: "Colors"
 
 # Colors
 
-We provide a color palette that you can use to customize your theme in case that you do not have any brand colors.
+We provide a default color palette that you can use to customize your theme in case that you do not have any brand colors.
 
-## Color palette
+## Default color palette
 
 <ColorPalette />
 
-## Using colors
+## Using default colors
 
-You can use the `siimple.get-color` function to get a color from the palette. This function accepts the color name as the first argument and the color shade as the second argument.
+In case that you do not have custom colors defined in your project, you can import the `siimple/colors` module in your configuration file to access the default colors provided in **siimple**.
 
-```scss
-@use "siimple" as siimple;
+```js title=siimple.config.js
+import colors from "siimple/colors";
 
 // Comfigure siimple using the color palette
-@include siimple.configure(
-    $scales: (
-        "colors": (
-            "primary": siimple.get-color("mint", "500"),
-            "secondary": siimple.get-color("royal", "600"),
-            "background": siimple.get-color("coolgray", "100"),
-            "text": siimple.get-color("coolgray", "700"),
-        ),
-    ),
-);
+export default {
+    scales: {
+        colors: {
+            primary: colors.mint["500"],
+            secondary: colors.royal["600"],
+            background: colors.white,
+            text: colors.coolgray["700"],
+        },
+    },
+};
 ```

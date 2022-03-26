@@ -1,0 +1,32 @@
+---
+title: "Card"
+description: "A minimal and flexible container element"
+--- 
+
+# Card
+
+A **card** is a flexible container element that holds content and actions about a single subject or topic. By default, cards have no fixed width. A card can be created adding a `card` class to a `<div>` tag.
+
+
+```html live=true
+<div class="card has-mx-auto has-maxw-96 has-shadow">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+</div>
+```
+
+### Variants
+
+Variants for this element can be defined in the `card` section of the variants configuration:
+
+```js
+export default {
+    variants: {
+        card: {
+            default: {
+                backgroundColor: "white",
+                color: "inherit",
+            },
+        },
+    },
+};
+```

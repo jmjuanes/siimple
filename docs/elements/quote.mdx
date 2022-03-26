@@ -1,0 +1,30 @@
+---
+title: "Quote"
+---
+
+# Quote
+
+Use `quote` class to style your blockquotes:
+
+```html live=true
+<blockquote class="quote">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</blockquote>
+```
+
+### Variants
+
+Variants for this element can be defined in the `text.quote` section of the variants configuration:
+
+```js
+export default {
+    variants: {
+        "text.quote": {
+            default: {
+                color: "text",
+                opacity: "0.5",
+            },
+        },
+    },
+};
+```

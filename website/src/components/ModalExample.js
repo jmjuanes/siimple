@@ -5,14 +5,14 @@ export const ModalExample = () => {
     return (
         <React.Fragment>
             <div align="center" className="has-mb-4">
-                <div className="btn is-full" onClick={() => setVisible(true)}>
+                <div className="button is-full" onClick={() => setVisible(true)}>
                     <strong>Display modal</strong>
                 </div>
             </div>
             {visible ? (
                 <div className="scrim">
                     <div className="modal">
-                        <div className="has-flex has-items-center">
+                        <div className="has-d-flex has-items-center">
                             <div className="title is-4 has-mb-0">
                                 <strong>Modal</strong>
                             </div>

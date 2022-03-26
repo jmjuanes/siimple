@@ -1,0 +1,28 @@
+---
+title: "Progress"
+---
+
+# Progress
+
+Style your `<progress>` elements using the class `progress`:
+
+```html live=true
+<progress class="progress" max="1" value="0.5"></progress>
+```
+
+### Variants
+
+Variants for this element can be defined in the `form.progress` section of the variants configuration:
+
+```js
+export default {
+    variants: {
+        "form.progress": {
+            default: {
+                backgroundColor: "fill",
+                color: "primary",
+            },
+        },
+    },
+};
+```
