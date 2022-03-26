@@ -1,0 +1,25 @@
+{
+    "hosting": {
+        "target": "playground",
+        "public": ".",
+        "ignore": [
+            ".firebaserc",
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**",
+            "website/**",
+            "docs/**",
+            "test/**",
+            "icons/**",
+            "*.md",
+            "*.cjs",
+            "*.svg"
+        ],
+        "rewrites": [
+            {
+                "source": "/**",
+                "destination": "/playground.html"
+            }
+        ]
+    }
+}
