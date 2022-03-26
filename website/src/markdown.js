@@ -8,6 +8,7 @@ import {IconsCheatsheet} from "./components/IconsCheatsheet.js";
 import {Welcome} from "./components/Welcome.js";
 import {Testimonials} from "./components/Testimonials.js";
 import {LiveCode} from "./components/LiveCode.js";
+import {Section} from "./components/Section.js";
 import {ModalExample} from "./components/ModalExample.js";
 import {NavbarExample} from "./components/NavbarExample.js";
 // import {Features} from "./components/Features.js";
@@ -53,6 +54,7 @@ export const shortcodes = {
     IconsCheatsheet,
     Testimonials,
     Welcome,
+    Section,
     // Features,
     ModalExample,
     NavbarExample,
