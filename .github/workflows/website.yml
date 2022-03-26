@@ -28,14 +28,14 @@ jobs:
         run: npm run website:build
 
       - name: Add configuration (devel)
-        if: github.event_name === 'push'
+        if: github.event_name == 'push'
         run: 'echo "$FIREBASE_CONFIG" > ./website/.firebaserc'
         shell: bash
         env:
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG_DEVEL }}
 
       - name: Add configuration (production)
-        if: github.event_name === 'release'
+        if: github.event_name == 'release'
         run: 'echo "$FIREBASE_CONFIG" > ./website/.firebaserc'
         shell: bash
         env:
