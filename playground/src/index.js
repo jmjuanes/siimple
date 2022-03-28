@@ -41,33 +41,46 @@ const ActionButton = props => {
     );
 };
 
+// Tab wrapper component
+const Tab = props => {
+    const tabClass = kofi.classNames({
+        "navlink has-text-center": true,
+        "has-bg-blue-500 has-text-white hover:has-text-white": props.active,
+    });
+    return (
+        <div className={tabClass} onClick={props.onClick}>{props.text}</div>
+    );
+};
+
 // Editor wrapper component
 const Editor = React.forwardRef((props, ref) => {
     const editorClass = kofi.classNames({
-        "CodeCake CodeCake-dark has-p-0 has-s-full": true,
-        "has-bg-coolgray-700": true,
-        "has-d-none": !props.visible,
+        "CodeCake has-p-6 has-s-full has-overflow-hidden has-radius": true,
+        "CodeCake-dark has-bg-coolgray-700": props.theme === "dark"
     });
     return (
-        <div className={editorClass} ref={ref} />
+        <div className={props.visible ? "has-d-block has-s-full" : "has-d-none"}>
+            <div className={editorClass} ref={ref} />
+        </div>
     );
 });
 
 // Playground app
-const App = props => {
+const App = () => {
     const htmlRef = React.useRef();
     const configRef = React.useRef();
     const previewRef = React.useRef();
-    const [tab, setTab] = React.useState("code");
+    const [theme, setTheme] = React.useState("dark");
+    const [tab, setTab] = React.useState("html");
     const [shareUrl, setShareUrl] = React.useState("");
     const [shareUrlCopied, setShareUrlCopied] = React.useState(false);
     const htmlEditor = useEditor(htmlRef, "html");
-    const configEditor = useEditor(configRef, "javascript")
+    // const configEditor = useEditor(configRef, "javascript")
     const sandbox = useSandbox();
     React.useEffect(() => {
         sandbox.current.init().then(() => {
             htmlEditor.current.setCode(sandbox.current.content.html);
-            configEditor.current.setCode(sandbox.current.content.config);
+            // configEditor.current.setCode(sandbox.current.content.config);
             updatePreview(previewRef, sandbox.current.content);
         });
     }, []);
@@ -95,50 +108,49 @@ const App = props => {
     const handleCopyClick = () => {
         // copyTextToClipboard(shareUrl).then(() => setShareUrlCopied(true));
     };
+    const rootClass = kofi.classNames({
+        "has-d-flex has-flex-column has-w-full has-h-screen has-p-4": true,
+        "has-bg-coolgray-800 has-text-white": theme === "dark",
+    });
     const parentClass = kofi.classNames({
         "has-d-flex has-flex-row has-items-stretch has-flex-grow": true,
         "has-w-full has-h-screen": true,
         "has-py-3": true,
-        // "has-bg-coolgray-200": true,
     });
     const codePanelClass = kofi.classNames({
         "has-d-flex has-flex-column has-s-full": true,
         "has-p-6 has-radius has-s-full": true,
         "has-bg-coolgray-700": true,
         "has-overflow-hidden": true,
-        // "CodeCake": true,
-        // "CodeCake-dark has-bg-coolgray-700": true,
-        // "CodeCake-light has-bg-white": true,
     });
-    // const actionsPanelClass = kofi.classNames({
-    //     "has-d-flex has-p-6 has-radius has-w-full has-minh-12 has-mb-4": true,
-    //     "has-bg-white": true,
-    // });
     const previewPanelClass = kofi.classNames({
         "has-d-flex has-flex-column": true,
-        "has-p-0 has-radius has-s-full": true,
+        "has-p-2 has-radius has-s-full": true,
         "has-bg-white": true,
     });
     // Render app component
     return (
-        <div className={parentClass}>
-            <div className={codePanelClass}>
-                <div className="has-mb-4 has-d-flex has-items-center">
-                    <button
-                        className="button has-d-flex has-items-center has-bg-white has-text-coolgray-800"
-                        onClick={handleRunClick}
-                    >
-                        <i className="icon-play has-text-lg has-pr-1" />
-                        <strong>Run</strong>
-                    </button>
-                    <div className="has-ml-auto">
-                        <ActionButton icon="link" text="Share" onClick={handleShareClick} />
-                    </div>
+        <div className={rootClass}>
+            <div className="has-d-flex has-py-4">
+                {/* Logotype */}
+                <div className="has-d-flex has-text-white has-text-xl has-mr-auto">
+                    <i className="icon-siimple has-text-2xl has-mr-2" />
+                    <strong>Playground</strong>
                 </div>
-                <Editor visible={tab === "html"} ref={htmlRef} />
+                <div className=" has-d-flex"></div>
             </div>
+            <div className={parentClass}>
+                <div className="has-d-flex has-flex-column has-s-full">
+                    <div className="has-mb-4">
+                        <div className="has-d-flex has-radius has-bg-coolgray-700 has-p-4">
+                            <Tab text="HTML" active={tab === "html"} onClick={() => setTab("html")} />
+                            <Tab text="Config" active={tab === "config"} onClick={() => setTab("config")} />
+                        </div>
+                    </div>
+                    <Editor theme={theme} visible={tab === "html"} ref={htmlRef} />
+                </div>
             <div className="has-h-full has-w-4 has-minw-8" />
-            <div className={previewPanelClass}>
+            <div className="has-s-full has-p-2 has-radius has-bg-white">
                 <iframe
                     ref={previewRef}
                     onLoad={handlePreviewLoad}
@@ -178,6 +190,16 @@ const App = props => {
                 </div>
             ) : null}
         </div>
+            <div className="has-d-flex has-text-xs has-pt-2 has-opacity-80">
+                <div className="has-mr-auto">
+                    Made with <i className="icon-heart" /> and <i className="icon-coffee" /> using <b>siimple</b>.
+                </div>
+                <div className="">
+                    Version <b>{process.env.VERSION}</b>
+                </div>
+            </div>
+        </div>
+
     );
 };
 
