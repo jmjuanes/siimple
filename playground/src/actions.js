@@ -35,19 +35,19 @@ export const loadPlayground = content => {
     });
 };
 
-// Share the sandbox via URL
-const shareSandbox = content => {
+// Share the playground code via URL
+export const sharePlayground = content => {
     return Promise.resolve().then(() => {
         const host = window.location.host;
         const query = new URLSearchParams();
         // Check for custom version
-        if (content.version !== "latest") {
-            query.set("version", "latest");
-        }
+        // if (content.version !== "latest") {
+        //     query.set("version", "latest");
+        // }
         query.set("html", compressStr(content.html));
-        // query.set("config", compressStr(content.config));
+        query.set("config", compressStr(content.config));
         // Return processed URL
-        return `${host}/try#${query.toString()}`;
+        return `${host}#${query.toString()}`;
     });
 };
 
