@@ -2,97 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import kofi from "kofi";
 
+import {ActionButton, Brand} from "./components.js";
+import {Tabs, Tab} from "./components.js";
+import {Editor} from "./components.js";
+import {Preview, PreviewLoader} from "./components.js";
 import {buildStyle} from "./actions.js";
-import {loadPlayground, updatePreview} from "./actions.js";
+import {loadPlayground, sharePlayground, updatePreview} from "./actions.js";
 import {useEditor, usePlayground} from "./hooks.js";
-// import {copyTextToClipboard} from "../utils/clipboard.js";
-
-// Brand component wrapper
-const Brand = props => {
-    const brandClass = kofi.classNames({
-        "has-d-flex has-mr-auto": true,
-        "has-text-white": props.theme === "dark",
-    });
-    return (
-        <div className={brandClass}>
-            <i className="icon-siimple has-text-2xl has-mr-2" />
-            <b className="has-text-xl">Playground</b>
-        </div>
-    );
-};
-
-// Action button wrapper
-const ActionButton = props => {
-    const buttonClass = kofi.classNames({
-        "has-cursor-pointer": true,
-        "has-d-flex has-radius": true,
-        "has-py-2 has-px-2 has-ml-3": true,
-        "has-bg-coolgray-600 has-text-white has-text-no-underline": true,
-        // "hover:has-bg-blue-200 hover:has-text-blue-700": true
-    });
-    return (
-        <div className={buttonClass} onClick={props.onClick}>
-            <i className={`${props.icon} has-text-2xl`} />
-        </div>
-    );
-};
-
-// Tab wrapper component
-const Tab = props => {
-    const tabClass = kofi.classNames({
-        "navlink has-text-center": true,
-        "has-bg-blue-500 has-text-white hover:has-text-white": props.active,
-    });
-    return (
-        <div className={tabClass} onClick={props.onClick}>{props.text}</div>
-    );
-};
-
-// Editor wrapper component
-const Editor = React.forwardRef((props, ref) => {
-    const editorClass = kofi.classNames({
-        "CodeCake has-p-6 has-s-full has-overflow-hidden has-radius": true,
-        "CodeCake-dark has-bg-coolgray-700": props.theme === "dark",
-        "CodeCake-light has-bg-white": props.theme === "light",
-    });
-    return (
-        <div className={props.visible ? "has-h-full has-overflow-hidden" : "has-d-none"}>
-            <div className={editorClass} style={{maxWidth: "50vw"}} ref={ref} />
-        </div>
-    );
-});
-
-// Preview wrapper component
-const Preview = React.forwardRef((props, ref) => {
-    const previewClass = kofi.classNames({
-        "has-d-none": !props.visible,
-        "has-p-8 has-radius has-bg-white": true,
-    });
-    return React.createElement("iframe", {
-        ref: ref,
-        className: previewClass,
-        style: {
-            width: "100%",
-            height: "100%",
-            border: "0",
-            backgroundColor: "#ffffff",
-        },
-        sandbox: "allow-scripts allow-same-origin",
-        scrolling: "no",
-        src: "/playground.html",
-        onLoad: props.onLoad,
-    });
-});
-
-// Loading wrapper
-const PreviewLoader = () => (
-    <div className="has-s-full has-bg-coolgray-700 has-p-6 has-radius has-d-flex has-flex-column has-justify-center has-items-center">
-        <div className="spinner has-text-white" />
-        <div className="has-text-white has-text-sm has-mt-2">
-            Building <b>siimple</b>, wait a second...
-        </div>
-    </div>
-);
 
 // Playground app
 const App = () => {
@@ -100,15 +16,23 @@ const App = () => {
     const configRef = React.useRef();
     const previewRef = React.useRef();
 
-    const [theme, setTheme] = React.useState("light");
     const [tab, setTab] = React.useState("html");
     const [shareUrl, setShareUrl] = React.useState("");
     const [shareUrlCopied, setShareUrlCopied] = React.useState(false);
     const [previewVisible, setPreviewVisible] = React.useState(false);
+    const [theme, setTheme] = React.useState(() => {
+        return localStorage.getItem("siimple:playground:theme") || "light";
+    });
 
     const htmlEditor = useEditor(htmlRef, "html");
     const configEditor = useEditor(configRef, "js")
     const playground = usePlayground();
+
+    // Handle theme toggle
+    const handleThemeToggle = newTheme => {
+        localStorage.setItem("siimple:playground:theme", newTheme);
+        setTheme(newTheme);
+    };
 
     // Handle preview loaded --> initialize sandbox
     const handlePreviewLoad = () => {
@@ -124,13 +48,6 @@ const App = () => {
             });
         });
     };
-
-    // Handle version change
-    // const handleVersionChange = newVersion => {
-    //     playground.current.version = newVersion;
-    //     playground.current.hasConfigChanges = true; // Force to update config
-    //     return handleRunClick();
-    // };
 
     // Handle tab change
     const handleTabChange = newTab => {
@@ -164,24 +81,24 @@ const App = () => {
             });
         }
     };
+    
     // Handle share click --> generate share url
-    // const handleShareClick = () => {
-    //     return sandbox.current.share().then(url => {
-    //         setShareUrlCopied(false);
-    //         setShareUrl(url);
-    //     });
-    // };
-    // // Handle action button click --> run sandbox
-    // const handleRunClick = () => {
-    //     sandbox.current.update({
-    //         html: codeEditor.current.getCode() || "",
-    //     });
-    //     updatePreview(previewRef, sandbox.current.content);
-    // };
-    // // Handle copy click --> Copy sandbox url to clipboard
-    // const handleCopyClick = () => {
-    //     // copyTextToClipboard(shareUrl).then(() => setShareUrlCopied(true));
-    // };
+    const handleShareClick = () => {
+        playground.current.html = htmlEditor.current.getCode();
+        playground.current.config = configEditor.current.getCode();
+        sharePlayground(playground.current).then(url => {
+            setShareUrlCopied(false);
+            setShareUrl(url);
+        });
+    };
+
+    // Handle copy click --> Copy url to clipboard
+    const handleCopyClick = () => {
+        navigator.clipboard.writeText(shareUrl).then(() => {
+            setShareUrlCopied(true);
+        });
+    };
+
     const rootClass = kofi.classNames({
         "has-d-flex has-flex-column has-w-full has-h-screen has-p-4": true,
         "has-bg-coolgray-800 has-text-white": theme === "dark",
@@ -197,14 +114,21 @@ const App = () => {
         <div className={rootClass}>
             <div className="has-d-flex has-py-4">
                 <Brand theme={theme} />
-                <div className="has-d-flex"></div>
+                <div className="has-d-flex">
+                    <ActionButton theme={theme} icon="share" onClick={handleShareClick} />
+                    <ActionButton
+                        theme={theme}
+                        icon={theme === "light" ? "sun" : "moon"}
+                        onClick={() => handleThemeToggle(theme === "light" ? "dark" : "light")}
+                    />
+                </div>
             </div>
             <div className={parentClass}>
                 <div className="has-d-flex has-flex-column has-s-full has-position-relative">
-                    <div className="has-d-flex has-radius has-bg-coolgray-700 has-p-4 has-w-full has-mb-4">
+                    <Tabs theme={theme}>
                         <Tab theme={theme} text="HTML" active={tab === "html"} onClick={() => handleTabChange("html")} />
                         <Tab theme={theme} text="Configuration" active={tab === "config"} onClick={() => handleTabChange("config")} />
-                    </div>
+                    </Tabs>
                     <Editor theme={theme} visible={tab === "html"} ref={htmlRef} />
                     <Editor theme={theme} visible={tab === "config"} ref={configRef} />
                     <div className="has-position-absolute has-bottom-none has-right-none has-mr-8 has-mb-8 has-p-2">
