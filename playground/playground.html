@@ -2,15 +2,14 @@
     <title>Playground template</title>
 </head>
 <body>
-    <div id="content"></div>
     <style id="style"></style>
-    <script type="module">
+    <div id="content"></div>
+    <script type="text/javascript">
         const content = document.getElementById("content");
         const style = document.getElementById("style");
 
         // Create message listener
         window.addEventListener("message", event => {
-            // const payload = JSON.parse(data || "{}");
             const payload = event.data || {};
             if (payload.source !== "siimple-playground") {
                 return;
@@ -19,10 +18,10 @@
             if (typeof payload.html === "string") {
                 content.innerHTML = payload.html;
             }
-            // Update playground styles
+            // Update playground CSS
             if (payload.css) {
-                style.innerHTML = css;
+                style.innerHTML = payload.css;
             }
-        })
+        });
     </script>
 </body>
