@@ -19,6 +19,7 @@ module.exports = {
             path.resolve(__dirname, "./node_modules"),
         ],
         alias: {
+            "siimple-config": path.resolve(__dirname, "../defaultConfig.js"),
             "siimple-colors": path.resolve(__dirname, "../colors.js"),
             "siimple": path.resolve(__dirname, "../lib.js"),
         },
@@ -41,6 +42,7 @@ module.exports = {
                     ],
                     plugins: [
                         "@babel/plugin-transform-react-jsx",
+                        "@babel/plugin-transform-runtime",
                     ],
                 },
             },
