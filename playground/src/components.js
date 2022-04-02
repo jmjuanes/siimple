@@ -4,7 +4,7 @@ import kofi from "kofi";
 // Brand component wrapper
 export const Brand = props => {
     const brandClass = kofi.classNames({
-        "has-d-flex has-mr-auto": true,
+        "has-d-flex has-items-center has-mr-auto": true,
         "has-text-white": props.theme === "dark",
     });
     return (
@@ -15,18 +15,59 @@ export const Brand = props => {
     );
 };
 
+// Version dropdown component
+export const VersionDropdown = props => {
+    const [expanded, setExpanded] = React.useState(false);
+    const currentVersion = process.env.VERSION;
+    const parentClass = kofi.classNames({
+        "has-py-3 has-px-4 has-d-flex has-items-center has-radius has-cursor-pointer": true,
+        "has-bg-coolgray-200 hover:has-bg-coolgray-300": props.theme === "light",
+        "has-bg-coolgray-600 hover:has-bg-coolgray-700 has-text-white": props.theme === "dark",
+    });
+    const dropdownClass = kofi.classNames({
+        "has-position-absolute has-right-none has-p-4 has-mt-1 has-radius has-w-64": true,
+        "has-bg-coolgray-200": props.theme === "light",
+        "has-bg-coolgray-600": props.theme === "dark",
+    });
+    return (
+        <div className="has-position-relative">
+            <div className={parentClass} onClick={() => setExpanded(!expanded)}>
+                <span className="has-mr-2">Version:</span>
+                <b>{currentVersion}</b>
+                <i className="icon-chevron-down has-ml-2" />
+            </div>
+            {kofi.when(expanded, () => (
+                <div className={dropdownClass} style={{top:"48px"}}>
+                    {[currentVersion].map(version => {
+                        const itemClass = kofi.classNames({
+                            "has-py-3 has-px-4 has-radius has-cursor-pointer": true,
+                            "has-bg-blue-500 has-text-white": true,
+                        });
+                        return (
+                            <div className={itemClass}>
+                                <b>{version}</b> (latest)
+                            </div>
+                        );
+                    })}
+                </div>
+            ))}
+        </div>
+    );
+};
+
 // Action button wrapper
 export const ActionButton = props => {
     const buttonClass = kofi.classNames({
         "has-cursor-pointer has-text-no-underline": true,
         "has-d-flex has-radius": true,
         "has-py-2 has-px-2 has-ml-3": true,
-        "has-bg-coolgray-600 has-text-white": props.theme === "light",
+        "has-bg-coolgray-600 hover:has-bg-coolgray-700 has-text-white": props.theme === "dark",
+        "has-bg-coolgray-200 hover:has-bg-coolgray-300": props.theme === "light",
         // "hover:has-bg-blue-200 hover:has-text-blue-700": true
     });
     return (
         <div className={buttonClass} onClick={props.onClick}>
-            <i className={`${props.icon} has-text-2xl`} />
+            <i className={`icon-${props.icon} has-text-2xl`} />
         </div>
     );
 };
@@ -47,7 +88,8 @@ export const Tabs = props => {
 export const Tab = props => {
     const tabClass = kofi.classNames({
         "navlink has-text-center": true,
-        "has-bg-blue-500 has-text-white hover:has-text-white": props.active,
+        // "has-bg-blue-500 has-text-white hover:has-text-white": props.active,
+        "is-active has-bg-white": props.active,
     });
     return (
         <div className={tabClass} onClick={props.onClick}>{props.text}</div>

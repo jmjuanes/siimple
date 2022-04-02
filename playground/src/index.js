@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import kofi from "kofi";
 
-import {ActionButton, Brand} from "./components.js";
+import {ActionButton, Brand, VersionDropdown} from "./components.js";
 import {Tabs, Tab} from "./components.js";
 import {Editor} from "./components.js";
 import {Preview, PreviewLoader} from "./components.js";
@@ -115,6 +115,7 @@ const App = () => {
             <div className="has-d-flex has-py-4">
                 <Brand theme={theme} />
                 <div className="has-d-flex">
+                    <VersionDropdown theme={theme} />
                     <ActionButton theme={theme} icon="share" onClick={handleShareClick} />
                     <ActionButton
                         theme={theme}
@@ -152,7 +153,7 @@ const App = () => {
                 {/* Share modal */}
                 {kofi.when(!!shareUrl, () => (
                     <div className="scrim">
-                        <div className="modal is-medium">
+                        <div className="modal is-medium has-text-coolgray-700">
                             <div className="has-d-flex has-items-center has-mb-4">
                                 <div className="title is-3 has-mb-0">Share</div>
                                 <div className="close has-ml-auto" onClick={() => setShareUrl("")} />
@@ -184,7 +185,7 @@ const App = () => {
                     Made with <i className="icon-heart" /> and <i className="icon-coffee" /> using <b>siimple</b>.
                 </div>
                 <div className="">
-                    Version <b>{process.env.VERSION}</b>
+                    Playground Version <b>{process.env.VERSION}</b>
                 </div>
             </div>
         </div>
