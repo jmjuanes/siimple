@@ -3,9 +3,7 @@ import ReactDOM from "react-dom";
 import kofi from "kofi";
 
 import {ActionButton, Brand, VersionDropdown} from "./components.js";
-import {Tabs, Tab} from "./components.js";
-import {Editor} from "./components.js";
-import {Preview, PreviewLoader} from "./components.js";
+import {FileTab, RunButton, Editor, Preview} from "./components.js";
 import {buildStyle} from "./actions.js";
 import {loadPlayground, sharePlayground, updatePreview} from "./actions.js";
 import {useEditor, usePlayground} from "./hooks.js";
@@ -16,10 +14,10 @@ const App = () => {
     const configRef = React.useRef();
     const previewRef = React.useRef();
 
+    const [loading, setLoading] = React.useState(true);
     const [tab, setTab] = React.useState("html");
     const [shareUrl, setShareUrl] = React.useState("");
     const [shareUrlCopied, setShareUrlCopied] = React.useState(false);
-    const [previewVisible, setPreviewVisible] = React.useState(false);
     const [theme, setTheme] = React.useState(() => {
         return localStorage.getItem("siimple:playground:theme") || "light";
     });
@@ -39,12 +37,11 @@ const App = () => {
         loadPlayground(playground.current).then(() => {
             htmlEditor.current.setCode(playground.current.html);
             configEditor.current.setCode(playground.current.config);
-            updatePreview(previewRef.current, playground.current.html, null);
 
             // Build styles using current configuration
             buildStyle(playground.current.config).then(css => {
-                updatePreview(previewRef.current, null, css);
-                setPreviewVisible(true);
+                updatePreview(previewRef.current, playground.current.html, css);
+                setLoading(false);
             });
         });
     };
@@ -66,6 +63,9 @@ const App = () => {
 
     // Handle run button click --> Update preview with the new content
     const handleRunClick = () => {
+        if (loading) {
+            return null; // Prevent loading twice...
+        }
         if (tab === "html" || playground.current.hasHtmlChanges) {
             playground.current.html = htmlEditor.current.getCode();
             playground.current.hasHtmlChanges = false;
@@ -74,10 +74,10 @@ const App = () => {
         if (tab === "config" || playground.current.hasConfigChanges) {
             playground.current.config = configEditor.current.getCode();
             playground.current.hasConfigChanges = false;
-            setPreviewVisible(false); // Hide preview
+            setLoading(true);
             buildStyle(playground.current.config).then(css => {
                 updatePreview(previewRef.current, null, css);
-                setPreviewVisible(true);
+                setLoading(false);
             });
         }
     };
@@ -109,6 +109,12 @@ const App = () => {
         "has-w-full has-h-full has-overflow-hidden": true,
         "has-py-3": true,
     });
+    const editorPanelClass = kofi.classNames({
+        "has-d-flex has-flex-column has-s-full has-position-relative": true,
+        "has-p-6 has-radius": true,
+        "has-bg-coolgray-700": theme === "dark",
+        "has-bg-white": theme === "light",
+    });
     // Render app component
     return (
         <div className={rootClass}>
@@ -125,30 +131,35 @@ const App = () => {
                 </div>
             </div>
             <div className={parentClass}>
-                <div className="has-d-flex has-flex-column has-s-full has-position-relative">
-                    <Tabs theme={theme}>
-                        <Tab theme={theme} text="HTML" active={tab === "html"} onClick={() => handleTabChange("html")} />
-                        <Tab theme={theme} text="Configuration" active={tab === "config"} onClick={() => handleTabChange("config")} />
-                    </Tabs>
-                    <Editor theme={theme} visible={tab === "html"} ref={htmlRef} />
-                    <Editor theme={theme} visible={tab === "config"} ref={configRef} />
-                    <div className="has-position-absolute has-bottom-none has-right-none has-mr-8 has-mb-8 has-p-2">
-                        <div className="button hover:has-bg-blue-600 has-d-flex has-items-center" onClick={handleRunClick}>
-                            <i className="icon-play has-text-lg has-mr-1" />
-                            <strong>Run</strong>
+                <div className={editorPanelClass} style={{maxWidth:"50vw"}}>
+                    <div className="has-d-flex has-mb-6">
+                        <FileTab
+                            theme={theme}
+                            text="index.html"
+                            icon="file"
+                            active={tab === "html"}
+                            onClick={() => handleTabChange("html")}
+                        />
+                        <FileTab
+                            theme={theme}
+                            text="siimple.config.js"
+                            icon="gear"
+                            active={tab === "config"}
+                            onClick={() => handleTabChange("config")}
+                        />
+                        <div className="has-ml-auto has-d-flex has-items-center">
+                            {kofi.when(loading, () => (
+                                <div className={`spinner has-text-${theme === "light" ? "coolgray-700" : "white"}`} />
+                            ))}
                         </div>
                     </div>
+                    <Editor theme={theme} visible={tab === "html"} ref={htmlRef} />
+                    <Editor theme={theme} visible={tab === "config"} ref={configRef} />
+                    <RunButton loading={loading} onClick={handleRunClick} />
                 </div>
                 <div className="has-h-full has-w-4 has-minw-8" />
                 <div className="has-s-full has-radius">
-                    {kofi.when(!previewVisible, () => (
-                        <PreviewLoader theme={theme} />
-                    ))}
-                    <Preview
-                        ref={previewRef}
-                        visible={previewVisible}
-                        onLoad={handlePreviewLoad}
-                    />
+                    <Preview ref={previewRef} onLoad={handlePreviewLoad} />
                 </div>
                 {/* Share modal */}
                 {kofi.when(!!shareUrl, () => (

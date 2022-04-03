@@ -67,7 +67,7 @@ const exportSandbox = sandbox => {
 
 // Evaluate configuration
 const evaluateConfig = configStr => {
-    return kofi.delay(10).then(() => {
+    return kofi.delay(2000).then(() => {
         const configCode = configStr
             .replace(/import\s*(.*?)\s*from\s*(['"])siimple\/colors(\.js)?\2/g, `const $1 = __require("siimple-colors");`)
             .replace(/export default /, "return ");

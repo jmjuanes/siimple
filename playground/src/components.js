@@ -67,45 +67,52 @@ export const ActionButton = props => {
     });
     return (
         <div className={buttonClass} onClick={props.onClick}>
-            <i className={`icon-${props.icon} has-text-2xl`} />
+            <i className={`icon-${props.icon} has-text-xl`} />
         </div>
     );
 };
 
-// Tabs wrapper component
-export const Tabs = props => {
-    const tabsClass = kofi.classNames({
-        "has-d-flex has-radius has-p-4 has-w-full has-mb-4": true,
-        "has-bg-coolgray-700": props.theme === "dark",
-        "has-bg-coolgray-200": props.theme === "light",
+// Run button wrapper
+export const RunButton = props => {
+    const buttonClass = kofi.classNames({
+        "button has-d-flex has-items-center": true,
+        "hover:has-bg-blue-600": !props.loading,
     });
     return (
-        <div className={tabsClass}>{props.children}</div>
+        <div className="has-position-absolute has-bottom-none has-right-none has-mr-8 has-mb-8 has-p-2">
+            <div className={buttonClass} onClick={props.onClick}>
+                <i className="icon-play has-text-lg has-mr-1" />
+                <strong>Run</strong>
+            </div>
+        </div>
     );
-}; 
+};
 
-// Tab wrapper component
-export const Tab = props => {
+// File Tab wrapper component
+export const FileTab = props => {
     const tabClass = kofi.classNames({
-        "navlink has-text-center": true,
-        // "has-bg-blue-500 has-text-white hover:has-text-white": props.active,
-        "is-active has-bg-white": props.active,
+        "navlink has-text-center has-w-auto has-mr-2 has-px-4": true,
+        "has-d-flex has-items-center": true,
+        "has-bg-blue-500 has-text-white hover:has-text-white": props.active,
     });
     return (
-        <div className={tabClass} onClick={props.onClick}>{props.text}</div>
+        <div className={tabClass} onClick={props.onClick}>
+            <i className={`icon-${props.icon} has-pr-2 has-text-lg`} />
+            <b>{props.text}</b>
+        </div>
     );
 };
 
 // Editor wrapper component
 export const Editor = React.forwardRef((props, ref) => {
     const editorClass = kofi.classNames({
-        "CodeCake has-p-6 has-s-full has-overflow-hidden has-radius": true,
+        "CodeCake has-s-full has-p-0 has-overflow-hidden": true,
         "CodeCake-dark has-bg-coolgray-700": props.theme === "dark",
         "CodeCake-light has-bg-white": props.theme === "light",
     });
     return (
         <div className={props.visible ? "has-h-full has-overflow-hidden" : "has-d-none"}>
-            <div className={editorClass} style={{maxWidth: "50vw"}} ref={ref} />
+            <div className={editorClass} ref={ref} />
         </div>
     );
 });
@@ -113,7 +120,7 @@ export const Editor = React.forwardRef((props, ref) => {
 // Preview wrapper component
 export const Preview = React.forwardRef((props, ref) => {
     const previewClass = kofi.classNames({
-        "has-d-none": !props.visible,
+        // "has-d-none": !props.visible,
         "has-p-8 has-radius has-bg-white": true,
     });
     return React.createElement("iframe", {
@@ -133,11 +140,17 @@ export const Preview = React.forwardRef((props, ref) => {
 });
 
 // Loading wrapper
-export const PreviewLoader = () => (
-    <div className="has-s-full has-bg-coolgray-700 has-p-6 has-radius has-d-flex has-flex-column has-justify-center has-items-center">
-        <div className="spinner has-text-white" />
-        <div className="has-text-white has-text-sm has-mt-2">
-            Building <b>siimple</b>, wait a second...
-        </div>
-    </div>
-);
+// export const PreviewLoader = props => {
+//     const parentClass = kofi.classNames({
+//         "alert has-position-absolute has-bottom-none has-items-center has-ml-4": true,
+//         "has-d-none": !props.visible,
+//     });
+//     return (
+//         <div className={parentClass}>
+//             <div className="spinner has-text-white" />
+//             <div className="has-text-white has-ml-4">
+//                 Building <b>siimple</b>, wait a second...
+//             </div>
+//         </div>
+//     );
+// };
