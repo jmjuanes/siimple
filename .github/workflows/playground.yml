@@ -19,8 +19,14 @@ jobs:
       - name: Build siimple css
         run: npm run build
 
+      - name: Install playground dependencies
+        run: cd playground && npm install
+
+      - name: Build playground
+        run: npm run plyaground:build
+
       - name: Add configuration
-        run: 'echo "$FIREBASE_CONFIG" > .firebaserc'
+        run: 'echo "$FIREBASE_CONFIG" > ./playground/.firebaserc'
         shell: bash
         env:
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG_PLAYGROUND }}
@@ -32,3 +38,4 @@ jobs:
           projectId: "${{ secrets.FIREBASE_PROJECT }}"
           channelId: live
           target: playground
+          entryPoint: playground
