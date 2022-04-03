@@ -60,7 +60,7 @@ export const ActionButton = props => {
     const buttonClass = kofi.classNames({
         "has-cursor-pointer has-text-no-underline": true,
         "has-d-flex has-radius": true,
-        "has-py-2 has-px-2 has-ml-3": true,
+        "has-py-2 has-px-2": true,
         "has-bg-coolgray-600 hover:has-bg-coolgray-700 has-text-white": props.theme === "dark",
         "has-bg-coolgray-200 hover:has-bg-coolgray-300": props.theme === "light",
         // "hover:has-bg-blue-200 hover:has-text-blue-700": true
@@ -75,15 +75,26 @@ export const ActionButton = props => {
 // Run button wrapper
 export const RunButton = props => {
     const buttonClass = kofi.classNames({
-        "button has-d-flex has-items-center": true,
+        "button has-d-flex has-items-center has-ml-2": true,
         "hover:has-bg-blue-600": !props.loading,
     });
     return (
-        <div className="has-position-absolute has-bottom-none has-right-none has-mr-8 has-mb-8 has-p-2">
-            <div className={buttonClass} onClick={props.onClick}>
-                <i className="icon-play has-text-lg has-mr-1" />
-                <strong>Run</strong>
-            </div>
+        <div className={buttonClass} onClick={props.onClick}>
+            <i className="icon-play has-text-lg has-mr-1" />
+            <strong>Run</strong>
+        </div>
+    );
+};
+
+export const DarkThemeButton = props => {
+    const buttonClass = kofi.classNames({
+        "has-cursor-pointer has-radius has-py-2 has-px-2": true,
+        "hover:has-bg-coolgray-100 hover:has-text-blue-500": props.theme === "light",
+        "has-bg-blue-500 has-text-white": props.theme === "dark",
+    });
+    return (
+        <div className={buttonClass} onClick={props.onClick}>
+            <i className="icon-moon has-text-2xl" />
         </div>
     );
 };
@@ -108,7 +119,7 @@ export const Editor = React.forwardRef((props, ref) => {
     const editorClass = kofi.classNames({
         "CodeCake has-s-full has-p-0 has-overflow-hidden": true,
         "CodeCake-dark has-bg-coolgray-700": props.theme === "dark",
-        "CodeCake-light has-bg-white": props.theme === "light",
+        "CodeCake-light has-bg-coolgray-100": props.theme === "light",
     });
     return (
         <div className={props.visible ? "has-h-full has-overflow-hidden" : "has-d-none"}>
@@ -121,7 +132,7 @@ export const Editor = React.forwardRef((props, ref) => {
 export const Preview = React.forwardRef((props, ref) => {
     const previewClass = kofi.classNames({
         // "has-d-none": !props.visible,
-        "has-p-8 has-radius has-bg-white": true,
+        "has-p-8 has-bg-white": true,
     });
     return React.createElement("iframe", {
         ref: ref,

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import kofi from "kofi";
 
-import {ActionButton, Brand, VersionDropdown} from "./components.js";
+import {ActionButton, DarkThemeButton, VersionDropdown} from "./components.js";
 import {FileTab, RunButton, Editor, Preview} from "./components.js";
 import {buildStyle} from "./actions.js";
 import {loadPlayground, sharePlayground, updatePreview} from "./actions.js";
@@ -27,7 +27,8 @@ const App = () => {
     const playground = usePlayground();
 
     // Handle theme toggle
-    const handleThemeToggle = newTheme => {
+    const handleThemeToggle = () => {
+        const newTheme = theme === "dark" ? "light" : "dark";
         localStorage.setItem("siimple:playground:theme", newTheme);
         setTheme(newTheme);
     };
@@ -100,7 +101,7 @@ const App = () => {
     };
 
     const rootClass = kofi.classNames({
-        "has-d-flex has-flex-column has-w-full has-h-screen has-p-4": true,
+        "has-d-flex has-flex-row has-w-full has-h-screen": true,
         "has-bg-coolgray-800 has-text-white": theme === "dark",
         "has-bg-coolgray-100": theme === "light",
     });
@@ -109,30 +110,30 @@ const App = () => {
         "has-w-full has-h-full has-overflow-hidden": true,
         "has-py-3": true,
     });
-    const editorPanelClass = kofi.classNames({
-        "has-d-flex has-flex-column has-s-full has-position-relative": true,
-        "has-p-6 has-radius": true,
-        "has-bg-coolgray-700": theme === "dark",
+    const menuPanelClass = kofi.classNames({
+        "has-d-flex has-flex-column has-justify-between has-py-4 has-px-6": true,
+        "has-text-white has-bg-coolgray-800": theme === "dark",
         "has-bg-white": theme === "light",
+    });
+    const editorPanelClass = kofi.classNames({
+        "has-d-flex has-flex-column has-s-full has-p-6": true,
+        "has-bg-coolgray-700": theme === "dark",
+        "has-bg-coolgray-100": theme === "light",
     });
     // Render app component
     return (
         <div className={rootClass}>
-            <div className="has-d-flex has-py-4">
-                <Brand theme={theme} />
-                <div className="has-d-flex">
-                    <VersionDropdown theme={theme} />
+            <div className={menuPanelClass}>
+                <i className="icon-siimple has-text-4xl" />
+                <div className="has-d-flex has-flex-column">
                     <ActionButton theme={theme} icon="share" onClick={handleShareClick} />
-                    <ActionButton
-                        theme={theme}
-                        icon={theme === "light" ? "sun" : "moon"}
-                        onClick={() => handleThemeToggle(theme === "light" ? "dark" : "light")}
-                    />
+                </div>
+                <div className="has-d-flex has-flex-column">
+                    <DarkThemeButton theme={theme} onClick={handleThemeToggle} />
                 </div>
             </div>
-            <div className={parentClass}>
                 <div className={editorPanelClass} style={{maxWidth:"50vw"}}>
-                    <div className="has-d-flex has-mb-6">
+                    <div className="has-d-flex has-mb-8">
                         <FileTab
                             theme={theme}
                             text="index.html"
@@ -148,17 +149,14 @@ const App = () => {
                             onClick={() => handleTabChange("config")}
                         />
                         <div className="has-ml-auto has-d-flex has-items-center">
-                            {kofi.when(loading, () => (
-                                <div className={`spinner has-text-${theme === "light" ? "coolgray-700" : "white"}`} />
-                            ))}
+                            <VersionDropdown theme={theme} />
+                            <RunButton loading={loading} onClick={handleRunClick} />
                         </div>
                     </div>
                     <Editor theme={theme} visible={tab === "html"} ref={htmlRef} />
                     <Editor theme={theme} visible={tab === "config"} ref={configRef} />
-                    <RunButton loading={loading} onClick={handleRunClick} />
                 </div>
-                <div className="has-h-full has-w-4 has-minw-8" />
-                <div className="has-s-full has-radius">
+                <div className="has-s-full">
                     <Preview ref={previewRef} onLoad={handlePreviewLoad} />
                 </div>
                 {/* Share modal */}
@@ -190,7 +188,7 @@ const App = () => {
                         </div>
                     </div>
                 ))}
-            </div>
+            {/*
             <div className="has-d-flex has-text-xs has-pt-2 has-opacity-80">
                 <div className="has-mr-auto">
                     Made with <i className="icon-heart" /> and <i className="icon-coffee" /> using <b>siimple</b>.
@@ -199,6 +197,7 @@ const App = () => {
                     Playground Version <b>{process.env.VERSION}</b>
                 </div>
             </div>
+            */}
         </div>
     );
 };
