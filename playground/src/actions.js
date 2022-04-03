@@ -38,7 +38,6 @@ export const loadPlayground = content => {
 // Share the playground code via URL
 export const sharePlayground = content => {
     return Promise.resolve().then(() => {
-        const host = window.location.host;
         const query = new URLSearchParams();
         // Check for custom version
         // if (content.version !== "latest") {
@@ -46,8 +45,7 @@ export const sharePlayground = content => {
         // }
         query.set("html", compressStr(content.html));
         query.set("config", compressStr(content.config));
-        // Return processed URL
-        return `${host}#${query.toString()}`;
+        return `${window.location.origin}#${query.toString()}`;
     });
 };
 
