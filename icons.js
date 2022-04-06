@@ -756,10 +756,10 @@ export default [
         keywords: ["clone", "copy"],
     },
     {
-        id: "opacity",
+        id: "circle-half",
         unicode: 57470,
         added: "v4.0.0",
-        keywords: ["opacity", "alpha", "image"],
+        keywords: ["circle", "shape", "half"],
     },
     {
         id: "fill",
@@ -1006,5 +1006,17 @@ export default [
         unicode: 57511,
         added: "v4.0.0",
         keywords: ["face", "wink"],
+    },
+    {
+        id: "square-half",
+        unicode: 57512,
+        added: "v4.0.0",
+        keywords: ["square", "shape", "half"],
+    },
+    {
+        id: "square-stroke",
+        unicode: 57513,
+        added: "v4.0.0",
+        keywords: ["square", "shape", "empty", "stroke"],
     },
 ];
