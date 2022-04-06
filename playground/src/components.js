@@ -58,16 +58,13 @@ export const VersionDropdown = props => {
 // Action button wrapper
 export const ActionButton = props => {
     const buttonClass = kofi.classNames({
-        "has-cursor-pointer has-text-no-underline": true,
-        "has-d-flex has-radius": true,
-        "has-py-2 has-px-2": true,
-        "has-bg-coolgray-600 hover:has-bg-coolgray-700 has-text-white": props.theme === "dark",
-        "has-bg-coolgray-200 hover:has-bg-coolgray-300": props.theme === "light",
-        // "hover:has-bg-blue-200 hover:has-text-blue-700": true
+        "has-cursor-pointer has-text-center has-p-2": true,
+        "has-text-coolgray-300 hover:has-text-blue-500": props.theme === "dark",
+        "has-text-coolgray-500 hover:has-text-blue-500": props.theme === "light",
     });
     return (
         <div className={buttonClass} onClick={props.onClick}>
-            <i className={`icon-${props.icon} has-text-xl`} />
+            <i className={`icon-${props.icon} has-text-2xl`} />
         </div>
     );
 };
@@ -132,7 +129,7 @@ export const Editor = React.forwardRef((props, ref) => {
 export const Preview = React.forwardRef((props, ref) => {
     const previewClass = kofi.classNames({
         // "has-d-none": !props.visible,
-        "has-p-8 has-bg-white": true,
+        "has-bg-white": true,
     });
     return React.createElement("iframe", {
         ref: ref,
@@ -144,24 +141,42 @@ export const Preview = React.forwardRef((props, ref) => {
             backgroundColor: "#ffffff",
         },
         sandbox: "allow-scripts allow-same-origin",
-        scrolling: "no",
+        scrolling: "yes",
         src: "/playground.html",
         onLoad: props.onLoad,
     });
 });
 
-// Loading wrapper
-// export const PreviewLoader = props => {
-//     const parentClass = kofi.classNames({
-//         "alert has-position-absolute has-bottom-none has-items-center has-ml-4": true,
-//         "has-d-none": !props.visible,
-//     });
-//     return (
-//         <div className={parentClass}>
-//             <div className="spinner has-text-white" />
-//             <div className="has-text-white has-ml-4">
-//                 Building <b>siimple</b>, wait a second...
-//             </div>
-//         </div>
-//     );
-// };
+// Layout Switch
+export const LayoutSwitch = props => {
+    const layoutIcons = {
+        "code": "square",
+        "both": "square-half",
+        "preview": "square-stroke",
+    };
+    const parentClass = kofi.classNames({
+        "has-d-flex tablet:has-flex-column has-radius": true,
+        "has-bg-coolgray-100": props.theme === "light",
+        "has-bg-coolgray-700": props.theme === "dark",
+    });
+    return (
+        <div className={parentClass}>
+            {Object.keys(layoutIcons).map(key => {
+                const iconClass = kofi.classNames({
+                    "has-m-1 has-text-3xl has-radius has-cursor-pointer": true,
+                    "has-text-coolgray-400 hover:has-text-coolgray-500": props.theme === "light" && key !== props.layout,
+                    "has-text-coolgray-500 hover:has-text-coolgray-400": props.theme === "dark" && key !== props.layout,
+                    "has-text-blue-500": key === props.layout && props.theme === "light",
+                    "has-text-blue-400": key === props.layout && props.theme === "dark",
+                });
+                return (
+                    <i
+                        key={key}
+                        className={`icon-${layoutIcons[key]} ${iconClass}`}
+                        onClick={() => props.onChange(key)}
+                    />
+                );
+            })}
+        </div>
+    );
+};
