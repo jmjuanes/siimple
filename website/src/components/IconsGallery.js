@@ -5,7 +5,6 @@ import icons from "siimple-icons";
 import {Link} from "./Link.js";
 import {Icon} from "./Icon.js";
 import {LiveCode} from "./LiveCode.js";
-import {copyTextToClipboard} from "../utils/clipboard.js";
 
 // Sorted icons list
 const sortedIcons = icons.sort((a, b) => a.id < b.id ? -1 : +1);
@@ -127,8 +126,9 @@ const IconModal = props => {
     const iconHtml = getIconUsage(props.icon);
     const iconSvgUrl = `${process.env.REPO_URL}/raw/main/icons/${props.icon.id}.svg`;
     const handleIconCopy = () => {
-        copyTextToClipboard(iconHtml);
-        setIconCopied(true);
+        navigator.clipboard.writeText(iconHtml).then(() => {
+            setIconCopied(true);
+        });
     };
     return (
         <div className="scrim">

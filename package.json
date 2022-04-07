@@ -18,6 +18,8 @@
         "website:clean": "cd website && npm run clean",
         "website:build": "cd website && npm run build",
         "website:serve": "cd website && npm run serve",
+        "playground:build": "cd playground && npm run build",
+        "playground:serve": "cd playground && npm run serve",
         "test": "jest"
     },
     "devDependencies": {

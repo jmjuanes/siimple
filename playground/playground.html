@@ -1,0 +1,27 @@
+<head>
+    <title>Playground template</title>
+</head>
+<body>
+    <style id="style"></style>
+    <div id="content"></div>
+    <script type="text/javascript">
+        const content = document.getElementById("content");
+        const style = document.getElementById("style");
+
+        // Create message listener
+        window.addEventListener("message", event => {
+            const payload = event.data || {};
+            if (payload.source !== "siimple-playground") {
+                return;
+            }
+            // Update playground HTML
+            if (typeof payload.html === "string") {
+                content.innerHTML = payload.html;
+            }
+            // Update playground CSS
+            if (payload.css) {
+                style.innerHTML = payload.css;
+            }
+        });
+    </script>
+</body>

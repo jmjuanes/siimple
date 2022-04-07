@@ -1,21 +1,14 @@
 import React from "react";
-import {classNames} from "../utils/classnames.js";
+import kofi from "kofi";
 
 // Export icon wrapper component
 export const Icon = props => {
     const newProps = {
-        "className": classNames(
-            // "icon",
-            typeof props.icon === "string" ? `icon-${props.icon}` : null,
+        className: kofi.classNames(
+            props.icon ? `icon-${props.icon}` : null,
             props.className,
         ),
-        "style": props.style || null,
+        style: props.style || null,
     };
     return React.createElement(props.as || "i", newProps);
-};
-
-// Icon default props
-Icon.defaultProps = {
-    "as": "i",
-    "icon": "",
 };
