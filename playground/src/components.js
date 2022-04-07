@@ -22,7 +22,7 @@ export const VersionDropdown = props => {
     const parentClass = kofi.classNames({
         "has-py-3 has-px-4 has-d-flex has-items-center has-radius has-cursor-pointer": true,
         "has-bg-coolgray-200 hover:has-bg-coolgray-300": props.theme === "light",
-        "has-bg-coolgray-600 hover:has-bg-coolgray-700 has-text-white": props.theme === "dark",
+        "has-bg-coolgray-600 hover:has-bg-coolgray-800 has-text-white": props.theme === "dark",
     });
     const dropdownClass = kofi.classNames({
         "has-position-absolute has-right-none has-p-4 has-mt-1 has-radius has-w-64": true,
@@ -32,7 +32,6 @@ export const VersionDropdown = props => {
     return (
         <div className="has-position-relative">
             <div className={parentClass} onClick={() => setExpanded(!expanded)}>
-                <span className="has-mr-2">Version:</span>
                 <b>{currentVersion}</b>
                 <i className="icon-chevron-down has-ml-2" />
             </div>
@@ -40,12 +39,12 @@ export const VersionDropdown = props => {
                 <div className={dropdownClass} style={{top:"48px"}}>
                     {[currentVersion].map(version => {
                         const itemClass = kofi.classNames({
-                            "has-py-3 has-px-4 has-radius has-cursor-pointer": true,
+                            "has-py-3 has-px-4 has-radius has-cursor-pointer has-text-center": true,
                             "has-bg-blue-500 has-text-white": true,
                         });
                         return (
                             <div className={itemClass}>
-                                <b>{version}</b> (latest)
+                                <b>{version}</b>
                             </div>
                         );
                     })}
@@ -58,9 +57,9 @@ export const VersionDropdown = props => {
 // Action button wrapper
 export const ActionButton = props => {
     const buttonClass = kofi.classNames({
-        "has-cursor-pointer has-text-center has-p-2": true,
-        "has-text-coolgray-300 hover:has-text-blue-500": props.theme === "dark",
-        "has-text-coolgray-500 hover:has-text-blue-500": props.theme === "light",
+        "has-cursor-pointer has-text-center has-p-2 has-ml-2 has-radius": true,
+        "has-bg-coolgray-600 hover:has-bg-coolgray-800 has-text-coolgray-300 hover:has-text-blue-500": props.theme === "dark",
+        "has-bg-coolgray-200 hover:has-bg-coolgray-300 has-text-coolgray-500 hover:has-text-blue-500": props.theme === "light",
     });
     return (
         <div className={buttonClass} onClick={props.onClick}>

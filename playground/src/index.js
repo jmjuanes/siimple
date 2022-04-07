@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import kofi from "kofi";
 
 import {ActionButton, DarkThemeButton, LayoutSwitch, Brand} from "./components.js";
-import {FileTab, Editor, Preview, ShareModal} from "./components.js";
+import {FileTab, Editor, Preview, ShareModal, VersionDropdown} from "./components.js";
 import {loadPlayground, savePlayground, sharePlayground} from "./actions.js";
 import {compile, inject} from "./actions.js";
 import {useEditor, usePlayground} from "./hooks.js";
@@ -162,6 +162,7 @@ const App = () => {
                             onClick={() => handleTabChange("config")}
                         />
                         <div className="has-ml-auto has-d-flex has-items-center mobile:has-d-none">
+                            <VersionDropdown theme={theme} />
                             <ActionButton theme={theme} icon="share" onClick={handleShareClick} />
                         </div>
                     </div>
@@ -172,7 +173,7 @@ const App = () => {
                             Made with <i className="icon-heart" /> and <i className="icon-coffee" /> using <b>siimple</b>.
                         </div>
                         <div className="">
-                            Playground Version <b>{process.env.VERSION}</b>
+                            Playground <b>v{process.env.VERSION}</b>
                         </div>
                     </div>
                 </div>
