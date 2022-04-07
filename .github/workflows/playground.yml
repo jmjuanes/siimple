@@ -23,7 +23,7 @@ jobs:
         run: cd playground && npm install
 
       - name: Build playground
-        run: npm run plyaground:build
+        run: npm run playground:build
 
       - name: Add configuration
         run: 'echo "$FIREBASE_CONFIG" > ./playground/.firebaserc'
