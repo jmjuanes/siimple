@@ -51,6 +51,7 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             "process.env.VERSION": JSON.stringify(package.version),
+            "process.env.HOMEPAGE_URL": JSON.stringify(package.homepage),
         }),
         new CopyPlugin({
             patterns: [

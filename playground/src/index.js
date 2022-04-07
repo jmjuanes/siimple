@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import kofi from "kofi";
 
-import {ActionButton, DarkThemeButton, LayoutSwitch} from "./components.js";
-import {FileTab, Editor, Preview} from "./components.js";
-import {loadPlayground, sharePlayground} from "./actions.js";
+import {ActionButton, DarkThemeButton, LayoutSwitch, Brand} from "./components.js";
+import {FileTab, Editor, Preview, ShareModal} from "./components.js";
+import {loadPlayground, savePlayground, sharePlayground} from "./actions.js";
 import {compile, inject} from "./actions.js";
 import {useEditor, usePlayground} from "./hooks.js";
 
@@ -19,7 +19,7 @@ const App = () => {
     const [ready, setReady] = React.useState(false);
     const [tab, setTab] = React.useState("html");
     const [shareUrl, setShareUrl] = React.useState("");
-    const [shareUrlCopied, setShareUrlCopied] = React.useState(false);
+    const [error, setError] = React.useState("");
     const [theme, setTheme] = React.useState(() => localStorage.getItem("siimple:playground:theme") || "light");
     const [layout, setLayout] = React.useState(() => localStorage.getItem("siimple:playground:layout") || "both");
 
@@ -32,13 +32,15 @@ const App = () => {
 
     // Request CSS compile
     const requestCompile = React.useMemo(() => {
-        return kofi.debounce(500, () => {
+        return kofi.debounce(1000, () => {
+            setError("");
             playground.current.html = htmlEditor.current.getCode();
             playground.current.config = configEditor.current.getCode();
+            savePlayground(playground.current);
 
             compile(worker.current, playground.current.config).then(data => {
                 if (data.error) {
-                    return console.error(data.error);
+                    return setError(data.error.message || data.error);
                 }
                 // Inject html and css in current preview
                 inject(previewRef.current, playground.current.html, data.css);
@@ -83,7 +85,8 @@ const App = () => {
         if (newTab === "html") {
             playground.current.config = configEditor.current.getCode();
         }
-        return setTab(newTab);
+        savePlayground(playground.current);
+        setTab(newTab);
     };
 
     // Handle preview loaded
@@ -102,15 +105,7 @@ const App = () => {
         playground.current.html = htmlEditor.current.getCode();
         playground.current.config = configEditor.current.getCode();
         sharePlayground(playground.current).then(url => {
-            setShareUrlCopied(false);
             setShareUrl(url);
-        });
-    };
-
-    // Handle copy click --> Copy url to clipboard
-    const handleCopyClick = () => {
-        navigator.clipboard.writeText(shareUrl).then(() => {
-            setShareUrlCopied(true);
         });
     };
 
@@ -133,15 +128,17 @@ const App = () => {
         "has-bg-coolgray-100": theme === "light",
     });
     const previewPanelClass = kofi.classNames({
-        "has-s-full has-minw-0 has-minh-0 has-p-0": true,
+        "has-s-full has-minw-0 has-minh-0 has-p-0 has-bg-white": true,
+        "has-d-flex has-flex-column": layout !== "code",
         "has-d-none": layout === "code",
     });
+
     // Render app component
     return (
         <div className={rootClass}>
             <div className={menuPanelClass}>
                 <div className="has-d-flex">
-                    <i className="icon-siimple has-text-4xl" />
+                    <Brand theme={theme} url={process.env.HOMEPAGE_URL} />
                 </div>
                 <LayoutSwitch theme={theme} layout={layout} onChange={handleLayoutChange} />
                 <div className="has-d-flex tablet:has-flex-column">
@@ -170,49 +167,31 @@ const App = () => {
                     </div>
                     <Editor theme={theme} visible={tab === "html"} ref={htmlRef} />
                     <Editor theme={theme} visible={tab === "config"} ref={configRef} />
+                    <div className="has-d-flex has-text-xs has-pt-4 has-opacity-80 mobile:has-d-none">
+                        <div className="has-mr-auto">
+                            Made with <i className="icon-heart" /> and <i className="icon-coffee" /> using <b>siimple</b>.
+                        </div>
+                        <div className="">
+                            Playground Version <b>{process.env.VERSION}</b>
+                        </div>
+                    </div>
                 </div>
                 <div className={previewPanelClass}>
+                    {kofi.when(!!error, () => (
+                        <div className="alert has-bg-red-500 has-radius-none">
+                            <i className="icon-exclamation has-text-2xl" />
+                            <div className="has-pl-4">
+                                <div className="title is-5 has-text-white">Error in siimple.config.js</div>
+                                <div className="has-weight-normal">{error}</div>
+                            </div>
+                        </div>
+                    ))}
                     <Preview ref={previewRef} onLoad={handlePreviewLoad} />
                 </div>
                 {/* Share modal */}
                 {kofi.when(!!shareUrl, () => (
-                    <div className="scrim">
-                        <div className="modal is-medium has-text-coolgray-700 mobile:has-mx-6">
-                            <div className="has-d-flex has-items-center has-mb-4">
-                                <div className="title is-3 has-mb-0">Share</div>
-                                <div className="close has-ml-auto" onClick={() => setShareUrl("")} />
-                            </div>
-                            <div className="paragraph">
-                                You can use the following URL for sharing your code:
-                            </div>
-                            <div className="has-mb-6">
-                                <textarea
-                                    className="textarea has-text-xs"
-                                    rows="5"
-                                    readOnly
-                                    defaultValue={shareUrl}
-                                />
-                            </div>
-                            <button
-                                className="button has-w-full has-d-flex has-items-center has-justify-center"
-                                onClick={() => handleCopyClick()}
-                            >
-                                <i className="icon-copy has-pr-1 has-text-lg" />
-                                <strong>{shareUrlCopied ? "Copied!" : "Copy to clipboard"}</strong>
-                            </button>
-                        </div>
-                    </div>
+                    <ShareModal url={shareUrl} theme={theme} onClose={() => setShareUrl("")} />
                 ))}
-            {/*
-            <div className="has-d-flex has-text-xs has-pt-2 has-opacity-80">
-                <div className="has-mr-auto">
-                    Made with <i className="icon-heart" /> and <i className="icon-coffee" /> using <b>siimple</b>.
-                </div>
-                <div className="">
-                    Playground Version <b>{process.env.VERSION}</b>
-                </div>
-            </div>
-            */}
         </div>
     );
 };
