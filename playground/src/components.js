@@ -3,15 +3,15 @@ import kofi from "kofi";
 
 // Brand component wrapper
 export const Brand = props => {
-    const brandClass = kofi.classNames({
-        "has-d-flex has-items-center has-mr-auto": true,
+    const parentClass = kofi.classNames({
+        "has-text-no-underline": true,
+        "has-text-coolgray-800": props.theme === "light",
         "has-text-white": props.theme === "dark",
     });
     return (
-        <div className={brandClass}>
-            <i className="icon-siimple has-text-2xl has-mr-2" />
-            <b className="has-text-xl">Playground</b>
-        </div>
+        <a className={parentClass} href={props.url} target="_blank">
+            <i className="icon-siimple has-text-4xl" />
+        </a>
     );
 };
 
@@ -65,20 +65,6 @@ export const ActionButton = props => {
     return (
         <div className={buttonClass} onClick={props.onClick}>
             <i className={`icon-${props.icon} has-text-2xl`} />
-        </div>
-    );
-};
-
-// Run button wrapper
-export const RunButton = props => {
-    const buttonClass = kofi.classNames({
-        "button has-d-flex has-items-center has-ml-2": true,
-        "hover:has-bg-blue-600": !props.loading,
-    });
-    return (
-        <div className={buttonClass} onClick={props.onClick}>
-            <i className="icon-play has-text-lg has-mr-1" />
-            <strong>Run</strong>
         </div>
     );
 };
@@ -177,6 +163,45 @@ export const LayoutSwitch = props => {
                     />
                 );
             })}
+        </div>
+    );
+};
+
+// Share modal
+export const ShareModal = props => {
+    const [copied, setCopied] = React.useState(false);
+    const handleCopyClick = () => {
+        navigator.clipboard.writeText(props.url).then(() => {
+            setCopied(true);
+        });
+    };
+
+    return (
+        <div className="scrim">
+            <div className="modal is-medium has-text-coolgray-700 mobile:has-mx-6">
+                <div className="has-d-flex has-items-center has-mb-4">
+                    <div className="title is-3 has-mb-0">Share</div>
+                    <div className="close has-ml-auto" onClick={props.onClose} />
+                </div>
+                <div className="paragraph">
+                    You can use the following URL for sharing your code:
+                </div>
+                <div className="has-mb-6">
+                    <textarea
+                        className="textarea has-text-xs"
+                        rows="5"
+                        readOnly
+                        defaultValue={props.url}
+                    />
+                </div>
+                <button
+                    className="button has-w-full has-d-flex has-items-center has-justify-center"
+                    onClick={() => handleCopyClick()}
+                >
+                    <i className="icon-copy has-pr-1 has-text-lg" />
+                    <strong>{copied ? "Copied!" : "Copy to clipboard"}</strong>
+                </button>
+            </div>
         </div>
     );
 };
