@@ -1,4 +1,4 @@
-import {mergeStyles} from "../lib.js";
+import {mergeStyles} from "../siimple/lib.js";
 
 describe("mergeStyles", () => {
     
