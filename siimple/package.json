@@ -1,0 +1,26 @@
+{
+    "name": "siimple",
+    "version": "4.0.0",
+    "description": "A minimal and themeable CSS toolkit for flat and clean designs.",
+    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "type": "module",
+    "license": "MIT",
+    "repository": "https://github.com/jmjuanes/siimple",
+    "bugs": "https://github.com/jmjuanes/siimple/issues",
+    "homepage": "https://www.siimple.xyz",
+    "main": "lib.js",
+    "bin": {
+        "siimple": "./cli.js"
+    },
+    "keywords": [
+        "siimple",
+        "flat",
+        "minimal",
+        "themeable",
+        "css",
+        "css-framework",
+        "css-toolkit",
+        "css-in-js",
+        "utilities"
+    ]
+}
