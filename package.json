@@ -13,7 +13,7 @@
     "twitter": "https://twitter.com/siimplecss",
     "scripts": {
         "build": "npm run css && npm run icons",
-        "css": "node ./cli.js -c ./defaultConfig.js -o siimple.css && gulp autoprefix && gulp minify",
+        "css": "node ./siimple/cli.js -c ./siimple/defaultConfig.js -o siimple/siimple.css && gulp autoprefix && gulp minify",
         "icons": "gulp icons",
         "website:clean": "cd website && npm run clean",
         "website:build": "cd website && npm run build",

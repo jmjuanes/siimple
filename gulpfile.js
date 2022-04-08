@@ -11,7 +11,7 @@ import svg2ttf from "svg2ttf";
 import ttf2woff from "ttf2woff";
 import Vinyl from "vinyl";
 
-import iconsList from "./icons.js";
+import iconsList from "./siimple/icons.js";
 // const pkg = require("./package.json");
 
 // Minify CSS
@@ -87,26 +87,26 @@ gulp.task("clean", () => null);
 
 // Build icons fonts
 gulp.task("icons", () => {
-    return gulp.src("icons.js")
+    return gulp.src("siimple/icons.js")
         .pipe(buildIcons())
-        .pipe(gulp.dest("."));
+        .pipe(gulp.dest("siimple"));
 });
 
 // Generate css files
 gulp.task("autoprefix", () => {
-    return gulp.src("siimple.css")
+    return gulp.src("siimple/siimple.css")
         .pipe(postcss([autoprefixer()]))
         .pipe(rename("siimple.css"))
-        .pipe(gulp.dest("."));
+        .pipe(gulp.dest("siimple"));
 });
 
 // Minify css
 gulp.task("minify", () => {
-    return gulp.src("siimple.css")
+    return gulp.src("siimple/siimple.css")
         .pipe(minify({
             "compatibility": "*",
             "level": 2,
         }))
         .pipe(rename("siimple.min.css"))
-        .pipe(gulp.dest("."));
+        .pipe(gulp.dest("siimple"));
 });
