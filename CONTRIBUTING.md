@@ -10,52 +10,56 @@ You must read and follow the [code of conduct](./CODE_OF_CONDUCT.md) of **siimpl
 
 ## Questions or problems
 
-We are happy to help you if you have any problem or question using **siimple**. Please, send your problem to our [public chat](https://gitter.im/siimple/siimple).
+We are happy to help you if you have any problem or question using **siimple**. Please, send your problem to our [discussions forum](https://github.com/jmjuanes/siimple/discussions).
 
 ## Issues or bugs
 
-If you want to report a bug or issue, please open a new [issue here](https://github.com/siimple/siimple/issues) and include as many details as possible with your report. Adding code or screenshots are very helpful.
+If you want to report a bug or issue, please open a new [issue here](https://github.com/jmjuanes/siimple/issues) and include as many details as possible with your report. Adding code or screenshots are very helpful.
 
-Also, you can help us and publish a new [pull request](https://github.com/siimple/siimple/pulls) with the fix of the bug or issue.
+Also, you can help us and publish a new [pull request](https://github.com/jmjuanes/siimple/pulls) with the fix of the bug or issue.
 
 ## New features
 
-You can request a new feature by [submitting a new issue](https://github.com/siimple/siimple/issues), or implement your new feature and [submit a new pull request](https://github.com/siimple/siimple/pulls) to the main repository. Keep in mind that the new feature must follow the style of **siimple**.
-
+You can request a new feature by [submitting a new issue](https://github.com/jmjuanes/siimple/issues), or implement your new feature and [submit a new pull request](https://github.com/jmjuanes/siimple/pulls) to the main repository. 
 
 ## Developing
 
-Make sure that [Node](https://nodejs.org), [npm](https://npmjs.com) and [Make](https://www.gnu.org/software/make/) are installed in your computer before starting.
+Make sure that [Node](https://nodejs.org) and [npm](https://npmjs.com) are installed in your computer before starting.
 
 ### Setup environment
 
 Run the following commands: 
 
 ```bash
-$ git clone https://github.com/siimple/siimple
+$ git clone https://github.com/jmjuanes/siimple
 $ cd siimple
-$ make install
+$ npm install
 ```
 
-After the `make install` you can update the node dependencies at any time running `make update`.
+If you plan to build the documentation site, you will need to run also the following command:
 
-**WARNING**: please never run `npm install` directly in the repository. Use `make install` to reinstall all dependencies or `make update` to update the dependencies instead. 
-
-### Building a package
-
-You can run
-
-```
-$ make build pkg="{{PKG_NAME}}"
+```bash
+$ npm run website:init
 ```
 
-to build the specified package. Note that you should replace `{{PKG_NAME}}` with the **name of the folder** in `/packages`. For example, if you want to build the `@siimple/css` package, you sould run `make build pkg="siimple-css"`.
+If you plan to use the playground tool, you will need to install the playground tool dependencies running the following command:
 
-Check the [packages description](/packages/README.md) for more information about the available packages.
+```bash
+$ npm run playground:init
+```
 
+### Building siimple
 
-### Building documentation
+```
+$ npm run build
+```
 
-Run `make docs` to build and start the documentation server. Then, open a new browser window and navigate to `http://localhost:5000`.
+This will generate the output CSS and the icons fonts in the `./siimple` folder.
 
+### Running documentation
 
+Just run `npm run website` to build the documentation site and start the documentation server Then, open a new browser window and navigate to `http://localhost:5000`.
+
+### Running playground
+
+Just run `npm run playground` to build the playground tool and start the playground server. Then, open a new browser window and navigate to `http://localhost:5000`.
