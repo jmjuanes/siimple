@@ -10,7 +10,7 @@ Welcome to the **siimple CSS toolkit** repository :tada:
 
 - :books: **Documentation**: read our documentation at https://www.siimple.xyz.
 - :pencil: **Try siimple**: play with **siimple** in your browser with our [online playground](https://playground.siimple.xyz).
-- :pray: **Contributing**: Check our [CONTRIBUTING guide](/CONTRIBUTING.md) to get started.
+- :pray: **Contributing**: check out our [CONTRIBUTING guide](/CONTRIBUTING.md) to get started.
 - :question: **Questions**: join our [discussion forum](https://github.com/jmjuanes/siimple/discussions).
 
 
