@@ -13,8 +13,9 @@ exports.onCreateWebpackConfig = ({getConfig, plugins, actions}) => {
                 path.resolve(__dirname, "./node_modules"),
             ],
             "alias": {
-                "siimple-colors": path.resolve(__dirname, "../colors.js"),
-                "siimple-icons": path.resolve(__dirname, "../icons.js"),
+                "siimple-colors": path.resolve(__dirname, "../siimple/colors.js"),
+                "siimple-icons": path.resolve(__dirname, "../siimple/icons.js"),
+                "siimple": path.resolve(__dirname, "../siimple/"),
             },
         },
         "plugins": [
@@ -31,9 +32,9 @@ exports.onCreateWebpackConfig = ({getConfig, plugins, actions}) => {
             // }))),
             new CopyPlugin({
                 patterns: [
-                    path.resolve(__dirname, "../siimple.min.css"),
-                    path.resolve(__dirname, "../siimple-icons.ttf"),
-                    path.resolve(__dirname, "../siimple-icons.woff"),
+                    path.resolve(__dirname, "../siimple/siimple.min.css"),
+                    path.resolve(__dirname, "../siimple/siimple-icons.ttf"),
+                    path.resolve(__dirname, "../siimple/siimple-icons.woff"),
                     "src/docs.css",
                     "node_modules/codecake/codecake.css",
                 ],

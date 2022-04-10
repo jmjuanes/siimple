@@ -1,4 +1,4 @@
-import {buildCssValue, buildCssRule, buildCss} from "../lib.js";
+import {buildCssValue, buildCssRule, buildCss} from "../siimple/lib.js";
 
 describe("buildCssValue", () => {
     it("should return the same string value", () => {

@@ -19,9 +19,9 @@ module.exports = {
             path.resolve(__dirname, "./node_modules"),
         ],
         alias: {
-            "siimple-config": path.resolve(__dirname, "../defaultConfig.js"),
-            "siimple-colors": path.resolve(__dirname, "../colors.js"),
-            "siimple": path.resolve(__dirname, "../lib.js"),
+            "siimple-config": path.resolve(__dirname, "../siimple/defaultConfig.js"),
+            "siimple-colors": path.resolve(__dirname, "../siimple/colors.js"),
+            "siimple": path.resolve(__dirname, "../siimple/"),
         },
     },
     module: {
@@ -55,9 +55,9 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                path.resolve(__dirname, "../siimple.min.css"),
-                path.resolve(__dirname, "../siimple-icons.ttf"),
-                path.resolve(__dirname, "../siimple-icons.woff"),
+                path.resolve(__dirname, "../siimple/siimple.min.css"),
+                path.resolve(__dirname, "../siimple/siimple-icons.ttf"),
+                path.resolve(__dirname, "../siimple/siimple-icons.woff"),
                 "node_modules/codecake/codecake.css",
                 "playground.html",
             ],

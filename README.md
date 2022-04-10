@@ -1,44 +1,72 @@
-# siimple
+![Siimple header](./header.svg)
 
-> A collection of toolkits and libs for building a better web
+[![NPM Version](https://badgen.net/npm/v/siimple)](https://npmjs.com/package/siimple)
+[![Follow @siimplecss](https://badgen.net/badge/Twitter/siimplecss/blue)](https://twitter.com/siimplecss)
+[![Get help](https://badgen.net/badge/Discussions/Join%20us/cyan)](https://github.com/jmjuanes/siimple/discussions)
+[![MIT License](https://badgen.net/github/license/jmjuanes/siimple)](https://github.com/jmjuanes/siimple)
+[![PRs welcome](https://badgen.net/badge/PR/Welcome/green)](https://github.com/jmjuanes/siimple)
 
-[![dependency Status](https://david-dm.org/siimple/siimple/status.svg?style=flat-square)](https://david-dm.org/siimple/siimple)
-[![Follow @siimplecss](https://img.shields.io/badge/Twitter-%40siimplecss-blue.svg?style=flat-square)](https://twitter.com/siimplecss)
-[![Join us on Gitter](https://img.shields.io/badge/chat-on_gitter-4EB897.svg?style=flat-square)](https://gitter.im/siimple/siimple)
-[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/siimple/siimple)
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/siimple/siimple)
+Welcome to the **siimple CSS toolkit** repository :tada: 
 
-## Introduction
-
-The **siimple** project started as a small css framework with basic UI elements.
+- :books: **Documentation**: read our documentation at https://www.siimple.xyz.
+- :pencil: **Try siimple**: play with **siimple** in your browser with our [online playground](https://playground.siimple.xyz).
+- :pray: **Contributing**: check out our [CONTRIBUTING guide](/CONTRIBUTING.md) to get started.
+- :question: **Questions**: join our [discussion forum](https://github.com/jmjuanes/siimple/discussions).
 
 
-## Contribute
+## Development
 
-Check our [CONTRIBUTING guide](/CONTRIBUTING.md) to get started.
+To get started, first clone this repository in your local machine:
 
-## FAQ
+```bash
+$ git clone https://github.com/jmjuanes/siimple
+```
 
-### Looking for support?
+Install dependencies with **npm**:
 
-For questions and support please join our [Gitter chat](https://gitter.im/siimple/siimple) or tweet us at [@siimplecss](https://twitter.com/siimplecss).
+```bash
+$ npm run install
+```
 
-### How is this repository structured?
+Build **siimple**:
 
-The **siimple** repository is managed as a monorepo with [many packages](/packages).
+```bash
+$ npm run build
+```
 
-### Where are the docs?
 
-The documentation of public packages of this monorepo is available at [docs.siimple.xyz](https://docs.siimple.xyz).
+## Local playground
 
-### How to report a bug or request a feature for a package?
+You can run the playground editor in your local machine after building **siimple**. First build the playground tool running the following commands:
 
-Issues for all packages are available at [siimple/issues](https://github.com/siimple/siimple/issues).
+```bash
+$ npm run playground:init && npm run playground:build
+```
 
-Before submit an issue, please specify in the issue the package the issue is related to (for example, in the issue title or using the label of the package).
+Start the playground tool running
+
+```bash
+$ npm run playground:serve
+```
+
+
+## Documentation
+
+We are using [Gatsby](https://www.gatsbyjs.com/) for documentation. After building **siimple** you can build the documentation site running the following command:
+
+```bash
+$ npm run website:init && npm run website:build
+```
+
+Start the website local server running:
+
+```bash
+$ npm run website:serve
+```
+
 
 ## License
 
-Code and documentation of **siimple** &copy; 2015-present **the siimple team**. 
-The code is released unde the [MIT License](LICENSE) and the documentation is released under the [Creative Commons CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
+Code and documentation of **siimple** &copy; 2015-present **Josemi Juanes**. 
 
+The code is released unde the [MIT License](LICENSE) and the documentation is released under the [Creative Commons CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).

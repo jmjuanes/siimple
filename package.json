@@ -13,13 +13,17 @@
     "twitter": "https://twitter.com/siimplecss",
     "scripts": {
         "build": "npm run css && npm run icons",
-        "css": "node ./cli.js -c ./defaultConfig.js -o siimple.css && gulp autoprefix && gulp minify",
+        "css": "node ./siimple/cli.js -c ./siimple/defaultConfig.js -o siimple/siimple.css && gulp autoprefix && gulp minify",
         "icons": "gulp icons",
+        "website:init": "cd website && npm install",
         "website:clean": "cd website && npm run clean",
         "website:build": "cd website && npm run build",
         "website:serve": "cd website && npm run serve",
+        "website": "cd website && npm run build && npm run serve",
+        "playground:init": "cd playground && npm run install",
         "playground:build": "cd playground && npm run build",
         "playground:serve": "cd playground && npm run serve",
+        "playground": "cd playground && npm run build && npm run serve",
         "test": "jest"
     },
     "devDependencies": {
