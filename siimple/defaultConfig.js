@@ -1,15 +1,19 @@
-import {screens, fonts} from "./globals.js";
+import {screens, fonts, lineHeights} from "./theme.js";
 import colors from "./colors.js";
-import elements from "./elements.js";
-import utilities from "./utilities.js";
 
 // Generate a default configuration for siimple
 export default {
-    flags: {
-        useRootStyles: true,
-        useBorderBox: true,
-    },
+    // Global flags
+    useRootStyles: true,
+    useBorderBox: true,
+    useRebootStyles: true,
+    useMarkupStyles: true,
+    useElements: true,
+    useUtilities: true,
+    useIcons: true,
+    // Prefixes
     prefix: "",
+    // Default theme breakpoints
     breakpoints: {
         mobile: {
             max: screens.tablet,
@@ -24,6 +28,7 @@ export default {
             min: screens.widescreen,
         },
     },
+    // Default theme scales
     scales: {
         colors: {
             primary: colors.blue["500"],
@@ -50,21 +55,10 @@ export default {
             bold: "700",
         },
         lineHeights: {
-            heading: "1.125",
-            body: "1.5",
+            heading: lineHeights.tight,
+            body: lineHeights.normal,
         },
     },
-    corePlugins: {
-        reboot: true,
-        markup: true,
-        elements: true,
-        utilities: true,
-        icons: true,
-        ...Object.fromEntries(Object.keys(elements).map(key => {
-            return [key, true];
-        })),
-        ...Object.fromEntries(Object.keys(utilities).map(key => {
-            return [key, true];
-        })),
-    },
+    // Default styles
+    styles: {},
 };
