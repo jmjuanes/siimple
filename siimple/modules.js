@@ -1,7 +1,322 @@
-import {columns, screens, headings} from "./globals.js";
+import icons from "./icons.js";
+import colors from "./colors.js";
+import {screens, fonts, sizes, opacities} from "./theme.js";
+
+// Generate colors values
+const getColorsValues = () => {
+    const flatColorsList = {};
+    Object.keys(colors).forEach(name => {
+        if (typeof colors[name] === "string") {
+            flatColorsList[name] = colors[name];
+            return;
+        }
+        Object.keys(colors[name]).forEach(shade => {
+            flatColorsList[`${name}-${shade}`] = colors[name][shade];
+        });
+    });
+    return flatColorsList;
+};
+
+// Column sizes
+const columns = {
+    "one-fifth": "20%",
+    "one-quarter": "25%",
+    "one-third": "33.33%",
+    "two-fifths": "40%",
+    "half": "50%",
+    "three-fifths": "60%",
+    "two-thirds": "66.66%",
+    "three-quarters": "75%",
+    "four-fifths": "80%",
+    "full": "100%",
+};
+
+// Heading sizes
+const headings = {
+    "1": "2.5rem",
+    "2": "2rem",
+    "3": "1.75rem",
+    "4": "1.5rem",
+    "5": "1.25rem",
+    "6": "1rem",
+};
+
+// Overflow properties
+const overflowProps = {
+    overflow: "overflow",
+    overflowX: "overflow-x",
+    overflowY: "overflow-y",
+};
+
+// Sizing properties
+const sizingProps = {
+    width: {
+        shortcut: "w",
+        properties: ["width"],
+        extraValues: {
+            screen: "100vw",
+        },
+    },
+    minWidth: {
+        shortcut: "minw",
+        properties: ["min-width"],
+        extraValues: {
+            screen: "100vw",
+        },
+    },
+    maxWidth: {
+        shortcut: "maxw",
+        properties: ["max-width"],
+        extraValues: {
+            screen: "100vw",
+        },
+    },
+    height: {
+        shortcut: "h",
+        properties: ["height"],
+        extraValues: {
+            screen: "100vh",
+        },
+    },
+    minHeight: {
+        shortcut: "minh",
+        properties: ["min-height"],
+        extraValues: {
+            screen: "100vh",
+        },
+    },
+    maxHeight: {
+        shortcut: "maxh",
+        properties: ["max-height"],
+        extraValues: {
+            screen: "100vh",
+        },
+    },
+    size: {
+        shortcut: "s",
+        properties: ["width", "height"],
+        extraValues: {},
+    },
+};
+
+// Spacing props
+const spacingProps = {
+    padding: {
+        shortcut: "p",
+        properties: ["padding"],
+    },
+    paddingX: {
+        shortcut: "px",
+        properties: ["padding-left", "padding-right"],
+    },
+    paddingY: {
+        shortcut: "py",
+        properties: ["padding-top", "padding-bottom"],
+    },
+    paddingTop: {
+        shortcut: "pt",
+        properties: ["padding-top"],
+    },
+    paddingBottom: {
+        shortcut: "pb",
+        properties: ["padding-bottom"],
+    },
+    paddingLeft: {
+        shortcut: "pl",
+        properties: ["padding-left"],
+    },
+    paddingRight: {
+        shortcut: "pr",
+        properties: ["padding-right"],
+    },
+    margin: {
+        shortcut: "m",
+        properties: ["margin"],
+    },
+    marginX: {
+        shortcut: "mx",
+        properties: ["margin-left", "margin-right"],
+    },
+    marginY: {
+        shortcut: "my",
+        properties: ["margin-top", "margin-bottom"],
+    },
+    marginTop: {
+        shortcut: "mt",
+        properties: ["margin-top"],
+    },
+    marginBottom: {
+        shortcut: "mb",
+        properties: ["margin-bottom"],
+    },
+    marginLeft: {
+        shortcut: "ml",
+        properties: ["margin-left"],
+    },
+    marginRight: {
+        shortcut: "mr",
+        properties: ["margin-right"],
+    },
+};
+
+// Markup plugin configuration
+const markupStyles = {
+    p: {
+        fontWeight: "body",
+        lineHeight: "body",
+        marginBottom: "1rem",
+        marginTop: "0px",
+    },
+    a: {
+        color: "primary",
+    },
+    small: {
+        fontSize: "small",
+    },
+    "b,strong": {
+        fontWeight: "bold",
+    },
+    pre: {
+        fontFamily: "monospace",
+        overflowX: "auto",
+    },
+    code: {
+        color: "primary",
+        fontFamily: "monospace",
+        fontSize: "small",
+        fontWeight: "bold",
+        textDecoration: "none",
+    },
+    hr: {
+        backgroundColor: "fill",
+        border: "0px",
+        display: "block",
+        height: "0.125rem",
+        padding: "0px",
+        "&:not(:first-child)": {
+            marginTop: "1rem",
+        },
+        "&:not(:last-child)": {
+            marginBottom: "1rem",
+        },
+    },
+    blockquote: {
+        borderLeft: ["0.25rem", "solid", "currentColor"],
+        color: "currentColor",
+        display: "block",
+        marginBottom: "1rem",
+        marginLeft: "0px",
+        marginRight: "0px",
+        opacity: "0.6",
+        paddingBottom: "0.75rem",
+        paddingLeft: "1.25rem",
+        paddingRight: "0.75rem",
+        paddingTop: "0.75rem",
+    },
+    table: {
+        width: "100%",
+    },
+    ...Object.fromEntries(Object.keys(headings).map(heading => {
+        const headingConfig = {
+            color: "heading",
+            fontFamily: "heading",
+            fontSize: headings[heading],
+            fontWeight: "heading",
+            lineHeight: "heading",
+        };
+        return [`h${heading}`, headingConfig];
+    })),
+};
+
+// Reboot styles
+const rebootStyles = {
+    // Reset box sizing of all elements
+    // *,
+    // *:before,
+    // *:after {
+    //     box-sizing: border-box;
+    // }
+    // Set default html style
+    html: {
+        // boxSizing: "border-box",
+        scrollBehavior: "smooth",
+    },
+    // Set default body style
+    body: {
+        margin: "0",
+        padding: "0",
+        minHeight: "100vh",
+        textRendering: "optimizeLegibility",
+        "-webkit-font-smoothing": "antialiased",
+        "-moz-osx-font-smoothing": "grayscale",
+    },
+    // Reset margins on lists
+    "ul,ol,dl": {
+        marginBottom: "1rem",
+        marginTop: "0",
+    },
+    // Reset margins on paragraphs
+    p: {
+        marginBottom: "1rem",
+        marginTop: "0",
+    },
+    // Fix bold weight (in firefox)
+    "strong,b": {
+        fontWeight: "bold",
+    },
+    // Make images and videos responsive by default
+    "img,video": {
+        display: "block",
+        height: "auto",
+        maxWidth: "100%",
+    },
+    // Remove border from iframe
+    iframe: {
+        border: "0",
+    },
+    // Reset table border
+    table: {
+        borderCollapse: "collapse",
+        borderSpacing: "0",
+    },
+    // td,
+    // th {
+    //     padding: 0;
+    // }
+};
+
+// Base icons styles
+const iconsStyles = {
+    // Icons font face
+    "@font-face": {
+        fontFamily: "'siimple-icons'",
+        fontStyle: "normal",
+        fontWeight: "normal",
+        src: [
+            "url(./siimple-icons.ttf) format('truetype'),",
+            "url(./siimple-icons.woff) format('woff')",
+        ],
+    },
+    // Icons base class
+    '[class^="icon-"],[class*=" icon-"]': {
+        alignSelf: "center",
+        // display: "inline-flex",
+        fontFamily: "'siimple-icons'",
+        fontStyle: "normal",
+        fontWeight: ["normal", "!important"],
+        lineHeight: "1",
+        textRendering: "auto",
+        verticalAlign: "-0.125em",
+        "-moz-osx-font-smoothing": "grayscale",
+        "-webkit-font-smoothing": "antialiased",
+        "&:before": {
+            boxSizing: "border-box",
+        },
+    },
+};
 
 // Elements configuration
-export default {
+const elements = {
     alert: {
         styles: {
             alignItems: "center",
@@ -917,5 +1232,426 @@ export default {
                 backgroundColor: "fill",
             },
         },
+    },
+};
+
+// Utilities configuration
+const utilities = {
+    alignContent: {
+        shortcut: "content",
+        states: ["default"],
+        responsive: true,
+        properties: ["align-content"],
+        values: {
+            start: "flex-start",
+            end: "flex-end",
+            center: "center",
+            between: "space-between",
+            around: "space-around",
+            evenly: "space-evenly",
+        },
+    },
+    alignItems: {
+        shortcut: "items",
+        states: ["default"],
+        responsive: true,
+        properties: ["align-items"],
+        values: {
+            start: "flex-start",
+            end: "flex-end",
+            center: "center",
+            stretch: "stretch",
+            baseline: "baseline",
+        },
+    },
+    alignSelf: {
+        shortcut: "self",
+        states: ["default"],
+        responsive: true,
+        properties: ["align-self"],
+        values: {
+            auto: "auto",
+            start: "flex-start",
+            end: "flex-end",
+            center: "center",
+            stretch: "stretch",
+            baseline: "baseline",
+        },
+    },
+    backgroundColor: {
+        shortcut: "bg",
+        states: ["default", "hover", "focus"],
+        responsive: false,
+        properties: ["background-color"],
+        values: getColorsValues(),
+    },
+    borderRadius: {
+        shortcut: "radius",
+        states: ["default"],
+        responsive: false,
+        properties: ["border-radius"],
+        values: {
+            // xs: "0.125rem",
+            sm: "0.25rem",
+            default: "0.5rem",
+            lg: "0.75rem",
+            xl: "1rem",
+            full: "9999px",
+            none: "0px",
+        },
+    },
+    color: {
+        shortcut: "text",
+        states: ["default", "hover", "focus"],
+        responsive: false,
+        properties: ["color"],
+        values: getColorsValues(),
+    },
+    cursor: {
+        shortcut: "cursor",
+        states: ["default"],
+        responsive: false,
+        properties: ["cursor"],
+        values: {
+            hand: "pointer",
+            pointer: "pointer",
+            move: "move",
+            none: "none",
+            "zoom-in": "zoom-in",
+            "zoom-out": "zoom-out",
+            "not-allowed": "not-allowed",
+        },
+    },
+    display: {
+        shortcut: "d",
+        states: ["default"],
+        responsive: true,
+        properties: ["display"],
+        values: {
+            "none": "none",
+            "inline": "inline",
+            "block": "block",
+            "inline-block": "inline-block",
+            "flex": "flex",
+            "inline-flex": "inline-flex",
+        },
+    },
+    flex: {
+        shortcut: "flex",
+        states: ["default"],
+        responsive: true,
+        properties: ["flex"],
+        values: {
+            "none": "none",
+            "initial": "initial",
+            "auto": "auto",
+        },
+    },
+    flexDirection: {
+        shortcut: "flex",
+        states: ["default"],
+        responsive: true,
+        properties: ["flex-direction"],
+        values: {
+            "row": "row", 
+            "column": "column", 
+            "row-rev": "row-reverse", 
+            "column-rev": "column-reverse",
+        },
+    },
+    flexGrow: {
+        shortcut: "flex",
+        states: ["default"],
+        responsive: true,
+        properties: ["flex-grow"],
+        values: {
+            "grow": "1",
+            "no-grow": "0",
+        },
+    },
+    flexShrink: {
+        shortcut: "flex",
+        states: ["default"],
+        responsive: true,
+        properties: ["flex-shrink"],
+        values: {
+            "shrink": "1",
+            "no-shrink": "0",
+        },
+    },
+    flexWrap: {
+        shortcut: "flex",
+        states: ["default"],
+        responsive: true,
+        properties: ["flex-wrap"],
+        values: {
+            "wrap": "wrap",
+            "no-wrap": "nowrap",
+        },
+    },
+    float: {
+        shortcut: "float",
+        states: ["default"],
+        responsive: true,
+        properties: ["float"],
+        values: {
+            left: "left",
+            right: "right",
+            none: "none",
+        },
+    },
+    font: {
+        shortcut: "font",
+        states: ["default"],
+        responsive: false,
+        properties: ["font-family"],
+        values: fonts,
+    },
+    fontSize: {
+        shortcut: "text",
+        states: ["default"],
+        responsive: false,
+        properties: ["font-size"],
+        values: {
+            "xs": "0.75rem",
+            "sm": "0.875rem",
+            "base": "1rem",
+            "lg": "1.25rem",
+            "xl": "1.5rem",
+            "2xl": "2rem",
+            "3xl": "2.5rem",
+            "4xl": "3rem",
+            "5xl": "3.5rem",
+        },
+    },
+    fontStyle: {
+        shortcut: "text",
+        states: ["default", "hover"],
+        responsive: false,
+        properties: ["font-style"],
+        values: {
+            "italic": "italic",
+            "no-italic": "normal",
+        },
+    },
+    fontWeight: {
+        shortcut: "weight",
+        states: ["default"],
+        responsive: false,
+        properties: ["font-weight"],
+        values: {
+            light: "300",
+            normal: "400",
+            medium: "500",
+            bold: "700",
+            black: "900",
+        },
+    },
+    justifyContent: {
+        shortcut: "justify",
+        states: ["default"],
+        responsive: true,
+        properties: ["justify-content"],
+        values: {
+            start: "flex-start",
+            end: "flex-end",
+            center: "center",
+            between: "space-between",
+            around: "space-around",
+            evenly: "space-evenly",
+        },
+    },
+    lineHeight: {
+        shortcut: "lh",
+        states: ["default"],
+        responsive: false,
+        properties: ["line-height"],
+        values: {
+            none: "1",
+            normal: "normal",
+            sm: "1.25",
+            base: "1.5",
+            lg: "2",
+        },
+    },
+    opacity: {
+        shortcut: "opacity",
+        states: ["default", "hover"],
+        responsive: false,
+        properties: ["opacity"],
+        values: opacities,
+    },
+    order: {
+        shortcut: "order",
+        states: ["default"],
+        responsive: true,
+        properties: ["order"],
+        values: {
+            none: "0",
+            first: "-999",
+            last: "999",
+        },
+    },
+    position: {
+        shortcut: "position",
+        states: ["default"],
+        responsive: true,
+        properties: ["position"],
+        values: {
+            relative: "relative",
+            absolute: "absolute",
+            sticky: "sticky",
+            fixed: "fixed",
+            initial: "initial",
+        },
+    },
+    shadow: {
+        shortcut: "shadow",
+        states: ["default"],
+        responsive: false,
+        properties: ["box-shadow"],
+        values: {
+            sm: "0 0.25rem 1rem -0.125rem rgba(#000, 0.15),0 0 0 1px rgba(#000, 0.02)",
+            default: "0 0.5rem 1rem -0.25rem rgba(#000, 0.2), 0 0 0 1px rgba(#000, 0.02)",
+            lg: "0rem 1rem 1rem -0.5rem rgba(#000, 0.25),0 0 0 1px rgba(#000, 0.02)",
+            none: "none",
+        },
+    },
+    textAlign: {
+        shortcut: "text",
+        states: ["default"],
+        responsive: false,
+        properties: ["text-align"],
+        values: {
+            justify: "justify", 
+            left: "left", 
+            center: "center", 
+            right: "right",
+        },
+    },
+    textDecoration: {
+        shortcut: "text",
+        states: ["default", "hover"],
+        responsive: false,
+        properties: ["text-decoration"],
+        values: {
+            "underline": "underline",
+            "no-underline": "none",
+        },
+    },
+    textTransform: {
+        shortcut: "text",
+        states: ["default", "hover"],
+        responsive: false,
+        properties: ["text-transform"],
+        values: {
+            capitalize: "capitalize",
+            uppercase: "uppercase",
+            lowercase: "lowercase",
+        },
+    },
+    verticalAlign: {
+        shortcut: "valign",
+        states: ["default"],
+        responsive: false,
+        properties: ["vertical-align"],
+        values: {
+            "baseline": "baseline",
+            "top": "top",
+            "middle": "middle",
+            "bottom": "bottom",
+            "text-top": "text-top",
+            "text-bottom": "text-bottom",
+        },
+    },
+    ...Object.fromEntries(Object.keys(overflowProps).map(name => {
+        const overflowConfig = {
+            shortcut: name,
+            states: ["default"],
+            properties: [overflowProps[name]],
+            values: {
+                auto: "auto",
+                scroll: "scroll",
+                hidden: "hidden",
+            },
+        };
+        return [name, overflowConfig];
+    })),
+    ...Object.fromEntries(Object.keys(sizingProps).map(key => {
+        const sizingConfig = {
+            shortcut: sizingProps[key].name,
+            states: ["default"],
+            responsive: true,
+            properties: sizingProps[key].properties,
+            values: {
+                ...sizes,
+                ...sizingProps[key].extraValues,
+                auto: "auto",
+                full: "100%",
+                half: "50%",
+                one: "1px",
+                none: "0px",
+            },
+        };
+        return [key, sizingConfig];
+    })),
+    ...Object.fromEntries(Object.keys(spacingProps).map(key => {
+        const spacingConfig = {
+            shortcut: spacingProps[key].name,
+            states: ["default"],
+            responsive: true,
+            properties: spacingProps[key].properties,
+            values: {
+                ...sizes,
+                auto: "auto",
+                full: "100%",
+                half: "50%",
+                none: "0px",
+            },
+        };
+        return [key, spacingConfig];
+    })),
+    ...Object.fromEntries(["bottom","left","right","top"].map(name => {
+        const placementConfig = {
+            shortcut: name,
+            states: ["default"],
+            responsive: true,
+            properties: [name],
+            values: {
+                none: "0px",
+                half: "50%",
+                full: "100%",
+                auto: "auto",
+            },
+        };
+        return [name, placementConfig];
+    })),
+};
+
+// Export core modules
+export default {
+    reboot: actions => actions.addStyles(rebootStyles),
+    markup: actions => actions.addStyles(markupStyles),
+    elements: actions => {
+        return Object.keys(elements).forEach(name => {
+            return actions.addElement(name, elements[name]);
+        });
+    },
+    utilities: actions => {
+        return Object.keys(utilities).forEach(name => {
+            return actions.addUtility(utilities[name]);
+        });
+    },
+    icons: actions => {
+        return actions.addStyles({
+            ...iconsStyles,
+            ...Object.fromEntries(icons.map(icon => {
+                const iconSelector = `.icon-${icon.id}:before`;
+                const iconStyles = {
+                    content: `"\\${icon.unicode.toString(16).toLowerCase()}"`,
+                };
+                return [iconSelector, iconStyles];
+            })),
+        });
     },
 };
