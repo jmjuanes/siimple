@@ -1,17 +1,3 @@
-// Column sizes
-export const columns = {
-    "one-fifth": "20%",
-    "one-quarter": "25%",
-    "one-third": "33.33%",
-    "two-fifths": "40%",
-    "half": "50%",
-    "three-fifths": "60%",
-    "two-thirds": "66.66%",
-    "three-quarters": "75%",
-    "four-fifths": "80%",
-    "full": "100%",
-};
-
 // Screen sizes
 export const screens = {
     tablet: "640px",
@@ -19,7 +5,7 @@ export const screens = {
     widescreen: "1504px",
 };
 
-// Font family
+// Font families list
 export const fonts = {
     sans: [
         "-apple-system", 
@@ -48,14 +34,20 @@ export const fonts = {
     ],
 };
 
-// Heading sizes
-export const headings = {
-    "1": "2.5rem",
-    "2": "2rem",
-    "3": "1.75rem",
-    "4": "1.5rem",
-    "5": "1.25rem",
-    "6": "1rem",
+// Font sizes
+export const fontSizes = {};
+
+// Font weights
+export const fontWeights = {};
+
+// Default line heights
+export const lineHeights = {
+    none: "1",
+    tight: "1.25",
+    snug: "1.375",
+    normal: "1.5",
+    relaxed: "1.625",
+    loose: "2",
 };
 
 // Global sizes
@@ -76,4 +68,29 @@ export const sizes = {
     "96": "24rem",
     "128": "32rem",
     "256": "64rem",
+};
+
+// Theme opacities
+export const opacities = {
+    "0": 0,
+    "5": 0.05,
+    "10": 0.1,
+    "15": 0.15,
+    "20": 0.2,
+    "25": 0.25,
+    "30": 0.3,
+    "35": 0.35,
+    "40": 0.4,
+    "45": 0.45,
+    "50": 0.5,
+    "55": 0.55,
+    "60": 0.6,
+    "65": 0.65,
+    "70": 0.7,
+    "75": 0.75,
+    "80": 0.8,
+    "85": 0.85,
+    "90": 0.9,
+    "95": 0.95,
+    "100": 100,
 };
