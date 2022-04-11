@@ -6,15 +6,13 @@ title: Markup
 
 Use this plugin to style base markup elements, like headings, paragraphs, links... 
 
-### Enable markup plugin
+### Disable markup module
 
-Markup styles are enabled by default, but can be disabled setting to `false` the `markup` field in the `corePlugins` section of the configuration.
+Markup styles are enabled by default, but can be disabled setting to `false` the `useMarkupStyles` flag in your configuration:
 
 ```js title=siimple.config.js
 export default {
-    corePlugins: {
-        markup: false, // Skip markup styles
-    },
+    useMarkupStyles: false, // Skip markup styles
 };
 ```
 
@@ -33,23 +31,6 @@ This plugin will style your heading elements, from `<h1>` through `<h6>`. For st
 <h6>h6. Siimple heading</h6>
 ```
 
-Headings will use the default variant of `text.heading` defined in the `variants` section of your configuration:
-
-```js title=siimple.config.js
-export default {
-    variants: {
-        "text.heading": {
-            default: {
-                color: "heading",
-                fontFamily: "heading",
-                fontWeight: "heading",
-                lineHeight: "heading",
-            },
-        },
-    },
-};
-```
-
 #### Paragraph
 
 This plugin will style your `<p>` elements. For style non paragraph HTML elements like `<div>` elements, you can use the [paragraph](/elements/paragraph) element instead.
@@ -59,21 +40,6 @@ This plugin will style your `<p>` elements. For style non paragraph HTML element
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
     incididunt ut labore et dolore magna aliqua.
 </p>
-```
-
-This plugin will use the default variant of `text.paragraph` defined in the `variants` section of your configuration:
-
-```js title=siimple.config.js
-export default {
-    variants: {
-        "text.paragraph": {
-            default: {
-                fontWeight: "body",
-                lineHeight: "body",
-            },
-        },
-    },
-};
 ```
 
 #### Blockquotes
@@ -101,22 +67,6 @@ This plugin will style your inline text elements, like `<small>` or `<code>` ele
 
 This plugin will style your `<hr>` elements. For styling non `<hr>` elements as an horizontal rule, you can use the [divider](/elements/divider) element instead.
 
-```html live=true
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
+```html
 <hr>
-<p class="has-mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-```
-
-The horizontal rule will use the default variant of `divider` defined in the `variants` section of your configuration.
-
-```js title=siimple.config.js
-export default {
-    variants: {
-        divider: {
-            default: {
-                backgroundColor: "fill",
-            },
-        },
-    },
-};
 ```

@@ -4,7 +4,7 @@ title: "Configuration"
 
 # Configuration
 
-**Siimple** is based in a set of configuration rules written in JavaScript, where you can define your theme, the core plugins that you need to include and additional plugins and styles.
+**Siimple** is based in a set of configuration rules written in JavaScript, where you can define your theme, the core modules that you need to include and additional styles.
 
 This is an example of a configuration file for **siimple**: 
 
@@ -12,6 +12,9 @@ This is an example of a configuration file for **siimple**:
 import colors from "siimple/colors.js";
 
 export default {
+    useReboot: true,
+    useBorderBox: true,
+    useUtilities: false,
     prefix: "",
     scales: {
         colors: {
@@ -25,10 +28,6 @@ export default {
             heading: ["Montserrat", "sans-serif"],
             monospace: ["monospace"],
         },
-    },
-    flags: {
-        useRootS: true,
-        useBorderBox: true,
     },
 };
 ```
@@ -137,43 +136,31 @@ Visit the [variants guide](/variants) to read more about how to customize your c
 
 ### Configuration flags
 
-Use the `flags` to enable or disable some features of **siimple**:
+Use the configuration flags to enable or disable some features of **siimple**:
 
 - `useRootStyles`: add root styles to the `<html>` element. Default is `true`.
 - `useBorderBox`: adds a global `box-sizing: border-box`. Default is `true`.
+- `useRebootStyles`: includes the styles defined in the [reboot module](/reboot). Default is `true`.
+- `useMarkupStyles`: include the styles defined in the [markup module](/markup). Default is `true`.
+- `useElements`: include elements. Default is `true`.
+- `useUtilities`: include utilities. Default is `true`.
+- `useIcons`: include icons. Default is `true`.
 
-### Core plugins
-
-The `corePlugins` section allows to enable or disable the core plugins of **siimple**. This is just an object where the key is the plugin name, and the value is a `Boolean` that will be used to add or skip this plugin when generation the output CSS.
+Flags are defined in the first level of the configuration object:
 
 ```js title=siimple.config.js
 export default {
-    corePlugins: {
-        reboot: true,
-        markup: true,
-        elements: true,
-        utilities: true,
-        icons: true,
-    },
+    useRootStyles: true,
+    useBorderBox: true,
+    useRebootStyles: true,
+    useMarkupStyles: true,
+    useElements: true,
+    useUtilities: true,
+    useIcons: true,
+    // include other configuration
+    // ...
 };
 ```
-
-### Plugins
-
-The `plugins` section allows to extend **siimple** adding additional styles, elements or utilities.
-
-```js title=siimple.config.js
-import extraUtilities from "extra-utilities-for-siimple";
-
-export default {
-    plugins: [
-        extraUtilities(),
-    ],
-};
-```
-
-Learn more about how to create your own plugins in the [plugins guide](/plugins);
-
 
 ### Root styles
 

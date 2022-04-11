@@ -6,14 +6,12 @@ title: Reboot
 
 This core plugin provides a modern and generic CSS reset that must be used to reduce inconsistencies between different browsers.
 
-### Enable reboot plugin
+### Disable reboot styles
 
-The reboot plugin are enabled by default, but can be disabled setting to `false` the `reboot` field in the `corePlugins` section of the configuration.
+The reboot styles are enabled by default, but can be disabled setting to `false` the `useRebootStyles` in your configuration:
 
 ```js title=siimple.config.js
 export default {
-    corePlugins: {
-        reboot: false, // Skip reboot
-    },
+    useRebootStyles: false, // Skip reboot
 };
 ```

@@ -6,15 +6,13 @@ title: Icons
 
 We provide a collection of hand-crafted and open source icons webfont that can be used in any web and mobile project.
 
-### Enable icons plugin
+### Disable icons module
 
-Icons are enabled by default, but can be disabled setting to `false` the `icons` field in the `corePlugins` section of the configuration.
+Icons are enabled by default, but can be disabled setting to `false` the `useIcons` flag in your configuration:
 
 ```js title=siimple.config.js
 export default {
-    corePlugins: {
-        icons: false, // Skip icons
-    },
+    useIcons: false, // Skip icons
 };
 ```
 
