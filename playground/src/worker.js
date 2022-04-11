@@ -1,6 +1,6 @@
 import {build, mergeConfig} from "siimple";
-import defaultConfig from "siimple-config";
-import colors from "siimple-colors";
+import defaultConfig from "siimple/defaultConfig.js";
+import colors from "siimple/colors.js";
 
 const AsyncFunction = Object.getPrototypeOf(async () => {}).constructor;
 const modules = {
