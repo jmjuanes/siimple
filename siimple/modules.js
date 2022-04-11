@@ -1579,7 +1579,7 @@ const utilities = {
     })),
     ...Object.fromEntries(Object.keys(sizingProps).map(key => {
         const sizingConfig = {
-            shortcut: sizingProps[key].name,
+            shortcut: sizingProps[key].shortcut,
             states: ["default"],
             responsive: true,
             properties: sizingProps[key].properties,
@@ -1597,7 +1597,7 @@ const utilities = {
     })),
     ...Object.fromEntries(Object.keys(spacingProps).map(key => {
         const spacingConfig = {
-            shortcut: spacingProps[key].name,
+            shortcut: spacingProps[key].shortcut,
             states: ["default"],
             responsive: true,
             properties: spacingProps[key].properties,
