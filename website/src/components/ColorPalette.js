@@ -1,6 +1,6 @@
 import React from "react";
 import kofi from "kofi";
-import colors from "siimple-colors";
+import colors from "siimple/colors.js";
 
 // Get visible colors keys
 const getVisibleColors = () => {

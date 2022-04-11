@@ -1,6 +1,6 @@
 import React from "react"
 import kofi from "kofi";
-import icons from "siimple-icons";
+import icons from "siimple/icons.js";
 
 // Sorted icons list
 const sortedIcons = icons.sort((a, b) => a.id < b.id ? -1 : +1);

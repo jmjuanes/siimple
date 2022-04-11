@@ -13,8 +13,6 @@ exports.onCreateWebpackConfig = ({getConfig, plugins, actions}) => {
                 path.resolve(__dirname, "./node_modules"),
             ],
             "alias": {
-                "siimple-colors": path.resolve(__dirname, "../siimple/colors.js"),
-                "siimple-icons": path.resolve(__dirname, "../siimple/icons.js"),
                 "siimple": path.resolve(__dirname, "../siimple/"),
             },
         },
