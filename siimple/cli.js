@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 
 import defaultConfig from "./defaultConfig.js";
-import {build, mergeConfig} from "./lib.js";
+import {build, mergeConfig} from "./index.js";
 
 // Get CLI arguments
 const getArguments = () => {
