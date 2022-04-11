@@ -18,13 +18,13 @@ export const defaultHtml = `
 
 // Default configuration for playground
 export const defaultConfig = `
-import colors from "siimple/colors";
+// You can import siimple colors to customize your theme
+// import colors from "siimple/colors";
 
 export default {
     prefix: "",
     scales: {},
     variants: {},
-    plugins: [],
 };
 
 `.trim();
