@@ -1,6 +1,6 @@
 import React from "react"
 import kofi from "kofi";
-import icons from "siimple-icons";
+import icons from "siimple/icons.js";
 
 import {Link} from "./Link.js";
 import {Icon} from "./Icon.js";

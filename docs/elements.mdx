@@ -6,27 +6,13 @@ title: Elements
 
 We provide a collection of built-in UI elements that you can customize and reuse across your projects, that includes buttons, alerts, navigation links, and more!
 
-### Enable elements plugin
+### Disable elements
 
-Elements are enabled by default, but can be disabled setting to `false` the `elements` field in the `corePlugins` section of the configuration.
-
-```js title=siimple.config.js
-export default {
-    corePlugins: {
-        elements: false, // Skip all elements
-    },
-};
-```
-
-Also, you can disable only individual elements just setting to `false` the element name in the `corePlugins` section of the configuration:
+Elements are enabled by default, but can be disabled setting to `false` the `useElements` flag in your configuration:
 
 ```js title=siimple.config.js
 export default {
-    corePlugins: {
-        alert: false,
-        button: false,
-        card: false,
-    },
+    useElements: false, // Skip all elements
 };
 ```
 

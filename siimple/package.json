@@ -8,7 +8,7 @@
     "repository": "https://github.com/jmjuanes/siimple",
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "homepage": "https://www.siimple.xyz",
-    "main": "lib.js",
+    "main": "index.js",
     "bin": {
         "siimple": "./cli.js"
     },

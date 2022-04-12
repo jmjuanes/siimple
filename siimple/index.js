@@ -1,8 +1,4 @@
-import elements from "./elements.js";
-import icons from "./icons.js";
-import markup from "./markup.js";
-import reboot from "./reboot.js";
-import utilities from "./utilities.js";
+import coreModules from "./modules.js";
 
 // Valid media-query features
 const mediaQueriesFeatures = {
@@ -81,91 +77,19 @@ const aliases = {
     size: ["width", "height"],
 };
 
-// Core plugins configuration
-const corePlugins = {
-    reboot: actions => actions.addStyles(reboot),
-    markup: actions => {
-        const config = actions.getConfig();
-        Object.values(markup).forEach(options => {
-            const variants = options.variants || "";
-            const defaultVariants = options.defaultVariants?.default || {};
-            return actions.addStyles({
-                [options.selector]: {
-                    ...(options.styles || {}),
-                    ...(config.variants?.[options.variants]?.default || defaultVariants),
-                },
-            });
-        });
-    },
-    elements: actions => {
-        const config = actions.getConfig();
-        Object.keys(elements).forEach(name => {
-            if (!config.corePlugins || config.corePlugins[name]) {
-                return actions.addElement(name, elements[name]);
-            }
-        });
-    },
-    utilities: actions => {
-        const config = actions.getConfig();
-        Object.keys(utilities).forEach(name => {
-            if (!config.corePlugins || config.corePlugins[name]) {
-                return actions.addUtility(utilities[name]);
-            }
-        });
-    },
-    icons: actions => {
-        return actions.addStyles({
-            // Icons font face
-            "@font-face": {
-                fontFamily: "'siimple-icons'",
-                fontStyle: "normal",
-                fontWeight: "normal",
-                src: [
-                    "url(./siimple-icons.ttf) format('truetype'),",
-                    "url(./siimple-icons.woff) format('woff')",
-                ],
-            },
-            // Icons base class
-            '[class^="icon-"],[class*=" icon-"]': {
-                alignSelf: "center",
-                // display: "inline-flex",
-                fontFamily: "'siimple-icons'",
-                fontStyle: "normal",
-                fontWeight: ["normal", "!important"],
-                lineHeight: "1",
-                textRendering: "auto",
-                verticalAlign: "-0.125em",
-                "-moz-osx-font-smoothing": "grayscale",
-                "-webkit-font-smoothing": "antialiased",
-                "&:before": {
-                    boxSizing: "border-box",
-                },
-            },
-            // All icons
-            ...Object.fromEntries(icons.map(icon => {
-                const iconSelector = `.icon-${icon.id}:before`;
-                const iconStyles = {
-                    content: `"\\${icon.unicode.toString(16).toLowerCase()}"`,
-                };
-                return [iconSelector, iconStyles];
-            })),
-        });
-    },
-};
-
 // Merge two object
 const mergeObject = (source, target) => ({...source, ...target});
 
 // Merge configurations
 export const mergeConfig = (source, target) => {
     return {
-        flags: mergeObject(source.flags, target.flags || {}),
+        ...source,
+        ...target,
         prefix: target.prefix || source.prefix || "",
         breakpoints: mergeObject(source.breakpoints, target.breakpoints || {}),
         scales: mergeObject(source.scales, target.scales || {}),
         variants: target.variants || {},
-        plugins: target.plugins || [],
-        corePlugins: mergeObject(source.corePlugins, target.corePlugins || {}),
+        // plugins: target.plugins || [],
         root: target.root || {},
         styles: target.styles || {},
     };
@@ -324,7 +248,7 @@ export const buildCss = (styles, config) => {
 export const build = config => {
     return new Promise(resolve => {
         const styles = {};
-        const pluginActions = {
+        const actions = {
             getConfig: () => config,
             addElement: (name, options) => {
                 const elementSelector = getElementSelector(name, null, config);
@@ -349,7 +273,7 @@ export const build = config => {
                 // Generate utilities for each state
                 (options.states || ["default"]).forEach(state => {
                     Object.keys(options.values).forEach(key => {
-                        const selector = getUtilitySelector(options.name, key, state, null);
+                        const selector = getUtilitySelector(options.shortcut, key, state, null);
                         styles[selector] = Object.fromEntries(properties.map(prop => {
                             return [prop, options.values[key]];
                         }));
@@ -359,7 +283,7 @@ export const build = config => {
                 if (options.responsive && config.breakpoints) {
                     Object.keys(config.breakpoints).forEach(breakpoint => {
                         Object.keys(options.values).forEach(key => {
-                            const selector = getUtilitySelector(options.name, key, null, breakpoint);
+                            const selector = getUtilitySelector(options.shortcut, key, null, breakpoint);
                             const mediaSelector = buildMediaQuery(config.breakpoints[breakpoint]);
                             styles[selector] = {
                                 [mediaSelector]: Object.fromEntries(properties.map(prop => {
@@ -373,7 +297,7 @@ export const build = config => {
             addStyles: newStyles => mergeStyles(styles, newStyles || {}),
         };
         // Add borderbox styles
-        if (!config.flags || config.flags.useBorderBox) {
+        if (config.useBorderBox) {
             mergeStyles(styles, {
                 html: {
                     boxSizing: "border-box",
@@ -384,7 +308,7 @@ export const build = config => {
             });
         }
         // Add root styles
-        if(!config.flags || config.flags.useRootStyles) {
+        if (config.useRootStyles) {
             mergeStyles(styles, {
                 html: {
                     backgroundColor: "background",
@@ -397,16 +321,26 @@ export const build = config => {
                 },
             });
         }
-        // Process core plugins
-        Object.keys(corePlugins).forEach(name => {
-            if (!config.corePlugins || config.corePlugins[name]) {
-                return corePlugins[name](pluginActions);
-            }
-        });
+        // Add core modules
+        if (config.useRebootStyles) {
+            coreModules.reboot(actions);
+        }
+        if (config.useMarkupStyles) {
+            coreModules.markup(actions);
+        }
+        if (config.useElements) {
+            coreModules.elements(actions);
+        }
+        if (config.useUtilities) {
+            coreModules.utilities(actions);
+        }
+        if (config.useIcons) {
+            coreModules.icons(actions);
+        }
         // Process plugins
-        (config.plugins || []).forEach(plugin => {
-            typeof plugin === "function" && plugin(pluginActions);
-        });
+        // (config.plugins || []).forEach(plugin => {
+        //     typeof plugin === "function" && plugin(pluginActions);
+        // });
         // Merge additional custom styles
         if (config.styles) {
             mergeStyles(styles, config.styles);

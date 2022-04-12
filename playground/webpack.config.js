@@ -19,8 +19,6 @@ module.exports = {
             path.resolve(__dirname, "./node_modules"),
         ],
         alias: {
-            "siimple-config": path.resolve(__dirname, "../siimple/defaultConfig.js"),
-            "siimple-colors": path.resolve(__dirname, "../siimple/colors.js"),
             "siimple": path.resolve(__dirname, "../siimple/"),
         },
     },
