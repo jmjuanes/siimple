@@ -1,4 +1,4 @@
-![Siimple header](https://github.com/jmjuanes/siimple/raw/package-folder/header.svg)
+![Siimple header](https://github.com/jmjuanes/siimple/raw/main/header.svg)
 
 [![NPM Version](https://badgen.net/npm/v/siimple)](https://npmjs.com/package/siimple)
 [![Get help](https://badgen.net/badge/Discussions/Join%20us/cyan)](https://github.com/jmjuanes/siimple/discussions)
