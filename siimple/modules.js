@@ -920,7 +920,7 @@ const elements = {
             outline: "none",
             transition: ["opacity", "0.2s"],
             width: "100%",
-            "&::-webkit-slider-thumb,&::-moz-range-thumb,&::-ms-thumb": {
+            "&:-webkit-slider-thumb,&:-moz-range-thumb,&:-ms-thumb": {
                 backgroundColor: "currentColor",
                 border: "none",
                 borderRadius: "999px",
@@ -928,10 +928,10 @@ const elements = {
                 height: "1rem",
                 width: "1rem",
             },
-            "&::-webkit-slider-thumb": {
+            "&:-webkit-slider-thumb": {
                 appearance: "none",
             },
-            "&::-ms-thumb": {
+            "&:-ms-thumb": {
                 marginTop: "0px",
             },
         },
