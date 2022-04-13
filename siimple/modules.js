@@ -983,7 +983,7 @@ const elements = {
                 color: "primary",
             },
         },
-        animations: {
+        keyframes: {
             spinnerAnimation: {
                 from: {
                     transform: "rotate(0deg)",

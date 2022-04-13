@@ -264,7 +264,7 @@ export const build = config => {
                 // Process keyframes
                 if (options.keyframes) {
                     Object.keys(options.keyframes).forEach(key => {
-                        styles[`@keyframes ${key}`] = options.keyframes[keyframes];
+                        styles[`@keyframes ${key}`] = options.keyframes[key];
                     });
                 }
             },
