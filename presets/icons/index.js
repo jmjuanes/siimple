@@ -15,23 +15,28 @@ const encodeSvg = svg => {
 
 // Generate SVG from path
 const svgFromPath = (path, fill) => {
-    return `<svg xmlns="http://www.w3.org/2000/svg"><path fill="${fill}" d="${path}"/></svg>`;
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="1em" height="1em"><path fill="${fill}" d="${path}"/></svg>`;
 };
 
 export default {
     styles: {
         '[class^="icon-"],[class*=" icon-"]': {
             backgroundColor: "currentColor",
-            // boxSizing: "border-box",
+            display: "inline-block",
             height: "1em",
-            maskSize: "100% 100%",
+            verticalAlign: "text-bottom",
             width: "1em",
         },
         ...Object.fromEntries(iconsList.map(icon => {
             const selector = `.icon-${icon.name}`;
             const svg = svgFromPath(icon.path, "currentColor");
+            const url = `url("data:image/svg+xml;utf8,${encodeSvg(svg)}") no-repeat`;
             const styles = {
-                mask: `url("data:image/svg+xml;utf8,${encodeSvg(svg)}") no-repeat`,
+                "--siimple-icon": url,
+                mask: "var(--siimple-icon) no-repeat",
+                maskSize: "100% 100%",
+                "-webkit-mask": "var(--siimple-icon) no-repeat",
+                "-webkit-mask-size": "100% 100%",
             };
             return [selector, styles];
         })),

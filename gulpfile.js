@@ -28,7 +28,7 @@ const iconify = () => {
     const icons = [];
     // Process SVG icons
     const bufferContents = function (file, enc, cb) {
-        const content = file.content.toString();
+        const content = file.contents.toString();
         icons.push({
             name: path.basename(file.path, ".svg"),
             path: /\sd="([\w,\.\-\s]*)"/gm.exec(content)[1] || "",
@@ -55,7 +55,7 @@ gulp.task("clean", () => null);
 
 // Build icons
 gulp.task("icons", () => {
-    return gulp.src("presets/icons/images/*.svg")
+    return gulp.src("icons/*.svg")
         .pipe(iconify())
         .pipe(gulp.dest("presets/icons/"));
 });
