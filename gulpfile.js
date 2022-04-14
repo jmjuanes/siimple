@@ -6,13 +6,7 @@ import postcss from "gulp-postcss";
 import rename from "gulp-rename";
 import CleanCSS from "clean-css";
 import through from "through2";
-import SVGIcons2SVGFontStream from "svgicons2svgfont";
-import svg2ttf from "svg2ttf";
-import ttf2woff from "ttf2woff";
 import Vinyl from "vinyl";
-
-import iconsList from "./siimple/icons.js";
-// const pkg = require("./package.json");
 
 // Minify CSS
 const minify = options => {
@@ -29,67 +23,41 @@ const minify = options => {
 };
 
 // Generate icons
-const buildIcons = options => {
-    options = options || {};
-    const name = options.name || "siimple-icons";
-    const folder = options.iconsFolder || path.join(process.cwd(), "icons");
-    return through.obj(function (file, enc, callback) {
-        const self = this;
-        // const icons = JSON.parse(file.contents.toString());
-        const chunks = []; //To save buffer chunks
-        const fontStream = new SVGIcons2SVGFontStream({
-            "fontName": options.fontName || "SiimpleIcons", 
-            "normalize": true, 
-            "fontHeight": 1000, 
-            "log": () => null,
+const iconify = () => {
+    let lastFile = null;
+    const icons = [];
+    // Process SVG icons
+    const bufferContents = function (file, enc, cb) {
+        const content = file.content.toString();
+        icons.push({
+            name: path.basename(file.path, ".svg"),
+            path: /\sd="([\w,\.\-\s]*)"/gm.exec(content)[1] || "",
         });
-        // Font stream listeners
-        fontStream.on("data", chunk => chunks.push(chunk));
-        fontStream.on("error", error => callback(error.message));
-        fontStream.on("end", () => {
-            const ttfContent = Buffer.from(svg2ttf(Buffer.concat(chunks).toString()).buffer);
-            self.push(new Vinyl({
-                "base": file.base,
-                "path": path.join(file.base, name + ".ttf"),
-                "contents": ttfContent,
-            }));
-            self.push(new Vinyl({
-                "base": file.base,
-                "path": path.join(file.base, name + ".woff"),
-                "contents": Buffer.from(ttf2woff(new Uint8Array(ttfContent), {})),
-            }));
-            // self.push(new Vinyl({
-            //     "base": file.base,
-            //     "path": path.join(file.base, name + ".woff2"),
-            //     "contents": ttf2woff2(ttfContent),
-            // }));
-            // End font creation
-            return callback();
-        });
-        // Add each icon in the font stream
-        iconsList.forEach((icon) => {
-            // process.stdout.write("Adding icon '" + icon.id + "' to SVG font");
-            const iconPath = path.join(folder, `${icon.id}.svg`);
-            const iconReader = fs.createReadStream(iconPath);
-            iconReader.metadata = {
-                "unicode": [String.fromCharCode(icon.unicode)], 
-                "name": icon.id,
-            };
-            return fontStream.write(iconReader);
-        });
-        fontStream.end();
-    });
-
+        lastFile = file; // Save reference to last file
+        return cb();
+    };
+    // End stream
+    const endStream = function (cb) {
+        const output = JSON.stringify(icons, null, "    ");
+        // Generate the new file and continue
+        this.push(new Vinyl({
+            base: lastFile.base,
+            path: path.join(lastFile.base, "icons.js"),
+            contents: new Buffer.from(`export default ${output};`),
+        }));
+        return cb();
+    };
+    return through.obj(bufferContents, endStream);
 };
 
 // Clean output directories
 gulp.task("clean", () => null);
 
-// Build icons fonts
+// Build icons
 gulp.task("icons", () => {
-    return gulp.src("siimple/icons.js")
-        .pipe(buildIcons())
-        .pipe(gulp.dest("siimple"));
+    return gulp.src("presets/icons/images/*.svg")
+        .pipe(iconify())
+        .pipe(gulp.dest("presets/icons/"));
 });
 
 // Generate css files
