@@ -4,7 +4,7 @@ A preset for the **siimple CSS toolkit** that provides a collection of **pure CS
 
 ## Installation
 
-Use NPM to install this preset:
+Use npm to install this preset in your project:
 
 ```bash
 $ npm install --save @siimple/preset-icons
@@ -28,10 +28,16 @@ export default {
 
 ## Using this preset
 
-Use the pattern `icon-<icon-name>` to include icons in your HTML content. Icons can be customized using the properties `font-size` for the size and `color` for the color.
+Use the class `icon-<icon-name>` to include icons in your HTML content. By default, icons will have the size and the color of the parent's font size and text color. This can be customized providing a custom `font-size` and `color` style properties.
 
 ```html
+<!-- Moon icon with the same size and color of the parent's font size and color -->
+<i class="icon-moon"></i>
+
+<!-- Arrows icon in red and with a size of 32px -->
 <i class="icon-arrows" style="font-size:32px;color:red;"></i>
+
+<!-- Circle icon in blue and with a size of 64px-->
 <i class="icon-circle" style="font-size:64px;color:blue;"></i>
 ```
 
