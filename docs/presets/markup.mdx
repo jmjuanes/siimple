@@ -1,26 +1,38 @@
 ---
-title: Markup
+title: Markup preset
 ---
 
-# Markup
+# Markup preset
 
-Use this plugin to style base markup elements, like headings, paragraphs, links... 
+Use this preset to style base markup elements, like headings, paragraphs, links... 
 
-### Disable markup module
+## Adding markup preset
 
-Markup styles are enabled by default, but can be disabled setting to `false` the `useMarkupStyles` flag in your configuration:
+This preset can be installed using **npm**:
+
+```bash
+$ npm install --save @siimple/preset-markup
+```
+
+In your configuration file, include the preset styles:
 
 ```js title=siimple.config.js
+import markup from "@siimple/preset-markup";
+
 export default {
-    useMarkupStyles: false, // Skip markup styles
+    // ...other configuration
+    styles: {
+        ...markup.styles,
+        // ...other styles
+    },
 };
 ```
 
-### Markup styles
+## Markup styles
 
-#### Headings
+### Headings
 
-This plugin will style your heading elements, from `<h1>` through `<h6>`. For styling non heading HTML elements, you can use the [title](/elements/title) element instead.
+This preset includes styles for your heading elements, from `<h1>` through `<h6>`. For styling non heading HTML elements, you can use the [title](/elements/title) element instead.
 
 ```html live=true
 <h1>h1. Siimple heading</h1>
@@ -31,9 +43,9 @@ This plugin will style your heading elements, from `<h1>` through `<h6>`. For st
 <h6>h6. Siimple heading</h6>
 ```
 
-#### Paragraph
+### Paragraph
 
-This plugin will style your `<p>` elements. For style non paragraph HTML elements like `<div>` elements, you can use the [paragraph](/elements/paragraph) element instead.
+This preset includes styles for your `<p>` elements. For style non paragraph HTML elements like `<div>` elements, you can use the [paragraph](/elements/paragraph) element instead.
 
 ```html live=true
 <p class="has-mb-0">
@@ -42,9 +54,9 @@ This plugin will style your `<p>` elements. For style non paragraph HTML element
 </p>
 ```
 
-#### Blockquotes
+### Blockquotes
 
-This plugin will style your `<blockquote>` elements:
+This preset includes styles for your `<blockquote>` elements:
 
 ```html live=true
 <blockquote>
@@ -53,9 +65,9 @@ This plugin will style your `<blockquote>` elements:
 </blockquote>
 ```
 
-#### Inline text elements
+### Inline text elements
 
-This plugin will style your inline text elements, like `<small>` or `<code>` elements.
+This preset includes styles for your inline text elements, like `<small>` or `<code>` elements.
 
 ```html live=true
 <p>You can style your <a href="">link</a> elements.</p>
@@ -63,9 +75,9 @@ This plugin will style your inline text elements, like `<small>` or `<code>` ele
 <p class="has-mb-0">You can style your <code>inline code</code> elements.</p>
 ```
 
-#### Horizontal rule
+### Horizontal rule
 
-This plugin will style your `<hr>` elements. For styling non `<hr>` elements as an horizontal rule, you can use the [divider](/elements/divider) element instead.
+This preset includes styles for your `<hr>` elements. For styling non `<hr>` elements as an horizontal rule, you can use the [divider](/elements/divider) element instead.
 
 ```html
 <hr>
