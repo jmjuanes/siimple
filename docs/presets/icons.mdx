@@ -2,23 +2,39 @@
 title: Icons
 ---
 
-# Icons
+# Icons Preset
 
-We provide a collection of hand-crafted and open source icons webfont that can be used in any web and mobile project.
+We provide a collection of hand-crafted and pure CSS icons that can be used as a preset for the **siimple** toolkit. After enabling the preset, you can use the classname pattern `icon-<icon-name>` for including the icons:
 
-### Disable icons module
+```html
+<i class="icon-star"></i>
+```
 
-Icons are enabled by default, but can be disabled setting to `false` the `useIcons` flag in your configuration:
+## Adding icons preset
+
+This preset can be installed using **npm**:
+
+```bash
+$ npm install --save @siimple/preset-icons
+```
+
+In your configuration file, include the preset styles:
 
 ```js title=siimple.config.js
+import icons from "@siimple/preset-icons";
+
 export default {
-    useIcons: false, // Skip icons
+    // ...other configuration
+    styles: {
+        ...icons.styles,
+        // ...other styles
+    },
 };
 ```
 
-### Using icons
+## Using icons
 
-Create a `<i>` tag and add the `icon-<IconName>` classname, where `<IconName>` is the name of the desired icon.
+Create a `<i>` tag and add the `icon-<icon-name>` classname, where `<icon-name>` is the name of the desired icon.
 
 ```html 
 <!-- Add a left arrow icon -->
@@ -38,6 +54,6 @@ You can style your icon using `font-size` and `color` style properties:
 <i class="icon-star has-color-red-500 has-size-xl"></i>
 ```
 
-### Icons cheatsheet
+## Icons cheatsheet
 
 <IconsCheatsheet />
