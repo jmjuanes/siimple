@@ -1,17 +1,1073 @@
 ---
-title: Utilities
+title: Utilities preset
 ---
 
-# Utilities
+# Utilities preset
 
-The **utilities** plugin provides a collection of **small functional CSS classes** that can be used for creating or customizing components. The main aim of this module is to provide a collection of reusable classes to replace the conventional style of writting CSS classes.
+The **utilities** preset provides a collection of **small functional styles** that can be used for creating or customizing elements. The main aim is to provide a collection of reusable classes to replace the conventional style of writting CSS classes.
 
-### Disable utilities
+```html
+<button class="has-p-2 has-radius has-bg-blue-500 has-text-white">
+    <strong>My button</strong>
+</button>
+```
 
-The utilities module are enabled by default, but can be disabled setting to `false` the `useUtilities` flag in your configuration:
+## Adding utilities preset
+
+This preset can be installed using **npm**:
+
+```bash
+$ npm install --save @siimple/preset-utilities
+```
+
+In your configuration file, include the preset styles:
 
 ```js title=siimple.config.js
+import utilities from "@siimple/preset-utilities";
+
 export default {
-    useUtilities: false, // Skip utilities
+    // ...other configuration
+    styles: {
+        ...utilities.styles,
+        // ...other styles
+    },
 };
 ```
+
+## Utilities styles
+
+### Background color
+
+Use `has-bg-{color}` to set the background color of any element. 
+
+```html
+<div class="button has-bg-royal-600 has-text-white">
+    <strong>Button</strong>
+</div>
+```
+
+You can change the background color of any element on hover adding the `hover:` prefix to the background color utility.
+
+```html
+<div class="button hover:has-bg-green-600 has-bg-aqua-600 has-text-white">
+    <strong>Hover me</strong>
+</div>
+```
+
+### Cursor
+
+Use the following classes to control the cursor property of any element:
+
+| Class | Property |
+|-------|----------|
+| `has-cursor-pointer`     | `cursor: pointer;` |
+| `has-cursor-move`        | `cursor: move;` |
+| `has-cursor-none`        | `cursor: none;` |
+| `has-cursor-zoom-in`     | `cursor: zoom-in;` |
+| `has-cursor-zoom-out`    | `cursor: zoom-out;` |
+| `has-cursor-not-allowed` | `cursor: not-allowed;` |
+| `has-cursor-wait`        | `cursor: wait;` |
+
+Use `has-cursor-hand` for displaying a pointer cursor to indicate a link or an interactive element:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-bg-blue-500 has-text-center has-p-3 has-w-64 has-cursor-pointer">
+    Pointer
+</div>
+```
+
+Use `has-cursor-move` to indicate that the element can be moved:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-bg-blue-500 has-text-center has-p-3 has-w-64 has-cursor-move">
+    Move
+</div>
+```
+
+Use `has-cursor-none` to hide the mouse cursor:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-bg-blue-500 has-text-center has-p-3 has-w-64 has-cursor-none">
+    Cursor disabled
+</div>
+```
+
+Use `has-cursor-zoom-in` and `has-cursor-zoom-out` for displaying zooming cursors:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-bg-blue-500 has-text-center has-p-3 has-mx-2 has-w-32 has-cursor-zoom-in">
+    Zoom in
+</div>
+<div class="has-bg-blue-500 has-text-center has-p-3 has-mx-2 has-w-32 has-cursor-zoom-out">
+    Zoom out
+</div>
+```
+
+### Display
+
+Control how elements will be displayed using the following classes: 
+
+| Class | Property | 
+|-------|----------|
+| `has-d-none`         | `display: none;` |
+| `has-d-inline`       | `display: inline;` |
+| `has-d-block`        | `display: block;` |
+| `has-d-inline-block` | `display: inline-block;` |
+| `has-d-flex`         | `display: flex;` |
+| `has-d-inline-flex`  | `display: inline-flex;` |
+
+
+Use `has-d-none` to hide an element:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-bg-blue-500 has-p-3 has-mx-2 has-w-24 has-radius">1</div>
+<div class="has-bg-blue-500 has-p-3 has-mx-2 has-w-24 has-radius has-d-none">2</div>
+<div class="has-bg-blue-500 has-p-3 has-mx-2 has-w-24 has-radius">3</div>
+```
+
+Use `has-d-block` to generate a block-level element: 
+
+```html live=true bg=blue-200 color=white
+<span class="has-bg-blue-500 has-p-3 has-m-2 has-radius has-d-block">1</span>
+<span class="has-bg-blue-500 has-p-3 has-m-2 has-radius has-d-block">2</span>
+<span class="has-bg-blue-500 has-p-3 has-m-2 has-radius has-d-block">3</span>
+```
+
+Use `has-d-inline-block` to generate an inline block element: 
+
+```html live=true bg=blue-200 color=primary
+<div class="has-bg-blue-500 has-radius has-p-2">
+    <div class="has-bg-white has-p-3 has-m-2 has-radius has-d-inline-block">1</div>
+    <div class="has-bg-white has-p-3 has-m-2 has-radius has-d-inline-block">2</div>
+    <div class="has-bg-white has-p-3 has-m-2 has-radius has-d-inline-block">3</div>
+</div>
+```
+
+You can control the display of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the display class. For example, to hide an element only on mobile screens, use the class `mobile:has-display-none`.
+
+```html
+<div class="has-d-block mobile:has-d-none">
+    . . . 
+</div>
+```
+
+### Flex
+
+Use the following classes to control the behaviour of flex items:
+
+| Class | Property |
+|-------|----------|
+| `has-flex-auto`    | `flex: auto;`    |
+| `has-flex-initial` | `flex: initial;` |
+| `has-flex-none`    | `flex: none;`    |
+
+You can use `has-flex-auto` helper to allow the item to grow and shrink to fit the container:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex">
+    <div class="has-flex-auto has-m-2 has-p-4 has-radius has-bg-blue-500">
+        Small
+    </div>
+    <div class="has-flex-auto has-m-2 has-p-4 has-radius has-bg-blue-500">
+        Medium content
+    </div>
+    <div class="has-flex-auto has-m-2 has-p-4 has-radius has-bg-blue-500">
+        Large content for this flexbox item
+    </div>
+</div>
+```
+
+You can use the `has-flex-initial` helper to allow the item to shrink, but prevent the item to grow to fit the container.
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-full">
+        Item
+    </div>
+    <div class="has-flex-initial has-m-2 has-p-4 has-radius has-bg-blue-700">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Qui ad labore ipsam, aut rem quo repellat esse tempore id, quidem.
+    </div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-full">
+        Item
+    </div>
+</div>
+```
+
+Use the `has-flex-none` helper to prevent a flex item from growing and shrinking:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-full">
+        Item
+    </div>
+    <div class="has-flex-none has-m-2 has-p-4 has-radius has-bg-blue-700">
+        This can not grow or shrink
+    </div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-full">
+        Item
+    </div>
+</div>
+```
+
+### Flex direction
+
+Use the following classes to control the direction of the items of a flex container:
+
+| Class | Property |
+|-------|----------|
+| `has-flex-row`        | `flex-direction: row;`           |
+| `has-flex-row-rev`    | `flex-direction: row-reverse`    |
+| `has-flex-column`     | `flex-direction: column;`        |
+| `has-flex-column-rev` | `flex-direction: column-reverse` |
+
+Use `has-flex-row` to position flex items horizontailly (row direction):
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-flex-row">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
+</div>
+```
+
+Or just use `has-flex-column` to position flex items vertically (in a column direction):
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-flex-column">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
+</div>
+```
+
+### Align items
+
+Use the following classes to define the alignment of the flex items along the **cross axis**.
+
+| Class | Property |
+|-------|----------|
+| `has-items-start`    | `align-items: flex-start;` |
+| `has-items-end`      | `align-items: flex-end;`   |
+| `has-items-center`   | `align-items: center;`     |
+| `has-items-stretch`  | `align-items: stretch;`    |
+
+You can use `has-items-start` to align flex items to the start of the cross axis:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-items-start has-text-center has-h-32">
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-flex-grow has-m-2 has-p-8 has-radius has-bg-blue-500">2</div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
+</div>
+```
+
+Use `has-items-center` to align flex items to the center of the cross axis:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-items-center has-text-center has-h-32">
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-flex-grow has-m-2 has-p-8 has-radius has-bg-blue-500">2</div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
+</div>
+```
+
+Use `has-items-end` helper to align flex items to the end of the cross axis:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-items-end has-text-center has-h-32">
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-flex-grow has-m-2 has-p-8 has-radius has-bg-blue-500">2</div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
+</div>
+```
+
+### Justify content
+
+Use the following classes to define how the browser should distribute the space between and around items along the **main axis**:
+
+| Class | Property |
+|-------|----------|
+| `has-justify-left`    | `justify-content: flex-start;`    |
+| `has-justify-center`  | `justify-content: center;`        |
+| `has-justify-right`   | `justify-content: flex-end;`      |
+| `has-justify-between` | `justify-content: space-between;` |
+| `has-justify-around`  | `justify-content: space-around;`  |
+| `has-justify-evenly`  | `justify-content: space-evenly;`  |
+
+Use the `has-justify-start` helper to pack items from the start of the main axis:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-justify-start has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
+</div>
+```
+
+Use the `has-justify-center` helper to pack items around the center of the main axis:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-justify-center has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
+</div>
+```
+
+Use the `has-justify-end` helper to pack items from the end of the main axis:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-justify-end has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
+</div>
+```
+
+Use the `has-justify-between` helper to distribute items evenly, and where the first item is flush with the start and the last item is flush with the end.
+
+```html live=true bg=blue-300 color=white
+<div class="has-d-flex has-justify-between has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
+</div>
+```
+
+Use the `has-justify-around` helper to distribute items evenly, and items will have a half-size space on either end:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-justify-around has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
+</div>
+```
+
+Use the `has-justify-evenly` helper to distribute items evenly:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-justify-evenly has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">3</div>
+</div>
+```
+
+### Flex wrap
+
+Use the following classes to define how items will wrap.
+
+| Class | Property |
+|-------|----------|
+| `has-flex-wrap`   | `flex-wrap: wrap;`   |
+| `has-flex-no-wrap` | `flex-wrap: nowrap;` |
+
+Use `has-flex-no-wrap` helper to prevent items from wrapping:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-flex-no-wrap has-text-center">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-128">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-128">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-w-128">3</div>
+</div>
+```
+
+### Flex order
+
+Use the following classes to control the order of flex items.
+
+| Class | Property |
+|-------|----------|
+| `has-order-none`  | `order: 0;`    |
+| `has-order-first` | `order: -999;` |
+| `has-order-last`  | `order: 999;`  |
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-justify-between">
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-order-last">1</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500">2</div>
+    <div class="has-m-2 has-p-4 has-radius has-bg-blue-500 has-order-first">3</div>
+</div>
+```
+
+### Font family
+
+Use the following classes to set the font family for the text:
+
+| Class | Property |
+|-------|----------|
+| `has-font-sams`  | `font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Noto Sans", "Helvetica Neue", Arial, sans-serif;` |
+| `has-font-serif` | `font-family: Georgia, Cambria, "Times New Roman", Times, serif;` |
+| `has-font-mono`  | `font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;` |
+
+Use `has-font-sans` to apply a **sans-serif** font family to your text:
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-font-sans">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+Use `has-font-serif` to apply a **serif** font family to your text: 
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-font-serif">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+Use `has-font-mono` to apply a monospace font (for example for `code` blocks): 
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-font-mono">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+### Font size
+
+Use the following classes to set the size of your text:
+
+| Class | Property |
+|-------|----------|
+| `has-text-xs`   | `font-size: 0.75rem;` |
+| `has-text-sm`   | `font-size: 0.875rem;`|
+| `has-text-base` | `font-size: 1rem;`    |
+| `has-text-lg`   | `font-size: 1.25rem;` |
+| `has-text-xl`   | `font-size: 1.5rem;`  |
+| `has-text-2xl`  | `font-size: 1.75rem;` |
+| `has-text-3xl`  | `font-size: 2rem;`    |
+| `has-text-4xl`  | `font-size: 2.5rem;`  |
+| `has-text-5xl`  | `font-size: 3rem;`    |
+| `has-text-6xl`  | `font-size: 3.5rem;`  |
+| `has-text-7xl`  | `font-size: 4rem;`    |
+| `has-text-8xl`  | `font-size: 4.5rem;`  |
+| `has-text-9xl`  | `font-size: 5rem;`    |
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-text-xs">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-sm">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-base">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-lg">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-xl">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-2xl">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-3xl">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-4xl">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-5xl">The quick brown fox jumps over the lazy dog.</div>
+```
+
+### Font Weight
+
+Use the following classes to set the weight of your text:
+
+| Class | Property |
+|-------|----------|
+| `has-weight-light`  | `font-weight: 300;` |
+| `has-weight-normal` | `font-weight: 400;` |
+| `has-weight-medium` | `font-weight: 500;` |
+| `has-weight-bold`   | `font-weight: 700;` |
+| `has-weight-black`  | `font-weight: 900;` |
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-weight-light">Text using has-weight-light</div>
+<div class="has-weight-normal">Text using has-weight-normal</div>
+<div class="has-weight-medium">Text using has-weight-medium</div>
+<div class="has-weight-bold">Test using has-weight-bold</div>
+<div class="has-weight-black">Text using has-weight-black</div>
+```
+
+### Opacity
+
+Add any of the `has-opacity-{value}` classes to set the opacity of an element:
+
+```html live=true bg=blue-200 color=white
+<div class="has-d-flex has-text-center">
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500 has-opacity-0">
+        <strong>0%</strong>
+    </div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500 has-opacity-25">
+        <strong>25%</strong>
+    </div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500 has-opacity-50">
+        <strong>50%</strong>
+    </div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500 has-opacity-75">
+        <strong>75%</strong>
+    </div>
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500 has-opacity-100">
+        <strong>100%</strong>
+    </div>
+</div>
+```
+
+You can change the opacity of any element on hover adding the `hover:` prefix to the opacity helper.
+
+```html
+<div class="has-opacity-50 hover:has-opacity-100 ...">
+    . . .
+</div>
+```
+
+You can control the opacity of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the opacity class.
+
+```html
+<div class="has-opacity-50 mobile:has-opacity-100 ...">
+    . . . 
+</div>
+```
+
+### Overflow
+
+You can use the following helpers to control the behavior for an element's overflow.
+
+| Class | Property |
+|-------|----------|
+| `has-overflow-auto`     | `overflow: auto;` |
+| `has-overflow-scroll`   | `overflow: scroll;` |
+| `has-overflow-hidden`   | `overflow: hidden;` |
+| `has-overflow-x-auto`   | `overflow-x: auto;` |
+| `has-overflow-x-scroll` | `overflow-x: scroll;` |
+| `has-overflow-x-hidden` | `overflow-x: hidden;` |
+| `has-overflow-y-auto`   | `overflow-y: auto;` |
+| `has-overflow-y-scroll` | `overflow-y: scroll;` |
+| `has-overflow-y-hidden` | `overflow-y: hidden;` |
+
+Use `has-overflow-auto` to display scrollbars only if content does not fit inside the padding box of the container:
+
+```html live=true color=white bg=blue-200 centered=true
+<div class="has-overflow-auto has-h-32 has-maxw-64 has-p-6 has-bg-blue-500 has-radius">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+    aliquip ex ea commodo consequat.
+</div>
+```
+
+Use `has-overflow-scroll` to always display scrollbars in both directions (but keep in mind that some OS will hide scrollbars when not neccesary). Instead of displaying scrollbars in both directions, you can always use `has-overflow-x-scroll` to enable only horizontal scrolling or `has-overflow-y-scroll` to enable only vertical scrolling. 
+
+```html live=true color=white bg=blue-200 centered=true
+<div class="has-overflow-scroll has-h-32 has-maxw-64 has-p-6 has-bg-blue-500 has-radius">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+    aliquip ex ea commodo consequat.
+</div>
+```
+
+On the other hand, you can use `has-overflow-hidden` to clip all neccesary content to fit the container size. Note that no scrollbars will be displayed and the user scrolling will be disabled.
+
+```html live=true color=white bg=blue-200 centered=true
+<div class="has-overflow-hidden has-h-32 has-maxw-64 has-p-6 has-bg-blue-500 has-radius">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+    aliquip ex ea commodo consequat.
+</div>
+```
+
+### Position 
+
+Use the following classes to change the position of an element:
+
+| Class | Property | 
+|-------|----------|
+| `has-position-initial`  | `position: initial;` |
+| `has-position-relative` | `position: relative;` |
+| `has-position-absolute` | `position: absolute;` |
+| `has-position-sticky`   | `position: sticky;` |
+| `has-position-fixed`    | `position: fixed;` |
+
+Example:
+
+```html
+<div class="has-position-fixed has-top-none">
+    ...
+</div>
+```
+
+### Float
+
+Use the following classes for positioning and formatting content, for example to wrap text around images.
+
+| Class | Property | 
+|-------|----------|
+| `has-float-left`  | `float: left;` |
+| `has-float-right` | `float: right;` |
+| `has-float-none`  | `float: none;` |
+
+You can use `has-float-left` to float an element to the left side of it's containing block:
+
+```html live=true
+<div class="has-float-left has-s-32 has-mr-8 has-radius has-bg-blue-500">
+    <div class="has-s-full has-d-flex has-justify-center">
+        <i class="icon-image has-text-5xl has-text-white"></i>
+    </div>
+</div>
+<p class="has-text-justify has-mb-0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+    sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+```
+
+Use `has-float-right` to float an element to the right side of it's containing block:
+
+```html live=true
+<div class="has-float-right has-s-32 has-ml-8 has-radius has-bg-blue-500">
+    <div class="has-s-full has-d-flex has-justify-center">
+        <i class="icon-image has-text-5xl has-text-white"></i>
+    </div>
+</div>
+<p class="has-text-justify has-mb-0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+    sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+```
+
+Use `has-float-none` to reset the float property applied to any element:
+
+```html live=true
+<div class="has-float-none has-s-32 has-mb-8 has-radius has-bg-blue-500">
+    <div class="has-s-full has-d-flex has-justify-center">
+        <i class="icon-image has-text-5xl has-text-white"></i>
+    </div>
+</div>
+<p class="has-text-justify has-mb-0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+    sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+```
+
+### Placement
+
+Use the following classes to set the placement of an element:
+
+| Class | Property |
+|-------|----------|
+| `has-bottom-auto` | `bottom: auto;` |
+| `has-bottom-none` | `bottom: 0px;`  |
+| `has-bottom-half` | `bottom: 50%;`  |
+| `has-bottom-full` | `bottom: 100%;` |
+| `has-left-auto`   | `left: auto;` |
+| `has-left-none`   | `left: 0px;`  |
+| `has-left-half`   | `left: 50%;`  |
+| `has-left-full`   | `left: 100%;` |
+| `has-right-auto`  | `right: auto;` |
+| `has-right-none`  | `right: 0px;`  |
+| `has-right-half`  | `right: 50%;`  |
+| `has-right-full`  | `right: 100%;` |
+| `has-top-auto`    | `top: auto;` |
+| `has-top-none`    | `top: 0px;`  |
+| `has-top-half`    | `top: 50%;`  |
+| `has-top-full`    | `top: 100%;` |
+
+Example:
+
+```html
+<div class="has-position-fixed has-top-none">
+    ...
+</div>
+```
+
+You can control the position of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the position or placement class helper.
+
+```html
+<div class="mobile:has-position-fixed mobile:has-top-0">
+    . . .
+</div>
+```
+
+### Radius
+
+Use the following classes to control the border radius of any element:
+
+| Class | Property |
+|-------|----------|
+| `has-radius-sm`   | `border-radius: 0.25rem;` |
+| `has-radius`      | `border-radius: 0.5rem;` |
+| `has-radius-lg`   | `border-radius: 0.75rem;` |
+| `has-radius-xl`   | `border-radius: 1rem;` |
+| `has-radius-full` | `border-radius: 9999px;` |
+| `has-radius-none` | `border-radius: 0px;` |
+
+You can use these classes to apply different border radius to your elements:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-p-6 has-m-2 has-bg-blue-500 has-radius-sm">
+    <strong>.has-radius-sm</strong>
+</div>
+<div class="has-p-6 has-m-2 has-bg-blue-500 has-radius">
+    <strong>.has-radius</strong>
+</div>
+<div class="has-p-6 has-m-2 has-bg-blue-500 has-radius-lg">
+    <strong>.has-radius-lg</strong>
+</div>
+<div class="has-p-6 has-m-2 has-bg-blue-500 has-radius-xl">
+    <strong>.has-radius-xl</strong>
+</div>
+```
+
+You can use the `has-radius-full` class to create pills or circles:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-px-6 has-py-3 has-m-2 has-bg-blue-500 has-radius-full">
+    <strong>Pill element</strong>
+</div>
+<div class="has-s-24 has-m-2 has-bg-blue-500 has-d-flex has-items-center has-justify-center has-radius-full">
+    <strong>Circle</strong>
+</div>
+```
+
+You can remove the border radius using `has-radius-none`: 
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-p-6 has-m-2 has-bg-blue-500 has-radius-none">
+    <strong>.has-radius-none</strong>
+</div>
+```
+
+### Shadow
+
+Use the following shadow utilities to apply a box shadow effect to the desired element:
+
+| Class | Property |
+|-------|----------|
+| `has-shadow-sm`  | `box-shadow: 0 .25rem 1rem -.125rem rgba(54,63,79,.15),0 0 0 1px rgba(54,63,79,.02);` |
+| `has-shadow` | `box-shadow: 0 .5rem 1rem -.25rem rgba(54,63,79,.2),0 0 0 1px rgba(54,63,79,.02);` |
+| `has-shadow-lg`  | `box-shadow: 0 1rem 1rem -.5rem rgba(54,63,79,.25),0 0 0 1px rgba(54,63,79,.02);` |
+| `has-shadow-none`   | `box-shadow: none;` |
+
+Example:
+
+```html live=true centered=true bg=blue-200
+<div class="has-shadow-sm has-m-2 has-p-6 has-radius has-bg-white">
+    .has-shadow-small
+</div>
+<div class="has-shadow has-m-2 has-p-6 has-radius has-bg-white">
+    .has-shadow-normal
+</div>
+<div class="has-shadow-lg has-m-2 has-p-6 has-radius has-bg-white">
+    .has-shadow-large
+</div>
+```
+
+You can remove the shadow of any element using `has-shadow-none`:
+
+```html live=true centered=true bg=blue-200
+<div class="has-shadow-none has-m-2 has-p-6 has-radius has-bg-white">
+    .has-shadow-none
+</div>
+```
+
+### Width
+
+Add any of the `has-w-{size}` classnames to modify the `width` property of the element.
+
+Use `has-w-auto` to let the browser to automatically calculate the width of the element: 
+
+```html
+<div class="has-w-auto ..."></div>
+```
+
+Use `has-w-screen` to fit the width of the screen:
+
+```html
+<div class="has-w-screen ..."></div>
+```
+
+Use the other clasess to set a fixed width:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-w-64 has-p-4 has-bg-blue-500 has-radius">
+    <strong>.has-w-64</strong>
+</div>
+```
+
+### Max Width
+
+Use `has-maxw-{size}` classes to set the `max-width` property of any element.
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-w-full has-maxw-64 has-p-4 has-bg-blue-500 has-radius">
+    <strong>.has-maxw-64</strong>
+</div>
+```
+
+### Min Width
+
+Use `has-minw-{size}` classes to modify the `min-width` property of any element.
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-minw-64 has-p-4 has-bg-blue-500 has-radius">
+    <strong>.has-minw-64</strong>
+</div>
+```
+
+## Height
+
+Add any of the `has-h-{size}` classnames to modify the `height` property of the element.
+
+Use `has-h-auto` to let the browser to automatically calculate the height of the element: 
+
+```html
+<div class="has-h-auto ..."></div>
+```
+
+Use `has-h-screen` to fit the height of the screen:
+
+```html
+<div class="has-h-screen ..."></div>
+```
+
+Use the other clasess to set a fixed height:
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-h-32 has-w-64 has-p-4 has-bg-blue-500 has-radius">
+    <strong>has-h-32</strong>
+</div>
+```
+
+## Max Height
+
+Use `has-maxh-{size}` classes to modify the `max-height` property of any element.
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-h-full has-maxh-64 has-w-64 has-p-4 has-bg-blue-500 has-radius">
+    <strong>.has-maxh-64</strong>
+</div>
+```
+
+## Min Height
+
+Use `has-minh-{size}` classes to modify the `min-height` property of any element.
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-minh-64 has-w-64 has-p-4 has-bg-blue-500 has-radius">
+    <strong>.has-minh-64</strong>
+</div>
+```
+
+### Uniform width and height
+
+Use `has-s-{size}` classes to set both the `width` and `height` properties of any element.
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-s-32 has-p-4 has-bg-blue-500 has-radius">
+    <strong>.has-s-32</strong>
+</div>
+```
+
+You can control the sizing of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the sizing class.
+
+```html
+<div class="has-s-half mobile:has-s-full">
+    . . .
+</div>
+``` 
+
+### Uniform padding or margin
+
+Use `has-p-{size}` to set the **padding** of all sides of the element, or `has-m-{size}` to set the **margin** of all sides of the element.
+
+```html live=true centered=true bg=blue-200 color=white
+<div class="has-p-6 has-bg-blue-500 has-radius">
+    <strong>has-p-6</strong>
+</div>
+```
+
+You can control the spacing of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the padding or margin class.
+
+```html
+<div class="has-p-3 mobile:has-p-0">
+    . . .
+</div>
+``` 
+
+### Directional padding or margin
+
+Use `has-p{direction}-{size}` or `has-m{direction}-{size}` to set the **padding or margin of one side**, **on the x-axis** or **the y-axis** of the element. The following sides are available:
+
+| Direction | Description |
+|-----------|-------------|
+| **t** | To set the margin or padding **top**. |
+| **b** | To set the margin or padding **bottom**. |
+| **l** | To set the margin or padding **left**. |
+| **r** | To set the margin or padding **right**. |
+| **x** | To set the margin or padding **left and right**. |
+| **y** | To set the margin or padding **top and bottom**. |
+
+```html live=true centered=true bg=blue-200 color=white padding=12
+<div class="has-p-4 has-pt-12 has-m-4 has-bg-blue-500 has-radius">
+    <strong>has-pt-12</strong>
+</div>
+<div class="has-p-4 has-pr-12 has-m-4 has-bg-blue-500 has-radius">
+    <strong>has-pr-12</strong>
+</div>
+<div class="has-p-4 has-pb-12 has-m-4 has-bg-blue-500 has-radius">
+    <strong>has-pb-12</strong>
+</div>
+<div class="has-p-4 has-pl-12 has-m-4 has-bg-blue-500 has-radius">
+    <strong>has-pl-12</strong>
+</div>
+```
+
+We provide an additional `has-mx-auto` classname to set the margin left and right to `auto`. This will center the block with a fixed width.
+
+```html live=true bg=blue-200 color=white
+<div class="has-mx-auto has-p-3 has-w-32 has-bg-blue-500 has-radius">
+    <strong>Centered</strong>
+</div>
+```
+
+You can control the spacing of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the padding or margin class.
+
+```html
+<div class="has-py-3 mobile:has-py-0">
+    . . .
+</div>
+``` 
+
+### Text alignment
+
+Use one of the following classes to set the horizontal align of your text inside the container element:
+
+| Class | Property |
+|-------|----------|
+| `has-text-justify` | `text-align: justify;` |
+| `has-text-left`    | `text-align: left;` |
+| `has-text-center`  | `text-align: center;` |
+| `has-text-right`   | `text-align: right;` |
+
+Use `has-text-justify` to justify the inline contents:
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-text-justify">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</div>
+```
+
+Use `has-text-left` to align inline contents to the left: 
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-text-left">Left aligned text</div>
+```
+
+Use `has-text-center` to center inline contents:
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-text-center">Centered text</div>
+```
+
+Use `has-text-right` to align inline contents to the right:
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-text-right">Right aligned text</div>
+```
+
+### Text color
+
+Use `has-text-{color}` to apply a different color to the text. 
+
+```html
+<strong class="has-text-royal-600">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```
+
+You can change the text color of any element on hover adding the `hover:` prefix to the text color utility.
+
+```html
+<strong class="has-text-blue-700 hover:has-text-red-400">Hover me</strong>
+```
+
+### Text decoration
+
+Use the following classes to set the `text-decoration` property of your text:
+
+| Class | Property |
+|-------|----------|
+| `has-text-underline` | `text-decoration: underline;` |
+| `has-text-no-underline` | `text-decoration: none;` |
+
+Use the `has-text-underline` to underline the text:
+
+```html live=true bg=blue-200 color=blue-700
+<strong class="has-text-underline">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```
+
+### Text transform
+
+You can use these classes to apply text transformations: 
+
+| Class | Property |
+|-------|----------|
+| `has-text-uppercase` | `text-transform: uppercase;` |
+| `has-text-lowercase` | `text-transform: lowercase;` |
+| `has-text-capitalize` | `text-transform: capitalize;` |
+
+Use `has-text-uppercase` to convert all characters of your text to uppercase:
+
+```html live=true bg=blue-200 color=blue-700
+<strong class="has-text-uppercase">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```
+
+Use `has-text-lowercase` to convert all characters of your text to lowercase:
+
+```html live=true bg=blue-200 color=blue-700
+<strong class="has-text-lowercase">
+    Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit...
+</strong>
+```
+
+Use `has-text-capitalize` to convert the first character of each word of your text to uppercase:
+
+```html live=true bg=blue-200 color=blue-700
+<strong class="has-text-capitalize">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```
+
+### Text style
+
+Use the following classes to set the font style of your text:
+
+| Class | Property |
+|-------|----------|
+| `has-text-italic`    | `font-style: italic;` |
+| `has-text-no-italic` | `font-style: normal;` |
+
+Use `has-text-italic` to display text in italic style: 
+
+```html live=true bg=blue-200 color=blue-700
+<strong class="has-text-italic">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```
+
+Use `has-text-no-italic` to reset italic style of the text: 
+
+```html live=true bg=blue-200 color=blue-700
+<strong class="has-text-no-italic">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```
+
