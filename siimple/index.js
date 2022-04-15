@@ -1,4 +1,4 @@
-import coreModules from "./modules.js";
+import elements from "./elements.js";
 
 // Valid media-query features
 const mediaQueriesFeatures = {
@@ -81,19 +81,16 @@ const aliases = {
 const mergeObject = (source, target) => ({...source, ...target});
 
 // Merge configurations
-export const mergeConfig = (source, target) => {
-    return {
-        ...source,
-        ...target,
-        prefix: target.prefix || source.prefix || "",
-        breakpoints: mergeObject(source.breakpoints, target.breakpoints || {}),
-        scales: mergeObject(source.scales, target.scales || {}),
-        variants: target.variants || {},
-        // plugins: target.plugins || [],
-        root: target.root || {},
-        styles: target.styles || {},
-    };
-};
+export const mergeConfig = (source, target) => ({
+    ...source,
+    ...target,
+    prefix: target.prefix || source.prefix || "",
+    breakpoints: mergeObject(source.breakpoints, target.breakpoints || {}),
+    scales: mergeObject(source.scales || {}, target.scales || {}),
+    variants: mergrObject(source.variants || {}, target.variants || {}),
+    root: target.root || {},
+    styles: target.styles || {},
+});
 
 // Parse CSS property name
 const parseCssProperty = prop => {
@@ -106,21 +103,6 @@ const parseCssProperty = prop => {
 const getElementSelector = (name, variant, config) => {
     const variantSelector = variant && variant !== "default" ? `.is-${variant}` : "";
     return `.${config.prefix || ""}${name}${variantSelector}`;
-};
-
-// Generate a selector for the specified utility, state and breakpoint
-const getUtilitySelector = (name, key, state, breakpoint) => {
-    const selector = `has-${name}${key !== "default" ? `-${key}` : ""}`;
-    // Check if breakpoint value has been provided
-    if (breakpoint) {
-        return `.${breakpoint}\\:${selector}`
-    }
-    // Check for state
-    else if (state && (state === "hover" || state === "focus")) {
-        return `.${state}\\:${selector}:${state}`;
-    }
-    // Default --> return the default utility class
-    return `.${selector}`;
 };
 
 // Generate media query rule
@@ -248,54 +230,10 @@ export const buildCss = (styles, config) => {
 export const build = config => {
     return new Promise(resolve => {
         const styles = {};
-        const actions = {
-            getConfig: () => config,
-            addElement: (name, options) => {
-                const elementSelector = getElementSelector(name, null, config);
-                styles[elementSelector] = styles[elementSelector] || {};
-                mergeStyles(styles[elementSelector], options.styles);
-                // Process variants
-                const variants = config.variants?.[options.variants] || options.defaultVariants;
-                Object.keys(variants || {}).forEach(variant => {
-                    const variantSelector = getElementSelector(name, variant, config);
-                    styles[variantSelector] = styles[variantSelector] || {};
-                    mergeStyles(styles[variantSelector], variants[variant]);
-                });
-                // Process keyframes
-                if (options.keyframes) {
-                    Object.keys(options.keyframes).forEach(key => {
-                        styles[`@keyframes ${key}`] = options.keyframes[key];
-                    });
-                }
-            },
-            addUtility: options => {
-                const properties = options.properties || [];
-                // Generate utilities for each state
-                (options.states || ["default"]).forEach(state => {
-                    Object.keys(options.values).forEach(key => {
-                        const selector = getUtilitySelector(options.shortcut, key, state, null);
-                        styles[selector] = Object.fromEntries(properties.map(prop => {
-                            return [prop, options.values[key]];
-                        }));
-                    });
-                });
-                // Generate utilities for each breakpoint
-                if (options.responsive && config.breakpoints) {
-                    Object.keys(config.breakpoints).forEach(breakpoint => {
-                        Object.keys(options.values).forEach(key => {
-                            const selector = getUtilitySelector(options.shortcut, key, null, breakpoint);
-                            const mediaSelector = buildMediaQuery(config.breakpoints[breakpoint]);
-                            styles[selector] = {
-                                [mediaSelector]: Object.fromEntries(properties.map(prop => {
-                                    return [prop, options.values[key]];
-                                })),
-                            };
-                        });
-                    });
-                }
-            },
-            addStyles: newStyles => mergeStyles(styles, newStyles || {}),
-        };
+        // const actions = {
+        //     getConfig: () => config,
+        //     addStyles: newStyles => mergeStyles(styles, newStyles || {}),
+        // };
         // Add borderbox styles
         if (config.useBorderBox) {
             mergeStyles(styles, {
@@ -321,21 +259,27 @@ export const build = config => {
                 },
             });
         }
-        // Add core modules
-        if (config.useRebootStyles) {
-            coreModules.reboot(actions);
-        }
-        if (config.useMarkupStyles) {
-            coreModules.markup(actions);
-        }
+        // Add elements
         if (config.useElements) {
-            coreModules.elements(actions);
-        }
-        if (config.useUtilities) {
-            coreModules.utilities(actions);
-        }
-        if (config.useIcons) {
-            coreModules.icons(actions);
+            Object.keys(elements).forEach(name => {
+                const options = elements[name];
+                const elementSelector = getElementSelector(name, null, config);
+                styles[elementSelector] = styles[elementSelector] || {};
+                mergeStyles(styles[elementSelector], options.styles);
+                // Process variants
+                const variants = config.variants?.[options.variants] || options.defaultVariants;
+                Object.keys(variants || {}).forEach(variant => {
+                    const variantSelector = getElementSelector(name, variant, config);
+                    styles[variantSelector] = styles[variantSelector] || {};
+                    mergeStyles(styles[variantSelector], variants[variant]);
+                });
+                // Process keyframes
+                if (options.keyframes) {
+                    Object.keys(options.keyframes).forEach(key => {
+                        styles[`@keyframes ${key}`] = options.keyframes[key];
+                    });
+                }
+            });
         }
         // Process plugins
         // (config.plugins || []).forEach(plugin => {
