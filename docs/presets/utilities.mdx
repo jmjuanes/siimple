@@ -34,9 +34,25 @@ export default {
 };
 ```
 
-## Utilities styles
+## Utilities included
 
-### Background color
+This preset includes the following utilities:
+
+- [Background](#background) utilities, to control the background of any element.
+- [Cursor](#cursor) utilities for changing the cursor style.
+- [Display](#display) utilities, to control how elements will be displayed..
+- [Flexbox](#flexbox) utilities, that include flex direction, order and more!
+- [Opacity](#opacity) utilities, to control the opacity of an element.
+- [Overflow](#overflow) utilities, to control the overflow behavior of any element.
+- [Placement](#placement) utilities, to set the placement of any element.
+- [Radius](#radius) utilities, to change the border radius of an element.
+- [Shadow](#shadow) utilities, for adding or removing shadow effects.
+- [Sizing](#sizing) utilities, to control the size of an element.
+- [Spacing](#spacing) utilities, to control the margin and padding of an element.
+- [Typography](#typography) utilities, that include fonts, text align, text color and more!.
+
+
+### Background
 
 Use `has-bg-{color}` to set the background color of any element. 
 
@@ -151,7 +167,9 @@ You can control the display of an element at a specific breakpoint adding a `{br
 </div>
 ```
 
-### Flex
+### Flexbox
+
+#### Flex
 
 Use the following classes to control the behaviour of flex items:
 
@@ -210,7 +228,7 @@ Use the `has-flex-none` helper to prevent a flex item from growing and shrinking
 </div>
 ```
 
-### Flex direction
+#### Flex direction
 
 Use the following classes to control the direction of the items of a flex container:
 
@@ -241,7 +259,7 @@ Or just use `has-flex-column` to position flex items vertically (in a column dir
 </div>
 ```
 
-### Align items
+#### Align items
 
 Use the following classes to define the alignment of the flex items along the **cross axis**.
 
@@ -282,7 +300,7 @@ Use `has-items-end` helper to align flex items to the end of the cross axis:
 </div>
 ```
 
-### Justify content
+#### Justify content
 
 Use the following classes to define how the browser should distribute the space between and around items along the **main axis**:
 
@@ -355,7 +373,7 @@ Use the `has-justify-evenly` helper to distribute items evenly:
 </div>
 ```
 
-### Flex wrap
+#### Flex wrap
 
 Use the following classes to define how items will wrap.
 
@@ -374,7 +392,7 @@ Use `has-flex-no-wrap` helper to prevent items from wrapping:
 </div>
 ```
 
-### Flex order
+#### Flex order
 
 Use the following classes to control the order of flex items.
 
@@ -392,95 +410,9 @@ Use the following classes to control the order of flex items.
 </div>
 ```
 
-### Font family
-
-Use the following classes to set the font family for the text:
-
-| Class | Property |
-|-------|----------|
-| `has-font-sams`  | `font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Noto Sans", "Helvetica Neue", Arial, sans-serif;` |
-| `has-font-serif` | `font-family: Georgia, Cambria, "Times New Roman", Times, serif;` |
-| `has-font-mono`  | `font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;` |
-
-Use `has-font-sans` to apply a **sans-serif** font family to your text:
-
-```html live=true bg=blue-200 color=blue-700
-<div class="has-font-sans">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
-</div>
-```
-
-Use `has-font-serif` to apply a **serif** font family to your text: 
-
-```html live=true bg=blue-200 color=blue-700
-<div class="has-font-serif">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
-</div>
-```
-
-Use `has-font-mono` to apply a monospace font (for example for `code` blocks): 
-
-```html live=true bg=blue-200 color=blue-700
-<div class="has-font-mono">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
-</div>
-```
-
-### Font size
-
-Use the following classes to set the size of your text:
-
-| Class | Property |
-|-------|----------|
-| `has-text-xs`   | `font-size: 0.75rem;` |
-| `has-text-sm`   | `font-size: 0.875rem;`|
-| `has-text-base` | `font-size: 1rem;`    |
-| `has-text-lg`   | `font-size: 1.25rem;` |
-| `has-text-xl`   | `font-size: 1.5rem;`  |
-| `has-text-2xl`  | `font-size: 1.75rem;` |
-| `has-text-3xl`  | `font-size: 2rem;`    |
-| `has-text-4xl`  | `font-size: 2.5rem;`  |
-| `has-text-5xl`  | `font-size: 3rem;`    |
-| `has-text-6xl`  | `font-size: 3.5rem;`  |
-| `has-text-7xl`  | `font-size: 4rem;`    |
-| `has-text-8xl`  | `font-size: 4.5rem;`  |
-| `has-text-9xl`  | `font-size: 5rem;`    |
-
-```html live=true bg=blue-200 color=blue-700
-<div class="has-text-xs">The quick brown fox jumps over the lazy dog.</div>
-<div class="has-text-sm">The quick brown fox jumps over the lazy dog.</div>
-<div class="has-text-base">The quick brown fox jumps over the lazy dog.</div>
-<div class="has-text-lg">The quick brown fox jumps over the lazy dog.</div>
-<div class="has-text-xl">The quick brown fox jumps over the lazy dog.</div>
-<div class="has-text-2xl">The quick brown fox jumps over the lazy dog.</div>
-<div class="has-text-3xl">The quick brown fox jumps over the lazy dog.</div>
-<div class="has-text-4xl">The quick brown fox jumps over the lazy dog.</div>
-<div class="has-text-5xl">The quick brown fox jumps over the lazy dog.</div>
-```
-
-### Font Weight
-
-Use the following classes to set the weight of your text:
-
-| Class | Property |
-|-------|----------|
-| `has-weight-light`  | `font-weight: 300;` |
-| `has-weight-normal` | `font-weight: 400;` |
-| `has-weight-medium` | `font-weight: 500;` |
-| `has-weight-bold`   | `font-weight: 700;` |
-| `has-weight-black`  | `font-weight: 900;` |
-
-```html live=true bg=blue-200 color=blue-700
-<div class="has-weight-light">Text using has-weight-light</div>
-<div class="has-weight-normal">Text using has-weight-normal</div>
-<div class="has-weight-medium">Text using has-weight-medium</div>
-<div class="has-weight-bold">Test using has-weight-bold</div>
-<div class="has-weight-black">Text using has-weight-black</div>
-```
-
 ### Opacity
 
-Add any of the `has-opacity-{value}` classes to set the opacity of an element:
+Add any of the `has-opacity-{value}` classes to set the opacity of an element. We are using [this opacities](https://github.com/jmjuanes/siimple/blob/main/siimple/theme.js#L74-L96) values.
 
 ```html live=true bg=blue-200 color=white
 <div class="has-d-flex has-text-center">
@@ -520,7 +452,7 @@ You can control the opacity of an element at a specific breakpoint adding a `{br
 
 ### Overflow
 
-You can use the following helpers to control the behavior for an element's overflow.
+You can use the following utilities to control the behavior for an element's overflow.
 
 | Class | Property |
 |-------|----------|
@@ -567,7 +499,8 @@ On the other hand, you can use `has-overflow-hidden` to clip all neccesary conte
 </div>
 ```
 
-### Position 
+### Placement
+#### Position 
 
 Use the following classes to change the position of an element:
 
@@ -587,7 +520,15 @@ Example:
 </div>
 ```
 
-### Float
+You can control the position of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the class.
+
+```html
+<div class="mobile:has-position-fixed mobile:has-top-none">
+    . . .
+</div>
+```
+
+#### Float
 
 Use the following classes for positioning and formatting content, for example to wrap text around images.
 
@@ -651,9 +592,9 @@ Use `has-float-none` to reset the float property applied to any element:
 </p>
 ```
 
-### Placement
+#### Bottom
 
-Use the following classes to set the placement of an element:
+Use the following classes to set the **bottom** position of an element:
 
 | Class | Property |
 |-------|----------|
@@ -661,14 +602,83 @@ Use the following classes to set the placement of an element:
 | `has-bottom-none` | `bottom: 0px;`  |
 | `has-bottom-half` | `bottom: 50%;`  |
 | `has-bottom-full` | `bottom: 100%;` |
+
+Example:
+
+```html
+<div class="has-position-fixed has-bottom-none">
+    ...
+</div>
+```
+
+You can control the position of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the class.
+
+```html
+<div class="mobile:has-position-fixed mobile:has-bottom-none">
+    . . .
+</div>
+```
+
+#### Left
+
+Use the following classes to set the **left** position of an element:
+
+| Class | Property |
+|-------|----------|
 | `has-left-auto`   | `left: auto;` |
 | `has-left-none`   | `left: 0px;`  |
 | `has-left-half`   | `left: 50%;`  |
 | `has-left-full`   | `left: 100%;` |
+
+Example:
+
+```html
+<div class="has-position-fixed has-left-none">
+    ...
+</div>
+```
+
+You can control the position of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the class:
+
+```html
+<div class="mobile:has-position-fixed mobile:has-left-none">
+    . . .
+</div>
+```
+
+#### Right
+
+Use the following classes to set the **right** position of an element:
+
+| Class | Property |
+|-------|----------|
 | `has-right-auto`  | `right: auto;` |
 | `has-right-none`  | `right: 0px;`  |
 | `has-right-half`  | `right: 50%;`  |
 | `has-right-full`  | `right: 100%;` |
+
+Example:
+
+```html
+<div class="has-position-fixed has-right-none">
+    ...
+</div>
+```
+
+You can control the position of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the class.
+
+```html
+<div class="mobile:has-position-fixed mobile:has-right-none">
+    . . .
+</div>
+```
+
+#### Top
+
+Use the following classes to set the **top** position of an element:
+
+| Class | Property |
+|-------|----------|
 | `has-top-auto`    | `top: auto;` |
 | `has-top-none`    | `top: 0px;`  |
 | `has-top-half`    | `top: 50%;`  |
@@ -682,10 +692,10 @@ Example:
 </div>
 ```
 
-You can control the position of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the position or placement class helper.
+You can control the position of an element at a specific breakpoint adding a `{breakpoint}:` prefix to the class:
 
 ```html
-<div class="mobile:has-position-fixed mobile:has-top-0">
+<div class="mobile:has-position-fixed mobile:has-top-none">
     . . .
 </div>
 ```
@@ -772,7 +782,11 @@ You can remove the shadow of any element using `has-shadow-none`:
 </div>
 ```
 
-### Width
+### Sizing
+
+For all sizing utilities the following [sizes](https://github.com/jmjuanes/siimple/blob/main/siimple/theme.js#L54-L70) can be used.
+
+#### Width
 
 Add any of the `has-w-{size}` classnames to modify the `width` property of the element.
 
@@ -796,7 +810,7 @@ Use the other clasess to set a fixed width:
 </div>
 ```
 
-### Max Width
+#### Max Width
 
 Use `has-maxw-{size}` classes to set the `max-width` property of any element.
 
@@ -806,7 +820,7 @@ Use `has-maxw-{size}` classes to set the `max-width` property of any element.
 </div>
 ```
 
-### Min Width
+#### Min Width
 
 Use `has-minw-{size}` classes to modify the `min-width` property of any element.
 
@@ -816,7 +830,7 @@ Use `has-minw-{size}` classes to modify the `min-width` property of any element.
 </div>
 ```
 
-## Height
+#### Height
 
 Add any of the `has-h-{size}` classnames to modify the `height` property of the element.
 
@@ -840,7 +854,7 @@ Use the other clasess to set a fixed height:
 </div>
 ```
 
-## Max Height
+#### Max Height
 
 Use `has-maxh-{size}` classes to modify the `max-height` property of any element.
 
@@ -850,7 +864,7 @@ Use `has-maxh-{size}` classes to modify the `max-height` property of any element
 </div>
 ```
 
-## Min Height
+#### Min Height
 
 Use `has-minh-{size}` classes to modify the `min-height` property of any element.
 
@@ -860,7 +874,7 @@ Use `has-minh-{size}` classes to modify the `min-height` property of any element
 </div>
 ```
 
-### Uniform width and height
+#### Uniform width and height
 
 Use `has-s-{size}` classes to set both the `width` and `height` properties of any element.
 
@@ -878,7 +892,11 @@ You can control the sizing of an element at a specific breakpoint adding a `{bre
 </div>
 ``` 
 
-### Uniform padding or margin
+### Spacing
+
+For all spacing utilities the following [sizes](https://github.com/jmjuanes/siimple/blob/main/siimple/theme.js#L54-L70) can be used.
+
+#### Uniform padding or margin
 
 Use `has-p-{size}` to set the **padding** of all sides of the element, or `has-m-{size}` to set the **margin** of all sides of the element.
 
@@ -896,18 +914,16 @@ You can control the spacing of an element at a specific breakpoint adding a `{br
 </div>
 ``` 
 
-### Directional padding or margin
+#### Directional padding or margin
 
 Use `has-p{direction}-{size}` or `has-m{direction}-{size}` to set the **padding or margin of one side**, **on the x-axis** or **the y-axis** of the element. The following sides are available:
 
-| Direction | Description |
-|-----------|-------------|
-| **t** | To set the margin or padding **top**. |
-| **b** | To set the margin or padding **bottom**. |
-| **l** | To set the margin or padding **left**. |
-| **r** | To set the margin or padding **right**. |
-| **x** | To set the margin or padding **left and right**. |
-| **y** | To set the margin or padding **top and bottom**. |
+- `t`: to set the margin or padding **top**. Example: `has-pt-none`.
+- `b`: to set the margin or padding **bottom**. Example: `has-pb-none`.
+- `l`: to set the margin or padding **left**. Example: `has-pl-none`.
+- `r`: to set the margin or padding **right**. Example: `has-pr-none`.
+- `x`: to set the margin or padding **left and right**. Example: `has-px-none`.
+- `y`: to set the margin or padding **top and bottom**. Example: `has-py-none`.
 
 ```html live=true centered=true bg=blue-200 color=white padding=12
 <div class="has-p-4 has-pt-12 has-m-4 has-bg-blue-500 has-radius">
@@ -940,7 +956,95 @@ You can control the spacing of an element at a specific breakpoint adding a `{br
 </div>
 ``` 
 
-### Text alignment
+### Typography
+
+#### Font family
+
+Use the following classes to set the font family for the text:
+
+| Class | Property |
+|-------|----------|
+| `has-font-sams`  | `font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Noto Sans", "Helvetica Neue", Arial, sans-serif;` |
+| `has-font-serif` | `font-family: Georgia, Cambria, "Times New Roman", Times, serif;` |
+| `has-font-mono`  | `font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;` |
+
+Use `has-font-sans` to apply a **sans-serif** font family to your text:
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-font-sans">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+Use `has-font-serif` to apply a **serif** font family to your text: 
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-font-serif">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+Use `has-font-mono` to apply a monospace font (for example for `code` blocks): 
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-font-mono">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+#### Font size
+
+Use the following classes to set the size of your text:
+
+| Class | Property |
+|-------|----------|
+| `has-text-xs`   | `font-size: 0.75rem;` |
+| `has-text-sm`   | `font-size: 0.875rem;`|
+| `has-text-base` | `font-size: 1rem;`    |
+| `has-text-lg`   | `font-size: 1.25rem;` |
+| `has-text-xl`   | `font-size: 1.5rem;`  |
+| `has-text-2xl`  | `font-size: 1.75rem;` |
+| `has-text-3xl`  | `font-size: 2rem;`    |
+| `has-text-4xl`  | `font-size: 2.5rem;`  |
+| `has-text-5xl`  | `font-size: 3rem;`    |
+| `has-text-6xl`  | `font-size: 3.5rem;`  |
+| `has-text-7xl`  | `font-size: 4rem;`    |
+| `has-text-8xl`  | `font-size: 4.5rem;`  |
+| `has-text-9xl`  | `font-size: 5rem;`    |
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-text-xs">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-sm">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-base">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-lg">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-xl">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-2xl">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-3xl">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-4xl">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-text-5xl">The quick brown fox jumps over the lazy dog.</div>
+```
+
+#### Font Weight
+
+Use the following classes to set the weight of your text:
+
+| Class | Property |
+|-------|----------|
+| `has-weight-light`  | `font-weight: 300;` |
+| `has-weight-normal` | `font-weight: 400;` |
+| `has-weight-medium` | `font-weight: 500;` |
+| `has-weight-bold`   | `font-weight: 700;` |
+| `has-weight-black`  | `font-weight: 900;` |
+
+```html live=true bg=blue-200 color=blue-700
+<div class="has-weight-light">Text using has-weight-light</div>
+<div class="has-weight-normal">Text using has-weight-normal</div>
+<div class="has-weight-medium">Text using has-weight-medium</div>
+<div class="has-weight-bold">Test using has-weight-bold</div>
+<div class="has-weight-black">Text using has-weight-black</div>
+```
+
+#### Text alignment
 
 Use one of the following classes to set the horizontal align of your text inside the container element:
 
@@ -979,7 +1083,7 @@ Use `has-text-right` to align inline contents to the right:
 <div class="has-text-right">Right aligned text</div>
 ```
 
-### Text color
+#### Text color
 
 Use `has-text-{color}` to apply a different color to the text. 
 
@@ -995,7 +1099,7 @@ You can change the text color of any element on hover adding the `hover:` prefix
 <strong class="has-text-blue-700 hover:has-text-red-400">Hover me</strong>
 ```
 
-### Text decoration
+#### Text decoration
 
 Use the following classes to set the `text-decoration` property of your text:
 
@@ -1012,7 +1116,7 @@ Use the `has-text-underline` to underline the text:
 </strong>
 ```
 
-### Text transform
+#### Text transform
 
 You can use these classes to apply text transformations: 
 
@@ -1046,7 +1150,7 @@ Use `has-text-capitalize` to convert the first character of each word of your te
 </strong>
 ```
 
-### Text style
+#### Text style
 
 Use the following classes to set the font style of your text:
 
@@ -1070,4 +1174,3 @@ Use `has-text-no-italic` to reset italic style of the text:
     Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 </strong>
 ```
-
