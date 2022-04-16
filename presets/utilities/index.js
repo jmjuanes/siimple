@@ -537,9 +537,11 @@ const utilityReducer = (prevStyles, options) => {
         Object.keys(options.values).forEach(key => {
             const selector = getSelector(options.shortcut, key, null, true);
             prevStyles[selector] = {
-                "@breakpoints": Object.fromEntries(properties.map(prop => {
-                    return [prop, options.values[key]];
-                })),
+                "@breakpoints": {
+                    "&": Object.fromEntries(properties.map(prop => {
+                        return [prop, options.values[key]];
+                    })),
+                },
             };
         });
     }
