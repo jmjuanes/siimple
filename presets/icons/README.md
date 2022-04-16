@@ -2,17 +2,13 @@
 
 A preset for the **siimple CSS toolkit** that provides a collection of **pure CSS icons**.
 
-## Installation
-
-Use npm to install this preset in your project:
+## Install
 
 ```bash
 $ npm install --save @siimple/preset-icons
 ```
 
-## Enable this preset
-
-Include the styles that this preset is exporting in your `siimple.config.js` file:
+Include the preset styles in your `siimple.config.js` file:
 
 ```js
 import icons from "@siimple/preset-icons";
@@ -26,7 +22,7 @@ export default {
 };
 ```
 
-## Using this preset
+## Usage
 
 Use the class `icon-<icon-name>` to include icons in your HTML content. By default, icons will have the size and the color of the parent's font size and text color. This can be customized providing a custom `font-size` and `color` style properties.
 

@@ -2,17 +2,13 @@
 
 A preset for the **siimple CSS toolkit** for adding CSS reset styles.
 
-## Installation
-
-Use npm to install this preset in your project:
+## Install
 
 ```bash
 $ npm install --save @siimple/preset-reboot
 ```
 
-## Enable this preset
-
-Include the styles that this preset is exporting in your `siimple.config.js` file:
+Include the preset styles in your `siimple.config.js` file:
 
 ```js
 import reboot from "@siimple/preset-reboot";
@@ -25,10 +21,6 @@ export default {
     },
 };
 ```
-
-## Using this preset
-
-Read [the preset documentation](https://www.siimple.xyz/presets/reboot).
 
 ## License
 
