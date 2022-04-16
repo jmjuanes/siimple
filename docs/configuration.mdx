@@ -4,7 +4,7 @@ title: "Configuration"
 
 # Configuration
 
-**Siimple** is based in a set of configuration rules written in JavaScript, where you can define your theme, the core modules that you need to include and additional styles.
+**Siimple** is based in a set of configuration rules written in JavaScript, where you can define your theme, variants for core elements and additional styles.
 
 This is an example of a configuration file for **siimple**: 
 
@@ -12,9 +12,9 @@ This is an example of a configuration file for **siimple**:
 import colors from "siimple/colors.js";
 
 export default {
-    useReboot: true,
+    useRootStyles: false,
     useBorderBox: true,
-    useUtilities: false,
+    useElements: true,
     prefix: "",
     scales: {
         colors: {
@@ -114,7 +114,7 @@ Visit the [scales guide](/scales) to read more about how to define your custom s
 
 ### Variants
 
-You can use the `variants` section to customize the style of the elements provided by **siimple** or included using plugins. 
+You can use the `variants` section to customize the style of the elements. 
 
 ```js title=siimple.config.js
 export default {
@@ -132,7 +132,7 @@ export default {
 };
 ```
 
-Visit the [variants guide](/variants) to read more about how to customize your components using variants.
+Visit the [variants guide](/variants) to read more about how to customize elements using variants.
 
 ### Configuration flags
 
@@ -140,11 +140,7 @@ Use the configuration flags to enable or disable some features of **siimple**:
 
 - `useRootStyles`: add root styles to the `<html>` element. Default is `true`.
 - `useBorderBox`: adds a global `box-sizing: border-box`. Default is `true`.
-- `useRebootStyles`: includes the styles defined in the [reboot module](/reboot). Default is `true`.
-- `useMarkupStyles`: include the styles defined in the [markup module](/markup). Default is `true`.
 - `useElements`: include elements. Default is `true`.
-- `useUtilities`: include utilities. Default is `true`.
-- `useIcons`: include icons. Default is `true`.
 
 Flags are defined in the first level of the configuration object:
 
@@ -152,11 +148,7 @@ Flags are defined in the first level of the configuration object:
 export default {
     useRootStyles: true,
     useBorderBox: true,
-    useRebootStyles: true,
-    useMarkupStyles: true,
     useElements: true,
-    useUtilities: true,
-    useIcons: true,
     // include other configuration
     // ...
 };
@@ -198,3 +190,20 @@ export default {
 ```
 
 Styles defined in this section must follow the [styles syntax](/guides/styles) specification.
+
+### Presets
+
+Presets allows you to extend **siimple** with reusable styles, variants and theme scales. 
+
+```js title=siimple.config.js
+import utilities from "@siimple/preset-utilities";
+
+export default {
+    // ...your custom configuration
+    styles: {
+        ...utilities.styles,
+    },
+};
+```
+
+Read more in the [presets guide](/presets).
