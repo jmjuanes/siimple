@@ -1,25 +1,22 @@
 import React from "react"
 import kofi from "kofi";
-import icons from "siimple/icons.js";
+import icons from "@siimple/preset-icons/icons.js";
 
 import {Link} from "./Link.js";
 import {Icon} from "./Icon.js";
 import {LiveCode} from "./LiveCode.js";
 
 // Sorted icons list
-const sortedIcons = icons.sort((a, b) => a.id < b.id ? -1 : +1);
+const sortedIcons = icons.sort((a, b) => a.name < b.name ? -1 : +1);
 
 // Generate icon usage string
 const getIconUsage = icon => {
-    return `<i class="icon-${icon.id}"></i>`;
+    return `<i class="icon-${icon.name}"></i>`;
 };
-
-// Get icon unicode
-const getIconUnicode = icon => icon.unicode.toString(16).toLowerCase();
 
 // Get displayed icons
 const getDisplayedIcons = query => {
-    return !query ? sortedIcons : sortedIcons.filter(icon => icon.id.includes(query)); 
+    return !query ? sortedIcons : sortedIcons.filter(icon => icon.name.includes(query)); 
 };
 
 // Icons list component
@@ -61,7 +58,7 @@ const IconsList = props => {
                 {kofi.when(displayedIcons.length > 0, () => (
                     <div className="has-d-flex has-flex-wrap mobile:has-justify-between">
                         {visibleIcons.map(icon => {
-                            const isActive = icon.id === props.activeIcon?.id;
+                            const isActive = icon.name === props.activeIcon?.name;
                             const iconClass = kofi.classNames({
                                 "has-radius has-d-flex has-cursor-pointer": true,
                                 "tablet:has-p-6 tablet:has-w-24 mobile:has-p-4": true,
@@ -69,8 +66,8 @@ const IconsList = props => {
                                 "has-bg-blue-500 has-text-white": isActive,
                             });
                             return (
-                                <div key={icon.id} className={iconClass} onClick={() => props.onIconClick(icon)}>
-                                    <Icon icon={icon.id} className="has-text-4xl" />
+                                <div key={icon.name} className={iconClass} onClick={() => props.onIconClick(icon)}>
+                                    <Icon icon={icon.name} className="has-text-4xl" />
                                 </div>
                             );
                         })}
@@ -124,7 +121,7 @@ const IconModal = props => {
         "has-bg-coolgray-200 has-text-coolgray-700",
     ]);
     const iconHtml = getIconUsage(props.icon);
-    const iconSvgUrl = `${process.env.REPO_URL}/raw/main/icons/${props.icon.id}.svg`;
+    const iconSvgUrl = `${process.env.REPO_URL}/raw/main/icons/${props.icon.name}.svg`;
     const handleIconCopy = () => {
         navigator.clipboard.writeText(iconHtml).then(() => {
             setIconCopied(true);
@@ -134,13 +131,11 @@ const IconModal = props => {
         <div className="scrim">
             <div className="modal is-medium">
                 <div className="has-d-flex has-items-center has-mb-6">
-                    <div className="title is-3 has-mb-0">
-                        {props.icon.id} <span className="has-weight-normal">({getIconUnicode(props.icon)})</span>
-                    </div>
+                    <div className="title is-3 has-mb-0">{props.icon.name}</div>
                     <div className="close has-ml-auto" onClick={props.onClose} />
                 </div>
                 <div className={previewClass}>
-                    <Icon icon={props.icon.id} style={{fontSize:"128px"}} />
+                    <Icon icon={props.icon.name} style={{fontSize:"128px"}} />
                 </div>
                 <div className="paragraph">Using this icon as a webfont:</div>
                 <LiveCode className="html">{iconHtml}</LiveCode>
