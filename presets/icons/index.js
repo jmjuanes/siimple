@@ -21,14 +21,27 @@ const svgFromPath = (path, fill) => {
 export default {
     styles: {
         '[class^="icon-"],[class*=" icon-"]': {
-            backgroundColor: "currentColor",
+            // backgroundColor: "currentColor",
+            // display: "inline-block",
+            // height: "1em",
+            // verticalAlign: "text-bottom",
+            // width: "1em",
+            // test
+            alignSelf: "center",
+            display: "inline-flex",
+            lineHeight: "1",
+            textRendering: "auto",
+            verticalAlign: "-0.125em",
+        },
+        '[class^="icon-"]:before,[class*=" icon-"]:before': {
+            content: "''",
             display: "inline-block",
-            height: "1em",
-            verticalAlign: "text-bottom",
             width: "1em",
+            height: "1em",
+            backgroundColor: "currentColor",
         },
         ...Object.fromEntries(iconsList.map(icon => {
-            const selector = `.icon-${icon.name}`;
+            const selector = `.icon-${icon.name}:before`;
             const svg = svgFromPath(icon.path, "currentColor");
             const url = `url("data:image/svg+xml;utf8,${encodeSvg(svg)}") no-repeat`;
             const styles = {
