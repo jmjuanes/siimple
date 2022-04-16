@@ -67,7 +67,7 @@ const IconsList = props => {
                             });
                             return (
                                 <div key={icon.name} className={iconClass} onClick={() => props.onIconClick(icon)}>
-                                    <Icon icon={icon.name} className="has-text-4xl" />
+                                    <Icon icon={icon.name} className="has-text-5xl" />
                                 </div>
                             );
                         })}
