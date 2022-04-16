@@ -8,6 +8,23 @@ import CleanCSS from "clean-css";
 import through from "through2";
 import Vinyl from "vinyl";
 
+import defaultConfig from "./siimple/defaultConfig.js";
+import {build, mergeConfig} from "./siimple/index.js";
+
+// Build Siimple
+const siimple = () => {
+    return through.obj((file, enc, callback) => {
+        import(file.path).then(rawConfig => {
+            return mergeConfig(defaultConfig, rawConfig.default);
+        })
+        .then(build)
+        .then(css => {
+            file.contents = new Buffer.from(css);
+            return callback(null, file);
+        });
+    });
+};
+
 // Minify CSS
 const minify = options => {
     return through.obj((file, enc, callback) => {
@@ -61,6 +78,18 @@ gulp.task("icons", () => {
 });
 
 // Generate css files
+gulp.task("css", () => {
+    return gulp.src("siimple.config.js")
+        .pipe(siimple())
+        .pipe(postcss([autoprefixer()]))
+        .pipe(minify({
+            "compatibility": "*",
+            "level": 2,
+        }))
+        .pipe(rename("siimple.css"))
+        .pipe(gulp.dest("siimple"))
+});
+
 gulp.task("autoprefix", () => {
     return gulp.src("siimple/siimple.css")
         .pipe(postcss([autoprefixer()]))
