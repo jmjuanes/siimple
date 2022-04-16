@@ -87,7 +87,7 @@ export const mergeConfig = (source, target) => ({
     prefix: target.prefix || source.prefix || "",
     breakpoints: mergeObject(source.breakpoints, target.breakpoints || {}),
     scales: mergeObject(source.scales || {}, target.scales || {}),
-    variants: mergrObject(source.variants || {}, target.variants || {}),
+    variants: mergeObject(source.variants || {}, target.variants || {}),
     root: target.root || {},
     styles: target.styles || {},
 });
