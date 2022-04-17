@@ -797,7 +797,7 @@ export default {
             default: {
                 "& th,& td": {
                     backgroundColor: "white",
-                    padding: "1.5rem",
+                    padding: "1rem", // "1.5rem",
                 },
             },
             divided: {
