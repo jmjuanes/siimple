@@ -16,18 +16,16 @@ export default {
     useBorderBox: true,
     useElements: true,
     prefix: "",
-    scales: {
-        colors: {
-            primary: colors.blue["500"],
-            secondary: colors.mint["600"],
-            text: colors.gray["800"],
-            background: "#ffffff",
-        },
-        fonts: {
-            body: ["Roboto", "sans-serif"],
-            heading: ["Montserrat", "sans-serif"],
-            monospace: ["monospace"],
-        },
+    colors: {
+        primary: colors.blue["500"],
+        secondary: colors.mint["600"],
+        text: colors.gray["800"],
+        background: "#ffffff",
+    },
+    fonts: {
+        body: ["Roboto", "sans-serif"],
+        heading: ["Montserrat", "sans-serif"],
+        monospace: ["monospace"],
     },
 };
 ```
@@ -86,31 +84,29 @@ export default {
 };
 ```
 
-### Scales
+### Theme scales
 
-In the `scales` section you can configure the list of CSS properties specific for your project, that includes colors, fonts, sizes, and more!
+You can configure the list of CSS properties specific for your project using the theme scales, that includes colors, fonts, sizes, and more!
 
 ```js title=siimple.config.js
 import colors from "siimple/colors";
 
 export default {
-    scales: {
-        colors: {
-            primary: colors.blue["500"],
-            secondary: colors.mint["600"],
-            text: colors.gray["800"],
-            background: "#ffffff",
-        },
-        fonts: {
-            body: ["Roboto", "sans-serif"],
-            heading: ["Montserrat", "sans-serif"],
-            monospace: ["monospace"],
-        },
+    colors: {
+        primary: colors.blue["500"],
+        secondary: colors.mint["600"],
+        text: colors.gray["800"],
+        background: "#ffffff",
+    },
+    fonts: {
+        body: ["Roboto", "sans-serif"],
+        heading: ["Montserrat", "sans-serif"],
+        monospace: ["monospace"],
     },
 };
 ```
 
-Visit the [scales guide](/scales) to read more about how to define your custom scales.
+Visit the [theme scales guide](/scales) to read more about how to define your custom theme scales.
 
 ### Variants
 
