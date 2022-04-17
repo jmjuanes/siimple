@@ -87,5 +87,5 @@ gulp.task("css", () => {
             "level": 2,
         }))
         .pipe(rename("siimple.css"))
-        .pipe(gulp.dest("siimple"))
+        .pipe(gulp.dest("."))
 });
