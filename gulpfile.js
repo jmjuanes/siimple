@@ -89,21 +89,3 @@ gulp.task("css", () => {
         .pipe(rename("siimple.css"))
         .pipe(gulp.dest("siimple"))
 });
-
-gulp.task("autoprefix", () => {
-    return gulp.src("siimple/siimple.css")
-        .pipe(postcss([autoprefixer()]))
-        .pipe(rename("siimple.css"))
-        .pipe(gulp.dest("siimple"));
-});
-
-// Minify css
-gulp.task("minify", () => {
-    return gulp.src("siimple/siimple.css")
-        .pipe(minify({
-            "compatibility": "*",
-            "level": 2,
-        }))
-        .pipe(rename("siimple.min.css"))
-        .pipe(gulp.dest("siimple"));
-});

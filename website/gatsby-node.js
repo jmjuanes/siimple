@@ -31,7 +31,7 @@ exports.onCreateWebpackConfig = ({getConfig, plugins, actions}) => {
             // }))),
             new CopyPlugin({
                 patterns: [
-                    path.resolve(__dirname, "../siimple/siimple.css"),
+                    path.resolve(__dirname, "../siimple.css"),
                     "src/docs.css",
                     "node_modules/codecake/codecake.css",
                 ],

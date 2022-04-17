@@ -17,8 +17,6 @@
     ],
     "scripts": {
         "build": "gulp icons && gulp css",
-        "css": "node ./siimple/cli.js -c ./siimple/defaultConfig.js -o siimple/siimple.css && gulp autoprefix && gulp minify",
-        "icons": "gulp icons",
         "website": "cd website && npm install && npm run build && npm run serve",
         "playground": "cd playground && npm install && npm run build && npm run serve",
         "test": "jest"

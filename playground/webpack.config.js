@@ -53,7 +53,7 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                path.resolve(__dirname, "../siimple/siimple.css"),
+                path.resolve(__dirname, "../siimple.css"),
                 "node_modules/codecake/codecake.css",
                 "playground.html",
             ],
