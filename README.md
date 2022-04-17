@@ -5,6 +5,7 @@
 [![Get help](https://badgen.net/badge/Discussions/Join%20us/cyan)](https://github.com/jmjuanes/siimple/discussions)
 [![MIT License](https://badgen.net/github/license/jmjuanes/siimple)](https://github.com/jmjuanes/siimple)
 [![PRs welcome](https://badgen.net/badge/PR/Welcome/green)](https://github.com/jmjuanes/siimple)
+[![CI](https://github.com/jmjuanes/siimple/actions/workflows/ci.yml/badge.svg)](https://github.com/jmjuanes/siimple/actions/workflows/ci.yml)
 
 Welcome to the **siimple CSS toolkit** repository :tada: 
 
@@ -12,6 +13,19 @@ Welcome to the **siimple CSS toolkit** repository :tada:
 - :pencil: **Try siimple**: play with **siimple** in your browser with our [online playground](https://playground.siimple.xyz).
 - :pray: **Contributing**: check out our [CONTRIBUTING guide](/CONTRIBUTING.md) to get started.
 - :question: **Questions**: join our [discussion forum](https://github.com/jmjuanes/siimple/discussions).
+
+
+## Packages
+
+You will find the following packages in this repository:
+
+| Package | Description | Version |
+|---------|-------------|---------|
+| [siimple](https://github.com/jmjuanes/siimple/tree/main/siimple) | The minimal and themeable CSS toolkit. | ![](https://badgen.net/npm/v/siimple) |
+| [@siimple/preset-reboot](https://github.com/jmjuanes/siimple/tree/main/presets/reboot) | Reboot preset for the siimple CSS toolkit. | ![](https://badgen.net/npm/v/@siimple/preset-reboot) |
+| [@siimple/preset-markup](https://github.com/jmjuanes/siimple/tree/main/presets/markup) | Markup preset for the siimple CSS toolkit. | ![](https://badgen.net/npm/v/@siimple/preset-markup) |
+| [@siimple/preset-utilities](https://github.com/jmjuanes/siimple/tree/main/presets/utilities) | Utilities preset for the siimple CSS toolkit. | ![](https://badgen.net/npm/v/@siimple/preset-utilities) |
+| [@siimple/preset-icons](https://github.com/jmjuanes/siimple/tree/main/presets/icons) | Icons preset for the siimple CSS toolkit. | ![](https://badgen.net/npm/v/@siimple/preset-icons) |
 
 
 ## Development
@@ -37,31 +51,19 @@ $ npm run build
 
 ## Local playground
 
-You can run the playground editor in your local machine after building **siimple**. First build the playground tool running the following commands:
+You can run the playground editor in your local machine after building **siimple**.  Just run the following command: 
 
 ```bash
-$ npm run playground:init && npm run playground:build
-```
-
-Start the playground tool running
-
-```bash
-$ npm run playground:serve
+$ npm run playground
 ```
 
 
 ## Documentation
 
-We are using [Gatsby](https://www.gatsbyjs.com/) for documentation. After building **siimple** you can build the documentation site running the following command:
+We are using [Gatsby](https://www.gatsbyjs.com/) for documentation. After building **siimple** you can build and start the documentation site running the following command:
 
 ```bash
-$ npm run website:init && npm run website:build
-```
-
-Start the website local server running:
-
-```bash
-$ npm run website:serve
+$ npm run website
 ```
 
 
