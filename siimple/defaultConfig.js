@@ -1,4 +1,4 @@
-import {screens, fonts, lineHeights} from "./theme.js";
+import {screens, fonts, fontSizes, lineHeights} from "./theme.js";
 import colors from "./colors.js";
 
 // Generate a default configuration for siimple
@@ -6,11 +6,7 @@ export default {
     // Global flags
     useRootStyles: true,
     useBorderBox: true,
-    useRebootStyles: true,
-    useMarkupStyles: true,
     useElements: true,
-    useUtilities: true,
-    useIcons: true,
     // Prefixes
     prefix: "",
     // Default theme breakpoints
@@ -33,7 +29,7 @@ export default {
         colors: {
             primary: colors.blue["500"],
             secondary: colors.royal["500"],
-            background: "#fff",
+            background: colors.white,
             text: colors.coolgray["700"],
             heading: colors.coolgray["800"],
             muted: colors.coolgray["500"],
@@ -45,9 +41,9 @@ export default {
             monospace: fonts.mono,
         },
         fontSizes: {
-            small: "0.875rem",
+            small: fontSizes["sm"],
             body: "16px",
-            large: "1.25rem",
+            large: fontSizes["lg"],
         },
         fontWeights: {
             body: "400",

@@ -36,18 +36,6 @@ $ cd siimple
 $ npm install
 ```
 
-If you plan to build the documentation site, you will need to run also the following command:
-
-```bash
-$ npm run website:init
-```
-
-If you plan to use the playground tool, you will need to install the playground tool dependencies running the following command:
-
-```bash
-$ npm run playground:init
-```
-
 ### Building siimple
 
 ```

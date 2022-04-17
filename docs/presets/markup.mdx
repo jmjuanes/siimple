@@ -1,0 +1,84 @@
+---
+title: Markup preset
+---
+
+# Markup preset
+
+Use this preset to style base markup elements, like headings, paragraphs, links... 
+
+## Adding markup preset
+
+This preset can be installed using **npm**:
+
+```bash
+$ npm install --save @siimple/preset-markup
+```
+
+In your configuration file, include the preset styles:
+
+```js title=siimple.config.js
+import markup from "@siimple/preset-markup";
+
+export default {
+    // ...other configuration
+    styles: {
+        ...markup.styles,
+        // ...other styles
+    },
+};
+```
+
+## Markup styles
+
+### Headings
+
+This preset includes styles for your heading elements, from `<h1>` through `<h6>`. For styling non heading HTML elements, you can use the [title](/elements/title) element instead.
+
+```html live=true
+<h1>h1. Siimple heading</h1>
+<h2>h2. Siimple heading</h2>
+<h3>h3. Siimple heading</h3>
+<h4>h4. Siimple heading</h4>
+<h5>h5. Siimple heading</h5>
+<h6>h6. Siimple heading</h6>
+```
+
+### Paragraph
+
+This preset includes styles for your `<p>` elements. For style non paragraph HTML elements like `<div>` elements, you can use the [paragraph](/elements/paragraph) element instead.
+
+```html live=true
+<p class="has-mb-0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua.
+</p>
+```
+
+### Blockquotes
+
+This preset includes styles for your `<blockquote>` elements:
+
+```html live=true
+<blockquote>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua.
+</blockquote>
+```
+
+### Inline text elements
+
+This preset includes styles for your inline text elements, like `<small>` or `<code>` elements.
+
+```html live=true
+<p>You can style your <a href="">link</a> elements.</p>
+<p>You can style your <small>small text</small> elements.</p>
+<p class="has-mb-0">You can style your <code>inline code</code> elements.</p>
+```
+
+### Horizontal rule
+
+This preset includes styles for your `<hr>` elements. For styling non `<hr>` elements as an horizontal rule, you can use the [divider](/elements/divider) element instead.
+
+```html
+<hr>
+```

@@ -20,7 +20,7 @@ const getArguments = () => {
 // Resolve configuration
 const resolveConfig = configPath => {
     return import(configPath).then(rawConfig => {
-        return mergeConfig(defaultConfig, rawConfig);
+        return mergeConfig(defaultConfig, rawConfig.default);
     });
 };
 

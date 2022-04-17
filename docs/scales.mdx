@@ -6,20 +6,22 @@ title: Scales
 
 The following scales can be provided in the `scales` section, and are applied to specific CSS properties:
 
-- `colors`: `background-color`, `border-color`, `border-bottom-color`, `border-left-color`, `border-right-color`, `border-top-color`, `color` and `fill`.
-- `fonts`: `font-family`.
-- `fontSizes`: `font-size`.
-- `fontWeights`: `font-weight`.
-- `lineHeights`: `line-height`.
-- `radius`: `border-radius`, `border-bottom-left-radius`, `border-bottom-right-radius`, `border-top-left-radius` and `border-top-right-radius`.
-- `sizes`: `height`, `max-height`, `max-width`, `min-height`, `min-width` and `width`.
-- `spacing`: `bottom`, `left`, `margin`, `margin-bottom`, `margin-left`, `margin-right`, `margin-top`, `padding`, `padding-bottom`, `padding-left`, `padding-right`, `padding-top`, `right` and `top`.
-- `opacities`: `opacity`.
+| Scale | CSS Properties |
+|-------|----------------|
+| `colors` | `background-color`, `border-color`, `border-bottom-color`, `border-left-color`, `border-right-color`, `border-top-color`, `color`, `fill` |
+| `fonts` | `font-family` |
+| `font-sizes` | `font-size` |
+| `font-weights` | `font-weight` |
+| `line-heights` | `line-height` |
+| `radius` | `border-radius`, `border-bottom-left-radius`, `border-bottom-right-radius`, `border-top-left-radius`, `border-top-right-radius` |
+| `sizes` | `height`, `max-height`, `max-width`, `min-height`, `min-width`, `width` |
+| `spacing` | `bottom`, `left`, `margin`, `margin-bottom`, `margin-left`, `margin-right`, `margin-top`, `padding`, `padding-bottom`, `padding-left`, `padding-right`, `padding-top`, `right`, `top` |
+| `opacities` | `opacity` |
 
 
 > You do not need to provide all scales in the configuration: just configure the scales that you really need for your project.
 
-Scales can be used in styles, variants and elements. Just provide a string with the scale key as the CSS property and **siimple** will automatically set this property with the value specified in the scale:
+Scales can be used in styles and variants. Just provide a string with the scale key as the CSS property and **siimple** will automatically set this property with the value specified in the scale:
 
 ```js title=siimple.config.js
 export default {
@@ -41,7 +43,6 @@ export default {
 };
 ```
 
-
 ## Colors
 
 In the `scales.colors` section you can provide your custom color palette. To allow creating interoperable themes for **siimple**, the following colors must be always provided in a color scale:
@@ -52,7 +53,6 @@ In the `scales.colors` section you can provide your custom color palette. To all
 - `heading`: color used in headings.
 - `background`: color used for the body background.
 - `fill`: background color used in some components like inputs or textarea.
-
 
 ## Font family
 
@@ -91,7 +91,6 @@ export default {
     },
 };
 ```
-
 
 ## Font size
 

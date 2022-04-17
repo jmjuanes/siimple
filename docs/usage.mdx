@@ -4,37 +4,13 @@ title: Usage
 
 # Usage
 
-
-### Using the precompiled version
-
-The npm package comes with a ready to use CSS version, so you can just use the CSS file in your project:
-
-```html title=index.html
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="./node_modules/siimple/siimple.min.css" rel="stylesheet">
-    </head>
-    <body>
-        <h1 class="title is-1">Hello world!</h1>
-    </body>
-</html>
-```
-
-You can also use the precompiled version available from a CDN. See the [installation](/installation) section to learn more.
-
-
 ### CLI usage
 
 You can use the siimple CLI tool to generate your customized version of siimple. First just create your configuration file `siimple.config.js` in the root of your project:
 
 ```js title=siimple.config.js
 export default {
-    prefix: "",
-    scales: {},
-    variants: {},
-    plugins: [],
+    /* Configuration */
 };
 ```
 
@@ -46,7 +22,4 @@ After creating your configuration file, just run the siimple CLI tool to generat
 $ npx siimple -c ./siimple.config.js -o ./output.css
 ```
 
-This will generate a file called `output.css` with the compiled styles of siimple. Remember to copy the fonts files `siimple-icons.ttf` and `siimple-icons.woff` from the siimple package to your root folder in case that you want to use the icons plugin.
-
-
-
+This will generate a file called `output.css` with the compiled styles of siimple. 

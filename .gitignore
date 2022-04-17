@@ -22,9 +22,9 @@ dist
 distributions
 release
 siimple.css
-siimple.min.css
-siimple-icons.ttf
-siimple-icons.woff
+siimple/*.css
+presets/*/*.css
+presets/icons/icons.js
 
 # Applications output folders
 public
