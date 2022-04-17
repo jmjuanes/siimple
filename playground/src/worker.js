@@ -1,10 +1,18 @@
 import {build, mergeConfig} from "siimple";
 import defaultConfig from "siimple/defaultConfig.js";
 import colors from "siimple/colors.js";
+import reboot from "@siimple/preset-reboot";
+import markup from "@siimple/preset-markup";
+import utilities from "@siimple/preset-utilities";
+import icons from "@siimple/preset-icons";
 
 const AsyncFunction = Object.getPrototypeOf(async () => {}).constructor;
 const modules = {
-    "siimple-colors": colors,
+    colors,
+    reboot,
+    markup,
+    utilities,
+    icons,
 };
 
 let prevConfig = null;
@@ -14,7 +22,8 @@ let prevCss = null;
 const evaluateConfig = configStr => {
     return Promise.resolve().then(() => {
         const configCode = configStr
-            .replace(/import\s*(.*?)\s*from\s*(['"])siimple\/colors(\.js)?\2/g, `const $1 = __require("siimple-colors");`)
+            .replace(/import\s*(.*?)\s*from\s*(['"])siimple\/colors(\.js)?\2/g, `const $1 = __require("colors");`)
+            .replace(/import\s*(.*?)\s*from\s*(['"])@siimple\/preset-(\w)(\.js)?\2/g, `const $1 = __require("$3");`)
             .replace(/export default /, "return ");
         
         // Custom require function

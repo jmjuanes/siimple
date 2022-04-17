@@ -18,13 +18,21 @@ export const defaultHtml = `
 
 // Default configuration for playground
 export const defaultConfig = `
-// You can import siimple colors to customize your theme
+// You can import our color palette to create your theme
 // import colors from "siimple/colors";
 
+// You can import presets to extend siimple using reusable styles and themes
+// import markup from "@siimple/preset-markup";
+import reboot from "@siimple/preset-reboot";
+import utilities from "@siimple/preset-utilities";
+import icons from "@siimple/preset-icons";
+
 export default {
-    prefix: "",
-    scales: {},
-    variants: {},
+    styles: {
+        ...reboot.styles,
+        ...utilities.styles,
+        ...icons.styles,
+    },
 };
 
 `.trim();
