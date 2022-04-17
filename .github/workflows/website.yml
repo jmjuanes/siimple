@@ -25,7 +25,7 @@ jobs:
         run: cd website && npm install
 
       - name: Build website
-        run: npm run website:build
+        run: cd website && npm run build
 
       - name: Add configuration (devel)
         if: github.event_name == 'push'
