@@ -4,6 +4,7 @@
 [![Get help](https://badgen.net/badge/Discussions/Join%20us/cyan)](https://github.com/jmjuanes/siimple/discussions)
 [![MIT License](https://badgen.net/github/license/jmjuanes/siimple)](https://github.com/jmjuanes/siimple)
 
+> **siimple**: a minimal and themeable CSS toolkit for flat and clean designs.
 
 ## Links
 
