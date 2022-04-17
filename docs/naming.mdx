@@ -5,30 +5,23 @@ description: "Understanding how siimple classnames has been designed"
 
 # Naming methodology
 
-The **siimple** toolkit uses a simplified version of the [**SMACSS** methodology](http://smacss.com) for naming classnames, as described on this section. We have divided the classnames used in **siimple** into four blocks:
-
-- **Elements**: are the primary building blocks of **siimple**.
-- **Icons**: used for displaying icons.
-- **Variant modifiers**: used to change the default style of each component.
-- **Utility modifiers**: low-level classnames that can be applied to any element.
+The **siimple** toolkit uses a simplified version of the [**SMACSS** methodology](http://smacss.com) for naming classnames, as described on this section. 
  
 ### Elements
 
 We use the following syntax for naming **elements** in siimple:
 
 ```
-.<Prefix><ElementName>
+.<prefix><element>
 ```
 
-- `<Prefix>`: is the elements prefix that can be customized in the `prefix` section of the configuration. The default prefix applied in **siimple** is an empty string.
-- `<ElementName>` is the element name, for example `button` or `card`.
+- `<prefix>`: is the elements prefix that can be customized in the `prefix` section of the configuration. The default prefix applied in **siimple** is an empty string.
+- `<element>` is the element name, for example `button` or `card`.
 
-### Icons
+Example: 
 
-Icons defined in siimple have the following classname pattern:
-
-```
-.icon-<IconName>
+```html
+<div class="button">...</div>
 ```
 
 ### Variant modifiers
@@ -36,7 +29,7 @@ Icons defined in siimple have the following classname pattern:
 **Variant modifiers** are special classnames used to change the default style of an element. Variant modifiers always use the following syntax:
 
 ```
-.is-<VariantName>
+.is-<variant>
 ```
 
 The following example shows how to use the `secondary` variant of a button:
@@ -54,15 +47,33 @@ Every element must define its own variants, and some variant modifiers that work
 **Utility modifiers** are a collection of low-level classnames that can be used in any element to modify some CSS properties. These modifiers follows this syntax:
 
 ```
-.has-<UtilityValue>
+.has-<shortcut>-<value>
 ```
+
+Example: 
+
+```html
+<div class="has-d-block has-bg-blue-500 has-text-white">
+    ...
+</div>
+```
+
+Utilities are included as part of the [utilities preset](/presets/utilities).
 
 #### Responsive modifiers
 
 Some utilities modifiers can be applied conditionally at different breakpoints, for building adaptative and responsive interfaces. 
 
 ```
-.<BreakpointValue>:has-<UtilityValue>
+.<breakpoint>:has-<shortcut>-<value>
+```
+
+Example: 
+
+```html
+<div class="mobile:has-d-none tablet:has-d-flex">
+    ...
+</div>
 ```
 
 #### Status modifiers
