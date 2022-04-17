@@ -85,11 +85,10 @@ export const mergeConfig = (source, target) => ({
     ...source,
     ...target,
     prefix: target.prefix || source.prefix || "",
-    breakpoints: mergeObject(source.breakpoints, target.breakpoints || {}),
-    scales: mergeObject(source.scales || {}, target.scales || {}),
+    breakpoints: target.breakpoints || source.breakpoints || {},
     variants: mergeObject(source.variants || {}, target.variants || {}),
-    root: target.root || {},
-    styles: target.styles || {},
+    root: target.root || source.root || {},
+    styles: mergeStyles(source.styles || {}, target.styles || {}),
 });
 
 // Parse CSS property name
@@ -145,9 +144,9 @@ const wrapCssRule = (ruleName, ruleContent, separator) => {
 // Build css value
 export const buildCssValue = (property, value, config) => {
     const values = [value].flat(1);
-    if (config.scales && scales[property] && typeof values[0] === "string") {
+    if (scales[property] && typeof values[0] === "string") {
         const key = scales[property];
-        values[0] = config.scales[key]?.[values[0]] || values[0];
+        values[0] = config[key]?.[values[0]] || values[0];
     }
     return values.join(" ");
 };
