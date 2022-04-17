@@ -6,7 +6,6 @@ export const documentationNav = [
     {"group": "customize", "url": "/configuration", "label": "Configuration"},
     {"group": "customize", "url": "/scales", "label": "Scales"},
     {"group": "customize", "url": "/variants", "label": "Variants"},
-    {"group": "customize", "url": "/presets", "label": "Presets"},
     {"group": "customize", "url": "/colors", "label": "Colors"},
     {"group": "elements", "url": "/elements/alert", "label": "Alert"},
     {"group": "elements", "url": "/elements/badge", "label": "Badge"},
