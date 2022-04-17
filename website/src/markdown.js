@@ -14,12 +14,12 @@ import {NavbarExample} from "./components/NavbarExample.js";
 // import {Features} from "./components/Features.js";
 
 // Alias to create a HTML element
-const html = (type, className, style) => {
+const html = (type, className) => {
     return props => {
         const newProps = {
             ...props,
             className: kofi.classNames(className, props.className),
-            style: style || props.style,
+            // style: style || props.style,
         };
         return React.createElement(type, newProps, props.children);
     };
@@ -39,8 +39,8 @@ export const shortcodes = {
     "code": LiveCode,
     "li": html("li", "has-mb-1"),
     "table": html("table", "table is-divided"),
-    "th": html("th", "", {padding: "1rem !important"}),
-    "td": html("td", "", {padding: "1rem !important"}),
+    // "th": html("th", "", {padding: "1rem !important"}),
+    // "td": html("td", "", {padding: "1rem !important"}),
     // Pages components
     ColorPalette,
     IconsGallery,
