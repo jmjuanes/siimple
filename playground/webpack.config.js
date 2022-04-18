@@ -20,6 +20,10 @@ module.exports = {
         ],
         alias: {
             "siimple": path.resolve(__dirname, "../siimple/"),
+            "@siimple/preset-reboot": path.resolve(__dirname, "../presets/reboot/"),
+            "@siimple/preset-markup": path.resolve(__dirname, "../presets/markup/"),
+            "@siimple/preset-utilities": path.resolve(__dirname, "../presets/utilities/"),
+            "@siimple/preset-icons": path.resolve(__dirname, "../presets/icons/"),
         },
     },
     module: {

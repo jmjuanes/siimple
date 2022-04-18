@@ -12,19 +12,20 @@ title: Minimal and themeable CSS toolkit
 
 ```js
 import colors from "siimple/colors";
+import {fonts} from "siimple/theme";
 
 export default {
-    scales: {
-        colors: {
-            primary: colors.royal["500"],
-            secondary: colors.mint["500"],
-            text: colors.royal["800"],
-            fill: colors.royal["200"],
-            heading: colors.royal["600"],
-        },
-        fonts: {
-            heading: ["Nunito", "sans-serif"],
-        },
+    colors: {
+        primary: colors.royal["500"],
+        secondary: colors.mint["500"],
+        text: colors.royal["800"],
+        fill: colors.royal["200"],
+        heading: colors.royal["600"],
+    },
+    fonts: {
+        body: fonts.sans,
+        heading: ["Nunito", "sans-serif"],
+        monospace: ["monospace"],
     },
 };
 ```
@@ -45,8 +46,8 @@ export default {
 </div>
 </div>
 
-<Section title="With hand-crafted icons" link="/icons">
-    Now <b>siimple</b> comes with an open source icon webfont that can be used in web and mobile projects. 
+<Section title="With hand-crafted icons" link="/presets/icons">
+    Now <b>siimple</b> comes with a preset for adding <b>Pure CSS icons</b> that can be used in web and mobile projects. 
     Made with <i className="icon-heart"></i>.
 </Section>
 <IconsGallery />

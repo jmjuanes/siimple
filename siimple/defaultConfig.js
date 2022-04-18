@@ -25,35 +25,33 @@ export default {
         },
     },
     // Default theme scales
-    scales: {
-        colors: {
-            primary: colors.blue["500"],
-            secondary: colors.royal["500"],
-            background: colors.white,
-            text: colors.coolgray["700"],
-            heading: colors.coolgray["800"],
-            muted: colors.coolgray["500"],
-            fill: colors.coolgray["200"],
-        },
-        fonts: {
-            body: fonts.sans,
-            heading: "inherit",
-            monospace: fonts.mono,
-        },
-        fontSizes: {
-            small: fontSizes["sm"],
-            body: "16px",
-            large: fontSizes["lg"],
-        },
-        fontWeights: {
-            body: "400",
-            heading: "700",
-            bold: "700",
-        },
-        lineHeights: {
-            heading: lineHeights.tight,
-            body: lineHeights.normal,
-        },
+    colors: {
+        primary: colors.blue["500"],
+        secondary: colors.royal["500"],
+        background: colors.white,
+        text: colors.coolgray["700"],
+        heading: colors.coolgray["800"],
+        muted: colors.coolgray["500"],
+        fill: colors.coolgray["200"],
+    },
+    fonts: {
+        body: fonts.sans,
+        heading: "inherit",
+        monospace: fonts.mono,
+    },
+    fontSizes: {
+        small: fontSizes["sm"],
+        body: "16px",
+        large: fontSizes["lg"],
+    },
+    fontWeights: {
+        body: "400",
+        heading: "700",
+        bold: "700",
+    },
+    lineHeights: {
+        heading: lineHeights.tight,
+        body: lineHeights.normal,
     },
     // Default styles
     styles: {},
