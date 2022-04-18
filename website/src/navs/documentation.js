@@ -39,4 +39,5 @@ export const documentationNav = [
     {"group": "presets", "url": "/presets/icons", "label": "Icons"},
     {"group": "guides", "url": "/guides/styles", "label": "Styles syntax"},
     {"group": "recipes", "url": "/recipes/navbar", "label": "Navbar"},
+    {"group": "recipes", "url": "/recipes/navigation", "label": "Navigation"},
 ];
