@@ -22,18 +22,18 @@ export const loadPlayground = content => {
             }
         }
         // Check for data in localStorage
-        else {
-            content.html = localStorage.getItem(htmlSymbol) || content.html;
-            content.config = localStorage.getItem(configSymbol) || content.config;
-        }
+        // else {
+        //     content.html = localStorage.getItem(htmlSymbol) || content.html;
+        //     content.config = localStorage.getItem(configSymbol) || content.config;
+        // }
         return resolve(content);
     });
 };
 
 // Save playground content in local storage
 export const savePlayground = content => {
-    localStorage.setItem(htmlSymbol, content.html || "");
-    localStorage.setItem(configSymbol, content.config || "");
+    // localStorage.setItem(htmlSymbol, content.html || "");
+    // localStorage.setItem(configSymbol, content.config || "");
 };
 
 // Share the playground code via URL

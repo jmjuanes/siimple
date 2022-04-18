@@ -22,8 +22,8 @@ let prevCss = null;
 const evaluateConfig = configStr => {
     return Promise.resolve().then(() => {
         const configCode = configStr
-            .replace(/import\s*(.*?)\s*from\s*(['"])siimple\/colors(\.js)?\2/g, `const $1 = __require("colors");`)
-            .replace(/import\s*(.*?)\s*from\s*(['"])@siimple\/preset-(\w)(\.js)?\2/g, `const $1 = __require("$3");`)
+            .replace(/import\s*(.*?)\s*from\s*(['"])siimple\/colors(\.js)?\2(;)?/g, `const $1 = __require("colors");`)
+            .replace(/import\s*(.*?)\s*from\s*(['"])@siimple\/preset-(.*?)(\.js)?\2(;)?/g, `const $1 = __require("$3");`)
             .replace(/export default /, "return ");
         
         // Custom require function
