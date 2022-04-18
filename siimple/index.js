@@ -134,6 +134,7 @@ export const mergeStyles = (source, target) => {
         // Other value --> override source property
         source[key] = target[key];
     });
+    return source;
 };
 
 // Wrap CSS Rule
