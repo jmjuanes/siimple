@@ -304,7 +304,9 @@ const utilities = [
         states: ["default"],
         responsive: false,
         properties: ["font-family"],
-        values: fonts,
+        values: Object.fromEntries(Object.keys(fonts).map(name => {
+            return [name, fonts[name].join(",")];
+        })),
     },
     {
         shortcut: "text",
