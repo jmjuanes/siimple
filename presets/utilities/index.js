@@ -400,9 +400,9 @@ const utilities = [
         responsive: false,
         properties: ["box-shadow"],
         values: {
-            sm: "0 0.25rem 1rem -0.125rem rgba(#000, 0.15),0 0 0 1px rgba(#000, 0.02)",
-            default: "0 0.5rem 1rem -0.25rem rgba(#000, 0.2), 0 0 0 1px rgba(#000, 0.02)",
-            lg: "0rem 1rem 1rem -0.5rem rgba(#000, 0.25),0 0 0 1px rgba(#000, 0.02)",
+            sm: "0 0.25rem 1rem -0.125rem rgba(54,63,79,0.15),0 0 0 1px rgba(54,63,79,0.02)",
+            default: "0 0.5rem 1rem -0.25rem rgba(54,63,79,0.2), 0 0 0 1px rgba(54,63,79,0.02)",
+            lg: "0rem 1rem 1rem -0.5rem rgba(54,63,79,0.25),0 0 0 1px rgba(54,63,79,0.02)",
             none: "none",
         },
     },
