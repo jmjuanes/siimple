@@ -38,6 +38,11 @@ export const documentationNav = [
     {"group": "presets", "url": "/presets/utilities", "label": "Utilities"},
     {"group": "presets", "url": "/presets/icons", "label": "Icons"},
     {"group": "guides", "url": "/guides/styles", "label": "Styles syntax"},
+    {"group": "recipes", "url": "/recipes/features", "label": "Features"},
+    {"group": "recipes", "url": "/recipes/footer", "label": "Footer"},
+    {"group": "recipes", "url": "/recipes/hero", "label": "Hero"},
     {"group": "recipes", "url": "/recipes/navbar", "label": "Navbar"},
-    {"group": "recipes", "url": "/recipes/navigation", "label": "Navigation"},
+    {"group": "recipes", "url": "/recipes/pricing", "label": "Pricing"},
+    {"group": "recipes", "url": "/recipes/sign-in", "label": "Sign in"},
+    {"group": "recipes", "url": "/recipes/tabs", "label": "Tabs"},
 ];
