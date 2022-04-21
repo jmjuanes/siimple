@@ -1,0 +1,32 @@
+---
+title: Sign in
+---
+
+# Sign in
+
+Use the [input](/elements/input) and the [card](/elements/card) elements just with some [utilities](/presets/utilities) for building an awesome sign in view for your application:
+
+```html live=true
+<div class="has-maxw-96 has-px-4 has-mx-auto">
+    <div class="card has-shadow">
+        <div class="title is-3">Sign in</div>
+        <div class="has-mb-4">
+            <label class="label">Your email</label>
+            <input type="text" class="input" placeholder="you@email.com" />
+        </div>
+        <div class="has-mb-6">
+            <label class="label">Your password</label>
+            <input type="password" class="input" placeholder="Password" />
+        </div>
+        <button class="button is-full hover:has-bg-blue-600">
+            <i class="icon-lock has-pr-1"></i>
+            <span>Sign in</span>
+        </button>
+    </div>
+    <div class="has-mt-8" align="center">
+        <a href="#" class="has-text-no-underline has-text-current hover:has-text-blue-500">
+            <strong>Forgot your password?</strong>
+        </a>
+    </div>
+</div>
+```
