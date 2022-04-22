@@ -12,8 +12,7 @@
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "twitter": "https://twitter.com/siimplecss",
     "workspaces": [
-        "siimple",
-        "presets/*"
+        "packages/*"
     ],
     "scripts": {
         "build": "gulp icons && gulp css",
