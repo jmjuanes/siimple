@@ -1,4 +1,3 @@
-// Column sizes
 const columns = {
     "one-fifth": "20%",
     "one-quarter": "25%",
@@ -151,7 +150,7 @@ export default {
             "&:after": {
                 transform: "rotate(-45deg)",
             },
-            variant: "links.close",
+            variant: "buttons.close",
         },
         ".{{prefix}}column": {
             flex: "1",
@@ -174,7 +173,7 @@ export default {
             paddingLeft: "1.5rem",
             paddingRight: "1.5rem",
             width: "100%",
-            variant: "layouts.content",
+            variant: "layout.content",
         },
         ".{{prefix}}divider": {
             backgroundColor: "fill",
@@ -188,7 +187,7 @@ export default {
             "&:not(:last-child)": {
                 marginBottom: "1rem",
             },
-            variant: "layouts.divider",
+            variant: "layout.divider",
         },
         ".{{prefix}}input": {
             backgroundColor: "fill",
@@ -235,7 +234,7 @@ export default {
             overflowY: "auto",
             padding: "2rem",
             width: "100%",
-            variant: "dialogs.modal",
+            variant: "dialog.modal",
         },
         ".{{prefix}}navlink": {
             borderRadius: "0.5rem",
@@ -280,7 +279,7 @@ export default {
             "&::-moz-progress-bar": {
                 backgroundColor: "currentColor",
             },
-            variants: "progress",
+            variant: "loaders.progress",
         },
         ".{{prefix}}radio": {
             appearance: "none",
@@ -340,7 +339,7 @@ export default {
             top: "0px",
             width: "100%",
             zIndex: "400",
-            variant: "dialogs.scrim",
+            variant: "dialog.scrim",
         },
         ".{{prefix}}select": {
             // appearance: "none",
@@ -424,7 +423,7 @@ export default {
                 animationTimingFunction: "linear",
                 borderTopColor: "currentColor",
             },
-            variants: "spinners",
+            variant: "loaders.spinner",
         },
         "@keyframes spinnerAnimation": {
             from: {
@@ -561,7 +560,7 @@ export default {
                 width: "1.75rem",
                 top: "1.25rem",
             },
-            variant: "links.toggler",
+            variant: "buttons.toggler",
         },
     },
     variants: {
@@ -622,12 +621,9 @@ export default {
                 },
             },
         },
-        spinners: {
-            primary: {
+        loaders: {
+            spinner: {
                 color: "primary",
-            },
-            secondary: {
-                color: "secondary",
             },
         },
     },
