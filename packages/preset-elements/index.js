@@ -1,5 +1,3 @@
-import defaultTheme from "@siimple/theme";
-
 // Column sizes
 const columns = {
     "one-fifth": "20%",
@@ -16,9 +14,11 @@ const columns = {
 
 export default {
     styles: {
-        ".alert": {
+        ".{{prefix}}alert": {
             alignItems: "center",
+            backgroundColor: "primary",
             borderRadius: "0.5rem",
+            color: "white",
             display: "flex",
             fontWeight: "bold",
             marginBottom: "1rem",
@@ -26,9 +26,9 @@ export default {
             minWidth: "0px",
             padding: "1.25rem",
             position: "relative",
-            variants: "alert",
+            variants: "alerts",
         },
-        ".badge": {
+        ".{{prefix}}badge": {
             borderRadius: "0.25rem",
             display: "inline-block",
             fontSize: "0.75rem",
@@ -37,12 +37,14 @@ export default {
             padding: ["0.25rem", "0.5rem"],
             textDecoration: "none",
             verticalAlign: "text-top",
-            variants: "badge",
+            variants: "badges",
         },
-        ".button": {
+        ".{{prefix}}button": {
             appearance: "none",
+            backgroundColor: "primary",
             border: "0px",
             borderRadius: "0.5rem",
+            color: "white",
             cursor: "pointer",
             display: "inline-block",
             fontFamily: "inherit",
@@ -60,9 +62,9 @@ export default {
                 transitionDuration: "0.3s",
                 transitionProperty: "background-color",
             },
-            variants: "button",
+            variants: "buttons",
         },
-        ".card": {
+        ".{{prefix}}card": {
             backgroundColor: "white",
             borderRadius: "0.5rem",
             color: "inherit",
@@ -70,9 +72,9 @@ export default {
             padding: "2rem",
             textDecoration: ["none", "!important"],
             width: "100%",
-            variants: "card",
+            variants: "cards",
         },
-        ".checkbox": {
+        ".{{prefix}}checkbox": {
             appearance: "none",
             backgroundColor: "fill",
             borderRadius: "0.25rem",
@@ -116,9 +118,9 @@ export default {
                 transform: "rotate(-45deg)",
                 width: "0.625rem",
             },
-            variants: "checkbox",
+            variant: "forms.checkbox",
         },
-        ".close": {
+        ".{{primary}}close": {
             appearance: "none",
             backgroundColor: "transparent",
             border: "none",
@@ -126,12 +128,12 @@ export default {
             cursor: "pointer",
             display: "inline-flex",
             height: "1rem",
-            opacity: 0.6,
+            opacity: "0.6",
             position: "relative",
             transition: ["opacity", "0.3s"],
             width: "1rem",
             "&:hover": {
-                opacity: 1.0,
+                opacity: "1.0",
             },
             "&:before,&:after": {
                 backgroundColor: "currentColor",
@@ -149,77 +151,32 @@ export default {
             "&:after": {
                 transform: "rotate(-45deg)",
             },
-            variants: "closeButton",
+            variant: "links.close",
         },
-        ".column": {
+        ".{{prefix}}column": {
             flex: "1",
             minHeight: "0",
             padding: "1rem",
             width: "100%",
-            variants: "column",
+            variants: "columns",
         },
-        ".columns": {
+        ".{{prefix}}columns": {
             display: "flex",
             flexWrap: "wrap",
             marginLeft: "-1rem",
             marginRight: "-1rem",
-            variants: "columns",
         },
-        ".content": {
+        ".{{prefix}}content": {
             display: "block",
             marginLeft: "auto",
             marginRight: "auto",
+            maxWidth: "1264px",
             paddingLeft: "1.5rem",
             paddingRight: "1.5rem",
             width: "100%",
-            variants: "content",
+            variant: "layouts.content",
         },
-        ".crumb": {
-            color: "currentColor",
-            cursor: "pointer",
-            fontWeight: "bold",
-            opacity: "0.6",
-            paddingBottom: "0.5rem",
-            paddingLeft: "0.75rem",
-            paddingRight: "1.5rem",
-            paddingTop: "0.5rem",
-            position: "relative",
-            textDecoration: "none",
-            "&:hover": {
-                opacity: "1.0",
-                transition: ["opacity", "0.3s"],
-            },
-            "&:not(:last-child)::after": {
-                borderRightColor: "currentColor",
-                borderRightWidth: "2px",
-                borderRightStyle: "solid",
-                borderTopWidth: "2px",
-                borderTopStyle: "solid",
-                borderTopColor: "currentColor",
-                content: "''",
-                display: "block",
-                height: "0.5rem",
-                position: "absolute",
-                right: "0.25rem",
-                top: "1rem",
-                transform: "rotate(45deg)",
-                width: "0.5rem",
-            },
-            variants: "crumb",
-        },
-        ".crumbs": {
-            borderRadius: "0.5rem",
-            display: "flex",
-            flexWrap: "nowrap",
-            marginBottom: "1rem",
-            overflow: "hidden",
-            overflowX: "auto",
-            padding: "0.5rem",
-            whiteSpace: ["nowrap", "!important"],
-            variants: "crumbs",
-        },
-
-        ".divider": {
+        ".{{prefix}}divider": {
             backgroundColor: "fill",
             border: "0px",
             display: "block",
@@ -231,9 +188,9 @@ export default {
             "&:not(:last-child)": {
                 marginBottom: "1rem",
             },
-            variants: "divider",
+            variant: "layouts.divider",
         },
-        ".input": {
+        ".{{prefix}}input": {
             backgroundColor: "fill",
             borderColor: "transparent",
             borderStyle: "solid",
@@ -255,9 +212,9 @@ export default {
             "&:focus": {
                 borderColor: "primary",
             },
-            variants: "formInput",
+            variant: "forms.input",
         },
-        ".label": {
+        ".{{prefix}}label": {
             alignItems: "center",
             color: "inherit",
             display: "flex",
@@ -267,41 +224,47 @@ export default {
             paddingBottom: "0.25rem",
             paddingTop: "0.25rem",
             width: "100%",
-            variants: "formLabel",
+            variant: "forms.label",
         },
-        ".modal": {
+        ".{{prefix}}modal": {
             backgroundColor: "white",
             borderRadius: "0.5rem",
             display: "block",
             maxHeight: "90vh",
+            maxWidth: "600px",
             overflowY: "auto",
             padding: "2rem",
             width: "100%",
-            variants: "modal",
+            variant: "dialogs.modal",
         },
-        ".navlink": {
+        ".{{prefix}}navlink": {
             borderRadius: "0.5rem",
             color: "inherit",
             cursor: "pointer",
             display: "block",
+            fontWeight: "bold",
             margin: "0px",
             padding: "0.75rem",
             textDecoration: ["none", "!important"],
             userSelect: "none",
             whiteSpace: "nowrap",
             width: "100%",
-            variants: "navlink",
+            "&:hover": {
+                color: "primary",
+            },
+            variant: "links.nav",
         },
-        ".paragraph": {
+        ".{{prefix}}paragraph": {
             display: "block",
             marginBottom: "1rem",
             marginTop: "0px",
-            variants: "paragraph",
+            variant: "text.paragraph",
         },
-        ".progress": {
+        ".{{prefix}}progress": {
             appearance: "none",
             border: "none",
             borderRadius: "999px",
+            color: "primary",
             display: "block",
             height: "0.5rem",
             margin: ["0px", "!important"],
@@ -319,8 +282,7 @@ export default {
             },
             variants: "progress",
         },
-
-        ".radio": {
+        ".{{prefix}}radio": {
             appearance: "none",
             boxSizing: "border-box",
             color: "primary",
@@ -363,11 +325,11 @@ export default {
             "&:checked:before": {
                 borderColor: ["currentColor", "!important"],
             },
-            variants: "radio",
+            variant: "forms.radio",
         },
-        ".scrim": {
+        ".{{prefix}}scrim": {
             alignItems: "center",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            backgroundColor: "rgba(0,0,0,0.5)",
             display: "flex",
             height: "100%",
             justifyContent: "center",
@@ -378,9 +340,9 @@ export default {
             top: "0px",
             width: "100%",
             zIndex: "400",
-            variants: "scrim",
+            variant: "dialogs.scrim",
         },
-        ".select": {
+        ".{{prefix}}select": {
             // appearance: "none",
             backgroundColor: "fill",
             borderColor: "transparent",
@@ -402,9 +364,9 @@ export default {
             "&:focus": {
                 borderColor: "primary",
             },
-            variants: "select",
+            variant: "forms.select",
         },
-        ".slider": {
+        ".{{prefix}}slider": {
             appearance: "none",
             backgroundColor: "fill",
             borderRadius: "1rem",
@@ -432,9 +394,10 @@ export default {
             "&:-ms-thumb": {
                 marginTop: "0px",
             },
-            variants: "slider",
+            variant: "forms.slider",
         },
-        ".spinner": {
+        ".{{prefix}}spinner": {
+            color: "primary",
             display: "inline-block",
             height: "2rem",
             position: "relative",
@@ -461,7 +424,7 @@ export default {
                 animationTimingFunction: "linear",
                 borderTopColor: "currentColor",
             },
-            variants: "spinner",
+            variants: "spinners",
         },
         "@keyframes spinnerAnimation": {
             from: {
@@ -471,9 +434,10 @@ export default {
                 transform: "rotate(359deg)",
             },
         },
-        ".switch": {
+        ".{{prefix}}switch": {
             appearance: "none",
             boxSizing: "border-box",
+            color: "primary",
             cursor: "pointer",
             display: "inline-block",
             height: "1.25rem",
@@ -511,57 +475,9 @@ export default {
             "&:checked:before": {
                 backgroundColor: "currentColor",
             },
-            variants: "switch",
+            variant: "forms.switch",
         },
-        ".table": {
-            backgroundColor: "transparent",
-            borderCollapse: "separate",
-            borderSpacing: "0",
-            borderWidth: "0px",
-            boxSizing: "border-box",
-            display: "table",
-            marginBottom: "2rem",
-            width: "100%",
-            "& tr": {
-               boxSizing: "border-box",
-               display: "table-row",
-            },
-            "& th,& td": {
-                boxSizing: "border-box",
-                display: "table-cell",
-                lineHeight: "inherit",
-            },
-            "& thead": {
-                boxSizing: "border-box",
-                display: "table-header-group",
-            },
-            "& thead th": {
-                fontWeight: "600",
-                textAlign: "left",
-                verticalAlign: "bottom",
-            },
-            "& tbody": {
-                display: "table-row-group",
-                verticalAlign: "middle",
-            },
-            "& tbody td": {
-                verticalAlign: "top",
-            },
-            "& thead tr:first-child th:first-child": {
-                borderTopLeftRadius: "0.5rem",
-            },
-            "& thead tr:first-child th:last-child": {
-                borderTopRightRadius: "0.5rem",
-            },
-            "& tbody tr:last-child td:first-child": {
-               borderBottomLeftRadius: "0.5rem",
-            },
-            "& tbody tr:last-child td:last-child": {
-               borderBottomRightRadius: "0.5rem",
-            },
-            variants: "table",
-        },
-        ".textarea": {
+        ".{{prefix}}textarea": {
             backgroundColor: "fill",
             borderColor: "transparent",
             borderStyle: "solid",
@@ -583,10 +499,11 @@ export default {
             "&:focus": {
                 borderColor: "primary",
             },
-            variants: "textarea",
+            variant: "forms.textarea",
         },
-        ".title": {
+        ".{{prefix}}title": {
             display: "block",
+            fontSize: "3rem",
             fontWeight: "bold",
             lineHeight: "heading",
             marginBottom: "0.5em",
@@ -594,9 +511,18 @@ export default {
             "&:not(:first-child)": {
                 marginTop: "2rem",
             },
-            variants: "title",
-        }, 
-        ".toggler": {
+            variant: "text.heading",
+        },
+        ".{{prefix}}subtitle": {
+            display: "block",
+            fontSize: "2rem",
+            fontWeight: "bold",
+            lineHeight: "heading",
+            marginBottom: "0.5em",
+            padding: "0px",
+            variant: "text.heading",
+        },
+        ".{{prefix}}toggler": {
             appearance: "none",
             backgroundColor: "fill",
             borderColor: "transparent",
@@ -635,12 +561,12 @@ export default {
                 width: "1.75rem",
                 top: "1.25rem",
             },
-            variants: "togglerButton",
+            variant: "links.toggler",
         },
     },
     variants: {
-        alert: {
-            default: {
+        alerts: {
+            primary: {
                 backgroundColor: "primary",
                 color: "white",
             },
@@ -649,18 +575,8 @@ export default {
                 color: "white",
             },
         },
-        badge: {
-            default: {
-                backgroundColor: "primary",
-                color: "white",
-            },
-            secondary: {
-                backgroundColor: "secondary",
-                color: "white",
-            },
-        },
-        button: {
-            default: {
+        badges: {
+            primary: {
                 backgroundColor: "primary",
                 color: "white",
             },
@@ -669,9 +585,24 @@ export default {
                 color: "white",
             },
         },
-        column: {
-            ...Object.fromEntries(Object.keys(columns).map(column => {
-                const columnStyles = {
+        buttons: {
+            primary: {
+                backgroundColor: "primary",
+                color: "white",
+            },
+            secondary: {
+                backgroundColor: "secondary",
+                color: "white",
+            },
+            full: {
+                display: "block",
+                width: "100%",
+            },
+        },
+        columns: {
+            ...Object.keys(columns).reduce((prevStyles, column) => ({
+                ...prevStyles,
+                [column]: {
                     flex: "none",
                     width: columns[column],
                     "@breakpoints": {
@@ -680,147 +611,24 @@ export default {
                             width: columns[column],
                         },
                     },
-                };
-                return [column, columnStyles];
-            })),
+                },
+            }), {}),
             hidden: {
-                display: "none",
+                "display": "none",
                 "@breakpoints": {
                     "&-{{breakpoint}}": {
-                        display: "none",
+                        "display": "none",
                     }
                 },
             },
         },
-        content: Object.fromEntries(Object.keys(defaultTheme.screens).map(screen => {
-            const size = defaultTheme.screens[screen];
-            const contentQuery = `@media screen and (min-width: ${size})`;
-            const contentStyles = {
-                [contentQuery]: {
-                    maxWidth: size,
-                },
-            };
-            return [screen, contentStyles];
-        })),
-        crumb: {
-            active: {
-                cursor: "default",
-                opacity: "1.0",
-                pointerEvents: "none",
-            },
-        },
-        modal: {
-            default: {
-                maxWidth: "500px",
-            },
-            small: {
-                maxWidth: "300px",
-            },
-            large: {
-                maxWidth: "900px",
-            },
-        },
-        navlink: {
-            default: {
-                fontWeight: "bold",
-                "&:hover": {
-                    color: "primary",
-                },
-            },
-            active: {
+        spinners: {
+            primary: {
                 color: "primary",
             },
-            disabled: {
-                opacity: "0.5",
-                pointerEvents: "none",
+            secondary: {
+                color: "secondary",
             },
         },
-        paragraph: {
-            lead: {
-                color: "muted",
-                fontSize: defaultTheme.fontSizes["lg"],
-                fontWeight: "bold",
-            },
-        },
-        progress: {
-            default: {
-                backgroundColor: "fill",
-                color: "primary",
-            },
-        },
-        slider: {
-            disabled: {
-                color: "muted",
-                cursor: "not-allowed",
-                opacity: "0.7",
-            },
-        },
-        spinner: {
-            default: {
-                color: "primary",
-            },
-        },
-        switch: {
-            default: {
-                color: "primary",
-            },
-        },
-        table: {
-            default: {
-                "& th,& td": {
-                    backgroundColor: "white",
-                    padding: "1rem", // "1.5rem",
-                },
-            },
-            divided: {
-                "& thead th": {
-                    borderBottomColor: "fill",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0.125rem",
-                },
-                "& tbody td": {
-                    borderTopColor: "fill",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "0.125rem",
-                },
-            },
-            bordered: {
-                "& th,& td": {
-                    borderColor: "fill",
-                    borderStyle: "solid",
-                    borderWidth: "0.125rem",
-                },
-                "& th:not(:last-child),& td:not(:last-child)": {
-                    borderRightWidth: ["0px", "!important"],
-                },
-                "& tbody tr:not(:last-child) td": {
-                    borderBottomWidth: ["0px", "!important"],
-                },
-            },
-            fixed: {
-                tableLayout: "fixed",
-            },
-        },
-        title: {
-            "1": {
-                fontSize: defaultTheme.fontSizes["4xl"],
-            },
-            "2": {
-                fontSize: defaultTheme.fontSizes["3xl"],
-            },
-            "3": {
-                fontSize: defaultTheme.fontSizes["2xl"],
-            },
-            "4": {
-                fontSize: defaultTheme.fontSizes["xl"]
-            },
-            "5": {
-                fontSize: defaultTheme.fontSizes["lg"],
-            },
-            "6": {
-                fontSize: defaultTheme.fontSizes["base"],
-            },
-        },
-
     },
 };
