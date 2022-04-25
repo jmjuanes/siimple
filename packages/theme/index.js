@@ -70,14 +70,14 @@ export default {
             "'Helvetica Neue'", 
             "Arial", 
             "sans-serif",
-        ],
+        ].join(","),
         serif: [
             "Georgia", 
             "Cambria", 
             "'Times New Roman'", 
             "Times", 
             "serif",
-        ],
+        ].join(","),
         monospace: [
             "SFMono-Regular", 
             "Menlo", 
@@ -86,7 +86,7 @@ export default {
             "'Liberation Mono'", 
             "'Courier New'", 
             "monospace",
-        ],
+        ].join(","),
     },
     fontSizes: {
         "xs": "0.75rem",
