@@ -119,7 +119,7 @@ export default {
             },
             variant: "forms.checkbox",
         },
-        ".{{primary}}close": {
+        ".{{prefix}}close": {
             appearance: "none",
             backgroundColor: "transparent",
             border: "none",
