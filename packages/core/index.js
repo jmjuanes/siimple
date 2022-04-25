@@ -78,6 +78,16 @@ const aliases = {
 // Merge two object
 const mergeObject = (source, target) => ({...source, ...target});
 
+// Get value in object from path
+const getInObject = (obj, path) => {
+    return path.split(".").reduce((o, p) => o?.[p], obj);
+};
+
+// Exclude a field from the specified object
+const excludeInObject = (obj, field) => {
+    return Object.fromEntries(Object.entries(obj).filter(e => e[0] !== field));
+};
+
 // Merge configurations
 export const mergeConfig = (source, target) => ({
     ...source,
@@ -149,6 +159,29 @@ export const buildRule = (parent, styles, config, vars) => {
     if (styles && Array.isArray(styles)) {
         return styles.map(item => buildRule(parent, item, config, vars)).flat();
     }
+    // Check for variants to apply to this styles block
+    if (styles.variants || styles.variant) {
+        if (styles.variant) {
+            const newStyles = {
+                ...excludeInObject(styles, "variant"),
+                ...(getInObject(config.variants || {}, styles.variant) || {}),
+            };
+            return buildRule(parent, newStyles, config, vars);
+        }
+        // Apply all variants
+        const variants = getInObject(config.variants || {}, styles.variants) || {};
+        const newStyles = excludeInObject(styles, "variants");
+        Object.keys(variants).forEach(name => {
+            // Default variants
+            if (name === "default") {
+                return mergeStyles(newStyles, variants[name]);
+            }
+            // Generate a new selector for this variant
+            const selector = `&.is-${name}`;
+            return mergeStyles(newStyles, {[selector]: variants[name]});
+        });
+        return buildRule(parent, newStyles, config, vars);
+    }
     const css = [""];
     Object.keys(styles).forEach(key => {
         // key = key.trim(); //Trim current key
@@ -163,6 +196,7 @@ export const buildRule = (parent, styles, config, vars) => {
                 return Object.keys(config.breakpoints || {}).forEach(breakpointName => {
                     const mediaQuery = buildMediaQuery(config.breakpoints[breakpointName]);
                     const newContent = buildRule(parent, value, config, {
+                        ...(vars || {}),
                         breakpoint: breakpointName,
                     });
                     if (newContent.length === 0) {
@@ -174,7 +208,7 @@ export const buildRule = (parent, styles, config, vars) => {
             }
             // Check for media rule --> wrap content inside the media rule
             else if (/^@/.test(key)) {
-                const newContent = buildRule(parent, value, config, vars);
+                const newContent = buildRule(parent, value, config, vars || {});
                 if (newContent.length === 0) {
                     return; // Skip this rule
                 }
@@ -213,7 +247,9 @@ export const buildStyles = (styles, config) => {
             return wrapRule(key, buildStyles(value, config), "\n");
         }
         // Other value --> parse as regular classname
-        return buildRule([key], value, config, {});
+        return buildRule([key], value, config, {
+            prefix: config.prefix || "",
+        });
     });
     return css.flat().join("\n");
 };
