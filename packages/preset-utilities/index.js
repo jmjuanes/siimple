@@ -2,13 +2,13 @@
 const props = {
     // Color utilities
     backgroundColor: {
-        scale: "color",
+        scale: "colors",
         shortcut: "bg",
         properties: ["backgroundColor"],
         states: ["default", "hover", "focus"],
     },
     textColor: {
-        scale: "color",
+        scale: "colors",
         shortcut: "text",
         properties: ["color"],
         states: ["default", "hover", "focus"],
