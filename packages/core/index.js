@@ -88,6 +88,13 @@ const excludeInObject = (obj, field) => {
     return Object.fromEntries(Object.entries(obj).filter(e => e[0] !== field));
 };
 
+// Replace variables in the provided string
+const format = (str, vars) => {
+    return str.replace(/\{\{\s*([^{}\s]+)\s*\}\}/g, (match, key) => {
+        return typeof vars[key] !== "undefined" ? vars[key].toString() : match;
+    });
+};
+
 // Merge configurations
 export const mergeConfig = (source, target) => ({
     ...source,
@@ -145,8 +152,11 @@ export const mergeStyles = (source, target) => {
 };
 
 // Build css value
-export const buildValue = (property, value, config) => {
+export const buildValue = (property, value, config, vars) => {
     const values = [value].flat(1);
+    if (vars?.value && values[0] === "value") {
+        values[0] = vars["value"]; // Replace value for vars
+    }
     if (scales[property] && typeof values[0] === "string") {
         const key = scales[property];
         values[0] = config[key]?.[values[0]] || values[0];
@@ -206,6 +216,18 @@ export const buildRule = (parent, styles, config, vars) => {
                     return css.push(wrapRule(mediaQuery, newContent.join("\n"), "\n"));
                 });
             }
+            // Check for theme rule
+            else if (/^@theme (\w*)$/.test(key.trim())) {
+                const scale = key.trim().match(/^@theme (\w*)$/)[1];
+                return Object.keys(config[scale] || {}).forEach(name => {
+                    const newContent = buildRule(parent, value, config, {
+                        ...(vars || {}),
+                        name: name === "default" ? "" : "-" + name,
+                        value: config[scale][name],
+                    });
+                    return css.push(newContent.join("\n"));
+                });
+            }
             // Check for media rule --> wrap content inside the media rule
             else if (/^@/.test(key)) {
                 const newContent = buildRule(parent, value, config, vars || {});
@@ -216,21 +238,16 @@ export const buildRule = (parent, styles, config, vars) => {
                 return css.push(wrapRule(key, newContent.join("\n"), "\n"));
             }
             // Add nested styles
-            const newParent = parent.map(p => {
-                return key.replace(/&/g, p).replace(/\{\{\s*([^{}\s]+)\s*\}\}/g, (match, key) => {
-                    return vars[key] ? vars[key].toString() : match;
-                });
-            });
-            return css.push(buildRule(newParent, value, config, vars));
+            return css.push(buildRule(parent.map(p => key.replace(/&/g, p)), value, config, vars));
         }
         // Other value --> append to the current css
         parseProperty(key).forEach(prop => {
-            css[0] = css[0] + `${prop}:${buildValue(key, value, config)};`;
+            css[0] = css[0] + `${prop}:${buildValue(key, value, config, vars)};`;
         });
     });
     // Wrap the main rule
     if (css[0] !== "") {
-        css[0] = wrapRule(parent.join(","), css[0], "");
+        css[0] = wrapRule(format(parent.join(","), vars), css[0], "");
     }
     // Filter items to remove empty
     return css.flat(2).filter(value => {
@@ -240,7 +257,7 @@ export const buildRule = (parent, styles, config, vars) => {
 
 // Build css styles
 export const buildStyles = (styles, config) => {
-    const css = Object.keys(styles).map(key => {
+    const css = Object.keys(styles || {}).map(key => {
         const value = styles[key];
         // Check for at rule (media or keyframes)
         if (/^@(media|keyframes)/.test(key.trim())) {
