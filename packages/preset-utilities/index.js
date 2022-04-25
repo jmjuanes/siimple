@@ -59,7 +59,7 @@ const props = {
     shadows: {
         scale: "shadows",
         shortcut: "shadow",
-        properties: ["shadow"],
+        properties: ["boxShadow"],
         states: ["default"],
     },
     // Sizes
