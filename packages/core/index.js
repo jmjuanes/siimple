@@ -273,31 +273,3 @@ export const buildStyles = (styles, config) => {
     });
     return css.flat().join("\n");
 };
-
-// Tiny utilities generator
-export const buildUtilities = items => {
-    return toObject([items].flat(2), (prev, item) => ({
-        ...prev,
-        ...Object.fromEntries(Object.keys(item.values).map(name => {
-            const styles = Object.fromEntries(item.properties.map(property => {
-                return [property, item.values[name]];
-            }));
-            const stateStyles = toObject(item.states || ["default"], (prevStateStyles, state) => {
-                if (state === "default") {
-                    return {...prevStateStyles, ...styles};
-                }
-                else if (state === "hover" || state === "focus") {
-                    prevStateStyles[`&-${state}:${state}`] = styles;
-                }
-                else if (state === "responsive") {
-                    prevStateStyles["@breakpoints"] = {
-                        "&-{{breakpoint}}": styles,
-                    };
-                }
-                // Return styles
-                return prevStateStyles;
-            });
-            return [`.has-${item.shortcut}-${name}`, stateStyles];
-        })),
-    }));
-};
