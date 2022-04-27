@@ -1,20 +1,8 @@
-import theme from "@siimple/theme";
-
-const headings = [
-    theme.fontSizes["4xl"],  // h1
-    theme.fontSizes["3xl"],  // h2
-    theme.fontSizes["2xl"],  // h3
-    theme.fontSizes["xl"],   // h4
-    theme.fontSizes["lg"],   // h5
-    theme.fontSizes["body"], // h6
-];
-
-// Markup preset configuration
 export default {
     styles: {
         p: {
-            // fontWeight: "body",
-            // lineHeight: "body",
+            fontWeight: "body",
+            lineHeight: "body",
             marginBottom: "1rem",
             marginTop: "0px",
             variant: "text.paragraph",
@@ -24,7 +12,7 @@ export default {
             variant: "text.link",
         },
         small: {
-            fontSize: theme.fontSizes["sm"],
+            fontSize: "0",
             variant: "text.small",
         },
         "strong,b": {
@@ -38,7 +26,7 @@ export default {
         code: {
             color: "primary",
             fontFamily: "monospace",
-            fontSize: theme.fontSizes["sm"],
+            fontSize: "0",
             fontWeight: "bold",
             textDecoration: "none",
             variant: "text.code",
@@ -74,16 +62,17 @@ export default {
         table: {
             width: "100%",
         },
-        ...Object.fromEntries(headings.map((size, index) => {
+        ...Object.fromEntries([6,5,4,3,2,1].map(index => {
+            const headingNumber = 7 - index;
             const headingConfig = {
                 color: "inherit",
                 fontFamily: "heading",
-                fontSize: size,
+                fontSize: `${index}`,
                 fontWeight: "heading",
                 lineHeight: "heading",
                 variant: "text.heading",
             };
-            return [`h${(index + 1)}`, headingConfig];
+            return [`h${(headingNumber)}`, headingConfig];
         })),
     },
 };
