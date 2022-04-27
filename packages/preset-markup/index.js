@@ -77,10 +77,10 @@ export default {
         ...Object.fromEntries(headings.map((size, index) => {
             const headingConfig = {
                 color: "inherit",
-                fontFamily: "inherit",
+                fontFamily: "heading",
                 fontSize: size,
-                fontWeight: "bold",
-                lineHeight: theme.lineHeights.tight,
+                fontWeight: "heading",
+                lineHeight: "heading",
                 variant: "text.heading",
             };
             return [`h${(index + 1)}`, headingConfig];
