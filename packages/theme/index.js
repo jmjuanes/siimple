@@ -1,5 +1,33 @@
 import colors from "@siimple/colors";
 
+const fonts = {
+    sans: [
+        "-apple-system", 
+        "BlinkMacSystemFont", 
+        "'Segoe UI'", 
+        "Roboto", 
+        "'Helvetica Neue'", 
+        "Arial", 
+        "sans-serif",
+    ].join(","),
+    serif: [
+        "Georgia", 
+        "Cambria", 
+        "'Times New Roman'", 
+        "Times", 
+        "serif",
+    ].join(","),
+    monospace: [
+        "SFMono-Regular", 
+        "Menlo", 
+        "Monaco", 
+        "Consolas", 
+        "'Liberation Mono'", 
+        "'Courier New'", 
+        "monospace",
+    ].join(","),
+};
+
 const screens = {
     tablet: "640px",
     desktop: "1264px",
@@ -49,74 +77,40 @@ export default {
         primary: colors.blue["500"],
         secondary: colors.royal["500"],
         muted: colors.coolgray["200"],
-        ...Object.keys(colors).reduce((list, name) => {
-            if (typeof colors[name] === "string") {
-                list[name] = colors[name];
-            }
-            else {
-                Object.keys(colors[name]).forEach(shade => {
-                    list[`${name}-${shade}`] = colors[name][shade];
-                });
-            }
-            return list;
-        }, {}),
+        body: colors.coolgray["700"],
+        // Gray color palette
+        ...Object.fromEntries(Object.keys(colors.coolgray).map(shade => {
+            return [`gray${shade[0]}`, colors.coolgray[shade]];
+        })),
     },
     fonts: {
-        sans: [
-            "-apple-system", 
-            "BlinkMacSystemFont", 
-            "'Segoe UI'", 
-            "Roboto", 
-            "'Helvetica Neue'", 
-            "Arial", 
-            "sans-serif",
-        ].join(","),
-        serif: [
-            "Georgia", 
-            "Cambria", 
-            "'Times New Roman'", 
-            "Times", 
-            "serif",
-        ].join(","),
-        monospace: [
-            "SFMono-Regular", 
-            "Menlo", 
-            "Monaco", 
-            "Consolas", 
-            "'Liberation Mono'", 
-            "'Courier New'", 
-            "monospace",
-        ].join(","),
+        body: fonts.sans,
+        heading: "inherit",
+        sans: fonts.sans,
+        monospace: fonts.monospace,
     },
-    fontSizes: {
-        "xs": "0.75rem",
-        "sm": "0.875rem",
-        "base": "16px",
-        "lg": "1.25rem",
-        "xl": "1.5rem",
-        "2xl": "1.75rem",
-        "3xl": "2rem",
-        "4xl": "2.5rem",
-        "5xl": "3rem",
-        "6xl": "3.5rem",
-        "7xl": "4rem",
-        "8xl": "4.5rem",
-        "9xl": "5rem",
-    },
+    fontSizes: [
+        "0.875rem", // 0
+        "16px",     // 1
+        "1.25rem",  // 2
+        "1.5rem",   // 3
+        "1.75rem",  // 4
+        "2rem",     // 5
+        "2.5rem",   // 6
+        "3rem",
+        "3.5rem",
+        "4rem",
+        "4.5rem",
+    ],
     fontWeights: {
-        thin: "100",
-        light: "300",
-        normal: "400",
-        medium: "500",
+        body: "400",
         bold: "700",
-        black: "900",
+        heading: "700",
     },
     lineHeights: {
         none: "1",
-        tight: "1.25",
-        snug: "1.375",
-        normal: "1.5",
-        relaxed: "1.625",
+        heading: "1.25",
+        body: "1.5",
         loose: "2",
     },
     opacities: {
@@ -151,9 +145,9 @@ export default {
         none: "0px",
     },
     shadows: {
-        small: "0 0.25rem 1rem -0.125rem rgba(54,63,79,0.15),0 0 0 1px rgba(54,63,79,0.02)",
+        sm: "0 0.25rem 1rem -0.125rem rgba(54,63,79,0.15),0 0 0 1px rgba(54,63,79,0.02)",
         default: "0 0.5rem 1rem -0.25rem rgba(54,63,79,0.2), 0 0 0 1px rgba(54,63,79,0.02)",
-        large: "0rem 1rem 1rem -0.5rem rgba(54,63,79,0.25),0 0 0 1px rgba(54,63,79,0.02)",
+        lg: "0rem 1rem 1rem -0.5rem rgba(54,63,79,0.25),0 0 0 1px rgba(54,63,79,0.02)",
         none: "none",
     },
     sizes: {
@@ -161,8 +155,16 @@ export default {
         auto: "auto",
         screen: "100vh",
     },
-    spaces: {
+    spacing: {
         ...sizes,
         auto: "auto",
+    },
+    // Default root styles
+    root: {
+        backgroundColor: "white",
+        color: "body",
+        fontFamily: "body",
+        fontSize: "1",
+        fontWeight: "body",
     },
 };
