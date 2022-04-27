@@ -9,9 +9,6 @@
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "homepage": "https://www.siimple.xyz",
     "main": "index.js",
-    "dependencies": {
-        "@siimple/theme": "0.0.0-dev"
-    },
     "keywords": [
         "siimple",
         "preset",

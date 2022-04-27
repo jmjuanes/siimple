@@ -1,5 +1,3 @@
-import theme from "@siimple/theme";
-
 const columns = {
     "one-fifth": "20%",
     "one-quarter": "25%",
@@ -12,15 +10,6 @@ const columns = {
     "four-fifths": "80%",
     "full": "100%",
 };
-
-const headings = [
-    theme.fontSizes["4xl"],  // title 1
-    theme.fontSizes["3xl"],  // title 2
-    theme.fontSizes["2xl"],  // title 3
-    theme.fontSizes["xl"],   // title 4
-    theme.fontSizes["lg"],   // title 5
-    theme.fontSizes["body"], // title 6
-];
 
 export default {
     styles: {
@@ -729,11 +718,11 @@ export default {
             "&:not(:first-child)": {
                 marginTop: "2rem",
             },
-            ...Object.fromEntries(headings.map((size, index) => {
+            ...Object.fromEntries([6,5,4,3,2,1].map(index => {
                 const headingConfig = {
-                    fontSize: size,
+                    fontSize: `${index}`,
                 };
-                return [`&.is-${(index + 1)}`, headingConfig];
+                return [`&.is-${(7 - index)}`, headingConfig];
             })),
             variant: "text.heading",
         },
