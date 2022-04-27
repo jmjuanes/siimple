@@ -1,6 +1,6 @@
 {
     "name": "@siimple/preset-markup",
-    "version": "0.0.1",
+    "version": "0.0.0-dev",
     "description": "Markup preset for the siimple css toolkit",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
@@ -9,8 +9,8 @@
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "homepage": "https://www.siimple.xyz",
     "main": "index.js",
-    "peerDependencies": {
-        "siimple": "^4.0.0"
+    "dependencies": {
+        "@siimple/theme": "0.0.0-dev"
     },
     "keywords": [
         "siimple",
