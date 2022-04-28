@@ -1,6 +1,14 @@
 import colors from "@siimple/colors";
 
-const fonts = {
+export const extraColors = {
+    inherit: "inherit",
+    white: "#fff",
+    black: "#000",
+    current: "currentColor",
+    transparent: "transparent",
+};
+
+export const fonts = {
     sans: [
         "-apple-system", 
         "BlinkMacSystemFont", 
@@ -28,13 +36,13 @@ const fonts = {
     ].join(","),
 };
 
-const screens = {
+export const screens = {
     tablet: "640px",
     desktop: "1264px",
     widescreen: "1504px",
 };
 
-const sizes = {
+export const sizes = {
     // "0": "0px",
     "1": "0.25rem",
     "2": "0.5rem",
@@ -79,9 +87,10 @@ export default {
         muted: colors.coolgray["200"],
         body: colors.coolgray["700"],
         // Gray color palette
-        ...Object.fromEntries(Object.keys(colors.coolgray).map(shade => {
-            return [`gray${shade[0]}`, colors.coolgray[shade]];
-        })),
+        // ...Object.fromEntries(Object.keys(colors.coolgray).map(shade => {
+        //     return [`gray${shade[0]}`, colors.coolgray[shade]];
+        // })),
+        ...extraColors,
     },
     fonts: {
         body: fonts.sans,
