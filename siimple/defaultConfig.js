@@ -3,11 +3,13 @@ import defaultTheme from "@siimple/theme";
 // Generate a default configuration for siimple
 export default {
     // Global flags
-    useRebootStyles: true,
+    useReboot: true,
     useRootStyles: true,
     useBorderBox: true,
+    useMarkup: true,
     useElements: true,
     useHelpers: true,
+    useIcons: true,
     // Initial values
     prefix: "",
     root: {},

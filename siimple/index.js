@@ -1,7 +1,9 @@
 import {buildStyles, mergeConfig, mergeStyles} from "@siimple/core";
 import reboot from "@siimple/preset-reboot";
+import markup from "@siimple/preset-markup";
 import elements from "@siimple/preset-elements";
 import helpers from "@siimple/preset-helpers";
+import icons from "@siimple/preset-icons";
 
 import defaultConfig from "./defaultConfig.js";
 
@@ -22,7 +24,7 @@ export default userConfig => {
             });
         }
         // Add reboot styles
-        if (config.useRebootStyles) {
+        if (config.useReboot) {
             mergeStyles(styles, reboot.styles);
         }
         // Add root styles
@@ -31,18 +33,13 @@ export default userConfig => {
                 html: config.root || {},
             });
         }
-        // Add elements
-        if (config.useElements) {
-            Object.assign(styles, elements.styles);
-            config.variants = {
-                ...elements.variants,
-                ...(config.variants || {}),
-            };
-        }
-        // Add helpers
-        if (config.useHelpers) {
-            Object.assign(styles, helpers.styles);
-        }
+        // Add presets
+        Object.assign(styles, {
+            ...(config.useMarkup ? markup.styles : {}),
+            ...(config.useElements ? elements.styles : {}),
+            ...(config.useHelpers ? helpers.styles : {}),
+            ...(config.useIcons ? icons.styles : {}),
+        });
         // Add custom styles
         if (config.styles) {
             mergeStyles(styles, config.styles);
