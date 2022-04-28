@@ -1,7 +1,7 @@
 {
-    "name": "@siimple/preset-reboot",
-    "version": "0.0.1",
-    "description": "Reboot preset for the siimple css toolkit",
+    "name": "@siimple/theme",
+    "version": "0.0.0-dev",
+    "description": "Default theme configuration for the siimple css toolkit",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
     "license": "MIT",
@@ -9,12 +9,11 @@
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "homepage": "https://www.siimple.xyz",
     "main": "index.js",
-    "peerDependencies": {
-        "siimple": "^4.0.0"
+    "dependencies": {
+        "@siimple/colors": "^0.0.0-dev"
     },
     "keywords": [
         "siimple",
-        "preset",
-        "reboot"
+        "theme"
     ]
 }

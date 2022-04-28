@@ -1,15 +1,3 @@
-import {fontSizes} from "siimple/theme.js";
-
-const headings = [
-    fontSizes["4xl"],  // h1
-    fontSizes["3xl"],  // h2
-    fontSizes["2xl"],  // h3
-    fontSizes["xl"],   // h4
-    fontSizes["lg"],   // h5
-    fontSizes["base"], // h6
-];
-
-// Markup preset configuration
 export default {
     styles: {
         p: {
@@ -17,15 +5,19 @@ export default {
             lineHeight: "body",
             marginBottom: "1rem",
             marginTop: "0px",
+            variant: "text.paragraph",
         },
         a: {
             color: "primary",
+            variant: "text.link",
         },
         small: {
-            fontSize: "small",
+            fontSize: "0",
+            variant: "text.small",
         },
-        "b,strong": {
+        "strong,b": {
             fontWeight: "bold",
+            variant: "text.strong",
         },
         pre: {
             fontFamily: "monospace",
@@ -34,12 +26,13 @@ export default {
         code: {
             color: "primary",
             fontFamily: "monospace",
-            fontSize: "small",
+            fontSize: "0",
             fontWeight: "bold",
             textDecoration: "none",
+            variant: "text.code",
         },
         hr: {
-            backgroundColor: "fill",
+            backgroundColor: "muted",
             border: "0px",
             display: "block",
             height: "0.125rem",
@@ -50,6 +43,7 @@ export default {
             "&:not(:last-child)": {
                 marginBottom: "1rem",
             },
+            variant: "layout.divider",
         },
         blockquote: {
             borderLeft: ["0.25rem", "solid", "currentColor"],
@@ -63,19 +57,22 @@ export default {
             paddingLeft: "1.25rem",
             paddingRight: "0.75rem",
             paddingTop: "0.75rem",
+            variant: "text.quote",
         },
         table: {
             width: "100%",
         },
-        ...Object.fromEntries(headings.map((size, index) => {
+        ...Object.fromEntries([6,5,4,3,2,1].map(index => {
+            const headingNumber = 7 - index;
             const headingConfig = {
-                color: "heading",
+                color: "inherit",
                 fontFamily: "heading",
-                fontSize: size,
+                fontSize: `${index}`,
                 fontWeight: "heading",
                 lineHeight: "heading",
+                variant: "text.heading",
             };
-            return [`h${(index + 1)}`, headingConfig];
+            return [`h${(headingNumber)}`, headingConfig];
         })),
     },
 };

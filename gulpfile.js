@@ -8,16 +8,15 @@ import CleanCSS from "clean-css";
 import through from "through2";
 import Vinyl from "vinyl";
 
-import defaultConfig from "./siimple/defaultConfig.js";
-import {build, mergeConfig} from "./siimple/index.js";
+import buildSiimple from "./siimple/index.js";
 
 // Build Siimple
 const siimple = () => {
     return through.obj((file, enc, callback) => {
-        import(file.path).then(rawConfig => {
-            return mergeConfig(defaultConfig, rawConfig.default);
+        import(file.path)
+        .then(rawConfig => {
+            return buildSiimple(rawConfig.default);
         })
-        .then(build)
         .then(css => {
             file.contents = new Buffer.from(css);
             return callback(null, file);
@@ -67,19 +66,9 @@ const iconify = () => {
     return through.obj(bufferContents, endStream);
 };
 
-// Clean output directories
-gulp.task("clean", () => null);
-
-// Build icons
-gulp.task("icons", () => {
-    return gulp.src("icons/*.svg")
-        .pipe(iconify())
-        .pipe(gulp.dest("presets/icons/"));
-});
-
-// Generate css files
-gulp.task("css", () => {
-    return gulp.src("siimple.config.js")
+// Build CSS wrapper
+const buildCss = (source, target) => {
+    return gulp.src(source)
         .pipe(siimple())
         .pipe(postcss([autoprefixer()]))
         .pipe(minify({
@@ -87,5 +76,24 @@ gulp.task("css", () => {
             "level": 2,
         }))
         .pipe(rename("siimple.css"))
-        .pipe(gulp.dest("."))
+        .pipe(gulp.dest(target))
+};
+
+// Clean output directories
+gulp.task("clean", () => null);
+
+// Build icons
+gulp.task("icons", () => {
+    return gulp.src("icons/*.svg")
+        .pipe(iconify())
+        .pipe(gulp.dest("packages/preset-icons/"));
+});
+
+// Generate css files
+gulp.task("css:internal", () => {
+    return buildCss("siimple.config.js", ".");
+});
+
+gulp.task("css:dist", () => {
+    return buildCss("siimple/defaultConfig.js", "siimple/");
 });

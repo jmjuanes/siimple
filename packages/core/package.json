@@ -1,7 +1,7 @@
 {
-    "name": "@siimple/preset-utilities",
-    "version": "0.0.1",
-    "description": "Utilities preset for the siimple css toolkit",
+    "name": "@siimple/core",
+    "version": "0.0.0-dev",
+    "description": "Core module of the siimple css toolkit",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
     "license": "MIT",
@@ -9,12 +9,7 @@
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "homepage": "https://www.siimple.xyz",
     "main": "index.js",
-    "peerDependencies": {
-        "siimple": "^4.0.0"
-    },
     "keywords": [
-        "siimple",
-        "preset",
-        "utilities"
+        "siimple"
     ]
 }

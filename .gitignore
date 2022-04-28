@@ -23,14 +23,11 @@ distributions
 release
 siimple.css
 siimple/*.css
-presets/*/*.css
-presets/icons/icons.js
+packages/*/*.css
 
 # Applications output folders
 public
 
 # Other folders and files
-drafts
-packages
 .firebaserc
 .firebase

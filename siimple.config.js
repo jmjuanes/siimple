@@ -1,16 +1,23 @@
-import icons from "@siimple/preset-icons";
-import markup from "@siimple/preset-markup";
-import utilities from "@siimple/preset-utilities";
-import reboot from "@siimple/preset-reboot";
+import theme from "@siimple/theme";
+import colors from "@siimple/colors";
 
 export default {
+    useReboot: true,
     useRootStyles: true,
     useBorderBox: true,
     useElements: true,
-    styles: {
-        ...reboot.styles,
-        ...markup.styles,
-        ...utilities.styles,
-        ...icons.styles,
+    useHelpers: true,
+    useMarkup: true,
+    useIcons: true,
+    prefix: "",
+    // Custom color palette for internal use
+    colors: {
+        ...theme.colors,
+        ...Object.keys(colors).reduce((list, name) => {
+            Object.keys(colors[name]).forEach(shade => {
+                list[`${name}-${shade}`] = colors[name][shade];
+            });
+            return list;
+        }, {}),
     },
 };

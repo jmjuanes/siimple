@@ -1,4 +1,4 @@
-import {mergeStyles} from "../siimple/index.js";
+import {mergeStyles} from "../packages/core/index.js";
 
 describe("mergeStyles", () => {
     

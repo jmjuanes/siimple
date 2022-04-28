@@ -12,11 +12,11 @@
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "twitter": "https://twitter.com/siimplecss",
     "workspaces": [
-        "siimple",
-        "presets/*"
+        "packages/*"
     ],
     "scripts": {
-        "build": "gulp icons && gulp css",
+        "build": "gulp css:internal css:dist",
+        "icons": "gulp icons",
         "website": "cd website && npm install && npm run build && npm run serve",
         "playground": "cd playground && npm install && npm run build && npm run serve",
         "test": "jest"

@@ -1,24 +1,24 @@
-import {buildCssValue, buildCssRule, buildCss} from "../siimple/index.js";
+import {buildValue, buildRule, buildStyles} from "../packages/core/index.js";
 
-describe("buildCssValue", () => {
+describe("buildValue", () => {
     it("should return the same string value", () => {
         const value = "block";
-        const cssValue = buildCssValue("", value, {});
+        const cssValue = buildValue("", value, {});
         expect(cssValue).toBe(value);
     });
 
     it("should join an array of values", () => {
-        const value = buildCssValue("", ["5px", "10px"], {});
+        const value = buildValue("", ["5px", "10px"], {});
         expect(value).toBe("5px 10px");
     });
 });
 
-describe("buildCssRule", () => {
+describe("buildRule", () => {
     it("should convert a simple rule to css", () => {
         const styles = {
             display: "block",
         };
-        const css = buildCssRule([".test"], styles, {});
+        const css = buildRule([".test"], styles, {});
         expect(css[0]).toBe(".test {display:block;}");
     });
 
@@ -30,7 +30,7 @@ describe("buildCssRule", () => {
                 "color": "blue",
             },
         };
-        const css = buildCssRule([".test"], styles, {});
+        const css = buildRule([".test"], styles, {});
         expect(css[0]).toBe(".test {display:block;color:red;}");
         expect(css[1]).toBe(".test:hover {color:blue;}");
     });
@@ -48,7 +48,7 @@ describe("buildCssRule", () => {
                 },
             },
         };
-        const css = buildCssRule([".test"], styles, {});
+        const css = buildRule([".test"], styles, {});
         const mediaCss = css[1].split("\n");
         expect(css[0]).toBe(".test {display:flex;}");
         expect(mediaCss[0]).toBe("@media (max-width: 450px) {");
@@ -59,9 +59,9 @@ describe("buildCssRule", () => {
     });
 });
 
-describe("buildCss", () => {
+describe("buildStyles", () => {
     it("should generate @keyframes blocks", () => {
-        const css = buildCss({
+        const css = buildStyles({
             "@keyframes animation1": {
                 "from": {"top": "0"},
                 "to": {"top": "100"},
@@ -74,7 +74,7 @@ describe("buildCss", () => {
     });
 
     it("should generate @font-faces blocks", () => {
-        const css = buildCss({
+        const css = buildStyles({
             "@font-face": [
                 {"font-family": "'Font 1'"},
                 {"font-family": "Font 2"},
@@ -85,7 +85,7 @@ describe("buildCss", () => {
     });
 
     it("should generate @media blocks", () => {
-        const css = buildCss({
+        const css = buildStyles({
             "@media (max-width: 450px)": {
                 ".test": {
                     "color": "red",
@@ -102,7 +102,7 @@ describe("buildCss", () => {
     });
 
     it("should process :root blocks", () => {
-        const css = buildCss({
+        const css = buildStyles({
             ":root": {
                 "--variable1": "#ffffff",
                 "--variable2": "#000000"
