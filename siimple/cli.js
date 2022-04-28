@@ -3,8 +3,7 @@
 import fs from "fs";
 import path from "path";
 
-import defaultConfig from "./defaultConfig.js";
-import {build, mergeConfig} from "./index.js";
+import build from "./index.js";
 
 // Get CLI arguments
 const getArguments = () => {
@@ -19,9 +18,7 @@ const getArguments = () => {
 
 // Resolve configuration
 const resolveConfig = configPath => {
-    return import(configPath).then(rawConfig => {
-        return mergeConfig(defaultConfig, rawConfig.default);
-    });
+    return import(configPath).then(rawConfig => rawConfig.default);
 };
 
 // Generate siimple CSS
