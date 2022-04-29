@@ -1,0 +1,74 @@
+---
+title: "Colors"
+---
+
+# Colors
+
+A collection of helpers to customize the text and background color of any element. 
+
+### Background color
+
+Use `has-bg-{color}` to set the background color of any element. 
+
+| Class | Applied value |
+|-------|---------------|
+| `has-bg-primary` | The **primary** color defined in your theme. |
+| `has-bg-secondary` | The **secondary** color defined in your theme. |
+| `has-bg-muted` | The **muted** color defined in your theme. |
+| `has-bg-white` | `background-color: #fff;` |
+| `has-bg-black` | `background-color: #000;` |
+| `has-bg-current` | `background-color: currentColor;` |
+
+Example:
+
+```html live=true align=center
+<div class="button has-bg-royal-600 has-text-white">
+    <strong>Button</strong>
+</div>
+```
+
+Any other color defined in the `colors` object of your theme will generate additional background helpers.
+
+#### Background color on hover
+
+You can change the background color of any element on hover adding the `-hover` suffix to the background color helper.
+
+```html live=true align=center
+<div class="button has-bg-green-600-hover has-bg-aqua-600 has-text-white">
+    <strong>Hover me</strong>
+</div>
+```
+
+### Text color
+
+Use `has-text-{color}` to apply a different color to the text. 
+
+| Class | Applied value |
+|-------|---------------|
+| `has-text-primary` | The **primary** color defined in your theme. |
+| `has-text-secondary` | The **secondary** color defined in your theme. |
+| `has-text-muted` | The **muted** color defined in your theme. |
+| `has-text-body` | The **body** color defined in your theme. |
+| `has-text-white` | `color: #fff;` |
+| `has-text-black` | `color: #000;` |
+| `has-text-current` | `color: currentColor;` |
+
+Example: 
+
+```html live=true align=center
+<strong class="has-text-royal-600">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```
+
+Any other color defined in the `colors` object of your theme will generate additional text color helpers.
+
+#### Text color on hover
+
+You can change the text color of any element on hover adding the `-hover` suffix to the text color helper.
+
+```html live=true align=center
+<strong class="has-text-blue-700 has-text-red-400-hover">
+    Hover me
+</strong>
+```
