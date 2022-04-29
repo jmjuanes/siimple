@@ -20,4 +20,12 @@ export default {
             return list;
         }, {}),
     },
+    fontWeights: {
+        ...theme.fontWeights,
+        black: "900",
+    },
+    sizes: {
+        ...theme.sizes,
+        "192": "48rem",
+    },
 };
