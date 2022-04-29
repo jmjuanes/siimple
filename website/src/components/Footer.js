@@ -10,23 +10,22 @@ const FOOTER_LINKS = [
 ];
 
 export const Footer = props => {
-    const size = props.size || "desktop";
     const items = props.links || FOOTER_LINKS;
-    const itemClass ="has-text-coolgray-700 hover:has-text-blue-500 has-text-no-underline";
+    const itemClass ="has-text-coolgray-700 has-text-blue-500-hover is-not-underlined";
     return (
-        <div className={`content is-${size} has-pt-12 has-pb-24`}>
+        <div className="container has-pt-12 has-pb-24">
             <div className="has-w-full" style={{"maxWidth":"500px"}}>
-                <div className="title is-4 has-text-dark has-mb-2">
+                <div className="title is-4 has-mb-2">
                     <strong className="siimple">siimple.</strong>
                 </div>
-                <div className="paragraph has-mb-0" style={{"opacity":"0.5"}}>
+                <div className="paragraph has-mb-0 has-opacity-50">
                     This website was build using <strong>the siimple toolkit</strong> and 
                     following the <strong>siimple design specification</strong>.
                 </div>
                 {/* Available links */}
-                <div className="has-pt-4 has-size-small has-weight-bold">
+                <div className="has-pt-4 has-size-0 has-weight-bold">
                     {items.map((item, key) => (
-                        <div key={key} className="has-d-inline has-mr-4">
+                        <div key={key} className="is-inline-block has-mr-4">
                             <Link className={itemClass} {...item} />
                         </div>
                     ))}

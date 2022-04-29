@@ -19,33 +19,35 @@ const items = [
 
 // Navigation link
 const NavLink = props => (
-    <Link to={props.href} target={props.target} className="navlink has-d-flex has-items-center">
-        <Icon icon={props.icon} className="has-mr-2 has-text-lg" />
+    <Link to={props.href} target={props.target} className="navlink is-flex has-items-center has-bg-coolgray-100-hover">
+        <Icon icon={props.icon} className="has-mr-2 has-size-2" />
         <div className="has-weight-bold">{props.text}</div>
     </Link>
 );
 
-export const Header = props => {
+export const Header = () => {
     const [active, setActive] = React.useState(false);
-    const size = props.size || "desktop";
     const menuClassName = kofi.classNames({
-        "has-d-flex": true,
-        "mobile:has-flex-column mobile:has-mt-4 mobile:has-w-full": true,
-        "mobile:has-d-none": !active,
+        "is-flex": true,
+        "has-direction-column-mobile has-mt-4-mobile has-w-full-mobile": true,
+        "is-hidden-mobile": !active,
     });
     return (
-        <div className={`content is-${size} has-position-relative`}>
-            <div className="has-d-flex has-py-6 has-flex-wrap has-items-center">
-                <Link to="/" className="has-d-flex has-text-coolgray-700 has-items-center has-mr-auto">
+        <div className="container is-relative">
+            <div className="is-flex has-py-6 has-flex-wrap has-items-center">
+                <Link to="/" className="is-flex has-text-coolgray-700 has-items-center has-mr-auto">
                     <Icon
                         icon="siimple"
                         className="has-align-middle"
                         style={{"fontSize":"28px"}}
                     />
-                    <strong className="has-ml-2 has-text-xl siimple">siimple.</strong>
+                    <strong className="has-ml-2 has-size-3 siimple">siimple.</strong>
+                    <span className="badge has-ml-2 has-bg-coolgray-200 has-text-coolgray-700 has-px-2">
+                        <strong>{process.env.VERSION}</strong>
+                    </span>
                 </Link>
                 <div
-                    className="toggler tablet:has-d-none"
+                    className="menu is-hidden-tablet"
                     onClick={() => setActive(!active)}
                 />
                 <div className={menuClassName}>
@@ -54,9 +56,4 @@ export const Header = props => {
             </div>
         </div>
     );
-};
-
-// Header default props
-Header.defaultProps = {
-    size: "desktop",
 };

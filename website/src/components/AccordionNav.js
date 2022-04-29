@@ -23,9 +23,9 @@ export const AccordionNav = props => {
                 const isActive = props.pathname === item.url;
                 const itemClass = kofi.classNames({
                     "navlink has-mb-1 has-pr-3 has-pl-6": true,
-                    "has-weight-normal": true,
-                    "has-bg-blue-500 hover:has-text-white has-text-white has-weight-bold": isActive,
-                    "hover:has-bg-coolgray-200": !isActive,
+                    "has-weight-body": true,
+                    "has-bg-blue-500 has-text-white-hover has-text-white has-weight-bold": isActive,
+                    "has-bg-coolgray-200-hover": !isActive,
                 });
                 const itemVisible = expanded[item.group] === true; // || item.group === "global";
                 const displayGroup = currentGroup !== item.group; // && item.group !== "global"; //Display group
@@ -36,7 +36,7 @@ export const AccordionNav = props => {
                         {kofi.when(displayGroup, () => {
                             const groupIcon = expanded[item.group] === true ? "chevron-down" : "chevron-right";
                             const groupClass = kofi.classNames({
-                                "has-cursor-hand": true,
+                                "is-clickable": true,
                                 "has-mt-6": currentGroup === null,
                             });
                             //Handle group click --> expand/collapse this group
@@ -49,11 +49,11 @@ export const AccordionNav = props => {
                             //currentGroup = item.group; //Change current group
                             return (
                                 <div className={groupClass} onClick={handleGroupClick}>
-                                    <div className="has-d-flex has-py-3">
-                                        <div className="has-flex-grow has-text-capitalize">
+                                    <div className="is-flex has-py-3 has-items-center">
+                                        <div className="is-capitalized">
                                             <strong>{item.group.replace("-", " ")}</strong>
                                         </div>
-                                        <div className="has-flex-nogrow has-ml-0">
+                                        <div className="has-ml-auto">
                                             <Icon icon={groupIcon} className="has-py-1" />
                                         </div>
                                     </div>

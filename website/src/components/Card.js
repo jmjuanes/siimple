@@ -18,7 +18,7 @@ export const Card = props => {
                 }} />
                 {/* Card content */}
                 <div className="title is-4 has-mt-0">{props.title}</div>
-                <div className="paragraph has-mb-0 has-text-muted">
+                <div className="paragraph has-mb-0 has-text-coolgray-600">
                     {props.content || props.children}
                 </div>
             </div>

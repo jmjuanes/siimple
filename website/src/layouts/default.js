@@ -7,18 +7,17 @@ import {Seo} from "../components/Seo.js";
 import {shortcodes} from "../markdown.js";
 
 const DefaultLayout = props => {
-    const size = props.pageContext?.frontmatter?.pageSize || props.size || "desktop";
     const title = props.pageContext?.frontmatter?.title || props.title;
     return (
         <React.Fragment>
             <Seo title={title} />
-            <Header size={size} />
-            <div className={`content is-${size} ${props.className || ""}`}>
+            <Header />
+            <div className={`container ${props.className || ""}`}>
                 <MDXProvider components={shortcodes}>
                     {props.children}
                 </MDXProvider>
             </div>
-            <Footer size={size} />
+            <Footer />
         </React.Fragment>
     )
 };
@@ -26,7 +25,6 @@ const DefaultLayout = props => {
 DefaultLayout.defaultProps = {
     className: "",
     title: "",
-    size: "desktop",
 };
 
 export default DefaultLayout;

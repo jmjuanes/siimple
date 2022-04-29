@@ -7,7 +7,7 @@ const CodeTitle = props => {
     if (props.title) {
         return (
             <div className="has-mb-4 has-text-blue-300 has-opacity-50">
-                <strong className="has-text-italic">{props.title}</strong>
+                <strong className="is-italic">{props.title}</strong>
             </div>
         );
     }
@@ -32,12 +32,12 @@ export const LiveCode = props => {
         return (
             <div className={`${codeClass} has-mb-6`}>
                 <CodeTitle title={props.title} />
-                <pre className="has-my-0" {...codeProps}>{codeChildren}</pre>
+                <pre className="has-my-none" {...codeProps}>{codeChildren}</pre>
             </div>
         );
     }
     //const {padding, bg, color} = props;
-    const demoClass = kofi.classNames("has-mb-6 has-overflow-x-hidden", [
+    const demoClass = kofi.classNames("has-mb-6 has-overflow-x-hidden is-clipped", [
         // "has-pt-4 has-pb-4",
         // `has-p-${props.padding}`,
         // `has-bg-${props.bg}`,
@@ -45,7 +45,7 @@ export const LiveCode = props => {
         `has-text-${props.color}`,
     ]);
     const contentClass = kofi.classNames("has-w-full has-overflow-y", {
-        "has-d-flex has-items-center has-justify-center": props.centered === "true",
+        "is-flex has-items-center has-justify-center": props.centered === "true",
     });
     return (
         <div className="has-mb-12 has-mt-6">
@@ -57,9 +57,9 @@ export const LiveCode = props => {
                 />
             </div>
             {/* Code */}
-            <div className={`${codeClass} has-my-0`}>
+            <div className={`${codeClass} has-my-none`}>
                 <CodeTitle title={props.title} />
-                <pre className="has-my-0" {...codeProps}>{codeChildren}</pre>
+                <pre className="has-my-none" {...codeProps}>{codeChildren}</pre>
             </div>
             {/* <pre className="codeblock has-mb-0">{props.children}</pre> */}
         </div>

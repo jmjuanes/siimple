@@ -24,7 +24,7 @@ export const Link = props => {
 
 //Link default props
 Link.defaultProps = {
-    "className": "has-text-no-underline",
+    "className": "is-not-underlined",
     "style": {
         "textDecoration": "none"
     },

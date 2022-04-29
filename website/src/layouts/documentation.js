@@ -34,11 +34,11 @@ export default props => {
             {/* Header block */}
             <Header />
             {/* Main content */}
-            <div className="content is-desktop has-pb-10 has-pt-0">
+            <div className="container has-pb-10 has-pt-0">
                 <div className="columns has-mb-0">
                     {/* Sidebar wrapper */}
                     <div className="column is-one-quarter is-full-mobile">
-                        <div className="tablet:has-pr-6">
+                        <div className="has-pr-6-tablet">
                             <AccordionNav
                                 current={currentSidebarItem}
                                 items={documentationNav}
