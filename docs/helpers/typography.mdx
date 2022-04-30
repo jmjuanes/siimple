@@ -1,0 +1,98 @@
+---
+title: "Typography"
+---
+
+# Typography
+
+Customize the text properties using the following typography helpers.
+
+### Font family
+
+Use the following classes to set the font family for the text:
+
+| Class | Value |
+|-------|----------|
+| `has-font-body` | The font defined in the **body** field. Default is `font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Noto Sans", "Helvetica Neue", Arial, sans-serif;`. |
+| `has-font-heading` | The font defined in the **heading** field of your theme. Default is `font-family: inherit;`. |
+| `has-font-monospace` | The font defined in the **monospace** field of your theme. Default is `font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;`. |
+
+> Any other values defined in the `fonts` object of your theme will generate additional fonts helpers.
+
+Use `has-font-body` to apply the same font used by default in your page:
+
+```html live=true
+<div class="has-font-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+Use `has-font-heading` to apply the same font used by default in your headings:
+
+```html live=true
+<div class="has-font-heading">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+Use `has-font-monospace` to apply a monospace font (for example for `code` blocks): 
+
+```html live=true
+<div class="has-font-monospace">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+</div>
+```
+
+### Font size
+
+Use the following classes to set the size of your text:
+
+| Class | Property |
+|-------|----------|
+| `has-size-0`  | `font-size: 0.75rem;` |
+| `has-size-1`  | `font-size: 1rem;`    |
+| `has-size-2`  | `font-size: 1.25rem;` |
+| `has-size-3`  | `font-size: 1.5rem;`  |
+| `has-size-4`  | `font-size: 2rem;`    |
+| `has-size-5`  | `font-size: 2.5rem;`  |
+| `has-size-6`  | `font-size: 3rem;`    |
+| `has-size-7`  | `font-size: 3.5rem;`  |
+| `has-size-8`  | `font-size: 4rem;`    |
+| `has-size-9`  | `font-size: 4.5rem;`  |
+
+> Any other values defined in the `fonts` object of your theme will generate additional fonts helpers.
+
+Example:
+
+```html live=true
+<div class="has-size-0">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-size-1">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-size-2">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-size-3">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-size-4">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-size-5">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-size-6">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-size-7">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-size-8">The quick brown fox jumps over the lazy dog.</div>
+<div class="has-size-9">The quick brown fox jumps over the lazy dog.</div>
+```
+
+### Font Weight
+
+Use the following classes to set the weight of your text:
+
+| Class | Property |
+|-------|----------|
+| `has-weight-body` | Will apply the weight defined in the `body` field of the `weights` theme scale. Default is `font-weight: 400;`. |
+| `has-weight-heading` | Will apply the weight defined in the `heading` field of the `weights` theme scale. Default is `font-weight: 700;`. |
+| `has-weight-bold` | Will apply the weight defined in the `bold` field of the `weights` theme scale. Default is `font-weight: 700;`. |
+
+> Any other values defined in the `weights` object of your theme will generate additional weights helpers.
+
+Example:
+
+```html live=true
+<div class="has-weight-body">Text using has-weight-body</div>
+<div class="has-weight-heading">Text using has-weight-heading</div>
+<div class="has-weight-bold">Test using has-weight-bold</div>
+```
+
