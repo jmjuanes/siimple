@@ -4,6 +4,156 @@ title: Other helpers
 
 # Other helpers
 
+### Cursors
+
+Use `is-clickable` for displaying a pointer cursor to indicate a link or an interactive element:
+
+```html live=true centered=true color=white
+<div class="has-bg-blue-500 has-text-center has-p-3 has-w-64 is-clickable">
+    Pointer
+</div>
+```
+
+Use `is-not-allowed` to display a not allowed cursor:
+
+```html live=true centered=true color=white
+<div class="has-bg-blue-500 has-text-center has-p-3 has-w-64 is-not-allowed">
+    Cursor disabled
+</div>
+```
+
+### Display
+
+Control how elements will be displayed using the following classes: 
+
+| Class | Property | 
+|-------|----------|
+| `is-hidden`         | `display: none;` |
+| `is-inline`       | `display: inline;` |
+| `is-block`        | `display: block;` |
+| `is-inline-block` | `display: inline-block;` |
+| `is-flex`         | `display: flex;` |
+| `is-inline-flex`  | `display: inline-flex;` |
+
+Use `is-hidden` to hide an element:
+
+```html live=true centered=true color=white
+<div class="has-bg-blue-500 has-p-3 has-mx-2 has-w-24 has-radius">1</div>
+<div class="has-bg-blue-500 has-p-3 has-mx-2 has-w-24 has-radius is-hidden">2</div>
+<div class="has-bg-blue-500 has-p-3 has-mx-2 has-w-24 has-radius">3</div>
+```
+
+Use `is-block` to generate a block-level element: 
+
+```html live=true color=white
+<span class="has-bg-blue-500 has-p-3 has-m-2 has-radius is-block">1</span>
+<span class="has-bg-blue-500 has-p-3 has-m-2 has-radius is-block">2</span>
+<span class="has-bg-blue-500 has-p-3 has-m-2 has-radius is-block">3</span>
+```
+
+Use `is-inline-block` to generate an inline block element: 
+
+```html live=true color=primary
+<div class="has-bg-blue-500 has-radius has-p-2">
+    <div class="has-bg-white has-p-3 has-m-2 has-radius is-inline-block">1</div>
+    <div class="has-bg-white has-p-3 has-m-2 has-radius is-inline-block">2</div>
+    <div class="has-bg-white has-p-3 has-m-2 has-radius is-inline-block">3</div>
+</div>
+```
+
+You can control the display of an element at a specific breakpoint adding a `-{breakpoint}` suffix to the display class. For example, to hide an element only on mobile screens, use the class `is-hidden-mobile`.
+
+```html
+<div class="is-block is-hidden-mobile">
+    . . . 
+</div>
+```
+
+### Position 
+
+Use the following classes to change the position property of an element:
+
+| Class | Property | 
+|-------|----------|
+| `is-relative` | `position: relative;` |
+| `is-absolute` | `position: absolute;` |
+| `is-sticky`   | `position: sticky;` |
+| `is-fixed`    | `position: fixed;` |
+
+Example:
+
+```html
+<div class="is-fixed has-top-none">
+    ...
+</div>
+```
+
+You can control the position of an element at a specific breakpoint adding a `-{breakpoint}` suffix to the class.
+
+```html
+<div class="is-fixed-mobile has-top-none-mobile">
+    . . .
+</div>
+```
+
+### Float
+
+Use the following classes for positioning and formatting content, for example to wrap text around images.
+
+| Class | Property | 
+|-------|----------|
+| `is-aligned-left`  | `float: left;` |
+| `is-aligned-right` | `float: right;` |
+
+You can use `is-aligned-left` to float an element to the left side of it's containing block:
+
+```html live=true
+<div class="is-aligned-left has-w-32 has-h-32 has-mr-8 has-radius has-bg-blue-500">
+    <div class="has-w-full has-h-full is-flex has-justify-center">
+        <i class="icon-image has-size-7 has-text-white"></i>
+    </div>
+</div>
+<p class="has-text-justified has-mb-0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+    sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+```
+
+Use `is-aligned-right` to float an element to the right side of it's containing block:
+
+```html live=true
+<div class="is-aligned-right has-w-32 has-h-32 has-ml-8 has-radius has-bg-blue-500">
+    <div class="has-w-full has-h-full is-flex has-justify-center">
+        <i class="icon-image has-size-7 has-text-white"></i>
+    </div>
+</div>
+<p class="has-text-justified has-mb-0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+    sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+```
+
+### Overflow
+
+Use `is-clipped` to clip all neccesary content to fit the container size. Note that no scrollbars will be displayed and the user scrolling will be disabled.
+
+```html live=true color=white centered=true
+<div class="is-clipped has-h-32 has-maxw-64 has-p-6 has-bg-blue-500 has-radius">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+    aliquip ex ea commodo consequat.
+</div>
+```
+
 
 ### Font style
 
