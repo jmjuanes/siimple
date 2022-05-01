@@ -8,15 +8,13 @@ Customize the text properties using the following typography helpers.
 
 ### Font family
 
-Use the following classes to set the font family for the text:
+For each size defined in the `fonts` field of your theme there will be a helper with the pattern `has-font-{name}` for applying the specified font. The following fonts helpers will be always available:
 
 | Class | Value |
 |-------|----------|
 | `has-font-body` | The font defined in the **body** field. By default it will apply `font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Noto Sans", "Helvetica Neue", Arial, sans-serif;`. |
 | `has-font-heading` | The font defined in the **heading** field of your theme. By default it will apply `font-family: inherit;`. |
-| `has-font-monospace` | The font defined in the **monospace** field of your theme. By default it will apply `font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;`. |
-
-> Any other values defined in the `fonts` object of your theme will generate additional fonts helpers.
+| `has-font-code` | The font defined in the **code** field of your theme. By default it will apply `font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;`. |
 
 Use `has-font-body` to apply the same font used by default in your page:
 
@@ -34,17 +32,17 @@ Use `has-font-heading` to apply the same font used by default in your headings:
 </div>
 ```
 
-Use `has-font-monospace` to apply a monospace font (for example for `code` blocks): 
+Use `has-font-code` to apply the same font that will be applied to the `<code>` and `<pre>` blocks:
 
 ```html live=true
-<div class="has-font-monospace">
+<div class="has-font-code">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
 </div>
 ```
 
 ### Font size
 
-Use the following classes to set the size of your text:
+For each size defined in the `fontSizes` field of your theme there will be a helper with the pattern `has-size-{index}`. In the default theme of **siimple** the following font sizes helpers will be available:
 
 | Class | Property |
 |-------|----------|
@@ -58,8 +56,6 @@ Use the following classes to set the size of your text:
 | `has-size-7`  | `font-size: 3.5rem;`  |
 | `has-size-8`  | `font-size: 4rem;`    |
 | `has-size-9`  | `font-size: 4.5rem;`  |
-
-> Any other values defined in the `fonts` object of your theme will generate additional fonts helpers.
 
 Example:
 
@@ -78,15 +74,13 @@ Example:
 
 ### Font Weight
 
-Use the following classes to set the weight of your text:
+For each weight defined in the `fontWeights` field of your theme there will be a helper with the pattern `has-weight-{name}` to apply the specified weight. The following weight helpers will be always available:
 
 | Class | Property |
 |-------|----------|
-| `has-weight-body` | Will apply the weight defined in the `body` field of the `weights` theme scale. By default it will apply `font-weight: 400;`. |
-| `has-weight-heading` | Will apply the weight defined in the `heading` field of the `weights` theme scale. By default it will apply `font-weight: 700;`. |
-| `has-weight-bold` | Will apply the weight defined in the `bold` field of the `weights` theme scale. By default it will apply `font-weight: 700;`. |
-
-> Any other values defined in the `weights` object of your theme will generate additional weights helpers.
+| `has-weight-body` | Weight used for the body text. In the default theme this helper will apply `font-weight: 400;`. |
+| `has-weight-heading` | Weight used for headings. In the default theme this will apply `font-weight: 700;`. |
+| `has-weight-bold` | Weight used for bold text. In the default theme this will apply `font-weight: 700;`. |
 
 Example:
 

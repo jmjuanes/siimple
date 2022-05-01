@@ -4,61 +4,39 @@ title: "Opacity"
 
 # Opacity
 
-Use the following helpers classes to control the opacity of an element:
+For each opacity value defined in the `opacities` field of your theme there will be a helper with the pattern `has-opacity-{index}` for applying the specified opacity value. In the default theme of **siimple** the following opacities helpers are available:
 
 | Class | Property |
 |-------|----------|
 | `has-opacity-0` | `opacity: 0.00;` |
-| `has-opacity-5` | `opacity: 0.05;` |
-| `has-opacity-10` | `opacity: 0.10;` |
-| `has-opacity-15` | `opacity: 0.15;` |
-| `has-opacity-20` | `opacity: 0.20;` |
-| `has-opacity-25` | `opacity: 0.25;` |
-| `has-opacity-30` | `opacity: 0.30;` |
-| `has-opacity-35` | `opacity: 0.35;` |
-| `has-opacity-40` | `opacity: 0.40;` |
-| `has-opacity-45` | `opacity: 0.45;` |
+| `has-opacity-20` | `opacity: 0.25;` |
 | `has-opacity-50` | `opacity: 0.50;` |
-| `has-opacity-55` | `opacity: 0.55;` |
-| `has-opacity-60` | `opacity: 0.60;` |
-| `has-opacity-65` | `opacity: 0.65;` |
-| `has-opacity-70` | `opacity: 0.70;` |
 | `has-opacity-75` | `opacity: 0.75;` |
-| `has-opacity-80` | `opacity: 0.80;` |
-| `has-opacity-85` | `opacity: 0.85;` |
-| `has-opacity-90` | `opacity: 0.90;` |
-| `has-opacity-95` | `opacity: 0.95;` |
 | `has-opacity-100` | `opacity: 1.00;` |
 
-> Any other values defined in the `opacities` object of your theme will generate additional or different opacities helpers.
+Example:
 
-### Usage
-
-Add any of the `has-opacity-{value}` classes to set the opacity of an element:
-
-```html live=true bg=blue-200 color=white
-<div class="has-d-flex has-text-center">
-    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500 has-opacity-0">
+```html live=true color=white
+<div class="is-flex has-text-center">
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary has-opacity-0">
         <strong>0%</strong>
     </div>
-    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500 has-opacity-25">
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary has-opacity-25">
         <strong>25%</strong>
     </div>
-    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500 has-opacity-50">
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary has-opacity-50">
         <strong>50%</strong>
     </div>
-    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500 has-opacity-75">
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary has-opacity-75">
         <strong>75%</strong>
     </div>
-    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-blue-500 has-opacity-100">
+    <div class="has-flex-grow has-m-2 has-p-4 has-radius has-bg-primary has-opacity-100">
         <strong>100%</strong>
     </div>
 </div>
 ```
 
-### Opacity on hover
-
-You can change the opacity of any element on hover adding the `hover:` prefix to the opacity helper.
+You can change the opacity of any element on hover adding the `-hover` suffix to the opacity helper.
 
 ```html
 <div class="has-opacity-50 has-opacity-100-hover ...">
@@ -66,9 +44,7 @@ You can change the opacity of any element on hover adding the `hover:` prefix to
 </div>
 ```
 
-### Responsive opacity
-
-Control the opacity of an element at a specific breakpoint adding a `-{breakpoint}` suffix to the opacity class. In the following example, the `has-opacity-100-mobile` will apply `opacity: 1` only on mobile screens.
+You can also control the opacity of an element at a specific breakpoint adding a `-{breakpoint}` suffix to the opacity class. In the following example, the `has-opacity-100-mobile` will apply `opacity: 1` only on mobile screens.
 
 ```html
 <div class="has-opacity-50 has-opacity-100-mobile ...">

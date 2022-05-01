@@ -5,7 +5,9 @@ description: "Modify the width or the height of an element"
 
 # Sizing
 
-Modify the width or the height of any element using the following default sizes:
+You can use the sizing helpers to set the width or height of any element. The sizes that will be used to generate the sizing helpers can be defined in the `sizes` field of your theme.
+
+In the default theme of **siimple**, the following sizes will be used to generate the sizing helpers:
 
 | Size     | Value     |
 |----------|-----------|
@@ -30,8 +32,6 @@ Modify the width or the height of any element using the following default sizes:
 | `full`   | `100%`    |
 | `screen` | `100vh`   |
 
-> Any other sizes defined in the `sizes` object of your theme will generate additional sizing helpers.
-
 ### Width
 
 Add any of the `has-w-{size}` classnames to modify the `width` property of the element.
@@ -51,7 +51,7 @@ Use `has-w-screen` to fit the width of the screen:
 Use the other clasess to set a fixed width:
 
 ```html live=true centered=true color=white
-<div class="has-w-64 has-p-4 has-bg-blue-500 has-radius">
+<div class="has-w-64 has-p-4 has-bg-primary has-radius">
     <strong>.has-w-64</strong>
 </div>
 ```
@@ -61,7 +61,7 @@ Use the other clasess to set a fixed width:
 Use `has-maxw-{size}` classes to set the `max-width` property of any element.
 
 ```html live=true centered=true color=white
-<div class="has-w-full has-maxw-64 has-p-4 has-bg-blue-500 has-radius">
+<div class="has-w-full has-maxw-64 has-p-4 has-bg-primary has-radius">
     <strong>.has-maxw-64</strong>
 </div>
 ```
@@ -71,7 +71,7 @@ Use `has-maxw-{size}` classes to set the `max-width` property of any element.
 Use `has-minw-{size}` classes to modify the `min-width` property of any element.
 
 ```html live=true centered=true color=white
-<div class="has-minw-64 has-p-4 has-bg-blue-500 has-radius">
+<div class="has-minw-64 has-p-4 has-bg-primary has-radius">
     <strong>.has-minw-64</strong>
 </div>
 ```
@@ -95,7 +95,7 @@ Use `has-h-screen` to fit the height of the screen:
 Use the other clasess to set a fixed height:
 
 ```html live=true centered=true color=white
-<div class="has-h-32 has-w-64 has-p-4 has-bg-blue-500 has-radius">
+<div class="has-h-32 has-w-64 has-p-4 has-bg-primary has-radius">
     <strong>has-h-32</strong>
 </div>
 ```
@@ -105,7 +105,7 @@ Use the other clasess to set a fixed height:
 Use `has-maxh-{size}` classes to modify the `max-height` property of any element.
 
 ```html live=true centered=true color=white
-<div class="has-h-full has-maxh-64 has-w-64 has-p-4 has-bg-blue-500 has-radius">
+<div class="has-h-full has-maxh-64 has-w-64 has-p-4 has-bg-primary has-radius">
     <strong>.has-maxh-64</strong>
 </div>
 ```
@@ -115,7 +115,7 @@ Use `has-maxh-{size}` classes to modify the `max-height` property of any element
 Use `has-minh-{size}` classes to modify the `min-height` property of any element.
 
 ```html live=true centered=true color=white
-<div class="has-minh-64 has-w-64 has-p-4 has-bg-blue-500 has-radius">
+<div class="has-minh-64 has-w-64 has-p-4 has-bg-primary has-radius">
     <strong>.has-minh-64</strong>
 </div>
 ```
@@ -125,7 +125,7 @@ Use `has-minh-{size}` classes to modify the `min-height` property of any element
 Use `has-s-{size}` classes to set both the `width` and `height` properties of any element.
 
 ```html live=true centered=true color=white
-<div class="has-s-32 has-p-4 has-bg-blue-500 has-radius">
+<div class="has-s-32 has-p-4 has-bg-primary has-radius">
     <strong>.has-s-32</strong>
 </div>
 ```

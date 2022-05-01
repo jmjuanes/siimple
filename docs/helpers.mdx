@@ -1,0 +1,53 @@
+---
+title: Helpers
+---
+
+# Helpers
+
+**Helpers** are modifiers that can be applied to any element to customize his style.
+
+
+
+### Enable or disable helpers
+
+Helpers are enabled by default in **siimple**. You can disable them setting the `useHelpers` flag to `false` in your configuration:
+
+```js title=siimple.config.js
+export default {
+    useHelpers: false,
+    // ...other configuration
+};
+```
+
+### Usage
+
+
+
+### Themeable helpers
+
+There are some helpers that are generated using the theme defined in your configuration file. For example, if you customize the `primary` color in your theme, the `has-bg-primary` helper will use the color that you have specified in your theme instead of the default color of the **siimple** theme.
+
+Also, additional colors provided in the `colors` scale will generate an additional helpers. For example, the following configuration:
+
+```js title=siimple.config.js
+export default {
+    colors: {
+        info: "#",
+        success: "#",
+        warning: "#",
+        error: "#",
+        // ...other default colors
+    },
+    // ...other configuration
+};
+```
+
+Will generate the following additional helpers: 
+
+```css
+.has-bg-info {background-color: #;}
+.has-bg-success {background-color: #;}
+.has-bg-warning {background-color: #;}
+.has-bg-error {background-color: #;}
+```
+

@@ -8,7 +8,7 @@ A collection of helpers to customize the text and background color of any elemen
 
 ### Background color
 
-Use `has-bg-{color}` to set the background color of any element. 
+Use `has-bg-{name}` to set the background color of any element. Background colors helpers will be generated using the values provided in the `colors` field of your theme. At least the following colors helpers will be always available: 
 
 | Class | Applied value |
 |-------|---------------|
@@ -19,13 +19,10 @@ Use `has-bg-{color}` to set the background color of any element.
 | `has-bg-black` | `background-color: #000;` |
 | `has-bg-current` | `background-color: currentColor;` |
 
-
-> Any other color defined in the `colors` object of your theme will generate additional background helpers.
-
 Example:
 
 ```html live=true align=center
-<div class="button has-bg-royal-600 has-text-white">
+<div class="button has-bg-secondary">
     <strong>Button</strong>
 </div>
 ```
@@ -35,14 +32,14 @@ Example:
 You can change the background color of any element on hover adding the `-hover` suffix to the background color helper.
 
 ```html live=true align=center
-<div class="button has-bg-green-600-hover has-bg-aqua-600 has-text-white">
+<div class="button has-bg-secondary-hover">
     <strong>Hover me</strong>
 </div>
 ```
 
 ### Text color
 
-Use `has-text-{color}` to apply a different color to the text. 
+Use `has-text-{name}` to set the text color of any element. Text colors helpers will be generated using the values provided in the `colors` field of your theme. At least the following colors helpers will be always available: 
 
 | Class | Applied value |
 |-------|---------------|
@@ -54,12 +51,10 @@ Use `has-text-{color}` to apply a different color to the text.
 | `has-text-black` | `color: #000;` |
 | `has-text-current` | `color: currentColor;` |
 
-> Any other color defined in the `colors` object of your theme will generate additional text color helpers.
-
 Example: 
 
 ```html live=true align=center
-<strong class="has-text-royal-600">
+<strong class="has-text-secondary">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 </strong>
 ```
@@ -69,7 +64,7 @@ Example:
 You can change the text color of any element on hover adding the `-hover` suffix to the text color helper.
 
 ```html live=true align=center
-<strong class="has-text-blue-700 has-text-red-400-hover">
+<strong class="has-text-primary has-text-secondary-hover">
     Hover me
 </strong>
 ```
