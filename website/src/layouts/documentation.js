@@ -7,16 +7,16 @@ import {AccordionNav} from "../components/AccordionNav.js";
 import {Pagination} from "../components/Pagination.js";
 import {Seo} from "../components/Seo.js";
 import {shortcodes} from "../markdown.js";
-import {documentationNav} from "../navs/documentation.js";
+import {navigation} from "../navigation.js";
 
 //Get current sidebar item
 const getCurrentSidebarIndex = p => {
-    return documentationNav.findIndex(s => s.url === p) || 0;
+    return navigation.findIndex(s => s.url === p) || 0;
 };
 
 //Get sidebar item by index
 const getSidebarItem = i => {
-    return (0 <= i && i < documentationNav.length) ? documentationNav[i] : null;
+    return (0 <= i && i < navigation.length) ? navigation[i] : null;
 };
 
 // Export layout component
@@ -41,7 +41,7 @@ export default props => {
                         <div className="has-pr-6-tablet">
                             <AccordionNav
                                 current={currentSidebarItem}
-                                items={documentationNav}
+                                items={navigation}
                                 pathname={pathname}
                             />
                         </div>
