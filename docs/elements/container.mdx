@@ -1,0 +1,30 @@
+---
+title: Container
+description: A responsive element to center content horizontally
+--- 
+
+# Container
+
+A **container** is a layout element that divides your website in sections and places the information it contains in the center of the window in every moment. Add the class `container` to your `<div>` to use it:
+
+```html
+<div class="container">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</div>
+```
+
+By default the container has the maximun width minus the `32px` of padding left and right. You can customize the maximum width of the container providing your custom `maxWidth` value in the container variant field of your theme (see below).
+
+### Variants
+
+Variants for this element can be defined in the `layout.container` section of the variants configuration:
+
+```js
+export default {
+    layout: {
+        container: {
+            maxWidth: "560px",
+        },
+    },
+};
+```

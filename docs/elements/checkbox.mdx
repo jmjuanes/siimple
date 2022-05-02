@@ -36,14 +36,14 @@ Checkboxes can also display the **indeterminate** state. Remember that there is 
 
 ### Variants
 
-Variants for this element can be defined in the `form.checkbox` section of the variants configuration:
+Variants for this element can be defined in the `forms.checkbox` section of the variants configuration:
 
 ```js
 export default {
     variants: {
-        "form.checkbox": {
-            default: {
-                backgroundColor: "fill",
+        forms: {
+            checkbox: {
+                backgroundColor: "muted",
                 color: "white",
                 "&:checked, &:indeterminate": {
                     backgroundColor: "primary",

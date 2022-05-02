@@ -25,21 +25,13 @@ Use the `modal` class to create a wrapper for your modal dialogs. Usually you wi
 
 ### Variants
 
-Variants for this element can be defined in the `dialog.modal` section of the variants configuration:
+The default variant for this element can be defined in the `dialog.modal` section of your theme configuration:
 
 ```js
 export default {
-    variants: {
-        "dialog.modal": {
-            default: {
-                maxWidth: "500px",
-            },
-            small: {
-                maxWidth: "300px",
-            },
-            large: {
-                maxWidth: "900px",
-            },
+    dialog: {
+        modal: {
+            maxWidth: "500px",
         },
     },
 };

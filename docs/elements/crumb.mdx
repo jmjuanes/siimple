@@ -16,7 +16,7 @@ Each item should have the `crumb` class, and you can use the additional `crumbs`
 </div>
 ```
 
-We provide an `active` variant to mark a crumb as active, for example to inform the user about the current page.
+We provide an `is-active` modifier to mark a crumb as active, for example to inform the user about the current page.
 
 ```html live=true
 <div class="crumbs has-mb-0">
@@ -28,17 +28,13 @@ We provide an `active` variant to mark a crumb as active, for example to inform 
 
 ### Variants
 
-Variants for this element can be defined in the `navigation.crumb` section of the variants configuration:
+Variants for this element can be defined in the `links.crumb` section of your theme configuration:
 
 ```js
 export default {
-    variants: {
-        "navigation.crumb": {
-            active: {
-                cursor: "default",
-                opacity: "1.0",
-                pointerEvents: "none",
-            },
+    links:{
+        crumb: {
+            color: "body",
         },
     },
 };

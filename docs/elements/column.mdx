@@ -9,40 +9,41 @@ You can add **columns** to your grid row using the class `column`, and wrapp all
 ```html live=true
 <div class="columns has-text-center">
     <div class="column">
-        <div class="has-radius has-bg-blue-500 has-text-white has-p-2">Column 1</div>
+        <div class="has-radius has-bg-primary has-text-white has-p-2">Column 1</div>
     </div>
     <div class="column">
-        <div class="has-radius has-bg-blue-500 has-text-white has-p-2">Column 2</div>
+        <div class="has-radius has-bg-primary has-text-white has-p-2">Column 2</div>
     </div>
     <div class="column">
-        <div class="has-radius has-bg-blue-500 has-text-white has-p-2">Column 3</div>
+        <div class="has-radius has-bg-primary has-text-white has-p-2">Column 3</div>
     </div>
 </div>
 ```
 
-To customize the width of each column, we provide the following variants:
+To customize the width of each column, we provide the following modifiers:
 
 | Variant | Column size |
 |---------|-------------|
-| `one-fifth` | `width: 20%` |
-| `one-quarter` | `width: 25%` |
-| `one-third` | `width: 33.33%` |
-| `two-fifths` | `width: 40%` |
-| `half` | `width: 50%` |
-| `three-fifths` | `width: 60%` |
-| `two-thirds` | `width: 66.66%` |
-| `three-quarters` | `width: 75%` |
-| `four-fifths` | `width: 80%` |
-| `full` | `width: 100%` |
+| `is-one-fifth` | `width: 20%` |
+| `is-one-quarter` | `width: 25%` |
+| `is-one-third` | `width: 33.33%` |
+| `is-two-fifths` | `width: 40%` |
+| `is-half` | `width: 50%` |
+| `is-three-fifths` | `width: 60%` |
+| `is-two-thirds` | `width: 66.66%` |
+| `is-three-quarters` | `width: 75%` |
+| `is-four-fifths` | `width: 80%` |
+| `is-full` | `width: 100%` |
 
+Example:
 
 ```html live=true
 <div class="columns has-text-center">
     <div class="column is-two-thirds">
-        <div class="has-radius has-bg-blue-500 has-text-white has-p-2">2/3</div>
+        <div class="has-radius has-bg-primary has-text-white has-p-2">2/3</div>
     </div>
     <div class="column is-one-third">
-        <div class="has-radius has-bg-blue-500 has-text-white has-p-2">1/3</div>
+        <div class="has-radius has-bg-primary has-text-white has-p-2">1/3</div>
     </div>
 </div>
 ```
@@ -58,7 +59,7 @@ You can combine different column classes to specify how the grid will be display
 </div>
 ```
 
-You can hide a column at a specific breakpoint using the responsive `hidden` variant.
+You can hide a column at a specific breakpoint using the responsive `is-hidden` helper.
 
 ```html
 <div class="columns">
@@ -74,15 +75,15 @@ You can hide a column at a specific breakpoint using the responsive `hidden` var
 
 ### Variants
 
-Variants for this element can be defined in the `column` section of the variants configuration:
+Variants for this element can be defined in the `columns` section of your theme configuration. Properties defined in the `columns.default` section will be applied to the base columns class:
 
 ```js
 export default {
-    variants: {
-        column: {
-            default: {
-                padding: "0.75rem",
-            },
+    columns: {
+        // Will be applied to the base '.column' class
+        default: {
+            paddingTop: "0.75rem",
+            paddingBottom: "0.75rem",
         },
     },
 };

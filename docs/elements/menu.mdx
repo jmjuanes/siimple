@@ -13,16 +13,14 @@ Use the `menu` class to create a menu button, useful for displaying hidden menus
 
 ### Variants
 
-Variants for this element can be defined in the `dialogs.menu` field of the variants configuration:
+The default variant for this element can be defined in the `dialog.menu` field of your theme configuration:
 
 ```js
 export default {
-    variants: {
-        dialogs: {
-            menu: {
-                borderColor: "currentColor",
-                color: "currentColor",
-            },
+    dialog: {
+        menu: {
+            borderColor: "currentColor",
+            color: "currentColor",
         },
     },
 };

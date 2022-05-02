@@ -20,20 +20,29 @@ We provide an `is-secondary` modifier for using the secondary color defined in y
 
 ### Variants
 
-Variants for this element can be defined in the `badge` section of the variants configuration:
+Variants for this element can be defined in the `badges` section of your theme configuration. Badges will use the properties defined in `badges.default` to customize the default badge class.
 
 ```js
 export default {
-    variants: {
-        badge: {
-            primary: {
-                backgroundColor: "primary",
-                color: "white",
-            },
-            secondary: {
-                backgroundColor: "secondary",
-                color: "white",
-            },
+    badges: {
+        // Will be applied to the base '.badge' class
+        default: {
+            backgroundColor: "primary",
+            color: "white",
+        },
+    },
+};
+```
+
+Additional fields defined in the `badges` section will generate additional modifierts for the badge element.
+
+```js
+export default {
+    badges: {
+        // Will generate '.badge.is-secondary'
+        secondary: {
+            backgroundColor: "secondary",
+            color: "white",
         },
     },
 };
