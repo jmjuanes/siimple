@@ -6,7 +6,7 @@ title: Elements
 
 We provide a collection of built-in UI elements that you can customize and reuse across your projects, that includes buttons, alerts, navigation links, and more!
 
-### Disable elements
+### Enable or disable elements
 
 Elements are enabled by default, but can be disabled setting to `false` the `useElements` flag in your configuration:
 
@@ -16,6 +16,10 @@ export default {
 };
 ```
 
+### Usage
+
+
+
 ### Customize elements
 
 Variants can be used to customize and change the look and feel of elements. Each element will look for a specific variant defined in the `variants` section of your configuration.
@@ -23,15 +27,73 @@ Variants can be used to customize and change the look and feel of elements. Each
 ```js title=siimple.config.js
 export default {
     variants: {
-        button: {
-            default: {
-                backgroundColor: "primary",
-                color: "white",
-            },
+        text: {
+            heading: {
+                color: "black",
+                lineHeight: "1.25",
+            }
+        }
+    }
+}
+```
+
+There is the list of elements and the default variant that can be used to customize the default styles of the element:
+
+| Element | Variant Group | Default Variant |
+|---------|---------------|-----------------|
+| `alert` | `alerts` | `alerts.default` |
+| `badge` | `badges` | `badges.default` |
+| `button` | `buttons` | `buttons.default` |
+| `card` | `cards` | `cards.default` |
+| `checkbox` | `forms` | `forms.checkbox` |
+| `close` | `dialogs` | `dialogs.close` |
+| `column` | `columns` | `columns.default` |
+| `container` | `layout` | `layout.container` |
+| `crumb` | `links` | `links.crumb` |
+| `divider` | `layout` | `layout.divider` |
+| `input` | `forms` | `forms.input` |
+| `label` | `forms` | `forms.label` |
+| `menu` | `dialogs` | `dialogs.menu` |
+| `modal` | `dialogs` | `dialogs.modal` |
+| `navlink` | `links` | `links.nav` |
+| `paragraph` | `text` | `text.paragraph` |
+| `progress` | `forms` | `forms.progress` |
+| `radio` | `forms` | `forms.radio` |
+| `scrim` | `dialogs` | `dialogs.scrim` |
+| `select` | `forms` | `forms.select` |
+| `slider` | `forms` | `forms.slider` |
+| `spinner` | `spinners` | `spinners.default` |
+| `switch` | `forms` | `forms.switch` |
+| `table` | `layout` | `layout.table` |
+| `textarea` | `forms` | `forms.textarea` |
+| `title` | `text` | `text.heading` |
+
+Some variants will generate additional elements modifiers using the items added to the variant group. For example, buttons will generate additional modifiers for each item that you add to the `variants.buttons` group:
+
+```js title=siimple.config.js
+export default {
+    variants: {
+        buttons: {
             secondary: {
                 backgroundColor: "secondary",
+            },
+            disabled: {
+                cursor: "not-allowed",
+                opacity: "0.5",
             },
         },
     },
 };
+```
+
+Will generate the following additional modifiers:
+
+```css
+.button.is-secondary {
+    background-color: #;
+}
+.button.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
 ```
