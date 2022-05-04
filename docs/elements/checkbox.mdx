@@ -34,27 +34,25 @@ Checkboxes can also display the **indeterminate** state. Remember that there is 
 </script>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `forms.checkbox` section of the variants configuration:
+The checkbox element will apply the styles defined in the `forms.checkbox` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        forms: {
-            checkbox: {
-                backgroundColor: "muted",
-                color: "white",
-                "&:checked, &:indeterminate": {
-                    backgroundColor: "primary",
-                },
-                "&:indeterminate:after": {
-                    borderBottomColor: "white",
-                },
-                "&:checked:after": {
-                    borderBottomColor: "white",
-                    borderLeftColor: "white",
-                },
+    forms: {
+        checkbox: {
+            backgroundColor: "muted",
+            color: "white",
+            "&:checked, &:indeterminate": {
+                backgroundColor: "primary",
+            },
+            "&:indeterminate:after": {
+                borderBottomColor: "white",
+            },
+            "&:checked:after": {
+                borderBottomColor: "white",
+                borderLeftColor: "white",
             },
         },
     },

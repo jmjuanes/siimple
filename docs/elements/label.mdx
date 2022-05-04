@@ -14,11 +14,11 @@ Style your form **label** element adding a `label` class, useful with radio, che
 </label>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `forms.label` section of your theme configuration:
+The label element will apply the styles defined in the `forms.label` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
     forms: {
         label: {
@@ -26,5 +26,6 @@ export default {
             fontWeight: "bold",
         },
     },
+    // ...other configuration
 };
 ```

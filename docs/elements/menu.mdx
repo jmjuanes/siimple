@@ -10,18 +10,18 @@ Use the `menu` class to create a menu button, useful for displaying hidden menus
 <button class="menu"></button>
 ```
 
+### Customize
 
-### Variants
+The menu element will apply the styles defined in the `buttons.menu` field of your theme configuration.
 
-The default variant for this element can be defined in the `dialog.menu` field of your theme configuration:
-
-```js
+```js title=siimple.config.js
 export default {
-    dialog: {
+    buttons: {
         menu: {
             borderColor: "currentColor",
             color: "currentColor",
         },
     },
+    // ...other configuration
 };
 ```

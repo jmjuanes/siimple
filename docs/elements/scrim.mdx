@@ -14,18 +14,17 @@ You can create a scrim using the class `scrim`. By default, all elements inside 
 </div>
 ```
 
-### Variants
+### Customize
 
-Variants for this component can be defined in the `dialog.scrim` section of the variants configuration:
+The scrim element will apply the styles defined in the `dialogs.scrim` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        "dialog.scrim": {
-            default: {
-                backgroundColor: "rgba(black, 0.5)",
-            },
+    dialogs: {
+        scrim: {
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
         },
     },
+    // ...other configuration
 };
 ```

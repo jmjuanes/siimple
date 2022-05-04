@@ -10,19 +10,18 @@ Style your `<progress>` elements using the class `progress`:
 <progress class="progress" max="1" value="0.5"></progress>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `form.progress` section of the variants configuration:
+The progress element will apply the styles defined in the `styles.progress` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        "form.progress": {
-            default: {
-                backgroundColor: "fill",
-                color: "primary",
-            },
+    styles: {
+        progress: {
+            backgroundColor: "muted",
+            color: "primary",
         },
     },
+    // ..other configuration
 };
 ```

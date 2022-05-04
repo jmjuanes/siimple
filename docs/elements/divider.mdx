@@ -10,17 +10,18 @@ The **divider** element helps you to separate content in your page. Add `divider
 <div class="divider"></div>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `layout.divider` section of your theme configuration:
+The divider element will apply the styles defined in the `styles.hr` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    layout: {
-        divider: {
+    styles: {
+        hr: {
             backgroundColor: "muted",
             height: "0.125rem",
         },
     },
+    // ...other configuration
 };
 ```

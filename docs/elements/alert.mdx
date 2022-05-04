@@ -29,32 +29,16 @@ You can add a close button to the alert using the `close` element:
 </div>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `alerts` section of your theme configuration. Alerts will use the properties defined in `alerts.default` to style the default alert class:
+The alert element will apply the styles defined in the `alerts` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
     alerts: {
-        // Will be applied to the base '.alert' class
-        default: {
-            backgroundColor: "primary",
-            color: "white",
-        },
+        backgroundColor: "primary",
+        color: "white",
     },
-};
-```
-
-Additional fields defined in the `alerts` section will generate additional modifierts for the alert element.
-
-```js
-export default {
-    alerts: {
-        // This will generate '.alert.is-secondary' modifier
-        secondary: {
-            backgroundColor: "secondary",
-            color: "white",
-        },
-    },
+    // ...other configuration
 };
 ```

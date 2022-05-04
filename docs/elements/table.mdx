@@ -4,36 +4,21 @@ title: "Table"
 
 # Table
 
-The `table` class allows you to style your `<table>` elements. We provide some variants to the default table style:
+The `table` class allows you to style your `<table>` elements. We provide some modifiers to the default table style:
 
-- `divided`: display a divider rule between table rows.
-- `bordered`: display a table with borders.
-- `striped`: table will have a zebra striped style.
-- `hoverable`: highlight the row where the cursor is.
-- `fixed`: automatically divide equally the width of the columns across the table, regardless of content inside the cells.
+- `is-divided`: display a divider rule between table rows.
+- `is-bordered`: display a table with borders.
+- `is-hoverable`: highlight the row where the cursor is.
+- `is-fixed`: automatically divide equally the width of the columns across the table, regardless of content inside the cells.
 
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Cell 1   | Cell 2   | Cell 3   |
+| Cell 4   | Cell 5   | Cell 6   |
 
-```html live=true
-<table class="table is-divided is-hoverable">
-    <thead>
-        <tr>
-            <th>Header 1</th>
-            <th>Header 2</th>
-            <th>Header 3</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Cell 1</td>
-            <td>Cell 2</td>
-            <td>Cell 3</td>
-        </tr>
-        <tr>
-            <td>Cell 4</td>
-            <td>Cell 5</td>
-            <td>Cell 6</td>
-        </tr>
-    </tbody>
+```html
+<table class="table is-divided">
+    ...
 </table>
 ```
 
@@ -47,33 +32,20 @@ You can also use the special `table-responsive` class to allow creating responsi
 </div>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `table` section of the variants configuration:
+The table element will apply the styles defined in the `styles.table` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
+    styles: {
         table: {
-            default: {
-                "& th, & td": {
-                    backgroundColor: "white",
-                    padding: "1rem",
-                },
-            },
-            divided: {
-                "& thead th": {
-                    borderBottomColor: "fill",
-                    borderBottomStyle: "solid",
-                    borderBottomWidth: "0.125rem",
-                },
-                "& tbody td": {
-                    borderTopColor: "fill",
-                    borderTopStyle: "solid",
-                    borderTopWidth: "0.125rem",
-                },
+            "& th, & td": {
+                backgroundColor: "white",
+                padding: "1rem",
             },
         },
     },
+    // ...other configuration
 };
 ```

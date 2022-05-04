@@ -25,41 +25,21 @@ We also provide the `is-full` modifier to change the button width to the **full 
 </button>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `buttons` section of your theme configuration. Buttons will use the properties defined in `buttons.default` to customize the default button class.
+The button element will apply the styles defined in the `buttons.default` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
     buttons: {
-        // Will be applied to the base '.buttons' class
         default: {
             backgroundColor: "primary",
             color: "white",
-        },
-    },
-};
-```
-
-Additional fields defined in the `buttons` section will generate additional modifierts for the button element.
-
-```js
-export default {
-    buttons: {
-        // Will generate '.button.is-secondary' 
-        secondary: {
-            backgroundColor: "secondary",
-            color: "white",
-        },
-        // Will generate '.button.is-disabled'
-        disabled: {
-            cursor: ["not-allowed", "!important"],
-            opacity: ["0.6", "!important"],
-        },
-        // Will generate '.button.is-full'
-        full: {
-            display: "block",
-            width: "100%",
+            // Will generate '.button.is-disabled' modifier
+            "&.is-disabled": {
+                cursor: ["not-allowed", "!important"],
+                opacity: ["0.6", "!important"],
+            },
         },
     },
 };

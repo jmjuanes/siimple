@@ -9,7 +9,6 @@ description: Small labelling element
 
 ```html live=true
 <span class="badge">Badge</span>
-<span class="badge is-secondary">Badge</span>
 ```
 
 We provide an `is-secondary` modifier for using the secondary color defined in your theme as the background color of the badge:
@@ -18,32 +17,15 @@ We provide an `is-secondary` modifier for using the secondary color defined in y
 <span class="badge is-secondary">Badge</span>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `badges` section of your theme configuration. Badges will use the properties defined in `badges.default` to customize the default badge class.
+The badge element will apply the styles defined in the `badges` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
     badges: {
-        // Will be applied to the base '.badge' class
-        default: {
-            backgroundColor: "primary",
-            color: "white",
-        },
-    },
-};
-```
-
-Additional fields defined in the `badges` section will generate additional modifierts for the badge element.
-
-```js
-export default {
-    badges: {
-        // Will generate '.badge.is-secondary'
-        secondary: {
-            backgroundColor: "secondary",
-            color: "white",
-        },
+        backgroundColor: "primary",
+        color: "white",
     },
 };
 ```

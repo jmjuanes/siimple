@@ -14,18 +14,16 @@ A **card** is a flexible container element that holds content and actions about 
 </div>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `cards` section of your theme configuration. The properties defined in the `cards.default` variant will be applied to the base card class:
+The card element will apply the styles defined in the `cards` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
     cards: {
-        // Will be applied to '.cards'
-        default: {
-            backgroundColor: "white",
-            color: "inherit",
-        },
+        backgroundColor: "white",
+        color: "inherit",
+        padding: "2rem",
     },
 };
 ```

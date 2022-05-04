@@ -15,7 +15,7 @@ A navigation link element that you can use in your navigation sections, for exam
 </div>
 ```
 
-We provide an `active` variant to mark a navigation link as active, and a `disabled` variant to mark a navigation link as disabled.
+We provide an `is-active` modifier to mark a navigation link as active, and a `is-disabled` modifier to mark a navigation link as disabled.
 
 ```html live=true
 <div class="has-d-inline-flex">
@@ -25,28 +25,24 @@ We provide an `active` variant to mark a navigation link as active, and a `disab
 </div>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `navigation.link` section of the variants configuration:
+The navlink element will apply the styles defined in the `links.nav` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        "navigation.link": {
-            default: {
-                fontWeight: "bold",
-                "&:hover": {
-                    color: "primary",
-                },
-            },
-            active: {
+    links: {
+        nav: {
+            fontWeight: "bold",
+            "&:hover": {
                 color: "primary",
             },
-            disabled: {
+            "&.is-disabled": {
                 opacity: "0.5",
                 pointerEvents: "none",
             },
         },
     },
+    // ...other configuration
 };
 ```

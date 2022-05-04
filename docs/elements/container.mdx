@@ -13,18 +13,19 @@ A **container** is a layout element that divides your website in sections and pl
 </div>
 ```
 
-By default the container has the maximun width minus the `32px` of padding left and right. You can customize the maximum width of the container providing your custom `maxWidth` value in the container variant field of your theme (see below).
+By default the container has the maximun width minus the `32px` of padding left and right. You can customize the maximum width of the container providing your custom `maxWidth` value in the `layout.container` field of your theme (see below).
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `layout.container` section of the variants configuration:
+The container element will apply the styles defined in the `layout.container` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
     layout: {
         container: {
             maxWidth: "560px",
         },
     },
+    // ..other configuration
 };
 ```
