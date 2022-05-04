@@ -41,7 +41,7 @@ export const navigation = [
     {"group": "helpers", "url": "/helpers/spacing", "label": "Spacing"},
     {"group": "helpers", "url": "/helpers/typography", "label": "Typography"},
     {"group": "helpers", "url": "/helpers/flexbox", "label": "Flexbox"},
-    {"group": "helpers", "url": "/helpers/other", "label": "Others"},
+    {"group": "helpers", "url": "/helpers/other", "label": "Other helpers"},
     {"group": "packages", "url": "/packages/core", "label": "@siimple/core"},
     {"group": "packages", "url": "/packages/colors", "label": "@siimple/colors"},
     {"group": "packages", "url": "/packages/elements", "label": "@siimple/preset-elements"},
