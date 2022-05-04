@@ -18,82 +18,94 @@ export default {
 
 ### Usage
 
+Just apply the element classname to the HTML tag that you want to style:
 
+```html
+<button class="button">Submit</button>
+```
+
+Some elements will provide additional modifiers that you can use to change the default style of the element:
+
+```html
+<button class="button is-secondary is-full">
+    Full width button
+</button>
+```
 
 ### Customize elements
 
-Variants can be used to customize and change the look and feel of elements. Each element will look for a specific variant defined in the `variants` section of your configuration.
+Mixins can be used to customize and change the look and feel of elements. Each element will look for a specific mixin in your theme configuration.
 
 ```js title=siimple.config.js
 export default {
-    variants: {
-        text: {
-            heading: {
-                color: "black",
-                lineHeight: "1.25",
-            }
-        }
-    }
-}
+    text: {
+        // The title element will use this mixin to extend the default styles
+        heading: {
+            color: "black",
+            lineHeight: "1.25",
+        },
+    },
+};
 ```
 
-There is the list of elements and the default variant that can be used to customize the default styles of the element:
+There is the list of elements and the mixin path that can be used to customize the styles of the element:
 
-| Element | Variant Group | Default Variant |
-|---------|---------------|-----------------|
-| `alert` | `alerts` | `alerts.default` |
-| `badge` | `badges` | `badges.default` |
-| `button` | `buttons` | `buttons.default` |
-| `card` | `cards` | `cards.default` |
-| `checkbox` | `forms` | `forms.checkbox` |
-| `close` | `dialogs` | `dialogs.close` |
-| `column` | `columns` | `columns.default` |
-| `container` | `layout` | `layout.container` |
-| `crumb` | `links` | `links.crumb` |
-| `divider` | `layout` | `layout.divider` |
-| `input` | `forms` | `forms.input` |
-| `label` | `forms` | `forms.label` |
-| `menu` | `dialogs` | `dialogs.menu` |
-| `modal` | `dialogs` | `dialogs.modal` |
-| `navlink` | `links` | `links.nav` |
-| `paragraph` | `text` | `text.paragraph` |
-| `progress` | `forms` | `forms.progress` |
-| `radio` | `forms` | `forms.radio` |
-| `scrim` | `dialogs` | `dialogs.scrim` |
-| `select` | `forms` | `forms.select` |
-| `slider` | `forms` | `forms.slider` |
-| `spinner` | `spinners` | `spinners.default` |
-| `switch` | `forms` | `forms.switch` |
-| `table` | `layout` | `layout.table` |
-| `textarea` | `forms` | `forms.textarea` |
-| `title` | `text` | `text.heading` |
+| Element | Mixin path |
+|---------|------------|
+| `alert` | `alerts` |
+| `badge` | `badges` |
+| `button` | `buttons.default` |
+| `card` | `cards` |
+| `checkbox` | `forms.checkbox` |
+| `close` | `buttons.close` |
+| `column` | `columns` |
+| `container` | `layout.container` |
+| `crumb` | `links.crumb` |
+| `divider` | `styles.hr` |
+| `input` | `forms.input` |
+| `label` | `forms.label` |
+| `menu` | `buttons.menu` |
+| `modal` | `dialogs.modal` |
+| `navlink` | `links.nav` |
+| `paragraph` | `text.paragraph` |
+| `progress` | `styles.progress` |
+| `radio` | `forms.radio` |
+| `scrim` | `dialogs.scrim` |
+| `select` | `forms.select` |
+| `slider` | `forms.slider` |
+| `spinner` | `spinners` |
+| `switch` | `forms.switch` |
+| `table` | `styles.table` |
+| `textarea` | `forms.textarea` |
+| `title` | `text.heading` |
 
-Some variants will generate additional elements modifiers using the items added to the variant group. For example, buttons will generate additional modifiers for each item that you add to the `variants.buttons` group:
+Note that some elements will reuse the styles that you define in the `styles` section of your theme, for example the `progress` or the `table` elements.
+
+Mixins can be used also to create additional modifiers for the element. For example, the following mixin:
 
 ```js title=siimple.config.js
 export default {
-    variants: {
-        buttons: {
-            secondary: {
-                backgroundColor: "secondary",
-            },
-            disabled: {
-                cursor: "not-allowed",
-                opacity: "0.5",
+    buttons: {
+        default: {
+            "&.is-outlined": {
+                backgroundColor: "transparent",
+                borderColor: "primary",
+                borderStyle: "solid",
+                borderWidth: "0.125rem",
+                color: "primary",
             },
         },
     },
 };
 ```
 
-Will generate the following additional modifiers:
+Will generate the following CSS:
 
 ```css
-.button.is-secondary {
-    background-color: #;
-}
-.button.is-disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
+.button { /* default styles */ }
+.button.is-outlined {
+    background-color: transparent;
+    border: 0.125rem solid #1c76fd;
+    color: #1c76fd;
 }
 ```
