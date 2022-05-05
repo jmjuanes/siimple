@@ -10,22 +10,28 @@ This is an example of a configuration file for **siimple**:
 
 ```js title=siimple.config.js
 import colors from "@siimple/colors";
+import theme from "@siimple/theme";
+import elements from "@siimple/preset-elements";
 
 export default {
+    ...theme,
     useRootStyles: false,
     useBorderBox: true,
-    useElements: true,
     prefix: "",
     colors: {
         primary: colors.blue["500"],
         secondary: colors.mint["600"],
         text: colors.gray["800"],
         background: "#fff",
+        muted: colors.gray["200"],
     },
     fonts: {
         body: ["Roboto", "sans-serif"],
         heading: ["Montserrat", "sans-serif"],
         code: ["monospace"],
+    },
+    styles: {
+        ...elements.styles,
     },
 };
 ```
@@ -39,6 +45,7 @@ For example, you can use `si-` as prefix by setting the `prefix` section:
 ```js title=siimple.config.js
 export default {
     prefix: "si-",
+    // ...other configuration
 }
 ```
 
@@ -81,6 +88,7 @@ export default {
             min: "1800px",
         },
     },
+    // ...other configuration
 };
 ```
 
@@ -96,13 +104,15 @@ export default {
         primary: colors.blue["500"],
         secondary: colors.mint["600"],
         text: colors.gray["800"],
-        background: "#ffffff",
+        background: "#fff",
+        muted: colors.gray["200"],
     },
     fonts: {
         body: ["Roboto", "sans-serif"],
         heading: ["Montserrat", "sans-serif"],
         code: ["monospace"],
     },
+    // ...other configuration
 };
 ```
 
@@ -119,6 +129,7 @@ export default {
             padding: "2rem",
         },
     },
+    // ...other configuration
 };
 ```
 
@@ -128,11 +139,6 @@ Use the configuration flags to enable or disable some features of **siimple**:
 
 - `useRootStyles`: add root styles to the `<html>` element. Default is `true`.
 - `useBorderBox`: adds a global `box-sizing: border-box`. Default is `true`.
-- `useReboot`: include our reboot styles. Default is `true`.
-- `useElements`: include elements. Default is `true`.
-- `useHelpers`: include helpers styles. Default is `true`.
-- `useMarkup`: include our markup styles. Default is `true`.
-- `useIcons`: include our icons styles. Default is `true`.
 
 Flags are defined in the first level of the configuration object:
 
@@ -140,7 +146,6 @@ Flags are defined in the first level of the configuration object:
 export default {
     useRootStyles: true,
     useBorderBox: true,
-    useElements: true,
     // ...other configuration
 };
 ```
@@ -155,12 +160,13 @@ export default {
         margin: "0px",
         padding: "0px",
     },
+    // ...other configuration
 };
 ```
 
-### Additional styles
+### Styles
 
-You can include additional styles on **siimple** using the `styles` section of the configuration. Styles in this section have access to values defined in the scales section, such as colors and fonts.
+You can include your styles on **siimple** using the `styles` section of the configuration. Styles in this section have access to values defined in the scales section, such as colors and fonts.
 
 ```js title=siimple.config.js
 export default {
@@ -177,6 +183,7 @@ export default {
             },
         },
     },
+    // ...other configuration
 };
 ```
 
@@ -187,12 +194,16 @@ Styles defined in this section must follow the [styles syntax](/guides/styles) s
 Presets allows you to extend **siimple** with reusable styles, mixins and theme scales. 
 
 ```js title=siimple.config.js
-import myPreset from "my-presets-lib";
+import elements from "@siimple/preset-elements";
+import helpers from "@siimple/preset-helpers";
 
 export default {
     // ...your custom configuration
     styles: {
-        ...myPreset.styles,
+        ...elements.styles,
+        ...elements.helpers,
     },
 };
 ```
+
+We provide a collection of core presets. Check out the [packages](/packages) section to learn more.

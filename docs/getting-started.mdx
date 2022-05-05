@@ -25,8 +25,30 @@ You can get more information [about installing yarn here](https://yarnpkg.com/ge
 You can use the siimple CLI tool to generate your customized version of siimple. First just create your configuration file `siimple.config.js` in the root of your project:
 
 ```js title=siimple.config.js
+import colors from "@siimple/colors";
+import theme from "@siimple/theme";
+import elements from "@siimple/preset-elements";
+
 export default {
-    /* Configuration */
+    ...theme,
+    useRootStyles: false,
+    useBorderBox: true,
+    prefix: "",
+    colors: {
+        primary: colors.blue["500"],
+        secondary: colors.mint["600"],
+        text: colors.gray["800"],
+        background: "#fff",
+        muted: colors.gray["200"],
+    },
+    fonts: {
+        body: ["Roboto", "sans-serif"],
+        heading: ["Montserrat", "sans-serif"],
+        code: ["monospace"],
+    },
+    styles: {
+        ...elements.styles,
+    },
 };
 ```
 
