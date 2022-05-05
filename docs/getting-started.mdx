@@ -1,9 +1,8 @@
 ---
-title: "Installation"
-description: "The guide to add siimple to your proyect"
+title: Getting started
 --- 
 
-# Installation
+# Getting started
 
 **siimple** is [published in npm](https://www.npmjs.com/package/siimple), so you can add it to your project running the following command:
 
@@ -21,9 +20,36 @@ $ yarn add siimple --save
 
 You can get more information [about installing yarn here](https://yarnpkg.com/getting-started).
 
-### Use a hosted version
+### CLI usage
 
-You can use our hosted version in [JsDelivr](https://www.jsdelivr.com/) and include **siimple** without installing any module. 
+You can use the siimple CLI tool to generate your customized version of siimple. First just create your configuration file `siimple.config.js` in the root of your project:
+
+```js title=siimple.config.js
+export default {
+    /* Configuration */
+};
+```
+
+You can learn more about the configuration file for siimple in the [configuration](/configuration) section.
+
+After creating your configuration file, just run the siimple CLI tool to generate your CSS:
+
+```bash
+$ npx siimple -c ./siimple.config.js -o ./output.css
+```
+
+This will generate a file called `output.css` with the compiled styles of siimple. 
+
+
+### Use the hosted CSS version
+
+You can use our hosted CSS version in [JsDelivr](https://www.jsdelivr.com/) and include **siimple** without installing any module. Note that:
+
+- You can not customize the default theme.
+- You can not customize the default modules (elements, helpers, ...).
+- You can not provide your custom styles.
+- You can not use third-party presets.
+
 Check all available hosted versions [in the jsDelivr website](https://www.jsdelivr.com/package/npm/siimple), or copy and paste the following `<link>` element in your HTML file for adding the latest version:
 
 ```html
@@ -35,3 +61,4 @@ You can also use [unpkg](https://unpkg.com/) for including the latest version in
 ```html
 <link rel="stylesheet" href="https://unpkg.com/siimple/siimple.css" />
 ```
+
