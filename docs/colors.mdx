@@ -10,10 +10,10 @@ We provide a default color palette that you can use to customize your theme in c
 
 ## Using default colors
 
-In case that you do not have custom colors defined in your project, you can import the `siimple/colors` module in your configuration file to access the default colors provided in **siimple**.
+In case that you do not have custom colors defined in your project, you can import the `@siimple/colors` module in your configuration file to access the default colors provided in **siimple**.
 
 ```js title=siimple.config.js
-import colors from "siimple/colors";
+import colors from "@siimple/colors";
 
 // Comfigure siimple using the color palette
 export default {
@@ -26,3 +26,37 @@ export default {
     // ...other configuration
 };
 ```
+
+## Adding all colors to your theme
+
+You can register all colors in your theme just using a tiny piece of JS code to transform color objects into plain color names with the pattern `{name}-{shade}`:
+
+```js title=siimple.config.js
+import colors from "@siimple/colors";
+
+export default {
+    colors: {
+        ...Object.keys(colors).reduce((prev, name) => ({
+            ...prev,
+            ...Object.fromEntries(Object.keys(colors[name]).map(shade => {
+                return [`${name}-${shade}`, colors[name][shade]];
+            })),
+        }), {}),
+        // ...other colors
+    },
+    // ...other configuration
+};
+```
+
+If you have the helpers module enabled, this will generate the following colors helpers: 
+
+```css
+.has-bg-blue-100 { /* ... */ }
+.has-bg-blue-200 { /* ... */ }
+.has-bg-blue-300 { /* ... */ }
+/* ... */
+.has-text-blue-100 { /* ... */ }
+.has-text-blue-200 { /* ... */ }
+.has-text-blue-300 { /* ... */ }
+/* ... */ 
+``` 

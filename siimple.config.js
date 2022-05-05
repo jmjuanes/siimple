@@ -28,4 +28,9 @@ export default {
         ...theme.sizes,
         "192": "48rem",
     },
+    styles: {
+        ".is-scrollable": {
+            overflow: "auto",
+        },
+    },
 };

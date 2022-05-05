@@ -4,13 +4,22 @@ title: "Spacing"
 
 # Spacing
 
-You can use the spacing helpers to set the margin or padding of any element. The sizes that will be used to generate the spacing helpers can be defined in the `spacing` field of your theme.
+You can use the spacing helpers to set the margin or padding of any element. The sizes that will be used to generate the spacing helpers can be defined in the `space` field of your theme.
+
+The following sizes will be always included for generating the spacing helpers, regardless the sizes you provide in your theme configuration:
+
+| Name | Value |
+|------|-------|
+| `auto` | `auto` |
+| `none` | `0px` |
+| `half` | `50%` |
+| `full` | `100%` |
+
 
 In the default theme of **siimple**, the following sizes will be used to generate the spacing helpers:
 
 | Size     | Value     |
 |----------|-----------|
-| `auto`   | `auto`    |
 | `0`      | `0px`     |
 | `1`      | `0.25rem` |
 | `2`      | `0.5rem`  |
@@ -24,11 +33,8 @@ In the default theme of **siimple**, the following sizes will be used to generat
 | `32`     | `8rem`    |
 | `48`     | `12rem`   |
 | `64`     | `16rem`   |
+| `80`     | `20rem`   |
 | `96`     | `24rem`   |
-| `128`    | `32rem`   |
-| `256`    | `64rem`   |
-| `half`   | `50%`     |
-| `full`   | `100%`    |
 
 ### Uniform padding or margin
 

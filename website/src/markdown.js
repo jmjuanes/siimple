@@ -25,6 +25,15 @@ const html = (type, className) => {
     };
 };
 
+// Table container wrapper
+const TableContainer = props => (
+    <div className="is-scrollable has-w-full has-maxh-96 has-mb-8">
+        <table className="table is-divided has-header-fixed has-mb-none">
+            {props.children}
+        </table>
+    </div>
+);
+
 //Custom markdown components
 export const shortcodes = {
     "Tip": () => null,
@@ -38,8 +47,8 @@ export const shortcodes = {
     "pre": html("div", ""),
     "code": LiveCode,
     "li": html("li", "has-mb-1"),
-    "table": html("table", "table is-divided"),
-    // "th": html("th", "", {padding: "1rem !important"}),
+    "table": TableContainer,
+    "th": html("th", "has-bg-white is-sticky has-top-none"),
     // "td": html("td", "", {padding: "1rem !important"}),
     // Pages components
     ColorPalette,

@@ -4,21 +4,19 @@ title: Navbar A1
 
 # Navbar A1
 
-You can create a simple navigation bar component using the [toggler](/elements/toggler), [navlink](/elements/navlink) and some utilities:
-
 <NavbarExample />
 
 ```html
-<div class="content has-p-6 has-d-flex has-items-center has-flex-wrap">
+<div class="container has-p-6 isflex has-items-center has-flex-wrap">
     <!-- Navigation brand: always visible at the left side of the navbar -->
-    <a class="has-d-block has-mr-auto has-text-lg has-text-current">
+    <a class="is-block has-mr-auto has-size-2 has-text-current">
         <strong>Navbar</strong>
     </a>
     <!-- Toggler button: only visible in mobile screens -->
-    <div id="navbar-toggler" class="toggler tablet:has-d-none"></div>
+    <div id="navbar-toggler" class="menu is-hidden-tablet"></div>
     <!-- Navigation menu: by default hidden on mobile screens -->
-    <div id="navbar-menu" class="tablet:has-d-flex mobile:has-w-full mobile:has-flex-column mobile:has-mt-4 mobile:has-d-none">
-        <a class="navlink mobile:has-mb-2">Link 1</a>
+    <div id="navbar-menu" class="is-flex-mobile has-w-full-mobile has-direction-column-mobile has-mt-4-mobile is-hidden-mobile">
+        <a class="navlink has-mb-2-mobile">Link 1</a>
         <a class="navlink">Link 2</a>
     </div>
 </div>
@@ -31,7 +29,7 @@ const menu = document.querySelector("#navbar-menu");
 const toggler = document.querySelector("#navbar-toggler");
 
 toggler.addEventListener("click", () => {
-    menu.classList.toggle("mobile:has-d-flex");
-    menu.classList.toggle("mobile:has-d-none");
+    menu.classList.toggle("is-flex-mobile");
+    menu.classList.toggle("is-hidden-mobile");
 });
 ```
