@@ -7,7 +7,7 @@ description: "Understanding the responsive design of siimple"
 
 The **siimple** toolkit has been designed to be fully responsive, so you can design an fully adaptative user interface.
 
-A high number of helpers and components of the **siimple** toolkit can be conditionally applied at different breakpoints, so you can customize how the user interface will be presented on different screen sizes.
+Some helpers and elements modifiers can be conditionally applied at different breakpoints, so you can customize how the user interface will be presented on different screen sizes.
 
 By default, we provide four screen breakpoints:
 
@@ -22,13 +22,13 @@ By default, we provide four screen breakpoints:
 The following example uses these responsive variants to customize how the card will be displayed for different screen sizes:
 
 ```html live=true bg=blue-200
-<div class="has-radius has-bg-white has-p-6 has-d-flex mobile:has-flex-column">
-    <div class="has-radius has-bg-blue-500 has-p-6 tablet:has-w-64 has-d-flex has-justify-center">
-        <i class="icon-image has-text-white has-text-5xl"></i>
+<div class="has-radius has-bg-white has-p-6 is-flex has-direction-column-mobile">
+    <div class="has-radius has-bg-primary has-p-6 has-w-64-tablet is-flex has-justify-center">
+        <i class="icon-image has-text-white has-size-9"></i>
     </div>
-    <div class="has-p-6 mobile:has-px-0">
+    <div class="has-p-6 has-px-none-mobile">
         <div class="title is-4">Hello world!</div>
-        <div class="paragraph has-mb-0">
+        <div class="paragraph has-mb-none">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
             incididunt ut labore et dolore magna aliqua.
         </div>

@@ -23,18 +23,17 @@ By default, the switch will be displayed inactive, but you can add a **checked**
 </label>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `form.switch` section of the variants configuration:
+The switch element will apply the styles defined in the `forms.switch` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        "form.switch": {
-            default: {
-                color: "primary",
-            },
+    forms: {
+        switch: {
+            color: "primary",
         },
     },
+    // ...other configuration
 };
 ```

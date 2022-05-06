@@ -1,6 +1,6 @@
 ---
-title: "Badge"
-description: "Small labelling element"
+title: Badge
+description: Small labelling element
 ---
 
 # Badge
@@ -9,26 +9,23 @@ description: "Small labelling element"
 
 ```html live=true
 <span class="badge">Badge</span>
+```
+
+We provide an `is-secondary` modifier for using the secondary color defined in your theme as the background color of the badge:
+
+```html live=true
 <span class="badge is-secondary">Badge</span>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `badge` section of the variants configuration:
+The badge element will apply the styles defined in the `badges` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        badge: {
-            primary: {
-                backgroundColor: "primary",
-                color: "white",
-            },
-            secondary: {
-                backgroundColor: "secondary",
-                color: "white",
-            },
-        },
+    badges: {
+        backgroundColor: "primary",
+        color: "white",
     },
 };
 ```

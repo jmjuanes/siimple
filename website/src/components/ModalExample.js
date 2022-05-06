@@ -12,8 +12,8 @@ export const ModalExample = () => {
             {visible ? (
                 <div className="scrim">
                     <div className="modal">
-                        <div className="has-d-flex has-items-center">
-                            <div className="title is-4 has-mb-0">
+                        <div className="is-flex has-items-center">
+                            <div className="title is-4 has-mb-none">
                                 <strong>Modal</strong>
                             </div>
                             <div className="close has-ml-auto" onClick={() => setVisible(false)} />

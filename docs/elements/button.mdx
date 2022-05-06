@@ -9,18 +9,15 @@ Buttons are essential elements in any website or application for **actions**. Th
 
 ```html live=true
 <button class="button">Primary button</button>
+```
+
+You can style your button using the secondary color of your theme with the mofidier `is-secondary`:
+
+```html live=true
 <button class="button is-secondary">Secondary button</button>
 ```
 
-We provide a `disabled` variant to the button to make it disabled or inactive:
-
-```html live=true
-<button class="button is-disabled">
-    Disabled button
-</button>
-```
-
-We also provide an special variant to change the button width to the **full parent width**:
+We also provide the `is-full` modifier to change the button width to the **full parent width**:
 
 ```html live=true
 <button class="button is-full">
@@ -28,29 +25,20 @@ We also provide an special variant to change the button width to the **full pare
 </button>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `button` section of the variants configuration:
+The button element will apply the styles defined in the `buttons.default` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        button: {
-            default: {
-                backgroundColor: "primary",
-                color: "white",
-            },
-            secondary: {
-                backgroundColor: "secondary",
-                color: "white",
-            },
-            disabled: {
+    buttons: {
+        default: {
+            backgroundColor: "primary",
+            color: "white",
+            // Will generate '.button.is-disabled' modifier
+            "&.is-disabled": {
                 cursor: ["not-allowed", "!important"],
                 opacity: ["0.6", "!important"],
-            },
-            full: {
-                display: "block",
-                width: "100%",
             },
         },
     },

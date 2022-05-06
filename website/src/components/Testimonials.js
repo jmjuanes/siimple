@@ -25,17 +25,17 @@ const testimonialsData = [
 ];
 
 export const Testimonials = () => (
-    <div className="columns has-mb-0">
+    <div className="columns has-mb-none">
         {testimonialsData.map((item, key) => (
             <div key={key} className="column is-full-mobile">
                 <div style={{"minHeight": "300px"}} className="has-p-8 has-radius has-bg-coolgray-100">
-                    <div className="has-text-opacity-50 has-mb-3">
-                        <Icon icon="quote" style={{"fontSize":"3.5rem"}} />
+                    <div className="has-mb-3">
+                        <Icon icon="quote has-size-8" />
                     </div>
                     <Link to={item.url} target="_blank" className="has-text-coolgray-800">
                         <div className="title is-4">{item.site}</div>
                     </Link>
-                    <div className="has-mb-0 has-text-coolgray-500">
+                    <div className="has-mb-none has-text-coolgray-500">
                         {item.content}
                     </div>
                 </div>

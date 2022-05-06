@@ -15,19 +15,17 @@ You can style your `<select>` elements adding a `select` class.
 </select>
 ```
 
+### Customize
 
-### Variants
+The select element will apply the styles defined in the `forms.select` field of your theme configuration.
 
-Variants for this element can be defined in the `form.select` section of the variants configuration:
-
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        "form.select": {
-            default: {
-                backgroundColor: "fill",
-            },
+    forms: {
+        select: {
+            backgroundColor: "fill",
         },
     },
+    // ...other configuration
 };
 ```

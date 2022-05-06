@@ -1,4 +1,4 @@
-# [@siimple/preset-icons](https://www.siimple.xyz/presets/icons)
+# @siimple/preset-icons
 
 A preset for the **siimple CSS toolkit** that provides a collection of **pure CSS icons**.
 

@@ -4,7 +4,18 @@ title: "Title"
 
 # Title
 
-Use `title` to style your headings. By default we provide six different variants to customize the title text size:
+Use `title` to style your headings. By default we provide six different modifiers to customize the title text size, using the sizes defined in your `fontSizes` scale:
+
+| `fontSize` index | Title modifier |
+|------------------|----------------|
+| 1 | `is-6` |
+| 2 | `is-5` |
+| 3 | `is-4` |
+| 4 | `is-3` |
+| 5 | `is-2` |
+| 6 | `is-1` |
+
+Example:
 
 ```html live=true
 <div class="title is-1">Title 1</div>
@@ -15,20 +26,18 @@ Use `title` to style your headings. By default we provide six different variants
 <div class="title is-6">Title 6</div>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `text.headings` section of the variants configuration:
+The title element will apply the styles defined in the `text.heading` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        "text.headings": {
-            default: {
-                color: "heading",
-                fontWeight: "600",
-            },
+    text: {
+        heading: {
+            color: "#000",
+            fontWeight: "800",
         },
     },
+    // ...other configuration
 };
 ```
-

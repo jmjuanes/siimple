@@ -1,0 +1,27 @@
+---
+title: Menu
+---
+
+# Menu
+
+Use the `menu` class to create a menu button, useful for displaying hidden menus:
+
+```html align=center live=true
+<button class="menu"></button>
+```
+
+### Customize
+
+The menu element will apply the styles defined in the `buttons.menu` field of your theme configuration.
+
+```js title=siimple.config.js
+export default {
+    buttons: {
+        menu: {
+            borderColor: "currentColor",
+            color: "currentColor",
+        },
+    },
+    // ...other configuration
+};
+```

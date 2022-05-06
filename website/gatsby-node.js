@@ -14,7 +14,8 @@ exports.onCreateWebpackConfig = ({getConfig, plugins, actions}) => {
             ],
             "alias": {
                 "siimple": path.resolve(__dirname, "../siimple/"),
-                "@siimple/preset-icons": path.resolve(__dirname, "../presets/icons/"),
+                "@siimple/colors": path.resolve(__dirname, "../packages/colors/"),
+                "@siimple/preset-icons": path.resolve(__dirname, "../packages/preset-icons/"),
             },
         },
         "plugins": [

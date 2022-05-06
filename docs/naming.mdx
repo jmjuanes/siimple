@@ -24,13 +24,68 @@ Example:
 <div class="button">...</div>
 ```
 
-### Variant modifiers
+### Modifiers
 
-**Variant modifiers** are special classnames used to change the default style of an element. Variant modifiers always use the following syntax:
+**Modifiers** are a collection of low-level classnames that can be used in any element to modify some CSS properties. Modifiers always follows this syntax: 
 
 ```
-.is-<variant>
+.has-<shortcut>-<name>
+.is-<name>
 ```
+
+Example: 
+
+```html
+<div class="is-block has-bg-primary has-text-white">
+    ...
+</div>
+```
+
+#### Responsive modifiers
+
+Some modifiers can be applied conditionally at different breakpoints, for building adaptative and responsive interfaces. Responsive modifiers uses the following syntax: 
+
+```
+.has-<shortcut>-<name>-<breakpoint>
+.is-<name>-<breakpoint>
+```
+
+Example: 
+
+```html
+<div class="is-hidden-mobile is-flex-tablet has-items-center-tablet">
+    ...
+</div>
+```
+
+#### Status modifiers
+
+Similar to responsive modifiers, you can apply some modifiers only in response to an specific status of the element. The classnames syntax in this case is very similar to the responsive modifiers:
+
+```
+.has-<shortcut>-<name>-<state>
+.is-<name>-<state>
+```
+
+##### Hover status
+
+Use the `hover` status to apply the modifier only on hover: 
+
+```html live=true align=center
+<div class="button has-text-white has-bg-secondary-hover">
+    Hoverable button
+</div>
+```
+
+#### Variant modifiers
+
+**Variant modifiers** are special modifiers used to change the default style of an element. Variant modifiers always use the following syntax:
+
+```
+.is-<variant-name>
+```
+
+Some elements, like buttons or bages will generate a variant modifier class for each additional variant specified in your configuration.
 
 The following example shows how to use the `secondary` variant of a button:
 
@@ -38,54 +93,4 @@ The following example shows how to use the `secondary` variant of a button:
 <button class="button is-secondary">
     Secondary button
 </button>
-```
-
-Every element must define its own variants, and some variant modifiers that works for some compelementsonents may not be available for another elements. This means that `is-secondary` modifier can be applied for example to a `button` element, but has no effect when applied to `card`.
-
-### Utility modifiers
-
-**Utility modifiers** are a collection of low-level classnames that can be used in any element to modify some CSS properties. These modifiers follows this syntax:
-
-```
-.has-<shortcut>-<value>
-```
-
-Example: 
-
-```html
-<div class="has-d-block has-bg-blue-500 has-text-white">
-    ...
-</div>
-```
-
-Utilities are included as part of the [utilities preset](/presets/utilities).
-
-#### Responsive modifiers
-
-Some utilities modifiers can be applied conditionally at different breakpoints, for building adaptative and responsive interfaces. 
-
-```
-.<breakpoint>:has-<shortcut>-<value>
-```
-
-Example: 
-
-```html
-<div class="mobile:has-d-none tablet:has-d-flex">
-    ...
-</div>
-```
-
-#### Status modifiers
-
-Similar to responsive modifiers, you can apply some utilities only in response to an specific status of the element. 
-
-##### Hover status
-
-Add the `hover:` prefix to a utility class to apply it only on hover: 
-
-```html live=true align=center
-<div class="button has-text-white has-bg-purple-500 hover:has-bg-purple-700">
-    Hoverable button
-</div>
 ```

@@ -7,24 +7,24 @@ title: Navbar A3
 A beautiful and simple navigation bar with a branding and two links on the left side, and an action button on the right side:
 
 ```html live=true
-<div class="content has-py-8 has-bg-white has-d-flex has-items-center mobile:has-flex-wrap">
+<div class="container has-py-8 has-bg-white is-flex has-items-center has-flex-wrap-mobile">
     <!-- Branding -->
-    <div class="has-d-flex has-items-center has-pr-4">
-        <i class="icon-coffee has-text-2xl has-pr-2"></i>
-        <span class="has-text-xl">
+    <div class="is-flex has-items-center has-pr-4">
+        <i class="icon-coffee has-size-4 has-pr-2"></i>
+        <span class="has-size-3">
             My<b>Coffee</b>
         </span>
     </div>
     <!-- Toggle button for mobile -->
-    <div class="tablet:has-d-none mobile:has-ml-auto">
-        <button class="toggler"></button>
+    <div class="is-hidden-tablet has-ml-auto-mobile">
+        <button class="menu"></button>
     </div>
     <!-- Links -->
-    <div class="has-d-flex has-w-full mobile:has-flex-column mobile:has-mt-4">
+    <div class="is-flex has-w-full has-direction-column-mobile has-mt-4-mobile">
         <a class="navlink has-w-auto">About</a>
         <a class="navlink has-w-auto">Store</a>
         <!-- Separator -->
-        <div class="tablet:has-ml-auto"></div>
+        <div class="has-ml-auto-tablet"></div>
         <!-- Right side: action button -->
         <a class="button">Login</a>
     </div>

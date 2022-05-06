@@ -14,19 +14,18 @@ Style your form **label** element adding a `label` class, useful with radio, che
 </label>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `form.label` section of the variants configuration:
+The label element will apply the styles defined in the `forms.label` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        "form.label": {
-            default: {
-                color: "inherit",
-                fontWeight: "bold",
-            },
+    forms: {
+        label: {
+            color: "inherit",
+            fontWeight: "bold",
         },
     },
+    // ...other configuration
 };
 ```

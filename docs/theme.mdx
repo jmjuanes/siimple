@@ -1,8 +1,12 @@
 ---
-title: Theme Scales
+title: Theme
 ---
 
-# Theme Scales
+# Theme
+
+The **siimple** framework can be customized using a theme, that is a collection of theme scales, breakpoints, mixins and root styles.
+
+## Theme scales
 
 The following theme scales can be provided in your configuration, and are applied to specific CSS properties:
 
@@ -10,18 +14,19 @@ The following theme scales can be provided in your configuration, and are applie
 |-------|----------------|
 | `colors` | `background-color`, `border-color`, `border-bottom-color`, `border-left-color`, `border-right-color`, `border-top-color`, `color`, `fill` |
 | `fonts` | `font-family` |
-| `font-sizes` | `font-size` |
-| `font-weights` | `font-weight` |
-| `line-heights` | `line-height` |
+| `fontSizes` | `font-size` |
+| `fontWeights` | `font-weight` |
+| `lineHeights` | `line-height` |
 | `radius` | `border-radius`, `border-bottom-left-radius`, `border-bottom-right-radius`, `border-top-left-radius`, `border-top-right-radius` |
+| `shadows` | `box-shadow` |
 | `sizes` | `height`, `max-height`, `max-width`, `min-height`, `min-width`, `width` |
-| `spacing` | `bottom`, `left`, `margin`, `margin-bottom`, `margin-left`, `margin-right`, `margin-top`, `padding`, `padding-bottom`, `padding-left`, `padding-right`, `padding-top`, `right`, `top` |
+| `space` | `bottom`, `left`, `margin`, `margin-bottom`, `margin-left`, `margin-right`, `margin-top`, `padding`, `padding-bottom`, `padding-left`, `padding-right`, `padding-top`, `right`, `top` |
 | `opacities` | `opacity` |
 
 
 > You do not need to provide all scales in the configuration: just configure the scales that you really need for your project.
 
-Scales can be used in styles and variants. Just provide a string with the scale key as the CSS property and **siimple** will automatically set this property with the value specified in the scale:
+Scales can be used in styles and mixins. Just provide a string with the scale key as the CSS property and **siimple** will automatically set this property with the value specified in the scale:
 
 ```js title=siimple.config.js
 export default {
@@ -41,90 +46,79 @@ export default {
 };
 ```
 
-## Colors
+#### Colors
 
-In the `colors` section you can provide your custom color palette. To allow creating interoperable themes for **siimple**, the following colors must be always provided in a color scale:
+In the `colors` section you can define your custom color palette. To allow creating interoperable themes for **siimple**, the following colors must be always provided in a color scale:
 
 - `primary`: the primary color used in your theme.
 - `secodary`: the secondary color used in your theme.
 - `text`: color used for body text.
-- `heading`: color used in headings.
 - `background`: color used for the body background.
-- `fill`: background color used in some components like inputs or textarea.
+- `heading`: color used in headings.
+- `muted`: color used in borders and for filling form elements like inputs or textarea.
 
 This is the default colors configuration:
 
 ```js title=siimple.config.js
-import colors from "siimple/colors";
+import colors from "@siimple/colors";
 
 export default {
     colors: {
         primary: colors.blue["500"],
         secondary: colors.royal["500"],
-        background: colors.white,
-        text: colors.coolgray["700"],
-        heading: colors.coolgray["800"],
-        muted: colors.coolgray["500"],
-        fill: colors.coolgray["200"],
+        text: colors.gray["700"],
+        background: "#000",
+        heading: colors.gray["800"],
+        muted: colors.gray["200"],
     },
 };
 ```
 
-## Font family
+#### Font family
 
 In the `fonts` section you can define the fonts used in your theme. The following fonts should be always provided: 
 
 - `body`: font used for the body text.
 - `heading`: font used in heading elements. 
-- `monospace`: font used in `<code>` or `<pre>` elements.
+- `code`: font used in `<code>` or `<pre>` elements.
 
 This is the list of the default font sizes defined in **siimple**: 
 
 ```js title=siimple.config.js
 export default {
     fonts: {
-        body: [
-            "-apple-system", 
-            "BlinkMacSystemFont", 
-            "'Segoe UI'", 
-            "Roboto", 
-            "'Helvetica Neue'", 
-            "Arial", 
-            "sans-serif",
-        ],
+        body: "-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif",
         heading: "inherit",
-        monospace: [
-            "SFMono-Regular", 
-            "Menlo", 
-            "Monaco", 
-            "Consolas", 
-            "'Liberation Mono'", 
-            "'Courier New'", 
-            "monospace",
-        ],
+        monospace: "Menlo,Monaco,Consolas,monospace",
     },
 };
 ```
 
-## Font size
+#### Font size
 
-In the `fontSizes` section you can define the font sizes used in your theme. The following sizes should be always provided: 
-
-- `body`: font size used in the body text.
-- `small`: font size used in `<small>` elements.
+In the `fontSizes` section you can define the font sizes used in your theme. It must be an array with the sizes from smallest to largest, where the size in the index 1 will be used as the size for the body text.
 
 This is the list of the default font sizes defined in **siimple**: 
 
 ```js title=siimple.config.js
 export default {
-    fontSizes: {
-        small: "0.875rem",
-        body: "16px",
-    },
+    fontSizes: [
+        "0.875rem",
+        "16px",
+        "1.25rem",
+        "1.5rem",
+        "1.75rem",
+        "2rem",
+        "2.5rem",
+        "3rem",
+        "3.5rem",
+        "4rem",
+        "4.5rem",
+    ],
 };
 ```
 
-## Font weight
+#### Font weight
 
 In the `fontWeights` section you can define the `font-weight` values used in your theme. The following weights should be always provided in a font weights scale map: 
 
@@ -138,13 +132,13 @@ This is the list of the default font weights defined in **siimple**:
 export default {
     fontWeights: {
         body: "400",
-        heading: "700",
+        heading: "800",
         bold: "700",
     },
 };
 ```
 
-## Line height
+#### Line height
 
 In the `lineHeights` section you can define the line heights used in your theme. The following line heights should be always provided:
 
@@ -158,6 +152,40 @@ export default {
     lineHeights: {
         body: "1.5",
         heading: "1.125",
+    },
+};
+```
+
+## Mixins
+
+Mixins allows you to define groups of styles that can be re-used throughout your custom styles. Mixins can be also used to customize built-in elements.
+
+Mixins can be defined anywhere in the theme, and can be referenced in your styles using the property `apply` and providing the full path to your mixin.
+
+```js title=siimple.config.js
+export default {
+    buttons: {
+        // Will be applied to the button element
+        default: {
+            backgroundColor: "transparent",
+            borderColor: "primary",
+            borderStyle: "solid",
+            borderWidth: "0.125rem",
+            color: "primary",
+        },
+    },
+    text: {
+        small: {
+            fontSize: "0",
+            color: "text",
+            opacity: 0.8,
+        },
+    },
+    styles: {
+        ".mySmallText": {
+            // Inherit styles from text.small mixin
+            apply: "text.small",
+        },
     },
 };
 ```

@@ -1,0 +1,86 @@
+---
+title: Getting started
+--- 
+
+# Getting started
+
+**siimple** is [published in npm](https://www.npmjs.com/package/siimple), so you can add it to your project running the following command:
+
+```bash
+$ npm install siimple --save
+```
+
+Be sure that you have **npm** installed in your computer. Get more information [about installing npm here](https://docs.npmjs.com/getting-started/installing-node).
+
+Alternatively, you can install **siimple** using [yarn](https://yarnpkg.com/) instead of **npm** running the following command:
+
+```bash
+$ yarn add siimple --save
+```
+
+You can get more information [about installing yarn here](https://yarnpkg.com/getting-started).
+
+### CLI usage
+
+You can use the siimple CLI tool to generate your customized version of siimple. First just create your configuration file `siimple.config.js` in the root of your project:
+
+```js title=siimple.config.js
+import colors from "@siimple/colors";
+import theme from "@siimple/theme";
+import elements from "@siimple/preset-elements";
+
+export default {
+    ...theme,
+    useRootStyles: false,
+    useBorderBox: true,
+    prefix: "",
+    colors: {
+        primary: colors.blue["500"],
+        secondary: colors.mint["600"],
+        text: colors.gray["800"],
+        background: "#fff",
+        muted: colors.gray["200"],
+    },
+    fonts: {
+        body: ["Roboto", "sans-serif"],
+        heading: ["Montserrat", "sans-serif"],
+        code: ["monospace"],
+    },
+    styles: {
+        ...elements.styles,
+    },
+};
+```
+
+You can learn more about the configuration file for siimple in the [configuration](/configuration) section.
+
+After creating your configuration file, just run the siimple CLI tool to generate your CSS:
+
+```bash
+$ npx siimple -c ./siimple.config.js -o ./output.css
+```
+
+This will generate a file called `output.css` with the compiled styles of siimple. 
+
+
+### Use the hosted CSS version
+
+You can use our hosted CSS version in [JsDelivr](https://www.jsdelivr.com/) and include **siimple** without installing any module. Note that:
+
+- You can not customize the default theme.
+- You can not customize the default modules (elements, helpers, ...).
+- You can not provide your custom styles.
+- You can not use third-party presets.
+
+Check all available hosted versions [in the jsDelivr website](https://www.jsdelivr.com/package/npm/siimple), or copy and paste the following `<link>` element in your HTML file for adding the latest version:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple/siimple.css" />
+```
+
+You can also use [unpkg](https://unpkg.com/) for including the latest version in your HTML file:
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/siimple/siimple.css" />
+```
+

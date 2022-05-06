@@ -11,18 +11,18 @@ Add the `textarea` class to your `<textarea>` element.
 <textarea class="textarea" rows="5">Textarea content</textarea>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `form.textarea` section of the variants configuration:
+The textarea element will apply the styles defined in the `forms.textarea` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        "form.textarea": {
-            default: {
-                backgroundColor: "fill",
-            },
+    forms: {
+        textarea: {
+            backgroundColor: "muted",
+            padding: "1rem",
         },
     },
+    // ...other configuration
 };
 ```

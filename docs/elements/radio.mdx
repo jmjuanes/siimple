@@ -23,18 +23,17 @@ By default, the radio will be displayed unchecked, but you can add a `checked` a
 </label>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `form.radio` section of the variants configuration:
+The radio element will apply the styles defined in the `forms.radio` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        "form.radio": {
-            default: {
-                color: "primary",
-            },
+    forms: {
+        radio: {
+            color: "primary",
         },
     },
+    // ...other configuration
 };
 ```

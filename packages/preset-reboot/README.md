@@ -1,4 +1,4 @@
-# [@siimple/preset-reboot](https://www.siimple.xyz/presets/reboot)
+# @siimple/preset-reboot
 
 A preset for the **siimple CSS toolkit** for adding CSS reset styles.
 

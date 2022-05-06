@@ -22,25 +22,17 @@ Use the `modal` class to create a wrapper for your modal dialogs. Usually you wi
 </div>
 ```
 
+### Customize
 
-### Variants
+The modal element will apply the styles defined in the `dialogs.modal` field of your theme configuration.
 
-Variants for this element can be defined in the `dialog.modal` section of the variants configuration:
-
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        "dialog.modal": {
-            default: {
-                maxWidth: "500px",
-            },
-            small: {
-                maxWidth: "300px",
-            },
-            large: {
-                maxWidth: "900px",
-            },
+    dialogs: {
+        modal: {
+            maxWidth: "500px",
         },
     },
+    // ...other configuration
 };
 ```

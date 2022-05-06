@@ -11,18 +11,15 @@ Use the `close` class to create a close button:
 <div class="close"></div>
 ```
 
+### Customize
 
-### Variants
+The close element will apply the styles defined in the `buttons.close` field of your theme configuration.
 
-Variants for this element can be defined in the `button.close` section of the variants configuration:
-
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        "button.close": {
-            default: {
-                color: "currentColor",
-            },
+    buttons: {
+        close: {
+            color: "currentColor",
         },
     },
 };

@@ -1,6 +1,5 @@
 ---
-title: "Alert"
-description: "Display block messages"
+title: Alert
 ---
 
 # Alert
@@ -8,9 +7,14 @@ description: "Display block messages"
 An **alert** is a colored notification block generally used to catch the attention of your users of something important. An alert can be created adding the `alert` class to a `<div>` tag.
 
 ```html live=true
-<div class="alert">
+<div class="alert has-mb-0">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 </div>
+```
+
+We provide an `is-secondary` modifier for using the secondary color defined in your theme as the background color of the alert:
+
+```html live=true
 <div class="alert is-secondary has-mb-0">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 </div>
@@ -25,23 +29,16 @@ You can add a close button to the alert using the `close` element:
 </div>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `alert` section of the variants configuration:
+The alert element will apply the styles defined in the `alerts` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        alert: {
-            default: {
-                backgroundColor: "primary",
-                color: "white",
-            },
-            secondary: {
-                backgroundColor: "secondary",
-                color: "white",
-            },
-        },
+    alerts: {
+        backgroundColor: "primary",
+        color: "white",
     },
+    // ...other configuration
 };
 ```

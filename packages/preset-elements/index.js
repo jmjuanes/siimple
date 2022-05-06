@@ -32,7 +32,9 @@ export default {
             variants: "alerts",
         },
         ".{{prefix}}badge": {
+            backgroundColor: "primary",
             borderRadius: "0.25rem",
+            color: "white",
             display: "inline-block",
             fontSize: "0.75rem",
             fontWeight: "bold",

@@ -1,0 +1,79 @@
+---
+title: Helpers
+---
+
+# Helpers
+
+**Helpers** are modifiers that can be applied to any element to change their style.
+
+### Adding helpers
+
+The helpers package is included when you install the `siimple` package framework, so you can just import helpers styles in your `siimple.config.js` file:
+
+```js title=siimple.config.js
+import helpers from "@siimple/preset-helpers";
+
+export default {
+    styles: {
+        ...helpers.styles,
+        // ...other styles
+    },
+    // ...other configuration
+};
+```
+
+### Usage
+
+Helpers modifiers have the following class pattern:
+
+```
+.has-<shortcut>-<name>
+.is-<name>
+```
+
+Some helpers modifiers, like colors and sizes, always use the `.has-<shortcut>-<name>` pattern. In this case,
+
+- `shortcut` is the CSS attribute. For example we will use `bg` for the `background-color` and `w` for the `width`.
+- `name` is the CSS value to apply. For example `full` usually will apply a `100%` value.
+
+Example:
+
+```html
+<button class="button has-w-full has-bg-primary has-text-center">
+    Example button
+</button>
+```
+
+Other simple helpers modifiers will use the `.is-<name>` pattern. Example:
+
+```html
+<span class="is-capitalized">Hello world!</span>
+```
+
+### Themeable helpers
+
+There are some helpers that are generated using the theme defined in your configuration file. For example, if you customize the `primary` color in your theme, the `has-bg-primary` helper will use the color that you have specified in your theme instead of the default color of the **siimple** theme.
+
+Also, additional colors provided in the `colors` scale will generate an additional helpers. For example, the following configuration:
+
+```js title=siimple.config.js
+export default {
+    colors: {
+        info: "#",
+        success: "#",
+        warning: "#",
+        error: "#",
+        // ...other default colors
+    },
+    // ...other configuration
+};
+```
+
+Will generate the following additional helpers: 
+
+```css
+.has-bg-info {background-color: #;}
+.has-bg-success {background-color: #;}
+.has-bg-warning {background-color: #;}
+.has-bg-error {background-color: #;}
+```

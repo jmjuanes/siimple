@@ -10,20 +10,18 @@ Use the `slider` class to style your range input elements:
 <input type="range" class="slider" value="50" />
 ```
 
+### Customize
 
-### Variants
+The slider element will apply the styles defined in the `forms.slider` field of your theme configuration.
 
-Variants for this element can be defined in the `form.slider` section of the variants configuration:
-
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        "form.slider": {
-            default: {
-                backgroundColor: "fill",
-                color: "primary",
-            },
+    forms: {
+        slider: {
+            backgroundColor: "fill",
+            color: "primary",
         },
     },
+    // ...other configuration
 };
 ```

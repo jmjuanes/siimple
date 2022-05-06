@@ -6,32 +6,112 @@ title: Elements
 
 We provide a collection of built-in UI elements that you can customize and reuse across your projects, that includes buttons, alerts, navigation links, and more!
 
-### Disable elements
+### Adding elements
 
-Elements are enabled by default, but can be disabled setting to `false` the `useElements` flag in your configuration:
+The elements package is included when you install the `siimple` package framework, so you can just import elements styles in your `siimple.config.js` file:
 
 ```js title=siimple.config.js
+import elements from "@siimple/preset-elements";
+
 export default {
-    useElements: false, // Skip all elements
+    styles: {
+        ...elements.styles,
+        // ...other styles
+    },
+    // ...other configuration
 };
+```
+
+### Usage
+
+Just apply the element classname to the HTML tag that you want to style:
+
+```html
+<button class="button">Submit</button>
+```
+
+Some elements will provide additional modifiers that you can use to change the default style of the element:
+
+```html
+<button class="button is-secondary is-full">
+    Full width button
+</button>
 ```
 
 ### Customize elements
 
-Variants can be used to customize and change the look and feel of elements. Each element will look for a specific variant defined in the `variants` section of your configuration.
+Mixins can be used to customize and change the look and feel of elements. Each element will look for a specific mixin in your theme configuration.
 
 ```js title=siimple.config.js
 export default {
-    variants: {
-        button: {
-            default: {
-                backgroundColor: "primary",
-                color: "white",
-            },
-            secondary: {
-                backgroundColor: "secondary",
+    text: {
+        // The title element will use this mixin to extend the default styles
+        heading: {
+            color: "black",
+            lineHeight: "1.25",
+        },
+    },
+};
+```
+
+There is the list of elements and the mixin path that can be used to customize the styles of the element:
+
+| Element | Mixin path |
+|---------|------------|
+| `alert` | `alerts` |
+| `badge` | `badges` |
+| `button` | `buttons.default` |
+| `card` | `cards` |
+| `checkbox` | `forms.checkbox` |
+| `close` | `buttons.close` |
+| `column` | `columns` |
+| `container` | `layout.container` |
+| `crumb` | `links.crumb` |
+| `divider` | `styles.hr` |
+| `input` | `forms.input` |
+| `label` | `forms.label` |
+| `menu` | `buttons.menu` |
+| `modal` | `dialogs.modal` |
+| `navlink` | `links.nav` |
+| `paragraph` | `text.paragraph` |
+| `progress` | `styles.progress` |
+| `radio` | `forms.radio` |
+| `scrim` | `dialogs.scrim` |
+| `select` | `forms.select` |
+| `slider` | `forms.slider` |
+| `spinner` | `spinners` |
+| `switch` | `forms.switch` |
+| `table` | `styles.table` |
+| `textarea` | `forms.textarea` |
+| `title` | `text.heading` |
+
+Note that some elements will reuse the styles that you define in the `styles` section of your theme, for example the `progress` or the `table` elements.
+
+Mixins can be used also to create additional modifiers for the element. For example, the following mixin:
+
+```js title=siimple.config.js
+export default {
+    buttons: {
+        default: {
+            "&.is-outlined": {
+                backgroundColor: "transparent",
+                borderColor: "primary",
+                borderStyle: "solid",
+                borderWidth: "0.125rem",
+                color: "primary",
             },
         },
     },
 };
+```
+
+Will generate the following CSS:
+
+```css
+.button { /* default styles */ }
+.button.is-outlined {
+    background-color: transparent;
+    border: 0.125rem solid #1c76fd;
+    color: #1c76fd;
+}
 ```

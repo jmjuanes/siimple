@@ -7,29 +7,21 @@ title: "Divider"
 The **divider** element helps you to separate content in your page. Add `divider` class to a `<div>` or a `<span>` tag to style it as a horizontal rule.
 
 ```html live=true
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
-</p>
 <div class="divider"></div>
-<p class="has-mb-0">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
-</p>
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `divider` section of the variants configuration:
+The divider element will apply the styles defined in the `styles.hr` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        divider: {
-            default: {
-                backgroundColor: "fill",
-            },
+    styles: {
+        hr: {
+            backgroundColor: "muted",
+            height: "0.125rem",
         },
     },
+    // ...other configuration
 };
 ```

@@ -1,0 +1,79 @@
+---
+title: "Colors"
+---
+
+# Colors
+
+A collection of helpers to customize the text and background color of any element. 
+
+### Background color
+
+Use `has-bg-{name}` to set the background color of any element. Background colors helpers will be generated using the values provided in the `colors` field of your theme. At least the following colors helpers will be always available: 
+
+| Class | Applied value |
+|-------|---------------|
+| `has-bg-primary` | The **primary** color defined in your theme. |
+| `has-bg-secondary` | The **secondary** color defined in your theme. |
+| `has-bg-muted` | The **muted** color defined in your theme. |
+
+The following background helpers will be also available, regardless the colors you provide in your theme configuration:
+
+| Class | Applied value |
+|-------|---------------|
+| `has-bg-white` | `background-color: #fff;` |
+| `has-bg-black` | `background-color: #000;` |
+| `has-bg-current` | `background-color: currentColor;` |
+
+Example:
+
+```html live=true align=center
+<div class="button has-bg-secondary">
+    <strong>Button</strong>
+</div>
+```
+
+#### Background color on hover
+
+You can change the background color of any element on hover adding the `-hover` suffix to the background color helper.
+
+```html live=true align=center
+<div class="button has-bg-secondary-hover">
+    <strong>Hover me</strong>
+</div>
+```
+
+### Text color
+
+Use `has-text-{name}` to set the text color of any element. Text colors helpers will be generated using the values provided in the `colors` field of your theme. At least the following colors helpers will be always available: 
+
+| Class | Applied value |
+|-------|---------------|
+| `has-text-primary` | The **primary** color defined in your theme. |
+| `has-text-secondary` | The **secondary** color defined in your theme. |
+| `has-text-muted` | The **muted** color defined in your theme. |
+
+The following color helpers will be also available, regardless the colors you provide in your theme configuration:
+
+| Class | Applied value |
+|-------|---------------|
+| `has-text-white` | `color: #fff;` |
+| `has-text-black` | `color: #000;` |
+| `has-text-current` | `color: currentColor;` |
+
+Example: 
+
+```html live=true align=center
+<strong class="has-text-secondary">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+</strong>
+```
+
+#### Text color on hover
+
+You can change the text color of any element on hover adding the `-hover` suffix to the text color helper.
+
+```html live=true align=center
+<strong class="has-text-primary has-text-secondary-hover">
+    Hover me
+</strong>
+```

@@ -12,18 +12,18 @@ Add the `input` class to your text-based `<input>` tags (text, password, number 
 <input type="text" class="input" placeholder="you@company.com">
 ```
 
-### Variants
+### Customize
 
-Variants for this element can be defined in the `form.input` section of the variants configuration:
+The input element will apply the styles defined in the `forms.input` field of your theme configuration.
 
-```js
+```js title=siimple.config.js
 export default {
-    variants: {
-        "form.input": {
-            default: {
-                backgroundColor: "fill",
-            },
+    forms: {
+        input: {
+            backgroundColor: "muted",
+            padding: "0.25rem",
         },
     },
+    // ...other configuration
 };
 ```
