@@ -143,10 +143,23 @@ Use `is-aligned-right` to float an element to the right side of it's containing 
 
 ### Overflow
 
-Use `is-clipped` to clip all neccesary content to fit the container size. Note that no scrollbars will be displayed and the user scrolling will be disabled.
+Use `is-scrollable` to display scrollbars only if content does not fit inside the padding box of the container:
 
 ```html live=true color=white centered=true
-<div class="is-clipped has-h-32 has-maxw-64 has-p-6 has-bg-blue-500 has-radius">
+<div class="is-scrollable has-h-32 has-maxw-64 has-p-6 has-bg-primary has-radius">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+    aliquip ex ea commodo consequat.
+</div>
+```
+
+
+
+Use `is-clipped` to clip all neccesary content to fit the container size. Note that no scrollbars will be displayed and the user scrolling will be disabled.
+
+```html live=true centered=true
+<div class="is-clipped has-h-32 has-maxw-64 has-p-6 has-bg-primary has-radius">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
     incididunt ut labore et dolore magna aliqua. 
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 

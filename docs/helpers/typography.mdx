@@ -90,6 +90,57 @@ Example:
 <div class="has-weight-bold">Test using has-weight-bold</div>
 ```
 
+### Line height
+
+For each size defined in the `lineHeights` field of your theme, there will be a helper with the pattern `has-lh-{name}` to apply the specified line-height. The following line-height helpers will be always available:
+
+| Class | Property |
+|-------|----------|
+| `has-lh-body` | The line-height for your body. In the default theme this helper will apply `line-height: 1.5;`. |
+| `has-lh-heading` | The line-height for your headings. In the default theme this helper will apply `line-height: 1.25;`. |
+
+Also, the following line-height helpers will be always included, regardless the values you provide in your theme configuration:
+
+| Class | Property |
+|-------|----------|
+| `has-lh-none` | `line-height: 1;` |
+| `has-lh-tight` | `line-height: 1.25;` |
+| `has-lh-normal` | `line-height: 1.5;` |
+| `has-lh-loose`  | `line-height: 2;` |
+
+Use `has-lh-none`, `has-lh-tight`, `has-lh-normal`, and `has-lh-loose` to apply a relative line-height to a text block based on its text size.
+
+```html live=true
+<div class="has-test-gray-500 has-weight-bold has-mb-2">has-lh-none</div>
+<p class="has-lh-none">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+    cillum dolore eu fugiat nulla pariatur.
+</p>
+<div class="has-test-gray-500 has-weight-bold has-mb-2">has-lh-tight</div>
+<p class="has-lh-tight">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+    cillum dolore eu fugiat nulla pariatur.
+</p>
+<div class="has-test-gray-500 has-weight-bold has-mb-2">has-lh-normal</div>
+<p class="has-lh-normal">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+    cillum dolore eu fugiat nulla pariatur.
+</p>
+<div class="has-test-gray-500 has-weight-bold has-mb-2">has-lh-loose</div>
+<p class="has-lh-loose">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+    cillum dolore eu fugiat nulla pariatur.
+</p>
+```
+
 ### Text alignment
 
 Use one of the following classes to set the horizontal align of your text inside the container element:
@@ -180,4 +231,23 @@ Use the `is-capitalized` helper to convert the first character of each word of y
 <strong class="is-capitalized">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 </strong>
+```
+
+### Vertical align
+
+Use the following helpers to control the vertical alignment of a inline block.
+
+| Class | Property |
+|-------|----------|
+| `has-align-baseline` | `vertical-align: baseline;` |
+| `has-align-top` | `vertical-align: top;` |
+| `has-align-middle` | `vertical-align: middle;` |
+| `has-align-bottom` | `vertical-align: bottom;` |
+| `has-align-text-top` | `vertical-align: text-top;` |
+| `has-align-text-bottom` | `vertical-align: text-bottom;` |
+
+Example:
+
+```html
+<div class="is-inline-block has-align-bottom">...</div>
 ```
