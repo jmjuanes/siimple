@@ -4,10 +4,10 @@ The core engine of the **siimple CSS toolkit**, that can be used for building yo
 
 ## Install
 
-Install this module using **npm**:
+Install this package using **npm**:
 
 ```bash
-$ npm install --save @siimple/code
+$ npm install --save @siimple/core
 ```
 
 ## API
