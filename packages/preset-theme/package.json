@@ -1,7 +1,7 @@
 {
-    "name": "@siimple/theme",
+    "name": "@siimple/preset-theme",
     "version": "0.0.0-dev",
-    "description": "Default theme configuration for the siimple css toolkit",
+    "description": "Default theme preset for the siimple css toolkit",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
     "license": "MIT",
@@ -14,6 +14,7 @@
     },
     "keywords": [
         "siimple",
+        "preset",
         "theme"
     ]
 }
