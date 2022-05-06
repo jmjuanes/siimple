@@ -1,5 +1,5 @@
-import theme from "@siimple/theme";
-import colors from "@siimple/colors";
+import theme from "@siimple/preset-theme";
+// import colors from "@siimple/colors";
 
 export default {
     useReboot: true,
@@ -10,16 +10,7 @@ export default {
     useMarkup: true,
     useIcons: true,
     prefix: "",
-    // Custom color palette for internal use
-    colors: {
-        ...theme.colors,
-        ...Object.keys(colors).reduce((list, name) => {
-            Object.keys(colors[name]).forEach(shade => {
-                list[`${name}-${shade}`] = colors[name][shade];
-            });
-            return list;
-        }, {}),
-    },
+    ...theme,
     fontWeights: {
         ...theme.fontWeights,
         black: "900",

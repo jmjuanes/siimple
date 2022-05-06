@@ -1,4 +1,4 @@
-import defaultTheme from "@siimple/theme";
+import defaultTheme from "@siimple/preset-theme";
 
 // Generate a default configuration for siimple
 export default {

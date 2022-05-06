@@ -12,19 +12,25 @@ title: Minimal and themeable CSS toolkit
 
 ```js
 import colors from "@siimple/colors";
-import theme from "@siimple/theme";
+import theme from "@siimple/preset-theme";
+import elements from "@siimple/preset-elements";
 
 export default {
+    ...theme,
     colors: {
+        ...theme.colors,
         primary: colors.royal["500"],
         secondary: colors.mint["500"],
-        body: colors.royal["800"],
+        text: colors.royal["800"],
         muted: colors.royal["200"],
     },
     fonts: {
         ...theme.fonts,
         heading: ["Nunito", "sans-serif"],
         monospace: ["monospace"],
+    },
+    styles: {
+        ...elements.styles,
     },
 };
 ```

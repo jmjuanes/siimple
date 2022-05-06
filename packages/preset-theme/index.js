@@ -57,13 +57,8 @@ export const sizes = {
     "40": "10rem",
     "48": "12rem",
     "64": "16rem",
+    "80": "20rem",
     "96": "24rem",
-    "128": "32rem",
-    "256": "64rem",
-    "half": "50%",
-    "full": "100%",
-    "none": "0px",
-    "one": "1px",
 };
 
 export default {
@@ -85,12 +80,17 @@ export default {
         primary: colors.blue["500"],
         secondary: colors.royal["500"],
         muted: colors.coolgray["200"],
-        body: colors.coolgray["700"],
-        // Gray color palette
-        // ...Object.fromEntries(Object.keys(colors.coolgray).map(shade => {
-        //     return [`gray${shade[0]}`, colors.coolgray[shade]];
-        // })),
-        ...extraColors,
+        text: colors.coolgray["700"],
+        heading: colors.gray["800"],
+        background: "#fff",
+        // All colors
+        ...Object.keys(colors).reduce((prev, name) => ({
+            ...prev,
+            ...Object.fromEntries(Object.keys(colors[name]).map(shade => {
+                return [`${name}-${shade}`, colors[name][shade]];
+            })),
+        }), {}),
+        // ...extraColors,
     },
     fonts: {
         body: fonts.sans,
@@ -117,32 +117,14 @@ export default {
         heading: "700",
     },
     lineHeights: {
-        none: "1",
         heading: "1.25",
         body: "1.5",
-        loose: "2",
     },
     opacities: {
         "0": 0,
-        "5": 0.05,
-        "10": 0.1,
-        "15": 0.15,
-        "20": 0.2,
         "25": 0.25,
-        "30": 0.3,
-        "35": 0.35,
-        "40": 0.4,
-        "45": 0.45,
         "50": 0.5,
-        "55": 0.55,
-        "60": 0.6,
-        "65": 0.65,
-        "70": 0.7,
         "75": 0.75,
-        "80": 0.8,
-        "85": 0.85,
-        "90": 0.9,
-        "95": 0.95,
         "100": 100,
     },
     radius: {
@@ -150,28 +132,18 @@ export default {
         default: "0.5rem",
         lg: "0.75rem",
         xl: "1rem",
-        full: "9999px",
-        none: "0px",
     },
     shadows: {
         sm: "0 0.25rem 1rem -0.125rem rgba(54,63,79,0.15),0 0 0 1px rgba(54,63,79,0.02)",
         default: "0 0.5rem 1rem -0.25rem rgba(54,63,79,0.2), 0 0 0 1px rgba(54,63,79,0.02)",
         lg: "0rem 1rem 1rem -0.5rem rgba(54,63,79,0.25),0 0 0 1px rgba(54,63,79,0.02)",
-        none: "none",
     },
-    sizes: {
-        ...sizes,
-        auto: "auto",
-        screen: "100vh",
-    },
-    spacing: {
-        ...sizes,
-        auto: "auto",
-    },
+    sizes: sizes,
+    space: sizes,
     // Default root styles
     root: {
-        backgroundColor: "white",
-        color: "body",
+        backgroundColor: "background",
+        color: "text",
         fontFamily: "body",
         fontSize: "1",
         fontWeight: "body",
