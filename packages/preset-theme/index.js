@@ -81,6 +81,7 @@ export default {
         secondary: colors.royal["500"],
         muted: colors.coolgray["200"],
         text: colors.coolgray["700"],
+        heading: colors.gray["800"],
         background: "#fff",
         // All colors
         ...Object.keys(colors).reduce((prev, name) => ({
