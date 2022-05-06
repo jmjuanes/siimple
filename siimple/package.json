@@ -14,7 +14,7 @@
     },
     "dependencies": {
         "@siimple/core": "^0.0.0-dev",
-        "@siimple/theme": "^0.0.0-dev",
+        "@siimple/preset-theme": "^0.0.0-dev",
         "@siimple/preset-reboot": "^0.0.0-dev",
         "@siimple/preset-markup": "^0.0.0-dev",
         "@siimple/preset-elements": "^0.0.0-dev",
