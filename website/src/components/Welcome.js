@@ -32,7 +32,7 @@ export const Welcome = () => (
             point for your next amazing website or application.
         </div>
         <div className="has-mt-12 has-mt-8-mobile">
-            <Link to="/installation">
+            <Link to="/getting-started">
                 <Button
                     text="Getting started"
                     icon="rocket"

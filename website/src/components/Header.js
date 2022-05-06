@@ -7,7 +7,7 @@ const items = [
     {
         text: "Getting started",
         icon: "rocket",
-        href: "/installation",
+        href: "/getting-started",
     },
     {
         text: "Playground",
