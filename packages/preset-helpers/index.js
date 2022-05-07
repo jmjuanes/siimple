@@ -1,200 +1,411 @@
-const themeHelpers = [
+import {generateHelpers} from "./utils.js";
+
+// Common values
+const colorsValues = {
+    white: "#fff",
+    black: "#000",
+    current: "currentColor",
+    transparent: "transparent",
+};
+
+// Build helpers
+const helpers = generateHelpers([
     // Colors
     {
-        scale: "colors",
+        prefix: "has",
         shortcut: "bg",
         properties: ["backgroundColor"],
         states: ["default", "hover", "focus"],
+        responsive: false,
+        scale: "colors",
+        values: colorsValues,
     },
     {
-        scale: "colors",
+        prefix: "has",
         shortcut: "text",
         properties: ["color"],
         states: ["default", "hover", "focus"],
+        responsive: false,
+        scale: "colors",
+        values: colorsValues,
     },
     // Fonts
     {
-        scale: "fonts",
+        prefix: "has",
         shortcut: "font",
         properties: ["fontFamily"],
         states: ["default"],
+        responsive: false,
+        scale: "fonts",
     },
     // Font sizes
     {
-        scale: "fontSizes",
+        prefix: "has",
         shortcut: "size",
         properties: ["fontSize"],
         states: ["default"],
+        responsive: false,
+        scale: "fontSizes",
     },
     // Font weights
     {
-        scale: "fontWeights",
+        prefix: "has",
         shortcut: "weight",
         properties: ["fontWeight"],
         states: ["default"],
+        scale: "fontWeights",
     },
     // Line heights
     {
-        scale: "lineHeights",
+        prefix: "has",
         shortcut: "lh",
         properties: ["lineHeight"],
         states: ["default"],
+        responsive: false,
+        scale: "lineHeights",
+        values: {
+            none: "1",
+            tight: "1.25",
+            normal: "1.5",
+            loose: "2",
+        },
     },
     // Opacities
     {
-        scale: "opacities",
+        prefix: "has",
         shortcut: "opacity",
         properties: ["opacity"],
         states: ["default"],
+        responsive: true,
+        scale: "opacities",
     },
     // Radius
     {
-        scale: "radius",
+        prefix: "has",
         shortcut: "radius",
         properties: ["borderRadius"],
         states: ["default"],
+        responsive: false,
+        scale: "radius",
+        values: {
+            none: "0px",
+        },
     },
     // Shadows
     {
-        scale: "shadows",
+        prefix: "has",
         shortcut: "shadow",
         properties: ["boxShadow"],
         states: ["default"],
+        responsive: false,
+        scale: "shadows",
+        values: {
+            none: "none",
+        },
     },
     // Sizes
     {
-        scale: "sizes",
+        prefix: "has",
         shortcut: "w",
         properties: ["width"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "sizes",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+            screen: "100vw",
+        },
     },
     {
-        scale: "sizes",
+        prefix: "has",
         shortcut: "minw",
         properties: ["min-width"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "sizes",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+            screen: "100vw",
+        },
     },
     {
-        scale: "sizes",
+        prefix: "has",
         shortcut: "maxw",
         properties: ["max-width"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "sizes",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+            screen: "100vw",
+        },
     },
     {
-        scale: "sizes",
+        prefix: "has",
         shortcut: "h",
         properties: ["height"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "sizes",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+            screen: "100vh",
+        },
     },
     {
-        scale: "sizes",
+        prefix: "has",
         shortcut: "minh",
         properties: ["min-height"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "sizes",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+            screen: "100vh",
+        },
     },
     {
-        scale: "sizes",
+        prefix: "has",
         shortcut: "maxh",
         properties: ["max-height"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "sizes",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+            screen: "100vh",
+        },
     },
     ...["bottom","left","right","top"].map(position => ({
-        scale: "sizes",
+        prefix: "has",
         shortcut: position,
         properties: [position],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        values: {
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     })),
     // spacing
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "p",
         properties: ["padding"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "px",
         properties: ["padding-left", "padding-right"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "py",
         properties: ["padding-top", "padding-bottom"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "pt",
         properties: ["padding-top"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "pb",
         properties: ["padding-bottom"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "pl",
         properties: ["padding-left"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "pr",
         properties: ["padding-right"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "m",
         properties: ["margin"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "mx",
         properties: ["margin-left", "margin-right"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "my",
         properties: ["margin-top", "margin-bottom"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "mt",
         properties: ["margin-top"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "mb",
         properties: ["margin-bottom"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "ml",
         properties: ["margin-left"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
     {
-        scale: "spacing",
+        prefix: "has",
         shortcut: "mr",
         properties: ["margin-right"],
-        states: ["default", "responsive"],
+        states: ["default"],
+        responsive: true,
+        scale: "space",
+        values: {
+            auto: "auto",
+            none: "0px",
+            half: "50%",
+            full: "100%",
+        },
     },
-];
-
-// Additional helpers
-const extraHelpers = [
     // Flexbox
     {
+        prefix: "has",
         shortcut: "flex",
         states: ["default"],
         responsive: true,
@@ -206,6 +417,7 @@ const extraHelpers = [
         },
     },
     {
+        prefix: "has",
         shortcut: "direction",
         states: ["default"],
         responsive: true,
@@ -218,6 +430,7 @@ const extraHelpers = [
         },
     },
     {
+        prefix: "has",
         shortcut: "flex",
         states: ["default"],
         responsive: true,
@@ -228,6 +441,7 @@ const extraHelpers = [
         },
     },
     {
+        prefix: "has",
         shortcut: "flex",
         states: ["default"],
         responsive: true,
@@ -238,6 +452,7 @@ const extraHelpers = [
         },
     },
     {
+        prefix: "has",
         shortcut: "flex",
         states: ["default"],
         responsive: true,
@@ -249,6 +464,7 @@ const extraHelpers = [
         },
     },
     {
+        prefix: "has",
         shortcut: "content",
         states: ["default"],
         responsive: true,
@@ -263,6 +479,7 @@ const extraHelpers = [
         },
     },
     {
+        prefix: "has",
         shortcut: "items",
         states: ["default"],
         responsive: true,
@@ -276,6 +493,7 @@ const extraHelpers = [
         },
     },
     {
+        prefix: "has",
         shortcut: "self",
         states: ["default"],
         responsive: true,
@@ -290,6 +508,7 @@ const extraHelpers = [
         },
     },
     {
+        prefix: "has",
         shortcut: "justify",
         states: ["default"],
         responsive: true,
@@ -304,6 +523,7 @@ const extraHelpers = [
         },
     },
     {
+        prefix: "has",
         shortcut: "justify-items",
         states: ["default"],
         responsive: true,
@@ -316,6 +536,7 @@ const extraHelpers = [
         },
     },
     {
+        prefix: "has",
         shortcut: "justify-self",
         states: ["default"],
         responsive: true,
@@ -329,6 +550,7 @@ const extraHelpers = [
         },
     },
     {
+        prefix: "has",
         shortcut: "order",
         states: ["default"],
         responsive: true,
@@ -341,6 +563,7 @@ const extraHelpers = [
     },
     // Text
     {
+        prefix: "has",
         shortcut: "text",
         states: ["default"],
         responsive: false,
@@ -354,6 +577,7 @@ const extraHelpers = [
     },
     // Vertical align
     {
+        prefix: "has",
         shortcut: "align",
         states: ["default"],
         responsive: false,
@@ -367,154 +591,130 @@ const extraHelpers = [
             "text-bottom": "text-bottom",
         },
     },
-];
-
-// Other helpers
-const otherHelpers = {
     // Cursor
-    "clickable": {
-        cursor: ["pointer", "!important"],
-    },
-    "not-allowed": {
-        cursor: ["not-allowed", "!important"],
+    {
+        prefix: "is",
+        states: ["default"],
+        responsive: false,
+        properties: ["cursor"],
+        important: true,
+        values: {
+            "clickable": ["pointer", "!important"],
+            "not-allowed": ["not-allowed", "!important"],
+        },
     },
     // Display
-    "block": {
-        display: "block",
-    },
-    "flex": {
-        display: "flex",
-    },
-    "inline": {
-        display: "inline",
-    },
-    "inline-block": {
-        display: "inline-block",
-    },
-    "inline-flex": {
-        display: "inline-flex",
-    },
-    "hidden": {
-        display: "none",
+    {
+        prefix: "is",
+        states: ["default"],
+        responsive: true,
+        properties: ["display"],
+        values: {
+            "block": "block",
+            "flex": "flex",
+            "inline": "inline",
+            "inline-block": "inline-block",
+            "inline-flex": "inline-flex",
+            "hidden": "none",
+        },
     },
     // Float
-    "aligned-left": {
-        float: "left",
-    },
-    "aligned-right": {
-        float: "right",
+    {
+        prefix: "is",
+        states: ["default"],
+        responsive: true,
+        properties: ["float"],
+        values: {
+            "aligned-left": "left",
+            "aligned-right": "right",
+        },
     },
     // Overflow
-    "clipped": {
-        overflow: ["hidden", "!important"],
+    {
+        prefix: "is",
+        states: ["default"],
+        responsive: true,
+        properties: ["overflow"],
+        values: {
+            "clipped": ["hidden", "!important"],
+            "scrollable": ["auto", "!important"],
+        },
     },
     // Position
-    "relative": {
-        position: "relative",
-    },
-    "absolute": {
-        position: "absolute",
-    },
-    "sticky": {
-        position: "sticky",
-    },
-    "fixed": {
-        position: "fixed",
+    {
+        prefix: "is",
+        states: ["default"],
+        responsive: true,
+        properties: ["position"],
+        values: {
+            "relative": "relative",
+            "absolute": "absolute",
+            "sticky": "sticky",
+            "fixed": "fixed",
+        },
     },
     // Text
-    "italic": {
-        fontStyle: "italic",
+    {
+        prefix: "is",
+        states: ["default"],
+        responsive: false,
+        properties: ["fontStyle"],
+        values: {
+            italic: "italic"
+        },
     },
-    "underlined": {
-        textDecoration: "underline",
+    {
+        prefix: "is",
+        states: ["default"],
+        responsive: false,
+        properties: ["textDecoration"],
+        values: {
+            "underlined": "underline",
+            "not-underlined": ["none", "!important"],
+        },
     },
-    "not-underlined": {
-        textDecoration: ["none", "!important"],
-    },
-    "capitalized": {
-        textTransform: "capitalize",
-    },
-    "lowercase": {
-        textTransform: "lowercase",
-    },
-    "uppercase": {
-        textTransform: "uppercase",
+    {
+        prefix: "is",
+        states: ["default"],
+        responsive: false,
+        properties: ["textTransform"],
+        values: {
+            "capitalized": "capitalize",
+            "lowercase": "lowercase",
+            "uppercase": "uppercase",
+        },
     },
     // Negative selectors
-    "radiusless": {
-        borderRadius: ["0px", "!important"],
+    {
+        prefix: "is",
+        states: ["default"],
+        responsive: false,
+        properties: ["borderRadius"],
+        values: {
+            "radiusless": ["0px", "!important"],
+        },
     },
-    "shadowless": {
-        boxShadow: ["none", "!important"],
+    {
+        prefix: "is",
+        states: ["default"],
+        responsive: false,
+        properties: ["boxShadow"],
+        values: {
+            "shadowless": ["none", "!important"],
+        },
     },
-    "unselectable": {
-        userSelect: ["none", "!important"],
+    {
+        prefix: "is",
+        states: ["default"],
+        responsive: false,
+        properties: ["userSelect"],
+        values: {
+            "unselectable": ["none", "!important"],
+        },
     },
-};
+]);
 
+// Export helpers styles
 export default {
-    styles: {
-        // Themeable helpers
-        ...Object.fromEntries(themeHelpers.map(item => {
-            const helperStyles = {};
-            const styles = {
-                [`@theme ${item.scale}`]: {
-                    "&": Object.fromEntries(item.properties.map(name => {
-                        return [name, "value"];
-                    })),
-                },
-            };
-            // Generate utilities for this configuration
-            item.states.forEach(state => {
-                if (state === "default") {
-                    Object.assign(helperStyles, styles);
-                }
-                else if (state === "focus" || state === "hover") {
-                    helperStyles[`&-${state}:${state}`] = styles;
-                }
-                else if (state === "responsive") {
-                    helperStyles["&-{{breakpoint}}"] = {
-                        "@breakpoints": styles,
-                    };
-                }
-            });
-            return [`.has-${item.shortcut}{{name}}`, helperStyles];
-        })),
-        // Additional helpers
-        ...Object.fromEntries(extraHelpers.map(item => {
-            const helperStyles = Object.fromEntries(Object.keys(item.values).map(name => {
-                const styles = Object.fromEntries(item.properties.map(property => {
-                    return [property, item.values[name]];
-                }));
-                const stateStyles = item.states.reduce((prevStateStyles, state) => {
-                    if (state === "default") {
-                        return {...prevStateStyles, ...styles};
-                    }
-                    else if (state === "hover" || state === "focus") {
-                        prevStateStyles[`&-${state}:${state}`] = styles;
-                    }
-                    // Return styles
-                    return prevStateStyles;
-                }, {});
-                // Responsive styles
-                if (item.responsive) {
-                    stateStyles["@breakpoints"] = {
-                        "&-{{breakpoint}}": styles,
-                    };
-                }
-                return [`&-${name}`, stateStyles];
-            }));
-            return [`.has-${item.shortcut}`, helperStyles];
-        })),
-        // Other helpers
-        ...Object.fromEntries(Object.keys(otherHelpers).map(name => {
-            const styles = {
-                ...otherHelpers[name],
-                "@breakpoints": {
-                    "&-{{breakpoint}}": otherHelpers[name],
-                },
-            };
-            return [`.is-${name}`, styles];
-        })),
-    },
+    styles: helpers,
 };
