@@ -1,4 +1,4 @@
-import {generateHelpers} from "./utils";
+import {generateHelpers} from "./utils.js";
 
 // Common values
 const colorsValues = {
