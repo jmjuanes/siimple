@@ -322,7 +322,7 @@ const helpers = generateHelpers([
     {
         prefix: "has",
         shortcut: "mx",
-        states: ["default", "responsive"],
+        properties: ["margin-left", "margin-right"],
         states: ["default"],
         responsive: true,
         scale: "space",
@@ -336,7 +336,7 @@ const helpers = generateHelpers([
     {
         prefix: "has",
         shortcut: "my",
-        states: ["default", "responsive"],
+        properties: ["margin-top", "margin-bottom"],
         states: ["default"],
         responsive: true,
         scale: "space",
