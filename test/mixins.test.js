@@ -1,4 +1,4 @@
-import {buildMixin} from "../packages/core.js";
+import {buildMixin} from "../packages/core/index.js";
 
 describe("buildMixin", () => {
     const theme = {
