@@ -20,6 +20,7 @@ describe("buildMixin", () => {
     it("should apply styles defined in the mixin", () => {
         const initialStyles = {
             color: "white",
+            apply: "test.basic",
         };
         const finalStyles = buildMixin(initialStyles, theme);
         expect(finalStyles.color).toBe("black");
