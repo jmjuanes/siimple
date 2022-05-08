@@ -29,7 +29,7 @@ export default {
                 backgroundColor: "secondary",
                 color: "white",
             },
-            variants: "alerts",
+            apply: "alerts",
         },
         ".{{prefix}}badge": {
             backgroundColor: "primary",
@@ -46,7 +46,7 @@ export default {
                 backgroundColor: "secondary",
                 color: "white",
             },
-            variants: "badges",
+            apply: "badges",
         },
         ".{{prefix}}button": {
             appearance: "none",
@@ -79,7 +79,7 @@ export default {
                 display: "block",
                 width: "100%",
             },
-            variants: "buttons",
+            apply: "buttons.default",
         },
         ".{{prefix}}card": {
             backgroundColor: "white",
@@ -89,7 +89,7 @@ export default {
             padding: "2rem",
             textDecoration: ["none", "!important"],
             width: "100%",
-            variants: "cards",
+            apply: "cards",
         },
         ".{{prefix}}checkbox": {
             appearance: "none",
@@ -135,7 +135,7 @@ export default {
                 transform: "rotate(-45deg)",
                 width: "0.625rem",
             },
-            variant: "forms.checkbox",
+            apply: "forms.checkbox",
         },
         ".{{prefix}}close": {
             appearance: "none",
@@ -168,7 +168,7 @@ export default {
             "&:after": {
                 transform: "rotate(-45deg)",
             },
-            variant: "dialogs.close",
+            apply: "buttons.close",
         },
         ".{{prefix}}column": {
             flex: "1",
@@ -189,7 +189,7 @@ export default {
                 };
                 return [`&.is-${column}`, styles];
             })),
-            variants: "columns",
+            apply: "columns",
         },
         ".{{prefix}}columns": {
             display: "flex",
@@ -205,7 +205,7 @@ export default {
             paddingLeft: "1.5rem",
             paddingRight: "1.5rem",
             width: "100%",
-            variant: "layout.container",
+            apply: "layout.container",
         },
         ".{{prefix}}crumb": {
             color: "currentColor",
@@ -243,7 +243,7 @@ export default {
                 opacity: "1.0",
                 pointerEvents: "none",
             },
-            variant: "links.crumb",
+            apply: "links.crumb",
         },
         ".{{prefix}}crumbs": {
             borderRadius: "default",
@@ -267,7 +267,7 @@ export default {
             "&:not(:last-child)": {
                 marginBottom: "1rem",
             },
-            variant: "layout.divider",
+            apply: "styles.hr",
         },
         ".{{prefix}}input": {
             backgroundColor: "muted",
@@ -291,7 +291,7 @@ export default {
             "&:focus": {
                 borderColor: "primary",
             },
-            variant: "forms.input",
+            apply: "forms.input",
         },
         ".{{prefix}}label": {
             alignItems: "center",
@@ -303,7 +303,7 @@ export default {
             paddingBottom: "0.25rem",
             paddingTop: "0.25rem",
             width: "100%",
-            variant: "forms.label",
+            apply: "forms.label",
         },
         ".{{prefix}}menu": {
             appearance: "none",
@@ -344,7 +344,7 @@ export default {
                 width: "1.75rem",
                 top: "1.25rem",
             },
-            variant: "dialogs.menu",
+            apply: "buttons.menu",
         },
         ".{{prefix}}modal": {
             backgroundColor: "white",
@@ -355,7 +355,7 @@ export default {
             overflowY: "auto",
             padding: "2rem",
             width: "100%",
-            variant: "dialogs.modal",
+            apply: "dialogs.modal",
         },
         ".{{prefix}}navlink": {
             borderRadius: "0.5rem",
@@ -379,13 +379,13 @@ export default {
                 opacity: "0.5",
                 pointerEvents: "none",
             },
-            variant: "links.nav",
+            apply: "links.nav",
         },
         ".{{prefix}}paragraph": {
             display: "block",
             marginBottom: "1rem",
             marginTop: "0px",
-            variant: "text.paragraph",
+            apply: "text.paragraph",
         },
         ".{{prefix}}progress": {
             appearance: "none",
@@ -408,7 +408,7 @@ export default {
             "&::-moz-progress-bar": {
                 backgroundColor: "currentColor",
             },
-            variant: "forms.progress",
+            apply: "forms.progress",
         },
         ".{{prefix}}radio": {
             appearance: "none",
@@ -453,7 +453,7 @@ export default {
             "&:checked:before": {
                 borderColor: ["currentColor", "!important"],
             },
-            variant: "forms.radio",
+            apply: "forms.radio",
         },
         ".{{prefix}}scrim": {
             alignItems: "center",
@@ -468,7 +468,7 @@ export default {
             top: "0px",
             width: "100%",
             zIndex: "400",
-            variant: "dialogs.scrim",
+            apply: "dialogs.scrim",
         },
         ".{{prefix}}select": {
             // appearance: "none",
@@ -492,7 +492,7 @@ export default {
             "&:focus": {
                 borderColor: "primary",
             },
-            variant: "forms.select",
+            apply: "forms.select",
         },
         ".{{prefix}}slider": {
             appearance: "none",
@@ -522,7 +522,7 @@ export default {
             "&:-ms-thumb": {
                 marginTop: "0px",
             },
-            variant: "forms.slider",
+            apply: "forms.slider",
         },
         ".{{prefix}}spinner": {
             color: "primary",
@@ -555,7 +555,7 @@ export default {
             "&.is-secondary": {
                 color: "secondary"
             },
-            variants: "spinners",
+            apply: "spinners",
         },
         "@keyframes spinnerAnimation": {
             from: {
@@ -606,7 +606,7 @@ export default {
             "&:checked:before": {
                 backgroundColor: "currentColor",
             },
-            variant: "forms.switch",
+            apply: "forms.switch",
         },
         ".{{prefix}}table": {
             backgroundColor: "transparent",
@@ -684,7 +684,7 @@ export default {
             "&.is-fixed": {
                 tableLayout: "fixed",
             },
-            variant: "layout.table",
+            apply: "styles.table",
         },
         ".{{prefix}}textarea": {
             backgroundColor: "muted",
@@ -708,7 +708,7 @@ export default {
             "&:focus": {
                 borderColor: "primary",
             },
-            variant: "forms.textarea",
+            apply: "forms.textarea",
         },
         ".{{prefix}}title": {
             display: "block",
@@ -726,8 +726,7 @@ export default {
                 };
                 return [`&.is-${(7 - index)}`, headingConfig];
             })),
-            variant: "text.heading",
+            apply: "text.heading",
         },
     },
-    variants: {},
 };
