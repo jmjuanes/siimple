@@ -12,7 +12,7 @@ const ColorItems = props => (
     <div className="columns">
         {Object.keys(props.items).map(item => {
             const itemClassName = kofi.classNames([
-                "has-radius has-p-6 has-mb-2",
+                "has-radius-md has-p-6 has-mb-2",
                 `has-bg-${props.name}-${item}`,
             ]);
             return (

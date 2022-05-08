@@ -8,7 +8,7 @@ const PaginationItem = props => {
     const label = props.type === "prev" ? "Prev" : "Next";
     const paginationClass = kofi.classNames([
         "is-block",
-        "has-radius has-p-4",
+        "has-radius-md has-p-4",
         "has-bg-coolgray-100-hover",
         "has-text-coolgray-700 is-not-underlined",
     ]);

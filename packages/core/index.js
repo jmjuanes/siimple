@@ -225,7 +225,7 @@ export const buildRule = (parent, styles, config, vars) => {
                 return Object.keys(config[scale] || {}).forEach(name => {
                     const newContent = buildRule(parent, value, config, {
                         ...(vars || {}),
-                        name: name === "default" ? "" : "-" + name,
+                        name: name,
                         value: config[scale][name],
                     });
                     return css.push(newContent.join("\n"));
