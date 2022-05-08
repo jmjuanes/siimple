@@ -167,33 +167,34 @@ export const buildValue = (property, value, config, vars) => {
     return values.join(" ");
 };
 
+// Build mixin styles
+export const buildMixin = (styles, theme, prev) => {
+    prev = prev || new Set();
+    if (typeof styles.apply === "string" && styles.apply) {
+        // Check for circular mixins found
+        if (prev.has(styles.apply)) {
+            const items = Array.from(prev);
+            throw new Error(`Circular mixins found: ${items.join("->")}->${styles.apply}`);
+        }
+        // Apply styles from this mixin
+        prev.add(styles.apply);
+        return {
+            ...excludeInObject(styles, "apply"),
+            ...buildMixin(getInObject(theme, styles.apply) || {}, theme, prev),
+        };
+    }
+    // No mixin to apply --> return styles
+    return styles;
+};
+
 // Build css rule
 export const buildRule = (parent, styles, config, vars) => {
     if (styles && Array.isArray(styles)) {
         return styles.map(item => buildRule(parent, item, config, vars)).flat();
     }
-    // Check for variants to apply to this styles block
-    if (styles.variants || styles.variant) {
-        if (styles.variant) {
-            const newStyles = {
-                ...excludeInObject(styles, "variant"),
-                ...(getInObject(config.variants || {}, styles.variant) || {}),
-            };
-            return buildRule(parent, newStyles, config, vars);
-        }
-        // Apply all variants
-        const variants = getInObject(config.variants || {}, styles.variants) || {};
-        const newStyles = excludeInObject(styles, "variants");
-        Object.keys(variants).forEach(name => {
-            // Default variants
-            if (name === "default") {
-                return mergeStyles(newStyles, variants[name]);
-            }
-            // Generate a new selector for this variant
-            const selector = `&.is-${name}`;
-            return mergeStyles(newStyles, {[selector]: variants[name]});
-        });
-        return buildRule(parent, newStyles, config, vars);
+    // Check for mixins to apply to this styles
+    if (typeof styles.apply === "string" && styles.apply) {
+        return buildRule(parent, buildMixin(styles, config), config, vars);
     }
     const css = [""];
     Object.keys(styles).forEach(key => {
