@@ -41,7 +41,7 @@ export const LiveCode = props => {
         // "has-pt-4 has-pb-4",
         // `has-p-${props.padding}`,
         // `has-bg-${props.bg}`,
-        "has-p-6 has-bg-coolgray-100 has-radius",
+        "has-p-6 has-bg-coolgray-100 has-radius-md",
         `has-text-${props.color}`,
     ]);
     const contentClass = kofi.classNames("has-w-full has-overflow-y", {

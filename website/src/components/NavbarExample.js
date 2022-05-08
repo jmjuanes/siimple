@@ -10,8 +10,8 @@ export const NavbarExample = () => {
         "is-flex-mobile": active,
     });
     return (
-        <div className="has-mb-4 has-radius has-bg-coolgray-100 has-p-6">
-            <div className="container has-bg-white has-radius has-p-6 is-flex has-items-center has-flex-wrap">
+        <div className="has-mb-4 has-radius-md has-bg-coolgray-100 has-p-6">
+            <div className="container has-bg-white has-radius-md has-p-6 is-flex has-items-center has-flex-wrap">
                 <a className="is-block has-size-2 is-clickable has-mr-auto has-text-current">
                     <strong>Navbar</strong>
                 </a>

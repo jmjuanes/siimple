@@ -35,7 +35,7 @@ export const Features = () => (
         <div className="columns has-mb-0">
             {data.map((item, index) => (
                 <div key={index} className="column is-full-mobile">
-                    <div className="has-radius is-clipped has-bg-coolgray-100">
+                    <div className="has-radius-md is-clipped has-bg-coolgray-100">
                         <div className="has-text-blue-500 has-p-8" align="center">
                             <Icon icon={item.icon} style={{"fontSize":"72px"}} />
                         </div>
