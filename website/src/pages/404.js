@@ -7,10 +7,10 @@ import {Seo} from "../components/Seo.js";
 export default () => {
     return (
         <div className="is-flex has-items-center has-justify-center has-w-full has-h-screen">
-            <div className="has-p-12 has-radius-md has-bg-coolgray-100" style={{"maxWidth":"600px"}}>
+            <div className="has-p-12 has-radius-md has-bg-gray-100" style={{"maxWidth":"600px"}}>
                 {/* Siimple logo */}
                 <div className="has-mb-4">
-                    <Link to="/" className="is-not-underlined has-text-coolgray-700">
+                    <Link to="/" className="is-not-underlined has-text-gray-700">
                         <strong className="siimple" style={{"fontSize":"56px"}}>siimple.</strong>
                     </Link>
                 </div>

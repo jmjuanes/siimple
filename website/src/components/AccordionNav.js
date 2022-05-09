@@ -25,7 +25,7 @@ export const AccordionNav = props => {
                     "navlink has-mb-1 has-pr-3 has-pl-6": true,
                     "has-weight-body": true,
                     "has-bg-blue-500 has-text-white-hover has-text-white has-weight-bold": isActive,
-                    "has-bg-coolgray-200-hover": !isActive,
+                    "has-bg-gray-200-hover": !isActive,
                 });
                 const itemVisible = expanded[item.group] === true; // || item.group === "global";
                 const displayGroup = currentGroup !== item.group; // && item.group !== "global"; //Display group

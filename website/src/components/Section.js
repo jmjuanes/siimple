@@ -14,7 +14,7 @@ export const Section = props => (
             <span className="badge">{props.label}</span>
         </div>
         <div className="title has-size-6 has-weight-black has-mt-4 has-mb-2">{props.title}</div>
-        <div className="has-text-coolgray-500 has-size-2 has-maxw-half-tablet">
+        <div className="has-text-gray-500 has-size-2 has-maxw-half-tablet">
             {props.children}
         </div>
         <div className="has-mt-4">

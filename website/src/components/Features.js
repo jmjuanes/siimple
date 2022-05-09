@@ -35,13 +35,13 @@ export const Features = () => (
         <div className="columns has-mb-0">
             {data.map((item, index) => (
                 <div key={index} className="column is-full-mobile">
-                    <div className="has-radius-md is-clipped has-bg-coolgray-100">
+                    <div className="has-radius-md is-clipped has-bg-gray-100">
                         <div className="has-text-blue-500 has-p-8" align="center">
                             <Icon icon={item.icon} style={{"fontSize":"72px"}} />
                         </div>
                         <div className="has-px-8 has-minh-32">
                             <div className="title is-5 has-mb-2">{item.title}</div>
-                            <div className="paragraph has-text-coolgray-600 has-mb-0">{item.content}</div>
+                            <div className="paragraph has-text-gray-600 has-mb-0">{item.content}</div>
                         </div>
                         <div className="has-p-8">
                             <Link to={item.link} className="is-inline-flex has-items-center">

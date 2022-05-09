@@ -111,21 +111,21 @@ const App = () => {
 
     const rootClass = kofi.classNames({
         "has-d-flex mobile:has-flex-column has-w-screen has-h-screen": true,
-        "has-bg-coolgray-800 has-text-white": theme === "dark",
-        "has-bg-coolgray-100": theme === "light",
+        "has-bg-gray-800 has-text-white": theme === "dark",
+        "has-bg-gray-100": theme === "light",
     });
     const menuPanelClass = kofi.classNames({
         "has-d-flex tablet:has-flex-column has-justify-between has-py-4 has-px-6": true,
         "mobile:has-order-last mobile:has-w-full": true,
-        "has-text-white has-bg-coolgray-800": theme === "dark",
+        "has-text-white has-bg-gray-800": theme === "dark",
         "has-bg-white": theme === "light",
     });
     const editorPanelClass = kofi.classNames({
         "has-flex-column has-s-full has-p-6 has-minw-0 has-minh-0": true,
         "has-d-none": layout === "preview",
         "has-d-flex": layout === "code" || layout === "both",
-        "has-bg-coolgray-700": theme === "dark",
-        "has-bg-coolgray-100": theme === "light",
+        "has-bg-gray-700": theme === "dark",
+        "has-bg-gray-100": theme === "light",
     });
     const previewPanelClass = kofi.classNames({
         "has-s-full has-minw-0 has-minh-0 has-p-0 has-bg-white": true,
