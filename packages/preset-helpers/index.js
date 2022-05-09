@@ -89,6 +89,7 @@ const helpers = generateHelpers([
         scale: "radius",
         values: {
             none: "0px",
+            full: "9999px",
         },
     },
     // Shadows
@@ -192,6 +193,19 @@ const helpers = generateHelpers([
             half: "50%",
             full: "100%",
             screen: "100vh",
+        },
+    },
+    {
+        prefix: "has",
+        shortcut: "s",
+        properties: ["height", "width"],
+        states: ["default"],
+        responsive: true,
+        scale: "sizes",
+        values: {
+            none: "0px",
+            half: "50%",
+            full: "100%",
         },
     },
     ...["bottom","left","right","top"].map(position => ({
