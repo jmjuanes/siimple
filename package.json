@@ -15,7 +15,7 @@
         "packages/*"
     ],
     "scripts": {
-        "build": "gulp css:internal css:dist",
+        "build": "gulp css",
         "icons": "gulp icons",
         "website": "cd website && npm install && npm run build && npm run serve",
         "playground": "cd playground && npm install && npm run build && npm run serve",
