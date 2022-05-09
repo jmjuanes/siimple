@@ -20,7 +20,7 @@ export const LiveCode = props => {
     let codeChildren = props.children; //Code children
     const codeProps = {};
     const lang = (props.className || "").replace("language-", "").replace("javascript", "js");
-    const codeClass = "livecode has-bg-coolgray-700 has-text-white CodeCake-dark";
+    const codeClass = "livecode has-bg-gray-700 has-text-white CodeCake-dark";
     if (["html", "css", "scss", "js"].includes(lang)) {
         codeProps["dangerouslySetInnerHTML"] = {
             "__html": highlightStr(props.children, lang),
@@ -41,7 +41,7 @@ export const LiveCode = props => {
         // "has-pt-4 has-pb-4",
         // `has-p-${props.padding}`,
         // `has-bg-${props.bg}`,
-        "has-p-6 has-bg-coolgray-100 has-radius-md",
+        "has-p-6 has-bg-gray-100 has-radius-md",
         `has-text-${props.color}`,
     ]);
     const contentClass = kofi.classNames("has-w-full has-overflow-y", {
@@ -69,7 +69,7 @@ export const LiveCode = props => {
 //Live code default props
 LiveCode.defaultProps = {
     "align": "left",
-    "bg": "coolgray-100",
+    "bg": "gray-100",
     "bold": "false",
     "color": "dark",
     "live": "false",

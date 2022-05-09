@@ -79,8 +79,8 @@ export default {
     colors: {
         primary: colors.blue["500"],
         secondary: colors.royal["500"],
-        muted: colors.coolgray["200"],
-        text: colors.coolgray["700"],
+        muted: colors.gray["200"],
+        text: colors.gray["700"],
         heading: colors.gray["800"],
         background: "#fff",
         // All colors

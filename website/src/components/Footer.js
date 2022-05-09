@@ -11,7 +11,7 @@ const FOOTER_LINKS = [
 
 export const Footer = props => {
     const items = props.links || FOOTER_LINKS;
-    const itemClass ="has-text-coolgray-700 has-text-blue-500-hover is-not-underlined";
+    const itemClass ="has-text-gray-700 has-text-blue-500-hover is-not-underlined";
     return (
         <div className="container has-pt-12 has-pb-24">
             <div className="has-w-full" style={{"maxWidth":"500px"}}>

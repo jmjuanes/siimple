@@ -9,7 +9,7 @@ export const IconsCheatsheet = () => (
         {sortedIcons.map(icon => (
             <div key={icon.name} className="column is-one-quarter-tablet is-full-mobile is-flex has-items-center">
                 <div className="">
-                    <code className="has-text-coolgray-500 has-size-0">{icon.name}</code>
+                    <code className="has-text-gray-500 has-size-0">{icon.name}</code>
                 </div>
                 <div className="has-ml-auto">
                     <i className={`icon-${icon.name} has-size-2`} />

@@ -23,10 +23,10 @@ const Button = props => {
 // Export Welcome component
 export const Welcome = () => (
     <div className="has-pt-24-tablet has-pt-12-mobile has-pb-32" align="center">
-        <div className="headline has-text-coolgray-700 has-mb-12">
+        <div className="headline has-text-gray-700 has-mb-12">
             A minimal and <span className="has-text-blue-500">themeable</span> css toolkit.
         </div>
-        <div className="has-text-coolgray-500 has-size-3 has-maxw-192">
+        <div className="has-text-gray-500 has-size-3 has-maxw-192">
             <strong>Siimple</strong> is an open source css toolkit that provides a 
             <strong> responsive</strong> and <strong>minimalistic</strong> starting 
             point for your next amazing website or application.
@@ -47,7 +47,7 @@ export const Welcome = () => (
                 <Button
                     text="View on GitHub"
                     icon="external-link"
-                    className="has-bg-coolgray-700"
+                    className="has-bg-gray-700"
                 />
             </Link>
         </div>

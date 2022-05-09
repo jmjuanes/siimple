@@ -28,7 +28,7 @@ const IconsList = props => {
     const visibleIcons = !props.pagination ? displayedIcons : displayedIcons.slice(start, start + props.pageSize);
     return (
         <div>
-            <div className="has-radius-md has-bg-coolgray-200 has-p-6 has-mb-4">
+            <div className="has-radius-md has-bg-gray-200 has-p-6 has-mb-4">
                 {/* Current query */}
                 <div className="has-mb-4 is-flex has-items-center">
                     <div className="has-mr-4 has-size-3">
@@ -36,7 +36,7 @@ const IconsList = props => {
                         <span> icons</span>
                     </div>
                     {kofi.when(!!props.query, () => (
-                        <div className="has-bg-coolgray-600 is-flex has-items-center has-radius-full has-px-3 has-py-1">
+                        <div className="has-bg-gray-600 is-flex has-items-center has-radius-full has-px-3 has-py-1">
                             <div className="has-size-2 has-pr-3 has-text-white">{props.query}</div>
                             <div className="icon-cross is-clickable has-text-white" onClick={props.onQueryClear} />
                         </div>
@@ -80,16 +80,16 @@ const IconsList = props => {
                 const firstClass = kofi.classNames({
                     "has-weight-bold has-py-3 has-px-4": true,
                     "is-clickable has-text-blue-500-hover": page > 0,
-                    "has-text-coolgray-400": page === 0,
+                    "has-text-gray-400": page === 0,
                 });
                 const lastClass = kofi.classNames({
                     "has-weight-bold has-py-3 has-px-4": true,
                     "is-clickable has-text-blue-500-hover": page < totalPages - 1,
-                    "has-text-coolgray-400": totalPages - 1 <= page,
+                    "has-text-gray-400": totalPages - 1 <= page,
                 });
                 return (
                     <div className="is-flex-tablet">
-                        <div className="has-ml-auto has-p-2 has-radius-md has-bg-coolgray-200 is-flex has-justify-between-mobile">
+                        <div className="has-ml-auto has-p-2 has-radius-md has-bg-gray-200 is-flex has-justify-between-mobile">
                             <div className={firstClass} onClick={() => setPage(0)}>First</div>
                             {pages.map(index => {
                                 const itemClass = kofi.classNames({
@@ -118,7 +118,7 @@ const IconModal = props => {
     const previewClass = kofi.classNames([
         "is-flex has-justify-center has-p-12 has-radius-md",
         "has-mb-4",
-        "has-bg-coolgray-200 has-text-coolgray-700",
+        "has-bg-gray-200 has-text-gray-700",
     ]);
     const iconHtml = getIconUsage(props.icon);
     const iconSvgUrl = `${process.env.REPO_URL}/raw/main/icons/${props.icon.name}.svg`;
@@ -176,7 +176,7 @@ export const IconsGallery = () => {
     };
     return (
         <div className="has-mb-24">
-            <div className="is-flex has-items-center has-mb-4 has-bg-coolgray-200 has-radius-md">
+            <div className="is-flex has-items-center has-mb-4 has-bg-gray-200 has-radius-md">
                 <Icon icon="search" className="has-text-xl has-pl-3 has-pr-0" />
                 <input
                     ref={queryRef}

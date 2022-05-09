@@ -9,12 +9,12 @@ const PaginationItem = props => {
     const paginationClass = kofi.classNames([
         "is-block",
         "has-radius-md has-p-4",
-        "has-bg-coolgray-100-hover",
-        "has-text-coolgray-700 is-not-underlined",
+        "has-bg-gray-100-hover",
+        "has-text-gray-700 is-not-underlined",
     ]);
     return (
         <Link className={paginationClass} to={props.url}>
-            <div className="has-size-0 has-text-coolgray-500">
+            <div className="has-size-0 has-text-gray-500">
                 {kofi.when(props.type === "prev", () => (
                     <Icon icon="arrow-left" className="has-pr-1" />
                 ))}

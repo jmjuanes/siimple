@@ -5,7 +5,7 @@ import kofi from "kofi";
 export const Brand = props => {
     const parentClass = kofi.classNames({
         "has-text-no-underline": true,
-        "has-text-coolgray-800": props.theme === "light",
+        "has-text-gray-800": props.theme === "light",
         "has-text-white": props.theme === "dark",
     });
     return (
@@ -21,13 +21,13 @@ export const VersionDropdown = props => {
     const currentVersion = process.env.VERSION;
     const parentClass = kofi.classNames({
         "has-py-3 has-px-4 has-d-flex has-items-center has-radius-md has-cursor-pointer": true,
-        "has-bg-coolgray-200 hover:has-bg-coolgray-300": props.theme === "light",
-        "has-bg-coolgray-600 hover:has-bg-coolgray-800 has-text-white": props.theme === "dark",
+        "has-bg-gray-200 hover:has-bg-gray-300": props.theme === "light",
+        "has-bg-gray-600 hover:has-bg-gray-800 has-text-white": props.theme === "dark",
     });
     const dropdownClass = kofi.classNames({
         "has-position-absolute has-right-none has-p-4 has-mt-1 has-radius-md has-w-64": true,
-        "has-bg-coolgray-200": props.theme === "light",
-        "has-bg-coolgray-600": props.theme === "dark",
+        "has-bg-gray-200": props.theme === "light",
+        "has-bg-gray-600": props.theme === "dark",
     });
     return (
         <div className="has-position-relative">
@@ -58,8 +58,8 @@ export const VersionDropdown = props => {
 export const ActionButton = props => {
     const buttonClass = kofi.classNames({
         "has-cursor-pointer has-text-center has-p-2 has-ml-2 has-radius-md": true,
-        "has-bg-coolgray-600 hover:has-bg-coolgray-800 has-text-coolgray-300 hover:has-text-blue-500": props.theme === "dark",
-        "has-bg-coolgray-200 hover:has-bg-coolgray-300 has-text-coolgray-500 hover:has-text-blue-500": props.theme === "light",
+        "has-bg-gray-600 hover:has-bg-gray-800 has-text-gray-300 hover:has-text-blue-500": props.theme === "dark",
+        "has-bg-gray-200 hover:has-bg-gray-300 has-text-gray-500 hover:has-text-blue-500": props.theme === "light",
     });
     return (
         <div className={buttonClass} onClick={props.onClick}>
@@ -71,7 +71,7 @@ export const ActionButton = props => {
 export const DarkThemeButton = props => {
     const buttonClass = kofi.classNames({
         "has-cursor-pointer has-radius-md has-py-2 has-px-2": true,
-        "hover:has-bg-coolgray-100 hover:has-text-blue-500": props.theme === "light",
+        "hover:has-bg-gray-100 hover:has-text-blue-500": props.theme === "light",
         "has-bg-blue-500 has-text-white": props.theme === "dark",
     });
     return (
@@ -100,8 +100,8 @@ export const FileTab = props => {
 export const Editor = React.forwardRef((props, ref) => {
     const editorClass = kofi.classNames({
         "CodeCake has-s-full has-p-0 has-overflow-hidden": true,
-        "CodeCake-dark has-bg-coolgray-700": props.theme === "dark",
-        "CodeCake-light has-bg-coolgray-100": props.theme === "light",
+        "CodeCake-dark has-bg-gray-700": props.theme === "dark",
+        "CodeCake-light has-bg-gray-100": props.theme === "light",
     });
     return (
         <div className={props.visible ? "has-h-full has-overflow-hidden" : "has-d-none"}>
@@ -141,16 +141,16 @@ export const LayoutSwitch = props => {
     };
     const parentClass = kofi.classNames({
         "has-d-flex tablet:has-flex-column has-radius-md": true,
-        "has-bg-coolgray-100": props.theme === "light",
-        "has-bg-coolgray-700": props.theme === "dark",
+        "has-bg-gray-100": props.theme === "light",
+        "has-bg-gray-700": props.theme === "dark",
     });
     return (
         <div className={parentClass}>
             {Object.keys(layoutIcons).map(key => {
                 const iconClass = kofi.classNames({
                     "has-m-1 has-text-3xl has-radius-md has-cursor-pointer": true,
-                    "has-text-coolgray-400 hover:has-text-coolgray-500": props.theme === "light" && key !== props.layout,
-                    "has-text-coolgray-500 hover:has-text-coolgray-400": props.theme === "dark" && key !== props.layout,
+                    "has-text-gray-400 hover:has-text-gray-500": props.theme === "light" && key !== props.layout,
+                    "has-text-gray-500 hover:has-text-gray-400": props.theme === "dark" && key !== props.layout,
                     "has-text-blue-500": key === props.layout && props.theme === "light",
                     "has-text-blue-400": key === props.layout && props.theme === "dark",
                 });
@@ -177,7 +177,7 @@ export const ShareModal = props => {
 
     return (
         <div className="scrim">
-            <div className="modal is-medium has-text-coolgray-700 mobile:has-mx-6">
+            <div className="modal is-medium has-text-gray-700 mobile:has-mx-6">
                 <div className="has-d-flex has-items-center has-mb-4">
                     <div className="title is-3 has-mb-0">Share</div>
                     <div className="close has-ml-auto" onClick={props.onClose} />
