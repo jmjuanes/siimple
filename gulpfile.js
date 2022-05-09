@@ -66,19 +66,6 @@ const iconify = () => {
     return through.obj(bufferContents, endStream);
 };
 
-// Build CSS wrapper
-const buildCss = (source, target) => {
-    return gulp.src(source)
-        .pipe(siimple())
-        .pipe(postcss([autoprefixer()]))
-        .pipe(minify({
-            "compatibility": "*",
-            "level": 2,
-        }))
-        .pipe(rename("siimple.css"))
-        .pipe(gulp.dest(target))
-};
-
 // Clean output directories
 gulp.task("clean", () => null);
 
@@ -90,10 +77,14 @@ gulp.task("icons", () => {
 });
 
 // Generate css files
-gulp.task("css:internal", () => {
-    return buildCss("siimple.config.js", ".");
-});
-
-gulp.task("css:dist", () => {
-    return buildCss("siimple/defaultConfig.js", "siimple/");
+gulp.task("css", () => {
+    return gulp.src("siimple.config.js")
+        .pipe(siimple())
+        .pipe(postcss([autoprefixer()]))
+        .pipe(minify({
+            "compatibility": "*",
+            "level": 2,
+        }))
+        .pipe(rename("siimple.css"))
+        .pipe(gulp.dest("siimple/"))
 });
