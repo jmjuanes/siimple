@@ -1,7 +1,7 @@
 // Helpers generator
 export const generateHelpers = helpers => {
-    return Object.fromEntries([helpers].flat().map(item => {
-        const styles = {};
+    return [helpers].flat().reduce((styles, item) => {
+        const prefix = [item.prefix, item.shortcut].filter(n => !!n).join("-");
         // Themeable helpers
         if (item.scale) {
             const themeStyles = {
@@ -14,15 +14,15 @@ export const generateHelpers = helpers => {
             // Generate states
             item.states.forEach(state => {
                 if (state === "default") {
-                    styles["&-{{name}}"] = themeStyles;
+                    styles[`.${prefix}-{{name}}`] = themeStyles;
                 }
                 else if (state === "focus" || state === "hover") {
-                    styles[`&-{{name}}-${state}:${state}`] = themeStyles;
+                    styles[`.${prefix}-{{name}}-${state}:${state}`] = themeStyles;
                 }
             });
             // Responsive
             if (!!item.responsive) {
-                styles["&-{{name}}-{{breakpoint}}"] = {
+                styles[`.${prefix}-{{name}}-{{breakpoint}}`] = {
                     "@breakpoints": themeStyles,
                 };
             }
@@ -37,15 +37,15 @@ export const generateHelpers = helpers => {
                 // Generate states
                 item.states.forEach(state => {
                     if (state === "default") {
-                        styles[`&-${name}`] = valueStyles;
+                        styles[`.${prefix}-${name}`] = valueStyles;
                     }
                     else if (state === "hover" || state === "focus") {
-                        styles[`&-${name}-${state}:${state}`] = valueStyles;
+                        styles[`.${prefix}-${name}-${state}:${state}`] = valueStyles;
                     }
                 });
                 // Responsive styles
                 if (!!item.responsive) {
-                    styles[`&-${name}-{{breakpoint}}`] = {
+                    styles[`.${prefix}-${name}-{{breakpoint}}`] = {
                         "@breakpoints": {
                             "&": valueStyles,
                         },
@@ -55,6 +55,7 @@ export const generateHelpers = helpers => {
             // return [`.has-${item.shortcut}`, helperStyles];
         }
         // Generate helper block
-        return [`.${[item.prefix, item.shortcut].filter(n => !!n).join("-")}`, styles];
-    }));
+        // return [`.${[item.prefix, item.shortcut].filter(n => !!n).join("-")}`, styles];
+        return styles;
+    }, {});
 };
