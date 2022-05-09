@@ -157,7 +157,7 @@ export const mergeStyles = (source, target) => {
 // Build css value
 export const buildValue = (property, value, config, vars) => {
     const values = [value].flat(1);
-    if (vars?.value && values[0] === "value") {
+    if (values[0] === "value" && typeof vars["value"] !== "undefined") {
         values[0] = vars["value"]; // Replace value for vars
     }
     if (scales[property] && typeof values[0] === "string") {
