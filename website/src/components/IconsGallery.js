@@ -177,7 +177,7 @@ export const IconsGallery = () => {
     return (
         <div className="has-mb-24">
             <div className="is-flex has-items-center has-mb-4 has-bg-gray-200 has-radius-md">
-                <Icon icon="search" className="has-text-xl has-pl-3 has-pr-0" />
+                <Icon icon="search" className="has-size-3 has-pl-3 has-pr-0" />
                 <input
                     ref={queryRef}
                     type="text"
