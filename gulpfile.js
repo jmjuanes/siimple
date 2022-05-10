@@ -8,19 +8,19 @@ import CleanCSS from "clean-css";
 import through from "through2";
 import Vinyl from "vinyl";
 
-import buildSiimple from "./siimple/index.js";
+import {css} from "@siimple/core";
 
 // Build Siimple
 const siimple = () => {
     return through.obj((file, enc, callback) => {
         import(file.path)
-        .then(rawConfig => {
-            return buildSiimple(rawConfig.default);
-        })
-        .then(css => {
-            file.contents = new Buffer.from(css);
-            return callback(null, file);
-        });
+            .then(rawConfig => {
+                return css(rawConfig.default);
+            })
+            .then(result => {
+                file.contents = new Buffer.from(result);
+                return callback(null, file);
+            });
     });
 };
 
@@ -28,11 +28,11 @@ const siimple = () => {
 const minify = options => {
     return through.obj((file, enc, callback) => {
         const content = file.contents.toString() || "";
-        new CleanCSS(options).minify(content, (errors, css) => {
+        new CleanCSS(options).minify(content, (errors, result) => {
             if (errors) {
                 return callback(errors.join(" "));
             }
-            file.contents = new Buffer.from(css.styles);
+            file.contents = new Buffer.from(result.styles);
             return callback(null, file);
         });
     });

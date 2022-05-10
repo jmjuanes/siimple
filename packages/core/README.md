@@ -12,44 +12,42 @@ $ npm install --save @siimple/core
 
 ## API
 
-### buildStyles(styles, theme)
+### css(config)
 
-Given a `styles` object and a `theme` object, this method will generate a CSS string with the parsed styles using the provided theme.
+Given a [configuration object](https://www.siimple.xyz/configuration), this method will generate a CSS string with the parsed styles in `config.styles` and using the provided theme in the configuration object.
 
 ```js
-import {buildStyles} from "@siimple/core";
+import {css} from "@siimple/core";
 
-// Example theme
-const theme = {
+const result = css({
+    useBorderBox: false,
+    useRootStyles: false,
     colors: {
-        text: "#000",
-        background: "#fff",
+        primary: "#34dde5",
     },
-};
-
-// Styles to compile
-const styles = {
-    html: {
-        backgroundColor: "background",
-        color: "text",
+    styles: {
+        button: {
+            backgroundColor: "primary",
+            color: "white",
+            p: "2rem",
+        },
     },
-};
-
-const css = buildStyles(styles, theme);
+});
 ```
 
 This will generate the following CSS string:
 
 ```css
-html {
-    background-color: #fff;
-    color: #000;
+button {
+    background-color: #34dde5;
+    color: white;
+    padding: 2rem;
 }
 ```
 
 ### mergeStyles(source, target)
 
-Performs a **deep merge** of the styles defined in the `target` object into `source`, and returns the merged styles.
+Performs a **deep merge** of the styles defined in the `target` object into the `source` object, and returns the merged styles object.
 
 ```js
 import {mergeStyles} from "@siimple/core";
@@ -91,6 +89,16 @@ mergedStyles = {
         },
     },
 };
+```
+
+### mergeConfig(source, target)
+
+This function will return a new configuration object as a result of performing a **deep merge** of the `target` configuration object into `source`.
+
+```js
+import {mergeConfig} from "@siimple/core";
+
+const config = mergeConfig({ /* source */}, {/* target */});
 ```
 
 
