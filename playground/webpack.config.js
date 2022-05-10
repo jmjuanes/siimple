@@ -21,7 +21,7 @@ module.exports = {
             path.resolve(__dirname, "./node_modules"),
         ],
         alias: {
-            "siimple": path.resolve(__dirname, "../siimple/"),
+            // "siimple": path.resolve(__dirname, "../siimple/"),
             "@siimple/colors": path.resolve(__dirname, "../packages/colors/"),
             "@siimple/core": path.resolve(__dirname, "../packages/core/"),
             "@siimple/preset-reboot": path.resolve(__dirname, "../packages/preset-reboot/"),

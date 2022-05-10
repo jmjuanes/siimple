@@ -1,4 +1,4 @@
-import siimple from "siimple";
+import {css} from "@siimple/core";
 import colors from "@siimple/colors";
 import reboot from "@siimple/preset-reboot";
 import elements from "@siimple/preset-elements";
@@ -51,13 +51,13 @@ self.addEventListener("message", event => {
         });
     }
     evaluateConfig(event.data.config)
-        .then(config => siimple(config))
-        .then(css => {
+        .then(config => css(config))
+        .then(result => {
             prevConfig = event.data.config;
-            prevCss = css;
+            prevCss = result;
             return self.postMessage({
                 id: event.data.id,
-                css: css,
+                css: result,
             });
         })
         .catch(error => {
