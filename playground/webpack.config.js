@@ -2,7 +2,9 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+
 const package = require("../package.json");
+// const {version: siimpleVersion} = require("../siimple/package.json");
 
 // Generate the default configuration
 module.exports = {
@@ -20,10 +22,14 @@ module.exports = {
         ],
         alias: {
             "siimple": path.resolve(__dirname, "../siimple/"),
-            "@siimple/preset-reboot": path.resolve(__dirname, "../presets/reboot/"),
-            "@siimple/preset-markup": path.resolve(__dirname, "../presets/markup/"),
-            "@siimple/preset-utilities": path.resolve(__dirname, "../presets/utilities/"),
-            "@siimple/preset-icons": path.resolve(__dirname, "../presets/icons/"),
+            "@siimple/colors": path.resolve(__dirname, "../packages/colors/"),
+            "@siimple/core": path.resolve(__dirname, "../packages/core/"),
+            "@siimple/preset-reboot": path.resolve(__dirname, "../packages/preset-reboot/"),
+            "@siimple/preset-elements": path.resolve(__dirname, "../packages/preset-elements/"),
+            "@siimple/preset-markup": path.resolve(__dirname, "../packages/preset-markup/"),
+            "@siimple/preset-helpers": path.resolve(__dirname, "../packages/preset-helpers/"),
+            "@siimple/preset-icons": path.resolve(__dirname, "../packages/preset-icons/"),
+            "@siimple/preset-theme": path.resolve(__dirname, "../packages/preset-theme/"),
         },
     },
     module: {
@@ -54,6 +60,7 @@ module.exports = {
         new webpack.DefinePlugin({
             "process.env.VERSION": JSON.stringify(package.version),
             "process.env.HOMEPAGE_URL": JSON.stringify(package.homepage),
+            // "process.end.SIIMPLE_VERSION": JSON.stringify(siimpleVersion),
         }),
         new CopyPlugin({
             patterns: [

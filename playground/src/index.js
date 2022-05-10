@@ -110,43 +110,43 @@ const App = () => {
     };
 
     const rootClass = kofi.classNames({
-        "has-d-flex mobile:has-flex-column has-w-screen has-h-screen": true,
+        "is-flex has-direction-column-mobile has-w-screen has-h-screen": true,
         "has-bg-gray-800 has-text-white": theme === "dark",
         "has-bg-gray-100": theme === "light",
     });
     const menuPanelClass = kofi.classNames({
-        "has-d-flex tablet:has-flex-column has-justify-between has-py-4 has-px-6": true,
-        "mobile:has-order-last mobile:has-w-full": true,
+        "is-flex has-direction-column-tablet has-justify-between has-py-4 has-px-6": true,
+        "has-order-last-mobile has-w-full-mobile": true,
         "has-text-white has-bg-gray-800": theme === "dark",
         "has-bg-white": theme === "light",
     });
     const editorPanelClass = kofi.classNames({
-        "has-flex-column has-s-full has-p-6 has-minw-0 has-minh-0": true,
-        "has-d-none": layout === "preview",
-        "has-d-flex": layout === "code" || layout === "both",
+        "has-direction-column has-s-full has-p-6 has-minw-0 has-minh-0": true,
+        "is-hidden": layout === "preview",
+        "is-flex": layout === "code" || layout === "both",
         "has-bg-gray-700": theme === "dark",
         "has-bg-gray-100": theme === "light",
     });
     const previewPanelClass = kofi.classNames({
         "has-s-full has-minw-0 has-minh-0 has-p-0 has-bg-white": true,
-        "has-d-flex has-flex-column": layout !== "code",
-        "has-d-none": layout === "code",
+        "is-flex has-direction-column": layout !== "code",
+        "is-hidden": layout === "code",
     });
 
     // Render app component
     return (
         <div className={rootClass}>
             <div className={menuPanelClass}>
-                <div className="has-d-flex">
+                <div className="is-flex">
                     <Brand theme={theme} url={process.env.HOMEPAGE_URL} />
                 </div>
                 <LayoutSwitch theme={theme} layout={layout} onChange={handleLayoutChange} />
-                <div className="has-d-flex tablet:has-flex-column">
+                <div className="is-flex has-direction-column-tablet">
                     <DarkThemeButton theme={theme} onClick={handleThemeToggle} />
                 </div>
             </div>
                 <div className={editorPanelClass}>
-                    <div className="has-d-flex has-mb-8">
+                    <div className="is-flex has-mb-8">
                         <FileTab
                             theme={theme}
                             text="index.html"
@@ -161,14 +161,14 @@ const App = () => {
                             active={tab === "config"}
                             onClick={() => handleTabChange("config")}
                         />
-                        <div className="has-ml-auto has-d-flex has-items-center mobile:has-d-none">
+                        <div className="has-ml-auto is-flex has-items-center is-hidden-mobile">
                             <VersionDropdown theme={theme} />
                             <ActionButton theme={theme} icon="share" onClick={handleShareClick} />
                         </div>
                     </div>
                     <Editor theme={theme} visible={tab === "html"} ref={htmlRef} />
                     <Editor theme={theme} visible={tab === "config"} ref={configRef} />
-                    <div className="has-d-flex has-text-xs has-pt-4 has-opacity-80 mobile:has-d-none">
+                    <div className="is-flex has-size-0 has-pt-4 has-opacity-75 is-hidden-mobile">
                         <div className="has-mr-auto">
                             Made with <i className="icon-heart" /> and <i className="icon-coffee" /> using <b>siimple</b>.
                         </div>
@@ -180,7 +180,7 @@ const App = () => {
                 <div className={previewPanelClass}>
                     {kofi.when(!!error, () => (
                         <div className="alert has-bg-red-500 has-radius-none">
-                            <i className="icon-exclamation has-text-2xl" />
+                            <i className="icon-exclamation has-size-4" />
                             <div className="has-pl-4">
                                 <div className="title is-5 has-text-white">Error in siimple.config.js</div>
                                 <div className="has-weight-normal">{error}</div>

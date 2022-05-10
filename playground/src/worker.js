@@ -1,18 +1,25 @@
-import {build, mergeConfig} from "siimple";
-import defaultConfig from "siimple/defaultConfig.js";
-import colors from "siimple/colors.js";
+import siimple from "siimple";
+import colors from "@siimple/colors";
 import reboot from "@siimple/preset-reboot";
+import elements from "@siimple/preset-elements";
 import markup from "@siimple/preset-markup";
-import utilities from "@siimple/preset-utilities";
+import helpers from "@siimple/preset-helpers";
+import * as helpersUtils from "@siimple/preset-helpers/utils.js";
 import icons from "@siimple/preset-icons";
+import theme from "@siimple/preset-theme";
 
 const AsyncFunction = Object.getPrototypeOf(async () => {}).constructor;
+
+// Available modules from siimple
 const modules = {
-    colors,
-    reboot,
-    markup,
-    utilities,
-    icons,
+    "colors": colors,
+    "preset-reboot": reboot,
+    "preset-markup": markup,
+    "preset-elements": elements,
+    "preset-helpers": helpers,
+    "preset-helpers/utils": helpersUtils,
+    "preset-icons": icons,
+    "preset-theme": theme,
 };
 
 let prevConfig = null;
@@ -22,8 +29,7 @@ let prevCss = null;
 const evaluateConfig = configStr => {
     return Promise.resolve().then(() => {
         const configCode = configStr
-            .replace(/import\s*(.*?)\s*from\s*(['"])siimple\/colors(\.js)?\2(;)?/g, `const $1 = __require("colors");`)
-            .replace(/import\s*(.*?)\s*from\s*(['"])@siimple\/preset-(.*?)(\.js)?\2(;)?/g, `const $1 = __require("$3");`)
+            .replace(/import\s*(.*?)\s*from\s*(['"])@siimple\/(.*?)(\.js)?\2(;)?/g, `const $1 = __require("$3");`)
             .replace(/export default /, "return ");
         
         // Custom require function
@@ -45,9 +51,7 @@ self.addEventListener("message", event => {
         });
     }
     evaluateConfig(event.data.config)
-        .then(config => {
-            return build(mergeConfig({...defaultConfig}, config));
-        })
+        .then(config => siimple(config))
         .then(css => {
             prevConfig = event.data.config;
             prevCss = css;
