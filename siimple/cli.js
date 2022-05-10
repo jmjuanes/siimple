@@ -3,7 +3,7 @@
 import fs from "fs";
 import path from "path";
 
-import build from "./index.js";
+import {css} from "@siimple/core";
 
 // Get CLI arguments
 const getArguments = () => {
@@ -35,15 +35,15 @@ process.nextTick(() => {
     }
     // Import configuration
     return resolveConfig(configPath).then(config => {
-        return build(config);
-    }).then(css => {
+        return css(config);
+    }).then(result => {
         // Print file in stdout
         if (!args.output) {
-            return process.stdout.write(css);
+            return process.stdout.write(result);
         }
         // Save to file
         const outputPath = path.resolve(process.cwd(), args.output);
-        fs.writeFileSync(outputPath, css, "utf8");
+        fs.writeFileSync(outputPath, result, "utf8");
     }).catch(error => {
         console.error(error);
         process.exit(1);
