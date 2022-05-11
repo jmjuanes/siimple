@@ -18,25 +18,33 @@ Welcome to the **siimple CSS toolkit** repository :tada:
 
 ## What is siimple
 
-### A themeable and customizable CSS framework
+We call **siimple** a **CSS toolkit** because it is a themeable and customizable CSS framework, but also a CSS engine that you can use for building your own CSS framework.
 
+Inspired by other CSS frameworks (like [bulma](https://bulma.io)), but:
 
+- **Fully themeable**: use your own theme to customize and extend **siimple**. 
+- **Use what you really need**: include the presets (elements, helpers, ...) that you **REALLY** need for your project.
+- **No dependencies**: written all from scratch without any dependencies.
+- **No CSS preprocessors needed**: we provide a tiny CLI to compile the CSS, so you do not need any other preprocessor like SASS or LESS.
+- **Color palette included**: we provide a flat color palette to customize **siimple** with different colors.
+- **Pure CSS icons included**: we provide a collection of pure CSS icons.
 
-### A CSS engine
-
-You can use the core of **siimple** for building your own themeable CSS framework.
 
 ## Packages
 
+Along with the main `siimple` package, the packages listed in the table below are also available on this repository. These packages are published in the `@siimple` organization in [npm](https://npmjs.com).
 
-You will find the following packages in this repository:
+| Package | Description | Included in `siimple` |
+|---------|-------------|-----------------------|
+| [@siimple/core](https://github.com/jmjuanes/siimple/tree/main/packages/core/) | Core engine of the siimple CSS toolkit. | :heavy_check_mark: |
+| [@siimple/colors](https://github.com/jmjuanes/siimple/tree/main/packages/colors/) | Color palette for siimple. | :heavy_check_mark: |
+| [@siimple/preset-reboot](https://github.com/jmjuanes/siimple/tree/main/packages/preset-reboot/) | Reboot preset for the siimple CSS toolkit. | :heavy_check_mark: |
+| [@siimple/preset-elements](https://github.com/jmjuanes/siimple/tree/main/packages/preset-elements/) | Elements preset for the siimple CSS toolkit. | :heavy_check_mark: |
+| [@siimple/preset-helpers](https://github.com/jmjuanes/siimple/tree/main/packages/preset-helpers/) | Helpers preset for the siimple CSS toolkit. | :heavy_check_mark: |
+| [@siimple/preset-markup](https://github.com/jmjuanes/siimple/tree/main/packages/preset-markup) | Markup preset for the siimple CSS toolkit. | :heavy_check_mark: |
+| [@siimple/preset-icons](https://github.com/jmjuanes/siimple/tree/main/packages/preset-icons/) | Pure CSS icons preset. | :heavy_check_mark: |
 
-| Package | Description | Version |
-|---------|-------------|---------|
-| [@siimple/preset-reboot](https://github.com/jmjuanes/siimple/tree/main/packages/reboot) | Reboot preset for the siimple CSS toolkit. | ![](https://badgen.net/npm/v/@siimple/preset-reboot) |
-| [@siimple/preset-markup](https://github.com/jmjuanes/siimple/tree/main/presets/markup) | Markup preset for the siimple CSS toolkit. | ![](https://badgen.net/npm/v/@siimple/preset-markup) |
-| [@siimple/preset-utilities](https://github.com/jmjuanes/siimple/tree/main/presets/utilities) | Utilities preset for the siimple CSS toolkit. | ![](https://badgen.net/npm/v/@siimple/preset-utilities) |
-| [@siimple/preset-icons](https://github.com/jmjuanes/siimple/tree/main/presets/icons) | Icons preset for the siimple CSS toolkit. | ![](https://badgen.net/npm/v/@siimple/preset-icons) |
+The version of these packages are different from the main `siimple` package, but follows this convention: the version `4.x.y` of `siimple` equals to version `0.x.y` of all packages published in the `@siimple` organization.
 
 
 ## Development
@@ -55,9 +63,9 @@ Navigate into the repository folder and then install dependencies with **npm**:
 $ npm run install
 ```
 
-### Generate the demo CSS
+### Generate the framework CSS
 
-Run the following command to generate a demo CSS version of **siimple** in `siimple/siimple.css`:
+Run the following command to generate the CSS of the **siimple** framework in `siimple/siimple.css`:
 
 ```bash
 $ npm run build
@@ -65,7 +73,7 @@ $ npm run build
 
 ### Local playground
 
-You can run the playground editor in your local machine after building the demo CSS of **siimple** and then running the following command: 
+You can run the playground editor in your local machine after building the framework CSS and then running the following command: 
 
 ```bash
 $ npm run playground
@@ -73,7 +81,7 @@ $ npm run playground
 
 ### Documentation
 
-We are using [Gatsby](https://www.gatsbyjs.com/) for documentation. After building the demo CSS of **siimple** you can build and start the documentation site running the following command:
+We are using [Gatsby](https://www.gatsbyjs.com/) for documentation. After building the CSS of the **siimple** framework you can build and start the documentation site running the following command:
 
 ```bash
 $ npm run website
@@ -83,5 +91,3 @@ $ npm run website
 ## License
 
 Code and documentation of **siimple** &copy; 2015-present **Josemi Juanes**. 
-
-The code is released unde the [MIT License](LICENSE) and the documentation is released under the [Creative Commons CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
