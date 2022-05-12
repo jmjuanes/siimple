@@ -1,6 +1,6 @@
 name: "💡 Request a feature"
 description: "Suggest a new idea for siimple"
-title: ""
+title: "New feature: "
 labels: ["request-feature"]
 body:
   - type: dropdown
