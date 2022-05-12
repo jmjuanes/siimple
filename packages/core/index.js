@@ -171,9 +171,13 @@ export const buildMixin = (styles, theme, prev) => {
         }
         // Apply styles from this mixin
         prev.add(styles.apply);
+        let appliedStyles = getInObject(theme, styles.apply) || {};
+        if (appliedStyles.default && typeof appliedStyles.default === "object") {
+            appliedStyles = appliedStyles.default;
+        }
         return {
             ...excludeInObject(styles, "apply"),
-            ...buildMixin(getInObject(theme, styles.apply) || {}, theme, prev),
+            ...buildMixin(appliedStyles, theme, prev),
         };
     }
     // No mixin to apply --> return styles

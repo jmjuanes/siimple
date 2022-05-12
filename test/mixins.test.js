@@ -3,6 +3,9 @@ import {buildMixin} from "../packages/core/index.js";
 describe("buildMixin", () => {
     const theme = {
         test: {
+            "default": {
+                color: "red",
+            },
             "basic": {
                 color: "black",
                 display: "none"
@@ -39,5 +42,13 @@ describe("buildMixin", () => {
             const msg = "Circular mixins found: test.circular1->test.circular2->test.circular1"
             expect(error.message).toBe(msg);
         }
+    });
+    it("should apply nested styles", () => {
+        const initialStyles = {
+            color: "white",
+            apply: "test",
+        };
+        const finalStyles = buildMixin(initialStyles, theme);
+        expect(finalStyles.color).toBe("red");
     });
 });

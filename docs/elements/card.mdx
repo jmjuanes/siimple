@@ -27,3 +27,19 @@ export default {
     },
 };
 ```
+
+If you use the `cards` group for more mixins, this element will use `cards.default` instead:
+
+```js title=siimple.config.js
+export default {
+    cards: {
+        default: {
+            backgroundColor: "white",
+            color: "inherit",
+            padding: "2rem",
+        },
+        // ...other additional cards mixins
+    },
+    // ...other configuration
+};
+```

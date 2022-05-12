@@ -27,20 +27,33 @@ We also provide the `is-full` modifier to change the button width to the **full 
 
 ### Customize
 
-The button element will apply the styles defined in the `buttons.default` field of your theme configuration.
+The button element will apply the styles defined in the `buttons` field of your theme configuration.
 
 ```js title=siimple.config.js
 export default {
     buttons: {
+        backgroundColor: "primary",
+        color: "white",
+        // Will generate '.button.is-disabled' modifier
+        "&.is-disabled": {
+            cursor: ["not-allowed", "!important"],
+            opacity: ["0.6", "!important"],
+        },
+    },
+};
+```
+
+If you use the `buttons` group for more mixins, this element will use `buttons.default` instead:
+
+```js title=siimple.config.js
+export default {
+    badges: {
         default: {
             backgroundColor: "primary",
             color: "white",
-            // Will generate '.button.is-disabled' modifier
-            "&.is-disabled": {
-                cursor: ["not-allowed", "!important"],
-                opacity: ["0.6", "!important"],
-            },
         },
+        // ...other additional buttons mixins
     },
+    // ...other configuration
 };
 ```
