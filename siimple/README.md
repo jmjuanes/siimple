@@ -33,8 +33,30 @@ $ npm install --save siimple
 Create a file called `siimple.config.js` with your configuration:
 
 ```js
+import colors from "@siimple/colors";
+import theme from "@siimple/preset-theme";
+import elements from "@siimple/preset-elements";
+
 export default {
-    // ...your custom configuration
+    ...theme,
+    useRootStyles: false,
+    useBorderBox: true,
+    prefix: "",
+    colors: {
+        primary: colors.blue["500"],
+        secondary: colors.mint["600"],
+        text: colors.gray["800"],
+        background: "#fff",
+        muted: colors.gray["200"],
+    },
+    fonts: {
+        body: ["Roboto", "sans-serif"],
+        heading: ["Montserrat", "sans-serif"],
+        code: ["monospace"],
+    },
+    styles: {
+        ...elements.styles,
+    },
 };
 ```
 
@@ -55,7 +77,7 @@ Read more about the [configuration](https://dev.siimple.xyz/configuration/).
 Use the theme scales to configure the list of CSS properties specific for your project, that includes colors, fonts, sizes, and more!
 
 ```js title=siimple.config.js
-import colors from "siimple/colors";
+import colors from "@siimple/colors";
 
 export default {
     colors: {
@@ -69,32 +91,31 @@ export default {
         heading: ["Montserrat", "sans-serif"],
         monospace: ["monospace"],
     },
+    // ...other configuration
 };
 ```
 
-Read more about [theme scales](https://www.siimple.xyz/scales).
+Read more about [theming](https://www.siimple.xyz/theme).
 
-### Variants
+### Mixins
 
-Variants can be used to register custom modifiers that are used to change the look and feel of elements. 
+Mixins can be used to recycle blocks of styles and to change the look and feel of elements. 
 
 ```js title=siimple.config.js
 export default {
-    variants: {
-        button: {
-            default: {
-                backgroundColor: "primary",
-                color: "white",
-            },
-            secondary: {
-                backgroundColor: "secondary",
-            },
+    buttons: {
+        backgroundColor: "primary",
+        color: "white",
+    },
+    // ...other theme configuration
+    styles: {
+        "button": {
+            // ...other button styles
+            apply: "buttons",
         },
     },
 };
 ```
-
-Read more about [variants](https://www.siimple.xyz/variants).
 
 ### Custom styles
 
@@ -140,10 +161,11 @@ export default {
 
 ##### Official presets
 
-- [@siimple/preset-reboot](https://github.com/jmjuanes/siimple/tree/main/presets/reboot): reboot preset for the siimple CSS toolkit. 
-- [@siimple/preset-markup](https://github.com/jmjuanes/siimple/tree/main/presets/markup): markup preset for the siimple CSS toolkit.
-- [@siimple/preset-utilities](https://github.com/jmjuanes/siimple/tree/main/presets/utilities): utilities preset for the siimple CSS toolkit.
-- [@siimple/preset-icons](https://github.com/jmjuanes/siimple/tree/main/presets/icons): icons preset for the siimple CSS toolkit.
+- [@siimple/preset-elements](https://github.com/jmjuanes/siimple/tree/main/packages/preset-elements): basic UI elements preset for the siimple CSS toolkit.
+- [@siimple/preset-helpers](https://github.com/jmjuanes/siimple/tree/main/packages/preset-helpers): helpers preset for the siimple CSS toolkit.
+- [@siimple/preset-reboot](https://github.com/jmjuanes/siimple/tree/main/packages/preset-reboot): reboot preset for the siimple CSS toolkit. 
+- [@siimple/preset-markup](https://github.com/jmjuanes/siimple/tree/main/packages/preset-markup): markup preset for the siimple CSS toolkit.
+- [@siimple/preset-icons](https://github.com/jmjuanes/siimple/tree/main/packages/preset-icons): icons preset for the siimple CSS toolkit.
 
 
 ## License
