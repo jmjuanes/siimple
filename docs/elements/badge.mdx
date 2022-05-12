@@ -29,3 +29,18 @@ export default {
     },
 };
 ```
+
+If you use the `badges` group for more mixins, this element will use `badges.default` instead:
+
+```js title=siimple.config.js
+export default {
+    badges: {
+        default: {
+            backgroundColor: "primary",
+            color: "white",
+        },
+        // ...other additional badges mixins
+    },
+    // ...other configuration
+};
+```

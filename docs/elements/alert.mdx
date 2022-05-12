@@ -42,3 +42,18 @@ export default {
     // ...other configuration
 };
 ```
+
+If you use the `alerts` group for more mixins, this element will use `alerts.default` instead:
+
+```js title=siimple.config.js
+export default {
+    alerts: {
+        default: {
+            backgroundColor: "primary",
+            color: "white",
+        },
+        // ...other additional alerts mixins
+    },
+    // ...other configuration
+};
+```
