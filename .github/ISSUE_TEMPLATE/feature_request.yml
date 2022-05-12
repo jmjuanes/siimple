@@ -1,8 +1,19 @@
-name: "Feature request"
-description: "Suggest an idea for siimple"
+name: "💡 Request a feature"
+description: "Suggest a new idea for siimple"
 title: ""
-labels: ["new-feature"]
+labels: ["request-feature"]
 body:
+  - type: dropdown
+    attributes:
+      label: "Feature type"
+      options:
+        - "New preset"
+        - "New element for @siimple/preset-elements"
+        - "New icon for @siimple/preset-icons"
+        - "Other..."
+    validations:
+      required: true
+
   - type: textarea
     attributes:
       label: "Is your feature request related to a problem?"
