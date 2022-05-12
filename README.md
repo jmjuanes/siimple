@@ -35,7 +35,7 @@ Inspired by other CSS frameworks (like [bulma](https://bulma.io)), but:
 Along with the main `siimple` package, the packages listed in the table below are also available on this repository. These packages are published in the `@siimple` organization in [npm](https://npmjs.com).
 
 | Package | Description | Included in `siimple` |
-|---------|-------------|-----------------------|
+|---------|-------------|:---------------------:|
 | [@siimple/core](https://github.com/jmjuanes/siimple/tree/main/packages/core/) | Core engine of the siimple CSS toolkit. | :heavy_check_mark: |
 | [@siimple/colors](https://github.com/jmjuanes/siimple/tree/main/packages/colors/) | Color palette for siimple. | :heavy_check_mark: |
 | [@siimple/preset-reboot](https://github.com/jmjuanes/siimple/tree/main/packages/preset-reboot/) | Reboot preset for the siimple CSS toolkit. | :heavy_check_mark: |
