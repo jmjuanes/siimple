@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Ask a Question
+  - name: 📚 Documentation
+    url: https://www.siimple.xyz
+    about: Check the documentation for usage.
+  - name: 💬 Ask a Question
     url: https://github.com/jmjuanes/siimple/discussions
     about: How does X work? I made this! I have an idea...

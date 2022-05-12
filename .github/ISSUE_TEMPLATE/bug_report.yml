@@ -1,4 +1,4 @@
-name: "Bug Report"
+name: "🐛 Report a bug"
 description: "Okay, Houston... I think we've had a problem here..."
 title: "Bug: "
 labels: ["under-investigation"]
