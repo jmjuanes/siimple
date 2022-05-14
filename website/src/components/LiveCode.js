@@ -20,8 +20,8 @@ export const LiveCode = props => {
     let codeChildren = props.children; //Code children
     const codeProps = {};
     const lang = (props.className || "").replace("language-", "").replace("javascript", "js");
-    const codeClass = "livecode has-bg-gray-700 has-text-white CodeCake-dark";
-    if (["html", "css", "scss", "js"].includes(lang)) {
+    const codeClass = "livecode has-bg-gray-800 has-text-white CodeCake-dark";
+    if (["html", "css", "js"].includes(lang)) {
         codeProps["dangerouslySetInnerHTML"] = {
             "__html": highlightStr(props.children, lang),
         };
