@@ -29,7 +29,7 @@ export const Testimonials = () => (
         {testimonialsData.map((item, key) => (
             <div key={key} className="column is-full-mobile">
                 <div style={{"minHeight": "300px"}} className="has-p-8 has-radius-md has-bg-gray-100">
-                    <div className="has-mb-3">
+                    <div className="has-mb-3 has-text-primary">
                         <Icon icon="quote has-size-8" />
                     </div>
                     <Link to={item.url} target="_blank" className="has-text-gray-800">
