@@ -169,7 +169,7 @@ export const ThemeExample = () => {
     };
     return (
         <React.Fragment>
-            <div className="has-mb-8 has-mx-auto has-maxw-96 has-w-full">
+            <div className="has-mb-8 has-mx-auto has-maxw-96-tablet has-w-full">
                 <Tabs
                     items={examples.map(item => item.name)}
                     active={theme.name}
@@ -177,7 +177,7 @@ export const ThemeExample = () => {
                 />
             </div>
             <div className="columns">
-                <div className="column is-half is-full-mobile has-py-0">
+                <div className="column is-half is-full-mobile">
                     <Section title="Headings" value={theme.heading?.fontName} />
                     <div className="has-mt-0">
                         <div className={`title is-1 has-mt-0 ${theme.heading.className}`} style={theme.heading?.style}>
@@ -194,16 +194,18 @@ export const ThemeExample = () => {
                     <Section title="Colors" />
                     <div className="columns">
                         {Object.keys(theme.colors).map(name => (
-                            <div key={name} class="column is-full-mobile has-py-0">
+                            <div key={name} class="column">
                                 <div className={`has-radius-md has-h-12 ${theme.colors[name]}`}></div>
                                 <div className="has-size-0 has-text-gray-500">{name}</div>
                             </div>
                         ))}
                     </div>
-                    <Section title="Buttons" />
-                    <div className="">
-                        <button className={`button ${theme.colors.primary} has-mr-1`}>Primary</button>
-                        <button className={`button ${theme.colors.secondary}`}>Secondary</button>
+                    <div className="is-hidden">
+                        <Section title="Buttons" />
+                        <div className="has-mb-4">
+                            <button className={`button ${theme.colors.primary} has-mr-1`}>Primary</button>
+                            <button className={`button ${theme.colors.secondary}`}>Secondary</button>
+                        </div>
                     </div>
                 </div>
                 <div className="column is-half is-full-mobile has-py-0">

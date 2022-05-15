@@ -3,19 +3,27 @@ title: Minimal and themeable CSS toolkit
 ---
 
 import {ThemeExample} from "../src/components/ThemeExample.js";
+import {Separator} from "../src/components/Separator.js";
 
 <Welcome />
 
-<Section
-    title="Fully customizable. Really."
-    label="Use your custom colors, fonts and more!"
-/>
+<Separator />
+
+<Section title="Fully customizable. Really." link="/configuration" icon="pen">
+    Customize and extend <b>siimple</b> using your configuration from your project, including 
+    colors, fonts, sizes, shadows and more!
+</Section>
 <ThemeExample />
 
-<Section title="Now with pure CSS icons" />
+<Section title="With pure CSS icons" icon="heart" link="/packages/preset-icons">
+    Now <b>siimple</b> comes with a preset for adding <b>Pure CSS icons</b> that can be used in web and mobile projects. 
+    Made with <i className="icon-heart"></i>.
+</Section>
 <IconsGallery />
 
-<div align="center" className="has-mb-8 has-mt-12">
+<Separator />
+
+<div align="center" className="has-mb-8 has-mt-24">
     <div className="title has-size-6 has-weight-black">What people say about siimple?</div>
 </div>
 <Testimonials />

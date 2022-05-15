@@ -22,7 +22,7 @@ const Button = props => {
 
 // Export Welcome component
 export const Welcome = () => (
-    <div className="has-pt-24-tablet has-pt-12-mobile has-pb-32" align="center">
+    <div className="has-pt-24-tablet has-pt-12-mobile has-pb-24" align="center">
         <div className="headline has-text-gray-700 has-mb-12">
             A minimal and <span className="has-text-blue-500">themeable</span> css toolkit.
         </div>

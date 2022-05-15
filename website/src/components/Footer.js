@@ -18,9 +18,9 @@ export const Footer = props => {
                 <div className="title is-4 has-mb-2">
                     <strong className="siimple">siimple.</strong>
                 </div>
-                <div className="paragraph has-mb-0 has-opacity-50">
-                    This website was build using <strong>the siimple toolkit</strong> and 
-                    following the <strong>siimple design specification</strong>.
+                <div className="paragraph has-mb-0 has-text-gray-500">
+                    Created by <Link to="https://github.com/jmjuanes" target="_blank" className="has-weight-bold">Josemi Juanes</Link> 
+                    with a lot of <icon className="icon-heart" />.
                 </div>
                 {/* Available links */}
                 <div className="has-pt-4 has-size-0 has-weight-bold">
