@@ -2,7 +2,7 @@ name: Deploy Playground App
 
 on:
   release:
-    types: [published]
+    types: [created]
 
 jobs:
   playground:
