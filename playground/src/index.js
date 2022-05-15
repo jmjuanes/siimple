@@ -162,7 +162,7 @@ const App = () => {
                             onClick={() => handleTabChange("config")}
                         />
                         <div className="has-ml-auto is-flex has-items-center is-hidden-mobile">
-                            <VersionDropdown theme={theme} />
+                            {/* <VersionDropdown theme={theme} /> */}
                             <ActionButton theme={theme} icon="share" onClick={handleShareClick} />
                         </div>
                     </div>
