@@ -90,4 +90,4 @@ $ npm run website
 
 ## License
 
-Code and documentation of **siimple** &copy; 2015-present **Josemi Juanes**. 
+Code and documentation of **siimple** &copy; 2015-present **Josemi Juanes**. Code released under the [MIT license](./LICENSE). Documentation released under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/).
