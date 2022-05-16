@@ -15,30 +15,35 @@ const FOOTER_LINKS = [
     // {"to": "/privacy", "text": "Privacy"},
 ];
 
+// External link wrapper
+const ExternalLink = props => (
+    <Link to={props.to} target="_blank" className="has-text-gray-700 has-text-blue-500-hover">
+        <strong>{props.text}</strong>
+    </Link>
+);
+
 export const Footer = props => {
     const items = props.links || FOOTER_LINKS;
     const itemClass ="has-text-gray-700 has-text-blue-500-hover is-not-underlined";
     return (
         <div className="container has-pt-12 has-pb-24">
             <hr />
-            <div className="has-w-full has-mt-6">
-                <div className="title is-4 has-mb-2">
-                    <i className="icon-siimple has-mr-2" />
-                    <strong className="siimple">siimple.</strong>
+            <div className="has-w-full has-mt-12">
+                <div className="has-mb-2">
+                    <i className="icon-siimple has-mr-2 has-size-6" />
                 </div>
                 <div className="paragraph has-mb-0 has-text-gray-500">
-                    Designed, built and maintained with a lot of <i className="icon-heart" /> by 
-                    <Link to="https://github.com/jmjuanes" target="_blank" className="has-weight-bold"> @jmjuanes</Link>. 
+                    Designed, built and maintained with by <ExternalLink to="https://github.com/jmjuanes" text="@jmjuanes" />.
                 </div>
                 <div className="paragraph has-mb-0 has-text-gray-500">
-                    Code is licensed under <Link to={LICENSES.mit} target="_blank" className="has-weight-bold">MIT</Link>, 
-                    documentation under <Link to={LICENSES.cc} target="_blank" className="has-weight-bold">Creative Commons Attribution 4.0</Link>.
+                    Code is licensed under <ExternalLink to={LICENSES.mit} text="MIT" />,
+                    documentation under <ExternalLink to={LICENSES.cc} text="Creative Commons Attribution 4.0" />.
                 </div>
                 {/* Available links */}
-                <div className="has-pt-4 has-size-0 has-weight-bold">
-                    <div className="is-inline-block has-mr-4">v{process.env.VERSION}</div>
+                <div className="has-pt-4 has-size-0">
+                    <div className="is-inline-block has-mr-4 has-text-gray-500">v{process.env.VERSION}</div>
                     {items.map((item, key) => (
-                        <div key={key} className="is-inline-block has-mr-4">
+                        <div key={key} className="is-inline-block has-mr-4 has-weight-bold">
                             <Link className={itemClass} {...item} />
                         </div>
                     ))}

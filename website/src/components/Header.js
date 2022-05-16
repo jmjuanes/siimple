@@ -6,12 +6,11 @@ import {Icon} from "./Icon.js";
 const items = [
     {
         text: "Getting started",
-        icon: "rocket",
         href: "/getting-started",
     },
     {
         text: "Playground",
-        icon: "code",
+        icon: "external-link",
         href: process.env.PLAYGROUND_URL,
         target: "_blank",
     },
@@ -20,7 +19,9 @@ const items = [
 // Navigation link
 const NavLink = props => (
     <Link to={props.href} target={props.target} className="navlink is-flex has-items-center has-bg-gray-100-hover">
-        <Icon icon={props.icon} className="has-mr-2 has-size-2" />
+        {kofi.when(!!props.icon, () => (
+            <Icon icon={props.icon} className="has-mr-2 has-size-2" />
+        ))}
         <div className="has-weight-bold">{props.text}</div>
     </Link>
 );
