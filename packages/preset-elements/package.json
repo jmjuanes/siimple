@@ -1,6 +1,6 @@
 {
     "name": "@siimple/preset-elements",
-    "version": "0.0.0-dev",
+    "version": "0.0.0",
     "description": "Elements preset for the siimple css toolkit",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",

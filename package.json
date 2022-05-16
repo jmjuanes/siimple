@@ -1,6 +1,6 @@
 {
     "name": "siimple",
-    "version": "4.0.0-dev",
+    "version": "4.0.0",
     "private": true,
     "description": "A minimal and themeable CSS toolkit for flat and clean designs.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",

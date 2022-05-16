@@ -1,6 +1,6 @@
 {
     "name": "@siimple/preset-reboot",
-    "version": "0.0.0-dev",
+    "version": "0.0.0",
     "description": "Reboot preset for the siimple css toolkit",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",

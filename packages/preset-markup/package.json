@@ -1,6 +1,6 @@
 {
     "name": "@siimple/preset-markup",
-    "version": "0.0.0-dev",
+    "version": "0.0.0",
     "description": "Markup preset for the siimple css toolkit",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
