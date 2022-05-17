@@ -2,24 +2,124 @@
 title: Minimal and themeable CSS toolkit
 ---
 
-import {ThemeExample} from "../src/components/ThemeExample.js";
 import {Separator} from "../src/components/Separator.js";
+import {Features} from "../src/components/Features.js";
 
 <Welcome />
 
-<Separator />
 
-<Section title="Fully customizable. Really." link="/configuration" icon="pen">
+<Section title="Fully customizable. Really." link="/configuration">
     Customize and extend <b>siimple</b> using your configuration from your project, including 
     colors, fonts, sizes, shadows and more!
 </Section>
-<ThemeExample />
 
-<Section title="With pure CSS icons" icon="heart" link="/packages/icons">
-    Now <b>siimple</b> comes with a preset for adding <b>Pure CSS icons</b> that can be used in web and mobile projects. 
-    Made with <i className="icon-heart"></i>.
+<div className="columns has-mb-24">
+<div className="column is-three-fifths-tablet is-full-mobile">
+
+```js title=siimple.config.js
+import colors from "@siimple/colors";
+import theme from "@siimple/preset-theme";
+import elements from "@siimple/preset-elements";
+
+export default {
+    ...theme,
+    colors: {
+        ...theme.colors,
+        primary: colors.royal["500"],
+        secondary: colors.mint["500"],
+        text: colors.royal["800"],
+        background: colors.royal["100"],
+        muted: colors.royal["200"],
+    },
+    fonts: {
+        ...theme.fonts,
+        heading: ["Nunito", "sans-serif"],
+        code: ["monospace"],
+    },
+    // ...other theme configuration
+    styles: {
+        ...elements.styles,
+        // ...other styles
+    },
+};
+```
+
+</div>
+<div className="column is-two-fifths-tablet is-full-mobile">
+    <div className="has-bg-royal-100 has-p-8 has-radius-md">
+        <div className="siimple title is-1 has-text-royal-600">Hello!</div>
+        <div className="paragraph has-text-royal-800">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+        <div className="has-mb-4">
+            <label className="label has-text-royal-800">Input example:</label>
+            <input type="text" className="input has-bg-royal-200" placeholder="Input" />
+        </div>
+        <div className="">
+            <button className="button has-bg-royal-500 has-mr-2">Primary</button>
+            <button className="button has-bg-mint-500">Secondary</button>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<Section title="Easy to learn. Simple to use.">
+    Use our official presets for adding essential UI elements, helpers modifiers and icons that you can use 
+    for building your next amazing website.
 </Section>
-<IconsGallery />
+
+<div className="columns has-mb-24">
+<div className="column is-two-fifths-tablet is-full-mobile">
+    <div className="has-bg-gray-100 has-radius-md has-px-4 has-py-8">
+        <div className="has-maxw-96 has-px-4 has-mx-auto">
+            <div className="card has-shadow-md">
+                <div className="title is-3">Sign in</div>
+                <div className="has-mb-4">
+                    <label className="label">Your email</label>
+                    <input type="text" className="input" placeholder="you@email.com" />
+                </div>
+                <div className="has-mb-6">
+                    <label className="label">Your password</label>
+                    <input type="password" className="input" placeholder="Password" />
+                </div>
+                <button className="button is-full has-bg-blue-600-hover">
+                    <i className="icon-lock has-pr-1"></i>
+                    <span>Sign in</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div className="column is-three-fifths-tablet is-full-mobile">
+
+```html title=index.html
+<div class="has-maxw-96 has-px-4 has-mx-auto">
+    <div class="card has-shadow-md">
+        <div class="title is-3">Sign in</div>
+        <div class="has-mb-4">
+            <label class="label">Your email</label>
+            <input type="text" class="input" placeholder="you@email.com" />
+        </div>
+        <div class="has-mb-6">
+            <label class="label">Your password</label>
+            <input type="password" class="input" placeholder="Password" />
+        </div>
+        <button class="button is-full has-bg-blue-600-hover">
+            <i class="icon-lock has-pr-1"></i>
+            <span>Sign in</span>
+        </button>
+    </div>
+</div>
+```
+
+</div>
+</div>
+
+
+<Features />
 
 <Separator />
 
