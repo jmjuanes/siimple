@@ -2,7 +2,6 @@ export const navigation = [
     {"group": "introduction", "url": "/getting-started", "label": "Getting started"},
     {"group": "introduction", "url": "/naming", "label": "Naming methodology"},
     {"group": "introduction", "url": "/responsive", "label": "Responsive"},
-    {"group": "introduction", "url": "/packages", "label": "Packages"},
     {"group": "customization", "url": "/configuration", "label": "Configuration"},
     {"group": "customization", "url": "/theme", "label": "Theme"},
     {"group": "customization", "url": "/colors", "label": "Colors"},
