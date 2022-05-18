@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: folders
-        run: echo "::set-output name=folders::$(ls -d */ | jq -R -s -c 'split("\n")[:-1] | map(.[:-1])')"
+        run: echo "::set-output name=folders::$(ls -d packages/* | jq -R -s -c 'split("\n")[:-1]'"
   ## Publish monorepo packages
   publish-packages:
     runs-on: ubuntu-20.04
@@ -27,8 +27,7 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: cd packages/${{ matrix.package }}
-      - run: npm publish --access public
+      - run: cd ${{ matrix.package }} && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   ## Publish main package
@@ -43,7 +42,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
       - run: npm run build
-      - run: cd siimple
-      - run: npm publish
+      - run: cd siimple && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
