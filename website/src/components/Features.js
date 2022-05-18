@@ -1,54 +1,49 @@
 import React from "react"
-// import kofi from "kofi";
 import {Icon} from "./Icon.js";
 import {Link} from "./Link.js";
 
 const data = [
     {
-        title: "Modular",
+        title: "Elements",
         icon: "box",
-        content: "siimple is built using SASS/SCSS, so you can include only the modules that you really need!",
-        link: "/installation"
+        content: "We provide a collection of essential UI elements that you can customize and reuse across your projects",
+        link: "/elements"
     },
     {
-        title: "Themeable",
-        icon: "brush",
-        content: "Easily customize siimple for building your own version that best fits your project.",
-        link: "/configuration",
+        title: "Helpers",
+        icon: "gear",
+        content: "A collection of utility CSS classes that can be used to change the style of any element.",
+        link: "/helpers",
     },
     {
-        title: "Responsive",
-        icon: "mobile",
-        content: "Design a website that looks great on all devices such as desktops, tablets and phones.",
-        link: "/responsive",
+        title: "Colors",
+        icon: "fill",
+        content: "A flat color palette that you can use for customizing your theme.",
+        link: "/colors",
     },
     {
-        title: "Easy to learn",
-        icon: "book",
-        content: "siimple is so intuitive that you can learn it and start building your amazing website in minutes.",
-        link: "/naming",
+        title: "Icons",
+        icon: "shapes",
+        content: "A collection of hand-crafted and pure CSS icons that can be used in web and mobile projects.",
+        link: "/icons",
     }
 ];
 
 export const Features = () => (
-    <div className="has-pt-12 has-pb-24">
+    <div className="has-mb-24">
         <div className="columns has-mb-0">
             {data.map((item, index) => (
                 <div key={index} className="column is-full-mobile">
-                    <div className="has-radius-md is-clipped has-bg-gray-100">
-                        <div className="has-text-blue-500 has-p-8" align="center">
-                            <Icon icon={item.icon} style={{"fontSize":"72px"}} />
+                    <div className="has-mb-6">
+                        <div className="has-text-primary has-bg-blue-200 has-radius-md is-inline-block has-p-3 has-lh-none">
+                            <Icon icon={item.icon} className="has-size-5" />
                         </div>
-                        <div className="has-px-8 has-minh-32">
-                            <div className="title is-5 has-mb-2">{item.title}</div>
-                            <div className="paragraph has-text-gray-600 has-mb-0">{item.content}</div>
-                        </div>
-                        <div className="has-p-8">
-                            <Link to={item.link} className="is-inline-flex has-items-center">
-                                <strong className="has-mr-1">Learn more</strong>
-                                <Icon icon="arrow-right" />
-                            </Link>
-                        </div>
+                    </div>
+                    <Link to={item.link} className="has-text-gray-700 has-text-primary-hover">
+                        <div className="title is-3">{item.title}</div>
+                    </Link>
+                    <div className="paragraph has-text-gray-600 has-mb-0">
+                        {item.content}
                     </div>
                 </div>
             ))}

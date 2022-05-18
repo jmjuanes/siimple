@@ -38,7 +38,7 @@ export default props => {
                 <div className="columns has-mb-0">
                     {/* Sidebar wrapper */}
                     <div className="column is-one-quarter is-full-mobile">
-                        <div className="has-pr-6-tablet">
+                        <div className="has-pr-8-tablet">
                             <AccordionNav
                                 current={currentSidebarItem}
                                 items={navigation}

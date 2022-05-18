@@ -9,18 +9,18 @@ const linkClass = kofi.classNames([
 ]);
 
 export const Section = props => (
-    <div align="center" className={props.className}>
-        {kofi.when(!!props.icon, () => (
+    <div className={props.className}>
+        {/* kofi.when(!!props.icon, () => (
             <div className="has-mb-4">
-                <div className="is-inline-block has-bg-blue-200 has-text-blue-500 has-radius-md has-p-4">
-                    <i className={`icon-${props.icon} has-size-6`} />
+                <div className="is-inline-block has-bg-blue-200 has-text-blue-500 has-radius-md has-p-3 has-lh-none">
+                    <i className={`icon-${props.icon} has-size-5`} />
                 </div>
             </div>
-        ))}
+        )) */}
         <div className="has-mb-2">
-            <div className="title has-size-8 has-weight-black">{props.title}</div>
+            <div className="title has-size-6 has-weight-black">{props.title}</div>
         </div>
-        <div className="has-text-gray-600 has-size-3 has-maxw-192">
+        <div className="has-text-gray-600 has-size-2 has-maxw-192">
             {props.children}
         </div>
         {kofi.when(!!props.link, () => (
