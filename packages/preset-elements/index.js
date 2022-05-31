@@ -79,7 +79,11 @@ export default {
                 display: "block",
                 width: "100%",
             },
-            apply: "buttons.default",
+            "&.is-disabled,&:disabled": {
+                cursor: ["not-allowed", "!important"],
+                opacity: ["0.6", "!important"],
+            },
+            apply: "buttons",
         },
         ".{{prefix}}card": {
             backgroundColor: "white",
