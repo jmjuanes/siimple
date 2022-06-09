@@ -14,9 +14,9 @@ const encodeSvg = str => {
 };
 
 // Generate SVG from path
-export const generateSvgFromPath = (path, fill) => {
+export const generateSvgFromPath = (path, size, fill) => {
 	const items = [
-		`<svg xmlns="${namespace}" viewBox="0 0 50 50" width="1em" height="1em">`,
+		`<svg xmlns="${namespace}" viewBox="0 0 ${size || "50"} ${size || "50"}" width="1em" height="1em">`,
 		`<path fill="${fill || "currentColor"}" d="${path}"/>`,
 		`</svg>`
 	];
@@ -24,10 +24,28 @@ export const generateSvgFromPath = (path, fill) => {
 };
 
 // Generate icon styles
-export const generateIconCssFromPath = path => ({
-	"--sii-icon": `url("data:image/svg+xml;utf8,${generateSvgFromPath(path)}") no-repeat`,
+export const generateIconCssFromPath = (path, size, fill) => ({
+	"--sii-icon": `url("data:image/svg+xml;utf8,${generateSvgFromPath(path, size, fill)}") no-repeat`,
      mask: "var(--sii-icon) no-repeat",
      maskSize: "100% 100%",
      "-webkit-mask": "var(--sii-icon) no-repeat",
      "-webkit-mask-size": "100% 100%",
+});
+
+// Get icons base styles
+export const getIconsBaseStyles = () => ({
+	'[class^="icon-"],[class*=" icon-"]': {
+		alignSelf: "center",
+		display: "inline-flex",
+		lineHeight: "1",
+		textRendering: "auto",
+		verticalAlign: "-0.125em",
+	},
+	'[class^="icon-"]:before,[class*=" icon-"]:before': {
+		content: "''",
+		display: "inline-block",
+		width: "1em",
+		height: "1em",
+		backgroundColor: "currentColor",
+	},
 });
