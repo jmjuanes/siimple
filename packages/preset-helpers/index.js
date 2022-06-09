@@ -7,6 +7,12 @@ const colorsValues = {
     current: "currentColor",
     transparent: "transparent",
 };
+const sizesValues = {
+    none: "0px",
+    one: "1px",
+    half: "50%",
+    full: "100%",
+};
 
 // Build helpers
 const helpers = generateHelpers([
@@ -113,10 +119,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "sizes",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
             screen: "100vw",
         },
     },
@@ -128,10 +132,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "sizes",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
             screen: "100vw",
         },
     },
@@ -143,10 +145,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "sizes",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
             screen: "100vw",
         },
     },
@@ -158,10 +158,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "sizes",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
             screen: "100vh",
         },
     },
@@ -173,10 +171,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "sizes",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
             screen: "100vh",
         },
     },
@@ -188,10 +184,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "sizes",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
             screen: "100vh",
         },
     },
@@ -202,11 +196,7 @@ const helpers = generateHelpers([
         states: ["default"],
         responsive: true,
         scale: "sizes",
-        values: {
-            none: "0px",
-            half: "50%",
-            full: "100%",
-        },
+        values: sizesValues,
     },
     ...["bottom","left","right","top"].map(position => ({
         prefix: "has",
@@ -214,11 +204,7 @@ const helpers = generateHelpers([
         properties: [position],
         states: ["default"],
         responsive: true,
-        values: {
-            none: "0px",
-            half: "50%",
-            full: "100%",
-        },
+        values: sizesValues,
     })),
     // spacing
     {
@@ -229,10 +215,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     {
@@ -243,10 +227,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     {
@@ -257,10 +239,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     {
@@ -271,10 +251,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     {
@@ -285,10 +263,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     {
@@ -299,10 +275,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     {
@@ -313,10 +287,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     {
@@ -327,10 +299,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     {
@@ -341,10 +311,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     {
@@ -355,10 +323,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     {
@@ -369,10 +335,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     {
@@ -383,10 +347,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     {
@@ -397,10 +359,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     {
@@ -411,10 +371,8 @@ const helpers = generateHelpers([
         responsive: true,
         scale: "space",
         values: {
+            ...sizesValues,
             auto: "auto",
-            none: "0px",
-            half: "50%",
-            full: "100%",
         },
     },
     // Flexbox
