@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: folders
-        run: echo "::set-output name=folders::$(ls -d packages/* | jq -R -s -c 'split("\n")[:-1]'"
+        run: echo "::set-output name=folders::$(ls -d packages/* | jq -R -s -c 'split("\n")[:-1]')"
   ## Publish monorepo packages
   publish-packages:
     runs-on: ubuntu-20.04
