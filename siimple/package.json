@@ -1,6 +1,6 @@
 {
     "name": "siimple",
-    "version": "4.0.1",
+    "version": "4.0.2",
     "description": "A minimal and themeable CSS framework for flat and clean designs.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
@@ -13,13 +13,13 @@
         "siimple": "./cli.js"
     },
     "dependencies": {
-        "@siimple/core": "^0.0.1",
-        "@siimple/preset-theme": "^0.0.1",
-        "@siimple/preset-reboot": "^0.0.1",
-        "@siimple/preset-markup": "^0.0.1",
-        "@siimple/preset-elements": "^0.0.1",
-        "@siimple/preset-helpers": "^0.0.1",
-        "@siimple/preset-icons": "^0.0.1"
+        "@siimple/core": "^0.0.2",
+        "@siimple/preset-theme": "^0.0.2",
+        "@siimple/preset-reboot": "^0.0.2",
+        "@siimple/preset-markup": "^0.0.2",
+        "@siimple/preset-elements": "^0.0.2",
+        "@siimple/preset-helpers": "^0.0.2",
+        "@siimple/preset-icons": "^0.0.2"
     },
     "keywords": [
         "siimple",
