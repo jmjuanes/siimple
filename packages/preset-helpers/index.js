@@ -81,7 +81,7 @@ const helpers = generateHelpers([
         prefix: "has",
         shortcut: "opacity",
         properties: ["opacity"],
-        states: ["default"],
+        states: ["default", "hover"],
         responsive: true,
         scale: "opacities",
     },
