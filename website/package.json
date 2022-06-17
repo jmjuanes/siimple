@@ -14,21 +14,16 @@
         "serve": "stattic --folder ./public --port 5000"
     },
     "devDependencies": {
-        "@mdx-js/mdx": "^1.0.1",
-        "@mdx-js/react": "^1.6.22",
         "codecake": "^0.0.3",
-        "copy-webpack-plugin": "^10.2.4",
+        "copy-webpack-plugin": "^11.0.0",
         "gatsby": "^4.5.2",
         "gatsby-cli": "^4.5.1",
-        "gatsby-plugin-mdx": "^3.5.1",
+        "gatsby-plugin-mdx": "^3.16.1",
         "gatsby-plugin-page-creator": "^4.5.1",
         "gatsby-plugin-react-helmet": "^5.6.0",
         "gatsby-source-filesystem": "^4.5.1",
         "kofi": "^0.5.1",
         "lz-string": "^1.4.4",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-helmet": "^6.1.0",
         "stattic": "^0.4.0"
     }
 }
