@@ -31,21 +31,3 @@ export const generateIconCssFromPath = (path, size, fill) => ({
      "-webkit-mask": "var(--sii-icon) no-repeat",
      "-webkit-mask-size": "100% 100%",
 });
-
-// Get icons base styles
-export const getIconsBaseStyles = () => ({
-	'[class^="icon-"],[class*=" icon-"]': {
-		alignSelf: "center",
-		display: "inline-flex",
-		lineHeight: "1",
-		textRendering: "auto",
-		verticalAlign: "-0.125em",
-	},
-	'[class^="icon-"]:before,[class*=" icon-"]:before': {
-		content: "''",
-		display: "inline-block",
-		width: "1em",
-		height: "1em",
-		backgroundColor: "currentColor",
-	},
-});
