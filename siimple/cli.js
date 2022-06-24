@@ -4,6 +4,7 @@ import fs from "fs";
 import path from "path";
 
 import {css} from "@siimple/core";
+import {injectModules} from "@siimple/modules";
 
 // Get CLI arguments
 const getArguments = () => {
@@ -35,7 +36,7 @@ process.nextTick(() => {
     }
     // Import configuration
     return resolveConfig(configPath).then(config => {
-        return css(config);
+        return css(injectModules(config));
     }).then(result => {
         // Print file in stdout
         if (!args.output) {
