@@ -6,25 +6,27 @@ title: "Colors"
 
 A collection of helpers to customize the text and background color of any element. 
 
+### Customize colors helpers
+
+You can customize colors helpers using the `colors` field of your theme configuration: any value provided will generate additional color helpers.
+
+```js title=siimple.config.js
+import colors from "@siimple/colors";
+
+export default {
+    colors: {
+        primary: colors.blue["500"],
+        secondary: colors.mint["500"],
+        accent: colors.royal["600"],
+        // ...other colors
+    },
+    // ...other configuration
+};
+```
+
 ### Background color
 
-Use `has-bg-{name}` to set the background color of any element. Background colors helpers will be generated using the values provided in the `colors` field of your theme. At least the following colors helpers will be always available: 
-
-| Class | Applied value |
-|-------|---------------|
-| `has-bg-primary` | The **primary** color defined in your theme. |
-| `has-bg-secondary` | The **secondary** color defined in your theme. |
-| `has-bg-muted` | The **muted** color defined in your theme. |
-
-The following background helpers will be also available, regardless the colors you provide in your theme configuration:
-
-| Class | Applied value |
-|-------|---------------|
-| `has-bg-white` | `background-color: #fff;` |
-| `has-bg-black` | `background-color: #000;` |
-| `has-bg-current` | `background-color: currentColor;` |
-
-Example:
+Use `has-bg-{name}` to set the background color of any element. Background colors helpers will be generated using the values provided in the `colors` field of your theme. 
 
 ```html live=true align=center
 <div class="button has-bg-secondary">
@@ -44,23 +46,7 @@ You can change the background color of any element on hover adding the `-hover` 
 
 ### Text color
 
-Use `has-text-{name}` to set the text color of any element. Text colors helpers will be generated using the values provided in the `colors` field of your theme. At least the following colors helpers will be always available: 
-
-| Class | Applied value |
-|-------|---------------|
-| `has-text-primary` | The **primary** color defined in your theme. |
-| `has-text-secondary` | The **secondary** color defined in your theme. |
-| `has-text-muted` | The **muted** color defined in your theme. |
-
-The following color helpers will be also available, regardless the colors you provide in your theme configuration:
-
-| Class | Applied value |
-|-------|---------------|
-| `has-text-white` | `color: #fff;` |
-| `has-text-black` | `color: #000;` |
-| `has-text-current` | `color: currentColor;` |
-
-Example: 
+Use `has-text-{name}` to set the text color of any element. Text colors helpers will be generated using the values provided in the `colors` field of your theme. 
 
 ```html live=true align=center
 <strong class="has-text-secondary">

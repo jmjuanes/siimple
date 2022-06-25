@@ -6,17 +6,15 @@ title: Elements
 
 We provide a collection of built-in UI elements that you can customize and reuse across your projects, that includes buttons, alerts, navigation links, and more!
 
-### Adding elements
+### Disable elements
 
-The elements package is included when you install the `siimple` package framework, so you can just import elements styles in your `siimple.config.js` file:
+Individual elements can be disabled providing an object in the `modules` field of your configuration with the name of the element setted to `false`:
 
 ```js title=siimple.config.js
-import elements from "@siimple/preset-elements";
-
 export default {
-    styles: {
-        ...elements.styles,
-        // ...other styles
+    modules: {
+        button: false,
+        table: false,
     },
     // ...other configuration
 };

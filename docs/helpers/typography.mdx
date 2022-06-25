@@ -6,6 +6,17 @@ title: "Typography"
 
 Customize the text properties using the following typography helpers.
 
+### Customize typography helpers
+
+Typography helpers can be customized using the `fonts`, `fontSizes`, `fontWeights` and `lineHeights` fields of your theme configuration.
+
+```js title=siimple.config.js
+export default {
+    fontSizes: ["0.875rem", "16px", "1.25rem", "1.5rem", "2rem", "2.5rem", "3rem", "3.5rem"],
+    // ...other configuration
+};
+```
+
 ### Font family
 
 For each size defined in the `fonts` field of your theme there will be a helper with the pattern `has-font-{name}` for applying the specified font. The following fonts helpers will be always available:
@@ -92,14 +103,9 @@ Example:
 
 ### Line height
 
-For each size defined in the `lineHeights` field of your theme, there will be a helper with the pattern `has-lh-{name}` to apply the specified line-height. The following line-height helpers will be always available:
+For each size defined in the `lineHeights` field of your theme, there will be a helper with the pattern `has-lh-{name}` to apply the specified line-height.
 
-| Class | Property |
-|-------|----------|
-| `has-lh-body` | The line-height for your body. In the default theme this helper will apply `line-height: 1.5;`. |
-| `has-lh-heading` | The line-height for your headings. In the default theme this helper will apply `line-height: 1.25;`. |
-
-Also, the following line-height helpers will be always included, regardless the values you provide in your theme configuration:
+The following line-height helpers will be always included, regardless the values you provide in your theme configuration:
 
 | Class | Property |
 |-------|----------|

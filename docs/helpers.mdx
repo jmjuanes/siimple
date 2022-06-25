@@ -4,19 +4,18 @@ title: Helpers
 
 # Helpers
 
-**Helpers** are modifiers that can be applied to any element to change their style.
+**Helpers** are modifiers that can be applied to any HTML element to change their style.
 
-### Adding helpers
+### Disable helpers
 
-The helpers package is included when you install the `siimple` package framework, so you can just import helpers styles in your `siimple.config.js` file:
+Individual helpers can be disabled providing an object in the `modules` field of your configuration with the name of the helper setted to `false`:
 
 ```js title=siimple.config.js
-import helpers from "@siimple/preset-helpers";
-
 export default {
-    styles: {
-        ...helpers.styles,
-        // ...other styles
+    modules: {
+        textColor: false,
+        margin: false,
+        padding: false,
     },
     // ...other configuration
 };

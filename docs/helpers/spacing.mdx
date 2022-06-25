@@ -4,7 +4,24 @@ title: "Spacing"
 
 # Spacing
 
-You can use the spacing helpers to set the margin or padding of any element. The sizes that will be used to generate the spacing helpers can be defined in the `space` field of your theme.
+You can use the spacing helpers to set the margin or padding of any element. 
+
+### Customize spacing helpers
+
+The sizes that will be used to generate the spacing helpers can be defined in the `space` field of your theme.
+
+```js title=siimple.config.js
+export default {
+    space: {
+        "0": "0px",
+        "1": "0.25rem",
+        "2": "0.5rem",
+        "4": "1rem",
+        // ...other sizes
+    },
+    // ...other configuration
+};
+``` 
 
 The following sizes will be always included for generating the spacing helpers, regardless the sizes you provide in your theme configuration:
 
@@ -15,27 +32,6 @@ The following sizes will be always included for generating the spacing helpers, 
 | `one`  | `1px` |
 | `half` | `50%` |
 | `full` | `100%` |
-
-
-In the default theme of **siimple**, the following sizes will be used to generate the spacing helpers:
-
-| Size     | Value     |
-|----------|-----------|
-| `0`      | `0px`     |
-| `1`      | `0.25rem` |
-| `2`      | `0.5rem`  |
-| `3`      | `0.75rem` |
-| `4`      | `1rem`    |
-| `6`      | `1.5rem`  |
-| `8`      | `2rem`    |
-| `12`     | `3rem`    |
-| `16`     | `4rem`    |
-| `24`     | `6rem`    |
-| `32`     | `8rem`    |
-| `48`     | `12rem`   |
-| `64`     | `16rem`   |
-| `80`     | `20rem`   |
-| `96`     | `24rem`   |
 
 ### Uniform padding or margin
 

@@ -25,7 +25,7 @@ const html = (type, className) => {
 
 // Table container wrapper
 const TableContainer = props => (
-    <div className="is-scrollable has-w-full has-maxh-96 has-mb-8">
+    <div className="has-w-full has-mb-8">
         <table className="table is-divided has-header-fixed has-mb-none">
             {props.children}
         </table>
