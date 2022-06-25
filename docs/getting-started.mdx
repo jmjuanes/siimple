@@ -27,7 +27,6 @@ You can use the siimple CLI tool to generate your customized version of siimple.
 ```js title=siimple.config.js
 import colors from "@siimple/colors";
 import theme from "@siimple/preset-theme";
-import elements from "@siimple/preset-elements";
 
 export default {
     useRootStyles: false,
@@ -45,9 +44,6 @@ export default {
         body: ["Roboto", "sans-serif"],
         heading: ["Montserrat", "sans-serif"],
         code: ["monospace"],
-    },
-    styles: {
-        ...elements.styles,
     },
 };
 ```
