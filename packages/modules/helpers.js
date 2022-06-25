@@ -200,14 +200,14 @@ export const helpers = {
     }),
     // Position
     ...Object.fromEntries(["bottom","left","right","top"].map(position => {
-        return [position, {
+        return [position, generateHelpers({
             prefix: "has",
             shortcut: position,
             properties: [position],
             states: ["default"],
             responsive: true,
             values: sizesValues,
-        }];
+        })];
     })),
     // spacing
     padding: generateHelpers({
