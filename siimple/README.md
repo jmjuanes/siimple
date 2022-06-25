@@ -35,7 +35,6 @@ Create a file called `siimple.config.js` with your configuration:
 ```js
 import colors from "@siimple/colors";
 import theme from "@siimple/preset-theme";
-import elements from "@siimple/preset-elements";
 
 export default {
     ...theme,
@@ -54,9 +53,6 @@ export default {
         heading: ["Montserrat", "sans-serif"],
         code: ["monospace"],
     },
-    styles: {
-        ...elements.styles,
-    },
 };
 ```
 
@@ -71,6 +67,22 @@ $ npx siimple -c ./siimple.config.js -o ./output.css
 A configuration file is where you can provide your custom theme scales, variants and styles for generating your customized version of **siimple** or to adapt it to your project look and feel.
 
 Read more about the [configuration](https://dev.siimple.xyz/configuration/).
+
+### Core modules (added in v4.1.0)
+
+In the `modules` field of your configuration you can disable the core modules (elements, helpers, markup or reset) that you do not need for your project.
+
+```js title=siimple.config.js
+export default {
+    modules: {
+        button: false,
+        badge: false,
+        margin: false,
+        reset: false,
+    },
+    // ...other configuration
+};
+```
 
 ### Theme scales
 
@@ -149,24 +161,13 @@ This will generate:
 Presets allows to extend **siimple** using reusable theme scales (like colors and fonts) and styles. Presets can be imported and used in your configuration file:
 
 ```js
-import reboot from "@siimple/preset-reboot";
+import theme from "@siimple/preset-theme";
 
 export default {
+    ...theme,
     // ...other configuration
-    styles: {
-        ...reboot.styles,
-    },
 };
 ```
-
-##### Official presets
-
-- [@siimple/preset-elements](https://github.com/jmjuanes/siimple/tree/main/packages/preset-elements): basic UI elements preset for the siimple CSS toolkit.
-- [@siimple/preset-helpers](https://github.com/jmjuanes/siimple/tree/main/packages/preset-helpers): helpers preset for the siimple CSS toolkit.
-- [@siimple/preset-reboot](https://github.com/jmjuanes/siimple/tree/main/packages/preset-reboot): reboot preset for the siimple CSS toolkit. 
-- [@siimple/preset-markup](https://github.com/jmjuanes/siimple/tree/main/packages/preset-markup): markup preset for the siimple CSS toolkit.
-- [@siimple/preset-icons](https://github.com/jmjuanes/siimple/tree/main/packages/preset-icons): icons preset for the siimple CSS toolkit.
-
 
 ## License
 

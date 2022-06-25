@@ -23,12 +23,11 @@ We call **siimple** a **CSS toolkit** because it is a themeable and customizable
 Inspired by other CSS frameworks (like [bulma](https://bulma.io)), but:
 
 - **Fully themeable**: use your own theme to customize and extend **siimple**. 
-- **Use what you really need**: include the presets (elements, helpers, ...) that you **REALLY** need for your project.
+- **Use what you really need**: include the core modules (elements, helpers, ...) and themes that you **REALLY** need for your project.
 - **No dependencies**: written all from scratch without any dependencies.
 - **No CSS preprocessors needed**: we provide a tiny CLI to compile the CSS, so you do not need any other preprocessor like SASS or LESS.
 - **Color palette included**: we provide a flat color palette to customize **siimple** with different colors.
 - **Pure CSS icons included**: we provide a collection of pure CSS icons.
-
 
 ## Packages
 
@@ -37,12 +36,9 @@ Along with the main `siimple` package, the packages listed in the table below ar
 | Package | Description | Included in `siimple` |
 |---------|-------------|:---------------------:|
 | [@siimple/core](https://github.com/jmjuanes/siimple/tree/main/packages/core/) | Core engine of the siimple CSS toolkit. | :heavy_check_mark: |
+| [@siimple/modules](https://github.com/jmjuanes/siimple/tree/main/packages/modules/) | Core modules of siimple. | :heavy_check_mark: |
 | [@siimple/colors](https://github.com/jmjuanes/siimple/tree/main/packages/colors/) | Color palette for siimple. | :heavy_check_mark: |
-| [@siimple/preset-reboot](https://github.com/jmjuanes/siimple/tree/main/packages/preset-reboot/) | Reboot preset for the siimple CSS toolkit. | :heavy_check_mark: |
-| [@siimple/preset-elements](https://github.com/jmjuanes/siimple/tree/main/packages/preset-elements/) | Elements preset for the siimple CSS toolkit. | :heavy_check_mark: |
-| [@siimple/preset-helpers](https://github.com/jmjuanes/siimple/tree/main/packages/preset-helpers/) | Helpers preset for the siimple CSS toolkit. | :heavy_check_mark: |
-| [@siimple/preset-markup](https://github.com/jmjuanes/siimple/tree/main/packages/preset-markup) | Markup preset for the siimple CSS toolkit. | :heavy_check_mark: |
-| [@siimple/preset-icons](https://github.com/jmjuanes/siimple/tree/main/packages/preset-icons/) | Pure CSS icons preset. | :heavy_check_mark: |
+| [@siimple/preset-theme](https://github.com/jmjuanes/siimple/tree/main/packages/preset-theme/) | Default theme of siimple. | :heavy_check_mark: |
 
 The version of these packages are different from the main `siimple` package, but follows this convention: the version `4.x.y` of `siimple` equals to version `0.x.y` of all packages published in the `@siimple` organization.
 
@@ -86,7 +82,6 @@ We are using [Gatsby](https://www.gatsbyjs.com/) for documentation. After buildi
 ```bash
 $ npm run website
 ```
-
 
 ## License
 
