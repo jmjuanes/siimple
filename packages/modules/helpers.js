@@ -94,7 +94,6 @@ export const helpers = {
         responsive: false,
         scale: "radius",
         values: {
-            none: "0px",
             full: "9999px",
         },
     }),
@@ -106,9 +105,6 @@ export const helpers = {
         states: ["default"],
         responsive: false,
         scale: "shadows",
-        values: {
-            none: "none",
-        },
     }),
     // Sizes
     width: generateHelpers({
