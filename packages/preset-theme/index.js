@@ -132,6 +132,7 @@ export default {
         md: "0.5rem",
         lg: "0.75rem",
         xl: "1rem",
+        full: "9999px",
     },
     shadows: {
         sm: "0 0.25rem 1rem -0.125rem rgba(54,63,79,0.15),0 0 0 1px rgba(54,63,79,0.02)",
