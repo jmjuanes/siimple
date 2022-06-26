@@ -19,7 +19,7 @@ export const injectModules = config => {
         });
     }
     // Check for object or undefined --> exclude modules
-    if (typeof config.modules === "undefined" || config.modules) {
+    else if (typeof config.modules === "undefined" || config.modules) {
         const excludeModules = new Set();
         Object.keys(config.modules || {}).forEach(key => {
             if (typeof config.modules[key] === "boolean" && !config.modules[key]) {
