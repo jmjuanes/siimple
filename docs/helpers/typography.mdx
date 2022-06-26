@@ -6,56 +6,22 @@ title: "Typography"
 
 Customize the text properties using the following typography helpers.
 
-### Font family
-
-For each size defined in the `fonts` field of your theme there will be a helper with the pattern `has-font-{name}` for applying the specified font. The following fonts helpers will be always available:
-
-| Class | Value |
-|-------|----------|
-| `has-font-body` | The font defined in the **body** field. By default it will apply `font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Noto Sans", "Helvetica Neue", Arial, sans-serif;`. |
-| `has-font-heading` | The font defined in the **heading** field of your theme. By default it will apply `font-family: inherit;`. |
-| `has-font-code` | The font defined in the **code** field of your theme. By default it will apply `font-family: Menlo, Monaco, Consolas, monospace;`. |
-
-Use `has-font-body` to apply the same font used by default in your page:
-
-```html live=true
-<div class="has-font-body">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
-</div>
-```
-
-Use `has-font-heading` to apply the same font used by default in your headings:
-
-```html live=true
-<div class="has-font-heading">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
-</div>
-```
-
-Use `has-font-code` to apply the same font that will be applied to the `<code>` and `<pre>` blocks:
-
-```html live=true
-<div class="has-font-code">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
-</div>
-```
-
 ### Font size
 
-For each size defined in the `fontSizes` field of your theme there will be a helper with the pattern `has-size-{index}`. In the default theme of **siimple** the following font sizes helpers will be available:
+Use the following classes to customize the `font-size` property of any element, using the values defined in the `fontSizes` scale:
 
 | Class | Property |
 |-------|----------|
-| `has-size-0`  | `font-size: 0.75rem;` |
-| `has-size-1`  | `font-size: 1rem;`    |
-| `has-size-2`  | `font-size: 1.25rem;` |
-| `has-size-3`  | `font-size: 1.5rem;`  |
-| `has-size-4`  | `font-size: 2rem;`    |
-| `has-size-5`  | `font-size: 2.5rem;`  |
-| `has-size-6`  | `font-size: 3rem;`    |
-| `has-size-7`  | `font-size: 3.5rem;`  |
-| `has-size-8`  | `font-size: 4rem;`    |
-| `has-size-9`  | `font-size: 4.5rem;`  |
+| `has-size-0` | Will apply the font size defined in `fontSizes[0]`. By default `0.75rem;` |
+| `has-size-1` | Will apply the font size defined in `fontSizes[1]`. By default `1rem;`    |
+| `has-size-2` | Will apply the font size defined in `fontSizes[2]`. By default `1.25rem;` |
+| `has-size-3` | Will apply the font size defined in `fontSizes[3]`. By default `1.5rem;`  |
+| `has-size-4` | Will apply the font size defined in `fontSizes[4]`. By default `2rem;`    |
+| `has-size-5` | Will apply the font size defined in `fontSizes[5]`. By default `2.5rem;`  |
+| `has-size-6` | Will apply the font size defined in `fontSizes[6]`. By default `3rem;`    |
+| `has-size-7` | Will apply the font size defined in `fontSizes[7]`. By default `3.5rem;`  |
+| `has-size-8` | Will apply the font size defined in `fontSizes[8]`. By default `4rem;`    |
+| `has-size-9` | Will apply the font size defined in `fontSizes[9]`. By default `4.5rem;`  |
 
 Example:
 
@@ -74,32 +40,26 @@ Example:
 
 ### Font Weight
 
-For each weight defined in the `fontWeights` field of your theme there will be a helper with the pattern `has-weight-{name}` to apply the specified weight. The following weight helpers will be always available:
+Use the following classes to customize the `font-weight` property of any element:
 
 | Class | Property |
 |-------|----------|
-| `has-weight-body` | Weight used for the body text. In the default theme this helper will apply `font-weight: 400;`. |
-| `has-weight-heading` | Weight used for headings. In the default theme this will apply `font-weight: 700;`. |
-| `has-weight-bold` | Weight used for bold text. In the default theme this will apply `font-weight: 700;`. |
+| `has-weight-light` | `font-weight: 300;` |
+| `has-weight-normal` | `font-weight: 400;` |
+| `has-weight-medium` | `font-weight: 500;` |
+| `has-weight-bold` | `font-weight: 700;` |
+| `has-weight-black` | `font-weight: 900;` |
 
 Example:
 
 ```html live=true
-<div class="has-weight-body">Text using has-weight-body</div>
-<div class="has-weight-heading">Text using has-weight-heading</div>
+<div class="has-weight-normal">Text using has-weight-normal</div>
 <div class="has-weight-bold">Test using has-weight-bold</div>
 ```
 
 ### Line height
 
-For each size defined in the `lineHeights` field of your theme, there will be a helper with the pattern `has-lh-{name}` to apply the specified line-height. The following line-height helpers will be always available:
-
-| Class | Property |
-|-------|----------|
-| `has-lh-body` | The line-height for your body. In the default theme this helper will apply `line-height: 1.5;`. |
-| `has-lh-heading` | The line-height for your headings. In the default theme this helper will apply `line-height: 1.25;`. |
-
-Also, the following line-height helpers will be always included, regardless the values you provide in your theme configuration:
+Use the following classes to control the line height of your text:
 
 | Class | Property |
 |-------|----------|

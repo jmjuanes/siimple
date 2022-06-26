@@ -1,10 +1,7 @@
 import {css} from "@siimple/core";
 import colors from "@siimple/colors";
-import reboot from "@siimple/preset-reboot";
-import elements from "@siimple/preset-elements";
-import markup from "@siimple/preset-markup";
-import helpers from "@siimple/preset-helpers";
-import * as helpersUtils from "@siimple/preset-helpers/utils.js";
+import {injectModules} from "@siimple/modules";
+// import * as helpersUtils from "@siimple/preset-helpers/utils.js";
 import icons from "@siimple/preset-icons";
 import theme from "@siimple/preset-theme";
 
@@ -13,11 +10,7 @@ const AsyncFunction = Object.getPrototypeOf(async () => {}).constructor;
 // Available modules from siimple
 const modules = {
     "colors": colors,
-    "preset-reboot": reboot,
-    "preset-markup": markup,
-    "preset-elements": elements,
-    "preset-helpers": helpers,
-    "preset-helpers/utils": helpersUtils,
+    // "preset-helpers/utils": helpersUtils,
     "preset-icons": icons,
     "preset-theme": theme,
 };
@@ -51,7 +44,7 @@ self.addEventListener("message", event => {
         });
     }
     evaluateConfig(event.data.config)
-        .then(config => css(config))
+        .then(config => css(injectModules(config)))
         .then(result => {
             prevConfig = event.data.config;
             prevCss = result;

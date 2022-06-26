@@ -21,23 +21,16 @@ export const defaultConfig = `
 // You can import our color palette to create your theme
 // import colors from "@siimple/colors";
 
-// Import our base theme
-import theme from "@siimple/preset-theme";
-
 // You can import presets to extend siimple using reusable styles and themes
-// import elements from "@siimple/preset-elements";
-// import markup from "@siimple/preset-markup";
-import reboot from "@siimple/preset-reboot";
-import helpers from "@siimple/preset-helpers";
+import theme from "@siimple/preset-theme";
 import icons from "@siimple/preset-icons";
 
 export default {
+    modules: {},
     useBorderBox: true,
     useRootStyles: true,
     ...theme,
     styles: {
-        ...reboot.styles,
-        ...helpers.styles,
         ...icons.styles,
     },
 };

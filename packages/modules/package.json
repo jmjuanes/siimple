@@ -1,7 +1,7 @@
 {
-    "name": "@siimple/preset-reboot",
-    "version": "0.0.2",
-    "description": "Reboot preset for the siimple css toolkit",
+    "name": "@siimple/modules",
+    "version": "0.1.0",
+    "description": "Core modules for the siimple css toolkit",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
     "license": "MIT",
@@ -11,7 +11,7 @@
     "main": "index.js",
     "keywords": [
         "siimple",
-        "preset",
-        "reboot"
+        "modules",
+        "core"
     ]
 }

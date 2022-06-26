@@ -11,7 +11,6 @@ This is an example of a configuration file for **siimple**:
 ```js title=siimple.config.js
 import colors from "@siimple/colors";
 import theme from "@siimple/preset-theme";
-import elements from "@siimple/preset-elements";
 
 export default {
     ...theme,
@@ -29,9 +28,6 @@ export default {
         body: ["Roboto", "sans-serif"],
         heading: ["Montserrat", "sans-serif"],
         code: ["monospace"],
-    },
-    styles: {
-        ...elements.styles,
     },
 };
 ```
@@ -194,16 +190,137 @@ Styles defined in this section must follow the [styles syntax](/guides/styles) s
 Presets allows you to extend **siimple** with reusable styles, mixins and theme scales. 
 
 ```js title=siimple.config.js
-import elements from "@siimple/preset-elements";
-import helpers from "@siimple/preset-helpers";
+import theme from "@siimple/preset-theme";
 
 export default {
-    styles: {
-        ...elements.styles,
-        ...helpers.helpers,
+    ...theme,
+    // ...other configuration
+};
+```
+
+### Core modules (added in v4.1.0)
+
+In the `modules` field of your configuration you can disable the core modules (elements, helpers, markup or reset) that you do not need for your project.
+
+To disable only specific modules, provide an object in the `modules` field and set a `false` value to the modules that you do not need:
+
+```js title=siimple.config.js
+export default {
+    modules: {
+        button: false,
+        badge: false,
+        margin: false,
+        reset: false,
     },
     // ...other configuration
 };
 ```
 
-We provide a collection of core presets. Check out the [packages](/packages) section to learn more.
+To enable only specific modules, provide an array with the modules that you need for your project:
+
+```js title=siimple.config.js
+export default {
+    modules: [
+        "button",
+        "padding",
+    ],
+    // ...other configuration
+};
+```
+
+If you want to **disable all modules**, provide an empty array to the `modules` field:
+
+```js title=siimple.config.js
+export default {
+    modules: [],
+    // ...other configuration
+};
+```
+
+This is the list of the available core modules of **siimple**:
+
+| Module name | Description |
+|-------------|-------------|
+| `alert` | The `.alert` element. |
+| `badge` | The `.badge` element. |
+| `button` | The `.button` element. |
+| `card` | The `.card` element. |
+| `checkbox` | The `.checkbox` element. |
+| `close` | The `.close` element. |
+| `column` | The `.column` element. |
+| `container` | The `.container` element. |
+| `crumb` | The `.crumb` element. |
+| `divider` | The `.divider` element. |
+| `input` | The `.input` element. |
+| `label` | The `.label` element. |
+| `menu` | The `.menu` element. |
+| `modal` | The `.modal` element. |
+| `navlink` | The `.navlink` element. |
+| `paragraph` | The `.paragraph` element. |
+| `progress` | The `.progress` element. |
+| `radio` | The `.radio` element. |
+| `scrim` | The `.scrim` element. |
+| `select` | The `.select` element. |
+| `slider` | The `.slider` element. |
+| `spinner` | The `.spinner` element. |
+| `switch` | The `.switch` element. |
+| `table` | The `.table` element. |
+| `textarea` | The `.textarea` element. |
+| `title` | The `.title` element. |
+| `backgroundColor` | Background color helpers. |
+| `textColor` | `Text colors helpers. |
+| `fontSize` | Font size helpers. |
+| `fontWeight` | Font weight helpers. |
+| `lineHeight` | Line height helpers. |
+| `opacity` | Opacity helpers. |
+| `radius` | Border radius helpers. |
+| `shadow` | Box shadow helpers. |
+| `width` | Width helpers. |
+| `minWidth` | Min width helpers. |
+| `maxWidth` | Max width helpers. |
+| `height` | Height helpers. |
+| `minHeight` | Min height helpers. |
+| `maxHeight` | Max height helpers. |
+| `size` | Uniform width and height helpers. |
+| `bottom` | Bottom position helpers. |
+| `left` | Left position helpers. |
+| `right` | Right position helpers. |
+| `top` | Top position helpers. |
+| `padding` | Padding helpers. |
+| `paddingX` | Uniform padding left and right helpers. |
+| `paddingY` | Unifor padding top and bottom helpers. |
+| `paddingTop` | Padding top helpers. |
+| `paddingBottom` | Padding bottom helpers. |
+| `paddingLeft` | Padding left helpers. |
+| `paddingRight` | Padding right helpers. |
+| `margin` | Uniform margin helpers. |
+| `marginX` | Uniform margin left and right helpers. |
+| `marginY` | Uniform margin top and bottom helpers. |
+| `marginTop` | Margin top helpers. |
+| `marginBottom` | Margin bottom helpers. |
+| `marginLeft` | Margin left helpers. |
+| `marginRight` | Margin right helpers. |
+| `flex` | Flex helpers. |
+| `flexDirection` | Flex direction helpers. |
+| `flexGrow` | Flex grow helpers. |
+| `flexShrink` | Flex shrink helpers. |
+| `flexWrap` | Flex wrap helpers. |
+| `alignContent` | Align content helpers. |
+| `alignItems` | Align items helpers. |
+| `alignSelf` | Align self helpers. |
+| `justifyContent` | Justify content helpers. |
+| `justifyItems` | Justify items helpers. |
+| `justifySelf` | Justify self helpers. |
+| `order` | Order helpers. |
+| `textAlign` | Text align helpers. |
+| `verticalAlign` | Vertical align helpers. |
+| `cursor` | Additional cursor helpers (for example `is-clickable`). |
+| `display` | Display helpers (for example `is-flex` or `is-hidden`). |
+| `float` | Float helpers (for example `is-aligned-left`). |
+| `overflow` | Overflow helpers (for example `is-clipped`). |
+| `position` | Position helpers (for example `is-relative` or `is-absolute`). |
+| `textTransform` | Text transform helpers (for example `is-italic`). |
+| `negative` | Negative helpers (for example `is-radiusless`). |
+| `markup` | The markup module, including headings, paragraphs, ... |
+| `reset` | The reset module. |
+

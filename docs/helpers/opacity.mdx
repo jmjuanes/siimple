@@ -4,7 +4,9 @@ title: "Opacity"
 
 # Opacity
 
-For each opacity value defined in the `opacities` field of your theme there will be a helper with the pattern `has-opacity-{index}` for applying the specified opacity value. In the default theme of **siimple** the following opacities helpers are available:
+For each opacity value defined in the `opacities` field of your theme there will be a helper with the pattern `has-opacity-{index}` for applying the specified opacity value.
+
+In the default theme of **siimple** the following opacity helpers are available:
 
 | Class | Property |
 |-------|----------|
@@ -36,18 +38,12 @@ Example:
 </div>
 ```
 
+### Opacity helpers on hover
+
 You can change the opacity of any element on hover adding the `-hover` suffix to the opacity helper.
 
 ```html
 <div class="has-opacity-50 has-opacity-100-hover ...">
     . . .
-</div>
-```
-
-You can also control the opacity of an element at a specific breakpoint adding a `-{breakpoint}` suffix to the opacity class. In the following example, the `has-opacity-100-mobile` will apply `opacity: 1` only on mobile screens.
-
-```html
-<div class="has-opacity-50 has-opacity-100-mobile ...">
-    . . . 
 </div>
 ```

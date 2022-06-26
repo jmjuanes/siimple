@@ -1,0 +1,22 @@
+---
+title: Reset
+---
+
+# Reset
+
+This module provides a collection of CSS selections for reducing browser inconsistencies in things like default margin and padding of `<body>` element, margins of `<p>` elements, and so on.
+
+
+### Disable reset module
+
+The reset module can be disabled providing an object in the `modules` field of your configuration with the `reset` key setted to `false`:
+
+```js title=siimple.config.js
+export default {
+    modules: {
+        reset: false,
+    },
+    // ...other configuration
+};
+```
+

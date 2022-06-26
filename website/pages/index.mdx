@@ -19,7 +19,6 @@ import {Features} from "../src/components/Features.js";
 ```js title=siimple.config.js
 import colors from "@siimple/colors";
 import theme from "@siimple/preset-theme";
-import elements from "@siimple/preset-elements";
 
 export default {
     ...theme,
@@ -37,10 +36,6 @@ export default {
         code: ["monospace"],
     },
     // ...other theme configuration
-    styles: {
-        ...elements.styles,
-        // ...other styles
-    },
 };
 ```
 

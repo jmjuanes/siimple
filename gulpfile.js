@@ -9,13 +9,14 @@ import through from "through2";
 import Vinyl from "vinyl";
 
 import {css} from "@siimple/core";
+import {injectModules} from "@siimple/modules";
 
 // Build Siimple
 const siimple = () => {
     return through.obj((file, enc, callback) => {
         import(file.path)
             .then(rawConfig => {
-                return css(rawConfig.default);
+                return css(injectModules(rawConfig.default));
             })
             .then(result => {
                 file.contents = new Buffer.from(result);
