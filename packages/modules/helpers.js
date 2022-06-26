@@ -36,14 +36,14 @@ export const helpers = {
         values: colorsValues,
     }),
     // Font
-    font: generateHelpers({
-        prefix: "has",
-        shortcut: "font",
-        properties: ["fontFamily"],
-        states: ["default"],
-        responsive: false,
-        scale: "fonts",
-    }),
+    // font: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "font",
+    //     properties: ["fontFamily"],
+    //     states: ["default"],
+    //     responsive: false,
+    //     scale: "fonts",
+    // }),
     // Font sizes
     fontSize: generateHelpers({
         prefix: "has",
@@ -59,7 +59,13 @@ export const helpers = {
         shortcut: "weight",
         properties: ["fontWeight"],
         states: ["default"],
-        scale: "fontWeights",
+        values: {
+            light: "300",
+            normal: "400",
+            medium: "500",
+            bold: "700",
+            black: "900",
+        },
     }),
     // Line heights
     lineHeight: generateHelpers({
@@ -68,7 +74,6 @@ export const helpers = {
         properties: ["lineHeight"],
         states: ["default"],
         responsive: false,
-        scale: "lineHeights",
         values: {
             none: "1",
             tight: "1.25",
@@ -82,7 +87,7 @@ export const helpers = {
         shortcut: "opacity",
         properties: ["opacity"],
         states: ["default", "hover"],
-        responsive: true,
+        responsive: false,
         scale: "opacities",
     }),
     // Radius
@@ -93,9 +98,6 @@ export const helpers = {
         states: ["default"],
         responsive: false,
         scale: "radius",
-        values: {
-            full: "9999px",
-        },
     }),
     // Shadows
     shadow: generateHelpers({
@@ -684,6 +686,15 @@ export const helpers = {
             properties: ["userSelect"],
             values: {
                 "unselectable": ["none", "!important"],
+            },
+        },
+        {
+            prefix: "is",
+            states: ["default"],
+            responsive: false,
+            properties: ["opacity"],
+            values: {
+                transparent: ["0", "!important"],
             },
         },
     ]),
