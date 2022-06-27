@@ -15,7 +15,6 @@ exports.onCreateWebpackConfig = ({getConfig, plugins, actions}) => {
             "alias": {
                 // "siimple": path.resolve(__dirname, "../siimple/"),
                 "@siimple/colors": path.resolve(__dirname, "../packages/colors/"),
-                "@siimple/preset-icons": path.resolve(__dirname, "../packages/preset-icons/"),
             },
         },
         "plugins": [
@@ -33,6 +32,7 @@ exports.onCreateWebpackConfig = ({getConfig, plugins, actions}) => {
             new CopyPlugin({
                 patterns: [
                     path.resolve(__dirname, "../siimple/siimple.css"),
+                    path.resolve(__dirname, "../siimple-icons/siimple-icons.css"),
                     "src/docs.css",
                     "node_modules/codecake/codecake.css",
                 ],

@@ -20,6 +20,7 @@ exports.onRenderBody = body => {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap" />,
         <link rel="stylesheet" href="/codecake.css" />,
         <link rel="stylesheet" href="/siimple.css" />,
+        <link rel="stylesheet" href="/siimple-icons.css" />,
         <link rel="stylesheet" href="/docs.css" />,
     ]);
     //body.setBodyAttributes(BodyAttributes)

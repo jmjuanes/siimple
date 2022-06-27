@@ -13,7 +13,7 @@ export const Section = props => (
         {/* kofi.when(!!props.icon, () => (
             <div className="has-mb-4">
                 <div className="is-inline-block has-bg-blue-200 has-text-blue-500 has-radius-md has-p-3 has-lh-none">
-                    <i className={`icon-${props.icon} has-size-5`} />
+                    <i className={`si-${props.icon} has-size-5`} />
                 </div>
             </div>
         )) */}
@@ -26,7 +26,7 @@ export const Section = props => (
         {kofi.when(!!props.link, () => (
             <div className="has-mt-4">
                 <Link to={props.link} className={linkClass}>
-                    <b>{props.linkText}</b> <i className="icon-chevron-right has-ml-2 has-size-0" />
+                    <b>{props.linkText}</b> <i className="si-chevron-right has-ml-2 has-size-0" />
                 </Link>
             </div>
         ))}

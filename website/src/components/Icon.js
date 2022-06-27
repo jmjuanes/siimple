@@ -5,7 +5,7 @@ import kofi from "kofi";
 export const Icon = props => {
     const newProps = {
         className: kofi.classNames(
-            props.icon ? `icon-${props.icon}` : null,
+            props.icon ? `si-${props.icon}` : null,
             props.className,
         ),
         style: props.style || null,
