@@ -14,12 +14,8 @@
     },
     "dependencies": {
         "@siimple/core": "^0.0.2",
-        "@siimple/preset-theme": "^0.0.2",
-        "@siimple/preset-reboot": "^0.0.2",
-        "@siimple/preset-markup": "^0.0.2",
-        "@siimple/preset-elements": "^0.0.2",
-        "@siimple/preset-helpers": "^0.0.2",
-        "@siimple/preset-icons": "^0.0.2"
+        "@siimple/modules": "^0.1.0",
+        "@siimple/preset-theme": "^0.0.2"
     },
     "keywords": [
         "siimple",
