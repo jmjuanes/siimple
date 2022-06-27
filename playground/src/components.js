@@ -10,7 +10,7 @@ export const Brand = props => {
     });
     return (
         <a className={parentClass} href={props.url} target="_blank">
-            <i className="icon-siimple has-size-6" />
+            <i className="si-siimple has-size-6" />
         </a>
     );
 };
@@ -33,7 +33,7 @@ export const VersionDropdown = props => {
         <div className="is-relative">
             <div className={parentClass} onClick={() => setExpanded(!expanded)}>
                 <b>{currentVersion}</b>
-                <i className="icon-chevron-down has-ml-2" />
+                <i className="si-chevron-down has-ml-2" />
             </div>
             {kofi.when(expanded, () => (
                 <div className={dropdownClass} style={{top:"48px"}}>
@@ -63,7 +63,7 @@ export const ActionButton = props => {
     });
     return (
         <div className={buttonClass} onClick={props.onClick}>
-            <i className={`icon-${props.icon} has-size-4`} />
+            <i className={`si-${props.icon} has-size-4`} />
         </div>
     );
 };
@@ -76,7 +76,7 @@ export const DarkThemeButton = props => {
     });
     return (
         <div className={buttonClass} onClick={props.onClick}>
-            <i className="icon-moon has-size-4" />
+            <i className="si-moon has-size-4" />
         </div>
     );
 };
@@ -91,7 +91,7 @@ export const FileTab = props => {
     });
     return (
         <div className={tabClass} onClick={props.onClick}>
-            <i className={`icon-${props.icon} has-pr-2 has-size-2`} />
+            <i className={`si-${props.icon} has-pr-2 has-size-2`} />
             <b>{props.text}</b>
         </div>
     );
@@ -136,9 +136,9 @@ export const Preview = React.forwardRef((props, ref) => {
 // Layout Switch
 export const LayoutSwitch = props => {
     const layoutIcons = {
-        "code": "square",
+        "code": "square-fill",
         "both": "square-half",
-        "preview": "square-stroke",
+        "preview": "square",
     };
     const parentClass = kofi.classNames({
         "is-flex has-direction-column-tablet has-radius-md": true,
@@ -158,7 +158,7 @@ export const LayoutSwitch = props => {
                 return (
                     <i
                         key={key}
-                        className={`icon-${layoutIcons[key]} ${iconClass}`}
+                        className={`si-${layoutIcons[key]} ${iconClass}`}
                         onClick={() => props.onChange(key)}
                     />
                 );
@@ -198,7 +198,7 @@ export const ShareModal = props => {
                     className="button has-w-full is-flex has-items-center has-justify-center"
                     onClick={() => handleCopyClick()}
                 >
-                    <i className="icon-copy has-pr-1 has-size-2" />
+                    <i className="si-copy has-pr-1 has-size-2" />
                     <strong>{copied ? "Copied!" : "Copy to clipboard"}</strong>
                 </button>
             </div>
