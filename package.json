@@ -15,8 +15,7 @@
         "packages/*"
     ],
     "scripts": {
-        "build": "gulp css",
-        "icons": "gulp icons:sprite",
+        "build": "gulp css icons:sprite",
         "website": "cd website && npm install && npm run build && npm run serve",
         "playground": "cd playground && npm install && npm run build && npm run serve",
         "test": "jest"
