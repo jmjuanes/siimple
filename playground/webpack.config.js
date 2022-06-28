@@ -25,7 +25,6 @@ module.exports = {
             "@siimple/colors": path.resolve(__dirname, "../packages/colors/"),
             "@siimple/core": path.resolve(__dirname, "../packages/core/"),
             "@siimple/modules": path.resolve(__dirname, "../packages/modules/"),
-            "@siimple/preset-icons": path.resolve(__dirname, "../packages/preset-icons/"),
             "@siimple/preset-theme": path.resolve(__dirname, "../packages/preset-theme/"),
         },
     },
@@ -62,6 +61,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 path.resolve(__dirname, "../siimple/siimple.css"),
+                path.resolve(__dirname, "../siimple-icons/siimple-icons.css"),
                 "node_modules/codecake/codecake.css",
                 "playground.html",
             ],

@@ -157,7 +157,7 @@ const App = () => {
                         <FileTab
                             theme={theme}
                             text="siimple.config.js"
-                            icon="siimple"
+                            icon="coffee"
                             active={tab === "config"}
                             onClick={() => handleTabChange("config")}
                         />
@@ -170,7 +170,7 @@ const App = () => {
                     <Editor theme={theme} visible={tab === "config"} ref={configRef} />
                     <div className="is-flex has-size-0 has-pt-4 has-opacity-75 is-hidden-mobile">
                         <div className="has-mr-auto">
-                            Made with <i className="icon-heart" /> and <i className="icon-coffee" /> using <b>siimple</b>.
+                            Made with <i className="si-heart" /> and <i className="si-coffee" /> using <b>siimple</b>.
                         </div>
                         <div className="">
                             Playground <b>v{process.env.VERSION}</b>
@@ -180,7 +180,7 @@ const App = () => {
                 <div className={previewPanelClass}>
                     {kofi.when(!!error, () => (
                         <div className="alert has-bg-red-500 has-radius-none">
-                            <i className="icon-exclamation has-size-4" />
+                            <i className="si-exclamation has-size-4" />
                             <div className="has-pl-4">
                                 <div className="title is-5 has-text-white">Error in siimple.config.js</div>
                                 <div className="has-weight-normal">{error}</div>

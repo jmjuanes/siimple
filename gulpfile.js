@@ -1,4 +1,3 @@
-import fs from "fs";
 import path from "path";
 import autoprefixer from "autoprefixer";
 import gulp from "gulp";
@@ -6,7 +5,6 @@ import postcss from "gulp-postcss";
 import rename from "gulp-rename";
 import CleanCSS from "clean-css";
 import through from "through2";
-import Vinyl from "vinyl";
 
 import {css} from "@siimple/core";
 import {injectModules} from "@siimple/modules";
@@ -39,53 +37,43 @@ const minify = options => {
     });
 };
 
-// Generate icons
-const iconify = () => {
-    let lastFile = null;
-    const icons = [];
-    // Process SVG icons
-    const bufferContents = function (file, enc, cb) {
-        const content = file.contents.toString();
-        icons.push({
-            name: path.basename(file.path, ".svg"),
-            path: /\sd="([\w,\.\-\s]*)"/gm.exec(content)[1] || "",
+const generateSvgSprite = () => {
+    const attrs = `stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"`;
+    return through.obj((file, _, callback) => {
+        import(file.path).then(rawIcons => {
+            const content = Object.keys(rawIcons.default).map(name => {
+                const p = rawIcons.default[name].path;
+                return `<symbol viewBox="0 0 24 24" id="${name}"><path ${attrs} d="${p}"/></symbol>`;
+            });
+            content.unshift(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">`);
+            content.push(`</svg>`);
+            file.contents = new Buffer.from(content.join(""));
+            callback(null, file);
         });
-        lastFile = file; // Save reference to last file
-        return cb();
-    };
-    // End stream
-    const endStream = function (cb) {
-        const output = JSON.stringify(icons, null, "    ");
-        // Generate the new file and continue
-        this.push(new Vinyl({
-            base: lastFile.base,
-            path: path.join(lastFile.base, "icons.js"),
-            contents: new Buffer.from(`export default ${output};`),
-        }));
-        return cb();
-    };
-    return through.obj(bufferContents, endStream);
+    });
 };
 
-// Clean output directories
 gulp.task("clean", () => null);
 
-// Build icons
-gulp.task("icons", () => {
-    return gulp.src("icons/*.svg")
-        .pipe(iconify())
-        .pipe(gulp.dest("packages/preset-icons/"));
+gulp.task("icons:sprite", () => {
+    return gulp.src("siimple-icons/icons.js", {base: "./"})
+        .pipe(generateSvgSprite())
+        .pipe(rename("siimple-icons.svg"))
+        .pipe(gulp.dest("siimple-icons/"));
 });
 
-// Generate css files
 gulp.task("css", () => {
-    return gulp.src("siimple.config.js")
+    return gulp.src("siimple*/siimple.config.js", {base: "./"})
         .pipe(siimple())
         .pipe(postcss([autoprefixer()]))
         .pipe(minify({
             "compatibility": "*",
             "level": 2,
         }))
-        .pipe(rename("siimple.css"))
-        .pipe(gulp.dest("siimple/"))
+        .pipe(rename(currentPath => ({
+            dirname: currentPath.dirname,
+            basename: currentPath.dirname,
+            extname: ".css",
+        })))
+        .pipe(gulp.dest("."))
 });

@@ -2,7 +2,6 @@ import {css} from "@siimple/core";
 import colors from "@siimple/colors";
 import {injectModules} from "@siimple/modules";
 // import * as helpersUtils from "@siimple/preset-helpers/utils.js";
-import icons from "@siimple/preset-icons";
 import theme from "@siimple/preset-theme";
 
 const AsyncFunction = Object.getPrototypeOf(async () => {}).constructor;
@@ -11,7 +10,6 @@ const AsyncFunction = Object.getPrototypeOf(async () => {}).constructor;
 const modules = {
     "colors": colors,
     // "preset-helpers/utils": helpersUtils,
-    "preset-icons": icons,
     "preset-theme": theme,
 };
 

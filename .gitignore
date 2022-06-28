@@ -23,6 +23,8 @@ distributions
 release
 siimple.css
 siimple/*.css
+siimple-icons/*.css
+siimple-icons/siimple-icons.svg
 packages/*/*.css
 
 # Applications output folders

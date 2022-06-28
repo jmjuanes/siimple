@@ -3,7 +3,6 @@ import kofi from "kofi";
 import {Link} from "gatsby";
 
 import {ColorPalette} from "./components/ColorPalette.js";
-import {IconsGallery} from "./components/IconsGallery.js";
 import {Welcome} from "./components/Welcome.js";
 import {Testimonials} from "./components/Testimonials.js";
 import {LiveCode} from "./components/LiveCode.js";
@@ -50,7 +49,6 @@ export const shortcodes = {
     // "td": html("td", "", {padding: "1rem !important"}),
     // Pages components
     ColorPalette,
-    IconsGallery,
     Testimonials,
     Welcome,
     Section,
