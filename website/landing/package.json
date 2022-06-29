@@ -10,7 +10,8 @@
     "bugs": "https://github.com/siimple/siimple/issues",
     "scripts": {
         "build": "gatsby build",
-        "clean": "rm -rf ./public ./.cache"
+        "clean": "rm -rf ./public ./.cache",
+        "serve": "stattic --folder public --port 5000"
     },
     "dependencies": {
         "@mdx-js/mdx": "^1.6.22",
@@ -26,6 +27,7 @@
         "kofi": "^0.5.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "react-helmet": "^6.1.0"
+        "react-helmet": "^6.1.0",
+        "stattic": "^0.4.0"
     }
 }
