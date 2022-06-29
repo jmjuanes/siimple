@@ -14,29 +14,20 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build siimple css
-        run: npm run build
-
-      - name: Install website dependencies
-        run: cd website && npm install
-
-      - name: Build website
-        run: cd website && npm run build
+      - run: yarn install
+      - run: yarn run build
+      - run: yarn run build:website
 
       - name: Add configuration (devel)
         if: github.event_name == 'push'
-        run: 'echo "$FIREBASE_CONFIG" > ./website/.firebaserc'
+        run: 'echo "$FIREBASE_CONFIG" > ./.firebaserc'
         shell: bash
         env:
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG_DEVEL }}
 
       - name: Add configuration (production)
         if: github.event_name == 'release'
-        run: 'echo "$FIREBASE_CONFIG" > ./website/.firebaserc'
+        run: 'echo "$FIREBASE_CONFIG" > ./.firebaserc'
         shell: bash
         env:
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG_WEBSITE }}
@@ -48,4 +39,3 @@ jobs:
           projectId: "${{ secrets.FIREBASE_PROJECT }}"
           channelId: live
           target: website
-          entryPoint: website

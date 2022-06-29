@@ -15,12 +15,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build siimple css
-        run: npm run build
-
-      - name: Run tests
-        run: npm run test
+      - run: yarn install
+      - run: yarn run build
+      - run: yarn run test

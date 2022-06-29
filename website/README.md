@@ -1,4 +1,4 @@
-# @siimple/website
+# Siimple Website
 
-[Documentation site](https://siimple.xyz) for [siimple](https://github.com/jmjuanes/siimple).
+This folder contains all the packages that we use for building https://www.siimple.xyz.
 

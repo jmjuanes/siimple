@@ -1,0 +1,33 @@
+{
+    "name": "siimple-landing",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Documentation site for siimple",
+    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "license": "MIT",
+    "homepage": "https://www.siimple.xyz/",
+    "repository": "https://github.com/siimple/siimple",
+    "bugs": "https://github.com/siimple/siimple/issues",
+    "scripts": {
+        "build": "gatsby build",
+        "clean": "rm -rf ./public ./.cache",
+        "serve": "stattic --folder public --port 5000"
+    },
+    "dependencies": {
+        "@mdx-js/mdx": "^1.6.22",
+        "@mdx-js/react": "^1.6.22",
+        "codecake": "^0.0.3",
+        "copy-webpack-plugin": "^11.0.0",
+        "gatsby": "^4.5.2",
+        "gatsby-cli": "^4.5.1",
+        "gatsby-plugin-mdx": "^3.16.1",
+        "gatsby-plugin-page-creator": "^4.5.1",
+        "gatsby-plugin-react-helmet": "^5.6.0",
+        "gatsby-source-filesystem": "^4.5.1",
+        "kofi": "^0.5.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-helmet": "^6.1.0",
+        "stattic": "^0.4.0"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "hosting": {
+        "target": "website",
+        "public": "public",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**",
+            ".env"
+        ],
+        "rewrites": [
+            {
+                "source": "/playground/**",
+                "destination": "/playground/index.html"
+            },
+            {
+                "source": "/getting-started",
+                "destination": "/docs/"
+            },
+            {
+                "source": "/configuration",
+                "destination": "/docs/configuration"
+            }
+        ],
+        "trailingSlash": false
+    }
+}
