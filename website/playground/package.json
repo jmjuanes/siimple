@@ -9,8 +9,7 @@
     "repository": "https://github.com/jmjuanes/siimple",
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "scripts": {
-        "build": "webpack build --config ./webpack.config.js",
-        "clean": "rm -rf public"
+        "build": "rm -rf ./public && webpack build --config ./webpack.config.js"
     },
     "dependencies": {
         "@babel/core": "^7.17.8",

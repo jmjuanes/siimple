@@ -14,10 +14,14 @@
         "website/*"
     ],
     "scripts": {
-        "build": "gulp css icons:sprite",
-        "website:build": "yarn workspace siimple-landing build && yarn workspace siimple-docs build && yarn workspace siimple-playground build",
-        "website:copy": "rm -rf ./public && cp -R ./website/landing/public ./public && cp -R ./website/docs/public ./public/docs && cp -R ./website/playground/public ./public/playground",
-        "website:serve": "stattic --folder ./public --port 5000",
+        "build": "yarn run build:css && yarn run build:icons",
+        "build:css": "gulp css",
+        "build:icons": "gulp icons:sprite",
+        "build:landing": "yarn workspace siimple-landing build && cp -R ./website/landing/public ./public",
+        "build:docs": "yarn workspace siimple-docs build && cp -R ./website/docs/public ./public/docs",
+        "build:playground": "yarn workspace siimple-playground build && cp -R ./website/playground/public ./public/playground",
+        "build:website": "rm -rf ./public && yarn build:landing && yarn build:docs && yarn build:playground",
+        "serve": "stattic --folder ./public --port 5000",
         "test": "jest"
     },
     "dependencies": {

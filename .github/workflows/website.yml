@@ -16,7 +16,7 @@ jobs:
           node-version: 16
       - run: yarn install
       - run: yarn run build
-      - run: yarn run website:build && yarn run website:copy
+      - run: yarn run build:website
 
       - name: Add configuration (devel)
         if: github.event_name == 'push'
