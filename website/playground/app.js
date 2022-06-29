@@ -2,11 +2,29 @@ import React from "react";
 import ReactDOM from "react-dom";
 import kofi from "kofi";
 
-import {ActionButton, DarkThemeButton, LayoutSwitch, Brand} from "./components.js";
-import {FileTab, Editor, Preview, ShareModal, VersionDropdown} from "./components.js";
-import {loadPlayground, savePlayground, sharePlayground} from "./actions.js";
-import {compile, inject} from "./actions.js";
-import {useEditor, usePlayground} from "./hooks.js";
+import {Brand} from "./components/Brand.js";
+import {ActionButton} from "./components/ActionButton.js";
+import {DarkThemeButton} from "./components/DarkThemeButton.js";
+import {LayoutSwitch} from "./components/LayoutSwitch.js";
+import {FileTab} from "./components/FileTab.js";
+import {Editor} from "./components/Editor.js";
+import {Preview} from "./components/Preview.js";
+import {ShareModal} from "./components/ShareModal.js";
+
+import {defaultHtml, defaultConfig} from "./defaults.js";
+import {loadPlayground, savePlayground, sharePlayground} from "./actions/playground.js";
+import {compile} from "./actions/worker.js";
+import {useEditor} from "./hooks/useEditor.js";
+
+// Update preview hanlder
+const inject = (preview, html, css) => {
+    const data = {
+        source: "siimple-playground",
+        html: html,
+        css: css,
+    };
+    return preview.contentWindow.postMessage(data, "*");
+};
 
 // Playground app
 const App = () => {
@@ -15,6 +33,13 @@ const App = () => {
     const configRef = React.useRef();
     const previewRef = React.useRef();
     const layoutRef = React.useRef();
+
+    // Playground data reference
+    const playground = React.useRef({
+        version: "latest",
+        html: defaultHtml + "\n",
+        config: defaultConfig + "\n",
+    });
 
     const [ready, setReady] = React.useState(false);
     const [tab, setTab] = React.useState("html");
@@ -25,7 +50,6 @@ const App = () => {
 
     const htmlEditor = useEditor(htmlRef, "html");
     const configEditor = useEditor(configRef, "js")
-    const playground = usePlayground();
 
     // Terrible hack to prevent compiling in code-only mode
     layoutRef.current = layout;
@@ -53,6 +77,7 @@ const App = () => {
         htmlEditor.current.addPlugin(() => layoutRef.current !== "code" && requestCompile());
         configEditor.current.addPlugin(() => layoutRef.current !== "code" && requestCompile());
         worker.current = new Worker(new URL('./worker.js', import.meta.url));
+
         return () => {
             worker.current.terminate();
         };
@@ -138,7 +163,7 @@ const App = () => {
         <div className={rootClass}>
             <div className={menuPanelClass}>
                 <div className="is-flex">
-                    <Brand theme={theme} url={process.env.HOMEPAGE_URL} />
+                    <Brand theme={theme} />
                 </div>
                 <LayoutSwitch theme={theme} layout={layout} onChange={handleLayoutChange} />
                 <div className="is-flex has-direction-column-tablet">

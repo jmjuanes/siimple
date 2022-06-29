@@ -3,31 +3,26 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
-const package = require("../package.json");
-// const {version: siimpleVersion} = require("../siimple/package.json");
+const package = require("../../package.json");
+const publicPath = process.env?.PLAYGROUND_PATH || "/playground/";
 
-// Generate the default configuration
 module.exports = {
     mode: "production",
     target: "web",
-    entry: path.join(__dirname, "src", "index.js"),
+    entry: path.join(__dirname, "app.js"),
     output: {
         path: path.join(__dirname, "public"),
-        publicPath: "/",
+        publicPath: publicPath,
         filename: "[contenthash:9].js",
     },
-    resolve: {
-        modules: [
-            path.resolve(__dirname, "./node_modules"),
-        ],
-        alias: {
-            // "siimple": path.resolve(__dirname, "../siimple/"),
-            "@siimple/colors": path.resolve(__dirname, "../packages/colors/"),
-            "@siimple/core": path.resolve(__dirname, "../packages/core/"),
-            "@siimple/modules": path.resolve(__dirname, "../packages/modules/"),
-            "@siimple/preset-theme": path.resolve(__dirname, "../packages/preset-theme/"),
-        },
-    },
+    // resolve: {
+    //     alias: {
+    //         "@siimple/colors": path.resolve(__dirname, "../packages/colors/"),
+    //         "@siimple/core": path.resolve(__dirname, "../packages/core/"),
+    //         "@siimple/modules": path.resolve(__dirname, "../packages/modules/"),
+    //         "@siimple/preset-theme": path.resolve(__dirname, "../packages/preset-theme/"),
+    //     },
+    // },
     module: {
         rules: [
             {
@@ -35,7 +30,7 @@ module.exports = {
                 // BUT: ignore all .js files in node_modules and bower_components folders
                 test: /\.(js|jsx)$/,
                 include: [
-                    path.join(__dirname, "src"),
+                    __dirname,
                 ],
                 exclude: /(node_modules|bower_components)/,
                 loader: "babel-loader",
@@ -57,12 +52,13 @@ module.exports = {
             "process.env.VERSION": JSON.stringify(package.version),
             "process.env.HOMEPAGE_URL": JSON.stringify(package.homepage),
             // "process.end.SIIMPLE_VERSION": JSON.stringify(siimpleVersion),
+            "process.env.PUBLIC_PATH": JSON.stringify(publicPath),
         }),
         new CopyPlugin({
             patterns: [
-                path.resolve(__dirname, "../siimple/siimple.css"),
-                path.resolve(__dirname, "../siimple-icons/siimple-icons.css"),
-                "node_modules/codecake/codecake.css",
+                path.resolve(__dirname, "../../siimple/siimple.css"),
+                path.resolve(__dirname, "../../siimple-icons/siimple-icons.css"),
+                path.resolve(__dirname, "../../node_modules/codecake/codecake.css"),
                 "playground.html",
             ],
         }),
@@ -70,7 +66,7 @@ module.exports = {
             title: "Siimple Playground",
             template: path.join(__dirname, "index.html"),
             meta: {
-                "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+                viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
             },
         }),
     ],
