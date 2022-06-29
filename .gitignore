@@ -5,6 +5,7 @@ node_modules
 .idea
 *.swp
 package-lock.json
+yarn.lock
 firebase-debug.log
 *.tgz
 *.tar.gz
