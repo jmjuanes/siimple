@@ -6,6 +6,11 @@ const package = require("../../package.json");
 exports.onCreateWebpackConfig = ({plugins, actions}) => {
     return actions.setWebpackConfig({
         devtool: false,
+        resolve: {
+            alias: {
+                "siimple-icons": path.resolve(__dirname, "../../siimple-icons/"),
+            },
+        },
         plugins: [
             plugins.define({
                 "process.env.VERSION": JSON.stringify(package.version),

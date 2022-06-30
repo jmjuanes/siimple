@@ -48,7 +48,7 @@ export const LiveCode = props => {
         "is-flex has-items-center has-justify-center": props.centered === "true",
     });
     return (
-        <div className="has-mb-12 has-mt-6">
+        <div className="has-mb-12">
             <div align={props.align} className={demoClass}>
                 <div
                     className={contentClass}

@@ -7,6 +7,10 @@ const items = [
         href: "/docs",
     },
     {
+        text: "Icons",
+        href: "/icons",
+    },
+    {
         text: "Playground",
         // icon: "si-external-link",
         href: "/playground",

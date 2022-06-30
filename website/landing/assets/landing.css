@@ -10,9 +10,16 @@
     display: block;
     font-family: monospace;
     font-size: 0.8rem;
-    overflow-x: auto;
+    overflow: auto;
     padding: 1.5rem;
     width: 100%;
+}
+/* hide scrollbar but allow scrolling */
+.livecode pre {
+    scrollbar-width: none;
+}
+.livecode pre::-webkit-scrollbar {
+    display: none;
 }
 
 /* Headline style */

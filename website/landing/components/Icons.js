@@ -1,21 +1,25 @@
 import React from "react"
 import kofi from "kofi";
-import icons from "@siimple/preset-icons/icons.js";
+import icons from "siimple-icons/icons.js";
+import {LiveCode} from "siimple-docs/components/LiveCode.js";
 
-import {Link} from "./Link.js";
-import {LiveCode} from "./LiveCode.js";
+// import {Link} from "./Link.js";
 
-// Sorted icons list
-const sortedIcons = icons.sort((a, b) => a.name < b.name ? -1 : +1);
+// Icons list
+const iconsList = Object.keys(icons).map(name => ({
+    name: name,
+    ...icons[name],
+}));
+// const sortedIcons = icons.sort((a, b) => a.name < b.name ? -1 : +1);
 
 // Generate icon usage string
 const getIconUsage = icon => {
-    return `<i class="icon-${icon.name}"></i>`;
+    return `<i class="si-${icon.name}"></i>`;
 };
 
 // Get displayed icons
 const getDisplayedIcons = query => {
-    return !query ? sortedIcons : sortedIcons.filter(icon => icon.name.includes(query)); 
+    return !query ? iconsList : iconsList.filter(icon => icon.name.includes(query)); 
 };
 
 // Icons list component
@@ -32,7 +36,7 @@ const IconsList = props => {
                 {kofi.when(!!props.query, () => (
                     <div className="has-bg-gray-700 is-flex has-items-center has-radius-full has-px-3 has-py-1">
                         <div className="has-size-2 has-pr-3 has-text-white">{props.query}</div>
-                        <div className="icon-cross is-clickable has-text-white" onClick={props.onQueryClear} />
+                        <div className="si-close is-clickable has-text-white" onClick={props.onQueryClear} />
                     </div>
                 ))}
             </div>
@@ -40,7 +44,7 @@ const IconsList = props => {
             {kofi.when(displayedIcons.length === 0, () => (
                 <div align="center" className="has-mx-auto has-w-full has-maxw-128 has-p-8">
                     <div className="has-mb-2">
-                        <Icon icon="face-sad" className="has-size-9" />
+                        <i className="si-emoji-sad has-size-9" />
                     </div>
                     <div>
                         <div className="title is-2 has-mb-2">No icons found</div>
@@ -63,7 +67,7 @@ const IconsList = props => {
                         return (
                             <div key={icon.name} className="column is-one-fifth-tablet is-half-mobile">
                                 <div className={iconClass} onClick={() => props.onIconClick(icon)} align="center">
-                                    <Icon icon={icon.name} className="has-size-7" />
+                                    <i className={`si-${icon.name} has-size-7`} />
                                     <div className="has-size-0 has-mt-2">{icon.name}</div>
                                 </div>
                             </div>
@@ -84,7 +88,7 @@ const IconModal = props => {
         "has-bg-gray-200 has-text-gray-700",
     ]);
     const iconHtml = getIconUsage(props.icon);
-    const iconSvgUrl = `${process.env.REPO_URL}/raw/main/icons/${props.icon.name}.svg`;
+    // const iconSvgUrl = `${process.env.REPO_URL}/raw/main/icons/${props.icon.name}.svg`;
     const handleIconCopy = () => {
         navigator.clipboard.writeText(iconHtml).then(() => {
             setIconCopied(true);
@@ -98,7 +102,7 @@ const IconModal = props => {
                     <div className="close has-ml-auto" onClick={props.onClose} />
                 </div>
                 <div className={previewClass}>
-                    <Icon icon={props.icon.name} style={{fontSize:"128px"}} />
+                    <i className={`si-${props.icon.name}`} style={{fontSize:"128px"}} />
                 </div>
                 <div className="paragraph">Using this icon as a webfont:</div>
                 <LiveCode className="html">{iconHtml}</LiveCode>
@@ -108,10 +112,11 @@ const IconModal = props => {
                             className="button is-flex has-items-center has-justify-center"
                             onClick={() => handleIconCopy()}
                         >
-                            <Icon icon="copy" className="has-pr-1 has-size-2" />
+                            <i className="si-copy has-pr-1 has-size-2" />
                             <strong>{iconCopied ? "Copied!" : "Copy HTML"}</strong>
                         </div>
                     </div>
+                    {/* 
                     <div className="column has-py-none">
                         <Link
                             to={iconSvgUrl}
@@ -122,6 +127,7 @@ const IconModal = props => {
                             <strong>Download SVG</strong>
                         </Link>
                     </div>
+                    */}
                 </div>
             </div>
         </div>
@@ -129,7 +135,7 @@ const IconModal = props => {
 };
 
 // Export Icons Gallery component
-export const IconsGallery = () => {
+export const Icons = () => {
     const queryRef = React.useRef();
     const [query, setQuery] = React.useState("");
     const [activeIcon, setActiveIcon] = React.useState(null);
@@ -140,7 +146,7 @@ export const IconsGallery = () => {
     return (
         <div>
             <div className="is-flex has-items-center has-mb-8 has-bg-gray-200 has-radius-md">
-                <Icon icon="search" className="has-size-3 has-pl-3 has-pr-0 has-text-gray-700" />
+                <i className="si-search has-size-3 has-pl-3 has-pr-0 has-text-gray-700" />
                 <input
                     ref={queryRef}
                     type="text"
@@ -151,7 +157,7 @@ export const IconsGallery = () => {
             </div>
             <IconsList
                 key={query}
-                icons={sortedIcons}
+                icons={iconsList}
                 activeIcon={activeIcon}
                 query={query}
                 onIconClick={icon => setActiveIcon(icon)}
