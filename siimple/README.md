@@ -1,5 +1,6 @@
 ![Siimple header](https://github.com/jmjuanes/siimple/raw/main/header.svg)
 
+
 [![NPM Version](https://badgen.net/npm/v/siimple)](https://npmjs.com/package/siimple)
 [![Get help](https://badgen.net/badge/Discussions/Join%20us/cyan)](https://github.com/jmjuanes/siimple/discussions)
 [![MIT License](https://badgen.net/github/license/jmjuanes/siimple)](https://github.com/jmjuanes/siimple)
@@ -8,8 +9,8 @@
 
 ## Links
 
-- Documentation: https://www.siimple.xyz.
-- Online playground: https://playground.siimple.xyz.
+- Documentation: https://www.siimple.xyz/docs.
+- Online playground: https://www.siimple.xyz/playground.
 - Report a bug or request a feature: https://github.com/jmjuanes/siimple/issues.
 - Get help: https://github.com/jmjuanes/siimple/discussions.
 
@@ -22,7 +23,9 @@
 - **Pure CSS in JS implementation**: **siimple** implements a pure CSS in JS parser with no dependencies.
 - **Easy to extend**: extend **siimple** with reusable styles and themes.
 
-## Install
+## Usage
+
+### CLI usage
 
 Add **siimple** to your project running the following command:
 
@@ -66,7 +69,7 @@ $ npx siimple -c ./siimple.config.js -o ./output.css
 
 A configuration file is where you can provide your custom theme scales, variants and styles for generating your customized version of **siimple** or to adapt it to your project look and feel.
 
-Read more about the [configuration](https://dev.siimple.xyz/configuration/).
+Read more about the [configuration](https://www.siimple.xyz/docs/configuration/).
 
 ### Core modules (added in v4.1.0)
 
@@ -107,7 +110,7 @@ export default {
 };
 ```
 
-Read more about [theming](https://www.siimple.xyz/theme).
+Read more about [theming](https://www.siimple.xyz/docs/theme).
 
 ### Mixins
 
@@ -131,7 +134,7 @@ export default {
 
 ### Custom styles
 
-You can specify your custom styles in the configuration file, using a [CSS-in-JS styles syntax](https://www.siimple.xyz/guides/styles).
+You can specify your custom styles in the configuration file, using a [CSS-in-JS styles syntax](https://www.siimple.xyz/docs/guides/styles).
 
 ```js
 export default {

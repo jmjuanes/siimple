@@ -9,11 +9,11 @@
 
 Welcome to the **siimple CSS toolkit** repository :tada: 
 
-- :books: **Documentation**: read our documentation at https://www.siimple.xyz.
-- :pencil: **Try siimple**: play with **siimple** in your browser with our [online playground](https://playground.siimple.xyz).
+- :globe_with_meridians: **Website**: www.siimple.xyz.
+- :books: **Documentation**: read our documentation at https://www.siimple.xyz/docs.
+- :pencil: **Try siimple**: play with **siimple** in your browser with our [online playground](https://www.siimple.xyz/playground).
 - :pray: **Contributing**: check out our [CONTRIBUTING guide](/CONTRIBUTING.md) to get started.
 - :question: **Questions**: join our [discussion forum](https://github.com/jmjuanes/siimple/discussions).
-- :bird: **Stay tunned**: follow us on [twitter](https://twitter.com/siimplecss).
 
 
 ## What is siimple
@@ -31,7 +31,7 @@ Inspired by other CSS frameworks (like [bulma](https://bulma.io)), but:
 
 ## Packages
 
-Along with the main `siimple` package, the packages listed in the table below are also available on this repository. These packages are published in the `@siimple` organization in [npm](https://npmjs.com).
+Along with `siimple` and `siimple-icons` packages, the packages listed in the table below are also available on this repository. These packages are published in the `@siimple` organization in [npm](https://npmjs.com).
 
 | Package | Description | Included in `siimple` |
 |---------|-------------|:---------------------:|
@@ -40,12 +40,12 @@ Along with the main `siimple` package, the packages listed in the table below ar
 | [@siimple/colors](https://github.com/jmjuanes/siimple/tree/main/packages/colors/) | Color palette for siimple. | :heavy_check_mark: |
 | [@siimple/preset-base](https://github.com/jmjuanes/siimple/tree/main/packages/preset-base/) | Base theme of siimple. | :heavy_check_mark: |
 
-The version of these packages are different from the main `siimple` package, but follows this convention: the version `4.x.y` of `siimple` equals to version `0.x.y` of all packages published in the `@siimple` organization.
+The version of these packages are different from the main `siimple` and `siimple-icons` packages, but follows this convention: the version `4.x.y` of `siimple` equals to version `0.x.y` of all packages published in the `@siimple` organization.
 
 
 ## Development
 
-Here are the instructions for building **siimple** from the source code. Before you get started, ensure you have [Node and NPM](https://nodejs.org/en/download/) installed in your computer.
+Here are the instructions for building **siimple** from the source code. Before you get started, ensure you have [Node 14 and Yarn](https://nodejs.org/en/download/) installed in your computer.
 
 First clone this repository in your local machine running the following command:
 
@@ -53,34 +53,32 @@ First clone this repository in your local machine running the following command:
 $ git clone https://github.com/jmjuanes/siimple
 ```
 
-Navigate into the repository folder and then install dependencies with **npm**:
+Navigate into the repository folder and then install dependencies with **yarn**:
 
 ```bash
-$ npm run install
+$ yarn install
 ```
 
-### Generate the framework CSS
+### Build siimple and siimple-icons
 
-Run the following command to generate the CSS of the **siimple** framework in `siimple/siimple.css`:
-
-```bash
-$ npm run build
-```
-
-### Local playground
-
-You can run the playground editor in your local machine after building the framework CSS and then running the following command: 
+Run the following command to build the **siimple** CSS framework in `siimple/siimple.css` and the **siimple-icons** CSS in `siimple-icons/siimple-icons.css`:
 
 ```bash
-$ npm run playground
+$ yarn run build
 ```
 
 ### Documentation
 
-We are using [Gatsby](https://www.gatsbyjs.com/) for documentation. After building the CSS of the **siimple** framework you can build and start the documentation site running the following command:
+We are using [Gatsby](https://www.gatsbyjs.com/) for documentation. After building the CSS of the **siimple** framework you can build the documentation site with the following command:
 
 ```bash
-$ npm run website
+$ yarn run build:website
+```
+
+Start the website server with the following command:
+
+```bash
+$ yarn run serve:website
 ```
 
 ## License

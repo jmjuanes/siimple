@@ -12,17 +12,17 @@ $ npm install --save @siimple/preset-base
 
 ## Usage
 
-Use default theme in your `siimple.config.js` file:
+Use the base theme in your `siimple.config.js` file:
 
 ```js
-import theme from "@siimple/preset-base";
+import base from "@siimple/preset-base";
 
 export default {
     // Import all default scales, breakpoints and root styles
-    ...theme,
+    ...base,
     // Extend default theme scales
     colors: {
-        ...theme.colors,
+        ...base.colors,
         text: "#000",
     },
     // ...other configuration
