@@ -1,4 +1,4 @@
-![Siimple header](https://github.com/jmjuanes/siimple/raw/main/header.svg)
+![Siimple header](https://github.com/jmjuanes/siimple/raw/main/siimple-icons/header.png)
 
 [![NPM Version](https://badgen.net/npm/v/siimple-icons)](https://npmjs.com/package/siimple-icons)
 [![Get help](https://badgen.net/badge/Discussions/Join%20us/cyan)](https://github.com/jmjuanes/siimple/discussions)
@@ -8,7 +8,7 @@
 
 ## Links
 
-- Documentation: https://icons.siimple.xyz.
+- Documentation: https://www.siimple.xyz/icons.
 - Report a bug or request a feature: https://github.com/jmjuanes/siimple/issues.
 - Get help: https://github.com/jmjuanes/siimple/discussions.
 
