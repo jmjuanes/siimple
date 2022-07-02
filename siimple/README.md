@@ -34,10 +34,10 @@ Create a file called `siimple.config.js` with your configuration:
 
 ```js
 import colors from "@siimple/colors";
-import theme from "@siimple/preset-theme";
+import base from "@siimple/preset-base";
 
 export default {
-    ...theme,
+    ...base,
     useRootStyles: false,
     useBorderBox: true,
     prefix: "",
@@ -161,10 +161,10 @@ This will generate:
 Presets allows to extend **siimple** using reusable theme scales (like colors and fonts) and styles. Presets can be imported and used in your configuration file:
 
 ```js
-import theme from "@siimple/preset-theme";
+import base from "@siimple/preset-base";
 
 export default {
-    ...theme,
+    ...base,
     // ...other configuration
 };
 ```

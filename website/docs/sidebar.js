@@ -47,7 +47,7 @@ export const sidebarItems = [
     {"group": "packages", "url": "/packages/core", "label": "@siimple/core"},
     {"group": "packages", "url": "/packages/modules", "label": "@siimple/modules"},
     {"group": "packages", "url": "/packages/colors", "label": "@siimple/colors"},
-    {"group": "packages", "url": "/packages/theme", "label": "@siimple/preset-theme"},
+    {"group": "packages", "url": "/packages/base", "label": "@siimple/preset-base"},
     {"group": "guides", "url": "/guides/styles", "label": "Styles syntax"},
     {"group": "recipes", "url": "/recipes/features", "label": "Features"},
     {"group": "recipes", "url": "/recipes/footer", "label": "Footer"},

@@ -38,7 +38,7 @@ Along with the main `siimple` package, the packages listed in the table below ar
 | [@siimple/core](https://github.com/jmjuanes/siimple/tree/main/packages/core/) | Core engine of the siimple CSS toolkit. | :heavy_check_mark: |
 | [@siimple/modules](https://github.com/jmjuanes/siimple/tree/main/packages/modules/) | Core modules of siimple. | :heavy_check_mark: |
 | [@siimple/colors](https://github.com/jmjuanes/siimple/tree/main/packages/colors/) | Color palette for siimple. | :heavy_check_mark: |
-| [@siimple/preset-theme](https://github.com/jmjuanes/siimple/tree/main/packages/preset-theme/) | Default theme of siimple. | :heavy_check_mark: |
+| [@siimple/preset-base](https://github.com/jmjuanes/siimple/tree/main/packages/preset-base/) | Base theme of siimple. | :heavy_check_mark: |
 
 The version of these packages are different from the main `siimple` package, but follows this convention: the version `4.x.y` of `siimple` equals to version `0.x.y` of all packages published in the `@siimple` organization.
 

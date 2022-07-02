@@ -22,13 +22,13 @@ export const defaultConfig = `
 // import colors from "@siimple/colors";
 
 // You can import presets to extend siimple using reusable styles and themes
-import theme from "@siimple/preset-theme";
+import base from "@siimple/preset-base";
 
 export default {
     modules: {},
     useBorderBox: true,
     useRootStyles: true,
-    ...theme,
+    ...base,
     styles: {
         // Include your custom styles
     },

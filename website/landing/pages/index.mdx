@@ -21,12 +21,12 @@ import {Welcome} from "../components/Welcome.js";
 
 ```js title=siimple.config.js
 import colors from "@siimple/colors";
-import theme from "@siimple/preset-theme";
+import base from "@siimple/preset-base";
 
 export default {
-    ...theme,
+    ...base,
     colors: {
-        ...theme.colors,
+        ...base.colors,
         primary: colors.royal["500"],
         secondary: colors.mint["500"],
         text: colors.royal["800"],
@@ -34,7 +34,7 @@ export default {
         muted: colors.royal["200"],
     },
     fonts: {
-        ...theme.fonts,
+        ...base.fonts,
         heading: ["Nunito", "sans-serif"],
         code: ["monospace"],
     },

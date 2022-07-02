@@ -1,4 +1,4 @@
-# @siimple/preset-theme
+# @siimple/preset-base
 
 Default theme preset for the **siimple CSS toolkit**.
 
@@ -7,7 +7,7 @@ Default theme preset for the **siimple CSS toolkit**.
 Install this package using **npm**:
 
 ```bash
-$ npm install --save @siimple/preset-theme
+$ npm install --save @siimple/preset-base
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ $ npm install --save @siimple/preset-theme
 Use default theme in your `siimple.config.js` file:
 
 ```js
-import theme from "@siimple/preset-theme";
+import theme from "@siimple/preset-base";
 
 export default {
     // Import all default scales, breakpoints and root styles

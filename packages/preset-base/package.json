@@ -1,7 +1,7 @@
 {
-    "name": "@siimple/preset-theme",
+    "name": "@siimple/preset-base",
     "version": "0.0.2",
-    "description": "Default theme preset for the siimple css toolkit",
+    "description": "Base theme preset for the siimple css toolkit",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
     "license": "MIT",

@@ -1,4 +1,4 @@
-import theme from "@siimple/preset-theme";
+import theme from "@siimple/preset-base";
 // import colors from "@siimple/colors";
 
 export default {

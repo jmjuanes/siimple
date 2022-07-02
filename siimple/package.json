@@ -15,7 +15,7 @@
     "dependencies": {
         "@siimple/core": "^0.0.2",
         "@siimple/modules": "^0.1.0",
-        "@siimple/preset-theme": "^0.0.2"
+        "@siimple/preset-base": "^0.0.2"
     },
     "keywords": [
         "siimple",

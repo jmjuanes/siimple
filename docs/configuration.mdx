@@ -10,7 +10,7 @@ This is an example of a configuration file for **siimple**:
 
 ```js title=siimple.config.js
 import colors from "@siimple/colors";
-import theme from "@siimple/preset-theme";
+import theme from "@siimple/preset-base";
 
 export default {
     ...theme,
@@ -190,10 +190,10 @@ Styles defined in this section must follow the [styles syntax](/guides/styles) s
 Presets allows you to extend **siimple** with reusable styles, mixins and theme scales. 
 
 ```js title=siimple.config.js
-import theme from "@siimple/preset-theme";
+import base from "@siimple/preset-base";
 
 export default {
-    ...theme,
+    ...base,
     // ...other configuration
 };
 ```
