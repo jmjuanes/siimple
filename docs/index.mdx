@@ -22,6 +22,8 @@ You can get more information [about installing yarn here](https://yarnpkg.com/ge
 
 ### CLI usage
 
+> **Note**: you will need **Node.js version 14** or higher installed in your computer.
+
 You can use the siimple CLI tool to generate your customized version of siimple. First just create your configuration file `siimple.config.js` in the root of your project:
 
 ```js title=siimple.config.js
@@ -57,6 +59,8 @@ $ npx siimple -c ./siimple.config.js -o ./output.css
 ```
 
 This will generate a file called `output.css` with the compiled styles of siimple. 
+
+> **Note**: **siimple** uses ECMAScript modules, so you will need to set `"type": "module"` in your `package.json` file or use `.mjs` as the extension for your configuration file (`siimple.config.mjs`).
 
 
 ### Use the hosted CSS version

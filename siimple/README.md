@@ -27,7 +27,7 @@
 
 ### CLI usage
 
-Add **siimple** to your project running the following command:
+Make sure you have **Node.js 14.x** installed on your computer. Add **siimple** to your project running the following command:
 
 ```bash
 $ npm install --save siimple
@@ -64,6 +64,8 @@ Generate your customized version of **siimple**:
 ```bash
 $ npx siimple -c ./siimple.config.js -o ./output.css
 ```
+
+> **Note**: **siimple** uses ECMAScript modules, so you will need to set `"type": "module"` in your `package.json` file or use `.mjs` as the extension for your configuration file (`siimple.config.mjs`).
 
 ## Configuration
 
