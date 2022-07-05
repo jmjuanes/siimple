@@ -6,19 +6,19 @@ const data = [
         title: "Elements",
         icon: "si-box",
         content: "We provide a collection of essential UI elements that you can customize and reuse across your projects",
-        link: "/elements"
+        link: "/docs/elements"
     },
     {
         title: "Helpers",
         icon: "si-tools",
         content: "A collection of utility CSS classes that can be used to change the style of any element.",
-        link: "/helpers",
+        link: "/docs/helpers",
     },
     {
         title: "Colors",
         icon: "si-palette",
         content: "A flat color palette that you can use for customizing your theme.",
-        link: "/colors",
+        link: "/docs/colors",
     },
     {
         title: "Icons",

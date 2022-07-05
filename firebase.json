@@ -20,6 +20,10 @@
             {
                 "source": "/configuration",
                 "destination": "/docs/configuration"
+            },
+            {
+                "source": "/colors",
+                "destination": "/docs/colors"
             }
         ],
         "trailingSlash": false
