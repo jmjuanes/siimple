@@ -1,6 +1,6 @@
 {
     "name": "@siimple/colors",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "description": "A color palette for the siimple css toolkit",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
