@@ -31,6 +31,14 @@ export default {
         "category": "arrows",
         "path": "M12 4L12 20M6 14L12 20L18 14"
     },
+    "arrow-down-left": {
+        "category": "arrows",
+        "path": "M18 6L6 18M6 9L6 18L15 18"
+    },
+    "arrow-down-right": {
+        "category": "arrows",
+        "path": "M6 6L18 18M18 9L18 18L9 18"
+    },
     "arrow-left": {
         "category": "arrows",
         "path": "M20 12L4 12M10 6L4 12L10 18"
@@ -42,6 +50,18 @@ export default {
     "arrow-up": {
         "category": "arrows",
         "path": "M12 20L12 4M6 10L12 4L18 10"
+    },
+    "arrow-up-left": {
+        "category": "arrows",
+        "path": "M18 18L6 6M6 15L6 6L15 6"
+    },
+    "arrow-up-right": {
+        "category": "arrows",
+        "path": "M6 18L18 6M18 15L18 6L9 6"
+    },
+    "arrows": {
+        "category": "arrows",
+        "path": "M12 4L12 20M4 12L20 12M9 6L12 3L15 6M9 18L12 21L15 18M6 9L3 12L6 15M18 9L21 12L18 15"
     },
     "arrows-maximize": {
         "category": "arrows",
@@ -127,9 +147,17 @@ export default {
         "category": "office",
         "path": "M4 19L20 19M4 15L8 10L12 12L17 5L20 8"
     },
+    "chart-pie": {
+        "category": "office",
+        "path": "M12 3C6 3 3 8 3 12C3 16 6 21 12 21C18 21 21 16 21 12L14 12C12 12 12 10 12 10L12 3ZM16 8L16 3C19 3 21 5 21 8L16 8Z"
+    },
     "chat": {
         "category": "communication",
         "path": "M4 7L4 18C4 18 4 20 6 20C7.03078 20 8 19 8 19L11 16L17 16C20 16 20 13 20 13L20 7C20 7 20 4 17 4L7 4C4 4 4 7 4 7Z"
+    },
+    "chat-dots": {
+        "category": "communication",
+        "path": "M4 7L4 18C4 18 4 20 6 20C7.03078 20 8 19 8 19L11 16L17 16C20 16 20 13 20 13L20 7C20 7 20 4 17 4L7 4C4 4 4 7 4 7ZM16 10L16 10M12 10L12 10M8 10L8 10"
     },
     "check": {
         "category": "interfaces",
@@ -184,8 +212,8 @@ export default {
         "path": "M14 5L10 19M7 8L3 12L7 16M17 8L21 12L17 16"
     },
     "coffee": {
-        "category": "general",
-        "path": "M3 6L3 15C3 15 3 19 7 19L12 19C16 19 16 15 16 15L16 6C16 6 16 5 15 5L4 5C3 5 3 6 3 6ZM16 8L19 8C21 8 21 10 21 10L21 13C21 13 21 15 19 15L16 15"
+        "category": "food",
+        "path": "M3 9L3 11C3 11 3 17 9 17L11 17C17 17 17 11 17 11L17 9C17 9 17 8 16 8L4 8C3 8 3 9 3 9ZM17 9L18 9C21 9 21 12 21 12C21 12 21 15 18 15L16 15M3 21L21 21M7 3L8 5M12 3L13 5"
     },
     "copy": {
         "category": "interfaces",
@@ -271,6 +299,10 @@ export default {
         "category": "interfaces",
         "path": "M12 8L12 12M12 16L12 16M4 6C4 6 4 4 6 4L18 4C20 4 20 6 20 6L20 18C20 18 20 20 18 20L6 20C4 20 4 18 4 18L4 6Z"
     },
+    "exclamation-triangle": {
+        "category": "interfaces",
+        "path": "M3 17C3 16 10 5 10 5C11 3 13 3 14 5C14 5 21 16 21 17C21 17 21 19 19 19L5 19C3 19 3 17 3 17ZM12 9L12 12M12 15L12 15"
+    },
     "external-link": {
         "category": "interfaces",
         "path": "M10 4L7 4C4 4 4 7 4 7L4 17C4 17 4 20 7 20L17 20C20 20 20 17 20 17L20 14M14 4L20 4L20 10M8 16L20 4"
@@ -281,7 +313,7 @@ export default {
     },
     "eye-slash": {
         "category": "general",
-        "path": "M3 3L21 21"
+        "path": "M3 3L21 21M7.29854 7.37352C4.40586 9.16759 3 12 3 12C3 12 6.00002 17.9846 12 18C14.7979 18.0072 16.6457 16.6728 16.6457 16.6728M10.5132 10.669C10.0665 10.9397 10 12 10 12C10 12 10 14.0021 12 14C12.7875 13.9992 13.3628 13.4577 13.3628 13.4577M11.0083 6.05761C11.4907 5.96848 12 6 12 6C18 6 21 12 21 12C21 12 20.939 12.2946 19.538 14.1846"
     },
     "file": {
         "category": "files",
@@ -298,6 +330,10 @@ export default {
     "filter": {
         "category": "interfaces",
         "path": "M4 4L20 4L14 12L14 20L10 17L10 12L4 4Z"
+    },
+    "flag": {
+        "category": "general",
+        "path": "M5 21L5 5C5 5 7 3 10 3C12 3 12 5 14 5C17 5 19 4 19 4L19 13C19 13 17 14 14 14C12 14 12 12 10 12C7 12 5 14 5 14"
     },
     "flask": {
         "category": "health",
@@ -343,17 +379,17 @@ export default {
         "category": "files",
         "path": "M5 5C5 3.89543 5.89543 3 7 3C8.10457 3 9 3.89543 9 5C9 6.10457 8.10457 7 7 7C5.89543 7 5 6.10457 5 5ZM5 19C5 17.8954 5.89543 17 7 17C8.10457 17 9 17.8954 9 19C9 20.1046 8.10457 21 7 21C5.89543 21 5 20.1046 5 19ZM15 19C15 17.8954 15.8954 17 17 17C18.1046 17 19 17.8954 19 19C19 20.1046 18.1046 21 17 21C15.8954 21 15 20.1046 15 19ZM7 7L7 17M17 17L17 8C17 8 17 5 14 5M14 7L14 3L12 5L14 7Z"
     },
+    "globe": {
+        "category": "navigation",
+        "path": "M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM12 3C8 7 8 17 12 21M12 3C16 7 16 17 12 21M4 9L20 9M4 15L20 15"
+    },
     "grid": {
         "category": "interfaces",
         "path": "M4 5C4 5 4 4 5 4L9 4C10 4 10 5 10 5L10 9C10 9 10 10 9 10L5 10C4 10 4 9 4 9L4 5ZM4 15C4 15 4 14 5 14L9 14C10 14 10 15 10 15L10 19C10 19 10 20 9 20L5 20C4 20 4 19 4 19L4 15ZM14 15C14 15 14 14 15 14L19 14C20 14 20 15 20 15L20 19C20 19 20 20 19 20L15 20C14 20 14 19 14 19L14 15ZM14 5C14 5 14 4 15 4L19 4C20 4 20 5 20 5L20 9C20 9 20 10 19 10L15 10C14 10 14 9 14 9L14 5Z"
     },
-    "grid-dots": {
-        "category": "interfaces",
-        "path": "M4 4L4 4M8 4L8 4M12 4L12 4M16 4L16 4M20 4L20 4M20 8L20 8M16 8L16 8M12 8L12 8M8 8L8 8M4 8L4 8M4 12L4 12M8 12L8 12M12 12L12 12M16 12L16 12M20 12L20 12M20 16L20 16M16 16L16 16M12 16L12 16M8 16L8 16M4 16L4 16M4 20L4 20M8 20L8 20M12 20L12 20M16 20L16 20M20 20L20 20"
-    },
-    "grid-lines": {
-        "category": "interfaces",
-        "path": "M6 4L6 20M10 4L10 20M14 4L14 20M18 4L18 20M4 6L20 6M4 10L20 10M4 14L20 14M4 18L20 18"
+    "hamburger": {
+        "category": "food",
+        "path": "M5 11.5C5 11.5 3 11.5 3 13.5C3 15.5 5 15.5 5 15.5L19 15.5C19 15.5 21 15.5 21 13.5C21 11.5 19 11.5 19 11.5L5 11.5ZM4 15.5L4 17.5C4 17.5 4 19.5 6 19.5L18 19.5C20 19.5 20 17.5 20 17.5L20 15.5M4 11L4 9.5C4 9.5 4 4.5 11 4.5L13 4.5C20 4.5 20 9.5 20 9.5L20 11M9 8.5L9 8.5M12 7.5L12 7.5M15 8.5L15 8.5"
     },
     "headphones": {
         "category": "devices",
@@ -478,6 +514,10 @@ export default {
     "mouse": {
         "category": "devices",
         "path": "M12 3C7 3 7 8 7 8L7 16C7 16 7 21 12 21C17 21 17 16 17 16L17 8C17 8 17 3 12 3ZM12 7L12 10"
+    },
+    "mug": {
+        "category": "food",
+        "path": "M3 6L3 15C3 15 3 19 7 19L12 19C16 19 16 15 16 15L16 6C16 6 16 5 15 5L4 5C3 5 3 6 3 6ZM16 8L19 8C21 8 21 10 21 10L21 13C21 13 21 15 19 15L16 15"
     },
     "note": {
         "category": "office",
@@ -679,9 +719,17 @@ export default {
         "category": "commerce",
         "path": "M5 5C3 5 3 7 3 7L3 10C3 10 5 10 5 12C5 14 3 14 3 14L3 17C3 17 3 19 5 19L19 19C21 19 21 17 21 17L21 14C21 14 19 14 19 12C19 10 21 10 21 10L21 7C21 7 21 5 19 5L5 5ZM9 5L9 7M9 17L9 19M9 11L9 13"
     },
+    "togo-cup": {
+        "category": "food",
+        "path": "M6 6C5 6 5 7 5 7L5 9C5 9 5 10 6 10L18 10C19 10 19 9 19 9L19 7C19 7 19 6 18 6L6 6ZM7 5C7 5 7 3 9 3L15 3C17 3 17 5 17 5M7 10L8 21L16 21L17 10"
+    },
     "tools": {
         "category": "general",
         "path": "M5 15L4 20L9 19L20 8C21 7 21 5 20 4C19 3 17 3 16 4L5 15ZM15 5L19 9M8 12L3 7L7 3L12 8M9 6L8 7M16 12L21 17L17 21L12 16M17 16L18 15"
+    },
+    "tower": {
+        "category": "general",
+        "path": "M6 21L7 11L4 8L4 3L7 3L7 6L10 6L10 3L14 3L14 6L17 6L17 3L20 3L20 8L17 11L18 21L6 21ZM12 11L12 13"
     },
     "trash": {
         "category": "general",
