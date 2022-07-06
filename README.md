@@ -14,7 +14,7 @@ Welcome to the **siimple CSS toolkit** repository :tada:
 - :pencil: **Try siimple**: play with **siimple** in your browser with our [online playground](https://www.siimple.xyz/playground).
 - :pray: **Contributing**: check out our [CONTRIBUTING guide](/CONTRIBUTING.md) to get started.
 - :question: **Questions**: join our [discussion forum](https://github.com/jmjuanes/siimple/discussions).
-
+- :sparkles: **Releases**: check out our [latest releases](https://github.com/jmjuanes/siimple/releases).
 
 ## What is siimple
 
@@ -41,7 +41,6 @@ Along with `siimple` and `siimple-icons` packages, the packages listed in the ta
 | [@siimple/preset-base](https://github.com/jmjuanes/siimple/tree/main/packages/preset-base/) | Base theme of siimple. | :heavy_check_mark: |
 
 The version of these packages are different from the main `siimple` and `siimple-icons` packages, but follows this convention: the version `4.x.y` of `siimple` equals to version `0.x.y` of all packages published in the `@siimple` organization.
-
 
 ## Development
 
