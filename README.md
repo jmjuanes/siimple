@@ -77,7 +77,7 @@ $ yarn run build:website
 Start the website server with the following command:
 
 ```bash
-$ yarn run serve:website
+$ yarn run serve
 ```
 
 ## License
