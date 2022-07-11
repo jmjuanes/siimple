@@ -1,0 +1,20 @@
+{
+    "name": "@siimple/styled",
+    "version": "0.1.0",
+    "description": "A tiny CSS-in-JS library with the power of the siimple framework",
+    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "type": "module",
+    "license": "MIT",
+    "repository": "https://github.com/jmjuanes/siimple",
+    "bugs": "https://github.com/jmjuanes/siimple/issues",
+    "homepage": "https://www.siimple.xyz",
+    "main": "index.js",
+    "dependencies": {
+        "@siimple/core": "^0.1.0",
+        "@siimple/preset-base": "^0.1.0"
+    },
+    "keywords": [
+        "siimple",
+        "css-in-js"
+    ]
+}
