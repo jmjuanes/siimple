@@ -39,7 +39,7 @@
         "gulp-rename": "^2.0.0",
         "jest": "^28.1.2",
         "jest-environment-jsdom": "^28.1.2",
-        "postcss": "^8.4.7",
+        "postcss": "^8.4.14",
         "stattic": "^0.4.0"
     }
 }
