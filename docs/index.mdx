@@ -62,6 +62,24 @@ This will generate a file called `output.css` with the compiled styles of siimpl
 
 > **Note**: **siimple** uses ECMAScript modules, so you will need to set `"type": "module"` in your `package.json` file or use `.mjs` as the extension for your configuration file (`siimple.config.mjs`).
 
+### PostCSS usage
+
+You can integrate **siimple** in your PostCSS build process using our plugin for PostCSS. In your `postcss.config.js`, include the plugin of **siimple** for PostCSS with the path to your `siimple.config.js` (or `siimple.config.mjs`):
+
+```js
+const autoprefixer = require("autoprefixer");
+const siimple = require("siimple/postcssPlugin.cjs");
+
+module.exports = {
+    plugins: [
+        siimple("./siimple.config.mjs"),
+        autoprefixer(),
+        // other plugins
+    ],
+};
+```
+
+This will inject the **siimple** compiled styles with the configuration path provided as an argument to the plugin.
 
 ### Use the hosted CSS version
 
