@@ -73,7 +73,7 @@ You can integrate **siimple** in your PostCSS build process using our plugin for
 
 ```js
 const autoprefixer = require("autoprefixer");
-const siimple = require("siimple/postcssPlugin.cjs");
+const siimple = require("siimple/postcss.cjs");
 
 module.exports = {
     plugins: [

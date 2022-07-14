@@ -11,7 +11,8 @@
     "main": "index.js",
     "exports": {
         ".": "./index.js",
-        "./postcssPlugin": "./postcssPlugin.cjs"
+        "./postcss": "./postcss.cjs",
+        "./postcssPlugin": "./postcss.cjs"
     },
     "bin": {
         "siimple": "./cli.js"
