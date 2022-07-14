@@ -9,6 +9,10 @@
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "homepage": "https://www.siimple.xyz",
     "main": "index.js",
+    "exports": {
+        ".": "./index.js",
+        "./postcssPlugin": "./postcssPlugin.cjs"
+    },
     "bin": {
         "siimple": "./cli.js"
     },
@@ -16,6 +20,9 @@
         "@siimple/core": "^0.1.0",
         "@siimple/modules": "^0.1.0",
         "@siimple/preset-base": "^0.1.0"
+    },
+    "optionalDependencies": {
+        "postcss": "^8.4.14"
     },
     "keywords": [
         "siimple",
