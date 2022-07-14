@@ -67,6 +67,23 @@ $ npx siimple -c ./siimple.config.js -o ./output.css
 
 > **Note**: **siimple** uses ECMAScript modules, so you will need to set `"type": "module"` in your `package.json` file or use `.mjs` as the extension for your configuration file (`siimple.config.mjs`).
 
+### PostCSS usage
+
+You can integrate **siimple** in your PostCSS build process using our plugin for PostCSS. In your `postcss.config.js`, include the plugin of **siimple** for PostCSS with the path to your `siimple.config.js` (or `siimple.config.mjs`):
+
+```js
+const autoprefixer = require("autoprefixer");
+const siimple = require("siimple/postcssPlugin.cjs");
+
+module.exports = {
+    plugins: [
+        siimple("./siimple.config.mjs"),
+        autoprefixer(),
+        // other plugins
+    ],
+};
+```
+
 ## Configuration
 
 A configuration file is where you can provide your custom theme scales, variants and styles for generating your customized version of **siimple** or to adapt it to your project look and feel.
