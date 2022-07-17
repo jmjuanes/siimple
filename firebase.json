@@ -11,19 +11,23 @@
         "redirects": [
             {
                 "source": "/getting-started",
-                "destination": "/docs/"
+                "destination": "/docs/",
+                "type": 301
             },
             {
                 "source": "/configuration",
-                "destination": "/docs/configuration"
+                "destination": "/docs/configuration",
+                "type": 301
             },
             {
                 "source": "/colors",
-                "destination": "/docs/colors"
+                "destination": "/docs/colors",
+                "type": 301
             },
             {
                 "source": "/recipes/:id",
-                "destination": "/docs/recipes/:id"
+                "destination": "/docs/recipes/:id",
+                "type": 301
             }
         ],
         "rewrites": [
