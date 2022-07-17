@@ -8,11 +8,7 @@
             "**/node_modules/**",
             ".env"
         ],
-        "rewrites": [
-            {
-                "source": "/playground/**",
-                "destination": "/playground/index.html"
-            },
+        "redirects": [
             {
                 "source": "/getting-started",
                 "destination": "/docs/"
@@ -24,6 +20,16 @@
             {
                 "source": "/colors",
                 "destination": "/docs/colors"
+            },
+            {
+                "source": "/recipes/:id",
+                "destination": "/docs/recipes/:id"
+            }
+        ],
+        "rewrites": [
+            {
+                "source": "/playground/**",
+                "destination": "/playground/index.html"
             }
         ],
         "trailingSlash": false
