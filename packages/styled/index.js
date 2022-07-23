@@ -42,7 +42,7 @@ const compile = (styles, sheet, config, cache, isGlobal, isKeyframes) => {
         sheet.innerHTML = sheet.innerHTML + compiledStyles;
     }
     // Return the CSS classname reference
-    return isKeyframes ? hash : "." + hash;
+    return hash;
 };
 
 export const create = (config, root = null) => {
