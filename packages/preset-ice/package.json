@@ -1,0 +1,26 @@
+{
+    "name": "@siimple/preset-ice",
+    "version": "0.1.0",
+    "description": "A frosty and clean theme for siimple",
+    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "type": "module",
+    "license": "MIT",
+    "repository": "https://github.com/jmjuanes/siimple",
+    "bugs": "https://github.com/jmjuanes/siimple/issues",
+    "homepage": "https://www.siimple.xyz/ice",
+    "main": "index.js",
+    "dependencies": {
+        "@siimple/preset-base": "^0.1.0"
+    },
+    "keywords": [
+        "siimple",
+        "preset",
+        "theme",
+        "ice",
+        "nord"
+    ],
+    "files": [
+        "index.js",
+        "README.md"
+    ]
+}
