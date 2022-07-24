@@ -29,21 +29,6 @@ export const baseColors = {
     ],
 };
 
-const coloredElements = {
-    "&.is-danger": {
-        backgroundColor: "danger",
-        color: "white",
-    },
-    "&.is-warning": {
-        backgroundColor: "warning",
-        color: "white",
-    },
-    "&.is-success": {
-        backgroundColor: "success",
-        colors: "white",
-    },
-};
-
 export default {
     ...base,
     colors: {
@@ -63,7 +48,45 @@ export default {
         monospace: "Menlo, monospace",
     },
     // Mixins
-    alerts: {...coloredElements},
-    badges: {...coloredElements},
-    buttons: {...coloredElements},
+    ...Object.fromEntries(["alerts","badges","buttons"].map(name => {
+        return [name, {
+            "&.is-danger": {
+                backgroundColor: "danger",
+                color: "white",
+            },
+            "&.is-warning": {
+                backgroundColor: "warning",
+                color: "white",
+            },
+            "&.is-success": {
+                backgroundColor: "success",
+                colors: "white",
+            },
+        }];
+    })),
+    forms: {
+        checkbox: {
+            backgroundColor: "muted",
+            "&:checked,&:indeterminate": {
+                backgroundColor: "primary",
+            },
+        },
+        ...Object.fromEntries(["input","select", "textarea"].map(el => {
+            return [el, {
+                backgroundColor: "muted",
+                "&:focus": {
+                    borderColor: "primary",
+                },
+            }];
+        })),
+        radio: {
+            color: "primary",
+            "&:before": {
+                borderColor: "muted",
+            },
+            "&:hover:after": {
+                backgroundColor: "muted",
+            },
+        },
+    },
 };
