@@ -1,3 +1,8 @@
+<p align="center">
+<img src="https://github.com/jmjuanes/siimple/raw/main/packages/preset-ice/preset-ice.svg" width="192px" />
+</p>
+
+
 # @siimple/preset-ice
 
 > A frosty and clean theme for **siimple**.
@@ -22,6 +27,12 @@ export default {
     ...ice,
     // ...other configuration
 };
+```
+
+This preset uses `Poppins` as default font for body text and headings. You will need to import this font in your HTML file:
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700" rel="stylesheet">
 ```
 
 ## Acknowledgement

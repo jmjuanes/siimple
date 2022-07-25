@@ -1,13 +1,13 @@
 {
     "name": "@siimple/preset-ice",
     "version": "0.1.0",
-    "description": "A frosty and clean theme for siimple",
+    "description": "A frosty and clean theme for siimple. Based on Nord Theme.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
     "license": "MIT",
     "repository": "https://github.com/jmjuanes/siimple",
     "bugs": "https://github.com/jmjuanes/siimple/issues",
-    "homepage": "https://www.siimple.xyz/ice",
+    "homepage": "https://www.siimple.xyz/presets/ice",
     "main": "index.js",
     "dependencies": {
         "@siimple/preset-base": "^0.1.0"
@@ -22,5 +22,11 @@
     "files": [
         "index.js",
         "README.md"
-    ]
+    ],
+    "presetDemo": {
+        "background": "#fff",
+        "fonts": [
+            "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700"
+        ]
+    }
 }
