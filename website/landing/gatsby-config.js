@@ -26,7 +26,7 @@ module.exports = {
             options: {
                 extensions: [".mdx", ".md"],
                 defaultLayouts: {
-                    "pages": path.join(__dirname, "layout.js"),
+                    "pages": path.join(__dirname, "layouts", "default.js"),
                 },
             },
         },

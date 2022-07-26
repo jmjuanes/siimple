@@ -11,6 +11,10 @@ const items = [
         href: "/icons",
     },
     {
+        text: "Presets",
+        href: "/presets",
+    },
+    {
         text: "Playground",
         // icon: "si-external-link",
         href: "/playground",

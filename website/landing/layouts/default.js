@@ -1,12 +1,11 @@
 import React from "react";
+import Helmet from "react-helmet";
 import {MDXProvider} from "@mdx-js/react"
 import {Link} from "gatsby";
-
 import {LiveCode} from "siimple-docs/components/LiveCode.js";
 
-import {Header} from "./components/Header.js";
-import {Footer} from "./components/Footer.js";
-import {Seo} from "./components/Seo.js";
+import {Header} from "../components/Header.js";
+import {Footer} from "../components/Footer.js";
 
 const shortcodes = {
     "Link": Link,
@@ -16,7 +15,11 @@ const shortcodes = {
 
 export default props => (
     <React.Fragment>
-        <Seo title={props.pageContext?.frontmatter?.title} />
+        <Helmet>
+            <link rel="stylesheet" href="/siimple.css" />
+            <link rel="stylesheet" href="/landing.css" />"
+            <title>{props.pageContext?.frontmatter?.title || props.title || ""} · siimple CSS</title>
+        </Helmet>
         <Header />
         <div className="container">
             <MDXProvider components={shortcodes}>
