@@ -4,8 +4,8 @@ import {MDXProvider} from "@mdx-js/react"
 import {Link} from "gatsby";
 import {LiveCode} from "siimple-docs/components/LiveCode.js";
 
-import {Header} from "../components/Header.js";
-import {Footer} from "../components/Footer.js";
+import {Header} from "./components/Header.js";
+import {Footer} from "./components/Footer.js";
 
 const shortcodes = {
     "Link": Link,

@@ -25,6 +25,7 @@
         "postbuild:website": "cp -R ./website/landing/public ./public && cp -R ./website/docs/public ./public/docs && cp -R ./website/playground/public ./public/playground",
         "serve": "stattic --folder ./public --port 5000",
         "serve:landing": "stattic --folder ./website/landing/public --port 5000",
+        "serve:docs": "yarn workspace siimple-docs serve",
         "test": "jest"
     },
     "dependencies": {

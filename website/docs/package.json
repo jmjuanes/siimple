@@ -10,7 +10,8 @@
     "bugs": "https://github.com/siimple/siimple/issues",
     "scripts": {
         "build": "gatsby build --prefix-paths",
-        "clean": "rm -rf ./public ./.cache"
+        "clean": "rm -rf ./public ./.cache",
+        "serve": "gatsby serve --prefix-paths"
     },
     "dependencies": {
         "@mdx-js/mdx": "^1.6.22",

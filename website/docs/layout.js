@@ -1,5 +1,4 @@
 import React from "react";
-import kofi from "kofi";
 import {Link} from "gatsby";
 import {MDXProvider} from "@mdx-js/react"
 
@@ -20,7 +19,7 @@ const html = (type, className) => {
     return props => {
         const newProps = {
             ...props,
-            className: kofi.classNames(className, props.className),
+            className: [className, props.className].filter(c => !!c).join(" "),
             // style: style || props.style,
         };
         return React.createElement(type, newProps, props.children);
@@ -71,7 +70,7 @@ export default props => {
     const index = getCurrentSidebarIndex(pathname);
     return (
         <React.Fragment>
-            <Seo title={props.pageContext?.frontmatter?.title} />
+            <Seo title={props.pageContext?.frontmatter?.title || props.title || ""} />
             <Header />
             <div className="container has-pb-10 has-pt-0">
                 <div className="columns has-mb-0">

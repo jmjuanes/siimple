@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
-import {LiveCode} from "siimple-docs/components/LiveCode.js";
 import {create} from "@siimple/styled";
+import Layout from "../layout.js";
 
 const tableData = {
     header: ["Rank", "Name", "Team", "Total Points"],
@@ -12,19 +12,7 @@ const tableData = {
     ],
 };
 
-// Tiny utility to join colors names
 const joinColorNames = (...args) => args.filter(n => !!n).join(".");
-
-const getConfigurationCode = ({name, id}) => {
-    return [
-        `import ${id} from "${name}";`,
-        "",
-        "export default {",
-        `    ...${id},`,
-        "    // ...other configuration",
-        "};",
-    ].join("\n");
-};
 
 const getVariants = obj => Object.keys(obj).filter(selector => /\.is-([\w\-_]+)/.test(selector));
 const getVariantName = selector => selector.match(/\.is-([\w\-_]+)/)[1];
@@ -59,12 +47,12 @@ const ColorPalette = ({colors, name}) => (
             {Object.keys(colors).filter(c => typeof colors[c] === "string").map(color => (
                 <div key={color}>
                     <div
-                        className="has-s-32 has-radius-md"
+                        className="has-s-24 has-radius-md"
                         style={{
                             backgroundColor: colors[color],
                         }}
                     />
-                    <div className="">
+                    <div className="has-mt-1 has-size-0">
                         {joinColorNames(name, color)}
                     </div>
                 </div>
@@ -249,91 +237,24 @@ const FormDemo = props => {
     );
 };
 
-const Header = props => (
-    <div className="has-mb-24" align="center">
-        {!!props.context.hasCoverImage && (
-            <div align="center">
-                <img src={`/preset-${props.context.id}.${"svg"}`} width="192px" />
-            </div> 
-        )}
-        <div className="has-size-10 has-weight-bold">siimple {props.context.id}</div>
-        <div className="has-size-3 has-mt-4 has-opacity-75">{props.context.description}</div>
-    </div>
-);
-
-const Footer = props => {
-    const linkClass = props.css({
-        color: "primary",
-        fontWeight: "bold",
-        textDecoration: "none",
-    });
-    return (
-        <div className="has-mt-24">
-            <div className="has-mt-8 has-mb-2" align="center">
-                <i className="si-siimple has-size-5" />
-            </div>
-            <div className="has-size-0" align="center">
-                Made with <i className="si-heart" /> using <a href="/" className={linkClass}>siimple</a>.
-            </div>
-        </div>
-    );
-};
-
 // preset data is in props.pageContext
 export default props => (
-    <React.Fragment>
+    <Layout {...props} title={`Preset ${props.pageContext.id}`}>
         <Helmet>
-            <meta name="description" content="" />
-            <link rel="stylesheet" href="/landing.css" />
-            <link rel="stylesheet" href="/codecake.css" />
-            <link rel="stylesheet" href="/siimple.css" />
-            <link rel="stylesheet" href="/siimple-icons.css" />
             {(props.pageContext?.fonts || []).map(fontPath => (
                 <link href={fontPath} rel="stylesheet" />
             ))}
-            <title>{props.pageContext.id || ""} preset · siimple CSS</title>
         </Helmet>
         <ThemeProvider theme={props.pageContext.theme} render={({css}) => (
             <div
-                className="container has-my-24"
+                className=""
                 style={{
                     fontFamily: props.pageContext.theme.fonts.body,
                     fontSize: props.pageContext.theme.fontSizes["1"],
-                    maxWidth: "960px",
                 }}
             >
                 {/* Header section */}
-                <Header
-                    css={css}
-                    context={props.pageContext}
-                />
-                {/* Installation and usage */}
-                <div className="columns">
-                    <div className="column is-half is-full-mobile">
-                        <div className="title is-4">
-                            <i className="si-download has-size-3 has-mr-2" />
-                            <span>Installation</span>
-                        </div>
-                        <div className="paragraph">
-                            Download this preset using <b>NPM</b>:
-                        </div>
-                        <LiveCode>$ npm install --save {props.pageContext.name} siimple</LiveCode>
-                        <div className="paragraph">
-                            Or using <b>YARN</b>:
-                        </div>
-                        <LiveCode>$ yarn add --save {props.pageContext.name} siimple</LiveCode>
-                    </div>
-                    <div className="column is-half is-full-mobile">
-                        <div className="title is-4">
-                            <i className="si-siimple has-size-3 has-mr-2" />
-                            <span>Configuration</span>
-                        </div>
-                        <div className="paragraph">
-                            Include this preset in your <code>siimple.config.js</code> file:
-                        </div>
-                        <LiveCode className="js" title="siimple.config.js">{getConfigurationCode(props.pageContext)}</LiveCode>
-                    </div>
-                </div>
+                <div className="title is-1 has-mb-0">{props.pageContext.name}</div>
                 {/* Colors list */}
                 <Title>Colors</Title>
                 <ColorsDemo theme={props.pageContext.theme || {}} />
@@ -390,9 +311,7 @@ export default props => (
                     css={css}
                     theme={props.pageContext.theme || {}}
                 />
-                {/* Footer section */}
-                <Footer css={css} />
             </div>
         )} />
-    </React.Fragment>
+    </Layout>
 );
