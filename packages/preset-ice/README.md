@@ -1,8 +1,3 @@
-<p align="center">
-<img src="https://github.com/jmjuanes/siimple/raw/main/packages/preset-ice/preset-ice.svg" width="192px" />
-</p>
-
-
 # @siimple/preset-ice
 
 > A frosty and clean theme for **siimple**.

@@ -1,8 +1,3 @@
-<p align="center">
-<img src="https://github.com/jmjuanes/siimple/raw/main/packages/preset-base/preset-base.svg" width="192px" />
-</p>
-
-
 # @siimple/preset-base
 
 Default theme preset for the **siimple CSS toolkit**.

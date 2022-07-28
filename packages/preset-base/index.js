@@ -17,14 +17,14 @@ export const fonts = {
         "'Helvetica Neue'", 
         "Arial", 
         "sans-serif",
-    ].join(","),
+    ].join(", "),
     serif: [
         "Georgia", 
         "Cambria", 
         "'Times New Roman'", 
         "Times", 
         "serif",
-    ].join(","),
+    ].join(", "),
     monospace: [
         "SFMono-Regular", 
         "Menlo", 
@@ -33,7 +33,7 @@ export const fonts = {
         "'Liberation Mono'", 
         "'Courier New'", 
         "monospace",
-    ].join(","),
+    ].join(", "),
 };
 
 export const screens = {

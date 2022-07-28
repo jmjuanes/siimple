@@ -23,10 +23,7 @@
         "index.js",
         "README.md"
     ],
-    "presetDemo": {
-        "background": "#fff",
-        "fonts": [
-            "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700"
-        ]
-    }
+    "presetFonts": [
+        "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700"
+    ]
 }
