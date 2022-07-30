@@ -3,20 +3,19 @@ import kofi from "kofi";
 
 const items = [
     {
-        text: "Getting started",
+        text: "Documentation",
         href: "/docs",
+    },
+    {
+        text: "Examples",
+        href: "/examples",
     },
     {
         text: "Icons",
         href: "/icons",
     },
     {
-        text: "Presets",
-        href: "/presets",
-    },
-    {
         text: "Playground",
-        // icon: "si-external-link",
         href: "/playground",
     },
 ];
@@ -40,8 +39,8 @@ export const Header = () => {
     });
     return (
         <div className="container is-relative">
-            <div className="is-flex has-py-6 has-flex-wrap has-items-center">
-                <a href="/" className="is-flex has-text-gray-700 has-items-center has-mr-auto is-not-underlined">
+            <div className="is-flex has-py-6 has-items-center has-justify-between">
+                <a href="/" className="is-flex has-text-gray-700 has-items-center is-not-underlined has-w-64">
                     <i
                         className="si-siimple has-align-middle"
                         style={{
@@ -53,13 +52,23 @@ export const Header = () => {
                         <strong>{process.env.VERSION}</strong>
                     </span>
                 </a>
+                <div className={menuClassName}>
+                    {items.map(item => (<NavLink key={item.href} {...item} />))}
+                </div>
+                <div className="has-w-64 is-flex has-justify-end">
+                    <a
+                        href={process.env.REPO_URL}
+                        target="_blank"
+                        className="navlink is-flex has-items-center has-bg-gray-800 has-bg-gray-900-hover has-text-white has-text-white-hover has-w-auto"
+                    >
+                        <i className="si-archive has-mr-2 has-size-2" />
+                        <strong>GitHub</strong>
+                    </a>
+                </div>
                 <div
                     className="menu is-hidden-tablet"
                     onClick={() => setActive(!active)}
                 />
-                <div className={menuClassName}>
-                    {items.map(item => (<NavLink key={item.href} {...item} />))}
-                </div>
             </div>
         </div>
     );
