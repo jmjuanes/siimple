@@ -1,5 +1,5 @@
 import React from "react";
-import kofi from "kofi";
+import {classNames} from "@siimple/styled";
 
 const items = [
     {
@@ -23,18 +23,18 @@ const items = [
 // Navigation link
 const NavLink = props => (
     <a href={props.href} target={props.target} className="navlink is-flex has-items-center has-bg-gray-100-hover">
-        {kofi.when(!!props.icon, () => (
+        {!!props.icon && (
             <i className={`${props.icon} has-mr-2 has-size-2`} />
-        ))}
+        )}
         <div className="has-weight-bold">{props.text}</div>
     </a>
 );
 
 export const Header = () => {
     const [active, setActive] = React.useState(false);
-    const menuClassName = kofi.classNames({
-        "is-flex": true,
-        "has-direction-column-mobile has-mt-4-mobile has-w-full-mobile": true,
+    const menuClassName = classNames({
+        "is-hidden-tablet has-direction-column has-p-4 has-bg-gray-200 has-w-full has-radius-md": true,
+        "is-flex": active,
         "is-hidden-mobile": !active,
     });
     return (
@@ -52,16 +52,16 @@ export const Header = () => {
                         <strong>{process.env.VERSION}</strong>
                     </span>
                 </a>
-                <div className={menuClassName}>
+                <div className="is-flex is-hidden-mobile">
                     {items.map(item => (<NavLink key={item.href} {...item} />))}
                 </div>
-                <div className="has-w-64 is-flex has-justify-end">
+                <div className="has-w-64 is-flex has-justify-end is-hidden-mobile">
                     <a
                         href={process.env.REPO_URL}
                         target="_blank"
                         className="navlink is-flex has-items-center has-bg-gray-800 has-bg-gray-900-hover has-text-white has-text-white-hover has-w-auto"
                     >
-                        <i className="si-archive has-mr-2 has-size-2" />
+                        <i className="si-external-link has-mr-2 has-size-2" />
                         <strong>GitHub</strong>
                     </a>
                 </div>
@@ -69,6 +69,9 @@ export const Header = () => {
                     className="menu is-hidden-tablet"
                     onClick={() => setActive(!active)}
                 />
+            </div>
+            <div className={menuClassName}>
+                {items.map(item => (<NavLink key={item.href} {...item} />))}
             </div>
         </div>
     );
