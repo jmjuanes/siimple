@@ -33,7 +33,7 @@ export default props => {
                         <div className="card has-shadow-md">
                             <div className="title is-4 is-capitalized">{example.title}</div>
                             <div className="paragraph has-minh-16">{example.description}</div>
-                            <div className="is-flex has-direction-column-mobile" style={{gap:"0.75rem"}}>
+                            <div className="is-flex has-direction-column-mobile" style={{gap:"0.5rem"}}>
                                 <div className="has-w-full">
                                     <a
                                         href={`/examples/${example.url}`}
@@ -49,7 +49,7 @@ export default props => {
                                         className="button is-full has-bg-blue-100 has-text-blue-800 has-bg-blue-200-hover"
                                         target="_blank"
                                     >
-                                        <strong>View code</strong>
+                                        <strong>Code</strong>
                                     </a>
                                 </div>
                             </div>
