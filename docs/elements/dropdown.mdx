@@ -1,0 +1,23 @@
+---
+title: Dropdown
+---
+
+# Dropdown
+
+Dropdowns are contextual elements usually used for displaying lists of links. Dropdowns are toggled by hovering the parent element.
+
+Dropdowns are created adding a `dropdown` class to a `<div>` element. To automatically display the dropdown when the user hovers the parent element, add a `with-dropdown` modifier to the parent element.
+
+```html live=true
+<div class="with-dropdown">
+    <button class="button is-flex has-items-center">
+        Dropdown
+        <i class="si-chevron-down has-size-2 has-ml-2"></i>
+    </button>
+    <div class="dropdown has-mt-1">
+        <a class="navlink">Action</a>
+        <a class="navlink is-active has-bg-blue-200">Another action</a>
+        <a class="navlink">Something else</a>
+    </div>
+</div>
+```
