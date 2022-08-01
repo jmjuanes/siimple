@@ -1,6 +1,6 @@
 import React from "react";
-import kofi from "kofi";
 import {highlightStr} from "codecake/highlight.js";
+import {classNames} from "@siimple/styled";
 
 // Render title element
 const CodeTitle = props => {
@@ -37,14 +37,12 @@ export const LiveCode = props => {
         );
     }
     //const {padding, bg, color} = props;
-    const demoClass = kofi.classNames("has-mb-6 has-overflow-x-hidden is-clipped", [
-        // "has-pt-4 has-pb-4",
-        // `has-p-${props.padding}`,
-        // `has-bg-${props.bg}`,
-        "has-p-6 has-bg-gray-100 has-radius-md",
-        `has-text-${props.color}`,
-    ]);
-    const contentClass = kofi.classNames("has-w-full has-overflow-y", {
+    const demoClass = classNames({
+        "has-mb-6 has-p-6 has-bg-gray-100 has-radius-md": true,
+        [`has-text-${props.color}`]: true,
+    });
+    const contentClass = classNames({
+        "has-w-full has-overflow-y": true,
         "is-flex has-items-center has-justify-center": props.centered === "true",
     });
     return (

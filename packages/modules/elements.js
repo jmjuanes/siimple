@@ -292,6 +292,24 @@ export const elements = {
             apply: "styles.hr",
         },
     },
+    dropdown: {
+        ".with-dropdown": {
+            position: "relative",
+        },
+        ".{{prefix}}dropdown": {
+            display: "none",
+            backgroundColor: "muted",
+            borderRadius: "0.5rem",
+            position: "absolute",
+            top: "100%",
+            left: "0px",
+            padding: "1rem",
+            ".with-dropdown:hover &": {
+                display: "block",
+            },
+            apply: "links.dropdown"
+        },
+    },
     input: {
         ".{{prefix}}input": {
             backgroundColor: "muted",

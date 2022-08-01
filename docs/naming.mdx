@@ -94,3 +94,22 @@ The following example shows how to use the `secondary` variant of a button:
     Secondary button
 </button>
 ```
+
+### Actionable modifiers
+
+In some elements we use special modifiers to active it. The syntax for this type of modifiers is:
+
+```
+.with-<element>
+```
+
+For example, for displaying the dropdown when the user movers the cursor over the dropdown parent element, you should add the `with-dropdown` class to the dropdown parent element:
+
+```html
+<div class="with-dropdown">
+    <button>Hover me</button>
+    <div class="dropdown">
+        <!-- Dropdown content -->
+    </div>
+</div>
+```

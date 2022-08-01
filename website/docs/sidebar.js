@@ -19,6 +19,7 @@ export const sidebarItems = [
     {"group": "elements", "url": "/elements/column", "label": "Column"},
     {"group": "elements", "url": "/elements/crumb", "label": "Crumb"},
     {"group": "elements", "url": "/elements/divider", "label": "Divider"},
+    {"group": "elements", "url": "/elements/dropdown", "label": "Dropdown"},
     {"group": "elements", "url": "/elements/input", "label": "Input"},
     {"group": "elements", "url": "/elements/label", "label": "Label"},
     {"group": "elements", "url": "/elements/menu", "label": "Menu"},
