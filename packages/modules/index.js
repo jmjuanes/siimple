@@ -10,12 +10,23 @@ const all = {
     reset,
 };
 
+// Merge CSS styles
+const mergeStyles = (source, target) => {
+    Object.keys(target).forEach(key => {
+        if (typeof source[key] === "object" && typeof target[key] === "object") {
+            return mergeStyles(source[key], target[key]);
+        }
+        source[key] = target[key];
+    });
+    return source;
+};
+
 export const injectModules = config => {
     const styles = {};
     // Check for array --> only include specified modules
     if (config.modules && Array.isArray(config.modules)) {
         config.modules.forEach(key => {
-            all[key] && Object.assign(styles, all[key]);
+            all[key] && mergeStyles(styles, all[key]);
         });
     }
     // Check for object or undefined --> exclude modules
@@ -27,13 +38,10 @@ export const injectModules = config => {
             }
         });
         Object.keys(all).forEach(key => {
-            !excludeModules.has(key) && Object.assign(styles, all[key]);
+            !excludeModules.has(key) && mergeStyles(styles, all[key]);
         });
     }
     return Object.assign(config, {
-        styles: {
-            ...styles,
-            ...(config.styles || {}),
-        },
+        styles: mergeStyles(styles, config.styles || {}),
     });
 };
