@@ -4,8 +4,12 @@ export const generateHelpers = helpers => {
         const prefix = [item.prefix, item.shortcut].filter(n => !!n).join("-");
         // Themeable helpers
         if (item.scale) {
+            let excludedFields = "";
+            if (item.exclude && Array.isArray(item.exclude) && item.exclude.length > 0) {
+                excludedFields = "!{" + item.exclude.join(",") + "}";
+            }
             const themeStyles = {
-                [`@theme ${item.scale}`]: {
+                [`@theme ${item.scale}${excludedFields}`]: {
                     "&": Object.fromEntries(item.properties.map(name => {
                         return [name, "value"];
                     })),

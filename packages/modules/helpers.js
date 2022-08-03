@@ -12,6 +12,7 @@ const sizesValues = {
     one: "1px",
     half: "50%",
     full: "100%",
+    auto: "auto",
 };
 
 // Build helpers
@@ -21,18 +22,20 @@ export const helpers = {
         prefix: "has",
         shortcut: "bg",
         properties: ["backgroundColor"],
-        states: ["default", "hover", "focus"],
+        states: ["default", "hover"],
         responsive: false,
         scale: "colors",
+        exclude: ["text", "background", "heading"],
         values: colorsValues,
     }),
     textColor: generateHelpers({
         prefix: "has",
         shortcut: "text",
         properties: ["color"],
-        states: ["default", "hover", "focus"],
+        states: ["default", "hover"],
         responsive: false,
         scale: "colors",
+        exclude: ["text", "background", "heading"],
         values: colorsValues,
     }),
     // Font
@@ -82,32 +85,33 @@ export const helpers = {
         },
     }),
     // Opacities
-    opacity: generateHelpers({
-        prefix: "has",
-        shortcut: "opacity",
-        properties: ["opacity"],
-        states: ["default", "hover"],
-        responsive: false,
-        scale: "opacities",
-    }),
+    // opacity: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "opacity",
+    //     properties: ["opacity"],
+    //     states: ["default", "hover"],
+    //     responsive: false,
+    //     scale: "opacities",
+    // }),
     // Radius
-    radius: generateHelpers({
-        prefix: "has",
-        shortcut: "radius",
-        properties: ["borderRadius"],
-        states: ["default"],
-        responsive: false,
-        scale: "radius",
-    }),
+    // This helper has been deprecated
+    // oldRadius: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "radius",
+    //     properties: ["borderRadius"],
+    //     states: ["default"],
+    //     responsive: false,
+    //     scale: "radius",
+    // }),
     // Shadows
-    shadow: generateHelpers({
-        prefix: "has",
-        shortcut: "shadow",
-        properties: ["boxShadow"],
-        states: ["default"],
-        responsive: false,
-        scale: "shadows",
-    }),
+    // shadow: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "shadow",
+    //     properties: ["boxShadow"],
+    //     states: ["default"],
+    //     responsive: false,
+    //     scale: "shadows",
+    // }),
     // Sizes
     width: generateHelpers({
         prefix: "has",
@@ -118,36 +122,35 @@ export const helpers = {
         scale: "sizes",
         values: {
             ...sizesValues,
-            auto: "auto",
             screen: "100vw",
         },
     }),
-    minWidth: generateHelpers({
-        prefix: "has",
-        shortcut: "minw",
-        properties: ["min-width"],
-        states: ["default"],
-        responsive: true,
-        scale: "sizes",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-            screen: "100vw",
-        },
-    }),
-    maxWidth: generateHelpers({
-        prefix: "has",
-        shortcut: "maxw",
-        properties: ["max-width"],
-        states: ["default"],
-        responsive: true,
-        scale: "sizes",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-            screen: "100vw",
-        },
-    }),
+    // minWidth: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "minw",
+    //     properties: ["min-width"],
+    //     states: ["default"],
+    //     responsive: true,
+    //     scale: "sizes",
+    //     values: {
+    //         ...sizesValues,
+    //         auto: "auto",
+    //         screen: "100vw",
+    //     },
+    // }),
+    // maxWidth: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "maxw",
+    //     properties: ["max-width"],
+    //     states: ["default"],
+    //     responsive: true,
+    //     scale: "sizes",
+    //     values: {
+    //         ...sizesValues,
+    //         auto: "auto",
+    //         screen: "100vw",
+    //     },
+    // }),
     height: generateHelpers({
         prefix: "has",
         shortcut: "h",
@@ -157,45 +160,44 @@ export const helpers = {
         scale: "sizes",
         values: {
             ...sizesValues,
-            auto: "auto",
             screen: "100vh",
         },
     }),
-    minHeight: generateHelpers({
-        prefix: "has",
-        shortcut: "minh",
-        properties: ["min-height"],
-        states: ["default"],
-        responsive: true,
-        scale: "sizes",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-            screen: "100vh",
-        },
-    }),
-    maxHeight: generateHelpers({
-        prefix: "has",
-        shortcut: "maxh",
-        properties: ["max-height"],
-        states: ["default"],
-        responsive: true,
-        scale: "sizes",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-            screen: "100vh",
-        },
-    }),
-    size: generateHelpers({
-        prefix: "has",
-        shortcut: "s",
-        properties: ["height", "width"],
-        states: ["default"],
-        responsive: true,
-        scale: "sizes",
-        values: sizesValues,
-    }),
+    // minHeight: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "minh",
+    //     properties: ["min-height"],
+    //     states: ["default"],
+    //     responsive: true,
+    //     scale: "sizes",
+    //     values: {
+    //         ...sizesValues,
+    //         auto: "auto",
+    //         screen: "100vh",
+    //     },
+    // }),
+    // maxHeight: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "maxh",
+    //     properties: ["max-height"],
+    //     states: ["default"],
+    //     responsive: true,
+    //     scale: "sizes",
+    //     values: {
+    //         ...sizesValues,
+    //         auto: "auto",
+    //         screen: "100vh",
+    //     },
+    // }),
+    // size: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "s",
+    //     properties: ["height", "width"],
+    //     states: ["default"],
+    //     responsive: true,
+    //     scale: "sizes",
+    //     values: sizesValues,
+    // }),
     // Position
     ...Object.fromEntries(["bottom","left","right","top"].map(position => {
         return [position, generateHelpers({
@@ -215,35 +217,32 @@ export const helpers = {
         states: ["default"],
         responsive: true,
         scale: "space",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-        },
+        values: sizesValues,
     }),
-    paddingX: generateHelpers({
-        prefix: "has",
-        shortcut: "px",
-        properties: ["padding-left", "padding-right"],
-        states: ["default"],
-        responsive: true,
-        scale: "space",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-        },
-    }),
-    paddingY: generateHelpers({
-        prefix: "has",
-        shortcut: "py",
-        properties: ["padding-top", "padding-bottom"],
-        states: ["default"],
-        responsive: true,
-        scale: "space",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-        },
-    }),
+    // paddingX: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "px",
+    //     properties: ["padding-left", "padding-right"],
+    //     states: ["default"],
+    //     responsive: true,
+    //     scale: "space",
+    //     values: {
+    //         ...sizesValues,
+    //         auto: "auto",
+    //     },
+    // }),
+    // paddingY: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "py",
+    //     properties: ["padding-top", "padding-bottom"],
+    //     states: ["default"],
+    //     responsive: true,
+    //     scale: "space",
+    //     values: {
+    //         ...sizesValues,
+    //         auto: "auto",
+    //     },
+    // }),
     paddingTop: generateHelpers({
         prefix: "has",
         shortcut: "pt",
@@ -251,10 +250,7 @@ export const helpers = {
         states: ["default"],
         responsive: true,
         scale: "space",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-        },
+        values: sizesValues,
     }),
     paddingBottom: generateHelpers({
         prefix: "has",
@@ -263,10 +259,7 @@ export const helpers = {
         states: ["default"],
         responsive: true,
         scale: "space",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-        },
+        values: sizesValues,
     }),
     paddingLeft: generateHelpers({
         prefix: "has",
@@ -275,10 +268,7 @@ export const helpers = {
         states: ["default"],
         responsive: true,
         scale: "space",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-        },
+        values: sizesValues,
     }),
     paddingRight: generateHelpers({
         prefix: "has",
@@ -287,10 +277,7 @@ export const helpers = {
         states: ["default"],
         responsive: true,
         scale: "space",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-        },
+        values: sizesValues,
     }),
     margin: generateHelpers({
         prefix: "has",
@@ -299,10 +286,7 @@ export const helpers = {
         states: ["default"],
         responsive: true,
         scale: "space",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-        },
+        values: sizesValues,
     }),
     marginX: generateHelpers({
         prefix: "has",
@@ -310,24 +294,22 @@ export const helpers = {
         properties: ["margin-left", "margin-right"],
         states: ["default"],
         responsive: true,
-        scale: "space",
         values: {
-            ...sizesValues,
             auto: "auto",
         },
     }),
-    marginY: generateHelpers({
-        prefix: "has",
-        shortcut: "my",
-        properties: ["margin-top", "margin-bottom"],
-        states: ["default"],
-        responsive: true,
-        scale: "space",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-        },
-    }),
+    // marginY: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "my",
+    //     properties: ["margin-top", "margin-bottom"],
+    //     states: ["default"],
+    //     responsive: true,
+    //     scale: "space",
+    //     values: {
+    //         ...sizesValues,
+    //         auto: "auto",
+    //     },
+    // }),
     marginTop: generateHelpers({
         prefix: "has",
         shortcut: "mt",
@@ -335,10 +317,7 @@ export const helpers = {
         states: ["default"],
         responsive: true,
         scale: "space",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-        },
+        values: sizesValues,
     }),
     marginBottom: generateHelpers({
         prefix: "has",
@@ -347,10 +326,7 @@ export const helpers = {
         states: ["default"],
         responsive: true,
         scale: "space",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-        },
+        values: sizesValues,
     }),
     marginLeft: generateHelpers({
         prefix: "has",
@@ -359,10 +335,7 @@ export const helpers = {
         states: ["default"],
         responsive: true,
         scale: "space",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-        },
+        values: sizesValues,
     }),
     marginRight: generateHelpers({
         prefix: "has",
@@ -371,10 +344,7 @@ export const helpers = {
         states: ["default"],
         responsive: true,
         scale: "space",
-        values: {
-            ...sizesValues,
-            auto: "auto",
-        },
+        values: sizesValues,
     }),
     // Flexbox
     flex: generateHelpers({
@@ -495,33 +465,33 @@ export const helpers = {
             evenly: "space-evenly",
         },
     }),
-    justifyItems: generateHelpers({
-        prefix: "has",
-        shortcut: "justify-items",
-        states: ["default"],
-        responsive: true,
-        properties: ["justify-items"],
-        values: {
-            start: "start",
-            end: "end",
-            center: "center",
-            stretch: "stretch",
-        },
-    }),
-    justifySelf: generateHelpers({
-        prefix: "has",
-        shortcut: "justify-self",
-        states: ["default"],
-        responsive: true,
-        properties: ["justify-self"],
-        values: {
-            auto: "auto",
-            start: "start",
-            end: "end",
-            center: "center",
-            stretch: "stretch",
-        },
-    }),
+    // justifyItems: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "justify-items",
+    //     states: ["default"],
+    //     responsive: true,
+    //     properties: ["justify-items"],
+    //     values: {
+    //         start: "start",
+    //         end: "end",
+    //         center: "center",
+    //         stretch: "stretch",
+    //     },
+    // }),
+    // justifySelf: generateHelpers({
+    //     prefix: "has",
+    //     shortcut: "justify-self",
+    //     states: ["default"],
+    //     responsive: true,
+    //     properties: ["justify-self"],
+    //     values: {
+    //         auto: "auto",
+    //         start: "start",
+    //         end: "end",
+    //         center: "center",
+    //         stretch: "stretch",
+    //     },
+    // }),
     order: generateHelpers({
         prefix: "has",
         shortcut: "order",
@@ -613,6 +583,29 @@ export const helpers = {
             "scrollable": ["auto", "!important"],
         },
     }),
+    // Shadow helpers
+    shadow: generateHelpers({
+        prefix: "is",
+        states: ["default"],
+        responsive: false,
+        properties: ["boxShadow"],
+        values: {
+            "shadowed": "0 0.5rem 1rem -0.25rem rgba(54,63,79,0.2), 0 0 0 1px rgba(54,63,79,0.02)",
+            "shadowless": ["none", "!important"],
+        },
+    }),
+    // Border radius
+    radius: generateHelpers({
+        prefix: "is",
+        states: ["default"],
+        responsive: false,
+        properties: ["radius"],
+        values: {
+            "rounded": "0.5rem",
+            "pill": "999px",
+            "radiusless": ["0px", "!important"],
+        },
+    }),
     // Position
     position: generateHelpers({
         prefix: "is",
@@ -659,43 +652,25 @@ export const helpers = {
             },
         },
     ]),
-    // Negative selectors
-    negative: generateHelpers([
-        {
-            prefix: "is",
-            states: ["default"],
-            responsive: false,
-            properties: ["borderRadius"],
-            values: {
-                "radiusless": ["0px", "!important"],
-            },
+    // Opacity helpers
+    opacity: generateHelpers({
+        prefix: "is",
+        states: ["default"],
+        responsive: false,
+        properties: ["opacity"],
+        values: {
+            "semitransparent": ["0.5", "!important"],
+            "transparent": ["0", "!important"],
         },
-        {
-            prefix: "is",
-            states: ["default"],
-            responsive: false,
-            properties: ["boxShadow"],
-            values: {
-                "shadowless": ["none", "!important"],
-            },
+    }),
+    // Text selection
+    textSelection: generateHelpers({
+        prefix: "is",
+        states: ["default"],
+        responsive: false,
+        properties: ["userSelect"],
+        values: {
+            "unselectable": ["none", "!important"],
         },
-        {
-            prefix: "is",
-            states: ["default"],
-            responsive: false,
-            properties: ["userSelect"],
-            values: {
-                "unselectable": ["none", "!important"],
-            },
-        },
-        {
-            prefix: "is",
-            states: ["default"],
-            responsive: false,
-            properties: ["opacity"],
-            values: {
-                transparent: ["0", "!important"],
-            },
-        },
-    ]),
+    }),
 };
