@@ -4,12 +4,56 @@ title: Other helpers
 
 # Other helpers
 
+### Border radius
+
+Use `is-rounded` for displaying rounded corners (default to `0.5rem`).
+
+```html live=true centered=true color=white
+<div class="has-p-6 has-m-2 has-bg-primary is-rounded">
+    <strong>.is-rounded</strong>
+</div>
+```
+
+Use `is-pill` to round it's corners like a pill element:
+
+```html live=true centered=true color=white
+<div class="has-p-6 has-m-2 has-bg-primary is-pill">
+    <strong>.is-pill</strong>
+</div>
+```
+
+Use `.is-radiusless` to prevent rounded corners in the element:
+
+```html live=true centered=true color=white
+<div class="has-p-6 has-m-2 has-bg-primary is-radiusless">
+    <strong>.is-radiusless</strong>
+</div>
+```
+
+### Shadow
+
+Use the `is-shadowed` class to apply a shadow to the specified element:
+
+```html live=true centered=true
+<div class="has-p-6 has-bg-white is-rounded is-shadowed">
+    <strong>.is-shadowed</strong>
+</div>
+```
+
+Use the `is-shadowless` class to remove the shadow of the element:
+
+```html live=true centered=true
+<div class="has-p-6 has-bg-white is-rounded is-shadowless">
+    <strong>.is-shadowless</strong>
+</div>
+```
+
 ### Cursors
 
 Use `is-clickable` for displaying a pointer cursor to indicate a link or an interactive element:
 
 ```html live=true centered=true color=white
-<div class="has-bg-blue-500 has-text-center has-p-3 has-w-64 is-clickable">
+<div class="has-bg-blue-500 has-text-center has-p-3 has-w-64 is-rounded is-clickable">
     Pointer
 </div>
 ```
@@ -17,7 +61,7 @@ Use `is-clickable` for displaying a pointer cursor to indicate a link or an inte
 Use `is-not-allowed` to display a not allowed cursor:
 
 ```html live=true centered=true color=white
-<div class="has-bg-blue-500 has-text-center has-p-3 has-w-64 is-not-allowed">
+<div class="has-bg-blue-500 has-text-center has-p-3 has-w-64 is-rounded is-not-allowed">
     Cursor disabled
 </div>
 ```
@@ -38,26 +82,26 @@ Control how elements will be displayed using the following classes:
 Use `is-hidden` to hide an element:
 
 ```html live=true centered=true color=white
-<div class="has-bg-blue-500 has-p-3 has-mx-2 has-w-24 has-radius-md">1</div>
-<div class="has-bg-blue-500 has-p-3 has-mx-2 has-w-24 has-radius-md is-hidden">2</div>
-<div class="has-bg-blue-500 has-p-3 has-mx-2 has-w-24 has-radius-md">3</div>
+<div class="has-bg-blue-500 has-p-3 has-mx-2 has-w-24 is-rounded">1</div>
+<div class="has-bg-blue-500 has-p-3 has-mx-2 has-w-24 is-rounded is-hidden">2</div>
+<div class="has-bg-blue-500 has-p-3 has-mx-2 has-w-24 is-rounded">3</div>
 ```
 
 Use `is-block` to generate a block-level element: 
 
 ```html live=true color=white
-<span class="has-bg-blue-500 has-p-3 has-m-2 has-radius-md is-block">1</span>
-<span class="has-bg-blue-500 has-p-3 has-m-2 has-radius-md is-block">2</span>
-<span class="has-bg-blue-500 has-p-3 has-m-2 has-radius-md is-block">3</span>
+<span class="has-bg-blue-500 has-p-3 has-m-2 is-rounded is-block">1</span>
+<span class="has-bg-blue-500 has-p-3 has-m-2 is-rounded is-block">2</span>
+<span class="has-bg-blue-500 has-p-3 has-m-2 is-rounded is-block">3</span>
 ```
 
 Use `is-inline-block` to generate an inline block element: 
 
 ```html live=true color=primary
-<div class="has-bg-blue-500 has-radius-md has-p-2">
-    <div class="has-bg-white has-p-3 has-m-2 has-radius-md is-inline-block">1</div>
-    <div class="has-bg-white has-p-3 has-m-2 has-radius-md is-inline-block">2</div>
-    <div class="has-bg-white has-p-3 has-m-2 has-radius-md is-inline-block">3</div>
+<div class="has-bg-blue-500 is-rounded has-p-2">
+    <div class="has-bg-white has-p-3 has-m-2 is-rounded is-inline-block">1</div>
+    <div class="has-bg-white has-p-3 has-m-2 is-rounded is-inline-block">2</div>
+    <div class="has-bg-white has-p-3 has-m-2 is-rounded is-inline-block">3</div>
 </div>
 ```
 
@@ -108,7 +152,7 @@ Use the following classes for positioning and formatting content, for example to
 You can use `is-aligned-left` to float an element to the left side of it's containing block:
 
 ```html live=true
-<div class="is-aligned-left has-w-32 has-h-32 has-mr-8 has-radius-md has-bg-blue-500">
+<div class="is-aligned-left has-w-32 has-h-32 has-mr-8 has-bg-blue-500 is-rounded">
     <div class="has-w-full has-h-full is-flex has-justify-center">
         <i class="si-image has-size-7 has-text-white"></i>
     </div>
@@ -126,7 +170,7 @@ You can use `is-aligned-left` to float an element to the left side of it's conta
 Use `is-aligned-right` to float an element to the right side of it's containing block:
 
 ```html live=true
-<div class="is-aligned-right has-w-32 has-h-32 has-ml-8 has-radius-md has-bg-blue-500">
+<div class="is-aligned-right has-w-32 has-h-32 has-ml-8 has-bg-blue-500 is-rounded">
     <div class="has-w-full has-h-full is-flex has-justify-center">
         <i class="si-image has-size-7 has-text-white"></i>
     </div>
@@ -146,7 +190,7 @@ Use `is-aligned-right` to float an element to the right side of it's containing 
 Use `is-scrollable` to display scrollbars only if content does not fit inside the padding box of the container:
 
 ```html live=true color=white centered=true
-<div class="is-scrollable has-h-32 has-maxw-64 has-p-6 has-bg-primary has-radius-md">
+<div class="is-scrollable has-h-32 has-maxw-64 has-p-6 has-bg-primary is-rounded">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
     incididunt ut labore et dolore magna aliqua. 
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
@@ -157,7 +201,7 @@ Use `is-scrollable` to display scrollbars only if content does not fit inside th
 Use `is-clipped` to clip all neccesary content to fit the container size. Note that no scrollbars will be displayed and the user scrolling will be disabled.
 
 ```html live=true color=white centered=true
-<div class="is-clipped has-h-32 has-maxw-64 has-p-6 has-bg-primary has-radius-md">
+<div class="is-clipped has-h-32 has-maxw-64 has-p-6 has-bg-primary is-rounded">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
     incididunt ut labore et dolore magna aliqua. 
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
@@ -165,21 +209,20 @@ Use `is-clipped` to clip all neccesary content to fit the container size. Note t
 </div>
 ```
 
-### Negative helpers
+### Opacity
 
-We also provide the following helpers to remove some styles like shadows or radius:
+Use `is-semitransparent` to apply an opacity of `0.5` to the specified element
 
-| Class | Property |
-|-------|----------|
-| `is-shadowless` | `box-shadow: none !important;` |
-| `is-radiusless` | `border-radius: 0px !important;` |
-| `is-unselectable` | `user-select: none !important;` |
-| `is-transparent` | `opacity: 0 !important;` |
+```html live=true centered=true color=white
+<div class="has-p-6 has-m-2 has-bg-primary is-rounded is-semitransparent">
+    <strong>.is-semitransparent</strong>
+</div>
+```
 
-Use `is-unselectable` to prevent selecting text of the element:
+Use `is-transparent` to make the element full transparent (that is `opacity: 0`):
 
-```html live=true
-<span class="is-unselectable has-text-center">
-    You can not select this text.
-</span>
+```html live=true centered=true color=white
+<div class="has-p-6 has-m-2 has-bg-primary is-rounded is-transparent">
+    <strong>.is-transparent</strong>
+</div>
 ```

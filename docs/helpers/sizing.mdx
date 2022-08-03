@@ -33,8 +33,8 @@ The following sizes will be always included for generating the sizing helpers, r
 | `one`  | `1px` | |
 | `half` | `50%` | |
 | `full` | `100%` | |
-| `screen` | `100vw` | Will be applied only on **width** properties, for example `width` or `max-width`. |
-| `screen` | `100vh` | Will be applied only on **height** properties, for example `height` or `max-height`. |
+| `screen` | `100vw` | Will be applied only on `width` helper. |
+| `screen` | `100vh` | Will be applied only on `height` helper. |
 
 ### Width
 
@@ -55,28 +55,8 @@ Use `has-w-screen` to fit the width of the screen:
 Use the other clasess to set a fixed width:
 
 ```html live=true centered=true color=white
-<div class="has-w-64 has-p-4 has-bg-primary has-radius-md">
+<div class="has-w-64 has-p-4 has-bg-primary is-rounded">
     <strong>.has-w-64</strong>
-</div>
-```
-
-### Max Width
-
-Use `has-maxw-{size}` classes to set the `max-width` property of any element.
-
-```html live=true centered=true color=white
-<div class="has-w-full has-maxw-64 has-p-4 has-bg-primary has-radius-md">
-    <strong>.has-maxw-64</strong>
-</div>
-```
-
-### Min Width
-
-Use `has-minw-{size}` classes to modify the `min-width` property of any element.
-
-```html live=true centered=true color=white
-<div class="has-minw-64 has-p-4 has-bg-primary has-radius-md">
-    <strong>.has-minw-64</strong>
 </div>
 ```
 
@@ -99,38 +79,8 @@ Use `has-h-screen` to fit the height of the screen:
 Use the other clasess to set a fixed height:
 
 ```html live=true centered=true color=white
-<div class="has-h-32 has-w-64 has-p-4 has-bg-primary has-radius-md">
+<div class="has-h-32 has-w-64 has-p-4 has-bg-primary is-rounded">
     <strong>has-h-32</strong>
-</div>
-```
-
-## Max Height
-
-Use `has-maxh-{size}` classes to modify the `max-height` property of any element.
-
-```html live=true centered=true color=white
-<div class="has-h-full has-maxh-64 has-w-64 has-p-4 has-bg-primary has-radius-md">
-    <strong>.has-maxh-64</strong>
-</div>
-```
-
-## Min Height
-
-Use `has-minh-{size}` classes to modify the `min-height` property of any element.
-
-```html live=true centered=true color=white
-<div class="has-minh-64 has-w-64 has-p-4 has-bg-primary has-radius-md">
-    <strong>.has-minh-64</strong>
-</div>
-```
-
-### Uniform width and height
-
-Use `has-s-{size}` classes to set both the `width` and `height` properties of any element.
-
-```html live=true centered=true color=white
-<div class="has-s-32 has-p-4 has-bg-primary has-radius-md">
-    <strong>.has-s-32</strong>
 </div>
 ```
 
