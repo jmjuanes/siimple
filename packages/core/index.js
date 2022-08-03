@@ -218,15 +218,19 @@ export const buildRule = (parent, styles, config, vars) => {
                 });
             }
             // Check for theme rule
-            else if (/^@theme (\w*)$/.test(key.trim())) {
-                const scale = key.trim().match(/^@theme (\w*)$/)[1];
+            else if (/^@theme (\w+)/.test(key.trim())) {
+                const match = key.trim().match(/^@theme (\w+)(?:!\{([^\}]+)\})?$/);
+                const scale = match[1]; // scale name
+                const exclude = new Set((match[2] || "").split(",")); // excluded scale fields
                 return Object.keys(config[scale] || {}).forEach(name => {
-                    const newContent = buildRule(parent, value, config, {
-                        ...(vars || {}),
-                        name: name,
-                        value: config[scale][name],
-                    });
-                    return result.push(newContent.join("\n"));
+                    if (!exclude.has(name)) {
+                        const newContent = buildRule(parent, value, config, {
+                            ...(vars || {}),
+                            name: name,
+                            value: config[scale][name],
+                        });
+                        return result.push(newContent.join("\n"));
+                    }
                 });
             }
             // Check for media rule --> wrap content inside the media rule
