@@ -140,20 +140,20 @@ const App = () => {
         "has-bg-gray-100": theme === "light",
     });
     const menuPanelClass = kofi.classNames({
-        "is-flex has-direction-column-tablet has-justify-between has-py-4 has-px-6": true,
+        "is-flex has-direction-column-tablet has-justify-between has-pt-4 has-pb-4 has-pl-6 has-pr-6": true,
         "has-order-last-mobile has-w-full-mobile": true,
         "has-text-white has-bg-gray-800": theme === "dark",
         "has-bg-white": theme === "light",
     });
     const editorPanelClass = kofi.classNames({
-        "has-direction-column has-s-full has-p-6 has-minw-0 has-minh-0": true,
+        "has-direction-column has-w-full has-h-full has-p-6 has-minw-0 has-minh-0": true,
         "is-hidden": layout === "preview",
         "is-flex": layout === "code" || layout === "both",
         "has-bg-gray-700": theme === "dark",
         "has-bg-gray-100": theme === "light",
     });
     const previewPanelClass = kofi.classNames({
-        "has-s-full has-minw-0 has-minh-0 has-p-0 has-bg-white": true,
+        "has-w-full has-h-full has-minw-0 has-minh-0 has-p-none has-bg-white": true,
         "is-flex has-direction-column": layout !== "code",
         "is-hidden": layout === "code",
     });
@@ -170,7 +170,7 @@ const App = () => {
                     <DarkThemeButton theme={theme} onClick={handleThemeToggle} />
                 </div>
             </div>
-                <div className={editorPanelClass}>
+                <div className={editorPanelClass} style={{minWidth:"0px",minHeight:"0px"}}>
                     <div className="is-flex has-mb-8">
                         <FileTab
                             theme={theme}
@@ -187,13 +187,12 @@ const App = () => {
                             onClick={() => handleTabChange("config")}
                         />
                         <div className="has-ml-auto is-flex has-items-center is-hidden-mobile">
-                            {/* <VersionDropdown theme={theme} /> */}
                             <ActionButton theme={theme} icon="share" onClick={handleShareClick} />
                         </div>
                     </div>
                     <Editor theme={theme} visible={tab === "html"} ref={htmlRef} />
                     <Editor theme={theme} visible={tab === "config"} ref={configRef} />
-                    <div className="is-flex has-size-0 has-pt-4 has-opacity-75 is-hidden-mobile">
+                    <div className="is-flex has-size-0 has-pt-4 is-semitransparent is-hidden-mobile">
                         <div className="has-mr-auto">
                             Made with <i className="si-heart" /> and <i className="si-coffee" /> using <b>siimple</b>.
                         </div>
@@ -202,9 +201,9 @@ const App = () => {
                         </div>
                     </div>
                 </div>
-                <div className={previewPanelClass}>
+                <div className={previewPanelClass} style={{minWidth:"0px",minHeight:"0px"}}>
                     {kofi.when(!!error, () => (
-                        <div className="alert has-bg-red-500 has-radius-none">
+                        <div className="alert has-bg-red-500 is-radiusless">
                             <i className="si-exclamation has-size-4" />
                             <div className="has-pl-4">
                                 <div className="title is-5 has-text-white">Error in siimple.config.js</div>

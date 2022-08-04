@@ -11,9 +11,9 @@ export const ShareModal = props => {
 
     return (
         <div className="scrim">
-            <div className="modal is-medium has-text-gray-700 has-mx-6-mobile">
+            <div className="modal is-medium has-text-gray-700 has-ml-6-mobile has-mr-6-mobile">
                 <div className="is-flex has-items-center has-mb-4">
-                    <div className="title is-3 has-mb-0">Share</div>
+                    <div className="title is-3 has-mb-none">Share</div>
                     <div className="close has-ml-auto" onClick={props.onClose} />
                 </div>
                 <div className="paragraph">

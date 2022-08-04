@@ -3,7 +3,7 @@ import kofi from "kofi";
 
 export const FileTab = props => {
     const tabClass = kofi.classNames({
-        "navlink has-text-center has-w-auto has-mr-2 has-px-4": true,
+        "navlink has-text-center has-w-auto has-mr-2 has-pl-4 has-pr-4": true,
         "is-flex has-items-center": true,
         "has-text-blue-400-hover": !props.active && props.theme === "dark",
         "has-bg-blue-500 has-text-white has-text-white-hover": props.active,
