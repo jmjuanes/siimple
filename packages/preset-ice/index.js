@@ -36,6 +36,7 @@ export default {
         secondary: baseColors.aurora[4],
         background: "#fff",
         text: baseColors.polar[1],
+        heading: baseColors.polar[0],
         muted: baseColors.snow[2],
         danger: baseColors.aurora[0],
         warning: baseColors.aurora[2],

@@ -1,7 +1,6 @@
 # @siimple/preset-ice
 
-> A frosty and clean theme for **siimple**.
-
+A frosty and clean theme for **siimple**. Based on [Nord Theme](https://www.nordtheme.com).
 
 ## Installation
 
