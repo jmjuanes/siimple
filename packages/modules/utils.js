@@ -1,5 +1,5 @@
 // Helpers generator
-export const generateHelpers = helpers => {
+export const createHelper = helpers => {
     return [helpers].flat().reduce((styles, item) => {
         const prefix = [item.prefix, item.shortcut].filter(n => !!n).join("-");
         // Themeable helpers

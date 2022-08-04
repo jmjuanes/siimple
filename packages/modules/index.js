@@ -3,6 +3,8 @@ import {helpers} from "./helpers.js";
 import {markup} from "./markup.js";
 import {reset} from "./reset.js";
 
+export {createHelper} from "./utils.js";
+
 const all = {
     ...elements,
     ...helpers,
