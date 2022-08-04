@@ -33,13 +33,13 @@ const NavLink = props => (
 export const Header = () => {
     const [active, setActive] = React.useState(false);
     const menuClassName = classNames({
-        "is-hidden-tablet has-direction-column has-p-4 has-bg-gray-200 has-w-full has-radius-md": true,
+        "is-hidden-tablet has-direction-column has-p-4 has-bg-gray-200 has-w-full is-rounded": true,
         "is-flex": active,
         "is-hidden-mobile": !active,
     });
     return (
         <div className="container is-relative">
-            <div className="is-flex has-py-6 has-items-center has-justify-between">
+            <div className="is-flex has-pt-6 has-pb-6 has-items-center has-justify-between">
                 <a href="/" className="is-flex has-text-gray-700 has-items-center is-not-underlined has-w-64">
                     <i
                         className="si-siimple has-align-middle"
@@ -48,7 +48,7 @@ export const Header = () => {
                         }}
                     />
                     <strong className="has-ml-2 has-size-3 siimple">siimple.</strong>
-                    <span className="badge has-ml-2 has-bg-gray-200 has-text-gray-700 has-px-2">
+                    <span className="badge has-ml-2 has-bg-gray-200 has-text-gray-700 has-pl-2 has-pr-2">
                         <strong>{process.env.VERSION}</strong>
                     </span>
                 </a>

@@ -15,7 +15,7 @@ export const Sidebar = props => {
     const [expanded, setExpanded] = React.useState(getExpandedGroups(props.current));
     let currentGroup = null; //Current group
     return (
-        <div className="has-pt-0 has-pb-4 has-mb-0">
+        <div className="has-pt-none has-pb-4 has-mb-none">
             {(props.items || []).map((item, key) => {
                 //Return link to the provided item
                 const isActive = props.pathname === item.url;
@@ -47,12 +47,12 @@ export const Sidebar = props => {
                             //currentGroup = item.group; //Change current group
                             return (
                                 <div className={groupClass} onClick={handleGroupClick}>
-                                    <div className="is-flex has-py-3 has-items-center">
+                                    <div className="is-flex has-pt-3 has-pb-3 has-items-center">
                                         <div className="is-capitalized">
                                             <strong>{item.group.replace("-", " ")}</strong>
                                         </div>
                                         <div className="has-ml-auto">
-                                            <i className={`si-${groupIcon} has-py-1`} />
+                                            <i className={`si-${groupIcon} has-pt-1 has-pb-1`} />
                                         </div>
                                     </div>
                                 </div>

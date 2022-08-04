@@ -1,18 +1,18 @@
 import React from "react"
-import kofi from "kofi";
+import {classNames} from "@siimple/styled";
 
 import {Link} from "./Link.js";
 
 // Action button component wrapper
 const Button = props => {
-    const buttonClass = kofi.classNames(props.className, [
-        "button has-size-3",
-        "is-inline-flex has-justify-center",
-        "has-px-6 has-py-3",
-        "has-w-full-mobile has-mb-2-mobile",
-    ]);
+    const buttonClass = classNames({
+        "button has-size-3": true,
+        "is-inline-flex has-justify-center": true,
+        "has-pl-6 has-pr-6 has-pt-3 has-pb-3": true,
+        "has-w-full-mobile has-mb-2-mobile": true,
+    });
     return (
-        <div className={buttonClass}>
+        <div className={`${props.className} ${buttonClass}`}>
             <i className={`${props.icon} has-pr-3`} />
             <strong>{props.text}</strong>
         </div>
@@ -25,7 +25,7 @@ export const Welcome = () => (
         <div className="headline has-text-gray-700 has-mb-12">
             A minimal and <span className="has-text-blue-500">themeable</span> css toolkit.
         </div>
-        <div className="has-text-gray-500 has-size-3 has-maxw-192">
+        <div className="has-text-gray-500 has-size-3" style={{maxWidth: "48rem"}}>
             <strong>Siimple</strong> is an open source css toolkit that provides a 
             <strong> responsive</strong> and <strong>minimalistic</strong> starting 
             point for your next amazing website or application.

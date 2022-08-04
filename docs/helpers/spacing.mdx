@@ -71,10 +71,10 @@ Use `has-p{direction}-{size}` or `has-m{direction}-{size}` to set the **padding 
 
 ### Centering elements
 
-We provide an additional `has-mx-auto` classname to set the margin left and right to `auto`. This will center the block with a fixed width.
+Use `has-ml-auto` and `has-mr-auto` classnames to set the margin left and right to `auto`. This will center the block with a fixed width.
 
 ```html live=true color=white
-<div class="has-mx-auto has-p-3 has-w-32 has-bg-primary is-rounded">
+<div class="has-ml-auto has-mr-auto has-p-3 has-w-32 has-bg-primary is-rounded">
     <strong>Centered</strong>
 </div>
 ```
@@ -84,7 +84,7 @@ We provide an additional `has-mx-auto` classname to set the margin left and righ
 You can control the spacing of an element at a specific breakpoint adding a `-{breakpoint}` suffix to the padding or margin class.
 
 ```html
-<div class="has-p-3 has-p-0-mobile">
+<div class="has-p-3 has-p-none-mobile">
     . . .
 </div>
 ```

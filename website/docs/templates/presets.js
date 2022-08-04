@@ -47,7 +47,7 @@ const ColorPalette = ({colors, name}) => (
             {Object.keys(colors).filter(c => typeof colors[c] === "string").map(color => (
                 <div key={color}>
                     <div
-                        className="has-s-24 has-radius-md"
+                        className="has-w-24 has-h-24 is-rounded"
                         style={{
                             backgroundColor: colors[color],
                         }}
@@ -159,8 +159,8 @@ const CardDemo = props => {
                 });
                 return (
                     <div key={key} className="column is-half is-full-mobile">
-                        <div className="card has-shadow-md">
-                            <div className={`has-radius-md has-w-full has-p-12 ${imageClass}`} align="center">
+                        <div className="card is-shadowed">
+                            <div className={`is-rounded has-w-full has-p-12 ${imageClass}`} align="center">
                                 <i className="si-image has-size-9 has-text-white" />
                             </div>
                             <div className="title is-5">Heading</div>
@@ -254,7 +254,7 @@ export default props => (
                 }}
             >
                 {/* Header section */}
-                <div className="title is-1 has-mb-0">{props.pageContext.name}</div>
+                <div className="title is-1 has-mb-none">{props.pageContext.name}</div>
                 {/* Colors list */}
                 <Title>Colors</Title>
                 <ColorsDemo theme={props.pageContext.theme || {}} />

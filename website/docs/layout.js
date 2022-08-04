@@ -72,8 +72,8 @@ export default props => {
         <React.Fragment>
             <Seo title={props.pageContext?.frontmatter?.title || props.title || ""} />
             <Header />
-            <div className="container has-pb-10 has-pt-0">
-                <div className="columns has-mb-0">
+            <div className="container has-pb-10 has-pt-none">
+                <div className="columns has-mb-none">
                     <div className="column is-one-quarter is-full-mobile">
                         <div className="has-pr-8-tablet">
                             <Sidebar

@@ -30,18 +30,18 @@ const data = [
 
 export const Features = () => (
     <div className="has-mb-24">
-        <div className="columns has-mb-0">
+        <div className="columns has-mb-none">
             {data.map((item, index) => (
                 <div key={index} className="column is-full-mobile">
                     <div className="has-mb-6">
-                        <div className="has-text-primary has-bg-blue-200 has-radius-md is-inline-block has-p-3 has-lh-none">
+                        <div className="has-text-primary has-bg-blue-200 is-rounded is-inline-block has-p-3 has-lh-none">
                             <i className={`${item.icon} has-size-5`} />
                         </div>
                     </div>
                     <Link to={item.link} className="has-text-gray-700 has-text-primary-hover">
                         <div className="title is-3">{item.title}</div>
                     </Link>
-                    <div className="paragraph has-text-gray-600 has-mb-0">
+                    <div className="paragraph has-text-gray-600 has-mb-none">
                         {item.content}
                     </div>
                 </div>

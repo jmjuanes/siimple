@@ -6,7 +6,7 @@ import {classNames} from "@siimple/styled";
 const CodeTitle = props => {
     if (props.title) {
         return (
-            <div className="has-mb-4 has-text-blue-300 has-opacity-50">
+            <div className="has-mb-4 has-text-blue-300 is-semitransparent">
                 <strong className="is-italic">{props.title}</strong>
             </div>
         );
@@ -32,13 +32,13 @@ export const LiveCode = props => {
         return (
             <div className={`${codeClass} has-mb-6`}>
                 <CodeTitle title={props.title} />
-                <pre className="has-my-none" {...codeProps}>{codeChildren}</pre>
+                <pre className="has-mt-none has-mb-none" {...codeProps}>{codeChildren}</pre>
             </div>
         );
     }
     //const {padding, bg, color} = props;
     const demoClass = classNames({
-        "has-mb-6 has-p-6 has-bg-gray-100 has-radius-md": true,
+        "has-mb-6 has-p-6 has-bg-gray-100 is-rounded": true,
         [`has-text-${props.color}`]: true,
     });
     const contentClass = classNames({
@@ -53,9 +53,9 @@ export const LiveCode = props => {
                     dangerouslySetInnerHTML={{"__html": props.children}}
                 />
             </div>
-            <div className={`${codeClass} has-my-none`}>
+            <div className={`${codeClass} has-mt-none has-mb-none`}>
                 <CodeTitle title={props.title} />
-                <pre className="has-my-none" {...codeProps}>{codeChildren}</pre>
+                <pre className="has-mt-none has-mb-none" {...codeProps}>{codeChildren}</pre>
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ const PaginationItem = props => {
     const label = props.type === "prev" ? "Prev" : "Next";
     const paginationClass = kofi.classNames([
         "is-block",
-        "has-radius-md has-p-4",
+        "is-rounded has-p-4",
         "has-bg-gray-100-hover",
         "has-text-gray-700 is-not-underlined",
     ]);
@@ -30,7 +30,7 @@ const PaginationItem = props => {
 // Export pagination item
 export const Pagination = props => (
     <div className="columns has-pt-4">
-        <div className="column has-py-none" align="left">
+        <div className="column has-pt-none has-pb-none" align="left">
             {kofi.when(props.prev, () => (
                 <PaginationItem
                     type="prev"
@@ -39,8 +39,8 @@ export const Pagination = props => (
                 />
             ))}
         </div>
-        <div className="column has-py-none is-hidden-mobile" />
-        <div className="column has-py-none" align="right">
+        <div className="column has-pt-none has-pb-none is-hidden-mobile" />
+        <div className="column has-pt-none has-pb-none" align="right">
             {kofi.when(props.next, () => (
                 <PaginationItem
                     type="next"

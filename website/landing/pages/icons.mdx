@@ -6,10 +6,10 @@ import {Icons} from "../components/Icons.js";
 
 
 <div className="has-pt-24-tablet has-pt-12-mobile has-pb-24" align="center">
-    <div className="has-weight-black has-size-9 has-text-gray-700 has-mb-0">
+    <div className="has-weight-black has-size-9 has-text-gray-700 has-mb-none">
         <span className="has-text-blue-500">Pure CSS</span> icons made <u>simple</u>.
     </div>
-    <div className="has-text-gray-500 has-size-3 has-maxw-192">
+    <div className="has-text-gray-500 has-size-3" style={{maxWidth:"48rem"}}>
         <b>Siimple Icons</b> is an Open Source SVG icons library that you can include in your project with just a <b>single .css</b> file.
     </div>
 </div>
@@ -47,15 +47,15 @@ Use our public CDN for adding icons styles to your HTML file. Just add the follo
 
 ### Using CSS
 
-<div className="columns has-py-none">
-<div className="column is-two-fifths is-full-mobile has-py-none">
+<div className="columns has-pt-none has-pb-none">
+<div className="column is-two-fifths is-full-mobile has-pt-none has-pb-none">
 
 Just include `siimple-icons.css` in your HTML document and reference any icon using the class `si-*` (for example, `si-home`).
 
 You can use `color` and `font-size` style properties to customize the icon color and size.
 
 </div>
-<div className="column is-three-fifths is-full-mobile has-py-none">
+<div className="column is-three-fifths is-full-mobile has-pt-none has-pb-none">
 
 ```html
 <i class="si-home" style="font-size: 32px;"></i>
@@ -67,15 +67,15 @@ You can use `color` and `font-size` style properties to customize the icon color
 
 ### Using SVG sprite
 
-<div className="columns has-py-none">
-<div className="column is-two-fifths is-full-mobile has-py-none">
+<div className="columns has-pt-none has-pb-none">
+<div className="column is-two-fifths is-full-mobile has-pt-none has-pb-none">
 
 Use the SVG sprite `siimple-icons.svg` to insert any icon through the `<use>` element and using the icon ID as the fragment identifier. 
 
 You can customize the icon color using the `stroke` attribute or the icon size using `width` and `height`.
 
 </div>
-<div className="column is-three-fifths is-full-mobile has-py-none">
+<div className="column is-three-fifths is-full-mobile has-pt-none has-pb-none">
 
 ```html
 <svg width="32" height="32" stroke="currentColor">

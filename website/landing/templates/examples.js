@@ -12,10 +12,10 @@ export default props => {
     return (
         <Layout title="Examples">
             <div className="has-pt-24-tablet has-pt-12-mobile has-pb-24" align="center">
-                <div className="has-weight-black has-size-9 has-text-gray-700 has-mb-0">
+                <div className="has-weight-black has-size-9 has-text-gray-700 has-mb-none">
                     Explore our <span className="has-text-blue-500">examples</span>.
                 </div>
-                <div className="has-text-gray-500 has-size-3 has-maxw-192">
+                <div className="has-text-gray-500 has-size-3" style={{maxWidth:"48rem"}}>
                     Get started with <b>siimple</b> using any of our examples 
                     or use parts of them for building your custom layouts and content.
                 </div>
@@ -30,9 +30,9 @@ export default props => {
             <div className="columns has-mb-24">
                 {visibleExamples.map(example => (
                     <div key={example.title} className="column is-one-third is-full-mobile">
-                        <div className="card has-shadow-md">
+                        <div className="card is-shadowed">
                             <div className="title is-4 is-capitalized">{example.title}</div>
-                            <div className="paragraph has-minh-16">{example.description}</div>
+                            <div className="paragraph" style={{minHeight:"4rem"}}>{example.description}</div>
                             <div className="is-flex has-direction-column-mobile" style={{gap:"0.5rem"}}>
                                 <div className="has-w-full">
                                     <a

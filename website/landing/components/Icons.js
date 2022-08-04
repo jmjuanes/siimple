@@ -34,7 +34,7 @@ const IconsList = props => {
                     <span> icons</span>
                 </div>
                 {kofi.when(!!props.query, () => (
-                    <div className="has-bg-gray-700 is-flex has-items-center has-radius-full has-px-3 has-py-1">
+                    <div className="has-bg-gray-700 is-flex has-items-center is-pill has-pl-3 has-pr-3 has-pt-1 has-pb-1">
                         <div className="has-size-2 has-pr-3 has-text-white">{props.query}</div>
                         <div className="si-close is-clickable has-text-white" onClick={props.onQueryClear} />
                     </div>
@@ -42,7 +42,7 @@ const IconsList = props => {
             </div>
             {/* No icons found message */}
             {kofi.when(displayedIcons.length === 0, () => (
-                <div align="center" className="has-mx-auto has-w-full has-maxw-128 has-p-8">
+                <div align="center" className="has-w-full has-p-8">
                     <div className="has-mb-2">
                         <i className="si-emoji-sad has-size-9" />
                     </div>
@@ -60,7 +60,7 @@ const IconsList = props => {
                     {displayedIcons.map(icon => {
                         const isActive = icon.name === props.activeIcon?.name;
                         const iconClass = kofi.classNames({
-                            "has-radius-md is-clickable has-p-4": true,
+                            "is-rounded is-clickable has-p-4": true,
                             "has-text-blue-500-hover has-bg-gray-200": !isActive,
                             "has-bg-blue-500 has-text-white": isActive,
                         });
@@ -83,7 +83,7 @@ const IconsList = props => {
 const IconModal = props => {
     const [iconCopied, setIconCopied] = React.useState(false);
     const previewClass = kofi.classNames([
-        "is-flex has-justify-center has-p-12 has-radius-md",
+        "is-flex has-justify-center has-p-12 is-rounded",
         "has-mb-4",
         "has-bg-gray-200 has-text-gray-700",
     ]);
@@ -107,7 +107,7 @@ const IconModal = props => {
                 <div className="paragraph">Using this icon as a webfont:</div>
                 <LiveCode className="html">{iconHtml}</LiveCode>
                 <div className="columns">
-                    <div className="column has-py-none">
+                    <div className="column has-pt-none has-pb-none">
                         <div
                             className="button is-flex has-items-center has-justify-center"
                             onClick={() => handleIconCopy()}
@@ -117,7 +117,7 @@ const IconModal = props => {
                         </div>
                     </div>
                     {/* 
-                    <div className="column has-py-none">
+                    <div className="column has-pt-none has-pb-none">
                         <Link
                             to={iconSvgUrl}
                             target="_blank"
@@ -145,8 +145,8 @@ export const Icons = () => {
     };
     return (
         <div>
-            <div className="is-flex has-items-center has-mb-8 has-bg-gray-200 has-radius-md">
-                <i className="si-search has-size-3 has-pl-3 has-pr-0 has-text-gray-700" />
+            <div className="is-flex has-items-center has-mb-8 has-bg-gray-200 is-rounded">
+                <i className="si-search has-size-3 has-pl-3 has-pr-none has-text-gray-700" />
                 <input
                     ref={queryRef}
                     type="text"

@@ -28,10 +28,10 @@ export const Footer = props => {
             <div className="has-mb-2">
                 <i className="si-siimple has-mr-2 has-size-6" />
             </div>
-            <div className="paragraph has-mb-0 has-text-gray-500">
+            <div className="paragraph has-mb-none has-text-gray-500">
                 Designed, built and maintained with <i className="si-heart"></i> by <ExternalLink to="https://github.com/jmjuanes" text="@jmjuanes" />.
             </div>
-            <div className="paragraph has-mb-0 has-text-gray-500">
+            <div className="paragraph has-mb-none has-text-gray-500">
                 Code is licensed under <ExternalLink to={LICENSES.mit} text="MIT" />,
                 documentation under <ExternalLink to={LICENSES.cc} text="Creative Commons Attribution 4.0" />.
             </div>
