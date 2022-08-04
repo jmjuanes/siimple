@@ -783,8 +783,8 @@ export const elements = {
     },
     title: {
         ".{{prefix}}title": {
+            color: "heading",
             display: "block",
-            // fontSize: "2.5rem",
             fontWeight: "heading",
             lineHeight: "heading",
             marginBottom: "0.5em",

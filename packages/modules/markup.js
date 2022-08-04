@@ -15,18 +15,18 @@ export const markup = {
         apply: "text.small",
     },
     "strong,b": {
-        fontWeight: "bold",
+        fontWeight: "700",
         apply: "text.strong",
     },
     pre: {
-        fontFamily: "monospace",
+        fontFamily: "code",
         overflowX: "auto",
     },
     code: {
         color: "primary",
-        fontFamily: "monospace",
+        fontFamily: "code",
         fontSize: "0",
-        fontWeight: "bold",
+        fontWeight: "700",
         textDecoration: "none",
         apply: "text.code",
     },
@@ -62,7 +62,7 @@ export const markup = {
     ...Object.fromEntries([6,5,4,3,2,1].map(index => {
         const headingNumber = 7 - index;
         const headingConfig = {
-            color: "inherit",
+            color: "heading",
             fontFamily: "heading",
             fontSize: `${index}`,
             fontWeight: "heading",

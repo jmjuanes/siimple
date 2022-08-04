@@ -1,13 +1,5 @@
 import colors from "@siimple/colors";
 
-export const extraColors = {
-    inherit: "inherit",
-    white: "#fff",
-    black: "#000",
-    current: "currentColor",
-    transparent: "transparent",
-};
-
 export const fonts = {
     sans: [
         "-apple-system", 
@@ -43,7 +35,19 @@ export const screens = {
 };
 
 export const sizes = {
-    "0": "0px",
+    "4": "1rem",
+    "8": "2rem",
+    "12": "3rem",
+    "16": "4rem",
+    "24": "6rem",
+    "32": "8rem",
+    "48": "12rem",
+    "64": "16rem",
+    "96": "24rem",
+    "192": "48rem",
+};
+
+export const space = {
     "1": "0.25rem",
     "2": "0.5rem",
     "3": "0.75rem",
@@ -53,12 +57,6 @@ export const sizes = {
     "12": "3rem",
     "16": "4rem",
     "24": "6rem",
-    "32": "8rem",
-    "40": "10rem",
-    "48": "12rem",
-    "64": "16rem",
-    "80": "20rem",
-    "96": "24rem",
 };
 
 export default {
@@ -71,9 +69,6 @@ export default {
         },
         desktop: {
             min: screens.desktop,
-        },
-        widescreen: {
-            min: screens.widescreen,
         },
     },
     colors: {
@@ -90,13 +85,11 @@ export default {
                 return [`${name}-${shade}`, colors[name][shade]];
             })),
         }), {}),
-        // ...extraColors,
     },
     fonts: {
         body: fonts.sans,
         heading: "inherit",
-        sans: fonts.sans,
-        monospace: fonts.monospace,
+        code: fonts.monospace,
     },
     fontSizes: [
         "0.875rem", // 0
@@ -113,34 +106,14 @@ export default {
     ],
     fontWeights: {
         body: "400",
-        bold: "700",
         heading: "700",
     },
     lineHeights: {
         heading: "1.25",
         body: "1.5",
     },
-    opacities: {
-        "0": 0,
-        "25": 0.25,
-        "50": 0.5,
-        "75": 0.75,
-        "100": 100,
-    },
-    radius: {
-        sm: "0.25rem",
-        md: "0.5rem",
-        lg: "0.75rem",
-        xl: "1rem",
-        full: "9999px",
-    },
-    shadows: {
-        sm: "0 0.25rem 1rem -0.125rem rgba(54,63,79,0.15),0 0 0 1px rgba(54,63,79,0.02)",
-        md: "0 0.5rem 1rem -0.25rem rgba(54,63,79,0.2), 0 0 0 1px rgba(54,63,79,0.02)",
-        lg: "0rem 1rem 1rem -0.5rem rgba(54,63,79,0.25),0 0 0 1px rgba(54,63,79,0.02)",
-    },
     sizes: sizes,
-    space: sizes,
+    space: space,
     // Default root styles
     root: {
         backgroundColor: "background",

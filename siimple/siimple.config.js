@@ -6,9 +6,5 @@ export default {
     useBorderBox: true,
     prefix: "",
     ...theme,
-    sizes: {
-        ...theme.sizes,
-        "192": "48rem",
-    },
     styles: {},
 };
