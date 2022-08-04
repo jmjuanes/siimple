@@ -6,65 +6,6 @@ title: "Flexbox"
 
 Use the following flexbox helpers to distribute and align items in a container. If you are new to flexbox, you can start with this awesome [guide to flexbox by CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
-### Flex
-
-Use the following classes to control the behaviour of flex items:
-
-| Class | Property |
-|-------|----------|
-| `has-flex-auto`    | `flex: auto;`    |
-| `has-flex-initial` | `flex: initial;` |
-| `has-flex-none`    | `flex: none;`    |
-
-You can use `has-flex-auto` helper to allow the item to grow and shrink to fit the container:
-
-```html live=true color=white
-<div class="is-flex has-p-4 is-rounded has-bg-blue-200">
-    <div class="has-flex-auto has-m-2 has-p-4 is-rounded has-bg-primary">
-        Small
-    </div>
-    <div class="has-flex-auto has-m-2 has-p-4 is-rounded has-bg-primary">
-        Medium content
-    </div>
-    <div class="has-flex-auto has-m-2 has-p-4 is-rounded has-bg-primary">
-        Large content for this flexbox item
-    </div>
-</div>
-```
-
-You can use the `has-flex-initial` helper to allow the item to shrink, but prevent the item to grow to fit the container.
-
-```html live=true color=white
-<div class="is-flex has-p-4 is-rounded has-bg-blue-200">
-    <div class="has-m-2 has-p-4 is-rounded has-bg-primary has-w-full">
-        Item
-    </div>
-    <div class="has-flex-initial has-m-2 has-p-4 is-rounded has-bg-secondary">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-        Qui ad labore ipsam, aut rem quo repellat esse tempore id, quidem.
-    </div>
-    <div class="has-m-2 has-p-4 is-rounded has-bg-primary has-w-full">
-        Item
-    </div>
-</div>
-```
-
-Use the `has-flex-none` helper to prevent a flex item from growing and shrinking:
-
-```html live=true color=white
-<div class="is-flex has-p-4 is-rounded has-bg-blue-200">
-    <div class="has-m-2 has-p-4 is-rounded has-bg-primary has-w-full">
-        Item
-    </div>
-    <div class="has-flex-none has-m-2 has-p-4 is-rounded has-bg-secondary">
-        This can not grow or shrink
-    </div>
-    <div class="has-m-2 has-p-4 is-rounded has-bg-primary has-w-full">
-        Item
-    </div>
-</div>
-```
-
 ### Flex direction
 
 Use the following classes to control the direction of the items of a flex container:
@@ -79,7 +20,7 @@ Use the following classes to control the direction of the items of a flex contai
 Use `has-direction-row` to position flex items horizontailly (row direction):
 
 ```html live=true color=white
-<div class="is-flex has-direction-row has-p-4 is-rounded has-bg-blue-200">
+<div class="is-flex has-direction-row">
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">2</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -89,7 +30,7 @@ Use `has-direction-row` to position flex items horizontailly (row direction):
 Or just use `has-direction-column` to position flex items vertically (in a column direction):
 
 ```html live=true color=white
-<div class="is-flex has-direction-column has-p-4 is-rounded has-bg-blue-200">
+<div class="is-flex has-direction-column">
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">2</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -112,7 +53,7 @@ Use the following classes to define the distribution of the space between and ar
 Use the `has-content-start` helper to pack items from the start of the cross axis:
 
 ```html live=true color=white
-<div class="is-flex has-content-start has-h-64 has-flex-wrap has-p-4 is-rounded has-bg-blue-200">
+<div class="is-flex has-content-start has-h-64 has-flex-wrap">
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">2</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -122,7 +63,7 @@ Use the `has-content-start` helper to pack items from the start of the cross axi
 Use `has-content-end` to pack items from the end end of the cross axis:
 
 ```html live=true color=white
-<div class="is-flex has-content-end has-h-64 has-flex-wrap has-p-4 is-rounded has-bg-blue-200">
+<div class="is-flex has-content-end has-h-64 has-flex-wrap">
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">2</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -132,7 +73,7 @@ Use `has-content-end` to pack items from the end end of the cross axis:
 Use the `has-content-center` helper to pack items around the center of the cross axis:
 
 ```html live=true color=white
-<div class="is-flex has-content-center has-h-64 has-flex-wrap has-p-4 is-rounded has-bg-blue-200">
+<div class="is-flex has-content-center has-h-64 has-flex-wrap">
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">2</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -153,7 +94,7 @@ Use the following classes to define the alignment of the flex items along the **
 You can use `has-items-start` to align flex items to the start of the cross axis:
 
 ```html live=true color=white
-<div class="is-flex has-items-start has-h-32 has-p-4 is-rounded has-bg-blue-200 has-text-center">
+<div class="is-flex has-items-start has-h-32 has-text-center">
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-w-full has-m-2 has-p-8 is-rounded has-bg-secondary">2</div>
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -163,7 +104,7 @@ You can use `has-items-start` to align flex items to the start of the cross axis
 Use `has-items-center` to align flex items to the center of the cross axis:
 
 ```html live=true color=white
-<div class="is-flex has-items-center has-h-32 has-p-4 is-rounded has-bg-blue-200 has-text-center">
+<div class="is-flex has-items-center has-h-32 has-text-center">
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-w-full has-m-2 has-p-8 is-rounded has-bg-secondary">2</div>
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -173,7 +114,7 @@ Use `has-items-center` to align flex items to the center of the cross axis:
 Use `has-items-end` helper to align flex items to the end of the cross axis:
 
 ```html live=true color=white
-<div class="is-flex has-items-end has-h-32 has-p-4 is-rounded has-bg-blue-200 has-text-center">
+<div class="is-flex has-items-end has-h-32 has-text-center">
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-w-full has-m-2 has-p-8 is-rounded has-bg-secondary">2</div>
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -196,7 +137,7 @@ Use the following classes to define how a single item is aligned on the **cross 
 Use `has-self-start` to align the item to the start of the cross axis:
 
 ```html live=true color=white
-<div class="is-flex has-items-end has-h-64 has-p-4 is-rounded has-bg-blue-200 has-text-center">
+<div class="is-flex has-items-end has-h-64 has-text-center">
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-secondary has-self-start">2</div>
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -205,7 +146,7 @@ Use `has-self-start` to align the item to the start of the cross axis:
 Use `has-self-end` to align the item to the end of the cross axis:
 
 ```html live=true color=white
-<div class="is-flex has-items-start has-h-64 has-p-4 is-rounded has-bg-blue-200 has-text-center">
+<div class="is-flex has-items-start has-h-64 has-text-center">
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-secondary has-self-end">2</div>
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -215,7 +156,7 @@ Use `has-self-end` to align the item to the end of the cross axis:
 Use `has-self-center` to align the item to the center of the cross axis:
 
 ```html live=true color=white
-<div class="is-flex has-items-start has-h-64 has-p-4 is-rounded has-bg-blue-200 has-text-center">
+<div class="is-flex has-items-start has-h-64 has-text-center">
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-secondary has-self-center">2</div>
     <div class="has-w-full has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -238,7 +179,7 @@ Use the following classes to define how the browser should distribute the space 
 Use the `has-justify-start` helper to pack items from the start of the main axis:
 
 ```html live=true color=white
-<div class="is-flex has-justify-start has-p-4 is-rounded has-bg-blue-200 has-text-center">
+<div class="is-flex has-justify-start has-text-center">
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">2</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -248,7 +189,7 @@ Use the `has-justify-start` helper to pack items from the start of the main axis
 Use the `has-justify-center` helper to pack items around the center of the main axis:
 
 ```html live=true color=white
-<div class="is-flex has-justify-center has-p-4 is-rounded has-bg-blue-200 has-text-center">
+<div class="is-flex has-justify-center has-text-center">
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">2</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -258,7 +199,7 @@ Use the `has-justify-center` helper to pack items around the center of the main 
 Use the `has-justify-end` helper to pack items from the end of the main axis:
 
 ```html live=true color=white
-<div class="is-flex has-justify-end has-p-4 is-rounded has-bg-blue-200 has-text-center">
+<div class="is-flex has-justify-end has-text-center">
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">2</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -268,7 +209,7 @@ Use the `has-justify-end` helper to pack items from the end of the main axis:
 Use the `has-justify-between` helper to distribute items evenly, and where the first item is flush with the start and the last item is flush with the end.
 
 ```html live=true bg=blue-300 color=white
-<div class="is-flex has-justify-between has-p-4 is-rounded has-bg-blue-200 has-text-center">
+<div class="is-flex has-justify-between has-text-center">
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">2</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -278,7 +219,7 @@ Use the `has-justify-between` helper to distribute items evenly, and where the f
 Use the `has-justify-around` helper to distribute items evenly, and items will have a half-size space on either end:
 
 ```html live=true color=white
-<div class="is-flex has-justify-around has-p-4 is-rounded has-bg-blue-200 has-text-center">
+<div class="is-flex has-justify-around has-text-center">
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">2</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -288,7 +229,7 @@ Use the `has-justify-around` helper to distribute items evenly, and items will h
 Use the `has-justify-evenly` helper to distribute items evenly:
 
 ```html live=true color=white
-<div class="is-flex has-justify-evenly has-p-4 is-rounded has-bg-blue-200 has-text-center">
+<div class="is-flex has-justify-evenly has-text-center">
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">1</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">2</div>
     <div class="has-m-2 has-p-4 is-rounded has-bg-primary">3</div>
@@ -308,9 +249,9 @@ Use `has-flex-no-wrap` helper to prevent items from wrapping:
 
 ```html live=true color=white
 <div class="is-flex has-flex-no-wrap has-text-center">
-    <div class="has-m-2 has-p-4 is-rounded has-bg-primary has-w-128">1</div>
-    <div class="has-m-2 has-p-4 is-rounded has-bg-primary has-w-128">2</div>
-    <div class="has-m-2 has-p-4 is-rounded has-bg-primary has-w-128">3</div>
+    <div class="has-m-2 has-p-4 is-rounded has-bg-primary has-w-96">1</div>
+    <div class="has-m-2 has-p-4 is-rounded has-bg-primary has-w-96">2</div>
+    <div class="has-m-2 has-p-4 is-rounded has-bg-primary has-w-96">3</div>
 </div>
 ```
 
