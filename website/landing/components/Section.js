@@ -27,7 +27,7 @@ export const Section = props => (
 );
 
 Section.defaultProps = {
-    className: "has-mb-12 has-mt-32",
+    className: "has-mb-12 has-mt-24",
     title: "",
     link: "",
     linkText: "Learn more",
