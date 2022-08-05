@@ -74,17 +74,14 @@ export default {
     colors: {
         primary: colors.blue["500"],
         secondary: colors.royal["500"],
+        highlight: colors.blue["200"],
         muted: colors.gray["200"],
         text: colors.gray["700"],
         heading: colors.gray["800"],
         background: "#fff",
-        // All colors
-        ...Object.keys(colors).reduce((prev, name) => ({
-            ...prev,
-            ...Object.fromEntries(Object.keys(colors[name]).map(shade => {
-                return [`${name}-${shade}`, colors[name][shade]];
-            })),
-        }), {}),
+        dark: colors.gray["800"],
+        light: colors.gray["100"],
+        white: "#fff",
     },
     fonts: {
         body: fonts.sans,
