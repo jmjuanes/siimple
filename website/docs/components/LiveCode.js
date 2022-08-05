@@ -6,7 +6,7 @@ import {classNames} from "@siimple/styled";
 const CodeTitle = props => {
     if (props.title) {
         return (
-            <div className="has-mb-4 has-text-blue-300 is-semitransparent">
+            <div className="has-mb-4 has-text-highlight is-semitransparent">
                 <strong className="is-italic">{props.title}</strong>
             </div>
         );
@@ -20,7 +20,7 @@ export const LiveCode = props => {
     let codeChildren = props.children; //Code children
     const codeProps = {};
     const lang = (props.className || "").replace("language-", "").replace("javascript", "js");
-    const codeClass = "livecode has-bg-gray-800 has-text-white CodeCake-dark";
+    const codeClass = "livecode has-bg-dark has-text-white CodeCake-dark";
     if (["html", "css", "js"].includes(lang)) {
         codeProps["dangerouslySetInnerHTML"] = {
             "__html": highlightStr(props.children, lang),
@@ -38,7 +38,7 @@ export const LiveCode = props => {
     }
     //const {padding, bg, color} = props;
     const demoClass = classNames({
-        "has-mb-6 has-p-6 has-bg-gray-100 is-rounded": true,
+        "has-mb-6 has-p-6 has-bg-light is-rounded": true,
         [`has-text-${props.color}`]: true,
     });
     const contentClass = classNames({

@@ -9,7 +9,6 @@ import {Seo} from "siimple-landing/components/Seo.js";
 import {ColorPalette} from "./components/ColorPalette.js";
 import {LiveCode} from "./components/LiveCode.js";
 import {ModalExample} from "./components/ModalExample.js";
-import {NavbarExample} from "./components/NavbarExample.js";
 import {Sidebar} from "./components/Sidebar.js";
 import {Pagination} from "./components/Pagination.js";
 import {sidebarItems} from "./sidebar.js";
@@ -52,7 +51,6 @@ const shortcodes = {
     // "td": html("td", "", {padding: "1rem !important"}),
     ColorPalette,
     ModalExample,
-    NavbarExample,
     Link,
 };
 

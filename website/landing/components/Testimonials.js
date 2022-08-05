@@ -27,14 +27,14 @@ export const Testimonials = () => (
     <div className="columns has-mb-none">
         {testimonialsData.map((item, key) => (
             <div key={key} className="column is-full-mobile">
-                <div style={{"minHeight": "300px"}} className="has-p-8 is-rounded has-bg-gray-100">
+                <div style={{"minHeight": "300px"}} className="has-p-8 is-rounded has-bg-light">
                     <div className="has-mb-3 has-text-primary">
                         <i className="si-quote has-size-8" />
                     </div>
-                    <Link to={item.url} target="_blank" className="has-text-gray-800">
+                    <Link to={item.url} target="_blank" className="has-text-dark">
                         <div className="title is-4">{item.site}</div>
                     </Link>
-                    <div className="has-mb-none has-text-gray-500">
+                    <div className="has-mb-none has-text-dark is-semitransparent">
                         {item.content}
                     </div>
                 </div>

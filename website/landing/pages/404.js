@@ -1,15 +1,18 @@
 import React from "react";
 import {Link} from "gatsby";
-import {Seo} from "../components/Seo.js";
+import Helmet from "react-helmet";
 
-//Export 404 error page
-export default () => {
-    return (
+export default () => (
+    <React.Fragment>
+        <Helmet>
+            <link rel="stylesheet" href="/siimple.css" />
+            <title>Not found · siimple CSS</title>
+        </Helmet>
         <div className="is-flex has-items-center has-justify-center has-w-full has-h-screen">
-            <div className="has-p-12 is-rounded has-bg-gray-100" style={{"maxWidth":"600px"}}>
+            <div className="has-p-12 is-rounded has-bg-light" style={{"maxWidth":"600px"}}>
                 {/* Siimple logo */}
                 <div className="has-mb-4">
-                    <Link to="/" className="is-not-underlined has-text-gray-700">
+                    <Link to="/" className="is-not-underlined has-text-dark">
                         <strong className="siimple" style={{"fontSize":"56px"}}>siimple.</strong>
                     </Link>
                 </div>
@@ -27,7 +30,6 @@ export default () => {
                     </Link>
                 </div>
             </div>
-            <Seo title="Not found" />
         </div>
-    );
-};
+    </React.Fragment>
+);

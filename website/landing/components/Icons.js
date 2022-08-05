@@ -34,7 +34,7 @@ const IconsList = props => {
                     <span> icons</span>
                 </div>
                 {kofi.when(!!props.query, () => (
-                    <div className="has-bg-gray-700 is-flex has-items-center is-pill has-pl-3 has-pr-3 has-pt-1 has-pb-1">
+                    <div className="has-bg-dark is-flex has-items-center is-pill has-pl-3 has-pr-3 has-pt-1 has-pb-1">
                         <div className="has-size-2 has-pr-3 has-text-white">{props.query}</div>
                         <div className="si-close is-clickable has-text-white" onClick={props.onQueryClear} />
                     </div>
@@ -61,8 +61,8 @@ const IconsList = props => {
                         const isActive = icon.name === props.activeIcon?.name;
                         const iconClass = kofi.classNames({
                             "is-rounded is-clickable has-p-4": true,
-                            "has-text-blue-500-hover has-bg-gray-200": !isActive,
-                            "has-bg-blue-500 has-text-white": isActive,
+                            "has-text-primary-hover has-bg-muted": !isActive,
+                            "has-bg-primary has-text-white": isActive,
                         });
                         return (
                             <div key={icon.name} className="column is-one-fifth-tablet is-half-mobile">
@@ -85,7 +85,7 @@ const IconModal = props => {
     const previewClass = kofi.classNames([
         "is-flex has-justify-center has-p-12 is-rounded",
         "has-mb-4",
-        "has-bg-gray-200 has-text-gray-700",
+        "has-bg-muted has-text-dark",
     ]);
     const iconHtml = getIconUsage(props.icon);
     // const iconSvgUrl = `${process.env.REPO_URL}/raw/main/icons/${props.icon.name}.svg`;
@@ -145,8 +145,8 @@ export const Icons = () => {
     };
     return (
         <div>
-            <div className="is-flex has-items-center has-mb-8 has-bg-gray-200 is-rounded">
-                <i className="si-search has-size-3 has-pl-3 has-pr-none has-text-gray-700" />
+            <div className="is-flex has-items-center has-mb-8 has-bg-muted is-rounded">
+                <i className="si-search has-size-3 has-pl-3 has-pr-none has-text-dark" />
                 <input
                     ref={queryRef}
                     type="text"

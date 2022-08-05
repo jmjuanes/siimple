@@ -34,14 +34,14 @@ export const Features = () => (
             {data.map((item, index) => (
                 <div key={index} className="column is-full-mobile">
                     <div className="has-mb-6">
-                        <div className="has-text-primary has-bg-blue-200 is-rounded is-inline-block has-p-3 has-lh-none">
+                        <div className="has-text-primary has-bg-highlight is-rounded is-inline-block has-p-3 has-lh-none">
                             <i className={`${item.icon} has-size-5`} />
                         </div>
                     </div>
-                    <Link to={item.link} className="has-text-gray-700 has-text-primary-hover">
+                    <Link to={item.link} className="has-text-dark has-text-primary-hover">
                         <div className="title is-3">{item.title}</div>
                     </Link>
-                    <div className="paragraph has-text-gray-600 has-mb-none">
+                    <div className="paragraph has-text-dark is-semitransparent has-mb-none">
                         {item.content}
                     </div>
                 </div>

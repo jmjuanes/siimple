@@ -22,8 +22,8 @@ export const Sidebar = props => {
                 const itemClass = kofi.classNames({
                     "navlink has-mb-1 has-pr-3 has-pl-6": true,
                     "has-weight-normal": true,
-                    "has-bg-blue-500 has-text-white-hover has-text-white has-weight-bold": isActive,
-                    "has-bg-gray-200-hover": !isActive,
+                    "has-bg-primary has-text-white-hover has-text-white has-weight-bold": isActive,
+                    "has-bg-muted-hover": !isActive,
                 });
                 const itemVisible = expanded[item.group] === true; // || item.group === "global";
                 const displayGroup = currentGroup !== item.group; // && item.group !== "global"; //Display group

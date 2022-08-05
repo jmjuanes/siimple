@@ -12,10 +12,10 @@ export default props => {
     return (
         <Layout title="Examples">
             <div className="has-pt-24-tablet has-pt-12-mobile has-pb-24" align="center">
-                <div className="has-weight-black has-size-9 has-text-gray-700 has-mb-none">
-                    Explore our <span className="has-text-blue-500">examples</span>.
+                <div className="has-weight-black has-size-9 has-text-dark has-mb-none">
+                    Explore our <span className="has-text-primary">examples</span>.
                 </div>
-                <div className="has-text-gray-500 has-size-3" style={{maxWidth:"48rem"}}>
+                <div className="has-text-dark is-semitransparent has-size-3" style={{maxWidth:"48rem"}}>
                     Get started with <b>siimple</b> using any of our examples 
                     or use parts of them for building your custom layouts and content.
                 </div>
@@ -37,7 +37,7 @@ export default props => {
                                 <div className="has-w-full">
                                     <a
                                         href={`/examples/${example.url}`}
-                                        className="button is-not-underlined is-full has-bg-blue-600-hover"
+                                        className="button is-not-underlined is-full"
                                         target="_blank"
                                     >
                                         <strong>Demo</strong>
@@ -46,7 +46,7 @@ export default props => {
                                 <div className="has-w-full">
                                     <a
                                         href={getExampleCodeUrl(example)}
-                                        className="button is-full has-bg-blue-100 has-text-blue-800 has-bg-blue-200-hover"
+                                        className="button is-full has-bg-white has-text-primary has-bg-highlight-hover"
                                         target="_blank"
                                     >
                                         <strong>Code</strong>

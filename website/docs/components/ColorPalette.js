@@ -19,7 +19,7 @@ const ColorItems = props => (
                 <div key={item} className="column is-one-third-mobile has-pt-none has-pl-2 has-pr-2">
                     <div className={itemClassName} />
                     <div className="has-weight-bold">{item}</div>
-                    <div className="has-text-gray-500 has-font-code has-size-0">{props.items[item]}</div>
+                    <div className="has-text-dark is-semitransparent has-size-0">{props.items[item]}</div>
                 </div>
             );
         })}

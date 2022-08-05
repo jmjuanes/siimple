@@ -8,12 +8,12 @@ const PaginationItem = props => {
     const paginationClass = kofi.classNames([
         "is-block",
         "is-rounded has-p-4",
-        "has-bg-gray-100-hover",
-        "has-text-gray-700 is-not-underlined",
+        "has-bg-light-hover",
+        "has-text-dark is-not-underlined",
     ]);
     return (
         <Link className={paginationClass} to={props.url}>
-            <div className="has-size-0 has-text-gray-500">
+            <div className="has-size-0 has-text-dark is-semitransparent">
                 {kofi.when(props.type === "prev", () => (
                     <i className="si-arrow-left has-pr-1" />
                 ))}
