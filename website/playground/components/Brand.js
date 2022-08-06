@@ -1,11 +1,10 @@
 import React from "react";
-import kofi from "kofi";
+import {classNames} from "@siimple/styled";
 
-// Brand component wrapper
 export const Brand = props => {
-    const parentClass = kofi.classNames({
+    const parentClass = classNames({
         "is-not-underlined": true,
-        "has-text-gray-800": props.theme === "light",
+        "has-text-dark": props.theme === "light",
         "has-text-white": props.theme === "dark",
     });
     return (
