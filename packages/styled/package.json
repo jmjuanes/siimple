@@ -1,6 +1,6 @@
 {
     "name": "@siimple/styled",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "A tiny CSS-in-JS library with the power of the siimple framework",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
@@ -10,8 +10,8 @@
     "homepage": "https://www.siimple.xyz",
     "main": "index.js",
     "dependencies": {
-        "@siimple/core": "^0.1.0",
-        "@siimple/preset-base": "^0.1.0"
+        "@siimple/core": "^0.2.0",
+        "@siimple/preset-base": "^0.2.0"
     },
     "keywords": [
         "siimple",
