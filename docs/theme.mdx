@@ -56,8 +56,9 @@ In the `colors` section you can define your custom color palette. To allow creat
 - `background`: color used for the body background.
 - `heading`: color used in headings.
 - `muted`: color used in borders and for filling form elements like inputs or textarea.
+- `highlight`: color used to highlight text.
 
-This is the default colors configuration:
+These are the colors defined in the base preset:
 
 ```js title=siimple.config.js
 import colors from "@siimple/colors";
@@ -70,6 +71,7 @@ export default {
         background: "#000",
         heading: colors.gray["800"],
         muted: colors.gray["200"],
+        highligh: colors.blue["200"],
     },
 };
 ```
@@ -89,7 +91,7 @@ export default {
     fonts: {
         body: "-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif",
         heading: "inherit",
-        monospace: "Menlo,Monaco,Consolas,monospace",
+        code: "Menlo,Monaco,Consolas,monospace",
     },
 };
 ```
