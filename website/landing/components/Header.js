@@ -55,16 +55,6 @@ export const Header = () => {
                 <div className="is-flex is-hidden-mobile">
                     {items.map(item => (<NavLink key={item.href} {...item} />))}
                 </div>
-                <div className="has-w-64 is-flex has-justify-end is-hidden-mobile">
-                    <a
-                        href={process.env.REPO_URL}
-                        target="_blank"
-                        className="navlink is-flex has-items-center has-bg-dark has-text-white has-text-white-hover has-w-auto"
-                    >
-                        <i className="si-external-link has-mr-2 has-size-2" />
-                        <strong>GitHub</strong>
-                    </a>
-                </div>
                 <div
                     className="menu is-hidden-tablet"
                     onClick={() => setActive(!active)}

@@ -12,7 +12,7 @@ export default props => {
     return (
         <Layout title="Examples">
             <div className="has-pt-24-tablet has-pt-12-mobile has-pb-24" align="center">
-                <div className="has-weight-black has-size-9 has-text-dark has-mb-none">
+                <div className="has-weight-black has-size-9 has-text-dark has-mb-6 has-lh-none">
                     Explore our <span className="has-text-primary">examples</span>.
                 </div>
                 <div className="has-text-dark is-semitransparent has-size-3" style={{maxWidth:"48rem"}}>

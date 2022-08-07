@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import kofi from "kofi";
-import colors from "@siimple/colors";
 import {classNames} from "@siimple/styled";
 
 import {Brand} from "./components/Brand.js";
@@ -182,12 +181,7 @@ const App = () => {
             </div>
             <div className={previewPanelClass} style={{minWidth:"0px",minHeight:"0px"}}>
                 {!!error && (
-                    <div
-                        className="alert is-radiusless"
-                        style={{
-                            backgroundColor: colors.red["500"],
-                        }}
-                    >
+                    <div className="alert is-secondary is-radiusless">
                         <i className="si-exclamation-circle has-size-8" />
                         <div className="has-pl-4">
                             <div className="title is-5 has-text-white has-mb-1">Error in siimple.config.js</div>
