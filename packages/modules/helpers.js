@@ -89,7 +89,6 @@ export const helpers = {
         properties: ["width"],
         states: ["default"],
         responsive: true,
-        important: true,
         scale: "sizes",
         values: {
             ...sizesValues,
@@ -102,7 +101,6 @@ export const helpers = {
         properties: ["height"],
         states: ["default"],
         responsive: true,
-        important: true,
         scale: "sizes",
         values: {
             ...sizesValues,
