@@ -438,6 +438,10 @@ export const elements = {
             marginBottom: "1rem",
             marginTop: "0px",
             apply: "text.paragraph",
+            "&.is-lead": {
+                fontSize: "2",
+                fontWeight: "bold",
+            },
         },
     },
     progress: {
