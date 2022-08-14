@@ -15,6 +15,7 @@ Welcome to the **siimple CSS toolkit** repository :tada:
 - :pray: **Contributing**: check out our [CONTRIBUTING guide](/CONTRIBUTING.md) to get started.
 - :question: **Questions**: join our [discussion forum](https://github.com/jmjuanes/siimple/discussions).
 - :sparkles: **Releases**: check out our [latest releases](https://github.com/jmjuanes/siimple/releases).
+- :leftwards_arrow_with_hook: Documentation for **v3**: [v3.siimple.xyz](https://v3.siimple.xyz).
 
 ## What is siimple
 
