@@ -647,7 +647,7 @@ export const elements = {
     },
     close: {
         ".{{prefix}}close": {
-            ...elements.Base.close,
+            ...elementsBase.close,
             apply: "buttons.close",
         },
     },
