@@ -1,6 +1,16 @@
+// Generate values
+const buildValue = (v, isImportant) => {
+    let value = [v].flat(1);
+    if (isImportant && value[value.length - 1] !== "!important") {
+        value.push("!important");
+    }
+    return value;
+};
+
 // Helpers generator
 export const createHelper = helpers => {
     return [helpers].flat().reduce((styles, item) => {
+        const isImportant = !!item.important;
         const prefix = [item.prefix, item.shortcut].filter(n => !!n).join("-");
         // Themeable helpers
         if (item.scale) {
@@ -11,7 +21,7 @@ export const createHelper = helpers => {
             const themeStyles = {
                 [`@theme ${item.scale}${excludedFields}`]: {
                     "&": Object.fromEntries(item.properties.map(name => {
-                        return [name, "value"];
+                        return [name, buildValue("value", isImportant)];
                     })),
                 },
             };
@@ -36,7 +46,7 @@ export const createHelper = helpers => {
         if (item.values) {
             Object.keys(item.values).map(name => {
                 const valueStyles = Object.fromEntries(item.properties.map(property => {
-                    return [property, item.values[name]];
+                    return [property, buildValue(item.values[name], isImportant)];
                 }));
                 // Generate states
                 item.states.forEach(state => {
