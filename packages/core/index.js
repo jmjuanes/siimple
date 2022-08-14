@@ -163,21 +163,27 @@ export const buildValue = (property, value, config, vars) => {
 // Build mixin styles
 export const buildMixin = (styles, theme, prev) => {
     prev = prev || new Set();
-    if (typeof styles.apply === "string" && styles.apply) {
-        // Check for circular mixins found
-        if (prev.has(styles.apply)) {
-            const items = Array.from(prev);
-            throw new Error(`Circular mixins found: ${items.join("->")}->${styles.apply}`);
-        }
-        // Apply styles from this mixin
-        prev.add(styles.apply);
-        let appliedStyles = getInObject(theme, styles.apply) || {};
-        if (appliedStyles.default && typeof appliedStyles.default === "object") {
-            appliedStyles = appliedStyles.default;
-        }
+    if (styles.apply && (typeof styles.apply === "string" || Array.isArray(styles.apply))) {
+        const mixinsList = [styles.apply].flat().filter(n => n && typeof n === "string");
         return {
             ...excludeInObject(styles, "apply"),
-            ...buildMixin(appliedStyles, theme, prev),
+            ...toObject(mixinsList, (newStyles, mixinName) => {
+                // Check for circular mixins found
+                if (prev.has(mixinName)) {
+                    const items = Array.from(prev);
+                    throw new Error(`Circular mixins found: ${items.join("->")}->${mixinName}`);
+                }
+                // Apply styles from this mixin
+                prev.add(mixinName);
+                let appliedStyles = getInObject(theme, mixinName) || {};
+                if (appliedStyles.default && typeof appliedStyles.default === "object") {
+                    appliedStyles = appliedStyles.default;
+                }
+                return {
+                    ...newStyles,
+                    ...buildMixin(appliedStyles, theme, prev),
+                };
+            }),
         };
     }
     // No mixin to apply --> return styles
