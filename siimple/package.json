@@ -1,6 +1,6 @@
 {
     "name": "siimple",
-    "version": "4.2.1",
+    "version": "4.2.2",
     "description": "A minimal and themeable CSS framework for flat and clean designs.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
@@ -18,9 +18,9 @@
         "siimple": "./cli.js"
     },
     "dependencies": {
-        "@siimple/core": "^0.2.1",
-        "@siimple/modules": "^0.2.1",
-        "@siimple/preset-base": "^0.2.1"
+        "@siimple/core": "^0.2.2",
+        "@siimple/modules": "^0.2.2",
+        "@siimple/preset-base": "^0.2.2"
     },
     "optionalDependencies": {
         "postcss": "^8.4.14"
