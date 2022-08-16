@@ -196,7 +196,7 @@ export const buildRule = (parent, styles, config, vars) => {
         return styles.map(item => buildRule(parent, item, config, vars)).flat();
     }
     // Check for mixins to apply to this styles
-    if (typeof styles.apply === "string" && styles.apply) {
+    if (styles.apply) {
         return buildRule(parent, buildMixin(styles, config), config, vars);
     }
     const result = [""];
