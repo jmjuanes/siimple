@@ -113,16 +113,28 @@ export default {
 
 Mixins allows you to define groups of styles that can be re-used throughout your custom styles. Mixins can be also used to customize built-in elements.
 
+Mixins are defined in the configuration of **siimple**, and can be applied in the styles using the `apply` keyword:
+
 ```js title=siimple.config.js
 export default {
     buttons: {
+        // Mixin to customize built-in button element
         default: {
             backgroundColor: "primary",
             color: "white",
             padding: "2rem",
         },
+        // Custom button mixin
+        outline: {
+            // custom outline button styles
+        }
     },
     // ...other configuration
+    style: {
+        ".outline-button": {
+            apply: "buttons.outline",
+        },
+    },
 };
 ```
 

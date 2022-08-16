@@ -191,3 +191,30 @@ export default {
     },
 };
 ```
+
+The `apply` property accepts a single mixin path as a string or a list of mixins paths:
+
+```js title=siimple.config.js
+export default {
+    buttons: {
+        bordered: {
+            borderColor: "primary",
+            borderStyle: "solid",
+            borderWidth: "2px",
+        },
+        fullWidth: {
+            textAlign: "center",
+            width: "100%",
+        },
+    },
+    styles: {
+        ".myButton": {
+            apply: [
+                "buttons.bordered",
+                "buttons.fullWidth",
+            ],
+            // other button styles
+        },
+    },
+};
+```
