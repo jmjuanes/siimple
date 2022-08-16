@@ -1,6 +1,6 @@
 {
     "name": "@siimple/preset-base",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "Base theme preset for the siimple css toolkit",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
@@ -10,7 +10,7 @@
     "homepage": "https://www.siimple.xyz",
     "main": "index.js",
     "dependencies": {
-        "@siimple/colors": "^0.2.2"
+        "@siimple/colors": "^0.2.3"
     },
     "keywords": [
         "siimple",
