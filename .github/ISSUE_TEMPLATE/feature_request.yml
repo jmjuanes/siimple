@@ -8,8 +8,8 @@ body:
       label: "Feature type"
       options:
         - "New preset"
-        - "New element for @siimple/preset-elements"
-        - "New icon for @siimple/preset-icons"
+        - "New element"
+        - "New icon"
         - "Other..."
     validations:
       required: true
