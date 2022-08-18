@@ -70,6 +70,19 @@ export const keyframes = s => getCachedConfig().keyframes(s);
 export const extractCss = () => getCachedConfig().extractCss();
 
 // Tiny utility for conditionally joining classNames
-export const classNames = obj => {
-    return Object.keys(obj || {}).filter(s => !!obj[s]).join(" ");
+const parseClassNames = items => {
+    if (typeof items === "string") {
+        return items.split(" ").filter(item => item.length);
+    }
+    else if (Array.isArray(items)) {
+        return items.filter(item => typeof item === "string" && item.length); 
+    }
+    else if (typeof items === "object") {
+        return Object.keys(items || {}).filter(key => !!items[key]);
+    }
+    //Over value --> return an empty array
+    return [];
+};
+export const classNames = (...args) => {
+    return (args || []).map(arg => parseClassNames(arg)).flat().join(" ");
 };
