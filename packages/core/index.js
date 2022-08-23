@@ -69,6 +69,12 @@ const aliases = {
     size: ["width", "height"],
 };
 
+// Map for css variables names
+const cssVariablesNames = {
+    colors: "color",
+    fonts: "font",
+};
+
 // Merge two object
 const mergeObject = (source, target) => ({...source, ...target});
 
@@ -111,7 +117,7 @@ const parseProperty = prop => {
 
 // Generate CSS variable name
 const getCssVariable = (scale, key) => {
-    return `--siimple-${parseProperty(scale)}-${parseProperty(key)}`;
+    return `--siimple-${cssVariablesNames[scale]}-${parseProperty(key)}`;
 };
 
 // Build CSS variables from scales
@@ -173,7 +179,7 @@ export const buildValue = (property, value, config, vars) => {
         const key = scales[property];
         if (config[key]?.[values[0]]) {
             // only colors and fonts are allowed to generate css variables
-            if (config.useCssVariables && (key === "colors" || key === "fonts")) {
+            if (config.useCssVariables && cssVariablesNames[key]) {
                 values[0] = `var(${getCssVariable(key, values[0])})`;
             }
             else {
@@ -304,8 +310,8 @@ export const buildStyles = (styles, config) => {
         });
     });
     if (config.useCssVariables) {
-        ["fonts", "colors"].filter(n => !!config[n]).forEach(name => {
-            const variables = buildCssVariables(name, config[name]);
+        Object.keys(cssVariablesNames).filter(s => !!config[s]).forEach(scale => {
+            const variables = buildCssVariables(cssVariablesNames[scale], config[scale], []);
             result.unshift(wrapRule(":root", variables.flat().join(""), ""));
         });
     }

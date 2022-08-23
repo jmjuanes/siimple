@@ -32,8 +32,8 @@ describe("buildValue", () => {
             },
             fontSizes: [0, 1],
         };
-        expect(buildValue("color", "primary", config)).toBe("var(--siimple-colors-primary)");
-        expect(buildValue("fontFamily", "body", config)).toBe("var(--siimple-fonts-body)");
+        expect(buildValue("color", "primary", config)).toBe("var(--siimple-color-primary)");
+        expect(buildValue("fontFamily", "body", config)).toBe("var(--siimple-font-body)");
         expect(buildValue("fontSize", "1", config)).toBe("1");
     });
 });
@@ -151,8 +151,8 @@ describe("buildStyles", () => {
         };
         const css = buildStyles({}, config).split("\n");
         expect(css).toHaveLength(2);
-        expect(css[0]).toBe(":root {--siimple-colors-primary:blue;--siimple-colors-secondary:red;}");
-        expect(css[1]).toBe(":root {--siimple-fonts-body:font1;--siimple-fonts-code:font2;}");
+        expect(css[0]).toBe(":root {--siimple-font-body:font1;--siimple-font-code:font2;}");
+        expect(css[1]).toBe(":root {--siimple-color-primary:blue;--siimple-color-secondary:red;}");
     });
 });
 
