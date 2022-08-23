@@ -11,6 +11,31 @@ describe("buildValue", () => {
         const value = buildValue("", ["5px", "10px"], {});
         expect(value).toBe("5px 10px");
     });
+
+    it ("should get the value from the specified scale", () => {
+        const value = buildValue("color", "primary", {
+            colors: {
+                primary: "blue",
+            },
+        });
+        expect(value).toBe("blue");
+    });
+
+    it("should use css variables if the useCssVariables flag is enabled", () => {
+        const config = {
+            useCssVariables: true,
+            colors: {
+                primary: "blue",
+            },
+            fonts: {
+                body: "font1",
+            },
+            fontSizes: [0, 1],
+        };
+        expect(buildValue("color", "primary", config)).toBe("var(--siimple-colors-primary)");
+        expect(buildValue("fontFamily", "body", config)).toBe("var(--siimple-fonts-body)");
+        expect(buildValue("fontSize", "1", config)).toBe("1");
+    });
 });
 
 describe("buildRule", () => {
@@ -109,6 +134,25 @@ describe("buildStyles", () => {
             }
         }, {}).split("\n");
         expect(css[0]).toBe(":root {--variable1:#ffffff;--variable2:#000000;}");
-    })
+    });
+
+    it("should add scales as CSS variables if useCssVariables flag is enabled", () => {
+        const config = {
+            useCssVariables: true,
+            colors: {
+                primary: "blue",
+                secondary: "red",
+            },
+            fonts: {
+                body: "font1",
+                code: "font2",
+            },
+            fontSizes: [0, 1, 2],
+        };
+        const css = buildStyles({}, config).split("\n");
+        expect(css).toHaveLength(2);
+        expect(css[0]).toBe(":root {--siimple-colors-primary:blue;--siimple-colors-secondary:red;}");
+        expect(css[1]).toBe(":root {--siimple-fonts-body:font1;--siimple-fonts-code:font2;}");
+    });
 });
 
