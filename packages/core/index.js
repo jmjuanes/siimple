@@ -109,6 +109,22 @@ const parseProperty = prop => {
     })
 };
 
+// Generate CSS variable name
+const getCssVariable = (scale, key) => {
+    return `--siimple-${parseProperty(scale)}-${parseProperty(key)}`;
+};
+
+// Build CSS variables from scales
+const buildCssVariables = (name, scale, prefix) => {
+    prefix = prefix || [];
+    return Object.keys(scale).map(key => {
+        if (scale[key] && typeof scale[key] === "object") {
+            return buildCssVariables(name, scale[key], [...prefix, key]);
+        }
+        return `${["--siimple", name, ...prefix, key].join("-")}:${scale[key]};`;
+    }).flat();
+};
+
 // Wrap CSS Rule
 const wrapRule = (ruleName, ruleContent, separator) => {
     return `${ruleName} {${separator || ""}${ruleContent}${separator || ""}}`;
@@ -155,7 +171,15 @@ export const buildValue = (property, value, config, vars) => {
     }
     if (scales[property] && typeof values[0] === "string") {
         const key = scales[property];
-        values[0] = config[key]?.[values[0]] || values[0];
+        if (config[key]?.[values[0]]) {
+            // only colors and fonts are allowed to generate css variables
+            if (config.useCssVariables && (key === "colors" || key === "fonts")) {
+                values[0] = `var(${getCssVariable(key, values[0])})`;
+            }
+            else {
+                values[0] = config[key][values[0]];
+            }
+        }
     }
     return values.join(" ");
 };
@@ -279,6 +303,12 @@ export const buildStyles = (styles, config) => {
             prefix: config.prefix || "",
         });
     });
+    if (config.useCssVariables) {
+        ["fonts", "colors"].filter(n => !!config[n]).forEach(name => {
+            const variables = buildCssVariables(name, config[name]);
+            result.unshift(wrapRule(":root", variables.flat().join(""), ""));
+        });
+    }
     return result.flat().join("\n");
 };
 
