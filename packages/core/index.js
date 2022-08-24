@@ -325,6 +325,16 @@ export const buildVariables = config => {
     return result.filter(item => !!item).join("\n");
 };
 
+// Build color modes
+export const buildColorModes = config => {
+    const result = Object.keys(config.colorModes || {}).map(name => {
+        const selector = `html[data-color-mode="${name}"]`;
+        const variables = buildCssVariables(cssVariablesNames["colors"], config.colorModes[name]);
+        return wrapRule(selector, variables.join(""), "");
+    });
+    return result.filter(item => !!item).join("\n");
+};
+
 // Generate CSS styles from a configuration object
 export const css = config => {
     const styles = {};
@@ -350,6 +360,11 @@ export const css = config => {
     // Build css variables
     if (config.useCssVariables) {
         result.push(buildVariables(config));
+    }
+    // Build color modes
+    if (config.useColorModes) {
+        // TODO: display a warning message if useCssVariables flag is disabled
+        result.push(buildColorModes(config));
     }
     // Add custom styles
     if (config.styles) {
