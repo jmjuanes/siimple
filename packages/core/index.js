@@ -361,6 +361,11 @@ export const css = config => {
     if (config.useCssVariables) {
         result.push(buildVariables(config));
     }
+    // Build color modes
+    if (config.useColorModes) {
+        // TODO: display a warning message if useCssVariables flag is disabled
+        result.push(buildColorModes(config));
+    }
     // Add custom styles
     if (config.styles) {
         mergeStyles(styles, config.styles);
