@@ -1,4 +1,9 @@
-import {buildValue, buildRule, buildStyles} from "../packages/core/index.js";
+import {
+    buildValue,
+    buildRule,
+    buildStyles,
+    buildVariables,
+} from "../packages/core/index.js";
 
 describe("buildValue", () => {
     it("should return the same string value", () => {
@@ -135,8 +140,10 @@ describe("buildStyles", () => {
         }, {}).split("\n");
         expect(css[0]).toBe(":root {--variable1:#ffffff;--variable2:#000000;}");
     });
+});
 
-    it("should add scales as CSS variables if useCssVariables flag is enabled", () => {
+describe("buildVariables", () => {
+    it("should generate CSS variables from scale values", () => {
         const config = {
             useCssVariables: true,
             colors: {
@@ -149,10 +156,10 @@ describe("buildStyles", () => {
             },
             fontSizes: [0, 1, 2],
         };
-        const css = buildStyles({}, config).split("\n");
+        const css = buildVariables(config).split("\n");
         expect(css).toHaveLength(2);
-        expect(css[0]).toBe(":root {--siimple-font-body:font1;--siimple-font-code:font2;}");
-        expect(css[1]).toBe(":root {--siimple-color-primary:blue;--siimple-color-secondary:red;}");
+        expect(css[0]).toBe(":root {--siimple-color-primary:blue;--siimple-color-secondary:red;}");
+        expect(css[1]).toBe(":root {--siimple-font-body:font1;--siimple-font-code:font2;}");
     });
 });
 

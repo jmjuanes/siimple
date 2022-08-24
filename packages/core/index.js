@@ -123,12 +123,13 @@ const getCssVariable = (scale, key) => {
 // Build CSS variables from scales
 const buildCssVariables = (name, scale, prefix) => {
     prefix = prefix || [];
-    return Object.keys(scale).map(key => {
+    const variables = Object.keys(scale).map(key => {
         if (scale[key] && typeof scale[key] === "object") {
             return buildCssVariables(name, scale[key], [...prefix, key]);
         }
         return `${["--siimple", name, ...prefix, key].join("-")}:${scale[key]};`;
-    }).flat();
+    });
+    return variables.flat();
 };
 
 // Wrap CSS Rule
@@ -309,18 +310,25 @@ export const buildStyles = (styles, config) => {
             prefix: config.prefix || "",
         });
     });
-    if (config.useCssVariables) {
-        Object.keys(cssVariablesNames).filter(s => !!config[s]).forEach(scale => {
-            const variables = buildCssVariables(cssVariablesNames[scale], config[scale], []);
-            result.unshift(wrapRule(":root", variables.flat().join(""), ""));
-        });
-    }
     return result.flat().join("\n");
+};
+
+// Build CSS variables from scales
+export const buildVariables = config => {
+    const result = Object.keys(cssVariablesNames).map(scale => {
+        if (config[scale]) {
+            const variables = buildCssVariables(cssVariablesNames[scale], config[scale]);
+            return wrapRule(":root", variables.join(""), "");
+        }
+        return "";
+    });
+    return result.filter(item => !!item).join("\n");
 };
 
 // Generate CSS styles from a configuration object
 export const css = config => {
     const styles = {};
+    const result = [];
     // Add borderbox styles
     if (typeof config.useBorderBox === "undefined" || !!config.useBorderBox) {
         styles["html"] = {
@@ -339,9 +347,14 @@ export const css = config => {
             ...(config.root || {}),
         };
     }
+    // Build css variables
+    if (config.useCssVariables) {
+        result.push(buildVariables(config));
+    }
     // Add custom styles
     if (config.styles) {
         mergeStyles(styles, config.styles);
     }
-    return buildStyles(styles, config);
+    result.push(buildStyles(styles, config));
+    return result.join("\n");
 };
