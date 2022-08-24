@@ -1,4 +1,9 @@
-import {buildValue, buildRule, buildStyles} from "../packages/core/index.js";
+import {
+    buildValue,
+    buildRule,
+    buildStyles,
+    buildVariables,
+} from "../packages/core/index.js";
 
 describe("buildValue", () => {
     it("should return the same string value", () => {
@@ -10,6 +15,31 @@ describe("buildValue", () => {
     it("should join an array of values", () => {
         const value = buildValue("", ["5px", "10px"], {});
         expect(value).toBe("5px 10px");
+    });
+
+    it ("should get the value from the specified scale", () => {
+        const value = buildValue("color", "primary", {
+            colors: {
+                primary: "blue",
+            },
+        });
+        expect(value).toBe("blue");
+    });
+
+    it("should use css variables if the useCssVariables flag is enabled", () => {
+        const config = {
+            useCssVariables: true,
+            colors: {
+                primary: "blue",
+            },
+            fonts: {
+                body: "font1",
+            },
+            fontSizes: [0, 1],
+        };
+        expect(buildValue("color", "primary", config)).toBe("var(--siimple-color-primary)");
+        expect(buildValue("fontFamily", "body", config)).toBe("var(--siimple-font-body)");
+        expect(buildValue("fontSize", "1", config)).toBe("1");
     });
 });
 
@@ -109,6 +139,27 @@ describe("buildStyles", () => {
             }
         }, {}).split("\n");
         expect(css[0]).toBe(":root {--variable1:#ffffff;--variable2:#000000;}");
-    })
+    });
+});
+
+describe("buildVariables", () => {
+    it("should generate CSS variables from scale values", () => {
+        const config = {
+            useCssVariables: true,
+            colors: {
+                primary: "blue",
+                secondary: "red",
+            },
+            fonts: {
+                body: "font1",
+                code: "font2",
+            },
+            fontSizes: [0, 1, 2],
+        };
+        const css = buildVariables(config).split("\n");
+        expect(css).toHaveLength(2);
+        expect(css[0]).toBe(":root {--siimple-color-primary:blue;--siimple-color-secondary:red;}");
+        expect(css[1]).toBe(":root {--siimple-font-body:font1;--siimple-font-code:font2;}");
+    });
 });
 

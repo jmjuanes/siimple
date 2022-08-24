@@ -69,6 +69,12 @@ const aliases = {
     size: ["width", "height"],
 };
 
+// Map for css variables names
+const cssVariablesNames = {
+    colors: "color",
+    fonts: "font",
+};
+
 // Merge two object
 const mergeObject = (source, target) => ({...source, ...target});
 
@@ -107,6 +113,23 @@ const parseProperty = prop => {
     return (aliases[prop] || [prop]).map(item => {
         return item.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`);
     })
+};
+
+// Generate CSS variable name
+const getCssVariable = (scale, key) => {
+    return `--siimple-${cssVariablesNames[scale]}-${parseProperty(key)}`;
+};
+
+// Build CSS variables from scales
+const buildCssVariables = (name, scale, prefix) => {
+    prefix = prefix || [];
+    const variables = Object.keys(scale).map(key => {
+        if (scale[key] && typeof scale[key] === "object") {
+            return buildCssVariables(name, scale[key], [...prefix, key]);
+        }
+        return `${["--siimple", name, ...prefix, key].join("-")}:${scale[key]};`;
+    });
+    return variables.flat();
 };
 
 // Wrap CSS Rule
@@ -155,7 +178,15 @@ export const buildValue = (property, value, config, vars) => {
     }
     if (scales[property] && typeof values[0] === "string") {
         const key = scales[property];
-        values[0] = config[key]?.[values[0]] || values[0];
+        if (config[key]?.[values[0]]) {
+            // only colors and fonts are allowed to generate css variables
+            if (config.useCssVariables && cssVariablesNames[key]) {
+                values[0] = `var(${getCssVariable(key, values[0])})`;
+            }
+            else {
+                values[0] = config[key][values[0]];
+            }
+        }
     }
     return values.join(" ");
 };
@@ -282,9 +313,22 @@ export const buildStyles = (styles, config) => {
     return result.flat().join("\n");
 };
 
+// Build CSS variables from scales
+export const buildVariables = config => {
+    const result = Object.keys(cssVariablesNames).map(scale => {
+        if (config[scale]) {
+            const variables = buildCssVariables(cssVariablesNames[scale], config[scale]);
+            return wrapRule(":root", variables.join(""), "");
+        }
+        return "";
+    });
+    return result.filter(item => !!item).join("\n");
+};
+
 // Generate CSS styles from a configuration object
 export const css = config => {
     const styles = {};
+    const result = [];
     // Add borderbox styles
     if (typeof config.useBorderBox === "undefined" || !!config.useBorderBox) {
         styles["html"] = {
@@ -303,9 +347,14 @@ export const css = config => {
             ...(config.root || {}),
         };
     }
+    // Build css variables
+    if (config.useCssVariables) {
+        result.push(buildVariables(config));
+    }
     // Add custom styles
     if (config.styles) {
         mergeStyles(styles, config.styles);
     }
-    return buildStyles(styles, config);
+    result.push(buildStyles(styles, config));
+    return result.join("\n");
 };
