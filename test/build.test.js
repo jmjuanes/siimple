@@ -3,6 +3,7 @@ import {
     buildRule,
     buildStyles,
     buildVariables,
+    buildColorModes,
 } from "../packages/core/index.js";
 
 describe("buildValue", () => {
@@ -160,6 +161,28 @@ describe("buildVariables", () => {
         expect(css).toHaveLength(2);
         expect(css[0]).toBe(":root {--siimple-color-primary:blue;--siimple-color-secondary:red;}");
         expect(css[1]).toBe(":root {--siimple-font-body:font1;--siimple-font-code:font2;}");
+    });
+});
+
+describe("buildColorModes", () => {
+    it("should generate color variables for each color mode", () => {
+        const config = {
+            useColorModes: true,
+            colorModes: {
+                dark: {
+                    primary: "black",
+                    secondary: "white",
+                },
+                light: {
+                    primary: "white",
+                    secondary: "black",
+                },
+            },
+        };
+        const css = buildColorModes(config).split("\n");
+        expect(css).toHaveLength(2);
+        expect(css[0]).toBe(`html[data-color-mode="dark"] {--siimple-color-primary:black;--siimple-color-secondary:white;}`);
+        expect(css[1]).toBe(`html[data-color-mode="light"] {--siimple-color-primary:white;--siimple-color-secondary:black;}`);
     });
 });
 
