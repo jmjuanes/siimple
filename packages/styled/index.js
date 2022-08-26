@@ -1,30 +1,36 @@
 import {buildStyles} from "@siimple/core";
 import base from "@siimple/preset-base";
 
-const globalID = "__styled_siimple__";
-let cachedConfig = null;
+const isBrowser = typeof document === "object";
 
 const hashCode = str => {
     return "sii-" + Math.abs(Array.from(str).reduce((s, c) => Math.imul(31, s) + c.charCodeAt(0) | 0, 0)).toString();
 };
 
-const getSheet = root => {
-    let target = null;
-    if (typeof window === "object") {
-        if (root && (target = root.querySelector(`#${globalID}`))) {
-            return target;
-        }
-        target = Object.assign(document.createElement("style"), {
-            id: globalID,
+export const createCache = options => {
+    const cache = {
+        key: options?.key || "css",
+        registry: new Set(),
+        sheet: {
             innerHTML: "",
-        });
-        (root || document.head).appendChild(target);
-        return target;
+        },
+    };
+    // Initialize sheet
+    if (isBrowser) {
+        let target = null;
+        if (!options?.root || !(target = options?.root?.querySelector(`[data-siimple="${cache.key}"`))) {
+            target = document.createElement("style");
+            target.dataset.siimple = `${cache.key}`;
+            target.innerHTML = "";
+            (options?.root || document.head).appendChild(target);
+        }
+        cache.sheet = target;
+        // TODO: check for initial styles in sheet
     }
-    return {innerHTML: ""};
+    return cache;
 };
 
-const compile = (styles, sheet, config, cache, isGlobal, isKeyframes) => {
+export const registerCss = (styles, config, cache, isGlobal, isKeyframes) => {
     let compiledStyles = null;
     if (isGlobal) {
         compiledStyles = buildStyles(styles, config);
@@ -36,38 +42,38 @@ const compile = (styles, sheet, config, cache, isGlobal, isKeyframes) => {
         compiledStyles = buildStyles({".__siimple": styles}, config);
     }
     const hash = hashCode(compiledStyles);
-    if (!cache.has(hash)) {
-        cache.add(hash);
-        compiledStyles = compiledStyles.replaceAll("__siimple", hash);
-        sheet.innerHTML = sheet.innerHTML + compiledStyles;
+    if (cache && !cache.registry.has(hash)) {
+        cache.registry.add(hash);
+        if (!isGlobal) {
+            compiledStyles = compiledStyles.replaceAll("__siimple", hash);
+        }
+        cache.sheet.innerHTML = cache.sheet.innerHTML + compiledStyles;
     }
     // Return the CSS classname reference
     return hash;
 };
 
-export const create = (config, root = null) => {
-    const sheet = getSheet(root);
-    const cache = new Set();
+export const create = (config, options) => {
+    const cache = createCache(options || {});
     return {
-        css: s => compile(s, sheet, config, cache, false, false),
-        globalCss: s => compile(s, sheet, config, cache, true, false),
-        keyframes: s => compile(s, sheet, config, cache, false, true),
-        extractCss: () => sheet.innerHTML || "",
-        reset: () => {
-            sheet.innerHTML = "";
-            cache.clear();
-        },
+        css: s => registerCss(s, config, cache, false, false),
+        globalCss: s => registerCss(s, config, cache, true, false),
+        keyframes: s => registerCss(s, config, cache, false, true),
+        extractCss: () => cache.sheet.innerHTML || "",
+        // reset: () => cache.clear(),
     };
 };
 
-const getCachedConfig = () => {
-    return cachedConfig || (cachedConfig = create({...base}));
+// Cached instance
+let cachedInstance = null;
+const getCachedInstance = () => {
+    return cachedInstance || (cachedInstance = create({...base}));
 };
 
-export const css = s => getCachedConfig().css(s);
-export const globalCss = s => getCachedConfig().globalCss(s);
-export const keyframes = s => getCachedConfig().keyframes(s);
-export const extractCss = () => getCachedConfig().extractCss();
+export const css = s => getCachedInstance().css(s);
+export const globalCss = s => getCachedInstance().globalCss(s);
+export const keyframes = s => getCachedInstance().keyframes(s);
+export const extractCss = () => getCachedInstance().extractCss();
 
 // Tiny utility for conditionally joining classNames
 const parseClassNames = items => {

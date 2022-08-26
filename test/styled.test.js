@@ -4,7 +4,7 @@
 
 import {css, globalCss, extractCss} from "@siimple/styled";
 
-const styleSelector = "style#__styled_siimple__";
+const styleSelector = `style[data-siimple="css"]`;
 
 describe("styled", () => {
     it("should generate the specified CSS", () => {
