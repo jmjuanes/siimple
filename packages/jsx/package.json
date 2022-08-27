@@ -1,0 +1,22 @@
+{
+    "name": "@siimple/jsx",
+    "version": "0.3.0-beta",
+    "description": "A JSX transform function to support the css prop.",
+    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "type": "module",
+    "license": "MIT",
+    "repository": "https://github.com/jmjuanes/siimple",
+    "bugs": "https://github.com/jmjuanes/siimple/issues",
+    "homepage": "https://www.siimple.xyz",
+    "main": "index.js",
+    "keywords": [
+        "siimple",
+        "react",
+        "jsx"
+    ],
+    "dependencies": {
+        "@siimple/styled": "^0.2.3",
+        "@siimple/theme-provider": "^0.3.0-beta",
+        "react": "^17.0.2"
+    }
+}
