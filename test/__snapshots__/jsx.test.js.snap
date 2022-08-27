@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`jsx should return a React.createElement if no 'css' prop is provided 1`] = `
+<div>
+  Hello world
+</div>
+`;
