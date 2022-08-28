@@ -16,8 +16,13 @@ const CacheContext = React.createContext({
     }),
 });
 
+export const parseProps = (type, props) => ({
+    ...props,
+    [TYPE_PROP]: type || "div",
+});
+
 // Element wrapper for jsx
-const SiimpleElement = React.forwardRef((props, ref) => {
+export const SiimpleElement = React.forwardRef((props, ref) => {
     const theme = useTheme();
     const cache = React.useContext(CacheContext);
 
@@ -55,9 +60,5 @@ export const jsx = (...args) => {
     }
 
     // Generate new props for our wrapper element
-    const newProps = {
-        ...(props || {}),
-        [TYPE_PROP]: type || "div",
-    };
-    return React.createElement(SiimpleElement, newProps, ...args.slice(2));
+    return React.createElement(SiimpleElement, parseProps(type, props), ...args.slice(2));
 };
