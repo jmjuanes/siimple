@@ -8,5 +8,12 @@ export const jsxDEV = (type, props, key, isStaticChildren, source, self) => {
     if (!props?.css || typeof props?.css !== "object") {
         return ReactJsxDEV(type, props, key, isStaticChildren, source, self);
     }
-    return ReactJsxDEV(SiimpleElement, parseProps(type, props), key, isStaticChildren, source, self);
+    return ReactJsxDEV(
+        SiimpleElement,
+        parseProps(props, type),
+        key,
+        isStaticChildren,
+        source,
+        self,
+    );
 };

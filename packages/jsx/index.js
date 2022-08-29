@@ -16,7 +16,7 @@ const CacheContext = React.createContext({
     }),
 });
 
-export const parseProps = (type, props) => ({
+export const parseProps = (props, type) => ({
     ...props,
     [TYPE_PROP]: type || "div",
 });
@@ -51,7 +51,6 @@ export const SiimpleElement = React.forwardRef((props, ref) => {
 
 // jsx wrapper
 export const jsx = (...args) => {
-    const type = args[0];
     const props = args[1];
     
     // No props or props.css provided --> just call React.createElement
@@ -60,5 +59,9 @@ export const jsx = (...args) => {
     }
 
     // Generate new props for our wrapper element
-    return React.createElement(SiimpleElement, parseProps(type, props), ...args.slice(2));
+    return React.createElement(
+        SiimpleElement,
+        parseProps(props, args[0]),
+        ...args.slice(2),
+    );
 };
