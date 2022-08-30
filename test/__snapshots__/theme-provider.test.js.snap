@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`[theme-provider] ThemeProvider component should render 1`] = `
-<div>
-  Hello world
-</div>
-`;
