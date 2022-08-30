@@ -1,7 +1,7 @@
 {
     "name": "@siimple/jsx",
     "version": "0.3.0-beta",
-    "description": "A JSX transform function to support the css prop.",
+    "description": "A simple JSX transform function to support the css prop.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
     "license": "MIT",

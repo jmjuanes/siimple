@@ -1,6 +1,6 @@
 # @siimple/jsx (Experimental)
 
-A JSX transform function to create React Elements that supports the `css` prop.
+A simple JSX transform function to create React Elements that supports the `css` prop.
 
 > **Note**: this is an experimental package. API may change at any time.
 
@@ -79,6 +79,38 @@ import {jsx} from "@siimple/jsx";
 const App = () => (
     <div css={{color: "blue"}}>
         <strong>Hello world</strong>
+    </div>
+);
+```
+
+## API
+
+### jsx(type, props, ...children)
+
+The JSX transform function that converts the `props.css` property to a className.
+
+### styled(type, css)
+
+Generate a styled React component with the specified type and CSS.
+
+```jsx
+import {styled} from "@siimple/jsx";
+
+const ButtonLink = styled("a", {
+    color: "primary",
+    display: "block",
+    padding: "2rem",
+    textDecoration: "none",
+    "&:hover": {
+        cursor: "pointer",
+    },
+});
+
+const App = () => (
+    <div align="center">
+        <ButtonLink href="/login">
+            Login
+        </ButtonLink>
     </div>
 );
 ```

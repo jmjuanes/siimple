@@ -1,10 +1,10 @@
 import React from "react";
+import {useTheme} from "@siimple/theme-provider";
 import {
     classNames,
     createCache,
     registerCss,
 } from "@siimple/styled";
-import {useTheme} from "@siimple/theme-provider";
 
 // Global variables
 const TYPE_PROP = "__siimple_type_prop__";
@@ -64,4 +64,24 @@ export const jsx = (...args) => {
         parseProps(props, args[0]),
         ...args.slice(2),
     );
+};
+
+// Create an styled element
+export const styled = (type, css) => {
+    if (typeof css !== "object") {
+        throw new Error(`[siimple:styled] Invalid 'css': expected 'Object' but got '${typeof css}'`);
+    }
+
+    // Generate a React element
+    return React.forwardRef((props, ref) => {
+        const theme = useTheme();
+        const cache = React.useContext(CacheContext);
+        const className = registerCss(css, theme, cache.current, false, false);
+
+        // Assign ref and classname to props
+        props.ref = ref;
+        props.className = classNames(props.className, className);
+
+        return React.createElement(type || "div", props, props.children);
+    });
 };
