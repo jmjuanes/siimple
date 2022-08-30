@@ -1,6 +1,6 @@
-# @siimple/jsx (Experimental)
+# @siimple/react (Experimental)
 
-A simple JSX transform function to create React Elements that supports the `css` prop.
+Style your React components using Siimple.
 
 > **Note**: this is an experimental package. API may change at any time.
 
@@ -9,15 +9,15 @@ A simple JSX transform function to create React Elements that supports the `css`
 Install this package using **npm**:
 
 ```bash
- npm install --save @siimple/jsx
+ npm install --save @siimple/react
 ```
 
 ## Usage
 
-This transform allows you to provide a custom CSS styles object using a `css` prop:
+Our custom `jsx` transform allows you to provide a custom CSS styles object using a `css` prop:
 
 ```js
-/** @jsxImportSource @siimple/jsx */
+/** @jsxImportSource @siimple/react */
 
 const App = () => (
     <div
@@ -37,11 +37,11 @@ const App = () => (
 );
 ```
 
-You can use `ThemeProvider` from `@siimple/theme-provider` for using your own theme:
+You can use `ThemeProvider` component for using your own theme:
 
 ```js
-/** @jsxImportSource @siimple/jsx */
-import ThemeProvider from "@siimple/theme-provider";
+/** @jsxImportSource @siimple/react */
+import {ThemeProvider} from "@siimple/react";
 
 const theme = {
     colors: {
@@ -58,10 +58,10 @@ const App = () => (
 );
 ```
 
-Remember that you should tell Babel to use `@siimple/jsx` as the [automatic runtime import](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx#customizing-the-automatic-runtime-import):
+Remember that you should tell Babel to use `@siimple/react` as the [automatic runtime import](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx#customizing-the-automatic-runtime-import):
 
 ```js
-/** @jsxImportSource @siimple/jsx */
+/** @jsxImportSource @siimple/react */
 
 const App = () => (
     <div css={{color: "blue"}}>
@@ -74,7 +74,7 @@ You can also use it as the [classic runtime](https://babeljs.io/docs/en/babel-pl
 
 ```js
 /** @jsx jsx */
-import {jsx} from "@siimple/jsx";
+import {jsx} from "@siimple/react";
 
 const App = () => (
     <div css={{color: "blue"}}>
@@ -87,14 +87,57 @@ const App = () => (
 
 ### jsx(type, props, ...children)
 
-The JSX transform function that converts the `props.css` property to a className.
+The JSX transform function that automatically converts the `props.css` property to a className.
+
+```js
+/** @jsx jsx */
+import {jsx} from "@siimple/react";
+
+const App = () => (
+    <div css={{color: "blue"}}>
+        <strong>Hello world</strong>
+    </div>
+);
+```
+
+### ThemeProvider
+
+A simple React component that accepts a **siimple theme object** as a prop and pass it top-down using [Context](https://reactjs.org/docs/context.html).
+
+```jsx
+import {ThemeProvider} from "@siimple/react";
+
+export default App = () => (
+    <ThemeProvider theme={theme}>
+        ...
+    </ThemeProvider>
+);
+```
+
+### useTheme()
+
+A React [Hook](https://reactjs.org/docs/hooks-intro.html) that returns the current theme provided to `<ThemeProvider>`.
+
+```jsx
+import {useTheme} from "@siimple/react";
+
+export const Text = props => {
+    const theme = useTheme();
+
+    return (
+        <span style={{color: theme.colors.primary}}>
+            {props.children}
+        </span>
+    );
+};
+```
 
 ### styled(type, css)
 
 Generate a styled React component with the specified type and CSS.
 
 ```jsx
-import {styled} from "@siimple/jsx";
+import {styled} from "@siimple/react";
 
 const ButtonLink = styled("a", {
     color: "primary",

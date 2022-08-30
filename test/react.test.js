@@ -3,8 +3,7 @@
  */
 
 import renderer from "react-test-renderer";
-import {jsx} from "@siimple/jsx";
-import {ThemeProvider} from "@siimple/theme-provider";
+import {ThemeProvider, useTheme, jsx} from "@siimple/react";
 
 const selector = `style[data-siimple="siimple-react"]`;
 
@@ -48,5 +47,40 @@ describe("jsx", () => {
         expect(div).toBeDefined();
         expect(div.props.className).toEqual(expect.stringContaining("sii-"));
         expect(document.querySelector(selector).innerHTML).toEqual(expect.stringContaining("color:black"));
+    });
+});
+
+describe("ThemeProvider", () => {
+    it("should render", () => {
+        const component = renderer.create((
+            <ThemeProvider theme={{}}>
+                <div>Hello world</div>
+            </ThemeProvider>
+        ));
+
+        expect(component.toJSON()).toMatchSnapshot();
+    });
+});
+
+describe("useTheme", () => {
+    it("should return current theme", () => {
+        const defaultTheme = {
+            colors: {
+                primary: "black",
+            },
+        };
+        let theme = null;
+        let TestComponent = () => {
+            theme = useTheme();
+            return null;
+        };
+        renderer.create((
+            <ThemeProvider theme={defaultTheme}>
+                <TestComponent />
+            </ThemeProvider>
+        ));
+
+        expect(theme).not.toBeNull();
+        expect(theme?.colors?.primary).toBe(defaultTheme.colors.primary);
     });
 });
