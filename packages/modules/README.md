@@ -81,7 +81,6 @@ The `options` object accepts the following keys:
 - `responsive`: a boolean to generate also responsive helpers based on the breakpoints specified in the configuration. Default is `false`.
 - `properties`: a list of CSS properties for the helper.
 - `values`: an object list of values to assign to the list of properties. The object key will be used as the helper name, and the value will be used as the CSS property value.
-- `scale`: use values provided in the specified scale in the configuration.
 
 
 ## License

@@ -14,7 +14,11 @@ export const markup = {
         fontSize: "0",
         apply: "text.small",
     },
-    "strong,b": {
+    strong: {
+        fontWeight: "700",
+        apply: "text.strong",
+    },
+    b: {
         fontWeight: "700",
         apply: "text.strong",
     },
