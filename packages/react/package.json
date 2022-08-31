@@ -11,8 +11,7 @@
     "main": "index.js",
     "keywords": [
         "siimple",
-        "react",
-        "jsx"
+        "react"
     ],
     "dependencies": {
         "@siimple/styled": "^0.2.3",
