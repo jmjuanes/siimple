@@ -11,7 +11,7 @@ const TYPE_PROP = "__siimple_type_prop__";
 // Cache Context
 export const CacheContext = React.createContext({
     current: createCache({
-      key: "siimple-react",
+        key: "siimple-react",
     }),
 });
 
