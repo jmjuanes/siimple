@@ -3,52 +3,9 @@
  */
 
 import renderer from "react-test-renderer";
-import {ThemeProvider, useTheme, jsx} from "@siimple/react";
+import {ThemeProvider, useTheme, styled} from "@siimple/react";
 
 const selector = `style[data-siimple="siimple-react"]`;
-
-describe("jsx", () => {
-    it("should return a React.createElement if no 'css' prop is provided", () => {
-        const component = renderer.create(
-            jsx("div", {}, "Hello world"),
-        );
-
-        expect(component.toJSON()).toMatchSnapshot();
-    });
-
-    it("should style the element", () => {
-        const component = renderer.create(
-            jsx("div", {
-                css: {
-                    color: "red",
-                },
-            }, "Hello world in red"),
-        );
-        const div = component.root.findByType("div");
-
-        expect(div).toBeDefined();
-        expect(div.props.className).toEqual(expect.stringContaining("sii-"));
-        expect(document.querySelector(selector).innerHTML).toEqual(expect.stringContaining("color:red"));
-    });
-
-    it("should style the element using the theme", () => {
-        const theme = {
-            colors: {
-                primary: "black",
-            },
-        };
-        const component = renderer.create(
-            jsx(ThemeProvider, {theme},
-                jsx("div", {css: {color: "primary"}}, "Hello world"),
-            ),
-        );
-        const div = component.root.findByType("div");
-
-        expect(div).toBeDefined();
-        expect(div.props.className).toEqual(expect.stringContaining("sii-"));
-        expect(document.querySelector(selector).innerHTML).toEqual(expect.stringContaining("color:black"));
-    });
-});
 
 describe("ThemeProvider", () => {
     it("should render", () => {
@@ -82,5 +39,39 @@ describe("useTheme", () => {
 
         expect(theme).not.toBeNull();
         expect(theme?.colors?.primary).toBe(defaultTheme.colors.primary);
+    });
+});
+
+describe("styled", () => {
+    it("should return a valid React component", () => {
+        const StyledComponent = styled("div", {
+            color: "white",
+        });
+        const component = renderer.create((
+            <StyledComponent>Hello world</StyledComponent>
+        ));
+
+        expect(component.toJSON()).toMatchSnapshot();
+    });
+
+    it("should apply theme", () => {
+        const theme = {
+            colors: {
+                primary: "black",
+            },
+        };
+        const StyledComponent = styled("div", {
+            color: "primary",
+        });
+        const component = renderer.create((
+            <ThemeProvider theme={theme}>
+                <StyledComponent>Hello</StyledComponent>
+            </ThemeProvider>
+        ));
+        const div = component.root.findByType("div");
+
+        expect(div).toBeDefined();
+        expect(div.props.className).toEqual(expect.stringContaining("sii-"));
+        expect(document.querySelector(selector).innerHTML).toEqual(expect.stringContaining("color:black"));
     });
 });

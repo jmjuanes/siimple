@@ -6,8 +6,10 @@ exports[`ThemeProvider should render 1`] = `
 </div>
 `;
 
-exports[`jsx should return a React.createElement if no 'css' prop is provided 1`] = `
-<div>
+exports[`styled should return a valid React component 1`] = `
+<div
+  className="sii-311768968"
+>
   Hello world
 </div>
 `;
