@@ -358,12 +358,11 @@ export const css = config => {
         };
     }
     // Build css variables
-    if (config.useCssVariables) {
+    if (config.useCssVariables || config.useColorModes) {
         result.push(buildVariables(config));
     }
     // Build color modes
     if (config.useColorModes) {
-        // TODO: display a warning message if useCssVariables flag is disabled
         result.push(buildColorModes(config));
     }
     // Add custom styles
