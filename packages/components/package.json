@@ -1,0 +1,23 @@
+{
+    "name": "@siimple/components",
+    "version": "0.3.0-beta",
+    "description": "React UI Components based on siimple",
+    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "type": "module",
+    "license": "MIT",
+    "repository": "https://github.com/jmjuanes/siimple",
+    "bugs": "https://github.com/jmjuanes/siimple/issues",
+    "homepage": "https://www.siimple.xyz",
+    "main": "index.js",
+    "keywords": [
+        "siimple",
+        "react",
+        "theme",
+        "theme-provider"
+    ],
+    "dependencies": {
+        "@siimple/modules": "^0.2.3",
+        "@siimple/react": "^0.3.0-beta",
+        "react": "^17.0.2"
+    }
+}
