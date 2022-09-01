@@ -1,6 +1,9 @@
 import React from "react";
 import {classNames, createCache, registerCss} from "@siimple/styled";
 
+// Forward classNames utility
+export {classNames} from "@siimple/styled";
+
 // Contexts
 export const ThemeContext = React.createContext({});
 export const CacheContext = React.createContext(

@@ -1,55 +1,69 @@
 import React from "react";
-import {jsx, useTheme} from "@siimple/react";
-import elements from "@siimple/modules/elements.js";
+import {classNames, useCss, useTheme} from "@siimple/react";
+import {elements} from "@siimple/modules/elements.js";
 
-const createComponent = name => {
-    const config = elements[name];
-    return React.forwardRef((props, ref) => {
-        const {as, variant, css: customCss, ...rest} = props;
-        const theme = useTheme();
-        const css = {
-            boxSizing: "border-box",
-            minWidth: "0",
-            ...config.styles,
-            ...customCss,
-        };
-
-        // Assign variants
-        if (config.variants && variant) {
-            if (config.defaultVariants?.[variant]) {
-                Object.assign(css, config.defaultVariants[variant]);
-            }
-
-            const variantStyles = theme[config.variants]?.[variant];
-            if (variantStyles) {
-                Object.assign(css, variantStyles);
-            }
-        }
-
-        return jsx(props.as || config.type, {
-            ref: ref,
-            css: css,
-            ...(config.defaultProps || {}),
-            ...rest,
-        });
+// Wrapper component for applying styles
+export const Box = React.forwardRef((props, ref) => {
+    const {as, css, ...rest} = props;
+    const className = useCss({
+        boxSizing: "border-box",
+        minWidth: "0",
+        ...css,
     });
-};
+
+    return React.createElement(as || "div", {
+        ...rest,
+        ref: ref,
+        className: classNames(className, props.className),
+    });
+});
 
 // Root styles
 export const RootStyles = props => {
     const theme = useTheme();
-    return jsx("div", {
+    const className = useCss({
+        boxSizing: "border-box",
+        background: "background",
+        color: "text",
+        fontFamily: "body",
+        fontWeight: "body",
+        lineHeight: "body",
+        ...(theme.root || {}),
+        // ...(props.css || {}),
+    });
+    return React.createElement("div", {
         ...props,
-        css: {
-            boxSizing: "border-box",
-            background: "background",
-            color: "text",
-            fontFamily: "body",
-            fontWeight: "body",
-            lineHeight: "body",
-            ...(theme.root || {}),
-            ...(props.css || {}),
-        },
+        className: classNames(props.className, className),
+    });
+};
+
+// Generate a component from elements
+const createComponent = name => {
+    const config = elements[name];
+    return React.forwardRef((props, ref) => {
+        const {variant, css, ...rest} = props;
+        const theme = useTheme();
+        const variantCss = {};
+    
+        // Assign variants
+        if (config?.variants && variant) {
+            Object.assign(variantCss, {
+                ...(config?.defaultVariants?.[variant] || {}),
+                ...(theme[config.variants]?.[variant] || {}),
+            });
+        }
+
+        return React.createElement(Box, {
+            ...(config?.defaultProps || {}),
+            ...rest,
+            as: props.as || config.type || "div",
+            ref: ref,
+            css: {
+                ...config?.styles,
+                ...variantCss,
+                ...css,
+            },
+        });
     });
 };
 
