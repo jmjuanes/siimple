@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`All components should render 1`] = `
+<div
+  className="sii-358420926"
+>
+  Hello world
+</div>
+`;
+
+exports[`Box should render 1`] = `
+<div
+  className="sii-1628842713"
+>
+  Hello world
+</div>
+`;
