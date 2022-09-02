@@ -4,7 +4,6 @@ A collection of React UI components based on Siimple.
 
 > **Note**: this is an experimental package. API may change at any time.
 
-
 ## Installation
 
 Install this package using **npm**:
@@ -17,12 +16,14 @@ $ npm install --save @siimple/components
 
 ```jsx
 import React from "react";
-import {Button, Title} from "@siimple/components";
+import {Elements} from "@siimple/components";
 
 export const App = () => (
     <div>
-        <Title>Welcome</Title>
-        <Button variant="secondary">Say hello!</Button>
+        <Elements.title>Welcome</Elements.title>
+        <Elements.button variant="secondary">
+            Say hello!
+        </Elements.button>
     </div>
 );
 ```
