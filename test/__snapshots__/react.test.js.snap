@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Box should render 1`] = `
+<div
+  className="sii-1628842713"
+>
+  Hello world
+</div>
+`;
+
 exports[`ThemeProvider should render 1`] = `
 <div>
   Hello world
@@ -8,7 +16,7 @@ exports[`ThemeProvider should render 1`] = `
 
 exports[`styled should return a valid React component 1`] = `
 <div
-  className="sii-311768968"
+  className="sii-1628842713"
 >
   Hello world
 </div>

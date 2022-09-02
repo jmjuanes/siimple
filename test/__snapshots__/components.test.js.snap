@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`All components should render 1`] = `
+exports[`Elements should render 1`] = `
 <div
   className="sii-358420926"
 >
@@ -8,10 +8,10 @@ exports[`All components should render 1`] = `
 </div>
 `;
 
-exports[`Box should render 1`] = `
-<div
-  className="sii-1628842713"
+exports[`Markup should render 1`] = `
+<h1
+  className="sii-1986486495"
 >
   Hello world
-</div>
+</h1>
 `;

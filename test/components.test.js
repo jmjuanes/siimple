@@ -4,15 +4,15 @@
 
 import renderer from "react-test-renderer";
 import {ThemeProvider} from "@siimple/react";
-import {Box, Alert} from "@siimple/components";
+import {Elements, Markup} from "@siimple/components";
 
-const selector = `style[data-siimple="siimple-react"]`;
+// const selector = `style[data-siimple="siimple-react"]`;
 
-describe("Box", () => {
+describe("Elements", () => {
     it("should render", () => {
         const component = renderer.create((
             <ThemeProvider theme={{}}>
-                <Box css={{color: "white"}}>Hello world</Box>
+                <Elements.alert>Hello world</Elements.alert>
             </ThemeProvider>
         ));
 
@@ -20,11 +20,11 @@ describe("Box", () => {
     });
 });
 
-describe("All components", () => {
+describe("Markup", () => {
     it("should render", () => {
         const component = renderer.create((
             <ThemeProvider theme={{}}>
-                <Alert>Hello world</Alert>
+                <Markup.h1>Hello world</Markup.h1>
             </ThemeProvider>
         ));
 

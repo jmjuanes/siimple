@@ -2,16 +2,11 @@
  * @jest-environment jsdom
  */
 
-import {
-    css,
-    globalCss,
-    extractCss,
-    classNames,
-} from "@siimple/styled";
+import {css, globalCss, extractCss} from "@siimple/css";
 
 const styleSelector = `style[data-siimple="css"]`;
 
-describe("[styled] css", () => {
+describe("css", () => {
     it("should generate the specified CSS", () => {
         const classname = css({
             backgroundColor: "white",
@@ -46,26 +41,5 @@ describe("[styled] css", () => {
             },
         });
         expect(document.querySelector(styleSelector)?.innerHTML).toEqual(expect.stringContaining("body"));
-    });
-});
-
-describe("[styled] classNames", () => {
-    it("should join arguments into a single string", () => {
-        const className = classNames("foo", "bar", "baz");
-        expect(className).toBe("foo bar baz");
-    });
-
-    it("should add only classes with a truthly value in an object", () => {
-        const className = classNames({
-            foo: true,
-            bar: false,
-            baz: true,
-        });
-        expect(className).toBe("foo baz");
-    });
-
-    it("should join all elements in an array", () => {
-        const className = classNames(["foo", "bar"], "baz");
-        expect(className).toBe("foo bar baz");
     });
 });
