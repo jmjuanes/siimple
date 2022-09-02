@@ -1,6 +1,6 @@
-# @siimple/styled
+# @siimple/css
 
-A tiny CSS-in-JS solution with the power of **siimple** and its configuration, mixins, and presets.
+A tiny and framework agnostic CSS-in-JS solution with the power of **siimple** and its configuration, mixins, and presets.
 
 > **Note**: this is an experimental package. API may change at any time.
 
@@ -9,19 +9,15 @@ A tiny CSS-in-JS solution with the power of **siimple** and its configuration, m
 Use **npm** or **yarn** for adding this package to your project:
 
 ```bash
-$ yarn add @siimple/styled
+$ yarn add @siimple/css
 ``` 
 
 ## Usage
 
-### Usage with React
+```js
+import {css} from "@siimple/css";
 
-You can use the `css` function to style your React components:
-
-```js title=Button.jsx
-import React from "react";
-import {css} from "@siimple/styled";
-
+const button = document.getElementById("button");
 const buttonClass = css({
     backgroundColor: "primary",
     borderRadius: "0.5rem",
@@ -32,16 +28,8 @@ const buttonClass = css({
     },
 });
 
-export default props => {
-    return (
-        <button className={buttonClass} onClick={props.onClick}>
-            {props.text}
-        </button>
-    );
-};
-
+button.classList.add(buttonClass);
 ```
-
 
 ## API
 
@@ -50,7 +38,7 @@ export default props => {
 A function to generate a classname from the specified styles object.
 
 ```js
-import {css} from "@siimple/styled";
+import {css} from "@siimple/css";
 
 const name = css({
     color: "red",
@@ -67,7 +55,7 @@ const name = css({
 A function to convert the speicifed styles object to global styles:
 
 ```js
-import {globalCss} from "@siimple/styled";
+import {globalCss} from "@siimple/css";
 
 globalCss({
     body: {
@@ -85,7 +73,7 @@ globalCss({
 Generate global `@keyframes` from the specified keyframes configuration object:
 
 ```js
-import {keyframes, css} from "@siimple/styled";
+import {keyframes, css} from "@siimple/css";
 
 const animationName = keyframes({
     from: {
@@ -106,7 +94,7 @@ const name = css({
 Generate a custom instance of the `css`, `keyframes` and `globalCss` functions that will use the specified **siimple** configuration object.
 
 ```js
-import {create} from "@siimple/styled";
+import {create} from "@siimple/css";
 import colors from "@siimple/colors";
 
 const {css, keyframes, globalCss} = create({
@@ -117,22 +105,6 @@ const {css, keyframes, globalCss} = create({
     // ...other theme configuration
 });
 ```
-
-### classNames(obj)
-
-A tiny utility for conditionally joining class names.
-
-```js
-import {classNames} from "@siimple/styled";
-
-const names = classNames({
-    "foo": true,
-    "bar": trueCondition === true,
-    "baz": null,
-});
-// names === "foo bar"
-```
-
 
 # License
 
