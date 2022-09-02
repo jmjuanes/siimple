@@ -1,6 +1,6 @@
 # @siimple/react (Experimental)
 
-Style your React components using the Siimple core.
+Style your React components using siimple.
 
 > **Note**: this is an experimental package. API may change at any time.
 
@@ -136,6 +136,20 @@ const App = () => (
 );
 ```
 
+### classNames(obj)
+
+A tiny utility for conditionally joining class names.
+
+```js
+import {classNames} from "@siimple/react";
+
+const names = classNames({
+    "foo": true,
+    "bar": trueCondition === true,
+    "baz": null,
+});
+// names === "foo bar"
+```
 
 ## License
 
