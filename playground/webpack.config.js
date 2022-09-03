@@ -2,14 +2,15 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const package = require("../package.json");
 
-const package = require("../../package.json");
-const publicPath = process.env?.PLAYGROUND_PATH || "/playground/";
+const PLAYGROUND_ONLY = process.env?.PLAYGROUND_ONLY === "true";
+const publicPath = !PLAYGROUND_ONLY ? "/playground/" : "/";
 
 module.exports = {
     mode: "production",
     target: "web",
-    entry: path.join(__dirname, "app.js"),
+    entry: path.join(__dirname, "App.jsx"),
     output: {
         path: path.join(__dirname, "public"),
         publicPath: publicPath,
@@ -56,9 +57,9 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                path.resolve(__dirname, "../../siimple/siimple.css"),
-                path.resolve(__dirname, "../../siimple-icons/siimple-icons.css"),
-                path.resolve(__dirname, "../../node_modules/codecake/codecake.css"),
+                path.resolve(__dirname, "../siimple/siimple.css"),
+                path.resolve(__dirname, "../siimple-icons/siimple-icons.css"),
+                path.resolve(__dirname, "../node_modules/codecake/codecake.css"),
                 "playground.html",
             ],
         }),

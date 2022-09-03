@@ -1,5 +1,5 @@
 import React from "react";
-import {classNames} from "@siimple/styled";
+import {classNames} from "@siimple/react";
 
 export const Button = props => {
     const buttonClass = classNames({

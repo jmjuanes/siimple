@@ -1,19 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import kofi from "kofi";
-import {classNames} from "@siimple/styled";
+import {classNames} from "@siimple/react";
 
-import {Brand} from "./components/Brand.js";
-import {Button} from "./components/Button.js";
-import {FileTab} from "./components/FileTab.js";
-import {Editor} from "./components/Editor.js";
-import {Preview} from "./components/Preview.js";
-import {ShareModal} from "./components/ShareModal.js";
+import {Brand} from "./components/Brand.jsx";
+import {Button} from "./components/Button.jsx";
+import {FileTab} from "./components/FileTab.jsx";
+import {Editor} from "./components/Editor.jsx";
+import {Preview} from "./components/Preview.jsx";
+import {ShareModal} from "./components/ShareModal.jsx";
 
 import {defaultHtml, defaultConfig} from "./defaults.js";
-import {loadPlayground, savePlayground, sharePlayground} from "./actions/playground.js";
-import {compile} from "./actions/worker.js";
 import {useEditor} from "./hooks/useEditor.js";
+import {
+    loadPlayground,
+    savePlayground,
+    sharePlayground,
+} from "./actions/playground.js";
+import {compile} from "./actions/worker.js";
 
 // Update preview hanlder
 const inject = (preview, html, css) => {
