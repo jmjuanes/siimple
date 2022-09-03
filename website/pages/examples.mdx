@@ -1,0 +1,18 @@
+---
+title: Examples
+---
+
+import {Examples} from "../components/Examples.jsx";
+import data from "../data/examples.json";
+
+<div className="has-pt-24-tablet has-pt-12-mobile has-pb-24" align="center">
+    <div className="has-weight-black has-size-9 has-text-dark has-mb-6 has-lh-none">
+        Explore our <span className="has-text-primary">examples</span>.
+    </div>
+    <div className="has-text-dark is-semitransparent has-size-3" style={{maxWidth:"48rem"}}>
+        Get started with <b>siimple</b> using any of our examples 
+        or use parts of them for building your custom layouts and content.
+    </div>
+</div>
+
+<Examples examples={data} />

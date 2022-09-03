@@ -1,0 +1,44 @@
+[
+    {
+        "url": "features.html",
+        "title": "Features",
+        "description": "Useful for explaining the features of your product or service.",
+        "type": "sections"
+    },
+    {
+        "url": "footer.html",
+        "title": "Footer",
+        "description": "Some footer components for ending your website.",
+        "type": "sections"
+    },
+    {
+        "url": "hero.html",
+        "title": "Hero",
+        "description": "Full screen hero components with a call to action for your homepage.",
+        "type": "sections"
+    },
+    {
+        "url": "navbar.html",
+        "title": "Navbar",
+        "description": "Navigation component for displaying links to your site sections.",
+        "type": "sections"
+    },
+    {
+        "url": "pricing.html",
+        "title": "Pricing",
+        "description": "Pricing components for your website.",
+        "type": "sections"
+    },
+    {
+        "url": "sign-in.html",
+        "title": "Sign-in form",
+        "description": "A simple sign-in form for your web application.",
+        "type": "templates"
+    },
+    {
+        "url": "tabs.html",
+        "title": "Tabs",
+        "description": "Examples of tabs components to organize the content of your website.",
+        "type": "sections"
+    }
+]

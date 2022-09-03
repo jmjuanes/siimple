@@ -1,0 +1,163 @@
+---
+title: Minimal and themeable CSS toolkit
+---
+
+import colors from "@siimple/colors";
+import {Section} from "../components/Section.jsx";
+import {Welcome} from "../components/Welcome.jsx";
+
+import features from "../data/features.json";
+import testimonials from "../data/testimonials.json";
+
+
+<Welcome />
+
+<Section title="Fully customizable. Really." link="/configuration">
+    Customize and extend <b>siimple</b> using your configuration from your project, including 
+    colors, fonts, sizes, shadows and more!
+</Section>
+
+<div className="columns has-mb-24">
+<div className="column is-three-fifths-tablet is-full-mobile">
+
+```js title=siimple.config.js
+import colors from "@siimple/colors";
+import base from "@siimple/preset-base";
+
+export default {
+    ...base,
+    colors: {
+        ...base.colors,
+        primary: colors.royal["500"],
+        secondary: colors.mint["500"],
+        text: colors.royal["800"],
+        background: colors.royal["100"],
+        muted: colors.royal["200"],
+    },
+    fonts: {
+        ...base.fonts,
+        heading: ["Nunito", "sans-serif"],
+        code: ["monospace"],
+    },
+    // ...other theme configuration
+};
+```
+
+</div>
+<div className="column is-two-fifths-tablet is-full-mobile">
+    <div className="has-p-8 is-rounded" style={{backgroundColor:colors.royal["100"]}}>
+        <div className="siimple title is-1" style={{color:colors.royal["600"]}}>Hello!</div>
+        <div className="paragraph" style={{color:colors.royal["800"]}}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+        <div className="has-mb-4">
+            <label className="label" style={{color:colors.royal["800"]}}>Input example:</label>
+            <input type="text" className="input" placeholder="Input" style={{backgroundColor:colors.royal["200"]}} />
+        </div>
+        <div className="">
+            <button className="button has-mr-2" style={{backgroundColor:colors.royal["500"]}}>Primary</button>
+            <button className="button" style={{backgroundColor:colors.mint["500"]}}>Secondary</button>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<Section title="Easy to learn. Simple to use." linkText="Examples" link="/examples">
+    Use our official presets for adding essential UI elements, helpers modifiers and icons 
+    for building your next amazing website.
+</Section>
+
+<div className="columns has-mb-24">
+<div className="column is-two-fifths-tablet is-full-mobile">
+    <div className="has-bg-light is-rounded has-pl-4 has-pr-4 has-pt-8 has-pb-8">
+        <div className="has-pl-4 has-pr-4 has-ml-auto has-mr-auto">
+            <div className="card is-shadowed">
+                <div className="title is-3">Sign in</div>
+                <div className="has-mb-4">
+                    <label className="label">Your email</label>
+                    <input type="text" className="input" placeholder="you@email.com" />
+                </div>
+                <div className="has-mb-6">
+                    <label className="label">Your password</label>
+                    <input type="password" className="input" placeholder="Password" />
+                </div>
+                <button className="button is-full">
+                    <i className="si-lock has-pr-1"></i>
+                    <span>Sign in</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div className="column is-three-fifths-tablet is-full-mobile">
+
+```html title=index.html
+<div class="has-pl-4 has-pr-4 has-ml-auto has-mr-auto">
+    <div class="card is-shadowed">
+        <div class="title is-3">Sign in</div>
+        <div class="has-mb-4">
+            <label class="label">Your email</label>
+            <input type="text" class="input" placeholder="you@email.com" />
+        </div>
+        <div class="has-mb-6">
+            <label class="label">Your password</label>
+            <input type="password" class="input" placeholder="Password" />
+        </div>
+        <button class="button is-full">
+            <i class="si-lock has-pr-1"></i>
+            <span>Sign in</span>
+        </button>
+    </div>
+</div>
+```
+
+</div>
+</div>
+
+
+# Features
+
+<div className="has-mb-24">
+    <div className="columns has-mb-none">
+        {features.map((item, index) => (
+            <div key={index} className="column is-full-mobile">
+                <div className="has-mb-6">
+                    <div className="has-text-primary has-bg-highlight is-rounded is-inline-block has-p-3 has-lh-none">
+                        <i className={`${item.icon} has-size-5`} />
+                    </div>
+                </div>
+                <Link to={item.link} className="has-text-dark has-text-primary-hover">
+                    <div className="title is-3">{item.title}</div>
+                </Link>
+                <div className="paragraph has-text-dark is-semitransparent has-mb-none">
+                    {item.content}
+                </div>
+            </div>
+        ))}
+    </div>
+</div>
+
+
+# What people say aboyt siimple?
+
+<Testimonials />
+<div className="columns has-mb-none">
+    {testimonials.map((item, key) => (
+        <div key={key} className="column is-full-mobile">
+            <div style={{"minHeight": "300px"}} className="has-p-8 is-rounded has-bg-light">
+                <div className="has-mb-3 has-text-primary">
+                    <i className="si-quote has-size-8" />
+                </div>
+                <Link to={item.url} target="_blank" className="has-text-dark">
+                    <div className="title is-4">{item.site}</div>
+                </Link>
+                <div className="has-mb-none has-text-dark is-semitransparent">
+                    {item.content}
+                </div>
+            </div>
+        </div>
+    ))}
+</div>

@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Elements",
+        "icon": "si-box",
+        "content": "We provide a collection of essential UI elements that you can customize and reuse across your projects",
+        "link": "/elements"
+    },
+    {
+        "title": "Helpers",
+        "icon": "si-tools",
+        "content": "A collection of utility CSS classes that can be used to change the style of any element.",
+        "link": "/helpers"
+    },
+    {
+        "title": "Colors",
+        "icon": "si-palette",
+        "content": "A flat color palette that you can use for customizing your theme.",
+        "link": "/colors"
+    },
+    {
+        "title": "Icons",
+        "icon": "si-heart",
+        "content": "A collection of hand-crafted and pure CSS icons that can be used in web and mobile projects.",
+        "link": "/icons"
+    }
+]
