@@ -1,6 +1,6 @@
 {
     "name": "siimple-repo",
-    "version": "4.2.3",
+    "version": "4.3.0-dev",
     "private": true,
     "description": "A minimal and themeable CSS toolkit for flat and clean designs.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
@@ -11,21 +11,21 @@
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "workspaces": [
         "packages/*",
-        "website/*"
+        "playground",
+        "website"
     ],
     "scripts": {
         "build": "yarn run build:css && yarn run build:icons",
         "build:css": "gulp css",
         "build:icons": "gulp icons:sprite",
-        "build:landing": "yarn workspace siimple-landing build",
-        "build:docs": "yarn workspace siimple-docs build",
-        "build:playground": "yarn workspace siimple-playground build",
-        "build:website": "yarn build:landing && yarn build:docs && yarn build:playground",
-        "prebuild:website": "rm -rf ./public",
-        "postbuild:website": "cp -R ./website/landing/public ./public && cp -R ./website/docs/public ./public/docs && cp -R ./website/playground/public ./public/playground",
-        "serve": "stattic --folder ./public --port 5000",
-        "serve:landing": "stattic --folder ./website/landing/public --port 5000",
-        "serve:docs": "yarn workspace siimple-docs serve",
+        "build:docs": "cross-env DOCS_ONLY=true yarn workspace siimple-website build",
+        "build:playground": "cross-env PLAYGROUND_ONLY=true yarn workspace siimple-playground build",
+        "build:website": "yarn workspace siimple-website build && yarn workspace siimple-playground build && yarn copy-assets",
+        "copy-assets": "node copy-assets.cjs",
+        "serve": "yarn start:website",
+        "start:website": "stattic --folder ./public --port 5000",
+        "start:docs": "cross-env DOCS_ONLY=true yarn workspace siimple-website serve",
+        "start:playground": "stattic --folder ./playground/public --port 5000",
         "test": "jest"
     },
     "devDependencies": {
@@ -34,10 +34,10 @@
         "@babel/plugin-transform-runtime": "^7.18.10",
         "@babel/preset-env": "^7.18.10",
         "@babel/preset-react": "^7.18.6",
-        "@testing-library/react": "^13.3.0",
         "autoprefixer": "^10.3.5",
         "babel-jest": "^29.0.1",
         "clean-css": "^5.2.4",
+        "cross-env": "^7.0.3",
         "gulp": "^4.0.2",
         "gulp-cli": "^2.3.0",
         "gulp-postcss": "^9.0.1",

@@ -10,28 +10,23 @@
         ],
         "redirects": [
             {
-                "source": "/getting-started",
-                "destination": "/docs/",
-                "type": 301
-            },
-            {
-                "source": "/configuration",
-                "destination": "/docs/configuration",
-                "type": 301
-            },
-            {
-                "source": "/colors",
-                "destination": "/docs/colors",
-                "type": 301
-            },
-            {
-                "source": "/recipes/*",
-                "destination": "/examples",
-                "type": 301
-            },
-            {
                 "source": "/docs/recipes/*",
                 "destination": "/examples",
+                "type": 301
+            },
+            {
+                "source": "/docs/:folder/:file",
+                "destination": "/:folder/:file",
+                "type": 301
+            },
+            {
+                "source": "/docs/:file",
+                "destination": "/:file",
+                "type": 301
+            },
+            {
+                "source": "/docs/",
+                "destination": "/getting-started",
                 "type": 301
             }
         ],
