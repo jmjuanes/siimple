@@ -1,11 +1,13 @@
 import React from "react";
+import Helmet from "react-helmet";
 import {Link} from "gatsby";
-
-import {Seo} from "../components/Seo";
 
 export default () => (
     <React.Fragment>
-        <Seo title="Not found" />
+        <Helmet>
+            <link rel="stylesheet" href="/siimple.css" />
+            <title>Not found · siimple CSS</title>
+        </Helmet>
         <div className="is-flex has-items-center has-justify-center has-w-full has-h-screen">
             <div className="has-p-12 is-rounded has-bg-light" style={{"maxWidth":"600px"}}>
                 {/* Siimple logo */}
