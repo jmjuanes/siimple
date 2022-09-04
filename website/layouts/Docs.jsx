@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from "react-helmet";
 import {Link} from "gatsby";
 import {MDXProvider} from "@mdx-js/react"
 
@@ -10,7 +11,6 @@ import {LiveCode} from "../components/LiveCode.jsx";
 import {Sidebar} from "../components/Sidebar.jsx";
 import {Pagination} from "../components/Pagination.jsx";
 import {Preset} from "../components/Preset.jsx";
-import {Seo} from "../components/Seo.jsx";
 
 import {sidebarItems} from "../sidebar.js";
 
@@ -71,7 +71,9 @@ export default props => {
     const index = getCurrentSidebarIndex(pathname);
     return (
         <React.Fragment>
-            <Seo title={props.pageContext?.frontmatter?.title || props.title || ""} />
+            <Helmet>
+                <title>{props.pageContext?.frontmatter?.title || ""} · siimple CSS</title>
+            </Helmet>
             <Header />
             <div className="container has-pb-10 has-pt-none">
                 <div className="columns has-mb-none">
