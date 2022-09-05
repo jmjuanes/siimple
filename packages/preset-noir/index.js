@@ -23,7 +23,7 @@ export default {
     },
     fonts: {
         ...base.fonts,
-        body: "Rubik, apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif",
+        body: "Rubik, apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
         heading: "'EB Garamond', serif",
     },
     fontWeights: {
@@ -45,11 +45,20 @@ export default {
         ].join(","),
     },
     // Variants
+    badges: {
+        outlined: {
+            apply: "bordered",
+            backgroundColor: colors.white,
+            color: "primary",
+            padding: ["0.125rem", "0.375rem"],
+        },
+    },
     buttons: {
         outlined: {
             apply: "bordered",
             backgroundColor: colors.white,
             color: "primary",
+            padding: ["0.625rem", "1.375rem"],
             "&:hover": {
                 backgroundColor: "primary",
                 color: colors.white,
@@ -76,14 +85,55 @@ export default {
         input: {
             apply: "bordered",
             backgroundColor: colors.white,
+            "&:focus": {
+                borderColor: "primary",
+            },
         },
         select: {
             apply: "bordered",
             backgroundColor: colors.white,
+            "&:focus": {
+                borderColor: "primary",
+            },
         },
         textarea: {
             apply: "bordered",
             backgroundColor: colors.white,
+            "&:focus": {
+                borderColor: "primary",
+            },
+        },
+    },
+    links: {
+        dropdown: {
+            apply: "bordered",
+            backgroundColor: colors.white,
+        },
+        navlink: {
+            color: "primary",
+            "&:hover": {
+                backgroundColor: "highlight",
+                color: colors.white,
+            },
+            "&.is-active": {
+                backgroundColor: "highlight",
+                color: colors.white,
+            },
+        },
+    },
+    styles: {
+        hr: {
+            backgroundColor: "primary",
+        },
+        // Additional helpers
+        ".has-font-rubik": {
+            fontFamily: "body",
+        },
+        ".has-font-garamond": {
+            fontFamily: "heading",
+        },
+        ".is-bordered": {
+            apply: "bordered",
         },
     },
 };
