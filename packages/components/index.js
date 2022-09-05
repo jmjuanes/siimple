@@ -3,8 +3,8 @@ import {useTheme, Box, styled} from "@siimple/react";
 import {elements} from "@siimple/modules/elements.js";
 import {markup} from "@siimple/modules/markup.js";
 
-// Root styles
-export const RootStyles = props => {
+// Base styles
+export const BaseStyles = props => {
     const theme = useTheme();
     return React.createElement(Box, {
         ...props,
