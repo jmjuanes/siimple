@@ -51,15 +51,15 @@ export default {
     // Mixins
     ...Object.fromEntries(["alerts","badges","buttons"].map(name => {
         return [name, {
-            "&.is-danger": {
+            danger: {
                 backgroundColor: "danger",
                 color: "white",
             },
-            "&.is-warning": {
+            warning: {
                 backgroundColor: "warning",
                 color: "white",
             },
-            "&.is-success": {
+            success: {
                 backgroundColor: "success",
                 colors: "white",
             },
