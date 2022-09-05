@@ -225,6 +225,11 @@ export const sidebarItems = [
         label: "preset-ice",
     },
     {
+        group: "presets",
+        url: "/presets/noir",
+        label: "preset-noir",
+    },
+    {
         group: "packages",
         url: "/packages/core",
         label: "@siimple/core",

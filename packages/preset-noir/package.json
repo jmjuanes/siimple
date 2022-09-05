@@ -1,0 +1,26 @@
+{
+    "name": "@siimple/preset-noir",
+    "version": "0.3.0-beta",
+    "description": "An elegant and minimal theme for siimple.",
+    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "type": "module",
+    "license": "MIT",
+    "repository": "https://github.com/jmjuanes/siimple",
+    "bugs": "https://github.com/jmjuanes/siimple/issues",
+    "homepage": "https://www.siimple.xyz/presets/noir",
+    "main": "index.js",
+    "dependencies": {
+        "@siimple/preset-base": "^0.2.3"
+    },
+    "keywords": [
+        "siimple",
+        "preset",
+        "theme",
+        "classic",
+        "elegant"
+    ],
+    "files": [
+        "index.js",
+        "README.md"
+    ]
+}
