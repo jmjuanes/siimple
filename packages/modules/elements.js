@@ -880,6 +880,7 @@ export const elements = {
             apply: "text.heading",
             color: "heading",
             display: "block",
+            fontFamily: "heading",
             fontWeight: "heading",
             lineHeight: "heading",
             marginBottom: "0.5em",
