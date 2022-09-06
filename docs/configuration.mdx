@@ -109,6 +109,34 @@ export default {
 };
 ```
 
+### Color Modes
+
+Color modes makes it easy to change the color mode of your website, including support for **dark and light modes**. Color modes can be configured in the `colorModes` field of your theme configuration:
+
+```js
+import colors from "@siimple/colors";
+
+export default {
+    useColorModes: true,
+    colors: {
+        text: colors.gray["700"],
+        background: "#fff",
+        primary: colors.blue["500"],
+        // ...other colors
+    },
+    colorModes: {
+        dark: {
+            text: "#fff",
+            background: colors.gray["800"],
+        },
+        // ...other color modes
+    },
+    // ...other configuration
+};
+```
+
+Read more about [color modes](/color-modes).
+
 ### Mixins
 
 Mixins allows you to define groups of styles that can be re-used throughout your custom styles. Mixins can be also used to customize built-in elements.
@@ -144,6 +172,8 @@ Use the configuration flags to enable or disable some features of **siimple**:
 
 - `useRootStyles`: add root styles to the `<html>` element. Default is `true`.
 - `useBorderBox`: adds a global `box-sizing: border-box`. Default is `true`.
+- `useCssVariables`: uses CSS variables for some theme scale values (colors and font families). Default is `false`.
+- `useColorModes`: allows to use color modes defined in the `colorModes` field of your configuration. Default is `false`.
 
 Flags are defined in the first level of the configuration object:
 
@@ -151,6 +181,8 @@ Flags are defined in the first level of the configuration object:
 export default {
     useRootStyles: true,
     useBorderBox: true,
+    useCssVariables: false,
+    useColorModes: false,
     // ...other configuration
 };
 ```

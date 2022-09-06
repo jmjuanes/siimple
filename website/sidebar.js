@@ -30,6 +30,11 @@ export const sidebarItems = [
         label: "Colors",
     },
     {
+        group: "customization",
+        url: "/color-modes",
+        label: "Color Modes",
+    },
+    {
         group: "modules",
         url: "/elements",
         label: "Elements",

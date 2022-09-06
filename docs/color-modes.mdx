@@ -1,0 +1,92 @@
+---
+title: Color Modes
+---
+
+# Color Modes
+
+Color modes makes it easy to change the color mode of your website, including support for **dark and light modes**.
+
+## Enable color modes
+
+To enable color mode you should set the `useColorModes` flag to `true` in your theme configuration:
+
+```js
+export default {
+    useColorModes: true,
+    // ...other configuration
+};
+```
+
+## Defining colors
+
+Color modes are configured in the `colorModes` field of your theme configuration. Use the key for the color mode name and a nested object for providing the custom colors for the color mode.
+
+```js
+import colors from "@siimple/colors";
+
+export default {
+    useColorModes: true,
+    colors: {
+        text: colors.gray["700"],
+        background: "#fff",
+        primary: colors.blue["500"],
+        // ...other colors
+    },
+    colorModes: {
+        dark: {
+            text: "#fff",
+            background: colors.gray["800"],
+        },
+        // ...other color modes
+    },
+    // ...other configuration
+};
+```
+
+In the previous example, we are defining a new color mode `dark` that will change the `text` and `background` colors when enabled.
+
+## Manually enable a color mode
+
+Add an attribute `data-color-mode` to the `<html>` tag with the color mode to apply. For example, if you define the `dark` color mode in your configuration file, you can enable it adding a `data-color-mode="dark"` in your `<html>` tag:
+
+```html
+<html data-color-mode="dark">
+    <!-- ... -->
+</html>
+```
+
+You can use JavaScript to change the color mode in runtime:
+
+```js
+const setColorMode = mode => {
+    document.querySelector("html").dataset.colorMode = mode;
+};
+
+// Change the color mode
+setColorMode("dark");
+```
+
+## Enable Dark mode automatically
+
+You can easily enable the dark (or light) color mode automatically based on the user color preference using the `prefers-color-scheme` media.
+
+Note that not all browsers supports the `prefers-color-scheme` media. You can check the browser compatibility there: https://caniuse.com/prefers-color-scheme.
+
+### Using JavaScript
+
+You can use the [`matchMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) function of JavaScript to check if the document matches the `(prefers-color-scheme: dark)` media query and enable the dark color mode based on the user preference.
+
+There is an example using the `setColorMode` function previously created:
+
+```js
+// Use matchMedia to check the user preference
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+// Initially enable dark mode
+setColorMode(prefersDark.matches ? "dark" : "light");
+
+// Add event listener to color mode changes
+perfersDark.addListener(() => {
+    setColorMode(prefersDark.matches ? "dark" : "light");
+});
+```
