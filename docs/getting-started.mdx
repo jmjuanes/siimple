@@ -102,3 +102,42 @@ You can also use [unpkg](https://unpkg.com/) for including the latest version in
 <link rel="stylesheet" href="https://unpkg.com/siimple/siimple.css" />
 ```
 
+### Standalone (experimental)
+
+> **Note**: this is still in experimental mode and API may change at any moment. **Please do not use it in production**.
+
+You can use the `@siimple/standalone` package to build your siimple configuration directly in the browser.
+
+The simplest way to include `@siimple/standalone` in a browser without any other setup is to use **unpkg**:
+
+```html
+<script src="https://unpkg.com/@siimple/standalone/siimple-standalone.js"></script>
+```
+
+You can alternatively add it in your project using **npm** or **yarn**:
+
+```bash
+$ npm install --save @siimple/standalone
+```
+
+After loading the `@siimple/standalone` package in the browser, it will automatically compile the configuration provided in a `<script>` tag with type `text/siimple` and include the output CSS in a `<style>` tag.
+
+```html
+<!-- Load @siimple/standalone -->
+<script src="https://unpkg.com/@siimple/standalone/siimple-standalone.js"></script>
+
+<!-- Your custom configuration there -->
+<script type="text/siimple">
+    export default {
+        // ...your configuration
+    };
+</script>   
+```
+
+You can provide your configuration as an external script:
+
+```html
+<script type="text/siimple" src="theme.js"></script>
+```
+
+Read more about the [standalone package](/packages/standalone).
