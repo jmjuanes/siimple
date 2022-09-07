@@ -1,0 +1,22 @@
+{
+    "name": "@siimple/standalone",
+    "version": "0.3.0-beta",
+    "description": "Generate siimple CSS directly in your browser",
+    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "type": "module",
+    "license": "MIT",
+    "repository": "https://github.com/jmjuanes/siimple",
+    "bugs": "https://github.com/jmjuanes/siimple/issues",
+    "homepage": "https://www.siimple.xyz",
+    "main": "siimple-standalone.js",
+    "keywords": [
+        "siimple",
+        "css",
+        "browser"
+    ],
+    "files": [
+        "index.js",
+        "siimple-standalone.js",
+        "README.md"
+    ]
+}
