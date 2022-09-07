@@ -1,8 +1,8 @@
 # @siimple/standalone
 
-Standalone build of **siimple** for use in browser.
+Standalone build of **siimple** for use directly in browser.
 
-> **Note**: this is an experimental package. API may change at any time.
+> **Note**: this is an experimental package. API may change at any time. **Please do not use it in production**.
 
 ## Installation
 
@@ -61,32 +61,16 @@ Example:
 <script type="text/javascript">
     Siimple.configure({
         cdnUrl: "https://unpkg.com/",
+        preventFlashOfUnstyledContent: true,
     });
 </script>
 ```
 
-### registerModule
+### registerExternal
 
-> Siimple.registerModule(name, obj)
+> Siimple.registerExternal(name, obj)
 
-Registers a new module to resolve in the configuration. The `name` argument is the module name (for example `@siimple/preset-base`) and `obj` is the object that will be returned im the `import` statement.
-
-### disableScriptTag
-
-Disables automatically convert the configuration provided in a `<script>` tag with the `type="text/siimple"` when page is loaded.
-
-Example:
-
-```html
-<!-- Load @siimple/standalone -->
-<script src="https://unpkg.com/@siimple/standalone/siimple-standalone.js"></script>
-
-<!-- Disable automatically generate siimple -->
-<script type="text/javascript">
-    Siimple.disableScriptTag();
-</script>
-``` 
-
+Registers a new external module to resolve in the configuration using the `import` statement. The `name` argument is the module name (for example `@siimple/preset-base`) and `obj` is the object that will be returned im the `import` statement.
 
 ## License
 
