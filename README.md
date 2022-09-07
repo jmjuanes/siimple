@@ -9,8 +9,7 @@
 
 Welcome to the **siimple CSS toolkit** repository :tada: 
 
-- :globe_with_meridians: **Website**: www.siimple.xyz.
-- :books: **Documentation**: read our documentation at https://www.siimple.xyz/docs.
+- :books: **Documentation**: https://www.siimple.xyz.
 - :pencil: **Try siimple**: play with **siimple** in your browser with our [online playground](https://www.siimple.xyz/playground).
 - :pray: **Contributing**: check out our [CONTRIBUTING guide](/CONTRIBUTING.md) to get started.
 - :question: **Questions**: join our [discussion forum](https://github.com/jmjuanes/siimple/discussions).
@@ -41,7 +40,11 @@ Along with `siimple` and `siimple-icons` packages, the packages listed in the ta
 | [@siimple/colors](https://github.com/jmjuanes/siimple/tree/main/packages/colors/) | Color palette for siimple. | :heavy_check_mark: |
 | [@siimple/preset-base](https://github.com/jmjuanes/siimple/tree/main/packages/preset-base/) | Base theme of siimple. | :heavy_check_mark: |
 | [@siimple/preset-ice](https://github.com/jmjuanes/siimple/tree/main/packages/preset-ice/) | A frosty and clean theme for siimple. | :x: |
-| [@siimple/styled](https://github.com/jmjuanes/siimple/tree/main/packages/styled/) | A tiny CSS-in-JS library with the power of the siimple framework. | :x: |
+| [@siimple/preset-noir](https://github.com/jmjuanes/siimple/tree/main/packages/preset-noir/) | A classic and element theme for siimple. | :x: |
+| [@siimple/standalone](https://github.com/jmjuanes/siimple/tree/main/packages/standalone/) | Run **siimple** directly in the browser. | :x: |
+| [@siimple/css](https://github.com/jmjuanes/siimple/tree/main/packages/css/) | Our tiny and agnostic CSS-in-JS library with the power of the siimple framework. | :x: |
+| [@siimple/react](https://github.com/jmjuanes/siimple/tree/main/packages/react/) | Style your React components using **siimple**. | :x: |
+| [@siimple/components](https://github.com/jmjuanes/siimple/tree/main/packages/components/) | A collection of React UI components based on **siimple**. | :x: |
 
 The version of these packages are different from the main `siimple` and `siimple-icons` packages, but follows this convention: the version `4.x.y` of `siimple` equals to version `0.x.y` of all packages published in the `@siimple` organization.
 
@@ -82,6 +85,27 @@ Start the website server with the following command:
 ```bash
 $ yarn run serve
 ```
+
+### Playground
+
+You can build our playground tool as a standalone web application with the following command:
+
+```bash
+$ yarn run build:playground
+```
+
+This will generate a new folder `playground/public` with the code of the playground app. Start the playground web service with the following command:
+
+```bash
+$ yarn run start:playground
+``` 
+
+## Acknowledgements
+
+- CSS naming methodology based on [SMACSS](http://smacss.com).
+- CSS-In-JS engine inspired by [Emotion](https://emotion.sh) and [Stitches](https://stitches.dev).
+- Theme configuration, presets demo and React integration inspired by [Theme UI](https://theme-ui.com) and [System UI](https://system-ui.com).
+- Standalone package inspired by [Babel Standalone](https://babel.dev).
 
 ## License
 
