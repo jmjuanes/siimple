@@ -25,8 +25,8 @@ export const configure = newOptions => {
     Object.assign(globalOptions, newOptions || {});
 };
 
-// Register a new module
-export const registerModule = (moduleName, moduleObj) => {
+// Register a new external module
+export const registerExternal = (moduleName, moduleObj) => {
     modulesCache.set(moduleName, moduleObj);
 };
 
@@ -147,8 +147,8 @@ const onDOMContentLoaded = () => {
     log(` --> Documentation for siimple/standalone is available at ${DOCS_URL}.`);
     log(" --> Please do not use it in production environments.");
     if (globalOptions.preventFlashOfUnstyledContent) {
-        // document.body.style.display = "none";
         getStyleTag(STYLES_INTERNAL).innerHTML = ".__unstyled { display: none; }";
+        document.body.classList.add("__unstyled");
     }
     buildFromScriptTag();
 };
