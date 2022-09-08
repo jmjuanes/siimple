@@ -1,4 +1,4 @@
-import icons from "./icons.js";
+import icons from "@siimple/icons";
 
 // Encode SVG for using in CSS
 // Based on https://bl.ocks.org/jennyknuth/222825e315d45a738ed9d6e04c7a88d0
