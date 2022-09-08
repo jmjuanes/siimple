@@ -1,4 +1,5 @@
 import React from "react";
+import icons from "@siimple/icons";
 import {useTheme, Box, styled} from "@siimple/react";
 import {elements} from "@siimple/modules/elements.js";
 import {markup} from "@siimple/modules/markup.js";
@@ -66,3 +67,31 @@ export const Markup = Object.fromEntries(
         return [key, Component];   
     }),
 );
+
+// Icon component
+export const Icon = props => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={props.width}
+        height={props.height}
+        viewBox="0 0 24 24"
+    >
+        <path
+            d={props.path || icons[props.icon]?.path}
+            fill="none"
+            stroke={props.stroke}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={props.strokeWidth}
+        />
+    </svg>
+);
+
+Icon.defaultProps = {
+    icon: "siimple",
+    height: "1rem",
+    path: null,
+    stroke: "currentColor",
+    strokeWidth: "2",
+    width: "1rem",
+};
