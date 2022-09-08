@@ -260,6 +260,26 @@ export const sidebarItems = [
         label: "@siimple/preset-ice",
     },
     {
+        group: "packages",
+        url: "/packages/preset-noir",
+        label: "@siimple/preset-noir",
+    },
+    {
+        group: "packages",
+        url: "/packages/standalone",
+        label: "@siimple/standalone",
+    },
+    {
+        group: "packages",
+        url: "/packages/icons",
+        label: "@siimple/icons",
+    },
+    {
+        group: "packages",
+        url: "/packages/css",
+        label: "@siimple/css",
+    },
+    {
         group: "guides",
         url: "/guides/styles",
         label: "Styles syntax",
