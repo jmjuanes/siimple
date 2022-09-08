@@ -1,7 +1,7 @@
 {
     "name": "@siimple/preset-noir",
     "version": "0.3.0-beta",
-    "description": "An elegant and minimal theme for siimple.",
+    "description": "An elegant and classic theme for siimple.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
     "license": "MIT",

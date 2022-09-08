@@ -24,7 +24,7 @@ export default {
     fonts: {
         ...base.fonts,
         body: "Rubik, apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
-        heading: "'EB Garamond', serif",
+        heading: "'Spectral', serif",
     },
     fontWeights: {
         body: "400",

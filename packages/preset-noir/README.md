@@ -1,6 +1,6 @@
 # @siimple/preset-noir
 
-An elegand and classic theme for **siimple**.
+An elegant and classic theme for **siimple**.
 
 ## Install
 
@@ -31,11 +31,11 @@ export default {
 };
 ```
 
-This preset uses [`Rubik`](https://fonts.google.com/specimen/Rubik) for body text and [`EB Garamond`](https://fonts.google.com/specimen/EB+Garamond) for headings, so you will need to import both fonts in your HTML file:
+This preset uses [`Rubik`](https://fonts.google.com/specimen/Rubik) for body text and [`Spectral`](https://fonts.google.com/specimen/Spectral) for headings, so you will need to import both fonts in your HTML file:
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;800" rel="stylesheet">
 ```
 
 ## License
