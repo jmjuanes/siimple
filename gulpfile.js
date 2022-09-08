@@ -56,7 +56,7 @@ const generateSvgSprite = () => {
 gulp.task("clean", () => null);
 
 gulp.task("icons:sprite", () => {
-    return gulp.src("siimple-icons/icons.js", {base: "./"})
+    return gulp.src("packages/icons/index.js", {base: "./"})
         .pipe(generateSvgSprite())
         .pipe(rename("siimple-icons.svg"))
         .pipe(gulp.dest("siimple-icons/"));
