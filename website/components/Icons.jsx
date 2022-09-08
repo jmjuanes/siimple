@@ -1,6 +1,6 @@
 import React from "react"
 import {classNames} from "@siimple/react";
-import icons from "siimple-icons/icons.js";
+import icons from "@siimple/icons";
 import {LiveCode} from "./LiveCode.jsx";
 
 // Icons list

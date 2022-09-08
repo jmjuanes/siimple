@@ -8,11 +8,6 @@ const DOCS_ONLY = process.env?.DOCS_ONLY === "true";
 exports.onCreateWebpackConfig = ({plugins, actions}) => {
     return actions.setWebpackConfig({
         devtool: false,
-        resolve: {
-            alias: {
-                "siimple-icons": path.resolve(__dirname, "../siimple-icons/"),
-            },
-        },
         plugins: [
             plugins.define({
                 "process.env.VERSION": JSON.stringify(package.version),
