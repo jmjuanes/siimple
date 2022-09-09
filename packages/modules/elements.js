@@ -110,7 +110,7 @@ export const elements = {
         type: "div",
         displayName: "Card",
         styles: {
-            backgroundColor: "white",
+            // backgroundColor: "white",
             borderRadius: "0.5rem",
             color: "inherit",
             display: "block",
@@ -348,6 +348,7 @@ export const elements = {
             top: "100%",
             left: "0px",
             padding: "1rem",
+            zIndex: "100",
             ".with-dropdown": {
                 position: "relative",
             },
@@ -450,7 +451,7 @@ export const elements = {
         displayName: "Modal",
         styles: {
             apply: "dialogs.modal",
-            backgroundColor: "white",
+            backgroundColor: "background",
             borderRadius: "0.5rem",
             display: "block",
             maxHeight: "90vh",
