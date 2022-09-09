@@ -136,7 +136,7 @@ const CardDemo = () => {
         <div className="columns">
             {["primary", "secondary"].map(key => (
                 <div key={key} className="column is-half is-full-mobile">
-                    <Elements.card className="is-shadowed">
+                    <Elements.card>
                         <div className={`is-rounded has-w-full has-p-12 ${backgrounds[key]}`} align="center">
                             <i className="si-image has-size-9 has-text-white" />
                         </div>
@@ -226,9 +226,7 @@ export const Preset = props => (
                 <link href={fontPath} rel="stylesheet" />
             ))}
         </Helmet>
-        <BaseStyles>
-            {/* Header section */}
-            <Elements.title className="is-1 has-mb-none">{props.name}</Elements.title>
+        <BaseStyles style={{padding: "1.5rem"}}>
             {/* Colors list */}
             <Title>Colors</Title>
             <ColorsDemo />
@@ -280,6 +278,25 @@ export const Preset = props => (
             <Divider />
             <Title>Modals</Title>
             <ModalDemo />
+            <Divider />
+            <Title>Navigation</Title>
+            <div className="is-flex">
+                <Elements.navlink>Default link</Elements.navlink>
+                <Elements.navlink className="is-active">Active link</Elements.navlink>
+                <Elements.navlink className="is-disabled">Disabled link</Elements.navlink>
+            </div>
+            <Divider />
+            <Title>Dropdown</Title>
+            <div>
+                <div className="is-inline-block with-dropdown">
+                    <Elements.button>Dropdown</Elements.button>
+                    <Elements.dropdown>
+                        <Elements.navlink>Dropdown link 1</Elements.navlink>
+                        <Elements.navlink>Dropdown link 2</Elements.navlink>
+                        <Elements.navlink>Dropdown link 3</Elements.navlink>
+                    </Elements.dropdown>
+                </div>
+            </div>
             <Divider />
         </BaseStyles>
     </ThemeProvider>
