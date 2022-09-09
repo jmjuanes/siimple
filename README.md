@@ -39,6 +39,7 @@ Along with `siimple` and `siimple-icons` packages, the packages listed in the ta
 | [@siimple/modules](https://github.com/jmjuanes/siimple/tree/main/packages/modules/) | Core modules of siimple. | :heavy_check_mark: |
 | [@siimple/colors](https://github.com/jmjuanes/siimple/tree/main/packages/colors/) | Color palette for siimple. | :heavy_check_mark: |
 | [@siimple/preset-base](https://github.com/jmjuanes/siimple/tree/main/packages/preset-base/) | Base theme of siimple. | :heavy_check_mark: |
+| [@siimple/preset-dark](https://github.com/jmjuanes/siimple/tree/main/packages/preset-dark/) | Dark theme for siimple. | :x: |
 | [@siimple/preset-ice](https://github.com/jmjuanes/siimple/tree/main/packages/preset-ice/) | A frosty and clean theme for siimple. | :x: |
 | [@siimple/preset-noir](https://github.com/jmjuanes/siimple/tree/main/packages/preset-noir/) | A classic and element theme for siimple. | :x: |
 | [@siimple/standalone](https://github.com/jmjuanes/siimple/tree/main/packages/standalone/) | Run **siimple** directly in the browser. | :x: |
