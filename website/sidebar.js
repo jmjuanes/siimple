@@ -226,6 +226,11 @@ export const sidebarItems = [
     },
     {
         group: "presets",
+        url: "/presets/dark",
+        label: "@siimple/perset-dark",
+    },
+    {
+        group: "presets",
         url: "/presets/ice",
         label: "preset-ice",
     },
