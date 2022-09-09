@@ -1,0 +1,20 @@
+{
+    "name": "@siimple/preset-mustard",
+    "version": "0.2.3",
+    "description": "Base theme preset for the siimple css toolkit",
+    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "type": "module",
+    "license": "MIT",
+    "repository": "https://github.com/jmjuanes/siimple",
+    "bugs": "https://github.com/jmjuanes/siimple/issues",
+    "homepage": "https://www.siimple.xyz/presets/mustard",
+    "main": "index.js",
+    "dependencies": {
+        "@siimple/preset-base": "^0.2.3"
+    },
+    "keywords": [
+        "siimple",
+        "preset",
+        "theme"
+    ]
+}
