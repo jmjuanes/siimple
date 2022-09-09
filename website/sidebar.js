@@ -240,6 +240,11 @@ export const sidebarItems = [
         label: "preset-noir",
     },
     {
+        group: "presets",
+        url: "/presets/mustard",
+        label: "@siimple/perset-mustard",
+    },
+    {
         group: "packages",
         url: "/packages/core",
         label: "@siimple/core",
