@@ -227,7 +227,7 @@ export const sidebarItems = [
     {
         group: "presets",
         url: "/presets/dark",
-        label: "@siimple/perset-dark",
+        label: "@siimple/preset-dark",
     },
     {
         group: "presets",
@@ -242,7 +242,7 @@ export const sidebarItems = [
     {
         group: "presets",
         url: "/presets/mustard",
-        label: "@siimple/perset-mustard",
+        label: "@siimple/preset-mustard",
     },
     {
         group: "packages",
