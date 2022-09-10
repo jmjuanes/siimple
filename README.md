@@ -41,8 +41,8 @@ Along with `siimple` and `siimple-icons` packages, the packages listed in the ta
 | [@siimple/preset-base](https://github.com/jmjuanes/siimple/tree/main/packages/preset-base/) | Base theme of siimple. | :heavy_check_mark: |
 | [@siimple/preset-dark](https://github.com/jmjuanes/siimple/tree/main/packages/preset-dark/) | Dark theme for siimple. | :x: |
 | [@siimple/preset-ice](https://github.com/jmjuanes/siimple/tree/main/packages/preset-ice/) | A frosty and clean theme for siimple. | :x: |
-| [@siimple/preset-noir](https://github.com/jmjuanes/siimple/tree/main/packages/preset-noir/) | A classic and element theme for siimple. | :x: |
-| [@siimple/preset-mustard](https://github.com/jmjuanes/siimple/tree/main/packages/preset-mustard/) | A yellowish and very clean theme for siimple. | :x: |
+| [@siimple/preset-noir](https://github.com/jmjuanes/siimple/tree/main/packages/preset-noir/) | Classic and elegant theme for siimple. | :x: |
+| [@siimple/preset-mustard](https://github.com/jmjuanes/siimple/tree/main/packages/preset-mustard/) | Yellowish and very clean theme preset. | :x: |
 | [@siimple/standalone](https://github.com/jmjuanes/siimple/tree/main/packages/standalone/) | Run **siimple** directly in the browser. | :x: |
 | [@siimple/css](https://github.com/jmjuanes/siimple/tree/main/packages/css/) | Our tiny and agnostic CSS-in-JS library with the power of the siimple framework. | :x: |
 | [@siimple/react](https://github.com/jmjuanes/siimple/tree/main/packages/react/) | Style your React components using **siimple**. | :x: |
