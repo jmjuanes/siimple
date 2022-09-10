@@ -1,7 +1,7 @@
 {
     "name": "@siimple/preset-mustard",
-    "version": "0.2.3",
-    "description": "Base theme preset for the siimple css toolkit",
+    "version": "0.3.0-beta",
+    "description": "A yellowish and clean theme for siimple.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
     "license": "MIT",
@@ -15,6 +15,9 @@
     "keywords": [
         "siimple",
         "preset",
-        "theme"
+        "theme",
+        "mustard",
+        "yellow",
+        "clean"
     ]
 }
