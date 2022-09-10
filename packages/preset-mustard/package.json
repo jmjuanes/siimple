@@ -1,0 +1,23 @@
+{
+    "name": "@siimple/preset-mustard",
+    "version": "0.3.0-beta",
+    "description": "A yellowish and clean theme for siimple.",
+    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "type": "module",
+    "license": "MIT",
+    "repository": "https://github.com/jmjuanes/siimple",
+    "bugs": "https://github.com/jmjuanes/siimple/issues",
+    "homepage": "https://www.siimple.xyz/presets/mustard",
+    "main": "index.js",
+    "dependencies": {
+        "@siimple/preset-base": "^0.2.3"
+    },
+    "keywords": [
+        "siimple",
+        "preset",
+        "theme",
+        "mustard",
+        "yellow",
+        "clean"
+    ]
+}
