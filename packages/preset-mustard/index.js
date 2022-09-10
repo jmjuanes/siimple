@@ -1,18 +1,26 @@
 import base from "@siimple/preset-base";
 
 export const colors = {
-    primary: "#f8ad15",
-    secondary: "#041f32",
+    primary: "#041f32",
+    secondary: "#f8ad15",
     highlight: "#fbe27c",
-    muted: "#f1f6fa",
+    muted: "#f8f8fa",
+    gray: "#757789",
 };
 
 export default {
     ...base,
+    // Preset meta information
+    meta: {
+        name: "mustard",
+        fonts: [
+            "https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap",
+        ],
+    },
     colors: {
         ...colors,
-        text: colors.secondary,
-        heading: colors.secondary,
+        text: colors.primary,
+        heading: colors.primary,
         background: "#fff",
     },
     fonts: {
@@ -20,11 +28,19 @@ export default {
         body: "'Inter', sans-serif",
         heading: "inherit",
     },
+    // Mixins
     bordered: {
-        borderColor: "secondary",
+        borderColor: "primary",
         borderStyle: "solid",
         borderWidth: "0.125rem",
     },
+    shadowed: {
+        boxShadow: [
+            "0rem 1rem 1rem -0.5rem rgba(54,63,79,0.25)",
+            "0 0 0 1px rgba(54,63,79,0.02)",
+        ].join(","),
+    },
+    // Variants
     alerts: {
         light: {
             backgroundColor: "highlight",
@@ -54,7 +70,7 @@ export default {
             color: "text",
             padding: ["0.625rem", "1.375rem"],
             "&:hover": {
-                backgroundColor: "secondary",
+                backgroundColor: "primary",
                 color: "white",
             },
         },
@@ -64,11 +80,21 @@ export default {
             apply: "bordered",
         },
     },
-    // links: {
-    //     nav: {
-    //         "&:hover": {
-    //             backgroundColor: "highlight",
-    //         },
-    //     },
-    // },
+    dialogs: {
+        modal: {
+            apply: "bordered",
+        },
+    },
+    links: {
+        nav: {
+            "&:hover": {
+                backgroundColor: "highlight",
+            },
+        },
+    },
+    styles: {
+        ".has-font-inter": {
+            fontFamily: "body",
+        },
+    },
 };
