@@ -3,6 +3,10 @@ import base from "@siimple/preset-base";
 
 export default {
     ...base,
+    meta: {
+        name: "dark",
+        fonts: [],
+    },
     colors: {
         primary: colors.blue["500"],
         secondary: colors.royal["500"],

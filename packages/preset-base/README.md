@@ -28,7 +28,3 @@ export default {
     // ...other configuration
 };
 ```
-
-## License
-
-[MIT License](https://github.com/jmjuanes/siimple/blob/main/LICENSE).
