@@ -261,21 +261,6 @@ export const sidebarItems = [
     },
     {
         group: "packages",
-        url: "/packages/preset-base",
-        label: "@siimple/preset-base",
-    },
-    {
-        group: "packages",
-        url: "/packages/preset-ice",
-        label: "@siimple/preset-ice",
-    },
-    {
-        group: "packages",
-        url: "/packages/preset-noir",
-        label: "@siimple/preset-noir",
-    },
-    {
-        group: "packages",
         url: "/packages/standalone",
         label: "@siimple/standalone",
     },
