@@ -2,17 +2,13 @@
 
 An elegant and classic theme for **siimple**.
 
-## Install
+## Installation
 
 Install this package using **npm**:
 
 ```bash
 $ npm install --save @siimple/preset-noir
 ```
-
-## Demo
-
-See the demo page at https://www.siimple.xyz/presets/noir.
 
 ## Usage
 
@@ -31,13 +27,20 @@ export default {
 };
 ```
 
-This preset uses [`Rubik`](https://fonts.google.com/specimen/Rubik) for body text and [`Spectral`](https://fonts.google.com/specimen/Spectral) for headings, so you will need to import both fonts in your HTML file:
+This preset uses [`Noto Serif`](https://fonts.google.com/specimen/Noto+Serif) for body text and for headings, so you will need to import this font in your HTML file:
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700" rel="stylesheet">
 ```
 
-## License
+## Additional variants
 
-[MIT License](https://github.com/jmjuanes/siimple/blob/main/LICENSE).
+This preset introduces additional variants for some elements. You can use the `outlined` variant to create an outlined button or badge:
+
+```html
+<!-- Outlined button -->
+<button class="button is-outlined">Outlined button</button>
+
+<!-- Outlined badge -->
+<span class="badge is-outlined">Outlined badge</span>
+```

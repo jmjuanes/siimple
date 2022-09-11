@@ -11,6 +11,12 @@ export const colors = {
 
 export default {
     ...base,
+    meta: {
+        name: "noir",
+        fonts: [
+            "https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700",
+        ],
+    },
     // Scales
     colors: {
         primary: colors.primary,
@@ -23,13 +29,13 @@ export default {
     },
     fonts: {
         ...base.fonts,
-        body: "Rubik, apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
-        heading: "'Spectral', serif",
+        body: "'Noto Serif', serif",
+        heading: "inherit",
     },
     fontWeights: {
         body: "400",
         bold: "700",
-        heading: "800",
+        heading: "700",
     },
     // Mixins
     bordered: {
@@ -48,7 +54,7 @@ export default {
     badges: {
         outlined: {
             apply: "bordered",
-            backgroundColor: colors.white,
+            backgroundColor: "background",
             color: "primary",
             padding: ["0.125rem", "0.375rem"],
         },
@@ -56,7 +62,7 @@ export default {
     buttons: {
         outlined: {
             apply: "bordered",
-            backgroundColor: colors.white,
+            backgroundColor: "background",
             color: "primary",
             padding: ["0.625rem", "1.375rem"],
             "&:hover": {
@@ -68,14 +74,14 @@ export default {
     cards: {
         default: {
             apply: "bordered",
-            backgroundColor: colors.white,
+            // backgroundColor: colors.white,
             boxShadow: ["none", "!important"],
         },
     },
     dialogs: {
         modal: {
             apply: "bordered",
-            backgroundColor: colors.white,
+            // backgroundColor: colors.white,
         },
         scrim: {
             backdropFilter: "blur(2px)",
@@ -84,21 +90,21 @@ export default {
     forms: {
         input: {
             apply: "bordered",
-            backgroundColor: colors.white,
+            backgroundColor: "background",
             "&:focus": {
                 borderColor: "primary",
             },
         },
         select: {
             apply: "bordered",
-            backgroundColor: colors.white,
+            backgroundColor: "background",
             "&:focus": {
                 borderColor: "primary",
             },
         },
         textarea: {
             apply: "bordered",
-            backgroundColor: colors.white,
+            backgroundColor: "background",
             "&:focus": {
                 borderColor: "primary",
             },
@@ -107,18 +113,17 @@ export default {
     links: {
         dropdown: {
             apply: "bordered",
-            backgroundColor: colors.white,
+            backgroundColor: "background",
         },
-        navlink: {
+        nav: {
             color: "primary",
             "&:hover": {
-                backgroundColor: "highlight",
-                color: colors.white,
+                backgroundColor: "muted",
             },
-            "&.is-active": {
-                backgroundColor: "highlight",
-                color: colors.white,
-            },
+            // "&.is-active": {
+            //     backgroundColor: "highlight",
+            //     color: colors.white,
+            // },
         },
     },
     styles: {
@@ -126,12 +131,6 @@ export default {
             backgroundColor: "primary",
         },
         // Additional helpers
-        ".has-font-rubik": {
-            fontFamily: "body",
-        },
-        ".has-font-garamond": {
-            fontFamily: "heading",
-        },
         ".is-bordered": {
             apply: "bordered",
         },
