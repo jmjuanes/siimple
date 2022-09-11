@@ -68,9 +68,23 @@ setColorMode("dark");
 
 ## Enable Dark mode automatically
 
-You can easily enable the dark (or light) color mode automatically based on the user color preference using the `prefers-color-scheme` media.
+You can easily enable the dark (or light) color mode automatically based on the user color preference using the `prefers-color-scheme` [media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme).
 
 Note that not all browsers supports the `prefers-color-scheme` media. You can check the browser compatibility there: https://caniuse.com/prefers-color-scheme.
+
+### Using the useColorModesMediaQuery flag
+
+We alsp provide an additional flag called `useColorModesMediaQuery` to automatically use the `prefers-color-scheme` media query to enable the color mode based on the user configuration. 
+
+Just set to `true` the `useColorModesMediaQuery` in your configuration file (note that the `useColorModes` flag **is also required**):
+
+```js
+export default {
+    useColorModes: true, // Required!!!
+    useColorModesMediaQuery: true,
+    // ...other configuration
+};
+```
 
 ### Using JavaScript
 
