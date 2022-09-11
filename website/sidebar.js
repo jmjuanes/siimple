@@ -222,7 +222,7 @@ export const sidebarItems = [
     {
         group: "presets",
         url: "/presets/base",
-        label: "perset-base",
+        label: "@siimple/preset-base",
     },
     {
         group: "presets",
@@ -232,12 +232,12 @@ export const sidebarItems = [
     {
         group: "presets",
         url: "/presets/ice",
-        label: "preset-ice",
+        label: "@siimple/preset-ice",
     },
     {
         group: "presets",
         url: "/presets/noir",
-        label: "preset-noir",
+        label: "@siimple/preset-noir",
     },
     {
         group: "presets",
@@ -253,6 +253,11 @@ export const sidebarItems = [
         group: "packages",
         url: "/packages/modules",
         label: "@siimple/modules",
+    },
+    {
+        group: "packages",
+        url: "/packages/presets",
+        label: "@siimple/presets",
     },
     {
         group: "packages",
