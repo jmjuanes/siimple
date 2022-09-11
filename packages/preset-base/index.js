@@ -60,6 +60,10 @@ export const space = {
 };
 
 export default {
+    meta: {
+        name: "base",
+        fonts: [],
+    },
     breakpoints: {
         mobile: {
             max: screens.tablet,

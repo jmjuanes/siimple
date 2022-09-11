@@ -31,6 +31,12 @@ export const baseColors = {
 
 export default {
     ...base,
+    meta: {
+        name: "ice",
+        fonts: [
+            "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap",
+        ],
+    },
     colors: {
         primary: baseColors.frost[3],
         secondary: baseColors.aurora[4],
