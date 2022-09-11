@@ -1,0 +1,28 @@
+{
+    "name": "@siimple/presets",
+    "version": "0.3.0-beta",
+    "description": "A collection of presets for siimple.",
+    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "type": "module",
+    "license": "MIT",
+    "repository": "https://github.com/jmjuanes/siimple",
+    "bugs": "https://github.com/jmjuanes/siimple/issues",
+    "homepage": "https://www.siimple.xyz",
+    "main": "index.js",
+    "dependencies": {
+        "@siimple/preset-base": "^0.2.3",
+        "@siimple/preset-dark": "^0.3.0-beta",
+        "@siimple/preset-ice": "^0.2.3",
+        "@siimple/preset-mustard": "^0.3.0-beta",
+        "@siimple/preset-noir": "^0.3.0-beta"
+    },
+    "keywords": [
+        "siimple",
+        "presets",
+        "theme"
+    ],
+    "files": [
+        "index.js",
+        "README.md"
+    ]
+}
