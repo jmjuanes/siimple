@@ -184,5 +184,26 @@ describe("buildColorModes", () => {
         expect(css[0]).toBe(`html[data-color-mode="dark"] {--siimple-color-primary:black;--siimple-color-secondary:white;}`);
         expect(css[1]).toBe(`html[data-color-mode="light"] {--siimple-color-primary:white;--siimple-color-secondary:black;}`);
     });
+
+    it("should use the prefers-color-scheme media query when enabled", () => {
+        const config = {
+            useColorModes: true,
+            useColorModesMediaQuery: true,
+            colorModes: {
+                dark: {
+                    primary: "black",
+                    secondary: "white",
+                },
+                light: {
+                    primary: "white",
+                    secondary: "black",
+                },
+            },
+        };
+        const css = buildColorModes(config).split("\n");
+        expect(css).toHaveLength(2);
+        expect(css[0]).toBe(`@media (prefers-color-scheme: dark) {:root {--siimple-color-primary:black;--siimple-color-secondary:white;}}`);
+        expect(css[1]).toBe(`@media (prefers-color-scheme: light) {:root {--siimple-color-primary:white;--siimple-color-secondary:black;}}`);
+    });
 });
 

@@ -174,6 +174,7 @@ Use the configuration flags to enable or disable some features of **siimple**:
 - `useBorderBox`: adds a global `box-sizing: border-box`. Default is `true`.
 - `useCssVariables`: uses CSS variables for some theme scale values (colors and font families). Default is `false`.
 - `useColorModes`: allows to use color modes defined in the `colorModes` field of your configuration. Default is `false`.
+- `useColorModesMediaQuery`: allows to use the `prefers-color-scheme` media query to set the color mode to apply. Note that `useColorModes` flag should be also enabled. Default is `false`.
 
 Flags are defined in the first level of the configuration object:
 
@@ -183,6 +184,7 @@ export default {
     useBorderBox: true,
     useCssVariables: false,
     useColorModes: false,
+    useColorModesMediaQuery: false,
     // ...other configuration
 };
 ```

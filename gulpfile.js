@@ -1,7 +1,7 @@
-import path from "path";
-import autoprefixer from "autoprefixer";
+// import path from "path";
+// import autoprefixer from "autoprefixer";
 import gulp from "gulp";
-import postcss from "gulp-postcss";
+// import postcss from "gulp-postcss";
 import rename from "gulp-rename";
 import CleanCSS from "clean-css";
 import through from "through2";
@@ -65,7 +65,7 @@ gulp.task("icons:sprite", () => {
 gulp.task("css", () => {
     return gulp.src("siimple*/siimple.config.js", {base: "./"})
         .pipe(siimple())
-        .pipe(postcss([autoprefixer()]))
+        // .pipe(postcss([autoprefixer()]))
         .pipe(minify({
             "compatibility": "*",
             "level": 2,
