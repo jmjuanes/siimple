@@ -328,9 +328,14 @@ export const buildVariables = config => {
 // Build color modes
 export const buildColorModes = config => {
     const result = Object.keys(config.colorModes || {}).map(name => {
-        const selector = `html[data-color-mode="${name}"]`;
         const variables = buildCssVariables(cssVariablesNames["colors"], config.colorModes[name]);
-        return wrapRule(selector, variables.join(""), "");
+        // Use the prefers-color-scheme media query instead
+        if (config.useColorModesMediaQuery && (name === "light" || name === "dark")) {
+            const rootVariables = wrapRule(":root", variables.join(""), "");
+            return wrapRule(`@media (prefers-color-scheme: ${name})`, rootVariables);
+        }
+        // Default selector
+        return wrapRule(`html[data-color-mode="${name}"]`, variables.join(""), "");
     });
     return result.filter(item => !!item).join("\n");
 };
