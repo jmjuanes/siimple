@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import {ThemeProvider, useTheme, useCss} from "@siimple/react";
 import {BaseStyles, Elements} from "@siimple/components";
+import * as presets from "@siimple/presets";
 
 const tableData = {
     header: ["Rank", "Name", "Team", "Total Points"],
@@ -220,10 +221,10 @@ const ModalDemo = () => {
 
 // preset data is in props.pageContext
 export const Preset = props => (
-    <ThemeProvider theme={props.theme}>
+    <ThemeProvider theme={presets[props.preset]}>
         <Helmet>
-            {(props.fonts || []).map(fontPath => (
-                <link href={fontPath} rel="stylesheet" />
+            {(presets[props.preset]?.meta?.fonts || []).map(font => (
+                <link href={font} rel="stylesheet" />
             ))}
         </Helmet>
         <BaseStyles style={{padding: "1.5rem"}}>
