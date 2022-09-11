@@ -1,7 +1,7 @@
 {
     "name": "@siimple/icons",
     "version": "0.3.0-beta",
-    "description": "Scalable vector icons",
+    "description": "Siimple icons in JSON format.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
     "license": "MIT",

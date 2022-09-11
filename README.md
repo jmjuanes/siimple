@@ -48,6 +48,7 @@ Along with `siimple` and `siimple-icons` packages, the packages listed in the ta
 | [@siimple/css](https://github.com/jmjuanes/siimple/tree/main/packages/css/) | Our tiny and agnostic CSS-in-JS library with the power of the siimple framework. | :x: |
 | [@siimple/react](https://github.com/jmjuanes/siimple/tree/main/packages/react/) | Style your React components using **siimple**. | :x: |
 | [@siimple/components](https://github.com/jmjuanes/siimple/tree/main/packages/components/) | A collection of React UI components based on **siimple**. | :x: |
+| [@siimple/icons](https://github.com/jmjuanes/siimple/tree/main/packages/icons/) | Siimple icons in JSON format. | :x: |
 
 The version of these packages are different from the main `siimple` and `siimple-icons` packages, but follows this convention: the version `4.x.y` of `siimple` equals to version `0.x.y` of all packages published in the `@siimple` organization.
 
