@@ -1,7 +1,6 @@
-// import path from "path";
-// import autoprefixer from "autoprefixer";
+import autoprefixer from "autoprefixer";
 import gulp from "gulp";
-// import postcss from "gulp-postcss";
+import postcss from "gulp-postcss";
 import rename from "gulp-rename";
 import CleanCSS from "clean-css";
 import through from "through2";
@@ -12,14 +11,11 @@ import {injectModules} from "@siimple/modules";
 // Build Siimple
 const siimple = () => {
     return through.obj((file, enc, callback) => {
-        import(file.path)
-            .then(rawConfig => {
-                return css(injectModules(rawConfig.default));
-            })
-            .then(result => {
-                file.contents = new Buffer.from(result);
-                return callback(null, file);
-            });
+        import(file.path).then(rawConfig => {
+            const result = css(injectModules(rawConfig.default));
+            file.contents = new Buffer.from(result);
+            callback(null, file);
+        });
     });
 };
 
@@ -65,7 +61,7 @@ gulp.task("icons:sprite", () => {
 gulp.task("css", () => {
     return gulp.src("siimple*/siimple.config.js", {base: "./"})
         .pipe(siimple())
-        // .pipe(postcss([autoprefixer()]))
+        .pipe(postcss([autoprefixer()]))
         .pipe(minify({
             "compatibility": "*",
             "level": 2,
