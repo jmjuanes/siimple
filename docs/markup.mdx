@@ -2,10 +2,9 @@
 title: Markup
 ---
 
-
 # Markup
 
-this module provides base classes for styling markup elements like `<h1>`, `<blockquote>` or `<p>`.
+this module provides base classes for styling common markup elements like `<h1>`, `<blockquote>` or `<p>`.
 
 ### Disable markup module
 
@@ -20,11 +19,28 @@ export default {
 };
 ```
 
-### Usage
+### Customize markup elements
+
+Use the `styles` field of your theme configuration to style markup elements. As an example, you can customize link elements (`<a>`) just adding your custom styles in the `styles.a` section of your configuration:
+
+```js title=siimple.config.js
+export default {
+    // ...other configuration
+    styles: {
+        a: {
+            color: "secondary",
+            textDecoration: "underline",
+        },
+        // ...other styles
+    },
+};
+```
+
+### Using markup styles
 
 #### Headings
 
-This module includes styles for your heading elements, from `<h1>` through `<h6>`. Headings will reuse styles defined in the `text.heading` field of your theme configuration.
+This module includes styles for your heading tags, from `<h1>` through `<h6>`.
 
 ```html live=true
 <h1>h1. Siimple heading</h1>
@@ -35,9 +51,30 @@ This module includes styles for your heading elements, from `<h1>` through `<h6>
 <h6>h6. Siimple heading</h6>
 ```
 
+Headings can be customized using `styles.h1` through `styles.h6`. You can customize all the common properties of the headings using the `text.heading` field of your theme configuration:
+
+```js title=siimple.config.js
+export default {
+    // ...other configuration
+    text: {
+        // The following styles will be applied to all heading tags,
+        // from <h1> through <h6>
+        heading: {
+            marginBottom: "2rem",
+        },
+    },
+    styles: {
+        // Customize individual heading tags
+        h1: {
+            marginTop: "0px",
+        },
+    },
+}
+```
+
 #### Paragraph
 
-This module includes styles for your `<p>` elements. Paragraphs will reuse styles defined in the `text.paragraph` field of your theme configuration.
+This module includes styles for your paragraph tags (`<p>`):
 
 ```html live=true
 <p class="has-mb-none">
@@ -46,9 +83,22 @@ This module includes styles for your `<p>` elements. Paragraphs will reuse style
 </p>
 ```
 
+Paragraphs can be customized using the `styles.p` field of your theme configuration: 
+
+```js title="siimple.config.js"
+export default {
+    // ...other configuration
+    styles: {
+        p: {
+            marginBottom: "1.5rem",
+        },
+    },
+};
+```
+
 #### Blockquotes
 
-This module includes styles for your `<blockquote>` elements:
+This module includes styles for your quote tags (`<blockquote>`):
 
 ```html live=true
 <blockquote>
@@ -57,35 +107,136 @@ This module includes styles for your `<blockquote>` elements:
 </blockquote>
 ```
 
+Blockquotes can be customized using the `styles.blockquote` field of your theme configuration:
+
+```js title="siimple.config.js"
+export default {
+    // ...other configuration
+    styles: {
+        blockquote: {
+            marginBottom: "1.5rem",
+        },
+    },
+};
+```
+
 #### Inline links
 
-This module includes styles for your inline links elements. Links will reuse styles defined in the `text.link` field of your theme configuration.
+This module includes styles for your inline link tags (`<a>`).
 
 ```html live=true
 You can style your <a href="">link</a> elements.
 ``` 
 
+Inline links can be customized using the `styles.a` field of your theme configuration:
+
+```js title="siimple.config.js"
+export default {
+    // ...other configuration
+    styles: {
+        a: {
+            color: "primary",
+            textTransform: "underline",
+        },
+        // ...other styles
+    },
+};
+```
+
 #### Small text
 
-This module adds styles for your `<small>` elements, and reuse styles defined in the `text.small` field of your theme configuration.
+This module adds styles for your `<small>` tags:
 
 ```html live=true
 You can style your <small>small text</small> elements.
 ```
 
+Small text tags can be customized using the `styles.small` field of your theme configuration:
+
+```js title="siimple.config.js"
+export default {
+    // ...other configuration
+    styles: {
+        small: {
+            color: "muted",
+            fontSize: "0",
+        },
+        // ...other styles
+    },
+};
+```
+
 #### Inline code
 
-This module includes styles for your inline code elements, and will reuse styles defined in the `text.code` field of your theme configuration.
+This module includes styles for your inline code tags (`<code>`):
 
 ```html live=true
 You can style your <code>inline code</code> elements.
 ```
 
+Inline code tags can be customized using the `styles.code` field of your theme configuration: 
+
+```js title="siimple.config.js"
+export default {
+    // ...other configuration
+    styles: {
+        code: {
+            color: "secondary",
+        },
+        // ...other styles
+    },
+};
+```
+
 #### Horizontal rule
 
-This module includes styles for your `<hr>` elements: 
+This module includes styles for your horizontal rule tags (`<hr>`): 
 
-```html
+```html live=true
 <hr>
 ```
 
+Horizontal rule tags can be customized using the `styles.hr` field of your theme configuration: 
+
+```js title="siimple.config.js"
+export default {
+    // ...other configuration
+    styles: {
+        hr: {
+            marginBottom: "1rem",
+            marginTop: "1rem",
+        },
+    },
+};
+```
+
+#### Tables
+
+This module includes styles for your table tags (`<table>`) and all of its child tags (`<tr>`, `<td>`, `<th>`, `<thead>` and `<tbody>`).
+
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Cell 1   | Cell 2   | Cell 3   |
+| Cell 4   | Cell 5   | Cell 6   |
+
+```html
+<table>
+    ...
+</table>
+```
+
+Table tags and its child subtags can be customized using the `styles.table` field of your theme configuration.
+
+```js title=siimple.config.js
+export default {
+    styles: {
+        table: {
+            "& th, & td": {
+                backgroundColor: "white",
+                padding: "1rem",
+            },
+        },
+    },
+    // ...other configuration
+};
+```
