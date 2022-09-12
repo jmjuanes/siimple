@@ -84,6 +84,9 @@ export default {
         modal: {
             apply: "bordered",
         },
+        scrim: {
+            backdropFilter: "blur(2px)",
+        },
     },
     links: {
         nav: {
