@@ -28,7 +28,7 @@ exports[`Icon should render 1`] = `
 
 exports[`Markup should render 1`] = `
 <h1
-  className="sii-1986486495"
+  className="sii-1440198707"
 >
   Hello world
 </h1>
