@@ -75,8 +75,8 @@ export default {
             },
         },
     },
-    cards: {
-        default: {
+    layout: {
+        card: {
             apply: "bordered",
         },
     },
