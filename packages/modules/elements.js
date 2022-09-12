@@ -117,10 +117,10 @@ export const elements = {
             padding: "2rem",
             textDecoration: ["none", "!important"],
             width: "100%",
-            apply: "cards.default",
+            apply: "layout.card",
         },
-        variants: "cards",
-        defaultVariants: {},
+        // variants: "cards",
+        // defaultVariants: {},
     },
     checkbox: {
         type: "input",
