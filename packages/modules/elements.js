@@ -216,7 +216,7 @@ export const elements = {
         type: "div",
         displayName: "Column",
         styles: {
-            apply: "layout.column",
+            apply: "columns.default",
             flex: "1",
             minHeight: "0",
             padding: "1rem",
@@ -235,12 +235,14 @@ export const elements = {
                 return [`&.is-${column}`, styles];
             })),
         },
+        variants: "columns",
+        defaultVariants: {},
     },
     columns: {
         type: "div",
         displayName: "Columns",
         styles: {
-            apply: "layout.columns",
+            // apply: "layout.columns",
             display: "flex",
             flexWrap: "wrap",
             marginLeft: "-1rem",
@@ -307,7 +309,7 @@ export const elements = {
         type: "div",
         displayName: "Crumbs",
         styles: {
-            apply: "links.crumbs",
+            // apply: "links.crumbs",
             borderRadius: "default",
             display: "flex",
             flexWrap: "nowrap",
@@ -316,24 +318,6 @@ export const elements = {
             overflowX: "auto",
             padding: "0.5rem",
             whiteSpace: ["nowrap", "!important"],
-        },
-    },
-    divider: {
-        type: "div",
-        displayName: "Divider",
-        styles: {
-            apply: "styles.hr",
-            backgroundColor: "muted",
-            border: "0px",
-            display: "block",
-            height: "0.125rem",
-            padding: "0px",
-            "&:not(:first-child)": {
-                marginTop: "1rem",
-            },
-            "&:not(:last-child)": {
-                marginBottom: "1rem",
-            },
         },
     },
     dropdown: {
@@ -486,20 +470,6 @@ export const elements = {
             "&.is-disabled": {
                 opacity: "0.5",
                 pointerEvents: "none",
-            },
-        },
-    },
-    paragraph: {
-        type: "p",
-        displayName: "Paragraph",
-        styles: {
-            apply: "text.paragraph",
-            display: "block",
-            marginBottom: "1rem",
-            marginTop: "0px",
-            "&.is-lead": {
-                fontSize: "2",
-                fontWeight: "bold",
             },
         },
     },
@@ -764,6 +734,70 @@ export const elements = {
             },
         },
     },
+    textarea: {
+        type: "textarea",
+        displayName: "Textarea",
+        styles: {
+            apply: "forms.textarea",
+            backgroundColor: "muted",
+            borderColor: "transparent",
+            borderStyle: "solid",
+            borderWidth: "0.125rem",
+            borderRadius: "0.5rem",
+            boxSizing: "border-box",
+            color: "inherit",
+            display: "block",
+            fontFamily: "inherit",
+            fontSize: "inherit",
+            lineHeight: "inherit",
+            margin: "0px",
+            minWidth: "0px",
+            outline: "0px",
+            padding: ["0.625rem", "1rem"],
+            resize: "vertical",
+            // verticalAlign: "top",
+            width: "100%",
+            "&:focus": {
+                borderColor: "primary",
+            },
+        },
+    },
+    // 
+    // DEPRECATED ELEMENTS: TO BE REMOVED IN THE NEXT MAJOR RELEASE
+    // USE MARKUP ELEMENTS INSTEAD
+    //
+    divider: {
+        type: "div",
+        displayName: "Divider",
+        styles: {
+            apply: "styles.hr",
+            backgroundColor: "muted",
+            border: "0px",
+            display: "block",
+            height: "0.125rem",
+            padding: "0px",
+            "&:not(:first-child)": {
+                marginTop: "1rem",
+            },
+            "&:not(:last-child)": {
+                marginBottom: "1rem",
+            },
+        },
+    },
+    paragraph: {
+        type: "p",
+        displayName: "Paragraph",
+        styles: {
+            apply: "text.paragraph",
+            display: "block",
+            marginBottom: "1rem",
+            marginTop: "0px",
+            "&.is-lead": {
+                fontSize: "2",
+                fontWeight: "bold",
+            },
+        },
+    },
     table: {
         type: "table",
         displayName: "Table",
@@ -804,18 +838,6 @@ export const elements = {
             "& tbody td": {
                 verticalAlign: "top",
             },
-            "& thead tr:first-child th:first-child": {
-                borderTopLeftRadius: "0.5rem",
-            },
-            "& thead tr:first-child th:last-child": {
-                borderTopRightRadius: "0.5rem",
-            },
-            "& tbody tr:last-child td:first-child": {
-               borderBottomLeftRadius: "0.5rem",
-            },
-            "& tbody tr:last-child td:last-child": {
-               borderBottomRightRadius: "0.5rem",
-            },
             "&.is-divided": {
                 "& thead th": {
                     borderBottomColor: "muted",
@@ -843,34 +865,6 @@ export const elements = {
             },
             "&.is-fixed": {
                 tableLayout: "fixed",
-            },
-        },
-    },
-    textarea: {
-        type: "textarea",
-        displayName: "Textarea",
-        styles: {
-            apply: "forms.textarea",
-            backgroundColor: "muted",
-            borderColor: "transparent",
-            borderStyle: "solid",
-            borderWidth: "0.125rem",
-            borderRadius: "0.5rem",
-            boxSizing: "border-box",
-            color: "inherit",
-            display: "block",
-            fontFamily: "inherit",
-            fontSize: "inherit",
-            lineHeight: "inherit",
-            margin: "0px",
-            minWidth: "0px",
-            outline: "0px",
-            padding: ["0.625rem", "1rem"],
-            resize: "vertical",
-            // verticalAlign: "top",
-            width: "100%",
-            "&:focus": {
-                borderColor: "primary",
             },
         },
     },
