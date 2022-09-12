@@ -216,7 +216,7 @@ export const elements = {
         type: "div",
         displayName: "Column",
         styles: {
-            apply: "columns.default",
+            apply: "layout.column",
             flex: "1",
             minHeight: "0",
             padding: "1rem",
@@ -235,14 +235,12 @@ export const elements = {
                 return [`&.is-${column}`, styles];
             })),
         },
-        variants: "columns",
-        defaultVariants: {},
     },
     columns: {
         type: "div",
         displayName: "Columns",
         styles: {
-            // apply: "layout.columns",
+            apply: "layout.columns",
             display: "flex",
             flexWrap: "wrap",
             marginLeft: "-1rem",
