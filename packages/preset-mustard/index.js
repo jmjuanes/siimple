@@ -75,14 +75,17 @@ export default {
             },
         },
     },
-    cards: {
-        default: {
+    layout: {
+        card: {
             apply: "bordered",
         },
     },
     dialogs: {
         modal: {
             apply: "bordered",
+        },
+        scrim: {
+            backdropFilter: "blur(2px)",
         },
     },
     links: {

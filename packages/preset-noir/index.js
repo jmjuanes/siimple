@@ -71,8 +71,8 @@ export default {
             },
         },
     },
-    cards: {
-        default: {
+    layout: {
+        card: {
             apply: "bordered",
             // backgroundColor: colors.white,
             boxShadow: ["none", "!important"],

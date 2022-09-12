@@ -61,16 +61,58 @@ export const markup = {
         paddingTop: "0.75rem",
     },
     table: {
+        backgroundColor: "transparent",
+        borderCollapse: "separate",
+        borderSpacing: "0",
+        borderWidth: "0px",
+        boxSizing: "border-box",
+        display: "table",
+        marginBottom: "2rem",
         width: "100%",
+        "& tr": {
+            boxSizing: "border-box",
+            display: "table-row",
+        },
+        "& th,& td": {
+            boxSizing: "border-box",
+            display: "table-cell",
+            lineHeight: "inherit",
+            padding: "1rem",
+        },
+        "& thead": {
+            boxSizing: "border-box",
+            display: "table-header-group",
+        },
+        "& thead th": {
+            borderBottomColor: "muted",
+            borderBottomStyle: "solid",
+            borderBottomWidth: "0.125rem",
+            fontWeight: "bold",
+            textAlign: "left",
+            verticalAlign: "bottom",
+        },
+        "& tbody": {
+            display: "table-row-group",
+            verticalAlign: "middle",
+        },
+        "& tbody td": {
+            borderTopColor: "muted",
+            borderTopStyle: "solid",
+            borderTopWidth: "0.125rem",
+            verticalAlign: "top",
+        },
     },
     ...Object.fromEntries([6,5,4,3,2,1].map(index => {
         const headingNumber = 7 - index;
         const headingConfig = {
             color: "heading",
+            display: "block",
             fontFamily: "heading",
             fontSize: `${index}`,
             fontWeight: "heading",
             lineHeight: "heading",
+            marginBottom: "0.5rem",
+            padding: "0px",
             apply: "text.heading",
         };
         return [`h${(headingNumber)}`, headingConfig];
