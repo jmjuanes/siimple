@@ -32,9 +32,9 @@ export const ColorPalette = () => (
         {getVisibleColors().map(name => (
             <div className="columns" key={name}>
                 <div className="column is-one-fifth is-full-mobile has-pb-none">
-                    <div className="title is-6 has-mt-none is-capitalized">
+                    <h6 className="has-mt-none is-capitalized">
                         <span>{name}</span>
-                    </div>    
+                    </h6>    
                 </div>
                 <div className="column is-four-fifths is-full-mobile">
                     <ColorItems name={name} items={colors[name]} />

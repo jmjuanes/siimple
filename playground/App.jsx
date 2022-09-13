@@ -188,7 +188,7 @@ const App = () => {
                     <div className="alert is-secondary is-radiusless">
                         <i className="si-exclamation-circle has-size-8" />
                         <div className="has-pl-4">
-                            <div className="title is-5 has-text-white has-mb-1">Error in siimple.config.js</div>
+                            <h5 className="has-text-white has-mb-1">Error in siimple.config.js</h5>
                             <div className="has-weight-normal">{error}</div>
                         </div>
                     </div>

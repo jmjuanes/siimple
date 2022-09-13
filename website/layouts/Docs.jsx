@@ -29,7 +29,7 @@ const html = (type, className) => {
 // Table container wrapper
 const TableContainer = props => (
     <div className="has-w-full has-mb-8">
-        <table className="table is-divided has-header-fixed has-mb-none">
+        <table>
             {props.children}
         </table>
     </div>
@@ -38,12 +38,6 @@ const TableContainer = props => (
 // Custom markdown components
 const shortcodes = {
     Tip: () => null,
-    h1: html("div", "title is-1"),
-    h2: html("div", "title is-2"),
-    h3: html("div", "title is-3"),
-    h4: html("div", "title is-4"),
-    h5: html("div", "title is-5"),
-    h6: html("div", "title is-6"),
     pre: html("div", ""),
     code: LiveCode,
     li: html("li", "has-mb-1"),

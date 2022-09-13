@@ -46,12 +46,12 @@ export default {
 </div>
 <div className="column is-two-fifths-tablet is-full-mobile">
     <div className="has-p-8 is-rounded" style={{backgroundColor:colors.royal["100"]}}>
-        <div className="siimple title is-1" style={{color:colors.royal["600"]}}>Hello!</div>
-        <div className="paragraph" style={{color:colors.royal["800"]}}>
+        <h1 className="siimple" style={{color:colors.royal["600"]}}>Hello!</h1>
+        <p style={{color:colors.royal["800"]}}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
             laboris nisi ut aliquip ex ea commodo consequat.
-        </div>
+        </p>
         <div className="has-mb-4">
             <label className="label" style={{color:colors.royal["800"]}}>Input example:</label>
             <input type="text" className="input" placeholder="Input" style={{backgroundColor:colors.royal["200"]}} />
@@ -75,7 +75,7 @@ export default {
     <div className="has-bg-light is-rounded has-pl-4 has-pr-4 has-pt-8 has-pb-8">
         <div className="has-pl-4 has-pr-4 has-ml-auto has-mr-auto">
             <div className="card is-shadowed">
-                <div className="title is-3">Sign in</div>
+                <h3>Sign in</h3>
                 <div className="has-mb-4">
                     <label className="label">Your email</label>
                     <input type="text" className="input" placeholder="you@email.com" />
@@ -97,7 +97,7 @@ export default {
 ```html title=index.html
 <div class="has-pl-4 has-pr-4 has-ml-auto has-mr-auto">
     <div class="card is-shadowed">
-        <div class="title is-3">Sign in</div>
+        <h3>Sign in</h3>
         <div class="has-mb-4">
             <label class="label">Your email</label>
             <input type="text" class="input" placeholder="you@email.com" />
@@ -130,11 +130,11 @@ export default {
                     </div>
                 </div>
                 <Link to={item.link} className="has-text-dark has-text-primary-hover">
-                    <div className="title is-3">{item.title}</div>
+                    <h3>{item.title}</h3>
                 </Link>
-                <div className="paragraph has-text-dark is-semitransparent has-mb-none">
+                <p className="has-text-dark is-semitransparent has-mb-none">
                     {item.content}
-                </div>
+                </p>
             </div>
         ))}
     </div>
@@ -151,7 +151,7 @@ export default {
                     <i className="si-quote has-size-8" />
                 </div>
                 <Link to={item.url} target="_blank" className="has-text-dark">
-                    <div className="title is-4">{item.site}</div>
+                    <h4>{item.site}</h4>
                 </Link>
                 <div className="has-mb-none has-text-dark is-semitransparent">
                     {item.content}

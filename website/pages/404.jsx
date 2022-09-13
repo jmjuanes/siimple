@@ -17,11 +17,11 @@ export default () => (
                     </Link>
                 </div>
                 {/* Warning message */}
-                <div className="title is-2 has-mt-none">Something went wrong.</div>
-                <div className="paragraph">
+                <h2 className="has-mt-none">Something went wrong.</h2>
+                <p className="has-mb-4">
                     We are sorry, but we can not find the page you are trying to reach... 
                     Please check that you typed the address correctly or go back to your previous page. 
-                </div>
+                </p>
                 {/* Back to home page */}
                 <div className="has-mt-6">
                     <Link to="/" className="button is-primary is-inline-flex has-items-center">

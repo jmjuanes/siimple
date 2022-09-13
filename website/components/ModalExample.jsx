@@ -13,9 +13,7 @@ export const ModalExample = () => {
                 <div className="scrim">
                     <div className="modal">
                         <div className="is-flex has-items-center">
-                            <div className="title is-4 has-mb-none">
-                                <strong>Modal</strong>
-                            </div>
+                            <h4 className="has-mb-none">Modal</h4>
                             <div
                                 className="close has-ml-auto"
                                 onClick={() => setVisible(false)}

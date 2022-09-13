@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import {ThemeProvider, useTheme, useCss} from "@siimple/react";
-import {BaseStyles, Elements} from "@siimple/components";
+import {BaseStyles, Elements, Markup} from "@siimple/components";
 import * as presets from "@siimple/presets";
 
 const tableData = {
@@ -88,7 +88,7 @@ const TypographyDemo = props => {
                     </div>
                 </div>
             ))}
-            <Elements.title className="title is-3">Font sizes</Elements.title>
+            <Markup.h3>Font sizes</Markup.h3>
             <div className="is-flex has-items-end has-flex-wrap" style={{gap: "1rem"}}>
                 {(theme?.fontSizes || []).map(s => (
                     <span key={s} style={{fontSize: s}}>{s}</span>

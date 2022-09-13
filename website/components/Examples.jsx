@@ -21,8 +21,8 @@ export const Examples = props => {
                 {visibleExamples.map(example => (
                     <div key={example.title} className="column is-one-third is-full-mobile">
                         <div className="card is-shadowed">
-                            <div className="title is-4 is-capitalized">{example.title}</div>
-                            <div className="paragraph" style={{minHeight:"4rem"}}>{example.description}</div>
+                            <h4 className="is-capitalized">{example.title}</h4>
+                            <p style={{minHeight:"4rem"}}>{example.description}</p>
                             <div className="is-flex has-direction-column-mobile" style={{gap:"0.5rem"}}>
                                 <div className="has-w-full">
                                     <a

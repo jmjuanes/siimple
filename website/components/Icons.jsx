@@ -45,10 +45,10 @@ const IconsList = props => {
                         <i className="si-emoji-sad has-size-9" />
                     </div>
                     <div>
-                        <div className="title is-2 has-mb-2">No icons found</div>
-                        <div className="paragraph has-size-2">
+                        <h2 className="has-mb-2">No icons found</h2>
+                        <p className="has-size-2">
                             There are no icons that matches <strong>"{props.query}"</strong>.
-                        </div>
+                        </p>
                     </div>
                 </div>
             )}
@@ -96,13 +96,13 @@ const IconModal = props => {
         <div className="scrim">
             <div className="modal">
                 <div className="is-flex has-items-center has-mb-6">
-                    <div className="title is-3 has-mb-none">{props.icon.name}</div>
+                    <h3 className="has-mb-none">{props.icon.name}</h3>
                     <div className="close has-ml-auto" onClick={props.onClose} />
                 </div>
                 <div className={previewClass}>
                     <i className={`si-${props.icon.name}`} style={{fontSize:"128px"}} />
                 </div>
-                <div className="paragraph">Using this icon as a webfont:</div>
+                <p>Using this icon as a webfont:</p>
                 <LiveCode className="html">{iconHtml}</LiveCode>
                 <div className="columns">
                     <div className="column has-pt-none has-pb-none">

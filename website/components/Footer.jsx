@@ -29,13 +29,13 @@ export const Footer = props => {
             <div className="has-mb-2">
                 <i className="si-siimple has-mr-2 has-size-6" />
             </div>
-            <div className="paragraph has-mb-none">
+            <p className="has-mb-none">
                 Designed and maintained with <i className="si-heart"></i> by <ExternalLink to="https://github.com/jmjuanes" text="@jmjuanes" />.
-            </div>
-            <div className="paragraph has-mb-none">
+            </p>
+            <p className="has-mb-none">
                 Code is licensed under <ExternalLink to={LICENSES.mit} text="MIT" />,
                 documentation under <ExternalLink to={LICENSES.cc} text="Creative Commons Attribution 4.0" />.
-            </div>
+            </p>
             {/* Available links */}
             <div className="has-pt-4 has-size-0">
                 <div className="is-inline-block has-mr-4">

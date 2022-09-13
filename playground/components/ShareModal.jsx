@@ -13,12 +13,10 @@ export const ShareModal = props => {
         <div className="scrim">
             <div className="modal is-medium has-text-dark has-ml-6-mobile has-mr-6-mobile">
                 <div className="is-flex has-items-center has-mb-4">
-                    <div className="title is-3 has-mb-none">Share</div>
+                    <h3 className="has-mb-none">Share</h3>
                     <div className="close has-ml-auto" onClick={props.onClose} />
                 </div>
-                <div className="paragraph">
-                    You can use the following URL for sharing your code:
-                </div>
+                <p>You can use the following URL for sharing your code:</p>
                 <div className="has-mb-6">
                     <textarea
                         className="textarea has-size-0"
