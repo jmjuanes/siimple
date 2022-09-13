@@ -10,14 +10,15 @@ This is an example of a configuration file for **siimple**:
 
 ```js title=siimple.config.js
 import colors from "@siimple/colors";
-import theme from "@siimple/preset-base";
+import base from "@siimple/preset-base";
 
 export default {
-    ...theme,
-    useRootStyles: false,
+    ...base,
+    useRootStyles: true,
     useBorderBox: true,
     prefix: "",
     colors: {
+        ...base.colors,
         primary: colors.blue["500"],
         secondary: colors.mint["600"],
         text: colors.gray["800"],
@@ -289,7 +290,18 @@ This is the list of the available core modules of **siimple**:
 | `markup`    | Markup primitives (headings, links, ...). |
 | `reset`     | Our minimal CSS reset module. |
 
-This is the list of available elements:
+You can use the `elements` or `helpers` aliases for enable or disable all elements or helpers, instead of adding or removing all items individually. For example, to disable all elements you can just use `elements: false` instead of disabling all elements individually:
+
+```js title=siimple.config.js
+export default {
+    modules: {
+        elements: false,
+    },
+    // ...other configuration
+};
+```
+
+If you need to enable or disable only some individual elements, you can use the following available elements:
 
 | Name | Description |
 |-------------|-------------|
@@ -302,14 +314,12 @@ This is the list of available elements:
 | `column` | The `.column` element. |
 | `container` | The `.container` element. |
 | `crumb` | The `.crumb` element. |
-| `divider` | The `.divider` element. |
 | `dropdown` | The `dropdown` element. |
 | `input` | The `.input` element. |
 | `label` | The `.label` element. |
 | `menu` | The `.menu` element. |
 | `modal` | The `.modal` element. |
 | `navlink` | The `.navlink` element. |
-| `paragraph` | The `.paragraph` element. |
 | `progress` | The `.progress` element. |
 | `radio` | The `.radio` element. |
 | `scrim` | The `.scrim` element. |
@@ -317,11 +327,9 @@ This is the list of available elements:
 | `slider` | The `.slider` element. |
 | `spinner` | The `.spinner` element. |
 | `switch` | The `.switch` element. |
-| `table` | The `.table` element. |
 | `textarea` | The `.textarea` element. |
-| `title` | The `.title` element. |
 
-This is the list of available helpers: 
+In case that you need to enable or disable only specific helpers, you can use the following list of available helpers:
 
 | Name | Description |
 |------|-------------|

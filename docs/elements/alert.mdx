@@ -31,19 +31,7 @@ You can add a close button to the alert using the `close` element:
 
 ### Customize
 
-The alert element will apply the styles defined in the `alerts` field of your theme configuration.
-
-```js title=siimple.config.js
-export default {
-    alerts: {
-        backgroundColor: "primary",
-        color: "white",
-    },
-    // ...other configuration
-};
-```
-
-If you use the `alerts` group for more mixins, this element will use `alerts.default` instead:
+You can customize the alert element using the `alerts` field of your theme configuration. Styles defined in the `alerts.default` field will be applied to the base `alert` element, and any other field will generate additional variant modifiers for the alert element.
 
 ```js title=siimple.config.js
 export default {
@@ -52,7 +40,7 @@ export default {
             backgroundColor: "primary",
             color: "white",
         },
-        // ...other additional alerts mixins
+        // ...other additional alert variants
     },
     // ...other configuration
 };

@@ -123,20 +123,14 @@ Use the following classes to change the position property of an element:
 | `is-absolute` | `position: absolute;` |
 | `is-sticky`   | `position: sticky;` |
 | `is-fixed`    | `position: fixed;` |
+| `is-top`      | `top: 0px;` |
+| `is-bottom`   | `bottom: 0px;` |
 
 Example:
 
 ```html
-<div class="is-fixed has-top-none">
+<div class="is-fixed is-top">
     ...
-</div>
-```
-
-You can control the position of an element at a specific breakpoint adding a `-{breakpoint}` suffix to the class.
-
-```html
-<div class="is-fixed-mobile has-top-none-mobile">
-    . . .
 </div>
 ```
 

@@ -74,13 +74,15 @@ You can hide a column at a specific breakpoint using the responsive `is-hidden` 
 
 ### Customize
 
-The column element will apply the styles defined in the `columns` field of your theme configuration.
+The column element will apply the styles defined in the `layout.column` field of your theme configuration.
 
 ```js title=siimple.config.js
 export default {
-    columns: {
-        paddingTop: "0.75rem",
-        paddingBottom: "0.75rem",
+    layout: {
+        column: {
+            paddingTop: "0.75rem",
+            paddingBottom: "0.75rem",
+        },
     },
     // ...other configuration
 };

@@ -36,6 +36,11 @@ export const sidebarItems = [
     },
     {
         group: "modules",
+        url: "/markup",
+        label: "Markup",
+    },
+    {
+        group: "modules",
         url: "/elements",
         label: "Elements",
     },
@@ -43,11 +48,6 @@ export const sidebarItems = [
         group: "modules",
         url: "/helpers",
         label: "Helpers",
-    },
-    {
-        group: "modules",
-        url: "/markup",
-        label: "Markup",
     },
     {
         group: "modules",
@@ -101,11 +101,6 @@ export const sidebarItems = [
     },
     {
         group: "elements",
-        url: "/elements/divider",
-        label: "Divider",
-    },
-    {
-        group: "elements",
         url: "/elements/dropdown",
         label: "Dropdown",
     },
@@ -133,11 +128,6 @@ export const sidebarItems = [
         group: "elements",
         url: "/elements/navlink",
         label: "Navlink",
-    },
-    {
-        group: "elements",
-        url: "/elements/paragraph",
-        label: "Paragraph",
     },
     {
         group: "elements",
@@ -176,18 +166,8 @@ export const sidebarItems = [
     },
     {
         group: "elements",
-        url: "/elements/table",
-        label: "Table",
-    },
-    {
-        group: "elements",
         url: "/elements/textarea",
         label: "Textarea",
-    },
-    {
-        group: "elements",
-        url: "/elements/title",
-        label: "Title",
     },
     {
         group: "helpers",

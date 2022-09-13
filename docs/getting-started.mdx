@@ -31,11 +31,12 @@ import colors from "@siimple/colors";
 import base from "@siimple/preset-base";
 
 export default {
-    useRootStyles: false,
+    useRootStyles: true,
     useBorderBox: true,
     prefix: "",
     ...base,
     colors: {
+        ...base.colors,
         primary: colors.blue["500"],
         secondary: colors.mint["600"],
         text: colors.gray["800"],

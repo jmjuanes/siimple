@@ -19,18 +19,8 @@ We provide an `is-secondary` modifier for using the secondary color defined in y
 
 ### Customize
 
-The badge element will apply the styles defined in the `badges` field of your theme configuration.
+You can customize the badge element using the `badges` field of your theme configuration. Styles defined in the `badges.default` field will be applied to the base `badge` element, and any other field will generate additional variants modifiers for the badge element.
 
-```js title=siimple.config.js
-export default {
-    badges: {
-        backgroundColor: "primary",
-        color: "white",
-    },
-};
-```
-
-If you use the `badges` group for more mixins, this element will use `badges.default` instead:
 
 ```js title=siimple.config.js
 export default {
@@ -39,7 +29,7 @@ export default {
             backgroundColor: "primary",
             color: "white",
         },
-        // ...other additional badges mixins
+        // ...other additional variants for badges
     },
     // ...other configuration
 };

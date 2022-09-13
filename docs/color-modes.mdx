@@ -10,7 +10,7 @@ Color modes makes it easy to change the color mode of your website, including su
 
 To enable color mode you should set the `useColorModes` flag to `true` in your theme configuration:
 
-```js
+```js title=siimple.config.js
 export default {
     useColorModes: true,
     // ...other configuration
@@ -21,7 +21,7 @@ export default {
 
 Color modes are configured in the `colorModes` field of your theme configuration. Use the key for the color mode name and a nested object for providing the custom colors for the color mode.
 
-```js
+```js title=siimple.config.js
 import colors from "@siimple/colors";
 
 export default {
@@ -78,7 +78,7 @@ We alsp provide an additional flag called `useColorModesMediaQuery` to automatic
 
 Just set to `true` the `useColorModesMediaQuery` in your configuration file (note that the `useColorModes` flag **is also required**):
 
-```js
+```js title=siimple.config.js
 export default {
     useColorModes: true, // Required!!!
     useColorModesMediaQuery: true,

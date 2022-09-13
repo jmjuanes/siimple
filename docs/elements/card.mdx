@@ -16,29 +16,16 @@ A **card** is a flexible container element that holds content and actions about 
 
 ### Customize
 
-The card element will apply the styles defined in the `cards` field of your theme configuration.
+The card element will apply the styles defined in the `layout.card` field of your theme configuration.
 
 ```js title=siimple.config.js
 export default {
-    cards: {
-        backgroundColor: "white",
-        color: "inherit",
-        padding: "2rem",
-    },
-};
-```
-
-If you use the `cards` group for more mixins, this element will use `cards.default` instead:
-
-```js title=siimple.config.js
-export default {
-    cards: {
-        default: {
+    layout: {
+        card: {
             backgroundColor: "white",
             color: "inherit",
             padding: "2rem",
         },
-        // ...other additional cards mixins
     },
     // ...other configuration
 };

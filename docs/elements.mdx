@@ -13,8 +13,8 @@ Individual elements can be disabled providing an object in the `modules` field o
 ```js title=siimple.config.js
 export default {
     modules: {
+        alert: false,
         button: false,
-        table: false,
     },
     // ...other configuration
 };
@@ -28,7 +28,7 @@ Just apply the element classname to the HTML tag that you want to style:
 <button class="button">Submit</button>
 ```
 
-Some elements will provide additional modifiers that you can use to change the default style of the element:
+Some elements will provide additional variant modifiers that you can use to change the default style of the element:
 
 ```html
 <button class="button is-secondary is-full">
@@ -42,63 +42,32 @@ Mixins can be used to customize and change the look and feel of elements. Each e
 
 ```js title=siimple.config.js
 export default {
-    text: {
-        // The title element will use this mixin to extend the default styles
-        heading: {
+    layout: {
+        // The card element will use this mixin to extend the default styles
+        card: {
+            backgroundColor: "white",
             color: "black",
-            lineHeight: "1.25",
         },
     },
 };
 ```
 
-There is the list of elements and the mixin path that can be used to customize the styles of the element:
-
-| Element | Mixin path |
-|---------|------------|
-| `alert` | `alerts` or `alerts.default` if more mixins are added to the `alerts` group. |
-| `badge` | `badges` or `badges.default` if more mixins are added to the `badges` group. |
-| `button` | `buttons` or `buttons.default` if more mixins are added to the `buttons` group. |
-| `card` | `cards` or `cards.default` of more mixins are added to the `cards` group. |
-| `checkbox` | `forms.checkbox` |
-| `close` | `buttons.close` |
-| `column` | `columns` |
-| `container` | `layout.container` |
-| `crumb` | `links.crumb` |
-| `divider` | `styles.hr` |
-| `dropdown` | `links.dropdown` |
-| `input` | `forms.input` |
-| `label` | `forms.label` |
-| `menu` | `buttons.menu` |
-| `modal` | `dialogs.modal` |
-| `navlink` | `links.nav` |
-| `paragraph` | `text.paragraph` |
-| `progress` | `styles.progress` |
-| `radio` | `forms.radio` |
-| `scrim` | `dialogs.scrim` |
-| `select` | `forms.select` |
-| `slider` | `forms.slider` |
-| `spinner` | `spinners` |
-| `switch` | `forms.switch` |
-| `table` | `styles.table` |
-| `textarea` | `forms.textarea` |
-| `title` | `text.heading` |
-
-Note that some elements will reuse the styles that you define in the `styles` section of your theme, for example the `progress` or the `table` elements.
-
-Mixins can be used also to create additional modifiers for the element. For example, the following mixin:
+Some elements will generate additional variant modifiers based in the mixins that you specify in your configuration. For example, buttons will generate one additional variant for each item defined in the `buttons` field of your configuration. As an example, the following buttons configuration:
 
 ```js title=siimple.config.js
 export default {
     buttons: {
         default: {
-            "&.is-outlined": {
-                backgroundColor: "transparent",
-                borderColor: "primary",
-                borderStyle: "solid",
-                borderWidth: "0.125rem",
-                color: "primary",
-            },
+            color: "white",
+        },
+        outlined: {
+            borderColor: "primary",
+            borderStyle: "solid",
+            borderWidth: "2px",
+        },
+        full: {
+            textAlign: "center",
+            width: "100%",
         },
     },
 };
@@ -107,10 +76,45 @@ export default {
 Will generate the following CSS:
 
 ```css
-.button { /* default styles */ }
+.button {
+    /* Default button styles plus defined in buttons.default */
+}
 .button.is-outlined {
-    background-color: transparent;
-    border: 0.125rem solid #1c76fd;
-    color: #1c76fd;
+    /* Styles defined in buttons.outlined */
+}
+.button.is-full {
+    /* Styles defined in buttons.full */
 }
 ```
+
+Note that the `default` variant will will be automatically applied to the base element styles instead of generating an additional `.is-default` modifier.
+
+There is the list of elements and the mixin path that can be used to customize the styles of the element:
+
+| Element | Default variant | Additional variants? |
+|---------|-----------------|---------------------|
+| `alert` | `alerts.default` | Yes, in `alerts` group. |
+| `badge` | `badges.default` | Yes, in `badges` group. |
+| `button` | `buttons.default` | Yes, in `buttons` group, but excluding `buttons.close` and `buttons.menu`. |
+| `card` | `layout.card` | No. |
+| `checkbox` | `forms.checkbox` | No. |
+| `close` | `buttons.close` | No. |
+| `column` | `layout.column` | No. |
+| `container` | `layout.container` | No. |
+| `crumb` | `links.crumb` | No. |
+| `dropdown` | `links.dropdown` | No. |
+| `input` | `forms.input` | No. |
+| `label` | `forms.label` | No. |
+| `menu` | `buttons.menu` | No. |
+| `modal` | `dialogs.modal` | No. |
+| `navlink` | `links.nav` | No. |
+| `progress` | `styles.progress` | No. |
+| `radio` | `forms.radio` | No. |
+| `scrim` | `dialogs.scrim` | No. |
+| `select` | `forms.select` | No. |
+| `slider` | `forms.slider` | No. |
+| `spinner` | `spinners.default` | Yes, in `spinners` group. |
+| `switch` | `forms.switch` | No. |
+| `textarea` | `forms.textarea` | No. |
+
+Note that some elements will reuse the styles that you define in the `styles` section of your theme, for example the `progress` element.

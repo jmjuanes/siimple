@@ -13,12 +13,15 @@ The **siimple spinner** is a pure CSS loading indicator used for showing the loa
 
 ### Customize
 
-The spinner element will apply the styles defined in the `spinners` field of your theme configuration.
+You can customize the spinner element using the `spinners` field of your the configuration: styles defined in the `spinners.default` field will be applied to the base `spinner` element, and any other field will generate additional variant modifiers for the spinner element.
 
 ```js title=siimple.config.js
 export default {
     spinners: {
-        color: "primary",
+        default: {
+            color: "primary",
+        },
+        // Other spinner variants
     },
     // ...other configuration
 };

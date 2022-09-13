@@ -31,23 +31,7 @@ We also provide the `is-full` modifier to change the button width to the **full 
 
 ### Customize
 
-The button element will apply the styles defined in the `buttons` field of your theme configuration.
-
-```js title=siimple.config.js
-export default {
-    buttons: {
-        backgroundColor: "primary",
-        color: "white",
-        // Will generate '.button.is-disabled' modifier
-        "&.is-disabled": {
-            cursor: ["not-allowed", "!important"],
-            opacity: ["0.6", "!important"],
-        },
-    },
-};
-```
-
-If you use the `buttons` group for more mixins, this element will use `buttons.default` instead:
+You can customize the button element using the `buttons` field of your theme configuration. Styles defined in the `buttons.default` field will be applied to the base `button` element, and any other field will generate additional variant modifiers for the button element.
 
 ```js title=siimple.config.js
 export default {
@@ -57,6 +41,11 @@ export default {
             color: "white",
         },
         // ...other additional buttons mixins
+        // For examplem the following 'disabled' variant will generate a '.button.is-disabled' modifier
+        disabled: {
+            cursor: ["not-allowed", "!important"],
+            opacity: ["0.6", "!important"],
+        },
     },
     // ...other configuration
 };
