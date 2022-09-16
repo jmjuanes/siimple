@@ -251,6 +251,11 @@ export const sidebarItems = [
     },
     {
         group: "packages",
+        url: "/packages/postcss",
+        label: "@siimple/postcss",
+    },
+    {
+        group: "packages",
         url: "/packages/standalone",
         label: "@siimple/standalone",
     },
