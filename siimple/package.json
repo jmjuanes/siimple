@@ -15,9 +15,10 @@
         "./postcssPlugin": "./postcss.cjs"
     },
     "dependencies": {
+        "@siimple/cli": "^0.3.0-beta",
         "@siimple/core": "^0.2.3",
         "@siimple/modules": "^0.2.3",
-        "@siimple/cli": "^0.3.0-beta",
+        "@siimple/postcss": "^0.3.0-beta",
         "@siimple/preset-base": "^0.2.3"
     },
     "optionalDependencies": {
@@ -30,5 +31,8 @@
         "themeable",
         "css",
         "css-framework"
-    ]
+    ],
+    "engines": {
+        "node": ">=14"
+    }
 }
