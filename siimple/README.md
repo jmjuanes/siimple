@@ -1,6 +1,5 @@
 ![Siimple header](https://github.com/jmjuanes/siimple/raw/main/header.svg)
 
-
 [![NPM Version](https://badgen.net/npm/v/siimple)](https://npmjs.com/package/siimple)
 [![Get help](https://badgen.net/badge/Discussions/Join%20us/cyan)](https://github.com/jmjuanes/siimple/discussions)
 [![MIT License](https://badgen.net/github/license/jmjuanes/siimple)](https://github.com/jmjuanes/siimple)
@@ -9,7 +8,7 @@
 
 ## Links
 
-- Documentation: https://www.siimple.xyz/docs.
+- Documentation: https://www.siimple.xyz/.
 - Online playground: https://www.siimple.xyz/playground.
 - Report a bug or request a feature: https://github.com/jmjuanes/siimple/issues.
 - Get help: https://github.com/jmjuanes/siimple/discussions.
@@ -90,7 +89,7 @@ export default {
 
 A configuration file is where you can provide your custom theme scales, variants and styles for generating your customized version of **siimple** or to adapt it to your project look and feel.
 
-Read more about the [configuration](https://www.siimple.xyz/docs/configuration/).
+Read more about the [configuration](https://www.siimple.xyz/configuration/).
 
 ### Core modules (added in v4.1.0)
 
@@ -131,7 +130,35 @@ export default {
 };
 ```
 
-Read more about [theming](https://www.siimple.xyz/docs/theme).
+Read more about [theming](https://www.siimple.xyz/theme).
+
+### Color Modes
+
+Color modes makes it easy to change the color mode of your website, including support for **dark and light modes**. Color modes can be configured in the `colorModes` field of your theme configuration:
+
+```js
+import colors from "@siimple/colors";
+
+export default {
+    useColorModes: true,
+    colors: {
+        text: colors.gray["700"],
+        background: "#fff",
+        primary: colors.blue["500"],
+        // ...other colors
+    },
+    colorModes: {
+        dark: {
+            text: "#fff",
+            background: colors.gray["800"],
+        },
+        // ...other color modes
+    },
+    // ...other configuration
+};
+```
+
+Read more about [color modes](https://www.siimple.xyz/color-modes).
 
 ### Mixins
 
@@ -155,7 +182,7 @@ export default {
 
 ### Custom styles
 
-You can specify your custom styles in the configuration file, using a [CSS-in-JS styles syntax](https://www.siimple.xyz/docs/guides/styles).
+You can specify your custom styles in the configuration file, using a [CSS-in-JS styles syntax](https://www.siimple.xyz/guides/styles).
 
 ```js
 export default {
