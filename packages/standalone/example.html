@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>@siimple/standalone example</title>
+        <!-- 1. Import @siimple/standalone package -->
+        <script type="module" src="https://esm.sh/@siimple/standalone"></script>
+        <!-- 2. Configure your theme -->
+        <script type="text/siimple">
+            import base from "@siimple/preset-base";
+
+            export default {
+                ...base,
+                // ...other configuration
+            };
+        </script>
+        <!-- 3. Prevent flash of unstyled content -->
+        <style>.unstyled {display: none; }</style>
+    </head>
+    <body class="unstyled">
+        <!-- 4. Write your body content -->
+        <h1>Hello world</h1>
+    </body>
+</html>
