@@ -2,35 +2,34 @@
  * @jest-environment jsdom
  */
 
-import {buildFromString, buildFromScriptTag, configure} from "@siimple/standalone/index.js";
+import {run, register} from "@siimple/standalone";
 
-// Disable logger
-configure({
-    logger: () => null,
+const styleSelector = `style[data-source="siimple/standalone"]`;
+const styleCss = "/* siimple css style */"; 
+
+// Mock console.info
+jest.spyOn(console, "info").mockImplementation(() => "");
+
+// Mock @siimple/core
+register("@siimple/core", {
+    css: () => styleCss,
 });
 
-const selector = `style[data-siimple="standalone:css"]`;
+// Mock @siimple/modules
+register("@siimple/modules", {
+    injectModules: c => c,
+});
 
-describe("buildFromString", () => {
+describe("run", () => {
     it("should append a new <style> element with the output css", () => {
-        const configStr = "export default {};";
-
-        return buildFromString(configStr).then(() => {
-            expect(document.querySelector(selector)).not.toBeNull();
-            expect(document.querySelector(selector).innerHTML).toEqual(expect.stringContaining(".button"));
-        });
-    });
-});
-
-describe("buildFromScriptTag", () => {
-    it("should load the content of the script tag", () => {
         const script = document.createElement("script");
         script.setAttribute("type", "text/siimple");
-        script.innerHTML = "export default {};";
+        script.innerHTML = "export default {}";
+        document.head.appendChild(script);
 
-        buildFromScriptTag(script).then(() => {
-            expect(document.querySelector(selector)).not.toBeNull();
-            expect(document.querySelector(selector).innerHTML).toEqual(expect.stringContaining(".button"));
+        return run().then(() => {
+            expect(document.querySelector(styleSelector)).not.toBeNull();
+            expect(document.querySelector(styleSelector).innerHTML).toEqual(styleCss);
         });
     });
 });
