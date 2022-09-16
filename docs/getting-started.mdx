@@ -109,10 +109,10 @@ You can also use [unpkg](https://unpkg.com/) for including the latest version in
 
 You can use the `@siimple/standalone` package to build your siimple configuration directly in the browser.
 
-The simplest way to include `@siimple/standalone` in a browser without any other setup is to use **unpkg**:
+The simplest way to include `@siimple/standalone` in a browser without any other setup is to use [esm.sh](https://esm.sh) CDN:
 
 ```html
-<script src="https://unpkg.com/@siimple/standalone/siimple-standalone.js"></script>
+<script type="module" src="https://esm.sh/@siimple/standalone"></script>
 ```
 
 You can alternatively add it in your project using **npm** or **yarn**:
@@ -121,11 +121,11 @@ You can alternatively add it in your project using **npm** or **yarn**:
 $ npm install --save @siimple/standalone
 ```
 
-After loading the `@siimple/standalone` package in the browser, it will automatically compile the configuration provided in a `<script>` tag with type `text/siimple` and include the output CSS in a `<style>` tag.
+After loading the `@siimple/standalone` package in the browser, it will automatically compile the configuration provided in a `<script>` tag with the `type="text/siimple"` attribute and include the output CSS in a `<style>` tag.
 
 ```html
 <!-- Load @siimple/standalone -->
-<script src="https://unpkg.com/@siimple/standalone/siimple-standalone.js"></script>
+<script src="https://esm.sh/@siimple/standalone"></script>
 
 <!-- Your custom configuration there -->
 <script type="text/siimple">

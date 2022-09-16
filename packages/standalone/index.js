@@ -1,34 +1,34 @@
-import {css as buildCss} from "@siimple/core";
-import {injectModules} from "@siimple/modules";
-
 const ISSUES_URL = "https://github.com/jmjuanes/siimple/issues";
 const DOCS_URL = "https://siimple.xyz/packages/standalone";
 
-const STYLES_INTERNAL = "standalone:internal";
-const STYLES_CSS = "standalone:css";
-
-// Global configuration
-const globalOptions = {
-    logger: console.warn,
-    cdnUrl: "https://esm.sh/",
-    preventFlashOfUnstyledContent: true,
-};
-
 const AsyncFunction = Object.getPrototypeOf(async () => {}).constructor;
-const log = msg => typeof globalOptions.logger === "function" && globalOptions.logger(`[siimple:standalone] ${msg}`);
+const log = msg => console.info(`[siimple:standalone] ${msg}`);
 
-// Internal modules cache
-const modulesCache = new Map();
+// Internal global variables
+const __target = {};
+const __cdn = "https://esm.sh/";
 
-// Configure
-export const configure = newOptions => {
-    Object.assign(globalOptions, newOptions || {});
+// Internal modules import cache
+const __importCache = new Map();
+const __importFn = new Function("a", "return import(a);");
+
+// Custom import
+const __import = name => {
+    // Check if this module is cached
+    if (__importCache.has(name)) {
+        return Promise.resolve(__importCache.get(name));
+    }
+    // Import this module
+    const importPath = __cdn + name;
+    log(`Importing module '${importPath}'...`);
+    return __importFn(importPath).then(response => {
+        __importCache.set(name, response);
+        return response;
+    });
 };
 
 // Register a new external module
-export const registerExternal = (moduleName, moduleObj) => {
-    modulesCache.set(moduleName, moduleObj);
-};
+export const register = (name, obj) => __importCache.set(name, obj);
 
 // Inject unstyled class
 // See https://en.wikipedia.org/wiki/Flash_of_unstyled_content 
@@ -37,7 +37,7 @@ const injectUnstyled = config => ({
     styles: {
         ...(config?.styles || {}),
         // If enabled, the <body> tag will have by default a display:none css applied
-        ".__unstyled": {
+        ".unstyled": {
             display: ["block", "!important"],
         },
     },
@@ -60,76 +60,55 @@ const loadScript = url => {
     });
 };
 
-const getStyleTag = id => {
-    let target = document.querySelector(`style[data-siimple="${id}"]`);
-    if (!target) {
-        target = document.createElement("style");
-        target.dataset.siimple = id;
-        document.head.appendChild(target);
-    }
-    return target;
-};
-
 // Evaluate configuration from string
 const evaluateConfig = configStr => {
     return Promise.resolve().then(() => {
         const configCode = configStr
-            // .replace(/import\s*(.*?)\s*from\s*(['"])@siimple\/(.*?)(\.js)?\2(;)?/g, `const $1 = _import("$3");`)
             .replace(/import\s*(\{[\s\S]*?\})\s*from\s*(['"])([\w-@/]+)\2/g, `const $1 = await _import("$3");`)
             .replace(/import\s*(.*?)\s*from\s*(['"])([\w-@/]+)\2/g, `const $1 = (await _import("$3")).default;`)
             .replace(/export default /, "return ");
         
-        // Custom import function
-        const _importFn = new Function("a", "return import(a);");
-        const _import = name => {
-            // Check if this module is cached
-            if (modulesCache.has(name)) {
-                return Promise.resolve(modulesCache.get(name));
-            }
-            // Import this module
-            const modulePath = globalOptions.cdnUrl + name;
-            return _importFn(modulePath).then(response => {
-                modulesCache.set(name, response);
-                return response;
-            });
-        };
         const fn = new AsyncFunction("_import", configCode);
-        return fn(_import);
+        return fn(__import);
     });
 };
 
 // Use the specified text as the configuration for siimple
-export const buildFromString = configString => {
-    return evaluateConfig(configString)
-        .then(config => injectModules(config))
-        .then(config => injectUnstyled(config))
-        .then(config => buildCss(config))
-        .then(cssString => {
-            getStyleTag(STYLES_CSS).innerHTML = cssString;
-            return true;
-        })
+const generateCss = async config => {
+    const {css} = await __import("@siimple/core");
+    const {injectModules} = await __import("@siimple/modules");
+
+    // Inject modules and unstyled class before generating css
+    return css(injectUnstyled(injectModules(config)));
 };
 
-// Use the provided <script> tag to extract the siimple configuration and compile it.
-// If not provided, it will use the first <script> tag found in the document with the attribute type="text/siimple".
-export const buildFromScriptTag = selector => {
-    log("Starting siimple/standalone...");
-    const start = Date.now();
-    if (!selector) {
-        const items = document.querySelectorAll(`script[type="text/siimple"]`);
-        if (items.length === 0) {
-            log("No <script> tags found with the type='text/siimple' attribute found.");
-            return;
-        }
-        if (items.length > 1) {
-            log("Found multiple <script> tags with the type='text/siimple' attribute, but only the first will be processed.");
-        }
-        // Only use the first <script> tag found
-        selector = items[0];
+// Append the specified css string to a <style> tag
+const appendCss = cssString => {
+    if (!__target?.current) {
+        __target.current = document.createElement("style");
+        __target.current.dataset.source = "siimple/standalone";
+        document.head.appendChild(__target.current);
     }
-    // Load script content
-    return (selector.src ? loadScript(selector.src) : Promise.resolve(selector.innerHTML))
-        .then(str => buildFromString(str))
+    __target.current.innerHTML = cssString;
+};
+
+// Use the first <script> tag found in the document with the attribute type="text/siimple".
+// to extract the siimple configuration and compile it.
+export const run = () => {
+    const items = document.querySelectorAll(`script[type="text/siimple"]`);
+    // No tags found --> nothing to do
+    if (items.length === 0) {
+        return;
+    }
+    log("Build started");
+    const start = Date.now();
+    // TODO: display a warning message when multiple <script type="text/siimple"> tags found
+    // Only use the first <script> tag found
+    const script = items[0];
+    return (script.src ? loadScript(script.src) : Promise.resolve(script.innerHTML))
+        .then(configStr => evaluateConfig(configStr))
+        .then(config => generateCss(config))
+        .then(css => appendCss(css))
         .then(() => {
             const end = Date.now();
             log(`Build finished after ${(end - start)}ms.`);
@@ -142,26 +121,12 @@ export const buildFromScriptTag = selector => {
         });
 };
 
-const onDOMContentLoaded = () => {
-    log("Welcome to siimple/standalone");
-    log(` --> Documentation for siimple/standalone is available at ${DOCS_URL}.`);
-    log(" --> Please do not use it in production environments.");
-    if (globalOptions.preventFlashOfUnstyledContent) {
-        getStyleTag(STYLES_INTERNAL).innerHTML = ".__unstyled { display: none; }";
-        document.body.classList.add("__unstyled");
-    }
-    buildFromScriptTag();
-};
-
 // Automatically process the first <script> tag with the type="text/siimple" attribute
 if (typeof window !== "undefined" && window?.addEventListener) {
-    window.addEventListener("DOMContentLoaded", onDOMContentLoaded, false);
+    window.addEventListener("DOMContentLoaded", () => {
+        log("Welcome to @siimple/standalone");
+        log(` --> Documentation for @siimple/standalone is available at ${DOCS_URL}.`);
+        log(" --> Please do not use it in production environments!!");
+        run();
+    });
 }
-
-// Disable the automatic transform of <script> tags with the type="text/siimple" attribute
-export const disableScriptTag = () => {
-    window.removeEventListener("DOMContentLoaded", onDOMContentLoaded);
-};
-
-// Reload siimple (just call again the buildFromScriptTag)
-export const reload = () => buildFromScriptTag();
