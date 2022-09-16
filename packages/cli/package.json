@@ -1,0 +1,29 @@
+{
+    "name": "@siimple/cli",
+    "version": "0.3.0-beta",
+    "description": "Command Line for siimple",
+    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "type": "module",
+    "license": "MIT",
+    "repository": "https://github.com/jmjuanes/siimple",
+    "bugs": "https://github.com/jmjuanes/siimple/issues",
+    "homepage": "https://www.siimple.xyz",
+    "bin": {
+        "siimple": "./index.js"
+    },
+    "dependencies": {
+        "@siimple/core": "^0.2.3",
+        "@siimple/modules": "^0.2.3"
+    },
+    "keywords": [
+        "siimple",
+        "cli"
+    ],
+    "files": [
+        "index.js",
+        "README.md"
+    ],
+    "engines": {
+        "node": ">=14"
+    }
+}

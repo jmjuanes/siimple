@@ -246,6 +246,11 @@ export const sidebarItems = [
     },
     {
         group: "packages",
+        url: "/packages/cli",
+        label: "@siimple/cli",
+    },
+    {
+        group: "packages",
         url: "/packages/standalone",
         label: "@siimple/standalone",
     },
