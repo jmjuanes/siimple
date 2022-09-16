@@ -65,15 +65,15 @@ This will generate a file called `output.css` with the compiled styles of siimpl
 
 ### PostCSS usage
 
-You can integrate **siimple** in your PostCSS build process using our plugin for PostCSS. In your `postcss.config.js`, include the plugin of **siimple** for PostCSS with the path to your `siimple.config.js` (or `siimple.config.mjs`):
+You can integrate **siimple** in your PostCSS build process using our plugin for PostCSS in `@siimple/postcss`. In your `postcss.config.js`, include the plugin of **siimple** for PostCSS with the path to your `siimple.config.js` (or `siimple.config.mjs`):
 
-```js
-const autoprefixer = require("autoprefixer");
-const siimple = require("siimple/postcss.cjs");
+```js title=postcss.config.js
+import autoprefixer from "autoprefixer";
+import siimple from "@siimple/postcss";
 
-module.exports = {
+export default {
     plugins: [
-        siimple("./siimple.config.mjs"),
+        siimple("./siimple.config.js"),
         autoprefixer(),
         // other plugins
     ],
@@ -81,6 +81,8 @@ module.exports = {
 ```
 
 This will inject the **siimple** compiled styles with the configuration path provided as an argument to the plugin.
+
+**Note**: the plugin `siimple/postcss.cjs` introduced in `v4.2.0` is deprecated and will be removed in a future major release. Please migrate as soon as possible to the new `@siimple/postcss` plugin instead.
 
 ### Use the hosted CSS version
 
