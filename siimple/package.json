@@ -14,12 +14,10 @@
         "./postcss": "./postcss.cjs",
         "./postcssPlugin": "./postcss.cjs"
     },
-    "bin": {
-        "siimple": "./cli.js"
-    },
     "dependencies": {
         "@siimple/core": "^0.2.3",
         "@siimple/modules": "^0.2.3",
+        "@siimple/cli": "^0.3.0-beta",
         "@siimple/preset-base": "^0.2.3"
     },
     "optionalDependencies": {
