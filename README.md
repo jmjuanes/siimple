@@ -39,6 +39,7 @@ Along with `siimple` and `siimple-icons` packages, the packages listed in the ta
 | [@siimple/modules](https://github.com/jmjuanes/siimple/tree/main/packages/modules/) | Core modules of siimple. | :heavy_check_mark: |
 | [@siimple/colors](https://github.com/jmjuanes/siimple/tree/main/packages/colors/) | Color palette for siimple. | :heavy_check_mark: |
 | [@siimple/cli](https://github.com/jmjuanes/siimple/tree/main/packages/cli/) | Command line for siimple. | :heavy_check_mark: |
+| [@siimple/postcss](https://github.com/jmjuanes/siimple/tree/main/packages/postcss/) | PostCSS plugin for siimple. | :heavy_check_mark: |
 | [@siimple/presets](https://github.com/jmjuanes/siimple/tree/main/packages/presets/) | A collection of all official presets for siimple. | :x: |
 | [@siimple/preset-base](https://github.com/jmjuanes/siimple/tree/main/packages/preset-base/) | Base theme of siimple. | :heavy_check_mark: |
 | [@siimple/preset-dark](https://github.com/jmjuanes/siimple/tree/main/packages/preset-dark/) | Dark theme for siimple. | :x: |
