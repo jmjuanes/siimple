@@ -74,7 +74,7 @@ Note that not all browsers supports the `prefers-color-scheme` media. You can ch
 
 ### Using the useColorModesMediaQuery flag
 
-We alsp provide an additional flag called `useColorModesMediaQuery` to automatically use the `prefers-color-scheme` media query to enable the color mode based on the user configuration. 
+We also provide an additional flag called `useColorModesMediaQuery` to automatically use the `prefers-color-scheme` media query to enable the color mode based on the user configuration. 
 
 Just set to `true` the `useColorModesMediaQuery` in your configuration file (note that the `useColorModes` flag **is also required**):
 
@@ -82,6 +82,13 @@ Just set to `true` the `useColorModesMediaQuery` in your configuration file (not
 export default {
     useColorModes: true, // Required!!!
     useColorModesMediaQuery: true,
+    // Configure your color modes
+    colorModes: {
+        dark: {
+            // ...dark color mode configuration
+        },
+        // ...other color modes
+    },
     // ...other configuration
 };
 ```
