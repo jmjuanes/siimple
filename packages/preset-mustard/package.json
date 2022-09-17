@@ -1,6 +1,6 @@
 {
     "name": "@siimple/preset-mustard",
-    "version": "0.3.0-beta",
+    "version": "0.3.0",
     "description": "A yellowish and clean theme for siimple.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
@@ -10,7 +10,7 @@
     "homepage": "https://www.siimple.xyz/presets/mustard",
     "main": "index.js",
     "dependencies": {
-        "@siimple/preset-base": "^0.2.3"
+        "@siimple/preset-base": "^0.3.0"
     },
     "keywords": [
         "siimple",

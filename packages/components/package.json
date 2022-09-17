@@ -1,6 +1,6 @@
 {
     "name": "@siimple/components",
-    "version": "0.3.0-beta",
+    "version": "0.3.0",
     "description": "React UI Components based on siimple",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
@@ -16,9 +16,9 @@
         "theme-provider"
     ],
     "dependencies": {
-        "@siimple/icons": "^0.3.0-beta",
-        "@siimple/modules": "^0.2.3",
-        "@siimple/react": "^0.3.0-beta",
+        "@siimple/icons": "^0.3.0",
+        "@siimple/modules": "^0.3.0",
+        "@siimple/react": "^0.3.0",
         "react": "^17.0.2"
     }
 }

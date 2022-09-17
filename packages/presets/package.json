@@ -1,6 +1,6 @@
 {
     "name": "@siimple/presets",
-    "version": "0.3.0-beta",
+    "version": "0.3.0",
     "description": "A collection of presets for siimple.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
@@ -10,11 +10,11 @@
     "homepage": "https://www.siimple.xyz",
     "main": "index.js",
     "dependencies": {
-        "@siimple/preset-base": "^0.2.3",
-        "@siimple/preset-dark": "^0.3.0-beta",
-        "@siimple/preset-ice": "^0.2.3",
-        "@siimple/preset-mustard": "^0.3.0-beta",
-        "@siimple/preset-noir": "^0.3.0-beta"
+        "@siimple/preset-base": "^0.3.0",
+        "@siimple/preset-dark": "^0.3.0",
+        "@siimple/preset-ice": "^0.3.0",
+        "@siimple/preset-mustard": "^0.3.0",
+        "@siimple/preset-noir": "^0.3.0"
     },
     "keywords": [
         "siimple",

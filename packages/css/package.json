@@ -1,6 +1,6 @@
 {
     "name": "@siimple/css",
-    "version": "0.3.0-beta",
+    "version": "0.3.0",
     "description": "A tiny CSS-in-JS library with the power of the siimple framework",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
@@ -10,7 +10,7 @@
     "homepage": "https://www.siimple.xyz",
     "main": "index.js",
     "dependencies": {
-        "@siimple/core": "^0.2.3"
+        "@siimple/core": "^0.3.0"
     },
     "keywords": [
         "siimple",

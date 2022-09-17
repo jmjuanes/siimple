@@ -1,6 +1,6 @@
 {
     "name": "siimple-icons",
-    "version": "4.2.3",
+    "version": "4.3.0",
     "description": "Open source icons for siimple",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
@@ -9,7 +9,7 @@
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "homepage": "https://www.siimple.xyz/icons",
     "dependencies": {
-        "@siimple/icons": "^0.3.0-beta"
+        "@siimple/icons": "^0.3.0"
     },
     "keywords": [
         "siimple",
