@@ -28,6 +28,11 @@
                 "source": "/docs/",
                 "destination": "/getting-started",
                 "type": 301
+            },
+            {
+                "source": "/guides/styles",
+                "destination": "/syntax",
+                "type": 301
             }
         ],
         "rewrites": [

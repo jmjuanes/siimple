@@ -35,6 +35,11 @@ export const sidebarItems = [
         label: "Color Modes",
     },
     {
+        group: "customization",
+        url: "/syntax",
+        label: "Styles syntax",
+    },
+    {
         group: "modules",
         url: "/markup",
         label: "Markup",
@@ -268,10 +273,5 @@ export const sidebarItems = [
         group: "packages",
         url: "/packages/css",
         label: "@siimple/css",
-    },
-    {
-        group: "guides",
-        url: "/guides/styles",
-        label: "Styles syntax",
     },
 ];

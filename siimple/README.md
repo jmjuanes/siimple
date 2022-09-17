@@ -182,7 +182,7 @@ export default {
 
 ### Custom styles
 
-You can specify your custom styles in the configuration file, using a [CSS-in-JS styles syntax](https://www.siimple.xyz/guides/styles).
+You can specify your custom styles in the configuration file, using a [CSS-in-JS styles syntax](https://www.siimple.xyz/syntax).
 
 ```js
 export default {
