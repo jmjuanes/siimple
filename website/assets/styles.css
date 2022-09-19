@@ -47,3 +47,8 @@
 blockquote > p {
     margin-bottom: 0px !important;
 }
+
+/* Terrible hack to remove the marginTop in h1 elements of documentation */
+.docs-content > h1 {
+    margin-top: 0px !important;
+}

@@ -11,7 +11,7 @@ const linkClass = classNames({
 export const Section = props => (
     <div className={props.className}>
         <div className="has-mb-2">
-            <div className="title has-size-6 has-weight-black">{props.title}</div>
+            <h1 className="has-size-6 has-weight-black">{props.title}</h1>
         </div>
         <div className="has-size-2" style={{maxWidth:"48rem"}}>
             {props.children}
