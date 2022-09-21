@@ -269,9 +269,4 @@ export const sidebarItems = [
         url: "/packages/icons",
         label: "@siimple/icons",
     },
-    {
-        group: "packages",
-        url: "/packages/css",
-        label: "@siimple/css",
-    },
 ];
