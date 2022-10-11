@@ -51,9 +51,9 @@ export default {
         muted: colors.gray["200"],
     },
     fonts: {
-        body: ["Roboto", "sans-serif"],
-        heading: ["Montserrat", "sans-serif"],
-        code: ["monospace"],
+        body: "'Roboto',sans-serif",
+        heading: "'Montserrat',sans-serif",
+        code: "monospace",
     },
 };
 ```
@@ -122,9 +122,9 @@ export default {
         background: "#fff",
     },
     fonts: {
-        body: ["Roboto", "sans-serif"],
-        heading: ["Montserrat", "sans-serif"],
-        monospace: ["monospace"],
+        body: "'Roboto',sans-serif",
+        heading: "'Montserrat',sans-serif",
+        code: "monospace",
     },
     // ...other configuration
 };
