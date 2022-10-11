@@ -2,6 +2,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import url from "node:url";
 import {css} from "@siimple/core";
 import {injectModules} from "@siimple/modules";
 
@@ -18,7 +19,7 @@ const getArguments = () => {
 
 // Resolve configuration
 const resolveConfig = configPath => {
-    return import(configPath).then(rawConfig => rawConfig.default);
+    return import(url.pathToFileURL(configPath)).then(rawConfig => rawConfig.default);
 };
 
 // Generate siimple CSS
