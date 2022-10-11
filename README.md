@@ -46,7 +46,7 @@ Along with `siimple` and `siimple-icons` packages, the packages listed in the ta
 | [@siimple/preset-ice](https://github.com/jmjuanes/siimple/tree/main/packages/preset-ice/) | A frosty and clean theme for siimple. | :x: |
 | [@siimple/preset-noir](https://github.com/jmjuanes/siimple/tree/main/packages/preset-noir/) | Classic and elegant theme for siimple. | :x: |
 | [@siimple/preset-mustard](https://github.com/jmjuanes/siimple/tree/main/packages/preset-mustard/) | Yellowish and very clean theme preset. | :x: |
-| [@siimple/standalone](https://github.com/jmjuanes/siimple/tree/main/packages/standalone/) | Run **siimple** directly in the browser. | :x: |
+| [@siimple/standalone](https://github.com/jmjuanes/siimple/tree/main/packages/standalone/) | Run siimple directly in the browser. | :x: |
 | [@siimple/icons](https://github.com/jmjuanes/siimple/tree/main/packages/icons/) | Siimple icons in JSON format. | :x: |
 
 The version of these packages are different from the main `siimple` and `siimple-icons` packages, but follows this convention: the version `4.x.y` of `siimple` equals to version `0.x.y` of all packages published in the `@siimple` organization.
@@ -107,7 +107,7 @@ $ yarn run start:playground
 
 - CSS naming methodology based on [SMACSS](http://smacss.com).
 - CSS-In-JS engine inspired by [Emotion](https://emotion.sh) and [Stitches](https://stitches.dev).
-- Theme configuration, presets demo and React integration inspired by [Theme UI](https://theme-ui.com) and [System UI](https://system-ui.com).
+- Theme configuration and presets demo inspired by [Theme UI](https://theme-ui.com) and [System UI](https://system-ui.com).
 - Standalone package inspired by [Babel Standalone](https://babel.dev).
 
 ## License
