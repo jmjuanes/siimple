@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import kofi from "kofi";
-import {classNames} from "@siimple/react";
+import classNames from "classnames";
 
 import {Brand} from "./components/Brand.jsx";
 import {Button} from "./components/Button.jsx";
@@ -27,6 +26,14 @@ const inject = (preview, html, css) => {
         css: css,
     };
     return preview.contentWindow.postMessage(data, "*");
+};
+
+const debounce = (wait, fn) => {
+    let timer = null;
+    return () => {
+        clearTimeout(timer);
+        timer = setTimeout(fn, wait || 25);
+    };
 };
 
 // Playground app
@@ -55,7 +62,7 @@ const App = () => {
 
     // Request CSS compile
     const requestCompile = React.useMemo(() => {
-        return kofi.debounce(1000, () => {
+        return debounce(1000, () => {
             setError("");
             playground.current.html = htmlEditor.current.getCode();
             playground.current.config = configEditor.current.getCode();
@@ -204,6 +211,4 @@ const App = () => {
 };
 
 // Mount app
-kofi.ready(() => {
-    ReactDOM.render(<App />, document.getElementById("root"));
-});
+ReactDOM.render(<App />, document.getElementById("root"));

@@ -1,16 +1,18 @@
 import {css} from "@siimple/core";
 import colors from "@siimple/colors";
 import {injectModules} from "@siimple/modules";
-// import * as helpersUtils from "@siimple/preset-helpers/utils.js";
-import theme from "@siimple/preset-base";
+import * as presets from "@siimple/presets";
 
 const AsyncFunction = Object.getPrototypeOf(async () => {}).constructor;
 
 // Available modules from siimple
 const modules = {
     "colors": colors,
-    // "preset-helpers/utils": helpersUtils,
-    "preset-base": theme,
+    "preset-base": presets.base,
+    "preset-dark": presets.dark,
+    "preset-ice": presets.ice,
+    "preset-mustard": presets.mustard,
+    "preset-noir": presets.noir,
 };
 
 let prevConfig = null;
