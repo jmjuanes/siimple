@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import {css as buildSiimple} from "@siimple/core";
 import {injectModules} from "@siimple/modules";
-import {markup} from "@siimple/modules/markup.js";
+import {markup} from "@siimple/modules/markup";
 import * as presets from "@siimple/presets";
 
 const tableData = {
