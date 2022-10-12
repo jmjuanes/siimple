@@ -9,6 +9,7 @@
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "homepage": "https://www.siimple.xyz/icons",
     "main": "index.js",
+    "exports": "./index.js",
     "keywords": [
         "siimple",
         "icons"

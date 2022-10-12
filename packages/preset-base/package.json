@@ -9,6 +9,7 @@
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "homepage": "https://www.siimple.xyz",
     "main": "index.js",
+    "exports": "./index.js",
     "dependencies": {
         "@siimple/colors": "^0.3.0"
     },

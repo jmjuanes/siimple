@@ -9,6 +9,7 @@
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "homepage": "https://www.siimple.xyz/presets/noir",
     "main": "index.js",
+    "exports": "./index.js",
     "dependencies": {
         "@siimple/preset-base": "^0.3.0"
     },
