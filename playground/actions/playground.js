@@ -1,4 +1,3 @@
-import kofi from "kofi";
 import lzString from "lz-string";
 
 // Compress and decompress  string
@@ -50,14 +49,14 @@ export const sharePlayground = content => {
 
 // Save playground in JSON format
 export const exportPlayground = content => {
-    const data = JSON.stringify({
-        html: content.html || "",
-        config: content.config || "",
-        version: sandbox.version || "latest",
-    }); 
-    const fileContent = URL.createObjectURL(new Blob([data], {
-        type: "application/json",
-    }));
-    const fileName = `playground-${kofi.timestamp("YYYY-MM-DD")}.json`;
-    return kofi.downloadFile(fileName, fileContent);
+    // const data = JSON.stringify({
+    //     html: content.html || "",
+    //     config: content.config || "",
+    //     version: sandbox.version || "latest",
+    // }); 
+    // const fileContent = URL.createObjectURL(new Blob([data], {
+    //     type: "application/json",
+    // }));
+    // const fileName = `playground-${kofi.timestamp("YYYY-MM-DD")}.json`;
+    // return kofi.downloadFile(fileName, fileContent);
 };

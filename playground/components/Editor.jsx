@@ -1,5 +1,5 @@
 import React from "react";
-import {classNames} from "@siimple/react";
+import classNames from "classnames";
 
 export const Editor = React.forwardRef((props, ref) => {
     const editorClass = classNames({
