@@ -1,6 +1,6 @@
 {
     "name": "@siimple/preset-noir",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "An elegant and classic theme for siimple.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
@@ -11,7 +11,7 @@
     "main": "index.js",
     "exports": "./index.js",
     "dependencies": {
-        "@siimple/preset-base": "^0.3.0"
+        "@siimple/preset-base": "^0.3.1"
     },
     "keywords": [
         "siimple",

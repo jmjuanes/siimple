@@ -1,6 +1,6 @@
 {
     "name": "@siimple/cli",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Command Line for siimple",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
@@ -12,8 +12,8 @@
         "siimple": "./index.js"
     },
     "dependencies": {
-        "@siimple/core": "^0.3.0",
-        "@siimple/modules": "^0.3.0"
+        "@siimple/core": "^0.3.1",
+        "@siimple/modules": "^0.3.1"
     },
     "keywords": [
         "siimple",

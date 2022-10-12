@@ -1,6 +1,6 @@
 {
     "name": "@siimple/icons",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Siimple icons in JSON format.",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",

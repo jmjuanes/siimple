@@ -1,6 +1,6 @@
 {
     "name": "@siimple/modules",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Core modules for the siimple css toolkit",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "type": "module",
