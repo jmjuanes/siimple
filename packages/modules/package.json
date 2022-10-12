@@ -9,7 +9,13 @@
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "homepage": "https://www.siimple.xyz",
     "main": "index.js",
-    "exports": "./index.js",
+    "exports": {
+        ".": "./index.js",
+        "./elements": "./elements.js",
+        "./markup": "./markup.js",
+        "./helpers": "./helpers.js",
+        "./reset": "./reset.js"
+    },
     "keywords": [
         "siimple",
         "modules",
