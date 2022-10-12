@@ -16,6 +16,7 @@
     "dependencies": {
         "@mdx-js/mdx": "^1.6.22",
         "@mdx-js/react": "^1.6.22",
+        "classnames": "^2.3.2",
         "codecake": "^0.0.3",
         "copy-webpack-plugin": "^11.0.0",
         "gatsby": "^4.5.2",
@@ -24,7 +25,6 @@
         "gatsby-plugin-page-creator": "^4.5.1",
         "gatsby-plugin-react-helmet": "^5.6.0",
         "gatsby-source-filesystem": "^4.5.1",
-        "kofi": "^0.5.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-helmet": "^6.1.0"

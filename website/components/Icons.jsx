@@ -1,5 +1,5 @@
 import React from "react"
-import {classNames} from "@siimple/react";
+import classNames from "classnames";
 import icons from "@siimple/icons";
 import {LiveCode} from "./LiveCode.jsx";
 

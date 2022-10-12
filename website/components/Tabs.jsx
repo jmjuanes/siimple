@@ -1,5 +1,5 @@
 import React from "react";
-import {classNames} from "@siimple/react";
+import classNames from "classnames";
 
 export const Tabs = props => (
     <div className="is-rounded has-p-2 has-bg-dark is-flex has-direction-column-mobile">

@@ -1,7 +1,8 @@
 import React from "react";
 import Helmet from "react-helmet";
-import {ThemeProvider, useTheme, useCss} from "@siimple/react";
-import {BaseStyles, Elements, Markup} from "@siimple/components";
+import {css as buildSiimple} from "@siimple/core";
+import {injectModules} from "@siimple/modules";
+import {markup} from "@siimple/modules/markup.js";
 import * as presets from "@siimple/presets";
 
 const tableData = {
@@ -19,14 +20,73 @@ const getVariants = obj => {
     return [...new Set(["primary", "secondary", ...Object.keys(obj || {})])].filter(n => n !== "default");
 };
 
+// Theme provider component
+const ThemeContext = React.createContext(null);
+const useTheme = () => React.useContext(ThemeContext);
+const ThemeProvider = props => {
+    const theme = presets[props.preset] || {};
+    const css = React.useMemo(
+        () => {
+            const config = injectModules({
+                ...theme,
+                prefix: "preset-",
+                useRootStyles: false,
+                useBorderBox: false,
+                useColorModes: false,
+                useCssVariables: false,
+                modules: ["elements"],
+                styles: {
+                    ".preset-demo": {
+                        backgroundColor: "background",
+                        color: "text",
+                        fontFamily: "body",
+                        fontWeight: "body",
+                        lineHeight: "body",
+                        padding: "1.5rem",
+                        "& hr": {
+                            backgroundColor: "muted",
+                            ...theme?.styles?.hr,
+                        },
+                        "& h1,& h2,& h3,& h4,& h5,& h6": {
+                            color: "heading",
+                            fontFamily: "heading",
+                            fontWeight: "heading",
+                            lineHeight: "heading",
+                        },
+                        "& table": {
+                            ...markup.table,
+                        },
+                        "& p": {
+                            ...markup.p,
+                        },
+                    },
+                },
+            });
+            return buildSiimple(config);
+        },
+        [props.preset],
+    );
+    return (
+        <ThemeContext.Provider value={theme}>
+            <Helmet>
+                {(theme?.meta?.fonts || []).map(font => (
+                    <link href={font} rel="stylesheet" />
+                ))}
+            </Helmet>
+            <style dangerouslySetInnerHTML={{ __html: css }} />
+            <div className="preset-demo">
+                {props.children}
+            </div>
+        </ThemeContext.Provider>
+    );
+};
+
 // Title wrapper
-const Title = props => (
-    <Elements.title className="is-2">{props.children}</Elements.title>
-);
+const Title = props => <h2>{props.children}</h2>;
 
 const Divider = () => (
     <div className="has-mt-6 has-mb-6">
-        <Elements.divider />
+        <hr />
     </div>
 );
 
@@ -40,7 +100,7 @@ const ColorsDemo = () => {
 const ColorPalette = ({colors, name}) => (
     <React.Fragment>
         {/* Basic colors */}
-        <Elements.title className="is-3 is-capitalized">{name || "base colors"}</Elements.title>
+        <h3 className="is-capitalized">{name || "base colors"}</h3>
         <div className="is-flex has-flex-wrap" style={{gap: "0.5rem"}}>
             {Object.keys(colors).filter(c => typeof colors[c] === "string").map(color => (
                 <div key={color}>
@@ -67,11 +127,11 @@ const ColorPalette = ({colors, name}) => (
     </React.Fragment>
 );
 
-const TypographyDemo = props => {
+const TypographyDemo = () => {
     const theme = useTheme();
     return (
         <React.Fragment>
-            <Elements.title className="is-3">Font family</Elements.title>
+            <h3>Font family</h3>
             {Object.keys(theme?.fonts || {}).map(key => (
                 <div className="columns" key={key}>
                     <div className="column is-one-quarter is-full-mobile">
@@ -88,7 +148,7 @@ const TypographyDemo = props => {
                     </div>
                 </div>
             ))}
-            <Markup.h3>Font sizes</Markup.h3>
+            <h3>Font sizes</h3>
             <div className="is-flex has-items-end has-flex-wrap" style={{gap: "1rem"}}>
                 {(theme?.fontSizes || []).map(s => (
                     <span key={s} style={{fontSize: s}}>{s}</span>
@@ -108,7 +168,7 @@ const ElementDemo = props => {
 };
 
 const TableDemo = () => (
-    <Elements.table className="is-divided">
+    <table>
         <thead className="">
             <tr className="">
                 {tableData.header.map(cell => (<th key={cell}>{cell}</th>))}
@@ -121,35 +181,36 @@ const TableDemo = () => (
                 </tr>
             ))}
         </tbody>
-    </Elements.table>
+    </table>
 );
 
 const CardDemo = () => {
-    const backgrounds = {
-        primary: useCss({
-            backgroundColor: "primary",
-        }),
-        secondary: useCss({
-            backgroundColor: "secondary",
-        }),
+    const theme = useTheme();
+    const bg = {
+        primary: {
+            backgroundColor: theme.colors.primary,
+        },
+        secondary: {
+            backgroundColor: theme.colors.secondary,
+        },
     };
     return (
         <div className="columns">
             {["primary", "secondary"].map(key => (
                 <div key={key} className="column is-half is-full-mobile">
-                    <Elements.card>
-                        <div className={`is-rounded has-w-full has-p-12 ${backgrounds[key]}`} align="center">
+                    <div className="preset-card">
+                        <div className="is-rounded has-w-full has-p-12" style={bg[key]} align="center">
                             <i className="si-image has-size-9 has-text-white" />
                         </div>
-                        <Elements.title className="is-5">Heading</Elements.title>
-                        <Elements.paragraph>
+                        <h5>Heading</h5>
+                        <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </Elements.paragraph>
-                        <Elements.button variant={key} className="is-full">
+                        </p>
+                        <div className={`preset-button is-${key} is-full`}>
                             <strong>Action</strong>
-                        </Elements.button>
-                    </Elements.card>
+                        </div>
+                    </div>
                 </div>
             ))}
         </div>
@@ -159,7 +220,7 @@ const CardDemo = () => {
 const FormField = props => (
     <div className="columns">
         <div className="column is-one-third">
-            <Elements.label>{props.title}</Elements.label>
+            <label className="preset-label">{props.title}</label>
         </div>
         <div class="column is-two-thids">
             {props.children}
@@ -170,29 +231,29 @@ const FormField = props => (
 const FormDemo = () => (
     <React.Fragment>
         <FormField title="Full name">
-            <Elements.input type="text" placeholder="Liam Wilson" />
+            <input className="preset-input" type="text" placeholder="Liam Wilson" />
         </FormField>
         <FormField title="Email">
-            <Elements.input type="email" placeholder="liam.wilson@email.com" />
+            <input className="preset-input" type="email" placeholder="liam.wilson@email.com" />
         </FormField>
         <FormField title="How many people are comming?">
-            <Elements.select>
+            <select className="preset-select">
                 <option>From 1 to 5</option>
                 <option>More than 5 people</option>
-            </Elements.select>
+            </select>
         </FormField>
         <FormField title="Custom message">
-            <Elements.textarea placeholder="Your message"></Elements.textarea>
+            <textarea className="preset-textarea" placeholder="Your message"></textarea>
         </FormField>
         <FormField title="Preferences">
-            <Elements.label>
-                <Elements.checkbox />
+            <label className="preset-label">
+                <input type="checkbox" className="preset-checkbox" />
                 <span className="has-ml-2">I agree to the terms and conditions.</span>
-            </Elements.label>
-            <Elements.label>
-                <Elements.checkbox />
+            </label>
+            <label className="preset-label">
+                <input type="checkbox" className="preset-checkbox" />
                 <span className="has-ml-2">Subscribe to our newsletter.</span>
-            </Elements.label>
+            </label>
         </FormField>
     </React.Fragment>
 );
@@ -201,19 +262,19 @@ const ModalDemo = () => {
     const [visible, setVisible] = React.useState(false);
     return (
         <React.Fragment>
-            <Elements.button onClick={() => setVisible(true)}>Open modal</Elements.button>
+            <div className="preset-button" onClick={() => setVisible(true)}>Open modal</div>
             {visible && (
-                <Elements.scrim>
-                    <Elements.modal>
-                        <div className="is-flex">
-                            <Elements.title className="is-4">Modal title</Elements.title>
+                <div className="preset-scrim">
+                    <div className="preset-modal">
+                        <div className="is-flex has-items-center">
+                            <h4 className="has-mt-none">Modal title</h4>
                             <div className="has-ml-auto">
-                                <Elements.close onClick={() => setVisible(false)} />
+                                <div className="preset-close" onClick={() => setVisible(false)} />
                             </div>
                         </div>
                         <div className="">Modal content</div>
-                    </Elements.modal>
-                </Elements.scrim>
+                    </div>
+                </div>
             )}
         </React.Fragment>
     );
@@ -221,84 +282,77 @@ const ModalDemo = () => {
 
 // preset data is in props.pageContext
 export const Preset = props => (
-    <ThemeProvider theme={presets[props.preset]}>
-        <Helmet>
-            {(presets[props.preset]?.meta?.fonts || []).map(font => (
-                <link href={font} rel="stylesheet" />
-            ))}
-        </Helmet>
-        <BaseStyles style={{padding: "1.5rem"}}>
-            {/* Colors list */}
-            <Title>Colors</Title>
-            <ColorsDemo />
-            <Divider />
-            <Title>Typography</Title>
-            <TypographyDemo /> 
-            <Divider />
-            <Title>Buttons</Title>
-            <ElementDemo
-                field="buttons"
-                render={name => (
-                    <Elements.button key={name} variant={name} className="is-capitalized has-mr-1">
-                        <strong>{name}</strong>
-                    </Elements.button>
-                )}
-            />
-            <Divider />
-            <Title>Alerts</Title>
-            <ElementDemo
-                field="alerts"
-                render={name => (
-                    <Elements.alert key={name} variant={name}>
-                        <div className="">
-                            <span className="is-capitalized">{name}</span> alert
-                        </div>
-                        <Elements.close className="has-ml-auto" as="div" />
-                    </Elements.alert>
-                )}
-            />
-            <Divider />
-            <Title>Badges</Title>
-            <ElementDemo
-                field="badges"
-                render={name => (
-                    <Elements.badge key={name} variant={name} className="is-capitalized has-mr-1">
-                        <strong>{name}</strong>
-                    </Elements.badge>
-                )}
-            />
-            <Divider />
-            <Title>Table</Title>
-            <TableDemo />
-            <Divider />
-            <Title>Cards</Title>
-            <CardDemo />
-            <Divider />
-            <Title>Forms</Title>
-            <FormDemo />
-            <Divider />
-            <Title>Modals</Title>
-            <ModalDemo />
-            <Divider />
-            <Title>Navigation</Title>
-            <div className="is-flex">
-                <Elements.navlink>Default link</Elements.navlink>
-                <Elements.navlink className="is-active">Active link</Elements.navlink>
-                <Elements.navlink className="is-disabled">Disabled link</Elements.navlink>
-            </div>
-            <Divider />
-            <Title>Dropdown</Title>
-            <div>
-                <div className="is-inline-block with-dropdown">
-                    <Elements.button>Dropdown</Elements.button>
-                    <Elements.dropdown>
-                        <Elements.navlink>Dropdown link 1</Elements.navlink>
-                        <Elements.navlink>Dropdown link 2</Elements.navlink>
-                        <Elements.navlink>Dropdown link 3</Elements.navlink>
-                    </Elements.dropdown>
+    <ThemeProvider preset={props.preset}>
+        {/* Colors list */}
+        <Title>Colors</Title>
+        <ColorsDemo />
+        <Divider />
+        <Title>Typography</Title>
+        <TypographyDemo /> 
+        <Divider />
+        <Title>Buttons</Title>
+        <ElementDemo
+            field="buttons"
+            render={name => (
+                <div key={name} className={`preset-button is-${name} is-capitalized has-mr-1`}>
+                    <strong>{name}</strong>
+                </div>
+            )}
+        />
+        <Divider />
+        <Title>Alerts</Title>
+        <ElementDemo
+            field="alerts"
+            render={name => (
+                <div key={name} className={`preset-alert is-${name}`}>
+                    <div className="">
+                        <span className="is-capitalized">{name}</span> alert
+                    </div>
+                    <div className="preset-close has-ml-auto" />
+                </div>
+            )}
+        />
+        <Divider />
+        <Title>Badges</Title>
+        <ElementDemo
+            field="badges"
+            render={name => (
+                <span key={name} className={`preset-badge is-${name} is-capitalized has-mr-1`}>
+                    <strong>{name}</strong>
+                </span>
+            )}
+        />
+        <Divider />
+        <Title>Table</Title>
+        <TableDemo />
+        <Divider />
+        <Title>Cards</Title>
+        <CardDemo />
+        <Divider />
+        <Title>Forms</Title>
+        <FormDemo />
+        <Divider />
+        <Title>Modals</Title>
+        <ModalDemo />
+        <Divider />
+        <Title>Navigation</Title>
+        <div className="is-flex">
+            <a className="preset-navlink">Default link</a>
+            <a className="preset-navlink is-active">Active link</a>
+            <a className="preset-navlink is-disabled">Disabled link</a>
+        </div>
+        <Divider />
+        <Title>Dropdown</Title>
+        <div className="is-block">
+            <div className="is-inline-block with-dropdown">
+                <div className="preset-button">Dropdown</div>
+                <div className="preset-dropdown">
+                    <a className="preset-navlink">Dropdown link 1</a>
+                    <a className="preset-navlink">Dropdown link 2</a>
+                    <a className="preset-navlink">Dropdown link 3</a>
                 </div>
             </div>
-            <Divider />
-        </BaseStyles>
+        </div>
+        <Divider />
     </ThemeProvider>
 );

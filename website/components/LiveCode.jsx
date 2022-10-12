@@ -1,6 +1,6 @@
 import React from "react";
 import {highlightStr} from "codecake/highlight.js";
-import {classNames} from "@siimple/react";
+import classNames from "classnames";
 
 // Render title element
 const CodeTitle = props => {
