@@ -83,6 +83,16 @@ export const helpers = {
             screen: "100vh",
         },
     },
+    gap: {
+        prefix: "has",
+        shortcut: "g",
+        properties: ["gap"],
+        responsive: true,
+        scale: "space",
+        values: {
+            none: "0px",
+        },
+    },
     padding: {
         prefix: "has",
         shortcut: "p",
