@@ -1,0 +1,39 @@
+name: Deploy
+
+on:
+  push:
+    tags: ["*"]
+  workflow_dispatch:
+  
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "deploy"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: ${{ github.repository == 'jmjuanes/siimple' }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - uses: actions/configure-pages@v1
+      - run: yarn install
+      - run: yarn run build
+      - run: yarn run build:website
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: public
+      - uses: actions/deploy-pages@v1
+        id: deployment
