@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "private": true,
     "description": "Online editor for siimple",
-    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "author": "Josemi Juanes <hello@josemi.xyz>",
     "license": "MIT",
-    "homepage": "https://www.siimple.xyz/",
+    "homepage": "https://siimple.josemi.xyz/",
     "repository": "https://github.com/jmjuanes/siimple",
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "scripts": {
