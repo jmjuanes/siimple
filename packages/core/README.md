@@ -14,7 +14,7 @@ $ npm install --save @siimple/core
 
 ### css(config)
 
-Given a [configuration object](https://www.siimple.xyz/configuration), this method will generate a CSS string with the parsed styles in `config.styles` and using the provided theme in the configuration object.
+Given a [configuration object](https://siimple.josemi.xyz/configuration), this method will generate a CSS string with the parsed styles in `config.styles` and using the provided theme in the configuration object.
 
 ```js
 import {css} from "@siimple/core";

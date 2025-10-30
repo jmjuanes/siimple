@@ -15,7 +15,7 @@ However, there are some valid use cases:
 
 ## Alternatives to @siimple/standalone
 
-You can use our [Playground App](https://www.siimple.xyz/playground) to get started with **siimple** and for rapid prototyping without any other setup.
+You can use our [Playground App](https://siimple.josemi.xyz/playground) to get started with **siimple** and for rapid prototyping without any other setup.
 
 ## Installation
 

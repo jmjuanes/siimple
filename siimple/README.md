@@ -8,8 +8,8 @@
 
 ## Links
 
-- Documentation: https://www.siimple.xyz/.
-- Online playground: https://www.siimple.xyz/playground.
+- Documentation: https://siimple.josemi.xyz/.
+- Online playground: https://siimple.josemi.xyz/playground.
 - Report a bug or request a feature: https://github.com/jmjuanes/siimple/issues.
 - Get help: https://github.com/jmjuanes/siimple/discussions.
 
@@ -89,7 +89,7 @@ export default {
 
 A configuration file is where you can provide your custom theme scales, variants and styles for generating your customized version of **siimple** or to adapt it to your project look and feel.
 
-Read more about the [configuration](https://www.siimple.xyz/configuration/).
+Read more about the [configuration](https://siimple.josemi.xyz/configuration/).
 
 ### Core modules (added in v4.1.0)
 
@@ -130,7 +130,7 @@ export default {
 };
 ```
 
-Read more about [theming](https://www.siimple.xyz/theme).
+Read more about [theming](https://siimple.josemi.xyz/theme).
 
 ### Color Modes
 
@@ -158,7 +158,7 @@ export default {
 };
 ```
 
-Read more about [color modes](https://www.siimple.xyz/color-modes).
+Read more about [color modes](https://siimple.josemi.xyz/color-modes).
 
 ### Mixins
 
@@ -182,7 +182,7 @@ export default {
 
 ### Custom styles
 
-You can specify your custom styles in the configuration file, using a [CSS-in-JS styles syntax](https://www.siimple.xyz/syntax).
+You can specify your custom styles in the configuration file, using a [CSS-in-JS styles syntax](https://siimple.josemi.xyz/syntax).
 
 ```js
 export default {

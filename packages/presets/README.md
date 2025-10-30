@@ -25,11 +25,11 @@ export default {
 
 The following presets can be imported:
 
-- [base](https://www.siimple.xyz/presets/base).
-- [dark](https://www.siimple.xyz/presets/dark).
-- [ice](https://www.siimple.xyz/presets/ice).
-- [mustard](https://www.siimple.xyz/presets/mustard).
-- [noir](https://www.siimple.xyz/presets/noir).
+- [base](https://siimple.josemi.xyz/presets/base).
+- [dark](https://siimple.josemi.xyz/presets/dark).
+- [ice](https://siimple.josemi.xyz/presets/ice).
+- [mustard](https://siimple.josemi.xyz/presets/mustard).
+- [noir](https://siimple.josemi.xyz/presets/noir).
 
 
 # License
