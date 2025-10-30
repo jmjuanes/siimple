@@ -24,16 +24,16 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: 16
-      - uses: actions/configure-pages@v1
+          node-version: 20
+      - uses: actions/configure-pages@v5
       - run: yarn install
       - run: yarn run build
       - run: yarn run build:website
-      - uses: actions/upload-pages-artifact@v1
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: public
-      - uses: actions/deploy-pages@v1
+      - uses: actions/deploy-pages@v4
         id: deployment

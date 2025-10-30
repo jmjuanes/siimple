@@ -11,7 +11,7 @@ jobs:
     outputs:
       names: ${{ steps.folders.outputs.folders }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - id: folders
         run: echo "::set-output name=folders::$(ls -d packages/* | jq -R -s -c 'split("\n")[:-1]')"
   ## Publish monorepo packages
@@ -22,10 +22,10 @@ jobs:
       matrix:
         package: ${{ fromJson(needs.packages.outputs.names) }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: '16.x'
+          node-version: '20'
           registry-url: 'https://registry.npmjs.org'
       - run: cd ${{ matrix.package }} && npm publish --access public
         env:
@@ -35,10 +35,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [publish-packages]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: '16.x'
+          node-version: '20'
           registry-url: 'https://registry.npmjs.org'
       - run: yarn install
       - run: yarn run build
