@@ -34,7 +34,7 @@ module.exports = configOrPath => ({
         root => {
             console.warn("[siimple/postcss] DEPRECATION NOTICE!");
             console.warn("[siimple/postcss] The 'siimple/postcss.cjs' module is deprecated. Please migrate to '@siimple/postcss' for full ESM integration.");
-            console.warn("[siimple/postcss] Read more at https://www.siimple.xyz/packages/postcss");
+            console.warn("[siimple/postcss] Read more at https://siimple.josemi.xyz/packages/postcss");
             return resolveConfig(configOrPath)
                 .then(config => compileSiimple(config))
                 .then(styles => root.append(postcss.parse(styles)));
