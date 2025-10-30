@@ -27,7 +27,7 @@ export default {
 };
 ```
 
-Check out the [full list of available colors](https://www.siimple.xyz/colors).
+Check out the [full list of available colors](https://siimple.josemi.xyz/colors).
 
 ## License
 

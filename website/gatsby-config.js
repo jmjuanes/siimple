@@ -8,7 +8,7 @@ module.exports = {
     siteMetadata: {
         title: "siimple CSS",
         description: "The minimal and themeable CSS toolkit",
-        url: "https://www.siimple.xyz/",
+        url: "https://siimple.josemi.xyz/",
     },
     plugins: [
         "gatsby-plugin-react-helmet",

@@ -3,10 +3,10 @@
     "version": "4.3.1",
     "private": true,
     "description": "A minimal and themeable CSS toolkit for flat and clean designs.",
-    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "author": "Josemi Juanes <hello@josemi.xyz>",
     "type": "module",
     "license": "MIT",
-    "homepage": "https://www.siimple.xyz/",
+    "homepage": "https://siimple.josemi.xyz/",
     "repository": "https://github.com/jmjuanes/siimple",
     "bugs": "https://github.com/jmjuanes/siimple/issues",
     "workspaces": [

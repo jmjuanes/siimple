@@ -2,12 +2,12 @@
     "name": "siimple-icons",
     "version": "4.3.1",
     "description": "Open source icons for siimple",
-    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "author": "Josemi Juanes <hello@josemi.xyz>",
     "type": "module",
     "license": "MIT",
     "repository": "https://github.com/jmjuanes/siimple",
     "bugs": "https://github.com/jmjuanes/siimple/issues",
-    "homepage": "https://www.siimple.xyz/icons",
+    "homepage": "https://siimple.josemi.xyz/icons",
     "dependencies": {
         "@siimple/icons": "^0.3.1"
     },

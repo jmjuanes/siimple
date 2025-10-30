@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "private": true,
     "description": "Documentation site for siimple",
-    "author": "Josemi Juanes <josemi@siimple.xyz>",
+    "author": "Josemi Juanes <hello@josemi.xyz>",
     "license": "MIT",
-    "homepage": "https://www.siimple.xyz/",
+    "homepage": "https://siimple.josemi.xyz/",
     "repository": "https://github.com/siimple/siimple",
     "bugs": "https://github.com/siimple/siimple/issues",
     "scripts": {

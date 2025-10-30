@@ -18,7 +18,7 @@ As an open source project, we love to receive contributions from the community.
 
 ### Improve the documentation
 
-We maintain a documentation site that is public available at https://www.siimple.xyz. You can help us improving the documentation by:
+We maintain a documentation site that is public available at https://siimple.josemi.xyz. You can help us improving the documentation by:
 - Adding missing information.
 - Fixing typos.
 - Updating them to the latest features of the toolkit.

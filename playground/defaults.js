@@ -10,7 +10,7 @@ export const defaultHtml = `
         The <b>minimal</b> and <b>themeable</b> CSS toolkit.
     </div>
     <div class="has-mt-2 is-semitransparent">
-        www.siimple.xyz
+        siimple.josemi.xyz
     </div>
 </div>
 

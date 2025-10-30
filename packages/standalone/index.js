@@ -1,5 +1,5 @@
 const ISSUES_URL = "https://github.com/jmjuanes/siimple/issues";
-const DOCS_URL = "https://siimple.xyz/packages/standalone";
+const DOCS_URL = "https://siimple.josemi.xyz/packages/standalone";
 
 const AsyncFunction = Object.getPrototypeOf(async () => {}).constructor;
 const log = msg => console.info(`[siimple:standalone] ${msg}`);

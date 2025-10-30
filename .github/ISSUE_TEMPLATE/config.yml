@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: 📚 Documentation
-    url: https://www.siimple.xyz
+    url: https://siimple.josemi.xyz
     about: Check the documentation for usage.
   - name: 💬 Ask a Question
     url: https://github.com/jmjuanes/siimple/discussions

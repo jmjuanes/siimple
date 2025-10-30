@@ -8,7 +8,7 @@
 
 ## Links
 
-- Documentation: https://www.siimple.xyz/icons.
+- Documentation: https://siimple.josemi.xyz/icons.
 - Report a bug or request a feature: https://github.com/jmjuanes/siimple/issues.
 - Get help: https://github.com/jmjuanes/siimple/discussions.
 
