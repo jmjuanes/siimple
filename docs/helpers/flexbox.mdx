@@ -273,6 +273,27 @@ Use the following classes to control the order of flex items.
 </div>
 ```
 
+### Gap
+
+Use the following classes to control the gap between flex items.
+
+| Class | Property |
+| `has-gap-0` and `has-gap-none` | `gap: 0;` |
+| `has-gap-1` | `gap: 0.25rem;` |
+| `has-gap-2` | `gap: 0.5rem;` |
+| `has-gap-3` | `gap: 0.75rem;` |
+| `has-gap-4` | `gap: 1rem;` |
+| `has-gap-6` | `gap: 1.5rem;` |
+| `has-gap-8` | `gap: 2rem;` |
+
+```html live=true color=white
+<div class="is-flex has-flex-no-wrap has-gap-6 has-text-center">
+    <div class="has-p-4 is-rounded has-bg-primary has-w-96">1</div>
+    <div class="has-p-4 is-rounded has-bg-primary has-w-96">2</div>
+    <div class="has-p-4 is-rounded has-bg-primary has-w-96">3</div>
+</div>
+```
+
 ### Responsive flexbox helpers
 
 Control the flexbox properties of an element at a specific breakpoint adding a `-{breakpoint}` suffix to the flexbox helper class. For example, you can change the direction of the flexbox items to column only on mobile devices adding the `has-direction-column-mobile` class to the container element:
