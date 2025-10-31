@@ -283,6 +283,22 @@ export const helpers = {
             last: "999",
         },
     },
+    gap: {
+        prefix: "has",
+        shortcut: "gap",
+        responsive: true,
+        properties: ["gap"],
+        values: {
+            "none": "0",
+            "0": "0",
+            "1": "0.25rem",
+            "2": "0.5rem",
+            "3": "0.75rem",
+            "4": "1rem",
+            "6": "1.5rem",
+            "8": "2rem",
+        },
+    },
     textAlign: {
         styles: {
             ".has-text-justified": {
