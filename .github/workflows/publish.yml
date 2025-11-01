@@ -1,8 +1,9 @@
 name: Publish packages to NPM
 
+## This workflow is limited only when a new tag is created
 on:
-  release:
-    types: [created]
+  push:
+    tags: ["*"]
 
 ## Set permissions to the github token
 ## https://github.com/softprops/action-gh-release#permissions 
