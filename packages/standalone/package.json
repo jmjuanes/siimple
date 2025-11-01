@@ -1,6 +1,6 @@
 {
     "name": "@siimple/standalone",
-    "version": "0.3.1",
+    "version": "0.0.0",
     "description": "Build siimple CSS directly in your browser",
     "author": "Josemi Juanes <hello@josemi.xyz>",
     "type": "module",
@@ -23,7 +23,7 @@
         "node": ">=14"
     },
     "dependencies": {
-        "@siimple/core": "^0.3.1",
-        "@siimple/modules": "^0.3.1"
+        "@siimple/core": "*",
+        "@siimple/modules": "*"
     }
 }
