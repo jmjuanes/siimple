@@ -1,4 +1,4 @@
-name: Publish packages to NPM
+name: Release on NPM and GitHub
 
 ## This workflow is limited only when a new tag is created
 on:
