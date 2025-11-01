@@ -1,6 +1,6 @@
 {
     "name": "@siimple/preset-dark",
-    "version": "0.3.1",
+    "version": "0.0.0",
     "description": "Dark theme preset for the siimple css toolkit",
     "author": "Josemi Juanes <hello@josemi.xyz>",
     "type": "module",
@@ -11,8 +11,8 @@
     "main": "index.js",
     "exports": "./index.js",
     "dependencies": {
-        "@siimple/colors": "^0.3.1",
-        "@siimple/preset-base": "^0.3.1"
+        "@siimple/colors": "*",
+        "@siimple/preset-base": "*"
     },
     "keywords": [
         "siimple",
