@@ -27,6 +27,7 @@ jobs:
         with:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
+      - run: yarn release
       - run: cd ${{ matrix.package }} && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -42,6 +43,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: yarn install
       - run: yarn run build
+      - run: yarn release
       - run: cd siimple && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
