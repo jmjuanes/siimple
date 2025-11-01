@@ -26,6 +26,7 @@
         "start:website": "stattic --folder ./public --port 5000",
         "start:docs": "cross-env DOCS_ONLY=true yarn workspace siimple-website serve",
         "start:playground": "stattic --folder ./playground/public --port 5000",
+        "release": "node scripts/release.js",
         "test": "jest"
     },
     "devDependencies": {
