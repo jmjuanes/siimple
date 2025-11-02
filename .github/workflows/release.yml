@@ -1,9 +1,10 @@
 name: Release on NPM and GitHub
 
-## This workflow is limited only when a new tag is created
 on:
   push:
     tags: ["*"]
+  workflow_dispatch:
+
 
 ## Set permissions to the github token
 ## https://github.com/softprops/action-gh-release#permissions 
@@ -11,23 +12,9 @@ permissions:
   contents: write
 
 jobs:
-  packages:
-    if: ${{ github.repository == 'jmjuanes/siimple' }}
-    runs-on: ubuntu-latest
-    outputs:
-      names: ${{ steps.folders.outputs.folders }}
-    steps:
-      - uses: actions/checkout@v5
-      - id: folders
-        run: echo "::set-output name=folders::$(ls -d packages/* | jq -R -s -c 'split("\n")[:-1]')"
-
   publish-packages:
     if: ${{ github.repository == 'jmjuanes/siimple' }}
-    runs-on: ubuntu-20.04
-    needs: [packages]
-    strategy:
-      matrix:
-        package: ${{ fromJson(needs.packages.outputs.names) }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v6
@@ -35,7 +22,7 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
       - run: yarn release
-      - run: cd ${{ matrix.package }} && npm publish --access public
+      - run: bash scripts/publish-packages.sh
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
